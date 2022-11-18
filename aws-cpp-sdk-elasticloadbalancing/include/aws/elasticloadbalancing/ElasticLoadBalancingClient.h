@@ -8,8 +8,10 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/elasticloadbalancing/ElasticLoadBalancingServiceClientModel.h>
+#include <aws/elasticloadbalancing/ElasticLoadBalancingLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -93,6 +95,47 @@ namespace ElasticLoadBalancing
         virtual ~ElasticLoadBalancingClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
        /**
         * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
         */
@@ -112,15 +155,6 @@ namespace ElasticLoadBalancing
          */
         virtual Model::AddTagsOutcome AddTags(const Model::AddTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddTagsOutcomeCallable AddTagsCallable(const Model::AddTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for AddTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddTagsAsync(const Model::AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates one or more security groups with your load balancer in a virtual
@@ -134,15 +168,6 @@ namespace ElasticLoadBalancing
          */
         virtual Model::ApplySecurityGroupsToLoadBalancerOutcome ApplySecurityGroupsToLoadBalancer(const Model::ApplySecurityGroupsToLoadBalancerRequest& request) const;
 
-        /**
-         * A Callable wrapper for ApplySecurityGroupsToLoadBalancer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ApplySecurityGroupsToLoadBalancerOutcomeCallable ApplySecurityGroupsToLoadBalancerCallable(const Model::ApplySecurityGroupsToLoadBalancerRequest& request) const;
-
-        /**
-         * An Async wrapper for ApplySecurityGroupsToLoadBalancer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ApplySecurityGroupsToLoadBalancerAsync(const Model::ApplySecurityGroupsToLoadBalancerRequest& request, const ApplySecurityGroupsToLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds one or more subnets to the set of configured subnets for the specified
@@ -156,15 +181,6 @@ namespace ElasticLoadBalancing
          */
         virtual Model::AttachLoadBalancerToSubnetsOutcome AttachLoadBalancerToSubnets(const Model::AttachLoadBalancerToSubnetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for AttachLoadBalancerToSubnets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AttachLoadBalancerToSubnetsOutcomeCallable AttachLoadBalancerToSubnetsCallable(const Model::AttachLoadBalancerToSubnetsRequest& request) const;
-
-        /**
-         * An Async wrapper for AttachLoadBalancerToSubnets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AttachLoadBalancerToSubnetsAsync(const Model::AttachLoadBalancerToSubnetsRequest& request, const AttachLoadBalancerToSubnetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Specifies the health check settings to use when evaluating the health state
@@ -177,15 +193,6 @@ namespace ElasticLoadBalancing
          */
         virtual Model::ConfigureHealthCheckOutcome ConfigureHealthCheck(const Model::ConfigureHealthCheckRequest& request) const;
 
-        /**
-         * A Callable wrapper for ConfigureHealthCheck that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ConfigureHealthCheckOutcomeCallable ConfigureHealthCheckCallable(const Model::ConfigureHealthCheckRequest& request) const;
-
-        /**
-         * An Async wrapper for ConfigureHealthCheck that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ConfigureHealthCheckAsync(const Model::ConfigureHealthCheckRequest& request, const ConfigureHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Generates a stickiness policy with sticky session lifetimes that follow that
@@ -206,15 +213,6 @@ namespace ElasticLoadBalancing
          */
         virtual Model::CreateAppCookieStickinessPolicyOutcome CreateAppCookieStickinessPolicy(const Model::CreateAppCookieStickinessPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateAppCookieStickinessPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateAppCookieStickinessPolicyOutcomeCallable CreateAppCookieStickinessPolicyCallable(const Model::CreateAppCookieStickinessPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateAppCookieStickinessPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateAppCookieStickinessPolicyAsync(const Model::CreateAppCookieStickinessPolicyRequest& request, const CreateAppCookieStickinessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Generates a stickiness policy with sticky session lifetimes controlled by the
@@ -237,15 +235,6 @@ namespace ElasticLoadBalancing
          */
         virtual Model::CreateLBCookieStickinessPolicyOutcome CreateLBCookieStickinessPolicy(const Model::CreateLBCookieStickinessPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateLBCookieStickinessPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateLBCookieStickinessPolicyOutcomeCallable CreateLBCookieStickinessPolicyCallable(const Model::CreateLBCookieStickinessPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateLBCookieStickinessPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateLBCookieStickinessPolicyAsync(const Model::CreateLBCookieStickinessPolicyRequest& request, const CreateLBCookieStickinessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a Classic Load Balancer.</p> <p>You can add listeners, security
@@ -265,15 +254,6 @@ namespace ElasticLoadBalancing
          */
         virtual Model::CreateLoadBalancerOutcome CreateLoadBalancer(const Model::CreateLoadBalancerRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateLoadBalancer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateLoadBalancerOutcomeCallable CreateLoadBalancerCallable(const Model::CreateLoadBalancerRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateLoadBalancer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateLoadBalancerAsync(const Model::CreateLoadBalancerRequest& request, const CreateLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates one or more listeners for the specified load balancer. If a listener
@@ -288,15 +268,6 @@ namespace ElasticLoadBalancing
          */
         virtual Model::CreateLoadBalancerListenersOutcome CreateLoadBalancerListeners(const Model::CreateLoadBalancerListenersRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateLoadBalancerListeners that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateLoadBalancerListenersOutcomeCallable CreateLoadBalancerListenersCallable(const Model::CreateLoadBalancerListenersRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateLoadBalancerListeners that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateLoadBalancerListenersAsync(const Model::CreateLoadBalancerListenersRequest& request, const CreateLoadBalancerListenersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a policy with the specified attributes for the specified load
@@ -308,15 +279,6 @@ namespace ElasticLoadBalancing
          */
         virtual Model::CreateLoadBalancerPolicyOutcome CreateLoadBalancerPolicy(const Model::CreateLoadBalancerPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateLoadBalancerPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateLoadBalancerPolicyOutcomeCallable CreateLoadBalancerPolicyCallable(const Model::CreateLoadBalancerPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateLoadBalancerPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateLoadBalancerPolicyAsync(const Model::CreateLoadBalancerPolicyRequest& request, const CreateLoadBalancerPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified load balancer.</p> <p>If you are attempting to recreate
@@ -331,15 +293,6 @@ namespace ElasticLoadBalancing
          */
         virtual Model::DeleteLoadBalancerOutcome DeleteLoadBalancer(const Model::DeleteLoadBalancerRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteLoadBalancer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteLoadBalancerOutcomeCallable DeleteLoadBalancerCallable(const Model::DeleteLoadBalancerRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteLoadBalancer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteLoadBalancerAsync(const Model::DeleteLoadBalancerRequest& request, const DeleteLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified listeners from the specified load
@@ -349,15 +302,6 @@ namespace ElasticLoadBalancing
          */
         virtual Model::DeleteLoadBalancerListenersOutcome DeleteLoadBalancerListeners(const Model::DeleteLoadBalancerListenersRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteLoadBalancerListeners that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteLoadBalancerListenersOutcomeCallable DeleteLoadBalancerListenersCallable(const Model::DeleteLoadBalancerListenersRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteLoadBalancerListeners that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteLoadBalancerListenersAsync(const Model::DeleteLoadBalancerListenersRequest& request, const DeleteLoadBalancerListenersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified policy from the specified load balancer. This policy
@@ -367,15 +311,6 @@ namespace ElasticLoadBalancing
          */
         virtual Model::DeleteLoadBalancerPolicyOutcome DeleteLoadBalancerPolicy(const Model::DeleteLoadBalancerPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteLoadBalancerPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteLoadBalancerPolicyOutcomeCallable DeleteLoadBalancerPolicyCallable(const Model::DeleteLoadBalancerPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteLoadBalancerPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteLoadBalancerPolicyAsync(const Model::DeleteLoadBalancerPolicyRequest& request, const DeleteLoadBalancerPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deregisters the specified instances from the specified load balancer. After
@@ -391,15 +326,6 @@ namespace ElasticLoadBalancing
          */
         virtual Model::DeregisterInstancesFromLoadBalancerOutcome DeregisterInstancesFromLoadBalancer(const Model::DeregisterInstancesFromLoadBalancerRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeregisterInstancesFromLoadBalancer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeregisterInstancesFromLoadBalancerOutcomeCallable DeregisterInstancesFromLoadBalancerCallable(const Model::DeregisterInstancesFromLoadBalancerRequest& request) const;
-
-        /**
-         * An Async wrapper for DeregisterInstancesFromLoadBalancer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeregisterInstancesFromLoadBalancerAsync(const Model::DeregisterInstancesFromLoadBalancerRequest& request, const DeregisterInstancesFromLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the current Elastic Load Balancing resource limits for your AWS
@@ -412,15 +338,6 @@ namespace ElasticLoadBalancing
          */
         virtual Model::DescribeAccountLimitsOutcome DescribeAccountLimits(const Model::DescribeAccountLimitsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAccountLimits that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAccountLimitsOutcomeCallable DescribeAccountLimitsCallable(const Model::DescribeAccountLimitsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAccountLimits that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAccountLimitsAsync(const Model::DescribeAccountLimitsRequest& request, const DescribeAccountLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the state of the specified instances with respect to the specified
@@ -434,15 +351,6 @@ namespace ElasticLoadBalancing
          */
         virtual Model::DescribeInstanceHealthOutcome DescribeInstanceHealth(const Model::DescribeInstanceHealthRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeInstanceHealth that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeInstanceHealthOutcomeCallable DescribeInstanceHealthCallable(const Model::DescribeInstanceHealthRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeInstanceHealth that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeInstanceHealthAsync(const Model::DescribeInstanceHealthRequest& request, const DescribeInstanceHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the attributes for the specified load balancer.</p><p><h3>See
@@ -452,15 +360,6 @@ namespace ElasticLoadBalancing
          */
         virtual Model::DescribeLoadBalancerAttributesOutcome DescribeLoadBalancerAttributes(const Model::DescribeLoadBalancerAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeLoadBalancerAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeLoadBalancerAttributesOutcomeCallable DescribeLoadBalancerAttributesCallable(const Model::DescribeLoadBalancerAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeLoadBalancerAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeLoadBalancerAttributesAsync(const Model::DescribeLoadBalancerAttributesRequest& request, const DescribeLoadBalancerAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified policies.</p> <p>If you specify a load balancer name,
@@ -475,15 +374,6 @@ namespace ElasticLoadBalancing
          */
         virtual Model::DescribeLoadBalancerPoliciesOutcome DescribeLoadBalancerPolicies(const Model::DescribeLoadBalancerPoliciesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeLoadBalancerPolicies that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeLoadBalancerPoliciesOutcomeCallable DescribeLoadBalancerPoliciesCallable(const Model::DescribeLoadBalancerPoliciesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeLoadBalancerPolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeLoadBalancerPoliciesAsync(const Model::DescribeLoadBalancerPoliciesRequest& request, const DescribeLoadBalancerPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified load balancer policy types or all load balancer
@@ -500,15 +390,6 @@ namespace ElasticLoadBalancing
          */
         virtual Model::DescribeLoadBalancerPolicyTypesOutcome DescribeLoadBalancerPolicyTypes(const Model::DescribeLoadBalancerPolicyTypesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeLoadBalancerPolicyTypes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeLoadBalancerPolicyTypesOutcomeCallable DescribeLoadBalancerPolicyTypesCallable(const Model::DescribeLoadBalancerPolicyTypesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeLoadBalancerPolicyTypes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeLoadBalancerPolicyTypesAsync(const Model::DescribeLoadBalancerPolicyTypesRequest& request, const DescribeLoadBalancerPolicyTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified the load balancers. If no load balancers are
@@ -519,15 +400,6 @@ namespace ElasticLoadBalancing
          */
         virtual Model::DescribeLoadBalancersOutcome DescribeLoadBalancers(const Model::DescribeLoadBalancersRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeLoadBalancers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeLoadBalancersOutcomeCallable DescribeLoadBalancersCallable(const Model::DescribeLoadBalancersRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeLoadBalancers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeLoadBalancersAsync(const Model::DescribeLoadBalancersRequest& request, const DescribeLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the tags associated with the specified load
@@ -537,15 +409,6 @@ namespace ElasticLoadBalancing
          */
         virtual Model::DescribeTagsOutcome DescribeTags(const Model::DescribeTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTagsOutcomeCallable DescribeTagsCallable(const Model::DescribeTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTagsAsync(const Model::DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified subnets from the set of configured subnets for the load
@@ -558,15 +421,6 @@ namespace ElasticLoadBalancing
          */
         virtual Model::DetachLoadBalancerFromSubnetsOutcome DetachLoadBalancerFromSubnets(const Model::DetachLoadBalancerFromSubnetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DetachLoadBalancerFromSubnets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DetachLoadBalancerFromSubnetsOutcomeCallable DetachLoadBalancerFromSubnetsCallable(const Model::DetachLoadBalancerFromSubnetsRequest& request) const;
-
-        /**
-         * An Async wrapper for DetachLoadBalancerFromSubnets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DetachLoadBalancerFromSubnetsAsync(const Model::DetachLoadBalancerFromSubnetsRequest& request, const DetachLoadBalancerFromSubnetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified Availability Zones from the set of Availability Zones
@@ -586,15 +440,6 @@ namespace ElasticLoadBalancing
          */
         virtual Model::DisableAvailabilityZonesForLoadBalancerOutcome DisableAvailabilityZonesForLoadBalancer(const Model::DisableAvailabilityZonesForLoadBalancerRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisableAvailabilityZonesForLoadBalancer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisableAvailabilityZonesForLoadBalancerOutcomeCallable DisableAvailabilityZonesForLoadBalancerCallable(const Model::DisableAvailabilityZonesForLoadBalancerRequest& request) const;
-
-        /**
-         * An Async wrapper for DisableAvailabilityZonesForLoadBalancer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisableAvailabilityZonesForLoadBalancerAsync(const Model::DisableAvailabilityZonesForLoadBalancerRequest& request, const DisableAvailabilityZonesForLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds the specified Availability Zones to the set of Availability Zones for
@@ -610,15 +455,6 @@ namespace ElasticLoadBalancing
          */
         virtual Model::EnableAvailabilityZonesForLoadBalancerOutcome EnableAvailabilityZonesForLoadBalancer(const Model::EnableAvailabilityZonesForLoadBalancerRequest& request) const;
 
-        /**
-         * A Callable wrapper for EnableAvailabilityZonesForLoadBalancer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnableAvailabilityZonesForLoadBalancerOutcomeCallable EnableAvailabilityZonesForLoadBalancerCallable(const Model::EnableAvailabilityZonesForLoadBalancerRequest& request) const;
-
-        /**
-         * An Async wrapper for EnableAvailabilityZonesForLoadBalancer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnableAvailabilityZonesForLoadBalancerAsync(const Model::EnableAvailabilityZonesForLoadBalancerRequest& request, const EnableAvailabilityZonesForLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the attributes of the specified load balancer.</p> <p>You can modify
@@ -641,15 +477,6 @@ namespace ElasticLoadBalancing
          */
         virtual Model::ModifyLoadBalancerAttributesOutcome ModifyLoadBalancerAttributes(const Model::ModifyLoadBalancerAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyLoadBalancerAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyLoadBalancerAttributesOutcomeCallable ModifyLoadBalancerAttributesCallable(const Model::ModifyLoadBalancerAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyLoadBalancerAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyLoadBalancerAttributesAsync(const Model::ModifyLoadBalancerAttributesRequest& request, const ModifyLoadBalancerAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds the specified instances to the specified load balancer.</p> <p>The
@@ -677,15 +504,6 @@ namespace ElasticLoadBalancing
          */
         virtual Model::RegisterInstancesWithLoadBalancerOutcome RegisterInstancesWithLoadBalancer(const Model::RegisterInstancesWithLoadBalancerRequest& request) const;
 
-        /**
-         * A Callable wrapper for RegisterInstancesWithLoadBalancer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RegisterInstancesWithLoadBalancerOutcomeCallable RegisterInstancesWithLoadBalancerCallable(const Model::RegisterInstancesWithLoadBalancerRequest& request) const;
-
-        /**
-         * An Async wrapper for RegisterInstancesWithLoadBalancer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RegisterInstancesWithLoadBalancerAsync(const Model::RegisterInstancesWithLoadBalancerRequest& request, const RegisterInstancesWithLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes one or more tags from the specified load balancer.</p><p><h3>See
@@ -695,15 +513,6 @@ namespace ElasticLoadBalancing
          */
         virtual Model::RemoveTagsOutcome RemoveTags(const Model::RemoveTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for RemoveTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RemoveTagsOutcomeCallable RemoveTagsCallable(const Model::RemoveTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for RemoveTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RemoveTagsAsync(const Model::RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets the certificate that terminates the specified listener's SSL
@@ -718,15 +527,6 @@ namespace ElasticLoadBalancing
          */
         virtual Model::SetLoadBalancerListenerSSLCertificateOutcome SetLoadBalancerListenerSSLCertificate(const Model::SetLoadBalancerListenerSSLCertificateRequest& request) const;
 
-        /**
-         * A Callable wrapper for SetLoadBalancerListenerSSLCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SetLoadBalancerListenerSSLCertificateOutcomeCallable SetLoadBalancerListenerSSLCertificateCallable(const Model::SetLoadBalancerListenerSSLCertificateRequest& request) const;
-
-        /**
-         * An Async wrapper for SetLoadBalancerListenerSSLCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SetLoadBalancerListenerSSLCertificateAsync(const Model::SetLoadBalancerListenerSSLCertificateRequest& request, const SetLoadBalancerListenerSSLCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Replaces the set of policies associated with the specified port on which the
@@ -750,15 +550,6 @@ namespace ElasticLoadBalancing
          */
         virtual Model::SetLoadBalancerPoliciesForBackendServerOutcome SetLoadBalancerPoliciesForBackendServer(const Model::SetLoadBalancerPoliciesForBackendServerRequest& request) const;
 
-        /**
-         * A Callable wrapper for SetLoadBalancerPoliciesForBackendServer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SetLoadBalancerPoliciesForBackendServerOutcomeCallable SetLoadBalancerPoliciesForBackendServerCallable(const Model::SetLoadBalancerPoliciesForBackendServerRequest& request) const;
-
-        /**
-         * An Async wrapper for SetLoadBalancerPoliciesForBackendServer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SetLoadBalancerPoliciesForBackendServerAsync(const Model::SetLoadBalancerPoliciesForBackendServerRequest& request, const SetLoadBalancerPoliciesForBackendServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Replaces the current set of policies for the specified load balancer port
@@ -777,15 +568,6 @@ namespace ElasticLoadBalancing
          */
         virtual Model::SetLoadBalancerPoliciesOfListenerOutcome SetLoadBalancerPoliciesOfListener(const Model::SetLoadBalancerPoliciesOfListenerRequest& request) const;
 
-        /**
-         * A Callable wrapper for SetLoadBalancerPoliciesOfListener that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SetLoadBalancerPoliciesOfListenerOutcomeCallable SetLoadBalancerPoliciesOfListenerCallable(const Model::SetLoadBalancerPoliciesOfListenerRequest& request) const;
-
-        /**
-         * An Async wrapper for SetLoadBalancerPoliciesOfListener that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SetLoadBalancerPoliciesOfListenerAsync(const Model::SetLoadBalancerPoliciesOfListenerRequest& request, const SetLoadBalancerPoliciesOfListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
         void OverrideEndpoint(const Aws::String& endpoint);

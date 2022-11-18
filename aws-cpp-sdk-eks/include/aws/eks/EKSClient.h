@@ -7,8 +7,10 @@
 #include <aws/eks/EKS_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/eks/EKSServiceClientModel.h>
+#include <aws/eks/EKSLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -83,6 +85,47 @@ namespace EKS
         virtual ~EKSClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Associate encryption configuration to an existing cluster.</p> <p>You can use
          * this API to enable encryption on existing clusters which do not have encryption
@@ -94,15 +137,6 @@ namespace EKS
          */
         virtual Model::AssociateEncryptionConfigOutcome AssociateEncryptionConfig(const Model::AssociateEncryptionConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateEncryptionConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateEncryptionConfigOutcomeCallable AssociateEncryptionConfigCallable(const Model::AssociateEncryptionConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateEncryptionConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateEncryptionConfigAsync(const Model::AssociateEncryptionConfigRequest& request, const AssociateEncryptionConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associate an identity provider configuration to a cluster.</p> <p>If you want
@@ -120,15 +154,6 @@ namespace EKS
          */
         virtual Model::AssociateIdentityProviderConfigOutcome AssociateIdentityProviderConfig(const Model::AssociateIdentityProviderConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateIdentityProviderConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateIdentityProviderConfigOutcomeCallable AssociateIdentityProviderConfigCallable(const Model::AssociateIdentityProviderConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateIdentityProviderConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateIdentityProviderConfigAsync(const Model::AssociateIdentityProviderConfigRequest& request, const AssociateIdentityProviderConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an Amazon EKS add-on.</p> <p>Amazon EKS add-ons help to automate the
@@ -141,15 +166,6 @@ namespace EKS
          */
         virtual Model::CreateAddonOutcome CreateAddon(const Model::CreateAddonRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateAddon that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateAddonOutcomeCallable CreateAddonCallable(const Model::CreateAddonRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateAddon that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateAddonAsync(const Model::CreateAddonRequest& request, const CreateAddonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an Amazon EKS control plane. </p> <p>The Amazon EKS control plane
@@ -179,15 +195,6 @@ namespace EKS
          */
         virtual Model::CreateClusterOutcome CreateCluster(const Model::CreateClusterRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateCluster that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateClusterOutcomeCallable CreateClusterCallable(const Model::CreateClusterRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateClusterAsync(const Model::CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an Fargate profile for your Amazon EKS cluster. You must have at
@@ -223,15 +230,6 @@ namespace EKS
          */
         virtual Model::CreateFargateProfileOutcome CreateFargateProfile(const Model::CreateFargateProfileRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateFargateProfile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateFargateProfileOutcomeCallable CreateFargateProfileCallable(const Model::CreateFargateProfileRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateFargateProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateFargateProfileAsync(const Model::CreateFargateProfileRequest& request, const CreateFargateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a managed node group for an Amazon EKS cluster. You can only create a
@@ -253,15 +251,6 @@ namespace EKS
          */
         virtual Model::CreateNodegroupOutcome CreateNodegroup(const Model::CreateNodegroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateNodegroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateNodegroupOutcomeCallable CreateNodegroupCallable(const Model::CreateNodegroupRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateNodegroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateNodegroupAsync(const Model::CreateNodegroupRequest& request, const CreateNodegroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Delete an Amazon EKS add-on.</p> <p>When you remove the add-on, it will also
@@ -272,15 +261,6 @@ namespace EKS
          */
         virtual Model::DeleteAddonOutcome DeleteAddon(const Model::DeleteAddonRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAddon that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAddonOutcomeCallable DeleteAddonCallable(const Model::DeleteAddonRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAddon that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAddonAsync(const Model::DeleteAddonRequest& request, const DeleteAddonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the Amazon EKS cluster control plane.</p> <p>If you have active
@@ -298,15 +278,6 @@ namespace EKS
          */
         virtual Model::DeleteClusterOutcome DeleteCluster(const Model::DeleteClusterRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteCluster that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteClusterOutcomeCallable DeleteClusterCallable(const Model::DeleteClusterRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteClusterAsync(const Model::DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an Fargate profile.</p> <p>When you delete a Fargate profile, any
@@ -322,15 +293,6 @@ namespace EKS
          */
         virtual Model::DeleteFargateProfileOutcome DeleteFargateProfile(const Model::DeleteFargateProfileRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteFargateProfile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteFargateProfileOutcomeCallable DeleteFargateProfileCallable(const Model::DeleteFargateProfileRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteFargateProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteFargateProfileAsync(const Model::DeleteFargateProfileRequest& request, const DeleteFargateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an Amazon EKS node group for a cluster.</p><p><h3>See Also:</h3>   <a
@@ -339,15 +301,6 @@ namespace EKS
          */
         virtual Model::DeleteNodegroupOutcome DeleteNodegroup(const Model::DeleteNodegroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteNodegroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteNodegroupOutcomeCallable DeleteNodegroupCallable(const Model::DeleteNodegroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteNodegroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteNodegroupAsync(const Model::DeleteNodegroupRequest& request, const DeleteNodegroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deregisters a connected cluster to remove it from the Amazon EKS control
@@ -357,15 +310,6 @@ namespace EKS
          */
         virtual Model::DeregisterClusterOutcome DeregisterCluster(const Model::DeregisterClusterRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeregisterCluster that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeregisterClusterOutcomeCallable DeregisterClusterCallable(const Model::DeregisterClusterRequest& request) const;
-
-        /**
-         * An Async wrapper for DeregisterCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeregisterClusterAsync(const Model::DeregisterClusterRequest& request, const DeregisterClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes an Amazon EKS add-on.</p><p><h3>See Also:</h3>   <a
@@ -374,15 +318,6 @@ namespace EKS
          */
         virtual Model::DescribeAddonOutcome DescribeAddon(const Model::DescribeAddonRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAddon that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAddonOutcomeCallable DescribeAddonCallable(const Model::DescribeAddonRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAddon that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAddonAsync(const Model::DescribeAddonRequest& request, const DescribeAddonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the Kubernetes versions that the add-on can be used
@@ -392,15 +327,6 @@ namespace EKS
          */
         virtual Model::DescribeAddonVersionsOutcome DescribeAddonVersions(const Model::DescribeAddonVersionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAddonVersions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAddonVersionsOutcomeCallable DescribeAddonVersionsCallable(const Model::DescribeAddonVersionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAddonVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAddonVersionsAsync(const Model::DescribeAddonVersionsRequest& request, const DescribeAddonVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns descriptive information about an Amazon EKS cluster.</p> <p>The API
@@ -416,15 +342,6 @@ namespace EKS
          */
         virtual Model::DescribeClusterOutcome DescribeCluster(const Model::DescribeClusterRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeCluster that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeClusterOutcomeCallable DescribeClusterCallable(const Model::DescribeClusterRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeClusterAsync(const Model::DescribeClusterRequest& request, const DescribeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns descriptive information about an Fargate profile.</p><p><h3>See
@@ -434,15 +351,6 @@ namespace EKS
          */
         virtual Model::DescribeFargateProfileOutcome DescribeFargateProfile(const Model::DescribeFargateProfileRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeFargateProfile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeFargateProfileOutcomeCallable DescribeFargateProfileCallable(const Model::DescribeFargateProfileRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeFargateProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeFargateProfileAsync(const Model::DescribeFargateProfileRequest& request, const DescribeFargateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns descriptive information about an identity provider
@@ -452,15 +360,6 @@ namespace EKS
          */
         virtual Model::DescribeIdentityProviderConfigOutcome DescribeIdentityProviderConfig(const Model::DescribeIdentityProviderConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeIdentityProviderConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeIdentityProviderConfigOutcomeCallable DescribeIdentityProviderConfigCallable(const Model::DescribeIdentityProviderConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeIdentityProviderConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeIdentityProviderConfigAsync(const Model::DescribeIdentityProviderConfigRequest& request, const DescribeIdentityProviderConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns descriptive information about an Amazon EKS node group.</p><p><h3>See
@@ -470,15 +369,6 @@ namespace EKS
          */
         virtual Model::DescribeNodegroupOutcome DescribeNodegroup(const Model::DescribeNodegroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeNodegroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeNodegroupOutcomeCallable DescribeNodegroupCallable(const Model::DescribeNodegroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeNodegroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeNodegroupAsync(const Model::DescribeNodegroupRequest& request, const DescribeNodegroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns descriptive information about an update against your Amazon EKS
@@ -491,15 +381,6 @@ namespace EKS
          */
         virtual Model::DescribeUpdateOutcome DescribeUpdate(const Model::DescribeUpdateRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeUpdate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeUpdateOutcomeCallable DescribeUpdateCallable(const Model::DescribeUpdateRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeUpdate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeUpdateAsync(const Model::DescribeUpdateRequest& request, const DescribeUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates an identity provider configuration from a cluster. If you
@@ -511,15 +392,6 @@ namespace EKS
          */
         virtual Model::DisassociateIdentityProviderConfigOutcome DisassociateIdentityProviderConfig(const Model::DisassociateIdentityProviderConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateIdentityProviderConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateIdentityProviderConfigOutcomeCallable DisassociateIdentityProviderConfigCallable(const Model::DisassociateIdentityProviderConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateIdentityProviderConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateIdentityProviderConfigAsync(const Model::DisassociateIdentityProviderConfigRequest& request, const DisassociateIdentityProviderConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the available add-ons.</p><p><h3>See Also:</h3>   <a
@@ -528,15 +400,6 @@ namespace EKS
          */
         virtual Model::ListAddonsOutcome ListAddons(const Model::ListAddonsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAddons that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAddonsOutcomeCallable ListAddonsCallable(const Model::ListAddonsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAddons that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAddonsAsync(const Model::ListAddonsRequest& request, const ListAddonsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the Amazon EKS clusters in your Amazon Web Services account in the
@@ -546,15 +409,6 @@ namespace EKS
          */
         virtual Model::ListClustersOutcome ListClusters(const Model::ListClustersRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListClusters that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListClustersOutcomeCallable ListClustersCallable(const Model::ListClustersRequest& request) const;
-
-        /**
-         * An Async wrapper for ListClusters that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListClustersAsync(const Model::ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the Fargate profiles associated with the specified cluster in your
@@ -565,15 +419,6 @@ namespace EKS
          */
         virtual Model::ListFargateProfilesOutcome ListFargateProfiles(const Model::ListFargateProfilesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListFargateProfiles that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListFargateProfilesOutcomeCallable ListFargateProfilesCallable(const Model::ListFargateProfilesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListFargateProfiles that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListFargateProfilesAsync(const Model::ListFargateProfilesRequest& request, const ListFargateProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>A list of identity provider configurations.</p><p><h3>See Also:</h3>   <a
@@ -582,15 +427,6 @@ namespace EKS
          */
         virtual Model::ListIdentityProviderConfigsOutcome ListIdentityProviderConfigs(const Model::ListIdentityProviderConfigsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListIdentityProviderConfigs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListIdentityProviderConfigsOutcomeCallable ListIdentityProviderConfigsCallable(const Model::ListIdentityProviderConfigsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListIdentityProviderConfigs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListIdentityProviderConfigsAsync(const Model::ListIdentityProviderConfigsRequest& request, const ListIdentityProviderConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the Amazon EKS managed node groups associated with the specified
@@ -601,15 +437,6 @@ namespace EKS
          */
         virtual Model::ListNodegroupsOutcome ListNodegroups(const Model::ListNodegroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListNodegroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListNodegroupsOutcomeCallable ListNodegroupsCallable(const Model::ListNodegroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListNodegroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListNodegroupsAsync(const Model::ListNodegroupsRequest& request, const ListNodegroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List the tags for an Amazon EKS resource.</p><p><h3>See Also:</h3>   <a
@@ -618,15 +445,6 @@ namespace EKS
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the updates associated with an Amazon EKS cluster or managed node group
@@ -637,15 +455,6 @@ namespace EKS
          */
         virtual Model::ListUpdatesOutcome ListUpdates(const Model::ListUpdatesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListUpdates that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListUpdatesOutcomeCallable ListUpdatesCallable(const Model::ListUpdatesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListUpdates that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListUpdatesAsync(const Model::ListUpdatesRequest& request, const ListUpdatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Connects a Kubernetes cluster to the Amazon EKS control plane. </p> <p>Any
@@ -666,15 +475,6 @@ namespace EKS
          */
         virtual Model::RegisterClusterOutcome RegisterCluster(const Model::RegisterClusterRequest& request) const;
 
-        /**
-         * A Callable wrapper for RegisterCluster that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RegisterClusterOutcomeCallable RegisterClusterCallable(const Model::RegisterClusterRequest& request) const;
-
-        /**
-         * An Async wrapper for RegisterCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RegisterClusterAsync(const Model::RegisterClusterRequest& request, const RegisterClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates the specified tags to a resource with the specified
@@ -690,15 +490,6 @@ namespace EKS
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes specified tags from a resource.</p><p><h3>See Also:</h3>   <a
@@ -707,15 +498,6 @@ namespace EKS
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an Amazon EKS add-on.</p><p><h3>See Also:</h3>   <a
@@ -724,15 +506,6 @@ namespace EKS
          */
         virtual Model::UpdateAddonOutcome UpdateAddon(const Model::UpdateAddonRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateAddon that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateAddonOutcomeCallable UpdateAddonCallable(const Model::UpdateAddonRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateAddon that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateAddonAsync(const Model::UpdateAddonRequest& request, const UpdateAddonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an Amazon EKS cluster configuration. Your cluster continues to
@@ -765,15 +538,6 @@ namespace EKS
          */
         virtual Model::UpdateClusterConfigOutcome UpdateClusterConfig(const Model::UpdateClusterConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateClusterConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateClusterConfigOutcomeCallable UpdateClusterConfigCallable(const Model::UpdateClusterConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateClusterConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateClusterConfigAsync(const Model::UpdateClusterConfigRequest& request, const UpdateClusterConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an Amazon EKS cluster to the specified Kubernetes version. Your
@@ -792,15 +556,6 @@ namespace EKS
          */
         virtual Model::UpdateClusterVersionOutcome UpdateClusterVersion(const Model::UpdateClusterVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateClusterVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateClusterVersionOutcomeCallable UpdateClusterVersionCallable(const Model::UpdateClusterVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateClusterVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateClusterVersionAsync(const Model::UpdateClusterVersionRequest& request, const UpdateClusterVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an Amazon EKS managed node group configuration. Your node group
@@ -814,15 +569,6 @@ namespace EKS
          */
         virtual Model::UpdateNodegroupConfigOutcome UpdateNodegroupConfig(const Model::UpdateNodegroupConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateNodegroupConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateNodegroupConfigOutcomeCallable UpdateNodegroupConfigCallable(const Model::UpdateNodegroupConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateNodegroupConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateNodegroupConfigAsync(const Model::UpdateNodegroupConfigRequest& request, const UpdateNodegroupConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the Kubernetes version or AMI version of an Amazon EKS managed node
@@ -850,15 +596,6 @@ namespace EKS
          */
         virtual Model::UpdateNodegroupVersionOutcome UpdateNodegroupVersion(const Model::UpdateNodegroupVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateNodegroupVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateNodegroupVersionOutcomeCallable UpdateNodegroupVersionCallable(const Model::UpdateNodegroupVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateNodegroupVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateNodegroupVersionAsync(const Model::UpdateNodegroupVersionRequest& request, const UpdateNodegroupVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

@@ -7,8 +7,10 @@
 #include <aws/opsworkscm/OpsWorksCM_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/opsworkscm/OpsWorksCMServiceClientModel.h>
+#include <aws/opsworkscm/OpsWorksCMLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -114,6 +116,47 @@ namespace OpsWorksCM
         virtual ~OpsWorksCMClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p> Associates a new node with the server. For more information about how to
          * disassociate a node, see <a>DisassociateNode</a>.</p> <p> On a Chef server: This
@@ -139,15 +182,6 @@ namespace OpsWorksCM
          */
         virtual Model::AssociateNodeOutcome AssociateNode(const Model::AssociateNodeRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateNode that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateNodeOutcomeCallable AssociateNodeCallable(const Model::AssociateNodeRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateNode that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateNodeAsync(const Model::AssociateNodeRequest& request, const AssociateNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Creates an application-level backup of a server. While the server is in the
@@ -167,15 +201,6 @@ namespace OpsWorksCM
          */
         virtual Model::CreateBackupOutcome CreateBackup(const Model::CreateBackupRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateBackup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateBackupOutcomeCallable CreateBackupCallable(const Model::CreateBackupRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateBackup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateBackupAsync(const Model::CreateBackupRequest& request, const CreateBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Creates and immedately starts a new server. The server is ready to use when
@@ -207,15 +232,6 @@ namespace OpsWorksCM
          */
         virtual Model::CreateServerOutcome CreateServer(const Model::CreateServerRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateServer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateServerOutcomeCallable CreateServerCallable(const Model::CreateServerRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateServer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateServerAsync(const Model::CreateServerRequest& request, const CreateServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Deletes a backup. You can delete both manual and automated backups. This
@@ -229,15 +245,6 @@ namespace OpsWorksCM
          */
         virtual Model::DeleteBackupOutcome DeleteBackup(const Model::DeleteBackupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteBackup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteBackupOutcomeCallable DeleteBackupCallable(const Model::DeleteBackupRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteBackup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteBackupAsync(const Model::DeleteBackupRequest& request, const DeleteBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Deletes the server and the underlying AWS CloudFormation stacks (including
@@ -255,15 +262,6 @@ namespace OpsWorksCM
          */
         virtual Model::DeleteServerOutcome DeleteServer(const Model::DeleteServerRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteServer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteServerOutcomeCallable DeleteServerCallable(const Model::DeleteServerRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteServer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteServerAsync(const Model::DeleteServerRequest& request, const DeleteServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Describes your OpsWorks-CM account attributes. </p> <p> This operation is
@@ -273,15 +271,6 @@ namespace OpsWorksCM
          */
         virtual Model::DescribeAccountAttributesOutcome DescribeAccountAttributes(const Model::DescribeAccountAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAccountAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAccountAttributesOutcomeCallable DescribeAccountAttributesCallable(const Model::DescribeAccountAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAccountAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAccountAttributesAsync(const Model::DescribeAccountAttributesRequest& request, const DescribeAccountAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Describes backups. The results are ordered by time, with newest backups
@@ -295,15 +284,6 @@ namespace OpsWorksCM
          */
         virtual Model::DescribeBackupsOutcome DescribeBackups(const Model::DescribeBackupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeBackups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeBackupsOutcomeCallable DescribeBackupsCallable(const Model::DescribeBackupsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeBackups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeBackupsAsync(const Model::DescribeBackupsRequest& request, const DescribeBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Describes events for a specified server. Results are ordered by time, with
@@ -316,15 +296,6 @@ namespace OpsWorksCM
          */
         virtual Model::DescribeEventsOutcome DescribeEvents(const Model::DescribeEventsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEvents that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEventsOutcomeCallable DescribeEventsCallable(const Model::DescribeEventsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEventsAsync(const Model::DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns the current status of an existing association or disassociation
@@ -337,15 +308,6 @@ namespace OpsWorksCM
          */
         virtual Model::DescribeNodeAssociationStatusOutcome DescribeNodeAssociationStatus(const Model::DescribeNodeAssociationStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeNodeAssociationStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeNodeAssociationStatusOutcomeCallable DescribeNodeAssociationStatusCallable(const Model::DescribeNodeAssociationStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeNodeAssociationStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeNodeAssociationStatusAsync(const Model::DescribeNodeAssociationStatusRequest& request, const DescribeNodeAssociationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Lists all configuration management servers that are identified with your
@@ -359,15 +321,6 @@ namespace OpsWorksCM
          */
         virtual Model::DescribeServersOutcome DescribeServers(const Model::DescribeServersRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeServers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeServersOutcomeCallable DescribeServersCallable(const Model::DescribeServersRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeServers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeServersAsync(const Model::DescribeServersRequest& request, const DescribeServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Disassociates a node from an AWS OpsWorks CM server, and removes the node
@@ -384,15 +337,6 @@ namespace OpsWorksCM
          */
         virtual Model::DisassociateNodeOutcome DisassociateNode(const Model::DisassociateNodeRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateNode that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateNodeOutcomeCallable DisassociateNodeCallable(const Model::DisassociateNodeRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateNode that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateNodeAsync(const Model::DisassociateNodeRequest& request, const DisassociateNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Exports a specified server engine attribute as a base64-encoded string. For
@@ -408,15 +352,6 @@ namespace OpsWorksCM
          */
         virtual Model::ExportServerEngineAttributeOutcome ExportServerEngineAttribute(const Model::ExportServerEngineAttributeRequest& request) const;
 
-        /**
-         * A Callable wrapper for ExportServerEngineAttribute that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ExportServerEngineAttributeOutcomeCallable ExportServerEngineAttributeCallable(const Model::ExportServerEngineAttributeRequest& request) const;
-
-        /**
-         * An Async wrapper for ExportServerEngineAttribute that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ExportServerEngineAttributeAsync(const Model::ExportServerEngineAttributeRequest& request, const ExportServerEngineAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of tags that are applied to the specified AWS OpsWorks for
@@ -427,15 +362,6 @@ namespace OpsWorksCM
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Restores a backup to a server that is in a <code>CONNECTION_LOST</code>,
@@ -458,15 +384,6 @@ namespace OpsWorksCM
          */
         virtual Model::RestoreServerOutcome RestoreServer(const Model::RestoreServerRequest& request) const;
 
-        /**
-         * A Callable wrapper for RestoreServer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RestoreServerOutcomeCallable RestoreServerCallable(const Model::RestoreServerRequest& request) const;
-
-        /**
-         * An Async wrapper for RestoreServer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RestoreServerAsync(const Model::RestoreServerRequest& request, const RestoreServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Manually starts server maintenance. This command can be useful if an earlier
@@ -483,15 +400,6 @@ namespace OpsWorksCM
          */
         virtual Model::StartMaintenanceOutcome StartMaintenance(const Model::StartMaintenanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartMaintenance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartMaintenanceOutcomeCallable StartMaintenanceCallable(const Model::StartMaintenanceRequest& request) const;
-
-        /**
-         * An Async wrapper for StartMaintenance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartMaintenanceAsync(const Model::StartMaintenanceRequest& request, const StartMaintenanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Applies tags to an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet
@@ -501,15 +409,6 @@ namespace OpsWorksCM
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes specified tags from an AWS OpsWorks-CM server or
@@ -519,15 +418,6 @@ namespace OpsWorksCM
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Updates settings for a server. </p> <p> This operation is synchronous.
@@ -537,15 +427,6 @@ namespace OpsWorksCM
          */
         virtual Model::UpdateServerOutcome UpdateServer(const Model::UpdateServerRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateServer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateServerOutcomeCallable UpdateServerCallable(const Model::UpdateServerRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateServer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateServerAsync(const Model::UpdateServerRequest& request, const UpdateServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Updates engine-specific attributes on a specified server. The server enters
@@ -564,15 +445,6 @@ namespace OpsWorksCM
          */
         virtual Model::UpdateServerEngineAttributesOutcome UpdateServerEngineAttributes(const Model::UpdateServerEngineAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateServerEngineAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateServerEngineAttributesOutcomeCallable UpdateServerEngineAttributesCallable(const Model::UpdateServerEngineAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateServerEngineAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateServerEngineAttributesAsync(const Model::UpdateServerEngineAttributesRequest& request, const UpdateServerEngineAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

@@ -8,8 +8,10 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/importexport/ImportExportServiceClientModel.h>
+#include <aws/importexport/ImportExportLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -79,6 +81,47 @@ namespace ImportExport
         virtual ~ImportExportClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
        /**
         * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
         */
@@ -94,15 +137,6 @@ namespace ImportExport
          */
         virtual Model::CancelJobOutcome CancelJob(const Model::CancelJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelJobOutcomeCallable CancelJobCallable(const Model::CancelJobRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelJobAsync(const Model::CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * This operation initiates the process of scheduling an upload or download of your
@@ -115,15 +149,6 @@ namespace ImportExport
          */
         virtual Model::CreateJobOutcome CreateJob(const Model::CreateJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateJobOutcomeCallable CreateJobCallable(const Model::CreateJobRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateJobAsync(const Model::CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * This operation generates a pre-paid UPS shipping label that you will use to ship
@@ -133,15 +158,6 @@ namespace ImportExport
          */
         virtual Model::GetShippingLabelOutcome GetShippingLabel(const Model::GetShippingLabelRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetShippingLabel that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetShippingLabelOutcomeCallable GetShippingLabelCallable(const Model::GetShippingLabelRequest& request) const;
-
-        /**
-         * An Async wrapper for GetShippingLabel that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetShippingLabelAsync(const Model::GetShippingLabelRequest& request, const GetShippingLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * This operation returns information about a job, including where the job is in
@@ -153,15 +169,6 @@ namespace ImportExport
          */
         virtual Model::GetStatusOutcome GetStatus(const Model::GetStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetStatusOutcomeCallable GetStatusCallable(const Model::GetStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for GetStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetStatusAsync(const Model::GetStatusRequest& request, const GetStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * This operation returns the jobs associated with the requester. AWS Import/Export
@@ -174,15 +181,6 @@ namespace ImportExport
          */
         virtual Model::ListJobsOutcome ListJobs(const Model::ListJobsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListJobs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListJobsOutcomeCallable ListJobsCallable(const Model::ListJobsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListJobsAsync(const Model::ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * You use this operation to change the parameters specified in the original
@@ -195,15 +193,6 @@ namespace ImportExport
          */
         virtual Model::UpdateJobOutcome UpdateJob(const Model::UpdateJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateJobOutcomeCallable UpdateJobCallable(const Model::UpdateJobRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateJobAsync(const Model::UpdateJobRequest& request, const UpdateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
         void OverrideEndpoint(const Aws::String& endpoint);

@@ -7,8 +7,10 @@
 #include <aws/resource-groups/ResourceGroups_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/resource-groups/ResourceGroupsServiceClientModel.h>
+#include <aws/resource-groups/ResourceGroupsLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -96,6 +98,47 @@ namespace ResourceGroups
         virtual ~ResourceGroupsClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Creates a resource group with the specified name and description. You can
          * optionally include a resource query, or a service configuration. For more
@@ -113,15 +156,6 @@ namespace ResourceGroups
          */
         virtual Model::CreateGroupOutcome CreateGroup(const Model::CreateGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateGroupOutcomeCallable CreateGroupCallable(const Model::CreateGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateGroupAsync(const Model::CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified resource group. Deleting a resource group does not
@@ -135,15 +169,6 @@ namespace ResourceGroups
          */
         virtual Model::DeleteGroupOutcome DeleteGroup(const Model::DeleteGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteGroupOutcomeCallable DeleteGroupCallable(const Model::DeleteGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteGroupAsync(const Model::DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a specified resource group.</p> <p> <b>Minimum
@@ -155,15 +180,6 @@ namespace ResourceGroups
          */
         virtual Model::GetGroupOutcome GetGroup(const Model::GetGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetGroupOutcomeCallable GetGroupCallable(const Model::GetGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for GetGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetGroupAsync(const Model::GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the service configuration associated with the specified resource
@@ -178,15 +194,6 @@ namespace ResourceGroups
          */
         virtual Model::GetGroupConfigurationOutcome GetGroupConfiguration(const Model::GetGroupConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetGroupConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetGroupConfigurationOutcomeCallable GetGroupConfigurationCallable(const Model::GetGroupConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetGroupConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetGroupConfigurationAsync(const Model::GetGroupConfigurationRequest& request, const GetGroupConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the resource query associated with the specified resource group.
@@ -201,15 +208,6 @@ namespace ResourceGroups
          */
         virtual Model::GetGroupQueryOutcome GetGroupQuery(const Model::GetGroupQueryRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetGroupQuery that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetGroupQueryOutcomeCallable GetGroupQueryCallable(const Model::GetGroupQueryRequest& request) const;
-
-        /**
-         * An Async wrapper for GetGroupQuery that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetGroupQueryAsync(const Model::GetGroupQueryRequest& request, const GetGroupQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of tags that are associated with a resource group, specified
@@ -221,15 +219,6 @@ namespace ResourceGroups
          */
         virtual Model::GetTagsOutcome GetTags(const Model::GetTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetTagsOutcomeCallable GetTagsCallable(const Model::GetTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetTagsAsync(const Model::GetTagsRequest& request, const GetTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds the specified resources to the specified group.</p> <p> <b>Minimum
@@ -241,15 +230,6 @@ namespace ResourceGroups
          */
         virtual Model::GroupResourcesOutcome GroupResources(const Model::GroupResourcesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GroupResources that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GroupResourcesOutcomeCallable GroupResourcesCallable(const Model::GroupResourcesRequest& request) const;
-
-        /**
-         * An Async wrapper for GroupResources that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GroupResourcesAsync(const Model::GroupResourcesRequest& request, const GroupResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of ARNs of the resources that are members of a specified
@@ -264,15 +244,6 @@ namespace ResourceGroups
          */
         virtual Model::ListGroupResourcesOutcome ListGroupResources(const Model::ListGroupResourcesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListGroupResources that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListGroupResourcesOutcomeCallable ListGroupResourcesCallable(const Model::ListGroupResourcesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListGroupResources that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListGroupResourcesAsync(const Model::ListGroupResourcesRequest& request, const ListGroupResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of existing resource groups in your account.</p> <p>
@@ -284,15 +255,6 @@ namespace ResourceGroups
          */
         virtual Model::ListGroupsOutcome ListGroups(const Model::ListGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListGroupsOutcomeCallable ListGroupsCallable(const Model::ListGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListGroupsAsync(const Model::ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Attaches a service configuration to the specified group. This occurs
@@ -307,15 +269,6 @@ namespace ResourceGroups
          */
         virtual Model::PutGroupConfigurationOutcome PutGroupConfiguration(const Model::PutGroupConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutGroupConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutGroupConfigurationOutcomeCallable PutGroupConfigurationCallable(const Model::PutGroupConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for PutGroupConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutGroupConfigurationAsync(const Model::PutGroupConfigurationRequest& request, const PutGroupConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of AWS resource identifiers that matches the specified query.
@@ -331,15 +284,6 @@ namespace ResourceGroups
          */
         virtual Model::SearchResourcesOutcome SearchResources(const Model::SearchResourcesRequest& request) const;
 
-        /**
-         * A Callable wrapper for SearchResources that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SearchResourcesOutcomeCallable SearchResourcesCallable(const Model::SearchResourcesRequest& request) const;
-
-        /**
-         * An Async wrapper for SearchResources that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SearchResourcesAsync(const Model::SearchResourcesRequest& request, const SearchResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds tags to a resource group with the specified ARN. Existing tags on a
@@ -356,15 +300,6 @@ namespace ResourceGroups
          */
         virtual Model::TagOutcome Tag(const Model::TagRequest& request) const;
 
-        /**
-         * A Callable wrapper for Tag that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagOutcomeCallable TagCallable(const Model::TagRequest& request) const;
-
-        /**
-         * An Async wrapper for Tag that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagAsync(const Model::TagRequest& request, const TagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified resources from the specified group.</p> <p> <b>Minimum
@@ -376,15 +311,6 @@ namespace ResourceGroups
          */
         virtual Model::UngroupResourcesOutcome UngroupResources(const Model::UngroupResourcesRequest& request) const;
 
-        /**
-         * A Callable wrapper for UngroupResources that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UngroupResourcesOutcomeCallable UngroupResourcesCallable(const Model::UngroupResourcesRequest& request) const;
-
-        /**
-         * An Async wrapper for UngroupResources that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UngroupResourcesAsync(const Model::UngroupResourcesRequest& request, const UngroupResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes tags from a specified resource group.</p> <p> <b>Minimum
@@ -396,15 +322,6 @@ namespace ResourceGroups
          */
         virtual Model::UntagOutcome Untag(const Model::UntagRequest& request) const;
 
-        /**
-         * A Callable wrapper for Untag that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagOutcomeCallable UntagCallable(const Model::UntagRequest& request) const;
-
-        /**
-         * An Async wrapper for Untag that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagAsync(const Model::UntagRequest& request, const UntagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the description for an existing group. You cannot update the name of
@@ -417,15 +334,6 @@ namespace ResourceGroups
          */
         virtual Model::UpdateGroupOutcome UpdateGroup(const Model::UpdateGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateGroupOutcomeCallable UpdateGroupCallable(const Model::UpdateGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateGroupAsync(const Model::UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the resource query of a group. For more information about resource
@@ -440,15 +348,6 @@ namespace ResourceGroups
          */
         virtual Model::UpdateGroupQueryOutcome UpdateGroupQuery(const Model::UpdateGroupQueryRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateGroupQuery that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateGroupQueryOutcomeCallable UpdateGroupQueryCallable(const Model::UpdateGroupQueryRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateGroupQuery that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateGroupQueryAsync(const Model::UpdateGroupQueryRequest& request, const UpdateGroupQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

@@ -7,8 +7,10 @@
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/gamelift/GameLiftServiceClientModel.h>
+#include <aws/gamelift/GameLiftLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -108,6 +110,47 @@ namespace GameLift
         virtual ~GameLiftClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Registers a player's acceptance or rejection of a proposed FlexMatch match. A
          * matchmaking configuration may require player acceptance; if so, then matches
@@ -142,15 +185,6 @@ namespace GameLift
          */
         virtual Model::AcceptMatchOutcome AcceptMatch(const Model::AcceptMatchRequest& request) const;
 
-        /**
-         * A Callable wrapper for AcceptMatch that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AcceptMatchOutcomeCallable AcceptMatchCallable(const Model::AcceptMatchRequest& request) const;
-
-        /**
-         * An Async wrapper for AcceptMatch that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AcceptMatchAsync(const Model::AcceptMatchRequest& request, const AcceptMatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> <b>This operation is used with the GameLift FleetIQ solution and game server
@@ -192,15 +226,6 @@ namespace GameLift
          */
         virtual Model::ClaimGameServerOutcome ClaimGameServer(const Model::ClaimGameServerRequest& request) const;
 
-        /**
-         * A Callable wrapper for ClaimGameServer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ClaimGameServerOutcomeCallable ClaimGameServerCallable(const Model::ClaimGameServerRequest& request) const;
-
-        /**
-         * An Async wrapper for ClaimGameServer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ClaimGameServerAsync(const Model::ClaimGameServerRequest& request, const ClaimGameServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an alias for a fleet. In most situations, you can use an alias ID in
@@ -226,15 +251,6 @@ namespace GameLift
          */
         virtual Model::CreateAliasOutcome CreateAlias(const Model::CreateAliasRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateAlias that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateAliasOutcomeCallable CreateAliasCallable(const Model::CreateAliasRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateAlias that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateAliasAsync(const Model::CreateAliasRequest& request, const CreateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new Amazon GameLift build resource for your game server binary
@@ -277,15 +293,6 @@ namespace GameLift
          */
         virtual Model::CreateBuildOutcome CreateBuild(const Model::CreateBuildRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateBuild that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateBuildOutcomeCallable CreateBuildCallable(const Model::CreateBuildRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateBuild that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateBuildAsync(const Model::CreateBuildRequest& request, const CreateBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a fleet of Amazon Elastic Compute Cloud (Amazon Elastic Compute
@@ -340,15 +347,6 @@ namespace GameLift
          */
         virtual Model::CreateFleetOutcome CreateFleet(const Model::CreateFleetRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateFleet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateFleetOutcomeCallable CreateFleetCallable(const Model::CreateFleetRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateFleet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateFleetAsync(const Model::CreateFleetRequest& request, const CreateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds remote locations to a fleet and begins populating the new locations with
@@ -383,15 +381,6 @@ namespace GameLift
          */
         virtual Model::CreateFleetLocationsOutcome CreateFleetLocations(const Model::CreateFleetLocationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateFleetLocations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateFleetLocationsOutcomeCallable CreateFleetLocationsCallable(const Model::CreateFleetLocationsRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateFleetLocations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateFleetLocationsAsync(const Model::CreateFleetLocationsRequest& request, const CreateFleetLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> <b>This operation is used with the GameLift FleetIQ solution and game server
@@ -438,15 +427,6 @@ namespace GameLift
          */
         virtual Model::CreateGameServerGroupOutcome CreateGameServerGroup(const Model::CreateGameServerGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateGameServerGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateGameServerGroupOutcomeCallable CreateGameServerGroupCallable(const Model::CreateGameServerGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateGameServerGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateGameServerGroupAsync(const Model::CreateGameServerGroupRequest& request, const CreateGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a multiplayer game session for players in a specific fleet location.
@@ -487,15 +467,6 @@ namespace GameLift
          */
         virtual Model::CreateGameSessionOutcome CreateGameSession(const Model::CreateGameSessionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateGameSession that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateGameSessionOutcomeCallable CreateGameSessionCallable(const Model::CreateGameSessionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateGameSession that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateGameSessionAsync(const Model::CreateGameSessionRequest& request, const CreateGameSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a placement queue that processes requests for new game sessions. A
@@ -544,15 +515,6 @@ namespace GameLift
          */
         virtual Model::CreateGameSessionQueueOutcome CreateGameSessionQueue(const Model::CreateGameSessionQueueRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateGameSessionQueue that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateGameSessionQueueOutcomeCallable CreateGameSessionQueueCallable(const Model::CreateGameSessionQueueRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateGameSessionQueue that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateGameSessionQueueAsync(const Model::CreateGameSessionQueueRequest& request, const CreateGameSessionQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Defines a new matchmaking configuration for use with FlexMatch. Whether your
@@ -589,15 +551,6 @@ namespace GameLift
          */
         virtual Model::CreateMatchmakingConfigurationOutcome CreateMatchmakingConfiguration(const Model::CreateMatchmakingConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateMatchmakingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateMatchmakingConfigurationOutcomeCallable CreateMatchmakingConfigurationCallable(const Model::CreateMatchmakingConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateMatchmakingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateMatchmakingConfigurationAsync(const Model::CreateMatchmakingConfigurationRequest& request, const CreateMatchmakingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new rule set for FlexMatch matchmaking. A rule set describes the
@@ -627,15 +580,6 @@ namespace GameLift
          */
         virtual Model::CreateMatchmakingRuleSetOutcome CreateMatchmakingRuleSet(const Model::CreateMatchmakingRuleSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateMatchmakingRuleSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateMatchmakingRuleSetOutcomeCallable CreateMatchmakingRuleSetCallable(const Model::CreateMatchmakingRuleSetRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateMatchmakingRuleSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateMatchmakingRuleSetAsync(const Model::CreateMatchmakingRuleSetRequest& request, const CreateMatchmakingRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Reserves an open player slot in a game session for a player. New player
@@ -661,15 +605,6 @@ namespace GameLift
          */
         virtual Model::CreatePlayerSessionOutcome CreatePlayerSession(const Model::CreatePlayerSessionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreatePlayerSession that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreatePlayerSessionOutcomeCallable CreatePlayerSessionCallable(const Model::CreatePlayerSessionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreatePlayerSession that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreatePlayerSessionAsync(const Model::CreatePlayerSessionRequest& request, const CreatePlayerSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Reserves open slots in a game session for a group of players. New player
@@ -695,15 +630,6 @@ namespace GameLift
          */
         virtual Model::CreatePlayerSessionsOutcome CreatePlayerSessions(const Model::CreatePlayerSessionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreatePlayerSessions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreatePlayerSessionsOutcomeCallable CreatePlayerSessionsCallable(const Model::CreatePlayerSessionsRequest& request) const;
-
-        /**
-         * An Async wrapper for CreatePlayerSessions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreatePlayerSessionsAsync(const Model::CreatePlayerSessionsRequest& request, const CreatePlayerSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new script record for your Realtime Servers script. Realtime
@@ -737,15 +663,6 @@ namespace GameLift
          */
         virtual Model::CreateScriptOutcome CreateScript(const Model::CreateScriptRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateScript that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateScriptOutcomeCallable CreateScriptCallable(const Model::CreateScriptRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateScript that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateScriptAsync(const Model::CreateScriptRequest& request, const CreateScriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Requests authorization to create or delete a peer connection between the VPC
@@ -784,15 +701,6 @@ namespace GameLift
          */
         virtual Model::CreateVpcPeeringAuthorizationOutcome CreateVpcPeeringAuthorization(const Model::CreateVpcPeeringAuthorizationRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateVpcPeeringAuthorization that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateVpcPeeringAuthorizationOutcomeCallable CreateVpcPeeringAuthorizationCallable(const Model::CreateVpcPeeringAuthorizationRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateVpcPeeringAuthorization that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateVpcPeeringAuthorizationAsync(const Model::CreateVpcPeeringAuthorizationRequest& request, const CreateVpcPeeringAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Establishes a VPC peering connection between a virtual private cloud (VPC) in
@@ -829,15 +737,6 @@ namespace GameLift
          */
         virtual Model::CreateVpcPeeringConnectionOutcome CreateVpcPeeringConnection(const Model::CreateVpcPeeringConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateVpcPeeringConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateVpcPeeringConnectionOutcomeCallable CreateVpcPeeringConnectionCallable(const Model::CreateVpcPeeringConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateVpcPeeringConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateVpcPeeringConnectionAsync(const Model::CreateVpcPeeringConnectionRequest& request, const CreateVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an alias. This operation removes all record of the alias. Game
@@ -853,15 +752,6 @@ namespace GameLift
          */
         virtual Model::DeleteAliasOutcome DeleteAlias(const Model::DeleteAliasRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAlias that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAliasOutcomeCallable DeleteAliasCallable(const Model::DeleteAliasRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAlias that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAliasAsync(const Model::DeleteAliasRequest& request, const DeleteAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a build. This operation permanently deletes the build resource and
@@ -880,15 +770,6 @@ namespace GameLift
          */
         virtual Model::DeleteBuildOutcome DeleteBuild(const Model::DeleteBuildRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteBuild that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteBuildOutcomeCallable DeleteBuildCallable(const Model::DeleteBuildRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteBuild that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteBuildAsync(const Model::DeleteBuildRequest& request, const DeleteBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes all resources and information related a fleet. Any current fleet
@@ -916,15 +797,6 @@ namespace GameLift
          */
         virtual Model::DeleteFleetOutcome DeleteFleet(const Model::DeleteFleetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteFleet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteFleetOutcomeCallable DeleteFleetCallable(const Model::DeleteFleetRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteFleet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteFleetAsync(const Model::DeleteFleetRequest& request, const DeleteFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes locations from a multi-location fleet. When deleting a location, all
@@ -949,15 +821,6 @@ namespace GameLift
          */
         virtual Model::DeleteFleetLocationsOutcome DeleteFleetLocations(const Model::DeleteFleetLocationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteFleetLocations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteFleetLocationsOutcomeCallable DeleteFleetLocationsCallable(const Model::DeleteFleetLocationsRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteFleetLocations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteFleetLocationsAsync(const Model::DeleteFleetLocationsRequest& request, const DeleteFleetLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> <b>This operation is used with the GameLift FleetIQ solution and game server
@@ -991,15 +854,6 @@ namespace GameLift
          */
         virtual Model::DeleteGameServerGroupOutcome DeleteGameServerGroup(const Model::DeleteGameServerGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteGameServerGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteGameServerGroupOutcomeCallable DeleteGameServerGroupCallable(const Model::DeleteGameServerGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteGameServerGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteGameServerGroupAsync(const Model::DeleteGameServerGroupRequest& request, const DeleteGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a game session queue. Once a queue is successfully deleted,
@@ -1024,15 +878,6 @@ namespace GameLift
          */
         virtual Model::DeleteGameSessionQueueOutcome DeleteGameSessionQueue(const Model::DeleteGameSessionQueueRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteGameSessionQueue that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteGameSessionQueueOutcomeCallable DeleteGameSessionQueueCallable(const Model::DeleteGameSessionQueueRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteGameSessionQueue that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteGameSessionQueueAsync(const Model::DeleteGameSessionQueueRequest& request, const DeleteGameSessionQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Permanently removes a FlexMatch matchmaking configuration. To delete, specify
@@ -1050,15 +895,6 @@ namespace GameLift
          */
         virtual Model::DeleteMatchmakingConfigurationOutcome DeleteMatchmakingConfiguration(const Model::DeleteMatchmakingConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteMatchmakingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteMatchmakingConfigurationOutcomeCallable DeleteMatchmakingConfigurationCallable(const Model::DeleteMatchmakingConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteMatchmakingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteMatchmakingConfigurationAsync(const Model::DeleteMatchmakingConfigurationRequest& request, const DeleteMatchmakingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an existing matchmaking rule set. To delete the rule set, provide the
@@ -1077,15 +913,6 @@ namespace GameLift
          */
         virtual Model::DeleteMatchmakingRuleSetOutcome DeleteMatchmakingRuleSet(const Model::DeleteMatchmakingRuleSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteMatchmakingRuleSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteMatchmakingRuleSetOutcomeCallable DeleteMatchmakingRuleSetCallable(const Model::DeleteMatchmakingRuleSetRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteMatchmakingRuleSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteMatchmakingRuleSetAsync(const Model::DeleteMatchmakingRuleSetRequest& request, const DeleteMatchmakingRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a fleet scaling policy. Once deleted, the policy is no longer in
@@ -1104,15 +931,6 @@ namespace GameLift
          */
         virtual Model::DeleteScalingPolicyOutcome DeleteScalingPolicy(const Model::DeleteScalingPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteScalingPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteScalingPolicyOutcomeCallable DeleteScalingPolicyCallable(const Model::DeleteScalingPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteScalingPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteScalingPolicyAsync(const Model::DeleteScalingPolicyRequest& request, const DeleteScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a Realtime script. This operation permanently deletes the script
@@ -1133,15 +951,6 @@ namespace GameLift
          */
         virtual Model::DeleteScriptOutcome DeleteScript(const Model::DeleteScriptRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteScript that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteScriptOutcomeCallable DeleteScriptCallable(const Model::DeleteScriptRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteScript that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteScriptAsync(const Model::DeleteScriptRequest& request, const DeleteScriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Cancels a pending VPC peering authorization for the specified VPC. If you
@@ -1157,15 +966,6 @@ namespace GameLift
          */
         virtual Model::DeleteVpcPeeringAuthorizationOutcome DeleteVpcPeeringAuthorization(const Model::DeleteVpcPeeringAuthorizationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteVpcPeeringAuthorization that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteVpcPeeringAuthorizationOutcomeCallable DeleteVpcPeeringAuthorizationCallable(const Model::DeleteVpcPeeringAuthorizationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteVpcPeeringAuthorization that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteVpcPeeringAuthorizationAsync(const Model::DeleteVpcPeeringAuthorizationRequest& request, const DeleteVpcPeeringAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes a VPC peering connection. To delete the connection, you must have a
@@ -1187,15 +987,6 @@ namespace GameLift
          */
         virtual Model::DeleteVpcPeeringConnectionOutcome DeleteVpcPeeringConnection(const Model::DeleteVpcPeeringConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteVpcPeeringConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteVpcPeeringConnectionOutcomeCallable DeleteVpcPeeringConnectionCallable(const Model::DeleteVpcPeeringConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteVpcPeeringConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteVpcPeeringConnectionAsync(const Model::DeleteVpcPeeringConnectionRequest& request, const DeleteVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> <b>This operation is used with the GameLift FleetIQ solution and game server
@@ -1217,15 +1008,6 @@ namespace GameLift
          */
         virtual Model::DeregisterGameServerOutcome DeregisterGameServer(const Model::DeregisterGameServerRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeregisterGameServer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeregisterGameServerOutcomeCallable DeregisterGameServerCallable(const Model::DeregisterGameServerRequest& request) const;
-
-        /**
-         * An Async wrapper for DeregisterGameServer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeregisterGameServerAsync(const Model::DeregisterGameServerRequest& request, const DeregisterGameServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves properties for an alias. This operation returns all alias metadata
@@ -1242,15 +1024,6 @@ namespace GameLift
          */
         virtual Model::DescribeAliasOutcome DescribeAlias(const Model::DescribeAliasRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAlias that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAliasOutcomeCallable DescribeAliasCallable(const Model::DescribeAliasRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAlias that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAliasAsync(const Model::DescribeAliasRequest& request, const DescribeAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves properties for a custom game build. To request a build resource,
@@ -1267,15 +1040,6 @@ namespace GameLift
          */
         virtual Model::DescribeBuildOutcome DescribeBuild(const Model::DescribeBuildRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeBuild that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeBuildOutcomeCallable DescribeBuildCallable(const Model::DescribeBuildRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeBuild that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeBuildAsync(const Model::DescribeBuildRequest& request, const DescribeBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the instance limits and current utilization for an Amazon Web
@@ -1328,15 +1092,6 @@ namespace GameLift
          */
         virtual Model::DescribeEC2InstanceLimitsOutcome DescribeEC2InstanceLimits(const Model::DescribeEC2InstanceLimitsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEC2InstanceLimits that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEC2InstanceLimitsOutcomeCallable DescribeEC2InstanceLimitsCallable(const Model::DescribeEC2InstanceLimitsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEC2InstanceLimits that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEC2InstanceLimitsAsync(const Model::DescribeEC2InstanceLimitsRequest& request, const DescribeEC2InstanceLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves core fleet-wide properties, including the computing hardware and
@@ -1365,15 +1120,6 @@ namespace GameLift
          */
         virtual Model::DescribeFleetAttributesOutcome DescribeFleetAttributes(const Model::DescribeFleetAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeFleetAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeFleetAttributesOutcomeCallable DescribeFleetAttributesCallable(const Model::DescribeFleetAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeFleetAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeFleetAttributesAsync(const Model::DescribeFleetAttributesRequest& request, const DescribeFleetAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the resource capacity settings for one or more fleets. The data
@@ -1410,15 +1156,6 @@ namespace GameLift
          */
         virtual Model::DescribeFleetCapacityOutcome DescribeFleetCapacity(const Model::DescribeFleetCapacityRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeFleetCapacity that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeFleetCapacityOutcomeCallable DescribeFleetCapacityCallable(const Model::DescribeFleetCapacityRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeFleetCapacity that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeFleetCapacityAsync(const Model::DescribeFleetCapacityRequest& request, const DescribeFleetCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves entries from a fleet's event log. Fleet events are initiated by
@@ -1443,15 +1180,6 @@ namespace GameLift
          */
         virtual Model::DescribeFleetEventsOutcome DescribeFleetEvents(const Model::DescribeFleetEventsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeFleetEvents that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeFleetEventsOutcomeCallable DescribeFleetEventsCallable(const Model::DescribeFleetEventsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeFleetEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeFleetEventsAsync(const Model::DescribeFleetEventsRequest& request, const DescribeFleetEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information on a fleet's remote locations, including life-cycle
@@ -1481,15 +1209,6 @@ namespace GameLift
          */
         virtual Model::DescribeFleetLocationAttributesOutcome DescribeFleetLocationAttributes(const Model::DescribeFleetLocationAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeFleetLocationAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeFleetLocationAttributesOutcomeCallable DescribeFleetLocationAttributesCallable(const Model::DescribeFleetLocationAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeFleetLocationAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeFleetLocationAttributesAsync(const Model::DescribeFleetLocationAttributesRequest& request, const DescribeFleetLocationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the resource capacity settings for a fleet location. The data
@@ -1517,15 +1236,6 @@ namespace GameLift
          */
         virtual Model::DescribeFleetLocationCapacityOutcome DescribeFleetLocationCapacity(const Model::DescribeFleetLocationCapacityRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeFleetLocationCapacity that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeFleetLocationCapacityOutcomeCallable DescribeFleetLocationCapacityCallable(const Model::DescribeFleetLocationCapacityRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeFleetLocationCapacity that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeFleetLocationCapacityAsync(const Model::DescribeFleetLocationCapacityRequest& request, const DescribeFleetLocationCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves current usage data for a fleet location. Utilization data provides
@@ -1552,15 +1262,6 @@ namespace GameLift
          */
         virtual Model::DescribeFleetLocationUtilizationOutcome DescribeFleetLocationUtilization(const Model::DescribeFleetLocationUtilizationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeFleetLocationUtilization that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeFleetLocationUtilizationOutcomeCallable DescribeFleetLocationUtilizationCallable(const Model::DescribeFleetLocationUtilizationRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeFleetLocationUtilization that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeFleetLocationUtilizationAsync(const Model::DescribeFleetLocationUtilizationRequest& request, const DescribeFleetLocationUtilizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a fleet's inbound connection permissions. Connection permissions
@@ -1590,15 +1291,6 @@ namespace GameLift
          */
         virtual Model::DescribeFleetPortSettingsOutcome DescribeFleetPortSettings(const Model::DescribeFleetPortSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeFleetPortSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeFleetPortSettingsOutcomeCallable DescribeFleetPortSettingsCallable(const Model::DescribeFleetPortSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeFleetPortSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeFleetPortSettingsAsync(const Model::DescribeFleetPortSettingsRequest& request, const DescribeFleetPortSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves utilization statistics for one or more fleets. Utilization data
@@ -1634,15 +1326,6 @@ namespace GameLift
          */
         virtual Model::DescribeFleetUtilizationOutcome DescribeFleetUtilization(const Model::DescribeFleetUtilizationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeFleetUtilization that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeFleetUtilizationOutcomeCallable DescribeFleetUtilizationCallable(const Model::DescribeFleetUtilizationRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeFleetUtilization that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeFleetUtilizationAsync(const Model::DescribeFleetUtilizationRequest& request, const DescribeFleetUtilizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> <b>This operation is used with the GameLift FleetIQ solution and game server
@@ -1663,15 +1346,6 @@ namespace GameLift
          */
         virtual Model::DescribeGameServerOutcome DescribeGameServer(const Model::DescribeGameServerRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeGameServer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeGameServerOutcomeCallable DescribeGameServerCallable(const Model::DescribeGameServerRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeGameServer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeGameServerAsync(const Model::DescribeGameServerRequest& request, const DescribeGameServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> <b>This operation is used with the GameLift FleetIQ solution and game server
@@ -1695,15 +1369,6 @@ namespace GameLift
          */
         virtual Model::DescribeGameServerGroupOutcome DescribeGameServerGroup(const Model::DescribeGameServerGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeGameServerGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeGameServerGroupOutcomeCallable DescribeGameServerGroupCallable(const Model::DescribeGameServerGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeGameServerGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeGameServerGroupAsync(const Model::DescribeGameServerGroupRequest& request, const DescribeGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> <b>This operation is used with the GameLift FleetIQ solution and game server
@@ -1734,15 +1399,6 @@ namespace GameLift
          */
         virtual Model::DescribeGameServerInstancesOutcome DescribeGameServerInstances(const Model::DescribeGameServerInstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeGameServerInstances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeGameServerInstancesOutcomeCallable DescribeGameServerInstancesCallable(const Model::DescribeGameServerInstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeGameServerInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeGameServerInstancesAsync(const Model::DescribeGameServerInstancesRequest& request, const DescribeGameServerInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves additional game session properties, including the game session
@@ -1779,15 +1435,6 @@ namespace GameLift
          */
         virtual Model::DescribeGameSessionDetailsOutcome DescribeGameSessionDetails(const Model::DescribeGameSessionDetailsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeGameSessionDetails that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeGameSessionDetailsOutcomeCallable DescribeGameSessionDetailsCallable(const Model::DescribeGameSessionDetailsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeGameSessionDetails that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeGameSessionDetailsAsync(const Model::DescribeGameSessionDetailsRequest& request, const DescribeGameSessionDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information, including current status, about a game session
@@ -1811,15 +1458,6 @@ namespace GameLift
          */
         virtual Model::DescribeGameSessionPlacementOutcome DescribeGameSessionPlacement(const Model::DescribeGameSessionPlacementRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeGameSessionPlacement that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeGameSessionPlacementOutcomeCallable DescribeGameSessionPlacementCallable(const Model::DescribeGameSessionPlacementRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeGameSessionPlacement that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeGameSessionPlacementAsync(const Model::DescribeGameSessionPlacementRequest& request, const DescribeGameSessionPlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the properties for one or more game session queues. When requesting
@@ -1845,15 +1483,6 @@ namespace GameLift
          */
         virtual Model::DescribeGameSessionQueuesOutcome DescribeGameSessionQueues(const Model::DescribeGameSessionQueuesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeGameSessionQueues that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeGameSessionQueuesOutcomeCallable DescribeGameSessionQueuesCallable(const Model::DescribeGameSessionQueuesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeGameSessionQueues that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeGameSessionQueuesAsync(const Model::DescribeGameSessionQueuesRequest& request, const DescribeGameSessionQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a set of one or more game sessions in a specific fleet location.
@@ -1901,15 +1530,6 @@ namespace GameLift
          */
         virtual Model::DescribeGameSessionsOutcome DescribeGameSessions(const Model::DescribeGameSessionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeGameSessions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeGameSessionsOutcomeCallable DescribeGameSessionsCallable(const Model::DescribeGameSessionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeGameSessions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeGameSessionsAsync(const Model::DescribeGameSessionsRequest& request, const DescribeGameSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about a fleet's instances, including instance IDs,
@@ -1936,15 +1556,6 @@ namespace GameLift
          */
         virtual Model::DescribeInstancesOutcome DescribeInstances(const Model::DescribeInstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeInstances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeInstancesOutcomeCallable DescribeInstancesCallable(const Model::DescribeInstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeInstancesAsync(const Model::DescribeInstancesRequest& request, const DescribeInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves one or more matchmaking tickets. Use this operation to retrieve
@@ -1972,15 +1583,6 @@ namespace GameLift
          */
         virtual Model::DescribeMatchmakingOutcome DescribeMatchmaking(const Model::DescribeMatchmakingRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeMatchmaking that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeMatchmakingOutcomeCallable DescribeMatchmakingCallable(const Model::DescribeMatchmakingRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeMatchmaking that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeMatchmakingAsync(const Model::DescribeMatchmakingRequest& request, const DescribeMatchmakingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the details of FlexMatch matchmaking configurations. </p> <p>This
@@ -2004,15 +1606,6 @@ namespace GameLift
          */
         virtual Model::DescribeMatchmakingConfigurationsOutcome DescribeMatchmakingConfigurations(const Model::DescribeMatchmakingConfigurationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeMatchmakingConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeMatchmakingConfigurationsOutcomeCallable DescribeMatchmakingConfigurationsCallable(const Model::DescribeMatchmakingConfigurationsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeMatchmakingConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeMatchmakingConfigurationsAsync(const Model::DescribeMatchmakingConfigurationsRequest& request, const DescribeMatchmakingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the details for FlexMatch matchmaking rule sets. You can request
@@ -2033,15 +1626,6 @@ namespace GameLift
          */
         virtual Model::DescribeMatchmakingRuleSetsOutcome DescribeMatchmakingRuleSets(const Model::DescribeMatchmakingRuleSetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeMatchmakingRuleSets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeMatchmakingRuleSetsOutcomeCallable DescribeMatchmakingRuleSetsCallable(const Model::DescribeMatchmakingRuleSetsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeMatchmakingRuleSets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeMatchmakingRuleSetsAsync(const Model::DescribeMatchmakingRuleSetsRequest& request, const DescribeMatchmakingRuleSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves properties for one or more player sessions. </p> <p>This action can
@@ -2065,15 +1649,6 @@ namespace GameLift
          */
         virtual Model::DescribePlayerSessionsOutcome DescribePlayerSessions(const Model::DescribePlayerSessionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribePlayerSessions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribePlayerSessionsOutcomeCallable DescribePlayerSessionsCallable(const Model::DescribePlayerSessionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribePlayerSessions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribePlayerSessionsAsync(const Model::DescribePlayerSessionsRequest& request, const DescribePlayerSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a fleet's runtime configuration settings. The runtime configuration
@@ -2099,15 +1674,6 @@ namespace GameLift
          */
         virtual Model::DescribeRuntimeConfigurationOutcome DescribeRuntimeConfiguration(const Model::DescribeRuntimeConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeRuntimeConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeRuntimeConfigurationOutcomeCallable DescribeRuntimeConfigurationCallable(const Model::DescribeRuntimeConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeRuntimeConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeRuntimeConfigurationAsync(const Model::DescribeRuntimeConfigurationRequest& request, const DescribeRuntimeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves all scaling policies applied to a fleet.</p> <p>To get a fleet's
@@ -2131,15 +1697,6 @@ namespace GameLift
          */
         virtual Model::DescribeScalingPoliciesOutcome DescribeScalingPolicies(const Model::DescribeScalingPoliciesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeScalingPolicies that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeScalingPoliciesOutcomeCallable DescribeScalingPoliciesCallable(const Model::DescribeScalingPoliciesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeScalingPolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeScalingPoliciesAsync(const Model::DescribeScalingPoliciesRequest& request, const DescribeScalingPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves properties for a Realtime script. </p> <p>To request a script
@@ -2156,15 +1713,6 @@ namespace GameLift
          */
         virtual Model::DescribeScriptOutcome DescribeScript(const Model::DescribeScriptRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeScript that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeScriptOutcomeCallable DescribeScriptCallable(const Model::DescribeScriptRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeScript that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeScriptAsync(const Model::DescribeScriptRequest& request, const DescribeScriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves valid VPC peering authorizations that are pending for the Amazon
@@ -2181,15 +1729,6 @@ namespace GameLift
          */
         virtual Model::DescribeVpcPeeringAuthorizationsOutcome DescribeVpcPeeringAuthorizations(const Model::DescribeVpcPeeringAuthorizationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeVpcPeeringAuthorizations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeVpcPeeringAuthorizationsOutcomeCallable DescribeVpcPeeringAuthorizationsCallable(const Model::DescribeVpcPeeringAuthorizationsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeVpcPeeringAuthorizations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeVpcPeeringAuthorizationsAsync(const Model::DescribeVpcPeeringAuthorizationsRequest& request, const DescribeVpcPeeringAuthorizationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information on VPC peering connections. Use this operation to get
@@ -2210,15 +1749,6 @@ namespace GameLift
          */
         virtual Model::DescribeVpcPeeringConnectionsOutcome DescribeVpcPeeringConnections(const Model::DescribeVpcPeeringConnectionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeVpcPeeringConnections that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeVpcPeeringConnectionsOutcomeCallable DescribeVpcPeeringConnectionsCallable(const Model::DescribeVpcPeeringConnectionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeVpcPeeringConnections that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeVpcPeeringConnectionsAsync(const Model::DescribeVpcPeeringConnectionsRequest& request, const DescribeVpcPeeringConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the location of stored game session logs for a specified game
@@ -2240,15 +1770,6 @@ namespace GameLift
          */
         virtual Model::GetGameSessionLogUrlOutcome GetGameSessionLogUrl(const Model::GetGameSessionLogUrlRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetGameSessionLogUrl that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetGameSessionLogUrlOutcomeCallable GetGameSessionLogUrlCallable(const Model::GetGameSessionLogUrlRequest& request) const;
-
-        /**
-         * An Async wrapper for GetGameSessionLogUrl that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetGameSessionLogUrlAsync(const Model::GetGameSessionLogUrlRequest& request, const GetGameSessionLogUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Requests remote access to a fleet instance. Remote access is useful for
@@ -2279,15 +1800,6 @@ namespace GameLift
          */
         virtual Model::GetInstanceAccessOutcome GetInstanceAccess(const Model::GetInstanceAccessRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetInstanceAccess that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetInstanceAccessOutcomeCallable GetInstanceAccessCallable(const Model::GetInstanceAccessRequest& request) const;
-
-        /**
-         * An Async wrapper for GetInstanceAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetInstanceAccessAsync(const Model::GetInstanceAccessRequest& request, const GetInstanceAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves all aliases for this Amazon Web Services account. You can filter
@@ -2304,15 +1816,6 @@ namespace GameLift
          */
         virtual Model::ListAliasesOutcome ListAliases(const Model::ListAliasesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAliases that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAliasesOutcomeCallable ListAliasesCallable(const Model::ListAliasesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAliases that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAliasesAsync(const Model::ListAliasesRequest& request, const ListAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves build resources for all builds associated with the Amazon Web
@@ -2332,15 +1835,6 @@ namespace GameLift
          */
         virtual Model::ListBuildsOutcome ListBuilds(const Model::ListBuildsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListBuilds that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListBuildsOutcomeCallable ListBuildsCallable(const Model::ListBuildsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListBuilds that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListBuildsAsync(const Model::ListBuildsRequest& request, const ListBuildsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a collection of fleet resources in an Amazon Web Services Region.
@@ -2374,15 +1868,6 @@ namespace GameLift
          */
         virtual Model::ListFleetsOutcome ListFleets(const Model::ListFleetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListFleets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListFleetsOutcomeCallable ListFleetsCallable(const Model::ListFleetsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListFleets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListFleetsAsync(const Model::ListFleetsRequest& request, const ListFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> <b>This operation is used with the GameLift FleetIQ solution and game server
@@ -2403,15 +1888,6 @@ namespace GameLift
          */
         virtual Model::ListGameServerGroupsOutcome ListGameServerGroups(const Model::ListGameServerGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListGameServerGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListGameServerGroupsOutcomeCallable ListGameServerGroupsCallable(const Model::ListGameServerGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListGameServerGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListGameServerGroupsAsync(const Model::ListGameServerGroupsRequest& request, const ListGameServerGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> <b>This operation is used with the GameLift FleetIQ solution and game server
@@ -2431,15 +1907,6 @@ namespace GameLift
          */
         virtual Model::ListGameServersOutcome ListGameServers(const Model::ListGameServersRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListGameServers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListGameServersOutcomeCallable ListGameServersCallable(const Model::ListGameServersRequest& request) const;
-
-        /**
-         * An Async wrapper for ListGameServers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListGameServersAsync(const Model::ListGameServersRequest& request, const ListGameServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves script records for all Realtime scripts that are associated with
@@ -2455,15 +1922,6 @@ namespace GameLift
          */
         virtual Model::ListScriptsOutcome ListScripts(const Model::ListScriptsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListScripts that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListScriptsOutcomeCallable ListScriptsCallable(const Model::ListScriptsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListScripts that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListScriptsAsync(const Model::ListScriptsRequest& request, const ListScriptsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Retrieves all tags that are assigned to a GameLift resource. Resource tags
@@ -2487,15 +1945,6 @@ namespace GameLift
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates or updates a scaling policy for a fleet. Scaling policies are used to
@@ -2568,15 +2017,6 @@ namespace GameLift
          */
         virtual Model::PutScalingPolicyOutcome PutScalingPolicy(const Model::PutScalingPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutScalingPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutScalingPolicyOutcomeCallable PutScalingPolicyCallable(const Model::PutScalingPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for PutScalingPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutScalingPolicyAsync(const Model::PutScalingPolicyRequest& request, const PutScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> <b>This operation is used with the GameLift FleetIQ solution and game server
@@ -2606,15 +2046,6 @@ namespace GameLift
          */
         virtual Model::RegisterGameServerOutcome RegisterGameServer(const Model::RegisterGameServerRequest& request) const;
 
-        /**
-         * A Callable wrapper for RegisterGameServer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RegisterGameServerOutcomeCallable RegisterGameServerCallable(const Model::RegisterGameServerRequest& request) const;
-
-        /**
-         * An Async wrapper for RegisterGameServer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RegisterGameServerAsync(const Model::RegisterGameServerRequest& request, const RegisterGameServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a fresh set of credentials for use when uploading a new set of game
@@ -2635,15 +2066,6 @@ namespace GameLift
          */
         virtual Model::RequestUploadCredentialsOutcome RequestUploadCredentials(const Model::RequestUploadCredentialsRequest& request) const;
 
-        /**
-         * A Callable wrapper for RequestUploadCredentials that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RequestUploadCredentialsOutcomeCallable RequestUploadCredentialsCallable(const Model::RequestUploadCredentialsRequest& request) const;
-
-        /**
-         * An Async wrapper for RequestUploadCredentials that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RequestUploadCredentialsAsync(const Model::RequestUploadCredentialsRequest& request, const RequestUploadCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the fleet ID that an alias is currently pointing to.</p> <p>
@@ -2657,15 +2079,6 @@ namespace GameLift
          */
         virtual Model::ResolveAliasOutcome ResolveAlias(const Model::ResolveAliasRequest& request) const;
 
-        /**
-         * A Callable wrapper for ResolveAlias that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ResolveAliasOutcomeCallable ResolveAliasCallable(const Model::ResolveAliasRequest& request) const;
-
-        /**
-         * An Async wrapper for ResolveAlias that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ResolveAliasAsync(const Model::ResolveAliasRequest& request, const ResolveAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> <b>This operation is used with the GameLift FleetIQ solution and game server
@@ -2693,15 +2106,6 @@ namespace GameLift
          */
         virtual Model::ResumeGameServerGroupOutcome ResumeGameServerGroup(const Model::ResumeGameServerGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for ResumeGameServerGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ResumeGameServerGroupOutcomeCallable ResumeGameServerGroupCallable(const Model::ResumeGameServerGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for ResumeGameServerGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ResumeGameServerGroupAsync(const Model::ResumeGameServerGroupRequest& request, const ResumeGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves all active game sessions that match a set of search criteria and
@@ -2769,15 +2173,6 @@ namespace GameLift
          */
         virtual Model::SearchGameSessionsOutcome SearchGameSessions(const Model::SearchGameSessionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for SearchGameSessions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SearchGameSessionsOutcomeCallable SearchGameSessionsCallable(const Model::SearchGameSessionsRequest& request) const;
-
-        /**
-         * An Async wrapper for SearchGameSessions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SearchGameSessionsAsync(const Model::SearchGameSessionsRequest& request, const SearchGameSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Resumes certain types of activity on fleet instances that were suspended with
@@ -2806,15 +2201,6 @@ namespace GameLift
          */
         virtual Model::StartFleetActionsOutcome StartFleetActions(const Model::StartFleetActionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartFleetActions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartFleetActionsOutcomeCallable StartFleetActionsCallable(const Model::StartFleetActionsRequest& request) const;
-
-        /**
-         * An Async wrapper for StartFleetActions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartFleetActionsAsync(const Model::StartFleetActionsRequest& request, const StartFleetActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Places a request for a new game session in a queue (see
@@ -2859,15 +2245,6 @@ namespace GameLift
          */
         virtual Model::StartGameSessionPlacementOutcome StartGameSessionPlacement(const Model::StartGameSessionPlacementRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartGameSessionPlacement that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartGameSessionPlacementOutcomeCallable StartGameSessionPlacementCallable(const Model::StartGameSessionPlacementRequest& request) const;
-
-        /**
-         * An Async wrapper for StartGameSessionPlacement that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartGameSessionPlacementAsync(const Model::StartGameSessionPlacementRequest& request, const StartGameSessionPlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Finds new players to fill open slots in currently running game sessions. The
@@ -2911,15 +2288,6 @@ namespace GameLift
          */
         virtual Model::StartMatchBackfillOutcome StartMatchBackfill(const Model::StartMatchBackfillRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartMatchBackfill that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartMatchBackfillOutcomeCallable StartMatchBackfillCallable(const Model::StartMatchBackfillRequest& request) const;
-
-        /**
-         * An Async wrapper for StartMatchBackfill that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartMatchBackfillAsync(const Model::StartMatchBackfillRequest& request, const StartMatchBackfillResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Uses FlexMatch to create a game match for a group of players based on custom
@@ -2953,15 +2321,6 @@ namespace GameLift
          */
         virtual Model::StartMatchmakingOutcome StartMatchmaking(const Model::StartMatchmakingRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartMatchmaking that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartMatchmakingOutcomeCallable StartMatchmakingCallable(const Model::StartMatchmakingRequest& request) const;
-
-        /**
-         * An Async wrapper for StartMatchmaking that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartMatchmakingAsync(const Model::StartMatchmakingRequest& request, const StartMatchmakingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Suspends certain types of activity in a fleet location. Currently, this
@@ -2993,15 +2352,6 @@ namespace GameLift
          */
         virtual Model::StopFleetActionsOutcome StopFleetActions(const Model::StopFleetActionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopFleetActions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopFleetActionsOutcomeCallable StopFleetActionsCallable(const Model::StopFleetActionsRequest& request) const;
-
-        /**
-         * An Async wrapper for StopFleetActions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopFleetActionsAsync(const Model::StopFleetActionsRequest& request, const StopFleetActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Cancels a game session placement that is in <code>PENDING</code> status. To
@@ -3019,15 +2369,6 @@ namespace GameLift
          */
         virtual Model::StopGameSessionPlacementOutcome StopGameSessionPlacement(const Model::StopGameSessionPlacementRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopGameSessionPlacement that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopGameSessionPlacementOutcomeCallable StopGameSessionPlacementCallable(const Model::StopGameSessionPlacementRequest& request) const;
-
-        /**
-         * An Async wrapper for StopGameSessionPlacement that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopGameSessionPlacementAsync(const Model::StopGameSessionPlacementRequest& request, const StopGameSessionPlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Cancels a matchmaking ticket or match backfill ticket that is currently being
@@ -3052,15 +2393,6 @@ namespace GameLift
          */
         virtual Model::StopMatchmakingOutcome StopMatchmaking(const Model::StopMatchmakingRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopMatchmaking that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopMatchmakingOutcomeCallable StopMatchmakingCallable(const Model::StopMatchmakingRequest& request) const;
-
-        /**
-         * An Async wrapper for StopMatchmaking that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopMatchmakingAsync(const Model::StopMatchmakingRequest& request, const StopMatchmakingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> <b>This operation is used with the GameLift FleetIQ solution and game server
@@ -3092,15 +2424,6 @@ namespace GameLift
          */
         virtual Model::SuspendGameServerGroupOutcome SuspendGameServerGroup(const Model::SuspendGameServerGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for SuspendGameServerGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SuspendGameServerGroupOutcomeCallable SuspendGameServerGroupCallable(const Model::SuspendGameServerGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for SuspendGameServerGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SuspendGameServerGroupAsync(const Model::SuspendGameServerGroupRequest& request, const SuspendGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Assigns a tag to a GameLift resource. Amazon Web Services resource tags
@@ -3128,15 +2451,6 @@ namespace GameLift
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes a tag that is assigned to a GameLift resource. Resource tags are used
@@ -3163,15 +2477,6 @@ namespace GameLift
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates properties for an alias. To update properties, specify the alias ID
@@ -3187,15 +2492,6 @@ namespace GameLift
          */
         virtual Model::UpdateAliasOutcome UpdateAlias(const Model::UpdateAliasRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateAlias that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateAliasOutcomeCallable UpdateAliasCallable(const Model::UpdateAliasRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateAlias that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateAliasAsync(const Model::UpdateAliasRequest& request, const UpdateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates metadata in a build resource, including the build name and version.
@@ -3213,15 +2509,6 @@ namespace GameLift
          */
         virtual Model::UpdateBuildOutcome UpdateBuild(const Model::UpdateBuildRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateBuild that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateBuildOutcomeCallable UpdateBuildCallable(const Model::UpdateBuildRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateBuild that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateBuildAsync(const Model::UpdateBuildRequest& request, const UpdateBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a fleet's mutable attributes, including game session protection and
@@ -3243,15 +2530,6 @@ namespace GameLift
          */
         virtual Model::UpdateFleetAttributesOutcome UpdateFleetAttributes(const Model::UpdateFleetAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateFleetAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateFleetAttributesOutcomeCallable UpdateFleetAttributesCallable(const Model::UpdateFleetAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateFleetAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateFleetAttributesAsync(const Model::UpdateFleetAttributesRequest& request, const UpdateFleetAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates capacity settings for a fleet. For fleets with multiple locations,
@@ -3295,15 +2573,6 @@ namespace GameLift
          */
         virtual Model::UpdateFleetCapacityOutcome UpdateFleetCapacity(const Model::UpdateFleetCapacityRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateFleetCapacity that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateFleetCapacityOutcomeCallable UpdateFleetCapacityCallable(const Model::UpdateFleetCapacityRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateFleetCapacity that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateFleetCapacityAsync(const Model::UpdateFleetCapacityRequest& request, const UpdateFleetCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates permissions that allow inbound traffic to connect to game sessions
@@ -3331,15 +2600,6 @@ namespace GameLift
          */
         virtual Model::UpdateFleetPortSettingsOutcome UpdateFleetPortSettings(const Model::UpdateFleetPortSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateFleetPortSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateFleetPortSettingsOutcomeCallable UpdateFleetPortSettingsCallable(const Model::UpdateFleetPortSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateFleetPortSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateFleetPortSettingsAsync(const Model::UpdateFleetPortSettingsRequest& request, const UpdateFleetPortSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> <b>This operation is used with the GameLift FleetIQ solution and game server
@@ -3373,15 +2633,6 @@ namespace GameLift
          */
         virtual Model::UpdateGameServerOutcome UpdateGameServer(const Model::UpdateGameServerRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateGameServer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateGameServerOutcomeCallable UpdateGameServerCallable(const Model::UpdateGameServerRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateGameServer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateGameServerAsync(const Model::UpdateGameServerRequest& request, const UpdateGameServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> <b>This operation is used with the GameLift FleetIQ solution and game server
@@ -3406,15 +2657,6 @@ namespace GameLift
          */
         virtual Model::UpdateGameServerGroupOutcome UpdateGameServerGroup(const Model::UpdateGameServerGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateGameServerGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateGameServerGroupOutcomeCallable UpdateGameServerGroupCallable(const Model::UpdateGameServerGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateGameServerGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateGameServerGroupAsync(const Model::UpdateGameServerGroupRequest& request, const UpdateGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the mutable properties of a game session. </p> <p>To update a game
@@ -3432,15 +2674,6 @@ namespace GameLift
          */
         virtual Model::UpdateGameSessionOutcome UpdateGameSession(const Model::UpdateGameSessionRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateGameSession that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateGameSessionOutcomeCallable UpdateGameSessionCallable(const Model::UpdateGameSessionRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateGameSession that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateGameSessionAsync(const Model::UpdateGameSessionRequest& request, const UpdateGameSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the configuration of a game session queue, which determines how the
@@ -3464,15 +2697,6 @@ namespace GameLift
          */
         virtual Model::UpdateGameSessionQueueOutcome UpdateGameSessionQueue(const Model::UpdateGameSessionQueueRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateGameSessionQueue that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateGameSessionQueueOutcomeCallable UpdateGameSessionQueueCallable(const Model::UpdateGameSessionQueueRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateGameSessionQueue that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateGameSessionQueueAsync(const Model::UpdateGameSessionQueueRequest& request, const UpdateGameSessionQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates settings for a FlexMatch matchmaking configuration. These changes
@@ -3492,15 +2716,6 @@ namespace GameLift
          */
         virtual Model::UpdateMatchmakingConfigurationOutcome UpdateMatchmakingConfiguration(const Model::UpdateMatchmakingConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateMatchmakingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateMatchmakingConfigurationOutcomeCallable UpdateMatchmakingConfigurationCallable(const Model::UpdateMatchmakingConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateMatchmakingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateMatchmakingConfigurationAsync(const Model::UpdateMatchmakingConfigurationRequest& request, const UpdateMatchmakingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the current runtime configuration for the specified fleet, which
@@ -3529,15 +2744,6 @@ namespace GameLift
          */
         virtual Model::UpdateRuntimeConfigurationOutcome UpdateRuntimeConfiguration(const Model::UpdateRuntimeConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateRuntimeConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateRuntimeConfigurationOutcomeCallable UpdateRuntimeConfigurationCallable(const Model::UpdateRuntimeConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateRuntimeConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateRuntimeConfigurationAsync(const Model::UpdateRuntimeConfigurationRequest& request, const UpdateRuntimeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates Realtime script metadata and content.</p> <p>To update script
@@ -3561,15 +2767,6 @@ namespace GameLift
          */
         virtual Model::UpdateScriptOutcome UpdateScript(const Model::UpdateScriptRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateScript that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateScriptOutcomeCallable UpdateScriptCallable(const Model::UpdateScriptRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateScript that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateScriptAsync(const Model::UpdateScriptRequest& request, const UpdateScriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Validates the syntax of a matchmaking rule or rule set. This operation checks
@@ -3589,15 +2786,6 @@ namespace GameLift
          */
         virtual Model::ValidateMatchmakingRuleSetOutcome ValidateMatchmakingRuleSet(const Model::ValidateMatchmakingRuleSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for ValidateMatchmakingRuleSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ValidateMatchmakingRuleSetOutcomeCallable ValidateMatchmakingRuleSetCallable(const Model::ValidateMatchmakingRuleSetRequest& request) const;
-
-        /**
-         * An Async wrapper for ValidateMatchmakingRuleSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ValidateMatchmakingRuleSetAsync(const Model::ValidateMatchmakingRuleSetRequest& request, const ValidateMatchmakingRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

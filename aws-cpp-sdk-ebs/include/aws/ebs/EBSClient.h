@@ -7,8 +7,10 @@
 #include <aws/ebs/EBS_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ebs/EBSServiceClientModel.h>
+#include <aws/ebs/EBSLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -97,6 +99,47 @@ namespace EBS
         virtual ~EBSClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Seals and completes the snapshot after all of the required blocks of data
          * have been written to it. Completing the snapshot changes the status to
@@ -107,15 +150,6 @@ namespace EBS
          */
         virtual Model::CompleteSnapshotOutcome CompleteSnapshot(const Model::CompleteSnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for CompleteSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CompleteSnapshotOutcomeCallable CompleteSnapshotCallable(const Model::CompleteSnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for CompleteSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CompleteSnapshotAsync(const Model::CompleteSnapshotRequest& request, const CompleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the data in a block in an Amazon Elastic Block Store
@@ -125,15 +159,6 @@ namespace EBS
          */
         virtual Model::GetSnapshotBlockOutcome GetSnapshotBlock(const Model::GetSnapshotBlockRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSnapshotBlock that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSnapshotBlockOutcomeCallable GetSnapshotBlockCallable(const Model::GetSnapshotBlockRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSnapshotBlock that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSnapshotBlockAsync(const Model::GetSnapshotBlockRequest& request, const GetSnapshotBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the blocks that are different between two Amazon
@@ -144,15 +169,6 @@ namespace EBS
          */
         virtual Model::ListChangedBlocksOutcome ListChangedBlocks(const Model::ListChangedBlocksRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListChangedBlocks that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListChangedBlocksOutcomeCallable ListChangedBlocksCallable(const Model::ListChangedBlocksRequest& request) const;
-
-        /**
-         * An Async wrapper for ListChangedBlocks that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListChangedBlocksAsync(const Model::ListChangedBlocksRequest& request, const ListChangedBlocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the blocks in an Amazon Elastic Block Store
@@ -162,15 +178,6 @@ namespace EBS
          */
         virtual Model::ListSnapshotBlocksOutcome ListSnapshotBlocks(const Model::ListSnapshotBlocksRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSnapshotBlocks that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListSnapshotBlocksOutcomeCallable ListSnapshotBlocksCallable(const Model::ListSnapshotBlocksRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSnapshotBlocks that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListSnapshotBlocksAsync(const Model::ListSnapshotBlocksRequest& request, const ListSnapshotBlocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Writes a block of data to a snapshot. If the specified block contains data,
@@ -182,15 +189,6 @@ namespace EBS
          */
         virtual Model::PutSnapshotBlockOutcome PutSnapshotBlock(const Model::PutSnapshotBlockRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutSnapshotBlock that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutSnapshotBlockOutcomeCallable PutSnapshotBlockCallable(const Model::PutSnapshotBlockRequest& request) const;
-
-        /**
-         * An Async wrapper for PutSnapshotBlock that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutSnapshotBlockAsync(const Model::PutSnapshotBlockRequest& request, const PutSnapshotBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new Amazon EBS snapshot. The new snapshot enters the
@@ -204,15 +202,6 @@ namespace EBS
          */
         virtual Model::StartSnapshotOutcome StartSnapshot(const Model::StartSnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartSnapshotOutcomeCallable StartSnapshotCallable(const Model::StartSnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for StartSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartSnapshotAsync(const Model::StartSnapshotRequest& request, const StartSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

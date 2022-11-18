@@ -8,8 +8,10 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/route53/Route53ServiceClientModel.h>
+#include <aws/route53/Route53LegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -84,6 +86,47 @@ namespace Route53
         virtual ~Route53Client();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Activates a key-signing key (KSK) so that it can be used for signing by
          * DNSSEC. This operation changes the KSK status to
@@ -93,15 +136,6 @@ namespace Route53
          */
         virtual Model::ActivateKeySigningKeyOutcome ActivateKeySigningKey(const Model::ActivateKeySigningKeyRequest& request) const;
 
-        /**
-         * A Callable wrapper for ActivateKeySigningKey that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ActivateKeySigningKeyOutcomeCallable ActivateKeySigningKeyCallable(const Model::ActivateKeySigningKeyRequest& request) const;
-
-        /**
-         * An Async wrapper for ActivateKeySigningKey that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ActivateKeySigningKeyAsync(const Model::ActivateKeySigningKeyRequest& request, const ActivateKeySigningKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates an Amazon VPC with a private hosted zone. </p>  <p>To
@@ -129,15 +163,6 @@ namespace Route53
          */
         virtual Model::AssociateVPCWithHostedZoneOutcome AssociateVPCWithHostedZone(const Model::AssociateVPCWithHostedZoneRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateVPCWithHostedZone that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateVPCWithHostedZoneOutcomeCallable AssociateVPCWithHostedZoneCallable(const Model::AssociateVPCWithHostedZoneRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateVPCWithHostedZone that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateVPCWithHostedZoneAsync(const Model::AssociateVPCWithHostedZoneRequest& request, const AssociateVPCWithHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates, changes, or deletes CIDR blocks within a collection. Contains
@@ -157,15 +182,6 @@ namespace Route53
          */
         virtual Model::ChangeCidrCollectionOutcome ChangeCidrCollection(const Model::ChangeCidrCollectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for ChangeCidrCollection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ChangeCidrCollectionOutcomeCallable ChangeCidrCollectionCallable(const Model::ChangeCidrCollectionRequest& request) const;
-
-        /**
-         * An Async wrapper for ChangeCidrCollection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ChangeCidrCollectionAsync(const Model::ChangeCidrCollectionRequest& request, const ChangeCidrCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates, changes, or deletes a resource record set, which contains
@@ -233,15 +249,6 @@ namespace Route53
          */
         virtual Model::ChangeResourceRecordSetsOutcome ChangeResourceRecordSets(const Model::ChangeResourceRecordSetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ChangeResourceRecordSets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ChangeResourceRecordSetsOutcomeCallable ChangeResourceRecordSetsCallable(const Model::ChangeResourceRecordSetsRequest& request) const;
-
-        /**
-         * An Async wrapper for ChangeResourceRecordSets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ChangeResourceRecordSetsAsync(const Model::ChangeResourceRecordSetsRequest& request, const ChangeResourceRecordSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds, edits, or deletes tags for a health check or a hosted zone.</p> <p>For
@@ -254,15 +261,6 @@ namespace Route53
          */
         virtual Model::ChangeTagsForResourceOutcome ChangeTagsForResource(const Model::ChangeTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ChangeTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ChangeTagsForResourceOutcomeCallable ChangeTagsForResourceCallable(const Model::ChangeTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ChangeTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ChangeTagsForResourceAsync(const Model::ChangeTagsForResourceRequest& request, const ChangeTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a CIDR collection in the current Amazon Web Services
@@ -272,15 +270,6 @@ namespace Route53
          */
         virtual Model::CreateCidrCollectionOutcome CreateCidrCollection(const Model::CreateCidrCollectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateCidrCollection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateCidrCollectionOutcomeCallable CreateCidrCollectionCallable(const Model::CreateCidrCollectionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateCidrCollection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateCidrCollectionAsync(const Model::CreateCidrCollectionRequest& request, const CreateCidrCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new health check.</p> <p>For information about adding health checks
@@ -313,15 +302,6 @@ namespace Route53
          */
         virtual Model::CreateHealthCheckOutcome CreateHealthCheck(const Model::CreateHealthCheckRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateHealthCheck that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateHealthCheckOutcomeCallable CreateHealthCheckCallable(const Model::CreateHealthCheckRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateHealthCheck that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateHealthCheckAsync(const Model::CreateHealthCheckRequest& request, const CreateHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new public or private hosted zone. You create records in a public
@@ -372,15 +352,6 @@ namespace Route53
          */
         virtual Model::CreateHostedZoneOutcome CreateHostedZone(const Model::CreateHostedZoneRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateHostedZone that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateHostedZoneOutcomeCallable CreateHostedZoneCallable(const Model::CreateHostedZoneRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateHostedZone that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateHostedZoneAsync(const Model::CreateHostedZoneRequest& request, const CreateHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new key-signing key (KSK) associated with a hosted zone. You can
@@ -390,15 +361,6 @@ namespace Route53
          */
         virtual Model::CreateKeySigningKeyOutcome CreateKeySigningKey(const Model::CreateKeySigningKeyRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateKeySigningKey that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateKeySigningKeyOutcomeCallable CreateKeySigningKeyCallable(const Model::CreateKeySigningKeyRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateKeySigningKey that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateKeySigningKeyAsync(const Model::CreateKeySigningKeyRequest& request, const CreateKeySigningKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a configuration for DNS query logging. After you create a query
@@ -491,15 +453,6 @@ namespace Route53
          */
         virtual Model::CreateQueryLoggingConfigOutcome CreateQueryLoggingConfig(const Model::CreateQueryLoggingConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateQueryLoggingConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateQueryLoggingConfigOutcomeCallable CreateQueryLoggingConfigCallable(const Model::CreateQueryLoggingConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateQueryLoggingConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateQueryLoggingConfigAsync(const Model::CreateQueryLoggingConfigRequest& request, const CreateQueryLoggingConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a delegation set (a group of four name servers) that can be reused by
@@ -538,15 +491,6 @@ namespace Route53
          */
         virtual Model::CreateReusableDelegationSetOutcome CreateReusableDelegationSet(const Model::CreateReusableDelegationSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateReusableDelegationSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateReusableDelegationSetOutcomeCallable CreateReusableDelegationSetCallable(const Model::CreateReusableDelegationSetRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateReusableDelegationSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateReusableDelegationSetAsync(const Model::CreateReusableDelegationSetRequest& request, const CreateReusableDelegationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a traffic policy, which you use to create multiple DNS resource
@@ -557,15 +501,6 @@ namespace Route53
          */
         virtual Model::CreateTrafficPolicyOutcome CreateTrafficPolicy(const Model::CreateTrafficPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateTrafficPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateTrafficPolicyOutcomeCallable CreateTrafficPolicyCallable(const Model::CreateTrafficPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateTrafficPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateTrafficPolicyAsync(const Model::CreateTrafficPolicyRequest& request, const CreateTrafficPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates resource record sets in a specified hosted zone based on the settings
@@ -580,15 +515,6 @@ namespace Route53
          */
         virtual Model::CreateTrafficPolicyInstanceOutcome CreateTrafficPolicyInstance(const Model::CreateTrafficPolicyInstanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateTrafficPolicyInstance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateTrafficPolicyInstanceOutcomeCallable CreateTrafficPolicyInstanceCallable(const Model::CreateTrafficPolicyInstanceRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateTrafficPolicyInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateTrafficPolicyInstanceAsync(const Model::CreateTrafficPolicyInstanceRequest& request, const CreateTrafficPolicyInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new version of an existing traffic policy. When you create a new
@@ -604,15 +530,6 @@ namespace Route53
          */
         virtual Model::CreateTrafficPolicyVersionOutcome CreateTrafficPolicyVersion(const Model::CreateTrafficPolicyVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateTrafficPolicyVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateTrafficPolicyVersionOutcomeCallable CreateTrafficPolicyVersionCallable(const Model::CreateTrafficPolicyVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateTrafficPolicyVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateTrafficPolicyVersionAsync(const Model::CreateTrafficPolicyVersionRequest& request, const CreateTrafficPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Authorizes the Amazon Web Services account that created a specified VPC to
@@ -630,15 +547,6 @@ namespace Route53
          */
         virtual Model::CreateVPCAssociationAuthorizationOutcome CreateVPCAssociationAuthorization(const Model::CreateVPCAssociationAuthorizationRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateVPCAssociationAuthorization that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateVPCAssociationAuthorizationOutcomeCallable CreateVPCAssociationAuthorizationCallable(const Model::CreateVPCAssociationAuthorizationRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateVPCAssociationAuthorization that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateVPCAssociationAuthorizationAsync(const Model::CreateVPCAssociationAuthorizationRequest& request, const CreateVPCAssociationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deactivates a key-signing key (KSK) so that it will not be used for signing
@@ -649,15 +557,6 @@ namespace Route53
          */
         virtual Model::DeactivateKeySigningKeyOutcome DeactivateKeySigningKey(const Model::DeactivateKeySigningKeyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeactivateKeySigningKey that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeactivateKeySigningKeyOutcomeCallable DeactivateKeySigningKeyCallable(const Model::DeactivateKeySigningKeyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeactivateKeySigningKey that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeactivateKeySigningKeyAsync(const Model::DeactivateKeySigningKeyRequest& request, const DeactivateKeySigningKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a CIDR collection in the current Amazon Web Services account. The
@@ -667,15 +566,6 @@ namespace Route53
          */
         virtual Model::DeleteCidrCollectionOutcome DeleteCidrCollection(const Model::DeleteCidrCollectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteCidrCollection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteCidrCollectionOutcomeCallable DeleteCidrCollectionCallable(const Model::DeleteCidrCollectionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteCidrCollection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteCidrCollectionAsync(const Model::DeleteCidrCollectionRequest& request, const DeleteCidrCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a health check.</p>  <p>Amazon Route 53 does not prevent
@@ -697,15 +587,6 @@ namespace Route53
          */
         virtual Model::DeleteHealthCheckOutcome DeleteHealthCheck(const Model::DeleteHealthCheckRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteHealthCheck that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteHealthCheckOutcomeCallable DeleteHealthCheckCallable(const Model::DeleteHealthCheckRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteHealthCheck that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteHealthCheckAsync(const Model::DeleteHealthCheckRequest& request, const DeleteHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a hosted zone.</p> <p>If the hosted zone was created by another
@@ -751,15 +632,6 @@ namespace Route53
          */
         virtual Model::DeleteHostedZoneOutcome DeleteHostedZone(const Model::DeleteHostedZoneRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteHostedZone that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteHostedZoneOutcomeCallable DeleteHostedZoneCallable(const Model::DeleteHostedZoneRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteHostedZone that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteHostedZoneAsync(const Model::DeleteHostedZoneRequest& request, const DeleteHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a key-signing key (KSK). Before you can delete a KSK, you must
@@ -775,15 +647,6 @@ namespace Route53
          */
         virtual Model::DeleteKeySigningKeyOutcome DeleteKeySigningKey(const Model::DeleteKeySigningKeyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteKeySigningKey that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteKeySigningKeyOutcomeCallable DeleteKeySigningKeyCallable(const Model::DeleteKeySigningKeyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteKeySigningKey that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteKeySigningKeyAsync(const Model::DeleteKeySigningKeyRequest& request, const DeleteKeySigningKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a configuration for DNS query logging. If you delete a configuration,
@@ -797,15 +660,6 @@ namespace Route53
          */
         virtual Model::DeleteQueryLoggingConfigOutcome DeleteQueryLoggingConfig(const Model::DeleteQueryLoggingConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteQueryLoggingConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteQueryLoggingConfigOutcomeCallable DeleteQueryLoggingConfigCallable(const Model::DeleteQueryLoggingConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteQueryLoggingConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteQueryLoggingConfigAsync(const Model::DeleteQueryLoggingConfigRequest& request, const DeleteQueryLoggingConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a reusable delegation set.</p>  <p>You can delete a
@@ -820,15 +674,6 @@ namespace Route53
          */
         virtual Model::DeleteReusableDelegationSetOutcome DeleteReusableDelegationSet(const Model::DeleteReusableDelegationSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteReusableDelegationSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteReusableDelegationSetOutcomeCallable DeleteReusableDelegationSetCallable(const Model::DeleteReusableDelegationSetRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteReusableDelegationSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteReusableDelegationSetAsync(const Model::DeleteReusableDelegationSetRequest& request, const DeleteReusableDelegationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a traffic policy.</p> <p>When you delete a traffic policy, Route 53
@@ -846,15 +691,6 @@ namespace Route53
          */
         virtual Model::DeleteTrafficPolicyOutcome DeleteTrafficPolicy(const Model::DeleteTrafficPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteTrafficPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteTrafficPolicyOutcomeCallable DeleteTrafficPolicyCallable(const Model::DeleteTrafficPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteTrafficPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteTrafficPolicyAsync(const Model::DeleteTrafficPolicyRequest& request, const DeleteTrafficPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a traffic policy instance and all of the resource record sets that
@@ -866,15 +702,6 @@ namespace Route53
          */
         virtual Model::DeleteTrafficPolicyInstanceOutcome DeleteTrafficPolicyInstance(const Model::DeleteTrafficPolicyInstanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteTrafficPolicyInstance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteTrafficPolicyInstanceOutcomeCallable DeleteTrafficPolicyInstanceCallable(const Model::DeleteTrafficPolicyInstanceRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteTrafficPolicyInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteTrafficPolicyInstanceAsync(const Model::DeleteTrafficPolicyInstanceRequest& request, const DeleteTrafficPolicyInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes authorization to submit an <code>AssociateVPCWithHostedZone</code>
@@ -893,15 +720,6 @@ namespace Route53
          */
         virtual Model::DeleteVPCAssociationAuthorizationOutcome DeleteVPCAssociationAuthorization(const Model::DeleteVPCAssociationAuthorizationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteVPCAssociationAuthorization that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteVPCAssociationAuthorizationOutcomeCallable DeleteVPCAssociationAuthorizationCallable(const Model::DeleteVPCAssociationAuthorizationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteVPCAssociationAuthorization that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteVPCAssociationAuthorizationAsync(const Model::DeleteVPCAssociationAuthorizationRequest& request, const DeleteVPCAssociationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disables DNSSEC signing in a specific hosted zone. This action does not
@@ -912,15 +730,6 @@ namespace Route53
          */
         virtual Model::DisableHostedZoneDNSSECOutcome DisableHostedZoneDNSSEC(const Model::DisableHostedZoneDNSSECRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisableHostedZoneDNSSEC that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisableHostedZoneDNSSECOutcomeCallable DisableHostedZoneDNSSECCallable(const Model::DisableHostedZoneDNSSECRequest& request) const;
-
-        /**
-         * An Async wrapper for DisableHostedZoneDNSSEC that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisableHostedZoneDNSSECAsync(const Model::DisableHostedZoneDNSSECRequest& request, const DisableHostedZoneDNSSECResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates an Amazon Virtual Private Cloud (Amazon VPC) from an Amazon
@@ -955,15 +764,6 @@ namespace Route53
          */
         virtual Model::DisassociateVPCFromHostedZoneOutcome DisassociateVPCFromHostedZone(const Model::DisassociateVPCFromHostedZoneRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateVPCFromHostedZone that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateVPCFromHostedZoneOutcomeCallable DisassociateVPCFromHostedZoneCallable(const Model::DisassociateVPCFromHostedZoneRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateVPCFromHostedZone that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateVPCFromHostedZoneAsync(const Model::DisassociateVPCFromHostedZoneRequest& request, const DisassociateVPCFromHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables DNSSEC signing in a specific hosted zone.</p><p><h3>See Also:</h3>  
@@ -973,15 +773,6 @@ namespace Route53
          */
         virtual Model::EnableHostedZoneDNSSECOutcome EnableHostedZoneDNSSEC(const Model::EnableHostedZoneDNSSECRequest& request) const;
 
-        /**
-         * A Callable wrapper for EnableHostedZoneDNSSEC that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnableHostedZoneDNSSECOutcomeCallable EnableHostedZoneDNSSECCallable(const Model::EnableHostedZoneDNSSECRequest& request) const;
-
-        /**
-         * An Async wrapper for EnableHostedZoneDNSSEC that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnableHostedZoneDNSSECAsync(const Model::EnableHostedZoneDNSSECRequest& request, const EnableHostedZoneDNSSECResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the specified limit for the current account, for example, the maximum
@@ -1001,15 +792,6 @@ namespace Route53
          */
         virtual Model::GetAccountLimitOutcome GetAccountLimit(const Model::GetAccountLimitRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAccountLimit that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAccountLimitOutcomeCallable GetAccountLimitCallable(const Model::GetAccountLimitRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAccountLimit that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAccountLimitAsync(const Model::GetAccountLimitRequest& request, const GetAccountLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the current status of a change batch request. The status is one of
@@ -1023,15 +805,6 @@ namespace Route53
          */
         virtual Model::GetChangeOutcome GetChange(const Model::GetChangeRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetChange that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetChangeOutcomeCallable GetChangeCallable(const Model::GetChangeRequest& request) const;
-
-        /**
-         * An Async wrapper for GetChange that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetChangeAsync(const Model::GetChangeRequest& request, const GetChangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Route 53 does not perform authorization for this API because it retrieves
@@ -1047,15 +820,6 @@ namespace Route53
          */
         virtual Model::GetCheckerIpRangesOutcome GetCheckerIpRanges(const Model::GetCheckerIpRangesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetCheckerIpRanges that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetCheckerIpRangesOutcomeCallable GetCheckerIpRangesCallable(const Model::GetCheckerIpRangesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetCheckerIpRanges that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetCheckerIpRangesAsync(const Model::GetCheckerIpRangesRequest& request, const GetCheckerIpRangesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about DNSSEC for a specific hosted zone, including the
@@ -1065,15 +829,6 @@ namespace Route53
          */
         virtual Model::GetDNSSECOutcome GetDNSSEC(const Model::GetDNSSECRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDNSSEC that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDNSSECOutcomeCallable GetDNSSECCallable(const Model::GetDNSSECRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDNSSEC that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDNSSECAsync(const Model::GetDNSSECRequest& request, const GetDNSSECResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about whether a specified geographic location is supported
@@ -1095,15 +850,6 @@ namespace Route53
          */
         virtual Model::GetGeoLocationOutcome GetGeoLocation(const Model::GetGeoLocationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetGeoLocation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetGeoLocationOutcomeCallable GetGeoLocationCallable(const Model::GetGeoLocationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetGeoLocation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetGeoLocationAsync(const Model::GetGeoLocationRequest& request, const GetGeoLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about a specified health check.</p><p><h3>See Also:</h3>  
@@ -1113,15 +859,6 @@ namespace Route53
          */
         virtual Model::GetHealthCheckOutcome GetHealthCheck(const Model::GetHealthCheckRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetHealthCheck that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetHealthCheckOutcomeCallable GetHealthCheckCallable(const Model::GetHealthCheckRequest& request) const;
-
-        /**
-         * An Async wrapper for GetHealthCheck that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetHealthCheckAsync(const Model::GetHealthCheckRequest& request, const GetHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the number of health checks that are associated with the current
@@ -1131,15 +868,6 @@ namespace Route53
          */
         virtual Model::GetHealthCheckCountOutcome GetHealthCheckCount(const Model::GetHealthCheckCountRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetHealthCheckCount that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetHealthCheckCountOutcomeCallable GetHealthCheckCountCallable(const Model::GetHealthCheckCountRequest& request) const;
-
-        /**
-         * An Async wrapper for GetHealthCheckCount that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetHealthCheckCountAsync(const Model::GetHealthCheckCountRequest& request, const GetHealthCheckCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the reason that a specified health check failed most
@@ -1149,15 +877,6 @@ namespace Route53
          */
         virtual Model::GetHealthCheckLastFailureReasonOutcome GetHealthCheckLastFailureReason(const Model::GetHealthCheckLastFailureReasonRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetHealthCheckLastFailureReason that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetHealthCheckLastFailureReasonOutcomeCallable GetHealthCheckLastFailureReasonCallable(const Model::GetHealthCheckLastFailureReasonRequest& request) const;
-
-        /**
-         * An Async wrapper for GetHealthCheckLastFailureReason that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetHealthCheckLastFailureReasonAsync(const Model::GetHealthCheckLastFailureReasonRequest& request, const GetHealthCheckLastFailureReasonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets status of a specified health check. </p>  <p>This API is
@@ -1169,15 +888,6 @@ namespace Route53
          */
         virtual Model::GetHealthCheckStatusOutcome GetHealthCheckStatus(const Model::GetHealthCheckStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetHealthCheckStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetHealthCheckStatusOutcomeCallable GetHealthCheckStatusCallable(const Model::GetHealthCheckStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for GetHealthCheckStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetHealthCheckStatusAsync(const Model::GetHealthCheckStatusRequest& request, const GetHealthCheckStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about a specified hosted zone including the four name
@@ -1187,15 +897,6 @@ namespace Route53
          */
         virtual Model::GetHostedZoneOutcome GetHostedZone(const Model::GetHostedZoneRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetHostedZone that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetHostedZoneOutcomeCallable GetHostedZoneCallable(const Model::GetHostedZoneRequest& request) const;
-
-        /**
-         * An Async wrapper for GetHostedZone that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetHostedZoneAsync(const Model::GetHostedZoneRequest& request, const GetHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the number of hosted zones that are associated with the current
@@ -1205,15 +906,6 @@ namespace Route53
          */
         virtual Model::GetHostedZoneCountOutcome GetHostedZoneCount(const Model::GetHostedZoneCountRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetHostedZoneCount that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetHostedZoneCountOutcomeCallable GetHostedZoneCountCallable(const Model::GetHostedZoneCountRequest& request) const;
-
-        /**
-         * An Async wrapper for GetHostedZoneCount that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetHostedZoneCountAsync(const Model::GetHostedZoneCountRequest& request, const GetHostedZoneCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the specified limit for a specified hosted zone, for example, the
@@ -1228,15 +920,6 @@ namespace Route53
          */
         virtual Model::GetHostedZoneLimitOutcome GetHostedZoneLimit(const Model::GetHostedZoneLimitRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetHostedZoneLimit that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetHostedZoneLimitOutcomeCallable GetHostedZoneLimitCallable(const Model::GetHostedZoneLimitRequest& request) const;
-
-        /**
-         * An Async wrapper for GetHostedZoneLimit that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetHostedZoneLimitAsync(const Model::GetHostedZoneLimitRequest& request, const GetHostedZoneLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about a specified configuration for DNS query logging.</p>
@@ -1250,15 +933,6 @@ namespace Route53
          */
         virtual Model::GetQueryLoggingConfigOutcome GetQueryLoggingConfig(const Model::GetQueryLoggingConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetQueryLoggingConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetQueryLoggingConfigOutcomeCallable GetQueryLoggingConfigCallable(const Model::GetQueryLoggingConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for GetQueryLoggingConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetQueryLoggingConfigAsync(const Model::GetQueryLoggingConfigRequest& request, const GetQueryLoggingConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about a specified reusable delegation set, including
@@ -1269,15 +943,6 @@ namespace Route53
          */
         virtual Model::GetReusableDelegationSetOutcome GetReusableDelegationSet(const Model::GetReusableDelegationSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetReusableDelegationSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetReusableDelegationSetOutcomeCallable GetReusableDelegationSetCallable(const Model::GetReusableDelegationSetRequest& request) const;
-
-        /**
-         * An Async wrapper for GetReusableDelegationSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetReusableDelegationSetAsync(const Model::GetReusableDelegationSetRequest& request, const GetReusableDelegationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the maximum number of hosted zones that you can associate with the
@@ -1291,15 +956,6 @@ namespace Route53
          */
         virtual Model::GetReusableDelegationSetLimitOutcome GetReusableDelegationSetLimit(const Model::GetReusableDelegationSetLimitRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetReusableDelegationSetLimit that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetReusableDelegationSetLimitOutcomeCallable GetReusableDelegationSetLimitCallable(const Model::GetReusableDelegationSetLimitRequest& request) const;
-
-        /**
-         * An Async wrapper for GetReusableDelegationSetLimit that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetReusableDelegationSetLimitAsync(const Model::GetReusableDelegationSetLimitRequest& request, const GetReusableDelegationSetLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about a specific traffic policy version.</p> <p>For
@@ -1312,15 +968,6 @@ namespace Route53
          */
         virtual Model::GetTrafficPolicyOutcome GetTrafficPolicy(const Model::GetTrafficPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetTrafficPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetTrafficPolicyOutcomeCallable GetTrafficPolicyCallable(const Model::GetTrafficPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetTrafficPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetTrafficPolicyAsync(const Model::GetTrafficPolicyRequest& request, const GetTrafficPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about a specified traffic policy instance.</p> 
@@ -1335,15 +982,6 @@ namespace Route53
          */
         virtual Model::GetTrafficPolicyInstanceOutcome GetTrafficPolicyInstance(const Model::GetTrafficPolicyInstanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetTrafficPolicyInstance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetTrafficPolicyInstanceOutcomeCallable GetTrafficPolicyInstanceCallable(const Model::GetTrafficPolicyInstanceRequest& request) const;
-
-        /**
-         * An Async wrapper for GetTrafficPolicyInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetTrafficPolicyInstanceAsync(const Model::GetTrafficPolicyInstanceRequest& request, const GetTrafficPolicyInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the number of traffic policy instances that are associated with the
@@ -1353,15 +991,6 @@ namespace Route53
          */
         virtual Model::GetTrafficPolicyInstanceCountOutcome GetTrafficPolicyInstanceCount(const Model::GetTrafficPolicyInstanceCountRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetTrafficPolicyInstanceCount that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetTrafficPolicyInstanceCountOutcomeCallable GetTrafficPolicyInstanceCountCallable(const Model::GetTrafficPolicyInstanceCountRequest& request) const;
-
-        /**
-         * An Async wrapper for GetTrafficPolicyInstanceCount that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetTrafficPolicyInstanceCountAsync(const Model::GetTrafficPolicyInstanceCountRequest& request, const GetTrafficPolicyInstanceCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a paginated list of location objects and their CIDR
@@ -1371,15 +1000,6 @@ namespace Route53
          */
         virtual Model::ListCidrBlocksOutcome ListCidrBlocks(const Model::ListCidrBlocksRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListCidrBlocks that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListCidrBlocksOutcomeCallable ListCidrBlocksCallable(const Model::ListCidrBlocksRequest& request) const;
-
-        /**
-         * An Async wrapper for ListCidrBlocks that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListCidrBlocksAsync(const Model::ListCidrBlocksRequest& request, const ListCidrBlocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a paginated list of CIDR collections in the Amazon Web Services
@@ -1389,15 +1009,6 @@ namespace Route53
          */
         virtual Model::ListCidrCollectionsOutcome ListCidrCollections(const Model::ListCidrCollectionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListCidrCollections that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListCidrCollectionsOutcomeCallable ListCidrCollectionsCallable(const Model::ListCidrCollectionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListCidrCollections that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListCidrCollectionsAsync(const Model::ListCidrCollectionsRequest& request, const ListCidrCollectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a paginated list of CIDR locations for the given collection (metadata
@@ -1407,15 +1018,6 @@ namespace Route53
          */
         virtual Model::ListCidrLocationsOutcome ListCidrLocations(const Model::ListCidrLocationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListCidrLocations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListCidrLocationsOutcomeCallable ListCidrLocationsCallable(const Model::ListCidrLocationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListCidrLocations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListCidrLocationsAsync(const Model::ListCidrLocationsRequest& request, const ListCidrLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list of supported geographic locations.</p> <p>Countries are
@@ -1432,15 +1034,6 @@ namespace Route53
          */
         virtual Model::ListGeoLocationsOutcome ListGeoLocations(const Model::ListGeoLocationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListGeoLocations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListGeoLocationsOutcomeCallable ListGeoLocationsCallable(const Model::ListGeoLocationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListGeoLocations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListGeoLocationsAsync(const Model::ListGeoLocationsRequest& request, const ListGeoLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieve a list of the health checks that are associated with the current
@@ -1450,15 +1043,6 @@ namespace Route53
          */
         virtual Model::ListHealthChecksOutcome ListHealthChecks(const Model::ListHealthChecksRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListHealthChecks that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListHealthChecksOutcomeCallable ListHealthChecksCallable(const Model::ListHealthChecksRequest& request) const;
-
-        /**
-         * An Async wrapper for ListHealthChecks that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListHealthChecksAsync(const Model::ListHealthChecksRequest& request, const ListHealthChecksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list of the public and private hosted zones that are associated
@@ -1472,15 +1056,6 @@ namespace Route53
          */
         virtual Model::ListHostedZonesOutcome ListHostedZones(const Model::ListHostedZonesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListHostedZones that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListHostedZonesOutcomeCallable ListHostedZonesCallable(const Model::ListHostedZonesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListHostedZones that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListHostedZonesAsync(const Model::ListHostedZonesRequest& request, const ListHostedZonesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list of your hosted zones in lexicographic order. The response
@@ -1527,15 +1102,6 @@ namespace Route53
          */
         virtual Model::ListHostedZonesByNameOutcome ListHostedZonesByName(const Model::ListHostedZonesByNameRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListHostedZonesByName that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListHostedZonesByNameOutcomeCallable ListHostedZonesByNameCallable(const Model::ListHostedZonesByNameRequest& request) const;
-
-        /**
-         * An Async wrapper for ListHostedZonesByName that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListHostedZonesByNameAsync(const Model::ListHostedZonesByNameRequest& request, const ListHostedZonesByNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all the private hosted zones that a specified VPC is associated with,
@@ -1565,15 +1131,6 @@ namespace Route53
          */
         virtual Model::ListHostedZonesByVPCOutcome ListHostedZonesByVPC(const Model::ListHostedZonesByVPCRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListHostedZonesByVPC that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListHostedZonesByVPCOutcomeCallable ListHostedZonesByVPCCallable(const Model::ListHostedZonesByVPCRequest& request) const;
-
-        /**
-         * An Async wrapper for ListHostedZonesByVPC that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListHostedZonesByVPCAsync(const Model::ListHostedZonesByVPCRequest& request, const ListHostedZonesByVPCResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the configurations for DNS query logging that are associated with the
@@ -1590,15 +1147,6 @@ namespace Route53
          */
         virtual Model::ListQueryLoggingConfigsOutcome ListQueryLoggingConfigs(const Model::ListQueryLoggingConfigsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListQueryLoggingConfigs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListQueryLoggingConfigsOutcomeCallable ListQueryLoggingConfigsCallable(const Model::ListQueryLoggingConfigsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListQueryLoggingConfigs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListQueryLoggingConfigsAsync(const Model::ListQueryLoggingConfigsRequest& request, const ListQueryLoggingConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the resource record sets in a specified hosted zone.</p> <p>
@@ -1646,15 +1194,6 @@ namespace Route53
          */
         virtual Model::ListResourceRecordSetsOutcome ListResourceRecordSets(const Model::ListResourceRecordSetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListResourceRecordSets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListResourceRecordSetsOutcomeCallable ListResourceRecordSetsCallable(const Model::ListResourceRecordSetsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListResourceRecordSets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListResourceRecordSetsAsync(const Model::ListResourceRecordSetsRequest& request, const ListResourceRecordSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list of the reusable delegation sets that are associated with the
@@ -1664,15 +1203,6 @@ namespace Route53
          */
         virtual Model::ListReusableDelegationSetsOutcome ListReusableDelegationSets(const Model::ListReusableDelegationSetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListReusableDelegationSets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListReusableDelegationSetsOutcomeCallable ListReusableDelegationSetsCallable(const Model::ListReusableDelegationSetsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListReusableDelegationSets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListReusableDelegationSetsAsync(const Model::ListReusableDelegationSetsRequest& request, const ListReusableDelegationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists tags for one health check or hosted zone. </p> <p>For information about
@@ -1685,15 +1215,6 @@ namespace Route53
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists tags for up to 10 health checks or hosted zones.</p> <p>For information
@@ -1706,15 +1227,6 @@ namespace Route53
          */
         virtual Model::ListTagsForResourcesOutcome ListTagsForResources(const Model::ListTagsForResourcesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResources that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourcesOutcomeCallable ListTagsForResourcesCallable(const Model::ListTagsForResourcesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResources that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourcesAsync(const Model::ListTagsForResourcesRequest& request, const ListTagsForResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the latest version for every traffic policy that is
@@ -1729,15 +1241,6 @@ namespace Route53
          */
         virtual Model::ListTrafficPoliciesOutcome ListTrafficPolicies(const Model::ListTrafficPoliciesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTrafficPolicies that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTrafficPoliciesOutcomeCallable ListTrafficPoliciesCallable(const Model::ListTrafficPoliciesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTrafficPolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTrafficPoliciesAsync(const Model::ListTrafficPoliciesRequest& request, const ListTrafficPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the traffic policy instances that you created by using
@@ -1754,15 +1257,6 @@ namespace Route53
          */
         virtual Model::ListTrafficPolicyInstancesOutcome ListTrafficPolicyInstances(const Model::ListTrafficPolicyInstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTrafficPolicyInstances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTrafficPolicyInstancesOutcomeCallable ListTrafficPolicyInstancesCallable(const Model::ListTrafficPolicyInstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTrafficPolicyInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTrafficPolicyInstancesAsync(const Model::ListTrafficPolicyInstancesRequest& request, const ListTrafficPolicyInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the traffic policy instances that you created in a
@@ -1780,15 +1274,6 @@ namespace Route53
          */
         virtual Model::ListTrafficPolicyInstancesByHostedZoneOutcome ListTrafficPolicyInstancesByHostedZone(const Model::ListTrafficPolicyInstancesByHostedZoneRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTrafficPolicyInstancesByHostedZone that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTrafficPolicyInstancesByHostedZoneOutcomeCallable ListTrafficPolicyInstancesByHostedZoneCallable(const Model::ListTrafficPolicyInstancesByHostedZoneRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTrafficPolicyInstancesByHostedZone that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTrafficPolicyInstancesByHostedZoneAsync(const Model::ListTrafficPolicyInstancesByHostedZoneRequest& request, const ListTrafficPolicyInstancesByHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the traffic policy instances that you created by using
@@ -1806,15 +1291,6 @@ namespace Route53
          */
         virtual Model::ListTrafficPolicyInstancesByPolicyOutcome ListTrafficPolicyInstancesByPolicy(const Model::ListTrafficPolicyInstancesByPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTrafficPolicyInstancesByPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTrafficPolicyInstancesByPolicyOutcomeCallable ListTrafficPolicyInstancesByPolicyCallable(const Model::ListTrafficPolicyInstancesByPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTrafficPolicyInstancesByPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTrafficPolicyInstancesByPolicyAsync(const Model::ListTrafficPolicyInstancesByPolicyRequest& request, const ListTrafficPolicyInstancesByPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about all of the versions for a specified traffic
@@ -1825,15 +1301,6 @@ namespace Route53
          */
         virtual Model::ListTrafficPolicyVersionsOutcome ListTrafficPolicyVersions(const Model::ListTrafficPolicyVersionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTrafficPolicyVersions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTrafficPolicyVersionsOutcomeCallable ListTrafficPolicyVersionsCallable(const Model::ListTrafficPolicyVersionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTrafficPolicyVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTrafficPolicyVersionsAsync(const Model::ListTrafficPolicyVersionsRequest& request, const ListTrafficPolicyVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of the VPCs that were created by other accounts and that can be
@@ -1847,15 +1314,6 @@ namespace Route53
          */
         virtual Model::ListVPCAssociationAuthorizationsOutcome ListVPCAssociationAuthorizations(const Model::ListVPCAssociationAuthorizationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListVPCAssociationAuthorizations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListVPCAssociationAuthorizationsOutcomeCallable ListVPCAssociationAuthorizationsCallable(const Model::ListVPCAssociationAuthorizationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListVPCAssociationAuthorizations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListVPCAssociationAuthorizationsAsync(const Model::ListVPCAssociationAuthorizationsRequest& request, const ListVPCAssociationAuthorizationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the value that Amazon Route 53 returns in response to a DNS request for
@@ -1867,15 +1325,6 @@ namespace Route53
          */
         virtual Model::TestDNSAnswerOutcome TestDNSAnswer(const Model::TestDNSAnswerRequest& request) const;
 
-        /**
-         * A Callable wrapper for TestDNSAnswer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TestDNSAnswerOutcomeCallable TestDNSAnswerCallable(const Model::TestDNSAnswerRequest& request) const;
-
-        /**
-         * An Async wrapper for TestDNSAnswer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TestDNSAnswerAsync(const Model::TestDNSAnswerRequest& request, const TestDNSAnswerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an existing health check. Note that some values can't be updated.
@@ -1888,15 +1337,6 @@ namespace Route53
          */
         virtual Model::UpdateHealthCheckOutcome UpdateHealthCheck(const Model::UpdateHealthCheckRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateHealthCheck that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateHealthCheckOutcomeCallable UpdateHealthCheckCallable(const Model::UpdateHealthCheckRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateHealthCheck that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateHealthCheckAsync(const Model::UpdateHealthCheckRequest& request, const UpdateHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the comment for a specified hosted zone.</p><p><h3>See Also:</h3>  
@@ -1906,15 +1346,6 @@ namespace Route53
          */
         virtual Model::UpdateHostedZoneCommentOutcome UpdateHostedZoneComment(const Model::UpdateHostedZoneCommentRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateHostedZoneComment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateHostedZoneCommentOutcomeCallable UpdateHostedZoneCommentCallable(const Model::UpdateHostedZoneCommentRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateHostedZoneComment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateHostedZoneCommentAsync(const Model::UpdateHostedZoneCommentRequest& request, const UpdateHostedZoneCommentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the comment for a specified traffic policy version.</p><p><h3>See
@@ -1924,15 +1355,6 @@ namespace Route53
          */
         virtual Model::UpdateTrafficPolicyCommentOutcome UpdateTrafficPolicyComment(const Model::UpdateTrafficPolicyCommentRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateTrafficPolicyComment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateTrafficPolicyCommentOutcomeCallable UpdateTrafficPolicyCommentCallable(const Model::UpdateTrafficPolicyCommentRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateTrafficPolicyComment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateTrafficPolicyCommentAsync(const Model::UpdateTrafficPolicyCommentRequest& request, const UpdateTrafficPolicyCommentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the resource record sets in a specified hosted zone that were created
@@ -1954,15 +1376,6 @@ namespace Route53
          */
         virtual Model::UpdateTrafficPolicyInstanceOutcome UpdateTrafficPolicyInstance(const Model::UpdateTrafficPolicyInstanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateTrafficPolicyInstance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateTrafficPolicyInstanceOutcomeCallable UpdateTrafficPolicyInstanceCallable(const Model::UpdateTrafficPolicyInstanceRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateTrafficPolicyInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateTrafficPolicyInstanceAsync(const Model::UpdateTrafficPolicyInstanceRequest& request, const UpdateTrafficPolicyInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
         void OverrideEndpoint(const Aws::String& endpoint);

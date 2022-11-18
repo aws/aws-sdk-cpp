@@ -7,8 +7,10 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ssm/SSMServiceClientModel.h>
+#include <aws/ssm/SSMLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -100,6 +102,47 @@ namespace SSM
         virtual ~SSMClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Adds or overwrites one or more tags for the specified resource. <i>Tags</i>
          * are metadata that you can assign to your automations, documents, managed nodes,
@@ -129,15 +172,6 @@ namespace SSM
          */
         virtual Model::AddTagsToResourceOutcome AddTagsToResource(const Model::AddTagsToResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddTagsToResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddTagsToResourceOutcomeCallable AddTagsToResourceCallable(const Model::AddTagsToResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for AddTagsToResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddTagsToResourceAsync(const Model::AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates a related item to a Systems Manager OpsCenter OpsItem. For
@@ -149,15 +183,6 @@ namespace SSM
          */
         virtual Model::AssociateOpsItemRelatedItemOutcome AssociateOpsItemRelatedItem(const Model::AssociateOpsItemRelatedItemRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateOpsItemRelatedItem that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateOpsItemRelatedItemOutcomeCallable AssociateOpsItemRelatedItemCallable(const Model::AssociateOpsItemRelatedItemRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateOpsItemRelatedItem that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateOpsItemRelatedItemAsync(const Model::AssociateOpsItemRelatedItemRequest& request, const AssociateOpsItemRelatedItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Attempts to cancel the command specified by the Command ID. There is no
@@ -168,15 +193,6 @@ namespace SSM
          */
         virtual Model::CancelCommandOutcome CancelCommand(const Model::CancelCommandRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelCommand that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelCommandOutcomeCallable CancelCommandCallable(const Model::CancelCommandRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelCommand that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelCommandAsync(const Model::CancelCommandRequest& request, const CancelCommandResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops a maintenance window execution that is already in progress and cancels
@@ -187,15 +203,6 @@ namespace SSM
          */
         virtual Model::CancelMaintenanceWindowExecutionOutcome CancelMaintenanceWindowExecution(const Model::CancelMaintenanceWindowExecutionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelMaintenanceWindowExecution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelMaintenanceWindowExecutionOutcomeCallable CancelMaintenanceWindowExecutionCallable(const Model::CancelMaintenanceWindowExecutionRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelMaintenanceWindowExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelMaintenanceWindowExecutionAsync(const Model::CancelMaintenanceWindowExecutionRequest& request, const CancelMaintenanceWindowExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Generates an activation code and activation ID you can use to register your
@@ -216,15 +223,6 @@ namespace SSM
          */
         virtual Model::CreateActivationOutcome CreateActivation(const Model::CreateActivationRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateActivation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateActivationOutcomeCallable CreateActivationCallable(const Model::CreateActivationRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateActivation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateActivationAsync(const Model::CreateActivationRequest& request, const CreateActivationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>A State Manager association defines the state that you want to maintain on
@@ -245,15 +243,6 @@ namespace SSM
          */
         virtual Model::CreateAssociationOutcome CreateAssociation(const Model::CreateAssociationRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateAssociationOutcomeCallable CreateAssociationCallable(const Model::CreateAssociationRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateAssociationAsync(const Model::CreateAssociationRequest& request, const CreateAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates the specified Amazon Web Services Systems Manager document (SSM
@@ -268,15 +257,6 @@ namespace SSM
          */
         virtual Model::CreateAssociationBatchOutcome CreateAssociationBatch(const Model::CreateAssociationBatchRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateAssociationBatch that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateAssociationBatchOutcomeCallable CreateAssociationBatchCallable(const Model::CreateAssociationBatchRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateAssociationBatch that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateAssociationBatchAsync(const Model::CreateAssociationBatchRequest& request, const CreateAssociationBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a Amazon Web Services Systems Manager (SSM document). An SSM document
@@ -291,15 +271,6 @@ namespace SSM
          */
         virtual Model::CreateDocumentOutcome CreateDocument(const Model::CreateDocumentRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDocument that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDocumentOutcomeCallable CreateDocumentCallable(const Model::CreateDocumentRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDocument that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDocumentAsync(const Model::CreateDocumentRequest& request, const CreateDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new maintenance window.</p>  <p>The value you specify for
@@ -315,15 +286,6 @@ namespace SSM
          */
         virtual Model::CreateMaintenanceWindowOutcome CreateMaintenanceWindow(const Model::CreateMaintenanceWindowRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateMaintenanceWindow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateMaintenanceWindowOutcomeCallable CreateMaintenanceWindowCallable(const Model::CreateMaintenanceWindowRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateMaintenanceWindow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateMaintenanceWindowAsync(const Model::CreateMaintenanceWindowRequest& request, const CreateMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new OpsItem. You must have permission in Identity and Access
@@ -342,15 +304,6 @@ namespace SSM
          */
         virtual Model::CreateOpsItemOutcome CreateOpsItem(const Model::CreateOpsItemRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateOpsItem that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateOpsItemOutcomeCallable CreateOpsItemCallable(const Model::CreateOpsItemRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateOpsItem that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateOpsItemAsync(const Model::CreateOpsItemRequest& request, const CreateOpsItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>If you create a new application in Application Manager, Amazon Web Services
@@ -361,15 +314,6 @@ namespace SSM
          */
         virtual Model::CreateOpsMetadataOutcome CreateOpsMetadata(const Model::CreateOpsMetadataRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateOpsMetadata that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateOpsMetadataOutcomeCallable CreateOpsMetadataCallable(const Model::CreateOpsMetadataRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateOpsMetadata that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateOpsMetadataAsync(const Model::CreateOpsMetadataRequest& request, const CreateOpsMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a patch baseline.</p>  <p>For information about valid key-value
@@ -380,15 +324,6 @@ namespace SSM
          */
         virtual Model::CreatePatchBaselineOutcome CreatePatchBaseline(const Model::CreatePatchBaselineRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreatePatchBaseline that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreatePatchBaselineOutcomeCallable CreatePatchBaselineCallable(const Model::CreatePatchBaselineRequest& request) const;
-
-        /**
-         * An Async wrapper for CreatePatchBaseline that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreatePatchBaselineAsync(const Model::CreatePatchBaselineRequest& request, const CreatePatchBaselineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>A resource data sync helps you view data from multiple sources in a single
@@ -422,15 +357,6 @@ namespace SSM
          */
         virtual Model::CreateResourceDataSyncOutcome CreateResourceDataSync(const Model::CreateResourceDataSyncRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateResourceDataSync that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateResourceDataSyncOutcomeCallable CreateResourceDataSyncCallable(const Model::CreateResourceDataSyncRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateResourceDataSync that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateResourceDataSyncAsync(const Model::CreateResourceDataSyncRequest& request, const CreateResourceDataSyncResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an activation. You aren't required to delete an activation. If you
@@ -442,15 +368,6 @@ namespace SSM
          */
         virtual Model::DeleteActivationOutcome DeleteActivation(const Model::DeleteActivationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteActivation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteActivationOutcomeCallable DeleteActivationCallable(const Model::DeleteActivationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteActivation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteActivationAsync(const Model::DeleteActivationRequest& request, const DeleteActivationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates the specified Amazon Web Services Systems Manager document (SSM
@@ -466,15 +383,6 @@ namespace SSM
          */
         virtual Model::DeleteAssociationOutcome DeleteAssociation(const Model::DeleteAssociationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAssociationOutcomeCallable DeleteAssociationCallable(const Model::DeleteAssociationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAssociationAsync(const Model::DeleteAssociationRequest& request, const DeleteAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the Amazon Web Services Systems Manager document (SSM document) and
@@ -487,15 +395,6 @@ namespace SSM
          */
         virtual Model::DeleteDocumentOutcome DeleteDocument(const Model::DeleteDocumentRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDocument that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDocumentOutcomeCallable DeleteDocumentCallable(const Model::DeleteDocumentRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDocument that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDocumentAsync(const Model::DeleteDocumentRequest& request, const DeleteDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Delete a custom inventory type or the data associated with a custom Inventory
@@ -506,15 +405,6 @@ namespace SSM
          */
         virtual Model::DeleteInventoryOutcome DeleteInventory(const Model::DeleteInventoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteInventory that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteInventoryOutcomeCallable DeleteInventoryCallable(const Model::DeleteInventoryRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteInventory that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteInventoryAsync(const Model::DeleteInventoryRequest& request, const DeleteInventoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a maintenance window.</p><p><h3>See Also:</h3>   <a
@@ -523,15 +413,6 @@ namespace SSM
          */
         virtual Model::DeleteMaintenanceWindowOutcome DeleteMaintenanceWindow(const Model::DeleteMaintenanceWindowRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteMaintenanceWindow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteMaintenanceWindowOutcomeCallable DeleteMaintenanceWindowCallable(const Model::DeleteMaintenanceWindowRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteMaintenanceWindow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteMaintenanceWindowAsync(const Model::DeleteMaintenanceWindowRequest& request, const DeleteMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Delete OpsMetadata related to an application.</p><p><h3>See Also:</h3>   <a
@@ -540,15 +421,6 @@ namespace SSM
          */
         virtual Model::DeleteOpsMetadataOutcome DeleteOpsMetadata(const Model::DeleteOpsMetadataRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteOpsMetadata that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteOpsMetadataOutcomeCallable DeleteOpsMetadataCallable(const Model::DeleteOpsMetadataRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteOpsMetadata that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteOpsMetadataAsync(const Model::DeleteOpsMetadataRequest& request, const DeleteOpsMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Delete a parameter from the system. After deleting a parameter, wait for at
@@ -559,15 +431,6 @@ namespace SSM
          */
         virtual Model::DeleteParameterOutcome DeleteParameter(const Model::DeleteParameterRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteParameter that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteParameterOutcomeCallable DeleteParameterCallable(const Model::DeleteParameterRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteParameter that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteParameterAsync(const Model::DeleteParameterRequest& request, const DeleteParameterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Delete a list of parameters. After deleting a parameter, wait for at least 30
@@ -577,15 +440,6 @@ namespace SSM
          */
         virtual Model::DeleteParametersOutcome DeleteParameters(const Model::DeleteParametersRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteParameters that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteParametersOutcomeCallable DeleteParametersCallable(const Model::DeleteParametersRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteParameters that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteParametersAsync(const Model::DeleteParametersRequest& request, const DeleteParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a patch baseline.</p><p><h3>See Also:</h3>   <a
@@ -594,15 +448,6 @@ namespace SSM
          */
         virtual Model::DeletePatchBaselineOutcome DeletePatchBaseline(const Model::DeletePatchBaselineRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeletePatchBaseline that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeletePatchBaselineOutcomeCallable DeletePatchBaselineCallable(const Model::DeletePatchBaselineRequest& request) const;
-
-        /**
-         * An Async wrapper for DeletePatchBaseline that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeletePatchBaselineAsync(const Model::DeletePatchBaselineRequest& request, const DeletePatchBaselineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a resource data sync configuration. After the configuration is
@@ -614,15 +459,6 @@ namespace SSM
          */
         virtual Model::DeleteResourceDataSyncOutcome DeleteResourceDataSync(const Model::DeleteResourceDataSyncRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteResourceDataSync that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteResourceDataSyncOutcomeCallable DeleteResourceDataSyncCallable(const Model::DeleteResourceDataSyncRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteResourceDataSync that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteResourceDataSyncAsync(const Model::DeleteResourceDataSyncRequest& request, const DeleteResourceDataSyncResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a Systems Manager resource policy. A resource policy helps you to
@@ -637,15 +473,6 @@ namespace SSM
          */
         virtual Model::DeleteResourcePolicyOutcome DeleteResourcePolicy(const Model::DeleteResourcePolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteResourcePolicyOutcomeCallable DeleteResourcePolicyCallable(const Model::DeleteResourcePolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteResourcePolicyAsync(const Model::DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the server or virtual machine from the list of registered servers.
@@ -657,15 +484,6 @@ namespace SSM
          */
         virtual Model::DeregisterManagedInstanceOutcome DeregisterManagedInstance(const Model::DeregisterManagedInstanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeregisterManagedInstance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeregisterManagedInstanceOutcomeCallable DeregisterManagedInstanceCallable(const Model::DeregisterManagedInstanceRequest& request) const;
-
-        /**
-         * An Async wrapper for DeregisterManagedInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeregisterManagedInstanceAsync(const Model::DeregisterManagedInstanceRequest& request, const DeregisterManagedInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes a patch group from a patch baseline.</p><p><h3>See Also:</h3>   <a
@@ -674,15 +492,6 @@ namespace SSM
          */
         virtual Model::DeregisterPatchBaselineForPatchGroupOutcome DeregisterPatchBaselineForPatchGroup(const Model::DeregisterPatchBaselineForPatchGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeregisterPatchBaselineForPatchGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeregisterPatchBaselineForPatchGroupOutcomeCallable DeregisterPatchBaselineForPatchGroupCallable(const Model::DeregisterPatchBaselineForPatchGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DeregisterPatchBaselineForPatchGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeregisterPatchBaselineForPatchGroupAsync(const Model::DeregisterPatchBaselineForPatchGroupRequest& request, const DeregisterPatchBaselineForPatchGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes a target from a maintenance window.</p><p><h3>See Also:</h3>   <a
@@ -691,15 +500,6 @@ namespace SSM
          */
         virtual Model::DeregisterTargetFromMaintenanceWindowOutcome DeregisterTargetFromMaintenanceWindow(const Model::DeregisterTargetFromMaintenanceWindowRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeregisterTargetFromMaintenanceWindow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeregisterTargetFromMaintenanceWindowOutcomeCallable DeregisterTargetFromMaintenanceWindowCallable(const Model::DeregisterTargetFromMaintenanceWindowRequest& request) const;
-
-        /**
-         * An Async wrapper for DeregisterTargetFromMaintenanceWindow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeregisterTargetFromMaintenanceWindowAsync(const Model::DeregisterTargetFromMaintenanceWindowRequest& request, const DeregisterTargetFromMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes a task from a maintenance window.</p><p><h3>See Also:</h3>   <a
@@ -708,15 +508,6 @@ namespace SSM
          */
         virtual Model::DeregisterTaskFromMaintenanceWindowOutcome DeregisterTaskFromMaintenanceWindow(const Model::DeregisterTaskFromMaintenanceWindowRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeregisterTaskFromMaintenanceWindow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeregisterTaskFromMaintenanceWindowOutcomeCallable DeregisterTaskFromMaintenanceWindowCallable(const Model::DeregisterTaskFromMaintenanceWindowRequest& request) const;
-
-        /**
-         * An Async wrapper for DeregisterTaskFromMaintenanceWindow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeregisterTaskFromMaintenanceWindowAsync(const Model::DeregisterTaskFromMaintenanceWindowRequest& request, const DeregisterTaskFromMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes details about the activation, such as the date and time the
@@ -728,15 +519,6 @@ namespace SSM
          */
         virtual Model::DescribeActivationsOutcome DescribeActivations(const Model::DescribeActivationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeActivations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeActivationsOutcomeCallable DescribeActivationsCallable(const Model::DescribeActivationsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeActivations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeActivationsAsync(const Model::DescribeActivationsRequest& request, const DescribeActivationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the association for the specified target or managed node. If you
@@ -748,15 +530,6 @@ namespace SSM
          */
         virtual Model::DescribeAssociationOutcome DescribeAssociation(const Model::DescribeAssociationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAssociationOutcomeCallable DescribeAssociationCallable(const Model::DescribeAssociationRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAssociationAsync(const Model::DescribeAssociationRequest& request, const DescribeAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Views information about a specific execution of a specific
@@ -766,15 +539,6 @@ namespace SSM
          */
         virtual Model::DescribeAssociationExecutionTargetsOutcome DescribeAssociationExecutionTargets(const Model::DescribeAssociationExecutionTargetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAssociationExecutionTargets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAssociationExecutionTargetsOutcomeCallable DescribeAssociationExecutionTargetsCallable(const Model::DescribeAssociationExecutionTargetsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAssociationExecutionTargets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAssociationExecutionTargetsAsync(const Model::DescribeAssociationExecutionTargetsRequest& request, const DescribeAssociationExecutionTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Views all executions for a specific association ID. </p><p><h3>See Also:</h3>
@@ -784,15 +548,6 @@ namespace SSM
          */
         virtual Model::DescribeAssociationExecutionsOutcome DescribeAssociationExecutions(const Model::DescribeAssociationExecutionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAssociationExecutions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAssociationExecutionsOutcomeCallable DescribeAssociationExecutionsCallable(const Model::DescribeAssociationExecutionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAssociationExecutions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAssociationExecutionsAsync(const Model::DescribeAssociationExecutionsRequest& request, const DescribeAssociationExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides details about all active and terminated Automation
@@ -802,15 +557,6 @@ namespace SSM
          */
         virtual Model::DescribeAutomationExecutionsOutcome DescribeAutomationExecutions(const Model::DescribeAutomationExecutionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAutomationExecutions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAutomationExecutionsOutcomeCallable DescribeAutomationExecutionsCallable(const Model::DescribeAutomationExecutionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAutomationExecutions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAutomationExecutionsAsync(const Model::DescribeAutomationExecutionsRequest& request, const DescribeAutomationExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Information about all active and terminated step executions in an Automation
@@ -820,15 +566,6 @@ namespace SSM
          */
         virtual Model::DescribeAutomationStepExecutionsOutcome DescribeAutomationStepExecutions(const Model::DescribeAutomationStepExecutionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAutomationStepExecutions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAutomationStepExecutionsOutcomeCallable DescribeAutomationStepExecutionsCallable(const Model::DescribeAutomationStepExecutionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAutomationStepExecutions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAutomationStepExecutionsAsync(const Model::DescribeAutomationStepExecutionsRequest& request, const DescribeAutomationStepExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all patches eligible to be included in a patch baseline.</p><p><h3>See
@@ -838,15 +575,6 @@ namespace SSM
          */
         virtual Model::DescribeAvailablePatchesOutcome DescribeAvailablePatches(const Model::DescribeAvailablePatchesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAvailablePatches that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAvailablePatchesOutcomeCallable DescribeAvailablePatchesCallable(const Model::DescribeAvailablePatchesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAvailablePatches that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAvailablePatchesAsync(const Model::DescribeAvailablePatchesRequest& request, const DescribeAvailablePatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified Amazon Web Services Systems Manager document (SSM
@@ -856,15 +584,6 @@ namespace SSM
          */
         virtual Model::DescribeDocumentOutcome DescribeDocument(const Model::DescribeDocumentRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDocument that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDocumentOutcomeCallable DescribeDocumentCallable(const Model::DescribeDocumentRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDocument that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDocumentAsync(const Model::DescribeDocumentRequest& request, const DescribeDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the permissions for a Amazon Web Services Systems Manager document
@@ -876,15 +595,6 @@ namespace SSM
          */
         virtual Model::DescribeDocumentPermissionOutcome DescribeDocumentPermission(const Model::DescribeDocumentPermissionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDocumentPermission that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDocumentPermissionOutcomeCallable DescribeDocumentPermissionCallable(const Model::DescribeDocumentPermissionRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDocumentPermission that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDocumentPermissionAsync(const Model::DescribeDocumentPermissionRequest& request, const DescribeDocumentPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>All associations for the managed node(s).</p><p><h3>See Also:</h3>   <a
@@ -893,15 +603,6 @@ namespace SSM
          */
         virtual Model::DescribeEffectiveInstanceAssociationsOutcome DescribeEffectiveInstanceAssociations(const Model::DescribeEffectiveInstanceAssociationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEffectiveInstanceAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEffectiveInstanceAssociationsOutcomeCallable DescribeEffectiveInstanceAssociationsCallable(const Model::DescribeEffectiveInstanceAssociationsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEffectiveInstanceAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEffectiveInstanceAssociationsAsync(const Model::DescribeEffectiveInstanceAssociationsRequest& request, const DescribeEffectiveInstanceAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the current effective patches (the patch and the approval state)
@@ -912,15 +613,6 @@ namespace SSM
          */
         virtual Model::DescribeEffectivePatchesForPatchBaselineOutcome DescribeEffectivePatchesForPatchBaseline(const Model::DescribeEffectivePatchesForPatchBaselineRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEffectivePatchesForPatchBaseline that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEffectivePatchesForPatchBaselineOutcomeCallable DescribeEffectivePatchesForPatchBaselineCallable(const Model::DescribeEffectivePatchesForPatchBaselineRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEffectivePatchesForPatchBaseline that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEffectivePatchesForPatchBaselineAsync(const Model::DescribeEffectivePatchesForPatchBaselineRequest& request, const DescribeEffectivePatchesForPatchBaselineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The status of the associations for the managed node(s).</p><p><h3>See
@@ -930,15 +622,6 @@ namespace SSM
          */
         virtual Model::DescribeInstanceAssociationsStatusOutcome DescribeInstanceAssociationsStatus(const Model::DescribeInstanceAssociationsStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeInstanceAssociationsStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeInstanceAssociationsStatusOutcomeCallable DescribeInstanceAssociationsStatusCallable(const Model::DescribeInstanceAssociationsStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeInstanceAssociationsStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeInstanceAssociationsStatusAsync(const Model::DescribeInstanceAssociationsStatusRequest& request, const DescribeInstanceAssociationsStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more of your managed nodes, including information about the
@@ -956,15 +639,6 @@ namespace SSM
          */
         virtual Model::DescribeInstanceInformationOutcome DescribeInstanceInformation(const Model::DescribeInstanceInformationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeInstanceInformation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeInstanceInformationOutcomeCallable DescribeInstanceInformationCallable(const Model::DescribeInstanceInformationRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeInstanceInformation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeInstanceInformationAsync(const Model::DescribeInstanceInformationRequest& request, const DescribeInstanceInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the high-level patch state of one or more managed
@@ -974,15 +648,6 @@ namespace SSM
          */
         virtual Model::DescribeInstancePatchStatesOutcome DescribeInstancePatchStates(const Model::DescribeInstancePatchStatesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeInstancePatchStates that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeInstancePatchStatesOutcomeCallable DescribeInstancePatchStatesCallable(const Model::DescribeInstancePatchStatesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeInstancePatchStates that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeInstancePatchStatesAsync(const Model::DescribeInstancePatchStatesRequest& request, const DescribeInstancePatchStatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the high-level patch state for the managed nodes in the specified
@@ -992,15 +657,6 @@ namespace SSM
          */
         virtual Model::DescribeInstancePatchStatesForPatchGroupOutcome DescribeInstancePatchStatesForPatchGroup(const Model::DescribeInstancePatchStatesForPatchGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeInstancePatchStatesForPatchGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeInstancePatchStatesForPatchGroupOutcomeCallable DescribeInstancePatchStatesForPatchGroupCallable(const Model::DescribeInstancePatchStatesForPatchGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeInstancePatchStatesForPatchGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeInstancePatchStatesForPatchGroupAsync(const Model::DescribeInstancePatchStatesForPatchGroupRequest& request, const DescribeInstancePatchStatesForPatchGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about the patches on the specified managed node and
@@ -1011,15 +667,6 @@ namespace SSM
          */
         virtual Model::DescribeInstancePatchesOutcome DescribeInstancePatches(const Model::DescribeInstancePatchesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeInstancePatches that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeInstancePatchesOutcomeCallable DescribeInstancePatchesCallable(const Model::DescribeInstancePatchesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeInstancePatches that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeInstancePatchesAsync(const Model::DescribeInstancePatchesRequest& request, const DescribeInstancePatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a specific delete inventory operation.</p><p><h3>See Also:</h3>  
@@ -1029,15 +676,6 @@ namespace SSM
          */
         virtual Model::DescribeInventoryDeletionsOutcome DescribeInventoryDeletions(const Model::DescribeInventoryDeletionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeInventoryDeletions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeInventoryDeletionsOutcomeCallable DescribeInventoryDeletionsCallable(const Model::DescribeInventoryDeletionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeInventoryDeletions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeInventoryDeletionsAsync(const Model::DescribeInventoryDeletionsRequest& request, const DescribeInventoryDeletionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the individual task executions (one per target) for a particular
@@ -1048,15 +686,6 @@ namespace SSM
          */
         virtual Model::DescribeMaintenanceWindowExecutionTaskInvocationsOutcome DescribeMaintenanceWindowExecutionTaskInvocations(const Model::DescribeMaintenanceWindowExecutionTaskInvocationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeMaintenanceWindowExecutionTaskInvocations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeMaintenanceWindowExecutionTaskInvocationsOutcomeCallable DescribeMaintenanceWindowExecutionTaskInvocationsCallable(const Model::DescribeMaintenanceWindowExecutionTaskInvocationsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeMaintenanceWindowExecutionTaskInvocations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeMaintenanceWindowExecutionTaskInvocationsAsync(const Model::DescribeMaintenanceWindowExecutionTaskInvocationsRequest& request, const DescribeMaintenanceWindowExecutionTaskInvocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>For a given maintenance window execution, lists the tasks that were
@@ -1066,15 +695,6 @@ namespace SSM
          */
         virtual Model::DescribeMaintenanceWindowExecutionTasksOutcome DescribeMaintenanceWindowExecutionTasks(const Model::DescribeMaintenanceWindowExecutionTasksRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeMaintenanceWindowExecutionTasks that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeMaintenanceWindowExecutionTasksOutcomeCallable DescribeMaintenanceWindowExecutionTasksCallable(const Model::DescribeMaintenanceWindowExecutionTasksRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeMaintenanceWindowExecutionTasks that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeMaintenanceWindowExecutionTasksAsync(const Model::DescribeMaintenanceWindowExecutionTasksRequest& request, const DescribeMaintenanceWindowExecutionTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the executions of a maintenance window. This includes information about
@@ -1086,15 +706,6 @@ namespace SSM
          */
         virtual Model::DescribeMaintenanceWindowExecutionsOutcome DescribeMaintenanceWindowExecutions(const Model::DescribeMaintenanceWindowExecutionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeMaintenanceWindowExecutions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeMaintenanceWindowExecutionsOutcomeCallable DescribeMaintenanceWindowExecutionsCallable(const Model::DescribeMaintenanceWindowExecutionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeMaintenanceWindowExecutions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeMaintenanceWindowExecutionsAsync(const Model::DescribeMaintenanceWindowExecutionsRequest& request, const DescribeMaintenanceWindowExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about upcoming executions of a maintenance
@@ -1104,15 +715,6 @@ namespace SSM
          */
         virtual Model::DescribeMaintenanceWindowScheduleOutcome DescribeMaintenanceWindowSchedule(const Model::DescribeMaintenanceWindowScheduleRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeMaintenanceWindowSchedule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeMaintenanceWindowScheduleOutcomeCallable DescribeMaintenanceWindowScheduleCallable(const Model::DescribeMaintenanceWindowScheduleRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeMaintenanceWindowSchedule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeMaintenanceWindowScheduleAsync(const Model::DescribeMaintenanceWindowScheduleRequest& request, const DescribeMaintenanceWindowScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the targets registered with the maintenance window.</p><p><h3>See
@@ -1122,15 +724,6 @@ namespace SSM
          */
         virtual Model::DescribeMaintenanceWindowTargetsOutcome DescribeMaintenanceWindowTargets(const Model::DescribeMaintenanceWindowTargetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeMaintenanceWindowTargets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeMaintenanceWindowTargetsOutcomeCallable DescribeMaintenanceWindowTargetsCallable(const Model::DescribeMaintenanceWindowTargetsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeMaintenanceWindowTargets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeMaintenanceWindowTargetsAsync(const Model::DescribeMaintenanceWindowTargetsRequest& request, const DescribeMaintenanceWindowTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the tasks in a maintenance window.</p>  <p>For maintenance window
@@ -1144,15 +737,6 @@ namespace SSM
          */
         virtual Model::DescribeMaintenanceWindowTasksOutcome DescribeMaintenanceWindowTasks(const Model::DescribeMaintenanceWindowTasksRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeMaintenanceWindowTasks that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeMaintenanceWindowTasksOutcomeCallable DescribeMaintenanceWindowTasksCallable(const Model::DescribeMaintenanceWindowTasksRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeMaintenanceWindowTasks that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeMaintenanceWindowTasksAsync(const Model::DescribeMaintenanceWindowTasksRequest& request, const DescribeMaintenanceWindowTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the maintenance windows in an Amazon Web Services
@@ -1162,15 +746,6 @@ namespace SSM
          */
         virtual Model::DescribeMaintenanceWindowsOutcome DescribeMaintenanceWindows(const Model::DescribeMaintenanceWindowsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeMaintenanceWindows that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeMaintenanceWindowsOutcomeCallable DescribeMaintenanceWindowsCallable(const Model::DescribeMaintenanceWindowsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeMaintenanceWindows that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeMaintenanceWindowsAsync(const Model::DescribeMaintenanceWindowsRequest& request, const DescribeMaintenanceWindowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about the maintenance window targets or tasks that a
@@ -1180,15 +755,6 @@ namespace SSM
          */
         virtual Model::DescribeMaintenanceWindowsForTargetOutcome DescribeMaintenanceWindowsForTarget(const Model::DescribeMaintenanceWindowsForTargetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeMaintenanceWindowsForTarget that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeMaintenanceWindowsForTargetOutcomeCallable DescribeMaintenanceWindowsForTargetCallable(const Model::DescribeMaintenanceWindowsForTargetRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeMaintenanceWindowsForTarget that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeMaintenanceWindowsForTargetAsync(const Model::DescribeMaintenanceWindowsForTargetRequest& request, const DescribeMaintenanceWindowsForTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Query a set of OpsItems. You must have permission in Identity and Access
@@ -1207,15 +773,6 @@ namespace SSM
          */
         virtual Model::DescribeOpsItemsOutcome DescribeOpsItems(const Model::DescribeOpsItemsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeOpsItems that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeOpsItemsOutcomeCallable DescribeOpsItemsCallable(const Model::DescribeOpsItemsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeOpsItems that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeOpsItemsAsync(const Model::DescribeOpsItemsRequest& request, const DescribeOpsItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get information about a parameter.</p> <p>Request results are returned on a
@@ -1235,15 +792,6 @@ namespace SSM
          */
         virtual Model::DescribeParametersOutcome DescribeParameters(const Model::DescribeParametersRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeParameters that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeParametersOutcomeCallable DescribeParametersCallable(const Model::DescribeParametersRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeParameters that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeParametersAsync(const Model::DescribeParametersRequest& request, const DescribeParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the patch baselines in your Amazon Web Services account.</p><p><h3>See
@@ -1253,15 +801,6 @@ namespace SSM
          */
         virtual Model::DescribePatchBaselinesOutcome DescribePatchBaselines(const Model::DescribePatchBaselinesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribePatchBaselines that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribePatchBaselinesOutcomeCallable DescribePatchBaselinesCallable(const Model::DescribePatchBaselinesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribePatchBaselines that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribePatchBaselinesAsync(const Model::DescribePatchBaselinesRequest& request, const DescribePatchBaselinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns high-level aggregated patch compliance state information for a patch
@@ -1271,15 +810,6 @@ namespace SSM
          */
         virtual Model::DescribePatchGroupStateOutcome DescribePatchGroupState(const Model::DescribePatchGroupStateRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribePatchGroupState that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribePatchGroupStateOutcomeCallable DescribePatchGroupStateCallable(const Model::DescribePatchGroupStateRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribePatchGroupState that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribePatchGroupStateAsync(const Model::DescribePatchGroupStateRequest& request, const DescribePatchGroupStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all patch groups that have been registered with patch
@@ -1289,15 +819,6 @@ namespace SSM
          */
         virtual Model::DescribePatchGroupsOutcome DescribePatchGroups(const Model::DescribePatchGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribePatchGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribePatchGroupsOutcomeCallable DescribePatchGroupsCallable(const Model::DescribePatchGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribePatchGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribePatchGroupsAsync(const Model::DescribePatchGroupsRequest& request, const DescribePatchGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the properties of available patches organized by product, product
@@ -1330,15 +851,6 @@ namespace SSM
          */
         virtual Model::DescribePatchPropertiesOutcome DescribePatchProperties(const Model::DescribePatchPropertiesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribePatchProperties that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribePatchPropertiesOutcomeCallable DescribePatchPropertiesCallable(const Model::DescribePatchPropertiesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribePatchProperties that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribePatchPropertiesAsync(const Model::DescribePatchPropertiesRequest& request, const DescribePatchPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list of all active sessions (both connected and disconnected) or
@@ -1348,15 +860,6 @@ namespace SSM
          */
         virtual Model::DescribeSessionsOutcome DescribeSessions(const Model::DescribeSessionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeSessions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeSessionsOutcomeCallable DescribeSessionsCallable(const Model::DescribeSessionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeSessions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeSessionsAsync(const Model::DescribeSessionsRequest& request, const DescribeSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the association between an OpsItem and a related item. For example,
@@ -1368,15 +871,6 @@ namespace SSM
          */
         virtual Model::DisassociateOpsItemRelatedItemOutcome DisassociateOpsItemRelatedItem(const Model::DisassociateOpsItemRelatedItemRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateOpsItemRelatedItem that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateOpsItemRelatedItemOutcomeCallable DisassociateOpsItemRelatedItemCallable(const Model::DisassociateOpsItemRelatedItemRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateOpsItemRelatedItem that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateOpsItemRelatedItemAsync(const Model::DisassociateOpsItemRelatedItemRequest& request, const DisassociateOpsItemRelatedItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get detailed information about a particular Automation
@@ -1386,15 +880,6 @@ namespace SSM
          */
         virtual Model::GetAutomationExecutionOutcome GetAutomationExecution(const Model::GetAutomationExecutionRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAutomationExecution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAutomationExecutionOutcomeCallable GetAutomationExecutionCallable(const Model::GetAutomationExecutionRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAutomationExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAutomationExecutionAsync(const Model::GetAutomationExecutionRequest& request, const GetAutomationExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the state of a Amazon Web Services Systems Manager change calendar at
@@ -1416,15 +901,6 @@ namespace SSM
          */
         virtual Model::GetCalendarStateOutcome GetCalendarState(const Model::GetCalendarStateRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetCalendarState that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetCalendarStateOutcomeCallable GetCalendarStateCallable(const Model::GetCalendarStateRequest& request) const;
-
-        /**
-         * An Async wrapper for GetCalendarState that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetCalendarStateAsync(const Model::GetCalendarStateRequest& request, const GetCalendarStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns detailed information about command execution for an invocation or
@@ -1438,15 +914,6 @@ namespace SSM
          */
         virtual Model::GetCommandInvocationOutcome GetCommandInvocation(const Model::GetCommandInvocationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetCommandInvocation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetCommandInvocationOutcomeCallable GetCommandInvocationCallable(const Model::GetCommandInvocationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetCommandInvocation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetCommandInvocationAsync(const Model::GetCommandInvocationRequest& request, const GetCommandInvocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the Session Manager connection status for a managed node to
@@ -1457,15 +924,6 @@ namespace SSM
          */
         virtual Model::GetConnectionStatusOutcome GetConnectionStatus(const Model::GetConnectionStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetConnectionStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetConnectionStatusOutcomeCallable GetConnectionStatusCallable(const Model::GetConnectionStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for GetConnectionStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetConnectionStatusAsync(const Model::GetConnectionStatusRequest& request, const GetConnectionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the default patch baseline. Amazon Web Services Systems Manager
@@ -1478,15 +936,6 @@ namespace SSM
          */
         virtual Model::GetDefaultPatchBaselineOutcome GetDefaultPatchBaseline(const Model::GetDefaultPatchBaselineRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDefaultPatchBaseline that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDefaultPatchBaselineOutcomeCallable GetDefaultPatchBaselineCallable(const Model::GetDefaultPatchBaselineRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDefaultPatchBaseline that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDefaultPatchBaselineAsync(const Model::GetDefaultPatchBaselineRequest& request, const GetDefaultPatchBaselineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the current snapshot for the patch baseline the managed node uses.
@@ -1505,15 +954,6 @@ namespace SSM
          */
         virtual Model::GetDeployablePatchSnapshotForInstanceOutcome GetDeployablePatchSnapshotForInstance(const Model::GetDeployablePatchSnapshotForInstanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDeployablePatchSnapshotForInstance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDeployablePatchSnapshotForInstanceOutcomeCallable GetDeployablePatchSnapshotForInstanceCallable(const Model::GetDeployablePatchSnapshotForInstanceRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDeployablePatchSnapshotForInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDeployablePatchSnapshotForInstanceAsync(const Model::GetDeployablePatchSnapshotForInstanceRequest& request, const GetDeployablePatchSnapshotForInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the contents of the specified Amazon Web Services Systems Manager
@@ -1523,15 +963,6 @@ namespace SSM
          */
         virtual Model::GetDocumentOutcome GetDocument(const Model::GetDocumentRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDocument that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDocumentOutcomeCallable GetDocumentCallable(const Model::GetDocumentRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDocument that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDocumentAsync(const Model::GetDocumentRequest& request, const GetDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Query inventory information. This includes managed node status, such as
@@ -1541,15 +972,6 @@ namespace SSM
          */
         virtual Model::GetInventoryOutcome GetInventory(const Model::GetInventoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetInventory that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetInventoryOutcomeCallable GetInventoryCallable(const Model::GetInventoryRequest& request) const;
-
-        /**
-         * An Async wrapper for GetInventory that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetInventoryAsync(const Model::GetInventoryRequest& request, const GetInventoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Return a list of inventory type names for the account, or return a list of
@@ -1560,15 +982,6 @@ namespace SSM
          */
         virtual Model::GetInventorySchemaOutcome GetInventorySchema(const Model::GetInventorySchemaRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetInventorySchema that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetInventorySchemaOutcomeCallable GetInventorySchemaCallable(const Model::GetInventorySchemaRequest& request) const;
-
-        /**
-         * An Async wrapper for GetInventorySchema that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetInventorySchemaAsync(const Model::GetInventorySchemaRequest& request, const GetInventorySchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a maintenance window.</p><p><h3>See Also:</h3>   <a
@@ -1577,15 +990,6 @@ namespace SSM
          */
         virtual Model::GetMaintenanceWindowOutcome GetMaintenanceWindow(const Model::GetMaintenanceWindowRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetMaintenanceWindow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetMaintenanceWindowOutcomeCallable GetMaintenanceWindowCallable(const Model::GetMaintenanceWindowRequest& request) const;
-
-        /**
-         * An Async wrapper for GetMaintenanceWindow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetMaintenanceWindowAsync(const Model::GetMaintenanceWindowRequest& request, const GetMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves details about a specific a maintenance window
@@ -1595,15 +999,6 @@ namespace SSM
          */
         virtual Model::GetMaintenanceWindowExecutionOutcome GetMaintenanceWindowExecution(const Model::GetMaintenanceWindowExecutionRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetMaintenanceWindowExecution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetMaintenanceWindowExecutionOutcomeCallable GetMaintenanceWindowExecutionCallable(const Model::GetMaintenanceWindowExecutionRequest& request) const;
-
-        /**
-         * An Async wrapper for GetMaintenanceWindowExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetMaintenanceWindowExecutionAsync(const Model::GetMaintenanceWindowExecutionRequest& request, const GetMaintenanceWindowExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the details about a specific task run as part of a maintenance
@@ -1613,15 +1008,6 @@ namespace SSM
          */
         virtual Model::GetMaintenanceWindowExecutionTaskOutcome GetMaintenanceWindowExecutionTask(const Model::GetMaintenanceWindowExecutionTaskRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetMaintenanceWindowExecutionTask that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetMaintenanceWindowExecutionTaskOutcomeCallable GetMaintenanceWindowExecutionTaskCallable(const Model::GetMaintenanceWindowExecutionTaskRequest& request) const;
-
-        /**
-         * An Async wrapper for GetMaintenanceWindowExecutionTask that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetMaintenanceWindowExecutionTaskAsync(const Model::GetMaintenanceWindowExecutionTaskRequest& request, const GetMaintenanceWindowExecutionTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about a specific task running on a specific
@@ -1631,15 +1017,6 @@ namespace SSM
          */
         virtual Model::GetMaintenanceWindowExecutionTaskInvocationOutcome GetMaintenanceWindowExecutionTaskInvocation(const Model::GetMaintenanceWindowExecutionTaskInvocationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetMaintenanceWindowExecutionTaskInvocation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetMaintenanceWindowExecutionTaskInvocationOutcomeCallable GetMaintenanceWindowExecutionTaskInvocationCallable(const Model::GetMaintenanceWindowExecutionTaskInvocationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetMaintenanceWindowExecutionTaskInvocation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetMaintenanceWindowExecutionTaskInvocationAsync(const Model::GetMaintenanceWindowExecutionTaskInvocationRequest& request, const GetMaintenanceWindowExecutionTaskInvocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the details of a maintenance window task.</p>  <p>For
@@ -1655,15 +1032,6 @@ namespace SSM
          */
         virtual Model::GetMaintenanceWindowTaskOutcome GetMaintenanceWindowTask(const Model::GetMaintenanceWindowTaskRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetMaintenanceWindowTask that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetMaintenanceWindowTaskOutcomeCallable GetMaintenanceWindowTaskCallable(const Model::GetMaintenanceWindowTaskRequest& request) const;
-
-        /**
-         * An Async wrapper for GetMaintenanceWindowTask that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetMaintenanceWindowTaskAsync(const Model::GetMaintenanceWindowTaskRequest& request, const GetMaintenanceWindowTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get information about an OpsItem by using the ID. You must have permission in
@@ -1683,15 +1051,6 @@ namespace SSM
          */
         virtual Model::GetOpsItemOutcome GetOpsItem(const Model::GetOpsItemRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetOpsItem that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetOpsItemOutcomeCallable GetOpsItemCallable(const Model::GetOpsItemRequest& request) const;
-
-        /**
-         * An Async wrapper for GetOpsItem that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetOpsItemAsync(const Model::GetOpsItemRequest& request, const GetOpsItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>View operational metadata related to an application in Application
@@ -1701,15 +1060,6 @@ namespace SSM
          */
         virtual Model::GetOpsMetadataOutcome GetOpsMetadata(const Model::GetOpsMetadataRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetOpsMetadata that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetOpsMetadataOutcomeCallable GetOpsMetadataCallable(const Model::GetOpsMetadataRequest& request) const;
-
-        /**
-         * An Async wrapper for GetOpsMetadata that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetOpsMetadataAsync(const Model::GetOpsMetadataRequest& request, const GetOpsMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>View a summary of operations metadata (OpsData) based on specified filters
@@ -1723,15 +1073,6 @@ namespace SSM
          */
         virtual Model::GetOpsSummaryOutcome GetOpsSummary(const Model::GetOpsSummaryRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetOpsSummary that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetOpsSummaryOutcomeCallable GetOpsSummaryCallable(const Model::GetOpsSummaryRequest& request) const;
-
-        /**
-         * An Async wrapper for GetOpsSummary that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetOpsSummaryAsync(const Model::GetOpsSummaryRequest& request, const GetOpsSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get information about a single parameter by specifying the parameter
@@ -1742,15 +1083,6 @@ namespace SSM
          */
         virtual Model::GetParameterOutcome GetParameter(const Model::GetParameterRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetParameter that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetParameterOutcomeCallable GetParameterCallable(const Model::GetParameterRequest& request) const;
-
-        /**
-         * An Async wrapper for GetParameter that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetParameterAsync(const Model::GetParameterRequest& request, const GetParameterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the history of all changes to a parameter.</p>  <p>If
@@ -1763,15 +1095,6 @@ namespace SSM
          */
         virtual Model::GetParameterHistoryOutcome GetParameterHistory(const Model::GetParameterHistoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetParameterHistory that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetParameterHistoryOutcomeCallable GetParameterHistoryCallable(const Model::GetParameterHistoryRequest& request) const;
-
-        /**
-         * An Async wrapper for GetParameterHistory that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetParameterHistoryAsync(const Model::GetParameterHistoryRequest& request, const GetParameterHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get information about one or more parameters by specifying multiple parameter
@@ -1782,15 +1105,6 @@ namespace SSM
          */
         virtual Model::GetParametersOutcome GetParameters(const Model::GetParametersRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetParameters that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetParametersOutcomeCallable GetParametersCallable(const Model::GetParametersRequest& request) const;
-
-        /**
-         * An Async wrapper for GetParameters that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetParametersAsync(const Model::GetParametersRequest& request, const GetParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieve information about one or more parameters in a specific hierarchy.
@@ -1807,15 +1121,6 @@ namespace SSM
          */
         virtual Model::GetParametersByPathOutcome GetParametersByPath(const Model::GetParametersByPathRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetParametersByPath that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetParametersByPathOutcomeCallable GetParametersByPathCallable(const Model::GetParametersByPathRequest& request) const;
-
-        /**
-         * An Async wrapper for GetParametersByPath that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetParametersByPathAsync(const Model::GetParametersByPathRequest& request, const GetParametersByPathResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about a patch baseline.</p><p><h3>See Also:</h3>   <a
@@ -1824,15 +1129,6 @@ namespace SSM
          */
         virtual Model::GetPatchBaselineOutcome GetPatchBaseline(const Model::GetPatchBaselineRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetPatchBaseline that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetPatchBaselineOutcomeCallable GetPatchBaselineCallable(const Model::GetPatchBaselineRequest& request) const;
-
-        /**
-         * An Async wrapper for GetPatchBaseline that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetPatchBaselineAsync(const Model::GetPatchBaselineRequest& request, const GetPatchBaselineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the patch baseline that should be used for the specified patch
@@ -1842,15 +1138,6 @@ namespace SSM
          */
         virtual Model::GetPatchBaselineForPatchGroupOutcome GetPatchBaselineForPatchGroup(const Model::GetPatchBaselineForPatchGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetPatchBaselineForPatchGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetPatchBaselineForPatchGroupOutcomeCallable GetPatchBaselineForPatchGroupCallable(const Model::GetPatchBaselineForPatchGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for GetPatchBaselineForPatchGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetPatchBaselineForPatchGroupAsync(const Model::GetPatchBaselineForPatchGroupRequest& request, const GetPatchBaselineForPatchGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns an array of the <code>Policy</code> object.</p><p><h3>See Also:</h3> 
@@ -1860,15 +1147,6 @@ namespace SSM
          */
         virtual Model::GetResourcePoliciesOutcome GetResourcePolicies(const Model::GetResourcePoliciesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetResourcePolicies that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetResourcePoliciesOutcomeCallable GetResourcePoliciesCallable(const Model::GetResourcePoliciesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetResourcePolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetResourcePoliciesAsync(const Model::GetResourcePoliciesRequest& request, const GetResourcePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> <code>ServiceSetting</code> is an account-level setting for an Amazon Web
@@ -1893,15 +1171,6 @@ namespace SSM
          */
         virtual Model::GetServiceSettingOutcome GetServiceSetting(const Model::GetServiceSettingRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetServiceSetting that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetServiceSettingOutcomeCallable GetServiceSettingCallable(const Model::GetServiceSettingRequest& request) const;
-
-        /**
-         * An Async wrapper for GetServiceSetting that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetServiceSettingAsync(const Model::GetServiceSettingRequest& request, const GetServiceSettingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>A parameter label is a user-defined alias to help you manage different
@@ -1930,15 +1199,6 @@ namespace SSM
          */
         virtual Model::LabelParameterVersionOutcome LabelParameterVersion(const Model::LabelParameterVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for LabelParameterVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::LabelParameterVersionOutcomeCallable LabelParameterVersionCallable(const Model::LabelParameterVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for LabelParameterVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void LabelParameterVersionAsync(const Model::LabelParameterVersionRequest& request, const LabelParameterVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves all versions of an association for a specific association
@@ -1948,15 +1208,6 @@ namespace SSM
          */
         virtual Model::ListAssociationVersionsOutcome ListAssociationVersions(const Model::ListAssociationVersionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAssociationVersions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAssociationVersionsOutcomeCallable ListAssociationVersionsCallable(const Model::ListAssociationVersionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAssociationVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAssociationVersionsAsync(const Model::ListAssociationVersionsRequest& request, const ListAssociationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns all State Manager associations in the current Amazon Web Services
@@ -1969,15 +1220,6 @@ namespace SSM
          */
         virtual Model::ListAssociationsOutcome ListAssociations(const Model::ListAssociationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAssociationsOutcomeCallable ListAssociationsCallable(const Model::ListAssociationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAssociationsAsync(const Model::ListAssociationsRequest& request, const ListAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>An invocation is copy of a command sent to a specific managed node. A command
@@ -1991,15 +1233,6 @@ namespace SSM
          */
         virtual Model::ListCommandInvocationsOutcome ListCommandInvocations(const Model::ListCommandInvocationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListCommandInvocations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListCommandInvocationsOutcomeCallable ListCommandInvocationsCallable(const Model::ListCommandInvocationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListCommandInvocations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListCommandInvocationsAsync(const Model::ListCommandInvocationsRequest& request, const ListCommandInvocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the commands requested by users of the Amazon Web Services
@@ -2009,15 +1242,6 @@ namespace SSM
          */
         virtual Model::ListCommandsOutcome ListCommands(const Model::ListCommandsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListCommands that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListCommandsOutcomeCallable ListCommandsCallable(const Model::ListCommandsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListCommands that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListCommandsAsync(const Model::ListCommandsRequest& request, const ListCommandsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>For a specified resource ID, this API operation returns a list of compliance
@@ -2029,15 +1253,6 @@ namespace SSM
          */
         virtual Model::ListComplianceItemsOutcome ListComplianceItems(const Model::ListComplianceItemsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListComplianceItems that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListComplianceItemsOutcomeCallable ListComplianceItemsCallable(const Model::ListComplianceItemsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListComplianceItems that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListComplianceItemsAsync(const Model::ListComplianceItemsRequest& request, const ListComplianceItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a summary count of compliant and non-compliant resources for a
@@ -2049,15 +1264,6 @@ namespace SSM
          */
         virtual Model::ListComplianceSummariesOutcome ListComplianceSummaries(const Model::ListComplianceSummariesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListComplianceSummaries that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListComplianceSummariesOutcomeCallable ListComplianceSummariesCallable(const Model::ListComplianceSummariesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListComplianceSummaries that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListComplianceSummariesAsync(const Model::ListComplianceSummariesRequest& request, const ListComplianceSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Information about approval reviews for a version of a change template in
@@ -2067,15 +1273,6 @@ namespace SSM
          */
         virtual Model::ListDocumentMetadataHistoryOutcome ListDocumentMetadataHistory(const Model::ListDocumentMetadataHistoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDocumentMetadataHistory that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDocumentMetadataHistoryOutcomeCallable ListDocumentMetadataHistoryCallable(const Model::ListDocumentMetadataHistoryRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDocumentMetadataHistory that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDocumentMetadataHistoryAsync(const Model::ListDocumentMetadataHistoryRequest& request, const ListDocumentMetadataHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List all versions for a document.</p><p><h3>See Also:</h3>   <a
@@ -2084,15 +1281,6 @@ namespace SSM
          */
         virtual Model::ListDocumentVersionsOutcome ListDocumentVersions(const Model::ListDocumentVersionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDocumentVersions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDocumentVersionsOutcomeCallable ListDocumentVersionsCallable(const Model::ListDocumentVersionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDocumentVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDocumentVersionsAsync(const Model::ListDocumentVersionsRequest& request, const ListDocumentVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns all Systems Manager (SSM) documents in the current Amazon Web
@@ -2103,15 +1291,6 @@ namespace SSM
          */
         virtual Model::ListDocumentsOutcome ListDocuments(const Model::ListDocumentsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDocuments that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDocumentsOutcomeCallable ListDocumentsCallable(const Model::ListDocumentsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDocuments that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDocumentsAsync(const Model::ListDocumentsRequest& request, const ListDocumentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>A list of inventory items returned by the request.</p><p><h3>See Also:</h3>  
@@ -2121,15 +1300,6 @@ namespace SSM
          */
         virtual Model::ListInventoryEntriesOutcome ListInventoryEntries(const Model::ListInventoryEntriesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListInventoryEntries that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListInventoryEntriesOutcomeCallable ListInventoryEntriesCallable(const Model::ListInventoryEntriesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListInventoryEntries that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListInventoryEntriesAsync(const Model::ListInventoryEntriesRequest& request, const ListInventoryEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of all OpsItem events in the current Amazon Web Services
@@ -2141,15 +1311,6 @@ namespace SSM
          */
         virtual Model::ListOpsItemEventsOutcome ListOpsItemEvents(const Model::ListOpsItemEventsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListOpsItemEvents that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListOpsItemEventsOutcomeCallable ListOpsItemEventsCallable(const Model::ListOpsItemEventsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListOpsItemEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListOpsItemEventsAsync(const Model::ListOpsItemEventsRequest& request, const ListOpsItemEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all related-item resources associated with a Systems Manager OpsCenter
@@ -2160,15 +1321,6 @@ namespace SSM
          */
         virtual Model::ListOpsItemRelatedItemsOutcome ListOpsItemRelatedItems(const Model::ListOpsItemRelatedItemsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListOpsItemRelatedItems that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListOpsItemRelatedItemsOutcomeCallable ListOpsItemRelatedItemsCallable(const Model::ListOpsItemRelatedItemsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListOpsItemRelatedItems that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListOpsItemRelatedItemsAsync(const Model::ListOpsItemRelatedItemsRequest& request, const ListOpsItemRelatedItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Amazon Web Services Systems Manager calls this API operation when displaying
@@ -2179,15 +1331,6 @@ namespace SSM
          */
         virtual Model::ListOpsMetadataOutcome ListOpsMetadata(const Model::ListOpsMetadataRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListOpsMetadata that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListOpsMetadataOutcomeCallable ListOpsMetadataCallable(const Model::ListOpsMetadataRequest& request) const;
-
-        /**
-         * An Async wrapper for ListOpsMetadata that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListOpsMetadataAsync(const Model::ListOpsMetadataRequest& request, const ListOpsMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a resource-level summary count. The summary includes information
@@ -2199,15 +1342,6 @@ namespace SSM
          */
         virtual Model::ListResourceComplianceSummariesOutcome ListResourceComplianceSummaries(const Model::ListResourceComplianceSummariesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListResourceComplianceSummaries that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListResourceComplianceSummariesOutcomeCallable ListResourceComplianceSummariesCallable(const Model::ListResourceComplianceSummariesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListResourceComplianceSummaries that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListResourceComplianceSummariesAsync(const Model::ListResourceComplianceSummariesRequest& request, const ListResourceComplianceSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists your resource data sync configurations. Includes information about the
@@ -2225,15 +1359,6 @@ namespace SSM
          */
         virtual Model::ListResourceDataSyncOutcome ListResourceDataSync(const Model::ListResourceDataSyncRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListResourceDataSync that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListResourceDataSyncOutcomeCallable ListResourceDataSyncCallable(const Model::ListResourceDataSyncRequest& request) const;
-
-        /**
-         * An Async wrapper for ListResourceDataSync that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListResourceDataSyncAsync(const Model::ListResourceDataSyncRequest& request, const ListResourceDataSyncResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of the tags assigned to the specified resource.</p> <p>For
@@ -2244,15 +1369,6 @@ namespace SSM
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Shares a Amazon Web Services Systems Manager document (SSM document)publicly
@@ -2265,15 +1381,6 @@ namespace SSM
          */
         virtual Model::ModifyDocumentPermissionOutcome ModifyDocumentPermission(const Model::ModifyDocumentPermissionRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyDocumentPermission that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyDocumentPermissionOutcomeCallable ModifyDocumentPermissionCallable(const Model::ModifyDocumentPermissionRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyDocumentPermission that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyDocumentPermissionAsync(const Model::ModifyDocumentPermissionRequest& request, const ModifyDocumentPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Registers a compliance type and other compliance details on a designated
@@ -2306,15 +1413,6 @@ namespace SSM
          */
         virtual Model::PutComplianceItemsOutcome PutComplianceItems(const Model::PutComplianceItemsRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutComplianceItems that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutComplianceItemsOutcomeCallable PutComplianceItemsCallable(const Model::PutComplianceItemsRequest& request) const;
-
-        /**
-         * An Async wrapper for PutComplianceItems that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutComplianceItemsAsync(const Model::PutComplianceItemsRequest& request, const PutComplianceItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Bulk update custom inventory items on one or more managed nodes. The request
@@ -2325,15 +1423,6 @@ namespace SSM
          */
         virtual Model::PutInventoryOutcome PutInventory(const Model::PutInventoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutInventory that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutInventoryOutcomeCallable PutInventoryCallable(const Model::PutInventoryRequest& request) const;
-
-        /**
-         * An Async wrapper for PutInventory that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutInventoryAsync(const Model::PutInventoryRequest& request, const PutInventoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Add a parameter to the system.</p><p><h3>See Also:</h3>   <a
@@ -2342,15 +1431,6 @@ namespace SSM
          */
         virtual Model::PutParameterOutcome PutParameter(const Model::PutParameterRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutParameter that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutParameterOutcomeCallable PutParameterCallable(const Model::PutParameterRequest& request) const;
-
-        /**
-         * An Async wrapper for PutParameter that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutParameterAsync(const Model::PutParameterRequest& request, const PutParameterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates or updates a Systems Manager resource policy. A resource policy helps
@@ -2365,15 +1445,6 @@ namespace SSM
          */
         virtual Model::PutResourcePolicyOutcome PutResourcePolicy(const Model::PutResourcePolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutResourcePolicyOutcomeCallable PutResourcePolicyCallable(const Model::PutResourcePolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for PutResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutResourcePolicyAsync(const Model::PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Defines the default patch baseline for the relevant operating system.</p>
@@ -2387,15 +1458,6 @@ namespace SSM
          */
         virtual Model::RegisterDefaultPatchBaselineOutcome RegisterDefaultPatchBaseline(const Model::RegisterDefaultPatchBaselineRequest& request) const;
 
-        /**
-         * A Callable wrapper for RegisterDefaultPatchBaseline that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RegisterDefaultPatchBaselineOutcomeCallable RegisterDefaultPatchBaselineCallable(const Model::RegisterDefaultPatchBaselineRequest& request) const;
-
-        /**
-         * An Async wrapper for RegisterDefaultPatchBaseline that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RegisterDefaultPatchBaselineAsync(const Model::RegisterDefaultPatchBaselineRequest& request, const RegisterDefaultPatchBaselineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Registers a patch baseline for a patch group.</p><p><h3>See Also:</h3>   <a
@@ -2404,15 +1466,6 @@ namespace SSM
          */
         virtual Model::RegisterPatchBaselineForPatchGroupOutcome RegisterPatchBaselineForPatchGroup(const Model::RegisterPatchBaselineForPatchGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for RegisterPatchBaselineForPatchGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RegisterPatchBaselineForPatchGroupOutcomeCallable RegisterPatchBaselineForPatchGroupCallable(const Model::RegisterPatchBaselineForPatchGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for RegisterPatchBaselineForPatchGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RegisterPatchBaselineForPatchGroupAsync(const Model::RegisterPatchBaselineForPatchGroupRequest& request, const RegisterPatchBaselineForPatchGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Registers a target with a maintenance window.</p><p><h3>See Also:</h3>   <a
@@ -2421,15 +1474,6 @@ namespace SSM
          */
         virtual Model::RegisterTargetWithMaintenanceWindowOutcome RegisterTargetWithMaintenanceWindow(const Model::RegisterTargetWithMaintenanceWindowRequest& request) const;
 
-        /**
-         * A Callable wrapper for RegisterTargetWithMaintenanceWindow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RegisterTargetWithMaintenanceWindowOutcomeCallable RegisterTargetWithMaintenanceWindowCallable(const Model::RegisterTargetWithMaintenanceWindowRequest& request) const;
-
-        /**
-         * An Async wrapper for RegisterTargetWithMaintenanceWindow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RegisterTargetWithMaintenanceWindowAsync(const Model::RegisterTargetWithMaintenanceWindowRequest& request, const RegisterTargetWithMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds a new task to a maintenance window.</p><p><h3>See Also:</h3>   <a
@@ -2438,15 +1482,6 @@ namespace SSM
          */
         virtual Model::RegisterTaskWithMaintenanceWindowOutcome RegisterTaskWithMaintenanceWindow(const Model::RegisterTaskWithMaintenanceWindowRequest& request) const;
 
-        /**
-         * A Callable wrapper for RegisterTaskWithMaintenanceWindow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RegisterTaskWithMaintenanceWindowOutcomeCallable RegisterTaskWithMaintenanceWindowCallable(const Model::RegisterTaskWithMaintenanceWindowRequest& request) const;
-
-        /**
-         * An Async wrapper for RegisterTaskWithMaintenanceWindow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RegisterTaskWithMaintenanceWindowAsync(const Model::RegisterTaskWithMaintenanceWindowRequest& request, const RegisterTaskWithMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes tag keys from the specified resource.</p><p><h3>See Also:</h3>   <a
@@ -2455,15 +1490,6 @@ namespace SSM
          */
         virtual Model::RemoveTagsFromResourceOutcome RemoveTagsFromResource(const Model::RemoveTagsFromResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for RemoveTagsFromResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RemoveTagsFromResourceOutcomeCallable RemoveTagsFromResourceCallable(const Model::RemoveTagsFromResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for RemoveTagsFromResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RemoveTagsFromResourceAsync(const Model::RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> <code>ServiceSetting</code> is an account-level setting for an Amazon Web
@@ -2486,15 +1512,6 @@ namespace SSM
          */
         virtual Model::ResetServiceSettingOutcome ResetServiceSetting(const Model::ResetServiceSettingRequest& request) const;
 
-        /**
-         * A Callable wrapper for ResetServiceSetting that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ResetServiceSettingOutcomeCallable ResetServiceSettingCallable(const Model::ResetServiceSettingRequest& request) const;
-
-        /**
-         * An Async wrapper for ResetServiceSetting that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ResetServiceSettingAsync(const Model::ResetServiceSettingRequest& request, const ResetServiceSettingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Reconnects a session to a managed node after it has been disconnected.
@@ -2507,15 +1524,6 @@ namespace SSM
          */
         virtual Model::ResumeSessionOutcome ResumeSession(const Model::ResumeSessionRequest& request) const;
 
-        /**
-         * A Callable wrapper for ResumeSession that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ResumeSessionOutcomeCallable ResumeSessionCallable(const Model::ResumeSessionRequest& request) const;
-
-        /**
-         * An Async wrapper for ResumeSession that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ResumeSessionAsync(const Model::ResumeSessionRequest& request, const ResumeSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sends a signal to an Automation execution to change the current behavior or
@@ -2525,15 +1533,6 @@ namespace SSM
          */
         virtual Model::SendAutomationSignalOutcome SendAutomationSignal(const Model::SendAutomationSignalRequest& request) const;
 
-        /**
-         * A Callable wrapper for SendAutomationSignal that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SendAutomationSignalOutcomeCallable SendAutomationSignalCallable(const Model::SendAutomationSignalRequest& request) const;
-
-        /**
-         * An Async wrapper for SendAutomationSignal that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SendAutomationSignalAsync(const Model::SendAutomationSignalRequest& request, const SendAutomationSignalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Runs commands on one or more managed nodes.</p><p><h3>See Also:</h3>   <a
@@ -2542,15 +1541,6 @@ namespace SSM
          */
         virtual Model::SendCommandOutcome SendCommand(const Model::SendCommandRequest& request) const;
 
-        /**
-         * A Callable wrapper for SendCommand that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SendCommandOutcomeCallable SendCommandCallable(const Model::SendCommandRequest& request) const;
-
-        /**
-         * An Async wrapper for SendCommand that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SendCommandAsync(const Model::SendCommandRequest& request, const SendCommandResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Runs an association immediately and only one time. This operation can be
@@ -2560,15 +1550,6 @@ namespace SSM
          */
         virtual Model::StartAssociationsOnceOutcome StartAssociationsOnce(const Model::StartAssociationsOnceRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartAssociationsOnce that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartAssociationsOnceOutcomeCallable StartAssociationsOnceCallable(const Model::StartAssociationsOnceRequest& request) const;
-
-        /**
-         * An Async wrapper for StartAssociationsOnce that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartAssociationsOnceAsync(const Model::StartAssociationsOnceRequest& request, const StartAssociationsOnceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Initiates execution of an Automation runbook.</p><p><h3>See Also:</h3>   <a
@@ -2577,15 +1558,6 @@ namespace SSM
          */
         virtual Model::StartAutomationExecutionOutcome StartAutomationExecution(const Model::StartAutomationExecutionRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartAutomationExecution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartAutomationExecutionOutcomeCallable StartAutomationExecutionCallable(const Model::StartAutomationExecutionRequest& request) const;
-
-        /**
-         * An Async wrapper for StartAutomationExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartAutomationExecutionAsync(const Model::StartAutomationExecutionRequest& request, const StartAutomationExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a change request for Change Manager. The Automation runbooks
@@ -2596,15 +1568,6 @@ namespace SSM
          */
         virtual Model::StartChangeRequestExecutionOutcome StartChangeRequestExecution(const Model::StartChangeRequestExecutionRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartChangeRequestExecution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartChangeRequestExecutionOutcomeCallable StartChangeRequestExecutionCallable(const Model::StartChangeRequestExecutionRequest& request) const;
-
-        /**
-         * An Async wrapper for StartChangeRequestExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartChangeRequestExecutionAsync(const Model::StartChangeRequestExecutionRequest& request, const StartChangeRequestExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Initiates a connection to a target (for example, a managed node) for a
@@ -2624,15 +1587,6 @@ namespace SSM
          */
         virtual Model::StartSessionOutcome StartSession(const Model::StartSessionRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartSession that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartSessionOutcomeCallable StartSessionCallable(const Model::StartSessionRequest& request) const;
-
-        /**
-         * An Async wrapper for StartSession that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartSessionAsync(const Model::StartSessionRequest& request, const StartSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stop an Automation that is currently running.</p><p><h3>See Also:</h3>   <a
@@ -2641,15 +1595,6 @@ namespace SSM
          */
         virtual Model::StopAutomationExecutionOutcome StopAutomationExecution(const Model::StopAutomationExecutionRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopAutomationExecution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopAutomationExecutionOutcomeCallable StopAutomationExecutionCallable(const Model::StopAutomationExecutionRequest& request) const;
-
-        /**
-         * An Async wrapper for StopAutomationExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopAutomationExecutionAsync(const Model::StopAutomationExecutionRequest& request, const StopAutomationExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Permanently ends a session and closes the data connection between the Session
@@ -2660,15 +1605,6 @@ namespace SSM
          */
         virtual Model::TerminateSessionOutcome TerminateSession(const Model::TerminateSessionRequest& request) const;
 
-        /**
-         * A Callable wrapper for TerminateSession that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TerminateSessionOutcomeCallable TerminateSessionCallable(const Model::TerminateSessionRequest& request) const;
-
-        /**
-         * An Async wrapper for TerminateSession that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TerminateSessionAsync(const Model::TerminateSessionRequest& request, const TerminateSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Remove a label or labels from a parameter.</p><p><h3>See Also:</h3>   <a
@@ -2677,15 +1613,6 @@ namespace SSM
          */
         virtual Model::UnlabelParameterVersionOutcome UnlabelParameterVersion(const Model::UnlabelParameterVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for UnlabelParameterVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UnlabelParameterVersionOutcomeCallable UnlabelParameterVersionCallable(const Model::UnlabelParameterVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for UnlabelParameterVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UnlabelParameterVersionAsync(const Model::UnlabelParameterVersionRequest& request, const UnlabelParameterVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an association. You can update the association name and version, the
@@ -2713,15 +1640,6 @@ namespace SSM
          */
         virtual Model::UpdateAssociationOutcome UpdateAssociation(const Model::UpdateAssociationRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateAssociationOutcomeCallable UpdateAssociationCallable(const Model::UpdateAssociationRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateAssociationAsync(const Model::UpdateAssociationRequest& request, const UpdateAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the status of the Amazon Web Services Systems Manager document (SSM
@@ -2735,15 +1653,6 @@ namespace SSM
          */
         virtual Model::UpdateAssociationStatusOutcome UpdateAssociationStatus(const Model::UpdateAssociationStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateAssociationStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateAssociationStatusOutcomeCallable UpdateAssociationStatusCallable(const Model::UpdateAssociationStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateAssociationStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateAssociationStatusAsync(const Model::UpdateAssociationStatusRequest& request, const UpdateAssociationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates one or more values for an SSM document.</p><p><h3>See Also:</h3>   <a
@@ -2752,15 +1661,6 @@ namespace SSM
          */
         virtual Model::UpdateDocumentOutcome UpdateDocument(const Model::UpdateDocumentRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateDocument that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateDocumentOutcomeCallable UpdateDocumentCallable(const Model::UpdateDocumentRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateDocument that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateDocumentAsync(const Model::UpdateDocumentRequest& request, const UpdateDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Set the default version of a document. </p>  <p>If you change a
@@ -2773,15 +1673,6 @@ namespace SSM
          */
         virtual Model::UpdateDocumentDefaultVersionOutcome UpdateDocumentDefaultVersion(const Model::UpdateDocumentDefaultVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateDocumentDefaultVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateDocumentDefaultVersionOutcomeCallable UpdateDocumentDefaultVersionCallable(const Model::UpdateDocumentDefaultVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateDocumentDefaultVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateDocumentDefaultVersionAsync(const Model::UpdateDocumentDefaultVersionRequest& request, const UpdateDocumentDefaultVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates information related to approval reviews for a specific version of a
@@ -2791,15 +1682,6 @@ namespace SSM
          */
         virtual Model::UpdateDocumentMetadataOutcome UpdateDocumentMetadata(const Model::UpdateDocumentMetadataRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateDocumentMetadata that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateDocumentMetadataOutcomeCallable UpdateDocumentMetadataCallable(const Model::UpdateDocumentMetadataRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateDocumentMetadata that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateDocumentMetadataAsync(const Model::UpdateDocumentMetadataRequest& request, const UpdateDocumentMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an existing maintenance window. Only specified parameters are
@@ -2815,15 +1697,6 @@ namespace SSM
          */
         virtual Model::UpdateMaintenanceWindowOutcome UpdateMaintenanceWindow(const Model::UpdateMaintenanceWindowRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateMaintenanceWindow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateMaintenanceWindowOutcomeCallable UpdateMaintenanceWindowCallable(const Model::UpdateMaintenanceWindowRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateMaintenanceWindow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateMaintenanceWindowAsync(const Model::UpdateMaintenanceWindowRequest& request, const UpdateMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the target of an existing maintenance window. You can change the
@@ -2839,15 +1712,6 @@ namespace SSM
          */
         virtual Model::UpdateMaintenanceWindowTargetOutcome UpdateMaintenanceWindowTarget(const Model::UpdateMaintenanceWindowTargetRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateMaintenanceWindowTarget that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateMaintenanceWindowTargetOutcomeCallable UpdateMaintenanceWindowTargetCallable(const Model::UpdateMaintenanceWindowTargetRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateMaintenanceWindowTarget that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateMaintenanceWindowTargetAsync(const Model::UpdateMaintenanceWindowTargetRequest& request, const UpdateMaintenanceWindowTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies a task assigned to a maintenance window. You can't change the task
@@ -2885,15 +1749,6 @@ namespace SSM
          */
         virtual Model::UpdateMaintenanceWindowTaskOutcome UpdateMaintenanceWindowTask(const Model::UpdateMaintenanceWindowTaskRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateMaintenanceWindowTask that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateMaintenanceWindowTaskOutcomeCallable UpdateMaintenanceWindowTaskCallable(const Model::UpdateMaintenanceWindowTaskRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateMaintenanceWindowTask that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateMaintenanceWindowTaskAsync(const Model::UpdateMaintenanceWindowTaskRequest& request, const UpdateMaintenanceWindowTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Changes the Identity and Access Management (IAM) role that is assigned to the
@@ -2905,15 +1760,6 @@ namespace SSM
          */
         virtual Model::UpdateManagedInstanceRoleOutcome UpdateManagedInstanceRole(const Model::UpdateManagedInstanceRoleRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateManagedInstanceRole that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateManagedInstanceRoleOutcomeCallable UpdateManagedInstanceRoleCallable(const Model::UpdateManagedInstanceRoleRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateManagedInstanceRole that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateManagedInstanceRoleAsync(const Model::UpdateManagedInstanceRoleRequest& request, const UpdateManagedInstanceRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Edit or change an OpsItem. You must have permission in Identity and Access
@@ -2932,15 +1778,6 @@ namespace SSM
          */
         virtual Model::UpdateOpsItemOutcome UpdateOpsItem(const Model::UpdateOpsItemRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateOpsItem that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateOpsItemOutcomeCallable UpdateOpsItemCallable(const Model::UpdateOpsItemRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateOpsItem that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateOpsItemAsync(const Model::UpdateOpsItemRequest& request, const UpdateOpsItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Amazon Web Services Systems Manager calls this API operation when you edit
@@ -2950,15 +1787,6 @@ namespace SSM
          */
         virtual Model::UpdateOpsMetadataOutcome UpdateOpsMetadata(const Model::UpdateOpsMetadataRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateOpsMetadata that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateOpsMetadataOutcomeCallable UpdateOpsMetadataCallable(const Model::UpdateOpsMetadataRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateOpsMetadata that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateOpsMetadataAsync(const Model::UpdateOpsMetadataRequest& request, const UpdateOpsMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies an existing patch baseline. Fields not specified in the request are
@@ -2970,15 +1798,6 @@ namespace SSM
          */
         virtual Model::UpdatePatchBaselineOutcome UpdatePatchBaseline(const Model::UpdatePatchBaselineRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdatePatchBaseline that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdatePatchBaselineOutcomeCallable UpdatePatchBaselineCallable(const Model::UpdatePatchBaselineRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdatePatchBaseline that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdatePatchBaselineAsync(const Model::UpdatePatchBaselineRequest& request, const UpdatePatchBaselineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Update a resource data sync. After you create a resource data sync for a
@@ -2995,15 +1814,6 @@ namespace SSM
          */
         virtual Model::UpdateResourceDataSyncOutcome UpdateResourceDataSync(const Model::UpdateResourceDataSyncRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateResourceDataSync that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateResourceDataSyncOutcomeCallable UpdateResourceDataSyncCallable(const Model::UpdateResourceDataSyncRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateResourceDataSync that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateResourceDataSyncAsync(const Model::UpdateResourceDataSyncRequest& request, const UpdateResourceDataSyncResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> <code>ServiceSetting</code> is an account-level setting for an Amazon Web
@@ -3026,15 +1836,6 @@ namespace SSM
          */
         virtual Model::UpdateServiceSettingOutcome UpdateServiceSetting(const Model::UpdateServiceSettingRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateServiceSetting that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateServiceSettingOutcomeCallable UpdateServiceSettingCallable(const Model::UpdateServiceSettingRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateServiceSetting that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateServiceSettingAsync(const Model::UpdateServiceSettingRequest& request, const UpdateServiceSettingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

@@ -7,8 +7,10 @@
 #include <aws/mturk-requester/MTurk_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mturk-requester/MTurkServiceClientModel.h>
+#include <aws/mturk-requester/MTurkLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -73,6 +75,47 @@ namespace MTurk
         virtual ~MTurkClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p> The <code>AcceptQualificationRequest</code> operation approves a Worker's
          * request for a Qualification. </p> <p> Only the owner of the Qualification type
@@ -84,15 +127,6 @@ namespace MTurk
          */
         virtual Model::AcceptQualificationRequestOutcome AcceptQualificationRequest(const Model::AcceptQualificationRequestRequest& request) const;
 
-        /**
-         * A Callable wrapper for AcceptQualificationRequest that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AcceptQualificationRequestOutcomeCallable AcceptQualificationRequestCallable(const Model::AcceptQualificationRequestRequest& request) const;
-
-        /**
-         * An Async wrapper for AcceptQualificationRequest that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AcceptQualificationRequestAsync(const Model::AcceptQualificationRequestRequest& request, const AcceptQualificationRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The <code>ApproveAssignment</code> operation approves the results of a
@@ -113,15 +147,6 @@ namespace MTurk
          */
         virtual Model::ApproveAssignmentOutcome ApproveAssignment(const Model::ApproveAssignmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for ApproveAssignment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ApproveAssignmentOutcomeCallable ApproveAssignmentCallable(const Model::ApproveAssignmentRequest& request) const;
-
-        /**
-         * An Async wrapper for ApproveAssignment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ApproveAssignmentAsync(const Model::ApproveAssignmentRequest& request, const ApproveAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The <code>AssociateQualificationWithWorker</code> operation gives a Worker a
@@ -143,15 +168,6 @@ namespace MTurk
          */
         virtual Model::AssociateQualificationWithWorkerOutcome AssociateQualificationWithWorker(const Model::AssociateQualificationWithWorkerRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateQualificationWithWorker that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateQualificationWithWorkerOutcomeCallable AssociateQualificationWithWorkerCallable(const Model::AssociateQualificationWithWorkerRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateQualificationWithWorker that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateQualificationWithWorkerAsync(const Model::AssociateQualificationWithWorkerRequest& request, const AssociateQualificationWithWorkerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The <code>CreateAdditionalAssignmentsForHIT</code> operation increases the
@@ -171,15 +187,6 @@ namespace MTurk
          */
         virtual Model::CreateAdditionalAssignmentsForHITOutcome CreateAdditionalAssignmentsForHIT(const Model::CreateAdditionalAssignmentsForHITRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateAdditionalAssignmentsForHIT that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateAdditionalAssignmentsForHITOutcomeCallable CreateAdditionalAssignmentsForHITCallable(const Model::CreateAdditionalAssignmentsForHITRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateAdditionalAssignmentsForHIT that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateAdditionalAssignmentsForHITAsync(const Model::CreateAdditionalAssignmentsForHITRequest& request, const CreateAdditionalAssignmentsForHITResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The <code>CreateHIT</code> operation creates a new Human Intelligence Task
@@ -206,15 +213,6 @@ namespace MTurk
          */
         virtual Model::CreateHITOutcome CreateHIT(const Model::CreateHITRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateHIT that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateHITOutcomeCallable CreateHITCallable(const Model::CreateHITRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateHIT that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateHITAsync(const Model::CreateHITRequest& request, const CreateHITResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The <code>CreateHITType</code> operation creates a new HIT type. This
@@ -227,15 +225,6 @@ namespace MTurk
          */
         virtual Model::CreateHITTypeOutcome CreateHITType(const Model::CreateHITTypeRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateHITType that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateHITTypeOutcomeCallable CreateHITTypeCallable(const Model::CreateHITTypeRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateHITType that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateHITTypeAsync(const Model::CreateHITTypeRequest& request, const CreateHITTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The <code>CreateHITWithHITType</code> operation creates a new Human
@@ -255,15 +244,6 @@ namespace MTurk
          */
         virtual Model::CreateHITWithHITTypeOutcome CreateHITWithHITType(const Model::CreateHITWithHITTypeRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateHITWithHITType that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateHITWithHITTypeOutcomeCallable CreateHITWithHITTypeCallable(const Model::CreateHITWithHITTypeRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateHITWithHITType that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateHITWithHITTypeAsync(const Model::CreateHITWithHITTypeRequest& request, const CreateHITWithHITTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The <code>CreateQualificationType</code> operation creates a new
@@ -274,15 +254,6 @@ namespace MTurk
          */
         virtual Model::CreateQualificationTypeOutcome CreateQualificationType(const Model::CreateQualificationTypeRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateQualificationType that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateQualificationTypeOutcomeCallable CreateQualificationTypeCallable(const Model::CreateQualificationTypeRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateQualificationType that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateQualificationTypeAsync(const Model::CreateQualificationTypeRequest& request, const CreateQualificationTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The <code>CreateWorkerBlock</code> operation allows you to prevent a Worker
@@ -294,15 +265,6 @@ namespace MTurk
          */
         virtual Model::CreateWorkerBlockOutcome CreateWorkerBlock(const Model::CreateWorkerBlockRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateWorkerBlock that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateWorkerBlockOutcomeCallable CreateWorkerBlockCallable(const Model::CreateWorkerBlockRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateWorkerBlock that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateWorkerBlockAsync(const Model::CreateWorkerBlockRequest& request, const CreateWorkerBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The <code>DeleteHIT</code> operation is used to delete HIT that is no longer
@@ -324,15 +286,6 @@ namespace MTurk
          */
         virtual Model::DeleteHITOutcome DeleteHIT(const Model::DeleteHITRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteHIT that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteHITOutcomeCallable DeleteHITCallable(const Model::DeleteHITRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteHIT that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteHITAsync(const Model::DeleteHITRequest& request, const DeleteHITResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The <code>DeleteQualificationType</code> deletes a Qualification type and
@@ -351,15 +304,6 @@ namespace MTurk
          */
         virtual Model::DeleteQualificationTypeOutcome DeleteQualificationType(const Model::DeleteQualificationTypeRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteQualificationType that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteQualificationTypeOutcomeCallable DeleteQualificationTypeCallable(const Model::DeleteQualificationTypeRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteQualificationType that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteQualificationTypeAsync(const Model::DeleteQualificationTypeRequest& request, const DeleteQualificationTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The <code>DeleteWorkerBlock</code> operation allows you to reinstate a
@@ -373,15 +317,6 @@ namespace MTurk
          */
         virtual Model::DeleteWorkerBlockOutcome DeleteWorkerBlock(const Model::DeleteWorkerBlockRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteWorkerBlock that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteWorkerBlockOutcomeCallable DeleteWorkerBlockCallable(const Model::DeleteWorkerBlockRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteWorkerBlock that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteWorkerBlockAsync(const Model::DeleteWorkerBlockRequest& request, const DeleteWorkerBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The <code>DisassociateQualificationFromWorker</code> revokes a previously
@@ -393,15 +328,6 @@ namespace MTurk
          */
         virtual Model::DisassociateQualificationFromWorkerOutcome DisassociateQualificationFromWorker(const Model::DisassociateQualificationFromWorkerRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateQualificationFromWorker that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateQualificationFromWorkerOutcomeCallable DisassociateQualificationFromWorkerCallable(const Model::DisassociateQualificationFromWorkerRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateQualificationFromWorker that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateQualificationFromWorkerAsync(const Model::DisassociateQualificationFromWorkerRequest& request, const DisassociateQualificationFromWorkerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The <code>GetAccountBalance</code> operation retrieves the Prepaid HITs
@@ -415,15 +341,6 @@ namespace MTurk
          */
         virtual Model::GetAccountBalanceOutcome GetAccountBalance(const Model::GetAccountBalanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAccountBalance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAccountBalanceOutcomeCallable GetAccountBalanceCallable(const Model::GetAccountBalanceRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAccountBalance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAccountBalanceAsync(const Model::GetAccountBalanceRequest& request, const GetAccountBalanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The <code>GetAssignment</code> operation retrieves the details of the
@@ -433,15 +350,6 @@ namespace MTurk
          */
         virtual Model::GetAssignmentOutcome GetAssignment(const Model::GetAssignmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAssignment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAssignmentOutcomeCallable GetAssignmentCallable(const Model::GetAssignmentRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAssignment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAssignmentAsync(const Model::GetAssignmentRequest& request, const GetAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The <code>GetFileUploadURL</code> operation generates and returns a
@@ -460,15 +368,6 @@ namespace MTurk
          */
         virtual Model::GetFileUploadURLOutcome GetFileUploadURL(const Model::GetFileUploadURLRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetFileUploadURL that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetFileUploadURLOutcomeCallable GetFileUploadURLCallable(const Model::GetFileUploadURLRequest& request) const;
-
-        /**
-         * An Async wrapper for GetFileUploadURL that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetFileUploadURLAsync(const Model::GetFileUploadURLRequest& request, const GetFileUploadURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The <code>GetHIT</code> operation retrieves the details of the specified
@@ -478,15 +377,6 @@ namespace MTurk
          */
         virtual Model::GetHITOutcome GetHIT(const Model::GetHITRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetHIT that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetHITOutcomeCallable GetHITCallable(const Model::GetHITRequest& request) const;
-
-        /**
-         * An Async wrapper for GetHIT that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetHITAsync(const Model::GetHITRequest& request, const GetHITResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The <code>GetQualificationScore</code> operation returns the value of a
@@ -501,15 +391,6 @@ namespace MTurk
          */
         virtual Model::GetQualificationScoreOutcome GetQualificationScore(const Model::GetQualificationScoreRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetQualificationScore that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetQualificationScoreOutcomeCallable GetQualificationScoreCallable(const Model::GetQualificationScoreRequest& request) const;
-
-        /**
-         * An Async wrapper for GetQualificationScore that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetQualificationScoreAsync(const Model::GetQualificationScoreRequest& request, const GetQualificationScoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The <code>GetQualificationType</code>operation retrieves information about a
@@ -519,15 +400,6 @@ namespace MTurk
          */
         virtual Model::GetQualificationTypeOutcome GetQualificationType(const Model::GetQualificationTypeRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetQualificationType that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetQualificationTypeOutcomeCallable GetQualificationTypeCallable(const Model::GetQualificationTypeRequest& request) const;
-
-        /**
-         * An Async wrapper for GetQualificationType that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetQualificationTypeAsync(const Model::GetQualificationTypeRequest& request, const GetQualificationTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The <code>ListAssignmentsForHIT</code> operation retrieves completed
@@ -550,15 +422,6 @@ namespace MTurk
          */
         virtual Model::ListAssignmentsForHITOutcome ListAssignmentsForHIT(const Model::ListAssignmentsForHITRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAssignmentsForHIT that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAssignmentsForHITOutcomeCallable ListAssignmentsForHITCallable(const Model::ListAssignmentsForHITRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAssignmentsForHIT that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAssignmentsForHITAsync(const Model::ListAssignmentsForHITRequest& request, const ListAssignmentsForHITResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The <code>ListBonusPayments</code> operation retrieves the amounts of
@@ -569,15 +432,6 @@ namespace MTurk
          */
         virtual Model::ListBonusPaymentsOutcome ListBonusPayments(const Model::ListBonusPaymentsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListBonusPayments that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListBonusPaymentsOutcomeCallable ListBonusPaymentsCallable(const Model::ListBonusPaymentsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListBonusPayments that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListBonusPaymentsAsync(const Model::ListBonusPaymentsRequest& request, const ListBonusPaymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The <code>ListHITs</code> operation returns all of a Requester's HITs. The
@@ -589,15 +443,6 @@ namespace MTurk
          */
         virtual Model::ListHITsOutcome ListHITs(const Model::ListHITsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListHITs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListHITsOutcomeCallable ListHITsCallable(const Model::ListHITsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListHITs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListHITsAsync(const Model::ListHITsRequest& request, const ListHITsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The <code>ListHITsForQualificationType</code> operation returns the HITs
@@ -610,15 +455,6 @@ namespace MTurk
          */
         virtual Model::ListHITsForQualificationTypeOutcome ListHITsForQualificationType(const Model::ListHITsForQualificationTypeRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListHITsForQualificationType that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListHITsForQualificationTypeOutcomeCallable ListHITsForQualificationTypeCallable(const Model::ListHITsForQualificationTypeRequest& request) const;
-
-        /**
-         * An Async wrapper for ListHITsForQualificationType that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListHITsForQualificationTypeAsync(const Model::ListHITsForQualificationTypeRequest& request, const ListHITsForQualificationTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The <code>ListQualificationRequests</code> operation retrieves requests for
@@ -631,15 +467,6 @@ namespace MTurk
          */
         virtual Model::ListQualificationRequestsOutcome ListQualificationRequests(const Model::ListQualificationRequestsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListQualificationRequests that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListQualificationRequestsOutcomeCallable ListQualificationRequestsCallable(const Model::ListQualificationRequestsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListQualificationRequests that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListQualificationRequestsAsync(const Model::ListQualificationRequestsRequest& request, const ListQualificationRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The <code>ListQualificationTypes</code> operation returns a list of
@@ -650,15 +477,6 @@ namespace MTurk
          */
         virtual Model::ListQualificationTypesOutcome ListQualificationTypes(const Model::ListQualificationTypesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListQualificationTypes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListQualificationTypesOutcomeCallable ListQualificationTypesCallable(const Model::ListQualificationTypesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListQualificationTypes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListQualificationTypesAsync(const Model::ListQualificationTypesRequest& request, const ListQualificationTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The <code>ListReviewPolicyResultsForHIT</code> operation retrieves the
@@ -672,15 +490,6 @@ namespace MTurk
          */
         virtual Model::ListReviewPolicyResultsForHITOutcome ListReviewPolicyResultsForHIT(const Model::ListReviewPolicyResultsForHITRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListReviewPolicyResultsForHIT that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListReviewPolicyResultsForHITOutcomeCallable ListReviewPolicyResultsForHITCallable(const Model::ListReviewPolicyResultsForHITRequest& request) const;
-
-        /**
-         * An Async wrapper for ListReviewPolicyResultsForHIT that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListReviewPolicyResultsForHITAsync(const Model::ListReviewPolicyResultsForHITRequest& request, const ListReviewPolicyResultsForHITResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The <code>ListReviewableHITs</code> operation retrieves the HITs with Status
@@ -691,15 +500,6 @@ namespace MTurk
          */
         virtual Model::ListReviewableHITsOutcome ListReviewableHITs(const Model::ListReviewableHITsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListReviewableHITs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListReviewableHITsOutcomeCallable ListReviewableHITsCallable(const Model::ListReviewableHITsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListReviewableHITs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListReviewableHITsAsync(const Model::ListReviewableHITsRequest& request, const ListReviewableHITsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The <code>ListWorkersBlocks</code> operation retrieves a list of Workers who
@@ -709,15 +509,6 @@ namespace MTurk
          */
         virtual Model::ListWorkerBlocksOutcome ListWorkerBlocks(const Model::ListWorkerBlocksRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListWorkerBlocks that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListWorkerBlocksOutcomeCallable ListWorkerBlocksCallable(const Model::ListWorkerBlocksRequest& request) const;
-
-        /**
-         * An Async wrapper for ListWorkerBlocks that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListWorkerBlocksAsync(const Model::ListWorkerBlocksRequest& request, const ListWorkerBlocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The <code>ListWorkersWithQualificationType</code> operation returns all of
@@ -728,15 +519,6 @@ namespace MTurk
          */
         virtual Model::ListWorkersWithQualificationTypeOutcome ListWorkersWithQualificationType(const Model::ListWorkersWithQualificationTypeRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListWorkersWithQualificationType that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListWorkersWithQualificationTypeOutcomeCallable ListWorkersWithQualificationTypeCallable(const Model::ListWorkersWithQualificationTypeRequest& request) const;
-
-        /**
-         * An Async wrapper for ListWorkersWithQualificationType that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListWorkersWithQualificationTypeAsync(const Model::ListWorkersWithQualificationTypeRequest& request, const ListWorkersWithQualificationTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The <code>NotifyWorkers</code> operation sends an email to one or more
@@ -750,15 +532,6 @@ namespace MTurk
          */
         virtual Model::NotifyWorkersOutcome NotifyWorkers(const Model::NotifyWorkersRequest& request) const;
 
-        /**
-         * A Callable wrapper for NotifyWorkers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::NotifyWorkersOutcomeCallable NotifyWorkersCallable(const Model::NotifyWorkersRequest& request) const;
-
-        /**
-         * An Async wrapper for NotifyWorkers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void NotifyWorkersAsync(const Model::NotifyWorkersRequest& request, const NotifyWorkersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The <code>RejectAssignment</code> operation rejects the results of a
@@ -774,15 +547,6 @@ namespace MTurk
          */
         virtual Model::RejectAssignmentOutcome RejectAssignment(const Model::RejectAssignmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for RejectAssignment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RejectAssignmentOutcomeCallable RejectAssignmentCallable(const Model::RejectAssignmentRequest& request) const;
-
-        /**
-         * An Async wrapper for RejectAssignment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RejectAssignmentAsync(const Model::RejectAssignmentRequest& request, const RejectAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The <code>RejectQualificationRequest</code> operation rejects a user's
@@ -794,15 +558,6 @@ namespace MTurk
          */
         virtual Model::RejectQualificationRequestOutcome RejectQualificationRequest(const Model::RejectQualificationRequestRequest& request) const;
 
-        /**
-         * A Callable wrapper for RejectQualificationRequest that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RejectQualificationRequestOutcomeCallable RejectQualificationRequestCallable(const Model::RejectQualificationRequestRequest& request) const;
-
-        /**
-         * An Async wrapper for RejectQualificationRequest that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RejectQualificationRequestAsync(const Model::RejectQualificationRequestRequest& request, const RejectQualificationRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The <code>SendBonus</code> operation issues a payment of money from your
@@ -819,15 +574,6 @@ namespace MTurk
          */
         virtual Model::SendBonusOutcome SendBonus(const Model::SendBonusRequest& request) const;
 
-        /**
-         * A Callable wrapper for SendBonus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SendBonusOutcomeCallable SendBonusCallable(const Model::SendBonusRequest& request) const;
-
-        /**
-         * An Async wrapper for SendBonus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SendBonusAsync(const Model::SendBonusRequest& request, const SendBonusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The <code>SendTestEventNotification</code> operation causes Amazon
@@ -842,15 +588,6 @@ namespace MTurk
          */
         virtual Model::SendTestEventNotificationOutcome SendTestEventNotification(const Model::SendTestEventNotificationRequest& request) const;
 
-        /**
-         * A Callable wrapper for SendTestEventNotification that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SendTestEventNotificationOutcomeCallable SendTestEventNotificationCallable(const Model::SendTestEventNotificationRequest& request) const;
-
-        /**
-         * An Async wrapper for SendTestEventNotification that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SendTestEventNotificationAsync(const Model::SendTestEventNotificationRequest& request, const SendTestEventNotificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The <code>UpdateExpirationForHIT</code> operation allows you update the
@@ -861,15 +598,6 @@ namespace MTurk
          */
         virtual Model::UpdateExpirationForHITOutcome UpdateExpirationForHIT(const Model::UpdateExpirationForHITRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateExpirationForHIT that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateExpirationForHITOutcomeCallable UpdateExpirationForHITCallable(const Model::UpdateExpirationForHITRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateExpirationForHIT that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateExpirationForHITAsync(const Model::UpdateExpirationForHITRequest& request, const UpdateExpirationForHITResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The <code>UpdateHITReviewStatus</code> operation updates the status of a
@@ -881,15 +609,6 @@ namespace MTurk
          */
         virtual Model::UpdateHITReviewStatusOutcome UpdateHITReviewStatus(const Model::UpdateHITReviewStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateHITReviewStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateHITReviewStatusOutcomeCallable UpdateHITReviewStatusCallable(const Model::UpdateHITReviewStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateHITReviewStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateHITReviewStatusAsync(const Model::UpdateHITReviewStatusRequest& request, const UpdateHITReviewStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The <code>UpdateHITTypeOfHIT</code> operation allows you to change the
@@ -902,15 +621,6 @@ namespace MTurk
          */
         virtual Model::UpdateHITTypeOfHITOutcome UpdateHITTypeOfHIT(const Model::UpdateHITTypeOfHITRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateHITTypeOfHIT that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateHITTypeOfHITOutcomeCallable UpdateHITTypeOfHITCallable(const Model::UpdateHITTypeOfHITRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateHITTypeOfHIT that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateHITTypeOfHITAsync(const Model::UpdateHITTypeOfHITRequest& request, const UpdateHITTypeOfHITResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The <code>UpdateNotificationSettings</code> operation creates, updates,
@@ -929,15 +639,6 @@ namespace MTurk
          */
         virtual Model::UpdateNotificationSettingsOutcome UpdateNotificationSettings(const Model::UpdateNotificationSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateNotificationSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateNotificationSettingsOutcomeCallable UpdateNotificationSettingsCallable(const Model::UpdateNotificationSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateNotificationSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateNotificationSettingsAsync(const Model::UpdateNotificationSettingsRequest& request, const UpdateNotificationSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The <code>UpdateQualificationType</code> operation modifies the attributes
@@ -970,15 +671,6 @@ namespace MTurk
          */
         virtual Model::UpdateQualificationTypeOutcome UpdateQualificationType(const Model::UpdateQualificationTypeRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateQualificationType that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateQualificationTypeOutcomeCallable UpdateQualificationTypeCallable(const Model::UpdateQualificationTypeRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateQualificationType that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateQualificationTypeAsync(const Model::UpdateQualificationTypeRequest& request, const UpdateQualificationTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

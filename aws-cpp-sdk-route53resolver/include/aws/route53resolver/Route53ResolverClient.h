@@ -7,8 +7,10 @@
 #include <aws/route53resolver/Route53Resolver_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/route53resolver/Route53ResolverServiceClientModel.h>
+#include <aws/route53resolver/Route53ResolverLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -101,6 +103,47 @@ namespace Route53Resolver
         virtual ~Route53ResolverClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Associates a <a>FirewallRuleGroup</a> with a VPC, to provide DNS filtering
          * for the VPC. </p><p><h3>See Also:</h3>   <a
@@ -109,15 +152,6 @@ namespace Route53Resolver
          */
         virtual Model::AssociateFirewallRuleGroupOutcome AssociateFirewallRuleGroup(const Model::AssociateFirewallRuleGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateFirewallRuleGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateFirewallRuleGroupOutcomeCallable AssociateFirewallRuleGroupCallable(const Model::AssociateFirewallRuleGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateFirewallRuleGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateFirewallRuleGroupAsync(const Model::AssociateFirewallRuleGroupRequest& request, const AssociateFirewallRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds IP addresses to an inbound or an outbound Resolver endpoint. If you want
@@ -131,15 +165,6 @@ namespace Route53Resolver
          */
         virtual Model::AssociateResolverEndpointIpAddressOutcome AssociateResolverEndpointIpAddress(const Model::AssociateResolverEndpointIpAddressRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateResolverEndpointIpAddress that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateResolverEndpointIpAddressOutcomeCallable AssociateResolverEndpointIpAddressCallable(const Model::AssociateResolverEndpointIpAddressRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateResolverEndpointIpAddress that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateResolverEndpointIpAddressAsync(const Model::AssociateResolverEndpointIpAddressRequest& request, const AssociateResolverEndpointIpAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates an Amazon VPC with a specified query logging configuration. Route
@@ -157,15 +182,6 @@ namespace Route53Resolver
          */
         virtual Model::AssociateResolverQueryLogConfigOutcome AssociateResolverQueryLogConfig(const Model::AssociateResolverQueryLogConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateResolverQueryLogConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateResolverQueryLogConfigOutcomeCallable AssociateResolverQueryLogConfigCallable(const Model::AssociateResolverQueryLogConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateResolverQueryLogConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateResolverQueryLogConfigAsync(const Model::AssociateResolverQueryLogConfigRequest& request, const AssociateResolverQueryLogConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates a Resolver rule with a VPC. When you associate a rule with a VPC,
@@ -180,15 +196,6 @@ namespace Route53Resolver
          */
         virtual Model::AssociateResolverRuleOutcome AssociateResolverRule(const Model::AssociateResolverRuleRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateResolverRule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateResolverRuleOutcomeCallable AssociateResolverRuleCallable(const Model::AssociateResolverRuleRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateResolverRule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateResolverRuleAsync(const Model::AssociateResolverRuleRequest& request, const AssociateResolverRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an empty firewall domain list for use in DNS Firewall rules. You can
@@ -200,15 +207,6 @@ namespace Route53Resolver
          */
         virtual Model::CreateFirewallDomainListOutcome CreateFirewallDomainList(const Model::CreateFirewallDomainListRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateFirewallDomainList that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateFirewallDomainListOutcomeCallable CreateFirewallDomainListCallable(const Model::CreateFirewallDomainListRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateFirewallDomainList that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateFirewallDomainListAsync(const Model::CreateFirewallDomainListRequest& request, const CreateFirewallDomainListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a single DNS Firewall rule in the specified rule group, using the
@@ -218,15 +216,6 @@ namespace Route53Resolver
          */
         virtual Model::CreateFirewallRuleOutcome CreateFirewallRule(const Model::CreateFirewallRuleRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateFirewallRule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateFirewallRuleOutcomeCallable CreateFirewallRuleCallable(const Model::CreateFirewallRuleRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateFirewallRule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateFirewallRuleAsync(const Model::CreateFirewallRuleRequest& request, const CreateFirewallRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an empty DNS Firewall rule group for filtering DNS network traffic in
@@ -237,15 +226,6 @@ namespace Route53Resolver
          */
         virtual Model::CreateFirewallRuleGroupOutcome CreateFirewallRuleGroup(const Model::CreateFirewallRuleGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateFirewallRuleGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateFirewallRuleGroupOutcomeCallable CreateFirewallRuleGroupCallable(const Model::CreateFirewallRuleGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateFirewallRuleGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateFirewallRuleGroupAsync(const Model::CreateFirewallRuleGroupRequest& request, const CreateFirewallRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a Resolver endpoint. There are two types of Resolver endpoints,
@@ -258,15 +238,6 @@ namespace Route53Resolver
          */
         virtual Model::CreateResolverEndpointOutcome CreateResolverEndpoint(const Model::CreateResolverEndpointRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateResolverEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateResolverEndpointOutcomeCallable CreateResolverEndpointCallable(const Model::CreateResolverEndpointRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateResolverEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateResolverEndpointAsync(const Model::CreateResolverEndpointRequest& request, const CreateResolverEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a Resolver query logging configuration, which defines where you want
@@ -286,15 +257,6 @@ namespace Route53Resolver
          */
         virtual Model::CreateResolverQueryLogConfigOutcome CreateResolverQueryLogConfig(const Model::CreateResolverQueryLogConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateResolverQueryLogConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateResolverQueryLogConfigOutcomeCallable CreateResolverQueryLogConfigCallable(const Model::CreateResolverQueryLogConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateResolverQueryLogConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateResolverQueryLogConfigAsync(const Model::CreateResolverQueryLogConfigRequest& request, const CreateResolverQueryLogConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>For DNS queries that originate in your VPCs, specifies which Resolver
@@ -306,15 +268,6 @@ namespace Route53Resolver
          */
         virtual Model::CreateResolverRuleOutcome CreateResolverRule(const Model::CreateResolverRuleRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateResolverRule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateResolverRuleOutcomeCallable CreateResolverRuleCallable(const Model::CreateResolverRuleRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateResolverRule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateResolverRuleAsync(const Model::CreateResolverRuleRequest& request, const CreateResolverRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified domain list. </p><p><h3>See Also:</h3>   <a
@@ -323,15 +276,6 @@ namespace Route53Resolver
          */
         virtual Model::DeleteFirewallDomainListOutcome DeleteFirewallDomainList(const Model::DeleteFirewallDomainListRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteFirewallDomainList that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteFirewallDomainListOutcomeCallable DeleteFirewallDomainListCallable(const Model::DeleteFirewallDomainListRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteFirewallDomainList that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteFirewallDomainListAsync(const Model::DeleteFirewallDomainListRequest& request, const DeleteFirewallDomainListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified firewall rule.</p><p><h3>See Also:</h3>   <a
@@ -340,15 +284,6 @@ namespace Route53Resolver
          */
         virtual Model::DeleteFirewallRuleOutcome DeleteFirewallRule(const Model::DeleteFirewallRuleRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteFirewallRule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteFirewallRuleOutcomeCallable DeleteFirewallRuleCallable(const Model::DeleteFirewallRuleRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteFirewallRule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteFirewallRuleAsync(const Model::DeleteFirewallRuleRequest& request, const DeleteFirewallRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified firewall rule group. </p><p><h3>See Also:</h3>   <a
@@ -357,15 +292,6 @@ namespace Route53Resolver
          */
         virtual Model::DeleteFirewallRuleGroupOutcome DeleteFirewallRuleGroup(const Model::DeleteFirewallRuleGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteFirewallRuleGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteFirewallRuleGroupOutcomeCallable DeleteFirewallRuleGroupCallable(const Model::DeleteFirewallRuleGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteFirewallRuleGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteFirewallRuleGroupAsync(const Model::DeleteFirewallRuleGroupRequest& request, const DeleteFirewallRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a Resolver endpoint. The effect of deleting a Resolver endpoint
@@ -379,15 +305,6 @@ namespace Route53Resolver
          */
         virtual Model::DeleteResolverEndpointOutcome DeleteResolverEndpoint(const Model::DeleteResolverEndpointRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteResolverEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteResolverEndpointOutcomeCallable DeleteResolverEndpointCallable(const Model::DeleteResolverEndpointRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteResolverEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteResolverEndpointAsync(const Model::DeleteResolverEndpointRequest& request, const DeleteResolverEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a query logging configuration. When you delete a configuration,
@@ -410,15 +327,6 @@ namespace Route53Resolver
          */
         virtual Model::DeleteResolverQueryLogConfigOutcome DeleteResolverQueryLogConfig(const Model::DeleteResolverQueryLogConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteResolverQueryLogConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteResolverQueryLogConfigOutcomeCallable DeleteResolverQueryLogConfigCallable(const Model::DeleteResolverQueryLogConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteResolverQueryLogConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteResolverQueryLogConfigAsync(const Model::DeleteResolverQueryLogConfigRequest& request, const DeleteResolverQueryLogConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a Resolver rule. Before you can delete a Resolver rule, you must
@@ -431,15 +339,6 @@ namespace Route53Resolver
          */
         virtual Model::DeleteResolverRuleOutcome DeleteResolverRule(const Model::DeleteResolverRuleRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteResolverRule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteResolverRuleOutcomeCallable DeleteResolverRuleCallable(const Model::DeleteResolverRuleRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteResolverRule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteResolverRuleAsync(const Model::DeleteResolverRuleRequest& request, const DeleteResolverRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates a <a>FirewallRuleGroup</a> from a VPC, to remove DNS filtering
@@ -449,15 +348,6 @@ namespace Route53Resolver
          */
         virtual Model::DisassociateFirewallRuleGroupOutcome DisassociateFirewallRuleGroup(const Model::DisassociateFirewallRuleGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateFirewallRuleGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateFirewallRuleGroupOutcomeCallable DisassociateFirewallRuleGroupCallable(const Model::DisassociateFirewallRuleGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateFirewallRuleGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateFirewallRuleGroupAsync(const Model::DisassociateFirewallRuleGroupRequest& request, const DisassociateFirewallRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes IP addresses from an inbound or an outbound Resolver endpoint. If you
@@ -471,15 +361,6 @@ namespace Route53Resolver
          */
         virtual Model::DisassociateResolverEndpointIpAddressOutcome DisassociateResolverEndpointIpAddress(const Model::DisassociateResolverEndpointIpAddressRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateResolverEndpointIpAddress that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateResolverEndpointIpAddressOutcomeCallable DisassociateResolverEndpointIpAddressCallable(const Model::DisassociateResolverEndpointIpAddressRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateResolverEndpointIpAddress that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateResolverEndpointIpAddressAsync(const Model::DisassociateResolverEndpointIpAddressRequest& request, const DisassociateResolverEndpointIpAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates a VPC from a query logging configuration.</p>  <p>Before
@@ -495,15 +376,6 @@ namespace Route53Resolver
          */
         virtual Model::DisassociateResolverQueryLogConfigOutcome DisassociateResolverQueryLogConfig(const Model::DisassociateResolverQueryLogConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateResolverQueryLogConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateResolverQueryLogConfigOutcomeCallable DisassociateResolverQueryLogConfigCallable(const Model::DisassociateResolverQueryLogConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateResolverQueryLogConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateResolverQueryLogConfigAsync(const Model::DisassociateResolverQueryLogConfigRequest& request, const DisassociateResolverQueryLogConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the association between a specified Resolver rule and a specified
@@ -515,15 +387,6 @@ namespace Route53Resolver
          */
         virtual Model::DisassociateResolverRuleOutcome DisassociateResolverRule(const Model::DisassociateResolverRuleRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateResolverRule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateResolverRuleOutcomeCallable DisassociateResolverRuleCallable(const Model::DisassociateResolverRuleRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateResolverRule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateResolverRuleAsync(const Model::DisassociateResolverRuleRequest& request, const DisassociateResolverRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the configuration of the firewall behavior provided by DNS Firewall
@@ -534,15 +397,6 @@ namespace Route53Resolver
          */
         virtual Model::GetFirewallConfigOutcome GetFirewallConfig(const Model::GetFirewallConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetFirewallConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetFirewallConfigOutcomeCallable GetFirewallConfigCallable(const Model::GetFirewallConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for GetFirewallConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetFirewallConfigAsync(const Model::GetFirewallConfigRequest& request, const GetFirewallConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the specified firewall domain list.</p><p><h3>See Also:</h3>   <a
@@ -551,15 +405,6 @@ namespace Route53Resolver
          */
         virtual Model::GetFirewallDomainListOutcome GetFirewallDomainList(const Model::GetFirewallDomainListRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetFirewallDomainList that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetFirewallDomainListOutcomeCallable GetFirewallDomainListCallable(const Model::GetFirewallDomainListRequest& request) const;
-
-        /**
-         * An Async wrapper for GetFirewallDomainList that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetFirewallDomainListAsync(const Model::GetFirewallDomainListRequest& request, const GetFirewallDomainListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the specified firewall rule group. </p><p><h3>See Also:</h3>   <a
@@ -568,15 +413,6 @@ namespace Route53Resolver
          */
         virtual Model::GetFirewallRuleGroupOutcome GetFirewallRuleGroup(const Model::GetFirewallRuleGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetFirewallRuleGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetFirewallRuleGroupOutcomeCallable GetFirewallRuleGroupCallable(const Model::GetFirewallRuleGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for GetFirewallRuleGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetFirewallRuleGroupAsync(const Model::GetFirewallRuleGroupRequest& request, const GetFirewallRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a firewall rule group association, which enables DNS filtering for
@@ -588,15 +424,6 @@ namespace Route53Resolver
          */
         virtual Model::GetFirewallRuleGroupAssociationOutcome GetFirewallRuleGroupAssociation(const Model::GetFirewallRuleGroupAssociationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetFirewallRuleGroupAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetFirewallRuleGroupAssociationOutcomeCallable GetFirewallRuleGroupAssociationCallable(const Model::GetFirewallRuleGroupAssociationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetFirewallRuleGroupAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetFirewallRuleGroupAssociationAsync(const Model::GetFirewallRuleGroupAssociationRequest& request, const GetFirewallRuleGroupAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the Identity and Access Management (Amazon Web Services IAM) policy
@@ -607,15 +434,6 @@ namespace Route53Resolver
          */
         virtual Model::GetFirewallRuleGroupPolicyOutcome GetFirewallRuleGroupPolicy(const Model::GetFirewallRuleGroupPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetFirewallRuleGroupPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetFirewallRuleGroupPolicyOutcomeCallable GetFirewallRuleGroupPolicyCallable(const Model::GetFirewallRuleGroupPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetFirewallRuleGroupPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetFirewallRuleGroupPolicyAsync(const Model::GetFirewallRuleGroupPolicyRequest& request, const GetFirewallRuleGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the behavior configuration of Route 53 Resolver behavior for a
@@ -625,15 +443,6 @@ namespace Route53Resolver
          */
         virtual Model::GetResolverConfigOutcome GetResolverConfig(const Model::GetResolverConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetResolverConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetResolverConfigOutcomeCallable GetResolverConfigCallable(const Model::GetResolverConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for GetResolverConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetResolverConfigAsync(const Model::GetResolverConfigRequest& request, const GetResolverConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets DNSSEC validation information for a specified resource.</p><p><h3>See
@@ -643,15 +452,6 @@ namespace Route53Resolver
          */
         virtual Model::GetResolverDnssecConfigOutcome GetResolverDnssecConfig(const Model::GetResolverDnssecConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetResolverDnssecConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetResolverDnssecConfigOutcomeCallable GetResolverDnssecConfigCallable(const Model::GetResolverDnssecConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for GetResolverDnssecConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetResolverDnssecConfigAsync(const Model::GetResolverDnssecConfigRequest& request, const GetResolverDnssecConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about a specified Resolver endpoint, such as whether it's an
@@ -662,15 +462,6 @@ namespace Route53Resolver
          */
         virtual Model::GetResolverEndpointOutcome GetResolverEndpoint(const Model::GetResolverEndpointRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetResolverEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetResolverEndpointOutcomeCallable GetResolverEndpointCallable(const Model::GetResolverEndpointRequest& request) const;
-
-        /**
-         * An Async wrapper for GetResolverEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetResolverEndpointAsync(const Model::GetResolverEndpointRequest& request, const GetResolverEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about a specified Resolver query logging configuration, such
@@ -681,15 +472,6 @@ namespace Route53Resolver
          */
         virtual Model::GetResolverQueryLogConfigOutcome GetResolverQueryLogConfig(const Model::GetResolverQueryLogConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetResolverQueryLogConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetResolverQueryLogConfigOutcomeCallable GetResolverQueryLogConfigCallable(const Model::GetResolverQueryLogConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for GetResolverQueryLogConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetResolverQueryLogConfigAsync(const Model::GetResolverQueryLogConfigRequest& request, const GetResolverQueryLogConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about a specified association between a Resolver query
@@ -701,15 +483,6 @@ namespace Route53Resolver
          */
         virtual Model::GetResolverQueryLogConfigAssociationOutcome GetResolverQueryLogConfigAssociation(const Model::GetResolverQueryLogConfigAssociationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetResolverQueryLogConfigAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetResolverQueryLogConfigAssociationOutcomeCallable GetResolverQueryLogConfigAssociationCallable(const Model::GetResolverQueryLogConfigAssociationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetResolverQueryLogConfigAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetResolverQueryLogConfigAssociationAsync(const Model::GetResolverQueryLogConfigAssociationRequest& request, const GetResolverQueryLogConfigAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about a query logging policy. A query logging policy
@@ -721,15 +494,6 @@ namespace Route53Resolver
          */
         virtual Model::GetResolverQueryLogConfigPolicyOutcome GetResolverQueryLogConfigPolicy(const Model::GetResolverQueryLogConfigPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetResolverQueryLogConfigPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetResolverQueryLogConfigPolicyOutcomeCallable GetResolverQueryLogConfigPolicyCallable(const Model::GetResolverQueryLogConfigPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetResolverQueryLogConfigPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetResolverQueryLogConfigPolicyAsync(const Model::GetResolverQueryLogConfigPolicyRequest& request, const GetResolverQueryLogConfigPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about a specified Resolver rule, such as the domain name
@@ -740,15 +504,6 @@ namespace Route53Resolver
          */
         virtual Model::GetResolverRuleOutcome GetResolverRule(const Model::GetResolverRuleRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetResolverRule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetResolverRuleOutcomeCallable GetResolverRuleCallable(const Model::GetResolverRuleRequest& request) const;
-
-        /**
-         * An Async wrapper for GetResolverRule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetResolverRuleAsync(const Model::GetResolverRuleRequest& request, const GetResolverRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about an association between a specified Resolver rule and a
@@ -760,15 +515,6 @@ namespace Route53Resolver
          */
         virtual Model::GetResolverRuleAssociationOutcome GetResolverRuleAssociation(const Model::GetResolverRuleAssociationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetResolverRuleAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetResolverRuleAssociationOutcomeCallable GetResolverRuleAssociationCallable(const Model::GetResolverRuleAssociationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetResolverRuleAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetResolverRuleAssociationAsync(const Model::GetResolverRuleAssociationRequest& request, const GetResolverRuleAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the Resolver rule policy for a specified rule. A
@@ -781,15 +527,6 @@ namespace Route53Resolver
          */
         virtual Model::GetResolverRulePolicyOutcome GetResolverRulePolicy(const Model::GetResolverRulePolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetResolverRulePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetResolverRulePolicyOutcomeCallable GetResolverRulePolicyCallable(const Model::GetResolverRulePolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetResolverRulePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetResolverRulePolicyAsync(const Model::GetResolverRulePolicyRequest& request, const GetResolverRulePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Imports domain names from a file into a domain list, for use in a DNS
@@ -805,15 +542,6 @@ namespace Route53Resolver
          */
         virtual Model::ImportFirewallDomainsOutcome ImportFirewallDomains(const Model::ImportFirewallDomainsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ImportFirewallDomains that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ImportFirewallDomainsOutcomeCallable ImportFirewallDomainsCallable(const Model::ImportFirewallDomainsRequest& request) const;
-
-        /**
-         * An Async wrapper for ImportFirewallDomains that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ImportFirewallDomainsAsync(const Model::ImportFirewallDomainsRequest& request, const ImportFirewallDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the firewall configurations that you have defined. DNS Firewall
@@ -825,15 +553,6 @@ namespace Route53Resolver
          */
         virtual Model::ListFirewallConfigsOutcome ListFirewallConfigs(const Model::ListFirewallConfigsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListFirewallConfigs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListFirewallConfigsOutcomeCallable ListFirewallConfigsCallable(const Model::ListFirewallConfigsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListFirewallConfigs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListFirewallConfigsAsync(const Model::ListFirewallConfigsRequest& request, const ListFirewallConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the firewall domain lists that you have defined. For each firewall
@@ -846,15 +565,6 @@ namespace Route53Resolver
          */
         virtual Model::ListFirewallDomainListsOutcome ListFirewallDomainLists(const Model::ListFirewallDomainListsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListFirewallDomainLists that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListFirewallDomainListsOutcomeCallable ListFirewallDomainListsCallable(const Model::ListFirewallDomainListsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListFirewallDomainLists that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListFirewallDomainListsAsync(const Model::ListFirewallDomainListsRequest& request, const ListFirewallDomainListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the domains that you have defined for the specified firewall domain
@@ -865,15 +575,6 @@ namespace Route53Resolver
          */
         virtual Model::ListFirewallDomainsOutcome ListFirewallDomains(const Model::ListFirewallDomainsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListFirewallDomains that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListFirewallDomainsOutcomeCallable ListFirewallDomainsCallable(const Model::ListFirewallDomainsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListFirewallDomains that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListFirewallDomainsAsync(const Model::ListFirewallDomainsRequest& request, const ListFirewallDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the firewall rule group associations that you have defined. Each
@@ -885,15 +586,6 @@ namespace Route53Resolver
          */
         virtual Model::ListFirewallRuleGroupAssociationsOutcome ListFirewallRuleGroupAssociations(const Model::ListFirewallRuleGroupAssociationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListFirewallRuleGroupAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListFirewallRuleGroupAssociationsOutcomeCallable ListFirewallRuleGroupAssociationsCallable(const Model::ListFirewallRuleGroupAssociationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListFirewallRuleGroupAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListFirewallRuleGroupAssociationsAsync(const Model::ListFirewallRuleGroupAssociationsRequest& request, const ListFirewallRuleGroupAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the minimal high-level information for the rule groups that you
@@ -905,15 +597,6 @@ namespace Route53Resolver
          */
         virtual Model::ListFirewallRuleGroupsOutcome ListFirewallRuleGroups(const Model::ListFirewallRuleGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListFirewallRuleGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListFirewallRuleGroupsOutcomeCallable ListFirewallRuleGroupsCallable(const Model::ListFirewallRuleGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListFirewallRuleGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListFirewallRuleGroupsAsync(const Model::ListFirewallRuleGroupsRequest& request, const ListFirewallRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the firewall rules that you have defined for the specified firewall
@@ -926,15 +609,6 @@ namespace Route53Resolver
          */
         virtual Model::ListFirewallRulesOutcome ListFirewallRules(const Model::ListFirewallRulesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListFirewallRules that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListFirewallRulesOutcomeCallable ListFirewallRulesCallable(const Model::ListFirewallRulesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListFirewallRules that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListFirewallRulesAsync(const Model::ListFirewallRulesRequest& request, const ListFirewallRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the Resolver configurations that you have defined. Route 53
@@ -945,15 +619,6 @@ namespace Route53Resolver
          */
         virtual Model::ListResolverConfigsOutcome ListResolverConfigs(const Model::ListResolverConfigsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListResolverConfigs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListResolverConfigsOutcomeCallable ListResolverConfigsCallable(const Model::ListResolverConfigsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListResolverConfigs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListResolverConfigsAsync(const Model::ListResolverConfigsRequest& request, const ListResolverConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the configurations for DNSSEC validation that are associated with the
@@ -963,15 +628,6 @@ namespace Route53Resolver
          */
         virtual Model::ListResolverDnssecConfigsOutcome ListResolverDnssecConfigs(const Model::ListResolverDnssecConfigsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListResolverDnssecConfigs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListResolverDnssecConfigsOutcomeCallable ListResolverDnssecConfigsCallable(const Model::ListResolverDnssecConfigsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListResolverDnssecConfigs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListResolverDnssecConfigsAsync(const Model::ListResolverDnssecConfigsRequest& request, const ListResolverDnssecConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the IP addresses for a specified Resolver endpoint.</p><p><h3>See
@@ -981,15 +637,6 @@ namespace Route53Resolver
          */
         virtual Model::ListResolverEndpointIpAddressesOutcome ListResolverEndpointIpAddresses(const Model::ListResolverEndpointIpAddressesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListResolverEndpointIpAddresses that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListResolverEndpointIpAddressesOutcomeCallable ListResolverEndpointIpAddressesCallable(const Model::ListResolverEndpointIpAddressesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListResolverEndpointIpAddresses that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListResolverEndpointIpAddressesAsync(const Model::ListResolverEndpointIpAddressesRequest& request, const ListResolverEndpointIpAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all the Resolver endpoints that were created using the current Amazon
@@ -999,15 +646,6 @@ namespace Route53Resolver
          */
         virtual Model::ListResolverEndpointsOutcome ListResolverEndpoints(const Model::ListResolverEndpointsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListResolverEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListResolverEndpointsOutcomeCallable ListResolverEndpointsCallable(const Model::ListResolverEndpointsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListResolverEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListResolverEndpointsAsync(const Model::ListResolverEndpointsRequest& request, const ListResolverEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists information about associations between Amazon VPCs and query logging
@@ -1017,15 +655,6 @@ namespace Route53Resolver
          */
         virtual Model::ListResolverQueryLogConfigAssociationsOutcome ListResolverQueryLogConfigAssociations(const Model::ListResolverQueryLogConfigAssociationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListResolverQueryLogConfigAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListResolverQueryLogConfigAssociationsOutcomeCallable ListResolverQueryLogConfigAssociationsCallable(const Model::ListResolverQueryLogConfigAssociationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListResolverQueryLogConfigAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListResolverQueryLogConfigAssociationsAsync(const Model::ListResolverQueryLogConfigAssociationsRequest& request, const ListResolverQueryLogConfigAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists information about the specified query logging configurations. Each
@@ -1037,15 +666,6 @@ namespace Route53Resolver
          */
         virtual Model::ListResolverQueryLogConfigsOutcome ListResolverQueryLogConfigs(const Model::ListResolverQueryLogConfigsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListResolverQueryLogConfigs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListResolverQueryLogConfigsOutcomeCallable ListResolverQueryLogConfigsCallable(const Model::ListResolverQueryLogConfigsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListResolverQueryLogConfigs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListResolverQueryLogConfigsAsync(const Model::ListResolverQueryLogConfigsRequest& request, const ListResolverQueryLogConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the associations that were created between Resolver rules and VPCs
@@ -1055,15 +675,6 @@ namespace Route53Resolver
          */
         virtual Model::ListResolverRuleAssociationsOutcome ListResolverRuleAssociations(const Model::ListResolverRuleAssociationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListResolverRuleAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListResolverRuleAssociationsOutcomeCallable ListResolverRuleAssociationsCallable(const Model::ListResolverRuleAssociationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListResolverRuleAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListResolverRuleAssociationsAsync(const Model::ListResolverRuleAssociationsRequest& request, const ListResolverRuleAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the Resolver rules that were created using the current Amazon Web
@@ -1073,15 +684,6 @@ namespace Route53Resolver
          */
         virtual Model::ListResolverRulesOutcome ListResolverRules(const Model::ListResolverRulesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListResolverRules that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListResolverRulesOutcomeCallable ListResolverRulesCallable(const Model::ListResolverRulesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListResolverRules that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListResolverRulesAsync(const Model::ListResolverRulesRequest& request, const ListResolverRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the tags that you associated with the specified resource.</p><p><h3>See
@@ -1091,15 +693,6 @@ namespace Route53Resolver
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Attaches an Identity and Access Management (Amazon Web Services IAM) policy
@@ -1110,15 +703,6 @@ namespace Route53Resolver
          */
         virtual Model::PutFirewallRuleGroupPolicyOutcome PutFirewallRuleGroupPolicy(const Model::PutFirewallRuleGroupPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutFirewallRuleGroupPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutFirewallRuleGroupPolicyOutcomeCallable PutFirewallRuleGroupPolicyCallable(const Model::PutFirewallRuleGroupPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for PutFirewallRuleGroupPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutFirewallRuleGroupPolicyAsync(const Model::PutFirewallRuleGroupPolicyRequest& request, const PutFirewallRuleGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Specifies an Amazon Web Services account that you want to share a query
@@ -1130,15 +714,6 @@ namespace Route53Resolver
          */
         virtual Model::PutResolverQueryLogConfigPolicyOutcome PutResolverQueryLogConfigPolicy(const Model::PutResolverQueryLogConfigPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutResolverQueryLogConfigPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutResolverQueryLogConfigPolicyOutcomeCallable PutResolverQueryLogConfigPolicyCallable(const Model::PutResolverQueryLogConfigPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for PutResolverQueryLogConfigPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutResolverQueryLogConfigPolicyAsync(const Model::PutResolverQueryLogConfigPolicyRequest& request, const PutResolverQueryLogConfigPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Specifies an Amazon Web Services rule that you want to share with another
@@ -1150,15 +725,6 @@ namespace Route53Resolver
          */
         virtual Model::PutResolverRulePolicyOutcome PutResolverRulePolicy(const Model::PutResolverRulePolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutResolverRulePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutResolverRulePolicyOutcomeCallable PutResolverRulePolicyCallable(const Model::PutResolverRulePolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for PutResolverRulePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutResolverRulePolicyAsync(const Model::PutResolverRulePolicyRequest& request, const PutResolverRulePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds one or more tags to a specified resource.</p><p><h3>See Also:</h3>   <a
@@ -1167,15 +733,6 @@ namespace Route53Resolver
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes one or more tags from a specified resource.</p><p><h3>See Also:</h3> 
@@ -1185,15 +742,6 @@ namespace Route53Resolver
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the configuration of the firewall behavior provided by DNS Firewall
@@ -1204,15 +752,6 @@ namespace Route53Resolver
          */
         virtual Model::UpdateFirewallConfigOutcome UpdateFirewallConfig(const Model::UpdateFirewallConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateFirewallConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateFirewallConfigOutcomeCallable UpdateFirewallConfigCallable(const Model::UpdateFirewallConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateFirewallConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateFirewallConfigAsync(const Model::UpdateFirewallConfigRequest& request, const UpdateFirewallConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the firewall domain list from an array of domain specifications.
@@ -1222,15 +761,6 @@ namespace Route53Resolver
          */
         virtual Model::UpdateFirewallDomainsOutcome UpdateFirewallDomains(const Model::UpdateFirewallDomainsRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateFirewallDomains that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateFirewallDomainsOutcomeCallable UpdateFirewallDomainsCallable(const Model::UpdateFirewallDomainsRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateFirewallDomains that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateFirewallDomainsAsync(const Model::UpdateFirewallDomainsRequest& request, const UpdateFirewallDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the specified firewall rule. </p><p><h3>See Also:</h3>   <a
@@ -1239,15 +769,6 @@ namespace Route53Resolver
          */
         virtual Model::UpdateFirewallRuleOutcome UpdateFirewallRule(const Model::UpdateFirewallRuleRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateFirewallRule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateFirewallRuleOutcomeCallable UpdateFirewallRuleCallable(const Model::UpdateFirewallRuleRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateFirewallRule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateFirewallRuleAsync(const Model::UpdateFirewallRuleRequest& request, const UpdateFirewallRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Changes the association of a <a>FirewallRuleGroup</a> with a VPC. The
@@ -1257,15 +778,6 @@ namespace Route53Resolver
          */
         virtual Model::UpdateFirewallRuleGroupAssociationOutcome UpdateFirewallRuleGroupAssociation(const Model::UpdateFirewallRuleGroupAssociationRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateFirewallRuleGroupAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateFirewallRuleGroupAssociationOutcomeCallable UpdateFirewallRuleGroupAssociationCallable(const Model::UpdateFirewallRuleGroupAssociationRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateFirewallRuleGroupAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateFirewallRuleGroupAssociationAsync(const Model::UpdateFirewallRuleGroupAssociationRequest& request, const UpdateFirewallRuleGroupAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the behavior configuration of Route 53 Resolver behavior for a single
@@ -1275,15 +787,6 @@ namespace Route53Resolver
          */
         virtual Model::UpdateResolverConfigOutcome UpdateResolverConfig(const Model::UpdateResolverConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateResolverConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateResolverConfigOutcomeCallable UpdateResolverConfigCallable(const Model::UpdateResolverConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateResolverConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateResolverConfigAsync(const Model::UpdateResolverConfigRequest& request, const UpdateResolverConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an existing DNSSEC validation configuration. If there is no existing
@@ -1293,15 +796,6 @@ namespace Route53Resolver
          */
         virtual Model::UpdateResolverDnssecConfigOutcome UpdateResolverDnssecConfig(const Model::UpdateResolverDnssecConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateResolverDnssecConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateResolverDnssecConfigOutcomeCallable UpdateResolverDnssecConfigCallable(const Model::UpdateResolverDnssecConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateResolverDnssecConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateResolverDnssecConfigAsync(const Model::UpdateResolverDnssecConfigRequest& request, const UpdateResolverDnssecConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the name of an inbound or an outbound Resolver endpoint.
@@ -1311,15 +805,6 @@ namespace Route53Resolver
          */
         virtual Model::UpdateResolverEndpointOutcome UpdateResolverEndpoint(const Model::UpdateResolverEndpointRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateResolverEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateResolverEndpointOutcomeCallable UpdateResolverEndpointCallable(const Model::UpdateResolverEndpointRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateResolverEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateResolverEndpointAsync(const Model::UpdateResolverEndpointRequest& request, const UpdateResolverEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates settings for a specified Resolver rule. <code>ResolverRuleId</code>
@@ -1330,15 +815,6 @@ namespace Route53Resolver
          */
         virtual Model::UpdateResolverRuleOutcome UpdateResolverRule(const Model::UpdateResolverRuleRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateResolverRule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateResolverRuleOutcomeCallable UpdateResolverRuleCallable(const Model::UpdateResolverRuleRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateResolverRule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateResolverRuleAsync(const Model::UpdateResolverRuleRequest& request, const UpdateResolverRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

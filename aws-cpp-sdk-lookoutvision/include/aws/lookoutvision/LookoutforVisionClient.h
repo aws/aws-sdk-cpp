@@ -7,8 +7,10 @@
 #include <aws/lookoutvision/LookoutforVision_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/lookoutvision/LookoutforVisionServiceClientModel.h>
+#include <aws/lookoutvision/LookoutforVisionLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -80,6 +82,47 @@ namespace LookoutforVision
         virtual ~LookoutforVisionClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Creates a new dataset in an Amazon Lookout for Vision project.
          * <code>CreateDataset</code> can create a training or a test dataset from a valid
@@ -97,15 +140,6 @@ namespace LookoutforVision
          */
         virtual Model::CreateDatasetOutcome CreateDataset(const Model::CreateDatasetRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDataset that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDatasetOutcomeCallable CreateDatasetCallable(const Model::CreateDatasetRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDataset that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDatasetAsync(const Model::CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new version of a model within an an Amazon Lookout for Vision
@@ -126,15 +160,6 @@ namespace LookoutforVision
          */
         virtual Model::CreateModelOutcome CreateModel(const Model::CreateModelRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateModel that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateModelOutcomeCallable CreateModelCallable(const Model::CreateModelRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateModel that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateModelAsync(const Model::CreateModelRequest& request, const CreateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an empty Amazon Lookout for Vision project. After you create the
@@ -146,15 +171,6 @@ namespace LookoutforVision
          */
         virtual Model::CreateProjectOutcome CreateProject(const Model::CreateProjectRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateProject that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateProjectOutcomeCallable CreateProjectCallable(const Model::CreateProjectRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateProject that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateProjectAsync(const Model::CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an existing Amazon Lookout for Vision <code>dataset</code>. </p>
@@ -173,15 +189,6 @@ namespace LookoutforVision
          */
         virtual Model::DeleteDatasetOutcome DeleteDataset(const Model::DeleteDatasetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDataset that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDatasetOutcomeCallable DeleteDatasetCallable(const Model::DeleteDatasetRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDataset that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDatasetAsync(const Model::DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an Amazon Lookout for Vision model. You can't delete a running model.
@@ -196,15 +203,6 @@ namespace LookoutforVision
          */
         virtual Model::DeleteModelOutcome DeleteModel(const Model::DeleteModelRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteModel that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteModelOutcomeCallable DeleteModelCallable(const Model::DeleteModelRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteModel that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteModelAsync(const Model::DeleteModelRequest& request, const DeleteModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an Amazon Lookout for Vision project.</p> <p>To delete a project, you
@@ -220,15 +218,6 @@ namespace LookoutforVision
          */
         virtual Model::DeleteProjectOutcome DeleteProject(const Model::DeleteProjectRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteProject that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteProjectOutcomeCallable DeleteProjectCallable(const Model::DeleteProjectRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteProject that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteProjectAsync(const Model::DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describe an Amazon Lookout for Vision dataset.</p> <p>This operation requires
@@ -239,15 +228,6 @@ namespace LookoutforVision
          */
         virtual Model::DescribeDatasetOutcome DescribeDataset(const Model::DescribeDatasetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDataset that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDatasetOutcomeCallable DescribeDatasetCallable(const Model::DescribeDatasetRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDataset that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDatasetAsync(const Model::DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a version of an Amazon Lookout for Vision model.</p> <p>This
@@ -259,15 +239,6 @@ namespace LookoutforVision
          */
         virtual Model::DescribeModelOutcome DescribeModel(const Model::DescribeModelRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeModel that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeModelOutcomeCallable DescribeModelCallable(const Model::DescribeModelRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeModel that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeModelAsync(const Model::DescribeModelRequest& request, const DescribeModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes an Amazon Lookout for Vision model packaging job. </p> <p>This
@@ -281,15 +252,6 @@ namespace LookoutforVision
          */
         virtual Model::DescribeModelPackagingJobOutcome DescribeModelPackagingJob(const Model::DescribeModelPackagingJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeModelPackagingJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeModelPackagingJobOutcomeCallable DescribeModelPackagingJobCallable(const Model::DescribeModelPackagingJobRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeModelPackagingJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeModelPackagingJobAsync(const Model::DescribeModelPackagingJobRequest& request, const DescribeModelPackagingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes an Amazon Lookout for Vision project.</p> <p>This operation
@@ -300,15 +262,6 @@ namespace LookoutforVision
          */
         virtual Model::DescribeProjectOutcome DescribeProject(const Model::DescribeProjectRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeProject that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeProjectOutcomeCallable DescribeProjectCallable(const Model::DescribeProjectRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeProject that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeProjectAsync(const Model::DescribeProjectRequest& request, const DescribeProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Detects anomalies in an image that you supply. </p> <p>The response from
@@ -330,15 +283,6 @@ namespace LookoutforVision
          */
         virtual Model::DetectAnomaliesOutcome DetectAnomalies(const Model::DetectAnomaliesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DetectAnomalies that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DetectAnomaliesOutcomeCallable DetectAnomaliesCallable(const Model::DetectAnomaliesRequest& request) const;
-
-        /**
-         * An Async wrapper for DetectAnomalies that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DetectAnomaliesAsync(const Model::DetectAnomaliesRequest& request, const DetectAnomaliesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the JSON Lines within a dataset. An Amazon Lookout for Vision JSON Line
@@ -351,15 +295,6 @@ namespace LookoutforVision
          */
         virtual Model::ListDatasetEntriesOutcome ListDatasetEntries(const Model::ListDatasetEntriesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDatasetEntries that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDatasetEntriesOutcomeCallable ListDatasetEntriesCallable(const Model::ListDatasetEntriesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDatasetEntries that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDatasetEntriesAsync(const Model::ListDatasetEntriesRequest& request, const ListDatasetEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Lists the model packaging jobs created for an Amazon Lookout for Vision
@@ -373,15 +308,6 @@ namespace LookoutforVision
          */
         virtual Model::ListModelPackagingJobsOutcome ListModelPackagingJobs(const Model::ListModelPackagingJobsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListModelPackagingJobs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListModelPackagingJobsOutcomeCallable ListModelPackagingJobsCallable(const Model::ListModelPackagingJobsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListModelPackagingJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListModelPackagingJobsAsync(const Model::ListModelPackagingJobsRequest& request, const ListModelPackagingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the versions of a model in an Amazon Lookout for Vision project.</p>
@@ -395,15 +321,6 @@ namespace LookoutforVision
          */
         virtual Model::ListModelsOutcome ListModels(const Model::ListModelsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListModels that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListModelsOutcomeCallable ListModelsCallable(const Model::ListModelsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListModels that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListModelsAsync(const Model::ListModelsRequest& request, const ListModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the Amazon Lookout for Vision projects in your AWS account that are in
@@ -418,15 +335,6 @@ namespace LookoutforVision
          */
         virtual Model::ListProjectsOutcome ListProjects(const Model::ListProjectsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListProjects that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListProjectsOutcomeCallable ListProjectsCallable(const Model::ListProjectsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListProjects that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListProjectsAsync(const Model::ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of tags attached to the specified Amazon Lookout for Vision
@@ -438,15 +346,6 @@ namespace LookoutforVision
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts the running of the version of an Amazon Lookout for Vision model.
@@ -463,15 +362,6 @@ namespace LookoutforVision
          */
         virtual Model::StartModelOutcome StartModel(const Model::StartModelRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartModel that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartModelOutcomeCallable StartModelCallable(const Model::StartModelRequest& request) const;
-
-        /**
-         * An Async wrapper for StartModel that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartModelAsync(const Model::StartModelRequest& request, const StartModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts an Amazon Lookout for Vision model packaging job. A model packaging
@@ -497,15 +387,6 @@ namespace LookoutforVision
          */
         virtual Model::StartModelPackagingJobOutcome StartModelPackagingJob(const Model::StartModelPackagingJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartModelPackagingJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartModelPackagingJobOutcomeCallable StartModelPackagingJobCallable(const Model::StartModelPackagingJobRequest& request) const;
-
-        /**
-         * An Async wrapper for StartModelPackagingJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartModelPackagingJobAsync(const Model::StartModelPackagingJobRequest& request, const StartModelPackagingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops the hosting of a running model. The operation might take a while to
@@ -518,15 +399,6 @@ namespace LookoutforVision
          */
         virtual Model::StopModelOutcome StopModel(const Model::StopModelRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopModel that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopModelOutcomeCallable StopModelCallable(const Model::StopModelRequest& request) const;
-
-        /**
-         * An Async wrapper for StopModel that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopModelAsync(const Model::StopModelRequest& request, const StopModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds one or more key-value tags to an Amazon Lookout for Vision model. For
@@ -538,15 +410,6 @@ namespace LookoutforVision
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes one or more tags from an Amazon Lookout for Vision model. For more
@@ -559,15 +422,6 @@ namespace LookoutforVision
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds or updates one or more JSON Line entries in a dataset. A JSON Line
@@ -590,15 +444,6 @@ namespace LookoutforVision
          */
         virtual Model::UpdateDatasetEntriesOutcome UpdateDatasetEntries(const Model::UpdateDatasetEntriesRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateDatasetEntries that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateDatasetEntriesOutcomeCallable UpdateDatasetEntriesCallable(const Model::UpdateDatasetEntriesRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateDatasetEntries that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateDatasetEntriesAsync(const Model::UpdateDatasetEntriesRequest& request, const UpdateDatasetEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

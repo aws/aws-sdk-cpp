@@ -7,8 +7,10 @@
 #include <aws/codeartifact/CodeArtifact_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/codeartifact/CodeArtifactServiceClientModel.h>
+#include <aws/codeartifact/CodeArtifactLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -200,6 +202,47 @@ namespace CodeArtifact
         virtual ~CodeArtifactClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Adds an existing external connection to a repository. One external connection
          * is allowed per repository.</p>  <p>A repository can have one or more
@@ -210,15 +253,6 @@ namespace CodeArtifact
          */
         virtual Model::AssociateExternalConnectionOutcome AssociateExternalConnection(const Model::AssociateExternalConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateExternalConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateExternalConnectionOutcomeCallable AssociateExternalConnectionCallable(const Model::AssociateExternalConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateExternalConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateExternalConnectionAsync(const Model::AssociateExternalConnectionRequest& request, const AssociateExternalConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Copies package versions from one repository to another repository in the
@@ -230,15 +264,6 @@ namespace CodeArtifact
          */
         virtual Model::CopyPackageVersionsOutcome CopyPackageVersions(const Model::CopyPackageVersionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for CopyPackageVersions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CopyPackageVersionsOutcomeCallable CopyPackageVersionsCallable(const Model::CopyPackageVersionsRequest& request) const;
-
-        /**
-         * An Async wrapper for CopyPackageVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CopyPackageVersionsAsync(const Model::CopyPackageVersionsRequest& request, const CopyPackageVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Creates a domain. CodeArtifact <i>domains</i> make it easier to manage
@@ -255,15 +280,6 @@ namespace CodeArtifact
          */
         virtual Model::CreateDomainOutcome CreateDomain(const Model::CreateDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDomainOutcomeCallable CreateDomainCallable(const Model::CreateDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDomainAsync(const Model::CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Creates a repository. </p><p><h3>See Also:</h3>   <a
@@ -272,15 +288,6 @@ namespace CodeArtifact
          */
         virtual Model::CreateRepositoryOutcome CreateRepository(const Model::CreateRepositoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateRepository that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateRepositoryOutcomeCallable CreateRepositoryCallable(const Model::CreateRepositoryRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateRepository that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateRepositoryAsync(const Model::CreateRepositoryRequest& request, const CreateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Deletes a domain. You cannot delete a domain that contains repositories. If
@@ -291,15 +298,6 @@ namespace CodeArtifact
          */
         virtual Model::DeleteDomainOutcome DeleteDomain(const Model::DeleteDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDomainOutcomeCallable DeleteDomainCallable(const Model::DeleteDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDomainAsync(const Model::DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Deletes the resource policy set on a domain. </p><p><h3>See Also:</h3>   <a
@@ -308,15 +306,6 @@ namespace CodeArtifact
          */
         virtual Model::DeleteDomainPermissionsPolicyOutcome DeleteDomainPermissionsPolicy(const Model::DeleteDomainPermissionsPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDomainPermissionsPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDomainPermissionsPolicyOutcomeCallable DeleteDomainPermissionsPolicyCallable(const Model::DeleteDomainPermissionsPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDomainPermissionsPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDomainPermissionsPolicyAsync(const Model::DeleteDomainPermissionsPolicyRequest& request, const DeleteDomainPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Deletes one or more versions of a package. A deleted package version cannot
@@ -333,15 +322,6 @@ namespace CodeArtifact
          */
         virtual Model::DeletePackageVersionsOutcome DeletePackageVersions(const Model::DeletePackageVersionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeletePackageVersions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeletePackageVersionsOutcomeCallable DeletePackageVersionsCallable(const Model::DeletePackageVersionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DeletePackageVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeletePackageVersionsAsync(const Model::DeletePackageVersionsRequest& request, const DeletePackageVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Deletes a repository. </p><p><h3>See Also:</h3>   <a
@@ -350,15 +330,6 @@ namespace CodeArtifact
          */
         virtual Model::DeleteRepositoryOutcome DeleteRepository(const Model::DeleteRepositoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteRepository that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteRepositoryOutcomeCallable DeleteRepositoryCallable(const Model::DeleteRepositoryRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteRepository that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteRepositoryAsync(const Model::DeleteRepositoryRequest& request, const DeleteRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Deletes the resource policy that is set on a repository. After a resource
@@ -373,15 +344,6 @@ namespace CodeArtifact
          */
         virtual Model::DeleteRepositoryPermissionsPolicyOutcome DeleteRepositoryPermissionsPolicy(const Model::DeleteRepositoryPermissionsPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteRepositoryPermissionsPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteRepositoryPermissionsPolicyOutcomeCallable DeleteRepositoryPermissionsPolicyCallable(const Model::DeleteRepositoryPermissionsPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteRepositoryPermissionsPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteRepositoryPermissionsPolicyAsync(const Model::DeleteRepositoryPermissionsPolicyRequest& request, const DeleteRepositoryPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a <a
@@ -393,15 +355,6 @@ namespace CodeArtifact
          */
         virtual Model::DescribeDomainOutcome DescribeDomain(const Model::DescribeDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDomainOutcomeCallable DescribeDomainCallable(const Model::DescribeDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDomainAsync(const Model::DescribeDomainRequest& request, const DescribeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a <a
@@ -413,15 +366,6 @@ namespace CodeArtifact
          */
         virtual Model::DescribePackageOutcome DescribePackage(const Model::DescribePackageRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribePackage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribePackageOutcomeCallable DescribePackageCallable(const Model::DescribePackageRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribePackage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribePackageAsync(const Model::DescribePackageRequest& request, const DescribePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a <a
@@ -433,15 +377,6 @@ namespace CodeArtifact
          */
         virtual Model::DescribePackageVersionOutcome DescribePackageVersion(const Model::DescribePackageVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribePackageVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribePackageVersionOutcomeCallable DescribePackageVersionCallable(const Model::DescribePackageVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribePackageVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribePackageVersionAsync(const Model::DescribePackageVersionRequest& request, const DescribePackageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a <code>RepositoryDescription</code> object that contains detailed
@@ -451,15 +386,6 @@ namespace CodeArtifact
          */
         virtual Model::DescribeRepositoryOutcome DescribeRepository(const Model::DescribeRepositoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeRepository that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeRepositoryOutcomeCallable DescribeRepositoryCallable(const Model::DescribeRepositoryRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeRepository that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeRepositoryAsync(const Model::DescribeRepositoryRequest& request, const DescribeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Removes an existing external connection from a repository. </p><p><h3>See
@@ -469,15 +395,6 @@ namespace CodeArtifact
          */
         virtual Model::DisassociateExternalConnectionOutcome DisassociateExternalConnection(const Model::DisassociateExternalConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateExternalConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateExternalConnectionOutcomeCallable DisassociateExternalConnectionCallable(const Model::DisassociateExternalConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateExternalConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateExternalConnectionAsync(const Model::DisassociateExternalConnectionRequest& request, const DisassociateExternalConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Deletes the assets in package versions and sets the package versions' status
@@ -496,15 +413,6 @@ namespace CodeArtifact
          */
         virtual Model::DisposePackageVersionsOutcome DisposePackageVersions(const Model::DisposePackageVersionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisposePackageVersions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisposePackageVersionsOutcomeCallable DisposePackageVersionsCallable(const Model::DisposePackageVersionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DisposePackageVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisposePackageVersionsAsync(const Model::DisposePackageVersionsRequest& request, const DisposePackageVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Generates a temporary authorization token for accessing repositories in the
@@ -533,15 +441,6 @@ namespace CodeArtifact
          */
         virtual Model::GetAuthorizationTokenOutcome GetAuthorizationToken(const Model::GetAuthorizationTokenRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAuthorizationToken that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAuthorizationTokenOutcomeCallable GetAuthorizationTokenCallable(const Model::GetAuthorizationTokenRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAuthorizationToken that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAuthorizationTokenAsync(const Model::GetAuthorizationTokenRequest& request, const GetAuthorizationTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns the resource policy attached to the specified domain. </p> 
@@ -555,15 +454,6 @@ namespace CodeArtifact
          */
         virtual Model::GetDomainPermissionsPolicyOutcome GetDomainPermissionsPolicy(const Model::GetDomainPermissionsPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDomainPermissionsPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDomainPermissionsPolicyOutcomeCallable GetDomainPermissionsPolicyCallable(const Model::GetDomainPermissionsPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDomainPermissionsPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDomainPermissionsPolicyAsync(const Model::GetDomainPermissionsPolicyRequest& request, const GetDomainPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns an asset (or file) that is in a package. For example, for a Maven
@@ -575,15 +465,6 @@ namespace CodeArtifact
          */
         virtual Model::GetPackageVersionAssetOutcome GetPackageVersionAsset(const Model::GetPackageVersionAssetRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetPackageVersionAsset that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetPackageVersionAssetOutcomeCallable GetPackageVersionAssetCallable(const Model::GetPackageVersionAssetRequest& request) const;
-
-        /**
-         * An Async wrapper for GetPackageVersionAsset that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetPackageVersionAssetAsync(const Model::GetPackageVersionAssetRequest& request, const GetPackageVersionAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Gets the readme file or descriptive text for a package version. For packages
@@ -597,15 +478,6 @@ namespace CodeArtifact
          */
         virtual Model::GetPackageVersionReadmeOutcome GetPackageVersionReadme(const Model::GetPackageVersionReadmeRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetPackageVersionReadme that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetPackageVersionReadmeOutcomeCallable GetPackageVersionReadmeCallable(const Model::GetPackageVersionReadmeRequest& request) const;
-
-        /**
-         * An Async wrapper for GetPackageVersionReadme that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetPackageVersionReadmeAsync(const Model::GetPackageVersionReadmeRequest& request, const GetPackageVersionReadmeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns the endpoint of a repository for a specific package format. A
@@ -618,15 +490,6 @@ namespace CodeArtifact
          */
         virtual Model::GetRepositoryEndpointOutcome GetRepositoryEndpoint(const Model::GetRepositoryEndpointRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRepositoryEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRepositoryEndpointOutcomeCallable GetRepositoryEndpointCallable(const Model::GetRepositoryEndpointRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRepositoryEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRepositoryEndpointAsync(const Model::GetRepositoryEndpointRequest& request, const GetRepositoryEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns the resource policy that is set on a repository. </p><p><h3>See
@@ -636,15 +499,6 @@ namespace CodeArtifact
          */
         virtual Model::GetRepositoryPermissionsPolicyOutcome GetRepositoryPermissionsPolicy(const Model::GetRepositoryPermissionsPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRepositoryPermissionsPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRepositoryPermissionsPolicyOutcomeCallable GetRepositoryPermissionsPolicyCallable(const Model::GetRepositoryPermissionsPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRepositoryPermissionsPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRepositoryPermissionsPolicyAsync(const Model::GetRepositoryPermissionsPolicyRequest& request, const GetRepositoryPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a list of <a
@@ -657,15 +511,6 @@ namespace CodeArtifact
          */
         virtual Model::ListDomainsOutcome ListDomains(const Model::ListDomainsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDomains that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDomainsOutcomeCallable ListDomainsCallable(const Model::ListDomainsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDomains that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDomainsAsync(const Model::ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a list of <a
@@ -676,15 +521,6 @@ namespace CodeArtifact
          */
         virtual Model::ListPackageVersionAssetsOutcome ListPackageVersionAssets(const Model::ListPackageVersionAssetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPackageVersionAssets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPackageVersionAssetsOutcomeCallable ListPackageVersionAssetsCallable(const Model::ListPackageVersionAssetsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPackageVersionAssets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPackageVersionAssetsAsync(const Model::ListPackageVersionAssetsRequest& request, const ListPackageVersionAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns the direct dependencies for a package version. The dependencies are
@@ -700,15 +536,6 @@ namespace CodeArtifact
          */
         virtual Model::ListPackageVersionDependenciesOutcome ListPackageVersionDependencies(const Model::ListPackageVersionDependenciesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPackageVersionDependencies that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPackageVersionDependenciesOutcomeCallable ListPackageVersionDependenciesCallable(const Model::ListPackageVersionDependenciesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPackageVersionDependencies that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPackageVersionDependenciesAsync(const Model::ListPackageVersionDependenciesRequest& request, const ListPackageVersionDependenciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a list of <a
@@ -720,15 +547,6 @@ namespace CodeArtifact
          */
         virtual Model::ListPackageVersionsOutcome ListPackageVersions(const Model::ListPackageVersionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPackageVersions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPackageVersionsOutcomeCallable ListPackageVersionsCallable(const Model::ListPackageVersionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPackageVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPackageVersionsAsync(const Model::ListPackageVersionsRequest& request, const ListPackageVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a list of <a
@@ -740,15 +558,6 @@ namespace CodeArtifact
          */
         virtual Model::ListPackagesOutcome ListPackages(const Model::ListPackagesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPackages that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPackagesOutcomeCallable ListPackagesCallable(const Model::ListPackagesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPackages that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPackagesAsync(const Model::ListPackagesRequest& request, const ListPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a list of <a
@@ -761,15 +570,6 @@ namespace CodeArtifact
          */
         virtual Model::ListRepositoriesOutcome ListRepositories(const Model::ListRepositoriesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListRepositories that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListRepositoriesOutcomeCallable ListRepositoriesCallable(const Model::ListRepositoriesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListRepositories that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListRepositoriesAsync(const Model::ListRepositoriesRequest& request, const ListRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a list of <a
@@ -782,15 +582,6 @@ namespace CodeArtifact
          */
         virtual Model::ListRepositoriesInDomainOutcome ListRepositoriesInDomain(const Model::ListRepositoriesInDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListRepositoriesInDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListRepositoriesInDomainOutcomeCallable ListRepositoriesInDomainCallable(const Model::ListRepositoriesInDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for ListRepositoriesInDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListRepositoriesInDomainAsync(const Model::ListRepositoriesInDomainRequest& request, const ListRepositoriesInDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about Amazon Web Services tags for a specified Amazon
@@ -800,15 +591,6 @@ namespace CodeArtifact
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Sets a resource policy on a domain that specifies permissions to access it.
@@ -822,15 +604,6 @@ namespace CodeArtifact
          */
         virtual Model::PutDomainPermissionsPolicyOutcome PutDomainPermissionsPolicy(const Model::PutDomainPermissionsPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutDomainPermissionsPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutDomainPermissionsPolicyOutcomeCallable PutDomainPermissionsPolicyCallable(const Model::PutDomainPermissionsPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for PutDomainPermissionsPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutDomainPermissionsPolicyAsync(const Model::PutDomainPermissionsPolicyRequest& request, const PutDomainPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets the package origin configuration for a package.</p> <p>The package
@@ -854,15 +627,6 @@ namespace CodeArtifact
          */
         virtual Model::PutPackageOriginConfigurationOutcome PutPackageOriginConfiguration(const Model::PutPackageOriginConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutPackageOriginConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutPackageOriginConfigurationOutcomeCallable PutPackageOriginConfigurationCallable(const Model::PutPackageOriginConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for PutPackageOriginConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutPackageOriginConfigurationAsync(const Model::PutPackageOriginConfigurationRequest& request, const PutPackageOriginConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Sets the resource policy on a repository that specifies permissions to
@@ -876,15 +640,6 @@ namespace CodeArtifact
          */
         virtual Model::PutRepositoryPermissionsPolicyOutcome PutRepositoryPermissionsPolicy(const Model::PutRepositoryPermissionsPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutRepositoryPermissionsPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutRepositoryPermissionsPolicyOutcomeCallable PutRepositoryPermissionsPolicyCallable(const Model::PutRepositoryPermissionsPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for PutRepositoryPermissionsPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutRepositoryPermissionsPolicyAsync(const Model::PutRepositoryPermissionsPolicyRequest& request, const PutRepositoryPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds or updates tags for a resource in CodeArtifact.</p><p><h3>See Also:</h3>
@@ -894,15 +649,6 @@ namespace CodeArtifact
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes tags from a resource in CodeArtifact.</p><p><h3>See Also:</h3>   <a
@@ -911,15 +657,6 @@ namespace CodeArtifact
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Updates the status of one or more versions of a package. Using
@@ -934,15 +671,6 @@ namespace CodeArtifact
          */
         virtual Model::UpdatePackageVersionsStatusOutcome UpdatePackageVersionsStatus(const Model::UpdatePackageVersionsStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdatePackageVersionsStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdatePackageVersionsStatusOutcomeCallable UpdatePackageVersionsStatusCallable(const Model::UpdatePackageVersionsStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdatePackageVersionsStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdatePackageVersionsStatusAsync(const Model::UpdatePackageVersionsStatusRequest& request, const UpdatePackageVersionsStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Update the properties of a repository. </p><p><h3>See Also:</h3>   <a
@@ -951,15 +679,6 @@ namespace CodeArtifact
          */
         virtual Model::UpdateRepositoryOutcome UpdateRepository(const Model::UpdateRepositoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateRepository that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateRepositoryOutcomeCallable UpdateRepositoryCallable(const Model::UpdateRepositoryRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateRepository that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateRepositoryAsync(const Model::UpdateRepositoryRequest& request, const UpdateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

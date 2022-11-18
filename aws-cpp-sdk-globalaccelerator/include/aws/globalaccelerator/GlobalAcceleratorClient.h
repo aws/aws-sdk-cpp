@@ -7,8 +7,10 @@
 #include <aws/globalaccelerator/GlobalAccelerator_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/globalaccelerator/GlobalAcceleratorServiceClientModel.h>
+#include <aws/globalaccelerator/GlobalAcceleratorLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -124,6 +126,47 @@ namespace GlobalAccelerator
         virtual ~GlobalAcceleratorClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Associate a virtual private cloud (VPC) subnet endpoint with your custom
          * routing accelerator.</p> <p>The listener port range must be large enough to
@@ -143,15 +186,6 @@ namespace GlobalAccelerator
          */
         virtual Model::AddCustomRoutingEndpointsOutcome AddCustomRoutingEndpoints(const Model::AddCustomRoutingEndpointsRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddCustomRoutingEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddCustomRoutingEndpointsOutcomeCallable AddCustomRoutingEndpointsCallable(const Model::AddCustomRoutingEndpointsRequest& request) const;
-
-        /**
-         * An Async wrapper for AddCustomRoutingEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddCustomRoutingEndpointsAsync(const Model::AddCustomRoutingEndpointsRequest& request, const AddCustomRoutingEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Add endpoints to an endpoint group. The <code>AddEndpoints</code> API
@@ -171,15 +205,6 @@ namespace GlobalAccelerator
          */
         virtual Model::AddEndpointsOutcome AddEndpoints(const Model::AddEndpointsRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddEndpointsOutcomeCallable AddEndpointsCallable(const Model::AddEndpointsRequest& request) const;
-
-        /**
-         * An Async wrapper for AddEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddEndpointsAsync(const Model::AddEndpointsRequest& request, const AddEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Advertises an IPv4 address range that is provisioned for use with your Amazon
@@ -197,15 +222,6 @@ namespace GlobalAccelerator
          */
         virtual Model::AdvertiseByoipCidrOutcome AdvertiseByoipCidr(const Model::AdvertiseByoipCidrRequest& request) const;
 
-        /**
-         * A Callable wrapper for AdvertiseByoipCidr that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AdvertiseByoipCidrOutcomeCallable AdvertiseByoipCidrCallable(const Model::AdvertiseByoipCidrRequest& request) const;
-
-        /**
-         * An Async wrapper for AdvertiseByoipCidr that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AdvertiseByoipCidrAsync(const Model::AdvertiseByoipCidrRequest& request, const AdvertiseByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Specify the Amazon EC2 instance (destination) IP addresses and ports for a
@@ -221,15 +237,6 @@ namespace GlobalAccelerator
          */
         virtual Model::AllowCustomRoutingTrafficOutcome AllowCustomRoutingTraffic(const Model::AllowCustomRoutingTrafficRequest& request) const;
 
-        /**
-         * A Callable wrapper for AllowCustomRoutingTraffic that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AllowCustomRoutingTrafficOutcomeCallable AllowCustomRoutingTrafficCallable(const Model::AllowCustomRoutingTrafficRequest& request) const;
-
-        /**
-         * An Async wrapper for AllowCustomRoutingTraffic that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AllowCustomRoutingTrafficAsync(const Model::AllowCustomRoutingTrafficRequest& request, const AllowCustomRoutingTrafficResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Create an accelerator. An accelerator includes one or more listeners that
@@ -245,15 +252,6 @@ namespace GlobalAccelerator
          */
         virtual Model::CreateAcceleratorOutcome CreateAccelerator(const Model::CreateAcceleratorRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateAccelerator that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateAcceleratorOutcomeCallable CreateAcceleratorCallable(const Model::CreateAcceleratorRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateAccelerator that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateAcceleratorAsync(const Model::CreateAcceleratorRequest& request, const CreateAcceleratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Create a custom routing accelerator. A custom routing accelerator directs
@@ -273,15 +271,6 @@ namespace GlobalAccelerator
          */
         virtual Model::CreateCustomRoutingAcceleratorOutcome CreateCustomRoutingAccelerator(const Model::CreateCustomRoutingAcceleratorRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateCustomRoutingAccelerator that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateCustomRoutingAcceleratorOutcomeCallable CreateCustomRoutingAcceleratorCallable(const Model::CreateCustomRoutingAcceleratorRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateCustomRoutingAccelerator that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateCustomRoutingAcceleratorAsync(const Model::CreateCustomRoutingAcceleratorRequest& request, const CreateCustomRoutingAcceleratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Create an endpoint group for the specified listener for a custom routing
@@ -292,15 +281,6 @@ namespace GlobalAccelerator
          */
         virtual Model::CreateCustomRoutingEndpointGroupOutcome CreateCustomRoutingEndpointGroup(const Model::CreateCustomRoutingEndpointGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateCustomRoutingEndpointGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateCustomRoutingEndpointGroupOutcomeCallable CreateCustomRoutingEndpointGroupCallable(const Model::CreateCustomRoutingEndpointGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateCustomRoutingEndpointGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateCustomRoutingEndpointGroupAsync(const Model::CreateCustomRoutingEndpointGroupRequest& request, const CreateCustomRoutingEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Create a listener to process inbound connections from clients to a custom
@@ -311,15 +291,6 @@ namespace GlobalAccelerator
          */
         virtual Model::CreateCustomRoutingListenerOutcome CreateCustomRoutingListener(const Model::CreateCustomRoutingListenerRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateCustomRoutingListener that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateCustomRoutingListenerOutcomeCallable CreateCustomRoutingListenerCallable(const Model::CreateCustomRoutingListenerRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateCustomRoutingListener that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateCustomRoutingListenerAsync(const Model::CreateCustomRoutingListenerRequest& request, const CreateCustomRoutingListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Create an endpoint group for the specified listener. An endpoint group is a
@@ -330,15 +301,6 @@ namespace GlobalAccelerator
          */
         virtual Model::CreateEndpointGroupOutcome CreateEndpointGroup(const Model::CreateEndpointGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateEndpointGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateEndpointGroupOutcomeCallable CreateEndpointGroupCallable(const Model::CreateEndpointGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateEndpointGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateEndpointGroupAsync(const Model::CreateEndpointGroupRequest& request, const CreateEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Create a listener to process inbound connections from clients to an
@@ -349,15 +311,6 @@ namespace GlobalAccelerator
          */
         virtual Model::CreateListenerOutcome CreateListener(const Model::CreateListenerRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateListener that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateListenerOutcomeCallable CreateListenerCallable(const Model::CreateListenerRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateListener that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateListenerAsync(const Model::CreateListenerRequest& request, const CreateListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Delete an accelerator. Before you can delete an accelerator, you must disable
@@ -383,15 +336,6 @@ namespace GlobalAccelerator
          */
         virtual Model::DeleteAcceleratorOutcome DeleteAccelerator(const Model::DeleteAcceleratorRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAccelerator that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAcceleratorOutcomeCallable DeleteAcceleratorCallable(const Model::DeleteAcceleratorRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAccelerator that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAcceleratorAsync(const Model::DeleteAcceleratorRequest& request, const DeleteAcceleratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Delete a custom routing accelerator. Before you can delete an accelerator,
@@ -416,15 +360,6 @@ namespace GlobalAccelerator
          */
         virtual Model::DeleteCustomRoutingAcceleratorOutcome DeleteCustomRoutingAccelerator(const Model::DeleteCustomRoutingAcceleratorRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteCustomRoutingAccelerator that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteCustomRoutingAcceleratorOutcomeCallable DeleteCustomRoutingAcceleratorCallable(const Model::DeleteCustomRoutingAcceleratorRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteCustomRoutingAccelerator that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteCustomRoutingAcceleratorAsync(const Model::DeleteCustomRoutingAcceleratorRequest& request, const DeleteCustomRoutingAcceleratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Delete an endpoint group from a listener for a custom routing
@@ -434,15 +369,6 @@ namespace GlobalAccelerator
          */
         virtual Model::DeleteCustomRoutingEndpointGroupOutcome DeleteCustomRoutingEndpointGroup(const Model::DeleteCustomRoutingEndpointGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteCustomRoutingEndpointGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteCustomRoutingEndpointGroupOutcomeCallable DeleteCustomRoutingEndpointGroupCallable(const Model::DeleteCustomRoutingEndpointGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteCustomRoutingEndpointGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteCustomRoutingEndpointGroupAsync(const Model::DeleteCustomRoutingEndpointGroupRequest& request, const DeleteCustomRoutingEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Delete a listener for a custom routing accelerator.</p><p><h3>See Also:</h3> 
@@ -452,15 +378,6 @@ namespace GlobalAccelerator
          */
         virtual Model::DeleteCustomRoutingListenerOutcome DeleteCustomRoutingListener(const Model::DeleteCustomRoutingListenerRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteCustomRoutingListener that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteCustomRoutingListenerOutcomeCallable DeleteCustomRoutingListenerCallable(const Model::DeleteCustomRoutingListenerRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteCustomRoutingListener that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteCustomRoutingListenerAsync(const Model::DeleteCustomRoutingListenerRequest& request, const DeleteCustomRoutingListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Delete an endpoint group from a listener.</p><p><h3>See Also:</h3>   <a
@@ -469,15 +386,6 @@ namespace GlobalAccelerator
          */
         virtual Model::DeleteEndpointGroupOutcome DeleteEndpointGroup(const Model::DeleteEndpointGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteEndpointGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteEndpointGroupOutcomeCallable DeleteEndpointGroupCallable(const Model::DeleteEndpointGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteEndpointGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteEndpointGroupAsync(const Model::DeleteEndpointGroupRequest& request, const DeleteEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Delete a listener from an accelerator.</p><p><h3>See Also:</h3>   <a
@@ -486,15 +394,6 @@ namespace GlobalAccelerator
          */
         virtual Model::DeleteListenerOutcome DeleteListener(const Model::DeleteListenerRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteListener that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteListenerOutcomeCallable DeleteListenerCallable(const Model::DeleteListenerRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteListener that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteListenerAsync(const Model::DeleteListenerRequest& request, const DeleteListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Specify the Amazon EC2 instance (destination) IP addresses and ports for a
@@ -510,15 +409,6 @@ namespace GlobalAccelerator
          */
         virtual Model::DenyCustomRoutingTrafficOutcome DenyCustomRoutingTraffic(const Model::DenyCustomRoutingTrafficRequest& request) const;
 
-        /**
-         * A Callable wrapper for DenyCustomRoutingTraffic that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DenyCustomRoutingTrafficOutcomeCallable DenyCustomRoutingTrafficCallable(const Model::DenyCustomRoutingTrafficRequest& request) const;
-
-        /**
-         * An Async wrapper for DenyCustomRoutingTraffic that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DenyCustomRoutingTrafficAsync(const Model::DenyCustomRoutingTrafficRequest& request, const DenyCustomRoutingTrafficResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Releases the specified address range that you provisioned to use with your
@@ -536,15 +426,6 @@ namespace GlobalAccelerator
          */
         virtual Model::DeprovisionByoipCidrOutcome DeprovisionByoipCidr(const Model::DeprovisionByoipCidrRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeprovisionByoipCidr that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeprovisionByoipCidrOutcomeCallable DeprovisionByoipCidrCallable(const Model::DeprovisionByoipCidrRequest& request) const;
-
-        /**
-         * An Async wrapper for DeprovisionByoipCidr that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeprovisionByoipCidrAsync(const Model::DeprovisionByoipCidrRequest& request, const DeprovisionByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describe an accelerator. </p><p><h3>See Also:</h3>   <a
@@ -553,15 +434,6 @@ namespace GlobalAccelerator
          */
         virtual Model::DescribeAcceleratorOutcome DescribeAccelerator(const Model::DescribeAcceleratorRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAccelerator that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAcceleratorOutcomeCallable DescribeAcceleratorCallable(const Model::DescribeAcceleratorRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAccelerator that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAcceleratorAsync(const Model::DescribeAcceleratorRequest& request, const DescribeAcceleratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describe the attributes of an accelerator. </p><p><h3>See Also:</h3>   <a
@@ -570,15 +442,6 @@ namespace GlobalAccelerator
          */
         virtual Model::DescribeAcceleratorAttributesOutcome DescribeAcceleratorAttributes(const Model::DescribeAcceleratorAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAcceleratorAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAcceleratorAttributesOutcomeCallable DescribeAcceleratorAttributesCallable(const Model::DescribeAcceleratorAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAcceleratorAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAcceleratorAttributesAsync(const Model::DescribeAcceleratorAttributesRequest& request, const DescribeAcceleratorAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describe a custom routing accelerator. </p><p><h3>See Also:</h3>   <a
@@ -587,15 +450,6 @@ namespace GlobalAccelerator
          */
         virtual Model::DescribeCustomRoutingAcceleratorOutcome DescribeCustomRoutingAccelerator(const Model::DescribeCustomRoutingAcceleratorRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeCustomRoutingAccelerator that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeCustomRoutingAcceleratorOutcomeCallable DescribeCustomRoutingAcceleratorCallable(const Model::DescribeCustomRoutingAcceleratorRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeCustomRoutingAccelerator that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeCustomRoutingAcceleratorAsync(const Model::DescribeCustomRoutingAcceleratorRequest& request, const DescribeCustomRoutingAcceleratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describe the attributes of a custom routing accelerator. </p><p><h3>See
@@ -605,15 +459,6 @@ namespace GlobalAccelerator
          */
         virtual Model::DescribeCustomRoutingAcceleratorAttributesOutcome DescribeCustomRoutingAcceleratorAttributes(const Model::DescribeCustomRoutingAcceleratorAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeCustomRoutingAcceleratorAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeCustomRoutingAcceleratorAttributesOutcomeCallable DescribeCustomRoutingAcceleratorAttributesCallable(const Model::DescribeCustomRoutingAcceleratorAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeCustomRoutingAcceleratorAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeCustomRoutingAcceleratorAttributesAsync(const Model::DescribeCustomRoutingAcceleratorAttributesRequest& request, const DescribeCustomRoutingAcceleratorAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describe an endpoint group for a custom routing accelerator. </p><p><h3>See
@@ -623,15 +468,6 @@ namespace GlobalAccelerator
          */
         virtual Model::DescribeCustomRoutingEndpointGroupOutcome DescribeCustomRoutingEndpointGroup(const Model::DescribeCustomRoutingEndpointGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeCustomRoutingEndpointGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeCustomRoutingEndpointGroupOutcomeCallable DescribeCustomRoutingEndpointGroupCallable(const Model::DescribeCustomRoutingEndpointGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeCustomRoutingEndpointGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeCustomRoutingEndpointGroupAsync(const Model::DescribeCustomRoutingEndpointGroupRequest& request, const DescribeCustomRoutingEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The description of a listener for a custom routing accelerator.</p><p><h3>See
@@ -641,15 +477,6 @@ namespace GlobalAccelerator
          */
         virtual Model::DescribeCustomRoutingListenerOutcome DescribeCustomRoutingListener(const Model::DescribeCustomRoutingListenerRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeCustomRoutingListener that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeCustomRoutingListenerOutcomeCallable DescribeCustomRoutingListenerCallable(const Model::DescribeCustomRoutingListenerRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeCustomRoutingListener that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeCustomRoutingListenerAsync(const Model::DescribeCustomRoutingListenerRequest& request, const DescribeCustomRoutingListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describe an endpoint group. </p><p><h3>See Also:</h3>   <a
@@ -658,15 +485,6 @@ namespace GlobalAccelerator
          */
         virtual Model::DescribeEndpointGroupOutcome DescribeEndpointGroup(const Model::DescribeEndpointGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEndpointGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEndpointGroupOutcomeCallable DescribeEndpointGroupCallable(const Model::DescribeEndpointGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEndpointGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEndpointGroupAsync(const Model::DescribeEndpointGroupRequest& request, const DescribeEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describe a listener. </p><p><h3>See Also:</h3>   <a
@@ -675,15 +493,6 @@ namespace GlobalAccelerator
          */
         virtual Model::DescribeListenerOutcome DescribeListener(const Model::DescribeListenerRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeListener that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeListenerOutcomeCallable DescribeListenerCallable(const Model::DescribeListenerRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeListener that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeListenerAsync(const Model::DescribeListenerRequest& request, const DescribeListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List the accelerators for an Amazon Web Services account. </p><p><h3>See
@@ -693,15 +502,6 @@ namespace GlobalAccelerator
          */
         virtual Model::ListAcceleratorsOutcome ListAccelerators(const Model::ListAcceleratorsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAccelerators that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAcceleratorsOutcomeCallable ListAcceleratorsCallable(const Model::ListAcceleratorsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAccelerators that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAcceleratorsAsync(const Model::ListAcceleratorsRequest& request, const ListAcceleratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the IP address ranges that were specified in calls to <a
@@ -713,15 +513,6 @@ namespace GlobalAccelerator
          */
         virtual Model::ListByoipCidrsOutcome ListByoipCidrs(const Model::ListByoipCidrsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListByoipCidrs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListByoipCidrsOutcomeCallable ListByoipCidrsCallable(const Model::ListByoipCidrsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListByoipCidrs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListByoipCidrsAsync(const Model::ListByoipCidrsRequest& request, const ListByoipCidrsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List the custom routing accelerators for an Amazon Web Services account.
@@ -731,15 +522,6 @@ namespace GlobalAccelerator
          */
         virtual Model::ListCustomRoutingAcceleratorsOutcome ListCustomRoutingAccelerators(const Model::ListCustomRoutingAcceleratorsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListCustomRoutingAccelerators that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListCustomRoutingAcceleratorsOutcomeCallable ListCustomRoutingAcceleratorsCallable(const Model::ListCustomRoutingAcceleratorsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListCustomRoutingAccelerators that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListCustomRoutingAcceleratorsAsync(const Model::ListCustomRoutingAcceleratorsRequest& request, const ListCustomRoutingAcceleratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List the endpoint groups that are associated with a listener for a custom
@@ -749,15 +531,6 @@ namespace GlobalAccelerator
          */
         virtual Model::ListCustomRoutingEndpointGroupsOutcome ListCustomRoutingEndpointGroups(const Model::ListCustomRoutingEndpointGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListCustomRoutingEndpointGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListCustomRoutingEndpointGroupsOutcomeCallable ListCustomRoutingEndpointGroupsCallable(const Model::ListCustomRoutingEndpointGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListCustomRoutingEndpointGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListCustomRoutingEndpointGroupsAsync(const Model::ListCustomRoutingEndpointGroupsRequest& request, const ListCustomRoutingEndpointGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List the listeners for a custom routing accelerator. </p><p><h3>See
@@ -767,15 +540,6 @@ namespace GlobalAccelerator
          */
         virtual Model::ListCustomRoutingListenersOutcome ListCustomRoutingListeners(const Model::ListCustomRoutingListenersRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListCustomRoutingListeners that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListCustomRoutingListenersOutcomeCallable ListCustomRoutingListenersCallable(const Model::ListCustomRoutingListenersRequest& request) const;
-
-        /**
-         * An Async wrapper for ListCustomRoutingListeners that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListCustomRoutingListenersAsync(const Model::ListCustomRoutingListenersRequest& request, const ListCustomRoutingListenersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides a complete mapping from the public accelerator IP address and port
@@ -796,15 +560,6 @@ namespace GlobalAccelerator
          */
         virtual Model::ListCustomRoutingPortMappingsOutcome ListCustomRoutingPortMappings(const Model::ListCustomRoutingPortMappingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListCustomRoutingPortMappings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListCustomRoutingPortMappingsOutcomeCallable ListCustomRoutingPortMappingsCallable(const Model::ListCustomRoutingPortMappingsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListCustomRoutingPortMappings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListCustomRoutingPortMappingsAsync(const Model::ListCustomRoutingPortMappingsRequest& request, const ListCustomRoutingPortMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List the port mappings for a specific EC2 instance (destination) in a VPC
@@ -818,15 +573,6 @@ namespace GlobalAccelerator
          */
         virtual Model::ListCustomRoutingPortMappingsByDestinationOutcome ListCustomRoutingPortMappingsByDestination(const Model::ListCustomRoutingPortMappingsByDestinationRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListCustomRoutingPortMappingsByDestination that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListCustomRoutingPortMappingsByDestinationOutcomeCallable ListCustomRoutingPortMappingsByDestinationCallable(const Model::ListCustomRoutingPortMappingsByDestinationRequest& request) const;
-
-        /**
-         * An Async wrapper for ListCustomRoutingPortMappingsByDestination that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListCustomRoutingPortMappingsByDestinationAsync(const Model::ListCustomRoutingPortMappingsByDestinationRequest& request, const ListCustomRoutingPortMappingsByDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List the endpoint groups that are associated with a listener. </p><p><h3>See
@@ -836,15 +582,6 @@ namespace GlobalAccelerator
          */
         virtual Model::ListEndpointGroupsOutcome ListEndpointGroups(const Model::ListEndpointGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListEndpointGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListEndpointGroupsOutcomeCallable ListEndpointGroupsCallable(const Model::ListEndpointGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListEndpointGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListEndpointGroupsAsync(const Model::ListEndpointGroupsRequest& request, const ListEndpointGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List the listeners for an accelerator. </p><p><h3>See Also:</h3>   <a
@@ -853,15 +590,6 @@ namespace GlobalAccelerator
          */
         virtual Model::ListListenersOutcome ListListeners(const Model::ListListenersRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListListeners that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListListenersOutcomeCallable ListListenersCallable(const Model::ListListenersRequest& request) const;
-
-        /**
-         * An Async wrapper for ListListeners that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListListenersAsync(const Model::ListListenersRequest& request, const ListListenersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List all tags for an accelerator. </p> <p>For more information, see <a
@@ -873,15 +601,6 @@ namespace GlobalAccelerator
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provisions an IP address range to use with your Amazon Web Services resources
@@ -898,15 +617,6 @@ namespace GlobalAccelerator
          */
         virtual Model::ProvisionByoipCidrOutcome ProvisionByoipCidr(const Model::ProvisionByoipCidrRequest& request) const;
 
-        /**
-         * A Callable wrapper for ProvisionByoipCidr that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ProvisionByoipCidrOutcomeCallable ProvisionByoipCidrCallable(const Model::ProvisionByoipCidrRequest& request) const;
-
-        /**
-         * An Async wrapper for ProvisionByoipCidr that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ProvisionByoipCidrAsync(const Model::ProvisionByoipCidrRequest& request, const ProvisionByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Remove endpoints from a custom routing accelerator.</p><p><h3>See Also:</h3> 
@@ -916,15 +626,6 @@ namespace GlobalAccelerator
          */
         virtual Model::RemoveCustomRoutingEndpointsOutcome RemoveCustomRoutingEndpoints(const Model::RemoveCustomRoutingEndpointsRequest& request) const;
 
-        /**
-         * A Callable wrapper for RemoveCustomRoutingEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RemoveCustomRoutingEndpointsOutcomeCallable RemoveCustomRoutingEndpointsCallable(const Model::RemoveCustomRoutingEndpointsRequest& request) const;
-
-        /**
-         * An Async wrapper for RemoveCustomRoutingEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RemoveCustomRoutingEndpointsAsync(const Model::RemoveCustomRoutingEndpointsRequest& request, const RemoveCustomRoutingEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Remove endpoints from an endpoint group. </p> <p>The
@@ -946,15 +647,6 @@ namespace GlobalAccelerator
          */
         virtual Model::RemoveEndpointsOutcome RemoveEndpoints(const Model::RemoveEndpointsRequest& request) const;
 
-        /**
-         * A Callable wrapper for RemoveEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RemoveEndpointsOutcomeCallable RemoveEndpointsCallable(const Model::RemoveEndpointsRequest& request) const;
-
-        /**
-         * An Async wrapper for RemoveEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RemoveEndpointsAsync(const Model::RemoveEndpointsRequest& request, const RemoveEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Add tags to an accelerator resource. </p> <p>For more information, see <a
@@ -966,15 +658,6 @@ namespace GlobalAccelerator
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Remove tags from a Global Accelerator resource. When you specify a tag key,
@@ -989,15 +672,6 @@ namespace GlobalAccelerator
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Update an accelerator. </p>  <p>Global Accelerator is a global
@@ -1010,15 +684,6 @@ namespace GlobalAccelerator
          */
         virtual Model::UpdateAcceleratorOutcome UpdateAccelerator(const Model::UpdateAcceleratorRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateAccelerator that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateAcceleratorOutcomeCallable UpdateAcceleratorCallable(const Model::UpdateAcceleratorRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateAccelerator that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateAcceleratorAsync(const Model::UpdateAcceleratorRequest& request, const UpdateAcceleratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Update the attributes for an accelerator. </p><p><h3>See Also:</h3>   <a
@@ -1027,15 +692,6 @@ namespace GlobalAccelerator
          */
         virtual Model::UpdateAcceleratorAttributesOutcome UpdateAcceleratorAttributes(const Model::UpdateAcceleratorAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateAcceleratorAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateAcceleratorAttributesOutcomeCallable UpdateAcceleratorAttributesCallable(const Model::UpdateAcceleratorAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateAcceleratorAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateAcceleratorAttributesAsync(const Model::UpdateAcceleratorAttributesRequest& request, const UpdateAcceleratorAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Update a custom routing accelerator. </p><p><h3>See Also:</h3>   <a
@@ -1044,15 +700,6 @@ namespace GlobalAccelerator
          */
         virtual Model::UpdateCustomRoutingAcceleratorOutcome UpdateCustomRoutingAccelerator(const Model::UpdateCustomRoutingAcceleratorRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateCustomRoutingAccelerator that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateCustomRoutingAcceleratorOutcomeCallable UpdateCustomRoutingAcceleratorCallable(const Model::UpdateCustomRoutingAcceleratorRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateCustomRoutingAccelerator that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateCustomRoutingAcceleratorAsync(const Model::UpdateCustomRoutingAcceleratorRequest& request, const UpdateCustomRoutingAcceleratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Update the attributes for a custom routing accelerator. </p><p><h3>See
@@ -1062,15 +709,6 @@ namespace GlobalAccelerator
          */
         virtual Model::UpdateCustomRoutingAcceleratorAttributesOutcome UpdateCustomRoutingAcceleratorAttributes(const Model::UpdateCustomRoutingAcceleratorAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateCustomRoutingAcceleratorAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateCustomRoutingAcceleratorAttributesOutcomeCallable UpdateCustomRoutingAcceleratorAttributesCallable(const Model::UpdateCustomRoutingAcceleratorAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateCustomRoutingAcceleratorAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateCustomRoutingAcceleratorAttributesAsync(const Model::UpdateCustomRoutingAcceleratorAttributesRequest& request, const UpdateCustomRoutingAcceleratorAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Update a listener for a custom routing accelerator. </p><p><h3>See Also:</h3>
@@ -1080,15 +718,6 @@ namespace GlobalAccelerator
          */
         virtual Model::UpdateCustomRoutingListenerOutcome UpdateCustomRoutingListener(const Model::UpdateCustomRoutingListenerRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateCustomRoutingListener that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateCustomRoutingListenerOutcomeCallable UpdateCustomRoutingListenerCallable(const Model::UpdateCustomRoutingListenerRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateCustomRoutingListener that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateCustomRoutingListenerAsync(const Model::UpdateCustomRoutingListenerRequest& request, const UpdateCustomRoutingListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Update an endpoint group. A resource must be valid and active when you add it
@@ -1098,15 +727,6 @@ namespace GlobalAccelerator
          */
         virtual Model::UpdateEndpointGroupOutcome UpdateEndpointGroup(const Model::UpdateEndpointGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateEndpointGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateEndpointGroupOutcomeCallable UpdateEndpointGroupCallable(const Model::UpdateEndpointGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateEndpointGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateEndpointGroupAsync(const Model::UpdateEndpointGroupRequest& request, const UpdateEndpointGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Update a listener. </p><p><h3>See Also:</h3>   <a
@@ -1115,15 +735,6 @@ namespace GlobalAccelerator
          */
         virtual Model::UpdateListenerOutcome UpdateListener(const Model::UpdateListenerRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateListener that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateListenerOutcomeCallable UpdateListenerCallable(const Model::UpdateListenerRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateListener that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateListenerAsync(const Model::UpdateListenerRequest& request, const UpdateListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops advertising an address range that is provisioned as an address pool.
@@ -1139,15 +750,6 @@ namespace GlobalAccelerator
          */
         virtual Model::WithdrawByoipCidrOutcome WithdrawByoipCidr(const Model::WithdrawByoipCidrRequest& request) const;
 
-        /**
-         * A Callable wrapper for WithdrawByoipCidr that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::WithdrawByoipCidrOutcomeCallable WithdrawByoipCidrCallable(const Model::WithdrawByoipCidrRequest& request) const;
-
-        /**
-         * An Async wrapper for WithdrawByoipCidr that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void WithdrawByoipCidrAsync(const Model::WithdrawByoipCidrRequest& request, const WithdrawByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

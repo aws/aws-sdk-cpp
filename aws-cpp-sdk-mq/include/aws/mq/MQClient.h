@@ -7,8 +7,10 @@
 #include <aws/mq/MQ_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mq/MQServiceClientModel.h>
+#include <aws/mq/MQLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -77,6 +79,47 @@ namespace MQ
         virtual ~MQClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Creates a broker. Note: This API is asynchronous.</p> <p>To create a broker,
          * you must either use the AmazonMQFullAccess IAM policy or include the following
@@ -104,15 +147,6 @@ namespace MQ
          */
         virtual Model::CreateBrokerOutcome CreateBroker(const Model::CreateBrokerRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateBroker that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateBrokerOutcomeCallable CreateBrokerCallable(const Model::CreateBrokerRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateBroker that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateBrokerAsync(const Model::CreateBrokerRequest& request, const CreateBrokerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new configuration for the specified configuration name. Amazon MQ
@@ -123,15 +157,6 @@ namespace MQ
          */
         virtual Model::CreateConfigurationOutcome CreateConfiguration(const Model::CreateConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateConfigurationOutcomeCallable CreateConfigurationCallable(const Model::CreateConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateConfigurationAsync(const Model::CreateConfigurationRequest& request, const CreateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Add a tag to a resource.</p><p><h3>See Also:</h3>   <a
@@ -140,15 +165,6 @@ namespace MQ
          */
         virtual Model::CreateTagsOutcome CreateTags(const Model::CreateTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateTagsOutcomeCallable CreateTagsCallable(const Model::CreateTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateTagsAsync(const Model::CreateTagsRequest& request, const CreateTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an ActiveMQ user.</p><p><h3>See Also:</h3>   <a
@@ -157,15 +173,6 @@ namespace MQ
          */
         virtual Model::CreateUserOutcome CreateUser(const Model::CreateUserRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateUser that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateUserOutcomeCallable CreateUserCallable(const Model::CreateUserRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateUser that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateUserAsync(const Model::CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a broker. Note: This API is asynchronous.</p><p><h3>See Also:</h3>  
@@ -174,15 +181,6 @@ namespace MQ
          */
         virtual Model::DeleteBrokerOutcome DeleteBroker(const Model::DeleteBrokerRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteBroker that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteBrokerOutcomeCallable DeleteBrokerCallable(const Model::DeleteBrokerRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteBroker that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteBrokerAsync(const Model::DeleteBrokerRequest& request, const DeleteBrokerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes a tag from a resource.</p><p><h3>See Also:</h3>   <a
@@ -191,15 +189,6 @@ namespace MQ
          */
         virtual Model::DeleteTagsOutcome DeleteTags(const Model::DeleteTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteTagsOutcomeCallable DeleteTagsCallable(const Model::DeleteTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteTagsAsync(const Model::DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an ActiveMQ user.</p><p><h3>See Also:</h3>   <a
@@ -208,15 +197,6 @@ namespace MQ
          */
         virtual Model::DeleteUserOutcome DeleteUser(const Model::DeleteUserRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteUser that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteUserOutcomeCallable DeleteUserCallable(const Model::DeleteUserRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteUser that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteUserAsync(const Model::DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the specified broker.</p><p><h3>See Also:</h3>   <a
@@ -225,15 +205,6 @@ namespace MQ
          */
         virtual Model::DescribeBrokerOutcome DescribeBroker(const Model::DescribeBrokerRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeBroker that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeBrokerOutcomeCallable DescribeBrokerCallable(const Model::DescribeBrokerRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeBroker that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeBrokerAsync(const Model::DescribeBrokerRequest& request, const DescribeBrokerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describe available engine types and versions.</p><p><h3>See Also:</h3>   <a
@@ -242,15 +213,6 @@ namespace MQ
          */
         virtual Model::DescribeBrokerEngineTypesOutcome DescribeBrokerEngineTypes(const Model::DescribeBrokerEngineTypesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeBrokerEngineTypes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeBrokerEngineTypesOutcomeCallable DescribeBrokerEngineTypesCallable(const Model::DescribeBrokerEngineTypesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeBrokerEngineTypes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeBrokerEngineTypesAsync(const Model::DescribeBrokerEngineTypesRequest& request, const DescribeBrokerEngineTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describe available broker instance options.</p><p><h3>See Also:</h3>   <a
@@ -259,15 +221,6 @@ namespace MQ
          */
         virtual Model::DescribeBrokerInstanceOptionsOutcome DescribeBrokerInstanceOptions(const Model::DescribeBrokerInstanceOptionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeBrokerInstanceOptions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeBrokerInstanceOptionsOutcomeCallable DescribeBrokerInstanceOptionsCallable(const Model::DescribeBrokerInstanceOptionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeBrokerInstanceOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeBrokerInstanceOptionsAsync(const Model::DescribeBrokerInstanceOptionsRequest& request, const DescribeBrokerInstanceOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the specified configuration.</p><p><h3>See
@@ -277,15 +230,6 @@ namespace MQ
          */
         virtual Model::DescribeConfigurationOutcome DescribeConfiguration(const Model::DescribeConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeConfigurationOutcomeCallable DescribeConfigurationCallable(const Model::DescribeConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeConfigurationAsync(const Model::DescribeConfigurationRequest& request, const DescribeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the specified configuration revision for the specified
@@ -295,15 +239,6 @@ namespace MQ
          */
         virtual Model::DescribeConfigurationRevisionOutcome DescribeConfigurationRevision(const Model::DescribeConfigurationRevisionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeConfigurationRevision that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeConfigurationRevisionOutcomeCallable DescribeConfigurationRevisionCallable(const Model::DescribeConfigurationRevisionRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeConfigurationRevision that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeConfigurationRevisionAsync(const Model::DescribeConfigurationRevisionRequest& request, const DescribeConfigurationRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about an ActiveMQ user.</p><p><h3>See Also:</h3>   <a
@@ -312,15 +247,6 @@ namespace MQ
          */
         virtual Model::DescribeUserOutcome DescribeUser(const Model::DescribeUserRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeUser that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeUserOutcomeCallable DescribeUserCallable(const Model::DescribeUserRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeUser that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeUserAsync(const Model::DescribeUserRequest& request, const DescribeUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of all brokers.</p><p><h3>See Also:</h3>   <a
@@ -329,15 +255,6 @@ namespace MQ
          */
         virtual Model::ListBrokersOutcome ListBrokers(const Model::ListBrokersRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListBrokers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListBrokersOutcomeCallable ListBrokersCallable(const Model::ListBrokersRequest& request) const;
-
-        /**
-         * An Async wrapper for ListBrokers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListBrokersAsync(const Model::ListBrokersRequest& request, const ListBrokersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of all revisions for the specified
@@ -347,15 +264,6 @@ namespace MQ
          */
         virtual Model::ListConfigurationRevisionsOutcome ListConfigurationRevisions(const Model::ListConfigurationRevisionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListConfigurationRevisions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListConfigurationRevisionsOutcomeCallable ListConfigurationRevisionsCallable(const Model::ListConfigurationRevisionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListConfigurationRevisions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListConfigurationRevisionsAsync(const Model::ListConfigurationRevisionsRequest& request, const ListConfigurationRevisionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of all configurations.</p><p><h3>See Also:</h3>   <a
@@ -364,15 +272,6 @@ namespace MQ
          */
         virtual Model::ListConfigurationsOutcome ListConfigurations(const Model::ListConfigurationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListConfigurationsOutcomeCallable ListConfigurationsCallable(const Model::ListConfigurationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListConfigurationsAsync(const Model::ListConfigurationsRequest& request, const ListConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists tags for a resource.</p><p><h3>See Also:</h3>   <a
@@ -381,15 +280,6 @@ namespace MQ
          */
         virtual Model::ListTagsOutcome ListTags(const Model::ListTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsOutcomeCallable ListTagsCallable(const Model::ListTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsAsync(const Model::ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of all ActiveMQ users.</p><p><h3>See Also:</h3>   <a
@@ -398,15 +288,6 @@ namespace MQ
          */
         virtual Model::ListUsersOutcome ListUsers(const Model::ListUsersRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListUsers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListUsersOutcomeCallable ListUsersCallable(const Model::ListUsersRequest& request) const;
-
-        /**
-         * An Async wrapper for ListUsers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListUsersAsync(const Model::ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Reboots a broker. Note: This API is asynchronous.</p><p><h3>See Also:</h3>  
@@ -415,15 +296,6 @@ namespace MQ
          */
         virtual Model::RebootBrokerOutcome RebootBroker(const Model::RebootBrokerRequest& request) const;
 
-        /**
-         * A Callable wrapper for RebootBroker that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RebootBrokerOutcomeCallable RebootBrokerCallable(const Model::RebootBrokerRequest& request) const;
-
-        /**
-         * An Async wrapper for RebootBroker that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RebootBrokerAsync(const Model::RebootBrokerRequest& request, const RebootBrokerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds a pending configuration change to a broker.</p><p><h3>See Also:</h3>  
@@ -432,15 +304,6 @@ namespace MQ
          */
         virtual Model::UpdateBrokerOutcome UpdateBroker(const Model::UpdateBrokerRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateBroker that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateBrokerOutcomeCallable UpdateBrokerCallable(const Model::UpdateBrokerRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateBroker that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateBrokerAsync(const Model::UpdateBrokerRequest& request, const UpdateBrokerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the specified configuration.</p><p><h3>See Also:</h3>   <a
@@ -449,15 +312,6 @@ namespace MQ
          */
         virtual Model::UpdateConfigurationOutcome UpdateConfiguration(const Model::UpdateConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateConfigurationOutcomeCallable UpdateConfigurationCallable(const Model::UpdateConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateConfigurationAsync(const Model::UpdateConfigurationRequest& request, const UpdateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the information for an ActiveMQ user.</p><p><h3>See Also:</h3>   <a
@@ -466,15 +320,6 @@ namespace MQ
          */
         virtual Model::UpdateUserOutcome UpdateUser(const Model::UpdateUserRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateUser that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateUserOutcomeCallable UpdateUserCallable(const Model::UpdateUserRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateUser that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateUserAsync(const Model::UpdateUserRequest& request, const UpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

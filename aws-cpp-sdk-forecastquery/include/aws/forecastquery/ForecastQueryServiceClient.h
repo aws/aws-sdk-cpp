@@ -7,8 +7,10 @@
 #include <aws/forecastquery/ForecastQueryService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/forecastquery/ForecastQueryServiceServiceClientModel.h>
+#include <aws/forecastquery/ForecastQueryServiceLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -73,6 +75,47 @@ namespace ForecastQueryService
         virtual ~ForecastQueryServiceClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Retrieves a forecast for a single item, filtered by the supplied
          * criteria.</p> <p>The criteria is a key-value pair. The key is either
@@ -91,15 +134,6 @@ namespace ForecastQueryService
          */
         virtual Model::QueryForecastOutcome QueryForecast(const Model::QueryForecastRequest& request) const;
 
-        /**
-         * A Callable wrapper for QueryForecast that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::QueryForecastOutcomeCallable QueryForecastCallable(const Model::QueryForecastRequest& request) const;
-
-        /**
-         * An Async wrapper for QueryForecast that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void QueryForecastAsync(const Model::QueryForecastRequest& request, const QueryForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a what-if forecast.</p><p><h3>See Also:</h3>   <a
@@ -108,15 +142,6 @@ namespace ForecastQueryService
          */
         virtual Model::QueryWhatIfForecastOutcome QueryWhatIfForecast(const Model::QueryWhatIfForecastRequest& request) const;
 
-        /**
-         * A Callable wrapper for QueryWhatIfForecast that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::QueryWhatIfForecastOutcomeCallable QueryWhatIfForecastCallable(const Model::QueryWhatIfForecastRequest& request) const;
-
-        /**
-         * An Async wrapper for QueryWhatIfForecast that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void QueryWhatIfForecastAsync(const Model::QueryWhatIfForecastRequest& request, const QueryWhatIfForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

@@ -8,8 +8,10 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/cloudfront/CloudFrontServiceClientModel.h>
+#include <aws/cloudfront/CloudFrontLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -77,6 +79,47 @@ namespace CloudFront
         virtual ~CloudFrontClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Associates an alias (also known as a CNAME or an alternate domain name) with
          * a CloudFront distribution.</p> <p>With this operation you can move an alias
@@ -96,15 +139,6 @@ namespace CloudFront
          */
         virtual Model::AssociateAlias2020_05_31Outcome AssociateAlias2020_05_31(const Model::AssociateAlias2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for AssociateAlias2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateAlias2020_05_31OutcomeCallable AssociateAlias2020_05_31Callable(const Model::AssociateAlias2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for AssociateAlias2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateAlias2020_05_31Async(const Model::AssociateAlias2020_05_31Request& request, const AssociateAlias2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a cache policy.</p> <p>After you create a cache policy, you can
@@ -129,15 +163,6 @@ namespace CloudFront
          */
         virtual Model::CreateCachePolicy2020_05_31Outcome CreateCachePolicy2020_05_31(const Model::CreateCachePolicy2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for CreateCachePolicy2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateCachePolicy2020_05_31OutcomeCallable CreateCachePolicy2020_05_31Callable(const Model::CreateCachePolicy2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for CreateCachePolicy2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateCachePolicy2020_05_31Async(const Model::CreateCachePolicy2020_05_31Request& request, const CreateCachePolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new origin access identity. If you're using Amazon S3 for your
@@ -152,15 +177,6 @@ namespace CloudFront
          */
         virtual Model::CreateCloudFrontOriginAccessIdentity2020_05_31Outcome CreateCloudFrontOriginAccessIdentity2020_05_31(const Model::CreateCloudFrontOriginAccessIdentity2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for CreateCloudFrontOriginAccessIdentity2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateCloudFrontOriginAccessIdentity2020_05_31OutcomeCallable CreateCloudFrontOriginAccessIdentity2020_05_31Callable(const Model::CreateCloudFrontOriginAccessIdentity2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for CreateCloudFrontOriginAccessIdentity2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateCloudFrontOriginAccessIdentity2020_05_31Async(const Model::CreateCloudFrontOriginAccessIdentity2020_05_31Request& request, const CreateCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new web distribution. You create a CloudFront distribution to tell
@@ -182,15 +198,6 @@ namespace CloudFront
          */
         virtual Model::CreateDistribution2020_05_31Outcome CreateDistribution2020_05_31(const Model::CreateDistribution2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for CreateDistribution2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDistribution2020_05_31OutcomeCallable CreateDistribution2020_05_31Callable(const Model::CreateDistribution2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for CreateDistribution2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDistribution2020_05_31Async(const Model::CreateDistribution2020_05_31Request& request, const CreateDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Create a new distribution with tags.</p><p><h3>See Also:</h3>   <a
@@ -199,15 +206,6 @@ namespace CloudFront
          */
         virtual Model::CreateDistributionWithTags2020_05_31Outcome CreateDistributionWithTags2020_05_31(const Model::CreateDistributionWithTags2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for CreateDistributionWithTags2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDistributionWithTags2020_05_31OutcomeCallable CreateDistributionWithTags2020_05_31Callable(const Model::CreateDistributionWithTags2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for CreateDistributionWithTags2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDistributionWithTags2020_05_31Async(const Model::CreateDistributionWithTags2020_05_31Request& request, const CreateDistributionWithTags2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Create a new field-level encryption configuration.</p><p><h3>See Also:</h3>  
@@ -217,15 +215,6 @@ namespace CloudFront
          */
         virtual Model::CreateFieldLevelEncryptionConfig2020_05_31Outcome CreateFieldLevelEncryptionConfig2020_05_31(const Model::CreateFieldLevelEncryptionConfig2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for CreateFieldLevelEncryptionConfig2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateFieldLevelEncryptionConfig2020_05_31OutcomeCallable CreateFieldLevelEncryptionConfig2020_05_31Callable(const Model::CreateFieldLevelEncryptionConfig2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for CreateFieldLevelEncryptionConfig2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateFieldLevelEncryptionConfig2020_05_31Async(const Model::CreateFieldLevelEncryptionConfig2020_05_31Request& request, const CreateFieldLevelEncryptionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Create a field-level encryption profile.</p><p><h3>See Also:</h3>   <a
@@ -234,15 +223,6 @@ namespace CloudFront
          */
         virtual Model::CreateFieldLevelEncryptionProfile2020_05_31Outcome CreateFieldLevelEncryptionProfile2020_05_31(const Model::CreateFieldLevelEncryptionProfile2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for CreateFieldLevelEncryptionProfile2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateFieldLevelEncryptionProfile2020_05_31OutcomeCallable CreateFieldLevelEncryptionProfile2020_05_31Callable(const Model::CreateFieldLevelEncryptionProfile2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for CreateFieldLevelEncryptionProfile2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateFieldLevelEncryptionProfile2020_05_31Async(const Model::CreateFieldLevelEncryptionProfile2020_05_31Request& request, const CreateFieldLevelEncryptionProfile2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a CloudFront function.</p> <p>To create a function, you provide the
@@ -261,15 +241,6 @@ namespace CloudFront
          */
         virtual Model::CreateFunction2020_05_31Outcome CreateFunction2020_05_31(const Model::CreateFunction2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for CreateFunction2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateFunction2020_05_31OutcomeCallable CreateFunction2020_05_31Callable(const Model::CreateFunction2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for CreateFunction2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateFunction2020_05_31Async(const Model::CreateFunction2020_05_31Request& request, const CreateFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Create a new invalidation. </p><p><h3>See Also:</h3>   <a
@@ -278,15 +249,6 @@ namespace CloudFront
          */
         virtual Model::CreateInvalidation2020_05_31Outcome CreateInvalidation2020_05_31(const Model::CreateInvalidation2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for CreateInvalidation2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateInvalidation2020_05_31OutcomeCallable CreateInvalidation2020_05_31Callable(const Model::CreateInvalidation2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for CreateInvalidation2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateInvalidation2020_05_31Async(const Model::CreateInvalidation2020_05_31Request& request, const CreateInvalidation2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a key group that you can use with <a
@@ -307,15 +269,6 @@ namespace CloudFront
          */
         virtual Model::CreateKeyGroup2020_05_31Outcome CreateKeyGroup2020_05_31(const Model::CreateKeyGroup2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for CreateKeyGroup2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateKeyGroup2020_05_31OutcomeCallable CreateKeyGroup2020_05_31Callable(const Model::CreateKeyGroup2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for CreateKeyGroup2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateKeyGroup2020_05_31Async(const Model::CreateKeyGroup2020_05_31Request& request, const CreateKeyGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables additional CloudWatch metrics for the specified CloudFront
@@ -329,15 +282,6 @@ namespace CloudFront
          */
         virtual Model::CreateMonitoringSubscription2020_05_31Outcome CreateMonitoringSubscription2020_05_31(const Model::CreateMonitoringSubscription2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for CreateMonitoringSubscription2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateMonitoringSubscription2020_05_31OutcomeCallable CreateMonitoringSubscription2020_05_31Callable(const Model::CreateMonitoringSubscription2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for CreateMonitoringSubscription2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateMonitoringSubscription2020_05_31Async(const Model::CreateMonitoringSubscription2020_05_31Request& request, const CreateMonitoringSubscription2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new origin access control in CloudFront. After you create an origin
@@ -355,15 +299,6 @@ namespace CloudFront
          */
         virtual Model::CreateOriginAccessControl2020_05_31Outcome CreateOriginAccessControl2020_05_31(const Model::CreateOriginAccessControl2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for CreateOriginAccessControl2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateOriginAccessControl2020_05_31OutcomeCallable CreateOriginAccessControl2020_05_31Callable(const Model::CreateOriginAccessControl2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for CreateOriginAccessControl2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateOriginAccessControl2020_05_31Async(const Model::CreateOriginAccessControl2020_05_31Request& request, const CreateOriginAccessControl2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an origin request policy.</p> <p>After you create an origin request
@@ -390,15 +325,6 @@ namespace CloudFront
          */
         virtual Model::CreateOriginRequestPolicy2020_05_31Outcome CreateOriginRequestPolicy2020_05_31(const Model::CreateOriginRequestPolicy2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for CreateOriginRequestPolicy2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateOriginRequestPolicy2020_05_31OutcomeCallable CreateOriginRequestPolicy2020_05_31Callable(const Model::CreateOriginRequestPolicy2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for CreateOriginRequestPolicy2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateOriginRequestPolicy2020_05_31Async(const Model::CreateOriginRequestPolicy2020_05_31Request& request, const CreateOriginRequestPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Uploads a public key to CloudFront that you can use with <a
@@ -411,15 +337,6 @@ namespace CloudFront
          */
         virtual Model::CreatePublicKey2020_05_31Outcome CreatePublicKey2020_05_31(const Model::CreatePublicKey2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for CreatePublicKey2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreatePublicKey2020_05_31OutcomeCallable CreatePublicKey2020_05_31Callable(const Model::CreatePublicKey2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for CreatePublicKey2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreatePublicKey2020_05_31Async(const Model::CreatePublicKey2020_05_31Request& request, const CreatePublicKey2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a real-time log configuration.</p> <p>After you create a real-time
@@ -434,15 +351,6 @@ namespace CloudFront
          */
         virtual Model::CreateRealtimeLogConfig2020_05_31Outcome CreateRealtimeLogConfig2020_05_31(const Model::CreateRealtimeLogConfig2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for CreateRealtimeLogConfig2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateRealtimeLogConfig2020_05_31OutcomeCallable CreateRealtimeLogConfig2020_05_31Callable(const Model::CreateRealtimeLogConfig2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for CreateRealtimeLogConfig2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateRealtimeLogConfig2020_05_31Async(const Model::CreateRealtimeLogConfig2020_05_31Request& request, const CreateRealtimeLogConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a response headers policy.</p> <p>A response headers policy contains
@@ -458,15 +366,6 @@ namespace CloudFront
          */
         virtual Model::CreateResponseHeadersPolicy2020_05_31Outcome CreateResponseHeadersPolicy2020_05_31(const Model::CreateResponseHeadersPolicy2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for CreateResponseHeadersPolicy2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateResponseHeadersPolicy2020_05_31OutcomeCallable CreateResponseHeadersPolicy2020_05_31Callable(const Model::CreateResponseHeadersPolicy2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for CreateResponseHeadersPolicy2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateResponseHeadersPolicy2020_05_31Async(const Model::CreateResponseHeadersPolicy2020_05_31Request& request, const CreateResponseHeadersPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This API is deprecated. Amazon CloudFront is deprecating real-time messaging
@@ -479,15 +378,6 @@ namespace CloudFront
          */
         virtual Model::CreateStreamingDistribution2020_05_31Outcome CreateStreamingDistribution2020_05_31(const Model::CreateStreamingDistribution2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for CreateStreamingDistribution2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateStreamingDistribution2020_05_31OutcomeCallable CreateStreamingDistribution2020_05_31Callable(const Model::CreateStreamingDistribution2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for CreateStreamingDistribution2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateStreamingDistribution2020_05_31Async(const Model::CreateStreamingDistribution2020_05_31Request& request, const CreateStreamingDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This API is deprecated. Amazon CloudFront is deprecating real-time messaging
@@ -500,15 +390,6 @@ namespace CloudFront
          */
         virtual Model::CreateStreamingDistributionWithTags2020_05_31Outcome CreateStreamingDistributionWithTags2020_05_31(const Model::CreateStreamingDistributionWithTags2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for CreateStreamingDistributionWithTags2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateStreamingDistributionWithTags2020_05_31OutcomeCallable CreateStreamingDistributionWithTags2020_05_31Callable(const Model::CreateStreamingDistributionWithTags2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for CreateStreamingDistributionWithTags2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateStreamingDistributionWithTags2020_05_31Async(const Model::CreateStreamingDistributionWithTags2020_05_31Request& request, const CreateStreamingDistributionWithTags2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a cache policy.</p> <p>You cannot delete a cache policy if it’s
@@ -522,15 +403,6 @@ namespace CloudFront
          */
         virtual Model::DeleteCachePolicy2020_05_31Outcome DeleteCachePolicy2020_05_31(const Model::DeleteCachePolicy2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for DeleteCachePolicy2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteCachePolicy2020_05_31OutcomeCallable DeleteCachePolicy2020_05_31Callable(const Model::DeleteCachePolicy2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for DeleteCachePolicy2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteCachePolicy2020_05_31Async(const Model::DeleteCachePolicy2020_05_31Request& request, const DeleteCachePolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Delete an origin access identity. </p><p><h3>See Also:</h3>   <a
@@ -539,15 +411,6 @@ namespace CloudFront
          */
         virtual Model::DeleteCloudFrontOriginAccessIdentity2020_05_31Outcome DeleteCloudFrontOriginAccessIdentity2020_05_31(const Model::DeleteCloudFrontOriginAccessIdentity2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for DeleteCloudFrontOriginAccessIdentity2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteCloudFrontOriginAccessIdentity2020_05_31OutcomeCallable DeleteCloudFrontOriginAccessIdentity2020_05_31Callable(const Model::DeleteCloudFrontOriginAccessIdentity2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for DeleteCloudFrontOriginAccessIdentity2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteCloudFrontOriginAccessIdentity2020_05_31Async(const Model::DeleteCloudFrontOriginAccessIdentity2020_05_31Request& request, const DeleteCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Delete a distribution. </p><p><h3>See Also:</h3>   <a
@@ -556,15 +419,6 @@ namespace CloudFront
          */
         virtual Model::DeleteDistribution2020_05_31Outcome DeleteDistribution2020_05_31(const Model::DeleteDistribution2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDistribution2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDistribution2020_05_31OutcomeCallable DeleteDistribution2020_05_31Callable(const Model::DeleteDistribution2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for DeleteDistribution2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDistribution2020_05_31Async(const Model::DeleteDistribution2020_05_31Request& request, const DeleteDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Remove a field-level encryption configuration.</p><p><h3>See Also:</h3>   <a
@@ -573,15 +427,6 @@ namespace CloudFront
          */
         virtual Model::DeleteFieldLevelEncryptionConfig2020_05_31Outcome DeleteFieldLevelEncryptionConfig2020_05_31(const Model::DeleteFieldLevelEncryptionConfig2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for DeleteFieldLevelEncryptionConfig2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteFieldLevelEncryptionConfig2020_05_31OutcomeCallable DeleteFieldLevelEncryptionConfig2020_05_31Callable(const Model::DeleteFieldLevelEncryptionConfig2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for DeleteFieldLevelEncryptionConfig2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteFieldLevelEncryptionConfig2020_05_31Async(const Model::DeleteFieldLevelEncryptionConfig2020_05_31Request& request, const DeleteFieldLevelEncryptionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Remove a field-level encryption profile.</p><p><h3>See Also:</h3>   <a
@@ -590,15 +435,6 @@ namespace CloudFront
          */
         virtual Model::DeleteFieldLevelEncryptionProfile2020_05_31Outcome DeleteFieldLevelEncryptionProfile2020_05_31(const Model::DeleteFieldLevelEncryptionProfile2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for DeleteFieldLevelEncryptionProfile2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteFieldLevelEncryptionProfile2020_05_31OutcomeCallable DeleteFieldLevelEncryptionProfile2020_05_31Callable(const Model::DeleteFieldLevelEncryptionProfile2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for DeleteFieldLevelEncryptionProfile2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteFieldLevelEncryptionProfile2020_05_31Async(const Model::DeleteFieldLevelEncryptionProfile2020_05_31Request& request, const DeleteFieldLevelEncryptionProfile2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a CloudFront function.</p> <p>You cannot delete a function if it’s
@@ -613,15 +449,6 @@ namespace CloudFront
          */
         virtual Model::DeleteFunction2020_05_31Outcome DeleteFunction2020_05_31(const Model::DeleteFunction2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for DeleteFunction2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteFunction2020_05_31OutcomeCallable DeleteFunction2020_05_31Callable(const Model::DeleteFunction2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for DeleteFunction2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteFunction2020_05_31Async(const Model::DeleteFunction2020_05_31Request& request, const DeleteFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a key group.</p> <p>You cannot delete a key group that is referenced
@@ -635,15 +462,6 @@ namespace CloudFront
          */
         virtual Model::DeleteKeyGroup2020_05_31Outcome DeleteKeyGroup2020_05_31(const Model::DeleteKeyGroup2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for DeleteKeyGroup2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteKeyGroup2020_05_31OutcomeCallable DeleteKeyGroup2020_05_31Callable(const Model::DeleteKeyGroup2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for DeleteKeyGroup2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteKeyGroup2020_05_31Async(const Model::DeleteKeyGroup2020_05_31Request& request, const DeleteKeyGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disables additional CloudWatch metrics for the specified CloudFront
@@ -653,15 +471,6 @@ namespace CloudFront
          */
         virtual Model::DeleteMonitoringSubscription2020_05_31Outcome DeleteMonitoringSubscription2020_05_31(const Model::DeleteMonitoringSubscription2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for DeleteMonitoringSubscription2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteMonitoringSubscription2020_05_31OutcomeCallable DeleteMonitoringSubscription2020_05_31Callable(const Model::DeleteMonitoringSubscription2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for DeleteMonitoringSubscription2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteMonitoringSubscription2020_05_31Async(const Model::DeleteMonitoringSubscription2020_05_31Request& request, const DeleteMonitoringSubscription2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a CloudFront origin access control.</p> <p>You cannot delete an
@@ -673,15 +482,6 @@ namespace CloudFront
          */
         virtual Model::DeleteOriginAccessControl2020_05_31Outcome DeleteOriginAccessControl2020_05_31(const Model::DeleteOriginAccessControl2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for DeleteOriginAccessControl2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteOriginAccessControl2020_05_31OutcomeCallable DeleteOriginAccessControl2020_05_31Callable(const Model::DeleteOriginAccessControl2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for DeleteOriginAccessControl2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteOriginAccessControl2020_05_31Async(const Model::DeleteOriginAccessControl2020_05_31Request& request, const DeleteOriginAccessControl2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an origin request policy.</p> <p>You cannot delete an origin request
@@ -696,15 +496,6 @@ namespace CloudFront
          */
         virtual Model::DeleteOriginRequestPolicy2020_05_31Outcome DeleteOriginRequestPolicy2020_05_31(const Model::DeleteOriginRequestPolicy2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for DeleteOriginRequestPolicy2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteOriginRequestPolicy2020_05_31OutcomeCallable DeleteOriginRequestPolicy2020_05_31Callable(const Model::DeleteOriginRequestPolicy2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for DeleteOriginRequestPolicy2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteOriginRequestPolicy2020_05_31Async(const Model::DeleteOriginRequestPolicy2020_05_31Request& request, const DeleteOriginRequestPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Remove a public key you previously added to CloudFront.</p><p><h3>See
@@ -714,15 +505,6 @@ namespace CloudFront
          */
         virtual Model::DeletePublicKey2020_05_31Outcome DeletePublicKey2020_05_31(const Model::DeletePublicKey2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for DeletePublicKey2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeletePublicKey2020_05_31OutcomeCallable DeletePublicKey2020_05_31Callable(const Model::DeletePublicKey2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for DeletePublicKey2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeletePublicKey2020_05_31Async(const Model::DeletePublicKey2020_05_31Request& request, const DeletePublicKey2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a real-time log configuration.</p> <p>You cannot delete a real-time
@@ -738,15 +520,6 @@ namespace CloudFront
          */
         virtual Model::DeleteRealtimeLogConfig2020_05_31Outcome DeleteRealtimeLogConfig2020_05_31(const Model::DeleteRealtimeLogConfig2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for DeleteRealtimeLogConfig2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteRealtimeLogConfig2020_05_31OutcomeCallable DeleteRealtimeLogConfig2020_05_31Callable(const Model::DeleteRealtimeLogConfig2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for DeleteRealtimeLogConfig2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteRealtimeLogConfig2020_05_31Async(const Model::DeleteRealtimeLogConfig2020_05_31Request& request, const DeleteRealtimeLogConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a response headers policy.</p> <p>You cannot delete a response
@@ -761,15 +534,6 @@ namespace CloudFront
          */
         virtual Model::DeleteResponseHeadersPolicy2020_05_31Outcome DeleteResponseHeadersPolicy2020_05_31(const Model::DeleteResponseHeadersPolicy2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for DeleteResponseHeadersPolicy2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteResponseHeadersPolicy2020_05_31OutcomeCallable DeleteResponseHeadersPolicy2020_05_31Callable(const Model::DeleteResponseHeadersPolicy2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for DeleteResponseHeadersPolicy2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteResponseHeadersPolicy2020_05_31Async(const Model::DeleteResponseHeadersPolicy2020_05_31Request& request, const DeleteResponseHeadersPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Delete a streaming distribution. To delete an RTMP distribution using the
@@ -806,15 +570,6 @@ namespace CloudFront
          */
         virtual Model::DeleteStreamingDistribution2020_05_31Outcome DeleteStreamingDistribution2020_05_31(const Model::DeleteStreamingDistribution2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for DeleteStreamingDistribution2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteStreamingDistribution2020_05_31OutcomeCallable DeleteStreamingDistribution2020_05_31Callable(const Model::DeleteStreamingDistribution2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for DeleteStreamingDistribution2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteStreamingDistribution2020_05_31Async(const Model::DeleteStreamingDistribution2020_05_31Request& request, const DeleteStreamingDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets configuration information and metadata about a CloudFront function, but
@@ -827,15 +582,6 @@ namespace CloudFront
          */
         virtual Model::DescribeFunction2020_05_31Outcome DescribeFunction2020_05_31(const Model::DescribeFunction2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for DescribeFunction2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeFunction2020_05_31OutcomeCallable DescribeFunction2020_05_31Callable(const Model::DescribeFunction2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for DescribeFunction2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeFunction2020_05_31Async(const Model::DescribeFunction2020_05_31Request& request, const DescribeFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a cache policy, including the following metadata:</p> <ul> <li> <p>The
@@ -851,15 +597,6 @@ namespace CloudFront
          */
         virtual Model::GetCachePolicy2020_05_31Outcome GetCachePolicy2020_05_31(const Model::GetCachePolicy2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for GetCachePolicy2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetCachePolicy2020_05_31OutcomeCallable GetCachePolicy2020_05_31Callable(const Model::GetCachePolicy2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for GetCachePolicy2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetCachePolicy2020_05_31Async(const Model::GetCachePolicy2020_05_31Request& request, const GetCachePolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a cache policy configuration.</p> <p>To get a cache policy
@@ -873,15 +610,6 @@ namespace CloudFront
          */
         virtual Model::GetCachePolicyConfig2020_05_31Outcome GetCachePolicyConfig2020_05_31(const Model::GetCachePolicyConfig2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for GetCachePolicyConfig2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetCachePolicyConfig2020_05_31OutcomeCallable GetCachePolicyConfig2020_05_31Callable(const Model::GetCachePolicyConfig2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for GetCachePolicyConfig2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetCachePolicyConfig2020_05_31Async(const Model::GetCachePolicyConfig2020_05_31Request& request, const GetCachePolicyConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get the information about an origin access identity. </p><p><h3>See
@@ -891,15 +619,6 @@ namespace CloudFront
          */
         virtual Model::GetCloudFrontOriginAccessIdentity2020_05_31Outcome GetCloudFrontOriginAccessIdentity2020_05_31(const Model::GetCloudFrontOriginAccessIdentity2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for GetCloudFrontOriginAccessIdentity2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetCloudFrontOriginAccessIdentity2020_05_31OutcomeCallable GetCloudFrontOriginAccessIdentity2020_05_31Callable(const Model::GetCloudFrontOriginAccessIdentity2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for GetCloudFrontOriginAccessIdentity2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetCloudFrontOriginAccessIdentity2020_05_31Async(const Model::GetCloudFrontOriginAccessIdentity2020_05_31Request& request, const GetCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get the configuration information about an origin access identity.
@@ -909,15 +628,6 @@ namespace CloudFront
          */
         virtual Model::GetCloudFrontOriginAccessIdentityConfig2020_05_31Outcome GetCloudFrontOriginAccessIdentityConfig2020_05_31(const Model::GetCloudFrontOriginAccessIdentityConfig2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for GetCloudFrontOriginAccessIdentityConfig2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetCloudFrontOriginAccessIdentityConfig2020_05_31OutcomeCallable GetCloudFrontOriginAccessIdentityConfig2020_05_31Callable(const Model::GetCloudFrontOriginAccessIdentityConfig2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for GetCloudFrontOriginAccessIdentityConfig2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetCloudFrontOriginAccessIdentityConfig2020_05_31Async(const Model::GetCloudFrontOriginAccessIdentityConfig2020_05_31Request& request, const GetCloudFrontOriginAccessIdentityConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get the information about a distribution.</p><p><h3>See Also:</h3>   <a
@@ -926,15 +636,6 @@ namespace CloudFront
          */
         virtual Model::GetDistribution2020_05_31Outcome GetDistribution2020_05_31(const Model::GetDistribution2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for GetDistribution2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDistribution2020_05_31OutcomeCallable GetDistribution2020_05_31Callable(const Model::GetDistribution2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for GetDistribution2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDistribution2020_05_31Async(const Model::GetDistribution2020_05_31Request& request, const GetDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get the configuration information about a distribution. </p><p><h3>See
@@ -944,15 +645,6 @@ namespace CloudFront
          */
         virtual Model::GetDistributionConfig2020_05_31Outcome GetDistributionConfig2020_05_31(const Model::GetDistributionConfig2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for GetDistributionConfig2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDistributionConfig2020_05_31OutcomeCallable GetDistributionConfig2020_05_31Callable(const Model::GetDistributionConfig2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for GetDistributionConfig2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDistributionConfig2020_05_31Async(const Model::GetDistributionConfig2020_05_31Request& request, const GetDistributionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get the field-level encryption configuration information.</p><p><h3>See
@@ -962,15 +654,6 @@ namespace CloudFront
          */
         virtual Model::GetFieldLevelEncryption2020_05_31Outcome GetFieldLevelEncryption2020_05_31(const Model::GetFieldLevelEncryption2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for GetFieldLevelEncryption2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetFieldLevelEncryption2020_05_31OutcomeCallable GetFieldLevelEncryption2020_05_31Callable(const Model::GetFieldLevelEncryption2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for GetFieldLevelEncryption2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetFieldLevelEncryption2020_05_31Async(const Model::GetFieldLevelEncryption2020_05_31Request& request, const GetFieldLevelEncryption2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get the field-level encryption configuration information.</p><p><h3>See
@@ -980,15 +663,6 @@ namespace CloudFront
          */
         virtual Model::GetFieldLevelEncryptionConfig2020_05_31Outcome GetFieldLevelEncryptionConfig2020_05_31(const Model::GetFieldLevelEncryptionConfig2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for GetFieldLevelEncryptionConfig2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetFieldLevelEncryptionConfig2020_05_31OutcomeCallable GetFieldLevelEncryptionConfig2020_05_31Callable(const Model::GetFieldLevelEncryptionConfig2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for GetFieldLevelEncryptionConfig2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetFieldLevelEncryptionConfig2020_05_31Async(const Model::GetFieldLevelEncryptionConfig2020_05_31Request& request, const GetFieldLevelEncryptionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get the field-level encryption profile information.</p><p><h3>See Also:</h3> 
@@ -998,15 +672,6 @@ namespace CloudFront
          */
         virtual Model::GetFieldLevelEncryptionProfile2020_05_31Outcome GetFieldLevelEncryptionProfile2020_05_31(const Model::GetFieldLevelEncryptionProfile2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for GetFieldLevelEncryptionProfile2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetFieldLevelEncryptionProfile2020_05_31OutcomeCallable GetFieldLevelEncryptionProfile2020_05_31Callable(const Model::GetFieldLevelEncryptionProfile2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for GetFieldLevelEncryptionProfile2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetFieldLevelEncryptionProfile2020_05_31Async(const Model::GetFieldLevelEncryptionProfile2020_05_31Request& request, const GetFieldLevelEncryptionProfile2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get the field-level encryption profile configuration
@@ -1016,15 +681,6 @@ namespace CloudFront
          */
         virtual Model::GetFieldLevelEncryptionProfileConfig2020_05_31Outcome GetFieldLevelEncryptionProfileConfig2020_05_31(const Model::GetFieldLevelEncryptionProfileConfig2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for GetFieldLevelEncryptionProfileConfig2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetFieldLevelEncryptionProfileConfig2020_05_31OutcomeCallable GetFieldLevelEncryptionProfileConfig2020_05_31Callable(const Model::GetFieldLevelEncryptionProfileConfig2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for GetFieldLevelEncryptionProfileConfig2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetFieldLevelEncryptionProfileConfig2020_05_31Async(const Model::GetFieldLevelEncryptionProfileConfig2020_05_31Request& request, const GetFieldLevelEncryptionProfileConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the code of a CloudFront function. To get configuration information and
@@ -1036,15 +692,6 @@ namespace CloudFront
          */
         virtual Model::GetFunction2020_05_31Outcome GetFunction2020_05_31(const Model::GetFunction2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for GetFunction2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetFunction2020_05_31OutcomeCallable GetFunction2020_05_31Callable(const Model::GetFunction2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for GetFunction2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetFunction2020_05_31Async(const Model::GetFunction2020_05_31Request& request, const GetFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get the information about an invalidation. </p><p><h3>See Also:</h3>   <a
@@ -1053,15 +700,6 @@ namespace CloudFront
          */
         virtual Model::GetInvalidation2020_05_31Outcome GetInvalidation2020_05_31(const Model::GetInvalidation2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for GetInvalidation2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetInvalidation2020_05_31OutcomeCallable GetInvalidation2020_05_31Callable(const Model::GetInvalidation2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for GetInvalidation2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetInvalidation2020_05_31Async(const Model::GetInvalidation2020_05_31Request& request, const GetInvalidation2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a key group, including the date and time when the key group was last
@@ -1076,15 +714,6 @@ namespace CloudFront
          */
         virtual Model::GetKeyGroup2020_05_31Outcome GetKeyGroup2020_05_31(const Model::GetKeyGroup2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for GetKeyGroup2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetKeyGroup2020_05_31OutcomeCallable GetKeyGroup2020_05_31Callable(const Model::GetKeyGroup2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for GetKeyGroup2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetKeyGroup2020_05_31Async(const Model::GetKeyGroup2020_05_31Request& request, const GetKeyGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a key group configuration.</p> <p>To get a key group configuration, you
@@ -1098,15 +727,6 @@ namespace CloudFront
          */
         virtual Model::GetKeyGroupConfig2020_05_31Outcome GetKeyGroupConfig2020_05_31(const Model::GetKeyGroupConfig2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for GetKeyGroupConfig2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetKeyGroupConfig2020_05_31OutcomeCallable GetKeyGroupConfig2020_05_31Callable(const Model::GetKeyGroupConfig2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for GetKeyGroupConfig2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetKeyGroupConfig2020_05_31Async(const Model::GetKeyGroupConfig2020_05_31Request& request, const GetKeyGroupConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about whether additional CloudWatch metrics are enabled for
@@ -1116,15 +736,6 @@ namespace CloudFront
          */
         virtual Model::GetMonitoringSubscription2020_05_31Outcome GetMonitoringSubscription2020_05_31(const Model::GetMonitoringSubscription2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for GetMonitoringSubscription2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetMonitoringSubscription2020_05_31OutcomeCallable GetMonitoringSubscription2020_05_31Callable(const Model::GetMonitoringSubscription2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for GetMonitoringSubscription2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetMonitoringSubscription2020_05_31Async(const Model::GetMonitoringSubscription2020_05_31Request& request, const GetMonitoringSubscription2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a CloudFront origin access control, including its unique
@@ -1134,15 +745,6 @@ namespace CloudFront
          */
         virtual Model::GetOriginAccessControl2020_05_31Outcome GetOriginAccessControl2020_05_31(const Model::GetOriginAccessControl2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for GetOriginAccessControl2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetOriginAccessControl2020_05_31OutcomeCallable GetOriginAccessControl2020_05_31Callable(const Model::GetOriginAccessControl2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for GetOriginAccessControl2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetOriginAccessControl2020_05_31Async(const Model::GetOriginAccessControl2020_05_31Request& request, const GetOriginAccessControl2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a CloudFront origin access control configuration.</p><p><h3>See
@@ -1152,15 +754,6 @@ namespace CloudFront
          */
         virtual Model::GetOriginAccessControlConfig2020_05_31Outcome GetOriginAccessControlConfig2020_05_31(const Model::GetOriginAccessControlConfig2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for GetOriginAccessControlConfig2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetOriginAccessControlConfig2020_05_31OutcomeCallable GetOriginAccessControlConfig2020_05_31Callable(const Model::GetOriginAccessControlConfig2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for GetOriginAccessControlConfig2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetOriginAccessControlConfig2020_05_31Async(const Model::GetOriginAccessControlConfig2020_05_31Request& request, const GetOriginAccessControlConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets an origin request policy, including the following metadata:</p> <ul>
@@ -1177,15 +770,6 @@ namespace CloudFront
          */
         virtual Model::GetOriginRequestPolicy2020_05_31Outcome GetOriginRequestPolicy2020_05_31(const Model::GetOriginRequestPolicy2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for GetOriginRequestPolicy2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetOriginRequestPolicy2020_05_31OutcomeCallable GetOriginRequestPolicy2020_05_31Callable(const Model::GetOriginRequestPolicy2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for GetOriginRequestPolicy2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetOriginRequestPolicy2020_05_31Async(const Model::GetOriginRequestPolicy2020_05_31Request& request, const GetOriginRequestPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets an origin request policy configuration.</p> <p>To get an origin request
@@ -1200,15 +784,6 @@ namespace CloudFront
          */
         virtual Model::GetOriginRequestPolicyConfig2020_05_31Outcome GetOriginRequestPolicyConfig2020_05_31(const Model::GetOriginRequestPolicyConfig2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for GetOriginRequestPolicyConfig2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetOriginRequestPolicyConfig2020_05_31OutcomeCallable GetOriginRequestPolicyConfig2020_05_31Callable(const Model::GetOriginRequestPolicyConfig2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for GetOriginRequestPolicyConfig2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetOriginRequestPolicyConfig2020_05_31Async(const Model::GetOriginRequestPolicyConfig2020_05_31Request& request, const GetOriginRequestPolicyConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a public key.</p><p><h3>See Also:</h3>   <a
@@ -1217,15 +792,6 @@ namespace CloudFront
          */
         virtual Model::GetPublicKey2020_05_31Outcome GetPublicKey2020_05_31(const Model::GetPublicKey2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for GetPublicKey2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetPublicKey2020_05_31OutcomeCallable GetPublicKey2020_05_31Callable(const Model::GetPublicKey2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for GetPublicKey2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetPublicKey2020_05_31Async(const Model::GetPublicKey2020_05_31Request& request, const GetPublicKey2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a public key configuration.</p><p><h3>See Also:</h3>   <a
@@ -1234,15 +800,6 @@ namespace CloudFront
          */
         virtual Model::GetPublicKeyConfig2020_05_31Outcome GetPublicKeyConfig2020_05_31(const Model::GetPublicKeyConfig2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for GetPublicKeyConfig2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetPublicKeyConfig2020_05_31OutcomeCallable GetPublicKeyConfig2020_05_31Callable(const Model::GetPublicKeyConfig2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for GetPublicKeyConfig2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetPublicKeyConfig2020_05_31Async(const Model::GetPublicKeyConfig2020_05_31Request& request, const GetPublicKeyConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a real-time log configuration.</p> <p>To get a real-time log
@@ -1255,15 +812,6 @@ namespace CloudFront
          */
         virtual Model::GetRealtimeLogConfig2020_05_31Outcome GetRealtimeLogConfig2020_05_31(const Model::GetRealtimeLogConfig2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for GetRealtimeLogConfig2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRealtimeLogConfig2020_05_31OutcomeCallable GetRealtimeLogConfig2020_05_31Callable(const Model::GetRealtimeLogConfig2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for GetRealtimeLogConfig2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRealtimeLogConfig2020_05_31Async(const Model::GetRealtimeLogConfig2020_05_31Request& request, const GetRealtimeLogConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a response headers policy, including metadata (the policy’s identifier
@@ -1279,15 +827,6 @@ namespace CloudFront
          */
         virtual Model::GetResponseHeadersPolicy2020_05_31Outcome GetResponseHeadersPolicy2020_05_31(const Model::GetResponseHeadersPolicy2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for GetResponseHeadersPolicy2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetResponseHeadersPolicy2020_05_31OutcomeCallable GetResponseHeadersPolicy2020_05_31Callable(const Model::GetResponseHeadersPolicy2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for GetResponseHeadersPolicy2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetResponseHeadersPolicy2020_05_31Async(const Model::GetResponseHeadersPolicy2020_05_31Request& request, const GetResponseHeadersPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a response headers policy configuration.</p> <p>To get a response
@@ -1302,15 +841,6 @@ namespace CloudFront
          */
         virtual Model::GetResponseHeadersPolicyConfig2020_05_31Outcome GetResponseHeadersPolicyConfig2020_05_31(const Model::GetResponseHeadersPolicyConfig2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for GetResponseHeadersPolicyConfig2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetResponseHeadersPolicyConfig2020_05_31OutcomeCallable GetResponseHeadersPolicyConfig2020_05_31Callable(const Model::GetResponseHeadersPolicyConfig2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for GetResponseHeadersPolicyConfig2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetResponseHeadersPolicyConfig2020_05_31Async(const Model::GetResponseHeadersPolicyConfig2020_05_31Request& request, const GetResponseHeadersPolicyConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about a specified RTMP distribution, including the
@@ -1320,15 +850,6 @@ namespace CloudFront
          */
         virtual Model::GetStreamingDistribution2020_05_31Outcome GetStreamingDistribution2020_05_31(const Model::GetStreamingDistribution2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for GetStreamingDistribution2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetStreamingDistribution2020_05_31OutcomeCallable GetStreamingDistribution2020_05_31Callable(const Model::GetStreamingDistribution2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for GetStreamingDistribution2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetStreamingDistribution2020_05_31Async(const Model::GetStreamingDistribution2020_05_31Request& request, const GetStreamingDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get the configuration information about a streaming distribution.
@@ -1338,15 +859,6 @@ namespace CloudFront
          */
         virtual Model::GetStreamingDistributionConfig2020_05_31Outcome GetStreamingDistributionConfig2020_05_31(const Model::GetStreamingDistributionConfig2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for GetStreamingDistributionConfig2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetStreamingDistributionConfig2020_05_31OutcomeCallable GetStreamingDistributionConfig2020_05_31Callable(const Model::GetStreamingDistributionConfig2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for GetStreamingDistributionConfig2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetStreamingDistributionConfig2020_05_31Async(const Model::GetStreamingDistributionConfig2020_05_31Request& request, const GetStreamingDistributionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of cache policies.</p> <p>You can optionally apply a filter to
@@ -1363,15 +875,6 @@ namespace CloudFront
          */
         virtual Model::ListCachePolicies2020_05_31Outcome ListCachePolicies2020_05_31(const Model::ListCachePolicies2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for ListCachePolicies2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListCachePolicies2020_05_31OutcomeCallable ListCachePolicies2020_05_31Callable(const Model::ListCachePolicies2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for ListCachePolicies2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListCachePolicies2020_05_31Async(const Model::ListCachePolicies2020_05_31Request& request, const ListCachePolicies2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists origin access identities.</p><p><h3>See Also:</h3>   <a
@@ -1380,15 +883,6 @@ namespace CloudFront
          */
         virtual Model::ListCloudFrontOriginAccessIdentities2020_05_31Outcome ListCloudFrontOriginAccessIdentities2020_05_31(const Model::ListCloudFrontOriginAccessIdentities2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for ListCloudFrontOriginAccessIdentities2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListCloudFrontOriginAccessIdentities2020_05_31OutcomeCallable ListCloudFrontOriginAccessIdentities2020_05_31Callable(const Model::ListCloudFrontOriginAccessIdentities2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for ListCloudFrontOriginAccessIdentities2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListCloudFrontOriginAccessIdentities2020_05_31Async(const Model::ListCloudFrontOriginAccessIdentities2020_05_31Request& request, const ListCloudFrontOriginAccessIdentities2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of aliases (also called CNAMEs or alternate domain names) that
@@ -1423,15 +917,6 @@ namespace CloudFront
          */
         virtual Model::ListConflictingAliases2020_05_31Outcome ListConflictingAliases2020_05_31(const Model::ListConflictingAliases2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for ListConflictingAliases2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListConflictingAliases2020_05_31OutcomeCallable ListConflictingAliases2020_05_31Callable(const Model::ListConflictingAliases2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for ListConflictingAliases2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListConflictingAliases2020_05_31Async(const Model::ListConflictingAliases2020_05_31Request& request, const ListConflictingAliases2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List CloudFront distributions.</p><p><h3>See Also:</h3>   <a
@@ -1440,15 +925,6 @@ namespace CloudFront
          */
         virtual Model::ListDistributions2020_05_31Outcome ListDistributions2020_05_31(const Model::ListDistributions2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for ListDistributions2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDistributions2020_05_31OutcomeCallable ListDistributions2020_05_31Callable(const Model::ListDistributions2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for ListDistributions2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDistributions2020_05_31Async(const Model::ListDistributions2020_05_31Request& request, const ListDistributions2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of distribution IDs for distributions that have a cache behavior
@@ -1464,15 +940,6 @@ namespace CloudFront
          */
         virtual Model::ListDistributionsByCachePolicyId2020_05_31Outcome ListDistributionsByCachePolicyId2020_05_31(const Model::ListDistributionsByCachePolicyId2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for ListDistributionsByCachePolicyId2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDistributionsByCachePolicyId2020_05_31OutcomeCallable ListDistributionsByCachePolicyId2020_05_31Callable(const Model::ListDistributionsByCachePolicyId2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for ListDistributionsByCachePolicyId2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDistributionsByCachePolicyId2020_05_31Async(const Model::ListDistributionsByCachePolicyId2020_05_31Request& request, const ListDistributionsByCachePolicyId2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of distribution IDs for distributions that have a cache behavior
@@ -1488,15 +955,6 @@ namespace CloudFront
          */
         virtual Model::ListDistributionsByKeyGroup2020_05_31Outcome ListDistributionsByKeyGroup2020_05_31(const Model::ListDistributionsByKeyGroup2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for ListDistributionsByKeyGroup2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDistributionsByKeyGroup2020_05_31OutcomeCallable ListDistributionsByKeyGroup2020_05_31Callable(const Model::ListDistributionsByKeyGroup2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for ListDistributionsByKeyGroup2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDistributionsByKeyGroup2020_05_31Async(const Model::ListDistributionsByKeyGroup2020_05_31Request& request, const ListDistributionsByKeyGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of distribution IDs for distributions that have a cache behavior
@@ -1512,15 +970,6 @@ namespace CloudFront
          */
         virtual Model::ListDistributionsByOriginRequestPolicyId2020_05_31Outcome ListDistributionsByOriginRequestPolicyId2020_05_31(const Model::ListDistributionsByOriginRequestPolicyId2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for ListDistributionsByOriginRequestPolicyId2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDistributionsByOriginRequestPolicyId2020_05_31OutcomeCallable ListDistributionsByOriginRequestPolicyId2020_05_31Callable(const Model::ListDistributionsByOriginRequestPolicyId2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for ListDistributionsByOriginRequestPolicyId2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDistributionsByOriginRequestPolicyId2020_05_31Async(const Model::ListDistributionsByOriginRequestPolicyId2020_05_31Request& request, const ListDistributionsByOriginRequestPolicyId2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of distributions that have a cache behavior that’s associated
@@ -1539,15 +988,6 @@ namespace CloudFront
          */
         virtual Model::ListDistributionsByRealtimeLogConfig2020_05_31Outcome ListDistributionsByRealtimeLogConfig2020_05_31(const Model::ListDistributionsByRealtimeLogConfig2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for ListDistributionsByRealtimeLogConfig2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDistributionsByRealtimeLogConfig2020_05_31OutcomeCallable ListDistributionsByRealtimeLogConfig2020_05_31Callable(const Model::ListDistributionsByRealtimeLogConfig2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for ListDistributionsByRealtimeLogConfig2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDistributionsByRealtimeLogConfig2020_05_31Async(const Model::ListDistributionsByRealtimeLogConfig2020_05_31Request& request, const ListDistributionsByRealtimeLogConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of distribution IDs for distributions that have a cache behavior
@@ -1563,15 +1003,6 @@ namespace CloudFront
          */
         virtual Model::ListDistributionsByResponseHeadersPolicyId2020_05_31Outcome ListDistributionsByResponseHeadersPolicyId2020_05_31(const Model::ListDistributionsByResponseHeadersPolicyId2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for ListDistributionsByResponseHeadersPolicyId2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDistributionsByResponseHeadersPolicyId2020_05_31OutcomeCallable ListDistributionsByResponseHeadersPolicyId2020_05_31Callable(const Model::ListDistributionsByResponseHeadersPolicyId2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for ListDistributionsByResponseHeadersPolicyId2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDistributionsByResponseHeadersPolicyId2020_05_31Async(const Model::ListDistributionsByResponseHeadersPolicyId2020_05_31Request& request, const ListDistributionsByResponseHeadersPolicyId2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List the distributions that are associated with a specified WAF web
@@ -1581,15 +1012,6 @@ namespace CloudFront
          */
         virtual Model::ListDistributionsByWebACLId2020_05_31Outcome ListDistributionsByWebACLId2020_05_31(const Model::ListDistributionsByWebACLId2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for ListDistributionsByWebACLId2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDistributionsByWebACLId2020_05_31OutcomeCallable ListDistributionsByWebACLId2020_05_31Callable(const Model::ListDistributionsByWebACLId2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for ListDistributionsByWebACLId2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDistributionsByWebACLId2020_05_31Async(const Model::ListDistributionsByWebACLId2020_05_31Request& request, const ListDistributionsByWebACLId2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List all field-level encryption configurations that have been created in
@@ -1599,15 +1021,6 @@ namespace CloudFront
          */
         virtual Model::ListFieldLevelEncryptionConfigs2020_05_31Outcome ListFieldLevelEncryptionConfigs2020_05_31(const Model::ListFieldLevelEncryptionConfigs2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for ListFieldLevelEncryptionConfigs2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListFieldLevelEncryptionConfigs2020_05_31OutcomeCallable ListFieldLevelEncryptionConfigs2020_05_31Callable(const Model::ListFieldLevelEncryptionConfigs2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for ListFieldLevelEncryptionConfigs2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListFieldLevelEncryptionConfigs2020_05_31Async(const Model::ListFieldLevelEncryptionConfigs2020_05_31Request& request, const ListFieldLevelEncryptionConfigs2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Request a list of field-level encryption profiles that have been created in
@@ -1617,15 +1030,6 @@ namespace CloudFront
          */
         virtual Model::ListFieldLevelEncryptionProfiles2020_05_31Outcome ListFieldLevelEncryptionProfiles2020_05_31(const Model::ListFieldLevelEncryptionProfiles2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for ListFieldLevelEncryptionProfiles2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListFieldLevelEncryptionProfiles2020_05_31OutcomeCallable ListFieldLevelEncryptionProfiles2020_05_31Callable(const Model::ListFieldLevelEncryptionProfiles2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for ListFieldLevelEncryptionProfiles2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListFieldLevelEncryptionProfiles2020_05_31Async(const Model::ListFieldLevelEncryptionProfiles2020_05_31Request& request, const ListFieldLevelEncryptionProfiles2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of all CloudFront functions in your Amazon Web Services
@@ -1643,15 +1047,6 @@ namespace CloudFront
          */
         virtual Model::ListFunctions2020_05_31Outcome ListFunctions2020_05_31(const Model::ListFunctions2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for ListFunctions2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListFunctions2020_05_31OutcomeCallable ListFunctions2020_05_31Callable(const Model::ListFunctions2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for ListFunctions2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListFunctions2020_05_31Async(const Model::ListFunctions2020_05_31Request& request, const ListFunctions2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists invalidation batches. </p><p><h3>See Also:</h3>   <a
@@ -1660,15 +1055,6 @@ namespace CloudFront
          */
         virtual Model::ListInvalidations2020_05_31Outcome ListInvalidations2020_05_31(const Model::ListInvalidations2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for ListInvalidations2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListInvalidations2020_05_31OutcomeCallable ListInvalidations2020_05_31Callable(const Model::ListInvalidations2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for ListInvalidations2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListInvalidations2020_05_31Async(const Model::ListInvalidations2020_05_31Request& request, const ListInvalidations2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of key groups.</p> <p>You can optionally specify the maximum
@@ -1683,15 +1069,6 @@ namespace CloudFront
          */
         virtual Model::ListKeyGroups2020_05_31Outcome ListKeyGroups2020_05_31(const Model::ListKeyGroups2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for ListKeyGroups2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListKeyGroups2020_05_31OutcomeCallable ListKeyGroups2020_05_31Callable(const Model::ListKeyGroups2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for ListKeyGroups2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListKeyGroups2020_05_31Async(const Model::ListKeyGroups2020_05_31Request& request, const ListKeyGroups2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the list of CloudFront origin access controls in this Amazon Web
@@ -1706,15 +1083,6 @@ namespace CloudFront
          */
         virtual Model::ListOriginAccessControls2020_05_31Outcome ListOriginAccessControls2020_05_31(const Model::ListOriginAccessControls2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for ListOriginAccessControls2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListOriginAccessControls2020_05_31OutcomeCallable ListOriginAccessControls2020_05_31Callable(const Model::ListOriginAccessControls2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for ListOriginAccessControls2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListOriginAccessControls2020_05_31Async(const Model::ListOriginAccessControls2020_05_31Request& request, const ListOriginAccessControls2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of origin request policies.</p> <p>You can optionally apply a
@@ -1731,15 +1099,6 @@ namespace CloudFront
          */
         virtual Model::ListOriginRequestPolicies2020_05_31Outcome ListOriginRequestPolicies2020_05_31(const Model::ListOriginRequestPolicies2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for ListOriginRequestPolicies2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListOriginRequestPolicies2020_05_31OutcomeCallable ListOriginRequestPolicies2020_05_31Callable(const Model::ListOriginRequestPolicies2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for ListOriginRequestPolicies2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListOriginRequestPolicies2020_05_31Async(const Model::ListOriginRequestPolicies2020_05_31Request& request, const ListOriginRequestPolicies2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List all public keys that have been added to CloudFront for this
@@ -1749,15 +1108,6 @@ namespace CloudFront
          */
         virtual Model::ListPublicKeys2020_05_31Outcome ListPublicKeys2020_05_31(const Model::ListPublicKeys2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for ListPublicKeys2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPublicKeys2020_05_31OutcomeCallable ListPublicKeys2020_05_31Callable(const Model::ListPublicKeys2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for ListPublicKeys2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPublicKeys2020_05_31Async(const Model::ListPublicKeys2020_05_31Request& request, const ListPublicKeys2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of real-time log configurations.</p> <p>You can optionally
@@ -1772,15 +1122,6 @@ namespace CloudFront
          */
         virtual Model::ListRealtimeLogConfigs2020_05_31Outcome ListRealtimeLogConfigs2020_05_31(const Model::ListRealtimeLogConfigs2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for ListRealtimeLogConfigs2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListRealtimeLogConfigs2020_05_31OutcomeCallable ListRealtimeLogConfigs2020_05_31Callable(const Model::ListRealtimeLogConfigs2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for ListRealtimeLogConfigs2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListRealtimeLogConfigs2020_05_31Async(const Model::ListRealtimeLogConfigs2020_05_31Request& request, const ListRealtimeLogConfigs2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of response headers policies.</p> <p>You can optionally apply a
@@ -1797,15 +1138,6 @@ namespace CloudFront
          */
         virtual Model::ListResponseHeadersPolicies2020_05_31Outcome ListResponseHeadersPolicies2020_05_31(const Model::ListResponseHeadersPolicies2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for ListResponseHeadersPolicies2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListResponseHeadersPolicies2020_05_31OutcomeCallable ListResponseHeadersPolicies2020_05_31Callable(const Model::ListResponseHeadersPolicies2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for ListResponseHeadersPolicies2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListResponseHeadersPolicies2020_05_31Async(const Model::ListResponseHeadersPolicies2020_05_31Request& request, const ListResponseHeadersPolicies2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List streaming distributions. </p><p><h3>See Also:</h3>   <a
@@ -1814,15 +1146,6 @@ namespace CloudFront
          */
         virtual Model::ListStreamingDistributions2020_05_31Outcome ListStreamingDistributions2020_05_31(const Model::ListStreamingDistributions2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for ListStreamingDistributions2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListStreamingDistributions2020_05_31OutcomeCallable ListStreamingDistributions2020_05_31Callable(const Model::ListStreamingDistributions2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for ListStreamingDistributions2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListStreamingDistributions2020_05_31Async(const Model::ListStreamingDistributions2020_05_31Request& request, const ListStreamingDistributions2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List tags for a CloudFront resource.</p><p><h3>See Also:</h3>   <a
@@ -1831,15 +1154,6 @@ namespace CloudFront
          */
         virtual Model::ListTagsForResource2020_05_31Outcome ListTagsForResource2020_05_31(const Model::ListTagsForResource2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResource2020_05_31OutcomeCallable ListTagsForResource2020_05_31Callable(const Model::ListTagsForResource2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResource2020_05_31Async(const Model::ListTagsForResource2020_05_31Request& request, const ListTagsForResource2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Publishes a CloudFront function by copying the function code from the
@@ -1856,15 +1170,6 @@ namespace CloudFront
          */
         virtual Model::PublishFunction2020_05_31Outcome PublishFunction2020_05_31(const Model::PublishFunction2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for PublishFunction2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PublishFunction2020_05_31OutcomeCallable PublishFunction2020_05_31Callable(const Model::PublishFunction2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for PublishFunction2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PublishFunction2020_05_31Async(const Model::PublishFunction2020_05_31Request& request, const PublishFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Add tags to a CloudFront resource.</p><p><h3>See Also:</h3>   <a
@@ -1873,15 +1178,6 @@ namespace CloudFront
          */
         virtual Model::TagResource2020_05_31Outcome TagResource2020_05_31(const Model::TagResource2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for TagResource2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResource2020_05_31OutcomeCallable TagResource2020_05_31Callable(const Model::TagResource2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for TagResource2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResource2020_05_31Async(const Model::TagResource2020_05_31Request& request, const TagResource2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Tests a CloudFront function.</p> <p>To test a function, you provide an
@@ -1902,15 +1198,6 @@ namespace CloudFront
          */
         virtual Model::TestFunction2020_05_31Outcome TestFunction2020_05_31(const Model::TestFunction2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for TestFunction2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TestFunction2020_05_31OutcomeCallable TestFunction2020_05_31Callable(const Model::TestFunction2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for TestFunction2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TestFunction2020_05_31Async(const Model::TestFunction2020_05_31Request& request, const TestFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Remove tags from a CloudFront resource.</p><p><h3>See Also:</h3>   <a
@@ -1919,15 +1206,6 @@ namespace CloudFront
          */
         virtual Model::UntagResource2020_05_31Outcome UntagResource2020_05_31(const Model::UntagResource2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResource2020_05_31OutcomeCallable UntagResource2020_05_31Callable(const Model::UntagResource2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for UntagResource2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResource2020_05_31Async(const Model::UntagResource2020_05_31Request& request, const UntagResource2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a cache policy configuration.</p> <p>When you update a cache policy
@@ -1944,15 +1222,6 @@ namespace CloudFront
          */
         virtual Model::UpdateCachePolicy2020_05_31Outcome UpdateCachePolicy2020_05_31(const Model::UpdateCachePolicy2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for UpdateCachePolicy2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateCachePolicy2020_05_31OutcomeCallable UpdateCachePolicy2020_05_31Callable(const Model::UpdateCachePolicy2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for UpdateCachePolicy2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateCachePolicy2020_05_31Async(const Model::UpdateCachePolicy2020_05_31Request& request, const UpdateCachePolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Update an origin access identity. </p><p><h3>See Also:</h3>   <a
@@ -1961,15 +1230,6 @@ namespace CloudFront
          */
         virtual Model::UpdateCloudFrontOriginAccessIdentity2020_05_31Outcome UpdateCloudFrontOriginAccessIdentity2020_05_31(const Model::UpdateCloudFrontOriginAccessIdentity2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for UpdateCloudFrontOriginAccessIdentity2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateCloudFrontOriginAccessIdentity2020_05_31OutcomeCallable UpdateCloudFrontOriginAccessIdentity2020_05_31Callable(const Model::UpdateCloudFrontOriginAccessIdentity2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for UpdateCloudFrontOriginAccessIdentity2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateCloudFrontOriginAccessIdentity2020_05_31Async(const Model::UpdateCloudFrontOriginAccessIdentity2020_05_31Request& request, const UpdateCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the configuration for a web distribution. </p>  <p>When
@@ -2028,15 +1288,6 @@ namespace CloudFront
          */
         virtual Model::UpdateDistribution2020_05_31Outcome UpdateDistribution2020_05_31(const Model::UpdateDistribution2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for UpdateDistribution2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateDistribution2020_05_31OutcomeCallable UpdateDistribution2020_05_31Callable(const Model::UpdateDistribution2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for UpdateDistribution2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateDistribution2020_05_31Async(const Model::UpdateDistribution2020_05_31Request& request, const UpdateDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Update a field-level encryption configuration. </p><p><h3>See Also:</h3>   <a
@@ -2045,15 +1296,6 @@ namespace CloudFront
          */
         virtual Model::UpdateFieldLevelEncryptionConfig2020_05_31Outcome UpdateFieldLevelEncryptionConfig2020_05_31(const Model::UpdateFieldLevelEncryptionConfig2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for UpdateFieldLevelEncryptionConfig2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateFieldLevelEncryptionConfig2020_05_31OutcomeCallable UpdateFieldLevelEncryptionConfig2020_05_31Callable(const Model::UpdateFieldLevelEncryptionConfig2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for UpdateFieldLevelEncryptionConfig2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateFieldLevelEncryptionConfig2020_05_31Async(const Model::UpdateFieldLevelEncryptionConfig2020_05_31Request& request, const UpdateFieldLevelEncryptionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Update a field-level encryption profile. </p><p><h3>See Also:</h3>   <a
@@ -2062,15 +1304,6 @@ namespace CloudFront
          */
         virtual Model::UpdateFieldLevelEncryptionProfile2020_05_31Outcome UpdateFieldLevelEncryptionProfile2020_05_31(const Model::UpdateFieldLevelEncryptionProfile2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for UpdateFieldLevelEncryptionProfile2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateFieldLevelEncryptionProfile2020_05_31OutcomeCallable UpdateFieldLevelEncryptionProfile2020_05_31Callable(const Model::UpdateFieldLevelEncryptionProfile2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for UpdateFieldLevelEncryptionProfile2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateFieldLevelEncryptionProfile2020_05_31Async(const Model::UpdateFieldLevelEncryptionProfile2020_05_31Request& request, const UpdateFieldLevelEncryptionProfile2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a CloudFront function.</p> <p>You can update a function’s code or the
@@ -2084,15 +1317,6 @@ namespace CloudFront
          */
         virtual Model::UpdateFunction2020_05_31Outcome UpdateFunction2020_05_31(const Model::UpdateFunction2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for UpdateFunction2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateFunction2020_05_31OutcomeCallable UpdateFunction2020_05_31Callable(const Model::UpdateFunction2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for UpdateFunction2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateFunction2020_05_31Async(const Model::UpdateFunction2020_05_31Request& request, const UpdateFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a key group.</p> <p>When you update a key group, all the fields are
@@ -2109,15 +1333,6 @@ namespace CloudFront
          */
         virtual Model::UpdateKeyGroup2020_05_31Outcome UpdateKeyGroup2020_05_31(const Model::UpdateKeyGroup2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for UpdateKeyGroup2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateKeyGroup2020_05_31OutcomeCallable UpdateKeyGroup2020_05_31Callable(const Model::UpdateKeyGroup2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for UpdateKeyGroup2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateKeyGroup2020_05_31Async(const Model::UpdateKeyGroup2020_05_31Request& request, const UpdateKeyGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a CloudFront origin access control.</p><p><h3>See Also:</h3>   <a
@@ -2126,15 +1341,6 @@ namespace CloudFront
          */
         virtual Model::UpdateOriginAccessControl2020_05_31Outcome UpdateOriginAccessControl2020_05_31(const Model::UpdateOriginAccessControl2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for UpdateOriginAccessControl2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateOriginAccessControl2020_05_31OutcomeCallable UpdateOriginAccessControl2020_05_31Callable(const Model::UpdateOriginAccessControl2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for UpdateOriginAccessControl2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateOriginAccessControl2020_05_31Async(const Model::UpdateOriginAccessControl2020_05_31Request& request, const UpdateOriginAccessControl2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an origin request policy configuration.</p> <p>When you update an
@@ -2152,15 +1358,6 @@ namespace CloudFront
          */
         virtual Model::UpdateOriginRequestPolicy2020_05_31Outcome UpdateOriginRequestPolicy2020_05_31(const Model::UpdateOriginRequestPolicy2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for UpdateOriginRequestPolicy2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateOriginRequestPolicy2020_05_31OutcomeCallable UpdateOriginRequestPolicy2020_05_31Callable(const Model::UpdateOriginRequestPolicy2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for UpdateOriginRequestPolicy2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateOriginRequestPolicy2020_05_31Async(const Model::UpdateOriginRequestPolicy2020_05_31Request& request, const UpdateOriginRequestPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Update public key information. Note that the only value you can change is the
@@ -2170,15 +1367,6 @@ namespace CloudFront
          */
         virtual Model::UpdatePublicKey2020_05_31Outcome UpdatePublicKey2020_05_31(const Model::UpdatePublicKey2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for UpdatePublicKey2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdatePublicKey2020_05_31OutcomeCallable UpdatePublicKey2020_05_31Callable(const Model::UpdatePublicKey2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for UpdatePublicKey2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdatePublicKey2020_05_31Async(const Model::UpdatePublicKey2020_05_31Request& request, const UpdatePublicKey2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a real-time log configuration.</p> <p>When you update a real-time log
@@ -2197,15 +1385,6 @@ namespace CloudFront
          */
         virtual Model::UpdateRealtimeLogConfig2020_05_31Outcome UpdateRealtimeLogConfig2020_05_31(const Model::UpdateRealtimeLogConfig2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for UpdateRealtimeLogConfig2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateRealtimeLogConfig2020_05_31OutcomeCallable UpdateRealtimeLogConfig2020_05_31Callable(const Model::UpdateRealtimeLogConfig2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for UpdateRealtimeLogConfig2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateRealtimeLogConfig2020_05_31Async(const Model::UpdateRealtimeLogConfig2020_05_31Request& request, const UpdateRealtimeLogConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a response headers policy.</p> <p>When you update a response headers
@@ -2222,15 +1401,6 @@ namespace CloudFront
          */
         virtual Model::UpdateResponseHeadersPolicy2020_05_31Outcome UpdateResponseHeadersPolicy2020_05_31(const Model::UpdateResponseHeadersPolicy2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for UpdateResponseHeadersPolicy2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateResponseHeadersPolicy2020_05_31OutcomeCallable UpdateResponseHeadersPolicy2020_05_31Callable(const Model::UpdateResponseHeadersPolicy2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for UpdateResponseHeadersPolicy2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateResponseHeadersPolicy2020_05_31Async(const Model::UpdateResponseHeadersPolicy2020_05_31Request& request, const UpdateResponseHeadersPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Update a streaming distribution. </p><p><h3>See Also:</h3>   <a
@@ -2239,15 +1409,6 @@ namespace CloudFront
          */
         virtual Model::UpdateStreamingDistribution2020_05_31Outcome UpdateStreamingDistribution2020_05_31(const Model::UpdateStreamingDistribution2020_05_31Request& request) const;
 
-        /**
-         * A Callable wrapper for UpdateStreamingDistribution2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateStreamingDistribution2020_05_31OutcomeCallable UpdateStreamingDistribution2020_05_31Callable(const Model::UpdateStreamingDistribution2020_05_31Request& request) const;
-
-        /**
-         * An Async wrapper for UpdateStreamingDistribution2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateStreamingDistribution2020_05_31Async(const Model::UpdateStreamingDistribution2020_05_31Request& request, const UpdateStreamingDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
         void OverrideEndpoint(const Aws::String& endpoint);

@@ -7,8 +7,10 @@
 #include <aws/acm/ACM_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/acm/ACMServiceClientModel.h>
+#include <aws/acm/ACMLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -77,6 +79,47 @@ namespace ACM
         virtual ~ACMClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Adds one or more tags to an ACM certificate. Tags are labels that you can use
          * to identify and organize your Amazon Web Services resources. Each tag consists
@@ -100,15 +143,6 @@ namespace ACM
          */
         virtual Model::AddTagsToCertificateOutcome AddTagsToCertificate(const Model::AddTagsToCertificateRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddTagsToCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddTagsToCertificateOutcomeCallable AddTagsToCertificateCallable(const Model::AddTagsToCertificateRequest& request) const;
-
-        /**
-         * An Async wrapper for AddTagsToCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddTagsToCertificateAsync(const Model::AddTagsToCertificateRequest& request, const AddTagsToCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a certificate and its associated private key. If this action
@@ -124,15 +158,6 @@ namespace ACM
          */
         virtual Model::DeleteCertificateOutcome DeleteCertificate(const Model::DeleteCertificateRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteCertificateOutcomeCallable DeleteCertificateCallable(const Model::DeleteCertificateRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteCertificateAsync(const Model::DeleteCertificateRequest& request, const DeleteCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns detailed metadata about the specified ACM certificate.</p> <p>If you
@@ -144,15 +169,6 @@ namespace ACM
          */
         virtual Model::DescribeCertificateOutcome DescribeCertificate(const Model::DescribeCertificateRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeCertificateOutcomeCallable DescribeCertificateCallable(const Model::DescribeCertificateRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeCertificateAsync(const Model::DescribeCertificateRequest& request, const DescribeCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Exports a private certificate issued by a private certificate authority (CA)
@@ -168,15 +184,6 @@ namespace ACM
          */
         virtual Model::ExportCertificateOutcome ExportCertificate(const Model::ExportCertificateRequest& request) const;
 
-        /**
-         * A Callable wrapper for ExportCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ExportCertificateOutcomeCallable ExportCertificateCallable(const Model::ExportCertificateRequest& request) const;
-
-        /**
-         * An Async wrapper for ExportCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ExportCertificateAsync(const Model::ExportCertificateRequest& request, const ExportCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the account configuration options associated with an Amazon Web
@@ -208,15 +215,6 @@ namespace ACM
          */
         virtual Model::GetCertificateOutcome GetCertificate(const Model::GetCertificateRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetCertificateOutcomeCallable GetCertificateCallable(const Model::GetCertificateRequest& request) const;
-
-        /**
-         * An Async wrapper for GetCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetCertificateAsync(const Model::GetCertificateRequest& request, const GetCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Imports a certificate into Certificate Manager (ACM) to use with services
@@ -268,15 +266,6 @@ namespace ACM
          */
         virtual Model::ImportCertificateOutcome ImportCertificate(const Model::ImportCertificateRequest& request) const;
 
-        /**
-         * A Callable wrapper for ImportCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ImportCertificateOutcomeCallable ImportCertificateCallable(const Model::ImportCertificateRequest& request) const;
-
-        /**
-         * An Async wrapper for ImportCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ImportCertificateAsync(const Model::ImportCertificateRequest& request, const ImportCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list of certificate ARNs and domain names. You can request that
@@ -289,15 +278,6 @@ namespace ACM
          */
         virtual Model::ListCertificatesOutcome ListCertificates(const Model::ListCertificatesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListCertificates that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListCertificatesOutcomeCallable ListCertificatesCallable(const Model::ListCertificatesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListCertificates that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListCertificatesAsync(const Model::ListCertificatesRequest& request, const ListCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the tags that have been applied to the ACM certificate. Use the
@@ -310,15 +290,6 @@ namespace ACM
          */
         virtual Model::ListTagsForCertificateOutcome ListTagsForCertificate(const Model::ListTagsForCertificateRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForCertificateOutcomeCallable ListTagsForCertificateCallable(const Model::ListTagsForCertificateRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForCertificateAsync(const Model::ListTagsForCertificateRequest& request, const ListTagsForCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds or modifies account-level configurations in ACM. </p> <p>The supported
@@ -332,15 +303,6 @@ namespace ACM
          */
         virtual Model::PutAccountConfigurationOutcome PutAccountConfiguration(const Model::PutAccountConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutAccountConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutAccountConfigurationOutcomeCallable PutAccountConfigurationCallable(const Model::PutAccountConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for PutAccountConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutAccountConfigurationAsync(const Model::PutAccountConfigurationRequest& request, const PutAccountConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Remove one or more tags from an ACM certificate. A tag consists of a
@@ -356,15 +318,6 @@ namespace ACM
          */
         virtual Model::RemoveTagsFromCertificateOutcome RemoveTagsFromCertificate(const Model::RemoveTagsFromCertificateRequest& request) const;
 
-        /**
-         * A Callable wrapper for RemoveTagsFromCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RemoveTagsFromCertificateOutcomeCallable RemoveTagsFromCertificateCallable(const Model::RemoveTagsFromCertificateRequest& request) const;
-
-        /**
-         * An Async wrapper for RemoveTagsFromCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RemoveTagsFromCertificateAsync(const Model::RemoveTagsFromCertificateRequest& request, const RemoveTagsFromCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Renews an eligible ACM certificate. At this time, only exported private
@@ -379,15 +332,6 @@ namespace ACM
          */
         virtual Model::RenewCertificateOutcome RenewCertificate(const Model::RenewCertificateRequest& request) const;
 
-        /**
-         * A Callable wrapper for RenewCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RenewCertificateOutcomeCallable RenewCertificateCallable(const Model::RenewCertificateRequest& request) const;
-
-        /**
-         * An Async wrapper for RenewCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RenewCertificateAsync(const Model::RenewCertificateRequest& request, const RenewCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Requests an ACM certificate for use with other Amazon Web Services services.
@@ -415,15 +359,6 @@ namespace ACM
          */
         virtual Model::RequestCertificateOutcome RequestCertificate(const Model::RequestCertificateRequest& request) const;
 
-        /**
-         * A Callable wrapper for RequestCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RequestCertificateOutcomeCallable RequestCertificateCallable(const Model::RequestCertificateRequest& request) const;
-
-        /**
-         * An Async wrapper for RequestCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RequestCertificateAsync(const Model::RequestCertificateRequest& request, const RequestCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Resends the email that requests domain ownership validation. The domain owner
@@ -443,15 +378,6 @@ namespace ACM
          */
         virtual Model::ResendValidationEmailOutcome ResendValidationEmail(const Model::ResendValidationEmailRequest& request) const;
 
-        /**
-         * A Callable wrapper for ResendValidationEmail that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ResendValidationEmailOutcomeCallable ResendValidationEmailCallable(const Model::ResendValidationEmailRequest& request) const;
-
-        /**
-         * An Async wrapper for ResendValidationEmail that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ResendValidationEmailAsync(const Model::ResendValidationEmailRequest& request, const ResendValidationEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a certificate. Currently, you can use this function to specify
@@ -465,15 +391,6 @@ namespace ACM
          */
         virtual Model::UpdateCertificateOptionsOutcome UpdateCertificateOptions(const Model::UpdateCertificateOptionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateCertificateOptions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateCertificateOptionsOutcomeCallable UpdateCertificateOptionsCallable(const Model::UpdateCertificateOptionsRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateCertificateOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateCertificateOptionsAsync(const Model::UpdateCertificateOptionsRequest& request, const UpdateCertificateOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

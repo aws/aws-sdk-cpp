@@ -7,8 +7,10 @@
 #include <aws/xray/XRay_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/xray/XRayServiceClientModel.h>
+#include <aws/xray/XRayLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -74,6 +76,47 @@ namespace XRay
         virtual ~XRayClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Retrieves a list of traces specified by ID. Each trace is a collection of
          * segment documents that originates from a single request. Use
@@ -84,15 +127,6 @@ namespace XRay
          */
         virtual Model::BatchGetTracesOutcome BatchGetTraces(const Model::BatchGetTracesRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchGetTraces that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchGetTracesOutcomeCallable BatchGetTracesCallable(const Model::BatchGetTracesRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchGetTraces that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchGetTracesAsync(const Model::BatchGetTracesRequest& request, const BatchGetTracesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a group resource with a name and a filter expression. </p><p><h3>See
@@ -102,15 +136,6 @@ namespace XRay
          */
         virtual Model::CreateGroupOutcome CreateGroup(const Model::CreateGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateGroupOutcomeCallable CreateGroupCallable(const Model::CreateGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateGroupAsync(const Model::CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a rule to control sampling behavior for instrumented applications.
@@ -128,15 +153,6 @@ namespace XRay
          */
         virtual Model::CreateSamplingRuleOutcome CreateSamplingRule(const Model::CreateSamplingRuleRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateSamplingRule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateSamplingRuleOutcomeCallable CreateSamplingRuleCallable(const Model::CreateSamplingRuleRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateSamplingRule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateSamplingRuleAsync(const Model::CreateSamplingRuleRequest& request, const CreateSamplingRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a group resource.</p><p><h3>See Also:</h3>   <a
@@ -145,15 +161,6 @@ namespace XRay
          */
         virtual Model::DeleteGroupOutcome DeleteGroup(const Model::DeleteGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteGroupOutcomeCallable DeleteGroupCallable(const Model::DeleteGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteGroupAsync(const Model::DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a resource policy from the target Amazon Web Services
@@ -163,15 +170,6 @@ namespace XRay
          */
         virtual Model::DeleteResourcePolicyOutcome DeleteResourcePolicy(const Model::DeleteResourcePolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteResourcePolicyOutcomeCallable DeleteResourcePolicyCallable(const Model::DeleteResourcePolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteResourcePolicyAsync(const Model::DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a sampling rule.</p><p><h3>See Also:</h3>   <a
@@ -180,15 +178,6 @@ namespace XRay
          */
         virtual Model::DeleteSamplingRuleOutcome DeleteSamplingRule(const Model::DeleteSamplingRuleRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteSamplingRule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteSamplingRuleOutcomeCallable DeleteSamplingRuleCallable(const Model::DeleteSamplingRuleRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteSamplingRule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteSamplingRuleAsync(const Model::DeleteSamplingRuleRequest& request, const DeleteSamplingRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the current encryption configuration for X-Ray data.</p><p><h3>See
@@ -198,15 +187,6 @@ namespace XRay
          */
         virtual Model::GetEncryptionConfigOutcome GetEncryptionConfig(const Model::GetEncryptionConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetEncryptionConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetEncryptionConfigOutcomeCallable GetEncryptionConfigCallable(const Model::GetEncryptionConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for GetEncryptionConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetEncryptionConfigAsync(const Model::GetEncryptionConfigRequest& request, const GetEncryptionConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves group resource details.</p><p><h3>See Also:</h3>   <a
@@ -215,15 +195,6 @@ namespace XRay
          */
         virtual Model::GetGroupOutcome GetGroup(const Model::GetGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetGroupOutcomeCallable GetGroupCallable(const Model::GetGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for GetGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetGroupAsync(const Model::GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves all active group details.</p><p><h3>See Also:</h3>   <a
@@ -232,15 +203,6 @@ namespace XRay
          */
         virtual Model::GetGroupsOutcome GetGroups(const Model::GetGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetGroupsOutcomeCallable GetGroupsCallable(const Model::GetGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetGroupsAsync(const Model::GetGroupsRequest& request, const GetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the summary information of an insight. This includes impact to
@@ -252,15 +214,6 @@ namespace XRay
          */
         virtual Model::GetInsightOutcome GetInsight(const Model::GetInsightRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetInsight that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetInsightOutcomeCallable GetInsightCallable(const Model::GetInsightRequest& request) const;
-
-        /**
-         * An Async wrapper for GetInsight that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetInsightAsync(const Model::GetInsightRequest& request, const GetInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>X-Ray reevaluates insights periodically until they're resolved, and records
@@ -272,15 +225,6 @@ namespace XRay
          */
         virtual Model::GetInsightEventsOutcome GetInsightEvents(const Model::GetInsightEventsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetInsightEvents that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetInsightEventsOutcomeCallable GetInsightEventsCallable(const Model::GetInsightEventsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetInsightEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetInsightEventsAsync(const Model::GetInsightEventsRequest& request, const GetInsightEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a service graph structure filtered by the specified insight. The
@@ -291,15 +235,6 @@ namespace XRay
          */
         virtual Model::GetInsightImpactGraphOutcome GetInsightImpactGraph(const Model::GetInsightImpactGraphRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetInsightImpactGraph that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetInsightImpactGraphOutcomeCallable GetInsightImpactGraphCallable(const Model::GetInsightImpactGraphRequest& request) const;
-
-        /**
-         * An Async wrapper for GetInsightImpactGraph that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetInsightImpactGraphAsync(const Model::GetInsightImpactGraphRequest& request, const GetInsightImpactGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the summaries of all insights in the specified group matching the
@@ -309,15 +244,6 @@ namespace XRay
          */
         virtual Model::GetInsightSummariesOutcome GetInsightSummaries(const Model::GetInsightSummariesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetInsightSummaries that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetInsightSummariesOutcomeCallable GetInsightSummariesCallable(const Model::GetInsightSummariesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetInsightSummaries that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetInsightSummariesAsync(const Model::GetInsightSummariesRequest& request, const GetInsightSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves all sampling rules.</p><p><h3>See Also:</h3>   <a
@@ -326,15 +252,6 @@ namespace XRay
          */
         virtual Model::GetSamplingRulesOutcome GetSamplingRules(const Model::GetSamplingRulesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSamplingRules that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSamplingRulesOutcomeCallable GetSamplingRulesCallable(const Model::GetSamplingRulesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSamplingRules that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSamplingRulesAsync(const Model::GetSamplingRulesRequest& request, const GetSamplingRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about recent sampling results for all sampling
@@ -344,15 +261,6 @@ namespace XRay
          */
         virtual Model::GetSamplingStatisticSummariesOutcome GetSamplingStatisticSummaries(const Model::GetSamplingStatisticSummariesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSamplingStatisticSummaries that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSamplingStatisticSummariesOutcomeCallable GetSamplingStatisticSummariesCallable(const Model::GetSamplingStatisticSummariesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSamplingStatisticSummaries that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSamplingStatisticSummariesAsync(const Model::GetSamplingStatisticSummariesRequest& request, const GetSamplingStatisticSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Requests a sampling quota for rules that the service is using to sample
@@ -362,15 +270,6 @@ namespace XRay
          */
         virtual Model::GetSamplingTargetsOutcome GetSamplingTargets(const Model::GetSamplingTargetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSamplingTargets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSamplingTargetsOutcomeCallable GetSamplingTargetsCallable(const Model::GetSamplingTargetsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSamplingTargets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSamplingTargetsAsync(const Model::GetSamplingTargetsRequest& request, const GetSamplingTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a document that describes services that process incoming requests,
@@ -385,15 +284,6 @@ namespace XRay
          */
         virtual Model::GetServiceGraphOutcome GetServiceGraph(const Model::GetServiceGraphRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetServiceGraph that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetServiceGraphOutcomeCallable GetServiceGraphCallable(const Model::GetServiceGraphRequest& request) const;
-
-        /**
-         * An Async wrapper for GetServiceGraph that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetServiceGraphAsync(const Model::GetServiceGraphRequest& request, const GetServiceGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get an aggregation of service statistics defined by a specific time
@@ -403,15 +293,6 @@ namespace XRay
          */
         virtual Model::GetTimeSeriesServiceStatisticsOutcome GetTimeSeriesServiceStatistics(const Model::GetTimeSeriesServiceStatisticsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetTimeSeriesServiceStatistics that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetTimeSeriesServiceStatisticsOutcomeCallable GetTimeSeriesServiceStatisticsCallable(const Model::GetTimeSeriesServiceStatisticsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetTimeSeriesServiceStatistics that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetTimeSeriesServiceStatisticsAsync(const Model::GetTimeSeriesServiceStatisticsRequest& request, const GetTimeSeriesServiceStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a service graph for one or more specific trace IDs.</p><p><h3>See
@@ -421,15 +302,6 @@ namespace XRay
          */
         virtual Model::GetTraceGraphOutcome GetTraceGraph(const Model::GetTraceGraphRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetTraceGraph that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetTraceGraphOutcomeCallable GetTraceGraphCallable(const Model::GetTraceGraphRequest& request) const;
-
-        /**
-         * An Async wrapper for GetTraceGraph that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetTraceGraphAsync(const Model::GetTraceGraphRequest& request, const GetTraceGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves IDs and annotations for traces available for a specified time frame
@@ -451,15 +323,6 @@ namespace XRay
          */
         virtual Model::GetTraceSummariesOutcome GetTraceSummaries(const Model::GetTraceSummariesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetTraceSummaries that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetTraceSummariesOutcomeCallable GetTraceSummariesCallable(const Model::GetTraceSummariesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetTraceSummaries that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetTraceSummariesAsync(const Model::GetTraceSummariesRequest& request, const GetTraceSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the list of resource policies in the target Amazon Web Services
@@ -469,15 +332,6 @@ namespace XRay
          */
         virtual Model::ListResourcePoliciesOutcome ListResourcePolicies(const Model::ListResourcePoliciesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListResourcePolicies that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListResourcePoliciesOutcomeCallable ListResourcePoliciesCallable(const Model::ListResourcePoliciesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListResourcePolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListResourcePoliciesAsync(const Model::ListResourcePoliciesRequest& request, const ListResourcePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of tags that are applied to the specified Amazon Web Services
@@ -487,15 +341,6 @@ namespace XRay
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the encryption configuration for X-Ray data.</p><p><h3>See Also:</h3>
@@ -505,15 +350,6 @@ namespace XRay
          */
         virtual Model::PutEncryptionConfigOutcome PutEncryptionConfig(const Model::PutEncryptionConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutEncryptionConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutEncryptionConfigOutcomeCallable PutEncryptionConfigCallable(const Model::PutEncryptionConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for PutEncryptionConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutEncryptionConfigAsync(const Model::PutEncryptionConfigRequest& request, const PutEncryptionConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Sets the resource policy to grant one or more Amazon Web Services services
@@ -527,15 +363,6 @@ namespace XRay
          */
         virtual Model::PutResourcePolicyOutcome PutResourcePolicy(const Model::PutResourcePolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutResourcePolicyOutcomeCallable PutResourcePolicyCallable(const Model::PutResourcePolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for PutResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutResourcePolicyAsync(const Model::PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Used by the Amazon Web Services X-Ray daemon to upload
@@ -545,15 +372,6 @@ namespace XRay
          */
         virtual Model::PutTelemetryRecordsOutcome PutTelemetryRecords(const Model::PutTelemetryRecordsRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutTelemetryRecords that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutTelemetryRecordsOutcomeCallable PutTelemetryRecordsCallable(const Model::PutTelemetryRecordsRequest& request) const;
-
-        /**
-         * An Async wrapper for PutTelemetryRecords that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutTelemetryRecordsAsync(const Model::PutTelemetryRecordsRequest& request, const PutTelemetryRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Uploads segment documents to Amazon Web Services X-Ray. The <a
@@ -596,15 +414,6 @@ namespace XRay
          */
         virtual Model::PutTraceSegmentsOutcome PutTraceSegments(const Model::PutTraceSegmentsRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutTraceSegments that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutTraceSegmentsOutcomeCallable PutTraceSegmentsCallable(const Model::PutTraceSegmentsRequest& request) const;
-
-        /**
-         * An Async wrapper for PutTraceSegments that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutTraceSegmentsAsync(const Model::PutTraceSegmentsRequest& request, const PutTraceSegmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Applies tags to an existing Amazon Web Services X-Ray group or sampling
@@ -614,15 +423,6 @@ namespace XRay
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes tags from an Amazon Web Services X-Ray group or sampling rule. You
@@ -633,15 +433,6 @@ namespace XRay
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a group resource.</p><p><h3>See Also:</h3>   <a
@@ -650,15 +441,6 @@ namespace XRay
          */
         virtual Model::UpdateGroupOutcome UpdateGroup(const Model::UpdateGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateGroupOutcomeCallable UpdateGroupCallable(const Model::UpdateGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateGroupAsync(const Model::UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies a sampling rule's configuration.</p><p><h3>See Also:</h3>   <a
@@ -667,15 +449,6 @@ namespace XRay
          */
         virtual Model::UpdateSamplingRuleOutcome UpdateSamplingRule(const Model::UpdateSamplingRuleRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateSamplingRule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateSamplingRuleOutcomeCallable UpdateSamplingRuleCallable(const Model::UpdateSamplingRuleRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateSamplingRule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateSamplingRuleAsync(const Model::UpdateSamplingRuleRequest& request, const UpdateSamplingRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

@@ -8,8 +8,10 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/sqs/SQSServiceClientModel.h>
+#include <aws/sqs/SQSLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -98,6 +100,47 @@ namespace SQS
         virtual ~SQSClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
        /**
         * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
         */
@@ -137,15 +180,6 @@ namespace SQS
          */
         virtual Model::AddPermissionOutcome AddPermission(const Model::AddPermissionRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddPermission that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddPermissionOutcomeCallable AddPermissionCallable(const Model::AddPermissionRequest& request) const;
-
-        /**
-         * An Async wrapper for AddPermission that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddPermissionAsync(const Model::AddPermissionRequest& request, const AddPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Changes the visibility timeout of a specified message in a queue to a new
@@ -194,15 +228,6 @@ namespace SQS
          */
         virtual Model::ChangeMessageVisibilityOutcome ChangeMessageVisibility(const Model::ChangeMessageVisibilityRequest& request) const;
 
-        /**
-         * A Callable wrapper for ChangeMessageVisibility that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ChangeMessageVisibilityOutcomeCallable ChangeMessageVisibilityCallable(const Model::ChangeMessageVisibilityRequest& request) const;
-
-        /**
-         * An Async wrapper for ChangeMessageVisibility that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ChangeMessageVisibilityAsync(const Model::ChangeMessageVisibilityRequest& request, const ChangeMessageVisibilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Changes the visibility timeout of multiple messages. This is a batch version
@@ -223,15 +248,6 @@ namespace SQS
          */
         virtual Model::ChangeMessageVisibilityBatchOutcome ChangeMessageVisibilityBatch(const Model::ChangeMessageVisibilityBatchRequest& request) const;
 
-        /**
-         * A Callable wrapper for ChangeMessageVisibilityBatch that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ChangeMessageVisibilityBatchOutcomeCallable ChangeMessageVisibilityBatchCallable(const Model::ChangeMessageVisibilityBatchRequest& request) const;
-
-        /**
-         * An Async wrapper for ChangeMessageVisibilityBatch that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ChangeMessageVisibilityBatchAsync(const Model::ChangeMessageVisibilityBatchRequest& request, const ChangeMessageVisibilityBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new standard or FIFO queue. You can pass one or more attributes in
@@ -273,15 +289,6 @@ namespace SQS
          */
         virtual Model::CreateQueueOutcome CreateQueue(const Model::CreateQueueRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateQueue that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateQueueOutcomeCallable CreateQueueCallable(const Model::CreateQueueRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateQueue that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateQueueAsync(const Model::CreateQueueRequest& request, const CreateQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified message from the specified queue. To select the message
@@ -308,15 +315,6 @@ namespace SQS
          */
         virtual Model::DeleteMessageOutcome DeleteMessage(const Model::DeleteMessageRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteMessage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteMessageOutcomeCallable DeleteMessageCallable(const Model::DeleteMessageRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteMessage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteMessageAsync(const Model::DeleteMessageRequest& request, const DeleteMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes up to ten messages from the specified queue. This is a batch version
@@ -334,15 +332,6 @@ namespace SQS
          */
         virtual Model::DeleteMessageBatchOutcome DeleteMessageBatch(const Model::DeleteMessageBatchRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteMessageBatch that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteMessageBatchOutcomeCallable DeleteMessageBatchCallable(const Model::DeleteMessageBatchRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteMessageBatch that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteMessageBatchAsync(const Model::DeleteMessageBatchRequest& request, const DeleteMessageBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the queue specified by the <code>QueueUrl</code>, regardless of the
@@ -364,15 +353,6 @@ namespace SQS
          */
         virtual Model::DeleteQueueOutcome DeleteQueue(const Model::DeleteQueueRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteQueue that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteQueueOutcomeCallable DeleteQueueCallable(const Model::DeleteQueueRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteQueue that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteQueueAsync(const Model::DeleteQueueRequest& request, const DeleteQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets attributes for the specified queue.</p>  <p>To determine whether a
@@ -385,15 +365,6 @@ namespace SQS
          */
         virtual Model::GetQueueAttributesOutcome GetQueueAttributes(const Model::GetQueueAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetQueueAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetQueueAttributesOutcomeCallable GetQueueAttributesCallable(const Model::GetQueueAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetQueueAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetQueueAttributesAsync(const Model::GetQueueAttributesRequest& request, const GetQueueAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the URL of an existing Amazon SQS queue.</p> <p>To access a queue
@@ -409,15 +380,6 @@ namespace SQS
          */
         virtual Model::GetQueueUrlOutcome GetQueueUrl(const Model::GetQueueUrlRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetQueueUrl that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetQueueUrlOutcomeCallable GetQueueUrlCallable(const Model::GetQueueUrlRequest& request) const;
-
-        /**
-         * An Async wrapper for GetQueueUrl that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetQueueUrlAsync(const Model::GetQueueUrlRequest& request, const GetQueueUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of your queues that have the <code>RedrivePolicy</code> queue
@@ -439,15 +401,6 @@ namespace SQS
          */
         virtual Model::ListDeadLetterSourceQueuesOutcome ListDeadLetterSourceQueues(const Model::ListDeadLetterSourceQueuesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDeadLetterSourceQueues that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDeadLetterSourceQueuesOutcomeCallable ListDeadLetterSourceQueuesCallable(const Model::ListDeadLetterSourceQueuesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDeadLetterSourceQueues that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDeadLetterSourceQueuesAsync(const Model::ListDeadLetterSourceQueuesRequest& request, const ListDeadLetterSourceQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List all cost allocation tags added to the specified Amazon SQS queue. For an
@@ -464,15 +417,6 @@ namespace SQS
          */
         virtual Model::ListQueueTagsOutcome ListQueueTags(const Model::ListQueueTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListQueueTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListQueueTagsOutcomeCallable ListQueueTagsCallable(const Model::ListQueueTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListQueueTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListQueueTagsAsync(const Model::ListQueueTagsRequest& request, const ListQueueTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of your queues in the current region. The response includes a
@@ -496,15 +440,6 @@ namespace SQS
          */
         virtual Model::ListQueuesOutcome ListQueues(const Model::ListQueuesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListQueues that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListQueuesOutcomeCallable ListQueuesCallable(const Model::ListQueuesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListQueues that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListQueuesAsync(const Model::ListQueuesRequest& request, const ListQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the messages in a queue specified by the <code>QueueURL</code>
@@ -521,15 +456,6 @@ namespace SQS
          */
         virtual Model::PurgeQueueOutcome PurgeQueue(const Model::PurgeQueueRequest& request) const;
 
-        /**
-         * A Callable wrapper for PurgeQueue that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PurgeQueueOutcomeCallable PurgeQueueCallable(const Model::PurgeQueueRequest& request) const;
-
-        /**
-         * An Async wrapper for PurgeQueue that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PurgeQueueAsync(const Model::PurgeQueueRequest& request, const PurgeQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves one or more messages (up to 10), from the specified queue. Using
@@ -572,15 +498,6 @@ namespace SQS
          */
         virtual Model::ReceiveMessageOutcome ReceiveMessage(const Model::ReceiveMessageRequest& request) const;
 
-        /**
-         * A Callable wrapper for ReceiveMessage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ReceiveMessageOutcomeCallable ReceiveMessageCallable(const Model::ReceiveMessageRequest& request) const;
-
-        /**
-         * An Async wrapper for ReceiveMessage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ReceiveMessageAsync(const Model::ReceiveMessageRequest& request, const ReceiveMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Revokes any permissions in the queue policy that matches the specified
@@ -598,15 +515,6 @@ namespace SQS
          */
         virtual Model::RemovePermissionOutcome RemovePermission(const Model::RemovePermissionRequest& request) const;
 
-        /**
-         * A Callable wrapper for RemovePermission that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RemovePermissionOutcomeCallable RemovePermissionCallable(const Model::RemovePermissionRequest& request) const;
-
-        /**
-         * An Async wrapper for RemovePermission that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RemovePermissionAsync(const Model::RemovePermissionRequest& request, const RemovePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Delivers a message to the specified queue.</p>  <p>A message can
@@ -622,15 +530,6 @@ namespace SQS
          */
         virtual Model::SendMessageOutcome SendMessage(const Model::SendMessageRequest& request) const;
 
-        /**
-         * A Callable wrapper for SendMessage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SendMessageOutcomeCallable SendMessageCallable(const Model::SendMessageRequest& request) const;
-
-        /**
-         * An Async wrapper for SendMessage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SendMessageAsync(const Model::SendMessageRequest& request, const SendMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Delivers up to ten messages to the specified queue. This is a batch version
@@ -661,15 +560,6 @@ namespace SQS
          */
         virtual Model::SendMessageBatchOutcome SendMessageBatch(const Model::SendMessageBatchRequest& request) const;
 
-        /**
-         * A Callable wrapper for SendMessageBatch that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SendMessageBatchOutcomeCallable SendMessageBatchCallable(const Model::SendMessageBatchRequest& request) const;
-
-        /**
-         * An Async wrapper for SendMessageBatch that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SendMessageBatchAsync(const Model::SendMessageBatchRequest& request, const SendMessageBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets the value of one or more queue attributes. When you change a queue's
@@ -691,15 +581,6 @@ namespace SQS
          */
         virtual Model::SetQueueAttributesOutcome SetQueueAttributes(const Model::SetQueueAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for SetQueueAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SetQueueAttributesOutcomeCallable SetQueueAttributesCallable(const Model::SetQueueAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for SetQueueAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SetQueueAttributesAsync(const Model::SetQueueAttributesRequest& request, const SetQueueAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Add cost allocation tags to the specified Amazon SQS queue. For an overview,
@@ -724,15 +605,6 @@ namespace SQS
          */
         virtual Model::TagQueueOutcome TagQueue(const Model::TagQueueRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagQueue that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagQueueOutcomeCallable TagQueueCallable(const Model::TagQueueRequest& request) const;
-
-        /**
-         * An Async wrapper for TagQueue that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagQueueAsync(const Model::TagQueueRequest& request, const TagQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Remove cost allocation tags from the specified Amazon SQS queue. For an
@@ -749,15 +621,6 @@ namespace SQS
          */
         virtual Model::UntagQueueOutcome UntagQueue(const Model::UntagQueueRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagQueue that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagQueueOutcomeCallable UntagQueueCallable(const Model::UntagQueueRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagQueue that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagQueueAsync(const Model::UntagQueueRequest& request, const UntagQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
         void OverrideEndpoint(const Aws::String& endpoint);

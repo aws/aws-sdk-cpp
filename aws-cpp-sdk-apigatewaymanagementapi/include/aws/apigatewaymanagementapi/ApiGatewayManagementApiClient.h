@@ -7,8 +7,10 @@
 #include <aws/apigatewaymanagementapi/ApiGatewayManagementApi_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/apigatewaymanagementapi/ApiGatewayManagementApiServiceClientModel.h>
+#include <aws/apigatewaymanagementapi/ApiGatewayManagementApiLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -78,6 +80,47 @@ namespace ApiGatewayManagementApi
         virtual ~ApiGatewayManagementApiClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Delete the connection with the provided id.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewaymanagementapi-2018-11-29/DeleteConnection">AWS
@@ -85,15 +128,6 @@ namespace ApiGatewayManagementApi
          */
         virtual Model::DeleteConnectionOutcome DeleteConnection(const Model::DeleteConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteConnectionOutcomeCallable DeleteConnectionCallable(const Model::DeleteConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteConnectionAsync(const Model::DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get information about the connection with the provided id.</p><p><h3>See
@@ -103,15 +137,6 @@ namespace ApiGatewayManagementApi
          */
         virtual Model::GetConnectionOutcome GetConnection(const Model::GetConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetConnectionOutcomeCallable GetConnectionCallable(const Model::GetConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for GetConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetConnectionAsync(const Model::GetConnectionRequest& request, const GetConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sends the provided data to the specified connection.</p><p><h3>See Also:</h3>
@@ -121,15 +146,6 @@ namespace ApiGatewayManagementApi
          */
         virtual Model::PostToConnectionOutcome PostToConnection(const Model::PostToConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for PostToConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PostToConnectionOutcomeCallable PostToConnectionCallable(const Model::PostToConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for PostToConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PostToConnectionAsync(const Model::PostToConnectionRequest& request, const PostToConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

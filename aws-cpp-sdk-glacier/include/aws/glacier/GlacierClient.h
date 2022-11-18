@@ -7,8 +7,10 @@
 #include <aws/glacier/Glacier_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/glacier/GlacierServiceClientModel.h>
+#include <aws/glacier/GlacierLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -98,6 +100,47 @@ namespace Glacier
         virtual ~GlacierClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>This operation aborts a multipart upload identified by the upload ID.</p>
          * <p>After the Abort Multipart Upload request succeeds, you cannot upload any more
@@ -123,15 +166,6 @@ namespace Glacier
          */
         virtual Model::AbortMultipartUploadOutcome AbortMultipartUpload(const Model::AbortMultipartUploadRequest& request) const;
 
-        /**
-         * A Callable wrapper for AbortMultipartUpload that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AbortMultipartUploadOutcomeCallable AbortMultipartUploadCallable(const Model::AbortMultipartUploadRequest& request) const;
-
-        /**
-         * An Async wrapper for AbortMultipartUpload that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AbortMultipartUploadAsync(const Model::AbortMultipartUploadRequest& request, const AbortMultipartUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation aborts the vault locking process if the vault lock is not in
@@ -156,15 +190,6 @@ namespace Glacier
          */
         virtual Model::AbortVaultLockOutcome AbortVaultLock(const Model::AbortVaultLockRequest& request) const;
 
-        /**
-         * A Callable wrapper for AbortVaultLock that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AbortVaultLockOutcomeCallable AbortVaultLockCallable(const Model::AbortVaultLockRequest& request) const;
-
-        /**
-         * An Async wrapper for AbortVaultLock that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AbortVaultLockAsync(const Model::AbortVaultLockRequest& request, const AbortVaultLockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation adds the specified tags to a vault. Each tag is composed of a
@@ -180,15 +205,6 @@ namespace Glacier
          */
         virtual Model::AddTagsToVaultOutcome AddTagsToVault(const Model::AddTagsToVaultRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddTagsToVault that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddTagsToVaultOutcomeCallable AddTagsToVaultCallable(const Model::AddTagsToVaultRequest& request) const;
-
-        /**
-         * An Async wrapper for AddTagsToVault that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddTagsToVaultAsync(const Model::AddTagsToVaultRequest& request, const AddTagsToVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>You call this operation to inform Amazon S3 Glacier (Glacier) that all the
@@ -236,15 +252,6 @@ namespace Glacier
          */
         virtual Model::CompleteMultipartUploadOutcome CompleteMultipartUpload(const Model::CompleteMultipartUploadRequest& request) const;
 
-        /**
-         * A Callable wrapper for CompleteMultipartUpload that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CompleteMultipartUploadOutcomeCallable CompleteMultipartUploadCallable(const Model::CompleteMultipartUploadRequest& request) const;
-
-        /**
-         * An Async wrapper for CompleteMultipartUpload that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CompleteMultipartUploadAsync(const Model::CompleteMultipartUploadRequest& request, const CompleteMultipartUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation completes the vault locking process by transitioning the vault
@@ -268,15 +275,6 @@ namespace Glacier
          */
         virtual Model::CompleteVaultLockOutcome CompleteVaultLock(const Model::CompleteVaultLockRequest& request) const;
 
-        /**
-         * A Callable wrapper for CompleteVaultLock that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CompleteVaultLockOutcomeCallable CompleteVaultLockCallable(const Model::CompleteVaultLockRequest& request) const;
-
-        /**
-         * An Async wrapper for CompleteVaultLock that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CompleteVaultLockAsync(const Model::CompleteVaultLockRequest& request, const CompleteVaultLockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation creates a new vault with the specified name. The name of the
@@ -303,15 +301,6 @@ namespace Glacier
          */
         virtual Model::CreateVaultOutcome CreateVault(const Model::CreateVaultRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateVault that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateVaultOutcomeCallable CreateVaultCallable(const Model::CreateVaultRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateVault that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateVaultAsync(const Model::CreateVaultRequest& request, const CreateVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation deletes an archive from a vault. Subsequent requests to
@@ -341,15 +330,6 @@ namespace Glacier
          */
         virtual Model::DeleteArchiveOutcome DeleteArchive(const Model::DeleteArchiveRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteArchive that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteArchiveOutcomeCallable DeleteArchiveCallable(const Model::DeleteArchiveRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteArchive that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteArchiveAsync(const Model::DeleteArchiveRequest& request, const DeleteArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation deletes a vault. Amazon S3 Glacier will delete a vault only if
@@ -380,15 +360,6 @@ namespace Glacier
          */
         virtual Model::DeleteVaultOutcome DeleteVault(const Model::DeleteVaultRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteVault that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteVaultOutcomeCallable DeleteVaultCallable(const Model::DeleteVaultRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteVault that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteVaultAsync(const Model::DeleteVaultRequest& request, const DeleteVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation deletes the access policy associated with the specified vault.
@@ -406,15 +377,6 @@ namespace Glacier
          */
         virtual Model::DeleteVaultAccessPolicyOutcome DeleteVaultAccessPolicy(const Model::DeleteVaultAccessPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteVaultAccessPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteVaultAccessPolicyOutcomeCallable DeleteVaultAccessPolicyCallable(const Model::DeleteVaultAccessPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteVaultAccessPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteVaultAccessPolicyAsync(const Model::DeleteVaultAccessPolicyRequest& request, const DeleteVaultAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation deletes the notification configuration set for a vault. The
@@ -438,15 +400,6 @@ namespace Glacier
          */
         virtual Model::DeleteVaultNotificationsOutcome DeleteVaultNotifications(const Model::DeleteVaultNotificationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteVaultNotifications that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteVaultNotificationsOutcomeCallable DeleteVaultNotificationsCallable(const Model::DeleteVaultNotificationsRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteVaultNotifications that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteVaultNotificationsAsync(const Model::DeleteVaultNotificationsRequest& request, const DeleteVaultNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation returns information about a job you previously initiated,
@@ -474,15 +427,6 @@ namespace Glacier
          */
         virtual Model::DescribeJobOutcome DescribeJob(const Model::DescribeJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeJobOutcomeCallable DescribeJobCallable(const Model::DescribeJobRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeJobAsync(const Model::DescribeJobRequest& request, const DescribeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation returns information about a vault, including the vault's
@@ -513,15 +457,6 @@ namespace Glacier
          */
         virtual Model::DescribeVaultOutcome DescribeVault(const Model::DescribeVaultRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeVault that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeVaultOutcomeCallable DescribeVaultCallable(const Model::DescribeVaultRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeVault that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeVaultAsync(const Model::DescribeVaultRequest& request, const DescribeVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation returns the current data retrieval policy for the account and
@@ -534,15 +469,6 @@ namespace Glacier
          */
         virtual Model::GetDataRetrievalPolicyOutcome GetDataRetrievalPolicy(const Model::GetDataRetrievalPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDataRetrievalPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDataRetrievalPolicyOutcomeCallable GetDataRetrievalPolicyCallable(const Model::GetDataRetrievalPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDataRetrievalPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDataRetrievalPolicyAsync(const Model::GetDataRetrievalPolicyRequest& request, const GetDataRetrievalPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation downloads the output of the job you initiated using
@@ -588,15 +514,6 @@ namespace Glacier
          */
         virtual Model::GetJobOutputOutcome GetJobOutput(const Model::GetJobOutputRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetJobOutput that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetJobOutputOutcomeCallable GetJobOutputCallable(const Model::GetJobOutputRequest& request) const;
-
-        /**
-         * An Async wrapper for GetJobOutput that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetJobOutputAsync(const Model::GetJobOutputRequest& request, const GetJobOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation retrieves the <code>access-policy</code> subresource set on
@@ -613,15 +530,6 @@ namespace Glacier
          */
         virtual Model::GetVaultAccessPolicyOutcome GetVaultAccessPolicy(const Model::GetVaultAccessPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetVaultAccessPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetVaultAccessPolicyOutcomeCallable GetVaultAccessPolicyCallable(const Model::GetVaultAccessPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetVaultAccessPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetVaultAccessPolicyAsync(const Model::GetVaultAccessPolicyRequest& request, const GetVaultAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation retrieves the following attributes from the
@@ -647,15 +555,6 @@ namespace Glacier
          */
         virtual Model::GetVaultLockOutcome GetVaultLock(const Model::GetVaultLockRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetVaultLock that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetVaultLockOutcomeCallable GetVaultLockCallable(const Model::GetVaultLockRequest& request) const;
-
-        /**
-         * An Async wrapper for GetVaultLock that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetVaultLockAsync(const Model::GetVaultLockRequest& request, const GetVaultLockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation retrieves the <code>notification-configuration</code>
@@ -683,15 +582,6 @@ namespace Glacier
          */
         virtual Model::GetVaultNotificationsOutcome GetVaultNotifications(const Model::GetVaultNotificationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetVaultNotifications that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetVaultNotificationsOutcomeCallable GetVaultNotificationsCallable(const Model::GetVaultNotificationsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetVaultNotifications that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetVaultNotificationsAsync(const Model::GetVaultNotificationsRequest& request, const GetVaultNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation initiates a job of the specified type, which can be a select,
@@ -704,15 +594,6 @@ namespace Glacier
          */
         virtual Model::InitiateJobOutcome InitiateJob(const Model::InitiateJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for InitiateJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::InitiateJobOutcomeCallable InitiateJobCallable(const Model::InitiateJobRequest& request) const;
-
-        /**
-         * An Async wrapper for InitiateJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void InitiateJobAsync(const Model::InitiateJobRequest& request, const InitiateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation initiates a multipart upload. Amazon S3 Glacier creates a
@@ -750,15 +631,6 @@ namespace Glacier
          */
         virtual Model::InitiateMultipartUploadOutcome InitiateMultipartUpload(const Model::InitiateMultipartUploadRequest& request) const;
 
-        /**
-         * A Callable wrapper for InitiateMultipartUpload that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::InitiateMultipartUploadOutcomeCallable InitiateMultipartUploadCallable(const Model::InitiateMultipartUploadRequest& request) const;
-
-        /**
-         * An Async wrapper for InitiateMultipartUpload that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void InitiateMultipartUploadAsync(const Model::InitiateMultipartUploadRequest& request, const InitiateMultipartUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation initiates the vault locking process by doing the
@@ -791,15 +663,6 @@ namespace Glacier
          */
         virtual Model::InitiateVaultLockOutcome InitiateVaultLock(const Model::InitiateVaultLockRequest& request) const;
 
-        /**
-         * A Callable wrapper for InitiateVaultLock that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::InitiateVaultLockOutcomeCallable InitiateVaultLockCallable(const Model::InitiateVaultLockRequest& request) const;
-
-        /**
-         * An Async wrapper for InitiateVaultLock that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void InitiateVaultLockAsync(const Model::InitiateVaultLockRequest& request, const InitiateVaultLockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation lists jobs for a vault, including jobs that are in-progress
@@ -839,15 +702,6 @@ namespace Glacier
          */
         virtual Model::ListJobsOutcome ListJobs(const Model::ListJobsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListJobs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListJobsOutcomeCallable ListJobsCallable(const Model::ListJobsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListJobsAsync(const Model::ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation lists in-progress multipart uploads for the specified vault.
@@ -883,15 +737,6 @@ namespace Glacier
          */
         virtual Model::ListMultipartUploadsOutcome ListMultipartUploads(const Model::ListMultipartUploadsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListMultipartUploads that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListMultipartUploadsOutcomeCallable ListMultipartUploadsCallable(const Model::ListMultipartUploadsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListMultipartUploads that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListMultipartUploadsAsync(const Model::ListMultipartUploadsRequest& request, const ListMultipartUploadsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation lists the parts of an archive that have been uploaded in a
@@ -924,15 +769,6 @@ namespace Glacier
          */
         virtual Model::ListPartsOutcome ListParts(const Model::ListPartsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListParts that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPartsOutcomeCallable ListPartsCallable(const Model::ListPartsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListParts that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPartsAsync(const Model::ListPartsRequest& request, const ListPartsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation lists the provisioned capacity units for the specified AWS
@@ -942,15 +778,6 @@ namespace Glacier
          */
         virtual Model::ListProvisionedCapacityOutcome ListProvisionedCapacity(const Model::ListProvisionedCapacityRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListProvisionedCapacity that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListProvisionedCapacityOutcomeCallable ListProvisionedCapacityCallable(const Model::ListProvisionedCapacityRequest& request) const;
-
-        /**
-         * An Async wrapper for ListProvisionedCapacity that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListProvisionedCapacityAsync(const Model::ListProvisionedCapacityRequest& request, const ListProvisionedCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation lists all the tags attached to a vault. The operation returns
@@ -962,15 +789,6 @@ namespace Glacier
          */
         virtual Model::ListTagsForVaultOutcome ListTagsForVault(const Model::ListTagsForVaultRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForVault that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForVaultOutcomeCallable ListTagsForVaultCallable(const Model::ListTagsForVaultRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForVault that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForVaultAsync(const Model::ListTagsForVaultRequest& request, const ListTagsForVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation lists all vaults owned by the calling user's account. The list
@@ -1000,15 +818,6 @@ namespace Glacier
          */
         virtual Model::ListVaultsOutcome ListVaults(const Model::ListVaultsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListVaults that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListVaultsOutcomeCallable ListVaultsCallable(const Model::ListVaultsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListVaults that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListVaultsAsync(const Model::ListVaultsRequest& request, const ListVaultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation purchases a provisioned capacity unit for an AWS account.
@@ -1018,15 +827,6 @@ namespace Glacier
          */
         virtual Model::PurchaseProvisionedCapacityOutcome PurchaseProvisionedCapacity(const Model::PurchaseProvisionedCapacityRequest& request) const;
 
-        /**
-         * A Callable wrapper for PurchaseProvisionedCapacity that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PurchaseProvisionedCapacityOutcomeCallable PurchaseProvisionedCapacityCallable(const Model::PurchaseProvisionedCapacityRequest& request) const;
-
-        /**
-         * An Async wrapper for PurchaseProvisionedCapacity that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PurchaseProvisionedCapacityAsync(const Model::PurchaseProvisionedCapacityRequest& request, const PurchaseProvisionedCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation removes one or more tags from the set of tags attached to a
@@ -1040,15 +840,6 @@ namespace Glacier
          */
         virtual Model::RemoveTagsFromVaultOutcome RemoveTagsFromVault(const Model::RemoveTagsFromVaultRequest& request) const;
 
-        /**
-         * A Callable wrapper for RemoveTagsFromVault that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RemoveTagsFromVaultOutcomeCallable RemoveTagsFromVaultCallable(const Model::RemoveTagsFromVaultRequest& request) const;
-
-        /**
-         * An Async wrapper for RemoveTagsFromVault that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RemoveTagsFromVaultAsync(const Model::RemoveTagsFromVaultRequest& request, const RemoveTagsFromVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation sets and then enacts a data retrieval policy in the region
@@ -1064,15 +855,6 @@ namespace Glacier
          */
         virtual Model::SetDataRetrievalPolicyOutcome SetDataRetrievalPolicy(const Model::SetDataRetrievalPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for SetDataRetrievalPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SetDataRetrievalPolicyOutcomeCallable SetDataRetrievalPolicyCallable(const Model::SetDataRetrievalPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for SetDataRetrievalPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SetDataRetrievalPolicyAsync(const Model::SetDataRetrievalPolicyRequest& request, const SetDataRetrievalPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation configures an access policy for a vault and will overwrite an
@@ -1089,15 +871,6 @@ namespace Glacier
          */
         virtual Model::SetVaultAccessPolicyOutcome SetVaultAccessPolicy(const Model::SetVaultAccessPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for SetVaultAccessPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SetVaultAccessPolicyOutcomeCallable SetVaultAccessPolicyCallable(const Model::SetVaultAccessPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for SetVaultAccessPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SetVaultAccessPolicyAsync(const Model::SetVaultAccessPolicyRequest& request, const SetVaultAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation configures notifications that will be sent when specific
@@ -1134,15 +907,6 @@ namespace Glacier
          */
         virtual Model::SetVaultNotificationsOutcome SetVaultNotifications(const Model::SetVaultNotificationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for SetVaultNotifications that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SetVaultNotificationsOutcomeCallable SetVaultNotificationsCallable(const Model::SetVaultNotificationsRequest& request) const;
-
-        /**
-         * An Async wrapper for SetVaultNotifications that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SetVaultNotificationsAsync(const Model::SetVaultNotificationsRequest& request, const SetVaultNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation adds an archive to a vault. This is a synchronous operation,
@@ -1183,15 +947,6 @@ namespace Glacier
          */
         virtual Model::UploadArchiveOutcome UploadArchive(const Model::UploadArchiveRequest& request) const;
 
-        /**
-         * A Callable wrapper for UploadArchive that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UploadArchiveOutcomeCallable UploadArchiveCallable(const Model::UploadArchiveRequest& request) const;
-
-        /**
-         * An Async wrapper for UploadArchive that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UploadArchiveAsync(const Model::UploadArchiveRequest& request, const UploadArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation uploads a part of an archive. You can upload archive parts in
@@ -1236,15 +991,6 @@ namespace Glacier
          */
         virtual Model::UploadMultipartPartOutcome UploadMultipartPart(const Model::UploadMultipartPartRequest& request) const;
 
-        /**
-         * A Callable wrapper for UploadMultipartPart that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UploadMultipartPartOutcomeCallable UploadMultipartPartCallable(const Model::UploadMultipartPartRequest& request) const;
-
-        /**
-         * An Async wrapper for UploadMultipartPart that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UploadMultipartPartAsync(const Model::UploadMultipartPartRequest& request, const UploadMultipartPartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

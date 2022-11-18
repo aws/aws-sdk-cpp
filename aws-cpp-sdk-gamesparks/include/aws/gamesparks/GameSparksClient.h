@@ -7,8 +7,10 @@
 #include <aws/gamesparks/GameSparks_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/gamesparks/GameSparksServiceClientModel.h>
+#include <aws/gamesparks/GameSparksLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -73,6 +75,47 @@ namespace GameSparks
         virtual ~GameSparksClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p> Creates a new game with an empty configuration. After creating your game,
          * you can update the configuration using <code>UpdateGameConfiguration</code> or
@@ -82,15 +125,6 @@ namespace GameSparks
          */
         virtual Model::CreateGameOutcome CreateGame(const Model::CreateGameRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateGame that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateGameOutcomeCallable CreateGameCallable(const Model::CreateGameRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateGame that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateGameAsync(const Model::CreateGameRequest& request, const CreateGameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a snapshot of the game configuration.</p><p><h3>See Also:</h3>   <a
@@ -99,15 +133,6 @@ namespace GameSparks
          */
         virtual Model::CreateSnapshotOutcome CreateSnapshot(const Model::CreateSnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateSnapshotOutcomeCallable CreateSnapshotCallable(const Model::CreateSnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateSnapshotAsync(const Model::CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new stage for stage-by-stage game development and
@@ -117,15 +142,6 @@ namespace GameSparks
          */
         virtual Model::CreateStageOutcome CreateStage(const Model::CreateStageRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateStage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateStageOutcomeCallable CreateStageCallable(const Model::CreateStageRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateStage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateStageAsync(const Model::CreateStageRequest& request, const CreateStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a game.</p><p><h3>See Also:</h3>   <a
@@ -134,15 +150,6 @@ namespace GameSparks
          */
         virtual Model::DeleteGameOutcome DeleteGame(const Model::DeleteGameRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteGame that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteGameOutcomeCallable DeleteGameCallable(const Model::DeleteGameRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteGame that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteGameAsync(const Model::DeleteGameRequest& request, const DeleteGameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a stage from a game, along with the associated game
@@ -152,15 +159,6 @@ namespace GameSparks
          */
         virtual Model::DeleteStageOutcome DeleteStage(const Model::DeleteStageRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteStage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteStageOutcomeCallable DeleteStageCallable(const Model::DeleteStageRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteStage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteStageAsync(const Model::DeleteStageRequest& request, const DeleteStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disconnects a player from the game runtime.</p> <p> If a player has multiple
@@ -171,15 +169,6 @@ namespace GameSparks
          */
         virtual Model::DisconnectPlayerOutcome DisconnectPlayer(const Model::DisconnectPlayerRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisconnectPlayer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisconnectPlayerOutcomeCallable DisconnectPlayerCallable(const Model::DisconnectPlayerRequest& request) const;
-
-        /**
-         * An Async wrapper for DisconnectPlayer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisconnectPlayerAsync(const Model::DisconnectPlayerRequest& request, const DisconnectPlayerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Exports a game configuration snapshot.</p><p><h3>See Also:</h3>   <a
@@ -188,15 +177,6 @@ namespace GameSparks
          */
         virtual Model::ExportSnapshotOutcome ExportSnapshot(const Model::ExportSnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for ExportSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ExportSnapshotOutcomeCallable ExportSnapshotCallable(const Model::ExportSnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for ExportSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ExportSnapshotAsync(const Model::ExportSnapshotRequest& request, const ExportSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets details about a specified extension.</p><p><h3>See Also:</h3>   <a
@@ -205,15 +185,6 @@ namespace GameSparks
          */
         virtual Model::GetExtensionOutcome GetExtension(const Model::GetExtensionRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetExtension that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetExtensionOutcomeCallable GetExtensionCallable(const Model::GetExtensionRequest& request) const;
-
-        /**
-         * An Async wrapper for GetExtension that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetExtensionAsync(const Model::GetExtensionRequest& request, const GetExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets details about a specified extension version.</p><p><h3>See Also:</h3>  
@@ -223,15 +194,6 @@ namespace GameSparks
          */
         virtual Model::GetExtensionVersionOutcome GetExtensionVersion(const Model::GetExtensionVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetExtensionVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetExtensionVersionOutcomeCallable GetExtensionVersionCallable(const Model::GetExtensionVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for GetExtensionVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetExtensionVersionAsync(const Model::GetExtensionVersionRequest& request, const GetExtensionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets details about a game.</p><p><h3>See Also:</h3>   <a
@@ -240,15 +202,6 @@ namespace GameSparks
          */
         virtual Model::GetGameOutcome GetGame(const Model::GetGameRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetGame that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetGameOutcomeCallable GetGameCallable(const Model::GetGameRequest& request) const;
-
-        /**
-         * An Async wrapper for GetGame that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetGameAsync(const Model::GetGameRequest& request, const GetGameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the configuration of the game.</p><p><h3>See Also:</h3>   <a
@@ -257,15 +210,6 @@ namespace GameSparks
          */
         virtual Model::GetGameConfigurationOutcome GetGameConfiguration(const Model::GetGameConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetGameConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetGameConfigurationOutcomeCallable GetGameConfigurationCallable(const Model::GetGameConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetGameConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetGameConfigurationAsync(const Model::GetGameConfigurationRequest& request, const GetGameConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets details about a job that is generating code for a
@@ -275,15 +219,6 @@ namespace GameSparks
          */
         virtual Model::GetGeneratedCodeJobOutcome GetGeneratedCodeJob(const Model::GetGeneratedCodeJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetGeneratedCodeJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetGeneratedCodeJobOutcomeCallable GetGeneratedCodeJobCallable(const Model::GetGeneratedCodeJobRequest& request) const;
-
-        /**
-         * An Async wrapper for GetGeneratedCodeJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetGeneratedCodeJobAsync(const Model::GetGeneratedCodeJobRequest& request, const GetGeneratedCodeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the status of a player's connection to the game runtime.</p> <p> It's
@@ -295,15 +230,6 @@ namespace GameSparks
          */
         virtual Model::GetPlayerConnectionStatusOutcome GetPlayerConnectionStatus(const Model::GetPlayerConnectionStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetPlayerConnectionStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetPlayerConnectionStatusOutcomeCallable GetPlayerConnectionStatusCallable(const Model::GetPlayerConnectionStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for GetPlayerConnectionStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetPlayerConnectionStatusAsync(const Model::GetPlayerConnectionStatusRequest& request, const GetPlayerConnectionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a copy of the game configuration in a snapshot.</p><p><h3>See Also:</h3>
@@ -313,15 +239,6 @@ namespace GameSparks
          */
         virtual Model::GetSnapshotOutcome GetSnapshot(const Model::GetSnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSnapshotOutcomeCallable GetSnapshotCallable(const Model::GetSnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSnapshotAsync(const Model::GetSnapshotRequest& request, const GetSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about a stage.</p><p><h3>See Also:</h3>   <a
@@ -330,15 +247,6 @@ namespace GameSparks
          */
         virtual Model::GetStageOutcome GetStage(const Model::GetStageRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetStage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetStageOutcomeCallable GetStageCallable(const Model::GetStageRequest& request) const;
-
-        /**
-         * An Async wrapper for GetStage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetStageAsync(const Model::GetStageRequest& request, const GetStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about a stage deployment.</p><p><h3>See Also:</h3>   <a
@@ -347,15 +255,6 @@ namespace GameSparks
          */
         virtual Model::GetStageDeploymentOutcome GetStageDeployment(const Model::GetStageDeploymentRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetStageDeployment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetStageDeploymentOutcomeCallable GetStageDeploymentCallable(const Model::GetStageDeploymentRequest& request) const;
-
-        /**
-         * An Async wrapper for GetStageDeployment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetStageDeploymentAsync(const Model::GetStageDeploymentRequest& request, const GetStageDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Imports a game configuration.</p> <p> This operation replaces the current
@@ -368,15 +267,6 @@ namespace GameSparks
          */
         virtual Model::ImportGameConfigurationOutcome ImportGameConfiguration(const Model::ImportGameConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for ImportGameConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ImportGameConfigurationOutcomeCallable ImportGameConfigurationCallable(const Model::ImportGameConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for ImportGameConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ImportGameConfigurationAsync(const Model::ImportGameConfigurationRequest& request, const ImportGameConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a paginated list of available versions for the extension.</p> <p> Each
@@ -388,15 +278,6 @@ namespace GameSparks
          */
         virtual Model::ListExtensionVersionsOutcome ListExtensionVersions(const Model::ListExtensionVersionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListExtensionVersions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListExtensionVersionsOutcomeCallable ListExtensionVersionsCallable(const Model::ListExtensionVersionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListExtensionVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListExtensionVersionsAsync(const Model::ListExtensionVersionsRequest& request, const ListExtensionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a paginated list of available extensions.</p> <p> Extensions provide
@@ -406,15 +287,6 @@ namespace GameSparks
          */
         virtual Model::ListExtensionsOutcome ListExtensions(const Model::ListExtensionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListExtensions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListExtensionsOutcomeCallable ListExtensionsCallable(const Model::ListExtensionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListExtensions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListExtensionsAsync(const Model::ListExtensionsRequest& request, const ListExtensionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a paginated list of games.</p><p><h3>See Also:</h3>   <a
@@ -423,15 +295,6 @@ namespace GameSparks
          */
         virtual Model::ListGamesOutcome ListGames(const Model::ListGamesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListGames that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListGamesOutcomeCallable ListGamesCallable(const Model::ListGamesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListGames that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListGamesAsync(const Model::ListGamesRequest& request, const ListGamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a paginated list of code generation jobs for a snapshot.</p><p><h3>See
@@ -441,15 +304,6 @@ namespace GameSparks
          */
         virtual Model::ListGeneratedCodeJobsOutcome ListGeneratedCodeJobs(const Model::ListGeneratedCodeJobsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListGeneratedCodeJobs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListGeneratedCodeJobsOutcomeCallable ListGeneratedCodeJobsCallable(const Model::ListGeneratedCodeJobsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListGeneratedCodeJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListGeneratedCodeJobsAsync(const Model::ListGeneratedCodeJobsRequest& request, const ListGeneratedCodeJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a paginated list of snapshot summaries from the game.</p><p><h3>See
@@ -459,15 +313,6 @@ namespace GameSparks
          */
         virtual Model::ListSnapshotsOutcome ListSnapshots(const Model::ListSnapshotsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSnapshots that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListSnapshotsOutcomeCallable ListSnapshotsCallable(const Model::ListSnapshotsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSnapshots that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListSnapshotsAsync(const Model::ListSnapshotsRequest& request, const ListSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a paginated list of stage deployment summaries from the
@@ -477,15 +322,6 @@ namespace GameSparks
          */
         virtual Model::ListStageDeploymentsOutcome ListStageDeployments(const Model::ListStageDeploymentsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListStageDeployments that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListStageDeploymentsOutcomeCallable ListStageDeploymentsCallable(const Model::ListStageDeploymentsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListStageDeployments that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListStageDeploymentsAsync(const Model::ListStageDeploymentsRequest& request, const ListStageDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a paginated list of stage summaries from the game.</p><p><h3>See
@@ -495,15 +331,6 @@ namespace GameSparks
          */
         virtual Model::ListStagesOutcome ListStages(const Model::ListStagesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListStages that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListStagesOutcomeCallable ListStagesCallable(const Model::ListStagesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListStages that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListStagesAsync(const Model::ListStagesRequest& request, const ListStagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the tags associated with a GameSparks resource.</p><p><h3>See
@@ -513,15 +340,6 @@ namespace GameSparks
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Starts an asynchronous process that generates client code for system-defined
@@ -532,15 +350,6 @@ namespace GameSparks
          */
         virtual Model::StartGeneratedCodeJobOutcome StartGeneratedCodeJob(const Model::StartGeneratedCodeJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartGeneratedCodeJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartGeneratedCodeJobOutcomeCallable StartGeneratedCodeJobCallable(const Model::StartGeneratedCodeJobRequest& request) const;
-
-        /**
-         * An Async wrapper for StartGeneratedCodeJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartGeneratedCodeJobAsync(const Model::StartGeneratedCodeJobRequest& request, const StartGeneratedCodeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deploys a snapshot to the stage and creates a new game runtime.</p> <p> After
@@ -555,15 +364,6 @@ namespace GameSparks
          */
         virtual Model::StartStageDeploymentOutcome StartStageDeployment(const Model::StartStageDeploymentRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartStageDeployment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartStageDeploymentOutcomeCallable StartStageDeploymentCallable(const Model::StartStageDeploymentRequest& request) const;
-
-        /**
-         * An Async wrapper for StartStageDeployment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartStageDeploymentAsync(const Model::StartStageDeploymentRequest& request, const StartStageDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds tags to a GameSparks resource.</p><p><h3>See Also:</h3>   <a
@@ -572,15 +372,6 @@ namespace GameSparks
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes tags from a GameSparks resource.</p><p><h3>See Also:</h3>   <a
@@ -589,15 +380,6 @@ namespace GameSparks
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates details of the game.</p><p><h3>See Also:</h3>   <a
@@ -606,15 +388,6 @@ namespace GameSparks
          */
         virtual Model::UpdateGameOutcome UpdateGame(const Model::UpdateGameRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateGame that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateGameOutcomeCallable UpdateGameCallable(const Model::UpdateGameRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateGame that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateGameAsync(const Model::UpdateGameRequest& request, const UpdateGameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates one or more sections of the game configuration.</p><p><h3>See
@@ -624,15 +397,6 @@ namespace GameSparks
          */
         virtual Model::UpdateGameConfigurationOutcome UpdateGameConfiguration(const Model::UpdateGameConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateGameConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateGameConfigurationOutcomeCallable UpdateGameConfigurationCallable(const Model::UpdateGameConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateGameConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateGameConfigurationAsync(const Model::UpdateGameConfigurationRequest& request, const UpdateGameConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the metadata of a GameSparks snapshot.</p><p><h3>See Also:</h3>   <a
@@ -641,15 +405,6 @@ namespace GameSparks
          */
         virtual Model::UpdateSnapshotOutcome UpdateSnapshot(const Model::UpdateSnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateSnapshotOutcomeCallable UpdateSnapshotCallable(const Model::UpdateSnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateSnapshotAsync(const Model::UpdateSnapshotRequest& request, const UpdateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the metadata of a stage.</p><p><h3>See Also:</h3>   <a
@@ -658,15 +413,6 @@ namespace GameSparks
          */
         virtual Model::UpdateStageOutcome UpdateStage(const Model::UpdateStageRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateStage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateStageOutcomeCallable UpdateStageCallable(const Model::UpdateStageRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateStage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateStageAsync(const Model::UpdateStageRequest& request, const UpdateStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

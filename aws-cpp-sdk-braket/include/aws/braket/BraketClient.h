@@ -7,8 +7,10 @@
 #include <aws/braket/Braket_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/braket/BraketServiceClientModel.h>
+#include <aws/braket/BraketLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -77,6 +79,47 @@ namespace Braket
         virtual ~BraketClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Cancels an Amazon Braket job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/CancelJob">AWS
@@ -84,15 +127,6 @@ namespace Braket
          */
         virtual Model::CancelJobOutcome CancelJob(const Model::CancelJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelJobOutcomeCallable CancelJobCallable(const Model::CancelJobRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelJobAsync(const Model::CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Cancels the specified task.</p><p><h3>See Also:</h3>   <a
@@ -101,15 +135,6 @@ namespace Braket
          */
         virtual Model::CancelQuantumTaskOutcome CancelQuantumTask(const Model::CancelQuantumTaskRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelQuantumTask that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelQuantumTaskOutcomeCallable CancelQuantumTaskCallable(const Model::CancelQuantumTaskRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelQuantumTask that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelQuantumTaskAsync(const Model::CancelQuantumTaskRequest& request, const CancelQuantumTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an Amazon Braket job.</p><p><h3>See Also:</h3>   <a
@@ -118,15 +143,6 @@ namespace Braket
          */
         virtual Model::CreateJobOutcome CreateJob(const Model::CreateJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateJobOutcomeCallable CreateJobCallable(const Model::CreateJobRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateJobAsync(const Model::CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a quantum task.</p><p><h3>See Also:</h3>   <a
@@ -135,15 +151,6 @@ namespace Braket
          */
         virtual Model::CreateQuantumTaskOutcome CreateQuantumTask(const Model::CreateQuantumTaskRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateQuantumTask that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateQuantumTaskOutcomeCallable CreateQuantumTaskCallable(const Model::CreateQuantumTaskRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateQuantumTask that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateQuantumTaskAsync(const Model::CreateQuantumTaskRequest& request, const CreateQuantumTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the devices available in Amazon Braket.</p>  <p>For backwards
@@ -160,15 +167,6 @@ namespace Braket
          */
         virtual Model::GetDeviceOutcome GetDevice(const Model::GetDeviceRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDevice that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDeviceOutcomeCallable GetDeviceCallable(const Model::GetDeviceRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDevice that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDeviceAsync(const Model::GetDeviceRequest& request, const GetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the specified Amazon Braket job.</p><p><h3>See Also:</h3>   <a
@@ -177,15 +175,6 @@ namespace Braket
          */
         virtual Model::GetJobOutcome GetJob(const Model::GetJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetJobOutcomeCallable GetJobCallable(const Model::GetJobRequest& request) const;
-
-        /**
-         * An Async wrapper for GetJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetJobAsync(const Model::GetJobRequest& request, const GetJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the specified quantum task.</p><p><h3>See Also:</h3>   <a
@@ -194,15 +183,6 @@ namespace Braket
          */
         virtual Model::GetQuantumTaskOutcome GetQuantumTask(const Model::GetQuantumTaskRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetQuantumTask that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetQuantumTaskOutcomeCallable GetQuantumTaskCallable(const Model::GetQuantumTaskRequest& request) const;
-
-        /**
-         * An Async wrapper for GetQuantumTask that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetQuantumTaskAsync(const Model::GetQuantumTaskRequest& request, const GetQuantumTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Shows the tags associated with this resource.</p><p><h3>See Also:</h3>   <a
@@ -211,15 +191,6 @@ namespace Braket
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Searches for devices using the specified filters.</p><p><h3>See Also:</h3>  
@@ -229,15 +200,6 @@ namespace Braket
          */
         virtual Model::SearchDevicesOutcome SearchDevices(const Model::SearchDevicesRequest& request) const;
 
-        /**
-         * A Callable wrapper for SearchDevices that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SearchDevicesOutcomeCallable SearchDevicesCallable(const Model::SearchDevicesRequest& request) const;
-
-        /**
-         * An Async wrapper for SearchDevices that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SearchDevicesAsync(const Model::SearchDevicesRequest& request, const SearchDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Searches for Amazon Braket jobs that match the specified filter
@@ -247,15 +209,6 @@ namespace Braket
          */
         virtual Model::SearchJobsOutcome SearchJobs(const Model::SearchJobsRequest& request) const;
 
-        /**
-         * A Callable wrapper for SearchJobs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SearchJobsOutcomeCallable SearchJobsCallable(const Model::SearchJobsRequest& request) const;
-
-        /**
-         * An Async wrapper for SearchJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SearchJobsAsync(const Model::SearchJobsRequest& request, const SearchJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Searches for tasks that match the specified filter values.</p><p><h3>See
@@ -265,15 +218,6 @@ namespace Braket
          */
         virtual Model::SearchQuantumTasksOutcome SearchQuantumTasks(const Model::SearchQuantumTasksRequest& request) const;
 
-        /**
-         * A Callable wrapper for SearchQuantumTasks that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SearchQuantumTasksOutcomeCallable SearchQuantumTasksCallable(const Model::SearchQuantumTasksRequest& request) const;
-
-        /**
-         * An Async wrapper for SearchQuantumTasks that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SearchQuantumTasksAsync(const Model::SearchQuantumTasksRequest& request, const SearchQuantumTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Add a tag to the specified resource.</p><p><h3>See Also:</h3>   <a
@@ -282,15 +226,6 @@ namespace Braket
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Remove tags from a resource.</p><p><h3>See Also:</h3>   <a
@@ -299,15 +234,6 @@ namespace Braket
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

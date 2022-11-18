@@ -7,8 +7,10 @@
 #include <aws/rds-data/RDSDataService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/rds-data/RDSDataServiceServiceClientModel.h>
+#include <aws/rds-data/RDSDataServiceLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -79,6 +81,47 @@ namespace RDSDataService
         virtual ~RDSDataServiceClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Runs a batch SQL statement over an array of data.</p> <p>You can run bulk
          * update and insert operations for multiple records using a DML statement with
@@ -100,15 +143,6 @@ namespace RDSDataService
          */
         virtual Model::BatchExecuteStatementOutcome BatchExecuteStatement(const Model::BatchExecuteStatementRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchExecuteStatement that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchExecuteStatementOutcomeCallable BatchExecuteStatementCallable(const Model::BatchExecuteStatementRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchExecuteStatement that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchExecuteStatementAsync(const Model::BatchExecuteStatementRequest& request, const BatchExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts a SQL transaction.</p>  <p>A transaction can run for a maximum
@@ -124,15 +158,6 @@ namespace RDSDataService
          */
         virtual Model::BeginTransactionOutcome BeginTransaction(const Model::BeginTransactionRequest& request) const;
 
-        /**
-         * A Callable wrapper for BeginTransaction that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BeginTransactionOutcomeCallable BeginTransactionCallable(const Model::BeginTransactionRequest& request) const;
-
-        /**
-         * An Async wrapper for BeginTransaction that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BeginTransactionAsync(const Model::BeginTransactionRequest& request, const BeginTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Ends a SQL transaction started with the <code>BeginTransaction</code>
@@ -142,15 +167,6 @@ namespace RDSDataService
          */
         virtual Model::CommitTransactionOutcome CommitTransaction(const Model::CommitTransactionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CommitTransaction that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CommitTransactionOutcomeCallable CommitTransactionCallable(const Model::CommitTransactionRequest& request) const;
-
-        /**
-         * An Async wrapper for CommitTransaction that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CommitTransactionAsync(const Model::CommitTransactionRequest& request, const CommitTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Runs a SQL statement against a database.</p>  <p>If a call isn't part
@@ -163,15 +179,6 @@ namespace RDSDataService
          */
         virtual Model::ExecuteStatementOutcome ExecuteStatement(const Model::ExecuteStatementRequest& request) const;
 
-        /**
-         * A Callable wrapper for ExecuteStatement that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ExecuteStatementOutcomeCallable ExecuteStatementCallable(const Model::ExecuteStatementRequest& request) const;
-
-        /**
-         * An Async wrapper for ExecuteStatement that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ExecuteStatementAsync(const Model::ExecuteStatementRequest& request, const ExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Performs a rollback of a transaction. Rolling back a transaction cancels its
@@ -181,15 +188,6 @@ namespace RDSDataService
          */
         virtual Model::RollbackTransactionOutcome RollbackTransaction(const Model::RollbackTransactionRequest& request) const;
 
-        /**
-         * A Callable wrapper for RollbackTransaction that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RollbackTransactionOutcomeCallable RollbackTransactionCallable(const Model::RollbackTransactionRequest& request) const;
-
-        /**
-         * An Async wrapper for RollbackTransaction that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RollbackTransactionAsync(const Model::RollbackTransactionRequest& request, const RollbackTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

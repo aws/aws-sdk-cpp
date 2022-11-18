@@ -7,8 +7,10 @@
 #include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2ServiceClientModel.h>
+#include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2LegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -88,6 +90,47 @@ namespace PinpointSMSVoiceV2
         virtual ~PinpointSMSVoiceV2Client();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Associates the specified origination identity with a pool.</p> <p>If the
          * origination identity is a phone number and is already associated with another
@@ -99,15 +142,6 @@ namespace PinpointSMSVoiceV2
          */
         virtual Model::AssociateOriginationIdentityOutcome AssociateOriginationIdentity(const Model::AssociateOriginationIdentityRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateOriginationIdentity that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateOriginationIdentityOutcomeCallable AssociateOriginationIdentityCallable(const Model::AssociateOriginationIdentityRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateOriginationIdentity that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateOriginationIdentityAsync(const Model::AssociateOriginationIdentityRequest& request, const AssociateOriginationIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new configuration set. After you create the configuration set, you
@@ -120,15 +154,6 @@ namespace PinpointSMSVoiceV2
          */
         virtual Model::CreateConfigurationSetOutcome CreateConfigurationSet(const Model::CreateConfigurationSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateConfigurationSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateConfigurationSetOutcomeCallable CreateConfigurationSetCallable(const Model::CreateConfigurationSetRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateConfigurationSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateConfigurationSetAsync(const Model::CreateConfigurationSetRequest& request, const CreateConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new event destination in a configuration set.</p> <p>An event
@@ -145,15 +170,6 @@ namespace PinpointSMSVoiceV2
          */
         virtual Model::CreateEventDestinationOutcome CreateEventDestination(const Model::CreateEventDestinationRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateEventDestination that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateEventDestinationOutcomeCallable CreateEventDestinationCallable(const Model::CreateEventDestinationRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateEventDestination that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateEventDestinationAsync(const Model::CreateEventDestinationRequest& request, const CreateEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new opt-out list.</p> <p>If the opt-out list name already exists,
@@ -171,15 +187,6 @@ namespace PinpointSMSVoiceV2
          */
         virtual Model::CreateOptOutListOutcome CreateOptOutList(const Model::CreateOptOutListRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateOptOutList that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateOptOutListOutcomeCallable CreateOptOutListCallable(const Model::CreateOptOutListRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateOptOutList that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateOptOutListAsync(const Model::CreateOptOutListRequest& request, const CreateOptOutListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new pool and associates the specified origination identity to the
@@ -196,15 +203,6 @@ namespace PinpointSMSVoiceV2
          */
         virtual Model::CreatePoolOutcome CreatePool(const Model::CreatePoolRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreatePool that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreatePoolOutcomeCallable CreatePoolCallable(const Model::CreatePoolRequest& request) const;
-
-        /**
-         * An Async wrapper for CreatePool that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreatePoolAsync(const Model::CreatePoolRequest& request, const CreatePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an existing configuration set.</p> <p>A configuration set is a set of
@@ -216,15 +214,6 @@ namespace PinpointSMSVoiceV2
          */
         virtual Model::DeleteConfigurationSetOutcome DeleteConfigurationSet(const Model::DeleteConfigurationSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteConfigurationSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteConfigurationSetOutcomeCallable DeleteConfigurationSetCallable(const Model::DeleteConfigurationSetRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteConfigurationSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteConfigurationSetAsync(const Model::DeleteConfigurationSetRequest& request, const DeleteConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an existing default message type on a configuration set.</p> <p> A
@@ -239,15 +228,6 @@ namespace PinpointSMSVoiceV2
          */
         virtual Model::DeleteDefaultMessageTypeOutcome DeleteDefaultMessageType(const Model::DeleteDefaultMessageTypeRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDefaultMessageType that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDefaultMessageTypeOutcomeCallable DeleteDefaultMessageTypeCallable(const Model::DeleteDefaultMessageTypeRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDefaultMessageType that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDefaultMessageTypeAsync(const Model::DeleteDefaultMessageTypeRequest& request, const DeleteDefaultMessageTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an existing default sender ID on a configuration set.</p> <p>A
@@ -259,15 +239,6 @@ namespace PinpointSMSVoiceV2
          */
         virtual Model::DeleteDefaultSenderIdOutcome DeleteDefaultSenderId(const Model::DeleteDefaultSenderIdRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDefaultSenderId that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDefaultSenderIdOutcomeCallable DeleteDefaultSenderIdCallable(const Model::DeleteDefaultSenderIdRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDefaultSenderId that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDefaultSenderIdAsync(const Model::DeleteDefaultSenderIdRequest& request, const DeleteDefaultSenderIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an existing event destination.</p> <p>An event destination is a
@@ -281,15 +252,6 @@ namespace PinpointSMSVoiceV2
          */
         virtual Model::DeleteEventDestinationOutcome DeleteEventDestination(const Model::DeleteEventDestinationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteEventDestination that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteEventDestinationOutcomeCallable DeleteEventDestinationCallable(const Model::DeleteEventDestinationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteEventDestination that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteEventDestinationAsync(const Model::DeleteEventDestinationRequest& request, const DeleteEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an existing keyword from an origination phone number or pool.</p>
@@ -304,15 +266,6 @@ namespace PinpointSMSVoiceV2
          */
         virtual Model::DeleteKeywordOutcome DeleteKeyword(const Model::DeleteKeywordRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteKeyword that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteKeywordOutcomeCallable DeleteKeywordCallable(const Model::DeleteKeywordRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteKeyword that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteKeywordAsync(const Model::DeleteKeywordRequest& request, const DeleteKeywordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an existing opt-out list. All opted out phone numbers in the opt-out
@@ -324,15 +277,6 @@ namespace PinpointSMSVoiceV2
          */
         virtual Model::DeleteOptOutListOutcome DeleteOptOutList(const Model::DeleteOptOutListRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteOptOutList that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteOptOutListOutcomeCallable DeleteOptOutListCallable(const Model::DeleteOptOutListRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteOptOutList that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteOptOutListAsync(const Model::DeleteOptOutListRequest& request, const DeleteOptOutListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an existing opted out destination phone number from the specified
@@ -345,15 +289,6 @@ namespace PinpointSMSVoiceV2
          */
         virtual Model::DeleteOptedOutNumberOutcome DeleteOptedOutNumber(const Model::DeleteOptedOutNumberRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteOptedOutNumber that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteOptedOutNumberOutcomeCallable DeleteOptedOutNumberCallable(const Model::DeleteOptedOutNumberRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteOptedOutNumber that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteOptedOutNumberAsync(const Model::DeleteOptedOutNumberRequest& request, const DeleteOptedOutNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an existing pool. Deleting a pool disassociates all origination
@@ -367,15 +302,6 @@ namespace PinpointSMSVoiceV2
          */
         virtual Model::DeletePoolOutcome DeletePool(const Model::DeletePoolRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeletePool that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeletePoolOutcomeCallable DeletePoolCallable(const Model::DeletePoolRequest& request) const;
-
-        /**
-         * An Async wrapper for DeletePool that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeletePoolAsync(const Model::DeletePoolRequest& request, const DeletePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an account-level monthly spending limit override for sending text
@@ -391,15 +317,6 @@ namespace PinpointSMSVoiceV2
          */
         virtual Model::DeleteTextMessageSpendLimitOverrideOutcome DeleteTextMessageSpendLimitOverride(const Model::DeleteTextMessageSpendLimitOverrideRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteTextMessageSpendLimitOverride that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteTextMessageSpendLimitOverrideOutcomeCallable DeleteTextMessageSpendLimitOverrideCallable(const Model::DeleteTextMessageSpendLimitOverrideRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteTextMessageSpendLimitOverride that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteTextMessageSpendLimitOverrideAsync(const Model::DeleteTextMessageSpendLimitOverrideRequest& request, const DeleteTextMessageSpendLimitOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an account level monthly spend limit override for sending voice
@@ -414,15 +331,6 @@ namespace PinpointSMSVoiceV2
          */
         virtual Model::DeleteVoiceMessageSpendLimitOverrideOutcome DeleteVoiceMessageSpendLimitOverride(const Model::DeleteVoiceMessageSpendLimitOverrideRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteVoiceMessageSpendLimitOverride that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteVoiceMessageSpendLimitOverrideOutcomeCallable DeleteVoiceMessageSpendLimitOverrideCallable(const Model::DeleteVoiceMessageSpendLimitOverrideRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteVoiceMessageSpendLimitOverride that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteVoiceMessageSpendLimitOverrideAsync(const Model::DeleteVoiceMessageSpendLimitOverrideRequest& request, const DeleteVoiceMessageSpendLimitOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes attributes of your Amazon Web Services account. The supported
@@ -438,15 +346,6 @@ namespace PinpointSMSVoiceV2
          */
         virtual Model::DescribeAccountAttributesOutcome DescribeAccountAttributes(const Model::DescribeAccountAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAccountAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAccountAttributesOutcomeCallable DescribeAccountAttributesCallable(const Model::DescribeAccountAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAccountAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAccountAttributesAsync(const Model::DescribeAccountAttributesRequest& request, const DescribeAccountAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the current Amazon Pinpoint SMS Voice V2 resource quotas for your
@@ -463,15 +362,6 @@ namespace PinpointSMSVoiceV2
          */
         virtual Model::DescribeAccountLimitsOutcome DescribeAccountLimits(const Model::DescribeAccountLimitsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAccountLimits that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAccountLimitsOutcomeCallable DescribeAccountLimitsCallable(const Model::DescribeAccountLimitsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAccountLimits that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAccountLimitsAsync(const Model::DescribeAccountLimitsRequest& request, const DescribeAccountLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified configuration sets or all in your account.</p> <p>If
@@ -486,15 +376,6 @@ namespace PinpointSMSVoiceV2
          */
         virtual Model::DescribeConfigurationSetsOutcome DescribeConfigurationSets(const Model::DescribeConfigurationSetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeConfigurationSets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeConfigurationSetsOutcomeCallable DescribeConfigurationSetsCallable(const Model::DescribeConfigurationSetsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeConfigurationSets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeConfigurationSetsAsync(const Model::DescribeConfigurationSetsRequest& request, const DescribeConfigurationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified keywords or all keywords on your origination phone
@@ -510,15 +391,6 @@ namespace PinpointSMSVoiceV2
          */
         virtual Model::DescribeKeywordsOutcome DescribeKeywords(const Model::DescribeKeywordsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeKeywords that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeKeywordsOutcomeCallable DescribeKeywordsCallable(const Model::DescribeKeywordsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeKeywords that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeKeywordsAsync(const Model::DescribeKeywordsRequest& request, const DescribeKeywordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified opt-out list or all opt-out lists in your
@@ -533,15 +405,6 @@ namespace PinpointSMSVoiceV2
          */
         virtual Model::DescribeOptOutListsOutcome DescribeOptOutLists(const Model::DescribeOptOutListsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeOptOutLists that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeOptOutListsOutcomeCallable DescribeOptOutListsCallable(const Model::DescribeOptOutListsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeOptOutLists that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeOptOutListsAsync(const Model::DescribeOptOutListsRequest& request, const DescribeOptOutListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified opted out destination numbers or all opted out
@@ -557,15 +420,6 @@ namespace PinpointSMSVoiceV2
          */
         virtual Model::DescribeOptedOutNumbersOutcome DescribeOptedOutNumbers(const Model::DescribeOptedOutNumbersRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeOptedOutNumbers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeOptedOutNumbersOutcomeCallable DescribeOptedOutNumbersCallable(const Model::DescribeOptedOutNumbersRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeOptedOutNumbers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeOptedOutNumbersAsync(const Model::DescribeOptedOutNumbersRequest& request, const DescribeOptedOutNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified origination phone number, or all the phone numbers in
@@ -580,15 +434,6 @@ namespace PinpointSMSVoiceV2
          */
         virtual Model::DescribePhoneNumbersOutcome DescribePhoneNumbers(const Model::DescribePhoneNumbersRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribePhoneNumbers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribePhoneNumbersOutcomeCallable DescribePhoneNumbersCallable(const Model::DescribePhoneNumbersRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribePhoneNumbers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribePhoneNumbersAsync(const Model::DescribePhoneNumbersRequest& request, const DescribePhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the specified pools or all pools associated with your Amazon Web
@@ -605,15 +450,6 @@ namespace PinpointSMSVoiceV2
          */
         virtual Model::DescribePoolsOutcome DescribePools(const Model::DescribePoolsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribePools that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribePoolsOutcomeCallable DescribePoolsCallable(const Model::DescribePoolsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribePools that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribePoolsAsync(const Model::DescribePoolsRequest& request, const DescribePoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified SenderIds or all SenderIds associated with your
@@ -628,15 +464,6 @@ namespace PinpointSMSVoiceV2
          */
         virtual Model::DescribeSenderIdsOutcome DescribeSenderIds(const Model::DescribeSenderIdsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeSenderIds that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeSenderIdsOutcomeCallable DescribeSenderIdsCallable(const Model::DescribeSenderIdsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeSenderIds that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeSenderIdsAsync(const Model::DescribeSenderIdsRequest& request, const DescribeSenderIdsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the current Amazon Pinpoint monthly spend limits for sending voice
@@ -651,15 +478,6 @@ namespace PinpointSMSVoiceV2
          */
         virtual Model::DescribeSpendLimitsOutcome DescribeSpendLimits(const Model::DescribeSpendLimitsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeSpendLimits that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeSpendLimitsOutcomeCallable DescribeSpendLimitsCallable(const Model::DescribeSpendLimitsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeSpendLimits that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeSpendLimitsAsync(const Model::DescribeSpendLimitsRequest& request, const DescribeSpendLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified origination identity from an existing pool.</p> <p>If
@@ -670,15 +488,6 @@ namespace PinpointSMSVoiceV2
          */
         virtual Model::DisassociateOriginationIdentityOutcome DisassociateOriginationIdentity(const Model::DisassociateOriginationIdentityRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateOriginationIdentity that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateOriginationIdentityOutcomeCallable DisassociateOriginationIdentityCallable(const Model::DisassociateOriginationIdentityRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateOriginationIdentity that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateOriginationIdentityAsync(const Model::DisassociateOriginationIdentityRequest& request, const DisassociateOriginationIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all associated origination identities in your pool.</p> <p>If you
@@ -689,15 +498,6 @@ namespace PinpointSMSVoiceV2
          */
         virtual Model::ListPoolOriginationIdentitiesOutcome ListPoolOriginationIdentities(const Model::ListPoolOriginationIdentitiesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPoolOriginationIdentities that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPoolOriginationIdentitiesOutcomeCallable ListPoolOriginationIdentitiesCallable(const Model::ListPoolOriginationIdentitiesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPoolOriginationIdentities that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPoolOriginationIdentitiesAsync(const Model::ListPoolOriginationIdentitiesRequest& request, const ListPoolOriginationIdentitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List all tags associated with a resource.</p><p><h3>See Also:</h3>   <a
@@ -706,15 +506,6 @@ namespace PinpointSMSVoiceV2
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates or updates a keyword configuration on an origination phone number or
@@ -729,15 +520,6 @@ namespace PinpointSMSVoiceV2
          */
         virtual Model::PutKeywordOutcome PutKeyword(const Model::PutKeywordRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutKeyword that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutKeywordOutcomeCallable PutKeywordCallable(const Model::PutKeywordRequest& request) const;
-
-        /**
-         * An Async wrapper for PutKeyword that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutKeywordAsync(const Model::PutKeywordRequest& request, const PutKeywordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an opted out destination phone number in the opt-out list.</p> <p>If
@@ -748,15 +530,6 @@ namespace PinpointSMSVoiceV2
          */
         virtual Model::PutOptedOutNumberOutcome PutOptedOutNumber(const Model::PutOptedOutNumberRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutOptedOutNumber that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutOptedOutNumberOutcomeCallable PutOptedOutNumberCallable(const Model::PutOptedOutNumberRequest& request) const;
-
-        /**
-         * An Async wrapper for PutOptedOutNumber that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutOptedOutNumberAsync(const Model::PutOptedOutNumberRequest& request, const PutOptedOutNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Releases an existing origination phone number in your account. Once released,
@@ -768,15 +541,6 @@ namespace PinpointSMSVoiceV2
          */
         virtual Model::ReleasePhoneNumberOutcome ReleasePhoneNumber(const Model::ReleasePhoneNumberRequest& request) const;
 
-        /**
-         * A Callable wrapper for ReleasePhoneNumber that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ReleasePhoneNumberOutcomeCallable ReleasePhoneNumberCallable(const Model::ReleasePhoneNumberRequest& request) const;
-
-        /**
-         * An Async wrapper for ReleasePhoneNumber that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ReleasePhoneNumberAsync(const Model::ReleasePhoneNumberRequest& request, const ReleasePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Request an origination phone number for use in your account. For more
@@ -789,15 +553,6 @@ namespace PinpointSMSVoiceV2
          */
         virtual Model::RequestPhoneNumberOutcome RequestPhoneNumber(const Model::RequestPhoneNumberRequest& request) const;
 
-        /**
-         * A Callable wrapper for RequestPhoneNumber that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RequestPhoneNumberOutcomeCallable RequestPhoneNumberCallable(const Model::RequestPhoneNumberRequest& request) const;
-
-        /**
-         * An Async wrapper for RequestPhoneNumber that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RequestPhoneNumberAsync(const Model::RequestPhoneNumberRequest& request, const RequestPhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new text message and sends it to a recipient's phone number.</p>
@@ -813,15 +568,6 @@ namespace PinpointSMSVoiceV2
          */
         virtual Model::SendTextMessageOutcome SendTextMessage(const Model::SendTextMessageRequest& request) const;
 
-        /**
-         * A Callable wrapper for SendTextMessage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SendTextMessageOutcomeCallable SendTextMessageCallable(const Model::SendTextMessageRequest& request) const;
-
-        /**
-         * An Async wrapper for SendTextMessage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SendTextMessageAsync(const Model::SendTextMessageRequest& request, const SendTextMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Allows you to send a request that sends a text message through Amazon
@@ -833,15 +579,6 @@ namespace PinpointSMSVoiceV2
          */
         virtual Model::SendVoiceMessageOutcome SendVoiceMessage(const Model::SendVoiceMessageRequest& request) const;
 
-        /**
-         * A Callable wrapper for SendVoiceMessage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SendVoiceMessageOutcomeCallable SendVoiceMessageCallable(const Model::SendVoiceMessageRequest& request) const;
-
-        /**
-         * An Async wrapper for SendVoiceMessage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SendVoiceMessageAsync(const Model::SendVoiceMessageRequest& request, const SendVoiceMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets the default message type on a configuration set.</p> <p>Choose the
@@ -856,15 +593,6 @@ namespace PinpointSMSVoiceV2
          */
         virtual Model::SetDefaultMessageTypeOutcome SetDefaultMessageType(const Model::SetDefaultMessageTypeRequest& request) const;
 
-        /**
-         * A Callable wrapper for SetDefaultMessageType that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SetDefaultMessageTypeOutcomeCallable SetDefaultMessageTypeCallable(const Model::SetDefaultMessageTypeRequest& request) const;
-
-        /**
-         * An Async wrapper for SetDefaultMessageType that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SetDefaultMessageTypeAsync(const Model::SetDefaultMessageTypeRequest& request, const SetDefaultMessageTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets default sender ID on a configuration set.</p> <p>When sending a text
@@ -877,15 +605,6 @@ namespace PinpointSMSVoiceV2
          */
         virtual Model::SetDefaultSenderIdOutcome SetDefaultSenderId(const Model::SetDefaultSenderIdRequest& request) const;
 
-        /**
-         * A Callable wrapper for SetDefaultSenderId that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SetDefaultSenderIdOutcomeCallable SetDefaultSenderIdCallable(const Model::SetDefaultSenderIdRequest& request) const;
-
-        /**
-         * An Async wrapper for SetDefaultSenderId that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SetDefaultSenderIdAsync(const Model::SetDefaultSenderIdRequest& request, const SetDefaultSenderIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets an account level monthly spend limit override for sending text messages.
@@ -897,15 +616,6 @@ namespace PinpointSMSVoiceV2
          */
         virtual Model::SetTextMessageSpendLimitOverrideOutcome SetTextMessageSpendLimitOverride(const Model::SetTextMessageSpendLimitOverrideRequest& request) const;
 
-        /**
-         * A Callable wrapper for SetTextMessageSpendLimitOverride that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SetTextMessageSpendLimitOverrideOutcomeCallable SetTextMessageSpendLimitOverrideCallable(const Model::SetTextMessageSpendLimitOverrideRequest& request) const;
-
-        /**
-         * An Async wrapper for SetTextMessageSpendLimitOverride that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SetTextMessageSpendLimitOverrideAsync(const Model::SetTextMessageSpendLimitOverrideRequest& request, const SetTextMessageSpendLimitOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets an account level monthly spend limit override for sending voice
@@ -917,15 +627,6 @@ namespace PinpointSMSVoiceV2
          */
         virtual Model::SetVoiceMessageSpendLimitOverrideOutcome SetVoiceMessageSpendLimitOverride(const Model::SetVoiceMessageSpendLimitOverrideRequest& request) const;
 
-        /**
-         * A Callable wrapper for SetVoiceMessageSpendLimitOverride that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SetVoiceMessageSpendLimitOverrideOutcomeCallable SetVoiceMessageSpendLimitOverrideCallable(const Model::SetVoiceMessageSpendLimitOverrideRequest& request) const;
-
-        /**
-         * An Async wrapper for SetVoiceMessageSpendLimitOverride that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SetVoiceMessageSpendLimitOverrideAsync(const Model::SetVoiceMessageSpendLimitOverrideRequest& request, const SetVoiceMessageSpendLimitOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds or overwrites only the specified tags for the specified Amazon Pinpoint
@@ -941,15 +642,6 @@ namespace PinpointSMSVoiceV2
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the association of the specified tags from an Amazon Pinpoint SMS
@@ -962,15 +654,6 @@ namespace PinpointSMSVoiceV2
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an existing event destination in a configuration set. You can update
@@ -984,15 +667,6 @@ namespace PinpointSMSVoiceV2
          */
         virtual Model::UpdateEventDestinationOutcome UpdateEventDestination(const Model::UpdateEventDestinationRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateEventDestination that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateEventDestinationOutcomeCallable UpdateEventDestinationCallable(const Model::UpdateEventDestinationRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateEventDestination that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateEventDestinationAsync(const Model::UpdateEventDestinationRequest& request, const UpdateEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the configuration of an existing origination phone number. You can
@@ -1005,15 +679,6 @@ namespace PinpointSMSVoiceV2
          */
         virtual Model::UpdatePhoneNumberOutcome UpdatePhoneNumber(const Model::UpdatePhoneNumberRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdatePhoneNumber that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdatePhoneNumberOutcomeCallable UpdatePhoneNumberCallable(const Model::UpdatePhoneNumberRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdatePhoneNumber that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdatePhoneNumberAsync(const Model::UpdatePhoneNumberRequest& request, const UpdatePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the configuration of an existing pool. You can update the opt-out
@@ -1026,15 +691,6 @@ namespace PinpointSMSVoiceV2
          */
         virtual Model::UpdatePoolOutcome UpdatePool(const Model::UpdatePoolRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdatePool that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdatePoolOutcomeCallable UpdatePoolCallable(const Model::UpdatePoolRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdatePool that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdatePoolAsync(const Model::UpdatePoolRequest& request, const UpdatePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

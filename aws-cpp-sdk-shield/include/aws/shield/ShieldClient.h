@@ -7,8 +7,10 @@
 #include <aws/shield/Shield_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/shield/ShieldServiceClientModel.h>
+#include <aws/shield/ShieldLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -79,6 +81,47 @@ namespace Shield
         virtual ~ShieldClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Authorizes the Shield Response Team (SRT) to access the specified Amazon S3
          * bucket containing log data such as Application Load Balancer access logs,
@@ -94,15 +137,6 @@ namespace Shield
          */
         virtual Model::AssociateDRTLogBucketOutcome AssociateDRTLogBucket(const Model::AssociateDRTLogBucketRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateDRTLogBucket that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateDRTLogBucketOutcomeCallable AssociateDRTLogBucketCallable(const Model::AssociateDRTLogBucketRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateDRTLogBucket that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateDRTLogBucketAsync(const Model::AssociateDRTLogBucketRequest& request, const AssociateDRTLogBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Authorizes the Shield Response Team (SRT) using the specified role, to access
@@ -141,15 +175,6 @@ namespace Shield
          */
         virtual Model::AssociateDRTRoleOutcome AssociateDRTRole(const Model::AssociateDRTRoleRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateDRTRole that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateDRTRoleOutcomeCallable AssociateDRTRoleCallable(const Model::AssociateDRTRoleRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateDRTRole that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateDRTRoleAsync(const Model::AssociateDRTRoleRequest& request, const AssociateDRTRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds health-based detection to the Shield Advanced protection for a resource.
@@ -165,15 +190,6 @@ namespace Shield
          */
         virtual Model::AssociateHealthCheckOutcome AssociateHealthCheck(const Model::AssociateHealthCheckRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateHealthCheck that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateHealthCheckOutcomeCallable AssociateHealthCheckCallable(const Model::AssociateHealthCheckRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateHealthCheck that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateHealthCheckAsync(const Model::AssociateHealthCheckRequest& request, const AssociateHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Initializes proactive engagement and sets the list of contacts for the Shield
@@ -193,15 +209,6 @@ namespace Shield
          */
         virtual Model::AssociateProactiveEngagementDetailsOutcome AssociateProactiveEngagementDetails(const Model::AssociateProactiveEngagementDetailsRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateProactiveEngagementDetails that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateProactiveEngagementDetailsOutcomeCallable AssociateProactiveEngagementDetailsCallable(const Model::AssociateProactiveEngagementDetailsRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateProactiveEngagementDetails that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateProactiveEngagementDetailsAsync(const Model::AssociateProactiveEngagementDetailsRequest& request, const AssociateProactiveEngagementDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables Shield Advanced for a specific Amazon Web Services resource. The
@@ -224,15 +231,6 @@ namespace Shield
          */
         virtual Model::CreateProtectionOutcome CreateProtection(const Model::CreateProtectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateProtection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateProtectionOutcomeCallable CreateProtectionCallable(const Model::CreateProtectionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateProtection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateProtectionAsync(const Model::CreateProtectionRequest& request, const CreateProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a grouping of protected resources so they can be handled as a
@@ -243,15 +241,6 @@ namespace Shield
          */
         virtual Model::CreateProtectionGroupOutcome CreateProtectionGroup(const Model::CreateProtectionGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateProtectionGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateProtectionGroupOutcomeCallable CreateProtectionGroupCallable(const Model::CreateProtectionGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateProtectionGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateProtectionGroupAsync(const Model::CreateProtectionGroupRequest& request, const CreateProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Activates Shield Advanced for an account.</p>  <p>For accounts that are
@@ -266,15 +255,6 @@ namespace Shield
          */
         virtual Model::CreateSubscriptionOutcome CreateSubscription(const Model::CreateSubscriptionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateSubscription that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateSubscriptionOutcomeCallable CreateSubscriptionCallable(const Model::CreateSubscriptionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateSubscription that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateSubscriptionAsync(const Model::CreateSubscriptionRequest& request, const CreateSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an Shield Advanced <a>Protection</a>.</p><p><h3>See Also:</h3>   <a
@@ -283,15 +263,6 @@ namespace Shield
          */
         virtual Model::DeleteProtectionOutcome DeleteProtection(const Model::DeleteProtectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteProtection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteProtectionOutcomeCallable DeleteProtectionCallable(const Model::DeleteProtectionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteProtection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteProtectionAsync(const Model::DeleteProtectionRequest& request, const DeleteProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified protection group.</p><p><h3>See Also:</h3>   <a
@@ -300,15 +271,6 @@ namespace Shield
          */
         virtual Model::DeleteProtectionGroupOutcome DeleteProtectionGroup(const Model::DeleteProtectionGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteProtectionGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteProtectionGroupOutcomeCallable DeleteProtectionGroupCallable(const Model::DeleteProtectionGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteProtectionGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteProtectionGroupAsync(const Model::DeleteProtectionGroupRequest& request, const DeleteProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the details of a DDoS attack. </p><p><h3>See Also:</h3>   <a
@@ -317,15 +279,6 @@ namespace Shield
          */
         virtual Model::DescribeAttackOutcome DescribeAttack(const Model::DescribeAttackRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAttack that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAttackOutcomeCallable DescribeAttackCallable(const Model::DescribeAttackRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAttack that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAttackAsync(const Model::DescribeAttackRequest& request, const DescribeAttackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides information about the number and type of attacks Shield has detected
@@ -344,15 +297,6 @@ namespace Shield
          */
         virtual Model::DescribeAttackStatisticsOutcome DescribeAttackStatistics(const Model::DescribeAttackStatisticsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAttackStatistics that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAttackStatisticsOutcomeCallable DescribeAttackStatisticsCallable(const Model::DescribeAttackStatisticsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAttackStatistics that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAttackStatisticsAsync(const Model::DescribeAttackStatisticsRequest& request, const DescribeAttackStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the current role and list of Amazon S3 log buckets used by the Shield
@@ -363,15 +307,6 @@ namespace Shield
          */
         virtual Model::DescribeDRTAccessOutcome DescribeDRTAccess(const Model::DescribeDRTAccessRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDRTAccess that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDRTAccessOutcomeCallable DescribeDRTAccessCallable(const Model::DescribeDRTAccessRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDRTAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDRTAccessAsync(const Model::DescribeDRTAccessRequest& request, const DescribeDRTAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>A list of email addresses and phone numbers that the Shield Response Team
@@ -383,15 +318,6 @@ namespace Shield
          */
         virtual Model::DescribeEmergencyContactSettingsOutcome DescribeEmergencyContactSettings(const Model::DescribeEmergencyContactSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEmergencyContactSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEmergencyContactSettingsOutcomeCallable DescribeEmergencyContactSettingsCallable(const Model::DescribeEmergencyContactSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEmergencyContactSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEmergencyContactSettingsAsync(const Model::DescribeEmergencyContactSettingsRequest& request, const DescribeEmergencyContactSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the details of a <a>Protection</a> object.</p><p><h3>See Also:</h3>  
@@ -401,15 +327,6 @@ namespace Shield
          */
         virtual Model::DescribeProtectionOutcome DescribeProtection(const Model::DescribeProtectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeProtection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeProtectionOutcomeCallable DescribeProtectionCallable(const Model::DescribeProtectionRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeProtection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeProtectionAsync(const Model::DescribeProtectionRequest& request, const DescribeProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the specification for the specified protection group.</p><p><h3>See
@@ -419,15 +336,6 @@ namespace Shield
          */
         virtual Model::DescribeProtectionGroupOutcome DescribeProtectionGroup(const Model::DescribeProtectionGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeProtectionGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeProtectionGroupOutcomeCallable DescribeProtectionGroupCallable(const Model::DescribeProtectionGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeProtectionGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeProtectionGroupAsync(const Model::DescribeProtectionGroupRequest& request, const DescribeProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides details about the Shield Advanced subscription for an
@@ -437,15 +345,6 @@ namespace Shield
          */
         virtual Model::DescribeSubscriptionOutcome DescribeSubscription(const Model::DescribeSubscriptionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeSubscription that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeSubscriptionOutcomeCallable DescribeSubscriptionCallable(const Model::DescribeSubscriptionRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeSubscription that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeSubscriptionAsync(const Model::DescribeSubscriptionRequest& request, const DescribeSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disable the Shield Advanced automatic application layer DDoS mitigation
@@ -457,15 +356,6 @@ namespace Shield
          */
         virtual Model::DisableApplicationLayerAutomaticResponseOutcome DisableApplicationLayerAutomaticResponse(const Model::DisableApplicationLayerAutomaticResponseRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisableApplicationLayerAutomaticResponse that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisableApplicationLayerAutomaticResponseOutcomeCallable DisableApplicationLayerAutomaticResponseCallable(const Model::DisableApplicationLayerAutomaticResponseRequest& request) const;
-
-        /**
-         * An Async wrapper for DisableApplicationLayerAutomaticResponse that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisableApplicationLayerAutomaticResponseAsync(const Model::DisableApplicationLayerAutomaticResponseRequest& request, const DisableApplicationLayerAutomaticResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes authorization from the Shield Response Team (SRT) to notify contacts
@@ -476,15 +366,6 @@ namespace Shield
          */
         virtual Model::DisableProactiveEngagementOutcome DisableProactiveEngagement(const Model::DisableProactiveEngagementRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisableProactiveEngagement that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisableProactiveEngagementOutcomeCallable DisableProactiveEngagementCallable(const Model::DisableProactiveEngagementRequest& request) const;
-
-        /**
-         * An Async wrapper for DisableProactiveEngagement that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisableProactiveEngagementAsync(const Model::DisableProactiveEngagementRequest& request, const DisableProactiveEngagementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the Shield Response Team's (SRT) access to the specified Amazon S3
@@ -495,15 +376,6 @@ namespace Shield
          */
         virtual Model::DisassociateDRTLogBucketOutcome DisassociateDRTLogBucket(const Model::DisassociateDRTLogBucketRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateDRTLogBucket that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateDRTLogBucketOutcomeCallable DisassociateDRTLogBucketCallable(const Model::DisassociateDRTLogBucketRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateDRTLogBucket that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateDRTLogBucketAsync(const Model::DisassociateDRTLogBucketRequest& request, const DisassociateDRTLogBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the Shield Response Team's (SRT) access to your Amazon Web Services
@@ -513,15 +385,6 @@ namespace Shield
          */
         virtual Model::DisassociateDRTRoleOutcome DisassociateDRTRole(const Model::DisassociateDRTRoleRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateDRTRole that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateDRTRoleOutcomeCallable DisassociateDRTRoleCallable(const Model::DisassociateDRTRoleRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateDRTRole that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateDRTRoleAsync(const Model::DisassociateDRTRoleRequest& request, const DisassociateDRTRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes health-based detection from the Shield Advanced protection for a
@@ -538,15 +401,6 @@ namespace Shield
          */
         virtual Model::DisassociateHealthCheckOutcome DisassociateHealthCheck(const Model::DisassociateHealthCheckRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateHealthCheck that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateHealthCheckOutcomeCallable DisassociateHealthCheckCallable(const Model::DisassociateHealthCheckRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateHealthCheck that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateHealthCheckAsync(const Model::DisassociateHealthCheckRequest& request, const DisassociateHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enable the Shield Advanced automatic application layer DDoS mitigation for
@@ -578,15 +432,6 @@ namespace Shield
          */
         virtual Model::EnableApplicationLayerAutomaticResponseOutcome EnableApplicationLayerAutomaticResponse(const Model::EnableApplicationLayerAutomaticResponseRequest& request) const;
 
-        /**
-         * A Callable wrapper for EnableApplicationLayerAutomaticResponse that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnableApplicationLayerAutomaticResponseOutcomeCallable EnableApplicationLayerAutomaticResponseCallable(const Model::EnableApplicationLayerAutomaticResponseRequest& request) const;
-
-        /**
-         * An Async wrapper for EnableApplicationLayerAutomaticResponse that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnableApplicationLayerAutomaticResponseAsync(const Model::EnableApplicationLayerAutomaticResponseRequest& request, const EnableApplicationLayerAutomaticResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Authorizes the Shield Response Team (SRT) to use email and phone to notify
@@ -597,15 +442,6 @@ namespace Shield
          */
         virtual Model::EnableProactiveEngagementOutcome EnableProactiveEngagement(const Model::EnableProactiveEngagementRequest& request) const;
 
-        /**
-         * A Callable wrapper for EnableProactiveEngagement that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnableProactiveEngagementOutcomeCallable EnableProactiveEngagementCallable(const Model::EnableProactiveEngagementRequest& request) const;
-
-        /**
-         * An Async wrapper for EnableProactiveEngagement that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnableProactiveEngagementAsync(const Model::EnableProactiveEngagementRequest& request, const EnableProactiveEngagementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the <code>SubscriptionState</code>, either <code>Active</code> or
@@ -615,15 +451,6 @@ namespace Shield
          */
         virtual Model::GetSubscriptionStateOutcome GetSubscriptionState(const Model::GetSubscriptionStateRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSubscriptionState that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSubscriptionStateOutcomeCallable GetSubscriptionStateCallable(const Model::GetSubscriptionStateRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSubscriptionState that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSubscriptionStateAsync(const Model::GetSubscriptionStateRequest& request, const GetSubscriptionStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns all ongoing DDoS attacks or all DDoS attacks during a specified time
@@ -633,15 +460,6 @@ namespace Shield
          */
         virtual Model::ListAttacksOutcome ListAttacks(const Model::ListAttacksRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAttacks that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAttacksOutcomeCallable ListAttacksCallable(const Model::ListAttacksRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAttacks that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAttacksAsync(const Model::ListAttacksRequest& request, const ListAttacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves <a>ProtectionGroup</a> objects for the account. You can retrieve
@@ -653,15 +471,6 @@ namespace Shield
          */
         virtual Model::ListProtectionGroupsOutcome ListProtectionGroups(const Model::ListProtectionGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListProtectionGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListProtectionGroupsOutcomeCallable ListProtectionGroupsCallable(const Model::ListProtectionGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListProtectionGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListProtectionGroupsAsync(const Model::ListProtectionGroupsRequest& request, const ListProtectionGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves <a>Protection</a> objects for the account. You can retrieve all
@@ -672,15 +481,6 @@ namespace Shield
          */
         virtual Model::ListProtectionsOutcome ListProtections(const Model::ListProtectionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListProtections that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListProtectionsOutcomeCallable ListProtectionsCallable(const Model::ListProtectionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListProtections that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListProtectionsAsync(const Model::ListProtectionsRequest& request, const ListProtectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the resources that are included in the protection group.
@@ -690,15 +490,6 @@ namespace Shield
          */
         virtual Model::ListResourcesInProtectionGroupOutcome ListResourcesInProtectionGroup(const Model::ListResourcesInProtectionGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListResourcesInProtectionGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListResourcesInProtectionGroupOutcomeCallable ListResourcesInProtectionGroupCallable(const Model::ListResourcesInProtectionGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for ListResourcesInProtectionGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListResourcesInProtectionGroupAsync(const Model::ListResourcesInProtectionGroupRequest& request, const ListResourcesInProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about Amazon Web Services tags for a specified Amazon
@@ -708,15 +499,6 @@ namespace Shield
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds or updates tags for a resource in Shield.</p><p><h3>See Also:</h3>   <a
@@ -725,15 +507,6 @@ namespace Shield
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes tags from a resource in Shield.</p><p><h3>See Also:</h3>   <a
@@ -742,15 +515,6 @@ namespace Shield
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an existing Shield Advanced automatic application layer DDoS
@@ -761,15 +525,6 @@ namespace Shield
          */
         virtual Model::UpdateApplicationLayerAutomaticResponseOutcome UpdateApplicationLayerAutomaticResponse(const Model::UpdateApplicationLayerAutomaticResponseRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateApplicationLayerAutomaticResponse that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateApplicationLayerAutomaticResponseOutcomeCallable UpdateApplicationLayerAutomaticResponseCallable(const Model::UpdateApplicationLayerAutomaticResponseRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateApplicationLayerAutomaticResponse that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateApplicationLayerAutomaticResponseAsync(const Model::UpdateApplicationLayerAutomaticResponseRequest& request, const UpdateApplicationLayerAutomaticResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the details of the list of email addresses and phone numbers that the
@@ -781,15 +536,6 @@ namespace Shield
          */
         virtual Model::UpdateEmergencyContactSettingsOutcome UpdateEmergencyContactSettings(const Model::UpdateEmergencyContactSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateEmergencyContactSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateEmergencyContactSettingsOutcomeCallable UpdateEmergencyContactSettingsCallable(const Model::UpdateEmergencyContactSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateEmergencyContactSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateEmergencyContactSettingsAsync(const Model::UpdateEmergencyContactSettingsRequest& request, const UpdateEmergencyContactSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an existing protection group. A protection group is a grouping of
@@ -801,15 +547,6 @@ namespace Shield
          */
         virtual Model::UpdateProtectionGroupOutcome UpdateProtectionGroup(const Model::UpdateProtectionGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateProtectionGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateProtectionGroupOutcomeCallable UpdateProtectionGroupCallable(const Model::UpdateProtectionGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateProtectionGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateProtectionGroupAsync(const Model::UpdateProtectionGroupRequest& request, const UpdateProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the details of an existing subscription. Only enter values for
@@ -823,15 +560,6 @@ namespace Shield
          */
         virtual Model::UpdateSubscriptionOutcome UpdateSubscription(const Model::UpdateSubscriptionRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateSubscription that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateSubscriptionOutcomeCallable UpdateSubscriptionCallable(const Model::UpdateSubscriptionRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateSubscription that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateSubscriptionAsync(const Model::UpdateSubscriptionRequest& request, const UpdateSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

@@ -7,8 +7,10 @@
 #include <aws/voice-id/VoiceID_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/voice-id/VoiceIDServiceClientModel.h>
+#include <aws/voice-id/VoiceIDLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -74,6 +76,47 @@ namespace VoiceID
         virtual ~VoiceIDClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Creates a domain that contains all Amazon Connect Voice ID data, such as
          * speakers, fraudsters, customer audio, and voiceprints. </p><p><h3>See Also:</h3>
@@ -83,15 +126,6 @@ namespace VoiceID
          */
         virtual Model::CreateDomainOutcome CreateDomain(const Model::CreateDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDomainOutcomeCallable CreateDomainCallable(const Model::CreateDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDomainAsync(const Model::CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified domain from Voice ID.</p><p><h3>See Also:</h3>   <a
@@ -100,15 +134,6 @@ namespace VoiceID
          */
         virtual Model::DeleteDomainOutcome DeleteDomain(const Model::DeleteDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDomainOutcomeCallable DeleteDomainCallable(const Model::DeleteDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDomainAsync(const Model::DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified fraudster from Voice ID.</p><p><h3>See Also:</h3>   <a
@@ -117,15 +142,6 @@ namespace VoiceID
          */
         virtual Model::DeleteFraudsterOutcome DeleteFraudster(const Model::DeleteFraudsterRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteFraudster that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteFraudsterOutcomeCallable DeleteFraudsterCallable(const Model::DeleteFraudsterRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteFraudster that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteFraudsterAsync(const Model::DeleteFraudsterRequest& request, const DeleteFraudsterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified speaker from Voice ID.</p><p><h3>See Also:</h3>   <a
@@ -134,15 +150,6 @@ namespace VoiceID
          */
         virtual Model::DeleteSpeakerOutcome DeleteSpeaker(const Model::DeleteSpeakerRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteSpeaker that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteSpeakerOutcomeCallable DeleteSpeakerCallable(const Model::DeleteSpeakerRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteSpeaker that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteSpeakerAsync(const Model::DeleteSpeakerRequest& request, const DeleteSpeakerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified domain.</p><p><h3>See Also:</h3>   <a
@@ -151,15 +158,6 @@ namespace VoiceID
          */
         virtual Model::DescribeDomainOutcome DescribeDomain(const Model::DescribeDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDomainOutcomeCallable DescribeDomainCallable(const Model::DescribeDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDomainAsync(const Model::DescribeDomainRequest& request, const DescribeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified fraudster.</p><p><h3>See Also:</h3>   <a
@@ -168,15 +166,6 @@ namespace VoiceID
          */
         virtual Model::DescribeFraudsterOutcome DescribeFraudster(const Model::DescribeFraudsterRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeFraudster that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeFraudsterOutcomeCallable DescribeFraudsterCallable(const Model::DescribeFraudsterRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeFraudster that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeFraudsterAsync(const Model::DescribeFraudsterRequest& request, const DescribeFraudsterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified fraudster registration job.</p><p><h3>See Also:</h3> 
@@ -186,15 +175,6 @@ namespace VoiceID
          */
         virtual Model::DescribeFraudsterRegistrationJobOutcome DescribeFraudsterRegistrationJob(const Model::DescribeFraudsterRegistrationJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeFraudsterRegistrationJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeFraudsterRegistrationJobOutcomeCallable DescribeFraudsterRegistrationJobCallable(const Model::DescribeFraudsterRegistrationJobRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeFraudsterRegistrationJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeFraudsterRegistrationJobAsync(const Model::DescribeFraudsterRegistrationJobRequest& request, const DescribeFraudsterRegistrationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified speaker.</p><p><h3>See Also:</h3>   <a
@@ -203,15 +183,6 @@ namespace VoiceID
          */
         virtual Model::DescribeSpeakerOutcome DescribeSpeaker(const Model::DescribeSpeakerRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeSpeaker that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeSpeakerOutcomeCallable DescribeSpeakerCallable(const Model::DescribeSpeakerRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeSpeaker that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeSpeakerAsync(const Model::DescribeSpeakerRequest& request, const DescribeSpeakerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified speaker enrollment job.</p><p><h3>See Also:</h3>   <a
@@ -220,15 +191,6 @@ namespace VoiceID
          */
         virtual Model::DescribeSpeakerEnrollmentJobOutcome DescribeSpeakerEnrollmentJob(const Model::DescribeSpeakerEnrollmentJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeSpeakerEnrollmentJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeSpeakerEnrollmentJobOutcomeCallable DescribeSpeakerEnrollmentJobCallable(const Model::DescribeSpeakerEnrollmentJobRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeSpeakerEnrollmentJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeSpeakerEnrollmentJobAsync(const Model::DescribeSpeakerEnrollmentJobRequest& request, const DescribeSpeakerEnrollmentJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Evaluates a specified session based on audio data accumulated during a
@@ -238,15 +200,6 @@ namespace VoiceID
          */
         virtual Model::EvaluateSessionOutcome EvaluateSession(const Model::EvaluateSessionRequest& request) const;
 
-        /**
-         * A Callable wrapper for EvaluateSession that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EvaluateSessionOutcomeCallable EvaluateSessionCallable(const Model::EvaluateSessionRequest& request) const;
-
-        /**
-         * An Async wrapper for EvaluateSession that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EvaluateSessionAsync(const Model::EvaluateSessionRequest& request, const EvaluateSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all the domains in the Amazon Web Services account. </p><p><h3>See
@@ -256,15 +209,6 @@ namespace VoiceID
          */
         virtual Model::ListDomainsOutcome ListDomains(const Model::ListDomainsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDomains that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDomainsOutcomeCallable ListDomainsCallable(const Model::ListDomainsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDomains that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDomainsAsync(const Model::ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all the fraudster registration jobs in the domain with the given
@@ -276,15 +220,6 @@ namespace VoiceID
          */
         virtual Model::ListFraudsterRegistrationJobsOutcome ListFraudsterRegistrationJobs(const Model::ListFraudsterRegistrationJobsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListFraudsterRegistrationJobs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListFraudsterRegistrationJobsOutcomeCallable ListFraudsterRegistrationJobsCallable(const Model::ListFraudsterRegistrationJobsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListFraudsterRegistrationJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListFraudsterRegistrationJobsAsync(const Model::ListFraudsterRegistrationJobsRequest& request, const ListFraudsterRegistrationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all the speaker enrollment jobs in the domain with the specified
@@ -296,15 +231,6 @@ namespace VoiceID
          */
         virtual Model::ListSpeakerEnrollmentJobsOutcome ListSpeakerEnrollmentJobs(const Model::ListSpeakerEnrollmentJobsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSpeakerEnrollmentJobs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListSpeakerEnrollmentJobsOutcomeCallable ListSpeakerEnrollmentJobsCallable(const Model::ListSpeakerEnrollmentJobsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSpeakerEnrollmentJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListSpeakerEnrollmentJobsAsync(const Model::ListSpeakerEnrollmentJobsRequest& request, const ListSpeakerEnrollmentJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all speakers in a specified domain.</p><p><h3>See Also:</h3>   <a
@@ -313,15 +239,6 @@ namespace VoiceID
          */
         virtual Model::ListSpeakersOutcome ListSpeakers(const Model::ListSpeakersRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSpeakers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListSpeakersOutcomeCallable ListSpeakersCallable(const Model::ListSpeakersRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSpeakers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListSpeakersAsync(const Model::ListSpeakersRequest& request, const ListSpeakersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all tags associated with a specified Voice ID resource.</p><p><h3>See
@@ -331,15 +248,6 @@ namespace VoiceID
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Opts out a speaker from Voice ID. A speaker can be opted out regardless of
@@ -354,15 +262,6 @@ namespace VoiceID
          */
         virtual Model::OptOutSpeakerOutcome OptOutSpeaker(const Model::OptOutSpeakerRequest& request) const;
 
-        /**
-         * A Callable wrapper for OptOutSpeaker that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::OptOutSpeakerOutcomeCallable OptOutSpeakerCallable(const Model::OptOutSpeakerRequest& request) const;
-
-        /**
-         * An Async wrapper for OptOutSpeaker that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void OptOutSpeakerAsync(const Model::OptOutSpeakerRequest& request, const OptOutSpeakerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts a new batch fraudster registration job using provided
@@ -372,15 +271,6 @@ namespace VoiceID
          */
         virtual Model::StartFraudsterRegistrationJobOutcome StartFraudsterRegistrationJob(const Model::StartFraudsterRegistrationJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartFraudsterRegistrationJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartFraudsterRegistrationJobOutcomeCallable StartFraudsterRegistrationJobCallable(const Model::StartFraudsterRegistrationJobRequest& request) const;
-
-        /**
-         * An Async wrapper for StartFraudsterRegistrationJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartFraudsterRegistrationJobAsync(const Model::StartFraudsterRegistrationJobRequest& request, const StartFraudsterRegistrationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts a new batch speaker enrollment job using specified
@@ -390,15 +280,6 @@ namespace VoiceID
          */
         virtual Model::StartSpeakerEnrollmentJobOutcome StartSpeakerEnrollmentJob(const Model::StartSpeakerEnrollmentJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartSpeakerEnrollmentJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartSpeakerEnrollmentJobOutcomeCallable StartSpeakerEnrollmentJobCallable(const Model::StartSpeakerEnrollmentJobRequest& request) const;
-
-        /**
-         * An Async wrapper for StartSpeakerEnrollmentJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartSpeakerEnrollmentJobAsync(const Model::StartSpeakerEnrollmentJobRequest& request, const StartSpeakerEnrollmentJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Tags a Voice ID resource with the provided list of tags.</p><p><h3>See
@@ -408,15 +289,6 @@ namespace VoiceID
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes specified tags from a specified Amazon Connect Voice ID
@@ -426,15 +298,6 @@ namespace VoiceID
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the specified domain. This API has clobber behavior, and clears and
@@ -445,15 +308,6 @@ namespace VoiceID
          */
         virtual Model::UpdateDomainOutcome UpdateDomain(const Model::UpdateDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateDomainOutcomeCallable UpdateDomainCallable(const Model::UpdateDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateDomainAsync(const Model::UpdateDomainRequest& request, const UpdateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

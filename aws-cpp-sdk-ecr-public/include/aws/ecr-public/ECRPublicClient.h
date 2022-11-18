@@ -7,8 +7,10 @@
 #include <aws/ecr-public/ECRPublic_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ecr-public/ECRPublicServiceClientModel.h>
+#include <aws/ecr-public/ECRPublicLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -82,6 +84,47 @@ namespace ECRPublic
         virtual ~ECRPublicClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Checks the availability of one or more image layers within a repository in a
          * public registry. When an image is pushed to a repository, each image layer is
@@ -95,15 +138,6 @@ namespace ECRPublic
          */
         virtual Model::BatchCheckLayerAvailabilityOutcome BatchCheckLayerAvailability(const Model::BatchCheckLayerAvailabilityRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchCheckLayerAvailability that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchCheckLayerAvailabilityOutcomeCallable BatchCheckLayerAvailabilityCallable(const Model::BatchCheckLayerAvailabilityRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchCheckLayerAvailability that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchCheckLayerAvailabilityAsync(const Model::BatchCheckLayerAvailabilityRequest& request, const BatchCheckLayerAvailabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a list of specified images within a repository in a public registry.
@@ -118,15 +152,6 @@ namespace ECRPublic
          */
         virtual Model::BatchDeleteImageOutcome BatchDeleteImage(const Model::BatchDeleteImageRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchDeleteImage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchDeleteImageOutcomeCallable BatchDeleteImageCallable(const Model::BatchDeleteImageRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchDeleteImage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchDeleteImageAsync(const Model::BatchDeleteImageRequest& request, const BatchDeleteImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Informs Amazon ECR that the image layer upload has completed for a specified
@@ -143,15 +168,6 @@ namespace ECRPublic
          */
         virtual Model::CompleteLayerUploadOutcome CompleteLayerUpload(const Model::CompleteLayerUploadRequest& request) const;
 
-        /**
-         * A Callable wrapper for CompleteLayerUpload that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CompleteLayerUploadOutcomeCallable CompleteLayerUploadCallable(const Model::CompleteLayerUploadRequest& request) const;
-
-        /**
-         * An Async wrapper for CompleteLayerUpload that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CompleteLayerUploadAsync(const Model::CompleteLayerUploadRequest& request, const CompleteLayerUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a repository in a public registry. For more information, see <a
@@ -163,15 +179,6 @@ namespace ECRPublic
          */
         virtual Model::CreateRepositoryOutcome CreateRepository(const Model::CreateRepositoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateRepository that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateRepositoryOutcomeCallable CreateRepositoryCallable(const Model::CreateRepositoryRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateRepository that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateRepositoryAsync(const Model::CreateRepositoryRequest& request, const CreateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a repository in a public registry. If the repository contains images,
@@ -183,15 +190,6 @@ namespace ECRPublic
          */
         virtual Model::DeleteRepositoryOutcome DeleteRepository(const Model::DeleteRepositoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteRepository that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteRepositoryOutcomeCallable DeleteRepositoryCallable(const Model::DeleteRepositoryRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteRepository that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteRepositoryAsync(const Model::DeleteRepositoryRequest& request, const DeleteRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the repository policy associated with the specified
@@ -201,15 +199,6 @@ namespace ECRPublic
          */
         virtual Model::DeleteRepositoryPolicyOutcome DeleteRepositoryPolicy(const Model::DeleteRepositoryPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteRepositoryPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteRepositoryPolicyOutcomeCallable DeleteRepositoryPolicyCallable(const Model::DeleteRepositoryPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteRepositoryPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteRepositoryPolicyAsync(const Model::DeleteRepositoryPolicyRequest& request, const DeleteRepositoryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the image tag details for a repository in a public
@@ -219,15 +208,6 @@ namespace ECRPublic
          */
         virtual Model::DescribeImageTagsOutcome DescribeImageTags(const Model::DescribeImageTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeImageTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeImageTagsOutcomeCallable DescribeImageTagsCallable(const Model::DescribeImageTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeImageTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeImageTagsAsync(const Model::DescribeImageTagsRequest& request, const DescribeImageTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns metadata about the images in a repository in a public registry.</p>
@@ -241,15 +221,6 @@ namespace ECRPublic
          */
         virtual Model::DescribeImagesOutcome DescribeImages(const Model::DescribeImagesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeImages that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeImagesOutcomeCallable DescribeImagesCallable(const Model::DescribeImagesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeImages that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeImagesAsync(const Model::DescribeImagesRequest& request, const DescribeImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns details for a public registry.</p><p><h3>See Also:</h3>   <a
@@ -258,15 +229,6 @@ namespace ECRPublic
          */
         virtual Model::DescribeRegistriesOutcome DescribeRegistries(const Model::DescribeRegistriesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeRegistries that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeRegistriesOutcomeCallable DescribeRegistriesCallable(const Model::DescribeRegistriesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeRegistries that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeRegistriesAsync(const Model::DescribeRegistriesRequest& request, const DescribeRegistriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes repositories in a public registry.</p><p><h3>See Also:</h3>   <a
@@ -275,15 +237,6 @@ namespace ECRPublic
          */
         virtual Model::DescribeRepositoriesOutcome DescribeRepositories(const Model::DescribeRepositoriesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeRepositories that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeRepositoriesOutcomeCallable DescribeRepositoriesCallable(const Model::DescribeRepositoriesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeRepositories that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeRepositoriesAsync(const Model::DescribeRepositoriesRequest& request, const DescribeRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves an authorization token. An authorization token represents your IAM
@@ -297,15 +250,6 @@ namespace ECRPublic
          */
         virtual Model::GetAuthorizationTokenOutcome GetAuthorizationToken(const Model::GetAuthorizationTokenRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAuthorizationToken that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAuthorizationTokenOutcomeCallable GetAuthorizationTokenCallable(const Model::GetAuthorizationTokenRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAuthorizationToken that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAuthorizationTokenAsync(const Model::GetAuthorizationTokenRequest& request, const GetAuthorizationTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves catalog metadata for a public registry.</p><p><h3>See Also:</h3>  
@@ -315,15 +259,6 @@ namespace ECRPublic
          */
         virtual Model::GetRegistryCatalogDataOutcome GetRegistryCatalogData(const Model::GetRegistryCatalogDataRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRegistryCatalogData that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRegistryCatalogDataOutcomeCallable GetRegistryCatalogDataCallable(const Model::GetRegistryCatalogDataRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRegistryCatalogData that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRegistryCatalogDataAsync(const Model::GetRegistryCatalogDataRequest& request, const GetRegistryCatalogDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieve catalog metadata for a repository in a public registry. This
@@ -334,15 +269,6 @@ namespace ECRPublic
          */
         virtual Model::GetRepositoryCatalogDataOutcome GetRepositoryCatalogData(const Model::GetRepositoryCatalogDataRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRepositoryCatalogData that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRepositoryCatalogDataOutcomeCallable GetRepositoryCatalogDataCallable(const Model::GetRepositoryCatalogDataRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRepositoryCatalogData that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRepositoryCatalogDataAsync(const Model::GetRepositoryCatalogDataRequest& request, const GetRepositoryCatalogDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the repository policy for the specified repository.</p><p><h3>See
@@ -352,15 +278,6 @@ namespace ECRPublic
          */
         virtual Model::GetRepositoryPolicyOutcome GetRepositoryPolicy(const Model::GetRepositoryPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRepositoryPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRepositoryPolicyOutcomeCallable GetRepositoryPolicyCallable(const Model::GetRepositoryPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRepositoryPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRepositoryPolicyAsync(const Model::GetRepositoryPolicyRequest& request, const GetRepositoryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Notifies Amazon ECR that you intend to upload an image layer.</p> <p>When an
@@ -376,15 +293,6 @@ namespace ECRPublic
          */
         virtual Model::InitiateLayerUploadOutcome InitiateLayerUpload(const Model::InitiateLayerUploadRequest& request) const;
 
-        /**
-         * A Callable wrapper for InitiateLayerUpload that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::InitiateLayerUploadOutcomeCallable InitiateLayerUploadCallable(const Model::InitiateLayerUploadRequest& request) const;
-
-        /**
-         * An Async wrapper for InitiateLayerUpload that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void InitiateLayerUploadAsync(const Model::InitiateLayerUploadRequest& request, const InitiateLayerUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List the tags for an Amazon ECR Public resource.</p><p><h3>See Also:</h3>  
@@ -394,15 +302,6 @@ namespace ECRPublic
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates or updates the image manifest and tags associated with an image.</p>
@@ -417,15 +316,6 @@ namespace ECRPublic
          */
         virtual Model::PutImageOutcome PutImage(const Model::PutImageRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutImage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutImageOutcomeCallable PutImageCallable(const Model::PutImageRequest& request) const;
-
-        /**
-         * An Async wrapper for PutImage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutImageAsync(const Model::PutImageRequest& request, const PutImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Create or updates the catalog data for a public registry.</p><p><h3>See
@@ -435,15 +325,6 @@ namespace ECRPublic
          */
         virtual Model::PutRegistryCatalogDataOutcome PutRegistryCatalogData(const Model::PutRegistryCatalogDataRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutRegistryCatalogData that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutRegistryCatalogDataOutcomeCallable PutRegistryCatalogDataCallable(const Model::PutRegistryCatalogDataRequest& request) const;
-
-        /**
-         * An Async wrapper for PutRegistryCatalogData that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutRegistryCatalogDataAsync(const Model::PutRegistryCatalogDataRequest& request, const PutRegistryCatalogDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates or updates the catalog data for a repository in a public
@@ -453,15 +334,6 @@ namespace ECRPublic
          */
         virtual Model::PutRepositoryCatalogDataOutcome PutRepositoryCatalogData(const Model::PutRepositoryCatalogDataRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutRepositoryCatalogData that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutRepositoryCatalogDataOutcomeCallable PutRepositoryCatalogDataCallable(const Model::PutRepositoryCatalogDataRequest& request) const;
-
-        /**
-         * An Async wrapper for PutRepositoryCatalogData that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutRepositoryCatalogDataAsync(const Model::PutRepositoryCatalogDataRequest& request, const PutRepositoryCatalogDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Applies a repository policy to the specified public repository to control
@@ -474,15 +346,6 @@ namespace ECRPublic
          */
         virtual Model::SetRepositoryPolicyOutcome SetRepositoryPolicy(const Model::SetRepositoryPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for SetRepositoryPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SetRepositoryPolicyOutcomeCallable SetRepositoryPolicyCallable(const Model::SetRepositoryPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for SetRepositoryPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SetRepositoryPolicyAsync(const Model::SetRepositoryPolicyRequest& request, const SetRepositoryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates the specified tags to a resource with the specified
@@ -495,15 +358,6 @@ namespace ECRPublic
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes specified tags from a resource.</p><p><h3>See Also:</h3>   <a
@@ -512,15 +366,6 @@ namespace ECRPublic
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Uploads an image layer part to Amazon ECR.</p> <p>When an image is pushed,
@@ -535,15 +380,6 @@ namespace ECRPublic
          */
         virtual Model::UploadLayerPartOutcome UploadLayerPart(const Model::UploadLayerPartRequest& request) const;
 
-        /**
-         * A Callable wrapper for UploadLayerPart that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UploadLayerPartOutcomeCallable UploadLayerPartCallable(const Model::UploadLayerPartRequest& request) const;
-
-        /**
-         * An Async wrapper for UploadLayerPart that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UploadLayerPartAsync(const Model::UploadLayerPartRequest& request, const UploadLayerPartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

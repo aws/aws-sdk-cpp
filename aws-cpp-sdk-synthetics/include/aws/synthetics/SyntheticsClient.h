@@ -7,8 +7,10 @@
 #include <aws/synthetics/Synthetics_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/synthetics/SyntheticsServiceClientModel.h>
+#include <aws/synthetics/SyntheticsLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -87,6 +89,47 @@ namespace Synthetics
         virtual ~SyntheticsClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Associates a canary with a group. Using groups can help you with managing and
          * automating your canaries, and you can also view aggregated run results and
@@ -97,15 +140,6 @@ namespace Synthetics
          */
         virtual Model::AssociateResourceOutcome AssociateResource(const Model::AssociateResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateResourceOutcomeCallable AssociateResourceCallable(const Model::AssociateResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateResourceAsync(const Model::AssociateResourceRequest& request, const AssociateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a canary. Canaries are scripts that monitor your endpoints and APIs
@@ -132,15 +166,6 @@ namespace Synthetics
          */
         virtual Model::CreateCanaryOutcome CreateCanary(const Model::CreateCanaryRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateCanary that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateCanaryOutcomeCallable CreateCanaryCallable(const Model::CreateCanaryRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateCanary that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateCanaryAsync(const Model::CreateCanaryRequest& request, const CreateCanaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a group which you can use to associate canaries with each other,
@@ -164,15 +189,6 @@ namespace Synthetics
          */
         virtual Model::CreateGroupOutcome CreateGroup(const Model::CreateGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateGroupOutcomeCallable CreateGroupCallable(const Model::CreateGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateGroupAsync(const Model::CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Permanently deletes the specified canary.</p> <p>If you specify
@@ -198,15 +214,6 @@ namespace Synthetics
          */
         virtual Model::DeleteCanaryOutcome DeleteCanary(const Model::DeleteCanaryRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteCanary that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteCanaryOutcomeCallable DeleteCanaryCallable(const Model::DeleteCanaryRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteCanary that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteCanaryAsync(const Model::DeleteCanaryRequest& request, const DeleteCanaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a group. The group doesn't need to be empty to be deleted. If there
@@ -219,15 +226,6 @@ namespace Synthetics
          */
         virtual Model::DeleteGroupOutcome DeleteGroup(const Model::DeleteGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteGroupOutcomeCallable DeleteGroupCallable(const Model::DeleteGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteGroupAsync(const Model::DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation returns a list of the canaries in your account, along with
@@ -247,15 +245,6 @@ namespace Synthetics
          */
         virtual Model::DescribeCanariesOutcome DescribeCanaries(const Model::DescribeCanariesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeCanaries that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeCanariesOutcomeCallable DescribeCanariesCallable(const Model::DescribeCanariesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeCanaries that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeCanariesAsync(const Model::DescribeCanariesRequest& request, const DescribeCanariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Use this operation to see information from the most recent run of each canary
@@ -275,15 +264,6 @@ namespace Synthetics
          */
         virtual Model::DescribeCanariesLastRunOutcome DescribeCanariesLastRun(const Model::DescribeCanariesLastRunRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeCanariesLastRun that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeCanariesLastRunOutcomeCallable DescribeCanariesLastRunCallable(const Model::DescribeCanariesLastRunRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeCanariesLastRun that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeCanariesLastRunAsync(const Model::DescribeCanariesLastRunRequest& request, const DescribeCanariesLastRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of Synthetics canary runtime versions. For more information,
@@ -295,15 +275,6 @@ namespace Synthetics
          */
         virtual Model::DescribeRuntimeVersionsOutcome DescribeRuntimeVersions(const Model::DescribeRuntimeVersionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeRuntimeVersions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeRuntimeVersionsOutcomeCallable DescribeRuntimeVersionsCallable(const Model::DescribeRuntimeVersionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeRuntimeVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeRuntimeVersionsAsync(const Model::DescribeRuntimeVersionsRequest& request, const DescribeRuntimeVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes a canary from a group. You must run this operation in the Region
@@ -313,15 +284,6 @@ namespace Synthetics
          */
         virtual Model::DisassociateResourceOutcome DisassociateResource(const Model::DisassociateResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateResourceOutcomeCallable DisassociateResourceCallable(const Model::DisassociateResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateResourceAsync(const Model::DisassociateResourceRequest& request, const DisassociateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves complete information about one canary. You must specify the name of
@@ -333,15 +295,6 @@ namespace Synthetics
          */
         virtual Model::GetCanaryOutcome GetCanary(const Model::GetCanaryRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetCanary that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetCanaryOutcomeCallable GetCanaryCallable(const Model::GetCanaryRequest& request) const;
-
-        /**
-         * An Async wrapper for GetCanary that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetCanaryAsync(const Model::GetCanaryRequest& request, const GetCanaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list of runs for a specified canary.</p><p><h3>See Also:</h3>  
@@ -351,15 +304,6 @@ namespace Synthetics
          */
         virtual Model::GetCanaryRunsOutcome GetCanaryRuns(const Model::GetCanaryRunsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetCanaryRuns that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetCanaryRunsOutcomeCallable GetCanaryRunsCallable(const Model::GetCanaryRunsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetCanaryRuns that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetCanaryRunsAsync(const Model::GetCanaryRunsRequest& request, const GetCanaryRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about one group. Groups are a global resource, so you can
@@ -369,15 +313,6 @@ namespace Synthetics
          */
         virtual Model::GetGroupOutcome GetGroup(const Model::GetGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetGroupOutcomeCallable GetGroupCallable(const Model::GetGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for GetGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetGroupAsync(const Model::GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of the groups that the specified canary is associated with.
@@ -388,15 +323,6 @@ namespace Synthetics
          */
         virtual Model::ListAssociatedGroupsOutcome ListAssociatedGroups(const Model::ListAssociatedGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAssociatedGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAssociatedGroupsOutcomeCallable ListAssociatedGroupsCallable(const Model::ListAssociatedGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAssociatedGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAssociatedGroupsAsync(const Model::ListAssociatedGroupsRequest& request, const ListAssociatedGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation returns a list of the ARNs of the canaries that are associated
@@ -406,15 +332,6 @@ namespace Synthetics
          */
         virtual Model::ListGroupResourcesOutcome ListGroupResources(const Model::ListGroupResourcesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListGroupResources that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListGroupResourcesOutcomeCallable ListGroupResourcesCallable(const Model::ListGroupResourcesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListGroupResources that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListGroupResourcesAsync(const Model::ListGroupResourcesRequest& request, const ListGroupResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of all groups in the account, displaying their names, unique
@@ -425,15 +342,6 @@ namespace Synthetics
          */
         virtual Model::ListGroupsOutcome ListGroups(const Model::ListGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListGroupsOutcomeCallable ListGroupsCallable(const Model::ListGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListGroupsAsync(const Model::ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Displays the tags associated with a canary or group.</p><p><h3>See Also:</h3>
@@ -443,15 +351,6 @@ namespace Synthetics
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Use this operation to run a canary that has already been created. The
@@ -464,15 +363,6 @@ namespace Synthetics
          */
         virtual Model::StartCanaryOutcome StartCanary(const Model::StartCanaryRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartCanary that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartCanaryOutcomeCallable StartCanaryCallable(const Model::StartCanaryRequest& request) const;
-
-        /**
-         * An Async wrapper for StartCanary that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartCanaryAsync(const Model::StartCanaryRequest& request, const StartCanaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops the canary to prevent all future runs. If the canary is currently
@@ -486,15 +376,6 @@ namespace Synthetics
          */
         virtual Model::StopCanaryOutcome StopCanary(const Model::StopCanaryRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopCanary that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopCanaryOutcomeCallable StopCanaryCallable(const Model::StopCanaryRequest& request) const;
-
-        /**
-         * An Async wrapper for StopCanary that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopCanaryAsync(const Model::StopCanaryRequest& request, const StopCanaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Assigns one or more tags (key-value pairs) to the specified canary or group.
@@ -514,15 +395,6 @@ namespace Synthetics
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes one or more tags from the specified resource.</p><p><h3>See
@@ -532,15 +404,6 @@ namespace Synthetics
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the configuration of a canary that has already been created.</p>
@@ -553,15 +416,6 @@ namespace Synthetics
          */
         virtual Model::UpdateCanaryOutcome UpdateCanary(const Model::UpdateCanaryRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateCanary that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateCanaryOutcomeCallable UpdateCanaryCallable(const Model::UpdateCanaryRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateCanary that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateCanaryAsync(const Model::UpdateCanaryRequest& request, const UpdateCanaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

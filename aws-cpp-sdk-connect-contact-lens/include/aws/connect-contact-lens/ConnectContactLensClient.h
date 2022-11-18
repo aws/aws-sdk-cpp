@@ -7,8 +7,10 @@
 #include <aws/connect-contact-lens/ConnectContactLens_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/connect-contact-lens/ConnectContactLensServiceClientModel.h>
+#include <aws/connect-contact-lens/ConnectContactLensLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -81,6 +83,47 @@ namespace ConnectContactLens
         virtual ~ConnectContactLensClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Provides a list of analysis segments for a real-time analysis
          * session.</p><p><h3>See Also:</h3>   <a
@@ -89,15 +132,6 @@ namespace ConnectContactLens
          */
         virtual Model::ListRealtimeContactAnalysisSegmentsOutcome ListRealtimeContactAnalysisSegments(const Model::ListRealtimeContactAnalysisSegmentsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListRealtimeContactAnalysisSegments that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListRealtimeContactAnalysisSegmentsOutcomeCallable ListRealtimeContactAnalysisSegmentsCallable(const Model::ListRealtimeContactAnalysisSegmentsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListRealtimeContactAnalysisSegments that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListRealtimeContactAnalysisSegmentsAsync(const Model::ListRealtimeContactAnalysisSegmentsRequest& request, const ListRealtimeContactAnalysisSegmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

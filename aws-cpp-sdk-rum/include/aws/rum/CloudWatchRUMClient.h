@@ -7,8 +7,10 @@
 #include <aws/rum/CloudWatchRUM_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/rum/CloudWatchRUMServiceClientModel.h>
+#include <aws/rum/CloudWatchRUMLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -83,6 +85,47 @@ namespace CloudWatchRUM
         virtual ~CloudWatchRUMClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Specifies the extended metrics that you want a CloudWatch RUM app monitor to
          * send to a destination. Valid destinations include CloudWatch and Evidently.</p>
@@ -116,15 +159,6 @@ namespace CloudWatchRUM
          */
         virtual Model::BatchCreateRumMetricDefinitionsOutcome BatchCreateRumMetricDefinitions(const Model::BatchCreateRumMetricDefinitionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchCreateRumMetricDefinitions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchCreateRumMetricDefinitionsOutcomeCallable BatchCreateRumMetricDefinitionsCallable(const Model::BatchCreateRumMetricDefinitionsRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchCreateRumMetricDefinitions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchCreateRumMetricDefinitionsAsync(const Model::BatchCreateRumMetricDefinitionsRequest& request, const BatchCreateRumMetricDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified metrics from being sent to an extended metrics
@@ -140,15 +174,6 @@ namespace CloudWatchRUM
          */
         virtual Model::BatchDeleteRumMetricDefinitionsOutcome BatchDeleteRumMetricDefinitions(const Model::BatchDeleteRumMetricDefinitionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchDeleteRumMetricDefinitions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchDeleteRumMetricDefinitionsOutcomeCallable BatchDeleteRumMetricDefinitionsCallable(const Model::BatchDeleteRumMetricDefinitionsRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchDeleteRumMetricDefinitions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchDeleteRumMetricDefinitionsAsync(const Model::BatchDeleteRumMetricDefinitionsRequest& request, const BatchDeleteRumMetricDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the list of metrics and dimensions that a RUM app monitor is
@@ -158,15 +183,6 @@ namespace CloudWatchRUM
          */
         virtual Model::BatchGetRumMetricDefinitionsOutcome BatchGetRumMetricDefinitions(const Model::BatchGetRumMetricDefinitionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchGetRumMetricDefinitions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchGetRumMetricDefinitionsOutcomeCallable BatchGetRumMetricDefinitionsCallable(const Model::BatchGetRumMetricDefinitionsRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchGetRumMetricDefinitions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchGetRumMetricDefinitionsAsync(const Model::BatchGetRumMetricDefinitionsRequest& request, const BatchGetRumMetricDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a Amazon CloudWatch RUM app monitor, which collects telemetry data
@@ -186,15 +202,6 @@ namespace CloudWatchRUM
          */
         virtual Model::CreateAppMonitorOutcome CreateAppMonitor(const Model::CreateAppMonitorRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateAppMonitor that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateAppMonitorOutcomeCallable CreateAppMonitorCallable(const Model::CreateAppMonitorRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateAppMonitor that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateAppMonitorAsync(const Model::CreateAppMonitorRequest& request, const CreateAppMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an existing app monitor. This immediately stops the collection of
@@ -204,15 +211,6 @@ namespace CloudWatchRUM
          */
         virtual Model::DeleteAppMonitorOutcome DeleteAppMonitor(const Model::DeleteAppMonitorRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAppMonitor that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAppMonitorOutcomeCallable DeleteAppMonitorCallable(const Model::DeleteAppMonitorRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAppMonitor that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAppMonitorAsync(const Model::DeleteAppMonitorRequest& request, const DeleteAppMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a destination for CloudWatch RUM extended metrics, so that the
@@ -223,15 +221,6 @@ namespace CloudWatchRUM
          */
         virtual Model::DeleteRumMetricsDestinationOutcome DeleteRumMetricsDestination(const Model::DeleteRumMetricsDestinationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteRumMetricsDestination that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteRumMetricsDestinationOutcomeCallable DeleteRumMetricsDestinationCallable(const Model::DeleteRumMetricsDestinationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteRumMetricsDestination that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteRumMetricsDestinationAsync(const Model::DeleteRumMetricsDestinationRequest& request, const DeleteRumMetricsDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the complete configuration information for one app
@@ -241,15 +230,6 @@ namespace CloudWatchRUM
          */
         virtual Model::GetAppMonitorOutcome GetAppMonitor(const Model::GetAppMonitorRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAppMonitor that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAppMonitorOutcomeCallable GetAppMonitorCallable(const Model::GetAppMonitorRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAppMonitor that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAppMonitorAsync(const Model::GetAppMonitorRequest& request, const GetAppMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the raw performance events that RUM has collected from your web
@@ -260,15 +240,6 @@ namespace CloudWatchRUM
          */
         virtual Model::GetAppMonitorDataOutcome GetAppMonitorData(const Model::GetAppMonitorDataRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAppMonitorData that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAppMonitorDataOutcomeCallable GetAppMonitorDataCallable(const Model::GetAppMonitorDataRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAppMonitorData that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAppMonitorDataAsync(const Model::GetAppMonitorDataRequest& request, const GetAppMonitorDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of the Amazon CloudWatch RUM app monitors in the
@@ -278,15 +249,6 @@ namespace CloudWatchRUM
          */
         virtual Model::ListAppMonitorsOutcome ListAppMonitors(const Model::ListAppMonitorsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAppMonitors that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAppMonitorsOutcomeCallable ListAppMonitorsCallable(const Model::ListAppMonitorsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAppMonitors that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAppMonitorsAsync(const Model::ListAppMonitorsRequest& request, const ListAppMonitorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of destinations that you have created to receive RUM extended
@@ -299,15 +261,6 @@ namespace CloudWatchRUM
          */
         virtual Model::ListRumMetricsDestinationsOutcome ListRumMetricsDestinations(const Model::ListRumMetricsDestinationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListRumMetricsDestinations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListRumMetricsDestinationsOutcomeCallable ListRumMetricsDestinationsCallable(const Model::ListRumMetricsDestinationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListRumMetricsDestinations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListRumMetricsDestinationsAsync(const Model::ListRumMetricsDestinationsRequest& request, const ListRumMetricsDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Displays the tags associated with a CloudWatch RUM resource.</p><p><h3>See
@@ -317,15 +270,6 @@ namespace CloudWatchRUM
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sends telemetry events about your application performance and user behavior
@@ -338,15 +282,6 @@ namespace CloudWatchRUM
          */
         virtual Model::PutRumEventsOutcome PutRumEvents(const Model::PutRumEventsRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutRumEvents that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutRumEventsOutcomeCallable PutRumEventsCallable(const Model::PutRumEventsRequest& request) const;
-
-        /**
-         * An Async wrapper for PutRumEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutRumEventsAsync(const Model::PutRumEventsRequest& request, const PutRumEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates or updates a destination to receive extended metrics from CloudWatch
@@ -359,15 +294,6 @@ namespace CloudWatchRUM
          */
         virtual Model::PutRumMetricsDestinationOutcome PutRumMetricsDestination(const Model::PutRumMetricsDestinationRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutRumMetricsDestination that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutRumMetricsDestinationOutcomeCallable PutRumMetricsDestinationCallable(const Model::PutRumMetricsDestinationRequest& request) const;
-
-        /**
-         * An Async wrapper for PutRumMetricsDestination that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutRumMetricsDestinationAsync(const Model::PutRumMetricsDestinationRequest& request, const PutRumMetricsDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Assigns one or more tags (key-value pairs) to the specified CloudWatch RUM
@@ -389,15 +315,6 @@ namespace CloudWatchRUM
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes one or more tags from the specified resource.</p><p><h3>See
@@ -407,15 +324,6 @@ namespace CloudWatchRUM
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the configuration of an existing app monitor. When you use this
@@ -437,15 +345,6 @@ namespace CloudWatchRUM
          */
         virtual Model::UpdateAppMonitorOutcome UpdateAppMonitor(const Model::UpdateAppMonitorRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateAppMonitor that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateAppMonitorOutcomeCallable UpdateAppMonitorCallable(const Model::UpdateAppMonitorRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateAppMonitor that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateAppMonitorAsync(const Model::UpdateAppMonitorRequest& request, const UpdateAppMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies one existing metric definition for CloudWatch RUM extended metrics.
@@ -457,15 +356,6 @@ namespace CloudWatchRUM
          */
         virtual Model::UpdateRumMetricDefinitionOutcome UpdateRumMetricDefinition(const Model::UpdateRumMetricDefinitionRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateRumMetricDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateRumMetricDefinitionOutcomeCallable UpdateRumMetricDefinitionCallable(const Model::UpdateRumMetricDefinitionRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateRumMetricDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateRumMetricDefinitionAsync(const Model::UpdateRumMetricDefinitionRequest& request, const UpdateRumMetricDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

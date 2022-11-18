@@ -7,8 +7,10 @@
 #include <aws/cloudtrail/CloudTrail_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/cloudtrail/CloudTrailServiceClientModel.h>
+#include <aws/cloudtrail/CloudTrailLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -91,6 +93,47 @@ namespace CloudTrail
         virtual ~CloudTrailClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Adds one or more tags to a trail or event data store, up to a limit of 50.
          * Overwrites an existing tag's value when a new value is specified for an existing
@@ -105,15 +148,6 @@ namespace CloudTrail
          */
         virtual Model::AddTagsOutcome AddTags(const Model::AddTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddTagsOutcomeCallable AddTagsCallable(const Model::AddTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for AddTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddTagsAsync(const Model::AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Cancels a query if the query is not in a terminated state, such as
@@ -128,15 +162,6 @@ namespace CloudTrail
          */
         virtual Model::CancelQueryOutcome CancelQuery(const Model::CancelQueryRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelQuery that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelQueryOutcomeCallable CancelQueryCallable(const Model::CancelQueryRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelQuery that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelQueryAsync(const Model::CancelQueryRequest& request, const CancelQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new event data store.</p><p><h3>See Also:</h3>   <a
@@ -145,15 +170,6 @@ namespace CloudTrail
          */
         virtual Model::CreateEventDataStoreOutcome CreateEventDataStore(const Model::CreateEventDataStoreRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateEventDataStore that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateEventDataStoreOutcomeCallable CreateEventDataStoreCallable(const Model::CreateEventDataStoreRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateEventDataStore that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateEventDataStoreAsync(const Model::CreateEventDataStoreRequest& request, const CreateEventDataStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a trail that specifies the settings for delivery of log data to an
@@ -163,15 +179,6 @@ namespace CloudTrail
          */
         virtual Model::CreateTrailOutcome CreateTrail(const Model::CreateTrailRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateTrail that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateTrailOutcomeCallable CreateTrailCallable(const Model::CreateTrailRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateTrail that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateTrailAsync(const Model::CreateTrailRequest& request, const CreateTrailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disables the event data store specified by <code>EventDataStore</code>, which
@@ -192,15 +199,6 @@ namespace CloudTrail
          */
         virtual Model::DeleteEventDataStoreOutcome DeleteEventDataStore(const Model::DeleteEventDataStoreRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteEventDataStore that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteEventDataStoreOutcomeCallable DeleteEventDataStoreCallable(const Model::DeleteEventDataStoreRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteEventDataStore that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteEventDataStoreAsync(const Model::DeleteEventDataStoreRequest& request, const DeleteEventDataStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a trail. This operation must be called from the region in which the
@@ -212,15 +210,6 @@ namespace CloudTrail
          */
         virtual Model::DeleteTrailOutcome DeleteTrail(const Model::DeleteTrailRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteTrail that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteTrailOutcomeCallable DeleteTrailCallable(const Model::DeleteTrailRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteTrail that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteTrailAsync(const Model::DeleteTrailRequest& request, const DeleteTrailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes CloudTrail delegated administrator permissions from a member account
@@ -230,15 +219,6 @@ namespace CloudTrail
          */
         virtual Model::DeregisterOrganizationDelegatedAdminOutcome DeregisterOrganizationDelegatedAdmin(const Model::DeregisterOrganizationDelegatedAdminRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeregisterOrganizationDelegatedAdmin that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeregisterOrganizationDelegatedAdminOutcomeCallable DeregisterOrganizationDelegatedAdminCallable(const Model::DeregisterOrganizationDelegatedAdminRequest& request) const;
-
-        /**
-         * An Async wrapper for DeregisterOrganizationDelegatedAdmin that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeregisterOrganizationDelegatedAdminAsync(const Model::DeregisterOrganizationDelegatedAdminRequest& request, const DeregisterOrganizationDelegatedAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns metadata about a query, including query run time in milliseconds,
@@ -250,15 +230,6 @@ namespace CloudTrail
          */
         virtual Model::DescribeQueryOutcome DescribeQuery(const Model::DescribeQueryRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeQuery that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeQueryOutcomeCallable DescribeQueryCallable(const Model::DescribeQueryRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeQuery that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeQueryAsync(const Model::DescribeQueryRequest& request, const DescribeQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves settings for one or more trails associated with the current region
@@ -268,15 +239,6 @@ namespace CloudTrail
          */
         virtual Model::DescribeTrailsOutcome DescribeTrails(const Model::DescribeTrailsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTrails that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTrailsOutcomeCallable DescribeTrailsCallable(const Model::DescribeTrailsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTrails that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTrailsAsync(const Model::DescribeTrailsRequest& request, const DescribeTrailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns information about a specific channel. Amazon Web Services services
@@ -290,15 +252,6 @@ namespace CloudTrail
          */
         virtual Model::GetChannelOutcome GetChannel(const Model::GetChannelRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetChannel that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetChannelOutcomeCallable GetChannelCallable(const Model::GetChannelRequest& request) const;
-
-        /**
-         * An Async wrapper for GetChannel that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetChannelAsync(const Model::GetChannelRequest& request, const GetChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about an event data store specified as either an ARN or
@@ -308,15 +261,6 @@ namespace CloudTrail
          */
         virtual Model::GetEventDataStoreOutcome GetEventDataStore(const Model::GetEventDataStoreRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetEventDataStore that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetEventDataStoreOutcomeCallable GetEventDataStoreCallable(const Model::GetEventDataStoreRequest& request) const;
-
-        /**
-         * An Async wrapper for GetEventDataStore that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetEventDataStoreAsync(const Model::GetEventDataStoreRequest& request, const GetEventDataStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the settings for the event selectors that you configured for your
@@ -337,15 +281,6 @@ namespace CloudTrail
          */
         virtual Model::GetEventSelectorsOutcome GetEventSelectors(const Model::GetEventSelectorsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetEventSelectors that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetEventSelectorsOutcomeCallable GetEventSelectorsCallable(const Model::GetEventSelectorsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetEventSelectors that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetEventSelectorsAsync(const Model::GetEventSelectorsRequest& request, const GetEventSelectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns information about a specific import. </p><p><h3>See Also:</h3>   <a
@@ -354,15 +289,6 @@ namespace CloudTrail
          */
         virtual Model::GetImportOutcome GetImport(const Model::GetImportRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetImport that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetImportOutcomeCallable GetImportCallable(const Model::GetImportRequest& request) const;
-
-        /**
-         * An Async wrapper for GetImport that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetImportAsync(const Model::GetImportRequest& request, const GetImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the settings for the Insights event selectors that you configured
@@ -379,15 +305,6 @@ namespace CloudTrail
          */
         virtual Model::GetInsightSelectorsOutcome GetInsightSelectors(const Model::GetInsightSelectorsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetInsightSelectors that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetInsightSelectorsOutcomeCallable GetInsightSelectorsCallable(const Model::GetInsightSelectorsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetInsightSelectors that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetInsightSelectorsAsync(const Model::GetInsightSelectorsRequest& request, const GetInsightSelectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets event data results of a query. You must specify the <code>QueryID</code>
@@ -398,15 +315,6 @@ namespace CloudTrail
          */
         virtual Model::GetQueryResultsOutcome GetQueryResults(const Model::GetQueryResultsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetQueryResults that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetQueryResultsOutcomeCallable GetQueryResultsCallable(const Model::GetQueryResultsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetQueryResults that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetQueryResultsAsync(const Model::GetQueryResultsRequest& request, const GetQueryResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns settings information for a specified trail.</p><p><h3>See Also:</h3> 
@@ -416,15 +324,6 @@ namespace CloudTrail
          */
         virtual Model::GetTrailOutcome GetTrail(const Model::GetTrailRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetTrail that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetTrailOutcomeCallable GetTrailCallable(const Model::GetTrailRequest& request) const;
-
-        /**
-         * An Async wrapper for GetTrail that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetTrailAsync(const Model::GetTrailRequest& request, const GetTrailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a JSON-formatted list of information about the specified trail.
@@ -437,15 +336,6 @@ namespace CloudTrail
          */
         virtual Model::GetTrailStatusOutcome GetTrailStatus(const Model::GetTrailStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetTrailStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetTrailStatusOutcomeCallable GetTrailStatusCallable(const Model::GetTrailStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for GetTrailStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetTrailStatusAsync(const Model::GetTrailStatusRequest& request, const GetTrailStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Lists the channels in the current account, and their source names. Amazon
@@ -460,15 +350,6 @@ namespace CloudTrail
          */
         virtual Model::ListChannelsOutcome ListChannels(const Model::ListChannelsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListChannels that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListChannelsOutcomeCallable ListChannelsCallable(const Model::ListChannelsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListChannels that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListChannelsAsync(const Model::ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about all event data stores in the account, in the
@@ -478,15 +359,6 @@ namespace CloudTrail
          */
         virtual Model::ListEventDataStoresOutcome ListEventDataStores(const Model::ListEventDataStoresRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListEventDataStores that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListEventDataStoresOutcomeCallable ListEventDataStoresCallable(const Model::ListEventDataStoresRequest& request) const;
-
-        /**
-         * An Async wrapper for ListEventDataStores that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListEventDataStoresAsync(const Model::ListEventDataStoresRequest& request, const ListEventDataStoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a list of failures for the specified import. </p><p><h3>See
@@ -496,15 +368,6 @@ namespace CloudTrail
          */
         virtual Model::ListImportFailuresOutcome ListImportFailures(const Model::ListImportFailuresRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListImportFailures that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListImportFailuresOutcomeCallable ListImportFailuresCallable(const Model::ListImportFailuresRequest& request) const;
-
-        /**
-         * An Async wrapper for ListImportFailures that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListImportFailuresAsync(const Model::ListImportFailuresRequest& request, const ListImportFailuresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns information on all imports, or a select set of imports by
@@ -515,15 +378,6 @@ namespace CloudTrail
          */
         virtual Model::ListImportsOutcome ListImports(const Model::ListImportsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListImports that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListImportsOutcomeCallable ListImportsCallable(const Model::ListImportsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListImports that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListImportsAsync(const Model::ListImportsRequest& request, const ListImportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns all public keys whose private keys were used to sign the digest files
@@ -538,15 +392,6 @@ namespace CloudTrail
          */
         virtual Model::ListPublicKeysOutcome ListPublicKeys(const Model::ListPublicKeysRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPublicKeys that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPublicKeysOutcomeCallable ListPublicKeysCallable(const Model::ListPublicKeysRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPublicKeys that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPublicKeysAsync(const Model::ListPublicKeysRequest& request, const ListPublicKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of queries and query statuses for the past seven days. You
@@ -562,15 +407,6 @@ namespace CloudTrail
          */
         virtual Model::ListQueriesOutcome ListQueries(const Model::ListQueriesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListQueries that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListQueriesOutcomeCallable ListQueriesCallable(const Model::ListQueriesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListQueries that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListQueriesAsync(const Model::ListQueriesRequest& request, const ListQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the tags for the trail or event data store in the current
@@ -580,15 +416,6 @@ namespace CloudTrail
          */
         virtual Model::ListTagsOutcome ListTags(const Model::ListTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsOutcomeCallable ListTagsCallable(const Model::ListTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsAsync(const Model::ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists trails that are in the current account.</p><p><h3>See Also:</h3>   <a
@@ -597,15 +424,6 @@ namespace CloudTrail
          */
         virtual Model::ListTrailsOutcome ListTrails(const Model::ListTrailsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTrails that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTrailsOutcomeCallable ListTrailsCallable(const Model::ListTrailsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTrails that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTrailsAsync(const Model::ListTrailsRequest& request, const ListTrailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Looks up <a
@@ -631,15 +449,6 @@ namespace CloudTrail
          */
         virtual Model::LookupEventsOutcome LookupEvents(const Model::LookupEventsRequest& request) const;
 
-        /**
-         * A Callable wrapper for LookupEvents that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::LookupEventsOutcomeCallable LookupEventsCallable(const Model::LookupEventsRequest& request) const;
-
-        /**
-         * An Async wrapper for LookupEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void LookupEventsAsync(const Model::LookupEventsRequest& request, const LookupEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Configures an event selector or advanced event selectors for your trail. Use
@@ -683,15 +492,6 @@ namespace CloudTrail
          */
         virtual Model::PutEventSelectorsOutcome PutEventSelectors(const Model::PutEventSelectorsRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutEventSelectors that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutEventSelectorsOutcomeCallable PutEventSelectorsCallable(const Model::PutEventSelectorsRequest& request) const;
-
-        /**
-         * An Async wrapper for PutEventSelectors that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutEventSelectorsAsync(const Model::PutEventSelectorsRequest& request, const PutEventSelectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lets you enable Insights event logging by specifying the Insights selectors
@@ -705,15 +505,6 @@ namespace CloudTrail
          */
         virtual Model::PutInsightSelectorsOutcome PutInsightSelectors(const Model::PutInsightSelectorsRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutInsightSelectors that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutInsightSelectorsOutcomeCallable PutInsightSelectorsCallable(const Model::PutInsightSelectorsRequest& request) const;
-
-        /**
-         * An Async wrapper for PutInsightSelectors that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutInsightSelectorsAsync(const Model::PutInsightSelectorsRequest& request, const PutInsightSelectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Registers an organization’s member account as the CloudTrail delegated
@@ -723,15 +514,6 @@ namespace CloudTrail
          */
         virtual Model::RegisterOrganizationDelegatedAdminOutcome RegisterOrganizationDelegatedAdmin(const Model::RegisterOrganizationDelegatedAdminRequest& request) const;
 
-        /**
-         * A Callable wrapper for RegisterOrganizationDelegatedAdmin that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RegisterOrganizationDelegatedAdminOutcomeCallable RegisterOrganizationDelegatedAdminCallable(const Model::RegisterOrganizationDelegatedAdminRequest& request) const;
-
-        /**
-         * An Async wrapper for RegisterOrganizationDelegatedAdmin that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RegisterOrganizationDelegatedAdminAsync(const Model::RegisterOrganizationDelegatedAdminRequest& request, const RegisterOrganizationDelegatedAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified tags from a trail or event data store.</p><p><h3>See
@@ -741,15 +523,6 @@ namespace CloudTrail
          */
         virtual Model::RemoveTagsOutcome RemoveTags(const Model::RemoveTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for RemoveTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RemoveTagsOutcomeCallable RemoveTagsCallable(const Model::RemoveTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for RemoveTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RemoveTagsAsync(const Model::RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Restores a deleted event data store specified by <code>EventDataStore</code>,
@@ -762,15 +535,6 @@ namespace CloudTrail
          */
         virtual Model::RestoreEventDataStoreOutcome RestoreEventDataStore(const Model::RestoreEventDataStoreRequest& request) const;
 
-        /**
-         * A Callable wrapper for RestoreEventDataStore that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RestoreEventDataStoreOutcomeCallable RestoreEventDataStoreCallable(const Model::RestoreEventDataStoreRequest& request) const;
-
-        /**
-         * An Async wrapper for RestoreEventDataStore that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RestoreEventDataStoreAsync(const Model::RestoreEventDataStoreRequest& request, const RestoreEventDataStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Starts an import of logged trail events from a source S3 bucket to a
@@ -795,15 +559,6 @@ namespace CloudTrail
          */
         virtual Model::StartImportOutcome StartImport(const Model::StartImportRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartImport that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartImportOutcomeCallable StartImportCallable(const Model::StartImportRequest& request) const;
-
-        /**
-         * An Async wrapper for StartImport that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartImportAsync(const Model::StartImportRequest& request, const StartImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts the recording of Amazon Web Services API calls and log file delivery
@@ -816,15 +571,6 @@ namespace CloudTrail
          */
         virtual Model::StartLoggingOutcome StartLogging(const Model::StartLoggingRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartLogging that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartLoggingOutcomeCallable StartLoggingCallable(const Model::StartLoggingRequest& request) const;
-
-        /**
-         * An Async wrapper for StartLogging that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartLoggingAsync(const Model::StartLoggingRequest& request, const StartLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts a CloudTrail Lake query. The required <code>QueryStatement</code>
@@ -836,15 +582,6 @@ namespace CloudTrail
          */
         virtual Model::StartQueryOutcome StartQuery(const Model::StartQueryRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartQuery that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartQueryOutcomeCallable StartQueryCallable(const Model::StartQueryRequest& request) const;
-
-        /**
-         * An Async wrapper for StartQuery that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartQueryAsync(const Model::StartQueryRequest& request, const StartQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Stops a specified import. </p><p><h3>See Also:</h3>   <a
@@ -853,15 +590,6 @@ namespace CloudTrail
          */
         virtual Model::StopImportOutcome StopImport(const Model::StopImportRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopImport that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopImportOutcomeCallable StopImportCallable(const Model::StopImportRequest& request) const;
-
-        /**
-         * An Async wrapper for StopImport that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopImportAsync(const Model::StopImportRequest& request, const StopImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Suspends the recording of Amazon Web Services API calls and log file delivery
@@ -877,15 +605,6 @@ namespace CloudTrail
          */
         virtual Model::StopLoggingOutcome StopLogging(const Model::StopLoggingRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopLogging that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopLoggingOutcomeCallable StopLoggingCallable(const Model::StopLoggingRequest& request) const;
-
-        /**
-         * An Async wrapper for StopLogging that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopLoggingAsync(const Model::StopLoggingRequest& request, const StopLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an event data store. The required <code>EventDataStore</code> value
@@ -903,15 +622,6 @@ namespace CloudTrail
          */
         virtual Model::UpdateEventDataStoreOutcome UpdateEventDataStore(const Model::UpdateEventDataStoreRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateEventDataStore that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateEventDataStoreOutcomeCallable UpdateEventDataStoreCallable(const Model::UpdateEventDataStoreRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateEventDataStore that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateEventDataStoreAsync(const Model::UpdateEventDataStoreRequest& request, const UpdateEventDataStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates trail settings that control what events you are logging, and how to
@@ -926,15 +636,6 @@ namespace CloudTrail
          */
         virtual Model::UpdateTrailOutcome UpdateTrail(const Model::UpdateTrailRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateTrail that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateTrailOutcomeCallable UpdateTrailCallable(const Model::UpdateTrailRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateTrail that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateTrailAsync(const Model::UpdateTrailRequest& request, const UpdateTrailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

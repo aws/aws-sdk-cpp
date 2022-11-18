@@ -7,8 +7,10 @@
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendationsServiceClientModel.h>
+#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendationsLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -81,6 +83,47 @@ namespace MigrationHubStrategyRecommendations
         virtual ~MigrationHubStrategyRecommendationsClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p> Retrieves details about an application component. </p><p><h3>See Also:</h3> 
          * <a
@@ -89,15 +132,6 @@ namespace MigrationHubStrategyRecommendations
          */
         virtual Model::GetApplicationComponentDetailsOutcome GetApplicationComponentDetails(const Model::GetApplicationComponentDetailsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetApplicationComponentDetails that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetApplicationComponentDetailsOutcomeCallable GetApplicationComponentDetailsCallable(const Model::GetApplicationComponentDetailsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetApplicationComponentDetails that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetApplicationComponentDetailsAsync(const Model::GetApplicationComponentDetailsRequest& request, const GetApplicationComponentDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Retrieves a list of all the recommended strategies and tools for an
@@ -107,15 +141,6 @@ namespace MigrationHubStrategyRecommendations
          */
         virtual Model::GetApplicationComponentStrategiesOutcome GetApplicationComponentStrategies(const Model::GetApplicationComponentStrategiesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetApplicationComponentStrategies that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetApplicationComponentStrategiesOutcomeCallable GetApplicationComponentStrategiesCallable(const Model::GetApplicationComponentStrategiesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetApplicationComponentStrategies that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetApplicationComponentStrategiesAsync(const Model::GetApplicationComponentStrategiesRequest& request, const GetApplicationComponentStrategiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Retrieves the status of an on-going assessment. </p><p><h3>See Also:</h3>  
@@ -125,15 +150,6 @@ namespace MigrationHubStrategyRecommendations
          */
         virtual Model::GetAssessmentOutcome GetAssessment(const Model::GetAssessmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAssessment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAssessmentOutcomeCallable GetAssessmentCallable(const Model::GetAssessmentRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAssessment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAssessmentAsync(const Model::GetAssessmentRequest& request, const GetAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Retrieves the details about a specific import task. </p><p><h3>See
@@ -143,15 +159,6 @@ namespace MigrationHubStrategyRecommendations
          */
         virtual Model::GetImportFileTaskOutcome GetImportFileTask(const Model::GetImportFileTaskRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetImportFileTask that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetImportFileTaskOutcomeCallable GetImportFileTaskCallable(const Model::GetImportFileTaskRequest& request) const;
-
-        /**
-         * An Async wrapper for GetImportFileTask that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetImportFileTaskAsync(const Model::GetImportFileTaskRequest& request, const GetImportFileTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Retrieves your migration and modernization preferences. </p><p><h3>See
@@ -161,15 +168,6 @@ namespace MigrationHubStrategyRecommendations
          */
         virtual Model::GetPortfolioPreferencesOutcome GetPortfolioPreferences(const Model::GetPortfolioPreferencesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetPortfolioPreferences that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetPortfolioPreferencesOutcomeCallable GetPortfolioPreferencesCallable(const Model::GetPortfolioPreferencesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetPortfolioPreferences that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetPortfolioPreferencesAsync(const Model::GetPortfolioPreferencesRequest& request, const GetPortfolioPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Retrieves overall summary including the number of servers to rehost and the
@@ -179,15 +177,6 @@ namespace MigrationHubStrategyRecommendations
          */
         virtual Model::GetPortfolioSummaryOutcome GetPortfolioSummary(const Model::GetPortfolioSummaryRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetPortfolioSummary that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetPortfolioSummaryOutcomeCallable GetPortfolioSummaryCallable(const Model::GetPortfolioSummaryRequest& request) const;
-
-        /**
-         * An Async wrapper for GetPortfolioSummary that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetPortfolioSummaryAsync(const Model::GetPortfolioSummaryRequest& request, const GetPortfolioSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Retrieves detailed information about the specified recommendation report.
@@ -197,15 +186,6 @@ namespace MigrationHubStrategyRecommendations
          */
         virtual Model::GetRecommendationReportDetailsOutcome GetRecommendationReportDetails(const Model::GetRecommendationReportDetailsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRecommendationReportDetails that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRecommendationReportDetailsOutcomeCallable GetRecommendationReportDetailsCallable(const Model::GetRecommendationReportDetailsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRecommendationReportDetails that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRecommendationReportDetailsAsync(const Model::GetRecommendationReportDetailsRequest& request, const GetRecommendationReportDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Retrieves detailed information about a specified server. </p><p><h3>See
@@ -215,15 +195,6 @@ namespace MigrationHubStrategyRecommendations
          */
         virtual Model::GetServerDetailsOutcome GetServerDetails(const Model::GetServerDetailsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetServerDetails that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetServerDetailsOutcomeCallable GetServerDetailsCallable(const Model::GetServerDetailsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetServerDetails that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetServerDetailsAsync(const Model::GetServerDetailsRequest& request, const GetServerDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Retrieves recommended strategies and tools for the specified server.
@@ -233,15 +204,6 @@ namespace MigrationHubStrategyRecommendations
          */
         virtual Model::GetServerStrategiesOutcome GetServerStrategies(const Model::GetServerStrategiesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetServerStrategies that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetServerStrategiesOutcomeCallable GetServerStrategiesCallable(const Model::GetServerStrategiesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetServerStrategies that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetServerStrategiesAsync(const Model::GetServerStrategiesRequest& request, const GetServerStrategiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Retrieves a list of all the application components (processes).
@@ -251,15 +213,6 @@ namespace MigrationHubStrategyRecommendations
          */
         virtual Model::ListApplicationComponentsOutcome ListApplicationComponents(const Model::ListApplicationComponentsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListApplicationComponents that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListApplicationComponentsOutcomeCallable ListApplicationComponentsCallable(const Model::ListApplicationComponentsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListApplicationComponents that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListApplicationComponentsAsync(const Model::ListApplicationComponentsRequest& request, const ListApplicationComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Retrieves a list of all the installed collectors. </p><p><h3>See Also:</h3> 
@@ -269,15 +222,6 @@ namespace MigrationHubStrategyRecommendations
          */
         virtual Model::ListCollectorsOutcome ListCollectors(const Model::ListCollectorsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListCollectors that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListCollectorsOutcomeCallable ListCollectorsCallable(const Model::ListCollectorsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListCollectors that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListCollectorsAsync(const Model::ListCollectorsRequest& request, const ListCollectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Retrieves a list of all the imports performed. </p><p><h3>See Also:</h3>  
@@ -287,15 +231,6 @@ namespace MigrationHubStrategyRecommendations
          */
         virtual Model::ListImportFileTaskOutcome ListImportFileTask(const Model::ListImportFileTaskRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListImportFileTask that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListImportFileTaskOutcomeCallable ListImportFileTaskCallable(const Model::ListImportFileTaskRequest& request) const;
-
-        /**
-         * An Async wrapper for ListImportFileTask that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListImportFileTaskAsync(const Model::ListImportFileTaskRequest& request, const ListImportFileTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a list of all the servers. </p><p><h3>See Also:</h3>   <a
@@ -304,15 +239,6 @@ namespace MigrationHubStrategyRecommendations
          */
         virtual Model::ListServersOutcome ListServers(const Model::ListServersRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListServers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListServersOutcomeCallable ListServersCallable(const Model::ListServersRequest& request) const;
-
-        /**
-         * An Async wrapper for ListServers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListServersAsync(const Model::ListServersRequest& request, const ListServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Saves the specified migration and modernization preferences. </p><p><h3>See
@@ -322,15 +248,6 @@ namespace MigrationHubStrategyRecommendations
          */
         virtual Model::PutPortfolioPreferencesOutcome PutPortfolioPreferences(const Model::PutPortfolioPreferencesRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutPortfolioPreferences that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutPortfolioPreferencesOutcomeCallable PutPortfolioPreferencesCallable(const Model::PutPortfolioPreferencesRequest& request) const;
-
-        /**
-         * An Async wrapper for PutPortfolioPreferences that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutPortfolioPreferencesAsync(const Model::PutPortfolioPreferencesRequest& request, const PutPortfolioPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Starts the assessment of an on-premises environment. </p><p><h3>See
@@ -340,15 +257,6 @@ namespace MigrationHubStrategyRecommendations
          */
         virtual Model::StartAssessmentOutcome StartAssessment(const Model::StartAssessmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartAssessment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartAssessmentOutcomeCallable StartAssessmentCallable(const Model::StartAssessmentRequest& request) const;
-
-        /**
-         * An Async wrapper for StartAssessment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartAssessmentAsync(const Model::StartAssessmentRequest& request, const StartAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Starts a file import. </p><p><h3>See Also:</h3>   <a
@@ -357,15 +265,6 @@ namespace MigrationHubStrategyRecommendations
          */
         virtual Model::StartImportFileTaskOutcome StartImportFileTask(const Model::StartImportFileTaskRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartImportFileTask that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartImportFileTaskOutcomeCallable StartImportFileTaskCallable(const Model::StartImportFileTaskRequest& request) const;
-
-        /**
-         * An Async wrapper for StartImportFileTask that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartImportFileTaskAsync(const Model::StartImportFileTaskRequest& request, const StartImportFileTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Starts generating a recommendation report. </p><p><h3>See Also:</h3>   <a
@@ -374,15 +273,6 @@ namespace MigrationHubStrategyRecommendations
          */
         virtual Model::StartRecommendationReportGenerationOutcome StartRecommendationReportGeneration(const Model::StartRecommendationReportGenerationRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartRecommendationReportGeneration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartRecommendationReportGenerationOutcomeCallable StartRecommendationReportGenerationCallable(const Model::StartRecommendationReportGenerationRequest& request) const;
-
-        /**
-         * An Async wrapper for StartRecommendationReportGeneration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartRecommendationReportGenerationAsync(const Model::StartRecommendationReportGenerationRequest& request, const StartRecommendationReportGenerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Stops the assessment of an on-premises environment. </p><p><h3>See
@@ -392,15 +282,6 @@ namespace MigrationHubStrategyRecommendations
          */
         virtual Model::StopAssessmentOutcome StopAssessment(const Model::StopAssessmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopAssessment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopAssessmentOutcomeCallable StopAssessmentCallable(const Model::StopAssessmentRequest& request) const;
-
-        /**
-         * An Async wrapper for StopAssessment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopAssessmentAsync(const Model::StopAssessmentRequest& request, const StopAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Updates the configuration of an application component. </p><p><h3>See
@@ -410,15 +291,6 @@ namespace MigrationHubStrategyRecommendations
          */
         virtual Model::UpdateApplicationComponentConfigOutcome UpdateApplicationComponentConfig(const Model::UpdateApplicationComponentConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateApplicationComponentConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateApplicationComponentConfigOutcomeCallable UpdateApplicationComponentConfigCallable(const Model::UpdateApplicationComponentConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateApplicationComponentConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateApplicationComponentConfigAsync(const Model::UpdateApplicationComponentConfigRequest& request, const UpdateApplicationComponentConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Updates the configuration of the specified server. </p><p><h3>See Also:</h3>
@@ -428,15 +300,6 @@ namespace MigrationHubStrategyRecommendations
          */
         virtual Model::UpdateServerConfigOutcome UpdateServerConfig(const Model::UpdateServerConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateServerConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateServerConfigOutcomeCallable UpdateServerConfigCallable(const Model::UpdateServerConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateServerConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateServerConfigAsync(const Model::UpdateServerConfigRequest& request, const UpdateServerConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

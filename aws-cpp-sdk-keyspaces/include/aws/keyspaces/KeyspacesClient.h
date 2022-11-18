@@ -7,8 +7,10 @@
 #include <aws/keyspaces/Keyspaces_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/keyspaces/KeyspacesServiceClientModel.h>
+#include <aws/keyspaces/KeyspacesLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -94,6 +96,47 @@ namespace Keyspaces
         virtual ~KeyspacesClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>The <code>CreateKeyspace</code> operation adds a new keyspace to your
          * account. In an Amazon Web Services account, keyspace names must be unique within
@@ -108,15 +151,6 @@ namespace Keyspaces
          */
         virtual Model::CreateKeyspaceOutcome CreateKeyspace(const Model::CreateKeyspaceRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateKeyspace that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateKeyspaceOutcomeCallable CreateKeyspaceCallable(const Model::CreateKeyspaceRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateKeyspace that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateKeyspaceAsync(const Model::CreateKeyspaceRequest& request, const CreateKeyspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The <code>CreateTable</code> operation adds a new table to the specified
@@ -135,15 +169,6 @@ namespace Keyspaces
          */
         virtual Model::CreateTableOutcome CreateTable(const Model::CreateTableRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateTable that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateTableOutcomeCallable CreateTableCallable(const Model::CreateTableRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateTable that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateTableAsync(const Model::CreateTableRequest& request, const CreateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The <code>DeleteKeyspace</code> operation deletes a keyspace and all of its
@@ -153,15 +178,6 @@ namespace Keyspaces
          */
         virtual Model::DeleteKeyspaceOutcome DeleteKeyspace(const Model::DeleteKeyspaceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteKeyspace that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteKeyspaceOutcomeCallable DeleteKeyspaceCallable(const Model::DeleteKeyspaceRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteKeyspace that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteKeyspaceAsync(const Model::DeleteKeyspaceRequest& request, const DeleteKeyspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The <code>DeleteTable</code> operation deletes a table and all of its data.
@@ -178,15 +194,6 @@ namespace Keyspaces
          */
         virtual Model::DeleteTableOutcome DeleteTable(const Model::DeleteTableRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteTable that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteTableOutcomeCallable DeleteTableCallable(const Model::DeleteTableRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteTable that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteTableAsync(const Model::DeleteTableRequest& request, const DeleteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the name and the Amazon Resource Name (ARN) of the specified
@@ -196,15 +203,6 @@ namespace Keyspaces
          */
         virtual Model::GetKeyspaceOutcome GetKeyspace(const Model::GetKeyspaceRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetKeyspace that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetKeyspaceOutcomeCallable GetKeyspaceCallable(const Model::GetKeyspaceRequest& request) const;
-
-        /**
-         * An Async wrapper for GetKeyspace that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetKeyspaceAsync(const Model::GetKeyspaceRequest& request, const GetKeyspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the table, including the table's name and current
@@ -217,15 +215,6 @@ namespace Keyspaces
          */
         virtual Model::GetTableOutcome GetTable(const Model::GetTableRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetTable that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetTableOutcomeCallable GetTableCallable(const Model::GetTableRequest& request) const;
-
-        /**
-         * An Async wrapper for GetTable that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetTableAsync(const Model::GetTableRequest& request, const GetTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of keyspaces.</p><p><h3>See Also:</h3>   <a
@@ -234,15 +223,6 @@ namespace Keyspaces
          */
         virtual Model::ListKeyspacesOutcome ListKeyspaces(const Model::ListKeyspacesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListKeyspaces that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListKeyspacesOutcomeCallable ListKeyspacesCallable(const Model::ListKeyspacesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListKeyspaces that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListKeyspacesAsync(const Model::ListKeyspacesRequest& request, const ListKeyspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of tables for a specified keyspace.</p><p><h3>See Also:</h3>  
@@ -252,15 +232,6 @@ namespace Keyspaces
          */
         virtual Model::ListTablesOutcome ListTables(const Model::ListTablesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTables that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTablesOutcomeCallable ListTablesCallable(const Model::ListTablesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTables that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTablesAsync(const Model::ListTablesRequest& request, const ListTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of all tags associated with the specified Amazon Keyspaces
@@ -270,15 +241,6 @@ namespace Keyspaces
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Restores the specified table to the specified point in time within the
@@ -312,15 +274,6 @@ namespace Keyspaces
          */
         virtual Model::RestoreTableOutcome RestoreTable(const Model::RestoreTableRequest& request) const;
 
-        /**
-         * A Callable wrapper for RestoreTable that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RestoreTableOutcomeCallable RestoreTableCallable(const Model::RestoreTableRequest& request) const;
-
-        /**
-         * An Async wrapper for RestoreTable that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RestoreTableAsync(const Model::RestoreTableRequest& request, const RestoreTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates a set of tags with a Amazon Keyspaces resource. You can then
@@ -338,15 +291,6 @@ namespace Keyspaces
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the association of tags from a Amazon Keyspaces
@@ -356,15 +300,6 @@ namespace Keyspaces
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds new columns to the table or updates one of the table's settings, for
@@ -376,15 +311,6 @@ namespace Keyspaces
          */
         virtual Model::UpdateTableOutcome UpdateTable(const Model::UpdateTableRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateTable that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateTableOutcomeCallable UpdateTableCallable(const Model::UpdateTableRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateTable that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateTableAsync(const Model::UpdateTableRequest& request, const UpdateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

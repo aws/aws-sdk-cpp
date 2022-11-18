@@ -7,8 +7,10 @@
 #include <aws/meteringmarketplace/MarketplaceMetering_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/meteringmarketplace/MarketplaceMeteringServiceClientModel.h>
+#include <aws/meteringmarketplace/MarketplaceMeteringLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -107,6 +109,47 @@ namespace MarketplaceMetering
         virtual ~MarketplaceMeteringClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p> <code>BatchMeterUsage</code> is called from a SaaS application listed on AWS
          * Marketplace to post metering records for a set of customers.</p> <p>For
@@ -134,15 +177,6 @@ namespace MarketplaceMetering
          */
         virtual Model::BatchMeterUsageOutcome BatchMeterUsage(const Model::BatchMeterUsageRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchMeterUsage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchMeterUsageOutcomeCallable BatchMeterUsageCallable(const Model::BatchMeterUsageRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchMeterUsage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchMeterUsageAsync(const Model::BatchMeterUsageRequest& request, const BatchMeterUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>API to emit metering records. For identical requests, the API is idempotent.
@@ -159,15 +193,6 @@ namespace MarketplaceMetering
          */
         virtual Model::MeterUsageOutcome MeterUsage(const Model::MeterUsageRequest& request) const;
 
-        /**
-         * A Callable wrapper for MeterUsage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::MeterUsageOutcomeCallable MeterUsageCallable(const Model::MeterUsageRequest& request) const;
-
-        /**
-         * An Async wrapper for MeterUsage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void MeterUsageAsync(const Model::MeterUsageRequest& request, const MeterUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Paid container software products sold through AWS Marketplace must integrate
@@ -207,15 +232,6 @@ namespace MarketplaceMetering
          */
         virtual Model::RegisterUsageOutcome RegisterUsage(const Model::RegisterUsageRequest& request) const;
 
-        /**
-         * A Callable wrapper for RegisterUsage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RegisterUsageOutcomeCallable RegisterUsageCallable(const Model::RegisterUsageRequest& request) const;
-
-        /**
-         * An Async wrapper for RegisterUsage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RegisterUsageAsync(const Model::RegisterUsageRequest& request, const RegisterUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> <code>ResolveCustomer</code> is called by a SaaS application during the
@@ -234,15 +250,6 @@ namespace MarketplaceMetering
          */
         virtual Model::ResolveCustomerOutcome ResolveCustomer(const Model::ResolveCustomerRequest& request) const;
 
-        /**
-         * A Callable wrapper for ResolveCustomer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ResolveCustomerOutcomeCallable ResolveCustomerCallable(const Model::ResolveCustomerRequest& request) const;
-
-        /**
-         * An Async wrapper for ResolveCustomer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ResolveCustomerAsync(const Model::ResolveCustomerRequest& request, const ResolveCustomerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

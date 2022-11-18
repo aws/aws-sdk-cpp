@@ -7,8 +7,10 @@
 #include <aws/greengrassv2/GreengrassV2_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/greengrassv2/GreengrassV2ServiceClientModel.h>
+#include <aws/greengrassv2/GreengrassV2LegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -86,6 +88,47 @@ namespace GreengrassV2
         virtual ~GreengrassV2Client();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Associates a Greengrass service role with IoT Greengrass for your Amazon Web
          * Services account in this Amazon Web Services Region. IoT Greengrass uses this
@@ -102,15 +145,6 @@ namespace GreengrassV2
          */
         virtual Model::AssociateServiceRoleToAccountOutcome AssociateServiceRoleToAccount(const Model::AssociateServiceRoleToAccountRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateServiceRoleToAccount that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateServiceRoleToAccountOutcomeCallable AssociateServiceRoleToAccountCallable(const Model::AssociateServiceRoleToAccountRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateServiceRoleToAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateServiceRoleToAccountAsync(const Model::AssociateServiceRoleToAccountRequest& request, const AssociateServiceRoleToAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates a list of client devices with a core device. Use this API
@@ -133,15 +167,6 @@ namespace GreengrassV2
          */
         virtual Model::BatchAssociateClientDeviceWithCoreDeviceOutcome BatchAssociateClientDeviceWithCoreDevice(const Model::BatchAssociateClientDeviceWithCoreDeviceRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchAssociateClientDeviceWithCoreDevice that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchAssociateClientDeviceWithCoreDeviceOutcomeCallable BatchAssociateClientDeviceWithCoreDeviceCallable(const Model::BatchAssociateClientDeviceWithCoreDeviceRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchAssociateClientDeviceWithCoreDevice that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchAssociateClientDeviceWithCoreDeviceAsync(const Model::BatchAssociateClientDeviceWithCoreDeviceRequest& request, const BatchAssociateClientDeviceWithCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates a list of client devices from a core device. After you
@@ -153,15 +178,6 @@ namespace GreengrassV2
          */
         virtual Model::BatchDisassociateClientDeviceFromCoreDeviceOutcome BatchDisassociateClientDeviceFromCoreDevice(const Model::BatchDisassociateClientDeviceFromCoreDeviceRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchDisassociateClientDeviceFromCoreDevice that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchDisassociateClientDeviceFromCoreDeviceOutcomeCallable BatchDisassociateClientDeviceFromCoreDeviceCallable(const Model::BatchDisassociateClientDeviceFromCoreDeviceRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchDisassociateClientDeviceFromCoreDevice that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchDisassociateClientDeviceFromCoreDeviceAsync(const Model::BatchDisassociateClientDeviceFromCoreDeviceRequest& request, const BatchDisassociateClientDeviceFromCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Cancels a deployment. This operation cancels the deployment for devices that
@@ -172,15 +188,6 @@ namespace GreengrassV2
          */
         virtual Model::CancelDeploymentOutcome CancelDeployment(const Model::CancelDeploymentRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelDeployment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelDeploymentOutcomeCallable CancelDeploymentCallable(const Model::CancelDeploymentRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelDeployment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelDeploymentAsync(const Model::CancelDeploymentRequest& request, const CancelDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a component. Components are software that run on Greengrass core
@@ -215,15 +222,6 @@ namespace GreengrassV2
          */
         virtual Model::CreateComponentVersionOutcome CreateComponentVersion(const Model::CreateComponentVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateComponentVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateComponentVersionOutcomeCallable CreateComponentVersionCallable(const Model::CreateComponentVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateComponentVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateComponentVersionAsync(const Model::CreateComponentVersionRequest& request, const CreateComponentVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a continuous deployment for a target, which is a Greengrass core
@@ -244,15 +242,6 @@ namespace GreengrassV2
          */
         virtual Model::CreateDeploymentOutcome CreateDeployment(const Model::CreateDeploymentRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDeployment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDeploymentOutcomeCallable CreateDeploymentCallable(const Model::CreateDeploymentRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDeployment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDeploymentAsync(const Model::CreateDeploymentRequest& request, const CreateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a version of a component from IoT Greengrass.</p>  <p>This
@@ -266,15 +255,6 @@ namespace GreengrassV2
          */
         virtual Model::DeleteComponentOutcome DeleteComponent(const Model::DeleteComponentRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteComponent that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteComponentOutcomeCallable DeleteComponentCallable(const Model::DeleteComponentRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteComponent that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteComponentAsync(const Model::DeleteComponentRequest& request, const DeleteComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a Greengrass core device, which is an IoT thing. This operation
@@ -288,15 +268,6 @@ namespace GreengrassV2
          */
         virtual Model::DeleteCoreDeviceOutcome DeleteCoreDevice(const Model::DeleteCoreDeviceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteCoreDevice that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteCoreDeviceOutcomeCallable DeleteCoreDeviceCallable(const Model::DeleteCoreDeviceRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteCoreDevice that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteCoreDeviceAsync(const Model::DeleteCoreDeviceRequest& request, const DeleteCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a deployment. To delete an active deployment, you must first cancel
@@ -311,15 +282,6 @@ namespace GreengrassV2
          */
         virtual Model::DeleteDeploymentOutcome DeleteDeployment(const Model::DeleteDeploymentRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDeployment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDeploymentOutcomeCallable DeleteDeploymentCallable(const Model::DeleteDeploymentRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDeployment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDeploymentAsync(const Model::DeleteDeploymentRequest& request, const DeleteDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves metadata for a version of a component.</p><p><h3>See Also:</h3>  
@@ -329,15 +291,6 @@ namespace GreengrassV2
          */
         virtual Model::DescribeComponentOutcome DescribeComponent(const Model::DescribeComponentRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeComponent that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeComponentOutcomeCallable DescribeComponentCallable(const Model::DescribeComponentRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeComponent that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeComponentAsync(const Model::DescribeComponentRequest& request, const DescribeComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates the Greengrass service role from IoT Greengrass for your Amazon
@@ -352,15 +305,6 @@ namespace GreengrassV2
          */
         virtual Model::DisassociateServiceRoleFromAccountOutcome DisassociateServiceRoleFromAccount(const Model::DisassociateServiceRoleFromAccountRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateServiceRoleFromAccount that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateServiceRoleFromAccountOutcomeCallable DisassociateServiceRoleFromAccountCallable(const Model::DisassociateServiceRoleFromAccountRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateServiceRoleFromAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateServiceRoleFromAccountAsync(const Model::DisassociateServiceRoleFromAccountRequest& request, const DisassociateServiceRoleFromAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the recipe for a version of a component.</p><p><h3>See Also:</h3>   <a
@@ -369,15 +313,6 @@ namespace GreengrassV2
          */
         virtual Model::GetComponentOutcome GetComponent(const Model::GetComponentRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetComponent that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetComponentOutcomeCallable GetComponentCallable(const Model::GetComponentRequest& request) const;
-
-        /**
-         * An Async wrapper for GetComponent that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetComponentAsync(const Model::GetComponentRequest& request, const GetComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the pre-signed URL to download a public or a Lambda component artifact.
@@ -388,15 +323,6 @@ namespace GreengrassV2
          */
         virtual Model::GetComponentVersionArtifactOutcome GetComponentVersionArtifact(const Model::GetComponentVersionArtifactRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetComponentVersionArtifact that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetComponentVersionArtifactOutcomeCallable GetComponentVersionArtifactCallable(const Model::GetComponentVersionArtifactRequest& request) const;
-
-        /**
-         * An Async wrapper for GetComponentVersionArtifact that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetComponentVersionArtifactAsync(const Model::GetComponentVersionArtifactRequest& request, const GetComponentVersionArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves connectivity information for a Greengrass core device.</p>
@@ -415,15 +341,6 @@ namespace GreengrassV2
          */
         virtual Model::GetConnectivityInfoOutcome GetConnectivityInfo(const Model::GetConnectivityInfoRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetConnectivityInfo that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetConnectivityInfoOutcomeCallable GetConnectivityInfoCallable(const Model::GetConnectivityInfoRequest& request) const;
-
-        /**
-         * An Async wrapper for GetConnectivityInfo that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetConnectivityInfoAsync(const Model::GetConnectivityInfoRequest& request, const GetConnectivityInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves metadata for a Greengrass core device.</p>  <p>IoT Greengrass
@@ -447,15 +364,6 @@ namespace GreengrassV2
          */
         virtual Model::GetCoreDeviceOutcome GetCoreDevice(const Model::GetCoreDeviceRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetCoreDevice that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetCoreDeviceOutcomeCallable GetCoreDeviceCallable(const Model::GetCoreDeviceRequest& request) const;
-
-        /**
-         * An Async wrapper for GetCoreDevice that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetCoreDeviceAsync(const Model::GetCoreDeviceRequest& request, const GetCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a deployment. Deployments define the components that run on Greengrass
@@ -465,15 +373,6 @@ namespace GreengrassV2
          */
         virtual Model::GetDeploymentOutcome GetDeployment(const Model::GetDeploymentRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDeployment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDeploymentOutcomeCallable GetDeploymentCallable(const Model::GetDeploymentRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDeployment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDeploymentAsync(const Model::GetDeploymentRequest& request, const GetDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the service role associated with IoT Greengrass for your Amazon Web
@@ -488,15 +387,6 @@ namespace GreengrassV2
          */
         virtual Model::GetServiceRoleForAccountOutcome GetServiceRoleForAccount(const Model::GetServiceRoleForAccountRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetServiceRoleForAccount that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetServiceRoleForAccountOutcomeCallable GetServiceRoleForAccountCallable(const Model::GetServiceRoleForAccountRequest& request) const;
-
-        /**
-         * An Async wrapper for GetServiceRoleForAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetServiceRoleForAccountAsync(const Model::GetServiceRoleForAccountRequest& request, const GetServiceRoleForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a paginated list of client devices that are associated with a core
@@ -506,15 +396,6 @@ namespace GreengrassV2
          */
         virtual Model::ListClientDevicesAssociatedWithCoreDeviceOutcome ListClientDevicesAssociatedWithCoreDevice(const Model::ListClientDevicesAssociatedWithCoreDeviceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListClientDevicesAssociatedWithCoreDevice that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListClientDevicesAssociatedWithCoreDeviceOutcomeCallable ListClientDevicesAssociatedWithCoreDeviceCallable(const Model::ListClientDevicesAssociatedWithCoreDeviceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListClientDevicesAssociatedWithCoreDevice that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListClientDevicesAssociatedWithCoreDeviceAsync(const Model::ListClientDevicesAssociatedWithCoreDeviceRequest& request, const ListClientDevicesAssociatedWithCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a paginated list of all versions for a component. Greater versions
@@ -524,15 +405,6 @@ namespace GreengrassV2
          */
         virtual Model::ListComponentVersionsOutcome ListComponentVersions(const Model::ListComponentVersionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListComponentVersions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListComponentVersionsOutcomeCallable ListComponentVersionsCallable(const Model::ListComponentVersionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListComponentVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListComponentVersionsAsync(const Model::ListComponentVersionsRequest& request, const ListComponentVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a paginated list of component summaries. This list includes
@@ -542,15 +414,6 @@ namespace GreengrassV2
          */
         virtual Model::ListComponentsOutcome ListComponents(const Model::ListComponentsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListComponents that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListComponentsOutcomeCallable ListComponentsCallable(const Model::ListComponentsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListComponents that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListComponentsAsync(const Model::ListComponentsRequest& request, const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a paginated list of Greengrass core devices.</p>  <p>IoT
@@ -574,15 +437,6 @@ namespace GreengrassV2
          */
         virtual Model::ListCoreDevicesOutcome ListCoreDevices(const Model::ListCoreDevicesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListCoreDevices that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListCoreDevicesOutcomeCallable ListCoreDevicesCallable(const Model::ListCoreDevicesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListCoreDevices that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListCoreDevicesAsync(const Model::ListCoreDevicesRequest& request, const ListCoreDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a paginated list of deployments.</p><p><h3>See Also:</h3>   <a
@@ -591,15 +445,6 @@ namespace GreengrassV2
          */
         virtual Model::ListDeploymentsOutcome ListDeployments(const Model::ListDeploymentsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDeployments that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDeploymentsOutcomeCallable ListDeploymentsCallable(const Model::ListDeploymentsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDeployments that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDeploymentsAsync(const Model::ListDeploymentsRequest& request, const ListDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a paginated list of deployment jobs that IoT Greengrass sends to
@@ -609,15 +454,6 @@ namespace GreengrassV2
          */
         virtual Model::ListEffectiveDeploymentsOutcome ListEffectiveDeployments(const Model::ListEffectiveDeploymentsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListEffectiveDeployments that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListEffectiveDeploymentsOutcomeCallable ListEffectiveDeploymentsCallable(const Model::ListEffectiveDeploymentsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListEffectiveDeployments that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListEffectiveDeploymentsAsync(const Model::ListEffectiveDeploymentsRequest& request, const ListEffectiveDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a paginated list of the components that a Greengrass core device
@@ -644,15 +480,6 @@ namespace GreengrassV2
          */
         virtual Model::ListInstalledComponentsOutcome ListInstalledComponents(const Model::ListInstalledComponentsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListInstalledComponents that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListInstalledComponentsOutcomeCallable ListInstalledComponentsCallable(const Model::ListInstalledComponentsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListInstalledComponents that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListInstalledComponentsAsync(const Model::ListInstalledComponentsRequest& request, const ListInstalledComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the list of tags for an IoT Greengrass resource.</p><p><h3>See
@@ -662,15 +489,6 @@ namespace GreengrassV2
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list of components that meet the component, version, and platform
@@ -694,15 +512,6 @@ namespace GreengrassV2
          */
         virtual Model::ResolveComponentCandidatesOutcome ResolveComponentCandidates(const Model::ResolveComponentCandidatesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ResolveComponentCandidates that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ResolveComponentCandidatesOutcomeCallable ResolveComponentCandidatesCallable(const Model::ResolveComponentCandidatesRequest& request) const;
-
-        /**
-         * An Async wrapper for ResolveComponentCandidates that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ResolveComponentCandidatesAsync(const Model::ResolveComponentCandidatesRequest& request, const ResolveComponentCandidatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds tags to an IoT Greengrass resource. If a tag already exists for the
@@ -712,15 +521,6 @@ namespace GreengrassV2
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes a tag from an IoT Greengrass resource.</p><p><h3>See Also:</h3>   <a
@@ -729,15 +529,6 @@ namespace GreengrassV2
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates connectivity information for a Greengrass core device.</p>
@@ -756,15 +547,6 @@ namespace GreengrassV2
          */
         virtual Model::UpdateConnectivityInfoOutcome UpdateConnectivityInfo(const Model::UpdateConnectivityInfoRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateConnectivityInfo that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateConnectivityInfoOutcomeCallable UpdateConnectivityInfoCallable(const Model::UpdateConnectivityInfoRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateConnectivityInfo that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateConnectivityInfoAsync(const Model::UpdateConnectivityInfoRequest& request, const UpdateConnectivityInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

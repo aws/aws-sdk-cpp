@@ -7,8 +7,10 @@
 #include <aws/auditmanager/AuditManager_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/auditmanager/AuditManagerServiceClientModel.h>
+#include <aws/auditmanager/AuditManagerLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -98,6 +100,47 @@ namespace AuditManager
         virtual ~AuditManagerClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p> Associates an evidence folder to an assessment report in a Audit Manager
          * assessment. </p><p><h3>See Also:</h3>   <a
@@ -106,15 +149,6 @@ namespace AuditManager
          */
         virtual Model::AssociateAssessmentReportEvidenceFolderOutcome AssociateAssessmentReportEvidenceFolder(const Model::AssociateAssessmentReportEvidenceFolderRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateAssessmentReportEvidenceFolder that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateAssessmentReportEvidenceFolderOutcomeCallable AssociateAssessmentReportEvidenceFolderCallable(const Model::AssociateAssessmentReportEvidenceFolderRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateAssessmentReportEvidenceFolder that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateAssessmentReportEvidenceFolderAsync(const Model::AssociateAssessmentReportEvidenceFolderRequest& request, const AssociateAssessmentReportEvidenceFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Associates a list of evidence to an assessment report in an Audit Manager
@@ -124,15 +158,6 @@ namespace AuditManager
          */
         virtual Model::BatchAssociateAssessmentReportEvidenceOutcome BatchAssociateAssessmentReportEvidence(const Model::BatchAssociateAssessmentReportEvidenceRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchAssociateAssessmentReportEvidence that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchAssociateAssessmentReportEvidenceOutcomeCallable BatchAssociateAssessmentReportEvidenceCallable(const Model::BatchAssociateAssessmentReportEvidenceRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchAssociateAssessmentReportEvidence that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchAssociateAssessmentReportEvidenceAsync(const Model::BatchAssociateAssessmentReportEvidenceRequest& request, const BatchAssociateAssessmentReportEvidenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Creates a batch of delegations for an assessment in Audit Manager.
@@ -142,15 +167,6 @@ namespace AuditManager
          */
         virtual Model::BatchCreateDelegationByAssessmentOutcome BatchCreateDelegationByAssessment(const Model::BatchCreateDelegationByAssessmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchCreateDelegationByAssessment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchCreateDelegationByAssessmentOutcomeCallable BatchCreateDelegationByAssessmentCallable(const Model::BatchCreateDelegationByAssessmentRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchCreateDelegationByAssessment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchCreateDelegationByAssessmentAsync(const Model::BatchCreateDelegationByAssessmentRequest& request, const BatchCreateDelegationByAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Deletes a batch of delegations for an assessment in Audit Manager.
@@ -160,15 +176,6 @@ namespace AuditManager
          */
         virtual Model::BatchDeleteDelegationByAssessmentOutcome BatchDeleteDelegationByAssessment(const Model::BatchDeleteDelegationByAssessmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchDeleteDelegationByAssessment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchDeleteDelegationByAssessmentOutcomeCallable BatchDeleteDelegationByAssessmentCallable(const Model::BatchDeleteDelegationByAssessmentRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchDeleteDelegationByAssessment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchDeleteDelegationByAssessmentAsync(const Model::BatchDeleteDelegationByAssessmentRequest& request, const BatchDeleteDelegationByAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Disassociates a list of evidence from an assessment report in Audit Manager.
@@ -178,15 +185,6 @@ namespace AuditManager
          */
         virtual Model::BatchDisassociateAssessmentReportEvidenceOutcome BatchDisassociateAssessmentReportEvidence(const Model::BatchDisassociateAssessmentReportEvidenceRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchDisassociateAssessmentReportEvidence that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchDisassociateAssessmentReportEvidenceOutcomeCallable BatchDisassociateAssessmentReportEvidenceCallable(const Model::BatchDisassociateAssessmentReportEvidenceRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchDisassociateAssessmentReportEvidence that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchDisassociateAssessmentReportEvidenceAsync(const Model::BatchDisassociateAssessmentReportEvidenceRequest& request, const BatchDisassociateAssessmentReportEvidenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Uploads one or more pieces of evidence to a control in an Audit Manager
@@ -196,15 +194,6 @@ namespace AuditManager
          */
         virtual Model::BatchImportEvidenceToAssessmentControlOutcome BatchImportEvidenceToAssessmentControl(const Model::BatchImportEvidenceToAssessmentControlRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchImportEvidenceToAssessmentControl that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchImportEvidenceToAssessmentControlOutcomeCallable BatchImportEvidenceToAssessmentControlCallable(const Model::BatchImportEvidenceToAssessmentControlRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchImportEvidenceToAssessmentControl that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchImportEvidenceToAssessmentControlAsync(const Model::BatchImportEvidenceToAssessmentControlRequest& request, const BatchImportEvidenceToAssessmentControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Creates an assessment in Audit Manager. </p><p><h3>See Also:</h3>   <a
@@ -213,15 +202,6 @@ namespace AuditManager
          */
         virtual Model::CreateAssessmentOutcome CreateAssessment(const Model::CreateAssessmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateAssessment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateAssessmentOutcomeCallable CreateAssessmentCallable(const Model::CreateAssessmentRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateAssessment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateAssessmentAsync(const Model::CreateAssessmentRequest& request, const CreateAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Creates a custom framework in Audit Manager. </p><p><h3>See Also:</h3>   <a
@@ -230,15 +210,6 @@ namespace AuditManager
          */
         virtual Model::CreateAssessmentFrameworkOutcome CreateAssessmentFramework(const Model::CreateAssessmentFrameworkRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateAssessmentFramework that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateAssessmentFrameworkOutcomeCallable CreateAssessmentFrameworkCallable(const Model::CreateAssessmentFrameworkRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateAssessmentFramework that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateAssessmentFrameworkAsync(const Model::CreateAssessmentFrameworkRequest& request, const CreateAssessmentFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Creates an assessment report for the specified assessment. </p><p><h3>See
@@ -248,15 +219,6 @@ namespace AuditManager
          */
         virtual Model::CreateAssessmentReportOutcome CreateAssessmentReport(const Model::CreateAssessmentReportRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateAssessmentReport that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateAssessmentReportOutcomeCallable CreateAssessmentReportCallable(const Model::CreateAssessmentReportRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateAssessmentReport that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateAssessmentReportAsync(const Model::CreateAssessmentReportRequest& request, const CreateAssessmentReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Creates a new custom control in Audit Manager. </p><p><h3>See Also:</h3>  
@@ -266,15 +228,6 @@ namespace AuditManager
          */
         virtual Model::CreateControlOutcome CreateControl(const Model::CreateControlRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateControl that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateControlOutcomeCallable CreateControlCallable(const Model::CreateControlRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateControl that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateControlAsync(const Model::CreateControlRequest& request, const CreateControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Deletes an assessment in Audit Manager. </p><p><h3>See Also:</h3>   <a
@@ -283,15 +236,6 @@ namespace AuditManager
          */
         virtual Model::DeleteAssessmentOutcome DeleteAssessment(const Model::DeleteAssessmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAssessment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAssessmentOutcomeCallable DeleteAssessmentCallable(const Model::DeleteAssessmentRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAssessment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAssessmentAsync(const Model::DeleteAssessmentRequest& request, const DeleteAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Deletes a custom framework in Audit Manager. </p><p><h3>See Also:</h3>   <a
@@ -300,15 +244,6 @@ namespace AuditManager
          */
         virtual Model::DeleteAssessmentFrameworkOutcome DeleteAssessmentFramework(const Model::DeleteAssessmentFrameworkRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAssessmentFramework that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAssessmentFrameworkOutcomeCallable DeleteAssessmentFrameworkCallable(const Model::DeleteAssessmentFrameworkRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAssessmentFramework that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAssessmentFrameworkAsync(const Model::DeleteAssessmentFrameworkRequest& request, const DeleteAssessmentFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Deletes a share request for a custom framework in Audit Manager.
@@ -318,15 +253,6 @@ namespace AuditManager
          */
         virtual Model::DeleteAssessmentFrameworkShareOutcome DeleteAssessmentFrameworkShare(const Model::DeleteAssessmentFrameworkShareRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAssessmentFrameworkShare that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAssessmentFrameworkShareOutcomeCallable DeleteAssessmentFrameworkShareCallable(const Model::DeleteAssessmentFrameworkShareRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAssessmentFrameworkShare that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAssessmentFrameworkShareAsync(const Model::DeleteAssessmentFrameworkShareRequest& request, const DeleteAssessmentFrameworkShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an assessment report in Audit Manager. </p> <p>When you run the
@@ -355,15 +281,6 @@ namespace AuditManager
          */
         virtual Model::DeleteAssessmentReportOutcome DeleteAssessmentReport(const Model::DeleteAssessmentReportRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAssessmentReport that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAssessmentReportOutcomeCallable DeleteAssessmentReportCallable(const Model::DeleteAssessmentReportRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAssessmentReport that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAssessmentReportAsync(const Model::DeleteAssessmentReportRequest& request, const DeleteAssessmentReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Deletes a custom control in Audit Manager. </p><p><h3>See Also:</h3>   <a
@@ -372,15 +289,6 @@ namespace AuditManager
          */
         virtual Model::DeleteControlOutcome DeleteControl(const Model::DeleteControlRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteControl that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteControlOutcomeCallable DeleteControlCallable(const Model::DeleteControlRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteControl that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteControlAsync(const Model::DeleteControlRequest& request, const DeleteControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Deregisters an account in Audit Manager. </p>  <p>When you deregister
@@ -421,15 +329,6 @@ namespace AuditManager
          */
         virtual Model::DeregisterAccountOutcome DeregisterAccount(const Model::DeregisterAccountRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeregisterAccount that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeregisterAccountOutcomeCallable DeregisterAccountCallable(const Model::DeregisterAccountRequest& request) const;
-
-        /**
-         * An Async wrapper for DeregisterAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeregisterAccountAsync(const Model::DeregisterAccountRequest& request, const DeregisterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified Amazon Web Services account as a delegated
@@ -477,15 +376,6 @@ namespace AuditManager
          */
         virtual Model::DeregisterOrganizationAdminAccountOutcome DeregisterOrganizationAdminAccount(const Model::DeregisterOrganizationAdminAccountRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeregisterOrganizationAdminAccount that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeregisterOrganizationAdminAccountOutcomeCallable DeregisterOrganizationAdminAccountCallable(const Model::DeregisterOrganizationAdminAccountRequest& request) const;
-
-        /**
-         * An Async wrapper for DeregisterOrganizationAdminAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeregisterOrganizationAdminAccountAsync(const Model::DeregisterOrganizationAdminAccountRequest& request, const DeregisterOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Disassociates an evidence folder from the specified assessment report in
@@ -495,15 +385,6 @@ namespace AuditManager
          */
         virtual Model::DisassociateAssessmentReportEvidenceFolderOutcome DisassociateAssessmentReportEvidenceFolder(const Model::DisassociateAssessmentReportEvidenceFolderRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateAssessmentReportEvidenceFolder that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateAssessmentReportEvidenceFolderOutcomeCallable DisassociateAssessmentReportEvidenceFolderCallable(const Model::DisassociateAssessmentReportEvidenceFolderRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateAssessmentReportEvidenceFolder that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateAssessmentReportEvidenceFolderAsync(const Model::DisassociateAssessmentReportEvidenceFolderRequest& request, const DisassociateAssessmentReportEvidenceFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns the registration status of an account in Audit Manager.
@@ -513,15 +394,6 @@ namespace AuditManager
          */
         virtual Model::GetAccountStatusOutcome GetAccountStatus(const Model::GetAccountStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAccountStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAccountStatusOutcomeCallable GetAccountStatusCallable(const Model::GetAccountStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAccountStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAccountStatusAsync(const Model::GetAccountStatusRequest& request, const GetAccountStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns an assessment from Audit Manager. </p><p><h3>See Also:</h3>   <a
@@ -530,15 +402,6 @@ namespace AuditManager
          */
         virtual Model::GetAssessmentOutcome GetAssessment(const Model::GetAssessmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAssessment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAssessmentOutcomeCallable GetAssessmentCallable(const Model::GetAssessmentRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAssessment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAssessmentAsync(const Model::GetAssessmentRequest& request, const GetAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a framework from Audit Manager. </p><p><h3>See Also:</h3>   <a
@@ -547,15 +410,6 @@ namespace AuditManager
          */
         virtual Model::GetAssessmentFrameworkOutcome GetAssessmentFramework(const Model::GetAssessmentFrameworkRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAssessmentFramework that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAssessmentFrameworkOutcomeCallable GetAssessmentFrameworkCallable(const Model::GetAssessmentFrameworkRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAssessmentFramework that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAssessmentFrameworkAsync(const Model::GetAssessmentFrameworkRequest& request, const GetAssessmentFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns the URL of an assessment report in Audit Manager. </p><p><h3>See
@@ -565,15 +419,6 @@ namespace AuditManager
          */
         virtual Model::GetAssessmentReportUrlOutcome GetAssessmentReportUrl(const Model::GetAssessmentReportUrlRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAssessmentReportUrl that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAssessmentReportUrlOutcomeCallable GetAssessmentReportUrlCallable(const Model::GetAssessmentReportUrlRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAssessmentReportUrl that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAssessmentReportUrlAsync(const Model::GetAssessmentReportUrlRequest& request, const GetAssessmentReportUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a list of changelogs from Audit Manager. </p><p><h3>See Also:</h3>  
@@ -583,15 +428,6 @@ namespace AuditManager
          */
         virtual Model::GetChangeLogsOutcome GetChangeLogs(const Model::GetChangeLogsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetChangeLogs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetChangeLogsOutcomeCallable GetChangeLogsCallable(const Model::GetChangeLogsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetChangeLogs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetChangeLogsAsync(const Model::GetChangeLogsRequest& request, const GetChangeLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a control from Audit Manager. </p><p><h3>See Also:</h3>   <a
@@ -600,15 +436,6 @@ namespace AuditManager
          */
         virtual Model::GetControlOutcome GetControl(const Model::GetControlRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetControl that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetControlOutcomeCallable GetControlCallable(const Model::GetControlRequest& request) const;
-
-        /**
-         * An Async wrapper for GetControl that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetControlAsync(const Model::GetControlRequest& request, const GetControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a list of delegations from an audit owner to a delegate.
@@ -618,15 +445,6 @@ namespace AuditManager
          */
         virtual Model::GetDelegationsOutcome GetDelegations(const Model::GetDelegationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDelegations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDelegationsOutcomeCallable GetDelegationsCallable(const Model::GetDelegationsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDelegations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDelegationsAsync(const Model::GetDelegationsRequest& request, const GetDelegationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns evidence from Audit Manager. </p><p><h3>See Also:</h3>   <a
@@ -635,15 +453,6 @@ namespace AuditManager
          */
         virtual Model::GetEvidenceOutcome GetEvidence(const Model::GetEvidenceRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetEvidence that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetEvidenceOutcomeCallable GetEvidenceCallable(const Model::GetEvidenceRequest& request) const;
-
-        /**
-         * An Async wrapper for GetEvidence that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetEvidenceAsync(const Model::GetEvidenceRequest& request, const GetEvidenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns all evidence from a specified evidence folder in Audit Manager.
@@ -653,15 +462,6 @@ namespace AuditManager
          */
         virtual Model::GetEvidenceByEvidenceFolderOutcome GetEvidenceByEvidenceFolder(const Model::GetEvidenceByEvidenceFolderRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetEvidenceByEvidenceFolder that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetEvidenceByEvidenceFolderOutcomeCallable GetEvidenceByEvidenceFolderCallable(const Model::GetEvidenceByEvidenceFolderRequest& request) const;
-
-        /**
-         * An Async wrapper for GetEvidenceByEvidenceFolder that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetEvidenceByEvidenceFolderAsync(const Model::GetEvidenceByEvidenceFolderRequest& request, const GetEvidenceByEvidenceFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns an evidence folder from the specified assessment in Audit Manager.
@@ -671,15 +471,6 @@ namespace AuditManager
          */
         virtual Model::GetEvidenceFolderOutcome GetEvidenceFolder(const Model::GetEvidenceFolderRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetEvidenceFolder that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetEvidenceFolderOutcomeCallable GetEvidenceFolderCallable(const Model::GetEvidenceFolderRequest& request) const;
-
-        /**
-         * An Async wrapper for GetEvidenceFolder that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetEvidenceFolderAsync(const Model::GetEvidenceFolderRequest& request, const GetEvidenceFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns the evidence folders from a specified assessment in Audit Manager.
@@ -689,15 +480,6 @@ namespace AuditManager
          */
         virtual Model::GetEvidenceFoldersByAssessmentOutcome GetEvidenceFoldersByAssessment(const Model::GetEvidenceFoldersByAssessmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetEvidenceFoldersByAssessment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetEvidenceFoldersByAssessmentOutcomeCallable GetEvidenceFoldersByAssessmentCallable(const Model::GetEvidenceFoldersByAssessmentRequest& request) const;
-
-        /**
-         * An Async wrapper for GetEvidenceFoldersByAssessment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetEvidenceFoldersByAssessmentAsync(const Model::GetEvidenceFoldersByAssessmentRequest& request, const GetEvidenceFoldersByAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a list of evidence folders that are associated with a specified
@@ -707,15 +489,6 @@ namespace AuditManager
          */
         virtual Model::GetEvidenceFoldersByAssessmentControlOutcome GetEvidenceFoldersByAssessmentControl(const Model::GetEvidenceFoldersByAssessmentControlRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetEvidenceFoldersByAssessmentControl that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetEvidenceFoldersByAssessmentControlOutcomeCallable GetEvidenceFoldersByAssessmentControlCallable(const Model::GetEvidenceFoldersByAssessmentControlRequest& request) const;
-
-        /**
-         * An Async wrapper for GetEvidenceFoldersByAssessmentControl that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetEvidenceFoldersByAssessmentControlAsync(const Model::GetEvidenceFoldersByAssessmentControlRequest& request, const GetEvidenceFoldersByAssessmentControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the latest analytics data for all your current active assessments.
@@ -725,15 +498,6 @@ namespace AuditManager
          */
         virtual Model::GetInsightsOutcome GetInsights(const Model::GetInsightsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetInsights that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetInsightsOutcomeCallable GetInsightsCallable(const Model::GetInsightsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetInsights that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetInsightsAsync(const Model::GetInsightsRequest& request, const GetInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the latest analytics data for a specific active assessment.
@@ -743,15 +507,6 @@ namespace AuditManager
          */
         virtual Model::GetInsightsByAssessmentOutcome GetInsightsByAssessment(const Model::GetInsightsByAssessmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetInsightsByAssessment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetInsightsByAssessmentOutcomeCallable GetInsightsByAssessmentCallable(const Model::GetInsightsByAssessmentRequest& request) const;
-
-        /**
-         * An Async wrapper for GetInsightsByAssessment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetInsightsByAssessmentAsync(const Model::GetInsightsByAssessmentRequest& request, const GetInsightsByAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns the name of the delegated Amazon Web Services administrator account
@@ -761,15 +516,6 @@ namespace AuditManager
          */
         virtual Model::GetOrganizationAdminAccountOutcome GetOrganizationAdminAccount(const Model::GetOrganizationAdminAccountRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetOrganizationAdminAccount that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetOrganizationAdminAccountOutcomeCallable GetOrganizationAdminAccountCallable(const Model::GetOrganizationAdminAccountRequest& request) const;
-
-        /**
-         * An Async wrapper for GetOrganizationAdminAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetOrganizationAdminAccountAsync(const Model::GetOrganizationAdminAccountRequest& request, const GetOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a list of the in-scope Amazon Web Services for the specified
@@ -779,15 +525,6 @@ namespace AuditManager
          */
         virtual Model::GetServicesInScopeOutcome GetServicesInScope(const Model::GetServicesInScopeRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetServicesInScope that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetServicesInScopeOutcomeCallable GetServicesInScopeCallable(const Model::GetServicesInScopeRequest& request) const;
-
-        /**
-         * An Async wrapper for GetServicesInScope that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetServicesInScopeAsync(const Model::GetServicesInScopeRequest& request, const GetServicesInScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns the settings for the specified Amazon Web Services account.
@@ -797,15 +534,6 @@ namespace AuditManager
          */
         virtual Model::GetSettingsOutcome GetSettings(const Model::GetSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSettingsOutcomeCallable GetSettingsCallable(const Model::GetSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSettingsAsync(const Model::GetSettingsRequest& request, const GetSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the latest analytics data for controls within a specific control domain
@@ -820,15 +548,6 @@ namespace AuditManager
          */
         virtual Model::ListAssessmentControlInsightsByControlDomainOutcome ListAssessmentControlInsightsByControlDomain(const Model::ListAssessmentControlInsightsByControlDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAssessmentControlInsightsByControlDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAssessmentControlInsightsByControlDomainOutcomeCallable ListAssessmentControlInsightsByControlDomainCallable(const Model::ListAssessmentControlInsightsByControlDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAssessmentControlInsightsByControlDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAssessmentControlInsightsByControlDomainAsync(const Model::ListAssessmentControlInsightsByControlDomainRequest& request, const ListAssessmentControlInsightsByControlDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a list of sent or received share requests for custom frameworks in
@@ -838,15 +557,6 @@ namespace AuditManager
          */
         virtual Model::ListAssessmentFrameworkShareRequestsOutcome ListAssessmentFrameworkShareRequests(const Model::ListAssessmentFrameworkShareRequestsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAssessmentFrameworkShareRequests that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAssessmentFrameworkShareRequestsOutcomeCallable ListAssessmentFrameworkShareRequestsCallable(const Model::ListAssessmentFrameworkShareRequestsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAssessmentFrameworkShareRequests that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAssessmentFrameworkShareRequestsAsync(const Model::ListAssessmentFrameworkShareRequestsRequest& request, const ListAssessmentFrameworkShareRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a list of the frameworks that are available in the Audit Manager
@@ -856,15 +566,6 @@ namespace AuditManager
          */
         virtual Model::ListAssessmentFrameworksOutcome ListAssessmentFrameworks(const Model::ListAssessmentFrameworksRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAssessmentFrameworks that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAssessmentFrameworksOutcomeCallable ListAssessmentFrameworksCallable(const Model::ListAssessmentFrameworksRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAssessmentFrameworks that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAssessmentFrameworksAsync(const Model::ListAssessmentFrameworksRequest& request, const ListAssessmentFrameworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a list of assessment reports created in Audit Manager.
@@ -874,15 +575,6 @@ namespace AuditManager
          */
         virtual Model::ListAssessmentReportsOutcome ListAssessmentReports(const Model::ListAssessmentReportsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAssessmentReports that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAssessmentReportsOutcomeCallable ListAssessmentReportsCallable(const Model::ListAssessmentReportsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAssessmentReports that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAssessmentReportsAsync(const Model::ListAssessmentReportsRequest& request, const ListAssessmentReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a list of current and past assessments from Audit Manager.
@@ -892,15 +584,6 @@ namespace AuditManager
          */
         virtual Model::ListAssessmentsOutcome ListAssessments(const Model::ListAssessmentsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAssessments that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAssessmentsOutcomeCallable ListAssessmentsCallable(const Model::ListAssessmentsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAssessments that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAssessmentsAsync(const Model::ListAssessmentsRequest& request, const ListAssessmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the latest analytics data for control domains across all of your active
@@ -914,15 +597,6 @@ namespace AuditManager
          */
         virtual Model::ListControlDomainInsightsOutcome ListControlDomainInsights(const Model::ListControlDomainInsightsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListControlDomainInsights that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListControlDomainInsightsOutcomeCallable ListControlDomainInsightsCallable(const Model::ListControlDomainInsightsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListControlDomainInsights that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListControlDomainInsightsAsync(const Model::ListControlDomainInsightsRequest& request, const ListControlDomainInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists analytics data for control domains within a specified active
@@ -935,15 +609,6 @@ namespace AuditManager
          */
         virtual Model::ListControlDomainInsightsByAssessmentOutcome ListControlDomainInsightsByAssessment(const Model::ListControlDomainInsightsByAssessmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListControlDomainInsightsByAssessment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListControlDomainInsightsByAssessmentOutcomeCallable ListControlDomainInsightsByAssessmentCallable(const Model::ListControlDomainInsightsByAssessmentRequest& request) const;
-
-        /**
-         * An Async wrapper for ListControlDomainInsightsByAssessment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListControlDomainInsightsByAssessmentAsync(const Model::ListControlDomainInsightsByAssessmentRequest& request, const ListControlDomainInsightsByAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the latest analytics data for controls within a specific control domain
@@ -957,15 +622,6 @@ namespace AuditManager
          */
         virtual Model::ListControlInsightsByControlDomainOutcome ListControlInsightsByControlDomain(const Model::ListControlInsightsByControlDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListControlInsightsByControlDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListControlInsightsByControlDomainOutcomeCallable ListControlInsightsByControlDomainCallable(const Model::ListControlInsightsByControlDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for ListControlInsightsByControlDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListControlInsightsByControlDomainAsync(const Model::ListControlInsightsByControlDomainRequest& request, const ListControlInsightsByControlDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a list of controls from Audit Manager. </p><p><h3>See Also:</h3>  
@@ -975,15 +631,6 @@ namespace AuditManager
          */
         virtual Model::ListControlsOutcome ListControls(const Model::ListControlsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListControls that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListControlsOutcomeCallable ListControlsCallable(const Model::ListControlsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListControls that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListControlsAsync(const Model::ListControlsRequest& request, const ListControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a list of keywords that are pre-mapped to the specified control data
@@ -993,15 +640,6 @@ namespace AuditManager
          */
         virtual Model::ListKeywordsForDataSourceOutcome ListKeywordsForDataSource(const Model::ListKeywordsForDataSourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListKeywordsForDataSource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListKeywordsForDataSourceOutcomeCallable ListKeywordsForDataSourceCallable(const Model::ListKeywordsForDataSourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListKeywordsForDataSource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListKeywordsForDataSourceAsync(const Model::ListKeywordsForDataSourceRequest& request, const ListKeywordsForDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a list of all Audit Manager notifications. </p><p><h3>See Also:</h3>
@@ -1011,15 +649,6 @@ namespace AuditManager
          */
         virtual Model::ListNotificationsOutcome ListNotifications(const Model::ListNotificationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListNotifications that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListNotificationsOutcomeCallable ListNotificationsCallable(const Model::ListNotificationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListNotifications that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListNotificationsAsync(const Model::ListNotificationsRequest& request, const ListNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a list of tags for the specified resource in Audit Manager.
@@ -1029,15 +658,6 @@ namespace AuditManager
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Enables Audit Manager for the specified Amazon Web Services account.
@@ -1047,15 +667,6 @@ namespace AuditManager
          */
         virtual Model::RegisterAccountOutcome RegisterAccount(const Model::RegisterAccountRequest& request) const;
 
-        /**
-         * A Callable wrapper for RegisterAccount that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RegisterAccountOutcomeCallable RegisterAccountCallable(const Model::RegisterAccountRequest& request) const;
-
-        /**
-         * An Async wrapper for RegisterAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RegisterAccountAsync(const Model::RegisterAccountRequest& request, const RegisterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Enables an Amazon Web Services account within the organization as the
@@ -1065,15 +676,6 @@ namespace AuditManager
          */
         virtual Model::RegisterOrganizationAdminAccountOutcome RegisterOrganizationAdminAccount(const Model::RegisterOrganizationAdminAccountRequest& request) const;
 
-        /**
-         * A Callable wrapper for RegisterOrganizationAdminAccount that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RegisterOrganizationAdminAccountOutcomeCallable RegisterOrganizationAdminAccountCallable(const Model::RegisterOrganizationAdminAccountRequest& request) const;
-
-        /**
-         * An Async wrapper for RegisterOrganizationAdminAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RegisterOrganizationAdminAccountAsync(const Model::RegisterOrganizationAdminAccountRequest& request, const RegisterOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Creates a share request for a custom framework in Audit Manager. </p> <p>The
@@ -1109,15 +711,6 @@ namespace AuditManager
          */
         virtual Model::StartAssessmentFrameworkShareOutcome StartAssessmentFrameworkShare(const Model::StartAssessmentFrameworkShareRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartAssessmentFrameworkShare that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartAssessmentFrameworkShareOutcomeCallable StartAssessmentFrameworkShareCallable(const Model::StartAssessmentFrameworkShareRequest& request) const;
-
-        /**
-         * An Async wrapper for StartAssessmentFrameworkShare that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartAssessmentFrameworkShareAsync(const Model::StartAssessmentFrameworkShareRequest& request, const StartAssessmentFrameworkShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Tags the specified resource in Audit Manager. </p><p><h3>See Also:</h3>   <a
@@ -1126,15 +719,6 @@ namespace AuditManager
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Removes a tag from a resource in Audit Manager. </p><p><h3>See Also:</h3>  
@@ -1144,15 +728,6 @@ namespace AuditManager
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Edits an Audit Manager assessment. </p><p><h3>See Also:</h3>   <a
@@ -1161,15 +736,6 @@ namespace AuditManager
          */
         virtual Model::UpdateAssessmentOutcome UpdateAssessment(const Model::UpdateAssessmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateAssessment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateAssessmentOutcomeCallable UpdateAssessmentCallable(const Model::UpdateAssessmentRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateAssessment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateAssessmentAsync(const Model::UpdateAssessmentRequest& request, const UpdateAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Updates a control within an assessment in Audit Manager. </p><p><h3>See
@@ -1179,15 +745,6 @@ namespace AuditManager
          */
         virtual Model::UpdateAssessmentControlOutcome UpdateAssessmentControl(const Model::UpdateAssessmentControlRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateAssessmentControl that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateAssessmentControlOutcomeCallable UpdateAssessmentControlCallable(const Model::UpdateAssessmentControlRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateAssessmentControl that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateAssessmentControlAsync(const Model::UpdateAssessmentControlRequest& request, const UpdateAssessmentControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Updates the status of a control set in an Audit Manager assessment.
@@ -1197,15 +754,6 @@ namespace AuditManager
          */
         virtual Model::UpdateAssessmentControlSetStatusOutcome UpdateAssessmentControlSetStatus(const Model::UpdateAssessmentControlSetStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateAssessmentControlSetStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateAssessmentControlSetStatusOutcomeCallable UpdateAssessmentControlSetStatusCallable(const Model::UpdateAssessmentControlSetStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateAssessmentControlSetStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateAssessmentControlSetStatusAsync(const Model::UpdateAssessmentControlSetStatusRequest& request, const UpdateAssessmentControlSetStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Updates a custom framework in Audit Manager. </p><p><h3>See Also:</h3>   <a
@@ -1214,15 +762,6 @@ namespace AuditManager
          */
         virtual Model::UpdateAssessmentFrameworkOutcome UpdateAssessmentFramework(const Model::UpdateAssessmentFrameworkRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateAssessmentFramework that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateAssessmentFrameworkOutcomeCallable UpdateAssessmentFrameworkCallable(const Model::UpdateAssessmentFrameworkRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateAssessmentFramework that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateAssessmentFrameworkAsync(const Model::UpdateAssessmentFrameworkRequest& request, const UpdateAssessmentFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Updates a share request for a custom framework in Audit Manager.
@@ -1232,15 +771,6 @@ namespace AuditManager
          */
         virtual Model::UpdateAssessmentFrameworkShareOutcome UpdateAssessmentFrameworkShare(const Model::UpdateAssessmentFrameworkShareRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateAssessmentFrameworkShare that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateAssessmentFrameworkShareOutcomeCallable UpdateAssessmentFrameworkShareCallable(const Model::UpdateAssessmentFrameworkShareRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateAssessmentFrameworkShare that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateAssessmentFrameworkShareAsync(const Model::UpdateAssessmentFrameworkShareRequest& request, const UpdateAssessmentFrameworkShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Updates the status of an assessment in Audit Manager. </p><p><h3>See
@@ -1250,15 +780,6 @@ namespace AuditManager
          */
         virtual Model::UpdateAssessmentStatusOutcome UpdateAssessmentStatus(const Model::UpdateAssessmentStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateAssessmentStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateAssessmentStatusOutcomeCallable UpdateAssessmentStatusCallable(const Model::UpdateAssessmentStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateAssessmentStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateAssessmentStatusAsync(const Model::UpdateAssessmentStatusRequest& request, const UpdateAssessmentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Updates a custom control in Audit Manager. </p><p><h3>See Also:</h3>   <a
@@ -1267,15 +788,6 @@ namespace AuditManager
          */
         virtual Model::UpdateControlOutcome UpdateControl(const Model::UpdateControlRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateControl that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateControlOutcomeCallable UpdateControlCallable(const Model::UpdateControlRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateControl that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateControlAsync(const Model::UpdateControlRequest& request, const UpdateControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Updates Audit Manager settings for the current user account. </p><p><h3>See
@@ -1285,15 +797,6 @@ namespace AuditManager
          */
         virtual Model::UpdateSettingsOutcome UpdateSettings(const Model::UpdateSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateSettingsOutcomeCallable UpdateSettingsCallable(const Model::UpdateSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateSettingsAsync(const Model::UpdateSettingsRequest& request, const UpdateSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Validates the integrity of an assessment report in Audit Manager.
@@ -1303,15 +806,6 @@ namespace AuditManager
          */
         virtual Model::ValidateAssessmentReportIntegrityOutcome ValidateAssessmentReportIntegrity(const Model::ValidateAssessmentReportIntegrityRequest& request) const;
 
-        /**
-         * A Callable wrapper for ValidateAssessmentReportIntegrity that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ValidateAssessmentReportIntegrityOutcomeCallable ValidateAssessmentReportIntegrityCallable(const Model::ValidateAssessmentReportIntegrityRequest& request) const;
-
-        /**
-         * An Async wrapper for ValidateAssessmentReportIntegrity that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ValidateAssessmentReportIntegrityAsync(const Model::ValidateAssessmentReportIntegrityRequest& request, const ValidateAssessmentReportIntegrityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

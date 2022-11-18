@@ -7,8 +7,10 @@
 #include <aws/cloudsearchdomain/CloudSearchDomain_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/cloudsearchdomain/CloudSearchDomainServiceClientModel.h>
+#include <aws/cloudsearchdomain/CloudSearchDomainLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -82,6 +84,47 @@ namespace CloudSearchDomain
         virtual ~CloudSearchDomainClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Retrieves a list of documents that match the specified search criteria. How
          * you specify the search criteria depends on which query parser you use. Amazon
@@ -108,15 +151,6 @@ namespace CloudSearchDomain
          */
         virtual Model::SearchOutcome Search(const Model::SearchRequest& request) const;
 
-        /**
-         * A Callable wrapper for Search that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SearchOutcomeCallable SearchCallable(const Model::SearchRequest& request) const;
-
-        /**
-         * An Async wrapper for Search that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SearchAsync(const Model::SearchRequest& request, const SearchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves autocomplete suggestions for a partial query string. You can use
@@ -140,15 +174,6 @@ namespace CloudSearchDomain
          */
         virtual Model::SuggestOutcome Suggest(const Model::SuggestRequest& request) const;
 
-        /**
-         * A Callable wrapper for Suggest that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SuggestOutcomeCallable SuggestCallable(const Model::SuggestRequest& request) const;
-
-        /**
-         * An Async wrapper for Suggest that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SuggestAsync(const Model::SuggestRequest& request, const SuggestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Posts a batch of documents to a search domain for indexing. A document batch
@@ -178,15 +203,6 @@ namespace CloudSearchDomain
          */
         virtual Model::UploadDocumentsOutcome UploadDocuments(const Model::UploadDocumentsRequest& request) const;
 
-        /**
-         * A Callable wrapper for UploadDocuments that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UploadDocumentsOutcomeCallable UploadDocumentsCallable(const Model::UploadDocumentsRequest& request) const;
-
-        /**
-         * An Async wrapper for UploadDocuments that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UploadDocumentsAsync(const Model::UploadDocumentsRequest& request, const UploadDocumentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

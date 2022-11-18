@@ -7,8 +7,10 @@
 #include <aws/pricing/Pricing_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/pricing/PricingServiceClientModel.h>
+#include <aws/pricing/PricingLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -92,6 +94,47 @@ namespace Pricing
         virtual ~PricingClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Returns the metadata for one service or a list of the metadata for all
          * services. Use this without a service code to get the service codes for all
@@ -106,15 +149,6 @@ namespace Pricing
          */
         virtual Model::DescribeServicesOutcome DescribeServices(const Model::DescribeServicesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeServices that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeServicesOutcomeCallable DescribeServicesCallable(const Model::DescribeServicesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeServices that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeServicesAsync(const Model::DescribeServicesRequest& request, const DescribeServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of attribute values. Attributes are similar to the details in
@@ -128,15 +162,6 @@ namespace Pricing
          */
         virtual Model::GetAttributeValuesOutcome GetAttributeValues(const Model::GetAttributeValuesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAttributeValues that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAttributeValuesOutcomeCallable GetAttributeValuesCallable(const Model::GetAttributeValuesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAttributeValues that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAttributeValuesAsync(const Model::GetAttributeValuesRequest& request, const GetAttributeValuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of all products that match the filter criteria.</p><p><h3>See
@@ -146,15 +171,6 @@ namespace Pricing
          */
         virtual Model::GetProductsOutcome GetProducts(const Model::GetProductsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetProducts that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetProductsOutcomeCallable GetProductsCallable(const Model::GetProductsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetProducts that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetProductsAsync(const Model::GetProductsRequest& request, const GetProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

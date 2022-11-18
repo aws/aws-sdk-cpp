@@ -7,8 +7,10 @@
 #include <aws/datapipeline/DataPipeline_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/datapipeline/DataPipelineServiceClientModel.h>
+#include <aws/datapipeline/DataPipelineLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -90,6 +92,47 @@ namespace DataPipeline
         virtual ~DataPipelineClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Validates the specified pipeline and starts processing pipeline tasks. If the
          * pipeline does not pass validation, activation fails.</p> <p>If you need to pause
@@ -102,15 +145,6 @@ namespace DataPipeline
          */
         virtual Model::ActivatePipelineOutcome ActivatePipeline(const Model::ActivatePipelineRequest& request) const;
 
-        /**
-         * A Callable wrapper for ActivatePipeline that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ActivatePipelineOutcomeCallable ActivatePipelineCallable(const Model::ActivatePipelineRequest& request) const;
-
-        /**
-         * An Async wrapper for ActivatePipeline that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ActivatePipelineAsync(const Model::ActivatePipelineRequest& request, const ActivatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds or modifies tags for the specified pipeline.</p><p><h3>See Also:</h3>  
@@ -120,15 +154,6 @@ namespace DataPipeline
          */
         virtual Model::AddTagsOutcome AddTags(const Model::AddTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddTagsOutcomeCallable AddTagsCallable(const Model::AddTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for AddTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddTagsAsync(const Model::AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new, empty pipeline. Use <a>PutPipelineDefinition</a> to populate
@@ -138,15 +163,6 @@ namespace DataPipeline
          */
         virtual Model::CreatePipelineOutcome CreatePipeline(const Model::CreatePipelineRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreatePipeline that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreatePipelineOutcomeCallable CreatePipelineCallable(const Model::CreatePipelineRequest& request) const;
-
-        /**
-         * An Async wrapper for CreatePipeline that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreatePipelineAsync(const Model::CreatePipelineRequest& request, const CreatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deactivates the specified running pipeline. The pipeline is set to the
@@ -159,15 +175,6 @@ namespace DataPipeline
          */
         virtual Model::DeactivatePipelineOutcome DeactivatePipeline(const Model::DeactivatePipelineRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeactivatePipeline that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeactivatePipelineOutcomeCallable DeactivatePipelineCallable(const Model::DeactivatePipelineRequest& request) const;
-
-        /**
-         * An Async wrapper for DeactivatePipeline that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeactivatePipelineAsync(const Model::DeactivatePipelineRequest& request, const DeactivatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a pipeline, its pipeline definition, and its run history. AWS Data
@@ -182,15 +189,6 @@ namespace DataPipeline
          */
         virtual Model::DeletePipelineOutcome DeletePipeline(const Model::DeletePipelineRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeletePipeline that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeletePipelineOutcomeCallable DeletePipelineCallable(const Model::DeletePipelineRequest& request) const;
-
-        /**
-         * An Async wrapper for DeletePipeline that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeletePipelineAsync(const Model::DeletePipelineRequest& request, const DeletePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the object definitions for a set of objects associated with the
@@ -201,15 +199,6 @@ namespace DataPipeline
          */
         virtual Model::DescribeObjectsOutcome DescribeObjects(const Model::DescribeObjectsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeObjects that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeObjectsOutcomeCallable DescribeObjectsCallable(const Model::DescribeObjectsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeObjects that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeObjectsAsync(const Model::DescribeObjectsRequest& request, const DescribeObjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves metadata about one or more pipelines. The information retrieved
@@ -225,15 +214,6 @@ namespace DataPipeline
          */
         virtual Model::DescribePipelinesOutcome DescribePipelines(const Model::DescribePipelinesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribePipelines that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribePipelinesOutcomeCallable DescribePipelinesCallable(const Model::DescribePipelinesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribePipelines that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribePipelinesAsync(const Model::DescribePipelinesRequest& request, const DescribePipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Task runners call <code>EvaluateExpression</code> to evaluate a string in the
@@ -244,15 +224,6 @@ namespace DataPipeline
          */
         virtual Model::EvaluateExpressionOutcome EvaluateExpression(const Model::EvaluateExpressionRequest& request) const;
 
-        /**
-         * A Callable wrapper for EvaluateExpression that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EvaluateExpressionOutcomeCallable EvaluateExpressionCallable(const Model::EvaluateExpressionRequest& request) const;
-
-        /**
-         * An Async wrapper for EvaluateExpression that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EvaluateExpressionAsync(const Model::EvaluateExpressionRequest& request, const EvaluateExpressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the definition of the specified pipeline. You can call
@@ -263,15 +234,6 @@ namespace DataPipeline
          */
         virtual Model::GetPipelineDefinitionOutcome GetPipelineDefinition(const Model::GetPipelineDefinitionRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetPipelineDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetPipelineDefinitionOutcomeCallable GetPipelineDefinitionCallable(const Model::GetPipelineDefinitionRequest& request) const;
-
-        /**
-         * An Async wrapper for GetPipelineDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetPipelineDefinitionAsync(const Model::GetPipelineDefinitionRequest& request, const GetPipelineDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the pipeline identifiers for all active pipelines that you have
@@ -281,15 +243,6 @@ namespace DataPipeline
          */
         virtual Model::ListPipelinesOutcome ListPipelines(const Model::ListPipelinesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPipelines that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPipelinesOutcomeCallable ListPipelinesCallable(const Model::ListPipelinesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPipelines that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPipelinesAsync(const Model::ListPipelinesRequest& request, const ListPipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Task runners call <code>PollForTask</code> to receive a task to perform from
@@ -311,15 +264,6 @@ namespace DataPipeline
          */
         virtual Model::PollForTaskOutcome PollForTask(const Model::PollForTaskRequest& request) const;
 
-        /**
-         * A Callable wrapper for PollForTask that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PollForTaskOutcomeCallable PollForTaskCallable(const Model::PollForTaskRequest& request) const;
-
-        /**
-         * An Async wrapper for PollForTask that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PollForTaskAsync(const Model::PollForTaskRequest& request, const PollForTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds tasks, schedules, and preconditions to the specified pipeline. You can
@@ -338,15 +282,6 @@ namespace DataPipeline
          */
         virtual Model::PutPipelineDefinitionOutcome PutPipelineDefinition(const Model::PutPipelineDefinitionRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutPipelineDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutPipelineDefinitionOutcomeCallable PutPipelineDefinitionCallable(const Model::PutPipelineDefinitionRequest& request) const;
-
-        /**
-         * An Async wrapper for PutPipelineDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutPipelineDefinitionAsync(const Model::PutPipelineDefinitionRequest& request, const PutPipelineDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Queries the specified pipeline for the names of objects that match the
@@ -356,15 +291,6 @@ namespace DataPipeline
          */
         virtual Model::QueryObjectsOutcome QueryObjects(const Model::QueryObjectsRequest& request) const;
 
-        /**
-         * A Callable wrapper for QueryObjects that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::QueryObjectsOutcomeCallable QueryObjectsCallable(const Model::QueryObjectsRequest& request) const;
-
-        /**
-         * An Async wrapper for QueryObjects that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void QueryObjectsAsync(const Model::QueryObjectsRequest& request, const QueryObjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes existing tags from the specified pipeline.</p><p><h3>See Also:</h3>  
@@ -374,15 +300,6 @@ namespace DataPipeline
          */
         virtual Model::RemoveTagsOutcome RemoveTags(const Model::RemoveTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for RemoveTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RemoveTagsOutcomeCallable RemoveTagsCallable(const Model::RemoveTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for RemoveTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RemoveTagsAsync(const Model::RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Task runners call <code>ReportTaskProgress</code> when assigned a task to
@@ -401,15 +318,6 @@ namespace DataPipeline
          */
         virtual Model::ReportTaskProgressOutcome ReportTaskProgress(const Model::ReportTaskProgressRequest& request) const;
 
-        /**
-         * A Callable wrapper for ReportTaskProgress that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ReportTaskProgressOutcomeCallable ReportTaskProgressCallable(const Model::ReportTaskProgressRequest& request) const;
-
-        /**
-         * An Async wrapper for ReportTaskProgress that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ReportTaskProgressAsync(const Model::ReportTaskProgressRequest& request, const ReportTaskProgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Task runners call <code>ReportTaskRunnerHeartbeat</code> every 15 minutes to
@@ -422,15 +330,6 @@ namespace DataPipeline
          */
         virtual Model::ReportTaskRunnerHeartbeatOutcome ReportTaskRunnerHeartbeat(const Model::ReportTaskRunnerHeartbeatRequest& request) const;
 
-        /**
-         * A Callable wrapper for ReportTaskRunnerHeartbeat that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ReportTaskRunnerHeartbeatOutcomeCallable ReportTaskRunnerHeartbeatCallable(const Model::ReportTaskRunnerHeartbeatRequest& request) const;
-
-        /**
-         * An Async wrapper for ReportTaskRunnerHeartbeat that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ReportTaskRunnerHeartbeatAsync(const Model::ReportTaskRunnerHeartbeatRequest& request, const ReportTaskRunnerHeartbeatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Requests that the status of the specified physical or logical pipeline
@@ -444,15 +343,6 @@ namespace DataPipeline
          */
         virtual Model::SetStatusOutcome SetStatus(const Model::SetStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for SetStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SetStatusOutcomeCallable SetStatusCallable(const Model::SetStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for SetStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SetStatusAsync(const Model::SetStatusRequest& request, const SetStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Task runners call <code>SetTaskStatus</code> to notify AWS Data Pipeline that
@@ -466,15 +356,6 @@ namespace DataPipeline
          */
         virtual Model::SetTaskStatusOutcome SetTaskStatus(const Model::SetTaskStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for SetTaskStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SetTaskStatusOutcomeCallable SetTaskStatusCallable(const Model::SetTaskStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for SetTaskStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SetTaskStatusAsync(const Model::SetTaskStatusRequest& request, const SetTaskStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Validates the specified pipeline definition to ensure that it is well formed
@@ -484,15 +365,6 @@ namespace DataPipeline
          */
         virtual Model::ValidatePipelineDefinitionOutcome ValidatePipelineDefinition(const Model::ValidatePipelineDefinitionRequest& request) const;
 
-        /**
-         * A Callable wrapper for ValidatePipelineDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ValidatePipelineDefinitionOutcomeCallable ValidatePipelineDefinitionCallable(const Model::ValidatePipelineDefinitionRequest& request) const;
-
-        /**
-         * An Async wrapper for ValidatePipelineDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ValidatePipelineDefinitionAsync(const Model::ValidatePipelineDefinitionRequest& request, const ValidatePipelineDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

@@ -8,8 +8,10 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/sdb/SimpleDBServiceClientModel.h>
+#include <aws/sdb/SimpleDBLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -87,6 +89,47 @@ namespace SimpleDB
         virtual ~SimpleDBClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
        /**
         * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
         */
@@ -105,15 +148,6 @@ namespace SimpleDB
          */
         virtual Model::BatchDeleteAttributesOutcome BatchDeleteAttributes(const Model::BatchDeleteAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchDeleteAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchDeleteAttributesOutcomeCallable BatchDeleteAttributesCallable(const Model::BatchDeleteAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchDeleteAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchDeleteAttributesAsync(const Model::BatchDeleteAttributesRequest& request, const BatchDeleteAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The <code>BatchPutAttributes</code> operation creates or replaces attributes
@@ -159,15 +193,6 @@ namespace SimpleDB
          */
         virtual Model::BatchPutAttributesOutcome BatchPutAttributes(const Model::BatchPutAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchPutAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchPutAttributesOutcomeCallable BatchPutAttributesCallable(const Model::BatchPutAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchPutAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchPutAttributesAsync(const Model::BatchPutAttributesRequest& request, const BatchPutAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The <code>CreateDomain</code> operation creates a new domain. The domain
@@ -183,15 +208,6 @@ namespace SimpleDB
          */
         virtual Model::CreateDomainOutcome CreateDomain(const Model::CreateDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDomainOutcomeCallable CreateDomainCallable(const Model::CreateDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDomainAsync(const Model::CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Deletes one or more attributes associated with an item. If all attributes of
@@ -208,15 +224,6 @@ namespace SimpleDB
          */
         virtual Model::DeleteAttributesOutcome DeleteAttributes(const Model::DeleteAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAttributesOutcomeCallable DeleteAttributesCallable(const Model::DeleteAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAttributesAsync(const Model::DeleteAttributesRequest& request, const DeleteAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The <code>DeleteDomain</code> operation deletes a domain. Any items (and
@@ -228,15 +235,6 @@ namespace SimpleDB
          */
         virtual Model::DeleteDomainOutcome DeleteDomain(const Model::DeleteDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDomainOutcomeCallable DeleteDomainCallable(const Model::DeleteDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDomainAsync(const Model::DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns information about the domain, including when the domain was created,
@@ -247,15 +245,6 @@ namespace SimpleDB
          */
         virtual Model::DomainMetadataOutcome DomainMetadata(const Model::DomainMetadataRequest& request) const;
 
-        /**
-         * A Callable wrapper for DomainMetadata that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DomainMetadataOutcomeCallable DomainMetadataCallable(const Model::DomainMetadataRequest& request) const;
-
-        /**
-         * An Async wrapper for DomainMetadata that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DomainMetadataAsync(const Model::DomainMetadataRequest& request, const DomainMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns all of the attributes associated with the specified item.
@@ -269,15 +258,6 @@ namespace SimpleDB
          */
         virtual Model::GetAttributesOutcome GetAttributes(const Model::GetAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAttributesOutcomeCallable GetAttributesCallable(const Model::GetAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAttributesAsync(const Model::GetAttributesRequest& request, const GetAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The <code>ListDomains</code> operation lists all domains associated with the
@@ -293,15 +273,6 @@ namespace SimpleDB
          */
         virtual Model::ListDomainsOutcome ListDomains(const Model::ListDomainsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDomains that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDomainsOutcomeCallable ListDomainsCallable(const Model::ListDomainsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDomains that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDomainsAsync(const Model::ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The PutAttributes operation creates or replaces attributes in an item. The
@@ -338,15 +309,6 @@ namespace SimpleDB
          */
         virtual Model::PutAttributesOutcome PutAttributes(const Model::PutAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutAttributesOutcomeCallable PutAttributesCallable(const Model::PutAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for PutAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutAttributesAsync(const Model::PutAttributesRequest& request, const PutAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The <code>Select</code> operation returns a set of attributes for
@@ -364,15 +326,6 @@ namespace SimpleDB
          */
         virtual Model::SelectOutcome Select(const Model::SelectRequest& request) const;
 
-        /**
-         * A Callable wrapper for Select that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SelectOutcomeCallable SelectCallable(const Model::SelectRequest& request) const;
-
-        /**
-         * An Async wrapper for Select that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SelectAsync(const Model::SelectRequest& request, const SelectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
         void OverrideEndpoint(const Aws::String& endpoint);

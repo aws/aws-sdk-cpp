@@ -7,8 +7,10 @@
 #include <aws/iotevents-data/IoTEventsData_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iotevents-data/IoTEventsDataServiceClientModel.h>
+#include <aws/iotevents-data/IoTEventsDataLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -78,6 +80,47 @@ namespace IoTEventsData
         virtual ~IoTEventsDataClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Acknowledges one or more alarms. The alarms change to the
          * <code>ACKNOWLEDGED</code> state after you acknowledge them.</p><p><h3>See
@@ -87,15 +130,6 @@ namespace IoTEventsData
          */
         virtual Model::BatchAcknowledgeAlarmOutcome BatchAcknowledgeAlarm(const Model::BatchAcknowledgeAlarmRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchAcknowledgeAlarm that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchAcknowledgeAlarmOutcomeCallable BatchAcknowledgeAlarmCallable(const Model::BatchAcknowledgeAlarmRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchAcknowledgeAlarm that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchAcknowledgeAlarmAsync(const Model::BatchAcknowledgeAlarmRequest& request, const BatchAcknowledgeAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes one or more detectors that were created. When a detector is deleted,
@@ -108,15 +142,6 @@ namespace IoTEventsData
          */
         virtual Model::BatchDeleteDetectorOutcome BatchDeleteDetector(const Model::BatchDeleteDetectorRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchDeleteDetector that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchDeleteDetectorOutcomeCallable BatchDeleteDetectorCallable(const Model::BatchDeleteDetectorRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchDeleteDetector that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchDeleteDetectorAsync(const Model::BatchDeleteDetectorRequest& request, const BatchDeleteDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disables one or more alarms. The alarms change to the <code>DISABLED</code>
@@ -126,15 +151,6 @@ namespace IoTEventsData
          */
         virtual Model::BatchDisableAlarmOutcome BatchDisableAlarm(const Model::BatchDisableAlarmRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchDisableAlarm that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchDisableAlarmOutcomeCallable BatchDisableAlarmCallable(const Model::BatchDisableAlarmRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchDisableAlarm that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchDisableAlarmAsync(const Model::BatchDisableAlarmRequest& request, const BatchDisableAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables one or more alarms. The alarms change to the <code>NORMAL</code>
@@ -144,15 +160,6 @@ namespace IoTEventsData
          */
         virtual Model::BatchEnableAlarmOutcome BatchEnableAlarm(const Model::BatchEnableAlarmRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchEnableAlarm that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchEnableAlarmOutcomeCallable BatchEnableAlarmCallable(const Model::BatchEnableAlarmRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchEnableAlarm that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchEnableAlarmAsync(const Model::BatchEnableAlarmRequest& request, const BatchEnableAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sends a set of messages to the IoT Events system. Each message payload is
@@ -166,15 +173,6 @@ namespace IoTEventsData
          */
         virtual Model::BatchPutMessageOutcome BatchPutMessage(const Model::BatchPutMessageRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchPutMessage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchPutMessageOutcomeCallable BatchPutMessageCallable(const Model::BatchPutMessageRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchPutMessage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchPutMessageAsync(const Model::BatchPutMessageRequest& request, const BatchPutMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Resets one or more alarms. The alarms return to the <code>NORMAL</code> state
@@ -184,15 +182,6 @@ namespace IoTEventsData
          */
         virtual Model::BatchResetAlarmOutcome BatchResetAlarm(const Model::BatchResetAlarmRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchResetAlarm that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchResetAlarmOutcomeCallable BatchResetAlarmCallable(const Model::BatchResetAlarmRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchResetAlarm that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchResetAlarmAsync(const Model::BatchResetAlarmRequest& request, const BatchResetAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Changes one or more alarms to the snooze mode. The alarms change to the
@@ -203,15 +192,6 @@ namespace IoTEventsData
          */
         virtual Model::BatchSnoozeAlarmOutcome BatchSnoozeAlarm(const Model::BatchSnoozeAlarmRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchSnoozeAlarm that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchSnoozeAlarmOutcomeCallable BatchSnoozeAlarmCallable(const Model::BatchSnoozeAlarmRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchSnoozeAlarm that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchSnoozeAlarmAsync(const Model::BatchSnoozeAlarmRequest& request, const BatchSnoozeAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the state, variable values, and timer settings of one or more
@@ -222,15 +202,6 @@ namespace IoTEventsData
          */
         virtual Model::BatchUpdateDetectorOutcome BatchUpdateDetector(const Model::BatchUpdateDetectorRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchUpdateDetector that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchUpdateDetectorOutcomeCallable BatchUpdateDetectorCallable(const Model::BatchUpdateDetectorRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchUpdateDetector that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchUpdateDetectorAsync(const Model::BatchUpdateDetectorRequest& request, const BatchUpdateDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about an alarm.</p><p><h3>See Also:</h3>   <a
@@ -239,15 +210,6 @@ namespace IoTEventsData
          */
         virtual Model::DescribeAlarmOutcome DescribeAlarm(const Model::DescribeAlarmRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAlarm that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAlarmOutcomeCallable DescribeAlarmCallable(const Model::DescribeAlarmRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAlarm that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAlarmAsync(const Model::DescribeAlarmRequest& request, const DescribeAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the specified detector (instance).</p><p><h3>See
@@ -257,15 +219,6 @@ namespace IoTEventsData
          */
         virtual Model::DescribeDetectorOutcome DescribeDetector(const Model::DescribeDetectorRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDetector that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDetectorOutcomeCallable DescribeDetectorCallable(const Model::DescribeDetectorRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDetector that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDetectorAsync(const Model::DescribeDetectorRequest& request, const DescribeDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists one or more alarms. The operation returns only the metadata associated
@@ -275,15 +228,6 @@ namespace IoTEventsData
          */
         virtual Model::ListAlarmsOutcome ListAlarms(const Model::ListAlarmsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAlarms that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAlarmsOutcomeCallable ListAlarmsCallable(const Model::ListAlarmsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAlarms that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAlarmsAsync(const Model::ListAlarmsRequest& request, const ListAlarmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists detectors (the instances of a detector model).</p><p><h3>See Also:</h3>
@@ -293,15 +237,6 @@ namespace IoTEventsData
          */
         virtual Model::ListDetectorsOutcome ListDetectors(const Model::ListDetectorsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDetectors that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDetectorsOutcomeCallable ListDetectorsCallable(const Model::ListDetectorsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDetectors that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDetectorsAsync(const Model::ListDetectorsRequest& request, const ListDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

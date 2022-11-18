@@ -7,8 +7,10 @@
 #include <aws/appflow/Appflow_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/appflow/AppflowServiceClientModel.h>
+#include <aws/appflow/AppflowLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -99,6 +101,47 @@ namespace Appflow
         virtual ~AppflowClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p> Creates a new connector profile associated with your Amazon Web Services
          * account. There is a soft quota of 100 connector profiles per Amazon Web Services
@@ -111,15 +154,6 @@ namespace Appflow
          */
         virtual Model::CreateConnectorProfileOutcome CreateConnectorProfile(const Model::CreateConnectorProfileRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateConnectorProfile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateConnectorProfileOutcomeCallable CreateConnectorProfileCallable(const Model::CreateConnectorProfileRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateConnectorProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateConnectorProfileAsync(const Model::CreateConnectorProfileRequest& request, const CreateConnectorProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Enables your application to create a new flow using Amazon AppFlow. You must
@@ -133,15 +167,6 @@ namespace Appflow
          */
         virtual Model::CreateFlowOutcome CreateFlow(const Model::CreateFlowRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateFlow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateFlowOutcomeCallable CreateFlowCallable(const Model::CreateFlowRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateFlow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateFlowAsync(const Model::CreateFlowRequest& request, const CreateFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Enables you to delete an existing connector profile. </p><p><h3>See
@@ -151,15 +176,6 @@ namespace Appflow
          */
         virtual Model::DeleteConnectorProfileOutcome DeleteConnectorProfile(const Model::DeleteConnectorProfileRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteConnectorProfile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteConnectorProfileOutcomeCallable DeleteConnectorProfileCallable(const Model::DeleteConnectorProfileRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteConnectorProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteConnectorProfileAsync(const Model::DeleteConnectorProfileRequest& request, const DeleteConnectorProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Enables your application to delete an existing flow. Before deleting the
@@ -170,15 +186,6 @@ namespace Appflow
          */
         virtual Model::DeleteFlowOutcome DeleteFlow(const Model::DeleteFlowRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteFlow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteFlowOutcomeCallable DeleteFlowCallable(const Model::DeleteFlowRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteFlow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteFlowAsync(const Model::DeleteFlowRequest& request, const DeleteFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the given custom connector registered in your Amazon Web Services
@@ -189,15 +196,6 @@ namespace Appflow
          */
         virtual Model::DescribeConnectorOutcome DescribeConnector(const Model::DescribeConnectorRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeConnector that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeConnectorOutcomeCallable DescribeConnectorCallable(const Model::DescribeConnectorRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeConnector that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeConnectorAsync(const Model::DescribeConnectorRequest& request, const DescribeConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Provides details regarding the entity used with the connector, with a
@@ -208,15 +206,6 @@ namespace Appflow
          */
         virtual Model::DescribeConnectorEntityOutcome DescribeConnectorEntity(const Model::DescribeConnectorEntityRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeConnectorEntity that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeConnectorEntityOutcomeCallable DescribeConnectorEntityCallable(const Model::DescribeConnectorEntityRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeConnectorEntity that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeConnectorEntityAsync(const Model::DescribeConnectorEntityRequest& request, const DescribeConnectorEntityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a list of <code>connector-profile</code> details matching the
@@ -230,15 +219,6 @@ namespace Appflow
          */
         virtual Model::DescribeConnectorProfilesOutcome DescribeConnectorProfiles(const Model::DescribeConnectorProfilesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeConnectorProfiles that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeConnectorProfilesOutcomeCallable DescribeConnectorProfilesCallable(const Model::DescribeConnectorProfilesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeConnectorProfiles that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeConnectorProfilesAsync(const Model::DescribeConnectorProfilesRequest& request, const DescribeConnectorProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Describes the connectors vended by Amazon AppFlow for specified connector
@@ -253,15 +233,6 @@ namespace Appflow
          */
         virtual Model::DescribeConnectorsOutcome DescribeConnectors(const Model::DescribeConnectorsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeConnectors that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeConnectorsOutcomeCallable DescribeConnectorsCallable(const Model::DescribeConnectorsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeConnectors that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeConnectorsAsync(const Model::DescribeConnectorsRequest& request, const DescribeConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Provides a description of the specified flow. </p><p><h3>See Also:</h3>   <a
@@ -270,15 +241,6 @@ namespace Appflow
          */
         virtual Model::DescribeFlowOutcome DescribeFlow(const Model::DescribeFlowRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeFlow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeFlowOutcomeCallable DescribeFlowCallable(const Model::DescribeFlowRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeFlow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeFlowAsync(const Model::DescribeFlowRequest& request, const DescribeFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Fetches the execution history of the flow. </p><p><h3>See Also:</h3>   <a
@@ -287,15 +249,6 @@ namespace Appflow
          */
         virtual Model::DescribeFlowExecutionRecordsOutcome DescribeFlowExecutionRecords(const Model::DescribeFlowExecutionRecordsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeFlowExecutionRecords that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeFlowExecutionRecordsOutcomeCallable DescribeFlowExecutionRecordsCallable(const Model::DescribeFlowExecutionRecordsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeFlowExecutionRecords that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeFlowExecutionRecordsAsync(const Model::DescribeFlowExecutionRecordsRequest& request, const DescribeFlowExecutionRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns the list of available connector entities supported by Amazon
@@ -307,15 +260,6 @@ namespace Appflow
          */
         virtual Model::ListConnectorEntitiesOutcome ListConnectorEntities(const Model::ListConnectorEntitiesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListConnectorEntities that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListConnectorEntitiesOutcomeCallable ListConnectorEntitiesCallable(const Model::ListConnectorEntitiesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListConnectorEntities that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListConnectorEntitiesAsync(const Model::ListConnectorEntitiesRequest& request, const ListConnectorEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the list of all registered custom connectors in your Amazon Web
@@ -327,15 +271,6 @@ namespace Appflow
          */
         virtual Model::ListConnectorsOutcome ListConnectors(const Model::ListConnectorsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListConnectors that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListConnectorsOutcomeCallable ListConnectorsCallable(const Model::ListConnectorsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListConnectors that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListConnectorsAsync(const Model::ListConnectorsRequest& request, const ListConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Lists all of the flows associated with your account. </p><p><h3>See
@@ -345,15 +280,6 @@ namespace Appflow
          */
         virtual Model::ListFlowsOutcome ListFlows(const Model::ListFlowsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListFlows that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListFlowsOutcomeCallable ListFlowsCallable(const Model::ListFlowsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListFlows that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListFlowsAsync(const Model::ListFlowsRequest& request, const ListFlowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Retrieves the tags that are associated with a specified flow. </p><p><h3>See
@@ -363,15 +289,6 @@ namespace Appflow
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Registers a new connector with your Amazon Web Services account. Before you
@@ -382,15 +299,6 @@ namespace Appflow
          */
         virtual Model::RegisterConnectorOutcome RegisterConnector(const Model::RegisterConnectorRequest& request) const;
 
-        /**
-         * A Callable wrapper for RegisterConnector that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RegisterConnectorOutcomeCallable RegisterConnectorCallable(const Model::RegisterConnectorRequest& request) const;
-
-        /**
-         * An Async wrapper for RegisterConnector that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RegisterConnectorAsync(const Model::RegisterConnectorRequest& request, const RegisterConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Activates an existing flow. For on-demand flows, this operation runs the
@@ -401,15 +309,6 @@ namespace Appflow
          */
         virtual Model::StartFlowOutcome StartFlow(const Model::StartFlowRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartFlow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartFlowOutcomeCallable StartFlowCallable(const Model::StartFlowRequest& request) const;
-
-        /**
-         * An Async wrapper for StartFlow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartFlowAsync(const Model::StartFlowRequest& request, const StartFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Deactivates the existing flow. For on-demand flows, this operation returns
@@ -421,15 +320,6 @@ namespace Appflow
          */
         virtual Model::StopFlowOutcome StopFlow(const Model::StopFlowRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopFlow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopFlowOutcomeCallable StopFlowCallable(const Model::StopFlowRequest& request) const;
-
-        /**
-         * An Async wrapper for StopFlow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopFlowAsync(const Model::StopFlowRequest& request, const StopFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Applies a tag to the specified flow. </p><p><h3>See Also:</h3>   <a
@@ -438,15 +328,6 @@ namespace Appflow
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Unregisters the custom connector registered in your account that matches the
@@ -456,15 +337,6 @@ namespace Appflow
          */
         virtual Model::UnregisterConnectorOutcome UnregisterConnector(const Model::UnregisterConnectorRequest& request) const;
 
-        /**
-         * A Callable wrapper for UnregisterConnector that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UnregisterConnectorOutcomeCallable UnregisterConnectorCallable(const Model::UnregisterConnectorRequest& request) const;
-
-        /**
-         * An Async wrapper for UnregisterConnector that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UnregisterConnectorAsync(const Model::UnregisterConnectorRequest& request, const UnregisterConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Removes a tag from the specified flow. </p><p><h3>See Also:</h3>   <a
@@ -473,15 +345,6 @@ namespace Appflow
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Updates a given connector profile associated with your account.
@@ -491,15 +354,6 @@ namespace Appflow
          */
         virtual Model::UpdateConnectorProfileOutcome UpdateConnectorProfile(const Model::UpdateConnectorProfileRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateConnectorProfile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateConnectorProfileOutcomeCallable UpdateConnectorProfileCallable(const Model::UpdateConnectorProfileRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateConnectorProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateConnectorProfileAsync(const Model::UpdateConnectorProfileRequest& request, const UpdateConnectorProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Updates an existing flow. </p><p><h3>See Also:</h3>   <a
@@ -508,15 +362,6 @@ namespace Appflow
          */
         virtual Model::UpdateFlowOutcome UpdateFlow(const Model::UpdateFlowRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateFlow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateFlowOutcomeCallable UpdateFlowCallable(const Model::UpdateFlowRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateFlow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateFlowAsync(const Model::UpdateFlowRequest& request, const UpdateFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

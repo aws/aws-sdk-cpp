@@ -7,8 +7,10 @@
 #include <aws/ivs/IVS_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ivs/IVSServiceClientModel.h>
+#include <aws/ivs/IVSLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -217,6 +219,47 @@ namespace IVS
         virtual ~IVSClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Performs <a>GetChannel</a> on multiple ARNs simultaneously.</p><p><h3>See
          * Also:</h3>   <a
@@ -225,15 +268,6 @@ namespace IVS
          */
         virtual Model::BatchGetChannelOutcome BatchGetChannel(const Model::BatchGetChannelRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchGetChannel that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchGetChannelOutcomeCallable BatchGetChannelCallable(const Model::BatchGetChannelRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchGetChannel that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchGetChannelAsync(const Model::BatchGetChannelRequest& request, const BatchGetChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Performs <a>GetStreamKey</a> on multiple ARNs simultaneously.</p><p><h3>See
@@ -243,15 +277,6 @@ namespace IVS
          */
         virtual Model::BatchGetStreamKeyOutcome BatchGetStreamKey(const Model::BatchGetStreamKeyRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchGetStreamKey that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchGetStreamKeyOutcomeCallable BatchGetStreamKeyCallable(const Model::BatchGetStreamKeyRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchGetStreamKey that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchGetStreamKeyAsync(const Model::BatchGetStreamKeyRequest& request, const BatchGetStreamKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new channel and an associated stream key to start
@@ -261,15 +286,6 @@ namespace IVS
          */
         virtual Model::CreateChannelOutcome CreateChannel(const Model::CreateChannelRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateChannel that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateChannelOutcomeCallable CreateChannelCallable(const Model::CreateChannelRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateChannel that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateChannelAsync(const Model::CreateChannelRequest& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new recording configuration, used to enable recording to Amazon
@@ -288,15 +304,6 @@ namespace IVS
          */
         virtual Model::CreateRecordingConfigurationOutcome CreateRecordingConfiguration(const Model::CreateRecordingConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateRecordingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateRecordingConfigurationOutcomeCallable CreateRecordingConfigurationCallable(const Model::CreateRecordingConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateRecordingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateRecordingConfigurationAsync(const Model::CreateRecordingConfigurationRequest& request, const CreateRecordingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a stream key, used to initiate a stream, for the specified channel
@@ -310,15 +317,6 @@ namespace IVS
          */
         virtual Model::CreateStreamKeyOutcome CreateStreamKey(const Model::CreateStreamKeyRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateStreamKey that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateStreamKeyOutcomeCallable CreateStreamKeyCallable(const Model::CreateStreamKeyRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateStreamKey that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateStreamKeyAsync(const Model::CreateStreamKeyRequest& request, const CreateStreamKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified channel and its associated stream keys.</p> <p>If you
@@ -333,15 +331,6 @@ namespace IVS
          */
         virtual Model::DeleteChannelOutcome DeleteChannel(const Model::DeleteChannelRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteChannel that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteChannelOutcomeCallable DeleteChannelCallable(const Model::DeleteChannelRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteChannel that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteChannelAsync(const Model::DeleteChannelRequest& request, const DeleteChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a specified authorization key pair. This invalidates future viewer
@@ -355,15 +344,6 @@ namespace IVS
          */
         virtual Model::DeletePlaybackKeyPairOutcome DeletePlaybackKeyPair(const Model::DeletePlaybackKeyPairRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeletePlaybackKeyPair that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeletePlaybackKeyPairOutcomeCallable DeletePlaybackKeyPairCallable(const Model::DeletePlaybackKeyPairRequest& request) const;
-
-        /**
-         * An Async wrapper for DeletePlaybackKeyPair that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeletePlaybackKeyPairAsync(const Model::DeletePlaybackKeyPairRequest& request, const DeletePlaybackKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the recording configuration for the specified ARN.</p> <p>If you try
@@ -377,15 +357,6 @@ namespace IVS
          */
         virtual Model::DeleteRecordingConfigurationOutcome DeleteRecordingConfiguration(const Model::DeleteRecordingConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteRecordingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteRecordingConfigurationOutcomeCallable DeleteRecordingConfigurationCallable(const Model::DeleteRecordingConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteRecordingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteRecordingConfigurationAsync(const Model::DeleteRecordingConfigurationRequest& request, const DeleteRecordingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the stream key for the specified ARN, so it can no longer be used to
@@ -395,15 +366,6 @@ namespace IVS
          */
         virtual Model::DeleteStreamKeyOutcome DeleteStreamKey(const Model::DeleteStreamKeyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteStreamKey that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteStreamKeyOutcomeCallable DeleteStreamKeyCallable(const Model::DeleteStreamKeyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteStreamKey that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteStreamKeyAsync(const Model::DeleteStreamKeyRequest& request, const DeleteStreamKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the channel configuration for the specified channel ARN. See also
@@ -413,15 +375,6 @@ namespace IVS
          */
         virtual Model::GetChannelOutcome GetChannel(const Model::GetChannelRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetChannel that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetChannelOutcomeCallable GetChannelCallable(const Model::GetChannelRequest& request) const;
-
-        /**
-         * An Async wrapper for GetChannel that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetChannelAsync(const Model::GetChannelRequest& request, const GetChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a specified playback authorization key pair and returns the
@@ -436,15 +389,6 @@ namespace IVS
          */
         virtual Model::GetPlaybackKeyPairOutcome GetPlaybackKeyPair(const Model::GetPlaybackKeyPairRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetPlaybackKeyPair that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetPlaybackKeyPairOutcomeCallable GetPlaybackKeyPairCallable(const Model::GetPlaybackKeyPairRequest& request) const;
-
-        /**
-         * An Async wrapper for GetPlaybackKeyPair that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetPlaybackKeyPairAsync(const Model::GetPlaybackKeyPairRequest& request, const GetPlaybackKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the recording configuration for the specified ARN.</p><p><h3>See
@@ -454,15 +398,6 @@ namespace IVS
          */
         virtual Model::GetRecordingConfigurationOutcome GetRecordingConfiguration(const Model::GetRecordingConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRecordingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRecordingConfigurationOutcomeCallable GetRecordingConfigurationCallable(const Model::GetRecordingConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRecordingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRecordingConfigurationAsync(const Model::GetRecordingConfigurationRequest& request, const GetRecordingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the active (live) stream on a specified
@@ -472,15 +407,6 @@ namespace IVS
          */
         virtual Model::GetStreamOutcome GetStream(const Model::GetStreamRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetStream that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetStreamOutcomeCallable GetStreamCallable(const Model::GetStreamRequest& request) const;
-
-        /**
-         * An Async wrapper for GetStream that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetStreamAsync(const Model::GetStreamRequest& request, const GetStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets stream-key information for a specified ARN.</p><p><h3>See Also:</h3>  
@@ -489,15 +415,6 @@ namespace IVS
          */
         virtual Model::GetStreamKeyOutcome GetStreamKey(const Model::GetStreamKeyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetStreamKey that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetStreamKeyOutcomeCallable GetStreamKeyCallable(const Model::GetStreamKeyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetStreamKey that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetStreamKeyAsync(const Model::GetStreamKeyRequest& request, const GetStreamKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets metadata on a specified stream.</p><p><h3>See Also:</h3>   <a
@@ -506,15 +423,6 @@ namespace IVS
          */
         virtual Model::GetStreamSessionOutcome GetStreamSession(const Model::GetStreamSessionRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetStreamSession that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetStreamSessionOutcomeCallable GetStreamSessionCallable(const Model::GetStreamSessionRequest& request) const;
-
-        /**
-         * An Async wrapper for GetStreamSession that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetStreamSessionAsync(const Model::GetStreamSessionRequest& request, const GetStreamSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Imports the public portion of a new key pair and returns its <code>arn</code>
@@ -529,15 +437,6 @@ namespace IVS
          */
         virtual Model::ImportPlaybackKeyPairOutcome ImportPlaybackKeyPair(const Model::ImportPlaybackKeyPairRequest& request) const;
 
-        /**
-         * A Callable wrapper for ImportPlaybackKeyPair that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ImportPlaybackKeyPairOutcomeCallable ImportPlaybackKeyPairCallable(const Model::ImportPlaybackKeyPairRequest& request) const;
-
-        /**
-         * An Async wrapper for ImportPlaybackKeyPair that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ImportPlaybackKeyPairAsync(const Model::ImportPlaybackKeyPairRequest& request, const ImportPlaybackKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets summary information about all channels in your account, in the Amazon
@@ -550,15 +449,6 @@ namespace IVS
          */
         virtual Model::ListChannelsOutcome ListChannels(const Model::ListChannelsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListChannels that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListChannelsOutcomeCallable ListChannelsCallable(const Model::ListChannelsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListChannels that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListChannelsAsync(const Model::ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets summary information about playback key pairs. For more information, see
@@ -571,15 +461,6 @@ namespace IVS
          */
         virtual Model::ListPlaybackKeyPairsOutcome ListPlaybackKeyPairs(const Model::ListPlaybackKeyPairsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPlaybackKeyPairs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPlaybackKeyPairsOutcomeCallable ListPlaybackKeyPairsCallable(const Model::ListPlaybackKeyPairsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPlaybackKeyPairs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPlaybackKeyPairsAsync(const Model::ListPlaybackKeyPairsRequest& request, const ListPlaybackKeyPairsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets summary information about all recording configurations in your account,
@@ -590,15 +471,6 @@ namespace IVS
          */
         virtual Model::ListRecordingConfigurationsOutcome ListRecordingConfigurations(const Model::ListRecordingConfigurationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListRecordingConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListRecordingConfigurationsOutcomeCallable ListRecordingConfigurationsCallable(const Model::ListRecordingConfigurationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListRecordingConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListRecordingConfigurationsAsync(const Model::ListRecordingConfigurationsRequest& request, const ListRecordingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets summary information about stream keys for the specified
@@ -608,15 +480,6 @@ namespace IVS
          */
         virtual Model::ListStreamKeysOutcome ListStreamKeys(const Model::ListStreamKeysRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListStreamKeys that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListStreamKeysOutcomeCallable ListStreamKeysCallable(const Model::ListStreamKeysRequest& request) const;
-
-        /**
-         * An Async wrapper for ListStreamKeys that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListStreamKeysAsync(const Model::ListStreamKeysRequest& request, const ListStreamKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a summary of current and previous streams for a specified channel in
@@ -627,15 +490,6 @@ namespace IVS
          */
         virtual Model::ListStreamSessionsOutcome ListStreamSessions(const Model::ListStreamSessionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListStreamSessions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListStreamSessionsOutcomeCallable ListStreamSessionsCallable(const Model::ListStreamSessionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListStreamSessions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListStreamSessionsAsync(const Model::ListStreamSessionsRequest& request, const ListStreamSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets summary information about live streams in your account, in the Amazon
@@ -645,15 +499,6 @@ namespace IVS
          */
         virtual Model::ListStreamsOutcome ListStreams(const Model::ListStreamsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListStreams that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListStreamsOutcomeCallable ListStreamsCallable(const Model::ListStreamsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListStreams that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListStreamsAsync(const Model::ListStreamsRequest& request, const ListStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about Amazon Web Services tags for the specified
@@ -663,15 +508,6 @@ namespace IVS
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Inserts metadata into the active stream of the specified channel. At most 5
@@ -687,15 +523,6 @@ namespace IVS
          */
         virtual Model::PutMetadataOutcome PutMetadata(const Model::PutMetadataRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutMetadata that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutMetadataOutcomeCallable PutMetadataCallable(const Model::PutMetadataRequest& request) const;
-
-        /**
-         * An Async wrapper for PutMetadata that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutMetadataAsync(const Model::PutMetadataRequest& request, const PutMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disconnects the incoming RTMPS stream for the specified channel. Can be used
@@ -709,15 +536,6 @@ namespace IVS
          */
         virtual Model::StopStreamOutcome StopStream(const Model::StopStreamRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopStream that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopStreamOutcomeCallable StopStreamCallable(const Model::StopStreamRequest& request) const;
-
-        /**
-         * An Async wrapper for StopStream that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopStreamAsync(const Model::StopStreamRequest& request, const StopStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds or updates tags for the Amazon Web Services resource with the specified
@@ -727,15 +545,6 @@ namespace IVS
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes tags from the resource with the specified ARN.</p><p><h3>See
@@ -745,15 +554,6 @@ namespace IVS
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a channel's configuration. This does not affect an ongoing stream of
@@ -764,15 +564,6 @@ namespace IVS
          */
         virtual Model::UpdateChannelOutcome UpdateChannel(const Model::UpdateChannelRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateChannel that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateChannelOutcomeCallable UpdateChannelCallable(const Model::UpdateChannelRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateChannel that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateChannelAsync(const Model::UpdateChannelRequest& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

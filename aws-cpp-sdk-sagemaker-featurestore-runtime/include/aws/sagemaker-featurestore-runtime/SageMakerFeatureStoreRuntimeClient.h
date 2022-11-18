@@ -7,8 +7,10 @@
 #include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntime_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntimeServiceClientModel.h>
+#include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntimeLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -85,6 +87,47 @@ namespace SageMakerFeatureStoreRuntime
         virtual ~SageMakerFeatureStoreRuntimeClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Retrieves a batch of <code>Records</code> from a
          * <code>FeatureGroup</code>.</p><p><h3>See Also:</h3>   <a
@@ -93,15 +136,6 @@ namespace SageMakerFeatureStoreRuntime
          */
         virtual Model::BatchGetRecordOutcome BatchGetRecord(const Model::BatchGetRecordRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchGetRecord that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchGetRecordOutcomeCallable BatchGetRecordCallable(const Model::BatchGetRecordRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchGetRecord that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchGetRecordAsync(const Model::BatchGetRecordRequest& request, const BatchGetRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a <code>Record</code> from a <code>FeatureGroup</code>. A new record
@@ -113,15 +147,6 @@ namespace SageMakerFeatureStoreRuntime
          */
         virtual Model::DeleteRecordOutcome DeleteRecord(const Model::DeleteRecordRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteRecord that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteRecordOutcomeCallable DeleteRecordCallable(const Model::DeleteRecordRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteRecord that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteRecordAsync(const Model::DeleteRecordRequest& request, const DeleteRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Use for <code>OnlineStore</code> serving from a <code>FeatureStore</code>.
@@ -133,15 +158,6 @@ namespace SageMakerFeatureStoreRuntime
          */
         virtual Model::GetRecordOutcome GetRecord(const Model::GetRecordRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRecord that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRecordOutcomeCallable GetRecordCallable(const Model::GetRecordRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRecord that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRecordAsync(const Model::GetRecordRequest& request, const GetRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Used for data ingestion into the <code>FeatureStore</code>. The
@@ -156,15 +172,6 @@ namespace SageMakerFeatureStoreRuntime
          */
         virtual Model::PutRecordOutcome PutRecord(const Model::PutRecordRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutRecord that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutRecordOutcomeCallable PutRecordCallable(const Model::PutRecordRequest& request) const;
-
-        /**
-         * An Async wrapper for PutRecord that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutRecordAsync(const Model::PutRecordRequest& request, const PutRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

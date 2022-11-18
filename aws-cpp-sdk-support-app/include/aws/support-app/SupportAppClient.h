@@ -7,8 +7,10 @@
 #include <aws/support-app/SupportApp_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/support-app/SupportAppServiceClientModel.h>
+#include <aws/support-app/SupportAppLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -102,6 +104,47 @@ namespace SupportApp
         virtual ~SupportAppClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Creates a Slack channel configuration for your Amazon Web Services
          * account.</p>  <ul> <li> <p>You can add up to 5 Slack workspaces for your
@@ -121,15 +164,6 @@ namespace SupportApp
          */
         virtual Model::CreateSlackChannelConfigurationOutcome CreateSlackChannelConfiguration(const Model::CreateSlackChannelConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateSlackChannelConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateSlackChannelConfigurationOutcomeCallable CreateSlackChannelConfigurationCallable(const Model::CreateSlackChannelConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateSlackChannelConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateSlackChannelConfigurationAsync(const Model::CreateSlackChannelConfigurationRequest& request, const CreateSlackChannelConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an alias for an Amazon Web Services account ID. The alias appears in
@@ -141,15 +175,6 @@ namespace SupportApp
          */
         virtual Model::DeleteAccountAliasOutcome DeleteAccountAlias(const Model::DeleteAccountAliasRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAccountAlias that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAccountAliasOutcomeCallable DeleteAccountAliasCallable(const Model::DeleteAccountAliasRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAccountAlias that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAccountAliasAsync(const Model::DeleteAccountAliasRequest& request, const DeleteAccountAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a Slack channel configuration from your Amazon Web Services account.
@@ -159,15 +184,6 @@ namespace SupportApp
          */
         virtual Model::DeleteSlackChannelConfigurationOutcome DeleteSlackChannelConfiguration(const Model::DeleteSlackChannelConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteSlackChannelConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteSlackChannelConfigurationOutcomeCallable DeleteSlackChannelConfigurationCallable(const Model::DeleteSlackChannelConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteSlackChannelConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteSlackChannelConfigurationAsync(const Model::DeleteSlackChannelConfigurationRequest& request, const DeleteSlackChannelConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a Slack workspace configuration from your Amazon Web Services
@@ -178,15 +194,6 @@ namespace SupportApp
          */
         virtual Model::DeleteSlackWorkspaceConfigurationOutcome DeleteSlackWorkspaceConfiguration(const Model::DeleteSlackWorkspaceConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteSlackWorkspaceConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteSlackWorkspaceConfigurationOutcomeCallable DeleteSlackWorkspaceConfigurationCallable(const Model::DeleteSlackWorkspaceConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteSlackWorkspaceConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteSlackWorkspaceConfigurationAsync(const Model::DeleteSlackWorkspaceConfigurationRequest& request, const DeleteSlackWorkspaceConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the alias from an Amazon Web Services account ID. The alias appears
@@ -198,15 +205,6 @@ namespace SupportApp
          */
         virtual Model::GetAccountAliasOutcome GetAccountAlias(const Model::GetAccountAliasRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAccountAlias that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAccountAliasOutcomeCallable GetAccountAliasCallable(const Model::GetAccountAliasRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAccountAlias that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAccountAliasAsync(const Model::GetAccountAliasRequest& request, const GetAccountAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the Slack channel configurations for an Amazon Web Services
@@ -216,15 +214,6 @@ namespace SupportApp
          */
         virtual Model::ListSlackChannelConfigurationsOutcome ListSlackChannelConfigurations(const Model::ListSlackChannelConfigurationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSlackChannelConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListSlackChannelConfigurationsOutcomeCallable ListSlackChannelConfigurationsCallable(const Model::ListSlackChannelConfigurationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSlackChannelConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListSlackChannelConfigurationsAsync(const Model::ListSlackChannelConfigurationsRequest& request, const ListSlackChannelConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the Slack workspace configurations for an Amazon Web Services
@@ -234,15 +223,6 @@ namespace SupportApp
          */
         virtual Model::ListSlackWorkspaceConfigurationsOutcome ListSlackWorkspaceConfigurations(const Model::ListSlackWorkspaceConfigurationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSlackWorkspaceConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListSlackWorkspaceConfigurationsOutcomeCallable ListSlackWorkspaceConfigurationsCallable(const Model::ListSlackWorkspaceConfigurationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSlackWorkspaceConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListSlackWorkspaceConfigurationsAsync(const Model::ListSlackWorkspaceConfigurationsRequest& request, const ListSlackWorkspaceConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates or updates an individual alias for each Amazon Web Services account
@@ -254,15 +234,6 @@ namespace SupportApp
          */
         virtual Model::PutAccountAliasOutcome PutAccountAlias(const Model::PutAccountAliasRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutAccountAlias that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutAccountAliasOutcomeCallable PutAccountAliasCallable(const Model::PutAccountAliasRequest& request) const;
-
-        /**
-         * An Async wrapper for PutAccountAlias that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutAccountAliasAsync(const Model::PutAccountAliasRequest& request, const PutAccountAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Registers a Slack workspace for your Amazon Web Services account. To call
@@ -296,15 +267,6 @@ namespace SupportApp
          */
         virtual Model::RegisterSlackWorkspaceForOrganizationOutcome RegisterSlackWorkspaceForOrganization(const Model::RegisterSlackWorkspaceForOrganizationRequest& request) const;
 
-        /**
-         * A Callable wrapper for RegisterSlackWorkspaceForOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RegisterSlackWorkspaceForOrganizationOutcomeCallable RegisterSlackWorkspaceForOrganizationCallable(const Model::RegisterSlackWorkspaceForOrganizationRequest& request) const;
-
-        /**
-         * An Async wrapper for RegisterSlackWorkspaceForOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RegisterSlackWorkspaceForOrganizationAsync(const Model::RegisterSlackWorkspaceForOrganizationRequest& request, const RegisterSlackWorkspaceForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the configuration for a Slack channel, such as case update
@@ -314,15 +276,6 @@ namespace SupportApp
          */
         virtual Model::UpdateSlackChannelConfigurationOutcome UpdateSlackChannelConfiguration(const Model::UpdateSlackChannelConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateSlackChannelConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateSlackChannelConfigurationOutcomeCallable UpdateSlackChannelConfigurationCallable(const Model::UpdateSlackChannelConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateSlackChannelConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateSlackChannelConfigurationAsync(const Model::UpdateSlackChannelConfigurationRequest& request, const UpdateSlackChannelConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

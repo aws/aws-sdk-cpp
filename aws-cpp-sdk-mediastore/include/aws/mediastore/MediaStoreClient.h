@@ -7,8 +7,10 @@
 #include <aws/mediastore/MediaStore_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mediastore/MediaStoreServiceClientModel.h>
+#include <aws/mediastore/MediaStoreLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -74,6 +76,47 @@ namespace MediaStore
         virtual ~MediaStoreClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Creates a storage container to hold objects. A container is similar to a
          * bucket in the Amazon S3 service.</p><p><h3>See Also:</h3>   <a
@@ -82,15 +125,6 @@ namespace MediaStore
          */
         virtual Model::CreateContainerOutcome CreateContainer(const Model::CreateContainerRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateContainer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateContainerOutcomeCallable CreateContainerCallable(const Model::CreateContainerRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateContainer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateContainerAsync(const Model::CreateContainerRequest& request, const CreateContainerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified container. Before you make a
@@ -102,15 +136,6 @@ namespace MediaStore
          */
         virtual Model::DeleteContainerOutcome DeleteContainer(const Model::DeleteContainerRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteContainer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteContainerOutcomeCallable DeleteContainerCallable(const Model::DeleteContainerRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteContainer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteContainerAsync(const Model::DeleteContainerRequest& request, const DeleteContainerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the access policy that is associated with the specified
@@ -120,15 +145,6 @@ namespace MediaStore
          */
         virtual Model::DeleteContainerPolicyOutcome DeleteContainerPolicy(const Model::DeleteContainerPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteContainerPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteContainerPolicyOutcomeCallable DeleteContainerPolicyCallable(const Model::DeleteContainerPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteContainerPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteContainerPolicyAsync(const Model::DeleteContainerPolicyRequest& request, const DeleteContainerPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the cross-origin resource sharing (CORS) configuration information
@@ -141,15 +157,6 @@ namespace MediaStore
          */
         virtual Model::DeleteCorsPolicyOutcome DeleteCorsPolicy(const Model::DeleteCorsPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteCorsPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteCorsPolicyOutcomeCallable DeleteCorsPolicyCallable(const Model::DeleteCorsPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteCorsPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteCorsPolicyAsync(const Model::DeleteCorsPolicyRequest& request, const DeleteCorsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes an object lifecycle policy from a container. It takes up to 20
@@ -159,15 +166,6 @@ namespace MediaStore
          */
         virtual Model::DeleteLifecyclePolicyOutcome DeleteLifecyclePolicy(const Model::DeleteLifecyclePolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteLifecyclePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteLifecyclePolicyOutcomeCallable DeleteLifecyclePolicyCallable(const Model::DeleteLifecyclePolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteLifecyclePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteLifecyclePolicyAsync(const Model::DeleteLifecyclePolicyRequest& request, const DeleteLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the metric policy that is associated with the specified container. If
@@ -178,15 +176,6 @@ namespace MediaStore
          */
         virtual Model::DeleteMetricPolicyOutcome DeleteMetricPolicy(const Model::DeleteMetricPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteMetricPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteMetricPolicyOutcomeCallable DeleteMetricPolicyCallable(const Model::DeleteMetricPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteMetricPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteMetricPolicyAsync(const Model::DeleteMetricPolicyRequest& request, const DeleteMetricPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the properties of the requested container. This request is commonly
@@ -202,15 +191,6 @@ namespace MediaStore
          */
         virtual Model::DescribeContainerOutcome DescribeContainer(const Model::DescribeContainerRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeContainer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeContainerOutcomeCallable DescribeContainerCallable(const Model::DescribeContainerRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeContainer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeContainerAsync(const Model::DescribeContainerRequest& request, const DescribeContainerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the access policy for the specified container. For information
@@ -222,15 +202,6 @@ namespace MediaStore
          */
         virtual Model::GetContainerPolicyOutcome GetContainerPolicy(const Model::GetContainerPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetContainerPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetContainerPolicyOutcomeCallable GetContainerPolicyCallable(const Model::GetContainerPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetContainerPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetContainerPolicyAsync(const Model::GetContainerPolicyRequest& request, const GetContainerPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the cross-origin resource sharing (CORS) configuration information
@@ -243,15 +214,6 @@ namespace MediaStore
          */
         virtual Model::GetCorsPolicyOutcome GetCorsPolicy(const Model::GetCorsPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetCorsPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetCorsPolicyOutcomeCallable GetCorsPolicyCallable(const Model::GetCorsPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetCorsPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetCorsPolicyAsync(const Model::GetCorsPolicyRequest& request, const GetCorsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the object lifecycle policy that is assigned to a
@@ -261,15 +223,6 @@ namespace MediaStore
          */
         virtual Model::GetLifecyclePolicyOutcome GetLifecyclePolicy(const Model::GetLifecyclePolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetLifecyclePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetLifecyclePolicyOutcomeCallable GetLifecyclePolicyCallable(const Model::GetLifecyclePolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetLifecyclePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetLifecyclePolicyAsync(const Model::GetLifecyclePolicyRequest& request, const GetLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the metric policy for the specified container. </p><p><h3>See
@@ -279,15 +232,6 @@ namespace MediaStore
          */
         virtual Model::GetMetricPolicyOutcome GetMetricPolicy(const Model::GetMetricPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetMetricPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetMetricPolicyOutcomeCallable GetMetricPolicyCallable(const Model::GetMetricPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetMetricPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetMetricPolicyAsync(const Model::GetMetricPolicyRequest& request, const GetMetricPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the properties of all containers in AWS Elemental MediaStore. </p>
@@ -304,15 +248,6 @@ namespace MediaStore
          */
         virtual Model::ListContainersOutcome ListContainers(const Model::ListContainersRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListContainers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListContainersOutcomeCallable ListContainersCallable(const Model::ListContainersRequest& request) const;
-
-        /**
-         * An Async wrapper for ListContainers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListContainersAsync(const Model::ListContainersRequest& request, const ListContainersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of the tags assigned to the specified container.
@@ -322,15 +257,6 @@ namespace MediaStore
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an access policy for the specified container to restrict the users
@@ -346,15 +272,6 @@ namespace MediaStore
          */
         virtual Model::PutContainerPolicyOutcome PutContainerPolicy(const Model::PutContainerPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutContainerPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutContainerPolicyOutcomeCallable PutContainerPolicyCallable(const Model::PutContainerPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for PutContainerPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutContainerPolicyAsync(const Model::PutContainerPolicyRequest& request, const PutContainerPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets the cross-origin resource sharing (CORS) configuration on a container so
@@ -375,15 +292,6 @@ namespace MediaStore
          */
         virtual Model::PutCorsPolicyOutcome PutCorsPolicy(const Model::PutCorsPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutCorsPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutCorsPolicyOutcomeCallable PutCorsPolicyCallable(const Model::PutCorsPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for PutCorsPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutCorsPolicyAsync(const Model::PutCorsPolicyRequest& request, const PutCorsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Writes an object lifecycle policy to a container. If the container already
@@ -397,15 +305,6 @@ namespace MediaStore
          */
         virtual Model::PutLifecyclePolicyOutcome PutLifecyclePolicy(const Model::PutLifecyclePolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutLifecyclePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutLifecyclePolicyOutcomeCallable PutLifecyclePolicyCallable(const Model::PutLifecyclePolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for PutLifecyclePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutLifecyclePolicyAsync(const Model::PutLifecyclePolicyRequest& request, const PutLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The metric policy that you want to add to the container. A metric policy
@@ -417,15 +316,6 @@ namespace MediaStore
          */
         virtual Model::PutMetricPolicyOutcome PutMetricPolicy(const Model::PutMetricPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutMetricPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutMetricPolicyOutcomeCallable PutMetricPolicyCallable(const Model::PutMetricPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for PutMetricPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutMetricPolicyAsync(const Model::PutMetricPolicyRequest& request, const PutMetricPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts access logging on the specified container. When you enable access
@@ -436,15 +326,6 @@ namespace MediaStore
          */
         virtual Model::StartAccessLoggingOutcome StartAccessLogging(const Model::StartAccessLoggingRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartAccessLogging that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartAccessLoggingOutcomeCallable StartAccessLoggingCallable(const Model::StartAccessLoggingRequest& request) const;
-
-        /**
-         * An Async wrapper for StartAccessLogging that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartAccessLoggingAsync(const Model::StartAccessLoggingRequest& request, const StartAccessLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops access logging on the specified container. When you stop access logging
@@ -456,15 +337,6 @@ namespace MediaStore
          */
         virtual Model::StopAccessLoggingOutcome StopAccessLogging(const Model::StopAccessLoggingRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopAccessLogging that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopAccessLoggingOutcomeCallable StopAccessLoggingCallable(const Model::StopAccessLoggingRequest& request) const;
-
-        /**
-         * An Async wrapper for StopAccessLogging that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopAccessLoggingAsync(const Model::StopAccessLoggingRequest& request, const StopAccessLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds tags to the specified AWS Elemental MediaStore container. Tags are
@@ -480,15 +352,6 @@ namespace MediaStore
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes tags from the specified container. You can specify one or more tags
@@ -498,15 +361,6 @@ namespace MediaStore
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

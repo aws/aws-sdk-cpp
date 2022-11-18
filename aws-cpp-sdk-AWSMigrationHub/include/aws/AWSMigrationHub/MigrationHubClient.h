@@ -7,8 +7,10 @@
 #include <aws/AWSMigrationHub/MigrationHub_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/AWSMigrationHub/MigrationHubServiceClientModel.h>
+#include <aws/AWSMigrationHub/MigrationHubLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -78,6 +80,47 @@ namespace MigrationHub
         virtual ~MigrationHubClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Associates a created artifact of an AWS cloud resource, the target receiving
          * the migration, with the migration task performed by a migration tool. This API
@@ -94,15 +137,6 @@ namespace MigrationHub
          */
         virtual Model::AssociateCreatedArtifactOutcome AssociateCreatedArtifact(const Model::AssociateCreatedArtifactRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateCreatedArtifact that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateCreatedArtifactOutcomeCallable AssociateCreatedArtifactCallable(const Model::AssociateCreatedArtifactRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateCreatedArtifact that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateCreatedArtifactAsync(const Model::AssociateCreatedArtifactRequest& request, const AssociateCreatedArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates a discovered resource ID from Application Discovery Service with a
@@ -112,15 +146,6 @@ namespace MigrationHub
          */
         virtual Model::AssociateDiscoveredResourceOutcome AssociateDiscoveredResource(const Model::AssociateDiscoveredResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateDiscoveredResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateDiscoveredResourceOutcomeCallable AssociateDiscoveredResourceCallable(const Model::AssociateDiscoveredResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateDiscoveredResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateDiscoveredResourceAsync(const Model::AssociateDiscoveredResourceRequest& request, const AssociateDiscoveredResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a progress update stream which is an AWS resource used for access
@@ -134,15 +159,6 @@ namespace MigrationHub
          */
         virtual Model::CreateProgressUpdateStreamOutcome CreateProgressUpdateStream(const Model::CreateProgressUpdateStreamRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateProgressUpdateStream that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateProgressUpdateStreamOutcomeCallable CreateProgressUpdateStreamCallable(const Model::CreateProgressUpdateStreamRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateProgressUpdateStream that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateProgressUpdateStreamAsync(const Model::CreateProgressUpdateStreamRequest& request, const CreateProgressUpdateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a progress update stream, including all of its tasks, which was
@@ -168,15 +184,6 @@ namespace MigrationHub
          */
         virtual Model::DeleteProgressUpdateStreamOutcome DeleteProgressUpdateStream(const Model::DeleteProgressUpdateStreamRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteProgressUpdateStream that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteProgressUpdateStreamOutcomeCallable DeleteProgressUpdateStreamCallable(const Model::DeleteProgressUpdateStreamRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteProgressUpdateStream that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteProgressUpdateStreamAsync(const Model::DeleteProgressUpdateStreamRequest& request, const DeleteProgressUpdateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the migration status of an application.</p><p><h3>See Also:</h3>   <a
@@ -185,15 +192,6 @@ namespace MigrationHub
          */
         virtual Model::DescribeApplicationStateOutcome DescribeApplicationState(const Model::DescribeApplicationStateRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeApplicationState that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeApplicationStateOutcomeCallable DescribeApplicationStateCallable(const Model::DescribeApplicationStateRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeApplicationState that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeApplicationStateAsync(const Model::DescribeApplicationStateRequest& request, const DescribeApplicationStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list of all attributes associated with a specific migration
@@ -203,15 +201,6 @@ namespace MigrationHub
          */
         virtual Model::DescribeMigrationTaskOutcome DescribeMigrationTask(const Model::DescribeMigrationTaskRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeMigrationTask that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeMigrationTaskOutcomeCallable DescribeMigrationTaskCallable(const Model::DescribeMigrationTaskRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeMigrationTask that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeMigrationTaskAsync(const Model::DescribeMigrationTaskRequest& request, const DescribeMigrationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates a created artifact of an AWS resource with a migration task
@@ -229,15 +218,6 @@ namespace MigrationHub
          */
         virtual Model::DisassociateCreatedArtifactOutcome DisassociateCreatedArtifact(const Model::DisassociateCreatedArtifactRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateCreatedArtifact that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateCreatedArtifactOutcomeCallable DisassociateCreatedArtifactCallable(const Model::DisassociateCreatedArtifactRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateCreatedArtifact that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateCreatedArtifactAsync(const Model::DisassociateCreatedArtifactRequest& request, const DisassociateCreatedArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociate an Application Discovery Service discovered resource from a
@@ -247,15 +227,6 @@ namespace MigrationHub
          */
         virtual Model::DisassociateDiscoveredResourceOutcome DisassociateDiscoveredResource(const Model::DisassociateDiscoveredResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateDiscoveredResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateDiscoveredResourceOutcomeCallable DisassociateDiscoveredResourceCallable(const Model::DisassociateDiscoveredResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateDiscoveredResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateDiscoveredResourceAsync(const Model::DisassociateDiscoveredResourceRequest& request, const DisassociateDiscoveredResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Registers a new migration task which represents a server, database, etc.,
@@ -268,15 +239,6 @@ namespace MigrationHub
          */
         virtual Model::ImportMigrationTaskOutcome ImportMigrationTask(const Model::ImportMigrationTaskRequest& request) const;
 
-        /**
-         * A Callable wrapper for ImportMigrationTask that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ImportMigrationTaskOutcomeCallable ImportMigrationTaskCallable(const Model::ImportMigrationTaskRequest& request) const;
-
-        /**
-         * An Async wrapper for ImportMigrationTask that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ImportMigrationTaskAsync(const Model::ImportMigrationTaskRequest& request, const ImportMigrationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all the migration statuses for your applications. If you use the
@@ -287,15 +249,6 @@ namespace MigrationHub
          */
         virtual Model::ListApplicationStatesOutcome ListApplicationStates(const Model::ListApplicationStatesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListApplicationStates that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListApplicationStatesOutcomeCallable ListApplicationStatesCallable(const Model::ListApplicationStatesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListApplicationStates that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListApplicationStatesAsync(const Model::ListApplicationStatesRequest& request, const ListApplicationStatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the created artifacts attached to a given migration task in an update
@@ -309,15 +262,6 @@ namespace MigrationHub
          */
         virtual Model::ListCreatedArtifactsOutcome ListCreatedArtifacts(const Model::ListCreatedArtifactsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListCreatedArtifacts that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListCreatedArtifactsOutcomeCallable ListCreatedArtifactsCallable(const Model::ListCreatedArtifactsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListCreatedArtifacts that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListCreatedArtifactsAsync(const Model::ListCreatedArtifactsRequest& request, const ListCreatedArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists discovered resources associated with the given
@@ -327,15 +271,6 @@ namespace MigrationHub
          */
         virtual Model::ListDiscoveredResourcesOutcome ListDiscoveredResources(const Model::ListDiscoveredResourcesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDiscoveredResources that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDiscoveredResourcesOutcomeCallable ListDiscoveredResourcesCallable(const Model::ListDiscoveredResourcesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDiscoveredResources that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDiscoveredResourcesAsync(const Model::ListDiscoveredResourcesRequest& request, const ListDiscoveredResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all, or filtered by resource name, migration tasks associated with the
@@ -349,15 +284,6 @@ namespace MigrationHub
          */
         virtual Model::ListMigrationTasksOutcome ListMigrationTasks(const Model::ListMigrationTasksRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListMigrationTasks that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListMigrationTasksOutcomeCallable ListMigrationTasksCallable(const Model::ListMigrationTasksRequest& request) const;
-
-        /**
-         * An Async wrapper for ListMigrationTasks that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListMigrationTasksAsync(const Model::ListMigrationTasksRequest& request, const ListMigrationTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists progress update streams associated with the user account making this
@@ -367,15 +293,6 @@ namespace MigrationHub
          */
         virtual Model::ListProgressUpdateStreamsOutcome ListProgressUpdateStreams(const Model::ListProgressUpdateStreamsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListProgressUpdateStreams that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListProgressUpdateStreamsOutcomeCallable ListProgressUpdateStreamsCallable(const Model::ListProgressUpdateStreamsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListProgressUpdateStreams that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListProgressUpdateStreamsAsync(const Model::ListProgressUpdateStreamsRequest& request, const ListProgressUpdateStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets the migration state of an application. For a given application
@@ -388,15 +305,6 @@ namespace MigrationHub
          */
         virtual Model::NotifyApplicationStateOutcome NotifyApplicationState(const Model::NotifyApplicationStateRequest& request) const;
 
-        /**
-         * A Callable wrapper for NotifyApplicationState that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::NotifyApplicationStateOutcomeCallable NotifyApplicationStateCallable(const Model::NotifyApplicationStateRequest& request) const;
-
-        /**
-         * An Async wrapper for NotifyApplicationState that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void NotifyApplicationStateAsync(const Model::NotifyApplicationStateRequest& request, const NotifyApplicationStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Notifies Migration Hub of the current status, progress, or other detail
@@ -412,15 +320,6 @@ namespace MigrationHub
          */
         virtual Model::NotifyMigrationTaskStateOutcome NotifyMigrationTaskState(const Model::NotifyMigrationTaskStateRequest& request) const;
 
-        /**
-         * A Callable wrapper for NotifyMigrationTaskState that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::NotifyMigrationTaskStateOutcomeCallable NotifyMigrationTaskStateCallable(const Model::NotifyMigrationTaskStateRequest& request) const;
-
-        /**
-         * An Async wrapper for NotifyMigrationTaskState that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void NotifyMigrationTaskStateAsync(const Model::NotifyMigrationTaskStateRequest& request, const NotifyMigrationTaskStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides identifying details of the resource being migrated so that it can be
@@ -443,15 +342,6 @@ namespace MigrationHub
          */
         virtual Model::PutResourceAttributesOutcome PutResourceAttributes(const Model::PutResourceAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutResourceAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutResourceAttributesOutcomeCallable PutResourceAttributesCallable(const Model::PutResourceAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for PutResourceAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutResourceAttributesAsync(const Model::PutResourceAttributesRequest& request, const PutResourceAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

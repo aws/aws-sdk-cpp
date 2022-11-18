@@ -7,8 +7,10 @@
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/lambda/LambdaServiceClientModel.h>
+#include <aws/lambda/LambdaLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -124,6 +126,47 @@ namespace Lambda
         virtual ~LambdaClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Adds permissions to the resource-based policy of a version of an <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
@@ -137,15 +180,6 @@ namespace Lambda
          */
         virtual Model::AddLayerVersionPermissionOutcome AddLayerVersionPermission(const Model::AddLayerVersionPermissionRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddLayerVersionPermission that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddLayerVersionPermissionOutcomeCallable AddLayerVersionPermissionCallable(const Model::AddLayerVersionPermissionRequest& request) const;
-
-        /**
-         * An Async wrapper for AddLayerVersionPermission that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddLayerVersionPermissionAsync(const Model::AddLayerVersionPermissionRequest& request, const AddLayerVersionPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Grants an Amazon Web Services service, account, or organization permission to
@@ -172,15 +206,6 @@ namespace Lambda
          */
         virtual Model::AddPermissionOutcome AddPermission(const Model::AddPermissionRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddPermission that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddPermissionOutcomeCallable AddPermissionCallable(const Model::AddPermissionRequest& request) const;
-
-        /**
-         * An Async wrapper for AddPermission that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddPermissionAsync(const Model::AddPermissionRequest& request, const AddPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an <a
@@ -196,15 +221,6 @@ namespace Lambda
          */
         virtual Model::CreateAliasOutcome CreateAlias(const Model::CreateAliasRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateAlias that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateAliasOutcomeCallable CreateAliasCallable(const Model::CreateAliasRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateAlias that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateAliasAsync(const Model::CreateAliasRequest& request, const CreateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a code signing configuration. A <a
@@ -217,15 +233,6 @@ namespace Lambda
          */
         virtual Model::CreateCodeSigningConfigOutcome CreateCodeSigningConfig(const Model::CreateCodeSigningConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateCodeSigningConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateCodeSigningConfigOutcomeCallable CreateCodeSigningConfigCallable(const Model::CreateCodeSigningConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateCodeSigningConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateCodeSigningConfigAsync(const Model::CreateCodeSigningConfigRequest& request, const CreateCodeSigningConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a mapping between an event source and an Lambda function. Lambda
@@ -275,15 +282,6 @@ namespace Lambda
          */
         virtual Model::CreateEventSourceMappingOutcome CreateEventSourceMapping(const Model::CreateEventSourceMappingRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateEventSourceMapping that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateEventSourceMappingOutcomeCallable CreateEventSourceMappingCallable(const Model::CreateEventSourceMappingRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateEventSourceMapping that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateEventSourceMappingAsync(const Model::CreateEventSourceMappingRequest& request, const CreateEventSourceMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a Lambda function. To create a function, you need a <a
@@ -346,15 +344,6 @@ namespace Lambda
          */
         virtual Model::CreateFunctionOutcome CreateFunction(const Model::CreateFunctionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateFunction that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateFunctionOutcomeCallable CreateFunctionCallable(const Model::CreateFunctionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateFunction that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateFunctionAsync(const Model::CreateFunctionRequest& request, const CreateFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a Lambda function URL with the specified configuration parameters. A
@@ -365,15 +354,6 @@ namespace Lambda
          */
         virtual Model::CreateFunctionUrlConfigOutcome CreateFunctionUrlConfig(const Model::CreateFunctionUrlConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateFunctionUrlConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateFunctionUrlConfigOutcomeCallable CreateFunctionUrlConfigCallable(const Model::CreateFunctionUrlConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateFunctionUrlConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateFunctionUrlConfigAsync(const Model::CreateFunctionUrlConfigRequest& request, const CreateFunctionUrlConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a Lambda function <a
@@ -384,15 +364,6 @@ namespace Lambda
          */
         virtual Model::DeleteAliasOutcome DeleteAlias(const Model::DeleteAliasRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAlias that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAliasOutcomeCallable DeleteAliasCallable(const Model::DeleteAliasRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAlias that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAliasAsync(const Model::DeleteAliasRequest& request, const DeleteAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the code signing configuration. You can delete the code signing
@@ -402,15 +373,6 @@ namespace Lambda
          */
         virtual Model::DeleteCodeSigningConfigOutcome DeleteCodeSigningConfig(const Model::DeleteCodeSigningConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteCodeSigningConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteCodeSigningConfigOutcomeCallable DeleteCodeSigningConfigCallable(const Model::DeleteCodeSigningConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteCodeSigningConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteCodeSigningConfigAsync(const Model::DeleteCodeSigningConfigRequest& request, const DeleteCodeSigningConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an <a
@@ -424,15 +386,6 @@ namespace Lambda
          */
         virtual Model::DeleteEventSourceMappingOutcome DeleteEventSourceMapping(const Model::DeleteEventSourceMappingRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteEventSourceMapping that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteEventSourceMappingOutcomeCallable DeleteEventSourceMappingCallable(const Model::DeleteEventSourceMappingRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteEventSourceMapping that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteEventSourceMappingAsync(const Model::DeleteEventSourceMappingRequest& request, const DeleteEventSourceMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a Lambda function. To delete a specific function version, use the
@@ -446,15 +399,6 @@ namespace Lambda
          */
         virtual Model::DeleteFunctionOutcome DeleteFunction(const Model::DeleteFunctionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteFunction that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteFunctionOutcomeCallable DeleteFunctionCallable(const Model::DeleteFunctionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteFunction that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteFunctionAsync(const Model::DeleteFunctionRequest& request, const DeleteFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the code signing configuration from the function.</p><p><h3>See
@@ -464,15 +408,6 @@ namespace Lambda
          */
         virtual Model::DeleteFunctionCodeSigningConfigOutcome DeleteFunctionCodeSigningConfig(const Model::DeleteFunctionCodeSigningConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteFunctionCodeSigningConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteFunctionCodeSigningConfigOutcomeCallable DeleteFunctionCodeSigningConfigCallable(const Model::DeleteFunctionCodeSigningConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteFunctionCodeSigningConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteFunctionCodeSigningConfigAsync(const Model::DeleteFunctionCodeSigningConfigRequest& request, const DeleteFunctionCodeSigningConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes a concurrent execution limit from a function.</p><p><h3>See
@@ -482,15 +417,6 @@ namespace Lambda
          */
         virtual Model::DeleteFunctionConcurrencyOutcome DeleteFunctionConcurrency(const Model::DeleteFunctionConcurrencyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteFunctionConcurrency that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteFunctionConcurrencyOutcomeCallable DeleteFunctionConcurrencyCallable(const Model::DeleteFunctionConcurrencyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteFunctionConcurrency that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteFunctionConcurrencyAsync(const Model::DeleteFunctionConcurrencyRequest& request, const DeleteFunctionConcurrencyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the configuration for asynchronous invocation for a function,
@@ -501,15 +427,6 @@ namespace Lambda
          */
         virtual Model::DeleteFunctionEventInvokeConfigOutcome DeleteFunctionEventInvokeConfig(const Model::DeleteFunctionEventInvokeConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteFunctionEventInvokeConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteFunctionEventInvokeConfigOutcomeCallable DeleteFunctionEventInvokeConfigCallable(const Model::DeleteFunctionEventInvokeConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteFunctionEventInvokeConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteFunctionEventInvokeConfigAsync(const Model::DeleteFunctionEventInvokeConfigRequest& request, const DeleteFunctionEventInvokeConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a Lambda function URL. When you delete a function URL, you can't
@@ -520,15 +437,6 @@ namespace Lambda
          */
         virtual Model::DeleteFunctionUrlConfigOutcome DeleteFunctionUrlConfig(const Model::DeleteFunctionUrlConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteFunctionUrlConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteFunctionUrlConfigOutcomeCallable DeleteFunctionUrlConfigCallable(const Model::DeleteFunctionUrlConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteFunctionUrlConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteFunctionUrlConfigAsync(const Model::DeleteFunctionUrlConfigRequest& request, const DeleteFunctionUrlConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a version of an <a
@@ -541,15 +449,6 @@ namespace Lambda
          */
         virtual Model::DeleteLayerVersionOutcome DeleteLayerVersion(const Model::DeleteLayerVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteLayerVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteLayerVersionOutcomeCallable DeleteLayerVersionCallable(const Model::DeleteLayerVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteLayerVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteLayerVersionAsync(const Model::DeleteLayerVersionRequest& request, const DeleteLayerVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the provisioned concurrency configuration for a
@@ -559,15 +458,6 @@ namespace Lambda
          */
         virtual Model::DeleteProvisionedConcurrencyConfigOutcome DeleteProvisionedConcurrencyConfig(const Model::DeleteProvisionedConcurrencyConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteProvisionedConcurrencyConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteProvisionedConcurrencyConfigOutcomeCallable DeleteProvisionedConcurrencyConfigCallable(const Model::DeleteProvisionedConcurrencyConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteProvisionedConcurrencyConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteProvisionedConcurrencyConfigAsync(const Model::DeleteProvisionedConcurrencyConfigRequest& request, const DeleteProvisionedConcurrencyConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves details about your account's <a
@@ -578,15 +468,6 @@ namespace Lambda
          */
         virtual Model::GetAccountSettingsOutcome GetAccountSettings(const Model::GetAccountSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAccountSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAccountSettingsOutcomeCallable GetAccountSettingsCallable(const Model::GetAccountSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAccountSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAccountSettingsAsync(const Model::GetAccountSettingsRequest& request, const GetAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns details about a Lambda function <a
@@ -597,15 +478,6 @@ namespace Lambda
          */
         virtual Model::GetAliasOutcome GetAlias(const Model::GetAliasRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAlias that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAliasOutcomeCallable GetAliasCallable(const Model::GetAliasRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAlias that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAliasAsync(const Model::GetAliasRequest& request, const GetAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the specified code signing
@@ -615,15 +487,6 @@ namespace Lambda
          */
         virtual Model::GetCodeSigningConfigOutcome GetCodeSigningConfig(const Model::GetCodeSigningConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetCodeSigningConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetCodeSigningConfigOutcomeCallable GetCodeSigningConfigCallable(const Model::GetCodeSigningConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for GetCodeSigningConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetCodeSigningConfigAsync(const Model::GetCodeSigningConfigRequest& request, const GetCodeSigningConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns details about an event source mapping. You can get the identifier of
@@ -634,15 +497,6 @@ namespace Lambda
          */
         virtual Model::GetEventSourceMappingOutcome GetEventSourceMapping(const Model::GetEventSourceMappingRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetEventSourceMapping that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetEventSourceMappingOutcomeCallable GetEventSourceMappingCallable(const Model::GetEventSourceMappingRequest& request) const;
-
-        /**
-         * An Async wrapper for GetEventSourceMapping that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetEventSourceMappingAsync(const Model::GetEventSourceMappingRequest& request, const GetEventSourceMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the function or function version, with a link to
@@ -654,15 +508,6 @@ namespace Lambda
          */
         virtual Model::GetFunctionOutcome GetFunction(const Model::GetFunctionRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetFunction that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetFunctionOutcomeCallable GetFunctionCallable(const Model::GetFunctionRequest& request) const;
-
-        /**
-         * An Async wrapper for GetFunction that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetFunctionAsync(const Model::GetFunctionRequest& request, const GetFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the code signing configuration for the specified
@@ -672,15 +517,6 @@ namespace Lambda
          */
         virtual Model::GetFunctionCodeSigningConfigOutcome GetFunctionCodeSigningConfig(const Model::GetFunctionCodeSigningConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetFunctionCodeSigningConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetFunctionCodeSigningConfigOutcomeCallable GetFunctionCodeSigningConfigCallable(const Model::GetFunctionCodeSigningConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for GetFunctionCodeSigningConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetFunctionCodeSigningConfigAsync(const Model::GetFunctionCodeSigningConfigRequest& request, const GetFunctionCodeSigningConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns details about the reserved concurrency configuration for a function.
@@ -691,15 +527,6 @@ namespace Lambda
          */
         virtual Model::GetFunctionConcurrencyOutcome GetFunctionConcurrency(const Model::GetFunctionConcurrencyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetFunctionConcurrency that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetFunctionConcurrencyOutcomeCallable GetFunctionConcurrencyCallable(const Model::GetFunctionConcurrencyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetFunctionConcurrency that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetFunctionConcurrencyAsync(const Model::GetFunctionConcurrencyRequest& request, const GetFunctionConcurrencyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the version-specific settings of a Lambda function or version. The
@@ -712,15 +539,6 @@ namespace Lambda
          */
         virtual Model::GetFunctionConfigurationOutcome GetFunctionConfiguration(const Model::GetFunctionConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetFunctionConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetFunctionConfigurationOutcomeCallable GetFunctionConfigurationCallable(const Model::GetFunctionConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetFunctionConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetFunctionConfigurationAsync(const Model::GetFunctionConfigurationRequest& request, const GetFunctionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the configuration for asynchronous invocation for a function,
@@ -731,15 +549,6 @@ namespace Lambda
          */
         virtual Model::GetFunctionEventInvokeConfigOutcome GetFunctionEventInvokeConfig(const Model::GetFunctionEventInvokeConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetFunctionEventInvokeConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetFunctionEventInvokeConfigOutcomeCallable GetFunctionEventInvokeConfigCallable(const Model::GetFunctionEventInvokeConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for GetFunctionEventInvokeConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetFunctionEventInvokeConfigAsync(const Model::GetFunctionEventInvokeConfigRequest& request, const GetFunctionEventInvokeConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns details about a Lambda function URL.</p><p><h3>See Also:</h3>   <a
@@ -748,15 +557,6 @@ namespace Lambda
          */
         virtual Model::GetFunctionUrlConfigOutcome GetFunctionUrlConfig(const Model::GetFunctionUrlConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetFunctionUrlConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetFunctionUrlConfigOutcomeCallable GetFunctionUrlConfigCallable(const Model::GetFunctionUrlConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for GetFunctionUrlConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetFunctionUrlConfigAsync(const Model::GetFunctionUrlConfigRequest& request, const GetFunctionUrlConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a version of an <a
@@ -768,15 +568,6 @@ namespace Lambda
          */
         virtual Model::GetLayerVersionOutcome GetLayerVersion(const Model::GetLayerVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetLayerVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetLayerVersionOutcomeCallable GetLayerVersionCallable(const Model::GetLayerVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for GetLayerVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetLayerVersionAsync(const Model::GetLayerVersionRequest& request, const GetLayerVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a version of an <a
@@ -788,15 +579,6 @@ namespace Lambda
          */
         virtual Model::GetLayerVersionByArnOutcome GetLayerVersionByArn(const Model::GetLayerVersionByArnRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetLayerVersionByArn that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetLayerVersionByArnOutcomeCallable GetLayerVersionByArnCallable(const Model::GetLayerVersionByArnRequest& request) const;
-
-        /**
-         * An Async wrapper for GetLayerVersionByArn that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetLayerVersionByArnAsync(const Model::GetLayerVersionByArnRequest& request, const GetLayerVersionByArnResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the permission policy for a version of an <a
@@ -808,15 +590,6 @@ namespace Lambda
          */
         virtual Model::GetLayerVersionPolicyOutcome GetLayerVersionPolicy(const Model::GetLayerVersionPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetLayerVersionPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetLayerVersionPolicyOutcomeCallable GetLayerVersionPolicyCallable(const Model::GetLayerVersionPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetLayerVersionPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetLayerVersionPolicyAsync(const Model::GetLayerVersionPolicyRequest& request, const GetLayerVersionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the <a
@@ -827,15 +600,6 @@ namespace Lambda
          */
         virtual Model::GetPolicyOutcome GetPolicy(const Model::GetPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetPolicyOutcomeCallable GetPolicyCallable(const Model::GetPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetPolicyAsync(const Model::GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the provisioned concurrency configuration for a function's alias or
@@ -845,15 +609,6 @@ namespace Lambda
          */
         virtual Model::GetProvisionedConcurrencyConfigOutcome GetProvisionedConcurrencyConfig(const Model::GetProvisionedConcurrencyConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetProvisionedConcurrencyConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetProvisionedConcurrencyConfigOutcomeCallable GetProvisionedConcurrencyConfigCallable(const Model::GetProvisionedConcurrencyConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for GetProvisionedConcurrencyConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetProvisionedConcurrencyConfigAsync(const Model::GetProvisionedConcurrencyConfigRequest& request, const GetProvisionedConcurrencyConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Invokes a Lambda function. You can invoke a function synchronously (and wait
@@ -903,15 +658,6 @@ namespace Lambda
          */
         virtual Model::InvokeOutcome Invoke(const Model::InvokeRequest& request) const;
 
-        /**
-         * A Callable wrapper for Invoke that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::InvokeOutcomeCallable InvokeCallable(const Model::InvokeRequest& request) const;
-
-        /**
-         * An Async wrapper for Invoke that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void InvokeAsync(const Model::InvokeRequest& request, const InvokeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of <a
@@ -922,15 +668,6 @@ namespace Lambda
          */
         virtual Model::ListAliasesOutcome ListAliases(const Model::ListAliasesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAliases that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAliasesOutcomeCallable ListAliasesCallable(const Model::ListAliasesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAliases that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAliasesAsync(const Model::ListAliasesRequest& request, const ListAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of <a
@@ -943,15 +680,6 @@ namespace Lambda
          */
         virtual Model::ListCodeSigningConfigsOutcome ListCodeSigningConfigs(const Model::ListCodeSigningConfigsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListCodeSigningConfigs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListCodeSigningConfigsOutcomeCallable ListCodeSigningConfigsCallable(const Model::ListCodeSigningConfigsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListCodeSigningConfigs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListCodeSigningConfigsAsync(const Model::ListCodeSigningConfigsRequest& request, const ListCodeSigningConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists event source mappings. Specify an <code>EventSourceArn</code> to show
@@ -962,15 +690,6 @@ namespace Lambda
          */
         virtual Model::ListEventSourceMappingsOutcome ListEventSourceMappings(const Model::ListEventSourceMappingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListEventSourceMappings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListEventSourceMappingsOutcomeCallable ListEventSourceMappingsCallable(const Model::ListEventSourceMappingsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListEventSourceMappings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListEventSourceMappingsAsync(const Model::ListEventSourceMappingsRequest& request, const ListEventSourceMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list of configurations for asynchronous invocation for a
@@ -981,15 +700,6 @@ namespace Lambda
          */
         virtual Model::ListFunctionEventInvokeConfigsOutcome ListFunctionEventInvokeConfigs(const Model::ListFunctionEventInvokeConfigsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListFunctionEventInvokeConfigs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListFunctionEventInvokeConfigsOutcomeCallable ListFunctionEventInvokeConfigsCallable(const Model::ListFunctionEventInvokeConfigsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListFunctionEventInvokeConfigs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListFunctionEventInvokeConfigsAsync(const Model::ListFunctionEventInvokeConfigsRequest& request, const ListFunctionEventInvokeConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of Lambda function URLs for the specified
@@ -999,15 +709,6 @@ namespace Lambda
          */
         virtual Model::ListFunctionUrlConfigsOutcome ListFunctionUrlConfigs(const Model::ListFunctionUrlConfigsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListFunctionUrlConfigs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListFunctionUrlConfigsOutcomeCallable ListFunctionUrlConfigsCallable(const Model::ListFunctionUrlConfigsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListFunctionUrlConfigs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListFunctionUrlConfigsAsync(const Model::ListFunctionUrlConfigsRequest& request, const ListFunctionUrlConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of Lambda functions, with the version-specific configuration
@@ -1024,15 +725,6 @@ namespace Lambda
          */
         virtual Model::ListFunctionsOutcome ListFunctions(const Model::ListFunctionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListFunctions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListFunctionsOutcomeCallable ListFunctionsCallable(const Model::ListFunctionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListFunctions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListFunctionsAsync(const Model::ListFunctionsRequest& request, const ListFunctionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List the functions that use the specified code signing configuration. You can
@@ -1043,15 +735,6 @@ namespace Lambda
          */
         virtual Model::ListFunctionsByCodeSigningConfigOutcome ListFunctionsByCodeSigningConfig(const Model::ListFunctionsByCodeSigningConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListFunctionsByCodeSigningConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListFunctionsByCodeSigningConfigOutcomeCallable ListFunctionsByCodeSigningConfigCallable(const Model::ListFunctionsByCodeSigningConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for ListFunctionsByCodeSigningConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListFunctionsByCodeSigningConfigAsync(const Model::ListFunctionsByCodeSigningConfigRequest& request, const ListFunctionsByCodeSigningConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the versions of an <a
@@ -1066,15 +749,6 @@ namespace Lambda
          */
         virtual Model::ListLayerVersionsOutcome ListLayerVersions(const Model::ListLayerVersionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListLayerVersions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListLayerVersionsOutcomeCallable ListLayerVersionsCallable(const Model::ListLayerVersionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListLayerVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListLayerVersionsAsync(const Model::ListLayerVersionsRequest& request, const ListLayerVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists <a
@@ -1091,15 +765,6 @@ namespace Lambda
          */
         virtual Model::ListLayersOutcome ListLayers(const Model::ListLayersRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListLayers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListLayersOutcomeCallable ListLayersCallable(const Model::ListLayersRequest& request) const;
-
-        /**
-         * An Async wrapper for ListLayers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListLayersAsync(const Model::ListLayersRequest& request, const ListLayersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list of provisioned concurrency configurations for a
@@ -1109,15 +774,6 @@ namespace Lambda
          */
         virtual Model::ListProvisionedConcurrencyConfigsOutcome ListProvisionedConcurrencyConfigs(const Model::ListProvisionedConcurrencyConfigsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListProvisionedConcurrencyConfigs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListProvisionedConcurrencyConfigsOutcomeCallable ListProvisionedConcurrencyConfigsCallable(const Model::ListProvisionedConcurrencyConfigsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListProvisionedConcurrencyConfigs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListProvisionedConcurrencyConfigsAsync(const Model::ListProvisionedConcurrencyConfigsRequest& request, const ListProvisionedConcurrencyConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a function's <a
@@ -1128,15 +784,6 @@ namespace Lambda
          */
         virtual Model::ListTagsOutcome ListTags(const Model::ListTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsOutcomeCallable ListTagsCallable(const Model::ListTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsAsync(const Model::ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of <a
@@ -1148,15 +795,6 @@ namespace Lambda
          */
         virtual Model::ListVersionsByFunctionOutcome ListVersionsByFunction(const Model::ListVersionsByFunctionRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListVersionsByFunction that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListVersionsByFunctionOutcomeCallable ListVersionsByFunctionCallable(const Model::ListVersionsByFunctionRequest& request) const;
-
-        /**
-         * An Async wrapper for ListVersionsByFunction that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListVersionsByFunctionAsync(const Model::ListVersionsByFunctionRequest& request, const ListVersionsByFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an <a
@@ -1170,15 +808,6 @@ namespace Lambda
          */
         virtual Model::PublishLayerVersionOutcome PublishLayerVersion(const Model::PublishLayerVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for PublishLayerVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PublishLayerVersionOutcomeCallable PublishLayerVersionCallable(const Model::PublishLayerVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for PublishLayerVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PublishLayerVersionAsync(const Model::PublishLayerVersionRequest& request, const PublishLayerVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a <a
@@ -1195,15 +824,6 @@ namespace Lambda
          */
         virtual Model::PublishVersionOutcome PublishVersion(const Model::PublishVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for PublishVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PublishVersionOutcomeCallable PublishVersionCallable(const Model::PublishVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for PublishVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PublishVersionAsync(const Model::PublishVersionRequest& request, const PublishVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Update the code signing configuration for the function. Changes to the code
@@ -1214,15 +834,6 @@ namespace Lambda
          */
         virtual Model::PutFunctionCodeSigningConfigOutcome PutFunctionCodeSigningConfig(const Model::PutFunctionCodeSigningConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutFunctionCodeSigningConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutFunctionCodeSigningConfigOutcomeCallable PutFunctionCodeSigningConfigCallable(const Model::PutFunctionCodeSigningConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for PutFunctionCodeSigningConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutFunctionCodeSigningConfigAsync(const Model::PutFunctionCodeSigningConfigRequest& request, const PutFunctionCodeSigningConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets the maximum number of simultaneous executions for a function, and
@@ -1243,15 +854,6 @@ namespace Lambda
          */
         virtual Model::PutFunctionConcurrencyOutcome PutFunctionConcurrency(const Model::PutFunctionConcurrencyRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutFunctionConcurrency that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutFunctionConcurrencyOutcomeCallable PutFunctionConcurrencyCallable(const Model::PutFunctionConcurrencyRequest& request) const;
-
-        /**
-         * An Async wrapper for PutFunctionConcurrency that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutFunctionConcurrencyAsync(const Model::PutFunctionConcurrencyRequest& request, const PutFunctionConcurrencyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Configures options for <a
@@ -1277,15 +879,6 @@ namespace Lambda
          */
         virtual Model::PutFunctionEventInvokeConfigOutcome PutFunctionEventInvokeConfig(const Model::PutFunctionEventInvokeConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutFunctionEventInvokeConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutFunctionEventInvokeConfigOutcomeCallable PutFunctionEventInvokeConfigCallable(const Model::PutFunctionEventInvokeConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for PutFunctionEventInvokeConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutFunctionEventInvokeConfigAsync(const Model::PutFunctionEventInvokeConfigRequest& request, const PutFunctionEventInvokeConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds a provisioned concurrency configuration to a function's alias or
@@ -1295,15 +888,6 @@ namespace Lambda
          */
         virtual Model::PutProvisionedConcurrencyConfigOutcome PutProvisionedConcurrencyConfig(const Model::PutProvisionedConcurrencyConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutProvisionedConcurrencyConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutProvisionedConcurrencyConfigOutcomeCallable PutProvisionedConcurrencyConfigCallable(const Model::PutProvisionedConcurrencyConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for PutProvisionedConcurrencyConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutProvisionedConcurrencyConfigAsync(const Model::PutProvisionedConcurrencyConfigRequest& request, const PutProvisionedConcurrencyConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes a statement from the permissions policy for a version of an <a
@@ -1315,15 +899,6 @@ namespace Lambda
          */
         virtual Model::RemoveLayerVersionPermissionOutcome RemoveLayerVersionPermission(const Model::RemoveLayerVersionPermissionRequest& request) const;
 
-        /**
-         * A Callable wrapper for RemoveLayerVersionPermission that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RemoveLayerVersionPermissionOutcomeCallable RemoveLayerVersionPermissionCallable(const Model::RemoveLayerVersionPermissionRequest& request) const;
-
-        /**
-         * An Async wrapper for RemoveLayerVersionPermission that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RemoveLayerVersionPermissionAsync(const Model::RemoveLayerVersionPermissionRequest& request, const RemoveLayerVersionPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Revokes function-use permission from an Amazon Web Services service or
@@ -1334,15 +909,6 @@ namespace Lambda
          */
         virtual Model::RemovePermissionOutcome RemovePermission(const Model::RemovePermissionRequest& request) const;
 
-        /**
-         * A Callable wrapper for RemovePermission that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RemovePermissionOutcomeCallable RemovePermissionCallable(const Model::RemovePermissionRequest& request) const;
-
-        /**
-         * An Async wrapper for RemovePermission that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RemovePermissionAsync(const Model::RemovePermissionRequest& request, const RemovePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds <a
@@ -1353,15 +919,6 @@ namespace Lambda
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes <a
@@ -1372,15 +929,6 @@ namespace Lambda
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the configuration of a Lambda function <a
@@ -1391,15 +939,6 @@ namespace Lambda
          */
         virtual Model::UpdateAliasOutcome UpdateAlias(const Model::UpdateAliasRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateAlias that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateAliasOutcomeCallable UpdateAliasCallable(const Model::UpdateAliasRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateAlias that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateAliasAsync(const Model::UpdateAliasRequest& request, const UpdateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Update the code signing configuration. Changes to the code signing
@@ -1410,15 +949,6 @@ namespace Lambda
          */
         virtual Model::UpdateCodeSigningConfigOutcome UpdateCodeSigningConfig(const Model::UpdateCodeSigningConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateCodeSigningConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateCodeSigningConfigOutcomeCallable UpdateCodeSigningConfigCallable(const Model::UpdateCodeSigningConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateCodeSigningConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateCodeSigningConfigAsync(const Model::UpdateCodeSigningConfigRequest& request, const UpdateCodeSigningConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an event source mapping. You can change the function that Lambda
@@ -1468,15 +998,6 @@ namespace Lambda
          */
         virtual Model::UpdateEventSourceMappingOutcome UpdateEventSourceMapping(const Model::UpdateEventSourceMappingRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateEventSourceMapping that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateEventSourceMappingOutcomeCallable UpdateEventSourceMappingCallable(const Model::UpdateEventSourceMappingRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateEventSourceMapping that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateEventSourceMappingAsync(const Model::UpdateEventSourceMappingRequest& request, const UpdateEventSourceMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a Lambda function's code. If code signing is enabled for the
@@ -1504,15 +1025,6 @@ namespace Lambda
          */
         virtual Model::UpdateFunctionCodeOutcome UpdateFunctionCode(const Model::UpdateFunctionCodeRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateFunctionCode that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateFunctionCodeOutcomeCallable UpdateFunctionCodeCallable(const Model::UpdateFunctionCodeRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateFunctionCode that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateFunctionCodeAsync(const Model::UpdateFunctionCodeRequest& request, const UpdateFunctionCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modify the version-specific settings of a Lambda function.</p> <p>When you
@@ -1536,15 +1048,6 @@ namespace Lambda
          */
         virtual Model::UpdateFunctionConfigurationOutcome UpdateFunctionConfiguration(const Model::UpdateFunctionConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateFunctionConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateFunctionConfigurationOutcomeCallable UpdateFunctionConfigurationCallable(const Model::UpdateFunctionConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateFunctionConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateFunctionConfigurationAsync(const Model::UpdateFunctionConfigurationRequest& request, const UpdateFunctionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the configuration for asynchronous invocation for a function,
@@ -1555,15 +1058,6 @@ namespace Lambda
          */
         virtual Model::UpdateFunctionEventInvokeConfigOutcome UpdateFunctionEventInvokeConfig(const Model::UpdateFunctionEventInvokeConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateFunctionEventInvokeConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateFunctionEventInvokeConfigOutcomeCallable UpdateFunctionEventInvokeConfigCallable(const Model::UpdateFunctionEventInvokeConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateFunctionEventInvokeConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateFunctionEventInvokeConfigAsync(const Model::UpdateFunctionEventInvokeConfigRequest& request, const UpdateFunctionEventInvokeConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the configuration for a Lambda function URL.</p><p><h3>See Also:</h3>
@@ -1573,15 +1067,6 @@ namespace Lambda
          */
         virtual Model::UpdateFunctionUrlConfigOutcome UpdateFunctionUrlConfig(const Model::UpdateFunctionUrlConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateFunctionUrlConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateFunctionUrlConfigOutcomeCallable UpdateFunctionUrlConfigCallable(const Model::UpdateFunctionUrlConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateFunctionUrlConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateFunctionUrlConfigAsync(const Model::UpdateFunctionUrlConfigRequest& request, const UpdateFunctionUrlConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

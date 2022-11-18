@@ -7,8 +7,10 @@
 #include <aws/iot-jobs-data/IoTJobsDataPlane_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iot-jobs-data/IoTJobsDataPlaneServiceClientModel.h>
+#include <aws/iot-jobs-data/IoTJobsDataPlaneLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -85,6 +87,47 @@ namespace IoTJobsDataPlane
         virtual ~IoTJobsDataPlaneClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Gets details of a job execution.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/DescribeJobExecution">AWS
@@ -92,15 +135,6 @@ namespace IoTJobsDataPlane
          */
         virtual Model::DescribeJobExecutionOutcome DescribeJobExecution(const Model::DescribeJobExecutionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeJobExecution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeJobExecutionOutcomeCallable DescribeJobExecutionCallable(const Model::DescribeJobExecutionRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeJobExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeJobExecutionAsync(const Model::DescribeJobExecutionRequest& request, const DescribeJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the list of all jobs for a thing that are not in a terminal
@@ -110,15 +144,6 @@ namespace IoTJobsDataPlane
          */
         virtual Model::GetPendingJobExecutionsOutcome GetPendingJobExecutions(const Model::GetPendingJobExecutionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetPendingJobExecutions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetPendingJobExecutionsOutcomeCallable GetPendingJobExecutionsCallable(const Model::GetPendingJobExecutionsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetPendingJobExecutions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetPendingJobExecutionsAsync(const Model::GetPendingJobExecutionsRequest& request, const GetPendingJobExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets and starts the next pending (status IN_PROGRESS or QUEUED) job execution
@@ -128,15 +153,6 @@ namespace IoTJobsDataPlane
          */
         virtual Model::StartNextPendingJobExecutionOutcome StartNextPendingJobExecution(const Model::StartNextPendingJobExecutionRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartNextPendingJobExecution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartNextPendingJobExecutionOutcomeCallable StartNextPendingJobExecutionCallable(const Model::StartNextPendingJobExecutionRequest& request) const;
-
-        /**
-         * An Async wrapper for StartNextPendingJobExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartNextPendingJobExecutionAsync(const Model::StartNextPendingJobExecutionRequest& request, const StartNextPendingJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the status of a job execution.</p><p><h3>See Also:</h3>   <a
@@ -145,15 +161,6 @@ namespace IoTJobsDataPlane
          */
         virtual Model::UpdateJobExecutionOutcome UpdateJobExecution(const Model::UpdateJobExecutionRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateJobExecution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateJobExecutionOutcomeCallable UpdateJobExecutionCallable(const Model::UpdateJobExecutionRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateJobExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateJobExecutionAsync(const Model::UpdateJobExecutionRequest& request, const UpdateJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

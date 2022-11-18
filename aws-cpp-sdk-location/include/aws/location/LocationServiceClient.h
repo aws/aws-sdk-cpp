@@ -7,8 +7,10 @@
 #include <aws/location/LocationService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/location/LocationServiceServiceClientModel.h>
+#include <aws/location/LocationServiceLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -74,6 +76,47 @@ namespace LocationService
         virtual ~LocationServiceClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Creates an association between a geofence collection and a tracker resource.
          * This allows the tracker resource to communicate location data to the linked
@@ -87,15 +130,6 @@ namespace LocationService
          */
         virtual Model::AssociateTrackerConsumerOutcome AssociateTrackerConsumer(const Model::AssociateTrackerConsumerRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateTrackerConsumer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateTrackerConsumerOutcomeCallable AssociateTrackerConsumerCallable(const Model::AssociateTrackerConsumerRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateTrackerConsumer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateTrackerConsumerAsync(const Model::AssociateTrackerConsumerRequest& request, const AssociateTrackerConsumerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the position history of one or more devices from a tracker
@@ -105,15 +139,6 @@ namespace LocationService
          */
         virtual Model::BatchDeleteDevicePositionHistoryOutcome BatchDeleteDevicePositionHistory(const Model::BatchDeleteDevicePositionHistoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchDeleteDevicePositionHistory that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchDeleteDevicePositionHistoryOutcomeCallable BatchDeleteDevicePositionHistoryCallable(const Model::BatchDeleteDevicePositionHistoryRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchDeleteDevicePositionHistory that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchDeleteDevicePositionHistoryAsync(const Model::BatchDeleteDevicePositionHistoryRequest& request, const BatchDeleteDevicePositionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a batch of geofences from a geofence collection.</p>  <p>This
@@ -124,15 +149,6 @@ namespace LocationService
          */
         virtual Model::BatchDeleteGeofenceOutcome BatchDeleteGeofence(const Model::BatchDeleteGeofenceRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchDeleteGeofence that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchDeleteGeofenceOutcomeCallable BatchDeleteGeofenceCallable(const Model::BatchDeleteGeofenceRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchDeleteGeofence that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchDeleteGeofenceAsync(const Model::BatchDeleteGeofenceRequest& request, const BatchDeleteGeofenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Evaluates device positions against the geofence geometries from a given
@@ -155,15 +171,6 @@ namespace LocationService
          */
         virtual Model::BatchEvaluateGeofencesOutcome BatchEvaluateGeofences(const Model::BatchEvaluateGeofencesRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchEvaluateGeofences that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchEvaluateGeofencesOutcomeCallable BatchEvaluateGeofencesCallable(const Model::BatchEvaluateGeofencesRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchEvaluateGeofences that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchEvaluateGeofencesAsync(const Model::BatchEvaluateGeofencesRequest& request, const BatchEvaluateGeofencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the latest device positions for requested devices.</p><p><h3>See
@@ -173,15 +180,6 @@ namespace LocationService
          */
         virtual Model::BatchGetDevicePositionOutcome BatchGetDevicePosition(const Model::BatchGetDevicePositionRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchGetDevicePosition that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchGetDevicePositionOutcomeCallable BatchGetDevicePositionCallable(const Model::BatchGetDevicePositionRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchGetDevicePosition that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchGetDevicePositionAsync(const Model::BatchGetDevicePositionRequest& request, const BatchGetDevicePositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>A batch request for storing geofence geometries into a given geofence
@@ -192,15 +190,6 @@ namespace LocationService
          */
         virtual Model::BatchPutGeofenceOutcome BatchPutGeofence(const Model::BatchPutGeofenceRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchPutGeofence that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchPutGeofenceOutcomeCallable BatchPutGeofenceCallable(const Model::BatchPutGeofenceRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchPutGeofence that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchPutGeofenceAsync(const Model::BatchPutGeofenceRequest& request, const BatchPutGeofenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Uploads position update data for one or more devices to a tracker resource.
@@ -229,15 +218,6 @@ namespace LocationService
          */
         virtual Model::BatchUpdateDevicePositionOutcome BatchUpdateDevicePosition(const Model::BatchUpdateDevicePositionRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchUpdateDevicePosition that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchUpdateDevicePositionOutcomeCallable BatchUpdateDevicePositionCallable(const Model::BatchUpdateDevicePositionRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchUpdateDevicePosition that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchUpdateDevicePositionAsync(const Model::BatchUpdateDevicePositionRequest& request, const BatchUpdateDevicePositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> <a
@@ -270,15 +250,6 @@ namespace LocationService
          */
         virtual Model::CalculateRouteOutcome CalculateRoute(const Model::CalculateRouteRequest& request) const;
 
-        /**
-         * A Callable wrapper for CalculateRoute that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CalculateRouteOutcomeCallable CalculateRouteCallable(const Model::CalculateRouteRequest& request) const;
-
-        /**
-         * An Async wrapper for CalculateRoute that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CalculateRouteAsync(const Model::CalculateRouteRequest& request, const CalculateRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> <a
@@ -318,15 +289,6 @@ namespace LocationService
          */
         virtual Model::CalculateRouteMatrixOutcome CalculateRouteMatrix(const Model::CalculateRouteMatrixRequest& request) const;
 
-        /**
-         * A Callable wrapper for CalculateRouteMatrix that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CalculateRouteMatrixOutcomeCallable CalculateRouteMatrixCallable(const Model::CalculateRouteMatrixRequest& request) const;
-
-        /**
-         * An Async wrapper for CalculateRouteMatrix that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CalculateRouteMatrixAsync(const Model::CalculateRouteMatrixRequest& request, const CalculateRouteMatrixResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a geofence collection, which manages and stores
@@ -336,15 +298,6 @@ namespace LocationService
          */
         virtual Model::CreateGeofenceCollectionOutcome CreateGeofenceCollection(const Model::CreateGeofenceCollectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateGeofenceCollection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateGeofenceCollectionOutcomeCallable CreateGeofenceCollectionCallable(const Model::CreateGeofenceCollectionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateGeofenceCollection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateGeofenceCollectionAsync(const Model::CreateGeofenceCollectionRequest& request, const CreateGeofenceCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a map resource in your AWS account, which provides map tiles of
@@ -359,15 +312,6 @@ namespace LocationService
          */
         virtual Model::CreateMapOutcome CreateMap(const Model::CreateMapRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateMap that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateMapOutcomeCallable CreateMapCallable(const Model::CreateMapRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateMap that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateMapAsync(const Model::CreateMapRequest& request, const CreateMapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a place index resource in your AWS account. Use a place index
@@ -385,15 +329,6 @@ namespace LocationService
          */
         virtual Model::CreatePlaceIndexOutcome CreatePlaceIndex(const Model::CreatePlaceIndexRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreatePlaceIndex that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreatePlaceIndexOutcomeCallable CreatePlaceIndexCallable(const Model::CreatePlaceIndexRequest& request) const;
-
-        /**
-         * An Async wrapper for CreatePlaceIndex that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreatePlaceIndexAsync(const Model::CreatePlaceIndexRequest& request, const CreatePlaceIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a route calculator resource in your AWS account.</p> <p>You can send
@@ -409,15 +344,6 @@ namespace LocationService
          */
         virtual Model::CreateRouteCalculatorOutcome CreateRouteCalculator(const Model::CreateRouteCalculatorRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateRouteCalculator that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateRouteCalculatorOutcomeCallable CreateRouteCalculatorCallable(const Model::CreateRouteCalculatorRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateRouteCalculator that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateRouteCalculatorAsync(const Model::CreateRouteCalculatorRequest& request, const CreateRouteCalculatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a tracker resource in your AWS account, which lets you retrieve
@@ -427,15 +353,6 @@ namespace LocationService
          */
         virtual Model::CreateTrackerOutcome CreateTracker(const Model::CreateTrackerRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateTracker that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateTrackerOutcomeCallable CreateTrackerCallable(const Model::CreateTrackerRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateTracker that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateTrackerAsync(const Model::CreateTrackerRequest& request, const CreateTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a geofence collection from your AWS account.</p>  <p>This
@@ -447,15 +364,6 @@ namespace LocationService
          */
         virtual Model::DeleteGeofenceCollectionOutcome DeleteGeofenceCollection(const Model::DeleteGeofenceCollectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteGeofenceCollection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteGeofenceCollectionOutcomeCallable DeleteGeofenceCollectionCallable(const Model::DeleteGeofenceCollectionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteGeofenceCollection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteGeofenceCollectionAsync(const Model::DeleteGeofenceCollectionRequest& request, const DeleteGeofenceCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a map resource from your AWS account.</p>  <p>This operation
@@ -466,15 +374,6 @@ namespace LocationService
          */
         virtual Model::DeleteMapOutcome DeleteMap(const Model::DeleteMapRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteMap that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteMapOutcomeCallable DeleteMapCallable(const Model::DeleteMapRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteMap that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteMapAsync(const Model::DeleteMapRequest& request, const DeleteMapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a place index resource from your AWS account.</p>  <p>This
@@ -485,15 +384,6 @@ namespace LocationService
          */
         virtual Model::DeletePlaceIndexOutcome DeletePlaceIndex(const Model::DeletePlaceIndexRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeletePlaceIndex that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeletePlaceIndexOutcomeCallable DeletePlaceIndexCallable(const Model::DeletePlaceIndexRequest& request) const;
-
-        /**
-         * An Async wrapper for DeletePlaceIndex that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeletePlaceIndexAsync(const Model::DeletePlaceIndexRequest& request, const DeletePlaceIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a route calculator resource from your AWS account.</p>  <p>This
@@ -504,15 +394,6 @@ namespace LocationService
          */
         virtual Model::DeleteRouteCalculatorOutcome DeleteRouteCalculator(const Model::DeleteRouteCalculatorRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteRouteCalculator that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteRouteCalculatorOutcomeCallable DeleteRouteCalculatorCallable(const Model::DeleteRouteCalculatorRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteRouteCalculator that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteRouteCalculatorAsync(const Model::DeleteRouteCalculatorRequest& request, const DeleteRouteCalculatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a tracker resource from your AWS account.</p>  <p>This
@@ -524,15 +405,6 @@ namespace LocationService
          */
         virtual Model::DeleteTrackerOutcome DeleteTracker(const Model::DeleteTrackerRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteTracker that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteTrackerOutcomeCallable DeleteTrackerCallable(const Model::DeleteTrackerRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteTracker that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteTrackerAsync(const Model::DeleteTrackerRequest& request, const DeleteTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the geofence collection details.</p><p><h3>See Also:</h3>   <a
@@ -541,15 +413,6 @@ namespace LocationService
          */
         virtual Model::DescribeGeofenceCollectionOutcome DescribeGeofenceCollection(const Model::DescribeGeofenceCollectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeGeofenceCollection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeGeofenceCollectionOutcomeCallable DescribeGeofenceCollectionCallable(const Model::DescribeGeofenceCollectionRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeGeofenceCollection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeGeofenceCollectionAsync(const Model::DescribeGeofenceCollectionRequest& request, const DescribeGeofenceCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the map resource details.</p><p><h3>See Also:</h3>   <a
@@ -558,15 +421,6 @@ namespace LocationService
          */
         virtual Model::DescribeMapOutcome DescribeMap(const Model::DescribeMapRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeMap that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeMapOutcomeCallable DescribeMapCallable(const Model::DescribeMapRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeMap that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeMapAsync(const Model::DescribeMapRequest& request, const DescribeMapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the place index resource details.</p><p><h3>See Also:</h3>   <a
@@ -575,15 +429,6 @@ namespace LocationService
          */
         virtual Model::DescribePlaceIndexOutcome DescribePlaceIndex(const Model::DescribePlaceIndexRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribePlaceIndex that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribePlaceIndexOutcomeCallable DescribePlaceIndexCallable(const Model::DescribePlaceIndexRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribePlaceIndex that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribePlaceIndexAsync(const Model::DescribePlaceIndexRequest& request, const DescribePlaceIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the route calculator resource details.</p><p><h3>See Also:</h3>  
@@ -593,15 +438,6 @@ namespace LocationService
          */
         virtual Model::DescribeRouteCalculatorOutcome DescribeRouteCalculator(const Model::DescribeRouteCalculatorRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeRouteCalculator that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeRouteCalculatorOutcomeCallable DescribeRouteCalculatorCallable(const Model::DescribeRouteCalculatorRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeRouteCalculator that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeRouteCalculatorAsync(const Model::DescribeRouteCalculatorRequest& request, const DescribeRouteCalculatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the tracker resource details.</p><p><h3>See Also:</h3>   <a
@@ -610,15 +446,6 @@ namespace LocationService
          */
         virtual Model::DescribeTrackerOutcome DescribeTracker(const Model::DescribeTrackerRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTracker that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTrackerOutcomeCallable DescribeTrackerCallable(const Model::DescribeTrackerRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTracker that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTrackerAsync(const Model::DescribeTrackerRequest& request, const DescribeTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the association between a tracker resource and a geofence
@@ -630,15 +457,6 @@ namespace LocationService
          */
         virtual Model::DisassociateTrackerConsumerOutcome DisassociateTrackerConsumer(const Model::DisassociateTrackerConsumerRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateTrackerConsumer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateTrackerConsumerOutcomeCallable DisassociateTrackerConsumerCallable(const Model::DisassociateTrackerConsumerRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateTrackerConsumer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateTrackerConsumerAsync(const Model::DisassociateTrackerConsumerRequest& request, const DisassociateTrackerConsumerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a device's most recent position according to its sample time.</p>
@@ -649,15 +467,6 @@ namespace LocationService
          */
         virtual Model::GetDevicePositionOutcome GetDevicePosition(const Model::GetDevicePositionRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDevicePosition that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDevicePositionOutcomeCallable GetDevicePositionCallable(const Model::GetDevicePositionRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDevicePosition that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDevicePositionAsync(const Model::GetDevicePositionRequest& request, const GetDevicePositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the device position history from a tracker resource within a
@@ -668,15 +477,6 @@ namespace LocationService
          */
         virtual Model::GetDevicePositionHistoryOutcome GetDevicePositionHistory(const Model::GetDevicePositionHistoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDevicePositionHistory that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDevicePositionHistoryOutcomeCallable GetDevicePositionHistoryCallable(const Model::GetDevicePositionHistoryRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDevicePositionHistory that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDevicePositionHistoryAsync(const Model::GetDevicePositionHistoryRequest& request, const GetDevicePositionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the geofence details from a geofence collection.</p><p><h3>See
@@ -686,15 +486,6 @@ namespace LocationService
          */
         virtual Model::GetGeofenceOutcome GetGeofence(const Model::GetGeofenceRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetGeofence that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetGeofenceOutcomeCallable GetGeofenceCallable(const Model::GetGeofenceRequest& request) const;
-
-        /**
-         * An Async wrapper for GetGeofence that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetGeofenceAsync(const Model::GetGeofenceRequest& request, const GetGeofenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves glyphs used to display labels on a map.</p><p><h3>See Also:</h3>  
@@ -704,15 +495,6 @@ namespace LocationService
          */
         virtual Model::GetMapGlyphsOutcome GetMapGlyphs(const Model::GetMapGlyphsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetMapGlyphs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetMapGlyphsOutcomeCallable GetMapGlyphsCallable(const Model::GetMapGlyphsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetMapGlyphs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetMapGlyphsAsync(const Model::GetMapGlyphsRequest& request, const GetMapGlyphsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the sprite sheet corresponding to a map resource. The sprite sheet
@@ -723,15 +505,6 @@ namespace LocationService
          */
         virtual Model::GetMapSpritesOutcome GetMapSprites(const Model::GetMapSpritesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetMapSprites that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetMapSpritesOutcomeCallable GetMapSpritesCallable(const Model::GetMapSpritesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetMapSprites that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetMapSpritesAsync(const Model::GetMapSpritesRequest& request, const GetMapSpritesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the map style descriptor from a map resource. </p> <p>The style
@@ -744,15 +517,6 @@ namespace LocationService
          */
         virtual Model::GetMapStyleDescriptorOutcome GetMapStyleDescriptor(const Model::GetMapStyleDescriptorRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetMapStyleDescriptor that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetMapStyleDescriptorOutcomeCallable GetMapStyleDescriptorCallable(const Model::GetMapStyleDescriptorRequest& request) const;
-
-        /**
-         * An Async wrapper for GetMapStyleDescriptor that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetMapStyleDescriptorAsync(const Model::GetMapStyleDescriptorRequest& request, const GetMapStyleDescriptorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a vector data tile from the map resource. Map tiles are used by
@@ -767,15 +531,6 @@ namespace LocationService
          */
         virtual Model::GetMapTileOutcome GetMapTile(const Model::GetMapTileRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetMapTile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetMapTileOutcomeCallable GetMapTileCallable(const Model::GetMapTileRequest& request) const;
-
-        /**
-         * An Async wrapper for GetMapTile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetMapTileAsync(const Model::GetMapTileRequest& request, const GetMapTileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Finds a place by its unique ID. A <code>PlaceId</code> is returned by other
@@ -789,15 +544,6 @@ namespace LocationService
          */
         virtual Model::GetPlaceOutcome GetPlace(const Model::GetPlaceRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetPlace that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetPlaceOutcomeCallable GetPlaceCallable(const Model::GetPlaceRequest& request) const;
-
-        /**
-         * An Async wrapper for GetPlace that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetPlaceAsync(const Model::GetPlaceRequest& request, const GetPlaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>A batch request to retrieve all device positions.</p><p><h3>See Also:</h3>  
@@ -807,15 +553,6 @@ namespace LocationService
          */
         virtual Model::ListDevicePositionsOutcome ListDevicePositions(const Model::ListDevicePositionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDevicePositions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDevicePositionsOutcomeCallable ListDevicePositionsCallable(const Model::ListDevicePositionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDevicePositions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDevicePositionsAsync(const Model::ListDevicePositionsRequest& request, const ListDevicePositionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists geofence collections in your AWS account.</p><p><h3>See Also:</h3>   <a
@@ -824,15 +561,6 @@ namespace LocationService
          */
         virtual Model::ListGeofenceCollectionsOutcome ListGeofenceCollections(const Model::ListGeofenceCollectionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListGeofenceCollections that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListGeofenceCollectionsOutcomeCallable ListGeofenceCollectionsCallable(const Model::ListGeofenceCollectionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListGeofenceCollections that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListGeofenceCollectionsAsync(const Model::ListGeofenceCollectionsRequest& request, const ListGeofenceCollectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists geofences stored in a given geofence collection.</p><p><h3>See
@@ -842,15 +570,6 @@ namespace LocationService
          */
         virtual Model::ListGeofencesOutcome ListGeofences(const Model::ListGeofencesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListGeofences that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListGeofencesOutcomeCallable ListGeofencesCallable(const Model::ListGeofencesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListGeofences that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListGeofencesAsync(const Model::ListGeofencesRequest& request, const ListGeofencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists map resources in your AWS account.</p><p><h3>See Also:</h3>   <a
@@ -859,15 +578,6 @@ namespace LocationService
          */
         virtual Model::ListMapsOutcome ListMaps(const Model::ListMapsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListMaps that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListMapsOutcomeCallable ListMapsCallable(const Model::ListMapsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListMaps that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListMapsAsync(const Model::ListMapsRequest& request, const ListMapsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists place index resources in your AWS account.</p><p><h3>See Also:</h3>  
@@ -877,15 +587,6 @@ namespace LocationService
          */
         virtual Model::ListPlaceIndexesOutcome ListPlaceIndexes(const Model::ListPlaceIndexesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPlaceIndexes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPlaceIndexesOutcomeCallable ListPlaceIndexesCallable(const Model::ListPlaceIndexesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPlaceIndexes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPlaceIndexesAsync(const Model::ListPlaceIndexesRequest& request, const ListPlaceIndexesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists route calculator resources in your AWS account.</p><p><h3>See
@@ -895,15 +596,6 @@ namespace LocationService
          */
         virtual Model::ListRouteCalculatorsOutcome ListRouteCalculators(const Model::ListRouteCalculatorsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListRouteCalculators that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListRouteCalculatorsOutcomeCallable ListRouteCalculatorsCallable(const Model::ListRouteCalculatorsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListRouteCalculators that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListRouteCalculatorsAsync(const Model::ListRouteCalculatorsRequest& request, const ListRouteCalculatorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of tags that are applied to the specified Amazon Location
@@ -913,15 +605,6 @@ namespace LocationService
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists geofence collections currently associated to the given tracker
@@ -931,15 +614,6 @@ namespace LocationService
          */
         virtual Model::ListTrackerConsumersOutcome ListTrackerConsumers(const Model::ListTrackerConsumersRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTrackerConsumers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTrackerConsumersOutcomeCallable ListTrackerConsumersCallable(const Model::ListTrackerConsumersRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTrackerConsumers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTrackerConsumersAsync(const Model::ListTrackerConsumersRequest& request, const ListTrackerConsumersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists tracker resources in your AWS account.</p><p><h3>See Also:</h3>   <a
@@ -948,15 +622,6 @@ namespace LocationService
          */
         virtual Model::ListTrackersOutcome ListTrackers(const Model::ListTrackersRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTrackers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTrackersOutcomeCallable ListTrackersCallable(const Model::ListTrackersRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTrackers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTrackersAsync(const Model::ListTrackersRequest& request, const ListTrackersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stores a geofence geometry in a given geofence collection, or updates the
@@ -967,15 +632,6 @@ namespace LocationService
          */
         virtual Model::PutGeofenceOutcome PutGeofence(const Model::PutGeofenceRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutGeofence that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutGeofenceOutcomeCallable PutGeofenceCallable(const Model::PutGeofenceRequest& request) const;
-
-        /**
-         * An Async wrapper for PutGeofence that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutGeofenceAsync(const Model::PutGeofenceRequest& request, const PutGeofenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Reverse geocodes a given coordinate and returns a legible address. Allows you
@@ -986,15 +642,6 @@ namespace LocationService
          */
         virtual Model::SearchPlaceIndexForPositionOutcome SearchPlaceIndexForPosition(const Model::SearchPlaceIndexForPositionRequest& request) const;
 
-        /**
-         * A Callable wrapper for SearchPlaceIndexForPosition that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SearchPlaceIndexForPositionOutcomeCallable SearchPlaceIndexForPositionCallable(const Model::SearchPlaceIndexForPositionRequest& request) const;
-
-        /**
-         * An Async wrapper for SearchPlaceIndexForPosition that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SearchPlaceIndexForPositionAsync(const Model::SearchPlaceIndexForPositionRequest& request, const SearchPlaceIndexForPositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Generates suggestions for addresses and points of interest based on partial
@@ -1012,15 +659,6 @@ namespace LocationService
          */
         virtual Model::SearchPlaceIndexForSuggestionsOutcome SearchPlaceIndexForSuggestions(const Model::SearchPlaceIndexForSuggestionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for SearchPlaceIndexForSuggestions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SearchPlaceIndexForSuggestionsOutcomeCallable SearchPlaceIndexForSuggestionsCallable(const Model::SearchPlaceIndexForSuggestionsRequest& request) const;
-
-        /**
-         * An Async wrapper for SearchPlaceIndexForSuggestions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SearchPlaceIndexForSuggestionsAsync(const Model::SearchPlaceIndexForSuggestionsRequest& request, const SearchPlaceIndexForSuggestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Geocodes free-form text, such as an address, name, city, or region to allow
@@ -1036,15 +674,6 @@ namespace LocationService
          */
         virtual Model::SearchPlaceIndexForTextOutcome SearchPlaceIndexForText(const Model::SearchPlaceIndexForTextRequest& request) const;
 
-        /**
-         * A Callable wrapper for SearchPlaceIndexForText that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SearchPlaceIndexForTextOutcomeCallable SearchPlaceIndexForTextCallable(const Model::SearchPlaceIndexForTextRequest& request) const;
-
-        /**
-         * An Async wrapper for SearchPlaceIndexForText that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SearchPlaceIndexForTextAsync(const Model::SearchPlaceIndexForTextRequest& request, const SearchPlaceIndexForTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Assigns one or more tags (key-value pairs) to the specified Amazon Location
@@ -1063,15 +692,6 @@ namespace LocationService
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes one or more tags from the specified Amazon Location
@@ -1081,15 +701,6 @@ namespace LocationService
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the specified properties of a given geofence
@@ -1099,15 +710,6 @@ namespace LocationService
          */
         virtual Model::UpdateGeofenceCollectionOutcome UpdateGeofenceCollection(const Model::UpdateGeofenceCollectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateGeofenceCollection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateGeofenceCollectionOutcomeCallable UpdateGeofenceCollectionCallable(const Model::UpdateGeofenceCollectionRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateGeofenceCollection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateGeofenceCollectionAsync(const Model::UpdateGeofenceCollectionRequest& request, const UpdateGeofenceCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the specified properties of a given map resource.</p><p><h3>See
@@ -1117,15 +719,6 @@ namespace LocationService
          */
         virtual Model::UpdateMapOutcome UpdateMap(const Model::UpdateMapRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateMap that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateMapOutcomeCallable UpdateMapCallable(const Model::UpdateMapRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateMap that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateMapAsync(const Model::UpdateMapRequest& request, const UpdateMapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the specified properties of a given place index
@@ -1135,15 +728,6 @@ namespace LocationService
          */
         virtual Model::UpdatePlaceIndexOutcome UpdatePlaceIndex(const Model::UpdatePlaceIndexRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdatePlaceIndex that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdatePlaceIndexOutcomeCallable UpdatePlaceIndexCallable(const Model::UpdatePlaceIndexRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdatePlaceIndex that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdatePlaceIndexAsync(const Model::UpdatePlaceIndexRequest& request, const UpdatePlaceIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the specified properties for a given route calculator
@@ -1153,15 +737,6 @@ namespace LocationService
          */
         virtual Model::UpdateRouteCalculatorOutcome UpdateRouteCalculator(const Model::UpdateRouteCalculatorRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateRouteCalculator that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateRouteCalculatorOutcomeCallable UpdateRouteCalculatorCallable(const Model::UpdateRouteCalculatorRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateRouteCalculator that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateRouteCalculatorAsync(const Model::UpdateRouteCalculatorRequest& request, const UpdateRouteCalculatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the specified properties of a given tracker resource.</p><p><h3>See
@@ -1171,15 +746,6 @@ namespace LocationService
          */
         virtual Model::UpdateTrackerOutcome UpdateTracker(const Model::UpdateTrackerRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateTracker that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateTrackerOutcomeCallable UpdateTrackerCallable(const Model::UpdateTrackerRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateTracker that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateTrackerAsync(const Model::UpdateTrackerRequest& request, const UpdateTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

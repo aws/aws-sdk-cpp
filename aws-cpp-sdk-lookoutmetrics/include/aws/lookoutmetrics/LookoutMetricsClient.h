@@ -7,8 +7,10 @@
 #include <aws/lookoutmetrics/LookoutMetrics_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/lookoutmetrics/LookoutMetricsServiceClientModel.h>
+#include <aws/lookoutmetrics/LookoutMetricsLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -76,6 +78,47 @@ namespace LookoutMetrics
         virtual ~LookoutMetricsClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Activates an anomaly detector.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ActivateAnomalyDetector">AWS
@@ -83,15 +126,6 @@ namespace LookoutMetrics
          */
         virtual Model::ActivateAnomalyDetectorOutcome ActivateAnomalyDetector(const Model::ActivateAnomalyDetectorRequest& request) const;
 
-        /**
-         * A Callable wrapper for ActivateAnomalyDetector that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ActivateAnomalyDetectorOutcomeCallable ActivateAnomalyDetectorCallable(const Model::ActivateAnomalyDetectorRequest& request) const;
-
-        /**
-         * An Async wrapper for ActivateAnomalyDetector that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ActivateAnomalyDetectorAsync(const Model::ActivateAnomalyDetectorRequest& request, const ActivateAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Runs a backtest for anomaly detection for the specified
@@ -101,15 +135,6 @@ namespace LookoutMetrics
          */
         virtual Model::BackTestAnomalyDetectorOutcome BackTestAnomalyDetector(const Model::BackTestAnomalyDetectorRequest& request) const;
 
-        /**
-         * A Callable wrapper for BackTestAnomalyDetector that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BackTestAnomalyDetectorOutcomeCallable BackTestAnomalyDetectorCallable(const Model::BackTestAnomalyDetectorRequest& request) const;
-
-        /**
-         * An Async wrapper for BackTestAnomalyDetector that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BackTestAnomalyDetectorAsync(const Model::BackTestAnomalyDetectorRequest& request, const BackTestAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an alert for an anomaly detector.</p><p><h3>See Also:</h3>   <a
@@ -118,15 +143,6 @@ namespace LookoutMetrics
          */
         virtual Model::CreateAlertOutcome CreateAlert(const Model::CreateAlertRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateAlert that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateAlertOutcomeCallable CreateAlertCallable(const Model::CreateAlertRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateAlert that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateAlertAsync(const Model::CreateAlertRequest& request, const CreateAlertResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an anomaly detector.</p><p><h3>See Also:</h3>   <a
@@ -135,15 +151,6 @@ namespace LookoutMetrics
          */
         virtual Model::CreateAnomalyDetectorOutcome CreateAnomalyDetector(const Model::CreateAnomalyDetectorRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateAnomalyDetector that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateAnomalyDetectorOutcomeCallable CreateAnomalyDetectorCallable(const Model::CreateAnomalyDetectorRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateAnomalyDetector that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateAnomalyDetectorAsync(const Model::CreateAnomalyDetectorRequest& request, const CreateAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a dataset.</p><p><h3>See Also:</h3>   <a
@@ -152,15 +159,6 @@ namespace LookoutMetrics
          */
         virtual Model::CreateMetricSetOutcome CreateMetricSet(const Model::CreateMetricSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateMetricSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateMetricSetOutcomeCallable CreateMetricSetCallable(const Model::CreateMetricSetRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateMetricSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateMetricSetAsync(const Model::CreateMetricSetRequest& request, const CreateMetricSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deactivates an anomaly detector.</p><p><h3>See Also:</h3>   <a
@@ -169,15 +167,6 @@ namespace LookoutMetrics
          */
         virtual Model::DeactivateAnomalyDetectorOutcome DeactivateAnomalyDetector(const Model::DeactivateAnomalyDetectorRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeactivateAnomalyDetector that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeactivateAnomalyDetectorOutcomeCallable DeactivateAnomalyDetectorCallable(const Model::DeactivateAnomalyDetectorRequest& request) const;
-
-        /**
-         * An Async wrapper for DeactivateAnomalyDetector that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeactivateAnomalyDetectorAsync(const Model::DeactivateAnomalyDetectorRequest& request, const DeactivateAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an alert.</p><p><h3>See Also:</h3>   <a
@@ -186,15 +175,6 @@ namespace LookoutMetrics
          */
         virtual Model::DeleteAlertOutcome DeleteAlert(const Model::DeleteAlertRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAlert that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAlertOutcomeCallable DeleteAlertCallable(const Model::DeleteAlertRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAlert that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAlertAsync(const Model::DeleteAlertRequest& request, const DeleteAlertResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a detector. Deleting an anomaly detector will delete all of its
@@ -205,15 +185,6 @@ namespace LookoutMetrics
          */
         virtual Model::DeleteAnomalyDetectorOutcome DeleteAnomalyDetector(const Model::DeleteAnomalyDetectorRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAnomalyDetector that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAnomalyDetectorOutcomeCallable DeleteAnomalyDetectorCallable(const Model::DeleteAnomalyDetectorRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAnomalyDetector that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAnomalyDetectorAsync(const Model::DeleteAnomalyDetectorRequest& request, const DeleteAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes an alert.</p> <p>Amazon Lookout for Metrics API actions are
@@ -225,15 +196,6 @@ namespace LookoutMetrics
          */
         virtual Model::DescribeAlertOutcome DescribeAlert(const Model::DescribeAlertRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAlert that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAlertOutcomeCallable DescribeAlertCallable(const Model::DescribeAlertRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAlert that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAlertAsync(const Model::DescribeAlertRequest& request, const DescribeAlertResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the status of the specified anomaly detection
@@ -243,15 +205,6 @@ namespace LookoutMetrics
          */
         virtual Model::DescribeAnomalyDetectionExecutionsOutcome DescribeAnomalyDetectionExecutions(const Model::DescribeAnomalyDetectionExecutionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAnomalyDetectionExecutions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAnomalyDetectionExecutionsOutcomeCallable DescribeAnomalyDetectionExecutionsCallable(const Model::DescribeAnomalyDetectionExecutionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAnomalyDetectionExecutions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAnomalyDetectionExecutionsAsync(const Model::DescribeAnomalyDetectionExecutionsRequest& request, const DescribeAnomalyDetectionExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a detector.</p> <p>Amazon Lookout for Metrics API actions are
@@ -263,15 +216,6 @@ namespace LookoutMetrics
          */
         virtual Model::DescribeAnomalyDetectorOutcome DescribeAnomalyDetector(const Model::DescribeAnomalyDetectorRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAnomalyDetector that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAnomalyDetectorOutcomeCallable DescribeAnomalyDetectorCallable(const Model::DescribeAnomalyDetectorRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAnomalyDetector that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAnomalyDetectorAsync(const Model::DescribeAnomalyDetectorRequest& request, const DescribeAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a dataset.</p> <p>Amazon Lookout for Metrics API actions are
@@ -283,15 +227,6 @@ namespace LookoutMetrics
          */
         virtual Model::DescribeMetricSetOutcome DescribeMetricSet(const Model::DescribeMetricSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeMetricSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeMetricSetOutcomeCallable DescribeMetricSetCallable(const Model::DescribeMetricSetRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeMetricSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeMetricSetAsync(const Model::DescribeMetricSetRequest& request, const DescribeMetricSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Detects an Amazon S3 dataset's file format, interval, and
@@ -301,15 +236,6 @@ namespace LookoutMetrics
          */
         virtual Model::DetectMetricSetConfigOutcome DetectMetricSetConfig(const Model::DetectMetricSetConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for DetectMetricSetConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DetectMetricSetConfigOutcomeCallable DetectMetricSetConfigCallable(const Model::DetectMetricSetConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for DetectMetricSetConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DetectMetricSetConfigAsync(const Model::DetectMetricSetConfigRequest& request, const DetectMetricSetConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns details about a group of anomalous metrics.</p><p><h3>See Also:</h3> 
@@ -319,15 +245,6 @@ namespace LookoutMetrics
          */
         virtual Model::GetAnomalyGroupOutcome GetAnomalyGroup(const Model::GetAnomalyGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAnomalyGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAnomalyGroupOutcomeCallable GetAnomalyGroupCallable(const Model::GetAnomalyGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAnomalyGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAnomalyGroupAsync(const Model::GetAnomalyGroupRequest& request, const GetAnomalyGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns details about the requested data quality metrics.</p><p><h3>See
@@ -337,15 +254,6 @@ namespace LookoutMetrics
          */
         virtual Model::GetDataQualityMetricsOutcome GetDataQualityMetrics(const Model::GetDataQualityMetricsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDataQualityMetrics that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDataQualityMetricsOutcomeCallable GetDataQualityMetricsCallable(const Model::GetDataQualityMetricsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDataQualityMetrics that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDataQualityMetricsAsync(const Model::GetDataQualityMetricsRequest& request, const GetDataQualityMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get feedback for an anomaly group.</p><p><h3>See Also:</h3>   <a
@@ -354,15 +262,6 @@ namespace LookoutMetrics
          */
         virtual Model::GetFeedbackOutcome GetFeedback(const Model::GetFeedbackRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetFeedback that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetFeedbackOutcomeCallable GetFeedbackCallable(const Model::GetFeedbackRequest& request) const;
-
-        /**
-         * An Async wrapper for GetFeedback that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetFeedbackAsync(const Model::GetFeedbackRequest& request, const GetFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a selection of sample records from an Amazon S3
@@ -372,15 +271,6 @@ namespace LookoutMetrics
          */
         virtual Model::GetSampleDataOutcome GetSampleData(const Model::GetSampleDataRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSampleData that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSampleDataOutcomeCallable GetSampleDataCallable(const Model::GetSampleDataRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSampleData that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSampleDataAsync(const Model::GetSampleDataRequest& request, const GetSampleDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the alerts attached to a detector.</p> <p>Amazon Lookout for Metrics
@@ -392,15 +282,6 @@ namespace LookoutMetrics
          */
         virtual Model::ListAlertsOutcome ListAlerts(const Model::ListAlertsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAlerts that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAlertsOutcomeCallable ListAlertsCallable(const Model::ListAlertsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAlerts that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAlertsAsync(const Model::ListAlertsRequest& request, const ListAlertsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the detectors in the current AWS Region.</p> <p>Amazon Lookout for
@@ -412,15 +293,6 @@ namespace LookoutMetrics
          */
         virtual Model::ListAnomalyDetectorsOutcome ListAnomalyDetectors(const Model::ListAnomalyDetectorsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAnomalyDetectors that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAnomalyDetectorsOutcomeCallable ListAnomalyDetectorsCallable(const Model::ListAnomalyDetectorsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAnomalyDetectors that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAnomalyDetectorsAsync(const Model::ListAnomalyDetectorsRequest& request, const ListAnomalyDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of measures that are potential causes or effects of an anomaly
@@ -430,15 +302,6 @@ namespace LookoutMetrics
          */
         virtual Model::ListAnomalyGroupRelatedMetricsOutcome ListAnomalyGroupRelatedMetrics(const Model::ListAnomalyGroupRelatedMetricsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAnomalyGroupRelatedMetrics that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAnomalyGroupRelatedMetricsOutcomeCallable ListAnomalyGroupRelatedMetricsCallable(const Model::ListAnomalyGroupRelatedMetricsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAnomalyGroupRelatedMetrics that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAnomalyGroupRelatedMetricsAsync(const Model::ListAnomalyGroupRelatedMetricsRequest& request, const ListAnomalyGroupRelatedMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of anomaly groups.</p><p><h3>See Also:</h3>   <a
@@ -447,15 +310,6 @@ namespace LookoutMetrics
          */
         virtual Model::ListAnomalyGroupSummariesOutcome ListAnomalyGroupSummaries(const Model::ListAnomalyGroupSummariesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAnomalyGroupSummaries that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAnomalyGroupSummariesOutcomeCallable ListAnomalyGroupSummariesCallable(const Model::ListAnomalyGroupSummariesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAnomalyGroupSummaries that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAnomalyGroupSummariesAsync(const Model::ListAnomalyGroupSummariesRequest& request, const ListAnomalyGroupSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of anomalous metrics for a measure in an anomaly
@@ -465,15 +319,6 @@ namespace LookoutMetrics
          */
         virtual Model::ListAnomalyGroupTimeSeriesOutcome ListAnomalyGroupTimeSeries(const Model::ListAnomalyGroupTimeSeriesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAnomalyGroupTimeSeries that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAnomalyGroupTimeSeriesOutcomeCallable ListAnomalyGroupTimeSeriesCallable(const Model::ListAnomalyGroupTimeSeriesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAnomalyGroupTimeSeries that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAnomalyGroupTimeSeriesAsync(const Model::ListAnomalyGroupTimeSeriesRequest& request, const ListAnomalyGroupTimeSeriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the datasets in the current AWS Region.</p> <p>Amazon Lookout for
@@ -485,15 +330,6 @@ namespace LookoutMetrics
          */
         virtual Model::ListMetricSetsOutcome ListMetricSets(const Model::ListMetricSetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListMetricSets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListMetricSetsOutcomeCallable ListMetricSetsCallable(const Model::ListMetricSetsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListMetricSets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListMetricSetsAsync(const Model::ListMetricSetsRequest& request, const ListMetricSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of <a
@@ -504,15 +340,6 @@ namespace LookoutMetrics
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Add feedback for an anomalous metric.</p><p><h3>See Also:</h3>   <a
@@ -521,15 +348,6 @@ namespace LookoutMetrics
          */
         virtual Model::PutFeedbackOutcome PutFeedback(const Model::PutFeedbackRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutFeedback that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutFeedbackOutcomeCallable PutFeedbackCallable(const Model::PutFeedbackRequest& request) const;
-
-        /**
-         * An Async wrapper for PutFeedback that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutFeedbackAsync(const Model::PutFeedbackRequest& request, const PutFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds <a
@@ -540,15 +358,6 @@ namespace LookoutMetrics
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes <a
@@ -559,15 +368,6 @@ namespace LookoutMetrics
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Make changes to an existing alert.</p><p><h3>See Also:</h3>   <a
@@ -576,15 +376,6 @@ namespace LookoutMetrics
          */
         virtual Model::UpdateAlertOutcome UpdateAlert(const Model::UpdateAlertRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateAlert that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateAlertOutcomeCallable UpdateAlertCallable(const Model::UpdateAlertRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateAlert that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateAlertAsync(const Model::UpdateAlertRequest& request, const UpdateAlertResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a detector. After activation, you can only change a detector's
@@ -594,15 +385,6 @@ namespace LookoutMetrics
          */
         virtual Model::UpdateAnomalyDetectorOutcome UpdateAnomalyDetector(const Model::UpdateAnomalyDetectorRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateAnomalyDetector that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateAnomalyDetectorOutcomeCallable UpdateAnomalyDetectorCallable(const Model::UpdateAnomalyDetectorRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateAnomalyDetector that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateAnomalyDetectorAsync(const Model::UpdateAnomalyDetectorRequest& request, const UpdateAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a dataset.</p><p><h3>See Also:</h3>   <a
@@ -611,15 +393,6 @@ namespace LookoutMetrics
          */
         virtual Model::UpdateMetricSetOutcome UpdateMetricSet(const Model::UpdateMetricSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateMetricSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateMetricSetOutcomeCallable UpdateMetricSetCallable(const Model::UpdateMetricSetRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateMetricSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateMetricSetAsync(const Model::UpdateMetricSetRequest& request, const UpdateMetricSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

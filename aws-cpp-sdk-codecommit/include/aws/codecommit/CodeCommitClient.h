@@ -7,8 +7,10 @@
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/codecommit/CodeCommitServiceClientModel.h>
+#include <aws/codecommit/CodeCommitLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -230,6 +232,47 @@ namespace CodeCommit
         virtual ~CodeCommitClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Creates an association between an approval rule template and a specified
          * repository. Then, the next time a pull request is created in the repository
@@ -244,15 +287,6 @@ namespace CodeCommit
          */
         virtual Model::AssociateApprovalRuleTemplateWithRepositoryOutcome AssociateApprovalRuleTemplateWithRepository(const Model::AssociateApprovalRuleTemplateWithRepositoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateApprovalRuleTemplateWithRepository that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateApprovalRuleTemplateWithRepositoryOutcomeCallable AssociateApprovalRuleTemplateWithRepositoryCallable(const Model::AssociateApprovalRuleTemplateWithRepositoryRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateApprovalRuleTemplateWithRepository that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateApprovalRuleTemplateWithRepositoryAsync(const Model::AssociateApprovalRuleTemplateWithRepositoryRequest& request, const AssociateApprovalRuleTemplateWithRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an association between an approval rule template and one or more
@@ -262,15 +296,6 @@ namespace CodeCommit
          */
         virtual Model::BatchAssociateApprovalRuleTemplateWithRepositoriesOutcome BatchAssociateApprovalRuleTemplateWithRepositories(const Model::BatchAssociateApprovalRuleTemplateWithRepositoriesRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchAssociateApprovalRuleTemplateWithRepositories that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchAssociateApprovalRuleTemplateWithRepositoriesOutcomeCallable BatchAssociateApprovalRuleTemplateWithRepositoriesCallable(const Model::BatchAssociateApprovalRuleTemplateWithRepositoriesRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchAssociateApprovalRuleTemplateWithRepositories that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchAssociateApprovalRuleTemplateWithRepositoriesAsync(const Model::BatchAssociateApprovalRuleTemplateWithRepositoriesRequest& request, const BatchAssociateApprovalRuleTemplateWithRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about one or more merge conflicts in the attempted merge
@@ -281,15 +306,6 @@ namespace CodeCommit
          */
         virtual Model::BatchDescribeMergeConflictsOutcome BatchDescribeMergeConflicts(const Model::BatchDescribeMergeConflictsRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchDescribeMergeConflicts that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchDescribeMergeConflictsOutcomeCallable BatchDescribeMergeConflictsCallable(const Model::BatchDescribeMergeConflictsRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchDescribeMergeConflicts that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchDescribeMergeConflictsAsync(const Model::BatchDescribeMergeConflictsRequest& request, const BatchDescribeMergeConflictsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the association between an approval rule template and one or more
@@ -299,15 +315,6 @@ namespace CodeCommit
          */
         virtual Model::BatchDisassociateApprovalRuleTemplateFromRepositoriesOutcome BatchDisassociateApprovalRuleTemplateFromRepositories(const Model::BatchDisassociateApprovalRuleTemplateFromRepositoriesRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchDisassociateApprovalRuleTemplateFromRepositories that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchDisassociateApprovalRuleTemplateFromRepositoriesOutcomeCallable BatchDisassociateApprovalRuleTemplateFromRepositoriesCallable(const Model::BatchDisassociateApprovalRuleTemplateFromRepositoriesRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchDisassociateApprovalRuleTemplateFromRepositories that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchDisassociateApprovalRuleTemplateFromRepositoriesAsync(const Model::BatchDisassociateApprovalRuleTemplateFromRepositoriesRequest& request, const BatchDisassociateApprovalRuleTemplateFromRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the contents of one or more commits in a
@@ -317,15 +324,6 @@ namespace CodeCommit
          */
         virtual Model::BatchGetCommitsOutcome BatchGetCommits(const Model::BatchGetCommitsRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchGetCommits that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchGetCommitsOutcomeCallable BatchGetCommitsCallable(const Model::BatchGetCommitsRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchGetCommits that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchGetCommitsAsync(const Model::BatchGetCommitsRequest& request, const BatchGetCommitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about one or more repositories.</p>  <p>The
@@ -340,15 +338,6 @@ namespace CodeCommit
          */
         virtual Model::BatchGetRepositoriesOutcome BatchGetRepositories(const Model::BatchGetRepositoriesRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchGetRepositories that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchGetRepositoriesOutcomeCallable BatchGetRepositoriesCallable(const Model::BatchGetRepositoriesRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchGetRepositories that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchGetRepositoriesAsync(const Model::BatchGetRepositoriesRequest& request, const BatchGetRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a template for approval rules that can then be associated with one or
@@ -363,15 +352,6 @@ namespace CodeCommit
          */
         virtual Model::CreateApprovalRuleTemplateOutcome CreateApprovalRuleTemplate(const Model::CreateApprovalRuleTemplateRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateApprovalRuleTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateApprovalRuleTemplateOutcomeCallable CreateApprovalRuleTemplateCallable(const Model::CreateApprovalRuleTemplateRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateApprovalRuleTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateApprovalRuleTemplateAsync(const Model::CreateApprovalRuleTemplateRequest& request, const CreateApprovalRuleTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a branch in a repository and points the branch to a commit.</p>
@@ -383,15 +363,6 @@ namespace CodeCommit
          */
         virtual Model::CreateBranchOutcome CreateBranch(const Model::CreateBranchRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateBranch that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateBranchOutcomeCallable CreateBranchCallable(const Model::CreateBranchRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateBranch that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateBranchAsync(const Model::CreateBranchRequest& request, const CreateBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a commit for a repository on the tip of a specified
@@ -401,15 +372,6 @@ namespace CodeCommit
          */
         virtual Model::CreateCommitOutcome CreateCommit(const Model::CreateCommitRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateCommit that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateCommitOutcomeCallable CreateCommitCallable(const Model::CreateCommitRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateCommit that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateCommitAsync(const Model::CreateCommitRequest& request, const CreateCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a pull request in the specified repository.</p><p><h3>See Also:</h3> 
@@ -419,15 +381,6 @@ namespace CodeCommit
          */
         virtual Model::CreatePullRequestOutcome CreatePullRequest(const Model::CreatePullRequestRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreatePullRequest that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreatePullRequestOutcomeCallable CreatePullRequestCallable(const Model::CreatePullRequestRequest& request) const;
-
-        /**
-         * An Async wrapper for CreatePullRequest that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreatePullRequestAsync(const Model::CreatePullRequestRequest& request, const CreatePullRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an approval rule for a pull request.</p><p><h3>See Also:</h3>   <a
@@ -436,15 +389,6 @@ namespace CodeCommit
          */
         virtual Model::CreatePullRequestApprovalRuleOutcome CreatePullRequestApprovalRule(const Model::CreatePullRequestApprovalRuleRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreatePullRequestApprovalRule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreatePullRequestApprovalRuleOutcomeCallable CreatePullRequestApprovalRuleCallable(const Model::CreatePullRequestApprovalRuleRequest& request) const;
-
-        /**
-         * An Async wrapper for CreatePullRequestApprovalRule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreatePullRequestApprovalRuleAsync(const Model::CreatePullRequestApprovalRuleRequest& request, const CreatePullRequestApprovalRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new, empty repository.</p><p><h3>See Also:</h3>   <a
@@ -453,15 +397,6 @@ namespace CodeCommit
          */
         virtual Model::CreateRepositoryOutcome CreateRepository(const Model::CreateRepositoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateRepository that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateRepositoryOutcomeCallable CreateRepositoryCallable(const Model::CreateRepositoryRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateRepository that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateRepositoryAsync(const Model::CreateRepositoryRequest& request, const CreateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an unreferenced commit that represents the result of merging two
@@ -477,15 +412,6 @@ namespace CodeCommit
          */
         virtual Model::CreateUnreferencedMergeCommitOutcome CreateUnreferencedMergeCommit(const Model::CreateUnreferencedMergeCommitRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateUnreferencedMergeCommit that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateUnreferencedMergeCommitOutcomeCallable CreateUnreferencedMergeCommitCallable(const Model::CreateUnreferencedMergeCommitRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateUnreferencedMergeCommit that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateUnreferencedMergeCommitAsync(const Model::CreateUnreferencedMergeCommitRequest& request, const CreateUnreferencedMergeCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a specified approval rule template. Deleting a template does not
@@ -496,15 +422,6 @@ namespace CodeCommit
          */
         virtual Model::DeleteApprovalRuleTemplateOutcome DeleteApprovalRuleTemplate(const Model::DeleteApprovalRuleTemplateRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteApprovalRuleTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteApprovalRuleTemplateOutcomeCallable DeleteApprovalRuleTemplateCallable(const Model::DeleteApprovalRuleTemplateRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteApprovalRuleTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteApprovalRuleTemplateAsync(const Model::DeleteApprovalRuleTemplateRequest& request, const DeleteApprovalRuleTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a branch from a repository, unless that branch is the default branch
@@ -514,15 +431,6 @@ namespace CodeCommit
          */
         virtual Model::DeleteBranchOutcome DeleteBranch(const Model::DeleteBranchRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteBranch that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteBranchOutcomeCallable DeleteBranchCallable(const Model::DeleteBranchRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteBranch that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteBranchAsync(const Model::DeleteBranchRequest& request, const DeleteBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the content of a comment made on a change, file, or commit in a
@@ -532,15 +440,6 @@ namespace CodeCommit
          */
         virtual Model::DeleteCommentContentOutcome DeleteCommentContent(const Model::DeleteCommentContentRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteCommentContent that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteCommentContentOutcomeCallable DeleteCommentContentCallable(const Model::DeleteCommentContentRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteCommentContent that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteCommentContentAsync(const Model::DeleteCommentContentRequest& request, const DeleteCommentContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a specified file from a specified branch. A commit is created on the
@@ -551,15 +450,6 @@ namespace CodeCommit
          */
         virtual Model::DeleteFileOutcome DeleteFile(const Model::DeleteFileRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteFile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteFileOutcomeCallable DeleteFileCallable(const Model::DeleteFileRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteFile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteFileAsync(const Model::DeleteFileRequest& request, const DeleteFileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an approval rule from a specified pull request. Approval rules can be
@@ -573,15 +463,6 @@ namespace CodeCommit
          */
         virtual Model::DeletePullRequestApprovalRuleOutcome DeletePullRequestApprovalRule(const Model::DeletePullRequestApprovalRuleRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeletePullRequestApprovalRule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeletePullRequestApprovalRuleOutcomeCallable DeletePullRequestApprovalRuleCallable(const Model::DeletePullRequestApprovalRuleRequest& request) const;
-
-        /**
-         * An Async wrapper for DeletePullRequestApprovalRule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeletePullRequestApprovalRuleAsync(const Model::DeletePullRequestApprovalRuleRequest& request, const DeletePullRequestApprovalRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a repository. If a specified repository was already deleted, a null
@@ -594,15 +475,6 @@ namespace CodeCommit
          */
         virtual Model::DeleteRepositoryOutcome DeleteRepository(const Model::DeleteRepositoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteRepository that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteRepositoryOutcomeCallable DeleteRepositoryCallable(const Model::DeleteRepositoryRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteRepository that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteRepositoryAsync(const Model::DeleteRepositoryRequest& request, const DeleteRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about one or more merge conflicts in the attempted merge
@@ -614,15 +486,6 @@ namespace CodeCommit
          */
         virtual Model::DescribeMergeConflictsOutcome DescribeMergeConflicts(const Model::DescribeMergeConflictsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeMergeConflicts that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeMergeConflictsOutcomeCallable DescribeMergeConflictsCallable(const Model::DescribeMergeConflictsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeMergeConflicts that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeMergeConflictsAsync(const Model::DescribeMergeConflictsRequest& request, const DescribeMergeConflictsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about one or more pull request events.</p><p><h3>See
@@ -632,15 +495,6 @@ namespace CodeCommit
          */
         virtual Model::DescribePullRequestEventsOutcome DescribePullRequestEvents(const Model::DescribePullRequestEventsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribePullRequestEvents that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribePullRequestEventsOutcomeCallable DescribePullRequestEventsCallable(const Model::DescribePullRequestEventsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribePullRequestEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribePullRequestEventsAsync(const Model::DescribePullRequestEventsRequest& request, const DescribePullRequestEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the association between a template and a repository so that approval
@@ -653,15 +507,6 @@ namespace CodeCommit
          */
         virtual Model::DisassociateApprovalRuleTemplateFromRepositoryOutcome DisassociateApprovalRuleTemplateFromRepository(const Model::DisassociateApprovalRuleTemplateFromRepositoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateApprovalRuleTemplateFromRepository that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateApprovalRuleTemplateFromRepositoryOutcomeCallable DisassociateApprovalRuleTemplateFromRepositoryCallable(const Model::DisassociateApprovalRuleTemplateFromRepositoryRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateApprovalRuleTemplateFromRepository that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateApprovalRuleTemplateFromRepositoryAsync(const Model::DisassociateApprovalRuleTemplateFromRepositoryRequest& request, const DisassociateApprovalRuleTemplateFromRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Evaluates whether a pull request has met all the conditions specified in its
@@ -671,15 +516,6 @@ namespace CodeCommit
          */
         virtual Model::EvaluatePullRequestApprovalRulesOutcome EvaluatePullRequestApprovalRules(const Model::EvaluatePullRequestApprovalRulesRequest& request) const;
 
-        /**
-         * A Callable wrapper for EvaluatePullRequestApprovalRules that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EvaluatePullRequestApprovalRulesOutcomeCallable EvaluatePullRequestApprovalRulesCallable(const Model::EvaluatePullRequestApprovalRulesRequest& request) const;
-
-        /**
-         * An Async wrapper for EvaluatePullRequestApprovalRules that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EvaluatePullRequestApprovalRulesAsync(const Model::EvaluatePullRequestApprovalRulesRequest& request, const EvaluatePullRequestApprovalRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a specified approval rule template.</p><p><h3>See
@@ -689,15 +525,6 @@ namespace CodeCommit
          */
         virtual Model::GetApprovalRuleTemplateOutcome GetApprovalRuleTemplate(const Model::GetApprovalRuleTemplateRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetApprovalRuleTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetApprovalRuleTemplateOutcomeCallable GetApprovalRuleTemplateCallable(const Model::GetApprovalRuleTemplateRequest& request) const;
-
-        /**
-         * An Async wrapper for GetApprovalRuleTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetApprovalRuleTemplateAsync(const Model::GetApprovalRuleTemplateRequest& request, const GetApprovalRuleTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the base-64 encoded content of an individual blob in a
@@ -707,15 +534,6 @@ namespace CodeCommit
          */
         virtual Model::GetBlobOutcome GetBlob(const Model::GetBlobRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBlob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBlobOutcomeCallable GetBlobCallable(const Model::GetBlobRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBlob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBlobAsync(const Model::GetBlobRequest& request, const GetBlobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a repository branch, including its name and the
@@ -725,15 +543,6 @@ namespace CodeCommit
          */
         virtual Model::GetBranchOutcome GetBranch(const Model::GetBranchRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBranch that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBranchOutcomeCallable GetBranchCallable(const Model::GetBranchRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBranch that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBranchAsync(const Model::GetBranchRequest& request, const GetBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the content of a comment made on a change, file, or commit in a
@@ -746,15 +555,6 @@ namespace CodeCommit
          */
         virtual Model::GetCommentOutcome GetComment(const Model::GetCommentRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetComment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetCommentOutcomeCallable GetCommentCallable(const Model::GetCommentRequest& request) const;
-
-        /**
-         * An Async wrapper for GetComment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetCommentAsync(const Model::GetCommentRequest& request, const GetCommentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about reactions to a specified comment ID. Reactions from
@@ -765,15 +565,6 @@ namespace CodeCommit
          */
         virtual Model::GetCommentReactionsOutcome GetCommentReactions(const Model::GetCommentReactionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetCommentReactions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetCommentReactionsOutcomeCallable GetCommentReactionsCallable(const Model::GetCommentReactionsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetCommentReactions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetCommentReactionsAsync(const Model::GetCommentReactionsRequest& request, const GetCommentReactionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about comments made on the comparison between two
@@ -786,15 +577,6 @@ namespace CodeCommit
          */
         virtual Model::GetCommentsForComparedCommitOutcome GetCommentsForComparedCommit(const Model::GetCommentsForComparedCommitRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetCommentsForComparedCommit that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetCommentsForComparedCommitOutcomeCallable GetCommentsForComparedCommitCallable(const Model::GetCommentsForComparedCommitRequest& request) const;
-
-        /**
-         * An Async wrapper for GetCommentsForComparedCommit that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetCommentsForComparedCommitAsync(const Model::GetCommentsForComparedCommitRequest& request, const GetCommentsForComparedCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns comments made on a pull request.</p>  <p>Reaction counts might
@@ -806,15 +588,6 @@ namespace CodeCommit
          */
         virtual Model::GetCommentsForPullRequestOutcome GetCommentsForPullRequest(const Model::GetCommentsForPullRequestRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetCommentsForPullRequest that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetCommentsForPullRequestOutcomeCallable GetCommentsForPullRequestCallable(const Model::GetCommentsForPullRequestRequest& request) const;
-
-        /**
-         * An Async wrapper for GetCommentsForPullRequest that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetCommentsForPullRequestAsync(const Model::GetCommentsForPullRequestRequest& request, const GetCommentsForPullRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a commit, including commit message and committer
@@ -824,15 +597,6 @@ namespace CodeCommit
          */
         virtual Model::GetCommitOutcome GetCommit(const Model::GetCommitRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetCommit that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetCommitOutcomeCallable GetCommitCallable(const Model::GetCommitRequest& request) const;
-
-        /**
-         * An Async wrapper for GetCommit that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetCommitAsync(const Model::GetCommitRequest& request, const GetCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the differences in a valid commit specifier (such
@@ -843,15 +607,6 @@ namespace CodeCommit
          */
         virtual Model::GetDifferencesOutcome GetDifferences(const Model::GetDifferencesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDifferences that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDifferencesOutcomeCallable GetDifferencesCallable(const Model::GetDifferencesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDifferences that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDifferencesAsync(const Model::GetDifferencesRequest& request, const GetDifferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the base-64 encoded contents of a specified file and its
@@ -861,15 +616,6 @@ namespace CodeCommit
          */
         virtual Model::GetFileOutcome GetFile(const Model::GetFileRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetFile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetFileOutcomeCallable GetFileCallable(const Model::GetFileRequest& request) const;
-
-        /**
-         * An Async wrapper for GetFile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetFileAsync(const Model::GetFileRequest& request, const GetFileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the contents of a specified folder in a repository.</p><p><h3>See
@@ -879,15 +625,6 @@ namespace CodeCommit
          */
         virtual Model::GetFolderOutcome GetFolder(const Model::GetFolderRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetFolder that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetFolderOutcomeCallable GetFolderCallable(const Model::GetFolderRequest& request) const;
-
-        /**
-         * An Async wrapper for GetFolder that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetFolderAsync(const Model::GetFolderRequest& request, const GetFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a specified merge commit.</p><p><h3>See Also:</h3> 
@@ -897,15 +634,6 @@ namespace CodeCommit
          */
         virtual Model::GetMergeCommitOutcome GetMergeCommit(const Model::GetMergeCommitRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetMergeCommit that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetMergeCommitOutcomeCallable GetMergeCommitCallable(const Model::GetMergeCommitRequest& request) const;
-
-        /**
-         * An Async wrapper for GetMergeCommit that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetMergeCommitAsync(const Model::GetMergeCommitRequest& request, const GetMergeCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about merge conflicts between the before and after commit
@@ -915,15 +643,6 @@ namespace CodeCommit
          */
         virtual Model::GetMergeConflictsOutcome GetMergeConflicts(const Model::GetMergeConflictsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetMergeConflicts that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetMergeConflictsOutcomeCallable GetMergeConflictsCallable(const Model::GetMergeConflictsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetMergeConflicts that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetMergeConflictsAsync(const Model::GetMergeConflictsRequest& request, const GetMergeConflictsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the merge options available for merging two
@@ -934,15 +653,6 @@ namespace CodeCommit
          */
         virtual Model::GetMergeOptionsOutcome GetMergeOptions(const Model::GetMergeOptionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetMergeOptions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetMergeOptionsOutcomeCallable GetMergeOptionsCallable(const Model::GetMergeOptionsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetMergeOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetMergeOptionsAsync(const Model::GetMergeOptionsRequest& request, const GetMergeOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about a pull request in a specified
@@ -952,15 +662,6 @@ namespace CodeCommit
          */
         virtual Model::GetPullRequestOutcome GetPullRequest(const Model::GetPullRequestRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetPullRequest that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetPullRequestOutcomeCallable GetPullRequestCallable(const Model::GetPullRequestRequest& request) const;
-
-        /**
-         * An Async wrapper for GetPullRequest that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetPullRequestAsync(const Model::GetPullRequestRequest& request, const GetPullRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the approval states for a specified pull request.
@@ -971,15 +672,6 @@ namespace CodeCommit
          */
         virtual Model::GetPullRequestApprovalStatesOutcome GetPullRequestApprovalStates(const Model::GetPullRequestApprovalStatesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetPullRequestApprovalStates that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetPullRequestApprovalStatesOutcomeCallable GetPullRequestApprovalStatesCallable(const Model::GetPullRequestApprovalStatesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetPullRequestApprovalStates that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetPullRequestApprovalStatesAsync(const Model::GetPullRequestApprovalStatesRequest& request, const GetPullRequestApprovalStatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about whether approval rules have been set aside
@@ -991,15 +683,6 @@ namespace CodeCommit
          */
         virtual Model::GetPullRequestOverrideStateOutcome GetPullRequestOverrideState(const Model::GetPullRequestOverrideStateRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetPullRequestOverrideState that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetPullRequestOverrideStateOutcomeCallable GetPullRequestOverrideStateCallable(const Model::GetPullRequestOverrideStateRequest& request) const;
-
-        /**
-         * An Async wrapper for GetPullRequestOverrideState that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetPullRequestOverrideStateAsync(const Model::GetPullRequestOverrideStateRequest& request, const GetPullRequestOverrideStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a repository.</p>  <p>The description field
@@ -1013,15 +696,6 @@ namespace CodeCommit
          */
         virtual Model::GetRepositoryOutcome GetRepository(const Model::GetRepositoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRepository that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRepositoryOutcomeCallable GetRepositoryCallable(const Model::GetRepositoryRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRepository that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRepositoryAsync(const Model::GetRepositoryRequest& request, const GetRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about triggers configured for a repository.</p><p><h3>See
@@ -1031,15 +705,6 @@ namespace CodeCommit
          */
         virtual Model::GetRepositoryTriggersOutcome GetRepositoryTriggers(const Model::GetRepositoryTriggersRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRepositoryTriggers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRepositoryTriggersOutcomeCallable GetRepositoryTriggersCallable(const Model::GetRepositoryTriggersRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRepositoryTriggers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRepositoryTriggersAsync(const Model::GetRepositoryTriggersRequest& request, const GetRepositoryTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all approval rule templates in the specified AWS Region in your AWS
@@ -1050,15 +715,6 @@ namespace CodeCommit
          */
         virtual Model::ListApprovalRuleTemplatesOutcome ListApprovalRuleTemplates(const Model::ListApprovalRuleTemplatesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListApprovalRuleTemplates that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListApprovalRuleTemplatesOutcomeCallable ListApprovalRuleTemplatesCallable(const Model::ListApprovalRuleTemplatesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListApprovalRuleTemplates that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListApprovalRuleTemplatesAsync(const Model::ListApprovalRuleTemplatesRequest& request, const ListApprovalRuleTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all approval rule templates that are associated with a specified
@@ -1068,15 +724,6 @@ namespace CodeCommit
          */
         virtual Model::ListAssociatedApprovalRuleTemplatesForRepositoryOutcome ListAssociatedApprovalRuleTemplatesForRepository(const Model::ListAssociatedApprovalRuleTemplatesForRepositoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAssociatedApprovalRuleTemplatesForRepository that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAssociatedApprovalRuleTemplatesForRepositoryOutcomeCallable ListAssociatedApprovalRuleTemplatesForRepositoryCallable(const Model::ListAssociatedApprovalRuleTemplatesForRepositoryRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAssociatedApprovalRuleTemplatesForRepository that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAssociatedApprovalRuleTemplatesForRepositoryAsync(const Model::ListAssociatedApprovalRuleTemplatesForRepositoryRequest& request, const ListAssociatedApprovalRuleTemplatesForRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about one or more branches in a repository.</p><p><h3>See
@@ -1086,15 +733,6 @@ namespace CodeCommit
          */
         virtual Model::ListBranchesOutcome ListBranches(const Model::ListBranchesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListBranches that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListBranchesOutcomeCallable ListBranchesCallable(const Model::ListBranchesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListBranches that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListBranchesAsync(const Model::ListBranchesRequest& request, const ListBranchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of pull requests for a specified repository. The return list
@@ -1105,15 +743,6 @@ namespace CodeCommit
          */
         virtual Model::ListPullRequestsOutcome ListPullRequests(const Model::ListPullRequestsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPullRequests that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPullRequestsOutcomeCallable ListPullRequestsCallable(const Model::ListPullRequestsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPullRequests that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPullRequestsAsync(const Model::ListPullRequestsRequest& request, const ListPullRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about one or more repositories.</p><p><h3>See Also:</h3>  
@@ -1123,15 +752,6 @@ namespace CodeCommit
          */
         virtual Model::ListRepositoriesOutcome ListRepositories(const Model::ListRepositoriesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListRepositories that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListRepositoriesOutcomeCallable ListRepositoriesCallable(const Model::ListRepositoriesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListRepositories that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListRepositoriesAsync(const Model::ListRepositoriesRequest& request, const ListRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all repositories associated with the specified approval rule
@@ -1141,15 +761,6 @@ namespace CodeCommit
          */
         virtual Model::ListRepositoriesForApprovalRuleTemplateOutcome ListRepositoriesForApprovalRuleTemplate(const Model::ListRepositoriesForApprovalRuleTemplateRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListRepositoriesForApprovalRuleTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListRepositoriesForApprovalRuleTemplateOutcomeCallable ListRepositoriesForApprovalRuleTemplateCallable(const Model::ListRepositoriesForApprovalRuleTemplateRequest& request) const;
-
-        /**
-         * An Async wrapper for ListRepositoriesForApprovalRuleTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListRepositoriesForApprovalRuleTemplateAsync(const Model::ListRepositoriesForApprovalRuleTemplateRequest& request, const ListRepositoriesForApprovalRuleTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about AWS tags for a specified Amazon Resource Name (ARN) in
@@ -1162,15 +773,6 @@ namespace CodeCommit
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Merges two branches using the fast-forward merge strategy.</p><p><h3>See
@@ -1180,15 +782,6 @@ namespace CodeCommit
          */
         virtual Model::MergeBranchesByFastForwardOutcome MergeBranchesByFastForward(const Model::MergeBranchesByFastForwardRequest& request) const;
 
-        /**
-         * A Callable wrapper for MergeBranchesByFastForward that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::MergeBranchesByFastForwardOutcomeCallable MergeBranchesByFastForwardCallable(const Model::MergeBranchesByFastForwardRequest& request) const;
-
-        /**
-         * An Async wrapper for MergeBranchesByFastForward that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void MergeBranchesByFastForwardAsync(const Model::MergeBranchesByFastForwardRequest& request, const MergeBranchesByFastForwardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Merges two branches using the squash merge strategy.</p><p><h3>See Also:</h3>
@@ -1198,15 +791,6 @@ namespace CodeCommit
          */
         virtual Model::MergeBranchesBySquashOutcome MergeBranchesBySquash(const Model::MergeBranchesBySquashRequest& request) const;
 
-        /**
-         * A Callable wrapper for MergeBranchesBySquash that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::MergeBranchesBySquashOutcomeCallable MergeBranchesBySquashCallable(const Model::MergeBranchesBySquashRequest& request) const;
-
-        /**
-         * An Async wrapper for MergeBranchesBySquash that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void MergeBranchesBySquashAsync(const Model::MergeBranchesBySquashRequest& request, const MergeBranchesBySquashResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Merges two specified branches using the three-way merge
@@ -1216,15 +800,6 @@ namespace CodeCommit
          */
         virtual Model::MergeBranchesByThreeWayOutcome MergeBranchesByThreeWay(const Model::MergeBranchesByThreeWayRequest& request) const;
 
-        /**
-         * A Callable wrapper for MergeBranchesByThreeWay that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::MergeBranchesByThreeWayOutcomeCallable MergeBranchesByThreeWayCallable(const Model::MergeBranchesByThreeWayRequest& request) const;
-
-        /**
-         * An Async wrapper for MergeBranchesByThreeWay that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void MergeBranchesByThreeWayAsync(const Model::MergeBranchesByThreeWayRequest& request, const MergeBranchesByThreeWayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Attempts to merge the source commit of a pull request into the specified
@@ -1236,15 +811,6 @@ namespace CodeCommit
          */
         virtual Model::MergePullRequestByFastForwardOutcome MergePullRequestByFastForward(const Model::MergePullRequestByFastForwardRequest& request) const;
 
-        /**
-         * A Callable wrapper for MergePullRequestByFastForward that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::MergePullRequestByFastForwardOutcomeCallable MergePullRequestByFastForwardCallable(const Model::MergePullRequestByFastForwardRequest& request) const;
-
-        /**
-         * An Async wrapper for MergePullRequestByFastForward that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void MergePullRequestByFastForwardAsync(const Model::MergePullRequestByFastForwardRequest& request, const MergePullRequestByFastForwardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Attempts to merge the source commit of a pull request into the specified
@@ -1256,15 +822,6 @@ namespace CodeCommit
          */
         virtual Model::MergePullRequestBySquashOutcome MergePullRequestBySquash(const Model::MergePullRequestBySquashRequest& request) const;
 
-        /**
-         * A Callable wrapper for MergePullRequestBySquash that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::MergePullRequestBySquashOutcomeCallable MergePullRequestBySquashCallable(const Model::MergePullRequestBySquashRequest& request) const;
-
-        /**
-         * An Async wrapper for MergePullRequestBySquash that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void MergePullRequestBySquashAsync(const Model::MergePullRequestBySquashRequest& request, const MergePullRequestBySquashResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Attempts to merge the source commit of a pull request into the specified
@@ -1276,15 +833,6 @@ namespace CodeCommit
          */
         virtual Model::MergePullRequestByThreeWayOutcome MergePullRequestByThreeWay(const Model::MergePullRequestByThreeWayRequest& request) const;
 
-        /**
-         * A Callable wrapper for MergePullRequestByThreeWay that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::MergePullRequestByThreeWayOutcomeCallable MergePullRequestByThreeWayCallable(const Model::MergePullRequestByThreeWayRequest& request) const;
-
-        /**
-         * An Async wrapper for MergePullRequestByThreeWay that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void MergePullRequestByThreeWayAsync(const Model::MergePullRequestByThreeWayRequest& request, const MergePullRequestByThreeWayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets aside (overrides) all approval rule requirements for a specified pull
@@ -1294,15 +842,6 @@ namespace CodeCommit
          */
         virtual Model::OverridePullRequestApprovalRulesOutcome OverridePullRequestApprovalRules(const Model::OverridePullRequestApprovalRulesRequest& request) const;
 
-        /**
-         * A Callable wrapper for OverridePullRequestApprovalRules that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::OverridePullRequestApprovalRulesOutcomeCallable OverridePullRequestApprovalRulesCallable(const Model::OverridePullRequestApprovalRulesRequest& request) const;
-
-        /**
-         * An Async wrapper for OverridePullRequestApprovalRules that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void OverridePullRequestApprovalRulesAsync(const Model::OverridePullRequestApprovalRulesRequest& request, const OverridePullRequestApprovalRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Posts a comment on the comparison between two commits.</p><p><h3>See
@@ -1312,15 +851,6 @@ namespace CodeCommit
          */
         virtual Model::PostCommentForComparedCommitOutcome PostCommentForComparedCommit(const Model::PostCommentForComparedCommitRequest& request) const;
 
-        /**
-         * A Callable wrapper for PostCommentForComparedCommit that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PostCommentForComparedCommitOutcomeCallable PostCommentForComparedCommitCallable(const Model::PostCommentForComparedCommitRequest& request) const;
-
-        /**
-         * An Async wrapper for PostCommentForComparedCommit that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PostCommentForComparedCommitAsync(const Model::PostCommentForComparedCommitRequest& request, const PostCommentForComparedCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Posts a comment on a pull request.</p><p><h3>See Also:</h3>   <a
@@ -1329,15 +859,6 @@ namespace CodeCommit
          */
         virtual Model::PostCommentForPullRequestOutcome PostCommentForPullRequest(const Model::PostCommentForPullRequestRequest& request) const;
 
-        /**
-         * A Callable wrapper for PostCommentForPullRequest that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PostCommentForPullRequestOutcomeCallable PostCommentForPullRequestCallable(const Model::PostCommentForPullRequestRequest& request) const;
-
-        /**
-         * An Async wrapper for PostCommentForPullRequest that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PostCommentForPullRequestAsync(const Model::PostCommentForPullRequestRequest& request, const PostCommentForPullRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Posts a comment in reply to an existing comment on a comparison between
@@ -1347,15 +868,6 @@ namespace CodeCommit
          */
         virtual Model::PostCommentReplyOutcome PostCommentReply(const Model::PostCommentReplyRequest& request) const;
 
-        /**
-         * A Callable wrapper for PostCommentReply that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PostCommentReplyOutcomeCallable PostCommentReplyCallable(const Model::PostCommentReplyRequest& request) const;
-
-        /**
-         * An Async wrapper for PostCommentReply that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PostCommentReplyAsync(const Model::PostCommentReplyRequest& request, const PostCommentReplyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds or updates a reaction to a specified comment for the user whose identity
@@ -1367,15 +879,6 @@ namespace CodeCommit
          */
         virtual Model::PutCommentReactionOutcome PutCommentReaction(const Model::PutCommentReactionRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutCommentReaction that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutCommentReactionOutcomeCallable PutCommentReactionCallable(const Model::PutCommentReactionRequest& request) const;
-
-        /**
-         * An Async wrapper for PutCommentReaction that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutCommentReactionAsync(const Model::PutCommentReactionRequest& request, const PutCommentReactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds or updates a file in a branch in an AWS CodeCommit repository, and
@@ -1386,15 +889,6 @@ namespace CodeCommit
          */
         virtual Model::PutFileOutcome PutFile(const Model::PutFileRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutFile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutFileOutcomeCallable PutFileCallable(const Model::PutFileRequest& request) const;
-
-        /**
-         * An Async wrapper for PutFile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutFileAsync(const Model::PutFileRequest& request, const PutFileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Replaces all triggers for a repository. Used to create or delete
@@ -1404,15 +898,6 @@ namespace CodeCommit
          */
         virtual Model::PutRepositoryTriggersOutcome PutRepositoryTriggers(const Model::PutRepositoryTriggersRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutRepositoryTriggers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutRepositoryTriggersOutcomeCallable PutRepositoryTriggersCallable(const Model::PutRepositoryTriggersRequest& request) const;
-
-        /**
-         * An Async wrapper for PutRepositoryTriggers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutRepositoryTriggersAsync(const Model::PutRepositoryTriggersRequest& request, const PutRepositoryTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds or updates tags for a resource in AWS CodeCommit. For a list of valid
@@ -1425,15 +910,6 @@ namespace CodeCommit
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Tests the functionality of repository triggers by sending information to the
@@ -1445,15 +921,6 @@ namespace CodeCommit
          */
         virtual Model::TestRepositoryTriggersOutcome TestRepositoryTriggers(const Model::TestRepositoryTriggersRequest& request) const;
 
-        /**
-         * A Callable wrapper for TestRepositoryTriggers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TestRepositoryTriggersOutcomeCallable TestRepositoryTriggersCallable(const Model::TestRepositoryTriggersRequest& request) const;
-
-        /**
-         * An Async wrapper for TestRepositoryTriggers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TestRepositoryTriggersAsync(const Model::TestRepositoryTriggersRequest& request, const TestRepositoryTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes tags for a resource in AWS CodeCommit. For a list of valid resources
@@ -1466,15 +933,6 @@ namespace CodeCommit
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the content of an approval rule template. You can change the number
@@ -1485,15 +943,6 @@ namespace CodeCommit
          */
         virtual Model::UpdateApprovalRuleTemplateContentOutcome UpdateApprovalRuleTemplateContent(const Model::UpdateApprovalRuleTemplateContentRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateApprovalRuleTemplateContent that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateApprovalRuleTemplateContentOutcomeCallable UpdateApprovalRuleTemplateContentCallable(const Model::UpdateApprovalRuleTemplateContentRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateApprovalRuleTemplateContent that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateApprovalRuleTemplateContentAsync(const Model::UpdateApprovalRuleTemplateContentRequest& request, const UpdateApprovalRuleTemplateContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the description for a specified approval rule template.</p><p><h3>See
@@ -1503,15 +952,6 @@ namespace CodeCommit
          */
         virtual Model::UpdateApprovalRuleTemplateDescriptionOutcome UpdateApprovalRuleTemplateDescription(const Model::UpdateApprovalRuleTemplateDescriptionRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateApprovalRuleTemplateDescription that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateApprovalRuleTemplateDescriptionOutcomeCallable UpdateApprovalRuleTemplateDescriptionCallable(const Model::UpdateApprovalRuleTemplateDescriptionRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateApprovalRuleTemplateDescription that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateApprovalRuleTemplateDescriptionAsync(const Model::UpdateApprovalRuleTemplateDescriptionRequest& request, const UpdateApprovalRuleTemplateDescriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the name of a specified approval rule template.</p><p><h3>See
@@ -1521,15 +961,6 @@ namespace CodeCommit
          */
         virtual Model::UpdateApprovalRuleTemplateNameOutcome UpdateApprovalRuleTemplateName(const Model::UpdateApprovalRuleTemplateNameRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateApprovalRuleTemplateName that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateApprovalRuleTemplateNameOutcomeCallable UpdateApprovalRuleTemplateNameCallable(const Model::UpdateApprovalRuleTemplateNameRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateApprovalRuleTemplateName that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateApprovalRuleTemplateNameAsync(const Model::UpdateApprovalRuleTemplateNameRequest& request, const UpdateApprovalRuleTemplateNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Replaces the contents of a comment.</p><p><h3>See Also:</h3>   <a
@@ -1538,15 +969,6 @@ namespace CodeCommit
          */
         virtual Model::UpdateCommentOutcome UpdateComment(const Model::UpdateCommentRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateComment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateCommentOutcomeCallable UpdateCommentCallable(const Model::UpdateCommentRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateComment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateCommentAsync(const Model::UpdateCommentRequest& request, const UpdateCommentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets or changes the default branch name for the specified repository.</p>
@@ -1558,15 +980,6 @@ namespace CodeCommit
          */
         virtual Model::UpdateDefaultBranchOutcome UpdateDefaultBranch(const Model::UpdateDefaultBranchRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateDefaultBranch that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateDefaultBranchOutcomeCallable UpdateDefaultBranchCallable(const Model::UpdateDefaultBranchRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateDefaultBranch that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateDefaultBranchAsync(const Model::UpdateDefaultBranchRequest& request, const UpdateDefaultBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the structure of an approval rule created specifically for a pull
@@ -1577,15 +990,6 @@ namespace CodeCommit
          */
         virtual Model::UpdatePullRequestApprovalRuleContentOutcome UpdatePullRequestApprovalRuleContent(const Model::UpdatePullRequestApprovalRuleContentRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdatePullRequestApprovalRuleContent that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdatePullRequestApprovalRuleContentOutcomeCallable UpdatePullRequestApprovalRuleContentCallable(const Model::UpdatePullRequestApprovalRuleContentRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdatePullRequestApprovalRuleContent that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdatePullRequestApprovalRuleContentAsync(const Model::UpdatePullRequestApprovalRuleContentRequest& request, const UpdatePullRequestApprovalRuleContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the state of a user's approval on a pull request. The user is derived
@@ -1596,15 +1000,6 @@ namespace CodeCommit
          */
         virtual Model::UpdatePullRequestApprovalStateOutcome UpdatePullRequestApprovalState(const Model::UpdatePullRequestApprovalStateRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdatePullRequestApprovalState that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdatePullRequestApprovalStateOutcomeCallable UpdatePullRequestApprovalStateCallable(const Model::UpdatePullRequestApprovalStateRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdatePullRequestApprovalState that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdatePullRequestApprovalStateAsync(const Model::UpdatePullRequestApprovalStateRequest& request, const UpdatePullRequestApprovalStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Replaces the contents of the description of a pull request.</p><p><h3>See
@@ -1614,15 +1009,6 @@ namespace CodeCommit
          */
         virtual Model::UpdatePullRequestDescriptionOutcome UpdatePullRequestDescription(const Model::UpdatePullRequestDescriptionRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdatePullRequestDescription that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdatePullRequestDescriptionOutcomeCallable UpdatePullRequestDescriptionCallable(const Model::UpdatePullRequestDescriptionRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdatePullRequestDescription that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdatePullRequestDescriptionAsync(const Model::UpdatePullRequestDescriptionRequest& request, const UpdatePullRequestDescriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the status of a pull request. </p><p><h3>See Also:</h3>   <a
@@ -1631,15 +1017,6 @@ namespace CodeCommit
          */
         virtual Model::UpdatePullRequestStatusOutcome UpdatePullRequestStatus(const Model::UpdatePullRequestStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdatePullRequestStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdatePullRequestStatusOutcomeCallable UpdatePullRequestStatusCallable(const Model::UpdatePullRequestStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdatePullRequestStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdatePullRequestStatusAsync(const Model::UpdatePullRequestStatusRequest& request, const UpdatePullRequestStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Replaces the title of a pull request.</p><p><h3>See Also:</h3>   <a
@@ -1648,15 +1025,6 @@ namespace CodeCommit
          */
         virtual Model::UpdatePullRequestTitleOutcome UpdatePullRequestTitle(const Model::UpdatePullRequestTitleRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdatePullRequestTitle that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdatePullRequestTitleOutcomeCallable UpdatePullRequestTitleCallable(const Model::UpdatePullRequestTitleRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdatePullRequestTitle that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdatePullRequestTitleAsync(const Model::UpdatePullRequestTitleRequest& request, const UpdatePullRequestTitleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets or changes the comment or description for a repository.</p> 
@@ -1671,15 +1039,6 @@ namespace CodeCommit
          */
         virtual Model::UpdateRepositoryDescriptionOutcome UpdateRepositoryDescription(const Model::UpdateRepositoryDescriptionRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateRepositoryDescription that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateRepositoryDescriptionOutcomeCallable UpdateRepositoryDescriptionCallable(const Model::UpdateRepositoryDescriptionRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateRepositoryDescription that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateRepositoryDescriptionAsync(const Model::UpdateRepositoryDescriptionRequest& request, const UpdateRepositoryDescriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Renames a repository. The repository name must be unique across the calling
@@ -1693,15 +1052,6 @@ namespace CodeCommit
          */
         virtual Model::UpdateRepositoryNameOutcome UpdateRepositoryName(const Model::UpdateRepositoryNameRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateRepositoryName that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateRepositoryNameOutcomeCallable UpdateRepositoryNameCallable(const Model::UpdateRepositoryNameRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateRepositoryName that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateRepositoryNameAsync(const Model::UpdateRepositoryNameRequest& request, const UpdateRepositoryNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

@@ -7,8 +7,10 @@
 #include <aws/route53domains/Route53Domains_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/route53domains/Route53DomainsServiceClientModel.h>
+#include <aws/route53domains/Route53DomainsLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -74,6 +76,47 @@ namespace Route53Domains
         virtual ~Route53DomainsClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Accepts the transfer of a domain from another Amazon Web Services account to
          * the currentAmazon Web Services account. You initiate a transfer between Amazon
@@ -96,15 +139,6 @@ namespace Route53Domains
          */
         virtual Model::AcceptDomainTransferFromAnotherAwsAccountOutcome AcceptDomainTransferFromAnotherAwsAccount(const Model::AcceptDomainTransferFromAnotherAwsAccountRequest& request) const;
 
-        /**
-         * A Callable wrapper for AcceptDomainTransferFromAnotherAwsAccount that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AcceptDomainTransferFromAnotherAwsAccountOutcomeCallable AcceptDomainTransferFromAnotherAwsAccountCallable(const Model::AcceptDomainTransferFromAnotherAwsAccountRequest& request) const;
-
-        /**
-         * An Async wrapper for AcceptDomainTransferFromAnotherAwsAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AcceptDomainTransferFromAnotherAwsAccountAsync(const Model::AcceptDomainTransferFromAnotherAwsAccountRequest& request, const AcceptDomainTransferFromAnotherAwsAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Cancels the transfer of a domain from the current Amazon Web Services account
@@ -127,15 +161,6 @@ namespace Route53Domains
          */
         virtual Model::CancelDomainTransferToAnotherAwsAccountOutcome CancelDomainTransferToAnotherAwsAccount(const Model::CancelDomainTransferToAnotherAwsAccountRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelDomainTransferToAnotherAwsAccount that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelDomainTransferToAnotherAwsAccountOutcomeCallable CancelDomainTransferToAnotherAwsAccountCallable(const Model::CancelDomainTransferToAnotherAwsAccountRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelDomainTransferToAnotherAwsAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelDomainTransferToAnotherAwsAccountAsync(const Model::CancelDomainTransferToAnotherAwsAccountRequest& request, const CancelDomainTransferToAnotherAwsAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation checks the availability of one domain name. Note that if the
@@ -146,15 +171,6 @@ namespace Route53Domains
          */
         virtual Model::CheckDomainAvailabilityOutcome CheckDomainAvailability(const Model::CheckDomainAvailabilityRequest& request) const;
 
-        /**
-         * A Callable wrapper for CheckDomainAvailability that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CheckDomainAvailabilityOutcomeCallable CheckDomainAvailabilityCallable(const Model::CheckDomainAvailabilityRequest& request) const;
-
-        /**
-         * An Async wrapper for CheckDomainAvailability that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CheckDomainAvailabilityAsync(const Model::CheckDomainAvailabilityRequest& request, const CheckDomainAvailabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Checks whether a domain name can be transferred to Amazon Route 53.
@@ -164,15 +180,6 @@ namespace Route53Domains
          */
         virtual Model::CheckDomainTransferabilityOutcome CheckDomainTransferability(const Model::CheckDomainTransferabilityRequest& request) const;
 
-        /**
-         * A Callable wrapper for CheckDomainTransferability that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CheckDomainTransferabilityOutcomeCallable CheckDomainTransferabilityCallable(const Model::CheckDomainTransferabilityRequest& request) const;
-
-        /**
-         * An Async wrapper for CheckDomainTransferability that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CheckDomainTransferabilityAsync(const Model::CheckDomainTransferabilityRequest& request, const CheckDomainTransferabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation deletes the specified domain. This action is permanent. For
@@ -194,15 +201,6 @@ namespace Route53Domains
          */
         virtual Model::DeleteDomainOutcome DeleteDomain(const Model::DeleteDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDomainOutcomeCallable DeleteDomainCallable(const Model::DeleteDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDomainAsync(const Model::DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation deletes the specified tags for a domain.</p> <p>All tag
@@ -213,15 +211,6 @@ namespace Route53Domains
          */
         virtual Model::DeleteTagsForDomainOutcome DeleteTagsForDomain(const Model::DeleteTagsForDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteTagsForDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteTagsForDomainOutcomeCallable DeleteTagsForDomainCallable(const Model::DeleteTagsForDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteTagsForDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteTagsForDomainAsync(const Model::DeleteTagsForDomainRequest& request, const DeleteTagsForDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation disables automatic renewal of domain registration for the
@@ -231,15 +220,6 @@ namespace Route53Domains
          */
         virtual Model::DisableDomainAutoRenewOutcome DisableDomainAutoRenew(const Model::DisableDomainAutoRenewRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisableDomainAutoRenew that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisableDomainAutoRenewOutcomeCallable DisableDomainAutoRenewCallable(const Model::DisableDomainAutoRenewRequest& request) const;
-
-        /**
-         * An Async wrapper for DisableDomainAutoRenew that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisableDomainAutoRenewAsync(const Model::DisableDomainAutoRenewRequest& request, const DisableDomainAutoRenewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation removes the transfer lock on the domain (specifically the
@@ -254,15 +234,6 @@ namespace Route53Domains
          */
         virtual Model::DisableDomainTransferLockOutcome DisableDomainTransferLock(const Model::DisableDomainTransferLockRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisableDomainTransferLock that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisableDomainTransferLockOutcomeCallable DisableDomainTransferLockCallable(const Model::DisableDomainTransferLockRequest& request) const;
-
-        /**
-         * An Async wrapper for DisableDomainTransferLock that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisableDomainTransferLockAsync(const Model::DisableDomainTransferLockRequest& request, const DisableDomainTransferLockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation configures Amazon Route 53 to automatically renew the
@@ -280,15 +251,6 @@ namespace Route53Domains
          */
         virtual Model::EnableDomainAutoRenewOutcome EnableDomainAutoRenew(const Model::EnableDomainAutoRenewRequest& request) const;
 
-        /**
-         * A Callable wrapper for EnableDomainAutoRenew that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnableDomainAutoRenewOutcomeCallable EnableDomainAutoRenewCallable(const Model::EnableDomainAutoRenewRequest& request) const;
-
-        /**
-         * An Async wrapper for EnableDomainAutoRenew that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnableDomainAutoRenewAsync(const Model::EnableDomainAutoRenewRequest& request, const EnableDomainAutoRenewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation sets the transfer lock on the domain (specifically the
@@ -302,15 +264,6 @@ namespace Route53Domains
          */
         virtual Model::EnableDomainTransferLockOutcome EnableDomainTransferLock(const Model::EnableDomainTransferLockRequest& request) const;
 
-        /**
-         * A Callable wrapper for EnableDomainTransferLock that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnableDomainTransferLockOutcomeCallable EnableDomainTransferLockCallable(const Model::EnableDomainTransferLockRequest& request) const;
-
-        /**
-         * An Async wrapper for EnableDomainTransferLock that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnableDomainTransferLockAsync(const Model::EnableDomainTransferLockRequest& request, const EnableDomainTransferLockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>For operations that require confirmation that the email address for the
@@ -324,15 +277,6 @@ namespace Route53Domains
          */
         virtual Model::GetContactReachabilityStatusOutcome GetContactReachabilityStatus(const Model::GetContactReachabilityStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetContactReachabilityStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetContactReachabilityStatusOutcomeCallable GetContactReachabilityStatusCallable(const Model::GetContactReachabilityStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for GetContactReachabilityStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetContactReachabilityStatusAsync(const Model::GetContactReachabilityStatusRequest& request, const GetContactReachabilityStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation returns detailed information about a specified domain that is
@@ -343,15 +287,6 @@ namespace Route53Domains
          */
         virtual Model::GetDomainDetailOutcome GetDomainDetail(const Model::GetDomainDetailRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDomainDetail that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDomainDetailOutcomeCallable GetDomainDetailCallable(const Model::GetDomainDetailRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDomainDetail that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDomainDetailAsync(const Model::GetDomainDetailRequest& request, const GetDomainDetailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The GetDomainSuggestions operation returns a list of suggested domain
@@ -361,15 +296,6 @@ namespace Route53Domains
          */
         virtual Model::GetDomainSuggestionsOutcome GetDomainSuggestions(const Model::GetDomainSuggestionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDomainSuggestions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDomainSuggestionsOutcomeCallable GetDomainSuggestionsCallable(const Model::GetDomainSuggestionsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDomainSuggestions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDomainSuggestionsAsync(const Model::GetDomainSuggestionsRequest& request, const GetDomainSuggestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation returns the current status of an operation that is not
@@ -379,15 +305,6 @@ namespace Route53Domains
          */
         virtual Model::GetOperationDetailOutcome GetOperationDetail(const Model::GetOperationDetailRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetOperationDetail that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetOperationDetailOutcomeCallable GetOperationDetailCallable(const Model::GetOperationDetailRequest& request) const;
-
-        /**
-         * An Async wrapper for GetOperationDetail that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetOperationDetailAsync(const Model::GetOperationDetailRequest& request, const GetOperationDetailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation returns all the domain names registered with Amazon Route 53
@@ -398,15 +315,6 @@ namespace Route53Domains
          */
         virtual Model::ListDomainsOutcome ListDomains(const Model::ListDomainsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDomains that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDomainsOutcomeCallable ListDomainsCallable(const Model::ListDomainsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDomains that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDomainsAsync(const Model::ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about all of the operations that return an operation ID
@@ -418,15 +326,6 @@ namespace Route53Domains
          */
         virtual Model::ListOperationsOutcome ListOperations(const Model::ListOperationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListOperations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListOperationsOutcomeCallable ListOperationsCallable(const Model::ListOperationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListOperations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListOperationsAsync(const Model::ListOperationsRequest& request, const ListOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the following prices for either all the TLDs supported by Route 53, or
@@ -438,15 +337,6 @@ namespace Route53Domains
          */
         virtual Model::ListPricesOutcome ListPrices(const Model::ListPricesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPrices that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPricesOutcomeCallable ListPricesCallable(const Model::ListPricesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPrices that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPricesAsync(const Model::ListPricesRequest& request, const ListPricesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation returns all of the tags that are associated with the specified
@@ -458,15 +348,6 @@ namespace Route53Domains
          */
         virtual Model::ListTagsForDomainOutcome ListTagsForDomain(const Model::ListTagsForDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForDomainOutcomeCallable ListTagsForDomainCallable(const Model::ListTagsForDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForDomainAsync(const Model::ListTagsForDomainRequest& request, const ListTagsForDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation registers a domain. Domains are registered either by Amazon
@@ -497,15 +378,6 @@ namespace Route53Domains
          */
         virtual Model::RegisterDomainOutcome RegisterDomain(const Model::RegisterDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for RegisterDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RegisterDomainOutcomeCallable RegisterDomainCallable(const Model::RegisterDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for RegisterDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RegisterDomainAsync(const Model::RegisterDomainRequest& request, const RegisterDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Rejects the transfer of a domain from another Amazon Web Services account to
@@ -525,15 +397,6 @@ namespace Route53Domains
          */
         virtual Model::RejectDomainTransferFromAnotherAwsAccountOutcome RejectDomainTransferFromAnotherAwsAccount(const Model::RejectDomainTransferFromAnotherAwsAccountRequest& request) const;
 
-        /**
-         * A Callable wrapper for RejectDomainTransferFromAnotherAwsAccount that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RejectDomainTransferFromAnotherAwsAccountOutcomeCallable RejectDomainTransferFromAnotherAwsAccountCallable(const Model::RejectDomainTransferFromAnotherAwsAccountRequest& request) const;
-
-        /**
-         * An Async wrapper for RejectDomainTransferFromAnotherAwsAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RejectDomainTransferFromAnotherAwsAccountAsync(const Model::RejectDomainTransferFromAnotherAwsAccountRequest& request, const RejectDomainTransferFromAnotherAwsAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation renews a domain for the specified number of years. The cost of
@@ -550,15 +413,6 @@ namespace Route53Domains
          */
         virtual Model::RenewDomainOutcome RenewDomain(const Model::RenewDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for RenewDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RenewDomainOutcomeCallable RenewDomainCallable(const Model::RenewDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for RenewDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RenewDomainAsync(const Model::RenewDomainRequest& request, const RenewDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>For operations that require confirmation that the email address for the
@@ -570,15 +424,6 @@ namespace Route53Domains
          */
         virtual Model::ResendContactReachabilityEmailOutcome ResendContactReachabilityEmail(const Model::ResendContactReachabilityEmailRequest& request) const;
 
-        /**
-         * A Callable wrapper for ResendContactReachabilityEmail that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ResendContactReachabilityEmailOutcomeCallable ResendContactReachabilityEmailCallable(const Model::ResendContactReachabilityEmailRequest& request) const;
-
-        /**
-         * An Async wrapper for ResendContactReachabilityEmail that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ResendContactReachabilityEmailAsync(const Model::ResendContactReachabilityEmailRequest& request, const ResendContactReachabilityEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation returns the AuthCode for the domain. To transfer a domain to
@@ -589,15 +434,6 @@ namespace Route53Domains
          */
         virtual Model::RetrieveDomainAuthCodeOutcome RetrieveDomainAuthCode(const Model::RetrieveDomainAuthCodeRequest& request) const;
 
-        /**
-         * A Callable wrapper for RetrieveDomainAuthCode that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RetrieveDomainAuthCodeOutcomeCallable RetrieveDomainAuthCodeCallable(const Model::RetrieveDomainAuthCodeRequest& request) const;
-
-        /**
-         * An Async wrapper for RetrieveDomainAuthCode that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RetrieveDomainAuthCodeAsync(const Model::RetrieveDomainAuthCodeRequest& request, const RetrieveDomainAuthCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Transfers a domain from another registrar to Amazon Route 53. When the
@@ -635,15 +471,6 @@ namespace Route53Domains
          */
         virtual Model::TransferDomainOutcome TransferDomain(const Model::TransferDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for TransferDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TransferDomainOutcomeCallable TransferDomainCallable(const Model::TransferDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for TransferDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TransferDomainAsync(const Model::TransferDomainRequest& request, const TransferDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Transfers a domain from the current Amazon Web Services account to another
@@ -678,15 +505,6 @@ namespace Route53Domains
          */
         virtual Model::TransferDomainToAnotherAwsAccountOutcome TransferDomainToAnotherAwsAccount(const Model::TransferDomainToAnotherAwsAccountRequest& request) const;
 
-        /**
-         * A Callable wrapper for TransferDomainToAnotherAwsAccount that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TransferDomainToAnotherAwsAccountOutcomeCallable TransferDomainToAnotherAwsAccountCallable(const Model::TransferDomainToAnotherAwsAccountRequest& request) const;
-
-        /**
-         * An Async wrapper for TransferDomainToAnotherAwsAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TransferDomainToAnotherAwsAccountAsync(const Model::TransferDomainToAnotherAwsAccountRequest& request, const TransferDomainToAnotherAwsAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation updates the contact information for a particular domain. You
@@ -700,15 +518,6 @@ namespace Route53Domains
          */
         virtual Model::UpdateDomainContactOutcome UpdateDomainContact(const Model::UpdateDomainContactRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateDomainContact that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateDomainContactOutcomeCallable UpdateDomainContactCallable(const Model::UpdateDomainContactRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateDomainContact that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateDomainContactAsync(const Model::UpdateDomainContactRequest& request, const UpdateDomainContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation updates the specified domain contact's privacy setting. When
@@ -738,15 +547,6 @@ namespace Route53Domains
          */
         virtual Model::UpdateDomainContactPrivacyOutcome UpdateDomainContactPrivacy(const Model::UpdateDomainContactPrivacyRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateDomainContactPrivacy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateDomainContactPrivacyOutcomeCallable UpdateDomainContactPrivacyCallable(const Model::UpdateDomainContactPrivacyRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateDomainContactPrivacy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateDomainContactPrivacyAsync(const Model::UpdateDomainContactPrivacyRequest& request, const UpdateDomainContactPrivacyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation replaces the current set of name servers for the domain with
@@ -761,15 +561,6 @@ namespace Route53Domains
          */
         virtual Model::UpdateDomainNameserversOutcome UpdateDomainNameservers(const Model::UpdateDomainNameserversRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateDomainNameservers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateDomainNameserversOutcomeCallable UpdateDomainNameserversCallable(const Model::UpdateDomainNameserversRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateDomainNameservers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateDomainNameserversAsync(const Model::UpdateDomainNameserversRequest& request, const UpdateDomainNameserversResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation adds or updates tags for a specified domain.</p> <p>All tag
@@ -780,15 +571,6 @@ namespace Route53Domains
          */
         virtual Model::UpdateTagsForDomainOutcome UpdateTagsForDomain(const Model::UpdateTagsForDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateTagsForDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateTagsForDomainOutcomeCallable UpdateTagsForDomainCallable(const Model::UpdateTagsForDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateTagsForDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateTagsForDomainAsync(const Model::UpdateTagsForDomainRequest& request, const UpdateTagsForDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns all the domain-related billing records for the current Amazon Web
@@ -798,15 +580,6 @@ namespace Route53Domains
          */
         virtual Model::ViewBillingOutcome ViewBilling(const Model::ViewBillingRequest& request) const;
 
-        /**
-         * A Callable wrapper for ViewBilling that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ViewBillingOutcomeCallable ViewBillingCallable(const Model::ViewBillingRequest& request) const;
-
-        /**
-         * An Async wrapper for ViewBilling that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ViewBillingAsync(const Model::ViewBillingRequest& request, const ViewBillingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

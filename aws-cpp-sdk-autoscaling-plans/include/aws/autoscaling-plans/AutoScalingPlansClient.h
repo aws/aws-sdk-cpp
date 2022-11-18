@@ -7,8 +7,10 @@
 #include <aws/autoscaling-plans/AutoScalingPlans_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/autoscaling-plans/AutoScalingPlansServiceClientModel.h>
+#include <aws/autoscaling-plans/AutoScalingPlansLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -87,6 +89,47 @@ namespace AutoScalingPlans
         virtual ~AutoScalingPlansClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Creates a scaling plan. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/CreateScalingPlan">AWS
@@ -94,15 +137,6 @@ namespace AutoScalingPlans
          */
         virtual Model::CreateScalingPlanOutcome CreateScalingPlan(const Model::CreateScalingPlanRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateScalingPlan that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateScalingPlanOutcomeCallable CreateScalingPlanCallable(const Model::CreateScalingPlanRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateScalingPlan that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateScalingPlanAsync(const Model::CreateScalingPlanRequest& request, const CreateScalingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified scaling plan.</p> <p>Deleting a scaling plan deletes
@@ -115,15 +149,6 @@ namespace AutoScalingPlans
          */
         virtual Model::DeleteScalingPlanOutcome DeleteScalingPlan(const Model::DeleteScalingPlanRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteScalingPlan that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteScalingPlanOutcomeCallable DeleteScalingPlanCallable(const Model::DeleteScalingPlanRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteScalingPlan that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteScalingPlanAsync(const Model::DeleteScalingPlanRequest& request, const DeleteScalingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the scalable resources in the specified scaling plan.</p><p><h3>See
@@ -133,15 +158,6 @@ namespace AutoScalingPlans
          */
         virtual Model::DescribeScalingPlanResourcesOutcome DescribeScalingPlanResources(const Model::DescribeScalingPlanResourcesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeScalingPlanResources that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeScalingPlanResourcesOutcomeCallable DescribeScalingPlanResourcesCallable(const Model::DescribeScalingPlanResourcesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeScalingPlanResources that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeScalingPlanResourcesAsync(const Model::DescribeScalingPlanResourcesRequest& request, const DescribeScalingPlanResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more of your scaling plans.</p><p><h3>See Also:</h3>   <a
@@ -150,15 +166,6 @@ namespace AutoScalingPlans
          */
         virtual Model::DescribeScalingPlansOutcome DescribeScalingPlans(const Model::DescribeScalingPlansRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeScalingPlans that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeScalingPlansOutcomeCallable DescribeScalingPlansCallable(const Model::DescribeScalingPlansRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeScalingPlans that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeScalingPlansAsync(const Model::DescribeScalingPlansRequest& request, const DescribeScalingPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the forecast data for a scalable resource.</p> <p>Capacity
@@ -170,15 +177,6 @@ namespace AutoScalingPlans
          */
         virtual Model::GetScalingPlanResourceForecastDataOutcome GetScalingPlanResourceForecastData(const Model::GetScalingPlanResourceForecastDataRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetScalingPlanResourceForecastData that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetScalingPlanResourceForecastDataOutcomeCallable GetScalingPlanResourceForecastDataCallable(const Model::GetScalingPlanResourceForecastDataRequest& request) const;
-
-        /**
-         * An Async wrapper for GetScalingPlanResourceForecastData that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetScalingPlanResourceForecastDataAsync(const Model::GetScalingPlanResourceForecastDataRequest& request, const GetScalingPlanResourceForecastDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the specified scaling plan.</p> <p>You cannot update a scaling plan
@@ -189,15 +187,6 @@ namespace AutoScalingPlans
          */
         virtual Model::UpdateScalingPlanOutcome UpdateScalingPlan(const Model::UpdateScalingPlanRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateScalingPlan that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateScalingPlanOutcomeCallable UpdateScalingPlanCallable(const Model::UpdateScalingPlanRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateScalingPlan that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateScalingPlanAsync(const Model::UpdateScalingPlanRequest& request, const UpdateScalingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

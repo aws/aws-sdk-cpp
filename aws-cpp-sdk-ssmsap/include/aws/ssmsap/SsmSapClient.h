@@ -7,8 +7,10 @@
 #include <aws/ssmsap/SsmSap_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ssmsap/SsmSapServiceClientModel.h>
+#include <aws/ssmsap/SsmSapLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -73,6 +75,47 @@ namespace SsmSap
         virtual ~SsmSapClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p/><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssmsap-2018-05-10/DeleteResourcePermission">AWS
@@ -80,15 +123,6 @@ namespace SsmSap
          */
         virtual Model::DeleteResourcePermissionOutcome DeleteResourcePermission(const Model::DeleteResourcePermissionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteResourcePermission that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteResourcePermissionOutcomeCallable DeleteResourcePermissionCallable(const Model::DeleteResourcePermissionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteResourcePermission that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteResourcePermissionAsync(const Model::DeleteResourcePermissionRequest& request, const DeleteResourcePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p/><p><h3>See Also:</h3>   <a
@@ -97,15 +131,6 @@ namespace SsmSap
          */
         virtual Model::DeregisterApplicationOutcome DeregisterApplication(const Model::DeregisterApplicationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeregisterApplication that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeregisterApplicationOutcomeCallable DeregisterApplicationCallable(const Model::DeregisterApplicationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeregisterApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeregisterApplicationAsync(const Model::DeregisterApplicationRequest& request, const DeregisterApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p/><p><h3>See Also:</h3>   <a
@@ -114,15 +139,6 @@ namespace SsmSap
          */
         virtual Model::GetApplicationOutcome GetApplication(const Model::GetApplicationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetApplication that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetApplicationOutcomeCallable GetApplicationCallable(const Model::GetApplicationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetApplicationAsync(const Model::GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p/><p><h3>See Also:</h3>   <a
@@ -131,15 +147,6 @@ namespace SsmSap
          */
         virtual Model::GetComponentOutcome GetComponent(const Model::GetComponentRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetComponent that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetComponentOutcomeCallable GetComponentCallable(const Model::GetComponentRequest& request) const;
-
-        /**
-         * An Async wrapper for GetComponent that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetComponentAsync(const Model::GetComponentRequest& request, const GetComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p/><p><h3>See Also:</h3>   <a
@@ -148,15 +155,6 @@ namespace SsmSap
          */
         virtual Model::GetDatabaseOutcome GetDatabase(const Model::GetDatabaseRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDatabase that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDatabaseOutcomeCallable GetDatabaseCallable(const Model::GetDatabaseRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDatabase that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDatabaseAsync(const Model::GetDatabaseRequest& request, const GetDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p/><p><h3>See Also:</h3>   <a
@@ -165,15 +163,6 @@ namespace SsmSap
          */
         virtual Model::GetOperationOutcome GetOperation(const Model::GetOperationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetOperation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetOperationOutcomeCallable GetOperationCallable(const Model::GetOperationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetOperation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetOperationAsync(const Model::GetOperationRequest& request, const GetOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p/><p><h3>See Also:</h3>   <a
@@ -182,15 +171,6 @@ namespace SsmSap
          */
         virtual Model::GetResourcePermissionOutcome GetResourcePermission(const Model::GetResourcePermissionRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetResourcePermission that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetResourcePermissionOutcomeCallable GetResourcePermissionCallable(const Model::GetResourcePermissionRequest& request) const;
-
-        /**
-         * An Async wrapper for GetResourcePermission that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetResourcePermissionAsync(const Model::GetResourcePermissionRequest& request, const GetResourcePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p/><p><h3>See Also:</h3>   <a
@@ -199,15 +179,6 @@ namespace SsmSap
          */
         virtual Model::ListApplicationsOutcome ListApplications(const Model::ListApplicationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListApplications that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListApplicationsOutcomeCallable ListApplicationsCallable(const Model::ListApplicationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListApplications that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListApplicationsAsync(const Model::ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p/><p><h3>See Also:</h3>   <a
@@ -216,15 +187,6 @@ namespace SsmSap
          */
         virtual Model::ListComponentsOutcome ListComponents(const Model::ListComponentsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListComponents that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListComponentsOutcomeCallable ListComponentsCallable(const Model::ListComponentsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListComponents that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListComponentsAsync(const Model::ListComponentsRequest& request, const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p/><p><h3>See Also:</h3>   <a
@@ -233,15 +195,6 @@ namespace SsmSap
          */
         virtual Model::ListDatabasesOutcome ListDatabases(const Model::ListDatabasesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDatabases that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDatabasesOutcomeCallable ListDatabasesCallable(const Model::ListDatabasesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDatabases that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDatabasesAsync(const Model::ListDatabasesRequest& request, const ListDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p/><p><h3>See Also:</h3>   <a
@@ -250,15 +203,6 @@ namespace SsmSap
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p/><p><h3>See Also:</h3>   <a
@@ -267,15 +211,6 @@ namespace SsmSap
          */
         virtual Model::PutResourcePermissionOutcome PutResourcePermission(const Model::PutResourcePermissionRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutResourcePermission that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutResourcePermissionOutcomeCallable PutResourcePermissionCallable(const Model::PutResourcePermissionRequest& request) const;
-
-        /**
-         * An Async wrapper for PutResourcePermission that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutResourcePermissionAsync(const Model::PutResourcePermissionRequest& request, const PutResourcePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p/><p><h3>See Also:</h3>   <a
@@ -284,15 +219,6 @@ namespace SsmSap
          */
         virtual Model::RegisterApplicationOutcome RegisterApplication(const Model::RegisterApplicationRequest& request) const;
 
-        /**
-         * A Callable wrapper for RegisterApplication that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RegisterApplicationOutcomeCallable RegisterApplicationCallable(const Model::RegisterApplicationRequest& request) const;
-
-        /**
-         * An Async wrapper for RegisterApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RegisterApplicationAsync(const Model::RegisterApplicationRequest& request, const RegisterApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p/><p><h3>See Also:</h3>   <a
@@ -301,15 +227,6 @@ namespace SsmSap
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p/><p><h3>See Also:</h3>   <a
@@ -318,15 +235,6 @@ namespace SsmSap
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p/><p><h3>See Also:</h3>   <a
@@ -335,15 +243,6 @@ namespace SsmSap
          */
         virtual Model::UpdateApplicationSettingsOutcome UpdateApplicationSettings(const Model::UpdateApplicationSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateApplicationSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateApplicationSettingsOutcomeCallable UpdateApplicationSettingsCallable(const Model::UpdateApplicationSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateApplicationSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateApplicationSettingsAsync(const Model::UpdateApplicationSettingsRequest& request, const UpdateApplicationSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

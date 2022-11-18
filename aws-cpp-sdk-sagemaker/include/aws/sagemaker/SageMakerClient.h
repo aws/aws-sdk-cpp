@@ -7,8 +7,10 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/sagemaker/SageMakerServiceClientModel.h>
+#include <aws/sagemaker/SageMakerLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -78,6 +80,47 @@ namespace SageMaker
         virtual ~SageMakerClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Creates an <i>association</i> between the source and the destination. A
          * source can be associated with multiple destinations, and a destination can be
@@ -90,15 +133,6 @@ namespace SageMaker
          */
         virtual Model::AddAssociationOutcome AddAssociation(const Model::AddAssociationRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddAssociationOutcomeCallable AddAssociationCallable(const Model::AddAssociationRequest& request) const;
-
-        /**
-         * An Async wrapper for AddAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddAssociationAsync(const Model::AddAssociationRequest& request, const AddAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds or overwrites one or more tags for the specified SageMaker resource. You
@@ -130,15 +164,6 @@ namespace SageMaker
          */
         virtual Model::AddTagsOutcome AddTags(const Model::AddTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddTagsOutcomeCallable AddTagsCallable(const Model::AddTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for AddTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddTagsAsync(const Model::AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates a trial component with a trial. A trial component can be
@@ -149,15 +174,6 @@ namespace SageMaker
          */
         virtual Model::AssociateTrialComponentOutcome AssociateTrialComponent(const Model::AssociateTrialComponentRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateTrialComponent that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateTrialComponentOutcomeCallable AssociateTrialComponentCallable(const Model::AssociateTrialComponentRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateTrialComponent that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateTrialComponentAsync(const Model::AssociateTrialComponentRequest& request, const AssociateTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This action batch describes a list of versioned model packages</p><p><h3>See
@@ -167,15 +183,6 @@ namespace SageMaker
          */
         virtual Model::BatchDescribeModelPackageOutcome BatchDescribeModelPackage(const Model::BatchDescribeModelPackageRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchDescribeModelPackage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchDescribeModelPackageOutcomeCallable BatchDescribeModelPackageCallable(const Model::BatchDescribeModelPackageRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchDescribeModelPackage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchDescribeModelPackageAsync(const Model::BatchDescribeModelPackageRequest& request, const BatchDescribeModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an <i>action</i>. An action is a lineage tracking entity that
@@ -189,15 +196,6 @@ namespace SageMaker
          */
         virtual Model::CreateActionOutcome CreateAction(const Model::CreateActionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateAction that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateActionOutcomeCallable CreateActionCallable(const Model::CreateActionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateAction that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateActionAsync(const Model::CreateActionRequest& request, const CreateActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Create a machine learning algorithm that you can use in SageMaker and list in
@@ -207,15 +205,6 @@ namespace SageMaker
          */
         virtual Model::CreateAlgorithmOutcome CreateAlgorithm(const Model::CreateAlgorithmRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateAlgorithm that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateAlgorithmOutcomeCallable CreateAlgorithmCallable(const Model::CreateAlgorithmRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateAlgorithm that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateAlgorithmAsync(const Model::CreateAlgorithmRequest& request, const CreateAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a running app for the specified UserProfile. This operation is
@@ -227,15 +216,6 @@ namespace SageMaker
          */
         virtual Model::CreateAppOutcome CreateApp(const Model::CreateAppRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateApp that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateAppOutcomeCallable CreateAppCallable(const Model::CreateAppRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateApp that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateAppAsync(const Model::CreateAppRequest& request, const CreateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a configuration for running a SageMaker image as a KernelGateway app.
@@ -247,15 +227,6 @@ namespace SageMaker
          */
         virtual Model::CreateAppImageConfigOutcome CreateAppImageConfig(const Model::CreateAppImageConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateAppImageConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateAppImageConfigOutcomeCallable CreateAppImageConfigCallable(const Model::CreateAppImageConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateAppImageConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateAppImageConfigAsync(const Model::CreateAppImageConfigRequest& request, const CreateAppImageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an <i>artifact</i>. An artifact is a lineage tracking entity that
@@ -268,15 +239,6 @@ namespace SageMaker
          */
         virtual Model::CreateArtifactOutcome CreateArtifact(const Model::CreateArtifactRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateArtifact that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateArtifactOutcomeCallable CreateArtifactCallable(const Model::CreateArtifactRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateArtifact that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateArtifactAsync(const Model::CreateArtifactRequest& request, const CreateArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an Autopilot job.</p> <p>Find the best-performing model after you run
@@ -290,15 +252,6 @@ namespace SageMaker
          */
         virtual Model::CreateAutoMLJobOutcome CreateAutoMLJob(const Model::CreateAutoMLJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateAutoMLJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateAutoMLJobOutcomeCallable CreateAutoMLJobCallable(const Model::CreateAutoMLJobRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateAutoMLJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateAutoMLJobAsync(const Model::CreateAutoMLJobRequest& request, const CreateAutoMLJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a Git repository as a resource in your SageMaker account. You can
@@ -315,15 +268,6 @@ namespace SageMaker
          */
         virtual Model::CreateCodeRepositoryOutcome CreateCodeRepository(const Model::CreateCodeRepositoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateCodeRepository that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateCodeRepositoryOutcomeCallable CreateCodeRepositoryCallable(const Model::CreateCodeRepositoryRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateCodeRepository that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateCodeRepositoryAsync(const Model::CreateCodeRepositoryRequest& request, const CreateCodeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts a model compilation job. After the model has been compiled, Amazon
@@ -349,15 +293,6 @@ namespace SageMaker
          */
         virtual Model::CreateCompilationJobOutcome CreateCompilationJob(const Model::CreateCompilationJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateCompilationJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateCompilationJobOutcomeCallable CreateCompilationJobCallable(const Model::CreateCompilationJobRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateCompilationJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateCompilationJobAsync(const Model::CreateCompilationJobRequest& request, const CreateCompilationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a <i>context</i>. A context is a lineage tracking entity that
@@ -370,15 +305,6 @@ namespace SageMaker
          */
         virtual Model::CreateContextOutcome CreateContext(const Model::CreateContextRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateContext that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateContextOutcomeCallable CreateContextCallable(const Model::CreateContextRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateContext that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateContextAsync(const Model::CreateContextRequest& request, const CreateContextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a definition for a job that monitors data quality and drift. For
@@ -390,15 +316,6 @@ namespace SageMaker
          */
         virtual Model::CreateDataQualityJobDefinitionOutcome CreateDataQualityJobDefinition(const Model::CreateDataQualityJobDefinitionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDataQualityJobDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDataQualityJobDefinitionOutcomeCallable CreateDataQualityJobDefinitionCallable(const Model::CreateDataQualityJobDefinitionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDataQualityJobDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDataQualityJobDefinitionAsync(const Model::CreateDataQualityJobDefinitionRequest& request, const CreateDataQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a device fleet.</p><p><h3>See Also:</h3>   <a
@@ -407,15 +324,6 @@ namespace SageMaker
          */
         virtual Model::CreateDeviceFleetOutcome CreateDeviceFleet(const Model::CreateDeviceFleetRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDeviceFleet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDeviceFleetOutcomeCallable CreateDeviceFleetCallable(const Model::CreateDeviceFleetRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDeviceFleet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDeviceFleetAsync(const Model::CreateDeviceFleetRequest& request, const CreateDeviceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a <code>Domain</code> used by Amazon SageMaker Studio. A domain
@@ -457,15 +365,6 @@ namespace SageMaker
          */
         virtual Model::CreateDomainOutcome CreateDomain(const Model::CreateDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDomainOutcomeCallable CreateDomainCallable(const Model::CreateDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDomainAsync(const Model::CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an edge deployment plan, consisting of multiple stages. Each stage
@@ -476,15 +375,6 @@ namespace SageMaker
          */
         virtual Model::CreateEdgeDeploymentPlanOutcome CreateEdgeDeploymentPlan(const Model::CreateEdgeDeploymentPlanRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateEdgeDeploymentPlan that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateEdgeDeploymentPlanOutcomeCallable CreateEdgeDeploymentPlanCallable(const Model::CreateEdgeDeploymentPlanRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateEdgeDeploymentPlan that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateEdgeDeploymentPlanAsync(const Model::CreateEdgeDeploymentPlanRequest& request, const CreateEdgeDeploymentPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new stage in an existing edge deployment plan.</p><p><h3>See
@@ -494,15 +384,6 @@ namespace SageMaker
          */
         virtual Model::CreateEdgeDeploymentStageOutcome CreateEdgeDeploymentStage(const Model::CreateEdgeDeploymentStageRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateEdgeDeploymentStage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateEdgeDeploymentStageOutcomeCallable CreateEdgeDeploymentStageCallable(const Model::CreateEdgeDeploymentStageRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateEdgeDeploymentStage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateEdgeDeploymentStageAsync(const Model::CreateEdgeDeploymentStageRequest& request, const CreateEdgeDeploymentStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts a SageMaker Edge Manager model packaging job. Edge Manager will use
@@ -514,15 +395,6 @@ namespace SageMaker
          */
         virtual Model::CreateEdgePackagingJobOutcome CreateEdgePackagingJob(const Model::CreateEdgePackagingJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateEdgePackagingJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateEdgePackagingJobOutcomeCallable CreateEdgePackagingJobCallable(const Model::CreateEdgePackagingJobRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateEdgePackagingJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateEdgePackagingJobAsync(const Model::CreateEdgePackagingJobRequest& request, const CreateEdgePackagingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an endpoint using the endpoint configuration specified in the
@@ -588,15 +460,6 @@ namespace SageMaker
          */
         virtual Model::CreateEndpointOutcome CreateEndpoint(const Model::CreateEndpointRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateEndpointOutcomeCallable CreateEndpointCallable(const Model::CreateEndpointRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateEndpointAsync(const Model::CreateEndpointRequest& request, const CreateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an endpoint configuration that SageMaker hosting services uses to
@@ -631,15 +494,6 @@ namespace SageMaker
          */
         virtual Model::CreateEndpointConfigOutcome CreateEndpointConfig(const Model::CreateEndpointConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateEndpointConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateEndpointConfigOutcomeCallable CreateEndpointConfigCallable(const Model::CreateEndpointConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateEndpointConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateEndpointConfigAsync(const Model::CreateEndpointConfigRequest& request, const CreateEndpointConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an SageMaker <i>experiment</i>. An experiment is a collection of
@@ -666,15 +520,6 @@ namespace SageMaker
          */
         virtual Model::CreateExperimentOutcome CreateExperiment(const Model::CreateExperimentRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateExperiment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateExperimentOutcomeCallable CreateExperimentCallable(const Model::CreateExperimentRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateExperiment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateExperimentAsync(const Model::CreateExperimentRequest& request, const CreateExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Create a new <code>FeatureGroup</code>. A <code>FeatureGroup</code> is a
@@ -695,15 +540,6 @@ namespace SageMaker
          */
         virtual Model::CreateFeatureGroupOutcome CreateFeatureGroup(const Model::CreateFeatureGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateFeatureGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateFeatureGroupOutcomeCallable CreateFeatureGroupCallable(const Model::CreateFeatureGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateFeatureGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateFeatureGroupAsync(const Model::CreateFeatureGroupRequest& request, const CreateFeatureGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a flow definition.</p><p><h3>See Also:</h3>   <a
@@ -712,15 +548,6 @@ namespace SageMaker
          */
         virtual Model::CreateFlowDefinitionOutcome CreateFlowDefinition(const Model::CreateFlowDefinitionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateFlowDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateFlowDefinitionOutcomeCallable CreateFlowDefinitionCallable(const Model::CreateFlowDefinitionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateFlowDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateFlowDefinitionAsync(const Model::CreateFlowDefinitionRequest& request, const CreateFlowDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Defines the settings you will use for the human review workflow user
@@ -731,15 +558,6 @@ namespace SageMaker
          */
         virtual Model::CreateHumanTaskUiOutcome CreateHumanTaskUi(const Model::CreateHumanTaskUiRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateHumanTaskUi that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateHumanTaskUiOutcomeCallable CreateHumanTaskUiCallable(const Model::CreateHumanTaskUiRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateHumanTaskUi that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateHumanTaskUiAsync(const Model::CreateHumanTaskUiRequest& request, const CreateHumanTaskUiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts a hyperparameter tuning job. A hyperparameter tuning job finds the
@@ -761,15 +579,6 @@ namespace SageMaker
          */
         virtual Model::CreateHyperParameterTuningJobOutcome CreateHyperParameterTuningJob(const Model::CreateHyperParameterTuningJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateHyperParameterTuningJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateHyperParameterTuningJobOutcomeCallable CreateHyperParameterTuningJobCallable(const Model::CreateHyperParameterTuningJobRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateHyperParameterTuningJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateHyperParameterTuningJobAsync(const Model::CreateHyperParameterTuningJobRequest& request, const CreateHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a custom SageMaker image. A SageMaker image is a set of image
@@ -782,15 +591,6 @@ namespace SageMaker
          */
         virtual Model::CreateImageOutcome CreateImage(const Model::CreateImageRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateImage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateImageOutcomeCallable CreateImageCallable(const Model::CreateImageRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateImage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateImageAsync(const Model::CreateImageRequest& request, const CreateImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a version of the SageMaker image specified by <code>ImageName</code>.
@@ -801,15 +601,6 @@ namespace SageMaker
          */
         virtual Model::CreateImageVersionOutcome CreateImageVersion(const Model::CreateImageVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateImageVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateImageVersionOutcomeCallable CreateImageVersionCallable(const Model::CreateImageVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateImageVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateImageVersionAsync(const Model::CreateImageVersionRequest& request, const CreateImageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts a recommendation job. You can create either an instance recommendation
@@ -819,15 +610,6 @@ namespace SageMaker
          */
         virtual Model::CreateInferenceRecommendationsJobOutcome CreateInferenceRecommendationsJob(const Model::CreateInferenceRecommendationsJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateInferenceRecommendationsJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateInferenceRecommendationsJobOutcomeCallable CreateInferenceRecommendationsJobCallable(const Model::CreateInferenceRecommendationsJobRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateInferenceRecommendationsJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateInferenceRecommendationsJobAsync(const Model::CreateInferenceRecommendationsJobRequest& request, const CreateInferenceRecommendationsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a job that uses workers to label the data objects in your input
@@ -869,15 +651,6 @@ namespace SageMaker
          */
         virtual Model::CreateLabelingJobOutcome CreateLabelingJob(const Model::CreateLabelingJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateLabelingJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateLabelingJobOutcomeCallable CreateLabelingJobCallable(const Model::CreateLabelingJobRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateLabelingJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateLabelingJobAsync(const Model::CreateLabelingJobRequest& request, const CreateLabelingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a model in SageMaker. In the request, you name the model and describe
@@ -907,15 +680,6 @@ namespace SageMaker
          */
         virtual Model::CreateModelOutcome CreateModel(const Model::CreateModelRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateModel that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateModelOutcomeCallable CreateModelCallable(const Model::CreateModelRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateModel that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateModelAsync(const Model::CreateModelRequest& request, const CreateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates the definition for a model bias job.</p><p><h3>See Also:</h3>   <a
@@ -924,15 +688,6 @@ namespace SageMaker
          */
         virtual Model::CreateModelBiasJobDefinitionOutcome CreateModelBiasJobDefinition(const Model::CreateModelBiasJobDefinitionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateModelBiasJobDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateModelBiasJobDefinitionOutcomeCallable CreateModelBiasJobDefinitionCallable(const Model::CreateModelBiasJobDefinitionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateModelBiasJobDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateModelBiasJobDefinitionAsync(const Model::CreateModelBiasJobDefinitionRequest& request, const CreateModelBiasJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates the definition for a model explainability job.</p><p><h3>See
@@ -942,15 +697,6 @@ namespace SageMaker
          */
         virtual Model::CreateModelExplainabilityJobDefinitionOutcome CreateModelExplainabilityJobDefinition(const Model::CreateModelExplainabilityJobDefinitionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateModelExplainabilityJobDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateModelExplainabilityJobDefinitionOutcomeCallable CreateModelExplainabilityJobDefinitionCallable(const Model::CreateModelExplainabilityJobDefinitionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateModelExplainabilityJobDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateModelExplainabilityJobDefinitionAsync(const Model::CreateModelExplainabilityJobDefinitionRequest& request, const CreateModelExplainabilityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a model package that you can use to create SageMaker models or list
@@ -971,15 +717,6 @@ namespace SageMaker
          */
         virtual Model::CreateModelPackageOutcome CreateModelPackage(const Model::CreateModelPackageRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateModelPackage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateModelPackageOutcomeCallable CreateModelPackageCallable(const Model::CreateModelPackageRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateModelPackage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateModelPackageAsync(const Model::CreateModelPackageRequest& request, const CreateModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a model group. A model group contains a group of model
@@ -989,15 +726,6 @@ namespace SageMaker
          */
         virtual Model::CreateModelPackageGroupOutcome CreateModelPackageGroup(const Model::CreateModelPackageGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateModelPackageGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateModelPackageGroupOutcomeCallable CreateModelPackageGroupCallable(const Model::CreateModelPackageGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateModelPackageGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateModelPackageGroupAsync(const Model::CreateModelPackageGroupRequest& request, const CreateModelPackageGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a definition for a job that monitors model quality and drift. For
@@ -1009,15 +737,6 @@ namespace SageMaker
          */
         virtual Model::CreateModelQualityJobDefinitionOutcome CreateModelQualityJobDefinition(const Model::CreateModelQualityJobDefinitionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateModelQualityJobDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateModelQualityJobDefinitionOutcomeCallable CreateModelQualityJobDefinitionCallable(const Model::CreateModelQualityJobDefinitionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateModelQualityJobDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateModelQualityJobDefinitionAsync(const Model::CreateModelQualityJobDefinitionRequest& request, const CreateModelQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a schedule that regularly starts Amazon SageMaker Processing Jobs to
@@ -1028,15 +747,6 @@ namespace SageMaker
          */
         virtual Model::CreateMonitoringScheduleOutcome CreateMonitoringSchedule(const Model::CreateMonitoringScheduleRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateMonitoringSchedule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateMonitoringScheduleOutcomeCallable CreateMonitoringScheduleCallable(const Model::CreateMonitoringScheduleRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateMonitoringSchedule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateMonitoringScheduleAsync(const Model::CreateMonitoringScheduleRequest& request, const CreateMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an SageMaker notebook instance. A notebook instance is a machine
@@ -1072,15 +782,6 @@ namespace SageMaker
          */
         virtual Model::CreateNotebookInstanceOutcome CreateNotebookInstance(const Model::CreateNotebookInstanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateNotebookInstance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateNotebookInstanceOutcomeCallable CreateNotebookInstanceCallable(const Model::CreateNotebookInstanceRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateNotebookInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateNotebookInstanceAsync(const Model::CreateNotebookInstanceRequest& request, const CreateNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a lifecycle configuration that you can associate with a notebook
@@ -1103,15 +804,6 @@ namespace SageMaker
          */
         virtual Model::CreateNotebookInstanceLifecycleConfigOutcome CreateNotebookInstanceLifecycleConfig(const Model::CreateNotebookInstanceLifecycleConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateNotebookInstanceLifecycleConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateNotebookInstanceLifecycleConfigOutcomeCallable CreateNotebookInstanceLifecycleConfigCallable(const Model::CreateNotebookInstanceLifecycleConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateNotebookInstanceLifecycleConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateNotebookInstanceLifecycleConfigAsync(const Model::CreateNotebookInstanceLifecycleConfigRequest& request, const CreateNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a pipeline using a JSON pipeline definition.</p><p><h3>See Also:</h3>
@@ -1121,15 +813,6 @@ namespace SageMaker
          */
         virtual Model::CreatePipelineOutcome CreatePipeline(const Model::CreatePipelineRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreatePipeline that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreatePipelineOutcomeCallable CreatePipelineCallable(const Model::CreatePipelineRequest& request) const;
-
-        /**
-         * An Async wrapper for CreatePipeline that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreatePipelineAsync(const Model::CreatePipelineRequest& request, const CreatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a URL for a specified UserProfile in a Domain. When accessed in a web
@@ -1156,15 +839,6 @@ namespace SageMaker
          */
         virtual Model::CreatePresignedDomainUrlOutcome CreatePresignedDomainUrl(const Model::CreatePresignedDomainUrlRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreatePresignedDomainUrl that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreatePresignedDomainUrlOutcomeCallable CreatePresignedDomainUrlCallable(const Model::CreatePresignedDomainUrlRequest& request) const;
-
-        /**
-         * An Async wrapper for CreatePresignedDomainUrl that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreatePresignedDomainUrlAsync(const Model::CreatePresignedDomainUrlRequest& request, const CreatePresignedDomainUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a URL that you can use to connect to the Jupyter server from a
@@ -1192,15 +866,6 @@ namespace SageMaker
          */
         virtual Model::CreatePresignedNotebookInstanceUrlOutcome CreatePresignedNotebookInstanceUrl(const Model::CreatePresignedNotebookInstanceUrlRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreatePresignedNotebookInstanceUrl that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreatePresignedNotebookInstanceUrlOutcomeCallable CreatePresignedNotebookInstanceUrlCallable(const Model::CreatePresignedNotebookInstanceUrlRequest& request) const;
-
-        /**
-         * An Async wrapper for CreatePresignedNotebookInstanceUrl that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreatePresignedNotebookInstanceUrlAsync(const Model::CreatePresignedNotebookInstanceUrlRequest& request, const CreatePresignedNotebookInstanceUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a processing job.</p><p><h3>See Also:</h3>   <a
@@ -1209,15 +874,6 @@ namespace SageMaker
          */
         virtual Model::CreateProcessingJobOutcome CreateProcessingJob(const Model::CreateProcessingJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateProcessingJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateProcessingJobOutcomeCallable CreateProcessingJobCallable(const Model::CreateProcessingJobRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateProcessingJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateProcessingJobAsync(const Model::CreateProcessingJobRequest& request, const CreateProcessingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a machine learning (ML) project that can contain one or more
@@ -1228,15 +884,6 @@ namespace SageMaker
          */
         virtual Model::CreateProjectOutcome CreateProject(const Model::CreateProjectRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateProject that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateProjectOutcomeCallable CreateProjectCallable(const Model::CreateProjectRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateProject that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateProjectAsync(const Model::CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new Studio Lifecycle Configuration.</p><p><h3>See Also:</h3>   <a
@@ -1245,15 +892,6 @@ namespace SageMaker
          */
         virtual Model::CreateStudioLifecycleConfigOutcome CreateStudioLifecycleConfig(const Model::CreateStudioLifecycleConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateStudioLifecycleConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateStudioLifecycleConfigOutcomeCallable CreateStudioLifecycleConfigCallable(const Model::CreateStudioLifecycleConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateStudioLifecycleConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateStudioLifecycleConfigAsync(const Model::CreateStudioLifecycleConfigRequest& request, const CreateStudioLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts a model training job. After training completes, SageMaker saves the
@@ -1303,15 +941,6 @@ namespace SageMaker
          */
         virtual Model::CreateTrainingJobOutcome CreateTrainingJob(const Model::CreateTrainingJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateTrainingJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateTrainingJobOutcomeCallable CreateTrainingJobCallable(const Model::CreateTrainingJobRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateTrainingJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateTrainingJobAsync(const Model::CreateTrainingJobRequest& request, const CreateTrainingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts a transform job. A transform job uses a trained model to get
@@ -1340,15 +969,6 @@ namespace SageMaker
          */
         virtual Model::CreateTransformJobOutcome CreateTransformJob(const Model::CreateTransformJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateTransformJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateTransformJobOutcomeCallable CreateTransformJobCallable(const Model::CreateTransformJobRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateTransformJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateTransformJobAsync(const Model::CreateTransformJobRequest& request, const CreateTransformJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an SageMaker <i>trial</i>. A trial is a set of steps called <i>trial
@@ -1367,15 +987,6 @@ namespace SageMaker
          */
         virtual Model::CreateTrialOutcome CreateTrial(const Model::CreateTrialRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateTrial that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateTrialOutcomeCallable CreateTrialCallable(const Model::CreateTrialRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateTrial that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateTrialAsync(const Model::CreateTrialRequest& request, const CreateTrialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a <i>trial component</i>, which is a stage of a machine learning
@@ -1392,15 +1003,6 @@ namespace SageMaker
          */
         virtual Model::CreateTrialComponentOutcome CreateTrialComponent(const Model::CreateTrialComponentRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateTrialComponent that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateTrialComponentOutcomeCallable CreateTrialComponentCallable(const Model::CreateTrialComponentRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateTrialComponent that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateTrialComponentAsync(const Model::CreateTrialComponentRequest& request, const CreateTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a user profile. A user profile represents a single user within a
@@ -1416,15 +1018,6 @@ namespace SageMaker
          */
         virtual Model::CreateUserProfileOutcome CreateUserProfile(const Model::CreateUserProfileRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateUserProfile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateUserProfileOutcomeCallable CreateUserProfileCallable(const Model::CreateUserProfileRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateUserProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateUserProfileAsync(const Model::CreateUserProfileRequest& request, const CreateUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Use this operation to create a workforce. This operation will return an error
@@ -1450,15 +1043,6 @@ namespace SageMaker
          */
         virtual Model::CreateWorkforceOutcome CreateWorkforce(const Model::CreateWorkforceRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateWorkforce that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateWorkforceOutcomeCallable CreateWorkforceCallable(const Model::CreateWorkforceRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateWorkforce that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateWorkforceAsync(const Model::CreateWorkforceRequest& request, const CreateWorkforceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new work team for labeling your data. A work team is defined by one
@@ -1470,15 +1054,6 @@ namespace SageMaker
          */
         virtual Model::CreateWorkteamOutcome CreateWorkteam(const Model::CreateWorkteamRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateWorkteam that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateWorkteamOutcomeCallable CreateWorkteamCallable(const Model::CreateWorkteamRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateWorkteam that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateWorkteamAsync(const Model::CreateWorkteamRequest& request, const CreateWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an action.</p><p><h3>See Also:</h3>   <a
@@ -1487,15 +1062,6 @@ namespace SageMaker
          */
         virtual Model::DeleteActionOutcome DeleteAction(const Model::DeleteActionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAction that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteActionOutcomeCallable DeleteActionCallable(const Model::DeleteActionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAction that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteActionAsync(const Model::DeleteActionRequest& request, const DeleteActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified algorithm from your account.</p><p><h3>See Also:</h3>  
@@ -1505,15 +1071,6 @@ namespace SageMaker
          */
         virtual Model::DeleteAlgorithmOutcome DeleteAlgorithm(const Model::DeleteAlgorithmRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAlgorithm that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAlgorithmOutcomeCallable DeleteAlgorithmCallable(const Model::DeleteAlgorithmRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAlgorithm that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAlgorithmAsync(const Model::DeleteAlgorithmRequest& request, const DeleteAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Used to stop and delete an app.</p><p><h3>See Also:</h3>   <a
@@ -1522,15 +1079,6 @@ namespace SageMaker
          */
         virtual Model::DeleteAppOutcome DeleteApp(const Model::DeleteAppRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteApp that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAppOutcomeCallable DeleteAppCallable(const Model::DeleteAppRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteApp that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAppAsync(const Model::DeleteAppRequest& request, const DeleteAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an AppImageConfig.</p><p><h3>See Also:</h3>   <a
@@ -1539,15 +1087,6 @@ namespace SageMaker
          */
         virtual Model::DeleteAppImageConfigOutcome DeleteAppImageConfig(const Model::DeleteAppImageConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAppImageConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAppImageConfigOutcomeCallable DeleteAppImageConfigCallable(const Model::DeleteAppImageConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAppImageConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAppImageConfigAsync(const Model::DeleteAppImageConfigRequest& request, const DeleteAppImageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an artifact. Either <code>ArtifactArn</code> or <code>Source</code>
@@ -1557,15 +1096,6 @@ namespace SageMaker
          */
         virtual Model::DeleteArtifactOutcome DeleteArtifact(const Model::DeleteArtifactRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteArtifact that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteArtifactOutcomeCallable DeleteArtifactCallable(const Model::DeleteArtifactRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteArtifact that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteArtifactAsync(const Model::DeleteArtifactRequest& request, const DeleteArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an association.</p><p><h3>See Also:</h3>   <a
@@ -1574,15 +1104,6 @@ namespace SageMaker
          */
         virtual Model::DeleteAssociationOutcome DeleteAssociation(const Model::DeleteAssociationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAssociationOutcomeCallable DeleteAssociationCallable(const Model::DeleteAssociationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAssociationAsync(const Model::DeleteAssociationRequest& request, const DeleteAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified Git repository from your account.</p><p><h3>See
@@ -1592,15 +1113,6 @@ namespace SageMaker
          */
         virtual Model::DeleteCodeRepositoryOutcome DeleteCodeRepository(const Model::DeleteCodeRepositoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteCodeRepository that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteCodeRepositoryOutcomeCallable DeleteCodeRepositoryCallable(const Model::DeleteCodeRepositoryRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteCodeRepository that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteCodeRepositoryAsync(const Model::DeleteCodeRepositoryRequest& request, const DeleteCodeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an context.</p><p><h3>See Also:</h3>   <a
@@ -1609,15 +1121,6 @@ namespace SageMaker
          */
         virtual Model::DeleteContextOutcome DeleteContext(const Model::DeleteContextRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteContext that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteContextOutcomeCallable DeleteContextCallable(const Model::DeleteContextRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteContext that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteContextAsync(const Model::DeleteContextRequest& request, const DeleteContextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a data quality monitoring job definition.</p><p><h3>See Also:</h3>  
@@ -1627,15 +1130,6 @@ namespace SageMaker
          */
         virtual Model::DeleteDataQualityJobDefinitionOutcome DeleteDataQualityJobDefinition(const Model::DeleteDataQualityJobDefinitionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDataQualityJobDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDataQualityJobDefinitionOutcomeCallable DeleteDataQualityJobDefinitionCallable(const Model::DeleteDataQualityJobDefinitionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDataQualityJobDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDataQualityJobDefinitionAsync(const Model::DeleteDataQualityJobDefinitionRequest& request, const DeleteDataQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a fleet.</p><p><h3>See Also:</h3>   <a
@@ -1644,15 +1138,6 @@ namespace SageMaker
          */
         virtual Model::DeleteDeviceFleetOutcome DeleteDeviceFleet(const Model::DeleteDeviceFleetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDeviceFleet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDeviceFleetOutcomeCallable DeleteDeviceFleetCallable(const Model::DeleteDeviceFleetRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDeviceFleet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDeviceFleetAsync(const Model::DeleteDeviceFleetRequest& request, const DeleteDeviceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Used to delete a domain. If you onboarded with IAM mode, you will need to
@@ -1664,15 +1149,6 @@ namespace SageMaker
          */
         virtual Model::DeleteDomainOutcome DeleteDomain(const Model::DeleteDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDomainOutcomeCallable DeleteDomainCallable(const Model::DeleteDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDomainAsync(const Model::DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an edge deployment plan if (and only if) all the stages in the plan
@@ -1682,15 +1158,6 @@ namespace SageMaker
          */
         virtual Model::DeleteEdgeDeploymentPlanOutcome DeleteEdgeDeploymentPlan(const Model::DeleteEdgeDeploymentPlanRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteEdgeDeploymentPlan that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteEdgeDeploymentPlanOutcomeCallable DeleteEdgeDeploymentPlanCallable(const Model::DeleteEdgeDeploymentPlanRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteEdgeDeploymentPlan that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteEdgeDeploymentPlanAsync(const Model::DeleteEdgeDeploymentPlanRequest& request, const DeleteEdgeDeploymentPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Delete a stage in an edge deployment plan if (and only if) the stage is
@@ -1700,15 +1167,6 @@ namespace SageMaker
          */
         virtual Model::DeleteEdgeDeploymentStageOutcome DeleteEdgeDeploymentStage(const Model::DeleteEdgeDeploymentStageRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteEdgeDeploymentStage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteEdgeDeploymentStageOutcomeCallable DeleteEdgeDeploymentStageCallable(const Model::DeleteEdgeDeploymentStageRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteEdgeDeploymentStage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteEdgeDeploymentStageAsync(const Model::DeleteEdgeDeploymentStageRequest& request, const DeleteEdgeDeploymentStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an endpoint. SageMaker frees up all of the resources that were
@@ -1727,15 +1185,6 @@ namespace SageMaker
          */
         virtual Model::DeleteEndpointOutcome DeleteEndpoint(const Model::DeleteEndpointRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteEndpointOutcomeCallable DeleteEndpointCallable(const Model::DeleteEndpointRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteEndpointAsync(const Model::DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an endpoint configuration. The <code>DeleteEndpointConfig</code> API
@@ -1752,15 +1201,6 @@ namespace SageMaker
          */
         virtual Model::DeleteEndpointConfigOutcome DeleteEndpointConfig(const Model::DeleteEndpointConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteEndpointConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteEndpointConfigOutcomeCallable DeleteEndpointConfigCallable(const Model::DeleteEndpointConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteEndpointConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteEndpointConfigAsync(const Model::DeleteEndpointConfigRequest& request, const DeleteEndpointConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an SageMaker experiment. All trials associated with the experiment
@@ -1771,15 +1211,6 @@ namespace SageMaker
          */
         virtual Model::DeleteExperimentOutcome DeleteExperiment(const Model::DeleteExperimentRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteExperiment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteExperimentOutcomeCallable DeleteExperimentCallable(const Model::DeleteExperimentRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteExperiment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteExperimentAsync(const Model::DeleteExperimentRequest& request, const DeleteExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Delete the <code>FeatureGroup</code> and any data that was written to the
@@ -1794,15 +1225,6 @@ namespace SageMaker
          */
         virtual Model::DeleteFeatureGroupOutcome DeleteFeatureGroup(const Model::DeleteFeatureGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteFeatureGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteFeatureGroupOutcomeCallable DeleteFeatureGroupCallable(const Model::DeleteFeatureGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteFeatureGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteFeatureGroupAsync(const Model::DeleteFeatureGroupRequest& request, const DeleteFeatureGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified flow definition.</p><p><h3>See Also:</h3>   <a
@@ -1811,15 +1233,6 @@ namespace SageMaker
          */
         virtual Model::DeleteFlowDefinitionOutcome DeleteFlowDefinition(const Model::DeleteFlowDefinitionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteFlowDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteFlowDefinitionOutcomeCallable DeleteFlowDefinitionCallable(const Model::DeleteFlowDefinitionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteFlowDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteFlowDefinitionAsync(const Model::DeleteFlowDefinitionRequest& request, const DeleteFlowDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Use this operation to delete a human task user interface (worker task
@@ -1832,15 +1245,6 @@ namespace SageMaker
          */
         virtual Model::DeleteHumanTaskUiOutcome DeleteHumanTaskUi(const Model::DeleteHumanTaskUiRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteHumanTaskUi that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteHumanTaskUiOutcomeCallable DeleteHumanTaskUiCallable(const Model::DeleteHumanTaskUiRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteHumanTaskUi that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteHumanTaskUiAsync(const Model::DeleteHumanTaskUiRequest& request, const DeleteHumanTaskUiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a SageMaker image and all versions of the image. The container images
@@ -1850,15 +1254,6 @@ namespace SageMaker
          */
         virtual Model::DeleteImageOutcome DeleteImage(const Model::DeleteImageRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteImage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteImageOutcomeCallable DeleteImageCallable(const Model::DeleteImageRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteImage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteImageAsync(const Model::DeleteImageRequest& request, const DeleteImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a version of a SageMaker image. The container image the version
@@ -1868,15 +1263,6 @@ namespace SageMaker
          */
         virtual Model::DeleteImageVersionOutcome DeleteImageVersion(const Model::DeleteImageVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteImageVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteImageVersionOutcomeCallable DeleteImageVersionCallable(const Model::DeleteImageVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteImageVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteImageVersionAsync(const Model::DeleteImageVersionRequest& request, const DeleteImageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a model. The <code>DeleteModel</code> API deletes only the model
@@ -1888,15 +1274,6 @@ namespace SageMaker
          */
         virtual Model::DeleteModelOutcome DeleteModel(const Model::DeleteModelRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteModel that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteModelOutcomeCallable DeleteModelCallable(const Model::DeleteModelRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteModel that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteModelAsync(const Model::DeleteModelRequest& request, const DeleteModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an Amazon SageMaker model bias job definition.</p><p><h3>See
@@ -1906,15 +1283,6 @@ namespace SageMaker
          */
         virtual Model::DeleteModelBiasJobDefinitionOutcome DeleteModelBiasJobDefinition(const Model::DeleteModelBiasJobDefinitionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteModelBiasJobDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteModelBiasJobDefinitionOutcomeCallable DeleteModelBiasJobDefinitionCallable(const Model::DeleteModelBiasJobDefinitionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteModelBiasJobDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteModelBiasJobDefinitionAsync(const Model::DeleteModelBiasJobDefinitionRequest& request, const DeleteModelBiasJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an Amazon SageMaker model explainability job
@@ -1924,15 +1292,6 @@ namespace SageMaker
          */
         virtual Model::DeleteModelExplainabilityJobDefinitionOutcome DeleteModelExplainabilityJobDefinition(const Model::DeleteModelExplainabilityJobDefinitionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteModelExplainabilityJobDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteModelExplainabilityJobDefinitionOutcomeCallable DeleteModelExplainabilityJobDefinitionCallable(const Model::DeleteModelExplainabilityJobDefinitionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteModelExplainabilityJobDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteModelExplainabilityJobDefinitionAsync(const Model::DeleteModelExplainabilityJobDefinitionRequest& request, const DeleteModelExplainabilityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a model package.</p> <p>A model package is used to create SageMaker
@@ -1944,15 +1303,6 @@ namespace SageMaker
          */
         virtual Model::DeleteModelPackageOutcome DeleteModelPackage(const Model::DeleteModelPackageRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteModelPackage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteModelPackageOutcomeCallable DeleteModelPackageCallable(const Model::DeleteModelPackageRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteModelPackage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteModelPackageAsync(const Model::DeleteModelPackageRequest& request, const DeleteModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified model group.</p><p><h3>See Also:</h3>   <a
@@ -1961,15 +1311,6 @@ namespace SageMaker
          */
         virtual Model::DeleteModelPackageGroupOutcome DeleteModelPackageGroup(const Model::DeleteModelPackageGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteModelPackageGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteModelPackageGroupOutcomeCallable DeleteModelPackageGroupCallable(const Model::DeleteModelPackageGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteModelPackageGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteModelPackageGroupAsync(const Model::DeleteModelPackageGroupRequest& request, const DeleteModelPackageGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a model group resource policy.</p><p><h3>See Also:</h3>   <a
@@ -1978,15 +1319,6 @@ namespace SageMaker
          */
         virtual Model::DeleteModelPackageGroupPolicyOutcome DeleteModelPackageGroupPolicy(const Model::DeleteModelPackageGroupPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteModelPackageGroupPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteModelPackageGroupPolicyOutcomeCallable DeleteModelPackageGroupPolicyCallable(const Model::DeleteModelPackageGroupPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteModelPackageGroupPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteModelPackageGroupPolicyAsync(const Model::DeleteModelPackageGroupPolicyRequest& request, const DeleteModelPackageGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the secified model quality monitoring job definition.</p><p><h3>See
@@ -1996,15 +1328,6 @@ namespace SageMaker
          */
         virtual Model::DeleteModelQualityJobDefinitionOutcome DeleteModelQualityJobDefinition(const Model::DeleteModelQualityJobDefinitionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteModelQualityJobDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteModelQualityJobDefinitionOutcomeCallable DeleteModelQualityJobDefinitionCallable(const Model::DeleteModelQualityJobDefinitionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteModelQualityJobDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteModelQualityJobDefinitionAsync(const Model::DeleteModelQualityJobDefinitionRequest& request, const DeleteModelQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a monitoring schedule. Also stops the schedule had not already been
@@ -2015,15 +1338,6 @@ namespace SageMaker
          */
         virtual Model::DeleteMonitoringScheduleOutcome DeleteMonitoringSchedule(const Model::DeleteMonitoringScheduleRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteMonitoringSchedule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteMonitoringScheduleOutcomeCallable DeleteMonitoringScheduleCallable(const Model::DeleteMonitoringScheduleRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteMonitoringSchedule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteMonitoringScheduleAsync(const Model::DeleteMonitoringScheduleRequest& request, const DeleteMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Deletes an SageMaker notebook instance. Before you can delete a notebook
@@ -2037,15 +1351,6 @@ namespace SageMaker
          */
         virtual Model::DeleteNotebookInstanceOutcome DeleteNotebookInstance(const Model::DeleteNotebookInstanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteNotebookInstance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteNotebookInstanceOutcomeCallable DeleteNotebookInstanceCallable(const Model::DeleteNotebookInstanceRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteNotebookInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteNotebookInstanceAsync(const Model::DeleteNotebookInstanceRequest& request, const DeleteNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a notebook instance lifecycle configuration.</p><p><h3>See Also:</h3>
@@ -2055,15 +1360,6 @@ namespace SageMaker
          */
         virtual Model::DeleteNotebookInstanceLifecycleConfigOutcome DeleteNotebookInstanceLifecycleConfig(const Model::DeleteNotebookInstanceLifecycleConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteNotebookInstanceLifecycleConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteNotebookInstanceLifecycleConfigOutcomeCallable DeleteNotebookInstanceLifecycleConfigCallable(const Model::DeleteNotebookInstanceLifecycleConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteNotebookInstanceLifecycleConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteNotebookInstanceLifecycleConfigAsync(const Model::DeleteNotebookInstanceLifecycleConfigRequest& request, const DeleteNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a pipeline if there are no running instances of the pipeline. To
@@ -2075,15 +1371,6 @@ namespace SageMaker
          */
         virtual Model::DeletePipelineOutcome DeletePipeline(const Model::DeletePipelineRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeletePipeline that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeletePipelineOutcomeCallable DeletePipelineCallable(const Model::DeletePipelineRequest& request) const;
-
-        /**
-         * An Async wrapper for DeletePipeline that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeletePipelineAsync(const Model::DeletePipelineRequest& request, const DeletePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Delete the specified project.</p><p><h3>See Also:</h3>   <a
@@ -2092,15 +1379,6 @@ namespace SageMaker
          */
         virtual Model::DeleteProjectOutcome DeleteProject(const Model::DeleteProjectRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteProject that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteProjectOutcomeCallable DeleteProjectCallable(const Model::DeleteProjectRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteProject that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteProjectAsync(const Model::DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the Studio Lifecycle Configuration. In order to delete the Lifecycle
@@ -2112,15 +1390,6 @@ namespace SageMaker
          */
         virtual Model::DeleteStudioLifecycleConfigOutcome DeleteStudioLifecycleConfig(const Model::DeleteStudioLifecycleConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteStudioLifecycleConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteStudioLifecycleConfigOutcomeCallable DeleteStudioLifecycleConfigCallable(const Model::DeleteStudioLifecycleConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteStudioLifecycleConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteStudioLifecycleConfigAsync(const Model::DeleteStudioLifecycleConfigRequest& request, const DeleteStudioLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified tags from an SageMaker resource.</p> <p>To list a
@@ -2136,15 +1405,6 @@ namespace SageMaker
          */
         virtual Model::DeleteTagsOutcome DeleteTags(const Model::DeleteTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteTagsOutcomeCallable DeleteTagsCallable(const Model::DeleteTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteTagsAsync(const Model::DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified trial. All trial components that make up the trial must
@@ -2155,15 +1415,6 @@ namespace SageMaker
          */
         virtual Model::DeleteTrialOutcome DeleteTrial(const Model::DeleteTrialRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteTrial that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteTrialOutcomeCallable DeleteTrialCallable(const Model::DeleteTrialRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteTrial that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteTrialAsync(const Model::DeleteTrialRequest& request, const DeleteTrialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified trial component. A trial component must be
@@ -2175,15 +1426,6 @@ namespace SageMaker
          */
         virtual Model::DeleteTrialComponentOutcome DeleteTrialComponent(const Model::DeleteTrialComponentRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteTrialComponent that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteTrialComponentOutcomeCallable DeleteTrialComponentCallable(const Model::DeleteTrialComponentRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteTrialComponent that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteTrialComponentAsync(const Model::DeleteTrialComponentRequest& request, const DeleteTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a user profile. When a user profile is deleted, the user loses access
@@ -2194,15 +1436,6 @@ namespace SageMaker
          */
         virtual Model::DeleteUserProfileOutcome DeleteUserProfile(const Model::DeleteUserProfileRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteUserProfile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteUserProfileOutcomeCallable DeleteUserProfileCallable(const Model::DeleteUserProfileRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteUserProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteUserProfileAsync(const Model::DeleteUserProfileRequest& request, const DeleteUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Use this operation to delete a workforce.</p> <p>If you want to create a new
@@ -2218,15 +1451,6 @@ namespace SageMaker
          */
         virtual Model::DeleteWorkforceOutcome DeleteWorkforce(const Model::DeleteWorkforceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteWorkforce that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteWorkforceOutcomeCallable DeleteWorkforceCallable(const Model::DeleteWorkforceRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteWorkforce that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteWorkforceAsync(const Model::DeleteWorkforceRequest& request, const DeleteWorkforceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an existing work team. This operation can't be undone.</p><p><h3>See
@@ -2236,15 +1460,6 @@ namespace SageMaker
          */
         virtual Model::DeleteWorkteamOutcome DeleteWorkteam(const Model::DeleteWorkteamRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteWorkteam that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteWorkteamOutcomeCallable DeleteWorkteamCallable(const Model::DeleteWorkteamRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteWorkteam that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteWorkteamAsync(const Model::DeleteWorkteamRequest& request, const DeleteWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deregisters the specified devices. After you deregister a device, you will
@@ -2254,15 +1469,6 @@ namespace SageMaker
          */
         virtual Model::DeregisterDevicesOutcome DeregisterDevices(const Model::DeregisterDevicesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeregisterDevices that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeregisterDevicesOutcomeCallable DeregisterDevicesCallable(const Model::DeregisterDevicesRequest& request) const;
-
-        /**
-         * An Async wrapper for DeregisterDevices that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeregisterDevicesAsync(const Model::DeregisterDevicesRequest& request, const DeregisterDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes an action.</p><p><h3>See Also:</h3>   <a
@@ -2271,15 +1477,6 @@ namespace SageMaker
          */
         virtual Model::DescribeActionOutcome DescribeAction(const Model::DescribeActionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAction that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeActionOutcomeCallable DescribeActionCallable(const Model::DescribeActionRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAction that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeActionAsync(const Model::DescribeActionRequest& request, const DescribeActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a description of the specified algorithm that is in your
@@ -2289,15 +1486,6 @@ namespace SageMaker
          */
         virtual Model::DescribeAlgorithmOutcome DescribeAlgorithm(const Model::DescribeAlgorithmRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAlgorithm that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAlgorithmOutcomeCallable DescribeAlgorithmCallable(const Model::DescribeAlgorithmRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAlgorithm that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAlgorithmAsync(const Model::DescribeAlgorithmRequest& request, const DescribeAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the app.</p><p><h3>See Also:</h3>   <a
@@ -2306,15 +1494,6 @@ namespace SageMaker
          */
         virtual Model::DescribeAppOutcome DescribeApp(const Model::DescribeAppRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeApp that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAppOutcomeCallable DescribeAppCallable(const Model::DescribeAppRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeApp that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAppAsync(const Model::DescribeAppRequest& request, const DescribeAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes an AppImageConfig.</p><p><h3>See Also:</h3>   <a
@@ -2323,15 +1502,6 @@ namespace SageMaker
          */
         virtual Model::DescribeAppImageConfigOutcome DescribeAppImageConfig(const Model::DescribeAppImageConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAppImageConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAppImageConfigOutcomeCallable DescribeAppImageConfigCallable(const Model::DescribeAppImageConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAppImageConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAppImageConfigAsync(const Model::DescribeAppImageConfigRequest& request, const DescribeAppImageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes an artifact.</p><p><h3>See Also:</h3>   <a
@@ -2340,15 +1510,6 @@ namespace SageMaker
          */
         virtual Model::DescribeArtifactOutcome DescribeArtifact(const Model::DescribeArtifactRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeArtifact that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeArtifactOutcomeCallable DescribeArtifactCallable(const Model::DescribeArtifactRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeArtifact that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeArtifactAsync(const Model::DescribeArtifactRequest& request, const DescribeArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about an Amazon SageMaker AutoML job.</p><p><h3>See
@@ -2358,15 +1519,6 @@ namespace SageMaker
          */
         virtual Model::DescribeAutoMLJobOutcome DescribeAutoMLJob(const Model::DescribeAutoMLJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAutoMLJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAutoMLJobOutcomeCallable DescribeAutoMLJobCallable(const Model::DescribeAutoMLJobRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAutoMLJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAutoMLJobAsync(const Model::DescribeAutoMLJobRequest& request, const DescribeAutoMLJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets details about the specified Git repository.</p><p><h3>See Also:</h3>  
@@ -2376,15 +1528,6 @@ namespace SageMaker
          */
         virtual Model::DescribeCodeRepositoryOutcome DescribeCodeRepository(const Model::DescribeCodeRepositoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeCodeRepository that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeCodeRepositoryOutcomeCallable DescribeCodeRepositoryCallable(const Model::DescribeCodeRepositoryRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeCodeRepository that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeCodeRepositoryAsync(const Model::DescribeCodeRepositoryRequest& request, const DescribeCodeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a model compilation job.</p> <p>To create a model
@@ -2396,15 +1539,6 @@ namespace SageMaker
          */
         virtual Model::DescribeCompilationJobOutcome DescribeCompilationJob(const Model::DescribeCompilationJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeCompilationJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeCompilationJobOutcomeCallable DescribeCompilationJobCallable(const Model::DescribeCompilationJobRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeCompilationJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeCompilationJobAsync(const Model::DescribeCompilationJobRequest& request, const DescribeCompilationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a context.</p><p><h3>See Also:</h3>   <a
@@ -2413,15 +1547,6 @@ namespace SageMaker
          */
         virtual Model::DescribeContextOutcome DescribeContext(const Model::DescribeContextRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeContext that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeContextOutcomeCallable DescribeContextCallable(const Model::DescribeContextRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeContext that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeContextAsync(const Model::DescribeContextRequest& request, const DescribeContextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the details of a data quality monitoring job definition.</p><p><h3>See
@@ -2431,15 +1556,6 @@ namespace SageMaker
          */
         virtual Model::DescribeDataQualityJobDefinitionOutcome DescribeDataQualityJobDefinition(const Model::DescribeDataQualityJobDefinitionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDataQualityJobDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDataQualityJobDefinitionOutcomeCallable DescribeDataQualityJobDefinitionCallable(const Model::DescribeDataQualityJobDefinitionRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDataQualityJobDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDataQualityJobDefinitionAsync(const Model::DescribeDataQualityJobDefinitionRequest& request, const DescribeDataQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the device.</p><p><h3>See Also:</h3>   <a
@@ -2448,15 +1564,6 @@ namespace SageMaker
          */
         virtual Model::DescribeDeviceOutcome DescribeDevice(const Model::DescribeDeviceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDevice that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDeviceOutcomeCallable DescribeDeviceCallable(const Model::DescribeDeviceRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDevice that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDeviceAsync(const Model::DescribeDeviceRequest& request, const DescribeDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>A description of the fleet the device belongs to.</p><p><h3>See Also:</h3>  
@@ -2466,15 +1573,6 @@ namespace SageMaker
          */
         virtual Model::DescribeDeviceFleetOutcome DescribeDeviceFleet(const Model::DescribeDeviceFleetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDeviceFleet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDeviceFleetOutcomeCallable DescribeDeviceFleetCallable(const Model::DescribeDeviceFleetRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDeviceFleet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDeviceFleetAsync(const Model::DescribeDeviceFleetRequest& request, const DescribeDeviceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The description of the domain.</p><p><h3>See Also:</h3>   <a
@@ -2483,15 +1581,6 @@ namespace SageMaker
          */
         virtual Model::DescribeDomainOutcome DescribeDomain(const Model::DescribeDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDomainOutcomeCallable DescribeDomainCallable(const Model::DescribeDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDomainAsync(const Model::DescribeDomainRequest& request, const DescribeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes an edge deployment plan with deployment status per
@@ -2501,15 +1590,6 @@ namespace SageMaker
          */
         virtual Model::DescribeEdgeDeploymentPlanOutcome DescribeEdgeDeploymentPlan(const Model::DescribeEdgeDeploymentPlanRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEdgeDeploymentPlan that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEdgeDeploymentPlanOutcomeCallable DescribeEdgeDeploymentPlanCallable(const Model::DescribeEdgeDeploymentPlanRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEdgeDeploymentPlan that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEdgeDeploymentPlanAsync(const Model::DescribeEdgeDeploymentPlanRequest& request, const DescribeEdgeDeploymentPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>A description of edge packaging jobs.</p><p><h3>See Also:</h3>   <a
@@ -2518,15 +1598,6 @@ namespace SageMaker
          */
         virtual Model::DescribeEdgePackagingJobOutcome DescribeEdgePackagingJob(const Model::DescribeEdgePackagingJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEdgePackagingJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEdgePackagingJobOutcomeCallable DescribeEdgePackagingJobCallable(const Model::DescribeEdgePackagingJobRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEdgePackagingJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEdgePackagingJobAsync(const Model::DescribeEdgePackagingJobRequest& request, const DescribeEdgePackagingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the description of an endpoint.</p><p><h3>See Also:</h3>   <a
@@ -2535,15 +1606,6 @@ namespace SageMaker
          */
         virtual Model::DescribeEndpointOutcome DescribeEndpoint(const Model::DescribeEndpointRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEndpointOutcomeCallable DescribeEndpointCallable(const Model::DescribeEndpointRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEndpointAsync(const Model::DescribeEndpointRequest& request, const DescribeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the description of an endpoint configuration created using the
@@ -2553,15 +1615,6 @@ namespace SageMaker
          */
         virtual Model::DescribeEndpointConfigOutcome DescribeEndpointConfig(const Model::DescribeEndpointConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEndpointConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEndpointConfigOutcomeCallable DescribeEndpointConfigCallable(const Model::DescribeEndpointConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEndpointConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEndpointConfigAsync(const Model::DescribeEndpointConfigRequest& request, const DescribeEndpointConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides a list of an experiment's properties.</p><p><h3>See Also:</h3>   <a
@@ -2570,15 +1623,6 @@ namespace SageMaker
          */
         virtual Model::DescribeExperimentOutcome DescribeExperiment(const Model::DescribeExperimentRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeExperiment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeExperimentOutcomeCallable DescribeExperimentCallable(const Model::DescribeExperimentRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeExperiment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeExperimentAsync(const Model::DescribeExperimentRequest& request, const DescribeExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Use this operation to describe a <code>FeatureGroup</code>. The response
@@ -2590,15 +1634,6 @@ namespace SageMaker
          */
         virtual Model::DescribeFeatureGroupOutcome DescribeFeatureGroup(const Model::DescribeFeatureGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeFeatureGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeFeatureGroupOutcomeCallable DescribeFeatureGroupCallable(const Model::DescribeFeatureGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeFeatureGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeFeatureGroupAsync(const Model::DescribeFeatureGroupRequest& request, const DescribeFeatureGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Shows the metadata for a feature within a feature group.</p><p><h3>See
@@ -2608,15 +1643,6 @@ namespace SageMaker
          */
         virtual Model::DescribeFeatureMetadataOutcome DescribeFeatureMetadata(const Model::DescribeFeatureMetadataRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeFeatureMetadata that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeFeatureMetadataOutcomeCallable DescribeFeatureMetadataCallable(const Model::DescribeFeatureMetadataRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeFeatureMetadata that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeFeatureMetadataAsync(const Model::DescribeFeatureMetadataRequest& request, const DescribeFeatureMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the specified flow definition.</p><p><h3>See
@@ -2626,15 +1652,6 @@ namespace SageMaker
          */
         virtual Model::DescribeFlowDefinitionOutcome DescribeFlowDefinition(const Model::DescribeFlowDefinitionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeFlowDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeFlowDefinitionOutcomeCallable DescribeFlowDefinitionCallable(const Model::DescribeFlowDefinitionRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeFlowDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeFlowDefinitionAsync(const Model::DescribeFlowDefinitionRequest& request, const DescribeFlowDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the requested human task user interface (worker
@@ -2644,15 +1661,6 @@ namespace SageMaker
          */
         virtual Model::DescribeHumanTaskUiOutcome DescribeHumanTaskUi(const Model::DescribeHumanTaskUiRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeHumanTaskUi that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeHumanTaskUiOutcomeCallable DescribeHumanTaskUiCallable(const Model::DescribeHumanTaskUiRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeHumanTaskUi that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeHumanTaskUiAsync(const Model::DescribeHumanTaskUiRequest& request, const DescribeHumanTaskUiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a description of a hyperparameter tuning job.</p><p><h3>See Also:</h3>  
@@ -2662,15 +1670,6 @@ namespace SageMaker
          */
         virtual Model::DescribeHyperParameterTuningJobOutcome DescribeHyperParameterTuningJob(const Model::DescribeHyperParameterTuningJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeHyperParameterTuningJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeHyperParameterTuningJobOutcomeCallable DescribeHyperParameterTuningJobCallable(const Model::DescribeHyperParameterTuningJobRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeHyperParameterTuningJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeHyperParameterTuningJobAsync(const Model::DescribeHyperParameterTuningJobRequest& request, const DescribeHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a SageMaker image.</p><p><h3>See Also:</h3>   <a
@@ -2679,15 +1678,6 @@ namespace SageMaker
          */
         virtual Model::DescribeImageOutcome DescribeImage(const Model::DescribeImageRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeImage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeImageOutcomeCallable DescribeImageCallable(const Model::DescribeImageRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeImage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeImageAsync(const Model::DescribeImageRequest& request, const DescribeImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a version of a SageMaker image.</p><p><h3>See Also:</h3>   <a
@@ -2696,15 +1686,6 @@ namespace SageMaker
          */
         virtual Model::DescribeImageVersionOutcome DescribeImageVersion(const Model::DescribeImageVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeImageVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeImageVersionOutcomeCallable DescribeImageVersionCallable(const Model::DescribeImageVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeImageVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeImageVersionAsync(const Model::DescribeImageVersionRequest& request, const DescribeImageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides the results of the Inference Recommender job. One or more
@@ -2714,15 +1695,6 @@ namespace SageMaker
          */
         virtual Model::DescribeInferenceRecommendationsJobOutcome DescribeInferenceRecommendationsJob(const Model::DescribeInferenceRecommendationsJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeInferenceRecommendationsJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeInferenceRecommendationsJobOutcomeCallable DescribeInferenceRecommendationsJobCallable(const Model::DescribeInferenceRecommendationsJobRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeInferenceRecommendationsJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeInferenceRecommendationsJobAsync(const Model::DescribeInferenceRecommendationsJobRequest& request, const DescribeInferenceRecommendationsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about a labeling job.</p><p><h3>See Also:</h3>   <a
@@ -2731,15 +1703,6 @@ namespace SageMaker
          */
         virtual Model::DescribeLabelingJobOutcome DescribeLabelingJob(const Model::DescribeLabelingJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeLabelingJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeLabelingJobOutcomeCallable DescribeLabelingJobCallable(const Model::DescribeLabelingJobRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeLabelingJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeLabelingJobAsync(const Model::DescribeLabelingJobRequest& request, const DescribeLabelingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides a list of properties for the requested lineage group. For more
@@ -2752,15 +1715,6 @@ namespace SageMaker
          */
         virtual Model::DescribeLineageGroupOutcome DescribeLineageGroup(const Model::DescribeLineageGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeLineageGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeLineageGroupOutcomeCallable DescribeLineageGroupCallable(const Model::DescribeLineageGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeLineageGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeLineageGroupAsync(const Model::DescribeLineageGroupRequest& request, const DescribeLineageGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a model that you created using the <code>CreateModel</code>
@@ -2770,15 +1724,6 @@ namespace SageMaker
          */
         virtual Model::DescribeModelOutcome DescribeModel(const Model::DescribeModelRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeModel that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeModelOutcomeCallable DescribeModelCallable(const Model::DescribeModelRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeModel that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeModelAsync(const Model::DescribeModelRequest& request, const DescribeModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a description of a model bias job definition.</p><p><h3>See
@@ -2788,15 +1733,6 @@ namespace SageMaker
          */
         virtual Model::DescribeModelBiasJobDefinitionOutcome DescribeModelBiasJobDefinition(const Model::DescribeModelBiasJobDefinitionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeModelBiasJobDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeModelBiasJobDefinitionOutcomeCallable DescribeModelBiasJobDefinitionCallable(const Model::DescribeModelBiasJobDefinitionRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeModelBiasJobDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeModelBiasJobDefinitionAsync(const Model::DescribeModelBiasJobDefinitionRequest& request, const DescribeModelBiasJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a description of a model explainability job definition.</p><p><h3>See
@@ -2806,15 +1742,6 @@ namespace SageMaker
          */
         virtual Model::DescribeModelExplainabilityJobDefinitionOutcome DescribeModelExplainabilityJobDefinition(const Model::DescribeModelExplainabilityJobDefinitionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeModelExplainabilityJobDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeModelExplainabilityJobDefinitionOutcomeCallable DescribeModelExplainabilityJobDefinitionCallable(const Model::DescribeModelExplainabilityJobDefinitionRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeModelExplainabilityJobDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeModelExplainabilityJobDefinitionAsync(const Model::DescribeModelExplainabilityJobDefinitionRequest& request, const DescribeModelExplainabilityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a description of the specified model package, which is used to create
@@ -2826,15 +1753,6 @@ namespace SageMaker
          */
         virtual Model::DescribeModelPackageOutcome DescribeModelPackage(const Model::DescribeModelPackageRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeModelPackage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeModelPackageOutcomeCallable DescribeModelPackageCallable(const Model::DescribeModelPackageRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeModelPackage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeModelPackageAsync(const Model::DescribeModelPackageRequest& request, const DescribeModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a description for the specified model group.</p><p><h3>See Also:</h3>  
@@ -2844,15 +1762,6 @@ namespace SageMaker
          */
         virtual Model::DescribeModelPackageGroupOutcome DescribeModelPackageGroup(const Model::DescribeModelPackageGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeModelPackageGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeModelPackageGroupOutcomeCallable DescribeModelPackageGroupCallable(const Model::DescribeModelPackageGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeModelPackageGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeModelPackageGroupAsync(const Model::DescribeModelPackageGroupRequest& request, const DescribeModelPackageGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a description of a model quality job definition.</p><p><h3>See
@@ -2862,15 +1771,6 @@ namespace SageMaker
          */
         virtual Model::DescribeModelQualityJobDefinitionOutcome DescribeModelQualityJobDefinition(const Model::DescribeModelQualityJobDefinitionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeModelQualityJobDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeModelQualityJobDefinitionOutcomeCallable DescribeModelQualityJobDefinitionCallable(const Model::DescribeModelQualityJobDefinitionRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeModelQualityJobDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeModelQualityJobDefinitionAsync(const Model::DescribeModelQualityJobDefinitionRequest& request, const DescribeModelQualityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the schedule for a monitoring job.</p><p><h3>See Also:</h3>   <a
@@ -2879,15 +1779,6 @@ namespace SageMaker
          */
         virtual Model::DescribeMonitoringScheduleOutcome DescribeMonitoringSchedule(const Model::DescribeMonitoringScheduleRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeMonitoringSchedule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeMonitoringScheduleOutcomeCallable DescribeMonitoringScheduleCallable(const Model::DescribeMonitoringScheduleRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeMonitoringSchedule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeMonitoringScheduleAsync(const Model::DescribeMonitoringScheduleRequest& request, const DescribeMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a notebook instance.</p><p><h3>See Also:</h3>   <a
@@ -2896,15 +1787,6 @@ namespace SageMaker
          */
         virtual Model::DescribeNotebookInstanceOutcome DescribeNotebookInstance(const Model::DescribeNotebookInstanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeNotebookInstance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeNotebookInstanceOutcomeCallable DescribeNotebookInstanceCallable(const Model::DescribeNotebookInstanceRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeNotebookInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeNotebookInstanceAsync(const Model::DescribeNotebookInstanceRequest& request, const DescribeNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a description of a notebook instance lifecycle configuration.</p>
@@ -2916,15 +1798,6 @@ namespace SageMaker
          */
         virtual Model::DescribeNotebookInstanceLifecycleConfigOutcome DescribeNotebookInstanceLifecycleConfig(const Model::DescribeNotebookInstanceLifecycleConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeNotebookInstanceLifecycleConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeNotebookInstanceLifecycleConfigOutcomeCallable DescribeNotebookInstanceLifecycleConfigCallable(const Model::DescribeNotebookInstanceLifecycleConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeNotebookInstanceLifecycleConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeNotebookInstanceLifecycleConfigAsync(const Model::DescribeNotebookInstanceLifecycleConfigRequest& request, const DescribeNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the details of a pipeline.</p><p><h3>See Also:</h3>   <a
@@ -2933,15 +1806,6 @@ namespace SageMaker
          */
         virtual Model::DescribePipelineOutcome DescribePipeline(const Model::DescribePipelineRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribePipeline that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribePipelineOutcomeCallable DescribePipelineCallable(const Model::DescribePipelineRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribePipeline that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribePipelineAsync(const Model::DescribePipelineRequest& request, const DescribePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the details of an execution's pipeline definition.</p><p><h3>See
@@ -2951,15 +1815,6 @@ namespace SageMaker
          */
         virtual Model::DescribePipelineDefinitionForExecutionOutcome DescribePipelineDefinitionForExecution(const Model::DescribePipelineDefinitionForExecutionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribePipelineDefinitionForExecution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribePipelineDefinitionForExecutionOutcomeCallable DescribePipelineDefinitionForExecutionCallable(const Model::DescribePipelineDefinitionForExecutionRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribePipelineDefinitionForExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribePipelineDefinitionForExecutionAsync(const Model::DescribePipelineDefinitionForExecutionRequest& request, const DescribePipelineDefinitionForExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the details of a pipeline execution.</p><p><h3>See Also:</h3>   <a
@@ -2968,15 +1823,6 @@ namespace SageMaker
          */
         virtual Model::DescribePipelineExecutionOutcome DescribePipelineExecution(const Model::DescribePipelineExecutionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribePipelineExecution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribePipelineExecutionOutcomeCallable DescribePipelineExecutionCallable(const Model::DescribePipelineExecutionRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribePipelineExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribePipelineExecutionAsync(const Model::DescribePipelineExecutionRequest& request, const DescribePipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a description of a processing job.</p><p><h3>See Also:</h3>   <a
@@ -2985,15 +1831,6 @@ namespace SageMaker
          */
         virtual Model::DescribeProcessingJobOutcome DescribeProcessingJob(const Model::DescribeProcessingJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeProcessingJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeProcessingJobOutcomeCallable DescribeProcessingJobCallable(const Model::DescribeProcessingJobRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeProcessingJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeProcessingJobAsync(const Model::DescribeProcessingJobRequest& request, const DescribeProcessingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the details of a project.</p><p><h3>See Also:</h3>   <a
@@ -3002,15 +1839,6 @@ namespace SageMaker
          */
         virtual Model::DescribeProjectOutcome DescribeProject(const Model::DescribeProjectRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeProject that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeProjectOutcomeCallable DescribeProjectCallable(const Model::DescribeProjectRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeProject that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeProjectAsync(const Model::DescribeProjectRequest& request, const DescribeProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the Studio Lifecycle Configuration.</p><p><h3>See Also:</h3>   <a
@@ -3019,15 +1847,6 @@ namespace SageMaker
          */
         virtual Model::DescribeStudioLifecycleConfigOutcome DescribeStudioLifecycleConfig(const Model::DescribeStudioLifecycleConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeStudioLifecycleConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeStudioLifecycleConfigOutcomeCallable DescribeStudioLifecycleConfigCallable(const Model::DescribeStudioLifecycleConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeStudioLifecycleConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeStudioLifecycleConfigAsync(const Model::DescribeStudioLifecycleConfigRequest& request, const DescribeStudioLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about a work team provided by a vendor. It returns details
@@ -3038,15 +1857,6 @@ namespace SageMaker
          */
         virtual Model::DescribeSubscribedWorkteamOutcome DescribeSubscribedWorkteam(const Model::DescribeSubscribedWorkteamRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeSubscribedWorkteam that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeSubscribedWorkteamOutcomeCallable DescribeSubscribedWorkteamCallable(const Model::DescribeSubscribedWorkteamRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeSubscribedWorkteam that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeSubscribedWorkteamAsync(const Model::DescribeSubscribedWorkteamRequest& request, const DescribeSubscribedWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a training job. </p> <p>Some of the attributes
@@ -3061,15 +1871,6 @@ namespace SageMaker
          */
         virtual Model::DescribeTrainingJobOutcome DescribeTrainingJob(const Model::DescribeTrainingJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTrainingJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTrainingJobOutcomeCallable DescribeTrainingJobCallable(const Model::DescribeTrainingJobRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTrainingJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTrainingJobAsync(const Model::DescribeTrainingJobRequest& request, const DescribeTrainingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a transform job.</p><p><h3>See Also:</h3>   <a
@@ -3078,15 +1879,6 @@ namespace SageMaker
          */
         virtual Model::DescribeTransformJobOutcome DescribeTransformJob(const Model::DescribeTransformJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTransformJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTransformJobOutcomeCallable DescribeTransformJobCallable(const Model::DescribeTransformJobRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTransformJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTransformJobAsync(const Model::DescribeTransformJobRequest& request, const DescribeTransformJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides a list of a trial's properties.</p><p><h3>See Also:</h3>   <a
@@ -3095,15 +1887,6 @@ namespace SageMaker
          */
         virtual Model::DescribeTrialOutcome DescribeTrial(const Model::DescribeTrialRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTrial that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTrialOutcomeCallable DescribeTrialCallable(const Model::DescribeTrialRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTrial that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTrialAsync(const Model::DescribeTrialRequest& request, const DescribeTrialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides a list of a trials component's properties.</p><p><h3>See Also:</h3> 
@@ -3113,15 +1896,6 @@ namespace SageMaker
          */
         virtual Model::DescribeTrialComponentOutcome DescribeTrialComponent(const Model::DescribeTrialComponentRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTrialComponent that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTrialComponentOutcomeCallable DescribeTrialComponentCallable(const Model::DescribeTrialComponentRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTrialComponent that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTrialComponentAsync(const Model::DescribeTrialComponentRequest& request, const DescribeTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a user profile. For more information, see
@@ -3131,15 +1905,6 @@ namespace SageMaker
          */
         virtual Model::DescribeUserProfileOutcome DescribeUserProfile(const Model::DescribeUserProfileRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeUserProfile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeUserProfileOutcomeCallable DescribeUserProfileCallable(const Model::DescribeUserProfileRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeUserProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeUserProfileAsync(const Model::DescribeUserProfileRequest& request, const DescribeUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists private workforce information, including workforce name, Amazon
@@ -3153,15 +1918,6 @@ namespace SageMaker
          */
         virtual Model::DescribeWorkforceOutcome DescribeWorkforce(const Model::DescribeWorkforceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeWorkforce that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeWorkforceOutcomeCallable DescribeWorkforceCallable(const Model::DescribeWorkforceRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeWorkforce that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeWorkforceAsync(const Model::DescribeWorkforceRequest& request, const DescribeWorkforceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about a specific work team. You can see information such as
@@ -3172,15 +1928,6 @@ namespace SageMaker
          */
         virtual Model::DescribeWorkteamOutcome DescribeWorkteam(const Model::DescribeWorkteamRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeWorkteam that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeWorkteamOutcomeCallable DescribeWorkteamCallable(const Model::DescribeWorkteamRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeWorkteam that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeWorkteamAsync(const Model::DescribeWorkteamRequest& request, const DescribeWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disables using Service Catalog in SageMaker. Service Catalog is used to
@@ -3190,15 +1937,6 @@ namespace SageMaker
          */
         virtual Model::DisableSagemakerServicecatalogPortfolioOutcome DisableSagemakerServicecatalogPortfolio(const Model::DisableSagemakerServicecatalogPortfolioRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisableSagemakerServicecatalogPortfolio that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisableSagemakerServicecatalogPortfolioOutcomeCallable DisableSagemakerServicecatalogPortfolioCallable(const Model::DisableSagemakerServicecatalogPortfolioRequest& request) const;
-
-        /**
-         * An Async wrapper for DisableSagemakerServicecatalogPortfolio that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisableSagemakerServicecatalogPortfolioAsync(const Model::DisableSagemakerServicecatalogPortfolioRequest& request, const DisableSagemakerServicecatalogPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates a trial component from a trial. This doesn't effect other
@@ -3215,15 +1953,6 @@ namespace SageMaker
          */
         virtual Model::DisassociateTrialComponentOutcome DisassociateTrialComponent(const Model::DisassociateTrialComponentRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateTrialComponent that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateTrialComponentOutcomeCallable DisassociateTrialComponentCallable(const Model::DisassociateTrialComponentRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateTrialComponent that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateTrialComponentAsync(const Model::DisassociateTrialComponentRequest& request, const DisassociateTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables using Service Catalog in SageMaker. Service Catalog is used to create
@@ -3233,15 +1962,6 @@ namespace SageMaker
          */
         virtual Model::EnableSagemakerServicecatalogPortfolioOutcome EnableSagemakerServicecatalogPortfolio(const Model::EnableSagemakerServicecatalogPortfolioRequest& request) const;
 
-        /**
-         * A Callable wrapper for EnableSagemakerServicecatalogPortfolio that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnableSagemakerServicecatalogPortfolioOutcomeCallable EnableSagemakerServicecatalogPortfolioCallable(const Model::EnableSagemakerServicecatalogPortfolioRequest& request) const;
-
-        /**
-         * An Async wrapper for EnableSagemakerServicecatalogPortfolio that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnableSagemakerServicecatalogPortfolioAsync(const Model::EnableSagemakerServicecatalogPortfolioRequest& request, const EnableSagemakerServicecatalogPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a fleet.</p><p><h3>See Also:</h3>   <a
@@ -3250,15 +1970,6 @@ namespace SageMaker
          */
         virtual Model::GetDeviceFleetReportOutcome GetDeviceFleetReport(const Model::GetDeviceFleetReportRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDeviceFleetReport that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDeviceFleetReportOutcomeCallable GetDeviceFleetReportCallable(const Model::GetDeviceFleetReportRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDeviceFleetReport that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDeviceFleetReportAsync(const Model::GetDeviceFleetReportRequest& request, const GetDeviceFleetReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The resource policy for the lineage group.</p><p><h3>See Also:</h3>   <a
@@ -3267,15 +1978,6 @@ namespace SageMaker
          */
         virtual Model::GetLineageGroupPolicyOutcome GetLineageGroupPolicy(const Model::GetLineageGroupPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetLineageGroupPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetLineageGroupPolicyOutcomeCallable GetLineageGroupPolicyCallable(const Model::GetLineageGroupPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetLineageGroupPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetLineageGroupPolicyAsync(const Model::GetLineageGroupPolicyRequest& request, const GetLineageGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a resource policy that manages access for a model group. For information
@@ -3288,15 +1990,6 @@ namespace SageMaker
          */
         virtual Model::GetModelPackageGroupPolicyOutcome GetModelPackageGroupPolicy(const Model::GetModelPackageGroupPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetModelPackageGroupPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetModelPackageGroupPolicyOutcomeCallable GetModelPackageGroupPolicyCallable(const Model::GetModelPackageGroupPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetModelPackageGroupPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetModelPackageGroupPolicyAsync(const Model::GetModelPackageGroupPolicyRequest& request, const GetModelPackageGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the status of Service Catalog in SageMaker. Service Catalog is used to
@@ -3306,15 +1999,6 @@ namespace SageMaker
          */
         virtual Model::GetSagemakerServicecatalogPortfolioStatusOutcome GetSagemakerServicecatalogPortfolioStatus(const Model::GetSagemakerServicecatalogPortfolioStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSagemakerServicecatalogPortfolioStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSagemakerServicecatalogPortfolioStatusOutcomeCallable GetSagemakerServicecatalogPortfolioStatusCallable(const Model::GetSagemakerServicecatalogPortfolioStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSagemakerServicecatalogPortfolioStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSagemakerServicecatalogPortfolioStatusAsync(const Model::GetSagemakerServicecatalogPortfolioStatusRequest& request, const GetSagemakerServicecatalogPortfolioStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>An auto-complete API for the search functionality in the Amazon SageMaker
@@ -3327,15 +2011,6 @@ namespace SageMaker
          */
         virtual Model::GetSearchSuggestionsOutcome GetSearchSuggestions(const Model::GetSearchSuggestionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSearchSuggestions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSearchSuggestionsOutcomeCallable GetSearchSuggestionsCallable(const Model::GetSearchSuggestionsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSearchSuggestions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSearchSuggestionsAsync(const Model::GetSearchSuggestionsRequest& request, const GetSearchSuggestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the actions in your account and their properties.</p><p><h3>See
@@ -3345,15 +2020,6 @@ namespace SageMaker
          */
         virtual Model::ListActionsOutcome ListActions(const Model::ListActionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListActions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListActionsOutcomeCallable ListActionsCallable(const Model::ListActionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListActions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListActionsAsync(const Model::ListActionsRequest& request, const ListActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the machine learning algorithms that have been created.</p><p><h3>See
@@ -3363,15 +2029,6 @@ namespace SageMaker
          */
         virtual Model::ListAlgorithmsOutcome ListAlgorithms(const Model::ListAlgorithmsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAlgorithms that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAlgorithmsOutcomeCallable ListAlgorithmsCallable(const Model::ListAlgorithmsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAlgorithms that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAlgorithmsAsync(const Model::ListAlgorithmsRequest& request, const ListAlgorithmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the AppImageConfigs in your account and their properties. The list can
@@ -3382,15 +2039,6 @@ namespace SageMaker
          */
         virtual Model::ListAppImageConfigsOutcome ListAppImageConfigs(const Model::ListAppImageConfigsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAppImageConfigs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAppImageConfigsOutcomeCallable ListAppImageConfigsCallable(const Model::ListAppImageConfigsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAppImageConfigs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAppImageConfigsAsync(const Model::ListAppImageConfigsRequest& request, const ListAppImageConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists apps.</p><p><h3>See Also:</h3>   <a
@@ -3399,15 +2047,6 @@ namespace SageMaker
          */
         virtual Model::ListAppsOutcome ListApps(const Model::ListAppsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListApps that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAppsOutcomeCallable ListAppsCallable(const Model::ListAppsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListApps that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAppsAsync(const Model::ListAppsRequest& request, const ListAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the artifacts in your account and their properties.</p><p><h3>See
@@ -3417,15 +2056,6 @@ namespace SageMaker
          */
         virtual Model::ListArtifactsOutcome ListArtifacts(const Model::ListArtifactsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListArtifacts that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListArtifactsOutcomeCallable ListArtifactsCallable(const Model::ListArtifactsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListArtifacts that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListArtifactsAsync(const Model::ListArtifactsRequest& request, const ListArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the associations in your account and their properties.</p><p><h3>See
@@ -3435,15 +2065,6 @@ namespace SageMaker
          */
         virtual Model::ListAssociationsOutcome ListAssociations(const Model::ListAssociationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAssociationsOutcomeCallable ListAssociationsCallable(const Model::ListAssociationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAssociationsAsync(const Model::ListAssociationsRequest& request, const ListAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Request a list of jobs.</p><p><h3>See Also:</h3>   <a
@@ -3452,15 +2073,6 @@ namespace SageMaker
          */
         virtual Model::ListAutoMLJobsOutcome ListAutoMLJobs(const Model::ListAutoMLJobsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAutoMLJobs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAutoMLJobsOutcomeCallable ListAutoMLJobsCallable(const Model::ListAutoMLJobsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAutoMLJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAutoMLJobsAsync(const Model::ListAutoMLJobsRequest& request, const ListAutoMLJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List the candidates created for the job.</p><p><h3>See Also:</h3>   <a
@@ -3469,15 +2081,6 @@ namespace SageMaker
          */
         virtual Model::ListCandidatesForAutoMLJobOutcome ListCandidatesForAutoMLJob(const Model::ListCandidatesForAutoMLJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListCandidatesForAutoMLJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListCandidatesForAutoMLJobOutcomeCallable ListCandidatesForAutoMLJobCallable(const Model::ListCandidatesForAutoMLJobRequest& request) const;
-
-        /**
-         * An Async wrapper for ListCandidatesForAutoMLJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListCandidatesForAutoMLJobAsync(const Model::ListCandidatesForAutoMLJobRequest& request, const ListCandidatesForAutoMLJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of the Git repositories in your account.</p><p><h3>See Also:</h3>
@@ -3487,15 +2090,6 @@ namespace SageMaker
          */
         virtual Model::ListCodeRepositoriesOutcome ListCodeRepositories(const Model::ListCodeRepositoriesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListCodeRepositories that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListCodeRepositoriesOutcomeCallable ListCodeRepositoriesCallable(const Model::ListCodeRepositoriesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListCodeRepositories that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListCodeRepositoriesAsync(const Model::ListCodeRepositoriesRequest& request, const ListCodeRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists model compilation jobs that satisfy various filters.</p> <p>To create a
@@ -3507,15 +2101,6 @@ namespace SageMaker
          */
         virtual Model::ListCompilationJobsOutcome ListCompilationJobs(const Model::ListCompilationJobsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListCompilationJobs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListCompilationJobsOutcomeCallable ListCompilationJobsCallable(const Model::ListCompilationJobsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListCompilationJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListCompilationJobsAsync(const Model::ListCompilationJobsRequest& request, const ListCompilationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the contexts in your account and their properties.</p><p><h3>See
@@ -3525,15 +2110,6 @@ namespace SageMaker
          */
         virtual Model::ListContextsOutcome ListContexts(const Model::ListContextsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListContexts that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListContextsOutcomeCallable ListContextsCallable(const Model::ListContextsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListContexts that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListContextsAsync(const Model::ListContextsRequest& request, const ListContextsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the data quality job definitions in your account.</p><p><h3>See
@@ -3543,15 +2119,6 @@ namespace SageMaker
          */
         virtual Model::ListDataQualityJobDefinitionsOutcome ListDataQualityJobDefinitions(const Model::ListDataQualityJobDefinitionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDataQualityJobDefinitions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDataQualityJobDefinitionsOutcomeCallable ListDataQualityJobDefinitionsCallable(const Model::ListDataQualityJobDefinitionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDataQualityJobDefinitions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDataQualityJobDefinitionsAsync(const Model::ListDataQualityJobDefinitionsRequest& request, const ListDataQualityJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of devices in the fleet.</p><p><h3>See Also:</h3>   <a
@@ -3560,15 +2127,6 @@ namespace SageMaker
          */
         virtual Model::ListDeviceFleetsOutcome ListDeviceFleets(const Model::ListDeviceFleetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDeviceFleets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDeviceFleetsOutcomeCallable ListDeviceFleetsCallable(const Model::ListDeviceFleetsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDeviceFleets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDeviceFleetsAsync(const Model::ListDeviceFleetsRequest& request, const ListDeviceFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>A list of devices.</p><p><h3>See Also:</h3>   <a
@@ -3577,15 +2135,6 @@ namespace SageMaker
          */
         virtual Model::ListDevicesOutcome ListDevices(const Model::ListDevicesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDevices that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDevicesOutcomeCallable ListDevicesCallable(const Model::ListDevicesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDevices that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDevicesAsync(const Model::ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the domains.</p><p><h3>See Also:</h3>   <a
@@ -3594,15 +2143,6 @@ namespace SageMaker
          */
         virtual Model::ListDomainsOutcome ListDomains(const Model::ListDomainsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDomains that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDomainsOutcomeCallable ListDomainsCallable(const Model::ListDomainsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDomains that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDomainsAsync(const Model::ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all edge deployment plans.</p><p><h3>See Also:</h3>   <a
@@ -3611,15 +2151,6 @@ namespace SageMaker
          */
         virtual Model::ListEdgeDeploymentPlansOutcome ListEdgeDeploymentPlans(const Model::ListEdgeDeploymentPlansRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListEdgeDeploymentPlans that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListEdgeDeploymentPlansOutcomeCallable ListEdgeDeploymentPlansCallable(const Model::ListEdgeDeploymentPlansRequest& request) const;
-
-        /**
-         * An Async wrapper for ListEdgeDeploymentPlans that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListEdgeDeploymentPlansAsync(const Model::ListEdgeDeploymentPlansRequest& request, const ListEdgeDeploymentPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of edge packaging jobs.</p><p><h3>See Also:</h3>   <a
@@ -3628,15 +2159,6 @@ namespace SageMaker
          */
         virtual Model::ListEdgePackagingJobsOutcome ListEdgePackagingJobs(const Model::ListEdgePackagingJobsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListEdgePackagingJobs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListEdgePackagingJobsOutcomeCallable ListEdgePackagingJobsCallable(const Model::ListEdgePackagingJobsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListEdgePackagingJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListEdgePackagingJobsAsync(const Model::ListEdgePackagingJobsRequest& request, const ListEdgePackagingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists endpoint configurations.</p><p><h3>See Also:</h3>   <a
@@ -3645,15 +2167,6 @@ namespace SageMaker
          */
         virtual Model::ListEndpointConfigsOutcome ListEndpointConfigs(const Model::ListEndpointConfigsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListEndpointConfigs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListEndpointConfigsOutcomeCallable ListEndpointConfigsCallable(const Model::ListEndpointConfigsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListEndpointConfigs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListEndpointConfigsAsync(const Model::ListEndpointConfigsRequest& request, const ListEndpointConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists endpoints.</p><p><h3>See Also:</h3>   <a
@@ -3662,15 +2175,6 @@ namespace SageMaker
          */
         virtual Model::ListEndpointsOutcome ListEndpoints(const Model::ListEndpointsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListEndpointsOutcomeCallable ListEndpointsCallable(const Model::ListEndpointsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListEndpointsAsync(const Model::ListEndpointsRequest& request, const ListEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all the experiments in your account. The list can be filtered to show
@@ -3681,15 +2185,6 @@ namespace SageMaker
          */
         virtual Model::ListExperimentsOutcome ListExperiments(const Model::ListExperimentsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListExperiments that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListExperimentsOutcomeCallable ListExperimentsCallable(const Model::ListExperimentsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListExperiments that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListExperimentsAsync(const Model::ListExperimentsRequest& request, const ListExperimentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List <code>FeatureGroup</code>s based on given filter and
@@ -3699,15 +2194,6 @@ namespace SageMaker
          */
         virtual Model::ListFeatureGroupsOutcome ListFeatureGroups(const Model::ListFeatureGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListFeatureGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListFeatureGroupsOutcomeCallable ListFeatureGroupsCallable(const Model::ListFeatureGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListFeatureGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListFeatureGroupsAsync(const Model::ListFeatureGroupsRequest& request, const ListFeatureGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the flow definitions in your account.</p><p><h3>See
@@ -3717,15 +2203,6 @@ namespace SageMaker
          */
         virtual Model::ListFlowDefinitionsOutcome ListFlowDefinitions(const Model::ListFlowDefinitionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListFlowDefinitions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListFlowDefinitionsOutcomeCallable ListFlowDefinitionsCallable(const Model::ListFlowDefinitionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListFlowDefinitions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListFlowDefinitionsAsync(const Model::ListFlowDefinitionsRequest& request, const ListFlowDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the human task user interfaces in your
@@ -3735,15 +2212,6 @@ namespace SageMaker
          */
         virtual Model::ListHumanTaskUisOutcome ListHumanTaskUis(const Model::ListHumanTaskUisRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListHumanTaskUis that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListHumanTaskUisOutcomeCallable ListHumanTaskUisCallable(const Model::ListHumanTaskUisRequest& request) const;
-
-        /**
-         * An Async wrapper for ListHumanTaskUis that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListHumanTaskUisAsync(const Model::ListHumanTaskUisRequest& request, const ListHumanTaskUisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of <a>HyperParameterTuningJobSummary</a> objects that describe
@@ -3754,15 +2222,6 @@ namespace SageMaker
          */
         virtual Model::ListHyperParameterTuningJobsOutcome ListHyperParameterTuningJobs(const Model::ListHyperParameterTuningJobsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListHyperParameterTuningJobs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListHyperParameterTuningJobsOutcomeCallable ListHyperParameterTuningJobsCallable(const Model::ListHyperParameterTuningJobsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListHyperParameterTuningJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListHyperParameterTuningJobsAsync(const Model::ListHyperParameterTuningJobsRequest& request, const ListHyperParameterTuningJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the versions of a specified image and their properties. The list can be
@@ -3772,15 +2231,6 @@ namespace SageMaker
          */
         virtual Model::ListImageVersionsOutcome ListImageVersions(const Model::ListImageVersionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListImageVersions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListImageVersionsOutcomeCallable ListImageVersionsCallable(const Model::ListImageVersionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListImageVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListImageVersionsAsync(const Model::ListImageVersionsRequest& request, const ListImageVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the images in your account and their properties. The list can be
@@ -3791,15 +2241,6 @@ namespace SageMaker
          */
         virtual Model::ListImagesOutcome ListImages(const Model::ListImagesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListImages that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListImagesOutcomeCallable ListImagesCallable(const Model::ListImagesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListImages that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListImagesAsync(const Model::ListImagesRequest& request, const ListImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of the subtasks for an Inference Recommender job.</p> <p>The
@@ -3810,15 +2251,6 @@ namespace SageMaker
          */
         virtual Model::ListInferenceRecommendationsJobStepsOutcome ListInferenceRecommendationsJobSteps(const Model::ListInferenceRecommendationsJobStepsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListInferenceRecommendationsJobSteps that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListInferenceRecommendationsJobStepsOutcomeCallable ListInferenceRecommendationsJobStepsCallable(const Model::ListInferenceRecommendationsJobStepsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListInferenceRecommendationsJobSteps that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListInferenceRecommendationsJobStepsAsync(const Model::ListInferenceRecommendationsJobStepsRequest& request, const ListInferenceRecommendationsJobStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists recommendation jobs that satisfy various filters.</p><p><h3>See
@@ -3828,15 +2260,6 @@ namespace SageMaker
          */
         virtual Model::ListInferenceRecommendationsJobsOutcome ListInferenceRecommendationsJobs(const Model::ListInferenceRecommendationsJobsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListInferenceRecommendationsJobs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListInferenceRecommendationsJobsOutcomeCallable ListInferenceRecommendationsJobsCallable(const Model::ListInferenceRecommendationsJobsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListInferenceRecommendationsJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListInferenceRecommendationsJobsAsync(const Model::ListInferenceRecommendationsJobsRequest& request, const ListInferenceRecommendationsJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of labeling jobs.</p><p><h3>See Also:</h3>   <a
@@ -3845,15 +2268,6 @@ namespace SageMaker
          */
         virtual Model::ListLabelingJobsOutcome ListLabelingJobs(const Model::ListLabelingJobsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListLabelingJobs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListLabelingJobsOutcomeCallable ListLabelingJobsCallable(const Model::ListLabelingJobsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListLabelingJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListLabelingJobsAsync(const Model::ListLabelingJobsRequest& request, const ListLabelingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of labeling jobs assigned to a specified work team.</p><p><h3>See
@@ -3863,15 +2277,6 @@ namespace SageMaker
          */
         virtual Model::ListLabelingJobsForWorkteamOutcome ListLabelingJobsForWorkteam(const Model::ListLabelingJobsForWorkteamRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListLabelingJobsForWorkteam that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListLabelingJobsForWorkteamOutcomeCallable ListLabelingJobsForWorkteamCallable(const Model::ListLabelingJobsForWorkteamRequest& request) const;
-
-        /**
-         * An Async wrapper for ListLabelingJobsForWorkteam that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListLabelingJobsForWorkteamAsync(const Model::ListLabelingJobsForWorkteamRequest& request, const ListLabelingJobsForWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>A list of lineage groups shared with your Amazon Web Services account. For
@@ -3884,15 +2289,6 @@ namespace SageMaker
          */
         virtual Model::ListLineageGroupsOutcome ListLineageGroups(const Model::ListLineageGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListLineageGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListLineageGroupsOutcomeCallable ListLineageGroupsCallable(const Model::ListLineageGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListLineageGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListLineageGroupsAsync(const Model::ListLineageGroupsRequest& request, const ListLineageGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists model bias jobs definitions that satisfy various filters.</p><p><h3>See
@@ -3902,15 +2298,6 @@ namespace SageMaker
          */
         virtual Model::ListModelBiasJobDefinitionsOutcome ListModelBiasJobDefinitions(const Model::ListModelBiasJobDefinitionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListModelBiasJobDefinitions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListModelBiasJobDefinitionsOutcomeCallable ListModelBiasJobDefinitionsCallable(const Model::ListModelBiasJobDefinitionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListModelBiasJobDefinitions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListModelBiasJobDefinitionsAsync(const Model::ListModelBiasJobDefinitionsRequest& request, const ListModelBiasJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists model explainability job definitions that satisfy various
@@ -3920,15 +2307,6 @@ namespace SageMaker
          */
         virtual Model::ListModelExplainabilityJobDefinitionsOutcome ListModelExplainabilityJobDefinitions(const Model::ListModelExplainabilityJobDefinitionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListModelExplainabilityJobDefinitions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListModelExplainabilityJobDefinitionsOutcomeCallable ListModelExplainabilityJobDefinitionsCallable(const Model::ListModelExplainabilityJobDefinitionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListModelExplainabilityJobDefinitions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListModelExplainabilityJobDefinitionsAsync(const Model::ListModelExplainabilityJobDefinitionsRequest& request, const ListModelExplainabilityJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the domain, framework, task, and model name of standard machine
@@ -3938,15 +2316,6 @@ namespace SageMaker
          */
         virtual Model::ListModelMetadataOutcome ListModelMetadata(const Model::ListModelMetadataRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListModelMetadata that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListModelMetadataOutcomeCallable ListModelMetadataCallable(const Model::ListModelMetadataRequest& request) const;
-
-        /**
-         * An Async wrapper for ListModelMetadata that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListModelMetadataAsync(const Model::ListModelMetadataRequest& request, const ListModelMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of the model groups in your Amazon Web Services
@@ -3956,15 +2325,6 @@ namespace SageMaker
          */
         virtual Model::ListModelPackageGroupsOutcome ListModelPackageGroups(const Model::ListModelPackageGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListModelPackageGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListModelPackageGroupsOutcomeCallable ListModelPackageGroupsCallable(const Model::ListModelPackageGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListModelPackageGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListModelPackageGroupsAsync(const Model::ListModelPackageGroupsRequest& request, const ListModelPackageGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the model packages that have been created.</p><p><h3>See Also:</h3>  
@@ -3974,15 +2334,6 @@ namespace SageMaker
          */
         virtual Model::ListModelPackagesOutcome ListModelPackages(const Model::ListModelPackagesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListModelPackages that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListModelPackagesOutcomeCallable ListModelPackagesCallable(const Model::ListModelPackagesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListModelPackages that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListModelPackagesAsync(const Model::ListModelPackagesRequest& request, const ListModelPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of model quality monitoring job definitions in your
@@ -3992,15 +2343,6 @@ namespace SageMaker
          */
         virtual Model::ListModelQualityJobDefinitionsOutcome ListModelQualityJobDefinitions(const Model::ListModelQualityJobDefinitionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListModelQualityJobDefinitions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListModelQualityJobDefinitionsOutcomeCallable ListModelQualityJobDefinitionsCallable(const Model::ListModelQualityJobDefinitionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListModelQualityJobDefinitions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListModelQualityJobDefinitionsAsync(const Model::ListModelQualityJobDefinitionsRequest& request, const ListModelQualityJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists models created with the <code>CreateModel</code> API.</p><p><h3>See
@@ -4010,15 +2352,6 @@ namespace SageMaker
          */
         virtual Model::ListModelsOutcome ListModels(const Model::ListModelsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListModels that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListModelsOutcomeCallable ListModelsCallable(const Model::ListModelsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListModels that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListModelsAsync(const Model::ListModelsRequest& request, const ListModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns list of all monitoring job executions.</p><p><h3>See Also:</h3>   <a
@@ -4027,15 +2360,6 @@ namespace SageMaker
          */
         virtual Model::ListMonitoringExecutionsOutcome ListMonitoringExecutions(const Model::ListMonitoringExecutionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListMonitoringExecutions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListMonitoringExecutionsOutcomeCallable ListMonitoringExecutionsCallable(const Model::ListMonitoringExecutionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListMonitoringExecutions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListMonitoringExecutionsAsync(const Model::ListMonitoringExecutionsRequest& request, const ListMonitoringExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns list of all monitoring schedules.</p><p><h3>See Also:</h3>   <a
@@ -4044,15 +2368,6 @@ namespace SageMaker
          */
         virtual Model::ListMonitoringSchedulesOutcome ListMonitoringSchedules(const Model::ListMonitoringSchedulesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListMonitoringSchedules that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListMonitoringSchedulesOutcomeCallable ListMonitoringSchedulesCallable(const Model::ListMonitoringSchedulesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListMonitoringSchedules that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListMonitoringSchedulesAsync(const Model::ListMonitoringSchedulesRequest& request, const ListMonitoringSchedulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists notebook instance lifestyle configurations created with the
@@ -4062,15 +2377,6 @@ namespace SageMaker
          */
         virtual Model::ListNotebookInstanceLifecycleConfigsOutcome ListNotebookInstanceLifecycleConfigs(const Model::ListNotebookInstanceLifecycleConfigsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListNotebookInstanceLifecycleConfigs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListNotebookInstanceLifecycleConfigsOutcomeCallable ListNotebookInstanceLifecycleConfigsCallable(const Model::ListNotebookInstanceLifecycleConfigsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListNotebookInstanceLifecycleConfigs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListNotebookInstanceLifecycleConfigsAsync(const Model::ListNotebookInstanceLifecycleConfigsRequest& request, const ListNotebookInstanceLifecycleConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of the SageMaker notebook instances in the requester's account
@@ -4080,15 +2386,6 @@ namespace SageMaker
          */
         virtual Model::ListNotebookInstancesOutcome ListNotebookInstances(const Model::ListNotebookInstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListNotebookInstances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListNotebookInstancesOutcomeCallable ListNotebookInstancesCallable(const Model::ListNotebookInstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListNotebookInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListNotebookInstancesAsync(const Model::ListNotebookInstancesRequest& request, const ListNotebookInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of <code>PipeLineExecutionStep</code> objects.</p><p><h3>See
@@ -4098,15 +2395,6 @@ namespace SageMaker
          */
         virtual Model::ListPipelineExecutionStepsOutcome ListPipelineExecutionSteps(const Model::ListPipelineExecutionStepsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPipelineExecutionSteps that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPipelineExecutionStepsOutcomeCallable ListPipelineExecutionStepsCallable(const Model::ListPipelineExecutionStepsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPipelineExecutionSteps that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPipelineExecutionStepsAsync(const Model::ListPipelineExecutionStepsRequest& request, const ListPipelineExecutionStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of the pipeline executions.</p><p><h3>See Also:</h3>   <a
@@ -4115,15 +2403,6 @@ namespace SageMaker
          */
         virtual Model::ListPipelineExecutionsOutcome ListPipelineExecutions(const Model::ListPipelineExecutionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPipelineExecutions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPipelineExecutionsOutcomeCallable ListPipelineExecutionsCallable(const Model::ListPipelineExecutionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPipelineExecutions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPipelineExecutionsAsync(const Model::ListPipelineExecutionsRequest& request, const ListPipelineExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of parameters for a pipeline execution.</p><p><h3>See Also:</h3> 
@@ -4133,15 +2412,6 @@ namespace SageMaker
          */
         virtual Model::ListPipelineParametersForExecutionOutcome ListPipelineParametersForExecution(const Model::ListPipelineParametersForExecutionRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPipelineParametersForExecution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPipelineParametersForExecutionOutcomeCallable ListPipelineParametersForExecutionCallable(const Model::ListPipelineParametersForExecutionRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPipelineParametersForExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPipelineParametersForExecutionAsync(const Model::ListPipelineParametersForExecutionRequest& request, const ListPipelineParametersForExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of pipelines.</p><p><h3>See Also:</h3>   <a
@@ -4150,15 +2420,6 @@ namespace SageMaker
          */
         virtual Model::ListPipelinesOutcome ListPipelines(const Model::ListPipelinesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPipelines that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPipelinesOutcomeCallable ListPipelinesCallable(const Model::ListPipelinesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPipelines that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPipelinesAsync(const Model::ListPipelinesRequest& request, const ListPipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists processing jobs that satisfy various filters.</p><p><h3>See Also:</h3> 
@@ -4168,15 +2429,6 @@ namespace SageMaker
          */
         virtual Model::ListProcessingJobsOutcome ListProcessingJobs(const Model::ListProcessingJobsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListProcessingJobs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListProcessingJobsOutcomeCallable ListProcessingJobsCallable(const Model::ListProcessingJobsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListProcessingJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListProcessingJobsAsync(const Model::ListProcessingJobsRequest& request, const ListProcessingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of the projects in an Amazon Web Services account.</p><p><h3>See
@@ -4186,15 +2438,6 @@ namespace SageMaker
          */
         virtual Model::ListProjectsOutcome ListProjects(const Model::ListProjectsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListProjects that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListProjectsOutcomeCallable ListProjectsCallable(const Model::ListProjectsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListProjects that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListProjectsAsync(const Model::ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists devices allocated to the stage, containing detailed device information
@@ -4204,15 +2447,6 @@ namespace SageMaker
          */
         virtual Model::ListStageDevicesOutcome ListStageDevices(const Model::ListStageDevicesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListStageDevices that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListStageDevicesOutcomeCallable ListStageDevicesCallable(const Model::ListStageDevicesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListStageDevices that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListStageDevicesAsync(const Model::ListStageDevicesRequest& request, const ListStageDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the Studio Lifecycle Configurations in your Amazon Web Services
@@ -4222,15 +2456,6 @@ namespace SageMaker
          */
         virtual Model::ListStudioLifecycleConfigsOutcome ListStudioLifecycleConfigs(const Model::ListStudioLifecycleConfigsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListStudioLifecycleConfigs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListStudioLifecycleConfigsOutcomeCallable ListStudioLifecycleConfigsCallable(const Model::ListStudioLifecycleConfigsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListStudioLifecycleConfigs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListStudioLifecycleConfigsAsync(const Model::ListStudioLifecycleConfigsRequest& request, const ListStudioLifecycleConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of the work teams that you are subscribed to in the Amazon Web
@@ -4242,15 +2467,6 @@ namespace SageMaker
          */
         virtual Model::ListSubscribedWorkteamsOutcome ListSubscribedWorkteams(const Model::ListSubscribedWorkteamsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSubscribedWorkteams that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListSubscribedWorkteamsOutcomeCallable ListSubscribedWorkteamsCallable(const Model::ListSubscribedWorkteamsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSubscribedWorkteams that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListSubscribedWorkteamsAsync(const Model::ListSubscribedWorkteamsRequest& request, const ListSubscribedWorkteamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the tags for the specified SageMaker resource.</p><p><h3>See
@@ -4260,15 +2476,6 @@ namespace SageMaker
          */
         virtual Model::ListTagsOutcome ListTags(const Model::ListTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsOutcomeCallable ListTagsCallable(const Model::ListTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsAsync(const Model::ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists training jobs.</p>  <p>When <code>StatusEquals</code> and
@@ -4290,15 +2497,6 @@ namespace SageMaker
          */
         virtual Model::ListTrainingJobsOutcome ListTrainingJobs(const Model::ListTrainingJobsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTrainingJobs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTrainingJobsOutcomeCallable ListTrainingJobsCallable(const Model::ListTrainingJobsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTrainingJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTrainingJobsAsync(const Model::ListTrainingJobsRequest& request, const ListTrainingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of <a>TrainingJobSummary</a> objects that describe the training
@@ -4308,15 +2506,6 @@ namespace SageMaker
          */
         virtual Model::ListTrainingJobsForHyperParameterTuningJobOutcome ListTrainingJobsForHyperParameterTuningJob(const Model::ListTrainingJobsForHyperParameterTuningJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTrainingJobsForHyperParameterTuningJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTrainingJobsForHyperParameterTuningJobOutcomeCallable ListTrainingJobsForHyperParameterTuningJobCallable(const Model::ListTrainingJobsForHyperParameterTuningJobRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTrainingJobsForHyperParameterTuningJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTrainingJobsForHyperParameterTuningJobAsync(const Model::ListTrainingJobsForHyperParameterTuningJobRequest& request, const ListTrainingJobsForHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists transform jobs.</p><p><h3>See Also:</h3>   <a
@@ -4325,15 +2514,6 @@ namespace SageMaker
          */
         virtual Model::ListTransformJobsOutcome ListTransformJobs(const Model::ListTransformJobsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTransformJobs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTransformJobsOutcomeCallable ListTransformJobsCallable(const Model::ListTransformJobsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTransformJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTransformJobsAsync(const Model::ListTransformJobsRequest& request, const ListTransformJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the trial components in your account. You can sort the list by trial
@@ -4347,15 +2527,6 @@ namespace SageMaker
          */
         virtual Model::ListTrialComponentsOutcome ListTrialComponents(const Model::ListTrialComponentsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTrialComponents that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTrialComponentsOutcomeCallable ListTrialComponentsCallable(const Model::ListTrialComponentsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTrialComponents that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTrialComponentsAsync(const Model::ListTrialComponentsRequest& request, const ListTrialComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the trials in your account. Specify an experiment name to limit the
@@ -4369,15 +2540,6 @@ namespace SageMaker
          */
         virtual Model::ListTrialsOutcome ListTrials(const Model::ListTrialsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTrials that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTrialsOutcomeCallable ListTrialsCallable(const Model::ListTrialsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTrials that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTrialsAsync(const Model::ListTrialsRequest& request, const ListTrialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists user profiles.</p><p><h3>See Also:</h3>   <a
@@ -4386,15 +2548,6 @@ namespace SageMaker
          */
         virtual Model::ListUserProfilesOutcome ListUserProfiles(const Model::ListUserProfilesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListUserProfiles that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListUserProfilesOutcomeCallable ListUserProfilesCallable(const Model::ListUserProfilesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListUserProfiles that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListUserProfilesAsync(const Model::ListUserProfilesRequest& request, const ListUserProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Use this operation to list all private and vendor workforces in an Amazon Web
@@ -4405,15 +2558,6 @@ namespace SageMaker
          */
         virtual Model::ListWorkforcesOutcome ListWorkforces(const Model::ListWorkforcesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListWorkforces that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListWorkforcesOutcomeCallable ListWorkforcesCallable(const Model::ListWorkforcesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListWorkforces that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListWorkforcesAsync(const Model::ListWorkforcesRequest& request, const ListWorkforcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of private work teams that you have defined in a region. The list
@@ -4424,15 +2568,6 @@ namespace SageMaker
          */
         virtual Model::ListWorkteamsOutcome ListWorkteams(const Model::ListWorkteamsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListWorkteams that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListWorkteamsOutcomeCallable ListWorkteamsCallable(const Model::ListWorkteamsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListWorkteams that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListWorkteamsAsync(const Model::ListWorkteamsRequest& request, const ListWorkteamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds a resouce policy to control access to a model group. For information
@@ -4445,15 +2580,6 @@ namespace SageMaker
          */
         virtual Model::PutModelPackageGroupPolicyOutcome PutModelPackageGroupPolicy(const Model::PutModelPackageGroupPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutModelPackageGroupPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutModelPackageGroupPolicyOutcomeCallable PutModelPackageGroupPolicyCallable(const Model::PutModelPackageGroupPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for PutModelPackageGroupPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutModelPackageGroupPolicyAsync(const Model::PutModelPackageGroupPolicyRequest& request, const PutModelPackageGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Use this action to inspect your lineage and discover relationships between
@@ -4466,15 +2592,6 @@ namespace SageMaker
          */
         virtual Model::QueryLineageOutcome QueryLineage(const Model::QueryLineageRequest& request) const;
 
-        /**
-         * A Callable wrapper for QueryLineage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::QueryLineageOutcomeCallable QueryLineageCallable(const Model::QueryLineageRequest& request) const;
-
-        /**
-         * An Async wrapper for QueryLineage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void QueryLineageAsync(const Model::QueryLineageRequest& request, const QueryLineageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Register devices.</p><p><h3>See Also:</h3>   <a
@@ -4483,15 +2600,6 @@ namespace SageMaker
          */
         virtual Model::RegisterDevicesOutcome RegisterDevices(const Model::RegisterDevicesRequest& request) const;
 
-        /**
-         * A Callable wrapper for RegisterDevices that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RegisterDevicesOutcomeCallable RegisterDevicesCallable(const Model::RegisterDevicesRequest& request) const;
-
-        /**
-         * An Async wrapper for RegisterDevices that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RegisterDevicesAsync(const Model::RegisterDevicesRequest& request, const RegisterDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Renders the UI template so that you can preview the worker's experience.
@@ -4501,15 +2609,6 @@ namespace SageMaker
          */
         virtual Model::RenderUiTemplateOutcome RenderUiTemplate(const Model::RenderUiTemplateRequest& request) const;
 
-        /**
-         * A Callable wrapper for RenderUiTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RenderUiTemplateOutcomeCallable RenderUiTemplateCallable(const Model::RenderUiTemplateRequest& request) const;
-
-        /**
-         * An Async wrapper for RenderUiTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RenderUiTemplateAsync(const Model::RenderUiTemplateRequest& request, const RenderUiTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retry the execution of the pipeline.</p><p><h3>See Also:</h3>   <a
@@ -4518,15 +2617,6 @@ namespace SageMaker
          */
         virtual Model::RetryPipelineExecutionOutcome RetryPipelineExecution(const Model::RetryPipelineExecutionRequest& request) const;
 
-        /**
-         * A Callable wrapper for RetryPipelineExecution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RetryPipelineExecutionOutcomeCallable RetryPipelineExecutionCallable(const Model::RetryPipelineExecutionRequest& request) const;
-
-        /**
-         * An Async wrapper for RetryPipelineExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RetryPipelineExecutionAsync(const Model::RetryPipelineExecutionRequest& request, const RetryPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Finds Amazon SageMaker resources that match a search query. Matching
@@ -4539,15 +2629,6 @@ namespace SageMaker
          */
         virtual Model::SearchOutcome Search(const Model::SearchRequest& request) const;
 
-        /**
-         * A Callable wrapper for Search that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SearchOutcomeCallable SearchCallable(const Model::SearchRequest& request) const;
-
-        /**
-         * An Async wrapper for Search that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SearchAsync(const Model::SearchRequest& request, const SearchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Notifies the pipeline that the execution of a callback step failed, along
@@ -4559,15 +2640,6 @@ namespace SageMaker
          */
         virtual Model::SendPipelineExecutionStepFailureOutcome SendPipelineExecutionStepFailure(const Model::SendPipelineExecutionStepFailureRequest& request) const;
 
-        /**
-         * A Callable wrapper for SendPipelineExecutionStepFailure that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SendPipelineExecutionStepFailureOutcomeCallable SendPipelineExecutionStepFailureCallable(const Model::SendPipelineExecutionStepFailureRequest& request) const;
-
-        /**
-         * An Async wrapper for SendPipelineExecutionStepFailure that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SendPipelineExecutionStepFailureAsync(const Model::SendPipelineExecutionStepFailureRequest& request, const SendPipelineExecutionStepFailureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Notifies the pipeline that the execution of a callback step succeeded and
@@ -4579,15 +2651,6 @@ namespace SageMaker
          */
         virtual Model::SendPipelineExecutionStepSuccessOutcome SendPipelineExecutionStepSuccess(const Model::SendPipelineExecutionStepSuccessRequest& request) const;
 
-        /**
-         * A Callable wrapper for SendPipelineExecutionStepSuccess that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SendPipelineExecutionStepSuccessOutcomeCallable SendPipelineExecutionStepSuccessCallable(const Model::SendPipelineExecutionStepSuccessRequest& request) const;
-
-        /**
-         * An Async wrapper for SendPipelineExecutionStepSuccess that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SendPipelineExecutionStepSuccessAsync(const Model::SendPipelineExecutionStepSuccessRequest& request, const SendPipelineExecutionStepSuccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts a stage in an edge deployment plan.</p><p><h3>See Also:</h3>   <a
@@ -4596,15 +2659,6 @@ namespace SageMaker
          */
         virtual Model::StartEdgeDeploymentStageOutcome StartEdgeDeploymentStage(const Model::StartEdgeDeploymentStageRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartEdgeDeploymentStage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartEdgeDeploymentStageOutcomeCallable StartEdgeDeploymentStageCallable(const Model::StartEdgeDeploymentStageRequest& request) const;
-
-        /**
-         * An Async wrapper for StartEdgeDeploymentStage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartEdgeDeploymentStageAsync(const Model::StartEdgeDeploymentStageRequest& request, const StartEdgeDeploymentStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts a previously stopped monitoring schedule.</p>  <p>By default,
@@ -4615,15 +2669,6 @@ namespace SageMaker
          */
         virtual Model::StartMonitoringScheduleOutcome StartMonitoringSchedule(const Model::StartMonitoringScheduleRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartMonitoringSchedule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartMonitoringScheduleOutcomeCallable StartMonitoringScheduleCallable(const Model::StartMonitoringScheduleRequest& request) const;
-
-        /**
-         * An Async wrapper for StartMonitoringSchedule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartMonitoringScheduleAsync(const Model::StartMonitoringScheduleRequest& request, const StartMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Launches an ML compute instance with the latest version of the libraries and
@@ -4636,15 +2681,6 @@ namespace SageMaker
          */
         virtual Model::StartNotebookInstanceOutcome StartNotebookInstance(const Model::StartNotebookInstanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartNotebookInstance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartNotebookInstanceOutcomeCallable StartNotebookInstanceCallable(const Model::StartNotebookInstanceRequest& request) const;
-
-        /**
-         * An Async wrapper for StartNotebookInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartNotebookInstanceAsync(const Model::StartNotebookInstanceRequest& request, const StartNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts a pipeline execution.</p><p><h3>See Also:</h3>   <a
@@ -4653,15 +2689,6 @@ namespace SageMaker
          */
         virtual Model::StartPipelineExecutionOutcome StartPipelineExecution(const Model::StartPipelineExecutionRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartPipelineExecution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartPipelineExecutionOutcomeCallable StartPipelineExecutionCallable(const Model::StartPipelineExecutionRequest& request) const;
-
-        /**
-         * An Async wrapper for StartPipelineExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartPipelineExecutionAsync(const Model::StartPipelineExecutionRequest& request, const StartPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>A method for forcing the termination of a running job.</p><p><h3>See
@@ -4671,15 +2698,6 @@ namespace SageMaker
          */
         virtual Model::StopAutoMLJobOutcome StopAutoMLJob(const Model::StopAutoMLJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopAutoMLJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopAutoMLJobOutcomeCallable StopAutoMLJobCallable(const Model::StopAutoMLJobRequest& request) const;
-
-        /**
-         * An Async wrapper for StopAutoMLJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopAutoMLJobAsync(const Model::StopAutoMLJobRequest& request, const StopAutoMLJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops a model compilation job.</p> <p> To stop a job, Amazon SageMaker sends
@@ -4695,15 +2713,6 @@ namespace SageMaker
          */
         virtual Model::StopCompilationJobOutcome StopCompilationJob(const Model::StopCompilationJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopCompilationJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopCompilationJobOutcomeCallable StopCompilationJobCallable(const Model::StopCompilationJobRequest& request) const;
-
-        /**
-         * An Async wrapper for StopCompilationJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopCompilationJobAsync(const Model::StopCompilationJobRequest& request, const StopCompilationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops a stage in an edge deployment plan.</p><p><h3>See Also:</h3>   <a
@@ -4712,15 +2721,6 @@ namespace SageMaker
          */
         virtual Model::StopEdgeDeploymentStageOutcome StopEdgeDeploymentStage(const Model::StopEdgeDeploymentStageRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopEdgeDeploymentStage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopEdgeDeploymentStageOutcomeCallable StopEdgeDeploymentStageCallable(const Model::StopEdgeDeploymentStageRequest& request) const;
-
-        /**
-         * An Async wrapper for StopEdgeDeploymentStage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopEdgeDeploymentStageAsync(const Model::StopEdgeDeploymentStageRequest& request, const StopEdgeDeploymentStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Request to stop an edge packaging job.</p><p><h3>See Also:</h3>   <a
@@ -4729,15 +2729,6 @@ namespace SageMaker
          */
         virtual Model::StopEdgePackagingJobOutcome StopEdgePackagingJob(const Model::StopEdgePackagingJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopEdgePackagingJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopEdgePackagingJobOutcomeCallable StopEdgePackagingJobCallable(const Model::StopEdgePackagingJobRequest& request) const;
-
-        /**
-         * An Async wrapper for StopEdgePackagingJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopEdgePackagingJobAsync(const Model::StopEdgePackagingJobRequest& request, const StopEdgePackagingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops a running hyperparameter tuning job and all running training jobs that
@@ -4751,15 +2742,6 @@ namespace SageMaker
          */
         virtual Model::StopHyperParameterTuningJobOutcome StopHyperParameterTuningJob(const Model::StopHyperParameterTuningJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopHyperParameterTuningJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopHyperParameterTuningJobOutcomeCallable StopHyperParameterTuningJobCallable(const Model::StopHyperParameterTuningJobRequest& request) const;
-
-        /**
-         * An Async wrapper for StopHyperParameterTuningJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopHyperParameterTuningJobAsync(const Model::StopHyperParameterTuningJobRequest& request, const StopHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops an Inference Recommender job.</p><p><h3>See Also:</h3>   <a
@@ -4768,15 +2750,6 @@ namespace SageMaker
          */
         virtual Model::StopInferenceRecommendationsJobOutcome StopInferenceRecommendationsJob(const Model::StopInferenceRecommendationsJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopInferenceRecommendationsJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopInferenceRecommendationsJobOutcomeCallable StopInferenceRecommendationsJobCallable(const Model::StopInferenceRecommendationsJobRequest& request) const;
-
-        /**
-         * An Async wrapper for StopInferenceRecommendationsJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopInferenceRecommendationsJobAsync(const Model::StopInferenceRecommendationsJobRequest& request, const StopInferenceRecommendationsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops a running labeling job. A job that is stopped cannot be restarted. Any
@@ -4787,15 +2760,6 @@ namespace SageMaker
          */
         virtual Model::StopLabelingJobOutcome StopLabelingJob(const Model::StopLabelingJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopLabelingJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopLabelingJobOutcomeCallable StopLabelingJobCallable(const Model::StopLabelingJobRequest& request) const;
-
-        /**
-         * An Async wrapper for StopLabelingJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopLabelingJobAsync(const Model::StopLabelingJobRequest& request, const StopLabelingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops a previously started monitoring schedule.</p><p><h3>See Also:</h3>   <a
@@ -4804,15 +2768,6 @@ namespace SageMaker
          */
         virtual Model::StopMonitoringScheduleOutcome StopMonitoringSchedule(const Model::StopMonitoringScheduleRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopMonitoringSchedule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopMonitoringScheduleOutcomeCallable StopMonitoringScheduleCallable(const Model::StopMonitoringScheduleRequest& request) const;
-
-        /**
-         * An Async wrapper for StopMonitoringSchedule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopMonitoringScheduleAsync(const Model::StopMonitoringScheduleRequest& request, const StopMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Terminates the ML compute instance. Before terminating the instance,
@@ -4828,15 +2783,6 @@ namespace SageMaker
          */
         virtual Model::StopNotebookInstanceOutcome StopNotebookInstance(const Model::StopNotebookInstanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopNotebookInstance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopNotebookInstanceOutcomeCallable StopNotebookInstanceCallable(const Model::StopNotebookInstanceRequest& request) const;
-
-        /**
-         * An Async wrapper for StopNotebookInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopNotebookInstanceAsync(const Model::StopNotebookInstanceRequest& request, const StopNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops a pipeline execution.</p> <p> <b>Callback Step</b> </p> <p>A pipeline
@@ -4863,15 +2809,6 @@ namespace SageMaker
          */
         virtual Model::StopPipelineExecutionOutcome StopPipelineExecution(const Model::StopPipelineExecutionRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopPipelineExecution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopPipelineExecutionOutcomeCallable StopPipelineExecutionCallable(const Model::StopPipelineExecutionRequest& request) const;
-
-        /**
-         * An Async wrapper for StopPipelineExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopPipelineExecutionAsync(const Model::StopPipelineExecutionRequest& request, const StopPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops a processing job.</p><p><h3>See Also:</h3>   <a
@@ -4880,15 +2817,6 @@ namespace SageMaker
          */
         virtual Model::StopProcessingJobOutcome StopProcessingJob(const Model::StopProcessingJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopProcessingJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopProcessingJobOutcomeCallable StopProcessingJobCallable(const Model::StopProcessingJobRequest& request) const;
-
-        /**
-         * An Async wrapper for StopProcessingJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopProcessingJobAsync(const Model::StopProcessingJobRequest& request, const StopProcessingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops a training job. To stop a job, SageMaker sends the algorithm the
@@ -4903,15 +2831,6 @@ namespace SageMaker
          */
         virtual Model::StopTrainingJobOutcome StopTrainingJob(const Model::StopTrainingJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopTrainingJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopTrainingJobOutcomeCallable StopTrainingJobCallable(const Model::StopTrainingJobRequest& request) const;
-
-        /**
-         * An Async wrapper for StopTrainingJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopTrainingJobAsync(const Model::StopTrainingJobRequest& request, const StopTrainingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops a batch transform job.</p> <p>When Amazon SageMaker receives a
@@ -4925,15 +2844,6 @@ namespace SageMaker
          */
         virtual Model::StopTransformJobOutcome StopTransformJob(const Model::StopTransformJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopTransformJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopTransformJobOutcomeCallable StopTransformJobCallable(const Model::StopTransformJobRequest& request) const;
-
-        /**
-         * An Async wrapper for StopTransformJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopTransformJobAsync(const Model::StopTransformJobRequest& request, const StopTransformJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an action.</p><p><h3>See Also:</h3>   <a
@@ -4942,15 +2852,6 @@ namespace SageMaker
          */
         virtual Model::UpdateActionOutcome UpdateAction(const Model::UpdateActionRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateAction that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateActionOutcomeCallable UpdateActionCallable(const Model::UpdateActionRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateAction that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateActionAsync(const Model::UpdateActionRequest& request, const UpdateActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the properties of an AppImageConfig.</p><p><h3>See Also:</h3>   <a
@@ -4959,15 +2860,6 @@ namespace SageMaker
          */
         virtual Model::UpdateAppImageConfigOutcome UpdateAppImageConfig(const Model::UpdateAppImageConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateAppImageConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateAppImageConfigOutcomeCallable UpdateAppImageConfigCallable(const Model::UpdateAppImageConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateAppImageConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateAppImageConfigAsync(const Model::UpdateAppImageConfigRequest& request, const UpdateAppImageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an artifact.</p><p><h3>See Also:</h3>   <a
@@ -4976,15 +2868,6 @@ namespace SageMaker
          */
         virtual Model::UpdateArtifactOutcome UpdateArtifact(const Model::UpdateArtifactRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateArtifact that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateArtifactOutcomeCallable UpdateArtifactCallable(const Model::UpdateArtifactRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateArtifact that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateArtifactAsync(const Model::UpdateArtifactRequest& request, const UpdateArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the specified Git repository with the specified values.</p><p><h3>See
@@ -4994,15 +2877,6 @@ namespace SageMaker
          */
         virtual Model::UpdateCodeRepositoryOutcome UpdateCodeRepository(const Model::UpdateCodeRepositoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateCodeRepository that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateCodeRepositoryOutcomeCallable UpdateCodeRepositoryCallable(const Model::UpdateCodeRepositoryRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateCodeRepository that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateCodeRepositoryAsync(const Model::UpdateCodeRepositoryRequest& request, const UpdateCodeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a context.</p><p><h3>See Also:</h3>   <a
@@ -5011,15 +2885,6 @@ namespace SageMaker
          */
         virtual Model::UpdateContextOutcome UpdateContext(const Model::UpdateContextRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateContext that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateContextOutcomeCallable UpdateContextCallable(const Model::UpdateContextRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateContext that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateContextAsync(const Model::UpdateContextRequest& request, const UpdateContextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a fleet of devices.</p><p><h3>See Also:</h3>   <a
@@ -5028,15 +2893,6 @@ namespace SageMaker
          */
         virtual Model::UpdateDeviceFleetOutcome UpdateDeviceFleet(const Model::UpdateDeviceFleetRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateDeviceFleet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateDeviceFleetOutcomeCallable UpdateDeviceFleetCallable(const Model::UpdateDeviceFleetRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateDeviceFleet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateDeviceFleetAsync(const Model::UpdateDeviceFleetRequest& request, const UpdateDeviceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates one or more devices in a fleet.</p><p><h3>See Also:</h3>   <a
@@ -5045,15 +2901,6 @@ namespace SageMaker
          */
         virtual Model::UpdateDevicesOutcome UpdateDevices(const Model::UpdateDevicesRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateDevices that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateDevicesOutcomeCallable UpdateDevicesCallable(const Model::UpdateDevicesRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateDevices that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateDevicesAsync(const Model::UpdateDevicesRequest& request, const UpdateDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the default settings for new user profiles in the
@@ -5063,15 +2910,6 @@ namespace SageMaker
          */
         virtual Model::UpdateDomainOutcome UpdateDomain(const Model::UpdateDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateDomainOutcomeCallable UpdateDomainCallable(const Model::UpdateDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateDomainAsync(const Model::UpdateDomainRequest& request, const UpdateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deploys the new <code>EndpointConfig</code> specified in the request,
@@ -5094,15 +2932,6 @@ namespace SageMaker
          */
         virtual Model::UpdateEndpointOutcome UpdateEndpoint(const Model::UpdateEndpointRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateEndpointOutcomeCallable UpdateEndpointCallable(const Model::UpdateEndpointRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateEndpointAsync(const Model::UpdateEndpointRequest& request, const UpdateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates variant weight of one or more variants associated with an existing
@@ -5116,15 +2945,6 @@ namespace SageMaker
          */
         virtual Model::UpdateEndpointWeightsAndCapacitiesOutcome UpdateEndpointWeightsAndCapacities(const Model::UpdateEndpointWeightsAndCapacitiesRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateEndpointWeightsAndCapacities that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateEndpointWeightsAndCapacitiesOutcomeCallable UpdateEndpointWeightsAndCapacitiesCallable(const Model::UpdateEndpointWeightsAndCapacitiesRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateEndpointWeightsAndCapacities that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateEndpointWeightsAndCapacitiesAsync(const Model::UpdateEndpointWeightsAndCapacitiesRequest& request, const UpdateEndpointWeightsAndCapacitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds, updates, or removes the description of an experiment. Updates the
@@ -5134,15 +2954,6 @@ namespace SageMaker
          */
         virtual Model::UpdateExperimentOutcome UpdateExperiment(const Model::UpdateExperimentRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateExperiment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateExperimentOutcomeCallable UpdateExperimentCallable(const Model::UpdateExperimentRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateExperiment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateExperimentAsync(const Model::UpdateExperimentRequest& request, const UpdateExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the feature group.</p><p><h3>See Also:</h3>   <a
@@ -5151,15 +2962,6 @@ namespace SageMaker
          */
         virtual Model::UpdateFeatureGroupOutcome UpdateFeatureGroup(const Model::UpdateFeatureGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateFeatureGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateFeatureGroupOutcomeCallable UpdateFeatureGroupCallable(const Model::UpdateFeatureGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateFeatureGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateFeatureGroupAsync(const Model::UpdateFeatureGroupRequest& request, const UpdateFeatureGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the description and parameters of the feature group.</p><p><h3>See
@@ -5169,15 +2971,6 @@ namespace SageMaker
          */
         virtual Model::UpdateFeatureMetadataOutcome UpdateFeatureMetadata(const Model::UpdateFeatureMetadataRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateFeatureMetadata that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateFeatureMetadataOutcomeCallable UpdateFeatureMetadataCallable(const Model::UpdateFeatureMetadataRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateFeatureMetadata that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateFeatureMetadataAsync(const Model::UpdateFeatureMetadataRequest& request, const UpdateFeatureMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the properties of a SageMaker image. To change the image's tags, use
@@ -5187,15 +2980,6 @@ namespace SageMaker
          */
         virtual Model::UpdateImageOutcome UpdateImage(const Model::UpdateImageRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateImage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateImageOutcomeCallable UpdateImageCallable(const Model::UpdateImageRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateImage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateImageAsync(const Model::UpdateImageRequest& request, const UpdateImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a versioned model.</p><p><h3>See Also:</h3>   <a
@@ -5204,15 +2988,6 @@ namespace SageMaker
          */
         virtual Model::UpdateModelPackageOutcome UpdateModelPackage(const Model::UpdateModelPackageRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateModelPackage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateModelPackageOutcomeCallable UpdateModelPackageCallable(const Model::UpdateModelPackageRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateModelPackage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateModelPackageAsync(const Model::UpdateModelPackageRequest& request, const UpdateModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a previously created schedule.</p><p><h3>See Also:</h3>   <a
@@ -5221,15 +2996,6 @@ namespace SageMaker
          */
         virtual Model::UpdateMonitoringScheduleOutcome UpdateMonitoringSchedule(const Model::UpdateMonitoringScheduleRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateMonitoringSchedule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateMonitoringScheduleOutcomeCallable UpdateMonitoringScheduleCallable(const Model::UpdateMonitoringScheduleRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateMonitoringSchedule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateMonitoringScheduleAsync(const Model::UpdateMonitoringScheduleRequest& request, const UpdateMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a notebook instance. NotebookInstance updates include upgrading or
@@ -5240,15 +3006,6 @@ namespace SageMaker
          */
         virtual Model::UpdateNotebookInstanceOutcome UpdateNotebookInstance(const Model::UpdateNotebookInstanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateNotebookInstance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateNotebookInstanceOutcomeCallable UpdateNotebookInstanceCallable(const Model::UpdateNotebookInstanceRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateNotebookInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateNotebookInstanceAsync(const Model::UpdateNotebookInstanceRequest& request, const UpdateNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a notebook instance lifecycle configuration created with the
@@ -5258,15 +3015,6 @@ namespace SageMaker
          */
         virtual Model::UpdateNotebookInstanceLifecycleConfigOutcome UpdateNotebookInstanceLifecycleConfig(const Model::UpdateNotebookInstanceLifecycleConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateNotebookInstanceLifecycleConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateNotebookInstanceLifecycleConfigOutcomeCallable UpdateNotebookInstanceLifecycleConfigCallable(const Model::UpdateNotebookInstanceLifecycleConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateNotebookInstanceLifecycleConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateNotebookInstanceLifecycleConfigAsync(const Model::UpdateNotebookInstanceLifecycleConfigRequest& request, const UpdateNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a pipeline.</p><p><h3>See Also:</h3>   <a
@@ -5275,15 +3023,6 @@ namespace SageMaker
          */
         virtual Model::UpdatePipelineOutcome UpdatePipeline(const Model::UpdatePipelineRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdatePipeline that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdatePipelineOutcomeCallable UpdatePipelineCallable(const Model::UpdatePipelineRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdatePipeline that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdatePipelineAsync(const Model::UpdatePipelineRequest& request, const UpdatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a pipeline execution.</p><p><h3>See Also:</h3>   <a
@@ -5292,15 +3031,6 @@ namespace SageMaker
          */
         virtual Model::UpdatePipelineExecutionOutcome UpdatePipelineExecution(const Model::UpdatePipelineExecutionRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdatePipelineExecution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdatePipelineExecutionOutcomeCallable UpdatePipelineExecutionCallable(const Model::UpdatePipelineExecutionRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdatePipelineExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdatePipelineExecutionAsync(const Model::UpdatePipelineExecutionRequest& request, const UpdatePipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a machine learning (ML) project that is created from a template that
@@ -5314,15 +3044,6 @@ namespace SageMaker
          */
         virtual Model::UpdateProjectOutcome UpdateProject(const Model::UpdateProjectRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateProject that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateProjectOutcomeCallable UpdateProjectCallable(const Model::UpdateProjectRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateProject that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateProjectAsync(const Model::UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Update a model training job to request a new Debugger profiling configuration
@@ -5332,15 +3053,6 @@ namespace SageMaker
          */
         virtual Model::UpdateTrainingJobOutcome UpdateTrainingJob(const Model::UpdateTrainingJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateTrainingJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateTrainingJobOutcomeCallable UpdateTrainingJobCallable(const Model::UpdateTrainingJobRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateTrainingJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateTrainingJobAsync(const Model::UpdateTrainingJobRequest& request, const UpdateTrainingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the display name of a trial.</p><p><h3>See Also:</h3>   <a
@@ -5349,15 +3061,6 @@ namespace SageMaker
          */
         virtual Model::UpdateTrialOutcome UpdateTrial(const Model::UpdateTrialRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateTrial that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateTrialOutcomeCallable UpdateTrialCallable(const Model::UpdateTrialRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateTrial that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateTrialAsync(const Model::UpdateTrialRequest& request, const UpdateTrialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates one or more properties of a trial component.</p><p><h3>See Also:</h3>
@@ -5367,15 +3070,6 @@ namespace SageMaker
          */
         virtual Model::UpdateTrialComponentOutcome UpdateTrialComponent(const Model::UpdateTrialComponentRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateTrialComponent that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateTrialComponentOutcomeCallable UpdateTrialComponentCallable(const Model::UpdateTrialComponentRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateTrialComponent that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateTrialComponentAsync(const Model::UpdateTrialComponentRequest& request, const UpdateTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a user profile.</p><p><h3>See Also:</h3>   <a
@@ -5384,15 +3078,6 @@ namespace SageMaker
          */
         virtual Model::UpdateUserProfileOutcome UpdateUserProfile(const Model::UpdateUserProfileRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateUserProfile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateUserProfileOutcomeCallable UpdateUserProfileCallable(const Model::UpdateUserProfileRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateUserProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateUserProfileAsync(const Model::UpdateUserProfileRequest& request, const UpdateUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Use this operation to update your workforce. You can use this operation to
@@ -5423,15 +3108,6 @@ namespace SageMaker
          */
         virtual Model::UpdateWorkforceOutcome UpdateWorkforce(const Model::UpdateWorkforceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateWorkforce that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateWorkforceOutcomeCallable UpdateWorkforceCallable(const Model::UpdateWorkforceRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateWorkforce that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateWorkforceAsync(const Model::UpdateWorkforceRequest& request, const UpdateWorkforceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an existing work team with new member definitions or
@@ -5441,15 +3117,6 @@ namespace SageMaker
          */
         virtual Model::UpdateWorkteamOutcome UpdateWorkteam(const Model::UpdateWorkteamRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateWorkteam that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateWorkteamOutcomeCallable UpdateWorkteamCallable(const Model::UpdateWorkteamRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateWorkteam that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateWorkteamAsync(const Model::UpdateWorkteamRequest& request, const UpdateWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

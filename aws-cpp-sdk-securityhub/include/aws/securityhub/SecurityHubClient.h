@@ -7,8 +7,10 @@
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/securityhub/SecurityHubServiceClientModel.h>
+#include <aws/securityhub/SecurityHubLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -104,6 +106,47 @@ namespace SecurityHub
         virtual ~SecurityHubClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Accepts the invitation to be a member account and be monitored by the
          * Security Hub administrator account that the invitation was sent from.</p>
@@ -116,15 +159,6 @@ namespace SecurityHub
          */
         virtual Model::AcceptAdministratorInvitationOutcome AcceptAdministratorInvitation(const Model::AcceptAdministratorInvitationRequest& request) const;
 
-        /**
-         * A Callable wrapper for AcceptAdministratorInvitation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AcceptAdministratorInvitationOutcomeCallable AcceptAdministratorInvitationCallable(const Model::AcceptAdministratorInvitationRequest& request) const;
-
-        /**
-         * An Async wrapper for AcceptAdministratorInvitation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AcceptAdministratorInvitationAsync(const Model::AcceptAdministratorInvitationRequest& request, const AcceptAdministratorInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disables the standards specified by the provided
@@ -137,15 +171,6 @@ namespace SecurityHub
          */
         virtual Model::BatchDisableStandardsOutcome BatchDisableStandards(const Model::BatchDisableStandardsRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchDisableStandards that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchDisableStandardsOutcomeCallable BatchDisableStandardsCallable(const Model::BatchDisableStandardsRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchDisableStandards that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchDisableStandardsAsync(const Model::BatchDisableStandardsRequest& request, const BatchDisableStandardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables the standards specified by the provided <code>StandardsArn</code>. To
@@ -159,15 +184,6 @@ namespace SecurityHub
          */
         virtual Model::BatchEnableStandardsOutcome BatchEnableStandards(const Model::BatchEnableStandardsRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchEnableStandards that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchEnableStandardsOutcomeCallable BatchEnableStandardsCallable(const Model::BatchEnableStandardsRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchEnableStandards that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchEnableStandardsAsync(const Model::BatchEnableStandardsRequest& request, const BatchEnableStandardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Imports security findings generated by a finding provider into Security Hub.
@@ -202,15 +218,6 @@ namespace SecurityHub
          */
         virtual Model::BatchImportFindingsOutcome BatchImportFindings(const Model::BatchImportFindingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchImportFindings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchImportFindingsOutcomeCallable BatchImportFindingsCallable(const Model::BatchImportFindingsRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchImportFindings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchImportFindingsAsync(const Model::BatchImportFindingsRequest& request, const BatchImportFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Used by Security Hub customers to update information about their
@@ -237,15 +244,6 @@ namespace SecurityHub
          */
         virtual Model::BatchUpdateFindingsOutcome BatchUpdateFindings(const Model::BatchUpdateFindingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchUpdateFindings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchUpdateFindingsOutcomeCallable BatchUpdateFindingsCallable(const Model::BatchUpdateFindingsRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchUpdateFindings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchUpdateFindingsAsync(const Model::BatchUpdateFindingsRequest& request, const BatchUpdateFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a custom action target in Security Hub.</p> <p>You can use custom
@@ -256,15 +254,6 @@ namespace SecurityHub
          */
         virtual Model::CreateActionTargetOutcome CreateActionTarget(const Model::CreateActionTargetRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateActionTarget that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateActionTargetOutcomeCallable CreateActionTargetCallable(const Model::CreateActionTargetRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateActionTarget that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateActionTargetAsync(const Model::CreateActionTargetRequest& request, const CreateActionTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Used to enable finding aggregation. Must be called from the aggregation
@@ -277,15 +266,6 @@ namespace SecurityHub
          */
         virtual Model::CreateFindingAggregatorOutcome CreateFindingAggregator(const Model::CreateFindingAggregatorRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateFindingAggregator that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateFindingAggregatorOutcomeCallable CreateFindingAggregatorCallable(const Model::CreateFindingAggregatorRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateFindingAggregator that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateFindingAggregatorAsync(const Model::CreateFindingAggregatorRequest& request, const CreateFindingAggregatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a custom insight in Security Hub. An insight is a consolidation of
@@ -297,15 +277,6 @@ namespace SecurityHub
          */
         virtual Model::CreateInsightOutcome CreateInsight(const Model::CreateInsightRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateInsight that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateInsightOutcomeCallable CreateInsightCallable(const Model::CreateInsightRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateInsight that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateInsightAsync(const Model::CreateInsightRequest& request, const CreateInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a member association in Security Hub between the specified accounts
@@ -343,15 +314,6 @@ namespace SecurityHub
          */
         virtual Model::CreateMembersOutcome CreateMembers(const Model::CreateMembersRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateMembers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateMembersOutcomeCallable CreateMembersCallable(const Model::CreateMembersRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateMembers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateMembersAsync(const Model::CreateMembersRequest& request, const CreateMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Declines invitations to become a member account.</p> <p>This operation is
@@ -362,15 +324,6 @@ namespace SecurityHub
          */
         virtual Model::DeclineInvitationsOutcome DeclineInvitations(const Model::DeclineInvitationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeclineInvitations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeclineInvitationsOutcomeCallable DeclineInvitationsCallable(const Model::DeclineInvitationsRequest& request) const;
-
-        /**
-         * An Async wrapper for DeclineInvitations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeclineInvitationsAsync(const Model::DeclineInvitationsRequest& request, const DeclineInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a custom action target from Security Hub.</p> <p>Deleting a custom
@@ -381,15 +334,6 @@ namespace SecurityHub
          */
         virtual Model::DeleteActionTargetOutcome DeleteActionTarget(const Model::DeleteActionTargetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteActionTarget that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteActionTargetOutcomeCallable DeleteActionTargetCallable(const Model::DeleteActionTargetRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteActionTarget that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteActionTargetAsync(const Model::DeleteActionTargetRequest& request, const DeleteActionTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a finding aggregator. When you delete the finding aggregator, you
@@ -402,15 +346,6 @@ namespace SecurityHub
          */
         virtual Model::DeleteFindingAggregatorOutcome DeleteFindingAggregator(const Model::DeleteFindingAggregatorRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteFindingAggregator that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteFindingAggregatorOutcomeCallable DeleteFindingAggregatorCallable(const Model::DeleteFindingAggregatorRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteFindingAggregator that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteFindingAggregatorAsync(const Model::DeleteFindingAggregatorRequest& request, const DeleteFindingAggregatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the insight specified by the <code>InsightArn</code>.</p><p><h3>See
@@ -420,15 +355,6 @@ namespace SecurityHub
          */
         virtual Model::DeleteInsightOutcome DeleteInsight(const Model::DeleteInsightRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteInsight that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteInsightOutcomeCallable DeleteInsightCallable(const Model::DeleteInsightRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteInsight that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteInsightAsync(const Model::DeleteInsightRequest& request, const DeleteInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes invitations received by the Amazon Web Services account to become a
@@ -440,15 +366,6 @@ namespace SecurityHub
          */
         virtual Model::DeleteInvitationsOutcome DeleteInvitations(const Model::DeleteInvitationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteInvitations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteInvitationsOutcomeCallable DeleteInvitationsCallable(const Model::DeleteInvitationsRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteInvitations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteInvitationsAsync(const Model::DeleteInvitationsRequest& request, const DeleteInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified member accounts from Security Hub.</p> <p>Can be used
@@ -459,15 +376,6 @@ namespace SecurityHub
          */
         virtual Model::DeleteMembersOutcome DeleteMembers(const Model::DeleteMembersRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteMembers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteMembersOutcomeCallable DeleteMembersCallable(const Model::DeleteMembersRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteMembers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteMembersAsync(const Model::DeleteMembersRequest& request, const DeleteMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of the custom action targets in Security Hub in your
@@ -477,15 +385,6 @@ namespace SecurityHub
          */
         virtual Model::DescribeActionTargetsOutcome DescribeActionTargets(const Model::DescribeActionTargetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeActionTargets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeActionTargetsOutcomeCallable DescribeActionTargetsCallable(const Model::DescribeActionTargetsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeActionTargets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeActionTargetsAsync(const Model::DescribeActionTargetsRequest& request, const DescribeActionTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns details about the Hub resource in your account, including the
@@ -496,15 +395,6 @@ namespace SecurityHub
          */
         virtual Model::DescribeHubOutcome DescribeHub(const Model::DescribeHubRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeHub that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeHubOutcomeCallable DescribeHubCallable(const Model::DescribeHubRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeHub that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeHubAsync(const Model::DescribeHubRequest& request, const DescribeHubResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the Organizations configuration for Security Hub.
@@ -515,15 +405,6 @@ namespace SecurityHub
          */
         virtual Model::DescribeOrganizationConfigurationOutcome DescribeOrganizationConfiguration(const Model::DescribeOrganizationConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeOrganizationConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeOrganizationConfigurationOutcomeCallable DescribeOrganizationConfigurationCallable(const Model::DescribeOrganizationConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeOrganizationConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeOrganizationConfigurationAsync(const Model::DescribeOrganizationConfigurationRequest& request, const DescribeOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about product integrations in Security Hub.</p> <p>You
@@ -536,15 +417,6 @@ namespace SecurityHub
          */
         virtual Model::DescribeProductsOutcome DescribeProducts(const Model::DescribeProductsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeProducts that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeProductsOutcomeCallable DescribeProductsCallable(const Model::DescribeProductsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeProducts that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeProductsAsync(const Model::DescribeProductsRequest& request, const DescribeProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of the available standards in Security Hub.</p> <p>For each
@@ -555,15 +427,6 @@ namespace SecurityHub
          */
         virtual Model::DescribeStandardsOutcome DescribeStandards(const Model::DescribeStandardsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeStandards that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeStandardsOutcomeCallable DescribeStandardsCallable(const Model::DescribeStandardsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeStandards that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeStandardsAsync(const Model::DescribeStandardsRequest& request, const DescribeStandardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of security standards controls.</p> <p>For each control, the
@@ -574,15 +437,6 @@ namespace SecurityHub
          */
         virtual Model::DescribeStandardsControlsOutcome DescribeStandardsControls(const Model::DescribeStandardsControlsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeStandardsControls that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeStandardsControlsOutcomeCallable DescribeStandardsControlsCallable(const Model::DescribeStandardsControlsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeStandardsControls that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeStandardsControlsAsync(const Model::DescribeStandardsControlsRequest& request, const DescribeStandardsControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disables the integration of the specified product with Security Hub. After
@@ -593,15 +447,6 @@ namespace SecurityHub
          */
         virtual Model::DisableImportFindingsForProductOutcome DisableImportFindingsForProduct(const Model::DisableImportFindingsForProductRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisableImportFindingsForProduct that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisableImportFindingsForProductOutcomeCallable DisableImportFindingsForProductCallable(const Model::DisableImportFindingsForProductRequest& request) const;
-
-        /**
-         * An Async wrapper for DisableImportFindingsForProduct that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisableImportFindingsForProductAsync(const Model::DisableImportFindingsForProductRequest& request, const DisableImportFindingsForProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disables a Security Hub administrator account. Can only be called by the
@@ -611,15 +456,6 @@ namespace SecurityHub
          */
         virtual Model::DisableOrganizationAdminAccountOutcome DisableOrganizationAdminAccount(const Model::DisableOrganizationAdminAccountRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisableOrganizationAdminAccount that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisableOrganizationAdminAccountOutcomeCallable DisableOrganizationAdminAccountCallable(const Model::DisableOrganizationAdminAccountRequest& request) const;
-
-        /**
-         * An Async wrapper for DisableOrganizationAdminAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisableOrganizationAdminAccountAsync(const Model::DisableOrganizationAdminAccountRequest& request, const DisableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disables Security Hub in your account only in the current Region. To disable
@@ -637,15 +473,6 @@ namespace SecurityHub
          */
         virtual Model::DisableSecurityHubOutcome DisableSecurityHub(const Model::DisableSecurityHubRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisableSecurityHub that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisableSecurityHubOutcomeCallable DisableSecurityHubCallable(const Model::DisableSecurityHubRequest& request) const;
-
-        /**
-         * An Async wrapper for DisableSecurityHub that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisableSecurityHubAsync(const Model::DisableSecurityHubRequest& request, const DisableSecurityHubResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates the current Security Hub member account from the associated
@@ -657,15 +484,6 @@ namespace SecurityHub
          */
         virtual Model::DisassociateFromAdministratorAccountOutcome DisassociateFromAdministratorAccount(const Model::DisassociateFromAdministratorAccountRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateFromAdministratorAccount that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateFromAdministratorAccountOutcomeCallable DisassociateFromAdministratorAccountCallable(const Model::DisassociateFromAdministratorAccountRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateFromAdministratorAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateFromAdministratorAccountAsync(const Model::DisassociateFromAdministratorAccountRequest& request, const DisassociateFromAdministratorAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates the specified member accounts from the associated administrator
@@ -677,15 +495,6 @@ namespace SecurityHub
          */
         virtual Model::DisassociateMembersOutcome DisassociateMembers(const Model::DisassociateMembersRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateMembers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateMembersOutcomeCallable DisassociateMembersCallable(const Model::DisassociateMembersRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateMembers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateMembersAsync(const Model::DisassociateMembersRequest& request, const DisassociateMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables the integration of a partner product with Security Hub. Integrated
@@ -697,15 +506,6 @@ namespace SecurityHub
          */
         virtual Model::EnableImportFindingsForProductOutcome EnableImportFindingsForProduct(const Model::EnableImportFindingsForProductRequest& request) const;
 
-        /**
-         * A Callable wrapper for EnableImportFindingsForProduct that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnableImportFindingsForProductOutcomeCallable EnableImportFindingsForProductCallable(const Model::EnableImportFindingsForProductRequest& request) const;
-
-        /**
-         * An Async wrapper for EnableImportFindingsForProduct that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnableImportFindingsForProductAsync(const Model::EnableImportFindingsForProductRequest& request, const EnableImportFindingsForProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Designates the Security Hub administrator account for an organization. Can
@@ -716,15 +516,6 @@ namespace SecurityHub
          */
         virtual Model::EnableOrganizationAdminAccountOutcome EnableOrganizationAdminAccount(const Model::EnableOrganizationAdminAccountRequest& request) const;
 
-        /**
-         * A Callable wrapper for EnableOrganizationAdminAccount that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnableOrganizationAdminAccountOutcomeCallable EnableOrganizationAdminAccountCallable(const Model::EnableOrganizationAdminAccountRequest& request) const;
-
-        /**
-         * An Async wrapper for EnableOrganizationAdminAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnableOrganizationAdminAccountAsync(const Model::EnableOrganizationAdminAccountRequest& request, const EnableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables Security Hub for your account in the current Region or the Region you
@@ -749,15 +540,6 @@ namespace SecurityHub
          */
         virtual Model::EnableSecurityHubOutcome EnableSecurityHub(const Model::EnableSecurityHubRequest& request) const;
 
-        /**
-         * A Callable wrapper for EnableSecurityHub that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnableSecurityHubOutcomeCallable EnableSecurityHubCallable(const Model::EnableSecurityHubRequest& request) const;
-
-        /**
-         * An Async wrapper for EnableSecurityHub that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnableSecurityHubAsync(const Model::EnableSecurityHubRequest& request, const EnableSecurityHubResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides the details for the Security Hub administrator account for the
@@ -769,15 +551,6 @@ namespace SecurityHub
          */
         virtual Model::GetAdministratorAccountOutcome GetAdministratorAccount(const Model::GetAdministratorAccountRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAdministratorAccount that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAdministratorAccountOutcomeCallable GetAdministratorAccountCallable(const Model::GetAdministratorAccountRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAdministratorAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAdministratorAccountAsync(const Model::GetAdministratorAccountRequest& request, const GetAdministratorAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of the standards that are currently enabled.</p><p><h3>See
@@ -787,15 +560,6 @@ namespace SecurityHub
          */
         virtual Model::GetEnabledStandardsOutcome GetEnabledStandards(const Model::GetEnabledStandardsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetEnabledStandards that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetEnabledStandardsOutcomeCallable GetEnabledStandardsCallable(const Model::GetEnabledStandardsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetEnabledStandards that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetEnabledStandardsAsync(const Model::GetEnabledStandardsRequest& request, const GetEnabledStandardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the current finding aggregation configuration.</p><p><h3>See
@@ -805,15 +569,6 @@ namespace SecurityHub
          */
         virtual Model::GetFindingAggregatorOutcome GetFindingAggregator(const Model::GetFindingAggregatorRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetFindingAggregator that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetFindingAggregatorOutcomeCallable GetFindingAggregatorCallable(const Model::GetFindingAggregatorRequest& request) const;
-
-        /**
-         * An Async wrapper for GetFindingAggregator that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetFindingAggregatorAsync(const Model::GetFindingAggregatorRequest& request, const GetFindingAggregatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of findings that match the specified criteria.</p> <p>If
@@ -826,15 +581,6 @@ namespace SecurityHub
          */
         virtual Model::GetFindingsOutcome GetFindings(const Model::GetFindingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetFindings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetFindingsOutcomeCallable GetFindingsCallable(const Model::GetFindingsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetFindings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetFindingsAsync(const Model::GetFindingsRequest& request, const GetFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the results of the Security Hub insight specified by the insight
@@ -844,15 +590,6 @@ namespace SecurityHub
          */
         virtual Model::GetInsightResultsOutcome GetInsightResults(const Model::GetInsightResultsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetInsightResults that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetInsightResultsOutcomeCallable GetInsightResultsCallable(const Model::GetInsightResultsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetInsightResults that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetInsightResultsAsync(const Model::GetInsightResultsRequest& request, const GetInsightResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists and describes insights for the specified insight ARNs.</p><p><h3>See
@@ -862,15 +599,6 @@ namespace SecurityHub
          */
         virtual Model::GetInsightsOutcome GetInsights(const Model::GetInsightsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetInsights that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetInsightsOutcomeCallable GetInsightsCallable(const Model::GetInsightsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetInsights that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetInsightsAsync(const Model::GetInsightsRequest& request, const GetInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the count of all Security Hub membership invitations that were sent
@@ -881,15 +609,6 @@ namespace SecurityHub
          */
         virtual Model::GetInvitationsCountOutcome GetInvitationsCount(const Model::GetInvitationsCountRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetInvitationsCount that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetInvitationsCountOutcomeCallable GetInvitationsCountCallable(const Model::GetInvitationsCountRequest& request) const;
-
-        /**
-         * An Async wrapper for GetInvitationsCount that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetInvitationsCountAsync(const Model::GetInvitationsCountRequest& request, const GetInvitationsCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the details for the Security Hub member accounts for the specified
@@ -903,15 +622,6 @@ namespace SecurityHub
          */
         virtual Model::GetMembersOutcome GetMembers(const Model::GetMembersRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetMembers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetMembersOutcomeCallable GetMembersCallable(const Model::GetMembersRequest& request) const;
-
-        /**
-         * An Async wrapper for GetMembers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetMembersAsync(const Model::GetMembersRequest& request, const GetMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Invites other Amazon Web Services accounts to become member accounts for the
@@ -928,15 +638,6 @@ namespace SecurityHub
          */
         virtual Model::InviteMembersOutcome InviteMembers(const Model::InviteMembersRequest& request) const;
 
-        /**
-         * A Callable wrapper for InviteMembers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::InviteMembersOutcomeCallable InviteMembersCallable(const Model::InviteMembersRequest& request) const;
-
-        /**
-         * An Async wrapper for InviteMembers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void InviteMembersAsync(const Model::InviteMembersRequest& request, const InviteMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all findings-generating solutions (products) that you are subscribed to
@@ -946,15 +647,6 @@ namespace SecurityHub
          */
         virtual Model::ListEnabledProductsForImportOutcome ListEnabledProductsForImport(const Model::ListEnabledProductsForImportRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListEnabledProductsForImport that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListEnabledProductsForImportOutcomeCallable ListEnabledProductsForImportCallable(const Model::ListEnabledProductsForImportRequest& request) const;
-
-        /**
-         * An Async wrapper for ListEnabledProductsForImport that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListEnabledProductsForImportAsync(const Model::ListEnabledProductsForImportRequest& request, const ListEnabledProductsForImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>If finding aggregation is enabled, then <code>ListFindingAggregators</code>
@@ -965,15 +657,6 @@ namespace SecurityHub
          */
         virtual Model::ListFindingAggregatorsOutcome ListFindingAggregators(const Model::ListFindingAggregatorsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListFindingAggregators that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListFindingAggregatorsOutcomeCallable ListFindingAggregatorsCallable(const Model::ListFindingAggregatorsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListFindingAggregators that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListFindingAggregatorsAsync(const Model::ListFindingAggregatorsRequest& request, const ListFindingAggregatorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all Security Hub membership invitations that were sent to the current
@@ -985,15 +668,6 @@ namespace SecurityHub
          */
         virtual Model::ListInvitationsOutcome ListInvitations(const Model::ListInvitationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListInvitations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListInvitationsOutcomeCallable ListInvitationsCallable(const Model::ListInvitationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListInvitations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListInvitationsAsync(const Model::ListInvitationsRequest& request, const ListInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists details about all member accounts for the current Security Hub
@@ -1005,15 +679,6 @@ namespace SecurityHub
          */
         virtual Model::ListMembersOutcome ListMembers(const Model::ListMembersRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListMembers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListMembersOutcomeCallable ListMembersCallable(const Model::ListMembersRequest& request) const;
-
-        /**
-         * An Async wrapper for ListMembers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListMembersAsync(const Model::ListMembersRequest& request, const ListMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the Security Hub administrator accounts. Can only be called by the
@@ -1023,15 +688,6 @@ namespace SecurityHub
          */
         virtual Model::ListOrganizationAdminAccountsOutcome ListOrganizationAdminAccounts(const Model::ListOrganizationAdminAccountsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListOrganizationAdminAccounts that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListOrganizationAdminAccountsOutcomeCallable ListOrganizationAdminAccountsCallable(const Model::ListOrganizationAdminAccountsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListOrganizationAdminAccounts that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListOrganizationAdminAccountsAsync(const Model::ListOrganizationAdminAccountsRequest& request, const ListOrganizationAdminAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of tags associated with a resource.</p><p><h3>See Also:</h3>  
@@ -1041,15 +697,6 @@ namespace SecurityHub
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds one or more tags to a resource.</p><p><h3>See Also:</h3>   <a
@@ -1058,15 +705,6 @@ namespace SecurityHub
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes one or more tags from a resource.</p><p><h3>See Also:</h3>   <a
@@ -1075,15 +713,6 @@ namespace SecurityHub
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the name and description of a custom action target in Security
@@ -1093,15 +722,6 @@ namespace SecurityHub
          */
         virtual Model::UpdateActionTargetOutcome UpdateActionTarget(const Model::UpdateActionTargetRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateActionTarget that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateActionTargetOutcomeCallable UpdateActionTargetCallable(const Model::UpdateActionTargetRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateActionTarget that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateActionTargetAsync(const Model::UpdateActionTargetRequest& request, const UpdateActionTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the finding aggregation configuration. Used to update the Region
@@ -1114,15 +734,6 @@ namespace SecurityHub
          */
         virtual Model::UpdateFindingAggregatorOutcome UpdateFindingAggregator(const Model::UpdateFindingAggregatorRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateFindingAggregator that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateFindingAggregatorOutcomeCallable UpdateFindingAggregatorCallable(const Model::UpdateFindingAggregatorRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateFindingAggregator that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateFindingAggregatorAsync(const Model::UpdateFindingAggregatorRequest& request, const UpdateFindingAggregatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> <code>UpdateFindings</code> is deprecated. Instead of
@@ -1136,15 +747,6 @@ namespace SecurityHub
          */
         virtual Model::UpdateFindingsOutcome UpdateFindings(const Model::UpdateFindingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateFindings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateFindingsOutcomeCallable UpdateFindingsCallable(const Model::UpdateFindingsRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateFindings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateFindingsAsync(const Model::UpdateFindingsRequest& request, const UpdateFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the Security Hub insight identified by the specified insight
@@ -1154,15 +756,6 @@ namespace SecurityHub
          */
         virtual Model::UpdateInsightOutcome UpdateInsight(const Model::UpdateInsightRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateInsight that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateInsightOutcomeCallable UpdateInsightCallable(const Model::UpdateInsightRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateInsight that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateInsightAsync(const Model::UpdateInsightRequest& request, const UpdateInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Used to update the configuration related to Organizations. Can only be called
@@ -1172,15 +765,6 @@ namespace SecurityHub
          */
         virtual Model::UpdateOrganizationConfigurationOutcome UpdateOrganizationConfiguration(const Model::UpdateOrganizationConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateOrganizationConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateOrganizationConfigurationOutcomeCallable UpdateOrganizationConfigurationCallable(const Model::UpdateOrganizationConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateOrganizationConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateOrganizationConfigurationAsync(const Model::UpdateOrganizationConfigurationRequest& request, const UpdateOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates configuration options for Security Hub.</p><p><h3>See Also:</h3>   <a
@@ -1189,15 +773,6 @@ namespace SecurityHub
          */
         virtual Model::UpdateSecurityHubConfigurationOutcome UpdateSecurityHubConfiguration(const Model::UpdateSecurityHubConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateSecurityHubConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateSecurityHubConfigurationOutcomeCallable UpdateSecurityHubConfigurationCallable(const Model::UpdateSecurityHubConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateSecurityHubConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateSecurityHubConfigurationAsync(const Model::UpdateSecurityHubConfigurationRequest& request, const UpdateSecurityHubConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Used to control whether an individual security standard control is enabled or
@@ -1207,15 +782,6 @@ namespace SecurityHub
          */
         virtual Model::UpdateStandardsControlOutcome UpdateStandardsControl(const Model::UpdateStandardsControlRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateStandardsControl that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateStandardsControlOutcomeCallable UpdateStandardsControlCallable(const Model::UpdateStandardsControlRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateStandardsControl that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateStandardsControlAsync(const Model::UpdateStandardsControlRequest& request, const UpdateStandardsControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

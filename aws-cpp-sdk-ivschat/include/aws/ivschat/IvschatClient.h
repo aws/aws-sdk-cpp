@@ -7,8 +7,10 @@
 #include <aws/ivschat/Ivschat_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ivschat/IvschatServiceClientModel.h>
+#include <aws/ivschat/IvschatLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -182,6 +184,47 @@ namespace ivschat
         virtual ~IvschatClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Creates an encrypted token that is used by a chat participant to establish an
          * individual WebSocket chat connection to a room. When the token is used to
@@ -201,15 +244,6 @@ namespace ivschat
          */
         virtual Model::CreateChatTokenOutcome CreateChatToken(const Model::CreateChatTokenRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateChatToken that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateChatTokenOutcomeCallable CreateChatTokenCallable(const Model::CreateChatTokenRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateChatToken that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateChatTokenAsync(const Model::CreateChatTokenRequest& request, const CreateChatTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a logging configuration that allows clients to store and record sent
@@ -219,15 +253,6 @@ namespace ivschat
          */
         virtual Model::CreateLoggingConfigurationOutcome CreateLoggingConfiguration(const Model::CreateLoggingConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateLoggingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateLoggingConfigurationOutcomeCallable CreateLoggingConfigurationCallable(const Model::CreateLoggingConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateLoggingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateLoggingConfigurationAsync(const Model::CreateLoggingConfigurationRequest& request, const CreateLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a room that allows clients to connect and pass
@@ -237,15 +262,6 @@ namespace ivschat
          */
         virtual Model::CreateRoomOutcome CreateRoom(const Model::CreateRoomRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateRoom that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateRoomOutcomeCallable CreateRoomCallable(const Model::CreateRoomRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateRoom that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateRoomAsync(const Model::CreateRoomRequest& request, const CreateRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified logging configuration.</p><p><h3>See Also:</h3>   <a
@@ -254,15 +270,6 @@ namespace ivschat
          */
         virtual Model::DeleteLoggingConfigurationOutcome DeleteLoggingConfiguration(const Model::DeleteLoggingConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteLoggingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteLoggingConfigurationOutcomeCallable DeleteLoggingConfigurationCallable(const Model::DeleteLoggingConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteLoggingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteLoggingConfigurationAsync(const Model::DeleteLoggingConfigurationRequest& request, const DeleteLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sends an event to a specific room which directs clients to delete a specific
@@ -277,15 +284,6 @@ namespace ivschat
          */
         virtual Model::DeleteMessageOutcome DeleteMessage(const Model::DeleteMessageRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteMessage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteMessageOutcomeCallable DeleteMessageCallable(const Model::DeleteMessageRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteMessage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteMessageAsync(const Model::DeleteMessageRequest& request, const DeleteMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified room.</p><p><h3>See Also:</h3>   <a
@@ -294,15 +292,6 @@ namespace ivschat
          */
         virtual Model::DeleteRoomOutcome DeleteRoom(const Model::DeleteRoomRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteRoom that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteRoomOutcomeCallable DeleteRoomCallable(const Model::DeleteRoomRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteRoom that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteRoomAsync(const Model::DeleteRoomRequest& request, const DeleteRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disconnects all connections using a specified user ID from a room. This
@@ -315,15 +304,6 @@ namespace ivschat
          */
         virtual Model::DisconnectUserOutcome DisconnectUser(const Model::DisconnectUserRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisconnectUser that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisconnectUserOutcomeCallable DisconnectUserCallable(const Model::DisconnectUserRequest& request) const;
-
-        /**
-         * An Async wrapper for DisconnectUser that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisconnectUserAsync(const Model::DisconnectUserRequest& request, const DisconnectUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the specified logging configuration.</p><p><h3>See Also:</h3>   <a
@@ -332,15 +312,6 @@ namespace ivschat
          */
         virtual Model::GetLoggingConfigurationOutcome GetLoggingConfiguration(const Model::GetLoggingConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetLoggingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetLoggingConfigurationOutcomeCallable GetLoggingConfigurationCallable(const Model::GetLoggingConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetLoggingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetLoggingConfigurationAsync(const Model::GetLoggingConfigurationRequest& request, const GetLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the specified room.</p><p><h3>See Also:</h3>   <a
@@ -349,15 +320,6 @@ namespace ivschat
          */
         virtual Model::GetRoomOutcome GetRoom(const Model::GetRoomRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRoom that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRoomOutcomeCallable GetRoomCallable(const Model::GetRoomRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRoom that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRoomAsync(const Model::GetRoomRequest& request, const GetRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets summary information about all your logging configurations in the AWS
@@ -367,15 +329,6 @@ namespace ivschat
          */
         virtual Model::ListLoggingConfigurationsOutcome ListLoggingConfigurations(const Model::ListLoggingConfigurationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListLoggingConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListLoggingConfigurationsOutcomeCallable ListLoggingConfigurationsCallable(const Model::ListLoggingConfigurationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListLoggingConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListLoggingConfigurationsAsync(const Model::ListLoggingConfigurationsRequest& request, const ListLoggingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets summary information about all your rooms in the AWS region where the API
@@ -386,15 +339,6 @@ namespace ivschat
          */
         virtual Model::ListRoomsOutcome ListRooms(const Model::ListRoomsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListRooms that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListRoomsOutcomeCallable ListRoomsCallable(const Model::ListRoomsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListRooms that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListRoomsAsync(const Model::ListRoomsRequest& request, const ListRoomsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about AWS tags for the specified ARN.</p><p><h3>See
@@ -404,15 +348,6 @@ namespace ivschat
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sends an event to a room. Use this within your application’s business logic
@@ -423,15 +358,6 @@ namespace ivschat
          */
         virtual Model::SendEventOutcome SendEvent(const Model::SendEventRequest& request) const;
 
-        /**
-         * A Callable wrapper for SendEvent that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SendEventOutcomeCallable SendEventCallable(const Model::SendEventRequest& request) const;
-
-        /**
-         * An Async wrapper for SendEvent that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SendEventAsync(const Model::SendEventRequest& request, const SendEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds or updates tags for the AWS resource with the specified
@@ -441,15 +367,6 @@ namespace ivschat
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes tags from the resource with the specified ARN.</p><p><h3>See
@@ -459,15 +376,6 @@ namespace ivschat
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a specified logging configuration.</p><p><h3>See Also:</h3>   <a
@@ -476,15 +384,6 @@ namespace ivschat
          */
         virtual Model::UpdateLoggingConfigurationOutcome UpdateLoggingConfiguration(const Model::UpdateLoggingConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateLoggingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateLoggingConfigurationOutcomeCallable UpdateLoggingConfigurationCallable(const Model::UpdateLoggingConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateLoggingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateLoggingConfigurationAsync(const Model::UpdateLoggingConfigurationRequest& request, const UpdateLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a room’s configuration.</p><p><h3>See Also:</h3>   <a
@@ -493,15 +392,6 @@ namespace ivschat
          */
         virtual Model::UpdateRoomOutcome UpdateRoom(const Model::UpdateRoomRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateRoom that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateRoomOutcomeCallable UpdateRoomCallable(const Model::UpdateRoomRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateRoom that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateRoomAsync(const Model::UpdateRoomRequest& request, const UpdateRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

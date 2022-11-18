@@ -7,8 +7,10 @@
 #include <aws/servicecatalog-appregistry/AppRegistry_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/servicecatalog-appregistry/AppRegistryServiceClientModel.h>
+#include <aws/servicecatalog-appregistry/AppRegistryLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -76,6 +78,47 @@ namespace AppRegistry
         virtual ~AppRegistryClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Associates an attribute group with an application to augment the
          * application's metadata with the group's attributes. This feature enables
@@ -87,15 +130,6 @@ namespace AppRegistry
          */
         virtual Model::AssociateAttributeGroupOutcome AssociateAttributeGroup(const Model::AssociateAttributeGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateAttributeGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateAttributeGroupOutcomeCallable AssociateAttributeGroupCallable(const Model::AssociateAttributeGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateAttributeGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateAttributeGroupAsync(const Model::AssociateAttributeGroupRequest& request, const AssociateAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates a resource with an application. Both the resource and the
@@ -105,15 +139,6 @@ namespace AppRegistry
          */
         virtual Model::AssociateResourceOutcome AssociateResource(const Model::AssociateResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateResourceOutcomeCallable AssociateResourceCallable(const Model::AssociateResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateResourceAsync(const Model::AssociateResourceRequest& request, const AssociateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new application that is the top-level node in a hierarchy of
@@ -123,15 +148,6 @@ namespace AppRegistry
          */
         virtual Model::CreateApplicationOutcome CreateApplication(const Model::CreateApplicationRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateApplication that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateApplicationOutcomeCallable CreateApplicationCallable(const Model::CreateApplicationRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateApplicationAsync(const Model::CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new attribute group as a container for user-defined attributes.
@@ -143,15 +159,6 @@ namespace AppRegistry
          */
         virtual Model::CreateAttributeGroupOutcome CreateAttributeGroup(const Model::CreateAttributeGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateAttributeGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateAttributeGroupOutcomeCallable CreateAttributeGroupCallable(const Model::CreateAttributeGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateAttributeGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateAttributeGroupAsync(const Model::CreateAttributeGroupRequest& request, const CreateAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an application that is specified either by its application ID or
@@ -162,15 +169,6 @@ namespace AppRegistry
          */
         virtual Model::DeleteApplicationOutcome DeleteApplication(const Model::DeleteApplicationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteApplication that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteApplicationOutcomeCallable DeleteApplicationCallable(const Model::DeleteApplicationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteApplicationAsync(const Model::DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an attribute group, specified either by its attribute group ID or
@@ -180,15 +178,6 @@ namespace AppRegistry
          */
         virtual Model::DeleteAttributeGroupOutcome DeleteAttributeGroup(const Model::DeleteAttributeGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAttributeGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAttributeGroupOutcomeCallable DeleteAttributeGroupCallable(const Model::DeleteAttributeGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAttributeGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAttributeGroupAsync(const Model::DeleteAttributeGroupRequest& request, const DeleteAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates an attribute group from an application to remove the extra
@@ -200,15 +189,6 @@ namespace AppRegistry
          */
         virtual Model::DisassociateAttributeGroupOutcome DisassociateAttributeGroup(const Model::DisassociateAttributeGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateAttributeGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateAttributeGroupOutcomeCallable DisassociateAttributeGroupCallable(const Model::DisassociateAttributeGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateAttributeGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateAttributeGroupAsync(const Model::DisassociateAttributeGroupRequest& request, const DisassociateAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates a resource from application. Both the resource and the
@@ -218,15 +198,6 @@ namespace AppRegistry
          */
         virtual Model::DisassociateResourceOutcome DisassociateResource(const Model::DisassociateResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateResourceOutcomeCallable DisassociateResourceCallable(const Model::DisassociateResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateResourceAsync(const Model::DisassociateResourceRequest& request, const DisassociateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves metadata information about one of your applications. The
@@ -240,15 +211,6 @@ namespace AppRegistry
          */
         virtual Model::GetApplicationOutcome GetApplication(const Model::GetApplicationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetApplication that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetApplicationOutcomeCallable GetApplicationCallable(const Model::GetApplicationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetApplicationAsync(const Model::GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the resource associated with the application.</p><p><h3>See Also:</h3>  
@@ -258,15 +220,6 @@ namespace AppRegistry
          */
         virtual Model::GetAssociatedResourceOutcome GetAssociatedResource(const Model::GetAssociatedResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAssociatedResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAssociatedResourceOutcomeCallable GetAssociatedResourceCallable(const Model::GetAssociatedResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAssociatedResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAssociatedResourceAsync(const Model::GetAssociatedResourceRequest& request, const GetAssociatedResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves an attribute group, either by its name or its ID. The attribute
@@ -277,15 +230,6 @@ namespace AppRegistry
          */
         virtual Model::GetAttributeGroupOutcome GetAttributeGroup(const Model::GetAttributeGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAttributeGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAttributeGroupOutcomeCallable GetAttributeGroupCallable(const Model::GetAttributeGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAttributeGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAttributeGroupAsync(const Model::GetAttributeGroupRequest& request, const GetAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Retrieves a <code>TagKey</code> configuration from an account.
@@ -312,15 +256,6 @@ namespace AppRegistry
          */
         virtual Model::ListApplicationsOutcome ListApplications(const Model::ListApplicationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListApplications that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListApplicationsOutcomeCallable ListApplicationsCallable(const Model::ListApplicationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListApplications that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListApplicationsAsync(const Model::ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all attribute groups that are associated with specified application.
@@ -330,15 +265,6 @@ namespace AppRegistry
          */
         virtual Model::ListAssociatedAttributeGroupsOutcome ListAssociatedAttributeGroups(const Model::ListAssociatedAttributeGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAssociatedAttributeGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAssociatedAttributeGroupsOutcomeCallable ListAssociatedAttributeGroupsCallable(const Model::ListAssociatedAttributeGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAssociatedAttributeGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAssociatedAttributeGroupsAsync(const Model::ListAssociatedAttributeGroupsRequest& request, const ListAssociatedAttributeGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Lists all of the resources that are associated with the specified
@@ -352,15 +278,6 @@ namespace AppRegistry
          */
         virtual Model::ListAssociatedResourcesOutcome ListAssociatedResources(const Model::ListAssociatedResourcesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAssociatedResources that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAssociatedResourcesOutcomeCallable ListAssociatedResourcesCallable(const Model::ListAssociatedResourcesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAssociatedResources that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAssociatedResourcesAsync(const Model::ListAssociatedResourcesRequest& request, const ListAssociatedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all attribute groups which you have access to. Results are
@@ -370,15 +287,6 @@ namespace AppRegistry
          */
         virtual Model::ListAttributeGroupsOutcome ListAttributeGroups(const Model::ListAttributeGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAttributeGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAttributeGroupsOutcomeCallable ListAttributeGroupsCallable(const Model::ListAttributeGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAttributeGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAttributeGroupsAsync(const Model::ListAttributeGroupsRequest& request, const ListAttributeGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the details of all attribute groups associated with a specific
@@ -388,15 +296,6 @@ namespace AppRegistry
          */
         virtual Model::ListAttributeGroupsForApplicationOutcome ListAttributeGroupsForApplication(const Model::ListAttributeGroupsForApplicationRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAttributeGroupsForApplication that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAttributeGroupsForApplicationOutcomeCallable ListAttributeGroupsForApplicationCallable(const Model::ListAttributeGroupsForApplicationRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAttributeGroupsForApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAttributeGroupsForApplicationAsync(const Model::ListAttributeGroupsForApplicationRequest& request, const ListAttributeGroupsForApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all of the tags on the resource.</p><p><h3>See Also:</h3>   <a
@@ -405,15 +304,6 @@ namespace AppRegistry
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Associates a <code>TagKey</code> configuration to an account. </p><p><h3>See
@@ -423,15 +313,6 @@ namespace AppRegistry
          */
         virtual Model::PutConfigurationOutcome PutConfiguration(const Model::PutConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutConfigurationOutcomeCallable PutConfigurationCallable(const Model::PutConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for PutConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutConfigurationAsync(const Model::PutConfigurationRequest& request, const PutConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Syncs the resource with current AppRegistry records.</p> <p>Specifically, the
@@ -444,15 +325,6 @@ namespace AppRegistry
          */
         virtual Model::SyncResourceOutcome SyncResource(const Model::SyncResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for SyncResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SyncResourceOutcomeCallable SyncResourceCallable(const Model::SyncResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for SyncResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SyncResourceAsync(const Model::SyncResourceRequest& request, const SyncResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Assigns one or more tags (key-value pairs) to the specified resource.</p>
@@ -465,15 +337,6 @@ namespace AppRegistry
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes tags from a resource.</p> <p>This operation returns an empty response
@@ -483,15 +346,6 @@ namespace AppRegistry
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an existing application with new attributes.</p><p><h3>See Also:</h3>
@@ -501,15 +355,6 @@ namespace AppRegistry
          */
         virtual Model::UpdateApplicationOutcome UpdateApplication(const Model::UpdateApplicationRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateApplication that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateApplicationOutcomeCallable UpdateApplicationCallable(const Model::UpdateApplicationRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateApplicationAsync(const Model::UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an existing attribute group with new details. </p><p><h3>See
@@ -519,15 +364,6 @@ namespace AppRegistry
          */
         virtual Model::UpdateAttributeGroupOutcome UpdateAttributeGroup(const Model::UpdateAttributeGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateAttributeGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateAttributeGroupOutcomeCallable UpdateAttributeGroupCallable(const Model::UpdateAttributeGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateAttributeGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateAttributeGroupAsync(const Model::UpdateAttributeGroupRequest& request, const UpdateAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

@@ -7,8 +7,10 @@
 #include <aws/migrationhuborchestrator/MigrationHubOrchestrator_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/migrationhuborchestrator/MigrationHubOrchestratorServiceClientModel.h>
+#include <aws/migrationhuborchestrator/MigrationHubOrchestratorLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -77,6 +79,47 @@ namespace MigrationHubOrchestrator
         virtual ~MigrationHubOrchestratorClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Create a workflow to orchestrate your migrations.</p><p><h3>See Also:</h3>  
          * <a
@@ -85,15 +128,6 @@ namespace MigrationHubOrchestrator
          */
         virtual Model::CreateWorkflowOutcome CreateWorkflow(const Model::CreateWorkflowRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateWorkflow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateWorkflowOutcomeCallable CreateWorkflowCallable(const Model::CreateWorkflowRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateWorkflow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateWorkflowAsync(const Model::CreateWorkflowRequest& request, const CreateWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Create a step in the migration workflow.</p><p><h3>See Also:</h3>   <a
@@ -102,15 +136,6 @@ namespace MigrationHubOrchestrator
          */
         virtual Model::CreateWorkflowStepOutcome CreateWorkflowStep(const Model::CreateWorkflowStepRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateWorkflowStep that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateWorkflowStepOutcomeCallable CreateWorkflowStepCallable(const Model::CreateWorkflowStepRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateWorkflowStep that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateWorkflowStepAsync(const Model::CreateWorkflowStepRequest& request, const CreateWorkflowStepResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Create a step group in a migration workflow.</p><p><h3>See Also:</h3>   <a
@@ -119,15 +144,6 @@ namespace MigrationHubOrchestrator
          */
         virtual Model::CreateWorkflowStepGroupOutcome CreateWorkflowStepGroup(const Model::CreateWorkflowStepGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateWorkflowStepGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateWorkflowStepGroupOutcomeCallable CreateWorkflowStepGroupCallable(const Model::CreateWorkflowStepGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateWorkflowStepGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateWorkflowStepGroupAsync(const Model::CreateWorkflowStepGroupRequest& request, const CreateWorkflowStepGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Delete a migration workflow. You must pause a running workflow in Migration
@@ -137,15 +153,6 @@ namespace MigrationHubOrchestrator
          */
         virtual Model::DeleteWorkflowOutcome DeleteWorkflow(const Model::DeleteWorkflowRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteWorkflow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteWorkflowOutcomeCallable DeleteWorkflowCallable(const Model::DeleteWorkflowRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteWorkflow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteWorkflowAsync(const Model::DeleteWorkflowRequest& request, const DeleteWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Delete a step in a migration workflow. Pause the workflow to delete a running
@@ -155,15 +162,6 @@ namespace MigrationHubOrchestrator
          */
         virtual Model::DeleteWorkflowStepOutcome DeleteWorkflowStep(const Model::DeleteWorkflowStepRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteWorkflowStep that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteWorkflowStepOutcomeCallable DeleteWorkflowStepCallable(const Model::DeleteWorkflowStepRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteWorkflowStep that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteWorkflowStepAsync(const Model::DeleteWorkflowStepRequest& request, const DeleteWorkflowStepResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Delete a step group in a migration workflow.</p><p><h3>See Also:</h3>   <a
@@ -172,15 +170,6 @@ namespace MigrationHubOrchestrator
          */
         virtual Model::DeleteWorkflowStepGroupOutcome DeleteWorkflowStepGroup(const Model::DeleteWorkflowStepGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteWorkflowStepGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteWorkflowStepGroupOutcomeCallable DeleteWorkflowStepGroupCallable(const Model::DeleteWorkflowStepGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteWorkflowStepGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteWorkflowStepGroupAsync(const Model::DeleteWorkflowStepGroupRequest& request, const DeleteWorkflowStepGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get the template you want to use for creating a migration
@@ -190,15 +179,6 @@ namespace MigrationHubOrchestrator
          */
         virtual Model::GetTemplateOutcome GetTemplate(const Model::GetTemplateRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetTemplateOutcomeCallable GetTemplateCallable(const Model::GetTemplateRequest& request) const;
-
-        /**
-         * An Async wrapper for GetTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetTemplateAsync(const Model::GetTemplateRequest& request, const GetTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get a specific step in a template.</p><p><h3>See Also:</h3>   <a
@@ -207,15 +187,6 @@ namespace MigrationHubOrchestrator
          */
         virtual Model::GetTemplateStepOutcome GetTemplateStep(const Model::GetTemplateStepRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetTemplateStep that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetTemplateStepOutcomeCallable GetTemplateStepCallable(const Model::GetTemplateStepRequest& request) const;
-
-        /**
-         * An Async wrapper for GetTemplateStep that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetTemplateStepAsync(const Model::GetTemplateStepRequest& request, const GetTemplateStepResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get a step group in a template.</p><p><h3>See Also:</h3>   <a
@@ -224,15 +195,6 @@ namespace MigrationHubOrchestrator
          */
         virtual Model::GetTemplateStepGroupOutcome GetTemplateStepGroup(const Model::GetTemplateStepGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetTemplateStepGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetTemplateStepGroupOutcomeCallable GetTemplateStepGroupCallable(const Model::GetTemplateStepGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for GetTemplateStepGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetTemplateStepGroupAsync(const Model::GetTemplateStepGroupRequest& request, const GetTemplateStepGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get migration workflow.</p><p><h3>See Also:</h3>   <a
@@ -241,15 +203,6 @@ namespace MigrationHubOrchestrator
          */
         virtual Model::GetWorkflowOutcome GetWorkflow(const Model::GetWorkflowRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetWorkflow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetWorkflowOutcomeCallable GetWorkflowCallable(const Model::GetWorkflowRequest& request) const;
-
-        /**
-         * An Async wrapper for GetWorkflow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetWorkflowAsync(const Model::GetWorkflowRequest& request, const GetWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get a step in the migration workflow.</p><p><h3>See Also:</h3>   <a
@@ -258,15 +211,6 @@ namespace MigrationHubOrchestrator
          */
         virtual Model::GetWorkflowStepOutcome GetWorkflowStep(const Model::GetWorkflowStepRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetWorkflowStep that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetWorkflowStepOutcomeCallable GetWorkflowStepCallable(const Model::GetWorkflowStepRequest& request) const;
-
-        /**
-         * An Async wrapper for GetWorkflowStep that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetWorkflowStepAsync(const Model::GetWorkflowStepRequest& request, const GetWorkflowStepResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get the step group of a migration workflow.</p><p><h3>See Also:</h3>   <a
@@ -275,15 +219,6 @@ namespace MigrationHubOrchestrator
          */
         virtual Model::GetWorkflowStepGroupOutcome GetWorkflowStepGroup(const Model::GetWorkflowStepGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetWorkflowStepGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetWorkflowStepGroupOutcomeCallable GetWorkflowStepGroupCallable(const Model::GetWorkflowStepGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for GetWorkflowStepGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetWorkflowStepGroupAsync(const Model::GetWorkflowStepGroupRequest& request, const GetWorkflowStepGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List AWS Migration Hub Orchestrator plugins.</p><p><h3>See Also:</h3>   <a
@@ -292,15 +227,6 @@ namespace MigrationHubOrchestrator
          */
         virtual Model::ListPluginsOutcome ListPlugins(const Model::ListPluginsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPlugins that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPluginsOutcomeCallable ListPluginsCallable(const Model::ListPluginsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPlugins that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPluginsAsync(const Model::ListPluginsRequest& request, const ListPluginsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List the tags added to a resource.</p><p><h3>See Also:</h3>   <a
@@ -309,15 +235,6 @@ namespace MigrationHubOrchestrator
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List the step groups in a template.</p><p><h3>See Also:</h3>   <a
@@ -326,15 +243,6 @@ namespace MigrationHubOrchestrator
          */
         virtual Model::ListTemplateStepGroupsOutcome ListTemplateStepGroups(const Model::ListTemplateStepGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTemplateStepGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTemplateStepGroupsOutcomeCallable ListTemplateStepGroupsCallable(const Model::ListTemplateStepGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTemplateStepGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTemplateStepGroupsAsync(const Model::ListTemplateStepGroupsRequest& request, const ListTemplateStepGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List the steps in a template.</p><p><h3>See Also:</h3>   <a
@@ -343,15 +251,6 @@ namespace MigrationHubOrchestrator
          */
         virtual Model::ListTemplateStepsOutcome ListTemplateSteps(const Model::ListTemplateStepsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTemplateSteps that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTemplateStepsOutcomeCallable ListTemplateStepsCallable(const Model::ListTemplateStepsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTemplateSteps that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTemplateStepsAsync(const Model::ListTemplateStepsRequest& request, const ListTemplateStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List the templates available in Migration Hub Orchestrator to create a
@@ -361,15 +260,6 @@ namespace MigrationHubOrchestrator
          */
         virtual Model::ListTemplatesOutcome ListTemplates(const Model::ListTemplatesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTemplates that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTemplatesOutcomeCallable ListTemplatesCallable(const Model::ListTemplatesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTemplates that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTemplatesAsync(const Model::ListTemplatesRequest& request, const ListTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List the step groups in a migration workflow.</p><p><h3>See Also:</h3>   <a
@@ -378,15 +268,6 @@ namespace MigrationHubOrchestrator
          */
         virtual Model::ListWorkflowStepGroupsOutcome ListWorkflowStepGroups(const Model::ListWorkflowStepGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListWorkflowStepGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListWorkflowStepGroupsOutcomeCallable ListWorkflowStepGroupsCallable(const Model::ListWorkflowStepGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListWorkflowStepGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListWorkflowStepGroupsAsync(const Model::ListWorkflowStepGroupsRequest& request, const ListWorkflowStepGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List the steps in a workflow.</p><p><h3>See Also:</h3>   <a
@@ -395,15 +276,6 @@ namespace MigrationHubOrchestrator
          */
         virtual Model::ListWorkflowStepsOutcome ListWorkflowSteps(const Model::ListWorkflowStepsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListWorkflowSteps that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListWorkflowStepsOutcomeCallable ListWorkflowStepsCallable(const Model::ListWorkflowStepsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListWorkflowSteps that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListWorkflowStepsAsync(const Model::ListWorkflowStepsRequest& request, const ListWorkflowStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List the migration workflows.</p><p><h3>See Also:</h3>   <a
@@ -412,15 +284,6 @@ namespace MigrationHubOrchestrator
          */
         virtual Model::ListWorkflowsOutcome ListWorkflows(const Model::ListWorkflowsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListWorkflows that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListWorkflowsOutcomeCallable ListWorkflowsCallable(const Model::ListWorkflowsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListWorkflows that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListWorkflowsAsync(const Model::ListWorkflowsRequest& request, const ListWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retry a failed step in a migration workflow.</p><p><h3>See Also:</h3>   <a
@@ -429,15 +292,6 @@ namespace MigrationHubOrchestrator
          */
         virtual Model::RetryWorkflowStepOutcome RetryWorkflowStep(const Model::RetryWorkflowStepRequest& request) const;
 
-        /**
-         * A Callable wrapper for RetryWorkflowStep that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RetryWorkflowStepOutcomeCallable RetryWorkflowStepCallable(const Model::RetryWorkflowStepRequest& request) const;
-
-        /**
-         * An Async wrapper for RetryWorkflowStep that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RetryWorkflowStepAsync(const Model::RetryWorkflowStepRequest& request, const RetryWorkflowStepResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Start a migration workflow.</p><p><h3>See Also:</h3>   <a
@@ -446,15 +300,6 @@ namespace MigrationHubOrchestrator
          */
         virtual Model::StartWorkflowOutcome StartWorkflow(const Model::StartWorkflowRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartWorkflow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartWorkflowOutcomeCallable StartWorkflowCallable(const Model::StartWorkflowRequest& request) const;
-
-        /**
-         * An Async wrapper for StartWorkflow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartWorkflowAsync(const Model::StartWorkflowRequest& request, const StartWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stop an ongoing migration workflow.</p><p><h3>See Also:</h3>   <a
@@ -463,15 +308,6 @@ namespace MigrationHubOrchestrator
          */
         virtual Model::StopWorkflowOutcome StopWorkflow(const Model::StopWorkflowRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopWorkflow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopWorkflowOutcomeCallable StopWorkflowCallable(const Model::StopWorkflowRequest& request) const;
-
-        /**
-         * An Async wrapper for StopWorkflow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopWorkflowAsync(const Model::StopWorkflowRequest& request, const StopWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Tag a resource by specifying its Amazon Resource Name (ARN).</p><p><h3>See
@@ -481,15 +317,6 @@ namespace MigrationHubOrchestrator
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the tags for a resource.</p><p><h3>See Also:</h3>   <a
@@ -498,15 +325,6 @@ namespace MigrationHubOrchestrator
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Update a migration workflow.</p><p><h3>See Also:</h3>   <a
@@ -515,15 +333,6 @@ namespace MigrationHubOrchestrator
          */
         virtual Model::UpdateWorkflowOutcome UpdateWorkflow(const Model::UpdateWorkflowRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateWorkflow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateWorkflowOutcomeCallable UpdateWorkflowCallable(const Model::UpdateWorkflowRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateWorkflow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateWorkflowAsync(const Model::UpdateWorkflowRequest& request, const UpdateWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Update a step in a migration workflow.</p><p><h3>See Also:</h3>   <a
@@ -532,15 +341,6 @@ namespace MigrationHubOrchestrator
          */
         virtual Model::UpdateWorkflowStepOutcome UpdateWorkflowStep(const Model::UpdateWorkflowStepRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateWorkflowStep that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateWorkflowStepOutcomeCallable UpdateWorkflowStepCallable(const Model::UpdateWorkflowStepRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateWorkflowStep that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateWorkflowStepAsync(const Model::UpdateWorkflowStepRequest& request, const UpdateWorkflowStepResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Update the step group in a migration workflow.</p><p><h3>See Also:</h3>   <a
@@ -549,15 +349,6 @@ namespace MigrationHubOrchestrator
          */
         virtual Model::UpdateWorkflowStepGroupOutcome UpdateWorkflowStepGroup(const Model::UpdateWorkflowStepGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateWorkflowStepGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateWorkflowStepGroupOutcomeCallable UpdateWorkflowStepGroupCallable(const Model::UpdateWorkflowStepGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateWorkflowStepGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateWorkflowStepGroupAsync(const Model::UpdateWorkflowStepGroupRequest& request, const UpdateWorkflowStepGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

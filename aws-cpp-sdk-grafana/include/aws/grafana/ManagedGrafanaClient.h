@@ -7,8 +7,10 @@
 #include <aws/grafana/ManagedGrafana_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/grafana/ManagedGrafanaServiceClientModel.h>
+#include <aws/grafana/ManagedGrafanaLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -81,6 +83,47 @@ namespace ManagedGrafana
         virtual ~ManagedGrafanaClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Assigns a Grafana Enterprise license to a workspace. Upgrading to Grafana
          * Enterprise incurs additional fees. For more information, see <a
@@ -91,15 +134,6 @@ namespace ManagedGrafana
          */
         virtual Model::AssociateLicenseOutcome AssociateLicense(const Model::AssociateLicenseRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateLicense that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateLicenseOutcomeCallable AssociateLicenseCallable(const Model::AssociateLicenseRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateLicense that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateLicenseAsync(const Model::AssociateLicenseRequest& request, const AssociateLicenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a <i>workspace</i>. In a workspace, you can create Grafana dashboards
@@ -114,15 +148,6 @@ namespace ManagedGrafana
          */
         virtual Model::CreateWorkspaceOutcome CreateWorkspace(const Model::CreateWorkspaceRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateWorkspace that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateWorkspaceOutcomeCallable CreateWorkspaceCallable(const Model::CreateWorkspaceRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateWorkspace that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateWorkspaceAsync(const Model::CreateWorkspaceRequest& request, const CreateWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an API key for the workspace. This key can be used to authenticate
@@ -135,15 +160,6 @@ namespace ManagedGrafana
          */
         virtual Model::CreateWorkspaceApiKeyOutcome CreateWorkspaceApiKey(const Model::CreateWorkspaceApiKeyRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateWorkspaceApiKey that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateWorkspaceApiKeyOutcomeCallable CreateWorkspaceApiKeyCallable(const Model::CreateWorkspaceApiKeyRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateWorkspaceApiKey that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateWorkspaceApiKeyAsync(const Model::CreateWorkspaceApiKeyRequest& request, const CreateWorkspaceApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an Amazon Managed Grafana workspace.</p><p><h3>See Also:</h3>   <a
@@ -152,15 +168,6 @@ namespace ManagedGrafana
          */
         virtual Model::DeleteWorkspaceOutcome DeleteWorkspace(const Model::DeleteWorkspaceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteWorkspace that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteWorkspaceOutcomeCallable DeleteWorkspaceCallable(const Model::DeleteWorkspaceRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteWorkspace that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteWorkspaceAsync(const Model::DeleteWorkspaceRequest& request, const DeleteWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an API key for a workspace.</p><p><h3>See Also:</h3>   <a
@@ -169,15 +176,6 @@ namespace ManagedGrafana
          */
         virtual Model::DeleteWorkspaceApiKeyOutcome DeleteWorkspaceApiKey(const Model::DeleteWorkspaceApiKeyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteWorkspaceApiKey that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteWorkspaceApiKeyOutcomeCallable DeleteWorkspaceApiKeyCallable(const Model::DeleteWorkspaceApiKeyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteWorkspaceApiKey that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteWorkspaceApiKeyAsync(const Model::DeleteWorkspaceApiKeyRequest& request, const DeleteWorkspaceApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Displays information about one Amazon Managed Grafana
@@ -187,15 +185,6 @@ namespace ManagedGrafana
          */
         virtual Model::DescribeWorkspaceOutcome DescribeWorkspace(const Model::DescribeWorkspaceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeWorkspace that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeWorkspaceOutcomeCallable DescribeWorkspaceCallable(const Model::DescribeWorkspaceRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeWorkspace that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeWorkspaceAsync(const Model::DescribeWorkspaceRequest& request, const DescribeWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Displays information about the authentication methods used in one Amazon
@@ -205,15 +194,6 @@ namespace ManagedGrafana
          */
         virtual Model::DescribeWorkspaceAuthenticationOutcome DescribeWorkspaceAuthentication(const Model::DescribeWorkspaceAuthenticationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeWorkspaceAuthentication that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeWorkspaceAuthenticationOutcomeCallable DescribeWorkspaceAuthenticationCallable(const Model::DescribeWorkspaceAuthenticationRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeWorkspaceAuthentication that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeWorkspaceAuthenticationAsync(const Model::DescribeWorkspaceAuthenticationRequest& request, const DescribeWorkspaceAuthenticationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the Grafana Enterprise license from a workspace.</p><p><h3>See
@@ -223,15 +203,6 @@ namespace ManagedGrafana
          */
         virtual Model::DisassociateLicenseOutcome DisassociateLicense(const Model::DisassociateLicenseRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateLicense that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateLicenseOutcomeCallable DisassociateLicenseCallable(const Model::DisassociateLicenseRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateLicense that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateLicenseAsync(const Model::DisassociateLicenseRequest& request, const DisassociateLicenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the users and groups who have the Grafana <code>Admin</code> and
@@ -246,15 +217,6 @@ namespace ManagedGrafana
          */
         virtual Model::ListPermissionsOutcome ListPermissions(const Model::ListPermissionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPermissions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPermissionsOutcomeCallable ListPermissionsCallable(const Model::ListPermissionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPermissions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPermissionsAsync(const Model::ListPermissionsRequest& request, const ListPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The <code>ListTagsForResource</code> operation returns the tags that are
@@ -266,15 +228,6 @@ namespace ManagedGrafana
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of Amazon Managed Grafana workspaces in the account, with some
@@ -287,15 +240,6 @@ namespace ManagedGrafana
          */
         virtual Model::ListWorkspacesOutcome ListWorkspaces(const Model::ListWorkspacesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListWorkspaces that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListWorkspacesOutcomeCallable ListWorkspacesCallable(const Model::ListWorkspacesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListWorkspaces that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListWorkspacesAsync(const Model::ListWorkspacesRequest& request, const ListWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The <code>TagResource</code> operation associates tags with an Amazon Managed
@@ -309,15 +253,6 @@ namespace ManagedGrafana
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The <code>UntagResource</code> operation removes the association of the tag
@@ -327,15 +262,6 @@ namespace ManagedGrafana
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates which users in a workspace have the Grafana <code>Admin</code> or
@@ -345,15 +271,6 @@ namespace ManagedGrafana
          */
         virtual Model::UpdatePermissionsOutcome UpdatePermissions(const Model::UpdatePermissionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdatePermissions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdatePermissionsOutcomeCallable UpdatePermissionsCallable(const Model::UpdatePermissionsRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdatePermissions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdatePermissionsAsync(const Model::UpdatePermissionsRequest& request, const UpdatePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies an existing Amazon Managed Grafana workspace. If you use this
@@ -370,15 +287,6 @@ namespace ManagedGrafana
          */
         virtual Model::UpdateWorkspaceOutcome UpdateWorkspace(const Model::UpdateWorkspaceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateWorkspace that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateWorkspaceOutcomeCallable UpdateWorkspaceCallable(const Model::UpdateWorkspaceRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateWorkspace that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateWorkspaceAsync(const Model::UpdateWorkspaceRequest& request, const UpdateWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Use this operation to define the identity provider (IdP) that this workspace
@@ -391,15 +299,6 @@ namespace ManagedGrafana
          */
         virtual Model::UpdateWorkspaceAuthenticationOutcome UpdateWorkspaceAuthentication(const Model::UpdateWorkspaceAuthenticationRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateWorkspaceAuthentication that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateWorkspaceAuthenticationOutcomeCallable UpdateWorkspaceAuthenticationCallable(const Model::UpdateWorkspaceAuthenticationRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateWorkspaceAuthentication that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateWorkspaceAuthenticationAsync(const Model::UpdateWorkspaceAuthenticationRequest& request, const UpdateWorkspaceAuthenticationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

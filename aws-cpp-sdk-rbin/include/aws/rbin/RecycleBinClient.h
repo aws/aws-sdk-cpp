@@ -7,8 +7,10 @@
 #include <aws/rbin/RecycleBin_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/rbin/RecycleBinServiceClientModel.h>
+#include <aws/rbin/RecycleBinLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -86,6 +88,47 @@ namespace RecycleBin
         virtual ~RecycleBinClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Creates a Recycle Bin retention rule. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-rules.html#recycle-bin-create-rule">
@@ -96,15 +139,6 @@ namespace RecycleBin
          */
         virtual Model::CreateRuleOutcome CreateRule(const Model::CreateRuleRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateRule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateRuleOutcomeCallable CreateRuleCallable(const Model::CreateRuleRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateRule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateRuleAsync(const Model::CreateRuleRequest& request, const CreateRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a Recycle Bin retention rule. For more information, see <a
@@ -116,15 +150,6 @@ namespace RecycleBin
          */
         virtual Model::DeleteRuleOutcome DeleteRule(const Model::DeleteRuleRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteRule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteRuleOutcomeCallable DeleteRuleCallable(const Model::DeleteRuleRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteRule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteRuleAsync(const Model::DeleteRuleRequest& request, const DeleteRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about a Recycle Bin retention rule.</p><p><h3>See Also:</h3>
@@ -133,15 +158,6 @@ namespace RecycleBin
          */
         virtual Model::GetRuleOutcome GetRule(const Model::GetRuleRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRuleOutcomeCallable GetRuleCallable(const Model::GetRuleRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRuleAsync(const Model::GetRuleRequest& request, const GetRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the Recycle Bin retention rules in the Region.</p><p><h3>See Also:</h3>
@@ -150,15 +166,6 @@ namespace RecycleBin
          */
         virtual Model::ListRulesOutcome ListRules(const Model::ListRulesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListRules that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListRulesOutcomeCallable ListRulesCallable(const Model::ListRulesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListRules that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListRulesAsync(const Model::ListRulesRequest& request, const ListRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the tags assigned to a retention rule.</p><p><h3>See Also:</h3>   <a
@@ -167,15 +174,6 @@ namespace RecycleBin
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Assigns tags to the specified retention rule.</p><p><h3>See Also:</h3>   <a
@@ -184,15 +182,6 @@ namespace RecycleBin
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Unassigns a tag from a retention rule.</p><p><h3>See Also:</h3>   <a
@@ -201,15 +190,6 @@ namespace RecycleBin
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an existing Recycle Bin retention rule. For more information, see <a
@@ -221,15 +201,6 @@ namespace RecycleBin
          */
         virtual Model::UpdateRuleOutcome UpdateRule(const Model::UpdateRuleRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateRule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateRuleOutcomeCallable UpdateRuleCallable(const Model::UpdateRuleRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateRule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateRuleAsync(const Model::UpdateRuleRequest& request, const UpdateRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

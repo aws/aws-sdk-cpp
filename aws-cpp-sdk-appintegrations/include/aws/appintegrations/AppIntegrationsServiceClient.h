@@ -7,8 +7,10 @@
 #include <aws/appintegrations/AppIntegrationsService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/appintegrations/AppIntegrationsServiceServiceClientModel.h>
+#include <aws/appintegrations/AppIntegrationsServiceLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -80,6 +82,47 @@ namespace AppIntegrationsService
         virtual ~AppIntegrationsServiceClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Creates and persists a DataIntegration resource.</p>  <p>You cannot
          * create a DataIntegration association for a DataIntegration that has been
@@ -91,15 +134,6 @@ namespace AppIntegrationsService
          */
         virtual Model::CreateDataIntegrationOutcome CreateDataIntegration(const Model::CreateDataIntegrationRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDataIntegration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDataIntegrationOutcomeCallable CreateDataIntegrationCallable(const Model::CreateDataIntegrationRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDataIntegration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDataIntegrationAsync(const Model::CreateDataIntegrationRequest& request, const CreateDataIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an EventIntegration, given a specified name, description, and a
@@ -112,15 +146,6 @@ namespace AppIntegrationsService
          */
         virtual Model::CreateEventIntegrationOutcome CreateEventIntegration(const Model::CreateEventIntegrationRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateEventIntegration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateEventIntegrationOutcomeCallable CreateEventIntegrationCallable(const Model::CreateEventIntegrationRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateEventIntegration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateEventIntegrationAsync(const Model::CreateEventIntegrationRequest& request, const CreateEventIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the DataIntegration. Only DataIntegrations that don't have any
@@ -136,15 +161,6 @@ namespace AppIntegrationsService
          */
         virtual Model::DeleteDataIntegrationOutcome DeleteDataIntegration(const Model::DeleteDataIntegrationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDataIntegration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDataIntegrationOutcomeCallable DeleteDataIntegrationCallable(const Model::DeleteDataIntegrationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDataIntegration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDataIntegrationAsync(const Model::DeleteDataIntegrationRequest& request, const DeleteDataIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified existing event integration. If the event integration is
@@ -154,15 +170,6 @@ namespace AppIntegrationsService
          */
         virtual Model::DeleteEventIntegrationOutcome DeleteEventIntegration(const Model::DeleteEventIntegrationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteEventIntegration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteEventIntegrationOutcomeCallable DeleteEventIntegrationCallable(const Model::DeleteEventIntegrationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteEventIntegration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteEventIntegrationAsync(const Model::DeleteEventIntegrationRequest& request, const DeleteEventIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the DataIntegration.</p>  <p>You cannot
@@ -176,15 +183,6 @@ namespace AppIntegrationsService
          */
         virtual Model::GetDataIntegrationOutcome GetDataIntegration(const Model::GetDataIntegrationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDataIntegration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDataIntegrationOutcomeCallable GetDataIntegrationCallable(const Model::GetDataIntegrationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDataIntegration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDataIntegrationAsync(const Model::GetDataIntegrationRequest& request, const GetDataIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the event integration.</p><p><h3>See Also:</h3>  
@@ -194,15 +192,6 @@ namespace AppIntegrationsService
          */
         virtual Model::GetEventIntegrationOutcome GetEventIntegration(const Model::GetEventIntegrationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetEventIntegration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetEventIntegrationOutcomeCallable GetEventIntegrationCallable(const Model::GetEventIntegrationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetEventIntegration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetEventIntegrationAsync(const Model::GetEventIntegrationRequest& request, const GetEventIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a paginated list of DataIntegration associations in the account.</p>
@@ -216,15 +205,6 @@ namespace AppIntegrationsService
          */
         virtual Model::ListDataIntegrationAssociationsOutcome ListDataIntegrationAssociations(const Model::ListDataIntegrationAssociationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDataIntegrationAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDataIntegrationAssociationsOutcomeCallable ListDataIntegrationAssociationsCallable(const Model::ListDataIntegrationAssociationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDataIntegrationAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDataIntegrationAssociationsAsync(const Model::ListDataIntegrationAssociationsRequest& request, const ListDataIntegrationAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a paginated list of DataIntegrations in the account.</p> 
@@ -238,15 +218,6 @@ namespace AppIntegrationsService
          */
         virtual Model::ListDataIntegrationsOutcome ListDataIntegrations(const Model::ListDataIntegrationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDataIntegrations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDataIntegrationsOutcomeCallable ListDataIntegrationsCallable(const Model::ListDataIntegrationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDataIntegrations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDataIntegrationsAsync(const Model::ListDataIntegrationsRequest& request, const ListDataIntegrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a paginated list of event integration associations in the account.
@@ -256,15 +227,6 @@ namespace AppIntegrationsService
          */
         virtual Model::ListEventIntegrationAssociationsOutcome ListEventIntegrationAssociations(const Model::ListEventIntegrationAssociationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListEventIntegrationAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListEventIntegrationAssociationsOutcomeCallable ListEventIntegrationAssociationsCallable(const Model::ListEventIntegrationAssociationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListEventIntegrationAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListEventIntegrationAssociationsAsync(const Model::ListEventIntegrationAssociationsRequest& request, const ListEventIntegrationAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a paginated list of event integrations in the account.</p><p><h3>See
@@ -274,15 +236,6 @@ namespace AppIntegrationsService
          */
         virtual Model::ListEventIntegrationsOutcome ListEventIntegrations(const Model::ListEventIntegrationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListEventIntegrations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListEventIntegrationsOutcomeCallable ListEventIntegrationsCallable(const Model::ListEventIntegrationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListEventIntegrations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListEventIntegrationsAsync(const Model::ListEventIntegrationsRequest& request, const ListEventIntegrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the tags for the specified resource.</p><p><h3>See Also:</h3>   <a
@@ -291,15 +244,6 @@ namespace AppIntegrationsService
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds the specified tags to the specified resource.</p><p><h3>See Also:</h3>  
@@ -309,15 +253,6 @@ namespace AppIntegrationsService
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified tags from the specified resource.</p><p><h3>See
@@ -327,15 +262,6 @@ namespace AppIntegrationsService
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the description of a DataIntegration.</p>  <p>You cannot create
@@ -349,15 +275,6 @@ namespace AppIntegrationsService
          */
         virtual Model::UpdateDataIntegrationOutcome UpdateDataIntegration(const Model::UpdateDataIntegrationRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateDataIntegration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateDataIntegrationOutcomeCallable UpdateDataIntegrationCallable(const Model::UpdateDataIntegrationRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateDataIntegration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateDataIntegrationAsync(const Model::UpdateDataIntegrationRequest& request, const UpdateDataIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the description of an event integration.</p><p><h3>See Also:</h3>  
@@ -367,15 +284,6 @@ namespace AppIntegrationsService
          */
         virtual Model::UpdateEventIntegrationOutcome UpdateEventIntegration(const Model::UpdateEventIntegrationRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateEventIntegration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateEventIntegrationOutcomeCallable UpdateEventIntegrationCallable(const Model::UpdateEventIntegrationRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateEventIntegration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateEventIntegrationAsync(const Model::UpdateEventIntegrationRequest& request, const UpdateEventIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

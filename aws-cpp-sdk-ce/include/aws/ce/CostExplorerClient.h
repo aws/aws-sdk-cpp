@@ -7,8 +7,10 @@
 #include <aws/ce/CostExplorer_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ce/CostExplorerServiceClientModel.h>
+#include <aws/ce/CostExplorerLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -82,6 +84,47 @@ namespace CostExplorer
         virtual ~CostExplorerClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Creates a new cost anomaly detection monitor with the requested type and
          * monitor specification. </p><p><h3>See Also:</h3>   <a
@@ -90,15 +133,6 @@ namespace CostExplorer
          */
         virtual Model::CreateAnomalyMonitorOutcome CreateAnomalyMonitor(const Model::CreateAnomalyMonitorRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateAnomalyMonitor that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateAnomalyMonitorOutcomeCallable CreateAnomalyMonitorCallable(const Model::CreateAnomalyMonitorRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateAnomalyMonitor that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateAnomalyMonitorAsync(const Model::CreateAnomalyMonitorRequest& request, const CreateAnomalyMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds a subscription to a cost anomaly detection monitor. You can use each
@@ -110,15 +144,6 @@ namespace CostExplorer
          */
         virtual Model::CreateAnomalySubscriptionOutcome CreateAnomalySubscription(const Model::CreateAnomalySubscriptionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateAnomalySubscription that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateAnomalySubscriptionOutcomeCallable CreateAnomalySubscriptionCallable(const Model::CreateAnomalySubscriptionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateAnomalySubscription that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateAnomalySubscriptionAsync(const Model::CreateAnomalySubscriptionRequest& request, const CreateAnomalySubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new Cost Category with the requested name and rules.</p><p><h3>See
@@ -128,15 +153,6 @@ namespace CostExplorer
          */
         virtual Model::CreateCostCategoryDefinitionOutcome CreateCostCategoryDefinition(const Model::CreateCostCategoryDefinitionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateCostCategoryDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateCostCategoryDefinitionOutcomeCallable CreateCostCategoryDefinitionCallable(const Model::CreateCostCategoryDefinitionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateCostCategoryDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateCostCategoryDefinitionAsync(const Model::CreateCostCategoryDefinitionRequest& request, const CreateCostCategoryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a cost anomaly monitor. </p><p><h3>See Also:</h3>   <a
@@ -145,15 +161,6 @@ namespace CostExplorer
          */
         virtual Model::DeleteAnomalyMonitorOutcome DeleteAnomalyMonitor(const Model::DeleteAnomalyMonitorRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAnomalyMonitor that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAnomalyMonitorOutcomeCallable DeleteAnomalyMonitorCallable(const Model::DeleteAnomalyMonitorRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAnomalyMonitor that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAnomalyMonitorAsync(const Model::DeleteAnomalyMonitorRequest& request, const DeleteAnomalyMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a cost anomaly subscription. </p><p><h3>See Also:</h3>   <a
@@ -162,15 +169,6 @@ namespace CostExplorer
          */
         virtual Model::DeleteAnomalySubscriptionOutcome DeleteAnomalySubscription(const Model::DeleteAnomalySubscriptionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAnomalySubscription that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAnomalySubscriptionOutcomeCallable DeleteAnomalySubscriptionCallable(const Model::DeleteAnomalySubscriptionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAnomalySubscription that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAnomalySubscriptionAsync(const Model::DeleteAnomalySubscriptionRequest& request, const DeleteAnomalySubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a Cost Category. Expenses from this month going forward will no
@@ -180,15 +178,6 @@ namespace CostExplorer
          */
         virtual Model::DeleteCostCategoryDefinitionOutcome DeleteCostCategoryDefinition(const Model::DeleteCostCategoryDefinitionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteCostCategoryDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteCostCategoryDefinitionOutcomeCallable DeleteCostCategoryDefinitionCallable(const Model::DeleteCostCategoryDefinitionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteCostCategoryDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteCostCategoryDefinitionAsync(const Model::DeleteCostCategoryDefinitionRequest& request, const DeleteCostCategoryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the name, Amazon Resource Name (ARN), rules, definition, and
@@ -203,15 +192,6 @@ namespace CostExplorer
          */
         virtual Model::DescribeCostCategoryDefinitionOutcome DescribeCostCategoryDefinition(const Model::DescribeCostCategoryDefinitionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeCostCategoryDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeCostCategoryDefinitionOutcomeCallable DescribeCostCategoryDefinitionCallable(const Model::DescribeCostCategoryDefinitionRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeCostCategoryDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeCostCategoryDefinitionAsync(const Model::DescribeCostCategoryDefinitionRequest& request, const DescribeCostCategoryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves all of the cost anomalies detected on your account during the time
@@ -222,15 +202,6 @@ namespace CostExplorer
          */
         virtual Model::GetAnomaliesOutcome GetAnomalies(const Model::GetAnomaliesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAnomalies that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAnomaliesOutcomeCallable GetAnomaliesCallable(const Model::GetAnomaliesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAnomalies that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAnomaliesAsync(const Model::GetAnomaliesRequest& request, const GetAnomaliesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the cost anomaly monitor definitions for your account. You can
@@ -241,15 +212,6 @@ namespace CostExplorer
          */
         virtual Model::GetAnomalyMonitorsOutcome GetAnomalyMonitors(const Model::GetAnomalyMonitorsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAnomalyMonitors that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAnomalyMonitorsOutcomeCallable GetAnomalyMonitorsCallable(const Model::GetAnomalyMonitorsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAnomalyMonitors that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAnomalyMonitorsAsync(const Model::GetAnomalyMonitorsRequest& request, const GetAnomalyMonitorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the cost anomaly subscription objects for your account. You can
@@ -260,15 +222,6 @@ namespace CostExplorer
          */
         virtual Model::GetAnomalySubscriptionsOutcome GetAnomalySubscriptions(const Model::GetAnomalySubscriptionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAnomalySubscriptions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAnomalySubscriptionsOutcomeCallable GetAnomalySubscriptionsCallable(const Model::GetAnomalySubscriptionsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAnomalySubscriptions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAnomalySubscriptionsAsync(const Model::GetAnomalySubscriptionsRequest& request, const GetAnomalySubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves cost and usage metrics for your account. You can specify which cost
@@ -288,15 +241,6 @@ namespace CostExplorer
          */
         virtual Model::GetCostAndUsageOutcome GetCostAndUsage(const Model::GetCostAndUsageRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetCostAndUsage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetCostAndUsageOutcomeCallable GetCostAndUsageCallable(const Model::GetCostAndUsageRequest& request) const;
-
-        /**
-         * An Async wrapper for GetCostAndUsage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetCostAndUsageAsync(const Model::GetCostAndUsageRequest& request, const GetCostAndUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves cost and usage metrics with resources for your account. You can
@@ -319,15 +263,6 @@ namespace CostExplorer
          */
         virtual Model::GetCostAndUsageWithResourcesOutcome GetCostAndUsageWithResources(const Model::GetCostAndUsageWithResourcesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetCostAndUsageWithResources that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetCostAndUsageWithResourcesOutcomeCallable GetCostAndUsageWithResourcesCallable(const Model::GetCostAndUsageWithResourcesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetCostAndUsageWithResources that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetCostAndUsageWithResourcesAsync(const Model::GetCostAndUsageWithResourcesRequest& request, const GetCostAndUsageWithResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves an array of Cost Category names and values incurred cost.</p>
@@ -339,15 +274,6 @@ namespace CostExplorer
          */
         virtual Model::GetCostCategoriesOutcome GetCostCategories(const Model::GetCostCategoriesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetCostCategories that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetCostCategoriesOutcomeCallable GetCostCategoriesCallable(const Model::GetCostCategoriesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetCostCategories that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetCostCategoriesAsync(const Model::GetCostCategoriesRequest& request, const GetCostCategoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a forecast for how much Amazon Web Services predicts that you will
@@ -358,15 +284,6 @@ namespace CostExplorer
          */
         virtual Model::GetCostForecastOutcome GetCostForecast(const Model::GetCostForecastRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetCostForecast that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetCostForecastOutcomeCallable GetCostForecastCallable(const Model::GetCostForecastRequest& request) const;
-
-        /**
-         * An Async wrapper for GetCostForecast that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetCostForecastAsync(const Model::GetCostForecastRequest& request, const GetCostForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves all available filter values for a specified filter over a period of
@@ -377,15 +294,6 @@ namespace CostExplorer
          */
         virtual Model::GetDimensionValuesOutcome GetDimensionValues(const Model::GetDimensionValuesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDimensionValues that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDimensionValuesOutcomeCallable GetDimensionValuesCallable(const Model::GetDimensionValuesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDimensionValues that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDimensionValuesAsync(const Model::GetDimensionValuesRequest& request, const GetDimensionValuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the reservation coverage for your account, which you can use to see
@@ -407,15 +315,6 @@ namespace CostExplorer
          */
         virtual Model::GetReservationCoverageOutcome GetReservationCoverage(const Model::GetReservationCoverageRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetReservationCoverage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetReservationCoverageOutcomeCallable GetReservationCoverageCallable(const Model::GetReservationCoverageRequest& request) const;
-
-        /**
-         * An Async wrapper for GetReservationCoverage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetReservationCoverageAsync(const Model::GetReservationCoverageRequest& request, const GetReservationCoverageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets recommendations for reservation purchases. These recommendations might
@@ -441,15 +340,6 @@ namespace CostExplorer
          */
         virtual Model::GetReservationPurchaseRecommendationOutcome GetReservationPurchaseRecommendation(const Model::GetReservationPurchaseRecommendationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetReservationPurchaseRecommendation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetReservationPurchaseRecommendationOutcomeCallable GetReservationPurchaseRecommendationCallable(const Model::GetReservationPurchaseRecommendationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetReservationPurchaseRecommendation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetReservationPurchaseRecommendationAsync(const Model::GetReservationPurchaseRecommendationRequest& request, const GetReservationPurchaseRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the reservation utilization for your account. Management account in
@@ -462,15 +352,6 @@ namespace CostExplorer
          */
         virtual Model::GetReservationUtilizationOutcome GetReservationUtilization(const Model::GetReservationUtilizationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetReservationUtilization that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetReservationUtilizationOutcomeCallable GetReservationUtilizationCallable(const Model::GetReservationUtilizationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetReservationUtilization that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetReservationUtilizationAsync(const Model::GetReservationUtilizationRequest& request, const GetReservationUtilizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates recommendations that help you save cost by identifying idle and
@@ -485,15 +366,6 @@ namespace CostExplorer
          */
         virtual Model::GetRightsizingRecommendationOutcome GetRightsizingRecommendation(const Model::GetRightsizingRecommendationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRightsizingRecommendation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRightsizingRecommendationOutcomeCallable GetRightsizingRecommendationCallable(const Model::GetRightsizingRecommendationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRightsizingRecommendation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRightsizingRecommendationAsync(const Model::GetRightsizingRecommendationRequest& request, const GetRightsizingRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the Savings Plans covered for your account. This enables you to see
@@ -511,15 +383,6 @@ namespace CostExplorer
          */
         virtual Model::GetSavingsPlansCoverageOutcome GetSavingsPlansCoverage(const Model::GetSavingsPlansCoverageRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSavingsPlansCoverage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSavingsPlansCoverageOutcomeCallable GetSavingsPlansCoverageCallable(const Model::GetSavingsPlansCoverageRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSavingsPlansCoverage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSavingsPlansCoverageAsync(const Model::GetSavingsPlansCoverageRequest& request, const GetSavingsPlansCoverageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves your request parameters, Savings Plan Recommendations Summary and
@@ -529,15 +392,6 @@ namespace CostExplorer
          */
         virtual Model::GetSavingsPlansPurchaseRecommendationOutcome GetSavingsPlansPurchaseRecommendation(const Model::GetSavingsPlansPurchaseRecommendationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSavingsPlansPurchaseRecommendation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSavingsPlansPurchaseRecommendationOutcomeCallable GetSavingsPlansPurchaseRecommendationCallable(const Model::GetSavingsPlansPurchaseRecommendationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSavingsPlansPurchaseRecommendation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSavingsPlansPurchaseRecommendationAsync(const Model::GetSavingsPlansPurchaseRecommendationRequest& request, const GetSavingsPlansPurchaseRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the Savings Plans utilization for your account across date ranges
@@ -551,15 +405,6 @@ namespace CostExplorer
          */
         virtual Model::GetSavingsPlansUtilizationOutcome GetSavingsPlansUtilization(const Model::GetSavingsPlansUtilizationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSavingsPlansUtilization that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSavingsPlansUtilizationOutcomeCallable GetSavingsPlansUtilizationCallable(const Model::GetSavingsPlansUtilizationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSavingsPlansUtilization that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSavingsPlansUtilizationAsync(const Model::GetSavingsPlansUtilizationRequest& request, const GetSavingsPlansUtilizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves attribute data along with aggregate utilization and savings data
@@ -576,15 +421,6 @@ namespace CostExplorer
          */
         virtual Model::GetSavingsPlansUtilizationDetailsOutcome GetSavingsPlansUtilizationDetails(const Model::GetSavingsPlansUtilizationDetailsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSavingsPlansUtilizationDetails that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSavingsPlansUtilizationDetailsOutcomeCallable GetSavingsPlansUtilizationDetailsCallable(const Model::GetSavingsPlansUtilizationDetailsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSavingsPlansUtilizationDetails that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSavingsPlansUtilizationDetailsAsync(const Model::GetSavingsPlansUtilizationDetailsRequest& request, const GetSavingsPlansUtilizationDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Queries for available tag keys and tag values for a specified period. You can
@@ -594,15 +430,6 @@ namespace CostExplorer
          */
         virtual Model::GetTagsOutcome GetTags(const Model::GetTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetTagsOutcomeCallable GetTagsCallable(const Model::GetTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetTagsAsync(const Model::GetTagsRequest& request, const GetTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a forecast for how much Amazon Web Services predicts that you will
@@ -613,15 +440,6 @@ namespace CostExplorer
          */
         virtual Model::GetUsageForecastOutcome GetUsageForecast(const Model::GetUsageForecastRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetUsageForecast that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetUsageForecastOutcomeCallable GetUsageForecastCallable(const Model::GetUsageForecastRequest& request) const;
-
-        /**
-         * An Async wrapper for GetUsageForecast that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetUsageForecastAsync(const Model::GetUsageForecastRequest& request, const GetUsageForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get a list of cost allocation tags. All inputs in the API are optional and
@@ -632,15 +450,6 @@ namespace CostExplorer
          */
         virtual Model::ListCostAllocationTagsOutcome ListCostAllocationTags(const Model::ListCostAllocationTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListCostAllocationTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListCostAllocationTagsOutcomeCallable ListCostAllocationTagsCallable(const Model::ListCostAllocationTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListCostAllocationTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListCostAllocationTagsAsync(const Model::ListCostAllocationTagsRequest& request, const ListCostAllocationTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the name, Amazon Resource Name (ARN), <code>NumberOfRules</code> and
@@ -657,15 +466,6 @@ namespace CostExplorer
          */
         virtual Model::ListCostCategoryDefinitionsOutcome ListCostCategoryDefinitions(const Model::ListCostCategoryDefinitionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListCostCategoryDefinitions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListCostCategoryDefinitionsOutcomeCallable ListCostCategoryDefinitionsCallable(const Model::ListCostCategoryDefinitionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListCostCategoryDefinitions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListCostCategoryDefinitionsAsync(const Model::ListCostCategoryDefinitionsRequest& request, const ListCostCategoryDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of resource tags associated with the resource specified by the
@@ -675,15 +475,6 @@ namespace CostExplorer
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the feedback property of a given cost anomaly. </p><p><h3>See
@@ -693,15 +484,6 @@ namespace CostExplorer
          */
         virtual Model::ProvideAnomalyFeedbackOutcome ProvideAnomalyFeedback(const Model::ProvideAnomalyFeedbackRequest& request) const;
 
-        /**
-         * A Callable wrapper for ProvideAnomalyFeedback that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ProvideAnomalyFeedbackOutcomeCallable ProvideAnomalyFeedbackCallable(const Model::ProvideAnomalyFeedbackRequest& request) const;
-
-        /**
-         * An Async wrapper for ProvideAnomalyFeedback that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ProvideAnomalyFeedbackAsync(const Model::ProvideAnomalyFeedbackRequest& request, const ProvideAnomalyFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>An API operation for adding one or more tags (key-value pairs) to a
@@ -717,15 +499,6 @@ namespace CostExplorer
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes one or more tags from a resource. Specify only tag keys in your
@@ -735,15 +508,6 @@ namespace CostExplorer
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an existing cost anomaly monitor. The changes made are applied going
@@ -754,15 +518,6 @@ namespace CostExplorer
          */
         virtual Model::UpdateAnomalyMonitorOutcome UpdateAnomalyMonitor(const Model::UpdateAnomalyMonitorRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateAnomalyMonitor that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateAnomalyMonitorOutcomeCallable UpdateAnomalyMonitorCallable(const Model::UpdateAnomalyMonitorRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateAnomalyMonitor that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateAnomalyMonitorAsync(const Model::UpdateAnomalyMonitorRequest& request, const UpdateAnomalyMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an existing cost anomaly monitor subscription. </p><p><h3>See
@@ -772,15 +527,6 @@ namespace CostExplorer
          */
         virtual Model::UpdateAnomalySubscriptionOutcome UpdateAnomalySubscription(const Model::UpdateAnomalySubscriptionRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateAnomalySubscription that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateAnomalySubscriptionOutcomeCallable UpdateAnomalySubscriptionCallable(const Model::UpdateAnomalySubscriptionRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateAnomalySubscription that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateAnomalySubscriptionAsync(const Model::UpdateAnomalySubscriptionRequest& request, const UpdateAnomalySubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates status for cost allocation tags in bulk, with maximum batch size of
@@ -792,15 +538,6 @@ namespace CostExplorer
          */
         virtual Model::UpdateCostAllocationTagsStatusOutcome UpdateCostAllocationTagsStatus(const Model::UpdateCostAllocationTagsStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateCostAllocationTagsStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateCostAllocationTagsStatusOutcomeCallable UpdateCostAllocationTagsStatusCallable(const Model::UpdateCostAllocationTagsStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateCostAllocationTagsStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateCostAllocationTagsStatusAsync(const Model::UpdateCostAllocationTagsStatusRequest& request, const UpdateCostAllocationTagsStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an existing Cost Category. Changes made to the Cost Category rules
@@ -812,15 +549,6 @@ namespace CostExplorer
          */
         virtual Model::UpdateCostCategoryDefinitionOutcome UpdateCostCategoryDefinition(const Model::UpdateCostCategoryDefinitionRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateCostCategoryDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateCostCategoryDefinitionOutcomeCallable UpdateCostCategoryDefinitionCallable(const Model::UpdateCostCategoryDefinitionRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateCostCategoryDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateCostCategoryDefinitionAsync(const Model::UpdateCostCategoryDefinitionRequest& request, const UpdateCostCategoryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

@@ -7,8 +7,10 @@
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ecs/ECSServiceClientModel.h>
+#include <aws/ecs/ECSLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -87,6 +89,47 @@ namespace ECS
         virtual ~ECSClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Creates a new capacity provider. Capacity providers are associated with an
          * Amazon ECS cluster and are used in capacity provider strategies to facilitate
@@ -100,15 +143,6 @@ namespace ECS
          */
         virtual Model::CreateCapacityProviderOutcome CreateCapacityProvider(const Model::CreateCapacityProviderRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateCapacityProvider that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateCapacityProviderOutcomeCallable CreateCapacityProviderCallable(const Model::CreateCapacityProviderRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateCapacityProvider that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateCapacityProviderAsync(const Model::CreateCapacityProviderRequest& request, const CreateCapacityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new Amazon ECS cluster. By default, your account receives a
@@ -128,15 +162,6 @@ namespace ECS
          */
         virtual Model::CreateClusterOutcome CreateCluster(const Model::CreateClusterRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateCluster that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateClusterOutcomeCallable CreateClusterCallable(const Model::CreateClusterRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateClusterAsync(const Model::CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Runs and maintains your desired number of tasks from a specified task
@@ -230,15 +255,6 @@ namespace ECS
          */
         virtual Model::CreateServiceOutcome CreateService(const Model::CreateServiceRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateService that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateServiceOutcomeCallable CreateServiceCallable(const Model::CreateServiceRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateService that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateServiceAsync(const Model::CreateServiceRequest& request, const CreateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Create a task set in the specified cluster and service. This is used when a
@@ -252,15 +268,6 @@ namespace ECS
          */
         virtual Model::CreateTaskSetOutcome CreateTaskSet(const Model::CreateTaskSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateTaskSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateTaskSetOutcomeCallable CreateTaskSetCallable(const Model::CreateTaskSetRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateTaskSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateTaskSetAsync(const Model::CreateTaskSetRequest& request, const CreateTaskSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disables an account setting for a specified IAM user, IAM role, or the root
@@ -270,15 +277,6 @@ namespace ECS
          */
         virtual Model::DeleteAccountSettingOutcome DeleteAccountSetting(const Model::DeleteAccountSettingRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAccountSetting that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAccountSettingOutcomeCallable DeleteAccountSettingCallable(const Model::DeleteAccountSettingRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAccountSetting that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAccountSettingAsync(const Model::DeleteAccountSettingRequest& request, const DeleteAccountSettingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes one or more custom attributes from an Amazon ECS
@@ -288,15 +286,6 @@ namespace ECS
          */
         virtual Model::DeleteAttributesOutcome DeleteAttributes(const Model::DeleteAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAttributesOutcomeCallable DeleteAttributesCallable(const Model::DeleteAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAttributesAsync(const Model::DeleteAttributesRequest& request, const DeleteAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified capacity provider.</p>  <p>The
@@ -319,15 +308,6 @@ namespace ECS
          */
         virtual Model::DeleteCapacityProviderOutcome DeleteCapacityProvider(const Model::DeleteCapacityProviderRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteCapacityProvider that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteCapacityProviderOutcomeCallable DeleteCapacityProviderCallable(const Model::DeleteCapacityProviderRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteCapacityProvider that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteCapacityProviderAsync(const Model::DeleteCapacityProviderRequest& request, const DeleteCapacityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified cluster. The cluster transitions to the
@@ -344,15 +324,6 @@ namespace ECS
          */
         virtual Model::DeleteClusterOutcome DeleteCluster(const Model::DeleteClusterRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteCluster that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteClusterOutcomeCallable DeleteClusterCallable(const Model::DeleteClusterRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteClusterAsync(const Model::DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a specified service within a cluster. You can delete a service if you
@@ -379,15 +350,6 @@ namespace ECS
          */
         virtual Model::DeleteServiceOutcome DeleteService(const Model::DeleteServiceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteService that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteServiceOutcomeCallable DeleteServiceCallable(const Model::DeleteServiceRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteService that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteServiceAsync(const Model::DeleteServiceRequest& request, const DeleteServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a specified task set within a service. This is used when a service
@@ -401,15 +363,6 @@ namespace ECS
          */
         virtual Model::DeleteTaskSetOutcome DeleteTaskSet(const Model::DeleteTaskSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteTaskSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteTaskSetOutcomeCallable DeleteTaskSetCallable(const Model::DeleteTaskSetRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteTaskSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteTaskSetAsync(const Model::DeleteTaskSetRequest& request, const DeleteTaskSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deregisters an Amazon ECS container instance from the specified cluster. This
@@ -429,15 +382,6 @@ namespace ECS
          */
         virtual Model::DeregisterContainerInstanceOutcome DeregisterContainerInstance(const Model::DeregisterContainerInstanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeregisterContainerInstance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeregisterContainerInstanceOutcomeCallable DeregisterContainerInstanceCallable(const Model::DeregisterContainerInstanceRequest& request) const;
-
-        /**
-         * An Async wrapper for DeregisterContainerInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeregisterContainerInstanceAsync(const Model::DeregisterContainerInstanceRequest& request, const DeregisterContainerInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deregisters the specified task definition by family and revision. Upon
@@ -460,15 +404,6 @@ namespace ECS
          */
         virtual Model::DeregisterTaskDefinitionOutcome DeregisterTaskDefinition(const Model::DeregisterTaskDefinitionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeregisterTaskDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeregisterTaskDefinitionOutcomeCallable DeregisterTaskDefinitionCallable(const Model::DeregisterTaskDefinitionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeregisterTaskDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeregisterTaskDefinitionAsync(const Model::DeregisterTaskDefinitionRequest& request, const DeregisterTaskDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more of your capacity providers.</p><p><h3>See Also:</h3>  
@@ -478,15 +413,6 @@ namespace ECS
          */
         virtual Model::DescribeCapacityProvidersOutcome DescribeCapacityProviders(const Model::DescribeCapacityProvidersRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeCapacityProviders that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeCapacityProvidersOutcomeCallable DescribeCapacityProvidersCallable(const Model::DescribeCapacityProvidersRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeCapacityProviders that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeCapacityProvidersAsync(const Model::DescribeCapacityProvidersRequest& request, const DescribeCapacityProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more of your clusters.</p><p><h3>See Also:</h3>   <a
@@ -495,15 +421,6 @@ namespace ECS
          */
         virtual Model::DescribeClustersOutcome DescribeClusters(const Model::DescribeClustersRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeClusters that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeClustersOutcomeCallable DescribeClustersCallable(const Model::DescribeClustersRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeClusters that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeClustersAsync(const Model::DescribeClustersRequest& request, const DescribeClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more container instances. Returns metadata about each
@@ -513,15 +430,6 @@ namespace ECS
          */
         virtual Model::DescribeContainerInstancesOutcome DescribeContainerInstances(const Model::DescribeContainerInstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeContainerInstances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeContainerInstancesOutcomeCallable DescribeContainerInstancesCallable(const Model::DescribeContainerInstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeContainerInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeContainerInstancesAsync(const Model::DescribeContainerInstancesRequest& request, const DescribeContainerInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified services running in your cluster.</p><p><h3>See
@@ -531,15 +439,6 @@ namespace ECS
          */
         virtual Model::DescribeServicesOutcome DescribeServices(const Model::DescribeServicesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeServices that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeServicesOutcomeCallable DescribeServicesCallable(const Model::DescribeServicesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeServices that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeServicesAsync(const Model::DescribeServicesRequest& request, const DescribeServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a task definition. You can specify a <code>family</code> and
@@ -553,15 +452,6 @@ namespace ECS
          */
         virtual Model::DescribeTaskDefinitionOutcome DescribeTaskDefinition(const Model::DescribeTaskDefinitionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTaskDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTaskDefinitionOutcomeCallable DescribeTaskDefinitionCallable(const Model::DescribeTaskDefinitionRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTaskDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTaskDefinitionAsync(const Model::DescribeTaskDefinitionRequest& request, const DescribeTaskDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the task sets in the specified cluster and service. This is used
@@ -575,15 +465,6 @@ namespace ECS
          */
         virtual Model::DescribeTaskSetsOutcome DescribeTaskSets(const Model::DescribeTaskSetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTaskSets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTaskSetsOutcomeCallable DescribeTaskSetsCallable(const Model::DescribeTaskSetsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTaskSets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTaskSetsAsync(const Model::DescribeTaskSetsRequest& request, const DescribeTaskSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a specified task or tasks.</p> <p>Currently, stopped tasks appear
@@ -593,15 +474,6 @@ namespace ECS
          */
         virtual Model::DescribeTasksOutcome DescribeTasks(const Model::DescribeTasksRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTasks that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTasksOutcomeCallable DescribeTasksCallable(const Model::DescribeTasksRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTasks that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTasksAsync(const Model::DescribeTasksRequest& request, const DescribeTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This action is only used by the Amazon ECS agent, and it is not
@@ -612,15 +484,6 @@ namespace ECS
          */
         virtual Model::DiscoverPollEndpointOutcome DiscoverPollEndpoint(const Model::DiscoverPollEndpointRequest& request) const;
 
-        /**
-         * A Callable wrapper for DiscoverPollEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DiscoverPollEndpointOutcomeCallable DiscoverPollEndpointCallable(const Model::DiscoverPollEndpointRequest& request) const;
-
-        /**
-         * An Async wrapper for DiscoverPollEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DiscoverPollEndpointAsync(const Model::DiscoverPollEndpointRequest& request, const DiscoverPollEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Runs a command remotely on a container within a task.</p> <p>If you use a
@@ -634,15 +497,6 @@ namespace ECS
          */
         virtual Model::ExecuteCommandOutcome ExecuteCommand(const Model::ExecuteCommandRequest& request) const;
 
-        /**
-         * A Callable wrapper for ExecuteCommand that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ExecuteCommandOutcomeCallable ExecuteCommandCallable(const Model::ExecuteCommandRequest& request) const;
-
-        /**
-         * An Async wrapper for ExecuteCommand that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ExecuteCommandAsync(const Model::ExecuteCommandRequest& request, const ExecuteCommandResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the protection status of tasks in an Amazon ECS
@@ -652,15 +506,6 @@ namespace ECS
          */
         virtual Model::GetTaskProtectionOutcome GetTaskProtection(const Model::GetTaskProtectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetTaskProtection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetTaskProtectionOutcomeCallable GetTaskProtectionCallable(const Model::GetTaskProtectionRequest& request) const;
-
-        /**
-         * An Async wrapper for GetTaskProtection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetTaskProtectionAsync(const Model::GetTaskProtectionRequest& request, const GetTaskProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the account settings for a specified principal.</p><p><h3>See
@@ -670,15 +515,6 @@ namespace ECS
          */
         virtual Model::ListAccountSettingsOutcome ListAccountSettings(const Model::ListAccountSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAccountSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAccountSettingsOutcomeCallable ListAccountSettingsCallable(const Model::ListAccountSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAccountSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAccountSettingsAsync(const Model::ListAccountSettingsRequest& request, const ListAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the attributes for Amazon ECS resources within a specified target type
@@ -694,15 +530,6 @@ namespace ECS
          */
         virtual Model::ListAttributesOutcome ListAttributes(const Model::ListAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAttributesOutcomeCallable ListAttributesCallable(const Model::ListAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAttributesAsync(const Model::ListAttributesRequest& request, const ListAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of existing clusters.</p><p><h3>See Also:</h3>   <a
@@ -711,15 +538,6 @@ namespace ECS
          */
         virtual Model::ListClustersOutcome ListClusters(const Model::ListClustersRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListClusters that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListClustersOutcomeCallable ListClustersCallable(const Model::ListClustersRequest& request) const;
-
-        /**
-         * An Async wrapper for ListClusters that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListClustersAsync(const Model::ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of container instances in a specified cluster. You can filter
@@ -734,15 +552,6 @@ namespace ECS
          */
         virtual Model::ListContainerInstancesOutcome ListContainerInstances(const Model::ListContainerInstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListContainerInstances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListContainerInstancesOutcomeCallable ListContainerInstancesCallable(const Model::ListContainerInstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListContainerInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListContainerInstancesAsync(const Model::ListContainerInstancesRequest& request, const ListContainerInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of services. You can filter the results by cluster, launch
@@ -752,15 +561,6 @@ namespace ECS
          */
         virtual Model::ListServicesOutcome ListServices(const Model::ListServicesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListServices that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListServicesOutcomeCallable ListServicesCallable(const Model::ListServicesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListServices that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListServicesAsync(const Model::ListServicesRequest& request, const ListServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List the tags for an Amazon ECS resource.</p><p><h3>See Also:</h3>   <a
@@ -769,15 +569,6 @@ namespace ECS
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of task definition families that are registered to your
@@ -792,15 +583,6 @@ namespace ECS
          */
         virtual Model::ListTaskDefinitionFamiliesOutcome ListTaskDefinitionFamilies(const Model::ListTaskDefinitionFamiliesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTaskDefinitionFamilies that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTaskDefinitionFamiliesOutcomeCallable ListTaskDefinitionFamiliesCallable(const Model::ListTaskDefinitionFamiliesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTaskDefinitionFamilies that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTaskDefinitionFamiliesAsync(const Model::ListTaskDefinitionFamiliesRequest& request, const ListTaskDefinitionFamiliesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of task definitions that are registered to your account. You
@@ -812,15 +594,6 @@ namespace ECS
          */
         virtual Model::ListTaskDefinitionsOutcome ListTaskDefinitions(const Model::ListTaskDefinitionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTaskDefinitions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTaskDefinitionsOutcomeCallable ListTaskDefinitionsCallable(const Model::ListTaskDefinitionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTaskDefinitions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTaskDefinitionsAsync(const Model::ListTaskDefinitionsRequest& request, const ListTaskDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of tasks. You can filter the results by cluster, task
@@ -833,15 +606,6 @@ namespace ECS
          */
         virtual Model::ListTasksOutcome ListTasks(const Model::ListTasksRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTasks that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTasksOutcomeCallable ListTasksCallable(const Model::ListTasksRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTasks that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTasksAsync(const Model::ListTasksRequest& request, const ListTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies an account setting. Account settings are set on a per-Region
@@ -877,15 +641,6 @@ namespace ECS
          */
         virtual Model::PutAccountSettingOutcome PutAccountSetting(const Model::PutAccountSettingRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutAccountSetting that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutAccountSettingOutcomeCallable PutAccountSettingCallable(const Model::PutAccountSettingRequest& request) const;
-
-        /**
-         * An Async wrapper for PutAccountSetting that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutAccountSettingAsync(const Model::PutAccountSettingRequest& request, const PutAccountSettingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies an account setting for all IAM users on an account for whom no
@@ -896,15 +651,6 @@ namespace ECS
          */
         virtual Model::PutAccountSettingDefaultOutcome PutAccountSettingDefault(const Model::PutAccountSettingDefaultRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutAccountSettingDefault that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutAccountSettingDefaultOutcomeCallable PutAccountSettingDefaultCallable(const Model::PutAccountSettingDefaultRequest& request) const;
-
-        /**
-         * An Async wrapper for PutAccountSettingDefault that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutAccountSettingDefaultAsync(const Model::PutAccountSettingDefaultRequest& request, const PutAccountSettingDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Create or update an attribute on an Amazon ECS resource. If the attribute
@@ -919,15 +665,6 @@ namespace ECS
          */
         virtual Model::PutAttributesOutcome PutAttributes(const Model::PutAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutAttributesOutcomeCallable PutAttributesCallable(const Model::PutAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for PutAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutAttributesAsync(const Model::PutAttributesRequest& request, const PutAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the available capacity providers and the default capacity provider
@@ -949,15 +686,6 @@ namespace ECS
          */
         virtual Model::PutClusterCapacityProvidersOutcome PutClusterCapacityProviders(const Model::PutClusterCapacityProvidersRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutClusterCapacityProviders that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutClusterCapacityProvidersOutcomeCallable PutClusterCapacityProvidersCallable(const Model::PutClusterCapacityProvidersRequest& request) const;
-
-        /**
-         * An Async wrapper for PutClusterCapacityProviders that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutClusterCapacityProvidersAsync(const Model::PutClusterCapacityProvidersRequest& request, const PutClusterCapacityProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This action is only used by the Amazon ECS agent, and it is not
@@ -969,15 +697,6 @@ namespace ECS
          */
         virtual Model::RegisterContainerInstanceOutcome RegisterContainerInstance(const Model::RegisterContainerInstanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for RegisterContainerInstance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RegisterContainerInstanceOutcomeCallable RegisterContainerInstanceCallable(const Model::RegisterContainerInstanceRequest& request) const;
-
-        /**
-         * An Async wrapper for RegisterContainerInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RegisterContainerInstanceAsync(const Model::RegisterContainerInstanceRequest& request, const RegisterContainerInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Registers a new task definition from the supplied <code>family</code> and
@@ -1009,15 +728,6 @@ namespace ECS
          */
         virtual Model::RegisterTaskDefinitionOutcome RegisterTaskDefinition(const Model::RegisterTaskDefinitionRequest& request) const;
 
-        /**
-         * A Callable wrapper for RegisterTaskDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RegisterTaskDefinitionOutcomeCallable RegisterTaskDefinitionCallable(const Model::RegisterTaskDefinitionRequest& request) const;
-
-        /**
-         * An Async wrapper for RegisterTaskDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RegisterTaskDefinitionAsync(const Model::RegisterTaskDefinitionRequest& request, const RegisterTaskDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts a new task using the specified task definition.</p> <p>You can allow
@@ -1048,15 +758,6 @@ namespace ECS
          */
         virtual Model::RunTaskOutcome RunTask(const Model::RunTaskRequest& request) const;
 
-        /**
-         * A Callable wrapper for RunTask that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RunTaskOutcomeCallable RunTaskCallable(const Model::RunTaskRequest& request) const;
-
-        /**
-         * An Async wrapper for RunTask that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RunTaskAsync(const Model::RunTaskRequest& request, const RunTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts a new task from the specified task definition on the specified
@@ -1070,15 +771,6 @@ namespace ECS
          */
         virtual Model::StartTaskOutcome StartTask(const Model::StartTaskRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartTask that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartTaskOutcomeCallable StartTaskCallable(const Model::StartTaskRequest& request) const;
-
-        /**
-         * An Async wrapper for StartTask that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartTaskAsync(const Model::StartTaskRequest& request, const StartTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops a running task. Any tags associated with the task will be deleted.</p>
@@ -1099,15 +791,6 @@ namespace ECS
          */
         virtual Model::StopTaskOutcome StopTask(const Model::StopTaskRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopTask that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopTaskOutcomeCallable StopTaskCallable(const Model::StopTaskRequest& request) const;
-
-        /**
-         * An Async wrapper for StopTask that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopTaskAsync(const Model::StopTaskRequest& request, const StopTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This action is only used by the Amazon ECS agent, and it is not
@@ -1118,15 +801,6 @@ namespace ECS
          */
         virtual Model::SubmitAttachmentStateChangesOutcome SubmitAttachmentStateChanges(const Model::SubmitAttachmentStateChangesRequest& request) const;
 
-        /**
-         * A Callable wrapper for SubmitAttachmentStateChanges that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SubmitAttachmentStateChangesOutcomeCallable SubmitAttachmentStateChangesCallable(const Model::SubmitAttachmentStateChangesRequest& request) const;
-
-        /**
-         * An Async wrapper for SubmitAttachmentStateChanges that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SubmitAttachmentStateChangesAsync(const Model::SubmitAttachmentStateChangesRequest& request, const SubmitAttachmentStateChangesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This action is only used by the Amazon ECS agent, and it is not
@@ -1137,15 +811,6 @@ namespace ECS
          */
         virtual Model::SubmitContainerStateChangeOutcome SubmitContainerStateChange(const Model::SubmitContainerStateChangeRequest& request) const;
 
-        /**
-         * A Callable wrapper for SubmitContainerStateChange that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SubmitContainerStateChangeOutcomeCallable SubmitContainerStateChangeCallable(const Model::SubmitContainerStateChangeRequest& request) const;
-
-        /**
-         * An Async wrapper for SubmitContainerStateChange that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SubmitContainerStateChangeAsync(const Model::SubmitContainerStateChangeRequest& request, const SubmitContainerStateChangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This action is only used by the Amazon ECS agent, and it is not
@@ -1156,15 +821,6 @@ namespace ECS
          */
         virtual Model::SubmitTaskStateChangeOutcome SubmitTaskStateChange(const Model::SubmitTaskStateChangeRequest& request) const;
 
-        /**
-         * A Callable wrapper for SubmitTaskStateChange that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SubmitTaskStateChangeOutcomeCallable SubmitTaskStateChangeCallable(const Model::SubmitTaskStateChangeRequest& request) const;
-
-        /**
-         * An Async wrapper for SubmitTaskStateChange that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SubmitTaskStateChangeAsync(const Model::SubmitTaskStateChangeRequest& request, const SubmitTaskStateChangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates the specified tags to a resource with the specified
@@ -1177,15 +833,6 @@ namespace ECS
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes specified tags from a resource.</p><p><h3>See Also:</h3>   <a
@@ -1194,15 +841,6 @@ namespace ECS
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the parameters for a capacity provider.</p><p><h3>See Also:</h3>  
@@ -1212,15 +850,6 @@ namespace ECS
          */
         virtual Model::UpdateCapacityProviderOutcome UpdateCapacityProvider(const Model::UpdateCapacityProviderRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateCapacityProvider that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateCapacityProviderOutcomeCallable UpdateCapacityProviderCallable(const Model::UpdateCapacityProviderRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateCapacityProvider that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateCapacityProviderAsync(const Model::UpdateCapacityProviderRequest& request, const UpdateCapacityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the cluster.</p><p><h3>See Also:</h3>   <a
@@ -1229,15 +858,6 @@ namespace ECS
          */
         virtual Model::UpdateClusterOutcome UpdateCluster(const Model::UpdateClusterRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateCluster that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateClusterOutcomeCallable UpdateClusterCallable(const Model::UpdateClusterRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateClusterAsync(const Model::UpdateClusterRequest& request, const UpdateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the settings to use for a cluster.</p><p><h3>See Also:</h3>   <a
@@ -1246,15 +866,6 @@ namespace ECS
          */
         virtual Model::UpdateClusterSettingsOutcome UpdateClusterSettings(const Model::UpdateClusterSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateClusterSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateClusterSettingsOutcomeCallable UpdateClusterSettingsCallable(const Model::UpdateClusterSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateClusterSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateClusterSettingsAsync(const Model::UpdateClusterSettingsRequest& request, const UpdateClusterSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the Amazon ECS container agent on a specified container instance.
@@ -1280,15 +891,6 @@ namespace ECS
          */
         virtual Model::UpdateContainerAgentOutcome UpdateContainerAgent(const Model::UpdateContainerAgentRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateContainerAgent that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateContainerAgentOutcomeCallable UpdateContainerAgentCallable(const Model::UpdateContainerAgentRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateContainerAgent that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateContainerAgentAsync(const Model::UpdateContainerAgentRequest& request, const UpdateContainerAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the status of an Amazon ECS container instance.</p> <p>Once a
@@ -1337,15 +939,6 @@ namespace ECS
          */
         virtual Model::UpdateContainerInstancesStateOutcome UpdateContainerInstancesState(const Model::UpdateContainerInstancesStateRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateContainerInstancesState that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateContainerInstancesStateOutcomeCallable UpdateContainerInstancesStateCallable(const Model::UpdateContainerInstancesStateRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateContainerInstancesState that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateContainerInstancesStateAsync(const Model::UpdateContainerInstancesStateRequest& request, const UpdateContainerInstancesStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the parameters of a service.</p> <p>For services using the rolling
@@ -1443,15 +1036,6 @@ namespace ECS
          */
         virtual Model::UpdateServiceOutcome UpdateService(const Model::UpdateServiceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateService that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateServiceOutcomeCallable UpdateServiceCallable(const Model::UpdateServiceRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateService that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateServiceAsync(const Model::UpdateServiceRequest& request, const UpdateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies which task set in a service is the primary task set. Any parameters
@@ -1466,15 +1050,6 @@ namespace ECS
          */
         virtual Model::UpdateServicePrimaryTaskSetOutcome UpdateServicePrimaryTaskSet(const Model::UpdateServicePrimaryTaskSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateServicePrimaryTaskSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateServicePrimaryTaskSetOutcomeCallable UpdateServicePrimaryTaskSetCallable(const Model::UpdateServicePrimaryTaskSetRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateServicePrimaryTaskSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateServicePrimaryTaskSetAsync(const Model::UpdateServicePrimaryTaskSetRequest& request, const UpdateServicePrimaryTaskSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the protection status of a task. You can set
@@ -1508,15 +1083,6 @@ namespace ECS
          */
         virtual Model::UpdateTaskProtectionOutcome UpdateTaskProtection(const Model::UpdateTaskProtectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateTaskProtection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateTaskProtectionOutcomeCallable UpdateTaskProtectionCallable(const Model::UpdateTaskProtectionRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateTaskProtection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateTaskProtectionAsync(const Model::UpdateTaskProtectionRequest& request, const UpdateTaskProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies a task set. This is used when a service uses the
@@ -1529,15 +1095,6 @@ namespace ECS
          */
         virtual Model::UpdateTaskSetOutcome UpdateTaskSet(const Model::UpdateTaskSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateTaskSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateTaskSetOutcomeCallable UpdateTaskSetCallable(const Model::UpdateTaskSetRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateTaskSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateTaskSetAsync(const Model::UpdateTaskSetRequest& request, const UpdateTaskSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

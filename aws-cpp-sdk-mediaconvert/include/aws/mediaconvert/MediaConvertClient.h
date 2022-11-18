@@ -7,8 +7,10 @@
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mediaconvert/MediaConvertServiceClientModel.h>
+#include <aws/mediaconvert/MediaConvertLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -73,6 +75,47 @@ namespace MediaConvert
         virtual ~MediaConvertClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * Associates an AWS Certificate Manager (ACM) Amazon Resource Name (ARN) with AWS
          * Elemental MediaConvert.<p><h3>See Also:</h3>   <a
@@ -81,15 +124,6 @@ namespace MediaConvert
          */
         virtual Model::AssociateCertificateOutcome AssociateCertificate(const Model::AssociateCertificateRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateCertificateOutcomeCallable AssociateCertificateCallable(const Model::AssociateCertificateRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateCertificateAsync(const Model::AssociateCertificateRequest& request, const AssociateCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Permanently cancel a job. Once you have canceled a job, you can't start it
@@ -99,15 +133,6 @@ namespace MediaConvert
          */
         virtual Model::CancelJobOutcome CancelJob(const Model::CancelJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelJobOutcomeCallable CancelJobCallable(const Model::CancelJobRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelJobAsync(const Model::CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Create a new transcoding job. For information about jobs and job settings, see
@@ -119,15 +144,6 @@ namespace MediaConvert
          */
         virtual Model::CreateJobOutcome CreateJob(const Model::CreateJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateJobOutcomeCallable CreateJobCallable(const Model::CreateJobRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateJobAsync(const Model::CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Create a new job template. For information about job templates see the User
@@ -139,15 +155,6 @@ namespace MediaConvert
          */
         virtual Model::CreateJobTemplateOutcome CreateJobTemplate(const Model::CreateJobTemplateRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateJobTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateJobTemplateOutcomeCallable CreateJobTemplateCallable(const Model::CreateJobTemplateRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateJobTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateJobTemplateAsync(const Model::CreateJobTemplateRequest& request, const CreateJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Create a new preset. For information about job templates see the User Guide at
@@ -158,15 +165,6 @@ namespace MediaConvert
          */
         virtual Model::CreatePresetOutcome CreatePreset(const Model::CreatePresetRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreatePreset that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreatePresetOutcomeCallable CreatePresetCallable(const Model::CreatePresetRequest& request) const;
-
-        /**
-         * An Async wrapper for CreatePreset that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreatePresetAsync(const Model::CreatePresetRequest& request, const CreatePresetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Create a new transcoding queue. For information about queues, see Working With
@@ -178,15 +176,6 @@ namespace MediaConvert
          */
         virtual Model::CreateQueueOutcome CreateQueue(const Model::CreateQueueRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateQueue that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateQueueOutcomeCallable CreateQueueCallable(const Model::CreateQueueRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateQueue that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateQueueAsync(const Model::CreateQueueRequest& request, const CreateQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Permanently delete a job template you have created.<p><h3>See Also:</h3>   <a
@@ -195,15 +184,6 @@ namespace MediaConvert
          */
         virtual Model::DeleteJobTemplateOutcome DeleteJobTemplate(const Model::DeleteJobTemplateRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteJobTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteJobTemplateOutcomeCallable DeleteJobTemplateCallable(const Model::DeleteJobTemplateRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteJobTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteJobTemplateAsync(const Model::DeleteJobTemplateRequest& request, const DeleteJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Permanently delete a policy that you created.<p><h3>See Also:</h3>   <a
@@ -212,15 +192,6 @@ namespace MediaConvert
          */
         virtual Model::DeletePolicyOutcome DeletePolicy(const Model::DeletePolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeletePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeletePolicyOutcomeCallable DeletePolicyCallable(const Model::DeletePolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeletePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeletePolicyAsync(const Model::DeletePolicyRequest& request, const DeletePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Permanently delete a preset you have created.<p><h3>See Also:</h3>   <a
@@ -229,15 +200,6 @@ namespace MediaConvert
          */
         virtual Model::DeletePresetOutcome DeletePreset(const Model::DeletePresetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeletePreset that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeletePresetOutcomeCallable DeletePresetCallable(const Model::DeletePresetRequest& request) const;
-
-        /**
-         * An Async wrapper for DeletePreset that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeletePresetAsync(const Model::DeletePresetRequest& request, const DeletePresetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Permanently delete a queue you have created.<p><h3>See Also:</h3>   <a
@@ -246,15 +208,6 @@ namespace MediaConvert
          */
         virtual Model::DeleteQueueOutcome DeleteQueue(const Model::DeleteQueueRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteQueue that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteQueueOutcomeCallable DeleteQueueCallable(const Model::DeleteQueueRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteQueue that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteQueueAsync(const Model::DeleteQueueRequest& request, const DeleteQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Send an request with an empty body to the regional API endpoint to get your
@@ -264,15 +217,6 @@ namespace MediaConvert
          */
         virtual Model::DescribeEndpointsOutcome DescribeEndpoints(const Model::DescribeEndpointsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEndpointsOutcomeCallable DescribeEndpointsCallable(const Model::DescribeEndpointsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEndpointsAsync(const Model::DescribeEndpointsRequest& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Removes an association between the Amazon Resource Name (ARN) of an AWS
@@ -283,15 +227,6 @@ namespace MediaConvert
          */
         virtual Model::DisassociateCertificateOutcome DisassociateCertificate(const Model::DisassociateCertificateRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateCertificateOutcomeCallable DisassociateCertificateCallable(const Model::DisassociateCertificateRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateCertificateAsync(const Model::DisassociateCertificateRequest& request, const DisassociateCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Retrieve the JSON for a specific completed transcoding job.<p><h3>See Also:</h3>
@@ -301,15 +236,6 @@ namespace MediaConvert
          */
         virtual Model::GetJobOutcome GetJob(const Model::GetJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetJobOutcomeCallable GetJobCallable(const Model::GetJobRequest& request) const;
-
-        /**
-         * An Async wrapper for GetJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetJobAsync(const Model::GetJobRequest& request, const GetJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Retrieve the JSON for a specific job template.<p><h3>See Also:</h3>   <a
@@ -318,15 +244,6 @@ namespace MediaConvert
          */
         virtual Model::GetJobTemplateOutcome GetJobTemplate(const Model::GetJobTemplateRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetJobTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetJobTemplateOutcomeCallable GetJobTemplateCallable(const Model::GetJobTemplateRequest& request) const;
-
-        /**
-         * An Async wrapper for GetJobTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetJobTemplateAsync(const Model::GetJobTemplateRequest& request, const GetJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Retrieve the JSON for your policy.<p><h3>See Also:</h3>   <a
@@ -335,15 +252,6 @@ namespace MediaConvert
          */
         virtual Model::GetPolicyOutcome GetPolicy(const Model::GetPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetPolicyOutcomeCallable GetPolicyCallable(const Model::GetPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetPolicyAsync(const Model::GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Retrieve the JSON for a specific preset.<p><h3>See Also:</h3>   <a
@@ -352,15 +260,6 @@ namespace MediaConvert
          */
         virtual Model::GetPresetOutcome GetPreset(const Model::GetPresetRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetPreset that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetPresetOutcomeCallable GetPresetCallable(const Model::GetPresetRequest& request) const;
-
-        /**
-         * An Async wrapper for GetPreset that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetPresetAsync(const Model::GetPresetRequest& request, const GetPresetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Retrieve the JSON for a specific queue.<p><h3>See Also:</h3>   <a
@@ -369,15 +268,6 @@ namespace MediaConvert
          */
         virtual Model::GetQueueOutcome GetQueue(const Model::GetQueueRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetQueue that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetQueueOutcomeCallable GetQueueCallable(const Model::GetQueueRequest& request) const;
-
-        /**
-         * An Async wrapper for GetQueue that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetQueueAsync(const Model::GetQueueRequest& request, const GetQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Retrieve a JSON array of up to twenty of your job templates. This will return
@@ -389,15 +279,6 @@ namespace MediaConvert
          */
         virtual Model::ListJobTemplatesOutcome ListJobTemplates(const Model::ListJobTemplatesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListJobTemplates that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListJobTemplatesOutcomeCallable ListJobTemplatesCallable(const Model::ListJobTemplatesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListJobTemplates that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListJobTemplatesAsync(const Model::ListJobTemplatesRequest& request, const ListJobTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Retrieve a JSON array of up to twenty of your most recently created jobs. This
@@ -410,15 +291,6 @@ namespace MediaConvert
          */
         virtual Model::ListJobsOutcome ListJobs(const Model::ListJobsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListJobs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListJobsOutcomeCallable ListJobsCallable(const Model::ListJobsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListJobsAsync(const Model::ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Retrieve a JSON array of up to twenty of your presets. This will return the
@@ -430,15 +302,6 @@ namespace MediaConvert
          */
         virtual Model::ListPresetsOutcome ListPresets(const Model::ListPresetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPresets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPresetsOutcomeCallable ListPresetsCallable(const Model::ListPresetsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPresets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPresetsAsync(const Model::ListPresetsRequest& request, const ListPresetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Retrieve a JSON array of up to twenty of your queues. This will return the
@@ -449,15 +312,6 @@ namespace MediaConvert
          */
         virtual Model::ListQueuesOutcome ListQueues(const Model::ListQueuesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListQueues that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListQueuesOutcomeCallable ListQueuesCallable(const Model::ListQueuesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListQueues that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListQueuesAsync(const Model::ListQueuesRequest& request, const ListQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Retrieve the tags for a MediaConvert resource.<p><h3>See Also:</h3>   <a
@@ -466,15 +320,6 @@ namespace MediaConvert
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Create or change your policy. For more information about policies, see the user
@@ -486,15 +331,6 @@ namespace MediaConvert
          */
         virtual Model::PutPolicyOutcome PutPolicy(const Model::PutPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutPolicyOutcomeCallable PutPolicyCallable(const Model::PutPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for PutPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutPolicyAsync(const Model::PutPolicyRequest& request, const PutPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Add tags to a MediaConvert queue, preset, or job template. For information about
@@ -506,15 +342,6 @@ namespace MediaConvert
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Remove tags from a MediaConvert queue, preset, or job template. For information
@@ -526,15 +353,6 @@ namespace MediaConvert
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Modify one of your existing job templates.<p><h3>See Also:</h3>   <a
@@ -543,15 +361,6 @@ namespace MediaConvert
          */
         virtual Model::UpdateJobTemplateOutcome UpdateJobTemplate(const Model::UpdateJobTemplateRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateJobTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateJobTemplateOutcomeCallable UpdateJobTemplateCallable(const Model::UpdateJobTemplateRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateJobTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateJobTemplateAsync(const Model::UpdateJobTemplateRequest& request, const UpdateJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Modify one of your existing presets.<p><h3>See Also:</h3>   <a
@@ -560,15 +369,6 @@ namespace MediaConvert
          */
         virtual Model::UpdatePresetOutcome UpdatePreset(const Model::UpdatePresetRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdatePreset that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdatePresetOutcomeCallable UpdatePresetCallable(const Model::UpdatePresetRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdatePreset that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdatePresetAsync(const Model::UpdatePresetRequest& request, const UpdatePresetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Modify one of your existing queues.<p><h3>See Also:</h3>   <a
@@ -577,15 +377,6 @@ namespace MediaConvert
          */
         virtual Model::UpdateQueueOutcome UpdateQueue(const Model::UpdateQueueRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateQueue that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateQueueOutcomeCallable UpdateQueueCallable(const Model::UpdateQueueRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateQueue that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateQueueAsync(const Model::UpdateQueueRequest& request, const UpdateQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

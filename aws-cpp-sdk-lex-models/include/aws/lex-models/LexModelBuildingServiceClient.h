@@ -7,8 +7,10 @@
 #include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/lex-models/LexModelBuildingServiceServiceClientModel.h>
+#include <aws/lex-models/LexModelBuildingServiceLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -76,6 +78,47 @@ namespace LexModelBuildingService
         virtual ~LexModelBuildingServiceClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Creates a new version of the bot based on the <code>$LATEST</code> version.
          * If the <code>$LATEST</code> version of this resource hasn't changed since you
@@ -92,15 +135,6 @@ namespace LexModelBuildingService
          */
         virtual Model::CreateBotVersionOutcome CreateBotVersion(const Model::CreateBotVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateBotVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateBotVersionOutcomeCallable CreateBotVersionCallable(const Model::CreateBotVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateBotVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateBotVersionAsync(const Model::CreateBotVersionRequest& request, const CreateBotVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new version of an intent based on the <code>$LATEST</code> version
@@ -119,15 +153,6 @@ namespace LexModelBuildingService
          */
         virtual Model::CreateIntentVersionOutcome CreateIntentVersion(const Model::CreateIntentVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateIntentVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateIntentVersionOutcomeCallable CreateIntentVersionCallable(const Model::CreateIntentVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateIntentVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateIntentVersionAsync(const Model::CreateIntentVersionRequest& request, const CreateIntentVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new version of a slot type based on the <code>$LATEST</code>
@@ -146,15 +171,6 @@ namespace LexModelBuildingService
          */
         virtual Model::CreateSlotTypeVersionOutcome CreateSlotTypeVersion(const Model::CreateSlotTypeVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateSlotTypeVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateSlotTypeVersionOutcomeCallable CreateSlotTypeVersionCallable(const Model::CreateSlotTypeVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateSlotTypeVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateSlotTypeVersionAsync(const Model::CreateSlotTypeVersionRequest& request, const CreateSlotTypeVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes all versions of the bot, including the <code>$LATEST</code> version.
@@ -176,15 +192,6 @@ namespace LexModelBuildingService
          */
         virtual Model::DeleteBotOutcome DeleteBot(const Model::DeleteBotRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteBot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteBotOutcomeCallable DeleteBotCallable(const Model::DeleteBotRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteBot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteBotAsync(const Model::DeleteBotRequest& request, const DeleteBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an alias for the specified bot. </p> <p>You can't delete an alias
@@ -201,15 +208,6 @@ namespace LexModelBuildingService
          */
         virtual Model::DeleteBotAliasOutcome DeleteBotAlias(const Model::DeleteBotAliasRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteBotAlias that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteBotAliasOutcomeCallable DeleteBotAliasCallable(const Model::DeleteBotAliasRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteBotAlias that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteBotAliasAsync(const Model::DeleteBotAliasRequest& request, const DeleteBotAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the association between an Amazon Lex bot and a messaging
@@ -221,15 +219,6 @@ namespace LexModelBuildingService
          */
         virtual Model::DeleteBotChannelAssociationOutcome DeleteBotChannelAssociation(const Model::DeleteBotChannelAssociationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteBotChannelAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteBotChannelAssociationOutcomeCallable DeleteBotChannelAssociationCallable(const Model::DeleteBotChannelAssociationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteBotChannelAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteBotChannelAssociationAsync(const Model::DeleteBotChannelAssociationRequest& request, const DeleteBotChannelAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a specific version of a bot. To delete all versions of a bot, use the
@@ -240,15 +229,6 @@ namespace LexModelBuildingService
          */
         virtual Model::DeleteBotVersionOutcome DeleteBotVersion(const Model::DeleteBotVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteBotVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteBotVersionOutcomeCallable DeleteBotVersionCallable(const Model::DeleteBotVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteBotVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteBotVersionAsync(const Model::DeleteBotVersionRequest& request, const DeleteBotVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes all versions of the intent, including the <code>$LATEST</code>
@@ -269,15 +249,6 @@ namespace LexModelBuildingService
          */
         virtual Model::DeleteIntentOutcome DeleteIntent(const Model::DeleteIntentRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteIntent that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteIntentOutcomeCallable DeleteIntentCallable(const Model::DeleteIntentRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteIntent that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteIntentAsync(const Model::DeleteIntentRequest& request, const DeleteIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a specific version of an intent. To delete all versions of a intent,
@@ -289,15 +260,6 @@ namespace LexModelBuildingService
          */
         virtual Model::DeleteIntentVersionOutcome DeleteIntentVersion(const Model::DeleteIntentVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteIntentVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteIntentVersionOutcomeCallable DeleteIntentVersionCallable(const Model::DeleteIntentVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteIntentVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteIntentVersionAsync(const Model::DeleteIntentVersionRequest& request, const DeleteIntentVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes all versions of the slot type, including the <code>$LATEST</code>
@@ -318,15 +280,6 @@ namespace LexModelBuildingService
          */
         virtual Model::DeleteSlotTypeOutcome DeleteSlotType(const Model::DeleteSlotTypeRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteSlotType that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteSlotTypeOutcomeCallable DeleteSlotTypeCallable(const Model::DeleteSlotTypeRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteSlotType that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteSlotTypeAsync(const Model::DeleteSlotTypeRequest& request, const DeleteSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a specific version of a slot type. To delete all versions of a slot
@@ -338,15 +291,6 @@ namespace LexModelBuildingService
          */
         virtual Model::DeleteSlotTypeVersionOutcome DeleteSlotTypeVersion(const Model::DeleteSlotTypeVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteSlotTypeVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteSlotTypeVersionOutcomeCallable DeleteSlotTypeVersionCallable(const Model::DeleteSlotTypeVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteSlotTypeVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteSlotTypeVersionAsync(const Model::DeleteSlotTypeVersionRequest& request, const DeleteSlotTypeVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes stored utterances.</p> <p>Amazon Lex stores the utterances that users
@@ -365,15 +309,6 @@ namespace LexModelBuildingService
          */
         virtual Model::DeleteUtterancesOutcome DeleteUtterances(const Model::DeleteUtterancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteUtterances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteUtterancesOutcomeCallable DeleteUtterancesCallable(const Model::DeleteUtterancesRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteUtterances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteUtterancesAsync(const Model::DeleteUtterancesRequest& request, const DeleteUtterancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns metadata information for a specific bot. You must provide the bot
@@ -384,15 +319,6 @@ namespace LexModelBuildingService
          */
         virtual Model::GetBotOutcome GetBot(const Model::GetBotRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBotOutcomeCallable GetBotCallable(const Model::GetBotRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBotAsync(const Model::GetBotRequest& request, const GetBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about an Amazon Lex bot alias. For more information about
@@ -404,15 +330,6 @@ namespace LexModelBuildingService
          */
         virtual Model::GetBotAliasOutcome GetBotAlias(const Model::GetBotAliasRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBotAlias that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBotAliasOutcomeCallable GetBotAliasCallable(const Model::GetBotAliasRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBotAlias that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBotAliasAsync(const Model::GetBotAliasRequest& request, const GetBotAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of aliases for a specified Amazon Lex bot.</p> <p>This
@@ -423,15 +340,6 @@ namespace LexModelBuildingService
          */
         virtual Model::GetBotAliasesOutcome GetBotAliases(const Model::GetBotAliasesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBotAliases that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBotAliasesOutcomeCallable GetBotAliasesCallable(const Model::GetBotAliasesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBotAliases that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBotAliasesAsync(const Model::GetBotAliasesRequest& request, const GetBotAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the association between an Amazon Lex bot and a
@@ -442,15 +350,6 @@ namespace LexModelBuildingService
          */
         virtual Model::GetBotChannelAssociationOutcome GetBotChannelAssociation(const Model::GetBotChannelAssociationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBotChannelAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBotChannelAssociationOutcomeCallable GetBotChannelAssociationCallable(const Model::GetBotChannelAssociationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBotChannelAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBotChannelAssociationAsync(const Model::GetBotChannelAssociationRequest& request, const GetBotChannelAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a list of all of the channels associated with the specified bot.
@@ -462,15 +361,6 @@ namespace LexModelBuildingService
          */
         virtual Model::GetBotChannelAssociationsOutcome GetBotChannelAssociations(const Model::GetBotChannelAssociationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBotChannelAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBotChannelAssociationsOutcomeCallable GetBotChannelAssociationsCallable(const Model::GetBotChannelAssociationsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBotChannelAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBotChannelAssociationsAsync(const Model::GetBotChannelAssociationsRequest& request, const GetBotChannelAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about all of the versions of a bot.</p> <p>The
@@ -487,15 +377,6 @@ namespace LexModelBuildingService
          */
         virtual Model::GetBotVersionsOutcome GetBotVersions(const Model::GetBotVersionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBotVersions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBotVersionsOutcomeCallable GetBotVersionsCallable(const Model::GetBotVersionsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBotVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBotVersionsAsync(const Model::GetBotVersionsRequest& request, const GetBotVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns bot information as follows: </p> <ul> <li> <p>If you provide the
@@ -510,15 +391,6 @@ namespace LexModelBuildingService
          */
         virtual Model::GetBotsOutcome GetBots(const Model::GetBotsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBots that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBotsOutcomeCallable GetBotsCallable(const Model::GetBotsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBots that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBotsAsync(const Model::GetBotsRequest& request, const GetBotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a built-in intent.</p> <p>This operation requires
@@ -529,15 +401,6 @@ namespace LexModelBuildingService
          */
         virtual Model::GetBuiltinIntentOutcome GetBuiltinIntent(const Model::GetBuiltinIntentRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBuiltinIntent that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBuiltinIntentOutcomeCallable GetBuiltinIntentCallable(const Model::GetBuiltinIntentRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBuiltinIntent that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBuiltinIntentAsync(const Model::GetBuiltinIntentRequest& request, const GetBuiltinIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of built-in intents that meet the specified criteria.</p> <p>This
@@ -548,15 +411,6 @@ namespace LexModelBuildingService
          */
         virtual Model::GetBuiltinIntentsOutcome GetBuiltinIntents(const Model::GetBuiltinIntentsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBuiltinIntents that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBuiltinIntentsOutcomeCallable GetBuiltinIntentsCallable(const Model::GetBuiltinIntentsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBuiltinIntents that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBuiltinIntentsAsync(const Model::GetBuiltinIntentsRequest& request, const GetBuiltinIntentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of built-in slot types that meet the specified criteria.</p>
@@ -570,15 +424,6 @@ namespace LexModelBuildingService
          */
         virtual Model::GetBuiltinSlotTypesOutcome GetBuiltinSlotTypes(const Model::GetBuiltinSlotTypesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBuiltinSlotTypes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBuiltinSlotTypesOutcomeCallable GetBuiltinSlotTypesCallable(const Model::GetBuiltinSlotTypesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBuiltinSlotTypes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBuiltinSlotTypesAsync(const Model::GetBuiltinSlotTypesRequest& request, const GetBuiltinSlotTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Exports the contents of a Amazon Lex resource in a specified format.
@@ -588,15 +433,6 @@ namespace LexModelBuildingService
          */
         virtual Model::GetExportOutcome GetExport(const Model::GetExportRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetExport that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetExportOutcomeCallable GetExportCallable(const Model::GetExportRequest& request) const;
-
-        /**
-         * An Async wrapper for GetExport that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetExportAsync(const Model::GetExportRequest& request, const GetExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about an import job started with the
@@ -606,15 +442,6 @@ namespace LexModelBuildingService
          */
         virtual Model::GetImportOutcome GetImport(const Model::GetImportRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetImport that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetImportOutcomeCallable GetImportCallable(const Model::GetImportRequest& request) const;
-
-        /**
-         * An Async wrapper for GetImport that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetImportAsync(const Model::GetImportRequest& request, const GetImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns information about an intent. In addition to the intent name, you
@@ -625,15 +452,6 @@ namespace LexModelBuildingService
          */
         virtual Model::GetIntentOutcome GetIntent(const Model::GetIntentRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetIntent that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetIntentOutcomeCallable GetIntentCallable(const Model::GetIntentRequest& request) const;
-
-        /**
-         * An Async wrapper for GetIntent that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetIntentAsync(const Model::GetIntentRequest& request, const GetIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about all of the versions of an intent.</p> <p>The
@@ -650,15 +468,6 @@ namespace LexModelBuildingService
          */
         virtual Model::GetIntentVersionsOutcome GetIntentVersions(const Model::GetIntentVersionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetIntentVersions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetIntentVersionsOutcomeCallable GetIntentVersionsCallable(const Model::GetIntentVersionsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetIntentVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetIntentVersionsAsync(const Model::GetIntentVersionsRequest& request, const GetIntentVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns intent information as follows: </p> <ul> <li> <p>If you specify the
@@ -673,15 +482,6 @@ namespace LexModelBuildingService
          */
         virtual Model::GetIntentsOutcome GetIntents(const Model::GetIntentsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetIntents that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetIntentsOutcomeCallable GetIntentsCallable(const Model::GetIntentsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetIntents that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetIntentsAsync(const Model::GetIntentsRequest& request, const GetIntentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides details about an ongoing or complete migration from an Amazon Lex V1
@@ -692,15 +492,6 @@ namespace LexModelBuildingService
          */
         virtual Model::GetMigrationOutcome GetMigration(const Model::GetMigrationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetMigration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetMigrationOutcomeCallable GetMigrationCallable(const Model::GetMigrationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetMigration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetMigrationAsync(const Model::GetMigrationRequest& request, const GetMigrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of migrations between Amazon Lex V1 and Amazon Lex
@@ -710,15 +501,6 @@ namespace LexModelBuildingService
          */
         virtual Model::GetMigrationsOutcome GetMigrations(const Model::GetMigrationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetMigrations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetMigrationsOutcomeCallable GetMigrationsCallable(const Model::GetMigrationsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetMigrations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetMigrationsAsync(const Model::GetMigrationsRequest& request, const GetMigrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a specific version of a slot type. In addition to
@@ -730,15 +512,6 @@ namespace LexModelBuildingService
          */
         virtual Model::GetSlotTypeOutcome GetSlotType(const Model::GetSlotTypeRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSlotType that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSlotTypeOutcomeCallable GetSlotTypeCallable(const Model::GetSlotTypeRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSlotType that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSlotTypeAsync(const Model::GetSlotTypeRequest& request, const GetSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about all versions of a slot type.</p> <p>The
@@ -756,15 +529,6 @@ namespace LexModelBuildingService
          */
         virtual Model::GetSlotTypeVersionsOutcome GetSlotTypeVersions(const Model::GetSlotTypeVersionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSlotTypeVersions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSlotTypeVersionsOutcomeCallable GetSlotTypeVersionsCallable(const Model::GetSlotTypeVersionsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSlotTypeVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSlotTypeVersionsAsync(const Model::GetSlotTypeVersionsRequest& request, const GetSlotTypeVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns slot type information as follows: </p> <ul> <li> <p>If you specify
@@ -779,15 +543,6 @@ namespace LexModelBuildingService
          */
         virtual Model::GetSlotTypesOutcome GetSlotTypes(const Model::GetSlotTypesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSlotTypes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSlotTypesOutcomeCallable GetSlotTypesCallable(const Model::GetSlotTypesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSlotTypes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSlotTypesAsync(const Model::GetSlotTypesRequest& request, const GetSlotTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Use the <code>GetUtterancesView</code> operation to get information about the
@@ -815,15 +570,6 @@ namespace LexModelBuildingService
          */
         virtual Model::GetUtterancesViewOutcome GetUtterancesView(const Model::GetUtterancesViewRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetUtterancesView that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetUtterancesViewOutcomeCallable GetUtterancesViewCallable(const Model::GetUtterancesViewRequest& request) const;
-
-        /**
-         * An Async wrapper for GetUtterancesView that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetUtterancesViewAsync(const Model::GetUtterancesViewRequest& request, const GetUtterancesViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of tags associated with the specified resource. Only bots, bot
@@ -834,15 +580,6 @@ namespace LexModelBuildingService
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an Amazon Lex conversational bot or replaces an existing bot. When
@@ -866,15 +603,6 @@ namespace LexModelBuildingService
          */
         virtual Model::PutBotOutcome PutBot(const Model::PutBotRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutBot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutBotOutcomeCallable PutBotCallable(const Model::PutBotRequest& request) const;
-
-        /**
-         * An Async wrapper for PutBot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutBotAsync(const Model::PutBotRequest& request, const PutBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an alias for the specified version of the bot or replaces an alias
@@ -887,15 +615,6 @@ namespace LexModelBuildingService
          */
         virtual Model::PutBotAliasOutcome PutBotAlias(const Model::PutBotAliasRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutBotAlias that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutBotAliasOutcomeCallable PutBotAliasCallable(const Model::PutBotAliasRequest& request) const;
-
-        /**
-         * An Async wrapper for PutBotAlias that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutBotAliasAsync(const Model::PutBotAliasRequest& request, const PutBotAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an intent or replaces an existing intent.</p> <p>To define the
@@ -934,15 +653,6 @@ namespace LexModelBuildingService
          */
         virtual Model::PutIntentOutcome PutIntent(const Model::PutIntentRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutIntent that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutIntentOutcomeCallable PutIntentCallable(const Model::PutIntentRequest& request) const;
-
-        /**
-         * An Async wrapper for PutIntent that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutIntentAsync(const Model::PutIntentRequest& request, const PutIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a custom slot type or replaces an existing custom slot type.</p>
@@ -962,15 +672,6 @@ namespace LexModelBuildingService
          */
         virtual Model::PutSlotTypeOutcome PutSlotType(const Model::PutSlotTypeRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutSlotType that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutSlotTypeOutcomeCallable PutSlotTypeCallable(const Model::PutSlotTypeRequest& request) const;
-
-        /**
-         * An Async wrapper for PutSlotType that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutSlotTypeAsync(const Model::PutSlotTypeRequest& request, const PutSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts a job to import a resource to Amazon Lex.</p><p><h3>See Also:</h3>  
@@ -980,15 +681,6 @@ namespace LexModelBuildingService
          */
         virtual Model::StartImportOutcome StartImport(const Model::StartImportRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartImport that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartImportOutcomeCallable StartImportCallable(const Model::StartImportRequest& request) const;
-
-        /**
-         * An Async wrapper for StartImport that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartImportAsync(const Model::StartImportRequest& request, const StartImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts migrating a bot from Amazon Lex V1 to Amazon Lex V2. Migrate your bot
@@ -1001,15 +693,6 @@ namespace LexModelBuildingService
          */
         virtual Model::StartMigrationOutcome StartMigration(const Model::StartMigrationRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartMigration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartMigrationOutcomeCallable StartMigrationCallable(const Model::StartMigrationRequest& request) const;
-
-        /**
-         * An Async wrapper for StartMigration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartMigrationAsync(const Model::StartMigrationRequest& request, const StartMigrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds the specified tags to the specified resource. If a tag key already
@@ -1020,15 +703,6 @@ namespace LexModelBuildingService
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes tags from a bot, bot alias or bot channel.</p><p><h3>See Also:</h3>  
@@ -1038,15 +712,6 @@ namespace LexModelBuildingService
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

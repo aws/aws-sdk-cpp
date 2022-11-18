@@ -7,8 +7,10 @@
 #include <aws/appmesh/AppMesh_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/appmesh/AppMeshServiceClientModel.h>
+#include <aws/appmesh/AppMeshLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -88,6 +90,47 @@ namespace AppMesh
         virtual ~AppMeshClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Creates a gateway route.</p> <p>A gateway route is attached to a virtual
          * gateway and routes traffic to an existing virtual service. If a route matches a
@@ -100,15 +143,6 @@ namespace AppMesh
          */
         virtual Model::CreateGatewayRouteOutcome CreateGatewayRoute(const Model::CreateGatewayRouteRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateGatewayRoute that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateGatewayRouteOutcomeCallable CreateGatewayRouteCallable(const Model::CreateGatewayRouteRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateGatewayRoute that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateGatewayRouteAsync(const Model::CreateGatewayRouteRequest& request, const CreateGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a service mesh.</p> <p> A service mesh is a logical boundary for
@@ -124,15 +158,6 @@ namespace AppMesh
          */
         virtual Model::CreateMeshOutcome CreateMesh(const Model::CreateMeshRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateMesh that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateMeshOutcomeCallable CreateMeshCallable(const Model::CreateMeshRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateMesh that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateMeshAsync(const Model::CreateMeshRequest& request, const CreateMeshResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a route that is associated with a virtual router.</p> <p> You can
@@ -146,15 +171,6 @@ namespace AppMesh
          */
         virtual Model::CreateRouteOutcome CreateRoute(const Model::CreateRouteRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateRoute that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateRouteOutcomeCallable CreateRouteCallable(const Model::CreateRouteRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateRoute that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateRouteAsync(const Model::CreateRouteRequest& request, const CreateRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a virtual gateway.</p> <p>A virtual gateway allows resources outside
@@ -170,15 +186,6 @@ namespace AppMesh
          */
         virtual Model::CreateVirtualGatewayOutcome CreateVirtualGateway(const Model::CreateVirtualGatewayRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateVirtualGateway that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateVirtualGatewayOutcomeCallable CreateVirtualGatewayCallable(const Model::CreateVirtualGatewayRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateVirtualGateway that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateVirtualGatewayAsync(const Model::CreateVirtualGatewayRequest& request, const CreateVirtualGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a virtual node within a service mesh.</p> <p> A virtual node acts as
@@ -212,15 +219,6 @@ namespace AppMesh
          */
         virtual Model::CreateVirtualNodeOutcome CreateVirtualNode(const Model::CreateVirtualNodeRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateVirtualNode that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateVirtualNodeOutcomeCallable CreateVirtualNodeCallable(const Model::CreateVirtualNodeRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateVirtualNode that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateVirtualNodeAsync(const Model::CreateVirtualNodeRequest& request, const CreateVirtualNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a virtual router within a service mesh.</p> <p>Specify a
@@ -237,15 +235,6 @@ namespace AppMesh
          */
         virtual Model::CreateVirtualRouterOutcome CreateVirtualRouter(const Model::CreateVirtualRouterRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateVirtualRouter that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateVirtualRouterOutcomeCallable CreateVirtualRouterCallable(const Model::CreateVirtualRouterRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateVirtualRouter that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateVirtualRouterAsync(const Model::CreateVirtualRouterRequest& request, const CreateVirtualRouterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a virtual service within a service mesh.</p> <p>A virtual service is
@@ -261,15 +250,6 @@ namespace AppMesh
          */
         virtual Model::CreateVirtualServiceOutcome CreateVirtualService(const Model::CreateVirtualServiceRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateVirtualService that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateVirtualServiceOutcomeCallable CreateVirtualServiceCallable(const Model::CreateVirtualServiceRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateVirtualService that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateVirtualServiceAsync(const Model::CreateVirtualServiceRequest& request, const CreateVirtualServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an existing gateway route.</p><p><h3>See Also:</h3>   <a
@@ -278,15 +258,6 @@ namespace AppMesh
          */
         virtual Model::DeleteGatewayRouteOutcome DeleteGatewayRoute(const Model::DeleteGatewayRouteRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteGatewayRoute that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteGatewayRouteOutcomeCallable DeleteGatewayRouteCallable(const Model::DeleteGatewayRouteRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteGatewayRoute that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteGatewayRouteAsync(const Model::DeleteGatewayRouteRequest& request, const DeleteGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an existing service mesh.</p> <p>You must delete all resources
@@ -297,15 +268,6 @@ namespace AppMesh
          */
         virtual Model::DeleteMeshOutcome DeleteMesh(const Model::DeleteMeshRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteMesh that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteMeshOutcomeCallable DeleteMeshCallable(const Model::DeleteMeshRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteMesh that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteMeshAsync(const Model::DeleteMeshRequest& request, const DeleteMeshResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an existing route.</p><p><h3>See Also:</h3>   <a
@@ -314,15 +276,6 @@ namespace AppMesh
          */
         virtual Model::DeleteRouteOutcome DeleteRoute(const Model::DeleteRouteRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteRoute that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteRouteOutcomeCallable DeleteRouteCallable(const Model::DeleteRouteRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteRoute that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteRouteAsync(const Model::DeleteRouteRequest& request, const DeleteRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an existing virtual gateway. You cannot delete a virtual gateway if
@@ -332,15 +285,6 @@ namespace AppMesh
          */
         virtual Model::DeleteVirtualGatewayOutcome DeleteVirtualGateway(const Model::DeleteVirtualGatewayRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteVirtualGateway that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteVirtualGatewayOutcomeCallable DeleteVirtualGatewayCallable(const Model::DeleteVirtualGatewayRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteVirtualGateway that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteVirtualGatewayAsync(const Model::DeleteVirtualGatewayRequest& request, const DeleteVirtualGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an existing virtual node.</p> <p>You must delete any virtual services
@@ -351,15 +295,6 @@ namespace AppMesh
          */
         virtual Model::DeleteVirtualNodeOutcome DeleteVirtualNode(const Model::DeleteVirtualNodeRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteVirtualNode that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteVirtualNodeOutcomeCallable DeleteVirtualNodeCallable(const Model::DeleteVirtualNodeRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteVirtualNode that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteVirtualNodeAsync(const Model::DeleteVirtualNodeRequest& request, const DeleteVirtualNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an existing virtual router.</p> <p>You must delete any routes
@@ -370,15 +305,6 @@ namespace AppMesh
          */
         virtual Model::DeleteVirtualRouterOutcome DeleteVirtualRouter(const Model::DeleteVirtualRouterRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteVirtualRouter that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteVirtualRouterOutcomeCallable DeleteVirtualRouterCallable(const Model::DeleteVirtualRouterRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteVirtualRouter that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteVirtualRouterAsync(const Model::DeleteVirtualRouterRequest& request, const DeleteVirtualRouterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an existing virtual service.</p><p><h3>See Also:</h3>   <a
@@ -387,15 +313,6 @@ namespace AppMesh
          */
         virtual Model::DeleteVirtualServiceOutcome DeleteVirtualService(const Model::DeleteVirtualServiceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteVirtualService that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteVirtualServiceOutcomeCallable DeleteVirtualServiceCallable(const Model::DeleteVirtualServiceRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteVirtualService that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteVirtualServiceAsync(const Model::DeleteVirtualServiceRequest& request, const DeleteVirtualServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes an existing gateway route.</p><p><h3>See Also:</h3>   <a
@@ -404,15 +321,6 @@ namespace AppMesh
          */
         virtual Model::DescribeGatewayRouteOutcome DescribeGatewayRoute(const Model::DescribeGatewayRouteRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeGatewayRoute that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeGatewayRouteOutcomeCallable DescribeGatewayRouteCallable(const Model::DescribeGatewayRouteRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeGatewayRoute that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeGatewayRouteAsync(const Model::DescribeGatewayRouteRequest& request, const DescribeGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes an existing service mesh.</p><p><h3>See Also:</h3>   <a
@@ -421,15 +329,6 @@ namespace AppMesh
          */
         virtual Model::DescribeMeshOutcome DescribeMesh(const Model::DescribeMeshRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeMesh that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeMeshOutcomeCallable DescribeMeshCallable(const Model::DescribeMeshRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeMesh that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeMeshAsync(const Model::DescribeMeshRequest& request, const DescribeMeshResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes an existing route.</p><p><h3>See Also:</h3>   <a
@@ -438,15 +337,6 @@ namespace AppMesh
          */
         virtual Model::DescribeRouteOutcome DescribeRoute(const Model::DescribeRouteRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeRoute that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeRouteOutcomeCallable DescribeRouteCallable(const Model::DescribeRouteRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeRoute that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeRouteAsync(const Model::DescribeRouteRequest& request, const DescribeRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes an existing virtual gateway.</p><p><h3>See Also:</h3>   <a
@@ -455,15 +345,6 @@ namespace AppMesh
          */
         virtual Model::DescribeVirtualGatewayOutcome DescribeVirtualGateway(const Model::DescribeVirtualGatewayRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeVirtualGateway that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeVirtualGatewayOutcomeCallable DescribeVirtualGatewayCallable(const Model::DescribeVirtualGatewayRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeVirtualGateway that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeVirtualGatewayAsync(const Model::DescribeVirtualGatewayRequest& request, const DescribeVirtualGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes an existing virtual node.</p><p><h3>See Also:</h3>   <a
@@ -472,15 +353,6 @@ namespace AppMesh
          */
         virtual Model::DescribeVirtualNodeOutcome DescribeVirtualNode(const Model::DescribeVirtualNodeRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeVirtualNode that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeVirtualNodeOutcomeCallable DescribeVirtualNodeCallable(const Model::DescribeVirtualNodeRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeVirtualNode that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeVirtualNodeAsync(const Model::DescribeVirtualNodeRequest& request, const DescribeVirtualNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes an existing virtual router.</p><p><h3>See Also:</h3>   <a
@@ -489,15 +361,6 @@ namespace AppMesh
          */
         virtual Model::DescribeVirtualRouterOutcome DescribeVirtualRouter(const Model::DescribeVirtualRouterRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeVirtualRouter that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeVirtualRouterOutcomeCallable DescribeVirtualRouterCallable(const Model::DescribeVirtualRouterRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeVirtualRouter that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeVirtualRouterAsync(const Model::DescribeVirtualRouterRequest& request, const DescribeVirtualRouterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes an existing virtual service.</p><p><h3>See Also:</h3>   <a
@@ -506,15 +369,6 @@ namespace AppMesh
          */
         virtual Model::DescribeVirtualServiceOutcome DescribeVirtualService(const Model::DescribeVirtualServiceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeVirtualService that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeVirtualServiceOutcomeCallable DescribeVirtualServiceCallable(const Model::DescribeVirtualServiceRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeVirtualService that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeVirtualServiceAsync(const Model::DescribeVirtualServiceRequest& request, const DescribeVirtualServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of existing gateway routes that are associated to a virtual
@@ -524,15 +378,6 @@ namespace AppMesh
          */
         virtual Model::ListGatewayRoutesOutcome ListGatewayRoutes(const Model::ListGatewayRoutesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListGatewayRoutes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListGatewayRoutesOutcomeCallable ListGatewayRoutesCallable(const Model::ListGatewayRoutesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListGatewayRoutes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListGatewayRoutesAsync(const Model::ListGatewayRoutesRequest& request, const ListGatewayRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of existing service meshes.</p><p><h3>See Also:</h3>   <a
@@ -541,15 +386,6 @@ namespace AppMesh
          */
         virtual Model::ListMeshesOutcome ListMeshes(const Model::ListMeshesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListMeshes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListMeshesOutcomeCallable ListMeshesCallable(const Model::ListMeshesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListMeshes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListMeshesAsync(const Model::ListMeshesRequest& request, const ListMeshesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of existing routes in a service mesh.</p><p><h3>See Also:</h3>
@@ -559,15 +395,6 @@ namespace AppMesh
          */
         virtual Model::ListRoutesOutcome ListRoutes(const Model::ListRoutesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListRoutes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListRoutesOutcomeCallable ListRoutesCallable(const Model::ListRoutesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListRoutes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListRoutesAsync(const Model::ListRoutesRequest& request, const ListRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List the tags for an App Mesh resource.</p><p><h3>See Also:</h3>   <a
@@ -576,15 +403,6 @@ namespace AppMesh
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of existing virtual gateways in a service mesh.</p><p><h3>See
@@ -594,15 +412,6 @@ namespace AppMesh
          */
         virtual Model::ListVirtualGatewaysOutcome ListVirtualGateways(const Model::ListVirtualGatewaysRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListVirtualGateways that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListVirtualGatewaysOutcomeCallable ListVirtualGatewaysCallable(const Model::ListVirtualGatewaysRequest& request) const;
-
-        /**
-         * An Async wrapper for ListVirtualGateways that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListVirtualGatewaysAsync(const Model::ListVirtualGatewaysRequest& request, const ListVirtualGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of existing virtual nodes.</p><p><h3>See Also:</h3>   <a
@@ -611,15 +420,6 @@ namespace AppMesh
          */
         virtual Model::ListVirtualNodesOutcome ListVirtualNodes(const Model::ListVirtualNodesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListVirtualNodes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListVirtualNodesOutcomeCallable ListVirtualNodesCallable(const Model::ListVirtualNodesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListVirtualNodes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListVirtualNodesAsync(const Model::ListVirtualNodesRequest& request, const ListVirtualNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of existing virtual routers in a service mesh.</p><p><h3>See
@@ -629,15 +429,6 @@ namespace AppMesh
          */
         virtual Model::ListVirtualRoutersOutcome ListVirtualRouters(const Model::ListVirtualRoutersRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListVirtualRouters that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListVirtualRoutersOutcomeCallable ListVirtualRoutersCallable(const Model::ListVirtualRoutersRequest& request) const;
-
-        /**
-         * An Async wrapper for ListVirtualRouters that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListVirtualRoutersAsync(const Model::ListVirtualRoutersRequest& request, const ListVirtualRoutersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of existing virtual services in a service mesh.</p><p><h3>See
@@ -647,15 +438,6 @@ namespace AppMesh
          */
         virtual Model::ListVirtualServicesOutcome ListVirtualServices(const Model::ListVirtualServicesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListVirtualServices that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListVirtualServicesOutcomeCallable ListVirtualServicesCallable(const Model::ListVirtualServicesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListVirtualServices that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListVirtualServicesAsync(const Model::ListVirtualServicesRequest& request, const ListVirtualServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates the specified tags to a resource with the specified
@@ -667,15 +449,6 @@ namespace AppMesh
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes specified tags from a resource.</p><p><h3>See Also:</h3>   <a
@@ -684,15 +457,6 @@ namespace AppMesh
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an existing gateway route that is associated to a specified virtual
@@ -702,15 +466,6 @@ namespace AppMesh
          */
         virtual Model::UpdateGatewayRouteOutcome UpdateGatewayRoute(const Model::UpdateGatewayRouteRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateGatewayRoute that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateGatewayRouteOutcomeCallable UpdateGatewayRouteCallable(const Model::UpdateGatewayRouteRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateGatewayRoute that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateGatewayRouteAsync(const Model::UpdateGatewayRouteRequest& request, const UpdateGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an existing service mesh.</p><p><h3>See Also:</h3>   <a
@@ -719,15 +474,6 @@ namespace AppMesh
          */
         virtual Model::UpdateMeshOutcome UpdateMesh(const Model::UpdateMeshRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateMesh that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateMeshOutcomeCallable UpdateMeshCallable(const Model::UpdateMeshRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateMesh that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateMeshAsync(const Model::UpdateMeshRequest& request, const UpdateMeshResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an existing route for a specified service mesh and virtual
@@ -737,15 +483,6 @@ namespace AppMesh
          */
         virtual Model::UpdateRouteOutcome UpdateRoute(const Model::UpdateRouteRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateRoute that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateRouteOutcomeCallable UpdateRouteCallable(const Model::UpdateRouteRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateRoute that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateRouteAsync(const Model::UpdateRouteRequest& request, const UpdateRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an existing virtual gateway in a specified service
@@ -755,15 +492,6 @@ namespace AppMesh
          */
         virtual Model::UpdateVirtualGatewayOutcome UpdateVirtualGateway(const Model::UpdateVirtualGatewayRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateVirtualGateway that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateVirtualGatewayOutcomeCallable UpdateVirtualGatewayCallable(const Model::UpdateVirtualGatewayRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateVirtualGateway that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateVirtualGatewayAsync(const Model::UpdateVirtualGatewayRequest& request, const UpdateVirtualGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an existing virtual node in a specified service mesh.</p><p><h3>See
@@ -773,15 +501,6 @@ namespace AppMesh
          */
         virtual Model::UpdateVirtualNodeOutcome UpdateVirtualNode(const Model::UpdateVirtualNodeRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateVirtualNode that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateVirtualNodeOutcomeCallable UpdateVirtualNodeCallable(const Model::UpdateVirtualNodeRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateVirtualNode that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateVirtualNodeAsync(const Model::UpdateVirtualNodeRequest& request, const UpdateVirtualNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an existing virtual router in a specified service mesh.</p><p><h3>See
@@ -791,15 +510,6 @@ namespace AppMesh
          */
         virtual Model::UpdateVirtualRouterOutcome UpdateVirtualRouter(const Model::UpdateVirtualRouterRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateVirtualRouter that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateVirtualRouterOutcomeCallable UpdateVirtualRouterCallable(const Model::UpdateVirtualRouterRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateVirtualRouter that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateVirtualRouterAsync(const Model::UpdateVirtualRouterRequest& request, const UpdateVirtualRouterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an existing virtual service in a specified service
@@ -809,15 +519,6 @@ namespace AppMesh
          */
         virtual Model::UpdateVirtualServiceOutcome UpdateVirtualService(const Model::UpdateVirtualServiceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateVirtualService that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateVirtualServiceOutcomeCallable UpdateVirtualServiceCallable(const Model::UpdateVirtualServiceRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateVirtualService that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateVirtualServiceAsync(const Model::UpdateVirtualServiceRequest& request, const UpdateVirtualServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

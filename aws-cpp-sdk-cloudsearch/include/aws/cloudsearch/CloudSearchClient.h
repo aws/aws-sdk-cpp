@@ -8,8 +8,10 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/cloudsearch/CloudSearchServiceClientModel.h>
+#include <aws/cloudsearch/CloudSearchLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -84,6 +86,47 @@ namespace CloudSearch
         virtual ~CloudSearchClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
        /**
         * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
         */
@@ -100,15 +143,6 @@ namespace CloudSearch
          */
         virtual Model::BuildSuggestersOutcome BuildSuggesters(const Model::BuildSuggestersRequest& request) const;
 
-        /**
-         * A Callable wrapper for BuildSuggesters that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BuildSuggestersOutcomeCallable BuildSuggestersCallable(const Model::BuildSuggestersRequest& request) const;
-
-        /**
-         * An Async wrapper for BuildSuggesters that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BuildSuggestersAsync(const Model::BuildSuggestersRequest& request, const BuildSuggestersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new search domain. For more information, see <a
@@ -120,15 +154,6 @@ namespace CloudSearch
          */
         virtual Model::CreateDomainOutcome CreateDomain(const Model::CreateDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDomainOutcomeCallable CreateDomainCallable(const Model::CreateDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDomainAsync(const Model::CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Configures an analysis scheme that can be applied to a <code>text</code> or
@@ -142,15 +167,6 @@ namespace CloudSearch
          */
         virtual Model::DefineAnalysisSchemeOutcome DefineAnalysisScheme(const Model::DefineAnalysisSchemeRequest& request) const;
 
-        /**
-         * A Callable wrapper for DefineAnalysisScheme that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DefineAnalysisSchemeOutcomeCallable DefineAnalysisSchemeCallable(const Model::DefineAnalysisSchemeRequest& request) const;
-
-        /**
-         * An Async wrapper for DefineAnalysisScheme that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DefineAnalysisSchemeAsync(const Model::DefineAnalysisSchemeRequest& request, const DefineAnalysisSchemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Configures an <code><a>Expression</a></code> for the search domain. Used to
@@ -164,15 +180,6 @@ namespace CloudSearch
          */
         virtual Model::DefineExpressionOutcome DefineExpression(const Model::DefineExpressionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DefineExpression that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DefineExpressionOutcomeCallable DefineExpressionCallable(const Model::DefineExpressionRequest& request) const;
-
-        /**
-         * An Async wrapper for DefineExpression that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DefineExpressionAsync(const Model::DefineExpressionRequest& request, const DefineExpressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Configures an <code><a>IndexField</a></code> for the search domain. Used to
@@ -190,15 +197,6 @@ namespace CloudSearch
          */
         virtual Model::DefineIndexFieldOutcome DefineIndexField(const Model::DefineIndexFieldRequest& request) const;
 
-        /**
-         * A Callable wrapper for DefineIndexField that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DefineIndexFieldOutcomeCallable DefineIndexFieldCallable(const Model::DefineIndexFieldRequest& request) const;
-
-        /**
-         * An Async wrapper for DefineIndexField that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DefineIndexFieldAsync(const Model::DefineIndexFieldRequest& request, const DefineIndexFieldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Configures a suggester for a domain. A suggester enables you to display
@@ -214,15 +212,6 @@ namespace CloudSearch
          */
         virtual Model::DefineSuggesterOutcome DefineSuggester(const Model::DefineSuggesterRequest& request) const;
 
-        /**
-         * A Callable wrapper for DefineSuggester that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DefineSuggesterOutcomeCallable DefineSuggesterCallable(const Model::DefineSuggesterRequest& request) const;
-
-        /**
-         * An Async wrapper for DefineSuggester that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DefineSuggesterAsync(const Model::DefineSuggesterRequest& request, const DefineSuggesterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an analysis scheme. For more information, see <a
@@ -234,15 +223,6 @@ namespace CloudSearch
          */
         virtual Model::DeleteAnalysisSchemeOutcome DeleteAnalysisScheme(const Model::DeleteAnalysisSchemeRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAnalysisScheme that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAnalysisSchemeOutcomeCallable DeleteAnalysisSchemeCallable(const Model::DeleteAnalysisSchemeRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAnalysisScheme that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAnalysisSchemeAsync(const Model::DeleteAnalysisSchemeRequest& request, const DeleteAnalysisSchemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Permanently deletes a search domain and all of its data. Once a domain has
@@ -255,15 +235,6 @@ namespace CloudSearch
          */
         virtual Model::DeleteDomainOutcome DeleteDomain(const Model::DeleteDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDomainOutcomeCallable DeleteDomainCallable(const Model::DeleteDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDomainAsync(const Model::DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes an <code><a>Expression</a></code> from the search domain. For more
@@ -276,15 +247,6 @@ namespace CloudSearch
          */
         virtual Model::DeleteExpressionOutcome DeleteExpression(const Model::DeleteExpressionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteExpression that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteExpressionOutcomeCallable DeleteExpressionCallable(const Model::DeleteExpressionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteExpression that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteExpressionAsync(const Model::DeleteExpressionRequest& request, const DeleteExpressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes an <code><a>IndexField</a></code> from the search domain. For more
@@ -297,15 +259,6 @@ namespace CloudSearch
          */
         virtual Model::DeleteIndexFieldOutcome DeleteIndexField(const Model::DeleteIndexFieldRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteIndexField that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteIndexFieldOutcomeCallable DeleteIndexFieldCallable(const Model::DeleteIndexFieldRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteIndexField that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteIndexFieldAsync(const Model::DeleteIndexFieldRequest& request, const DeleteIndexFieldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a suggester. For more information, see <a
@@ -317,15 +270,6 @@ namespace CloudSearch
          */
         virtual Model::DeleteSuggesterOutcome DeleteSuggester(const Model::DeleteSuggesterRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteSuggester that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteSuggesterOutcomeCallable DeleteSuggesterCallable(const Model::DeleteSuggesterRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteSuggester that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteSuggesterAsync(const Model::DeleteSuggesterRequest& request, const DeleteSuggesterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the analysis schemes configured for a domain. An analysis scheme defines
@@ -342,15 +286,6 @@ namespace CloudSearch
          */
         virtual Model::DescribeAnalysisSchemesOutcome DescribeAnalysisSchemes(const Model::DescribeAnalysisSchemesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAnalysisSchemes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAnalysisSchemesOutcomeCallable DescribeAnalysisSchemesCallable(const Model::DescribeAnalysisSchemesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAnalysisSchemes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAnalysisSchemesAsync(const Model::DescribeAnalysisSchemesRequest& request, const DescribeAnalysisSchemesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the availability options configured for a domain. By default, shows the
@@ -365,15 +300,6 @@ namespace CloudSearch
          */
         virtual Model::DescribeAvailabilityOptionsOutcome DescribeAvailabilityOptions(const Model::DescribeAvailabilityOptionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAvailabilityOptions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAvailabilityOptionsOutcomeCallable DescribeAvailabilityOptionsCallable(const Model::DescribeAvailabilityOptionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAvailabilityOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAvailabilityOptionsAsync(const Model::DescribeAvailabilityOptionsRequest& request, const DescribeAvailabilityOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the domain's endpoint options, specifically whether all requests to
@@ -386,15 +312,6 @@ namespace CloudSearch
          */
         virtual Model::DescribeDomainEndpointOptionsOutcome DescribeDomainEndpointOptions(const Model::DescribeDomainEndpointOptionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDomainEndpointOptions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDomainEndpointOptionsOutcomeCallable DescribeDomainEndpointOptionsCallable(const Model::DescribeDomainEndpointOptionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDomainEndpointOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDomainEndpointOptionsAsync(const Model::DescribeDomainEndpointOptionsRequest& request, const DescribeDomainEndpointOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the search domains owned by this account. Can be
@@ -411,15 +328,6 @@ namespace CloudSearch
          */
         virtual Model::DescribeDomainsOutcome DescribeDomains(const Model::DescribeDomainsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDomains that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDomainsOutcomeCallable DescribeDomainsCallable(const Model::DescribeDomainsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDomains that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDomainsAsync(const Model::DescribeDomainsRequest& request, const DescribeDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the expressions configured for the search domain. Can be limited to
@@ -435,15 +343,6 @@ namespace CloudSearch
          */
         virtual Model::DescribeExpressionsOutcome DescribeExpressions(const Model::DescribeExpressionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeExpressions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeExpressionsOutcomeCallable DescribeExpressionsCallable(const Model::DescribeExpressionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeExpressions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeExpressionsAsync(const Model::DescribeExpressionsRequest& request, const DescribeExpressionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the index fields configured for the search domain. Can
@@ -459,15 +358,6 @@ namespace CloudSearch
          */
         virtual Model::DescribeIndexFieldsOutcome DescribeIndexFields(const Model::DescribeIndexFieldsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeIndexFields that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeIndexFieldsOutcomeCallable DescribeIndexFieldsCallable(const Model::DescribeIndexFieldsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeIndexFields that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeIndexFieldsAsync(const Model::DescribeIndexFieldsRequest& request, const DescribeIndexFieldsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the scaling parameters configured for a domain. A domain's scaling
@@ -481,15 +371,6 @@ namespace CloudSearch
          */
         virtual Model::DescribeScalingParametersOutcome DescribeScalingParameters(const Model::DescribeScalingParametersRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeScalingParameters that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeScalingParametersOutcomeCallable DescribeScalingParametersCallable(const Model::DescribeScalingParametersRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeScalingParameters that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeScalingParametersAsync(const Model::DescribeScalingParametersRequest& request, const DescribeScalingParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the access policies that control access to the
@@ -505,15 +386,6 @@ namespace CloudSearch
          */
         virtual Model::DescribeServiceAccessPoliciesOutcome DescribeServiceAccessPolicies(const Model::DescribeServiceAccessPoliciesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeServiceAccessPolicies that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeServiceAccessPoliciesOutcomeCallable DescribeServiceAccessPoliciesCallable(const Model::DescribeServiceAccessPoliciesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeServiceAccessPolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeServiceAccessPoliciesAsync(const Model::DescribeServiceAccessPoliciesRequest& request, const DescribeServiceAccessPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the suggesters configured for a domain. A suggester enables you to
@@ -530,15 +402,6 @@ namespace CloudSearch
          */
         virtual Model::DescribeSuggestersOutcome DescribeSuggesters(const Model::DescribeSuggestersRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeSuggesters that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeSuggestersOutcomeCallable DescribeSuggestersCallable(const Model::DescribeSuggestersRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeSuggesters that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeSuggestersAsync(const Model::DescribeSuggestersRequest& request, const DescribeSuggestersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Tells the search domain to start indexing its documents using the latest
@@ -550,15 +413,6 @@ namespace CloudSearch
          */
         virtual Model::IndexDocumentsOutcome IndexDocuments(const Model::IndexDocumentsRequest& request) const;
 
-        /**
-         * A Callable wrapper for IndexDocuments that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::IndexDocumentsOutcomeCallable IndexDocumentsCallable(const Model::IndexDocumentsRequest& request) const;
-
-        /**
-         * An Async wrapper for IndexDocuments that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void IndexDocumentsAsync(const Model::IndexDocumentsRequest& request, const IndexDocumentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all search domains owned by an account.</p><p><h3>See Also:</h3>   <a
@@ -567,15 +421,6 @@ namespace CloudSearch
          */
         virtual Model::ListDomainNamesOutcome ListDomainNames(const Model::ListDomainNamesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDomainNames that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDomainNamesOutcomeCallable ListDomainNamesCallable(const Model::ListDomainNamesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDomainNames that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDomainNamesAsync(const Model::ListDomainNamesRequest& request, const ListDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Configures the availability options for a domain. Enabling the Multi-AZ
@@ -591,15 +436,6 @@ namespace CloudSearch
          */
         virtual Model::UpdateAvailabilityOptionsOutcome UpdateAvailabilityOptions(const Model::UpdateAvailabilityOptionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateAvailabilityOptions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateAvailabilityOptionsOutcomeCallable UpdateAvailabilityOptionsCallable(const Model::UpdateAvailabilityOptionsRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateAvailabilityOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateAvailabilityOptionsAsync(const Model::UpdateAvailabilityOptionsRequest& request, const UpdateAvailabilityOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the domain's endpoint options, specifically whether all requests to
@@ -612,15 +448,6 @@ namespace CloudSearch
          */
         virtual Model::UpdateDomainEndpointOptionsOutcome UpdateDomainEndpointOptions(const Model::UpdateDomainEndpointOptionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateDomainEndpointOptions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateDomainEndpointOptionsOutcomeCallable UpdateDomainEndpointOptionsCallable(const Model::UpdateDomainEndpointOptionsRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateDomainEndpointOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateDomainEndpointOptionsAsync(const Model::UpdateDomainEndpointOptionsRequest& request, const UpdateDomainEndpointOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Configures scaling parameters for a domain. A domain's scaling parameters
@@ -637,15 +464,6 @@ namespace CloudSearch
          */
         virtual Model::UpdateScalingParametersOutcome UpdateScalingParameters(const Model::UpdateScalingParametersRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateScalingParameters that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateScalingParametersOutcomeCallable UpdateScalingParametersCallable(const Model::UpdateScalingParametersRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateScalingParameters that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateScalingParametersAsync(const Model::UpdateScalingParametersRequest& request, const UpdateScalingParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Configures the access rules that control access to the domain's document and
@@ -658,15 +476,6 @@ namespace CloudSearch
          */
         virtual Model::UpdateServiceAccessPoliciesOutcome UpdateServiceAccessPolicies(const Model::UpdateServiceAccessPoliciesRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateServiceAccessPolicies that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateServiceAccessPoliciesOutcomeCallable UpdateServiceAccessPoliciesCallable(const Model::UpdateServiceAccessPoliciesRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateServiceAccessPolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateServiceAccessPoliciesAsync(const Model::UpdateServiceAccessPoliciesRequest& request, const UpdateServiceAccessPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
         void OverrideEndpoint(const Aws::String& endpoint);

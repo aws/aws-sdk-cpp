@@ -7,8 +7,10 @@
 #include <aws/kinesisvideo/KinesisVideo_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kinesisvideo/KinesisVideoServiceClientModel.h>
+#include <aws/kinesisvideo/KinesisVideoLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -73,6 +75,47 @@ namespace KinesisVideo
         virtual ~KinesisVideoClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Creates a signaling channel. </p> <p> <code>CreateSignalingChannel</code> is
          * an asynchronous operation.</p><p><h3>See Also:</h3>   <a
@@ -81,15 +124,6 @@ namespace KinesisVideo
          */
         virtual Model::CreateSignalingChannelOutcome CreateSignalingChannel(const Model::CreateSignalingChannelRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateSignalingChannel that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateSignalingChannelOutcomeCallable CreateSignalingChannelCallable(const Model::CreateSignalingChannelRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateSignalingChannel that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateSignalingChannelAsync(const Model::CreateSignalingChannelRequest& request, const CreateSignalingChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new Kinesis video stream. </p> <p>When you create a new stream,
@@ -105,15 +139,6 @@ namespace KinesisVideo
          */
         virtual Model::CreateStreamOutcome CreateStream(const Model::CreateStreamRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateStream that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateStreamOutcomeCallable CreateStreamCallable(const Model::CreateStreamRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateStream that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateStreamAsync(const Model::CreateStreamRequest& request, const CreateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a specified signaling channel. <code>DeleteSignalingChannel</code> is
@@ -124,15 +149,6 @@ namespace KinesisVideo
          */
         virtual Model::DeleteSignalingChannelOutcome DeleteSignalingChannel(const Model::DeleteSignalingChannelRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteSignalingChannel that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteSignalingChannelOutcomeCallable DeleteSignalingChannelCallable(const Model::DeleteSignalingChannelRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteSignalingChannel that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteSignalingChannelAsync(const Model::DeleteSignalingChannelRequest& request, const DeleteSignalingChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a Kinesis video stream and the data contained in the stream. </p>
@@ -149,15 +165,6 @@ namespace KinesisVideo
          */
         virtual Model::DeleteStreamOutcome DeleteStream(const Model::DeleteStreamRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteStream that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteStreamOutcomeCallable DeleteStreamCallable(const Model::DeleteStreamRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteStream that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteStreamAsync(const Model::DeleteStreamRequest& request, const DeleteStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the <code>ImageGenerationConfiguration</code> for a given Kinesis video
@@ -167,15 +174,6 @@ namespace KinesisVideo
          */
         virtual Model::DescribeImageGenerationConfigurationOutcome DescribeImageGenerationConfiguration(const Model::DescribeImageGenerationConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeImageGenerationConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeImageGenerationConfigurationOutcomeCallable DescribeImageGenerationConfigurationCallable(const Model::DescribeImageGenerationConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeImageGenerationConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeImageGenerationConfigurationAsync(const Model::DescribeImageGenerationConfigurationRequest& request, const DescribeImageGenerationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the <code>NotificationConfiguration</code> for a given Kinesis video
@@ -185,15 +183,6 @@ namespace KinesisVideo
          */
         virtual Model::DescribeNotificationConfigurationOutcome DescribeNotificationConfiguration(const Model::DescribeNotificationConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeNotificationConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeNotificationConfigurationOutcomeCallable DescribeNotificationConfigurationCallable(const Model::DescribeNotificationConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeNotificationConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeNotificationConfigurationAsync(const Model::DescribeNotificationConfigurationRequest& request, const DescribeNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the most current information about the signaling channel. You must
@@ -204,15 +193,6 @@ namespace KinesisVideo
          */
         virtual Model::DescribeSignalingChannelOutcome DescribeSignalingChannel(const Model::DescribeSignalingChannelRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeSignalingChannel that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeSignalingChannelOutcomeCallable DescribeSignalingChannelCallable(const Model::DescribeSignalingChannelRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeSignalingChannel that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeSignalingChannelAsync(const Model::DescribeSignalingChannelRequest& request, const DescribeSignalingChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the most current information about the specified stream. You must
@@ -223,15 +203,6 @@ namespace KinesisVideo
          */
         virtual Model::DescribeStreamOutcome DescribeStream(const Model::DescribeStreamRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeStream that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeStreamOutcomeCallable DescribeStreamCallable(const Model::DescribeStreamRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeStream that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeStreamAsync(const Model::DescribeStreamRequest& request, const DescribeStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets an endpoint for a specified stream for either reading or writing. Use
@@ -247,15 +218,6 @@ namespace KinesisVideo
          */
         virtual Model::GetDataEndpointOutcome GetDataEndpoint(const Model::GetDataEndpointRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDataEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDataEndpointOutcomeCallable GetDataEndpointCallable(const Model::GetDataEndpointRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDataEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDataEndpointAsync(const Model::GetDataEndpointRequest& request, const GetDataEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides an endpoint for the specified signaling channel to send and receive
@@ -276,15 +238,6 @@ namespace KinesisVideo
          */
         virtual Model::GetSignalingChannelEndpointOutcome GetSignalingChannelEndpoint(const Model::GetSignalingChannelEndpointRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSignalingChannelEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSignalingChannelEndpointOutcomeCallable GetSignalingChannelEndpointCallable(const Model::GetSignalingChannelEndpointRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSignalingChannelEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSignalingChannelEndpointAsync(const Model::GetSignalingChannelEndpointRequest& request, const GetSignalingChannelEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns an array of <code>ChannelInfo</code> objects. Each object describes a
@@ -296,15 +249,6 @@ namespace KinesisVideo
          */
         virtual Model::ListSignalingChannelsOutcome ListSignalingChannels(const Model::ListSignalingChannelsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSignalingChannels that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListSignalingChannelsOutcomeCallable ListSignalingChannelsCallable(const Model::ListSignalingChannelsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSignalingChannels that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListSignalingChannelsAsync(const Model::ListSignalingChannelsRequest& request, const ListSignalingChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns an array of <code>StreamInfo</code> objects. Each object describes a
@@ -315,15 +259,6 @@ namespace KinesisVideo
          */
         virtual Model::ListStreamsOutcome ListStreams(const Model::ListStreamsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListStreams that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListStreamsOutcomeCallable ListStreamsCallable(const Model::ListStreamsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListStreams that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListStreamsAsync(const Model::ListStreamsRequest& request, const ListStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of tags associated with the specified signaling
@@ -333,15 +268,6 @@ namespace KinesisVideo
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of tags associated with the specified stream.</p> <p>In the
@@ -352,15 +278,6 @@ namespace KinesisVideo
          */
         virtual Model::ListTagsForStreamOutcome ListTagsForStream(const Model::ListTagsForStreamRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForStream that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForStreamOutcomeCallable ListTagsForStreamCallable(const Model::ListTagsForStreamRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForStream that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForStreamAsync(const Model::ListTagsForStreamRequest& request, const ListTagsForStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds one or more tags to a signaling channel. A <i>tag</i> is a key-value
@@ -376,15 +293,6 @@ namespace KinesisVideo
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds one or more tags to a stream. A <i>tag</i> is a key-value pair (the
@@ -402,15 +310,6 @@ namespace KinesisVideo
          */
         virtual Model::TagStreamOutcome TagStream(const Model::TagStreamRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagStream that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagStreamOutcomeCallable TagStreamCallable(const Model::TagStreamRequest& request) const;
-
-        /**
-         * An Async wrapper for TagStream that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagStreamAsync(const Model::TagStreamRequest& request, const TagStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes one or more tags from a signaling channel. In the request, specify
@@ -421,15 +320,6 @@ namespace KinesisVideo
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes one or more tags from a stream. In the request, specify only a tag
@@ -441,15 +331,6 @@ namespace KinesisVideo
          */
         virtual Model::UntagStreamOutcome UntagStream(const Model::UntagStreamRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagStream that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagStreamOutcomeCallable UntagStreamCallable(const Model::UntagStreamRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagStream that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagStreamAsync(const Model::UntagStreamRequest& request, const UntagStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Increases or decreases the stream's data retention period by the value that
@@ -473,15 +354,6 @@ namespace KinesisVideo
          */
         virtual Model::UpdateDataRetentionOutcome UpdateDataRetention(const Model::UpdateDataRetentionRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateDataRetention that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateDataRetentionOutcomeCallable UpdateDataRetentionCallable(const Model::UpdateDataRetentionRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateDataRetention that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateDataRetentionAsync(const Model::UpdateDataRetentionRequest& request, const UpdateDataRetentionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the <code>StreamInfo</code> and
@@ -491,15 +363,6 @@ namespace KinesisVideo
          */
         virtual Model::UpdateImageGenerationConfigurationOutcome UpdateImageGenerationConfiguration(const Model::UpdateImageGenerationConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateImageGenerationConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateImageGenerationConfigurationOutcomeCallable UpdateImageGenerationConfigurationCallable(const Model::UpdateImageGenerationConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateImageGenerationConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateImageGenerationConfigurationAsync(const Model::UpdateImageGenerationConfigurationRequest& request, const UpdateImageGenerationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the notification information for a stream.</p><p><h3>See Also:</h3>  
@@ -509,15 +372,6 @@ namespace KinesisVideo
          */
         virtual Model::UpdateNotificationConfigurationOutcome UpdateNotificationConfiguration(const Model::UpdateNotificationConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateNotificationConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateNotificationConfigurationOutcomeCallable UpdateNotificationConfigurationCallable(const Model::UpdateNotificationConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateNotificationConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateNotificationConfigurationAsync(const Model::UpdateNotificationConfigurationRequest& request, const UpdateNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the existing signaling channel. This is an asynchronous operation and
@@ -530,15 +384,6 @@ namespace KinesisVideo
          */
         virtual Model::UpdateSignalingChannelOutcome UpdateSignalingChannel(const Model::UpdateSignalingChannelRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateSignalingChannel that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateSignalingChannelOutcomeCallable UpdateSignalingChannelCallable(const Model::UpdateSignalingChannelRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateSignalingChannel that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateSignalingChannelAsync(const Model::UpdateSignalingChannelRequest& request, const UpdateSignalingChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates stream metadata, such as the device name and media type.</p> <p>You
@@ -555,15 +400,6 @@ namespace KinesisVideo
          */
         virtual Model::UpdateStreamOutcome UpdateStream(const Model::UpdateStreamRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateStream that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateStreamOutcomeCallable UpdateStreamCallable(const Model::UpdateStreamRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateStream that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateStreamAsync(const Model::UpdateStreamRequest& request, const UpdateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

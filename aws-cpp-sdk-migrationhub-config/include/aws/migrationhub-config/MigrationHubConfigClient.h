@@ -7,8 +7,10 @@
 #include <aws/migrationhub-config/MigrationHubConfig_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/migrationhub-config/MigrationHubConfigServiceClientModel.h>
+#include <aws/migrationhub-config/MigrationHubConfigLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -84,6 +86,47 @@ namespace MigrationHubConfig
         virtual ~MigrationHubConfigClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>This API sets up the home region for the calling account only.</p><p><h3>See
          * Also:</h3>   <a
@@ -92,15 +135,6 @@ namespace MigrationHubConfig
          */
         virtual Model::CreateHomeRegionControlOutcome CreateHomeRegionControl(const Model::CreateHomeRegionControlRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateHomeRegionControl that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateHomeRegionControlOutcomeCallable CreateHomeRegionControlCallable(const Model::CreateHomeRegionControlRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateHomeRegionControl that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateHomeRegionControlAsync(const Model::CreateHomeRegionControlRequest& request, const CreateHomeRegionControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This API permits filtering on the <code>ControlId</code> and
@@ -110,15 +144,6 @@ namespace MigrationHubConfig
          */
         virtual Model::DescribeHomeRegionControlsOutcome DescribeHomeRegionControls(const Model::DescribeHomeRegionControlsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeHomeRegionControls that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeHomeRegionControlsOutcomeCallable DescribeHomeRegionControlsCallable(const Model::DescribeHomeRegionControlsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeHomeRegionControls that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeHomeRegionControlsAsync(const Model::DescribeHomeRegionControlsRequest& request, const DescribeHomeRegionControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the calling account’s home region, if configured. This API is used by
@@ -132,15 +157,6 @@ namespace MigrationHubConfig
          */
         virtual Model::GetHomeRegionOutcome GetHomeRegion(const Model::GetHomeRegionRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetHomeRegion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetHomeRegionOutcomeCallable GetHomeRegionCallable(const Model::GetHomeRegionRequest& request) const;
-
-        /**
-         * An Async wrapper for GetHomeRegion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetHomeRegionAsync(const Model::GetHomeRegionRequest& request, const GetHomeRegionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

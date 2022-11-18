@@ -8,8 +8,10 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/cloudformation/CloudFormationServiceClientModel.h>
+#include <aws/cloudformation/CloudFormationLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -90,6 +92,47 @@ namespace CloudFormation
         virtual ~CloudFormationClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
        /**
         * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
         */
@@ -113,15 +156,6 @@ namespace CloudFormation
          */
         virtual Model::ActivateTypeOutcome ActivateType(const Model::ActivateTypeRequest& request) const;
 
-        /**
-         * A Callable wrapper for ActivateType that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ActivateTypeOutcomeCallable ActivateTypeCallable(const Model::ActivateTypeRequest& request) const;
-
-        /**
-         * An Async wrapper for ActivateType that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ActivateTypeAsync(const Model::ActivateTypeRequest& request, const ActivateTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns configuration data for the specified CloudFormation extensions, from
@@ -135,15 +169,6 @@ namespace CloudFormation
          */
         virtual Model::BatchDescribeTypeConfigurationsOutcome BatchDescribeTypeConfigurations(const Model::BatchDescribeTypeConfigurationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchDescribeTypeConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchDescribeTypeConfigurationsOutcomeCallable BatchDescribeTypeConfigurationsCallable(const Model::BatchDescribeTypeConfigurationsRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchDescribeTypeConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchDescribeTypeConfigurationsAsync(const Model::BatchDescribeTypeConfigurationsRequest& request, const BatchDescribeTypeConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Cancels an update on the specified stack. If the call completes successfully,
@@ -155,15 +180,6 @@ namespace CloudFormation
          */
         virtual Model::CancelUpdateStackOutcome CancelUpdateStack(const Model::CancelUpdateStackRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelUpdateStack that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelUpdateStackOutcomeCallable CancelUpdateStackCallable(const Model::CancelUpdateStackRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelUpdateStack that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelUpdateStackAsync(const Model::CancelUpdateStackRequest& request, const CancelUpdateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>For a specified stack that's in the <code>UPDATE_ROLLBACK_FAILED</code>
@@ -184,15 +200,6 @@ namespace CloudFormation
          */
         virtual Model::ContinueUpdateRollbackOutcome ContinueUpdateRollback(const Model::ContinueUpdateRollbackRequest& request) const;
 
-        /**
-         * A Callable wrapper for ContinueUpdateRollback that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ContinueUpdateRollbackOutcomeCallable ContinueUpdateRollbackCallable(const Model::ContinueUpdateRollbackRequest& request) const;
-
-        /**
-         * An Async wrapper for ContinueUpdateRollback that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ContinueUpdateRollbackAsync(const Model::ContinueUpdateRollbackRequest& request, const ContinueUpdateRollbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a list of changes that will be applied to a stack so that you can
@@ -222,15 +229,6 @@ namespace CloudFormation
          */
         virtual Model::CreateChangeSetOutcome CreateChangeSet(const Model::CreateChangeSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateChangeSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateChangeSetOutcomeCallable CreateChangeSetCallable(const Model::CreateChangeSetRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateChangeSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateChangeSetAsync(const Model::CreateChangeSetRequest& request, const CreateChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a stack as specified in the template. After the call completes
@@ -241,15 +239,6 @@ namespace CloudFormation
          */
         virtual Model::CreateStackOutcome CreateStack(const Model::CreateStackRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateStack that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateStackOutcomeCallable CreateStackCallable(const Model::CreateStackRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateStack that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateStackAsync(const Model::CreateStackRequest& request, const CreateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates stack instances for the specified accounts, within the specified
@@ -262,15 +251,6 @@ namespace CloudFormation
          */
         virtual Model::CreateStackInstancesOutcome CreateStackInstances(const Model::CreateStackInstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateStackInstances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateStackInstancesOutcomeCallable CreateStackInstancesCallable(const Model::CreateStackInstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateStackInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateStackInstancesAsync(const Model::CreateStackInstancesRequest& request, const CreateStackInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a stack set.</p><p><h3>See Also:</h3>   <a
@@ -279,15 +259,6 @@ namespace CloudFormation
          */
         virtual Model::CreateStackSetOutcome CreateStackSet(const Model::CreateStackSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateStackSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateStackSetOutcomeCallable CreateStackSetCallable(const Model::CreateStackSetRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateStackSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateStackSetAsync(const Model::CreateStackSetRequest& request, const CreateStackSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deactivates a public extension that was previously activated in this account
@@ -301,15 +272,6 @@ namespace CloudFormation
          */
         virtual Model::DeactivateTypeOutcome DeactivateType(const Model::DeactivateTypeRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeactivateType that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeactivateTypeOutcomeCallable DeactivateTypeCallable(const Model::DeactivateTypeRequest& request) const;
-
-        /**
-         * An Async wrapper for DeactivateType that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeactivateTypeAsync(const Model::DeactivateTypeRequest& request, const DeactivateTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified change set. Deleting change sets ensures that no one
@@ -325,15 +287,6 @@ namespace CloudFormation
          */
         virtual Model::DeleteChangeSetOutcome DeleteChangeSet(const Model::DeleteChangeSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteChangeSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteChangeSetOutcomeCallable DeleteChangeSetCallable(const Model::DeleteChangeSetRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteChangeSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteChangeSetAsync(const Model::DeleteChangeSetRequest& request, const DeleteChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a specified stack. Once the call completes successfully, stack
@@ -345,15 +298,6 @@ namespace CloudFormation
          */
         virtual Model::DeleteStackOutcome DeleteStack(const Model::DeleteStackRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteStack that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteStackOutcomeCallable DeleteStackCallable(const Model::DeleteStackRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteStack that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteStackAsync(const Model::DeleteStackRequest& request, const DeleteStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes stack instances for the specified accounts, in the specified Amazon
@@ -363,15 +307,6 @@ namespace CloudFormation
          */
         virtual Model::DeleteStackInstancesOutcome DeleteStackInstances(const Model::DeleteStackInstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteStackInstances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteStackInstancesOutcomeCallable DeleteStackInstancesCallable(const Model::DeleteStackInstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteStackInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteStackInstancesAsync(const Model::DeleteStackInstancesRequest& request, const DeleteStackInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a stack set. Before you can delete a stack set, all its member stack
@@ -382,15 +317,6 @@ namespace CloudFormation
          */
         virtual Model::DeleteStackSetOutcome DeleteStackSet(const Model::DeleteStackSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteStackSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteStackSetOutcomeCallable DeleteStackSetCallable(const Model::DeleteStackSetRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteStackSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteStackSetAsync(const Model::DeleteStackSetRequest& request, const DeleteStackSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Marks an extension or extension version as <code>DEPRECATED</code> in the
@@ -411,15 +337,6 @@ namespace CloudFormation
          */
         virtual Model::DeregisterTypeOutcome DeregisterType(const Model::DeregisterTypeRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeregisterType that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeregisterTypeOutcomeCallable DeregisterTypeCallable(const Model::DeregisterTypeRequest& request) const;
-
-        /**
-         * An Async wrapper for DeregisterType that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeregisterTypeAsync(const Model::DeregisterTypeRequest& request, const DeregisterTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves your account's CloudFormation limits, such as the maximum number of
@@ -433,15 +350,6 @@ namespace CloudFormation
          */
         virtual Model::DescribeAccountLimitsOutcome DescribeAccountLimits(const Model::DescribeAccountLimitsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAccountLimits that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAccountLimitsOutcomeCallable DescribeAccountLimitsCallable(const Model::DescribeAccountLimitsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAccountLimits that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAccountLimitsAsync(const Model::DescribeAccountLimitsRequest& request, const DescribeAccountLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the inputs for the change set and a list of changes that
@@ -455,15 +363,6 @@ namespace CloudFormation
          */
         virtual Model::DescribeChangeSetOutcome DescribeChangeSet(const Model::DescribeChangeSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeChangeSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeChangeSetOutcomeCallable DescribeChangeSetCallable(const Model::DescribeChangeSetRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeChangeSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeChangeSetAsync(const Model::DescribeChangeSetRequest& request, const DescribeChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns hook-related information for the change set and a list of changes
@@ -474,15 +373,6 @@ namespace CloudFormation
          */
         virtual Model::DescribeChangeSetHooksOutcome DescribeChangeSetHooks(const Model::DescribeChangeSetHooksRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeChangeSetHooks that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeChangeSetHooksOutcomeCallable DescribeChangeSetHooksCallable(const Model::DescribeChangeSetHooksRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeChangeSetHooks that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeChangeSetHooksAsync(const Model::DescribeChangeSetHooksRequest& request, const DescribeChangeSetHooksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a CloudFormation extension publisher.</p> <p>If you
@@ -500,15 +390,6 @@ namespace CloudFormation
          */
         virtual Model::DescribePublisherOutcome DescribePublisher(const Model::DescribePublisherRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribePublisher that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribePublisherOutcomeCallable DescribePublisherCallable(const Model::DescribePublisherRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribePublisher that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribePublisherAsync(const Model::DescribePublisherRequest& request, const DescribePublisherResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a stack drift detection operation. A stack drift
@@ -530,15 +411,6 @@ namespace CloudFormation
          */
         virtual Model::DescribeStackDriftDetectionStatusOutcome DescribeStackDriftDetectionStatus(const Model::DescribeStackDriftDetectionStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeStackDriftDetectionStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeStackDriftDetectionStatusOutcomeCallable DescribeStackDriftDetectionStatusCallable(const Model::DescribeStackDriftDetectionStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeStackDriftDetectionStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeStackDriftDetectionStatusAsync(const Model::DescribeStackDriftDetectionStatusRequest& request, const DescribeStackDriftDetectionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns all stack related events for a specified stack in reverse
@@ -553,15 +425,6 @@ namespace CloudFormation
          */
         virtual Model::DescribeStackEventsOutcome DescribeStackEvents(const Model::DescribeStackEventsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeStackEvents that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeStackEventsOutcomeCallable DescribeStackEventsCallable(const Model::DescribeStackEventsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeStackEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeStackEventsAsync(const Model::DescribeStackEventsRequest& request, const DescribeStackEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the stack instance that's associated with the specified stack set,
@@ -573,15 +436,6 @@ namespace CloudFormation
          */
         virtual Model::DescribeStackInstanceOutcome DescribeStackInstance(const Model::DescribeStackInstanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeStackInstance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeStackInstanceOutcomeCallable DescribeStackInstanceCallable(const Model::DescribeStackInstanceRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeStackInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeStackInstanceAsync(const Model::DescribeStackInstanceRequest& request, const DescribeStackInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a description of the specified resource in the specified stack.</p>
@@ -592,15 +446,6 @@ namespace CloudFormation
          */
         virtual Model::DescribeStackResourceOutcome DescribeStackResource(const Model::DescribeStackResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeStackResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeStackResourceOutcomeCallable DescribeStackResourceCallable(const Model::DescribeStackResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeStackResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeStackResourceAsync(const Model::DescribeStackResourceRequest& request, const DescribeStackResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns drift information for the resources that have been checked for drift
@@ -620,15 +465,6 @@ namespace CloudFormation
          */
         virtual Model::DescribeStackResourceDriftsOutcome DescribeStackResourceDrifts(const Model::DescribeStackResourceDriftsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeStackResourceDrifts that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeStackResourceDriftsOutcomeCallable DescribeStackResourceDriftsCallable(const Model::DescribeStackResourceDriftsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeStackResourceDrifts that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeStackResourceDriftsAsync(const Model::DescribeStackResourceDriftsRequest& request, const DescribeStackResourceDriftsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns Amazon Web Services resource descriptions for running and deleted
@@ -653,15 +489,6 @@ namespace CloudFormation
          */
         virtual Model::DescribeStackResourcesOutcome DescribeStackResources(const Model::DescribeStackResourcesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeStackResources that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeStackResourcesOutcomeCallable DescribeStackResourcesCallable(const Model::DescribeStackResourcesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeStackResources that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeStackResourcesAsync(const Model::DescribeStackResourcesRequest& request, const DescribeStackResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the description of the specified stack set.</p><p><h3>See Also:</h3> 
@@ -671,15 +498,6 @@ namespace CloudFormation
          */
         virtual Model::DescribeStackSetOutcome DescribeStackSet(const Model::DescribeStackSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeStackSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeStackSetOutcomeCallable DescribeStackSetCallable(const Model::DescribeStackSetRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeStackSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeStackSetAsync(const Model::DescribeStackSetRequest& request, const DescribeStackSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the description of the specified stack set operation.</p><p><h3>See
@@ -689,15 +507,6 @@ namespace CloudFormation
          */
         virtual Model::DescribeStackSetOperationOutcome DescribeStackSetOperation(const Model::DescribeStackSetOperationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeStackSetOperation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeStackSetOperationOutcomeCallable DescribeStackSetOperationCallable(const Model::DescribeStackSetOperationRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeStackSetOperation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeStackSetOperationAsync(const Model::DescribeStackSetOperationRequest& request, const DescribeStackSetOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the description for the specified stack; if no stack name was
@@ -709,15 +518,6 @@ namespace CloudFormation
          */
         virtual Model::DescribeStacksOutcome DescribeStacks(const Model::DescribeStacksRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeStacks that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeStacksOutcomeCallable DescribeStacksCallable(const Model::DescribeStacksRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeStacks that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeStacksAsync(const Model::DescribeStacksRequest& request, const DescribeStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns detailed information about an extension that has been registered.</p>
@@ -729,15 +529,6 @@ namespace CloudFormation
          */
         virtual Model::DescribeTypeOutcome DescribeType(const Model::DescribeTypeRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeType that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTypeOutcomeCallable DescribeTypeCallable(const Model::DescribeTypeRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeType that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTypeAsync(const Model::DescribeTypeRequest& request, const DescribeTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about an extension's registration, including its current
@@ -752,15 +543,6 @@ namespace CloudFormation
          */
         virtual Model::DescribeTypeRegistrationOutcome DescribeTypeRegistration(const Model::DescribeTypeRegistrationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTypeRegistration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTypeRegistrationOutcomeCallable DescribeTypeRegistrationCallable(const Model::DescribeTypeRegistrationRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTypeRegistration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTypeRegistrationAsync(const Model::DescribeTypeRegistrationRequest& request, const DescribeTypeRegistrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Detects whether a stack's actual configuration differs, or has
@@ -792,15 +574,6 @@ namespace CloudFormation
          */
         virtual Model::DetectStackDriftOutcome DetectStackDrift(const Model::DetectStackDriftRequest& request) const;
 
-        /**
-         * A Callable wrapper for DetectStackDrift that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DetectStackDriftOutcomeCallable DetectStackDriftCallable(const Model::DetectStackDriftRequest& request) const;
-
-        /**
-         * An Async wrapper for DetectStackDrift that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DetectStackDriftAsync(const Model::DetectStackDriftRequest& request, const DetectStackDriftResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about whether a resource's actual configuration differs,
@@ -824,15 +597,6 @@ namespace CloudFormation
          */
         virtual Model::DetectStackResourceDriftOutcome DetectStackResourceDrift(const Model::DetectStackResourceDriftRequest& request) const;
 
-        /**
-         * A Callable wrapper for DetectStackResourceDrift that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DetectStackResourceDriftOutcomeCallable DetectStackResourceDriftCallable(const Model::DetectStackResourceDriftRequest& request) const;
-
-        /**
-         * An Async wrapper for DetectStackResourceDrift that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DetectStackResourceDriftAsync(const Model::DetectStackResourceDriftRequest& request, const DetectStackResourceDriftResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Detect drift on a stack set. When CloudFormation performs drift detection on
@@ -868,15 +632,6 @@ namespace CloudFormation
          */
         virtual Model::DetectStackSetDriftOutcome DetectStackSetDrift(const Model::DetectStackSetDriftRequest& request) const;
 
-        /**
-         * A Callable wrapper for DetectStackSetDrift that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DetectStackSetDriftOutcomeCallable DetectStackSetDriftCallable(const Model::DetectStackSetDriftRequest& request) const;
-
-        /**
-         * An Async wrapper for DetectStackSetDrift that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DetectStackSetDriftAsync(const Model::DetectStackSetDriftRequest& request, const DetectStackSetDriftResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the estimated monthly cost of a template. The return value is an
@@ -888,15 +643,6 @@ namespace CloudFormation
          */
         virtual Model::EstimateTemplateCostOutcome EstimateTemplateCost(const Model::EstimateTemplateCostRequest& request) const;
 
-        /**
-         * A Callable wrapper for EstimateTemplateCost that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EstimateTemplateCostOutcomeCallable EstimateTemplateCostCallable(const Model::EstimateTemplateCostRequest& request) const;
-
-        /**
-         * An Async wrapper for EstimateTemplateCost that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EstimateTemplateCostAsync(const Model::EstimateTemplateCostRequest& request, const EstimateTemplateCostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a stack using the input information that was provided when the
@@ -915,15 +661,6 @@ namespace CloudFormation
          */
         virtual Model::ExecuteChangeSetOutcome ExecuteChangeSet(const Model::ExecuteChangeSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for ExecuteChangeSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ExecuteChangeSetOutcomeCallable ExecuteChangeSetCallable(const Model::ExecuteChangeSetRequest& request) const;
-
-        /**
-         * An Async wrapper for ExecuteChangeSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ExecuteChangeSetAsync(const Model::ExecuteChangeSetRequest& request, const ExecuteChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the stack policy for a specified stack. If a stack doesn't have a
@@ -933,15 +670,6 @@ namespace CloudFormation
          */
         virtual Model::GetStackPolicyOutcome GetStackPolicy(const Model::GetStackPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetStackPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetStackPolicyOutcomeCallable GetStackPolicyCallable(const Model::GetStackPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetStackPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetStackPolicyAsync(const Model::GetStackPolicyRequest& request, const GetStackPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the template body for a specified stack. You can get the template for
@@ -954,15 +682,6 @@ namespace CloudFormation
          */
         virtual Model::GetTemplateOutcome GetTemplate(const Model::GetTemplateRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetTemplateOutcomeCallable GetTemplateCallable(const Model::GetTemplateRequest& request) const;
-
-        /**
-         * An Async wrapper for GetTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetTemplateAsync(const Model::GetTemplateRequest& request, const GetTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a new or existing template. The
@@ -980,15 +699,6 @@ namespace CloudFormation
          */
         virtual Model::GetTemplateSummaryOutcome GetTemplateSummary(const Model::GetTemplateSummaryRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetTemplateSummary that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetTemplateSummaryOutcomeCallable GetTemplateSummaryCallable(const Model::GetTemplateSummaryRequest& request) const;
-
-        /**
-         * An Async wrapper for GetTemplateSummary that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetTemplateSummaryAsync(const Model::GetTemplateSummaryRequest& request, const GetTemplateSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Import existing stacks into a new stack sets. Use the stack import operation
@@ -1002,15 +712,6 @@ namespace CloudFormation
          */
         virtual Model::ImportStacksToStackSetOutcome ImportStacksToStackSet(const Model::ImportStacksToStackSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for ImportStacksToStackSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ImportStacksToStackSetOutcomeCallable ImportStacksToStackSetCallable(const Model::ImportStacksToStackSetRequest& request) const;
-
-        /**
-         * An Async wrapper for ImportStacksToStackSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ImportStacksToStackSetAsync(const Model::ImportStacksToStackSetRequest& request, const ImportStacksToStackSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the ID and status of each active change set for a stack. For example,
@@ -1021,15 +722,6 @@ namespace CloudFormation
          */
         virtual Model::ListChangeSetsOutcome ListChangeSets(const Model::ListChangeSetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListChangeSets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListChangeSetsOutcomeCallable ListChangeSetsCallable(const Model::ListChangeSetsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListChangeSets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListChangeSetsAsync(const Model::ListChangeSetsRequest& request, const ListChangeSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all exported output values in the account and Region in which you call
@@ -1044,15 +736,6 @@ namespace CloudFormation
          */
         virtual Model::ListExportsOutcome ListExports(const Model::ListExportsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListExports that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListExportsOutcomeCallable ListExportsCallable(const Model::ListExportsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListExports that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListExportsAsync(const Model::ListExportsRequest& request, const ListExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all stacks that are importing an exported output value. To modify or
@@ -1067,15 +750,6 @@ namespace CloudFormation
          */
         virtual Model::ListImportsOutcome ListImports(const Model::ListImportsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListImports that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListImportsOutcomeCallable ListImportsCallable(const Model::ListImportsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListImports that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListImportsAsync(const Model::ListImportsRequest& request, const ListImportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns summary information about stack instances that are associated with
@@ -1087,15 +761,6 @@ namespace CloudFormation
          */
         virtual Model::ListStackInstancesOutcome ListStackInstances(const Model::ListStackInstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListStackInstances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListStackInstancesOutcomeCallable ListStackInstancesCallable(const Model::ListStackInstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListStackInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListStackInstancesAsync(const Model::ListStackInstancesRequest& request, const ListStackInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns descriptions of all resources of the specified stack.</p> <p>For
@@ -1106,15 +771,6 @@ namespace CloudFormation
          */
         virtual Model::ListStackResourcesOutcome ListStackResources(const Model::ListStackResourcesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListStackResources that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListStackResourcesOutcomeCallable ListStackResourcesCallable(const Model::ListStackResourcesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListStackResources that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListStackResourcesAsync(const Model::ListStackResourcesRequest& request, const ListStackResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns summary information about the results of a stack set
@@ -1124,15 +780,6 @@ namespace CloudFormation
          */
         virtual Model::ListStackSetOperationResultsOutcome ListStackSetOperationResults(const Model::ListStackSetOperationResultsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListStackSetOperationResults that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListStackSetOperationResultsOutcomeCallable ListStackSetOperationResultsCallable(const Model::ListStackSetOperationResultsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListStackSetOperationResults that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListStackSetOperationResultsAsync(const Model::ListStackSetOperationResultsRequest& request, const ListStackSetOperationResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns summary information about operations performed on a stack
@@ -1142,15 +789,6 @@ namespace CloudFormation
          */
         virtual Model::ListStackSetOperationsOutcome ListStackSetOperations(const Model::ListStackSetOperationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListStackSetOperations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListStackSetOperationsOutcomeCallable ListStackSetOperationsCallable(const Model::ListStackSetOperationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListStackSetOperations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListStackSetOperationsAsync(const Model::ListStackSetOperationsRequest& request, const ListStackSetOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns summary information about stack sets that are associated with the
@@ -1170,15 +808,6 @@ namespace CloudFormation
          */
         virtual Model::ListStackSetsOutcome ListStackSets(const Model::ListStackSetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListStackSets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListStackSetsOutcomeCallable ListStackSetsCallable(const Model::ListStackSetsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListStackSets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListStackSetsAsync(const Model::ListStackSetsRequest& request, const ListStackSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the summary information for stacks whose status matches the specified
@@ -1191,15 +820,6 @@ namespace CloudFormation
          */
         virtual Model::ListStacksOutcome ListStacks(const Model::ListStacksRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListStacks that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListStacksOutcomeCallable ListStacksCallable(const Model::ListStacksRequest& request) const;
-
-        /**
-         * An Async wrapper for ListStacks that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListStacksAsync(const Model::ListStacksRequest& request, const ListStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of registration tokens for the specified
@@ -1209,15 +829,6 @@ namespace CloudFormation
          */
         virtual Model::ListTypeRegistrationsOutcome ListTypeRegistrations(const Model::ListTypeRegistrationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTypeRegistrations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTypeRegistrationsOutcomeCallable ListTypeRegistrationsCallable(const Model::ListTypeRegistrationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTypeRegistrations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTypeRegistrationsAsync(const Model::ListTypeRegistrationsRequest& request, const ListTypeRegistrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns summary information about the versions of an extension.</p><p><h3>See
@@ -1227,15 +838,6 @@ namespace CloudFormation
          */
         virtual Model::ListTypeVersionsOutcome ListTypeVersions(const Model::ListTypeVersionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTypeVersions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTypeVersionsOutcomeCallable ListTypeVersionsCallable(const Model::ListTypeVersionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTypeVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTypeVersionsAsync(const Model::ListTypeVersionsRequest& request, const ListTypeVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns summary information about extension that have been registered with
@@ -1245,15 +847,6 @@ namespace CloudFormation
          */
         virtual Model::ListTypesOutcome ListTypes(const Model::ListTypesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTypes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTypesOutcomeCallable ListTypesCallable(const Model::ListTypesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTypes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTypesAsync(const Model::ListTypesRequest& request, const ListTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Publishes the specified extension to the CloudFormation registry as a public
@@ -1270,15 +863,6 @@ namespace CloudFormation
          */
         virtual Model::PublishTypeOutcome PublishType(const Model::PublishTypeRequest& request) const;
 
-        /**
-         * A Callable wrapper for PublishType that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PublishTypeOutcomeCallable PublishTypeCallable(const Model::PublishTypeRequest& request) const;
-
-        /**
-         * An Async wrapper for PublishType that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PublishTypeAsync(const Model::PublishTypeRequest& request, const PublishTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Reports progress of a resource handler to CloudFormation.</p> <p>Reserved for
@@ -1290,15 +874,6 @@ namespace CloudFormation
          */
         virtual Model::RecordHandlerProgressOutcome RecordHandlerProgress(const Model::RecordHandlerProgressRequest& request) const;
 
-        /**
-         * A Callable wrapper for RecordHandlerProgress that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RecordHandlerProgressOutcomeCallable RecordHandlerProgressCallable(const Model::RecordHandlerProgressRequest& request) const;
-
-        /**
-         * An Async wrapper for RecordHandlerProgress that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RecordHandlerProgressAsync(const Model::RecordHandlerProgressRequest& request, const RecordHandlerProgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Registers your account as a publisher of public extensions in the
@@ -1314,15 +889,6 @@ namespace CloudFormation
          */
         virtual Model::RegisterPublisherOutcome RegisterPublisher(const Model::RegisterPublisherRequest& request) const;
 
-        /**
-         * A Callable wrapper for RegisterPublisher that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RegisterPublisherOutcomeCallable RegisterPublisherCallable(const Model::RegisterPublisherRequest& request) const;
-
-        /**
-         * An Async wrapper for RegisterPublisher that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RegisterPublisherAsync(const Model::RegisterPublisherRequest& request, const RegisterPublisherResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Registers an extension with the CloudFormation service. Registering an
@@ -1353,15 +919,6 @@ namespace CloudFormation
          */
         virtual Model::RegisterTypeOutcome RegisterType(const Model::RegisterTypeRequest& request) const;
 
-        /**
-         * A Callable wrapper for RegisterType that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RegisterTypeOutcomeCallable RegisterTypeCallable(const Model::RegisterTypeRequest& request) const;
-
-        /**
-         * An Async wrapper for RegisterType that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RegisterTypeAsync(const Model::RegisterTypeRequest& request, const RegisterTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>When specifying <code>RollbackStack</code>, you preserve the state of
@@ -1382,15 +939,6 @@ namespace CloudFormation
          */
         virtual Model::RollbackStackOutcome RollbackStack(const Model::RollbackStackRequest& request) const;
 
-        /**
-         * A Callable wrapper for RollbackStack that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RollbackStackOutcomeCallable RollbackStackCallable(const Model::RollbackStackRequest& request) const;
-
-        /**
-         * An Async wrapper for RollbackStack that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RollbackStackAsync(const Model::RollbackStackRequest& request, const RollbackStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets a stack policy for a specified stack.</p><p><h3>See Also:</h3>   <a
@@ -1399,15 +947,6 @@ namespace CloudFormation
          */
         virtual Model::SetStackPolicyOutcome SetStackPolicy(const Model::SetStackPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for SetStackPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SetStackPolicyOutcomeCallable SetStackPolicyCallable(const Model::SetStackPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for SetStackPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SetStackPolicyAsync(const Model::SetStackPolicyRequest& request, const SetStackPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Specifies the configuration data for a registered CloudFormation extension,
@@ -1428,15 +967,6 @@ namespace CloudFormation
          */
         virtual Model::SetTypeConfigurationOutcome SetTypeConfiguration(const Model::SetTypeConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for SetTypeConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SetTypeConfigurationOutcomeCallable SetTypeConfigurationCallable(const Model::SetTypeConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for SetTypeConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SetTypeConfigurationAsync(const Model::SetTypeConfigurationRequest& request, const SetTypeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Specify the default version of an extension. The default version of an
@@ -1447,15 +977,6 @@ namespace CloudFormation
          */
         virtual Model::SetTypeDefaultVersionOutcome SetTypeDefaultVersion(const Model::SetTypeDefaultVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for SetTypeDefaultVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SetTypeDefaultVersionOutcomeCallable SetTypeDefaultVersionCallable(const Model::SetTypeDefaultVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for SetTypeDefaultVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SetTypeDefaultVersionAsync(const Model::SetTypeDefaultVersionRequest& request, const SetTypeDefaultVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sends a signal to the specified resource with a success or failure status.
@@ -1470,15 +991,6 @@ namespace CloudFormation
          */
         virtual Model::SignalResourceOutcome SignalResource(const Model::SignalResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for SignalResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SignalResourceOutcomeCallable SignalResourceCallable(const Model::SignalResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for SignalResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SignalResourceAsync(const Model::SignalResourceRequest& request, const SignalResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops an in-progress operation on a stack set and its associated stack
@@ -1489,15 +1001,6 @@ namespace CloudFormation
          */
         virtual Model::StopStackSetOperationOutcome StopStackSetOperation(const Model::StopStackSetOperationRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopStackSetOperation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopStackSetOperationOutcomeCallable StopStackSetOperationCallable(const Model::StopStackSetOperationRequest& request) const;
-
-        /**
-         * An Async wrapper for StopStackSetOperation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopStackSetOperationAsync(const Model::StopStackSetOperationRequest& request, const StopStackSetOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Tests a registered extension to make sure it meets all necessary requirements
@@ -1527,15 +1030,6 @@ namespace CloudFormation
          */
         virtual Model::TestTypeOutcome TestType(const Model::TestTypeRequest& request) const;
 
-        /**
-         * A Callable wrapper for TestType that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TestTypeOutcomeCallable TestTypeCallable(const Model::TestTypeRequest& request) const;
-
-        /**
-         * An Async wrapper for TestType that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TestTypeAsync(const Model::TestTypeRequest& request, const TestTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a stack as specified in the template. After the call completes
@@ -1551,15 +1045,6 @@ namespace CloudFormation
          */
         virtual Model::UpdateStackOutcome UpdateStack(const Model::UpdateStackRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateStack that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateStackOutcomeCallable UpdateStackCallable(const Model::UpdateStackRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateStack that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateStackAsync(const Model::UpdateStackRequest& request, const UpdateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the parameter values for stack instances for the specified accounts,
@@ -1586,15 +1071,6 @@ namespace CloudFormation
          */
         virtual Model::UpdateStackInstancesOutcome UpdateStackInstances(const Model::UpdateStackInstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateStackInstances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateStackInstancesOutcomeCallable UpdateStackInstancesCallable(const Model::UpdateStackInstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateStackInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateStackInstancesAsync(const Model::UpdateStackInstancesRequest& request, const UpdateStackInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the stack set, and associated stack instances in the specified
@@ -1608,15 +1084,6 @@ namespace CloudFormation
          */
         virtual Model::UpdateStackSetOutcome UpdateStackSet(const Model::UpdateStackSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateStackSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateStackSetOutcomeCallable UpdateStackSetCallable(const Model::UpdateStackSetRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateStackSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateStackSetAsync(const Model::UpdateStackSetRequest& request, const UpdateStackSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates termination protection for the specified stack. If a user attempts to
@@ -1633,15 +1100,6 @@ namespace CloudFormation
          */
         virtual Model::UpdateTerminationProtectionOutcome UpdateTerminationProtection(const Model::UpdateTerminationProtectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateTerminationProtection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateTerminationProtectionOutcomeCallable UpdateTerminationProtectionCallable(const Model::UpdateTerminationProtectionRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateTerminationProtection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateTerminationProtectionAsync(const Model::UpdateTerminationProtectionRequest& request, const UpdateTerminationProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Validates a specified template. CloudFormation first checks if the template
@@ -1653,15 +1111,6 @@ namespace CloudFormation
          */
         virtual Model::ValidateTemplateOutcome ValidateTemplate(const Model::ValidateTemplateRequest& request) const;
 
-        /**
-         * A Callable wrapper for ValidateTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ValidateTemplateOutcomeCallable ValidateTemplateCallable(const Model::ValidateTemplateRequest& request) const;
-
-        /**
-         * An Async wrapper for ValidateTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ValidateTemplateAsync(const Model::ValidateTemplateRequest& request, const ValidateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
         void OverrideEndpoint(const Aws::String& endpoint);

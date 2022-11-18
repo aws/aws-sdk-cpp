@@ -7,8 +7,10 @@
 #include <aws/ram/RAM_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ram/RAMServiceClientModel.h>
+#include <aws/ram/RAMLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -86,6 +88,47 @@ namespace RAM
         virtual ~RAMClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Accepts an invitation to a resource share from another Amazon Web Services
          * account. After you accept the invitation, the resources included in the resource
@@ -96,15 +139,6 @@ namespace RAM
          */
         virtual Model::AcceptResourceShareInvitationOutcome AcceptResourceShareInvitation(const Model::AcceptResourceShareInvitationRequest& request) const;
 
-        /**
-         * A Callable wrapper for AcceptResourceShareInvitation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AcceptResourceShareInvitationOutcomeCallable AcceptResourceShareInvitationCallable(const Model::AcceptResourceShareInvitationRequest& request) const;
-
-        /**
-         * An Async wrapper for AcceptResourceShareInvitation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AcceptResourceShareInvitationAsync(const Model::AcceptResourceShareInvitationRequest& request, const AcceptResourceShareInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds the specified list of principals and list of resources to a resource
@@ -117,15 +151,6 @@ namespace RAM
          */
         virtual Model::AssociateResourceShareOutcome AssociateResourceShare(const Model::AssociateResourceShareRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateResourceShare that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateResourceShareOutcomeCallable AssociateResourceShareCallable(const Model::AssociateResourceShareRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateResourceShare that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateResourceShareAsync(const Model::AssociateResourceShareRequest& request, const AssociateResourceShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds or replaces the RAM permission for a resource type included in a
@@ -138,15 +163,6 @@ namespace RAM
          */
         virtual Model::AssociateResourceSharePermissionOutcome AssociateResourceSharePermission(const Model::AssociateResourceSharePermissionRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateResourceSharePermission that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateResourceSharePermissionOutcomeCallable AssociateResourceSharePermissionCallable(const Model::AssociateResourceSharePermissionRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateResourceSharePermission that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateResourceSharePermissionAsync(const Model::AssociateResourceSharePermissionRequest& request, const AssociateResourceSharePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a resource share. You can provide a list of the <a
@@ -162,15 +178,6 @@ namespace RAM
          */
         virtual Model::CreateResourceShareOutcome CreateResourceShare(const Model::CreateResourceShareRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateResourceShare that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateResourceShareOutcomeCallable CreateResourceShareCallable(const Model::CreateResourceShareRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateResourceShare that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateResourceShareAsync(const Model::CreateResourceShareRequest& request, const CreateResourceShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified resource share. This doesn't delete any of the
@@ -182,15 +189,6 @@ namespace RAM
          */
         virtual Model::DeleteResourceShareOutcome DeleteResourceShare(const Model::DeleteResourceShareRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteResourceShare that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteResourceShareOutcomeCallable DeleteResourceShareCallable(const Model::DeleteResourceShareRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteResourceShare that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteResourceShareAsync(const Model::DeleteResourceShareRequest& request, const DeleteResourceShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates the specified principals or resources from the specified
@@ -200,15 +198,6 @@ namespace RAM
          */
         virtual Model::DisassociateResourceShareOutcome DisassociateResourceShare(const Model::DisassociateResourceShareRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateResourceShare that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateResourceShareOutcomeCallable DisassociateResourceShareCallable(const Model::DisassociateResourceShareRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateResourceShare that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateResourceShareAsync(const Model::DisassociateResourceShareRequest& request, const DisassociateResourceShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates an RAM permission from a resource share. Permission changes
@@ -220,15 +209,6 @@ namespace RAM
          */
         virtual Model::DisassociateResourceSharePermissionOutcome DisassociateResourceSharePermission(const Model::DisassociateResourceSharePermissionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateResourceSharePermission that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateResourceSharePermissionOutcomeCallable DisassociateResourceSharePermissionCallable(const Model::DisassociateResourceSharePermissionRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateResourceSharePermission that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateResourceSharePermissionAsync(const Model::DisassociateResourceSharePermissionRequest& request, const DisassociateResourceSharePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables resource sharing within your organization in Organizations. Calling
@@ -245,15 +225,6 @@ namespace RAM
          */
         virtual Model::EnableSharingWithAwsOrganizationOutcome EnableSharingWithAwsOrganization(const Model::EnableSharingWithAwsOrganizationRequest& request) const;
 
-        /**
-         * A Callable wrapper for EnableSharingWithAwsOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnableSharingWithAwsOrganizationOutcomeCallable EnableSharingWithAwsOrganizationCallable(const Model::EnableSharingWithAwsOrganizationRequest& request) const;
-
-        /**
-         * An Async wrapper for EnableSharingWithAwsOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnableSharingWithAwsOrganizationAsync(const Model::EnableSharingWithAwsOrganizationRequest& request, const EnableSharingWithAwsOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the contents of an RAM permission in JSON format.</p><p><h3>See
@@ -263,15 +234,6 @@ namespace RAM
          */
         virtual Model::GetPermissionOutcome GetPermission(const Model::GetPermissionRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetPermission that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetPermissionOutcomeCallable GetPermissionCallable(const Model::GetPermissionRequest& request) const;
-
-        /**
-         * An Async wrapper for GetPermission that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetPermissionAsync(const Model::GetPermissionRequest& request, const GetPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the resource policies for the specified resources that you own and
@@ -281,15 +243,6 @@ namespace RAM
          */
         virtual Model::GetResourcePoliciesOutcome GetResourcePolicies(const Model::GetResourcePoliciesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetResourcePolicies that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetResourcePoliciesOutcomeCallable GetResourcePoliciesCallable(const Model::GetResourcePoliciesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetResourcePolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetResourcePoliciesAsync(const Model::GetResourcePoliciesRequest& request, const GetResourcePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the resource and principal associations for resource shares that
@@ -299,15 +252,6 @@ namespace RAM
          */
         virtual Model::GetResourceShareAssociationsOutcome GetResourceShareAssociations(const Model::GetResourceShareAssociationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetResourceShareAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetResourceShareAssociationsOutcomeCallable GetResourceShareAssociationsCallable(const Model::GetResourceShareAssociationsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetResourceShareAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetResourceShareAssociationsAsync(const Model::GetResourceShareAssociationsRequest& request, const GetResourceShareAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves details about invitations that you have received for resource
@@ -317,15 +261,6 @@ namespace RAM
          */
         virtual Model::GetResourceShareInvitationsOutcome GetResourceShareInvitations(const Model::GetResourceShareInvitationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetResourceShareInvitations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetResourceShareInvitationsOutcomeCallable GetResourceShareInvitationsCallable(const Model::GetResourceShareInvitationsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetResourceShareInvitations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetResourceShareInvitationsAsync(const Model::GetResourceShareInvitationsRequest& request, const GetResourceShareInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves details about the resource shares that you own or that are shared
@@ -335,15 +270,6 @@ namespace RAM
          */
         virtual Model::GetResourceSharesOutcome GetResourceShares(const Model::GetResourceSharesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetResourceShares that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetResourceSharesOutcomeCallable GetResourceSharesCallable(const Model::GetResourceSharesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetResourceShares that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetResourceSharesAsync(const Model::GetResourceSharesRequest& request, const GetResourceSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the resources in a resource share that is shared with you but for which
@@ -355,15 +281,6 @@ namespace RAM
          */
         virtual Model::ListPendingInvitationResourcesOutcome ListPendingInvitationResources(const Model::ListPendingInvitationResourcesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPendingInvitationResources that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPendingInvitationResourcesOutcomeCallable ListPendingInvitationResourcesCallable(const Model::ListPendingInvitationResourcesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPendingInvitationResources that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPendingInvitationResourcesAsync(const Model::ListPendingInvitationResourcesRequest& request, const ListPendingInvitationResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the available versions of the specified RAM permission.</p><p><h3>See
@@ -373,15 +290,6 @@ namespace RAM
          */
         virtual Model::ListPermissionVersionsOutcome ListPermissionVersions(const Model::ListPermissionVersionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPermissionVersions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPermissionVersionsOutcomeCallable ListPermissionVersionsCallable(const Model::ListPermissionVersionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPermissionVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPermissionVersionsAsync(const Model::ListPermissionVersionsRequest& request, const ListPermissionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list of available RAM permissions that you can use for the
@@ -391,15 +299,6 @@ namespace RAM
          */
         virtual Model::ListPermissionsOutcome ListPermissions(const Model::ListPermissionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPermissions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPermissionsOutcomeCallable ListPermissionsCallable(const Model::ListPermissionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPermissions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPermissionsAsync(const Model::ListPermissionsRequest& request, const ListPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the principals that you are sharing resources with or that are sharing
@@ -409,15 +308,6 @@ namespace RAM
          */
         virtual Model::ListPrincipalsOutcome ListPrincipals(const Model::ListPrincipalsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPrincipals that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPrincipalsOutcomeCallable ListPrincipalsCallable(const Model::ListPrincipalsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPrincipals that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPrincipalsAsync(const Model::ListPrincipalsRequest& request, const ListPrincipalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the RAM permissions that are associated with a resource
@@ -427,15 +317,6 @@ namespace RAM
          */
         virtual Model::ListResourceSharePermissionsOutcome ListResourceSharePermissions(const Model::ListResourceSharePermissionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListResourceSharePermissions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListResourceSharePermissionsOutcomeCallable ListResourceSharePermissionsCallable(const Model::ListResourceSharePermissionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListResourceSharePermissions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListResourceSharePermissionsAsync(const Model::ListResourceSharePermissionsRequest& request, const ListResourceSharePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the resource types that can be shared by RAM.</p><p><h3>See Also:</h3> 
@@ -445,15 +326,6 @@ namespace RAM
          */
         virtual Model::ListResourceTypesOutcome ListResourceTypes(const Model::ListResourceTypesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListResourceTypes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListResourceTypesOutcomeCallable ListResourceTypesCallable(const Model::ListResourceTypesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListResourceTypes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListResourceTypesAsync(const Model::ListResourceTypesRequest& request, const ListResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the resources that you added to a resource share or the resources that
@@ -463,15 +335,6 @@ namespace RAM
          */
         virtual Model::ListResourcesOutcome ListResources(const Model::ListResourcesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListResources that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListResourcesOutcomeCallable ListResourcesCallable(const Model::ListResourcesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListResources that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListResourcesAsync(const Model::ListResourcesRequest& request, const ListResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>When you attach a resource-based permission policy to a resource, it
@@ -486,15 +349,6 @@ namespace RAM
          */
         virtual Model::PromoteResourceShareCreatedFromPolicyOutcome PromoteResourceShareCreatedFromPolicy(const Model::PromoteResourceShareCreatedFromPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for PromoteResourceShareCreatedFromPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PromoteResourceShareCreatedFromPolicyOutcomeCallable PromoteResourceShareCreatedFromPolicyCallable(const Model::PromoteResourceShareCreatedFromPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for PromoteResourceShareCreatedFromPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PromoteResourceShareCreatedFromPolicyAsync(const Model::PromoteResourceShareCreatedFromPolicyRequest& request, const PromoteResourceShareCreatedFromPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Rejects an invitation to a resource share from another Amazon Web Services
@@ -504,15 +358,6 @@ namespace RAM
          */
         virtual Model::RejectResourceShareInvitationOutcome RejectResourceShareInvitation(const Model::RejectResourceShareInvitationRequest& request) const;
 
-        /**
-         * A Callable wrapper for RejectResourceShareInvitation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RejectResourceShareInvitationOutcomeCallable RejectResourceShareInvitationCallable(const Model::RejectResourceShareInvitationRequest& request) const;
-
-        /**
-         * An Async wrapper for RejectResourceShareInvitation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RejectResourceShareInvitationAsync(const Model::RejectResourceShareInvitationRequest& request, const RejectResourceShareInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds the specified tag keys and values to the specified resource share. The
@@ -523,15 +368,6 @@ namespace RAM
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified tag key and value pairs from the specified resource
@@ -541,15 +377,6 @@ namespace RAM
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies some of the properties of the specified resource
@@ -559,15 +386,6 @@ namespace RAM
          */
         virtual Model::UpdateResourceShareOutcome UpdateResourceShare(const Model::UpdateResourceShareRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateResourceShare that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateResourceShareOutcomeCallable UpdateResourceShareCallable(const Model::UpdateResourceShareRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateResourceShare that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateResourceShareAsync(const Model::UpdateResourceShareRequest& request, const UpdateResourceShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

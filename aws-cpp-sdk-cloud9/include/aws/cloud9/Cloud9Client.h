@@ -7,8 +7,10 @@
 #include <aws/cloud9/Cloud9_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/cloud9/Cloud9ServiceClientModel.h>
+#include <aws/cloud9/Cloud9LegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -98,6 +100,47 @@ namespace Cloud9
         virtual ~Cloud9Client();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Creates an Cloud9 development environment, launches an Amazon Elastic Compute
          * Cloud (Amazon EC2) instance, and then connects from the instance to the
@@ -107,15 +150,6 @@ namespace Cloud9
          */
         virtual Model::CreateEnvironmentEC2Outcome CreateEnvironmentEC2(const Model::CreateEnvironmentEC2Request& request) const;
 
-        /**
-         * A Callable wrapper for CreateEnvironmentEC2 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateEnvironmentEC2OutcomeCallable CreateEnvironmentEC2Callable(const Model::CreateEnvironmentEC2Request& request) const;
-
-        /**
-         * An Async wrapper for CreateEnvironmentEC2 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateEnvironmentEC2Async(const Model::CreateEnvironmentEC2Request& request, const CreateEnvironmentEC2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds an environment member to an Cloud9 development
@@ -125,15 +159,6 @@ namespace Cloud9
          */
         virtual Model::CreateEnvironmentMembershipOutcome CreateEnvironmentMembership(const Model::CreateEnvironmentMembershipRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateEnvironmentMembership that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateEnvironmentMembershipOutcomeCallable CreateEnvironmentMembershipCallable(const Model::CreateEnvironmentMembershipRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateEnvironmentMembership that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateEnvironmentMembershipAsync(const Model::CreateEnvironmentMembershipRequest& request, const CreateEnvironmentMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an Cloud9 development environment. If an Amazon EC2 instance is
@@ -144,15 +169,6 @@ namespace Cloud9
          */
         virtual Model::DeleteEnvironmentOutcome DeleteEnvironment(const Model::DeleteEnvironmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteEnvironment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteEnvironmentOutcomeCallable DeleteEnvironmentCallable(const Model::DeleteEnvironmentRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteEnvironment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteEnvironmentAsync(const Model::DeleteEnvironmentRequest& request, const DeleteEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an environment member from a development environment.</p><p><h3>See
@@ -162,15 +178,6 @@ namespace Cloud9
          */
         virtual Model::DeleteEnvironmentMembershipOutcome DeleteEnvironmentMembership(const Model::DeleteEnvironmentMembershipRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteEnvironmentMembership that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteEnvironmentMembershipOutcomeCallable DeleteEnvironmentMembershipCallable(const Model::DeleteEnvironmentMembershipRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteEnvironmentMembership that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteEnvironmentMembershipAsync(const Model::DeleteEnvironmentMembershipRequest& request, const DeleteEnvironmentMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about environment members for an Cloud9 development
@@ -180,15 +187,6 @@ namespace Cloud9
          */
         virtual Model::DescribeEnvironmentMembershipsOutcome DescribeEnvironmentMemberships(const Model::DescribeEnvironmentMembershipsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEnvironmentMemberships that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEnvironmentMembershipsOutcomeCallable DescribeEnvironmentMembershipsCallable(const Model::DescribeEnvironmentMembershipsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEnvironmentMemberships that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEnvironmentMembershipsAsync(const Model::DescribeEnvironmentMembershipsRequest& request, const DescribeEnvironmentMembershipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets status information for an Cloud9 development environment.</p><p><h3>See
@@ -198,15 +196,6 @@ namespace Cloud9
          */
         virtual Model::DescribeEnvironmentStatusOutcome DescribeEnvironmentStatus(const Model::DescribeEnvironmentStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEnvironmentStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEnvironmentStatusOutcomeCallable DescribeEnvironmentStatusCallable(const Model::DescribeEnvironmentStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEnvironmentStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEnvironmentStatusAsync(const Model::DescribeEnvironmentStatusRequest& request, const DescribeEnvironmentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about Cloud9 development environments.</p><p><h3>See
@@ -216,15 +205,6 @@ namespace Cloud9
          */
         virtual Model::DescribeEnvironmentsOutcome DescribeEnvironments(const Model::DescribeEnvironmentsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEnvironments that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEnvironmentsOutcomeCallable DescribeEnvironmentsCallable(const Model::DescribeEnvironmentsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEnvironments that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEnvironmentsAsync(const Model::DescribeEnvironmentsRequest& request, const DescribeEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of Cloud9 development environment identifiers.</p><p><h3>See
@@ -234,15 +214,6 @@ namespace Cloud9
          */
         virtual Model::ListEnvironmentsOutcome ListEnvironments(const Model::ListEnvironmentsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListEnvironments that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListEnvironmentsOutcomeCallable ListEnvironmentsCallable(const Model::ListEnvironmentsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListEnvironments that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListEnvironmentsAsync(const Model::ListEnvironmentsRequest& request, const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of the tags associated with an Cloud9 development
@@ -252,15 +223,6 @@ namespace Cloud9
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds tags to an Cloud9 development environment.</p>  <p>Tags that
@@ -271,15 +233,6 @@ namespace Cloud9
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes tags from an Cloud9 development environment.</p><p><h3>See Also:</h3>
@@ -289,15 +242,6 @@ namespace Cloud9
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Changes the settings of an existing Cloud9 development
@@ -307,15 +251,6 @@ namespace Cloud9
          */
         virtual Model::UpdateEnvironmentOutcome UpdateEnvironment(const Model::UpdateEnvironmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateEnvironment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateEnvironmentOutcomeCallable UpdateEnvironmentCallable(const Model::UpdateEnvironmentRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateEnvironment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateEnvironmentAsync(const Model::UpdateEnvironmentRequest& request, const UpdateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Changes the settings of an existing environment member for an Cloud9
@@ -325,15 +260,6 @@ namespace Cloud9
          */
         virtual Model::UpdateEnvironmentMembershipOutcome UpdateEnvironmentMembership(const Model::UpdateEnvironmentMembershipRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateEnvironmentMembership that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateEnvironmentMembershipOutcomeCallable UpdateEnvironmentMembershipCallable(const Model::UpdateEnvironmentMembershipRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateEnvironmentMembership that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateEnvironmentMembershipAsync(const Model::UpdateEnvironmentMembershipRequest& request, const UpdateEnvironmentMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

@@ -7,8 +7,10 @@
 #include <aws/codestar-connections/CodeStarconnections_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/codestar-connections/CodeStarconnectionsServiceClientModel.h>
+#include <aws/codestar-connections/CodeStarconnectionsLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -111,6 +113,47 @@ namespace CodeStarconnections
         virtual ~CodeStarconnectionsClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Creates a connection that can then be given to other AWS services like
          * CodePipeline so that it can access third-party code repositories. The connection
@@ -121,15 +164,6 @@ namespace CodeStarconnections
          */
         virtual Model::CreateConnectionOutcome CreateConnection(const Model::CreateConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateConnectionOutcomeCallable CreateConnectionCallable(const Model::CreateConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateConnectionAsync(const Model::CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a resource that represents the infrastructure where a third-party
@@ -144,15 +178,6 @@ namespace CodeStarconnections
          */
         virtual Model::CreateHostOutcome CreateHost(const Model::CreateHostRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateHost that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateHostOutcomeCallable CreateHostCallable(const Model::CreateHostRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateHost that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateHostAsync(const Model::CreateHostRequest& request, const CreateHostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The connection to be deleted.</p><p><h3>See Also:</h3>   <a
@@ -161,15 +186,6 @@ namespace CodeStarconnections
          */
         virtual Model::DeleteConnectionOutcome DeleteConnection(const Model::DeleteConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteConnectionOutcomeCallable DeleteConnectionCallable(const Model::DeleteConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteConnectionAsync(const Model::DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The host to be deleted. Before you delete a host, all connections associated
@@ -181,15 +197,6 @@ namespace CodeStarconnections
          */
         virtual Model::DeleteHostOutcome DeleteHost(const Model::DeleteHostRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteHost that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteHostOutcomeCallable DeleteHostCallable(const Model::DeleteHostRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteHost that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteHostAsync(const Model::DeleteHostRequest& request, const DeleteHostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the connection ARN and details such as status, owner, and provider
@@ -199,15 +206,6 @@ namespace CodeStarconnections
          */
         virtual Model::GetConnectionOutcome GetConnection(const Model::GetConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetConnectionOutcomeCallable GetConnectionCallable(const Model::GetConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for GetConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetConnectionAsync(const Model::GetConnectionRequest& request, const GetConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the host ARN and details such as status, provider type, endpoint,
@@ -217,15 +215,6 @@ namespace CodeStarconnections
          */
         virtual Model::GetHostOutcome GetHost(const Model::GetHostRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetHost that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetHostOutcomeCallable GetHostCallable(const Model::GetHostRequest& request) const;
-
-        /**
-         * An Async wrapper for GetHost that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetHostAsync(const Model::GetHostRequest& request, const GetHostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the connections associated with your account.</p><p><h3>See Also:</h3> 
@@ -235,15 +224,6 @@ namespace CodeStarconnections
          */
         virtual Model::ListConnectionsOutcome ListConnections(const Model::ListConnectionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListConnections that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListConnectionsOutcomeCallable ListConnectionsCallable(const Model::ListConnectionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListConnections that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListConnectionsAsync(const Model::ListConnectionsRequest& request, const ListConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the hosts associated with your account.</p><p><h3>See Also:</h3>   <a
@@ -252,15 +232,6 @@ namespace CodeStarconnections
          */
         virtual Model::ListHostsOutcome ListHosts(const Model::ListHostsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListHosts that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListHostsOutcomeCallable ListHostsCallable(const Model::ListHostsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListHosts that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListHostsAsync(const Model::ListHostsRequest& request, const ListHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the set of key-value pairs (metadata) that are used to manage the
@@ -270,15 +241,6 @@ namespace CodeStarconnections
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds to or modifies the tags of the given resource. Tags are metadata that
@@ -288,15 +250,6 @@ namespace CodeStarconnections
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes tags from an AWS resource.</p><p><h3>See Also:</h3>   <a
@@ -305,15 +258,6 @@ namespace CodeStarconnections
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a specified host with the provided configurations.</p><p><h3>See
@@ -323,15 +267,6 @@ namespace CodeStarconnections
          */
         virtual Model::UpdateHostOutcome UpdateHost(const Model::UpdateHostRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateHost that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateHostOutcomeCallable UpdateHostCallable(const Model::UpdateHostRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateHost that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateHostAsync(const Model::UpdateHostRequest& request, const UpdateHostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

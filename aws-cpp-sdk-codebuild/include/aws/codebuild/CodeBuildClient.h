@@ -7,8 +7,10 @@
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/codebuild/CodeBuildServiceClientModel.h>
+#include <aws/codebuild/CodeBuildLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -83,6 +85,47 @@ namespace CodeBuild
         virtual ~CodeBuildClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Deletes one or more builds.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchDeleteBuilds">AWS
@@ -90,15 +133,6 @@ namespace CodeBuild
          */
         virtual Model::BatchDeleteBuildsOutcome BatchDeleteBuilds(const Model::BatchDeleteBuildsRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchDeleteBuilds that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchDeleteBuildsOutcomeCallable BatchDeleteBuildsCallable(const Model::BatchDeleteBuildsRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchDeleteBuilds that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchDeleteBuildsAsync(const Model::BatchDeleteBuildsRequest& request, const BatchDeleteBuildsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about one or more batch builds.</p><p><h3>See
@@ -108,15 +142,6 @@ namespace CodeBuild
          */
         virtual Model::BatchGetBuildBatchesOutcome BatchGetBuildBatches(const Model::BatchGetBuildBatchesRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchGetBuildBatches that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchGetBuildBatchesOutcomeCallable BatchGetBuildBatchesCallable(const Model::BatchGetBuildBatchesRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchGetBuildBatches that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchGetBuildBatchesAsync(const Model::BatchGetBuildBatchesRequest& request, const BatchGetBuildBatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about one or more builds.</p><p><h3>See Also:</h3>   <a
@@ -125,15 +150,6 @@ namespace CodeBuild
          */
         virtual Model::BatchGetBuildsOutcome BatchGetBuilds(const Model::BatchGetBuildsRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchGetBuilds that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchGetBuildsOutcomeCallable BatchGetBuildsCallable(const Model::BatchGetBuildsRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchGetBuilds that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchGetBuildsAsync(const Model::BatchGetBuildsRequest& request, const BatchGetBuildsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about one or more build projects.</p><p><h3>See Also:</h3>  
@@ -143,15 +159,6 @@ namespace CodeBuild
          */
         virtual Model::BatchGetProjectsOutcome BatchGetProjects(const Model::BatchGetProjectsRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchGetProjects that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchGetProjectsOutcomeCallable BatchGetProjectsCallable(const Model::BatchGetProjectsRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchGetProjects that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchGetProjectsAsync(const Model::BatchGetProjectsRequest& request, const BatchGetProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns an array of report groups. </p><p><h3>See Also:</h3>   <a
@@ -160,15 +167,6 @@ namespace CodeBuild
          */
         virtual Model::BatchGetReportGroupsOutcome BatchGetReportGroups(const Model::BatchGetReportGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchGetReportGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchGetReportGroupsOutcomeCallable BatchGetReportGroupsCallable(const Model::BatchGetReportGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchGetReportGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchGetReportGroupsAsync(const Model::BatchGetReportGroupsRequest& request, const BatchGetReportGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns an array of reports. </p><p><h3>See Also:</h3>   <a
@@ -177,15 +175,6 @@ namespace CodeBuild
          */
         virtual Model::BatchGetReportsOutcome BatchGetReports(const Model::BatchGetReportsRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchGetReports that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchGetReportsOutcomeCallable BatchGetReportsCallable(const Model::BatchGetReportsRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchGetReports that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchGetReportsAsync(const Model::BatchGetReportsRequest& request, const BatchGetReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a build project.</p><p><h3>See Also:</h3>   <a
@@ -194,15 +183,6 @@ namespace CodeBuild
          */
         virtual Model::CreateProjectOutcome CreateProject(const Model::CreateProjectRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateProject that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateProjectOutcomeCallable CreateProjectCallable(const Model::CreateProjectRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateProject that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateProjectAsync(const Model::CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Creates a report group. A report group contains a collection of reports.
@@ -212,15 +192,6 @@ namespace CodeBuild
          */
         virtual Model::CreateReportGroupOutcome CreateReportGroup(const Model::CreateReportGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateReportGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateReportGroupOutcomeCallable CreateReportGroupCallable(const Model::CreateReportGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateReportGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateReportGroupAsync(const Model::CreateReportGroupRequest& request, const CreateReportGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>For an existing CodeBuild build project that has its source code stored in a
@@ -240,15 +211,6 @@ namespace CodeBuild
          */
         virtual Model::CreateWebhookOutcome CreateWebhook(const Model::CreateWebhookRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateWebhook that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateWebhookOutcomeCallable CreateWebhookCallable(const Model::CreateWebhookRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateWebhook that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateWebhookAsync(const Model::CreateWebhookRequest& request, const CreateWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a batch build.</p><p><h3>See Also:</h3>   <a
@@ -257,15 +219,6 @@ namespace CodeBuild
          */
         virtual Model::DeleteBuildBatchOutcome DeleteBuildBatch(const Model::DeleteBuildBatchRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteBuildBatch that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteBuildBatchOutcomeCallable DeleteBuildBatchCallable(const Model::DeleteBuildBatchRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteBuildBatch that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteBuildBatchAsync(const Model::DeleteBuildBatchRequest& request, const DeleteBuildBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Deletes a build project. When you delete a project, its builds are not
@@ -275,15 +228,6 @@ namespace CodeBuild
          */
         virtual Model::DeleteProjectOutcome DeleteProject(const Model::DeleteProjectRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteProject that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteProjectOutcomeCallable DeleteProjectCallable(const Model::DeleteProjectRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteProject that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteProjectAsync(const Model::DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Deletes a report. </p><p><h3>See Also:</h3>   <a
@@ -292,15 +236,6 @@ namespace CodeBuild
          */
         virtual Model::DeleteReportOutcome DeleteReport(const Model::DeleteReportRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteReport that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteReportOutcomeCallable DeleteReportCallable(const Model::DeleteReportRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteReport that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteReportAsync(const Model::DeleteReportRequest& request, const DeleteReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a report group. Before you delete a report group, you must delete its
@@ -310,15 +245,6 @@ namespace CodeBuild
          */
         virtual Model::DeleteReportGroupOutcome DeleteReportGroup(const Model::DeleteReportGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteReportGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteReportGroupOutcomeCallable DeleteReportGroupCallable(const Model::DeleteReportGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteReportGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteReportGroupAsync(const Model::DeleteReportGroupRequest& request, const DeleteReportGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Deletes a resource policy that is identified by its resource ARN.
@@ -328,15 +254,6 @@ namespace CodeBuild
          */
         virtual Model::DeleteResourcePolicyOutcome DeleteResourcePolicy(const Model::DeleteResourcePolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteResourcePolicyOutcomeCallable DeleteResourcePolicyCallable(const Model::DeleteResourcePolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteResourcePolicyAsync(const Model::DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Deletes a set of GitHub, GitHub Enterprise, or Bitbucket source credentials.
@@ -346,15 +263,6 @@ namespace CodeBuild
          */
         virtual Model::DeleteSourceCredentialsOutcome DeleteSourceCredentials(const Model::DeleteSourceCredentialsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteSourceCredentials that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteSourceCredentialsOutcomeCallable DeleteSourceCredentialsCallable(const Model::DeleteSourceCredentialsRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteSourceCredentials that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteSourceCredentialsAsync(const Model::DeleteSourceCredentialsRequest& request, const DeleteSourceCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>For an existing CodeBuild build project that has its source code stored in a
@@ -366,15 +274,6 @@ namespace CodeBuild
          */
         virtual Model::DeleteWebhookOutcome DeleteWebhook(const Model::DeleteWebhookRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteWebhook that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteWebhookOutcomeCallable DeleteWebhookCallable(const Model::DeleteWebhookRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteWebhook that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteWebhookAsync(const Model::DeleteWebhookRequest& request, const DeleteWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves one or more code coverage reports.</p><p><h3>See Also:</h3>   <a
@@ -383,15 +282,6 @@ namespace CodeBuild
          */
         virtual Model::DescribeCodeCoveragesOutcome DescribeCodeCoverages(const Model::DescribeCodeCoveragesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeCodeCoverages that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeCodeCoveragesOutcomeCallable DescribeCodeCoveragesCallable(const Model::DescribeCodeCoveragesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeCodeCoverages that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeCodeCoveragesAsync(const Model::DescribeCodeCoveragesRequest& request, const DescribeCodeCoveragesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a list of details about test cases for a report. </p><p><h3>See
@@ -401,15 +291,6 @@ namespace CodeBuild
          */
         virtual Model::DescribeTestCasesOutcome DescribeTestCases(const Model::DescribeTestCasesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTestCases that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTestCasesOutcomeCallable DescribeTestCasesCallable(const Model::DescribeTestCasesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTestCases that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTestCasesAsync(const Model::DescribeTestCasesRequest& request, const DescribeTestCasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Analyzes and accumulates test report values for the specified test
@@ -419,15 +300,6 @@ namespace CodeBuild
          */
         virtual Model::GetReportGroupTrendOutcome GetReportGroupTrend(const Model::GetReportGroupTrendRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetReportGroupTrend that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetReportGroupTrendOutcomeCallable GetReportGroupTrendCallable(const Model::GetReportGroupTrendRequest& request) const;
-
-        /**
-         * An Async wrapper for GetReportGroupTrend that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetReportGroupTrendAsync(const Model::GetReportGroupTrendRequest& request, const GetReportGroupTrendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Gets a resource policy that is identified by its resource ARN.
@@ -437,15 +309,6 @@ namespace CodeBuild
          */
         virtual Model::GetResourcePolicyOutcome GetResourcePolicy(const Model::GetResourcePolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetResourcePolicyOutcomeCallable GetResourcePolicyCallable(const Model::GetResourcePolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetResourcePolicyAsync(const Model::GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Imports the source repository credentials for an CodeBuild project that has
@@ -456,15 +319,6 @@ namespace CodeBuild
          */
         virtual Model::ImportSourceCredentialsOutcome ImportSourceCredentials(const Model::ImportSourceCredentialsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ImportSourceCredentials that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ImportSourceCredentialsOutcomeCallable ImportSourceCredentialsCallable(const Model::ImportSourceCredentialsRequest& request) const;
-
-        /**
-         * An Async wrapper for ImportSourceCredentials that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ImportSourceCredentialsAsync(const Model::ImportSourceCredentialsRequest& request, const ImportSourceCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Resets the cache for a project.</p><p><h3>See Also:</h3>   <a
@@ -473,15 +327,6 @@ namespace CodeBuild
          */
         virtual Model::InvalidateProjectCacheOutcome InvalidateProjectCache(const Model::InvalidateProjectCacheRequest& request) const;
 
-        /**
-         * A Callable wrapper for InvalidateProjectCache that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::InvalidateProjectCacheOutcomeCallable InvalidateProjectCacheCallable(const Model::InvalidateProjectCacheRequest& request) const;
-
-        /**
-         * An Async wrapper for InvalidateProjectCache that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void InvalidateProjectCacheAsync(const Model::InvalidateProjectCacheRequest& request, const InvalidateProjectCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the identifiers of your build batches in the current
@@ -491,15 +336,6 @@ namespace CodeBuild
          */
         virtual Model::ListBuildBatchesOutcome ListBuildBatches(const Model::ListBuildBatchesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListBuildBatches that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListBuildBatchesOutcomeCallable ListBuildBatchesCallable(const Model::ListBuildBatchesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListBuildBatches that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListBuildBatchesAsync(const Model::ListBuildBatchesRequest& request, const ListBuildBatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the identifiers of the build batches for a specific
@@ -509,15 +345,6 @@ namespace CodeBuild
          */
         virtual Model::ListBuildBatchesForProjectOutcome ListBuildBatchesForProject(const Model::ListBuildBatchesForProjectRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListBuildBatchesForProject that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListBuildBatchesForProjectOutcomeCallable ListBuildBatchesForProjectCallable(const Model::ListBuildBatchesForProjectRequest& request) const;
-
-        /**
-         * An Async wrapper for ListBuildBatchesForProject that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListBuildBatchesForProjectAsync(const Model::ListBuildBatchesForProjectRequest& request, const ListBuildBatchesForProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of build IDs, with each build ID representing a single
@@ -527,15 +354,6 @@ namespace CodeBuild
          */
         virtual Model::ListBuildsOutcome ListBuilds(const Model::ListBuildsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListBuilds that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListBuildsOutcomeCallable ListBuildsCallable(const Model::ListBuildsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListBuilds that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListBuildsAsync(const Model::ListBuildsRequest& request, const ListBuildsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of build identifiers for the specified build project, with each
@@ -545,15 +363,6 @@ namespace CodeBuild
          */
         virtual Model::ListBuildsForProjectOutcome ListBuildsForProject(const Model::ListBuildsForProjectRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListBuildsForProject that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListBuildsForProjectOutcomeCallable ListBuildsForProjectCallable(const Model::ListBuildsForProjectRequest& request) const;
-
-        /**
-         * An Async wrapper for ListBuildsForProject that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListBuildsForProjectAsync(const Model::ListBuildsForProjectRequest& request, const ListBuildsForProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about Docker images that are managed by
@@ -563,15 +372,6 @@ namespace CodeBuild
          */
         virtual Model::ListCuratedEnvironmentImagesOutcome ListCuratedEnvironmentImages(const Model::ListCuratedEnvironmentImagesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListCuratedEnvironmentImages that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListCuratedEnvironmentImagesOutcomeCallable ListCuratedEnvironmentImagesCallable(const Model::ListCuratedEnvironmentImagesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListCuratedEnvironmentImages that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListCuratedEnvironmentImagesAsync(const Model::ListCuratedEnvironmentImagesRequest& request, const ListCuratedEnvironmentImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of build project names, with each build project name representing
@@ -581,15 +381,6 @@ namespace CodeBuild
          */
         virtual Model::ListProjectsOutcome ListProjects(const Model::ListProjectsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListProjects that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListProjectsOutcomeCallable ListProjectsCallable(const Model::ListProjectsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListProjects that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListProjectsAsync(const Model::ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Gets a list ARNs for the report groups in the current Amazon Web Services
@@ -599,15 +390,6 @@ namespace CodeBuild
          */
         virtual Model::ListReportGroupsOutcome ListReportGroups(const Model::ListReportGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListReportGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListReportGroupsOutcomeCallable ListReportGroupsCallable(const Model::ListReportGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListReportGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListReportGroupsAsync(const Model::ListReportGroupsRequest& request, const ListReportGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a list of ARNs for the reports in the current Amazon Web Services
@@ -617,15 +399,6 @@ namespace CodeBuild
          */
         virtual Model::ListReportsOutcome ListReports(const Model::ListReportsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListReports that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListReportsOutcomeCallable ListReportsCallable(const Model::ListReportsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListReports that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListReportsAsync(const Model::ListReportsRequest& request, const ListReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a list of ARNs for the reports that belong to a
@@ -635,15 +408,6 @@ namespace CodeBuild
          */
         virtual Model::ListReportsForReportGroupOutcome ListReportsForReportGroup(const Model::ListReportsForReportGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListReportsForReportGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListReportsForReportGroupOutcomeCallable ListReportsForReportGroupCallable(const Model::ListReportsForReportGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for ListReportsForReportGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListReportsForReportGroupAsync(const Model::ListReportsForReportGroupRequest& request, const ListReportsForReportGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Gets a list of projects that are shared with other Amazon Web Services
@@ -653,15 +417,6 @@ namespace CodeBuild
          */
         virtual Model::ListSharedProjectsOutcome ListSharedProjects(const Model::ListSharedProjectsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSharedProjects that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListSharedProjectsOutcomeCallable ListSharedProjectsCallable(const Model::ListSharedProjectsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSharedProjects that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListSharedProjectsAsync(const Model::ListSharedProjectsRequest& request, const ListSharedProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Gets a list of report groups that are shared with other Amazon Web Services
@@ -671,15 +426,6 @@ namespace CodeBuild
          */
         virtual Model::ListSharedReportGroupsOutcome ListSharedReportGroups(const Model::ListSharedReportGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSharedReportGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListSharedReportGroupsOutcomeCallable ListSharedReportGroupsCallable(const Model::ListSharedReportGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSharedReportGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListSharedReportGroupsAsync(const Model::ListSharedReportGroupsRequest& request, const ListSharedReportGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a list of <code>SourceCredentialsInfo</code> objects. </p><p><h3>See
@@ -689,15 +435,6 @@ namespace CodeBuild
          */
         virtual Model::ListSourceCredentialsOutcome ListSourceCredentials(const Model::ListSourceCredentialsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSourceCredentials that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListSourceCredentialsOutcomeCallable ListSourceCredentialsCallable(const Model::ListSourceCredentialsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSourceCredentials that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListSourceCredentialsAsync(const Model::ListSourceCredentialsRequest& request, const ListSourceCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Stores a resource policy for the ARN of a <code>Project</code> or
@@ -707,15 +444,6 @@ namespace CodeBuild
          */
         virtual Model::PutResourcePolicyOutcome PutResourcePolicy(const Model::PutResourcePolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutResourcePolicyOutcomeCallable PutResourcePolicyCallable(const Model::PutResourcePolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for PutResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutResourcePolicyAsync(const Model::PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Restarts a build.</p><p><h3>See Also:</h3>   <a
@@ -724,15 +452,6 @@ namespace CodeBuild
          */
         virtual Model::RetryBuildOutcome RetryBuild(const Model::RetryBuildRequest& request) const;
 
-        /**
-         * A Callable wrapper for RetryBuild that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RetryBuildOutcomeCallable RetryBuildCallable(const Model::RetryBuildRequest& request) const;
-
-        /**
-         * An Async wrapper for RetryBuild that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RetryBuildAsync(const Model::RetryBuildRequest& request, const RetryBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Restarts a failed batch build. Only batch builds that have failed can be
@@ -742,15 +461,6 @@ namespace CodeBuild
          */
         virtual Model::RetryBuildBatchOutcome RetryBuildBatch(const Model::RetryBuildBatchRequest& request) const;
 
-        /**
-         * A Callable wrapper for RetryBuildBatch that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RetryBuildBatchOutcomeCallable RetryBuildBatchCallable(const Model::RetryBuildBatchRequest& request) const;
-
-        /**
-         * An Async wrapper for RetryBuildBatch that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RetryBuildBatchAsync(const Model::RetryBuildBatchRequest& request, const RetryBuildBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts running a build.</p><p><h3>See Also:</h3>   <a
@@ -759,15 +469,6 @@ namespace CodeBuild
          */
         virtual Model::StartBuildOutcome StartBuild(const Model::StartBuildRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartBuild that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartBuildOutcomeCallable StartBuildCallable(const Model::StartBuildRequest& request) const;
-
-        /**
-         * An Async wrapper for StartBuild that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartBuildAsync(const Model::StartBuildRequest& request, const StartBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts a batch build for a project.</p><p><h3>See Also:</h3>   <a
@@ -776,15 +477,6 @@ namespace CodeBuild
          */
         virtual Model::StartBuildBatchOutcome StartBuildBatch(const Model::StartBuildBatchRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartBuildBatch that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartBuildBatchOutcomeCallable StartBuildBatchCallable(const Model::StartBuildBatchRequest& request) const;
-
-        /**
-         * An Async wrapper for StartBuildBatch that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartBuildBatchAsync(const Model::StartBuildBatchRequest& request, const StartBuildBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Attempts to stop running a build.</p><p><h3>See Also:</h3>   <a
@@ -793,15 +485,6 @@ namespace CodeBuild
          */
         virtual Model::StopBuildOutcome StopBuild(const Model::StopBuildRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopBuild that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopBuildOutcomeCallable StopBuildCallable(const Model::StopBuildRequest& request) const;
-
-        /**
-         * An Async wrapper for StopBuild that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopBuildAsync(const Model::StopBuildRequest& request, const StopBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops a running batch build.</p><p><h3>See Also:</h3>   <a
@@ -810,15 +493,6 @@ namespace CodeBuild
          */
         virtual Model::StopBuildBatchOutcome StopBuildBatch(const Model::StopBuildBatchRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopBuildBatch that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopBuildBatchOutcomeCallable StopBuildBatchCallable(const Model::StopBuildBatchRequest& request) const;
-
-        /**
-         * An Async wrapper for StopBuildBatch that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopBuildBatchAsync(const Model::StopBuildBatchRequest& request, const StopBuildBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Changes the settings of a build project.</p><p><h3>See Also:</h3>   <a
@@ -827,15 +501,6 @@ namespace CodeBuild
          */
         virtual Model::UpdateProjectOutcome UpdateProject(const Model::UpdateProjectRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateProject that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateProjectOutcomeCallable UpdateProjectCallable(const Model::UpdateProjectRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateProject that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateProjectAsync(const Model::UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Changes the public visibility for a project. The project's build results,
@@ -869,15 +534,6 @@ namespace CodeBuild
          */
         virtual Model::UpdateProjectVisibilityOutcome UpdateProjectVisibility(const Model::UpdateProjectVisibilityRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateProjectVisibility that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateProjectVisibilityOutcomeCallable UpdateProjectVisibilityCallable(const Model::UpdateProjectVisibilityRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateProjectVisibility that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateProjectVisibilityAsync(const Model::UpdateProjectVisibilityRequest& request, const UpdateProjectVisibilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Updates a report group. </p><p><h3>See Also:</h3>   <a
@@ -886,15 +542,6 @@ namespace CodeBuild
          */
         virtual Model::UpdateReportGroupOutcome UpdateReportGroup(const Model::UpdateReportGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateReportGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateReportGroupOutcomeCallable UpdateReportGroupCallable(const Model::UpdateReportGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateReportGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateReportGroupAsync(const Model::UpdateReportGroupRequest& request, const UpdateReportGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Updates the webhook associated with an CodeBuild build project. </p> 
@@ -905,15 +552,6 @@ namespace CodeBuild
          */
         virtual Model::UpdateWebhookOutcome UpdateWebhook(const Model::UpdateWebhookRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateWebhook that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateWebhookOutcomeCallable UpdateWebhookCallable(const Model::UpdateWebhookRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateWebhook that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateWebhookAsync(const Model::UpdateWebhookRequest& request, const UpdateWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

@@ -7,8 +7,10 @@
 #include <aws/discovery/ApplicationDiscoveryService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/discovery/ApplicationDiscoveryServiceServiceClientModel.h>
+#include <aws/discovery/ApplicationDiscoveryServiceLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -132,6 +134,47 @@ namespace ApplicationDiscoveryService
         virtual ~ApplicationDiscoveryServiceClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Associates one or more configuration items with an application.</p><p><h3>See
          * Also:</h3>   <a
@@ -140,15 +183,6 @@ namespace ApplicationDiscoveryService
          */
         virtual Model::AssociateConfigurationItemsToApplicationOutcome AssociateConfigurationItemsToApplication(const Model::AssociateConfigurationItemsToApplicationRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateConfigurationItemsToApplication that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateConfigurationItemsToApplicationOutcomeCallable AssociateConfigurationItemsToApplicationCallable(const Model::AssociateConfigurationItemsToApplicationRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateConfigurationItemsToApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateConfigurationItemsToApplicationAsync(const Model::AssociateConfigurationItemsToApplicationRequest& request, const AssociateConfigurationItemsToApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes one or more import tasks, each identified by their import ID. Each
@@ -165,15 +199,6 @@ namespace ApplicationDiscoveryService
          */
         virtual Model::BatchDeleteImportDataOutcome BatchDeleteImportData(const Model::BatchDeleteImportDataRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchDeleteImportData that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchDeleteImportDataOutcomeCallable BatchDeleteImportDataCallable(const Model::BatchDeleteImportDataRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchDeleteImportData that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchDeleteImportDataAsync(const Model::BatchDeleteImportDataRequest& request, const BatchDeleteImportDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an application with the given name and description.</p><p><h3>See
@@ -183,15 +208,6 @@ namespace ApplicationDiscoveryService
          */
         virtual Model::CreateApplicationOutcome CreateApplication(const Model::CreateApplicationRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateApplication that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateApplicationOutcomeCallable CreateApplicationCallable(const Model::CreateApplicationRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateApplicationAsync(const Model::CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates one or more tags for configuration items. Tags are metadata that help
@@ -203,15 +219,6 @@ namespace ApplicationDiscoveryService
          */
         virtual Model::CreateTagsOutcome CreateTags(const Model::CreateTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateTagsOutcomeCallable CreateTagsCallable(const Model::CreateTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateTagsAsync(const Model::CreateTagsRequest& request, const CreateTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a list of applications and their associations with configuration
@@ -221,15 +228,6 @@ namespace ApplicationDiscoveryService
          */
         virtual Model::DeleteApplicationsOutcome DeleteApplications(const Model::DeleteApplicationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteApplications that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteApplicationsOutcomeCallable DeleteApplicationsCallable(const Model::DeleteApplicationsRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteApplications that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteApplicationsAsync(const Model::DeleteApplicationsRequest& request, const DeleteApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the association between configuration items and one or more tags.
@@ -240,15 +238,6 @@ namespace ApplicationDiscoveryService
          */
         virtual Model::DeleteTagsOutcome DeleteTags(const Model::DeleteTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteTagsOutcomeCallable DeleteTagsCallable(const Model::DeleteTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteTagsAsync(const Model::DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists agents or connectors as specified by ID or other filters. All
@@ -260,15 +249,6 @@ namespace ApplicationDiscoveryService
          */
         virtual Model::DescribeAgentsOutcome DescribeAgents(const Model::DescribeAgentsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAgents that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAgentsOutcomeCallable DescribeAgentsCallable(const Model::DescribeAgentsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAgents that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAgentsAsync(const Model::DescribeAgentsRequest& request, const DescribeAgentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves attributes for a list of configuration item IDs.</p>  <p>All
@@ -287,15 +267,6 @@ namespace ApplicationDiscoveryService
          */
         virtual Model::DescribeConfigurationsOutcome DescribeConfigurations(const Model::DescribeConfigurationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeConfigurationsOutcomeCallable DescribeConfigurationsCallable(const Model::DescribeConfigurationsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeConfigurationsAsync(const Model::DescribeConfigurationsRequest& request, const DescribeConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists exports as specified by ID. All continuous exports associated with your
@@ -306,15 +277,6 @@ namespace ApplicationDiscoveryService
          */
         virtual Model::DescribeContinuousExportsOutcome DescribeContinuousExports(const Model::DescribeContinuousExportsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeContinuousExports that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeContinuousExportsOutcomeCallable DescribeContinuousExportsCallable(const Model::DescribeContinuousExportsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeContinuousExports that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeContinuousExportsAsync(const Model::DescribeContinuousExportsRequest& request, const DescribeContinuousExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieve status of one or more export tasks. You can retrieve the status of
@@ -324,15 +286,6 @@ namespace ApplicationDiscoveryService
          */
         virtual Model::DescribeExportTasksOutcome DescribeExportTasks(const Model::DescribeExportTasksRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeExportTasks that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeExportTasksOutcomeCallable DescribeExportTasksCallable(const Model::DescribeExportTasksRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeExportTasks that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeExportTasksAsync(const Model::DescribeExportTasksRequest& request, const DescribeExportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns an array of import tasks for your account, including status
@@ -343,15 +296,6 @@ namespace ApplicationDiscoveryService
          */
         virtual Model::DescribeImportTasksOutcome DescribeImportTasks(const Model::DescribeImportTasksRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeImportTasks that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeImportTasksOutcomeCallable DescribeImportTasksCallable(const Model::DescribeImportTasksRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeImportTasks that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeImportTasksAsync(const Model::DescribeImportTasksRequest& request, const DescribeImportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list of configuration items that have tags as specified by the
@@ -366,15 +310,6 @@ namespace ApplicationDiscoveryService
          */
         virtual Model::DescribeTagsOutcome DescribeTags(const Model::DescribeTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTagsOutcomeCallable DescribeTagsCallable(const Model::DescribeTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTagsAsync(const Model::DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates one or more configuration items from an
@@ -384,15 +319,6 @@ namespace ApplicationDiscoveryService
          */
         virtual Model::DisassociateConfigurationItemsFromApplicationOutcome DisassociateConfigurationItemsFromApplication(const Model::DisassociateConfigurationItemsFromApplicationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateConfigurationItemsFromApplication that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateConfigurationItemsFromApplicationOutcomeCallable DisassociateConfigurationItemsFromApplicationCallable(const Model::DisassociateConfigurationItemsFromApplicationRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateConfigurationItemsFromApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateConfigurationItemsFromApplicationAsync(const Model::DisassociateConfigurationItemsFromApplicationRequest& request, const DisassociateConfigurationItemsFromApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a short summary of discovered assets.</p> <p>This API operation
@@ -403,15 +329,6 @@ namespace ApplicationDiscoveryService
          */
         virtual Model::GetDiscoverySummaryOutcome GetDiscoverySummary(const Model::GetDiscoverySummaryRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDiscoverySummary that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDiscoverySummaryOutcomeCallable GetDiscoverySummaryCallable(const Model::GetDiscoverySummaryRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDiscoverySummary that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDiscoverySummaryAsync(const Model::GetDiscoverySummaryRequest& request, const GetDiscoverySummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list of configuration items as specified by the value passed to
@@ -422,15 +339,6 @@ namespace ApplicationDiscoveryService
          */
         virtual Model::ListConfigurationsOutcome ListConfigurations(const Model::ListConfigurationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListConfigurationsOutcomeCallable ListConfigurationsCallable(const Model::ListConfigurationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListConfigurationsAsync(const Model::ListConfigurationsRequest& request, const ListConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list of servers that are one network hop away from a specified
@@ -440,15 +348,6 @@ namespace ApplicationDiscoveryService
          */
         virtual Model::ListServerNeighborsOutcome ListServerNeighbors(const Model::ListServerNeighborsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListServerNeighbors that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListServerNeighborsOutcomeCallable ListServerNeighborsCallable(const Model::ListServerNeighborsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListServerNeighbors that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListServerNeighborsAsync(const Model::ListServerNeighborsRequest& request, const ListServerNeighborsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Start the continuous flow of agent's discovered data into Amazon
@@ -458,15 +357,6 @@ namespace ApplicationDiscoveryService
          */
         virtual Model::StartContinuousExportOutcome StartContinuousExport(const Model::StartContinuousExportRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartContinuousExport that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartContinuousExportOutcomeCallable StartContinuousExportCallable(const Model::StartContinuousExportRequest& request) const;
-
-        /**
-         * An Async wrapper for StartContinuousExport that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartContinuousExportAsync(const Model::StartContinuousExportRequest& request, const StartContinuousExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Instructs the specified agents or connectors to start collecting
@@ -476,15 +366,6 @@ namespace ApplicationDiscoveryService
          */
         virtual Model::StartDataCollectionByAgentIdsOutcome StartDataCollectionByAgentIds(const Model::StartDataCollectionByAgentIdsRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartDataCollectionByAgentIds that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartDataCollectionByAgentIdsOutcomeCallable StartDataCollectionByAgentIdsCallable(const Model::StartDataCollectionByAgentIdsRequest& request) const;
-
-        /**
-         * An Async wrapper for StartDataCollectionByAgentIds that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartDataCollectionByAgentIdsAsync(const Model::StartDataCollectionByAgentIdsRequest& request, const StartDataCollectionByAgentIdsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Begins the export of discovered data to an S3 bucket.</p> <p> If you specify
@@ -502,15 +383,6 @@ namespace ApplicationDiscoveryService
          */
         virtual Model::StartExportTaskOutcome StartExportTask(const Model::StartExportTaskRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartExportTask that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartExportTaskOutcomeCallable StartExportTaskCallable(const Model::StartExportTaskRequest& request) const;
-
-        /**
-         * An Async wrapper for StartExportTask that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartExportTaskAsync(const Model::StartExportTaskRequest& request, const StartExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts an import task, which allows you to import details of your on-premises
@@ -544,15 +416,6 @@ namespace ApplicationDiscoveryService
          */
         virtual Model::StartImportTaskOutcome StartImportTask(const Model::StartImportTaskRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartImportTask that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartImportTaskOutcomeCallable StartImportTaskCallable(const Model::StartImportTaskRequest& request) const;
-
-        /**
-         * An Async wrapper for StartImportTask that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartImportTaskAsync(const Model::StartImportTaskRequest& request, const StartImportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stop the continuous flow of agent's discovered data into Amazon
@@ -562,15 +425,6 @@ namespace ApplicationDiscoveryService
          */
         virtual Model::StopContinuousExportOutcome StopContinuousExport(const Model::StopContinuousExportRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopContinuousExport that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopContinuousExportOutcomeCallable StopContinuousExportCallable(const Model::StopContinuousExportRequest& request) const;
-
-        /**
-         * An Async wrapper for StopContinuousExport that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopContinuousExportAsync(const Model::StopContinuousExportRequest& request, const StopContinuousExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Instructs the specified agents or connectors to stop collecting
@@ -580,15 +434,6 @@ namespace ApplicationDiscoveryService
          */
         virtual Model::StopDataCollectionByAgentIdsOutcome StopDataCollectionByAgentIds(const Model::StopDataCollectionByAgentIdsRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopDataCollectionByAgentIds that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopDataCollectionByAgentIdsOutcomeCallable StopDataCollectionByAgentIdsCallable(const Model::StopDataCollectionByAgentIdsRequest& request) const;
-
-        /**
-         * An Async wrapper for StopDataCollectionByAgentIds that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopDataCollectionByAgentIdsAsync(const Model::StopDataCollectionByAgentIdsRequest& request, const StopDataCollectionByAgentIdsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates metadata about an application.</p><p><h3>See Also:</h3>   <a
@@ -597,15 +442,6 @@ namespace ApplicationDiscoveryService
          */
         virtual Model::UpdateApplicationOutcome UpdateApplication(const Model::UpdateApplicationRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateApplication that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateApplicationOutcomeCallable UpdateApplicationCallable(const Model::UpdateApplicationRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateApplicationAsync(const Model::UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

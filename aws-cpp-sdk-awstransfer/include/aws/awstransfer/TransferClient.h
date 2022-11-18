@@ -7,8 +7,10 @@
 #include <aws/awstransfer/Transfer_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/awstransfer/TransferServiceClientModel.h>
+#include <aws/awstransfer/TransferLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -84,6 +86,47 @@ namespace Transfer
         virtual ~TransferClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Used by administrators to choose which groups in the directory should have
          * access to upload and download files over the enabled protocols using Transfer
@@ -96,15 +139,6 @@ namespace Transfer
          */
         virtual Model::CreateAccessOutcome CreateAccess(const Model::CreateAccessRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateAccess that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateAccessOutcomeCallable CreateAccessCallable(const Model::CreateAccessRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateAccessAsync(const Model::CreateAccessRequest& request, const CreateAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an agreement. An agreement is a bilateral trading partner agreement,
@@ -120,15 +154,6 @@ namespace Transfer
          */
         virtual Model::CreateAgreementOutcome CreateAgreement(const Model::CreateAgreementRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateAgreement that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateAgreementOutcomeCallable CreateAgreementCallable(const Model::CreateAgreementRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateAgreement that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateAgreementAsync(const Model::CreateAgreementRequest& request, const CreateAgreementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates the connector, which captures the parameters for an outbound
@@ -141,15 +166,6 @@ namespace Transfer
          */
         virtual Model::CreateConnectorOutcome CreateConnector(const Model::CreateConnectorRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateConnector that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateConnectorOutcomeCallable CreateConnectorCallable(const Model::CreateConnectorRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateConnector that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateConnectorAsync(const Model::CreateConnectorRequest& request, const CreateConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates the local or partner profile to use for AS2 transfers.</p><p><h3>See
@@ -159,15 +175,6 @@ namespace Transfer
          */
         virtual Model::CreateProfileOutcome CreateProfile(const Model::CreateProfileRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateProfile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateProfileOutcomeCallable CreateProfileCallable(const Model::CreateProfileRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateProfileAsync(const Model::CreateProfileRequest& request, const CreateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Instantiates an auto-scaling virtual server based on the selected file
@@ -180,15 +187,6 @@ namespace Transfer
          */
         virtual Model::CreateServerOutcome CreateServer(const Model::CreateServerRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateServer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateServerOutcomeCallable CreateServerCallable(const Model::CreateServerRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateServer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateServerAsync(const Model::CreateServerRequest& request, const CreateServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a user and associates them with an existing file transfer
@@ -204,15 +202,6 @@ namespace Transfer
          */
         virtual Model::CreateUserOutcome CreateUser(const Model::CreateUserRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateUser that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateUserOutcomeCallable CreateUserCallable(const Model::CreateUserRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateUser that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateUserAsync(const Model::CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Allows you to create a workflow with specified steps and step details the
@@ -225,15 +214,6 @@ namespace Transfer
          */
         virtual Model::CreateWorkflowOutcome CreateWorkflow(const Model::CreateWorkflowRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateWorkflow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateWorkflowOutcomeCallable CreateWorkflowCallable(const Model::CreateWorkflowRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateWorkflow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateWorkflowAsync(const Model::CreateWorkflowRequest& request, const CreateWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Allows you to delete the access specified in the <code>ServerID</code> and
@@ -243,15 +223,6 @@ namespace Transfer
          */
         virtual Model::DeleteAccessOutcome DeleteAccess(const Model::DeleteAccessRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAccess that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAccessOutcomeCallable DeleteAccessCallable(const Model::DeleteAccessRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAccessAsync(const Model::DeleteAccessRequest& request, const DeleteAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Delete the agreement that's specified in the provided
@@ -261,15 +232,6 @@ namespace Transfer
          */
         virtual Model::DeleteAgreementOutcome DeleteAgreement(const Model::DeleteAgreementRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAgreement that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAgreementOutcomeCallable DeleteAgreementCallable(const Model::DeleteAgreementRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAgreement that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAgreementAsync(const Model::DeleteAgreementRequest& request, const DeleteAgreementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the certificate that's specified in the <code>CertificateId</code>
@@ -279,15 +241,6 @@ namespace Transfer
          */
         virtual Model::DeleteCertificateOutcome DeleteCertificate(const Model::DeleteCertificateRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteCertificateOutcomeCallable DeleteCertificateCallable(const Model::DeleteCertificateRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteCertificateAsync(const Model::DeleteCertificateRequest& request, const DeleteCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the agreement that's specified in the provided
@@ -297,15 +250,6 @@ namespace Transfer
          */
         virtual Model::DeleteConnectorOutcome DeleteConnector(const Model::DeleteConnectorRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteConnector that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteConnectorOutcomeCallable DeleteConnectorCallable(const Model::DeleteConnectorRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteConnector that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteConnectorAsync(const Model::DeleteConnectorRequest& request, const DeleteConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the host key that's specified in the <code>HoskKeyId</code>
@@ -315,15 +259,6 @@ namespace Transfer
          */
         virtual Model::DeleteHostKeyOutcome DeleteHostKey(const Model::DeleteHostKeyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteHostKey that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteHostKeyOutcomeCallable DeleteHostKeyCallable(const Model::DeleteHostKeyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteHostKey that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteHostKeyAsync(const Model::DeleteHostKeyRequest& request, const DeleteHostKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the profile that's specified in the <code>ProfileId</code>
@@ -333,15 +268,6 @@ namespace Transfer
          */
         virtual Model::DeleteProfileOutcome DeleteProfile(const Model::DeleteProfileRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteProfile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteProfileOutcomeCallable DeleteProfileCallable(const Model::DeleteProfileRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteProfileAsync(const Model::DeleteProfileRequest& request, const DeleteProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the file transfer protocol-enabled server that you specify.</p> <p>No
@@ -351,15 +277,6 @@ namespace Transfer
          */
         virtual Model::DeleteServerOutcome DeleteServer(const Model::DeleteServerRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteServer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteServerOutcomeCallable DeleteServerCallable(const Model::DeleteServerRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteServer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteServerAsync(const Model::DeleteServerRequest& request, const DeleteServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a user's Secure Shell (SSH) public key.</p><p><h3>See Also:</h3>   <a
@@ -368,15 +285,6 @@ namespace Transfer
          */
         virtual Model::DeleteSshPublicKeyOutcome DeleteSshPublicKey(const Model::DeleteSshPublicKeyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteSshPublicKey that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteSshPublicKeyOutcomeCallable DeleteSshPublicKeyCallable(const Model::DeleteSshPublicKeyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteSshPublicKey that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteSshPublicKeyAsync(const Model::DeleteSshPublicKeyRequest& request, const DeleteSshPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the user belonging to a file transfer protocol-enabled server you
@@ -388,15 +296,6 @@ namespace Transfer
          */
         virtual Model::DeleteUserOutcome DeleteUser(const Model::DeleteUserRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteUser that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteUserOutcomeCallable DeleteUserCallable(const Model::DeleteUserRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteUser that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteUserAsync(const Model::DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified workflow.</p><p><h3>See Also:</h3>   <a
@@ -405,15 +304,6 @@ namespace Transfer
          */
         virtual Model::DeleteWorkflowOutcome DeleteWorkflow(const Model::DeleteWorkflowRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteWorkflow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteWorkflowOutcomeCallable DeleteWorkflowCallable(const Model::DeleteWorkflowRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteWorkflow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteWorkflowAsync(const Model::DeleteWorkflowRequest& request, const DeleteWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the access that is assigned to the specific file transfer
@@ -426,15 +316,6 @@ namespace Transfer
          */
         virtual Model::DescribeAccessOutcome DescribeAccess(const Model::DescribeAccessRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAccess that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAccessOutcomeCallable DescribeAccessCallable(const Model::DescribeAccessRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAccessAsync(const Model::DescribeAccessRequest& request, const DescribeAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the agreement that's identified by the
@@ -444,15 +325,6 @@ namespace Transfer
          */
         virtual Model::DescribeAgreementOutcome DescribeAgreement(const Model::DescribeAgreementRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAgreement that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAgreementOutcomeCallable DescribeAgreementCallable(const Model::DescribeAgreementRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAgreement that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAgreementAsync(const Model::DescribeAgreementRequest& request, const DescribeAgreementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the certificate that's identified by the
@@ -462,15 +334,6 @@ namespace Transfer
          */
         virtual Model::DescribeCertificateOutcome DescribeCertificate(const Model::DescribeCertificateRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeCertificateOutcomeCallable DescribeCertificateCallable(const Model::DescribeCertificateRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeCertificateAsync(const Model::DescribeCertificateRequest& request, const DescribeCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the connector that's identified by the <code>ConnectorId.</code>
@@ -480,15 +343,6 @@ namespace Transfer
          */
         virtual Model::DescribeConnectorOutcome DescribeConnector(const Model::DescribeConnectorRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeConnector that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeConnectorOutcomeCallable DescribeConnectorCallable(const Model::DescribeConnectorRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeConnector that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeConnectorAsync(const Model::DescribeConnectorRequest& request, const DescribeConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>You can use <code>DescribeExecution</code> to check the details of the
@@ -498,15 +352,6 @@ namespace Transfer
          */
         virtual Model::DescribeExecutionOutcome DescribeExecution(const Model::DescribeExecutionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeExecution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeExecutionOutcomeCallable DescribeExecutionCallable(const Model::DescribeExecutionRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeExecutionAsync(const Model::DescribeExecutionRequest& request, const DescribeExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the details of the host key that's specified by the
@@ -516,15 +361,6 @@ namespace Transfer
          */
         virtual Model::DescribeHostKeyOutcome DescribeHostKey(const Model::DescribeHostKeyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeHostKey that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeHostKeyOutcomeCallable DescribeHostKeyCallable(const Model::DescribeHostKeyRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeHostKey that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeHostKeyAsync(const Model::DescribeHostKeyRequest& request, const DescribeHostKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the details of the profile that's specified by the
@@ -534,15 +370,6 @@ namespace Transfer
          */
         virtual Model::DescribeProfileOutcome DescribeProfile(const Model::DescribeProfileRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeProfile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeProfileOutcomeCallable DescribeProfileCallable(const Model::DescribeProfileRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeProfileAsync(const Model::DescribeProfileRequest& request, const DescribeProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the security policy that is attached to your file transfer
@@ -555,15 +382,6 @@ namespace Transfer
          */
         virtual Model::DescribeSecurityPolicyOutcome DescribeSecurityPolicy(const Model::DescribeSecurityPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeSecurityPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeSecurityPolicyOutcomeCallable DescribeSecurityPolicyCallable(const Model::DescribeSecurityPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeSecurityPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeSecurityPolicyAsync(const Model::DescribeSecurityPolicyRequest& request, const DescribeSecurityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a file transfer protocol-enabled server that you specify by passing
@@ -576,15 +394,6 @@ namespace Transfer
          */
         virtual Model::DescribeServerOutcome DescribeServer(const Model::DescribeServerRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeServer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeServerOutcomeCallable DescribeServerCallable(const Model::DescribeServerRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeServer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeServerAsync(const Model::DescribeServerRequest& request, const DescribeServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the user assigned to the specific file transfer protocol-enabled
@@ -596,15 +405,6 @@ namespace Transfer
          */
         virtual Model::DescribeUserOutcome DescribeUser(const Model::DescribeUserRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeUser that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeUserOutcomeCallable DescribeUserCallable(const Model::DescribeUserRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeUser that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeUserAsync(const Model::DescribeUserRequest& request, const DescribeUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified workflow.</p><p><h3>See Also:</h3>   <a
@@ -613,15 +413,6 @@ namespace Transfer
          */
         virtual Model::DescribeWorkflowOutcome DescribeWorkflow(const Model::DescribeWorkflowRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeWorkflow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeWorkflowOutcomeCallable DescribeWorkflowCallable(const Model::DescribeWorkflowRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeWorkflow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeWorkflowAsync(const Model::DescribeWorkflowRequest& request, const DescribeWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Imports the signing and encryption certificates that you need to create local
@@ -631,15 +422,6 @@ namespace Transfer
          */
         virtual Model::ImportCertificateOutcome ImportCertificate(const Model::ImportCertificateRequest& request) const;
 
-        /**
-         * A Callable wrapper for ImportCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ImportCertificateOutcomeCallable ImportCertificateCallable(const Model::ImportCertificateRequest& request) const;
-
-        /**
-         * An Async wrapper for ImportCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ImportCertificateAsync(const Model::ImportCertificateRequest& request, const ImportCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds a host key to the server that's specified by the <code>ServerId</code>
@@ -649,15 +431,6 @@ namespace Transfer
          */
         virtual Model::ImportHostKeyOutcome ImportHostKey(const Model::ImportHostKeyRequest& request) const;
 
-        /**
-         * A Callable wrapper for ImportHostKey that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ImportHostKeyOutcomeCallable ImportHostKeyCallable(const Model::ImportHostKeyRequest& request) const;
-
-        /**
-         * An Async wrapper for ImportHostKey that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ImportHostKeyAsync(const Model::ImportHostKeyRequest& request, const ImportHostKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds a Secure Shell (SSH) public key to a user account identified by a
@@ -671,15 +444,6 @@ namespace Transfer
          */
         virtual Model::ImportSshPublicKeyOutcome ImportSshPublicKey(const Model::ImportSshPublicKeyRequest& request) const;
 
-        /**
-         * A Callable wrapper for ImportSshPublicKey that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ImportSshPublicKeyOutcomeCallable ImportSshPublicKeyCallable(const Model::ImportSshPublicKeyRequest& request) const;
-
-        /**
-         * An Async wrapper for ImportSshPublicKey that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ImportSshPublicKeyAsync(const Model::ImportSshPublicKeyRequest& request, const ImportSshPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the details for all the accesses you have on your server.</p><p><h3>See
@@ -689,15 +453,6 @@ namespace Transfer
          */
         virtual Model::ListAccessesOutcome ListAccesses(const Model::ListAccessesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAccesses that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAccessesOutcomeCallable ListAccessesCallable(const Model::ListAccessesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAccesses that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAccessesAsync(const Model::ListAccessesRequest& request, const ListAccessesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of the agreements for the server that's identified by the
@@ -711,15 +466,6 @@ namespace Transfer
          */
         virtual Model::ListAgreementsOutcome ListAgreements(const Model::ListAgreementsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAgreements that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAgreementsOutcomeCallable ListAgreementsCallable(const Model::ListAgreementsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAgreements that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAgreementsAsync(const Model::ListAgreementsRequest& request, const ListAgreementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of the current certificates that have been imported into
@@ -733,15 +479,6 @@ namespace Transfer
          */
         virtual Model::ListCertificatesOutcome ListCertificates(const Model::ListCertificatesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListCertificates that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListCertificatesOutcomeCallable ListCertificatesCallable(const Model::ListCertificatesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListCertificates that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListCertificatesAsync(const Model::ListCertificatesRequest& request, const ListCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the connectors for the specified Region.</p><p><h3>See Also:</h3>   <a
@@ -750,15 +487,6 @@ namespace Transfer
          */
         virtual Model::ListConnectorsOutcome ListConnectors(const Model::ListConnectorsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListConnectors that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListConnectorsOutcomeCallable ListConnectorsCallable(const Model::ListConnectorsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListConnectors that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListConnectorsAsync(const Model::ListConnectorsRequest& request, const ListConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all executions for the specified workflow.</p><p><h3>See Also:</h3>  
@@ -768,15 +496,6 @@ namespace Transfer
          */
         virtual Model::ListExecutionsOutcome ListExecutions(const Model::ListExecutionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListExecutions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListExecutionsOutcomeCallable ListExecutionsCallable(const Model::ListExecutionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListExecutions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListExecutionsAsync(const Model::ListExecutionsRequest& request, const ListExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of host keys for the server that's specified by the
@@ -786,15 +505,6 @@ namespace Transfer
          */
         virtual Model::ListHostKeysOutcome ListHostKeys(const Model::ListHostKeysRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListHostKeys that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListHostKeysOutcomeCallable ListHostKeysCallable(const Model::ListHostKeysRequest& request) const;
-
-        /**
-         * An Async wrapper for ListHostKeys that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListHostKeysAsync(const Model::ListHostKeysRequest& request, const ListHostKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of the profiles for your system. If you want to limit the
@@ -807,15 +517,6 @@ namespace Transfer
          */
         virtual Model::ListProfilesOutcome ListProfiles(const Model::ListProfilesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListProfiles that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListProfilesOutcomeCallable ListProfilesCallable(const Model::ListProfilesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListProfiles that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListProfilesAsync(const Model::ListProfilesRequest& request, const ListProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the security policies that are attached to your file transfer
@@ -825,15 +526,6 @@ namespace Transfer
          */
         virtual Model::ListSecurityPoliciesOutcome ListSecurityPolicies(const Model::ListSecurityPoliciesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSecurityPolicies that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListSecurityPoliciesOutcomeCallable ListSecurityPoliciesCallable(const Model::ListSecurityPoliciesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSecurityPolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListSecurityPoliciesAsync(const Model::ListSecurityPoliciesRequest& request, const ListSecurityPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the file transfer protocol-enabled servers that are associated with
@@ -843,15 +535,6 @@ namespace Transfer
          */
         virtual Model::ListServersOutcome ListServers(const Model::ListServersRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListServers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListServersOutcomeCallable ListServersCallable(const Model::ListServersRequest& request) const;
-
-        /**
-         * An Async wrapper for ListServers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListServersAsync(const Model::ListServersRequest& request, const ListServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all of the tags associated with the Amazon Resource Name (ARN) that you
@@ -862,15 +545,6 @@ namespace Transfer
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the users for a file transfer protocol-enabled server that you specify
@@ -880,15 +554,6 @@ namespace Transfer
          */
         virtual Model::ListUsersOutcome ListUsers(const Model::ListUsersRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListUsers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListUsersOutcomeCallable ListUsersCallable(const Model::ListUsersRequest& request) const;
-
-        /**
-         * An Async wrapper for ListUsers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListUsersAsync(const Model::ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all of your workflows.</p><p><h3>See Also:</h3>   <a
@@ -897,15 +562,6 @@ namespace Transfer
          */
         virtual Model::ListWorkflowsOutcome ListWorkflows(const Model::ListWorkflowsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListWorkflows that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListWorkflowsOutcomeCallable ListWorkflowsCallable(const Model::ListWorkflowsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListWorkflows that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListWorkflowsAsync(const Model::ListWorkflowsRequest& request, const ListWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sends a callback for asynchronous custom steps.</p> <p> The
@@ -918,15 +574,6 @@ namespace Transfer
          */
         virtual Model::SendWorkflowStepStateOutcome SendWorkflowStepState(const Model::SendWorkflowStepStateRequest& request) const;
 
-        /**
-         * A Callable wrapper for SendWorkflowStepState that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SendWorkflowStepStateOutcomeCallable SendWorkflowStepStateCallable(const Model::SendWorkflowStepStateRequest& request) const;
-
-        /**
-         * An Async wrapper for SendWorkflowStepState that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SendWorkflowStepStateAsync(const Model::SendWorkflowStepStateRequest& request, const SendWorkflowStepStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Begins an outbound file transfer to a remote AS2 server. You specify the
@@ -937,15 +584,6 @@ namespace Transfer
          */
         virtual Model::StartFileTransferOutcome StartFileTransfer(const Model::StartFileTransferRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartFileTransfer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartFileTransferOutcomeCallable StartFileTransferCallable(const Model::StartFileTransferRequest& request) const;
-
-        /**
-         * An Async wrapper for StartFileTransfer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartFileTransferAsync(const Model::StartFileTransferRequest& request, const StartFileTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Changes the state of a file transfer protocol-enabled server from
@@ -961,15 +599,6 @@ namespace Transfer
          */
         virtual Model::StartServerOutcome StartServer(const Model::StartServerRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartServer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartServerOutcomeCallable StartServerCallable(const Model::StartServerRequest& request) const;
-
-        /**
-         * An Async wrapper for StartServer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartServerAsync(const Model::StartServerRequest& request, const StartServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Changes the state of a file transfer protocol-enabled server from
@@ -988,15 +617,6 @@ namespace Transfer
          */
         virtual Model::StopServerOutcome StopServer(const Model::StopServerRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopServer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopServerOutcomeCallable StopServerCallable(const Model::StopServerRequest& request) const;
-
-        /**
-         * An Async wrapper for StopServer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopServerAsync(const Model::StopServerRequest& request, const StopServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Attaches a key-value pair to a resource, as identified by its Amazon Resource
@@ -1007,15 +627,6 @@ namespace Transfer
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>If the <code>IdentityProviderType</code> of a file transfer protocol-enabled
@@ -1044,15 +655,6 @@ namespace Transfer
          */
         virtual Model::TestIdentityProviderOutcome TestIdentityProvider(const Model::TestIdentityProviderRequest& request) const;
 
-        /**
-         * A Callable wrapper for TestIdentityProvider that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TestIdentityProviderOutcomeCallable TestIdentityProviderCallable(const Model::TestIdentityProviderRequest& request) const;
-
-        /**
-         * An Async wrapper for TestIdentityProvider that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TestIdentityProviderAsync(const Model::TestIdentityProviderRequest& request, const TestIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Detaches a key-value pair from a resource, as identified by its Amazon
@@ -1064,15 +666,6 @@ namespace Transfer
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Allows you to update parameters for the access specified in the
@@ -1083,15 +676,6 @@ namespace Transfer
          */
         virtual Model::UpdateAccessOutcome UpdateAccess(const Model::UpdateAccessRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateAccess that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateAccessOutcomeCallable UpdateAccessCallable(const Model::UpdateAccessRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateAccessAsync(const Model::UpdateAccessRequest& request, const UpdateAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates some of the parameters for an existing agreement. Provide the
@@ -1103,15 +687,6 @@ namespace Transfer
          */
         virtual Model::UpdateAgreementOutcome UpdateAgreement(const Model::UpdateAgreementRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateAgreement that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateAgreementOutcomeCallable UpdateAgreementCallable(const Model::UpdateAgreementRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateAgreement that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateAgreementAsync(const Model::UpdateAgreementRequest& request, const UpdateAgreementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the active and inactive dates for a certificate.</p><p><h3>See
@@ -1121,15 +696,6 @@ namespace Transfer
          */
         virtual Model::UpdateCertificateOutcome UpdateCertificate(const Model::UpdateCertificateRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateCertificateOutcomeCallable UpdateCertificateCallable(const Model::UpdateCertificateRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateCertificateAsync(const Model::UpdateCertificateRequest& request, const UpdateCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates some of the parameters for an existing connector. Provide the
@@ -1140,15 +706,6 @@ namespace Transfer
          */
         virtual Model::UpdateConnectorOutcome UpdateConnector(const Model::UpdateConnectorRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateConnector that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateConnectorOutcomeCallable UpdateConnectorCallable(const Model::UpdateConnectorRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateConnector that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateConnectorAsync(const Model::UpdateConnectorRequest& request, const UpdateConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the description for the host key that's specified by the
@@ -1159,15 +716,6 @@ namespace Transfer
          */
         virtual Model::UpdateHostKeyOutcome UpdateHostKey(const Model::UpdateHostKeyRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateHostKey that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateHostKeyOutcomeCallable UpdateHostKeyCallable(const Model::UpdateHostKeyRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateHostKey that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateHostKeyAsync(const Model::UpdateHostKeyRequest& request, const UpdateHostKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates some of the parameters for an existing profile. Provide the
@@ -1178,15 +726,6 @@ namespace Transfer
          */
         virtual Model::UpdateProfileOutcome UpdateProfile(const Model::UpdateProfileRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateProfile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateProfileOutcomeCallable UpdateProfileCallable(const Model::UpdateProfileRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateProfileAsync(const Model::UpdateProfileRequest& request, const UpdateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the file transfer protocol-enabled server's properties after that
@@ -1197,15 +736,6 @@ namespace Transfer
          */
         virtual Model::UpdateServerOutcome UpdateServer(const Model::UpdateServerRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateServer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateServerOutcomeCallable UpdateServerCallable(const Model::UpdateServerRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateServer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateServerAsync(const Model::UpdateServerRequest& request, const UpdateServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Assigns new properties to a user. Parameters you pass modify any or all of
@@ -1218,15 +748,6 @@ namespace Transfer
          */
         virtual Model::UpdateUserOutcome UpdateUser(const Model::UpdateUserRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateUser that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateUserOutcomeCallable UpdateUserCallable(const Model::UpdateUserRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateUser that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateUserAsync(const Model::UpdateUserRequest& request, const UpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

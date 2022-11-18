@@ -7,8 +7,10 @@
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/lightsail/LightsailServiceClientModel.h>
+#include <aws/lightsail/LightsailLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -90,6 +92,47 @@ namespace Lightsail
         virtual ~LightsailClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Allocates a static IP address.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AllocateStaticIp">AWS
@@ -97,15 +140,6 @@ namespace Lightsail
          */
         virtual Model::AllocateStaticIpOutcome AllocateStaticIp(const Model::AllocateStaticIpRequest& request) const;
 
-        /**
-         * A Callable wrapper for AllocateStaticIp that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AllocateStaticIpOutcomeCallable AllocateStaticIpCallable(const Model::AllocateStaticIpRequest& request) const;
-
-        /**
-         * An Async wrapper for AllocateStaticIp that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AllocateStaticIpAsync(const Model::AllocateStaticIpRequest& request, const AllocateStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Attaches an SSL/TLS certificate to your Amazon Lightsail content delivery
@@ -123,15 +157,6 @@ namespace Lightsail
          */
         virtual Model::AttachCertificateToDistributionOutcome AttachCertificateToDistribution(const Model::AttachCertificateToDistributionRequest& request) const;
 
-        /**
-         * A Callable wrapper for AttachCertificateToDistribution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AttachCertificateToDistributionOutcomeCallable AttachCertificateToDistributionCallable(const Model::AttachCertificateToDistributionRequest& request) const;
-
-        /**
-         * An Async wrapper for AttachCertificateToDistribution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AttachCertificateToDistributionAsync(const Model::AttachCertificateToDistributionRequest& request, const AttachCertificateToDistributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Attaches a block storage disk to a running or stopped Lightsail instance and
@@ -146,15 +171,6 @@ namespace Lightsail
          */
         virtual Model::AttachDiskOutcome AttachDisk(const Model::AttachDiskRequest& request) const;
 
-        /**
-         * A Callable wrapper for AttachDisk that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AttachDiskOutcomeCallable AttachDiskCallable(const Model::AttachDiskRequest& request) const;
-
-        /**
-         * An Async wrapper for AttachDisk that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AttachDiskAsync(const Model::AttachDiskRequest& request, const AttachDiskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Attaches one or more Lightsail instances to a load balancer.</p> <p>After
@@ -170,15 +186,6 @@ namespace Lightsail
          */
         virtual Model::AttachInstancesToLoadBalancerOutcome AttachInstancesToLoadBalancer(const Model::AttachInstancesToLoadBalancerRequest& request) const;
 
-        /**
-         * A Callable wrapper for AttachInstancesToLoadBalancer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AttachInstancesToLoadBalancerOutcomeCallable AttachInstancesToLoadBalancerCallable(const Model::AttachInstancesToLoadBalancerRequest& request) const;
-
-        /**
-         * An Async wrapper for AttachInstancesToLoadBalancer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AttachInstancesToLoadBalancerAsync(const Model::AttachInstancesToLoadBalancerRequest& request, const AttachInstancesToLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Attaches a Transport Layer Security (TLS) certificate to your load balancer.
@@ -198,15 +205,6 @@ namespace Lightsail
          */
         virtual Model::AttachLoadBalancerTlsCertificateOutcome AttachLoadBalancerTlsCertificate(const Model::AttachLoadBalancerTlsCertificateRequest& request) const;
 
-        /**
-         * A Callable wrapper for AttachLoadBalancerTlsCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AttachLoadBalancerTlsCertificateOutcomeCallable AttachLoadBalancerTlsCertificateCallable(const Model::AttachLoadBalancerTlsCertificateRequest& request) const;
-
-        /**
-         * An Async wrapper for AttachLoadBalancerTlsCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AttachLoadBalancerTlsCertificateAsync(const Model::AttachLoadBalancerTlsCertificateRequest& request, const AttachLoadBalancerTlsCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Attaches a static IP address to a specific Amazon Lightsail
@@ -216,15 +214,6 @@ namespace Lightsail
          */
         virtual Model::AttachStaticIpOutcome AttachStaticIp(const Model::AttachStaticIpRequest& request) const;
 
-        /**
-         * A Callable wrapper for AttachStaticIp that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AttachStaticIpOutcomeCallable AttachStaticIpCallable(const Model::AttachStaticIpRequest& request) const;
-
-        /**
-         * An Async wrapper for AttachStaticIp that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AttachStaticIpAsync(const Model::AttachStaticIpRequest& request, const AttachStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Closes ports for a specific Amazon Lightsail instance.</p> <p>The
@@ -238,15 +227,6 @@ namespace Lightsail
          */
         virtual Model::CloseInstancePublicPortsOutcome CloseInstancePublicPorts(const Model::CloseInstancePublicPortsRequest& request) const;
 
-        /**
-         * A Callable wrapper for CloseInstancePublicPorts that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CloseInstancePublicPortsOutcomeCallable CloseInstancePublicPortsCallable(const Model::CloseInstancePublicPortsRequest& request) const;
-
-        /**
-         * An Async wrapper for CloseInstancePublicPorts that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CloseInstancePublicPortsAsync(const Model::CloseInstancePublicPortsRequest& request, const CloseInstancePublicPortsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Copies a manual snapshot of an instance or disk as another manual snapshot,
@@ -265,15 +245,6 @@ namespace Lightsail
          */
         virtual Model::CopySnapshotOutcome CopySnapshot(const Model::CopySnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for CopySnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CopySnapshotOutcomeCallable CopySnapshotCallable(const Model::CopySnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for CopySnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CopySnapshotAsync(const Model::CopySnapshotRequest& request, const CopySnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an Amazon Lightsail bucket.</p> <p>A bucket is a cloud storage
@@ -288,15 +259,6 @@ namespace Lightsail
          */
         virtual Model::CreateBucketOutcome CreateBucket(const Model::CreateBucketRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateBucket that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateBucketOutcomeCallable CreateBucketCallable(const Model::CreateBucketRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateBucket that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateBucketAsync(const Model::CreateBucketRequest& request, const CreateBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new access key for the specified Amazon Lightsail bucket. Access
@@ -318,15 +280,6 @@ namespace Lightsail
          */
         virtual Model::CreateBucketAccessKeyOutcome CreateBucketAccessKey(const Model::CreateBucketAccessKeyRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateBucketAccessKey that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateBucketAccessKeyOutcomeCallable CreateBucketAccessKeyCallable(const Model::CreateBucketAccessKeyRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateBucketAccessKey that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateBucketAccessKeyAsync(const Model::CreateBucketAccessKeyRequest& request, const CreateBucketAccessKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an SSL/TLS certificate for an Amazon Lightsail content delivery
@@ -345,15 +298,6 @@ namespace Lightsail
          */
         virtual Model::CreateCertificateOutcome CreateCertificate(const Model::CreateCertificateRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateCertificateOutcomeCallable CreateCertificateCallable(const Model::CreateCertificateRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateCertificateAsync(const Model::CreateCertificateRequest& request, const CreateCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an AWS CloudFormation stack, which creates a new Amazon EC2 instance
@@ -369,15 +313,6 @@ namespace Lightsail
          */
         virtual Model::CreateCloudFormationStackOutcome CreateCloudFormationStack(const Model::CreateCloudFormationStackRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateCloudFormationStack that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateCloudFormationStackOutcomeCallable CreateCloudFormationStackCallable(const Model::CreateCloudFormationStackRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateCloudFormationStack that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateCloudFormationStackAsync(const Model::CreateCloudFormationStackRequest& request, const CreateCloudFormationStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an email or SMS text message contact method.</p> <p>A contact method
@@ -393,15 +328,6 @@ namespace Lightsail
          */
         virtual Model::CreateContactMethodOutcome CreateContactMethod(const Model::CreateContactMethodRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateContactMethod that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateContactMethodOutcomeCallable CreateContactMethodCallable(const Model::CreateContactMethodRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateContactMethod that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateContactMethodAsync(const Model::CreateContactMethodRequest& request, const CreateContactMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an Amazon Lightsail container service.</p> <p>A Lightsail container
@@ -415,15 +341,6 @@ namespace Lightsail
          */
         virtual Model::CreateContainerServiceOutcome CreateContainerService(const Model::CreateContainerServiceRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateContainerService that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateContainerServiceOutcomeCallable CreateContainerServiceCallable(const Model::CreateContainerServiceRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateContainerService that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateContainerServiceAsync(const Model::CreateContainerServiceRequest& request, const CreateContainerServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a deployment for your Amazon Lightsail container service.</p> <p>A
@@ -443,15 +360,6 @@ namespace Lightsail
          */
         virtual Model::CreateContainerServiceDeploymentOutcome CreateContainerServiceDeployment(const Model::CreateContainerServiceDeploymentRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateContainerServiceDeployment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateContainerServiceDeploymentOutcomeCallable CreateContainerServiceDeploymentCallable(const Model::CreateContainerServiceDeploymentRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateContainerServiceDeployment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateContainerServiceDeploymentAsync(const Model::CreateContainerServiceDeploymentRequest& request, const CreateContainerServiceDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a temporary set of log in credentials that you can use to log in to
@@ -479,15 +387,6 @@ namespace Lightsail
          */
         virtual Model::CreateContainerServiceRegistryLoginOutcome CreateContainerServiceRegistryLogin(const Model::CreateContainerServiceRegistryLoginRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateContainerServiceRegistryLogin that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateContainerServiceRegistryLoginOutcomeCallable CreateContainerServiceRegistryLoginCallable(const Model::CreateContainerServiceRegistryLoginRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateContainerServiceRegistryLogin that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateContainerServiceRegistryLoginAsync(const Model::CreateContainerServiceRegistryLoginRequest& request, const CreateContainerServiceRegistryLoginResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a block storage disk that can be attached to an Amazon Lightsail
@@ -501,15 +400,6 @@ namespace Lightsail
          */
         virtual Model::CreateDiskOutcome CreateDisk(const Model::CreateDiskRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDisk that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDiskOutcomeCallable CreateDiskCallable(const Model::CreateDiskRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDisk that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDiskAsync(const Model::CreateDiskRequest& request, const CreateDiskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a block storage disk from a manual or automatic snapshot of a disk.
@@ -525,15 +415,6 @@ namespace Lightsail
          */
         virtual Model::CreateDiskFromSnapshotOutcome CreateDiskFromSnapshot(const Model::CreateDiskFromSnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDiskFromSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDiskFromSnapshotOutcomeCallable CreateDiskFromSnapshotCallable(const Model::CreateDiskFromSnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDiskFromSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDiskFromSnapshotAsync(const Model::CreateDiskFromSnapshotRequest& request, const CreateDiskFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a snapshot of a block storage disk. You can use snapshots for
@@ -564,15 +445,6 @@ namespace Lightsail
          */
         virtual Model::CreateDiskSnapshotOutcome CreateDiskSnapshot(const Model::CreateDiskSnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDiskSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDiskSnapshotOutcomeCallable CreateDiskSnapshotCallable(const Model::CreateDiskSnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDiskSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDiskSnapshotAsync(const Model::CreateDiskSnapshotRequest& request, const CreateDiskSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an Amazon Lightsail content delivery network (CDN) distribution.</p>
@@ -586,15 +458,6 @@ namespace Lightsail
          */
         virtual Model::CreateDistributionOutcome CreateDistribution(const Model::CreateDistributionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDistribution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDistributionOutcomeCallable CreateDistributionCallable(const Model::CreateDistributionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDistribution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDistributionAsync(const Model::CreateDistributionRequest& request, const CreateDistributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a domain resource for the specified domain (e.g., example.com).</p>
@@ -607,15 +470,6 @@ namespace Lightsail
          */
         virtual Model::CreateDomainOutcome CreateDomain(const Model::CreateDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDomainOutcomeCallable CreateDomainCallable(const Model::CreateDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDomainAsync(const Model::CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates one of the following domain name system (DNS) records in a domain DNS
@@ -631,15 +485,6 @@ namespace Lightsail
          */
         virtual Model::CreateDomainEntryOutcome CreateDomainEntry(const Model::CreateDomainEntryRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDomainEntry that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDomainEntryOutcomeCallable CreateDomainEntryCallable(const Model::CreateDomainEntryRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDomainEntry that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDomainEntryAsync(const Model::CreateDomainEntryRequest& request, const CreateDomainEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a snapshot of a specific virtual private server, or <i>instance</i>.
@@ -653,15 +498,6 @@ namespace Lightsail
          */
         virtual Model::CreateInstanceSnapshotOutcome CreateInstanceSnapshot(const Model::CreateInstanceSnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateInstanceSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateInstanceSnapshotOutcomeCallable CreateInstanceSnapshotCallable(const Model::CreateInstanceSnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateInstanceSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateInstanceSnapshotAsync(const Model::CreateInstanceSnapshotRequest& request, const CreateInstanceSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates one or more Amazon Lightsail instances.</p> <p>The <code>create
@@ -674,15 +510,6 @@ namespace Lightsail
          */
         virtual Model::CreateInstancesOutcome CreateInstances(const Model::CreateInstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateInstances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateInstancesOutcomeCallable CreateInstancesCallable(const Model::CreateInstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateInstancesAsync(const Model::CreateInstancesRequest& request, const CreateInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates one or more new instances from a manual or automatic snapshot of an
@@ -697,15 +524,6 @@ namespace Lightsail
          */
         virtual Model::CreateInstancesFromSnapshotOutcome CreateInstancesFromSnapshot(const Model::CreateInstancesFromSnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateInstancesFromSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateInstancesFromSnapshotOutcomeCallable CreateInstancesFromSnapshotCallable(const Model::CreateInstancesFromSnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateInstancesFromSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateInstancesFromSnapshotAsync(const Model::CreateInstancesFromSnapshotRequest& request, const CreateInstancesFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a custom SSH key pair that you can use with an Amazon Lightsail
@@ -722,15 +540,6 @@ namespace Lightsail
          */
         virtual Model::CreateKeyPairOutcome CreateKeyPair(const Model::CreateKeyPairRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateKeyPair that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateKeyPairOutcomeCallable CreateKeyPairCallable(const Model::CreateKeyPairRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateKeyPair that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateKeyPairAsync(const Model::CreateKeyPairRequest& request, const CreateKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a Lightsail load balancer. To learn more about deciding whether to
@@ -749,15 +558,6 @@ namespace Lightsail
          */
         virtual Model::CreateLoadBalancerOutcome CreateLoadBalancer(const Model::CreateLoadBalancerRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateLoadBalancer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateLoadBalancerOutcomeCallable CreateLoadBalancerCallable(const Model::CreateLoadBalancerRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateLoadBalancer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateLoadBalancerAsync(const Model::CreateLoadBalancerRequest& request, const CreateLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an SSL/TLS certificate for an Amazon Lightsail load balancer.</p>
@@ -772,15 +572,6 @@ namespace Lightsail
          */
         virtual Model::CreateLoadBalancerTlsCertificateOutcome CreateLoadBalancerTlsCertificate(const Model::CreateLoadBalancerTlsCertificateRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateLoadBalancerTlsCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateLoadBalancerTlsCertificateOutcomeCallable CreateLoadBalancerTlsCertificateCallable(const Model::CreateLoadBalancerTlsCertificateRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateLoadBalancerTlsCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateLoadBalancerTlsCertificateAsync(const Model::CreateLoadBalancerTlsCertificateRequest& request, const CreateLoadBalancerTlsCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new database in Amazon Lightsail.</p> <p>The <code>create
@@ -793,15 +584,6 @@ namespace Lightsail
          */
         virtual Model::CreateRelationalDatabaseOutcome CreateRelationalDatabase(const Model::CreateRelationalDatabaseRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateRelationalDatabase that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateRelationalDatabaseOutcomeCallable CreateRelationalDatabaseCallable(const Model::CreateRelationalDatabaseRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateRelationalDatabase that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateRelationalDatabaseAsync(const Model::CreateRelationalDatabaseRequest& request, const CreateRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new database from an existing database snapshot in Amazon
@@ -818,15 +600,6 @@ namespace Lightsail
          */
         virtual Model::CreateRelationalDatabaseFromSnapshotOutcome CreateRelationalDatabaseFromSnapshot(const Model::CreateRelationalDatabaseFromSnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateRelationalDatabaseFromSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateRelationalDatabaseFromSnapshotOutcomeCallable CreateRelationalDatabaseFromSnapshotCallable(const Model::CreateRelationalDatabaseFromSnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateRelationalDatabaseFromSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateRelationalDatabaseFromSnapshotAsync(const Model::CreateRelationalDatabaseFromSnapshotRequest& request, const CreateRelationalDatabaseFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a snapshot of your database in Amazon Lightsail. You can use
@@ -841,15 +614,6 @@ namespace Lightsail
          */
         virtual Model::CreateRelationalDatabaseSnapshotOutcome CreateRelationalDatabaseSnapshot(const Model::CreateRelationalDatabaseSnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateRelationalDatabaseSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateRelationalDatabaseSnapshotOutcomeCallable CreateRelationalDatabaseSnapshotCallable(const Model::CreateRelationalDatabaseSnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateRelationalDatabaseSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateRelationalDatabaseSnapshotAsync(const Model::CreateRelationalDatabaseSnapshotRequest& request, const CreateRelationalDatabaseSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an alarm.</p> <p>An alarm is used to monitor a single metric for one
@@ -863,15 +627,6 @@ namespace Lightsail
          */
         virtual Model::DeleteAlarmOutcome DeleteAlarm(const Model::DeleteAlarmRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAlarm that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAlarmOutcomeCallable DeleteAlarmCallable(const Model::DeleteAlarmRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAlarm that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAlarmAsync(const Model::DeleteAlarmRequest& request, const DeleteAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an automatic snapshot of an instance or disk. For more information,
@@ -883,15 +638,6 @@ namespace Lightsail
          */
         virtual Model::DeleteAutoSnapshotOutcome DeleteAutoSnapshot(const Model::DeleteAutoSnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAutoSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAutoSnapshotOutcomeCallable DeleteAutoSnapshotCallable(const Model::DeleteAutoSnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAutoSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAutoSnapshotAsync(const Model::DeleteAutoSnapshotRequest& request, const DeleteAutoSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a Amazon Lightsail bucket.</p>  <p>When you delete your bucket,
@@ -902,15 +648,6 @@ namespace Lightsail
          */
         virtual Model::DeleteBucketOutcome DeleteBucket(const Model::DeleteBucketRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteBucket that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteBucketOutcomeCallable DeleteBucketCallable(const Model::DeleteBucketRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteBucket that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteBucketAsync(const Model::DeleteBucketRequest& request, const DeleteBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an access key for the specified Amazon Lightsail bucket.</p> <p>We
@@ -924,15 +661,6 @@ namespace Lightsail
          */
         virtual Model::DeleteBucketAccessKeyOutcome DeleteBucketAccessKey(const Model::DeleteBucketAccessKeyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteBucketAccessKey that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteBucketAccessKeyOutcomeCallable DeleteBucketAccessKeyCallable(const Model::DeleteBucketAccessKeyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteBucketAccessKey that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteBucketAccessKeyAsync(const Model::DeleteBucketAccessKeyRequest& request, const DeleteBucketAccessKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an SSL/TLS certificate for your Amazon Lightsail content delivery
@@ -945,15 +673,6 @@ namespace Lightsail
          */
         virtual Model::DeleteCertificateOutcome DeleteCertificate(const Model::DeleteCertificateRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteCertificateOutcomeCallable DeleteCertificateCallable(const Model::DeleteCertificateRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteCertificateAsync(const Model::DeleteCertificateRequest& request, const DeleteCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a contact method.</p> <p>A contact method is used to send you
@@ -969,15 +688,6 @@ namespace Lightsail
          */
         virtual Model::DeleteContactMethodOutcome DeleteContactMethod(const Model::DeleteContactMethodRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteContactMethod that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteContactMethodOutcomeCallable DeleteContactMethodCallable(const Model::DeleteContactMethodRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteContactMethod that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteContactMethodAsync(const Model::DeleteContactMethodRequest& request, const DeleteContactMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a container image that is registered to your Amazon Lightsail
@@ -987,15 +697,6 @@ namespace Lightsail
          */
         virtual Model::DeleteContainerImageOutcome DeleteContainerImage(const Model::DeleteContainerImageRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteContainerImage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteContainerImageOutcomeCallable DeleteContainerImageCallable(const Model::DeleteContainerImageRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteContainerImage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteContainerImageAsync(const Model::DeleteContainerImageRequest& request, const DeleteContainerImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes your Amazon Lightsail container service.</p><p><h3>See Also:</h3>  
@@ -1005,15 +706,6 @@ namespace Lightsail
          */
         virtual Model::DeleteContainerServiceOutcome DeleteContainerService(const Model::DeleteContainerServiceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteContainerService that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteContainerServiceOutcomeCallable DeleteContainerServiceCallable(const Model::DeleteContainerServiceRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteContainerService that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteContainerServiceAsync(const Model::DeleteContainerServiceRequest& request, const DeleteContainerServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified block storage disk. The disk must be in the
@@ -1029,15 +721,6 @@ namespace Lightsail
          */
         virtual Model::DeleteDiskOutcome DeleteDisk(const Model::DeleteDiskRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDisk that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDiskOutcomeCallable DeleteDiskCallable(const Model::DeleteDiskRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDisk that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDiskAsync(const Model::DeleteDiskRequest& request, const DeleteDiskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified disk snapshot.</p> <p>When you make periodic snapshots
@@ -1056,15 +739,6 @@ namespace Lightsail
          */
         virtual Model::DeleteDiskSnapshotOutcome DeleteDiskSnapshot(const Model::DeleteDiskSnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDiskSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDiskSnapshotOutcomeCallable DeleteDiskSnapshotCallable(const Model::DeleteDiskSnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDiskSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDiskSnapshotAsync(const Model::DeleteDiskSnapshotRequest& request, const DeleteDiskSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes your Amazon Lightsail content delivery network (CDN)
@@ -1074,15 +748,6 @@ namespace Lightsail
          */
         virtual Model::DeleteDistributionOutcome DeleteDistribution(const Model::DeleteDistributionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDistribution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDistributionOutcomeCallable DeleteDistributionCallable(const Model::DeleteDistributionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDistribution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDistributionAsync(const Model::DeleteDistributionRequest& request, const DeleteDistributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified domain recordset and all of its domain records.</p>
@@ -1096,15 +761,6 @@ namespace Lightsail
          */
         virtual Model::DeleteDomainOutcome DeleteDomain(const Model::DeleteDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDomainOutcomeCallable DeleteDomainCallable(const Model::DeleteDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDomainAsync(const Model::DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a specific domain entry.</p> <p>The <code>delete domain entry</code>
@@ -1118,15 +774,6 @@ namespace Lightsail
          */
         virtual Model::DeleteDomainEntryOutcome DeleteDomainEntry(const Model::DeleteDomainEntryRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDomainEntry that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDomainEntryOutcomeCallable DeleteDomainEntryCallable(const Model::DeleteDomainEntryRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDomainEntry that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDomainEntryAsync(const Model::DeleteDomainEntryRequest& request, const DeleteDomainEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an Amazon Lightsail instance.</p> <p>The <code>delete instance</code>
@@ -1140,15 +787,6 @@ namespace Lightsail
          */
         virtual Model::DeleteInstanceOutcome DeleteInstance(const Model::DeleteInstanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteInstance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteInstanceOutcomeCallable DeleteInstanceCallable(const Model::DeleteInstanceRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteInstanceAsync(const Model::DeleteInstanceRequest& request, const DeleteInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a specific snapshot of a virtual private server (or
@@ -1163,15 +801,6 @@ namespace Lightsail
          */
         virtual Model::DeleteInstanceSnapshotOutcome DeleteInstanceSnapshot(const Model::DeleteInstanceSnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteInstanceSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteInstanceSnapshotOutcomeCallable DeleteInstanceSnapshotCallable(const Model::DeleteInstanceSnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteInstanceSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteInstanceSnapshotAsync(const Model::DeleteInstanceSnapshotRequest& request, const DeleteInstanceSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified key pair by removing the public key from Amazon
@@ -1193,15 +822,6 @@ namespace Lightsail
          */
         virtual Model::DeleteKeyPairOutcome DeleteKeyPair(const Model::DeleteKeyPairRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteKeyPair that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteKeyPairOutcomeCallable DeleteKeyPairCallable(const Model::DeleteKeyPairRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteKeyPair that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteKeyPairAsync(const Model::DeleteKeyPairRequest& request, const DeleteKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the known host key or certificate used by the Amazon Lightsail
@@ -1219,15 +839,6 @@ namespace Lightsail
          */
         virtual Model::DeleteKnownHostKeysOutcome DeleteKnownHostKeys(const Model::DeleteKnownHostKeysRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteKnownHostKeys that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteKnownHostKeysOutcomeCallable DeleteKnownHostKeysCallable(const Model::DeleteKnownHostKeysRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteKnownHostKeys that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteKnownHostKeysAsync(const Model::DeleteKnownHostKeysRequest& request, const DeleteKnownHostKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a Lightsail load balancer and all its associated SSL/TLS
@@ -1243,15 +854,6 @@ namespace Lightsail
          */
         virtual Model::DeleteLoadBalancerOutcome DeleteLoadBalancer(const Model::DeleteLoadBalancerRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteLoadBalancer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteLoadBalancerOutcomeCallable DeleteLoadBalancerCallable(const Model::DeleteLoadBalancerRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteLoadBalancer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteLoadBalancerAsync(const Model::DeleteLoadBalancerRequest& request, const DeleteLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an SSL/TLS certificate associated with a Lightsail load balancer.</p>
@@ -1265,15 +867,6 @@ namespace Lightsail
          */
         virtual Model::DeleteLoadBalancerTlsCertificateOutcome DeleteLoadBalancerTlsCertificate(const Model::DeleteLoadBalancerTlsCertificateRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteLoadBalancerTlsCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteLoadBalancerTlsCertificateOutcomeCallable DeleteLoadBalancerTlsCertificateCallable(const Model::DeleteLoadBalancerTlsCertificateRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteLoadBalancerTlsCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteLoadBalancerTlsCertificateAsync(const Model::DeleteLoadBalancerTlsCertificateRequest& request, const DeleteLoadBalancerTlsCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a database in Amazon Lightsail.</p> <p>The <code>delete relational
@@ -1287,15 +880,6 @@ namespace Lightsail
          */
         virtual Model::DeleteRelationalDatabaseOutcome DeleteRelationalDatabase(const Model::DeleteRelationalDatabaseRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteRelationalDatabase that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteRelationalDatabaseOutcomeCallable DeleteRelationalDatabaseCallable(const Model::DeleteRelationalDatabaseRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteRelationalDatabase that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteRelationalDatabaseAsync(const Model::DeleteRelationalDatabaseRequest& request, const DeleteRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a database snapshot in Amazon Lightsail.</p> <p>The <code>delete
@@ -1309,15 +893,6 @@ namespace Lightsail
          */
         virtual Model::DeleteRelationalDatabaseSnapshotOutcome DeleteRelationalDatabaseSnapshot(const Model::DeleteRelationalDatabaseSnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteRelationalDatabaseSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteRelationalDatabaseSnapshotOutcomeCallable DeleteRelationalDatabaseSnapshotCallable(const Model::DeleteRelationalDatabaseSnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteRelationalDatabaseSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteRelationalDatabaseSnapshotAsync(const Model::DeleteRelationalDatabaseSnapshotRequest& request, const DeleteRelationalDatabaseSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Detaches an SSL/TLS certificate from your Amazon Lightsail content delivery
@@ -1329,15 +904,6 @@ namespace Lightsail
          */
         virtual Model::DetachCertificateFromDistributionOutcome DetachCertificateFromDistribution(const Model::DetachCertificateFromDistributionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DetachCertificateFromDistribution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DetachCertificateFromDistributionOutcomeCallable DetachCertificateFromDistributionCallable(const Model::DetachCertificateFromDistributionRequest& request) const;
-
-        /**
-         * An Async wrapper for DetachCertificateFromDistribution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DetachCertificateFromDistributionAsync(const Model::DetachCertificateFromDistributionRequest& request, const DetachCertificateFromDistributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Detaches a stopped block storage disk from a Lightsail instance. Make sure to
@@ -1353,15 +919,6 @@ namespace Lightsail
          */
         virtual Model::DetachDiskOutcome DetachDisk(const Model::DetachDiskRequest& request) const;
 
-        /**
-         * A Callable wrapper for DetachDisk that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DetachDiskOutcomeCallable DetachDiskCallable(const Model::DetachDiskRequest& request) const;
-
-        /**
-         * An Async wrapper for DetachDisk that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DetachDiskAsync(const Model::DetachDiskRequest& request, const DetachDiskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Detaches the specified instances from a Lightsail load balancer.</p> <p>This
@@ -1377,15 +934,6 @@ namespace Lightsail
          */
         virtual Model::DetachInstancesFromLoadBalancerOutcome DetachInstancesFromLoadBalancer(const Model::DetachInstancesFromLoadBalancerRequest& request) const;
 
-        /**
-         * A Callable wrapper for DetachInstancesFromLoadBalancer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DetachInstancesFromLoadBalancerOutcomeCallable DetachInstancesFromLoadBalancerCallable(const Model::DetachInstancesFromLoadBalancerRequest& request) const;
-
-        /**
-         * An Async wrapper for DetachInstancesFromLoadBalancer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DetachInstancesFromLoadBalancerAsync(const Model::DetachInstancesFromLoadBalancerRequest& request, const DetachInstancesFromLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Detaches a static IP from the Amazon Lightsail instance to which it is
@@ -1395,15 +943,6 @@ namespace Lightsail
          */
         virtual Model::DetachStaticIpOutcome DetachStaticIp(const Model::DetachStaticIpRequest& request) const;
 
-        /**
-         * A Callable wrapper for DetachStaticIp that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DetachStaticIpOutcomeCallable DetachStaticIpCallable(const Model::DetachStaticIpRequest& request) const;
-
-        /**
-         * An Async wrapper for DetachStaticIp that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DetachStaticIpAsync(const Model::DetachStaticIpRequest& request, const DetachStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disables an add-on for an Amazon Lightsail resource. For more information,
@@ -1415,15 +954,6 @@ namespace Lightsail
          */
         virtual Model::DisableAddOnOutcome DisableAddOn(const Model::DisableAddOnRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisableAddOn that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisableAddOnOutcomeCallable DisableAddOnCallable(const Model::DisableAddOnRequest& request) const;
-
-        /**
-         * An Async wrapper for DisableAddOn that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisableAddOnAsync(const Model::DisableAddOnRequest& request, const DisableAddOnResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Downloads the regional Amazon Lightsail default key pair.</p> <p>This action
@@ -1434,15 +964,6 @@ namespace Lightsail
          */
         virtual Model::DownloadDefaultKeyPairOutcome DownloadDefaultKeyPair(const Model::DownloadDefaultKeyPairRequest& request) const;
 
-        /**
-         * A Callable wrapper for DownloadDefaultKeyPair that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DownloadDefaultKeyPairOutcomeCallable DownloadDefaultKeyPairCallable(const Model::DownloadDefaultKeyPairRequest& request) const;
-
-        /**
-         * An Async wrapper for DownloadDefaultKeyPair that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DownloadDefaultKeyPairAsync(const Model::DownloadDefaultKeyPairRequest& request, const DownloadDefaultKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables or modifies an add-on for an Amazon Lightsail resource. For more
@@ -1454,15 +975,6 @@ namespace Lightsail
          */
         virtual Model::EnableAddOnOutcome EnableAddOn(const Model::EnableAddOnRequest& request) const;
 
-        /**
-         * A Callable wrapper for EnableAddOn that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnableAddOnOutcomeCallable EnableAddOnCallable(const Model::EnableAddOnRequest& request) const;
-
-        /**
-         * An Async wrapper for EnableAddOn that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnableAddOnAsync(const Model::EnableAddOnRequest& request, const EnableAddOnResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Exports an Amazon Lightsail instance or block storage disk snapshot to Amazon
@@ -1486,15 +998,6 @@ namespace Lightsail
          */
         virtual Model::ExportSnapshotOutcome ExportSnapshot(const Model::ExportSnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for ExportSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ExportSnapshotOutcomeCallable ExportSnapshotCallable(const Model::ExportSnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for ExportSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ExportSnapshotAsync(const Model::ExportSnapshotRequest& request, const ExportSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the names of all active (not deleted) resources.</p><p><h3>See
@@ -1504,15 +1007,6 @@ namespace Lightsail
          */
         virtual Model::GetActiveNamesOutcome GetActiveNames(const Model::GetActiveNamesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetActiveNames that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetActiveNamesOutcomeCallable GetActiveNamesCallable(const Model::GetActiveNamesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetActiveNames that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetActiveNamesAsync(const Model::GetActiveNamesRequest& request, const GetActiveNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the configured alarms. Specify an alarm name in
@@ -1529,15 +1023,6 @@ namespace Lightsail
          */
         virtual Model::GetAlarmsOutcome GetAlarms(const Model::GetAlarmsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAlarms that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAlarmsOutcomeCallable GetAlarmsCallable(const Model::GetAlarmsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAlarms that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAlarmsAsync(const Model::GetAlarmsRequest& request, const GetAlarmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the available automatic snapshots for an instance or disk. For more
@@ -1549,15 +1034,6 @@ namespace Lightsail
          */
         virtual Model::GetAutoSnapshotsOutcome GetAutoSnapshots(const Model::GetAutoSnapshotsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAutoSnapshots that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAutoSnapshotsOutcomeCallable GetAutoSnapshotsCallable(const Model::GetAutoSnapshotsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAutoSnapshots that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAutoSnapshotsAsync(const Model::GetAutoSnapshotsRequest& request, const GetAutoSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the list of available instance images, or <i>blueprints</i>. You can
@@ -1574,15 +1050,6 @@ namespace Lightsail
          */
         virtual Model::GetBlueprintsOutcome GetBlueprints(const Model::GetBlueprintsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBlueprints that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBlueprintsOutcomeCallable GetBlueprintsCallable(const Model::GetBlueprintsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBlueprints that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBlueprintsAsync(const Model::GetBlueprintsRequest& request, const GetBlueprintsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the existing access key IDs for the specified Amazon Lightsail
@@ -1597,15 +1064,6 @@ namespace Lightsail
          */
         virtual Model::GetBucketAccessKeysOutcome GetBucketAccessKeys(const Model::GetBucketAccessKeysRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBucketAccessKeys that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBucketAccessKeysOutcomeCallable GetBucketAccessKeysCallable(const Model::GetBucketAccessKeysRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBucketAccessKeys that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBucketAccessKeysAsync(const Model::GetBucketAccessKeysRequest& request, const GetBucketAccessKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the bundles that you can apply to a Amazon Lightsail bucket.</p>
@@ -1618,15 +1076,6 @@ namespace Lightsail
          */
         virtual Model::GetBucketBundlesOutcome GetBucketBundles(const Model::GetBucketBundlesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBucketBundles that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBucketBundlesOutcomeCallable GetBucketBundlesCallable(const Model::GetBucketBundlesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBucketBundles that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBucketBundlesAsync(const Model::GetBucketBundlesRequest& request, const GetBucketBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the data points of a specific metric for an Amazon Lightsail
@@ -1639,15 +1088,6 @@ namespace Lightsail
          */
         virtual Model::GetBucketMetricDataOutcome GetBucketMetricData(const Model::GetBucketMetricDataRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBucketMetricData that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBucketMetricDataOutcomeCallable GetBucketMetricDataCallable(const Model::GetBucketMetricDataRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBucketMetricData that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBucketMetricDataAsync(const Model::GetBucketMetricDataRequest& request, const GetBucketMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about one or more Amazon Lightsail buckets. The
@@ -1662,15 +1102,6 @@ namespace Lightsail
          */
         virtual Model::GetBucketsOutcome GetBuckets(const Model::GetBucketsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBuckets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBucketsOutcomeCallable GetBucketsCallable(const Model::GetBucketsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBuckets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBucketsAsync(const Model::GetBucketsRequest& request, const GetBucketsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the bundles that you can apply to an Amazon Lightsail instance when
@@ -1684,15 +1115,6 @@ namespace Lightsail
          */
         virtual Model::GetBundlesOutcome GetBundles(const Model::GetBundlesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBundles that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBundlesOutcomeCallable GetBundlesCallable(const Model::GetBundlesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBundles that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBundlesAsync(const Model::GetBundlesRequest& request, const GetBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about one or more Amazon Lightsail SSL/TLS
@@ -1705,15 +1127,6 @@ namespace Lightsail
          */
         virtual Model::GetCertificatesOutcome GetCertificates(const Model::GetCertificatesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetCertificates that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetCertificatesOutcomeCallable GetCertificatesCallable(const Model::GetCertificatesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetCertificates that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetCertificatesAsync(const Model::GetCertificatesRequest& request, const GetCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the CloudFormation stack record created as a result of the
@@ -1725,15 +1138,6 @@ namespace Lightsail
          */
         virtual Model::GetCloudFormationStackRecordsOutcome GetCloudFormationStackRecords(const Model::GetCloudFormationStackRecordsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetCloudFormationStackRecords that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetCloudFormationStackRecordsOutcomeCallable GetCloudFormationStackRecordsCallable(const Model::GetCloudFormationStackRecordsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetCloudFormationStackRecords that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetCloudFormationStackRecordsAsync(const Model::GetCloudFormationStackRecordsRequest& request, const GetCloudFormationStackRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the configured contact methods. Specify a protocol
@@ -1750,15 +1154,6 @@ namespace Lightsail
          */
         virtual Model::GetContactMethodsOutcome GetContactMethods(const Model::GetContactMethodsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetContactMethods that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetContactMethodsOutcomeCallable GetContactMethodsCallable(const Model::GetContactMethodsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetContactMethods that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetContactMethodsAsync(const Model::GetContactMethodsRequest& request, const GetContactMethodsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about Amazon Lightsail containers, such as the current
@@ -1769,15 +1164,6 @@ namespace Lightsail
          */
         virtual Model::GetContainerAPIMetadataOutcome GetContainerAPIMetadata(const Model::GetContainerAPIMetadataRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetContainerAPIMetadata that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetContainerAPIMetadataOutcomeCallable GetContainerAPIMetadataCallable(const Model::GetContainerAPIMetadataRequest& request) const;
-
-        /**
-         * An Async wrapper for GetContainerAPIMetadata that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetContainerAPIMetadataAsync(const Model::GetContainerAPIMetadataRequest& request, const GetContainerAPIMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the container images that are registered to your Amazon Lightsail
@@ -1791,15 +1177,6 @@ namespace Lightsail
          */
         virtual Model::GetContainerImagesOutcome GetContainerImages(const Model::GetContainerImagesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetContainerImages that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetContainerImagesOutcomeCallable GetContainerImagesCallable(const Model::GetContainerImagesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetContainerImages that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetContainerImagesAsync(const Model::GetContainerImagesRequest& request, const GetContainerImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the log events of a container of your Amazon Lightsail container
@@ -1816,15 +1193,6 @@ namespace Lightsail
          */
         virtual Model::GetContainerLogOutcome GetContainerLog(const Model::GetContainerLogRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetContainerLog that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetContainerLogOutcomeCallable GetContainerLogCallable(const Model::GetContainerLogRequest& request) const;
-
-        /**
-         * An Async wrapper for GetContainerLog that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetContainerLogAsync(const Model::GetContainerLogRequest& request, const GetContainerLogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the deployments for your Amazon Lightsail container service</p> <p>A
@@ -1841,15 +1209,6 @@ namespace Lightsail
          */
         virtual Model::GetContainerServiceDeploymentsOutcome GetContainerServiceDeployments(const Model::GetContainerServiceDeploymentsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetContainerServiceDeployments that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetContainerServiceDeploymentsOutcomeCallable GetContainerServiceDeploymentsCallable(const Model::GetContainerServiceDeploymentsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetContainerServiceDeployments that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetContainerServiceDeploymentsAsync(const Model::GetContainerServiceDeploymentsRequest& request, const GetContainerServiceDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the data points of a specific metric of your Amazon Lightsail
@@ -1861,15 +1220,6 @@ namespace Lightsail
          */
         virtual Model::GetContainerServiceMetricDataOutcome GetContainerServiceMetricData(const Model::GetContainerServiceMetricDataRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetContainerServiceMetricData that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetContainerServiceMetricDataOutcomeCallable GetContainerServiceMetricDataCallable(const Model::GetContainerServiceMetricDataRequest& request) const;
-
-        /**
-         * An Async wrapper for GetContainerServiceMetricData that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetContainerServiceMetricDataAsync(const Model::GetContainerServiceMetricDataRequest& request, const GetContainerServiceMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the list of powers that can be specified for your Amazon Lightsail
@@ -1881,15 +1231,6 @@ namespace Lightsail
          */
         virtual Model::GetContainerServicePowersOutcome GetContainerServicePowers(const Model::GetContainerServicePowersRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetContainerServicePowers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetContainerServicePowersOutcomeCallable GetContainerServicePowersCallable(const Model::GetContainerServicePowersRequest& request) const;
-
-        /**
-         * An Async wrapper for GetContainerServicePowers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetContainerServicePowersAsync(const Model::GetContainerServicePowersRequest& request, const GetContainerServicePowersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about one or more of your Amazon Lightsail container
@@ -1899,15 +1240,6 @@ namespace Lightsail
          */
         virtual Model::GetContainerServicesOutcome GetContainerServices(const Model::GetContainerServicesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetContainerServices that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetContainerServicesOutcomeCallable GetContainerServicesCallable(const Model::GetContainerServicesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetContainerServices that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetContainerServicesAsync(const Model::GetContainerServicesRequest& request, const GetContainerServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a specific block storage disk.</p><p><h3>See
@@ -1917,15 +1249,6 @@ namespace Lightsail
          */
         virtual Model::GetDiskOutcome GetDisk(const Model::GetDiskRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDisk that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDiskOutcomeCallable GetDiskCallable(const Model::GetDiskRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDisk that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDiskAsync(const Model::GetDiskRequest& request, const GetDiskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a specific block storage disk
@@ -1935,15 +1258,6 @@ namespace Lightsail
          */
         virtual Model::GetDiskSnapshotOutcome GetDiskSnapshot(const Model::GetDiskSnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDiskSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDiskSnapshotOutcomeCallable GetDiskSnapshotCallable(const Model::GetDiskSnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDiskSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDiskSnapshotAsync(const Model::GetDiskSnapshotRequest& request, const GetDiskSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about all block storage disk snapshots in your AWS
@@ -1953,15 +1267,6 @@ namespace Lightsail
          */
         virtual Model::GetDiskSnapshotsOutcome GetDiskSnapshots(const Model::GetDiskSnapshotsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDiskSnapshots that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDiskSnapshotsOutcomeCallable GetDiskSnapshotsCallable(const Model::GetDiskSnapshotsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDiskSnapshots that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDiskSnapshotsAsync(const Model::GetDiskSnapshotsRequest& request, const GetDiskSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about all block storage disks in your AWS account and
@@ -1971,15 +1276,6 @@ namespace Lightsail
          */
         virtual Model::GetDisksOutcome GetDisks(const Model::GetDisksRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDisks that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDisksOutcomeCallable GetDisksCallable(const Model::GetDisksRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDisks that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDisksAsync(const Model::GetDisksRequest& request, const GetDisksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the bundles that can be applied to your Amazon Lightsail content
@@ -1991,15 +1287,6 @@ namespace Lightsail
          */
         virtual Model::GetDistributionBundlesOutcome GetDistributionBundles(const Model::GetDistributionBundlesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDistributionBundles that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDistributionBundlesOutcomeCallable GetDistributionBundlesCallable(const Model::GetDistributionBundlesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDistributionBundles that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDistributionBundlesAsync(const Model::GetDistributionBundlesRequest& request, const GetDistributionBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the timestamp and status of the last cache reset of a specific Amazon
@@ -2010,15 +1297,6 @@ namespace Lightsail
          */
         virtual Model::GetDistributionLatestCacheResetOutcome GetDistributionLatestCacheReset(const Model::GetDistributionLatestCacheResetRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDistributionLatestCacheReset that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDistributionLatestCacheResetOutcomeCallable GetDistributionLatestCacheResetCallable(const Model::GetDistributionLatestCacheResetRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDistributionLatestCacheReset that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDistributionLatestCacheResetAsync(const Model::GetDistributionLatestCacheResetRequest& request, const GetDistributionLatestCacheResetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the data points of a specific metric for an Amazon Lightsail content
@@ -2031,15 +1309,6 @@ namespace Lightsail
          */
         virtual Model::GetDistributionMetricDataOutcome GetDistributionMetricData(const Model::GetDistributionMetricDataRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDistributionMetricData that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDistributionMetricDataOutcomeCallable GetDistributionMetricDataCallable(const Model::GetDistributionMetricDataRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDistributionMetricData that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDistributionMetricDataAsync(const Model::GetDistributionMetricDataRequest& request, const GetDistributionMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about one or more of your Amazon Lightsail content
@@ -2049,15 +1318,6 @@ namespace Lightsail
          */
         virtual Model::GetDistributionsOutcome GetDistributions(const Model::GetDistributionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDistributions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDistributionsOutcomeCallable GetDistributionsCallable(const Model::GetDistributionsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDistributions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDistributionsAsync(const Model::GetDistributionsRequest& request, const GetDistributionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a specific domain recordset.</p><p><h3>See
@@ -2067,15 +1327,6 @@ namespace Lightsail
          */
         virtual Model::GetDomainOutcome GetDomain(const Model::GetDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDomainOutcomeCallable GetDomainCallable(const Model::GetDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDomainAsync(const Model::GetDomainRequest& request, const GetDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of all domains in the user's account.</p><p><h3>See Also:</h3>
@@ -2085,15 +1336,6 @@ namespace Lightsail
          */
         virtual Model::GetDomainsOutcome GetDomains(const Model::GetDomainsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDomains that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDomainsOutcomeCallable GetDomainsCallable(const Model::GetDomainsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDomains that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDomainsAsync(const Model::GetDomainsRequest& request, const GetDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns all export snapshot records created as a result of the <code>export
@@ -2106,15 +1348,6 @@ namespace Lightsail
          */
         virtual Model::GetExportSnapshotRecordsOutcome GetExportSnapshotRecords(const Model::GetExportSnapshotRecordsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetExportSnapshotRecords that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetExportSnapshotRecordsOutcomeCallable GetExportSnapshotRecordsCallable(const Model::GetExportSnapshotRecordsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetExportSnapshotRecords that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetExportSnapshotRecordsAsync(const Model::GetExportSnapshotRecordsRequest& request, const GetExportSnapshotRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a specific Amazon Lightsail instance, which is a
@@ -2124,15 +1357,6 @@ namespace Lightsail
          */
         virtual Model::GetInstanceOutcome GetInstance(const Model::GetInstanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetInstance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetInstanceOutcomeCallable GetInstanceCallable(const Model::GetInstanceRequest& request) const;
-
-        /**
-         * An Async wrapper for GetInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetInstanceAsync(const Model::GetInstanceRequest& request, const GetInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns temporary SSH keys you can use to connect to a specific virtual
@@ -2147,15 +1371,6 @@ namespace Lightsail
          */
         virtual Model::GetInstanceAccessDetailsOutcome GetInstanceAccessDetails(const Model::GetInstanceAccessDetailsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetInstanceAccessDetails that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetInstanceAccessDetailsOutcomeCallable GetInstanceAccessDetailsCallable(const Model::GetInstanceAccessDetailsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetInstanceAccessDetails that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetInstanceAccessDetailsAsync(const Model::GetInstanceAccessDetailsRequest& request, const GetInstanceAccessDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the data points for the specified Amazon Lightsail instance metric,
@@ -2168,15 +1383,6 @@ namespace Lightsail
          */
         virtual Model::GetInstanceMetricDataOutcome GetInstanceMetricData(const Model::GetInstanceMetricDataRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetInstanceMetricData that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetInstanceMetricDataOutcomeCallable GetInstanceMetricDataCallable(const Model::GetInstanceMetricDataRequest& request) const;
-
-        /**
-         * An Async wrapper for GetInstanceMetricData that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetInstanceMetricDataAsync(const Model::GetInstanceMetricDataRequest& request, const GetInstanceMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the firewall port states for a specific Amazon Lightsail instance,
@@ -2187,15 +1393,6 @@ namespace Lightsail
          */
         virtual Model::GetInstancePortStatesOutcome GetInstancePortStates(const Model::GetInstancePortStatesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetInstancePortStates that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetInstancePortStatesOutcomeCallable GetInstancePortStatesCallable(const Model::GetInstancePortStatesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetInstancePortStates that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetInstancePortStatesAsync(const Model::GetInstancePortStatesRequest& request, const GetInstancePortStatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a specific instance snapshot.</p><p><h3>See
@@ -2205,15 +1402,6 @@ namespace Lightsail
          */
         virtual Model::GetInstanceSnapshotOutcome GetInstanceSnapshot(const Model::GetInstanceSnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetInstanceSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetInstanceSnapshotOutcomeCallable GetInstanceSnapshotCallable(const Model::GetInstanceSnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for GetInstanceSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetInstanceSnapshotAsync(const Model::GetInstanceSnapshotRequest& request, const GetInstanceSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns all instance snapshots for the user's account.</p><p><h3>See
@@ -2223,15 +1411,6 @@ namespace Lightsail
          */
         virtual Model::GetInstanceSnapshotsOutcome GetInstanceSnapshots(const Model::GetInstanceSnapshotsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetInstanceSnapshots that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetInstanceSnapshotsOutcomeCallable GetInstanceSnapshotsCallable(const Model::GetInstanceSnapshotsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetInstanceSnapshots that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetInstanceSnapshotsAsync(const Model::GetInstanceSnapshotsRequest& request, const GetInstanceSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the state of a specific instance. Works on one instance at a
@@ -2241,15 +1420,6 @@ namespace Lightsail
          */
         virtual Model::GetInstanceStateOutcome GetInstanceState(const Model::GetInstanceStateRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetInstanceState that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetInstanceStateOutcomeCallable GetInstanceStateCallable(const Model::GetInstanceStateRequest& request) const;
-
-        /**
-         * An Async wrapper for GetInstanceState that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetInstanceStateAsync(const Model::GetInstanceStateRequest& request, const GetInstanceStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about all Amazon Lightsail virtual private servers, or
@@ -2259,15 +1429,6 @@ namespace Lightsail
          */
         virtual Model::GetInstancesOutcome GetInstances(const Model::GetInstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetInstances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetInstancesOutcomeCallable GetInstancesCallable(const Model::GetInstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetInstancesAsync(const Model::GetInstancesRequest& request, const GetInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a specific key pair.</p><p><h3>See Also:</h3>   <a
@@ -2276,15 +1437,6 @@ namespace Lightsail
          */
         virtual Model::GetKeyPairOutcome GetKeyPair(const Model::GetKeyPairRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetKeyPair that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetKeyPairOutcomeCallable GetKeyPairCallable(const Model::GetKeyPairRequest& request) const;
-
-        /**
-         * An Async wrapper for GetKeyPair that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetKeyPairAsync(const Model::GetKeyPairRequest& request, const GetKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about all key pairs in the user's account.</p><p><h3>See
@@ -2294,15 +1446,6 @@ namespace Lightsail
          */
         virtual Model::GetKeyPairsOutcome GetKeyPairs(const Model::GetKeyPairsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetKeyPairs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetKeyPairsOutcomeCallable GetKeyPairsCallable(const Model::GetKeyPairsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetKeyPairs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetKeyPairsAsync(const Model::GetKeyPairsRequest& request, const GetKeyPairsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the specified Lightsail load
@@ -2312,15 +1455,6 @@ namespace Lightsail
          */
         virtual Model::GetLoadBalancerOutcome GetLoadBalancer(const Model::GetLoadBalancerRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetLoadBalancer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetLoadBalancerOutcomeCallable GetLoadBalancerCallable(const Model::GetLoadBalancerRequest& request) const;
-
-        /**
-         * An Async wrapper for GetLoadBalancer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetLoadBalancerAsync(const Model::GetLoadBalancerRequest& request, const GetLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about health metrics for your Lightsail load
@@ -2333,15 +1467,6 @@ namespace Lightsail
          */
         virtual Model::GetLoadBalancerMetricDataOutcome GetLoadBalancerMetricData(const Model::GetLoadBalancerMetricDataRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetLoadBalancerMetricData that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetLoadBalancerMetricDataOutcomeCallable GetLoadBalancerMetricDataCallable(const Model::GetLoadBalancerMetricDataRequest& request) const;
-
-        /**
-         * An Async wrapper for GetLoadBalancerMetricData that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetLoadBalancerMetricDataAsync(const Model::GetLoadBalancerMetricDataRequest& request, const GetLoadBalancerMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the TLS certificates that are associated with the
@@ -2354,15 +1479,6 @@ namespace Lightsail
          */
         virtual Model::GetLoadBalancerTlsCertificatesOutcome GetLoadBalancerTlsCertificates(const Model::GetLoadBalancerTlsCertificatesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetLoadBalancerTlsCertificates that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetLoadBalancerTlsCertificatesOutcomeCallable GetLoadBalancerTlsCertificatesCallable(const Model::GetLoadBalancerTlsCertificatesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetLoadBalancerTlsCertificates that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetLoadBalancerTlsCertificatesAsync(const Model::GetLoadBalancerTlsCertificatesRequest& request, const GetLoadBalancerTlsCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of TLS security policies that you can apply to Lightsail load
@@ -2376,15 +1492,6 @@ namespace Lightsail
          */
         virtual Model::GetLoadBalancerTlsPoliciesOutcome GetLoadBalancerTlsPolicies(const Model::GetLoadBalancerTlsPoliciesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetLoadBalancerTlsPolicies that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetLoadBalancerTlsPoliciesOutcomeCallable GetLoadBalancerTlsPoliciesCallable(const Model::GetLoadBalancerTlsPoliciesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetLoadBalancerTlsPolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetLoadBalancerTlsPoliciesAsync(const Model::GetLoadBalancerTlsPoliciesRequest& request, const GetLoadBalancerTlsPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about all load balancers in an account.</p><p><h3>See
@@ -2394,15 +1501,6 @@ namespace Lightsail
          */
         virtual Model::GetLoadBalancersOutcome GetLoadBalancers(const Model::GetLoadBalancersRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetLoadBalancers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetLoadBalancersOutcomeCallable GetLoadBalancersCallable(const Model::GetLoadBalancersRequest& request) const;
-
-        /**
-         * An Async wrapper for GetLoadBalancers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetLoadBalancersAsync(const Model::GetLoadBalancersRequest& request, const GetLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a specific operation. Operations include events
@@ -2413,15 +1511,6 @@ namespace Lightsail
          */
         virtual Model::GetOperationOutcome GetOperation(const Model::GetOperationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetOperation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetOperationOutcomeCallable GetOperationCallable(const Model::GetOperationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetOperation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetOperationAsync(const Model::GetOperationRequest& request, const GetOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about all operations.</p> <p>Results are returned from
@@ -2434,15 +1523,6 @@ namespace Lightsail
          */
         virtual Model::GetOperationsOutcome GetOperations(const Model::GetOperationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetOperations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetOperationsOutcomeCallable GetOperationsCallable(const Model::GetOperationsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetOperations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetOperationsAsync(const Model::GetOperationsRequest& request, const GetOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets operations for a specific resource (e.g., an instance or a static
@@ -2452,15 +1532,6 @@ namespace Lightsail
          */
         virtual Model::GetOperationsForResourceOutcome GetOperationsForResource(const Model::GetOperationsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetOperationsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetOperationsForResourceOutcomeCallable GetOperationsForResourceCallable(const Model::GetOperationsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for GetOperationsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetOperationsForResourceAsync(const Model::GetOperationsForResourceRequest& request, const GetOperationsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of all valid regions for Amazon Lightsail. Use the
@@ -2471,15 +1542,6 @@ namespace Lightsail
          */
         virtual Model::GetRegionsOutcome GetRegions(const Model::GetRegionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRegions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRegionsOutcomeCallable GetRegionsCallable(const Model::GetRegionsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRegions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRegionsAsync(const Model::GetRegionsRequest& request, const GetRegionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a specific database in Amazon
@@ -2489,15 +1551,6 @@ namespace Lightsail
          */
         virtual Model::GetRelationalDatabaseOutcome GetRelationalDatabase(const Model::GetRelationalDatabaseRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRelationalDatabase that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRelationalDatabaseOutcomeCallable GetRelationalDatabaseCallable(const Model::GetRelationalDatabaseRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRelationalDatabase that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRelationalDatabaseAsync(const Model::GetRelationalDatabaseRequest& request, const GetRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of available database blueprints in Amazon Lightsail. A
@@ -2509,15 +1562,6 @@ namespace Lightsail
          */
         virtual Model::GetRelationalDatabaseBlueprintsOutcome GetRelationalDatabaseBlueprints(const Model::GetRelationalDatabaseBlueprintsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRelationalDatabaseBlueprints that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRelationalDatabaseBlueprintsOutcomeCallable GetRelationalDatabaseBlueprintsCallable(const Model::GetRelationalDatabaseBlueprintsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRelationalDatabaseBlueprints that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRelationalDatabaseBlueprintsAsync(const Model::GetRelationalDatabaseBlueprintsRequest& request, const GetRelationalDatabaseBlueprintsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the list of bundles that are available in Amazon Lightsail. A bundle
@@ -2529,15 +1573,6 @@ namespace Lightsail
          */
         virtual Model::GetRelationalDatabaseBundlesOutcome GetRelationalDatabaseBundles(const Model::GetRelationalDatabaseBundlesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRelationalDatabaseBundles that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRelationalDatabaseBundlesOutcomeCallable GetRelationalDatabaseBundlesCallable(const Model::GetRelationalDatabaseBundlesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRelationalDatabaseBundles that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRelationalDatabaseBundlesAsync(const Model::GetRelationalDatabaseBundlesRequest& request, const GetRelationalDatabaseBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of events for a specific database in Amazon
@@ -2547,15 +1582,6 @@ namespace Lightsail
          */
         virtual Model::GetRelationalDatabaseEventsOutcome GetRelationalDatabaseEvents(const Model::GetRelationalDatabaseEventsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRelationalDatabaseEvents that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRelationalDatabaseEventsOutcomeCallable GetRelationalDatabaseEventsCallable(const Model::GetRelationalDatabaseEventsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRelationalDatabaseEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRelationalDatabaseEventsAsync(const Model::GetRelationalDatabaseEventsRequest& request, const GetRelationalDatabaseEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of log events for a database in Amazon
@@ -2565,15 +1591,6 @@ namespace Lightsail
          */
         virtual Model::GetRelationalDatabaseLogEventsOutcome GetRelationalDatabaseLogEvents(const Model::GetRelationalDatabaseLogEventsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRelationalDatabaseLogEvents that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRelationalDatabaseLogEventsOutcomeCallable GetRelationalDatabaseLogEventsCallable(const Model::GetRelationalDatabaseLogEventsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRelationalDatabaseLogEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRelationalDatabaseLogEventsAsync(const Model::GetRelationalDatabaseLogEventsRequest& request, const GetRelationalDatabaseLogEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of available log streams for a specific database in Amazon
@@ -2583,15 +1600,6 @@ namespace Lightsail
          */
         virtual Model::GetRelationalDatabaseLogStreamsOutcome GetRelationalDatabaseLogStreams(const Model::GetRelationalDatabaseLogStreamsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRelationalDatabaseLogStreams that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRelationalDatabaseLogStreamsOutcomeCallable GetRelationalDatabaseLogStreamsCallable(const Model::GetRelationalDatabaseLogStreamsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRelationalDatabaseLogStreams that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRelationalDatabaseLogStreamsAsync(const Model::GetRelationalDatabaseLogStreamsRequest& request, const GetRelationalDatabaseLogStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the current, previous, or pending versions of the master user
@@ -2604,15 +1612,6 @@ namespace Lightsail
          */
         virtual Model::GetRelationalDatabaseMasterUserPasswordOutcome GetRelationalDatabaseMasterUserPassword(const Model::GetRelationalDatabaseMasterUserPasswordRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRelationalDatabaseMasterUserPassword that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRelationalDatabaseMasterUserPasswordOutcomeCallable GetRelationalDatabaseMasterUserPasswordCallable(const Model::GetRelationalDatabaseMasterUserPasswordRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRelationalDatabaseMasterUserPassword that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRelationalDatabaseMasterUserPasswordAsync(const Model::GetRelationalDatabaseMasterUserPasswordRequest& request, const GetRelationalDatabaseMasterUserPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the data points of the specified metric for a database in Amazon
@@ -2625,15 +1624,6 @@ namespace Lightsail
          */
         virtual Model::GetRelationalDatabaseMetricDataOutcome GetRelationalDatabaseMetricData(const Model::GetRelationalDatabaseMetricDataRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRelationalDatabaseMetricData that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRelationalDatabaseMetricDataOutcomeCallable GetRelationalDatabaseMetricDataCallable(const Model::GetRelationalDatabaseMetricDataRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRelationalDatabaseMetricData that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRelationalDatabaseMetricDataAsync(const Model::GetRelationalDatabaseMetricDataRequest& request, const GetRelationalDatabaseMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns all of the runtime parameters offered by the underlying database
@@ -2647,15 +1637,6 @@ namespace Lightsail
          */
         virtual Model::GetRelationalDatabaseParametersOutcome GetRelationalDatabaseParameters(const Model::GetRelationalDatabaseParametersRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRelationalDatabaseParameters that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRelationalDatabaseParametersOutcomeCallable GetRelationalDatabaseParametersCallable(const Model::GetRelationalDatabaseParametersRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRelationalDatabaseParameters that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRelationalDatabaseParametersAsync(const Model::GetRelationalDatabaseParametersRequest& request, const GetRelationalDatabaseParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a specific database snapshot in Amazon
@@ -2665,15 +1646,6 @@ namespace Lightsail
          */
         virtual Model::GetRelationalDatabaseSnapshotOutcome GetRelationalDatabaseSnapshot(const Model::GetRelationalDatabaseSnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRelationalDatabaseSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRelationalDatabaseSnapshotOutcomeCallable GetRelationalDatabaseSnapshotCallable(const Model::GetRelationalDatabaseSnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRelationalDatabaseSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRelationalDatabaseSnapshotAsync(const Model::GetRelationalDatabaseSnapshotRequest& request, const GetRelationalDatabaseSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about all of your database snapshots in Amazon
@@ -2683,15 +1655,6 @@ namespace Lightsail
          */
         virtual Model::GetRelationalDatabaseSnapshotsOutcome GetRelationalDatabaseSnapshots(const Model::GetRelationalDatabaseSnapshotsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRelationalDatabaseSnapshots that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRelationalDatabaseSnapshotsOutcomeCallable GetRelationalDatabaseSnapshotsCallable(const Model::GetRelationalDatabaseSnapshotsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRelationalDatabaseSnapshots that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRelationalDatabaseSnapshotsAsync(const Model::GetRelationalDatabaseSnapshotsRequest& request, const GetRelationalDatabaseSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about all of your databases in Amazon
@@ -2701,15 +1664,6 @@ namespace Lightsail
          */
         virtual Model::GetRelationalDatabasesOutcome GetRelationalDatabases(const Model::GetRelationalDatabasesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRelationalDatabases that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRelationalDatabasesOutcomeCallable GetRelationalDatabasesCallable(const Model::GetRelationalDatabasesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRelationalDatabases that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRelationalDatabasesAsync(const Model::GetRelationalDatabasesRequest& request, const GetRelationalDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about an Amazon Lightsail static IP.</p><p><h3>See
@@ -2719,15 +1673,6 @@ namespace Lightsail
          */
         virtual Model::GetStaticIpOutcome GetStaticIp(const Model::GetStaticIpRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetStaticIp that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetStaticIpOutcomeCallable GetStaticIpCallable(const Model::GetStaticIpRequest& request) const;
-
-        /**
-         * An Async wrapper for GetStaticIp that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetStaticIpAsync(const Model::GetStaticIpRequest& request, const GetStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about all static IPs in the user's account.</p><p><h3>See
@@ -2737,15 +1682,6 @@ namespace Lightsail
          */
         virtual Model::GetStaticIpsOutcome GetStaticIps(const Model::GetStaticIpsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetStaticIps that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetStaticIpsOutcomeCallable GetStaticIpsCallable(const Model::GetStaticIpsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetStaticIps that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetStaticIpsAsync(const Model::GetStaticIpsRequest& request, const GetStaticIpsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Imports a public SSH key from a specific key pair.</p><p><h3>See Also:</h3>  
@@ -2755,15 +1691,6 @@ namespace Lightsail
          */
         virtual Model::ImportKeyPairOutcome ImportKeyPair(const Model::ImportKeyPairRequest& request) const;
 
-        /**
-         * A Callable wrapper for ImportKeyPair that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ImportKeyPairOutcomeCallable ImportKeyPairCallable(const Model::ImportKeyPairRequest& request) const;
-
-        /**
-         * An Async wrapper for ImportKeyPair that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ImportKeyPairAsync(const Model::ImportKeyPairRequest& request, const ImportKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a Boolean value indicating whether your Lightsail VPC is
@@ -2773,15 +1700,6 @@ namespace Lightsail
          */
         virtual Model::IsVpcPeeredOutcome IsVpcPeered(const Model::IsVpcPeeredRequest& request) const;
 
-        /**
-         * A Callable wrapper for IsVpcPeered that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::IsVpcPeeredOutcomeCallable IsVpcPeeredCallable(const Model::IsVpcPeeredRequest& request) const;
-
-        /**
-         * An Async wrapper for IsVpcPeered that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void IsVpcPeeredAsync(const Model::IsVpcPeeredRequest& request, const IsVpcPeeredResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Opens ports for a specific Amazon Lightsail instance, and specifies the IP
@@ -2796,15 +1714,6 @@ namespace Lightsail
          */
         virtual Model::OpenInstancePublicPortsOutcome OpenInstancePublicPorts(const Model::OpenInstancePublicPortsRequest& request) const;
 
-        /**
-         * A Callable wrapper for OpenInstancePublicPorts that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::OpenInstancePublicPortsOutcomeCallable OpenInstancePublicPortsCallable(const Model::OpenInstancePublicPortsRequest& request) const;
-
-        /**
-         * An Async wrapper for OpenInstancePublicPorts that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void OpenInstancePublicPortsAsync(const Model::OpenInstancePublicPortsRequest& request, const OpenInstancePublicPortsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Peers the Lightsail VPC with the user's default VPC.</p><p><h3>See Also:</h3>
@@ -2814,15 +1723,6 @@ namespace Lightsail
          */
         virtual Model::PeerVpcOutcome PeerVpc(const Model::PeerVpcRequest& request) const;
 
-        /**
-         * A Callable wrapper for PeerVpc that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PeerVpcOutcomeCallable PeerVpcCallable(const Model::PeerVpcRequest& request) const;
-
-        /**
-         * An Async wrapper for PeerVpc that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PeerVpcAsync(const Model::PeerVpcRequest& request, const PeerVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates or updates an alarm, and associates it with the specified metric.</p>
@@ -2843,15 +1743,6 @@ namespace Lightsail
          */
         virtual Model::PutAlarmOutcome PutAlarm(const Model::PutAlarmRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutAlarm that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutAlarmOutcomeCallable PutAlarmCallable(const Model::PutAlarmRequest& request) const;
-
-        /**
-         * An Async wrapper for PutAlarm that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutAlarmAsync(const Model::PutAlarmRequest& request, const PutAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Opens ports for a specific Amazon Lightsail instance, and specifies the IP
@@ -2870,15 +1761,6 @@ namespace Lightsail
          */
         virtual Model::PutInstancePublicPortsOutcome PutInstancePublicPorts(const Model::PutInstancePublicPortsRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutInstancePublicPorts that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutInstancePublicPortsOutcomeCallable PutInstancePublicPortsCallable(const Model::PutInstancePublicPortsRequest& request) const;
-
-        /**
-         * An Async wrapper for PutInstancePublicPorts that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutInstancePublicPortsAsync(const Model::PutInstancePublicPortsRequest& request, const PutInstancePublicPortsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Restarts a specific instance.</p> <p>The <code>reboot instance</code>
@@ -2892,15 +1774,6 @@ namespace Lightsail
          */
         virtual Model::RebootInstanceOutcome RebootInstance(const Model::RebootInstanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for RebootInstance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RebootInstanceOutcomeCallable RebootInstanceCallable(const Model::RebootInstanceRequest& request) const;
-
-        /**
-         * An Async wrapper for RebootInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RebootInstanceAsync(const Model::RebootInstanceRequest& request, const RebootInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Restarts a specific database in Amazon Lightsail.</p> <p>The <code>reboot
@@ -2914,15 +1787,6 @@ namespace Lightsail
          */
         virtual Model::RebootRelationalDatabaseOutcome RebootRelationalDatabase(const Model::RebootRelationalDatabaseRequest& request) const;
 
-        /**
-         * A Callable wrapper for RebootRelationalDatabase that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RebootRelationalDatabaseOutcomeCallable RebootRelationalDatabaseCallable(const Model::RebootRelationalDatabaseRequest& request) const;
-
-        /**
-         * An Async wrapper for RebootRelationalDatabase that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RebootRelationalDatabaseAsync(const Model::RebootRelationalDatabaseRequest& request, const RebootRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Registers a container image to your Amazon Lightsail container service.</p>
@@ -2938,15 +1802,6 @@ namespace Lightsail
          */
         virtual Model::RegisterContainerImageOutcome RegisterContainerImage(const Model::RegisterContainerImageRequest& request) const;
 
-        /**
-         * A Callable wrapper for RegisterContainerImage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RegisterContainerImageOutcomeCallable RegisterContainerImageCallable(const Model::RegisterContainerImageRequest& request) const;
-
-        /**
-         * An Async wrapper for RegisterContainerImage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RegisterContainerImageAsync(const Model::RegisterContainerImageRequest& request, const RegisterContainerImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a specific static IP from your account.</p><p><h3>See Also:</h3>   <a
@@ -2955,15 +1810,6 @@ namespace Lightsail
          */
         virtual Model::ReleaseStaticIpOutcome ReleaseStaticIp(const Model::ReleaseStaticIpRequest& request) const;
 
-        /**
-         * A Callable wrapper for ReleaseStaticIp that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ReleaseStaticIpOutcomeCallable ReleaseStaticIpCallable(const Model::ReleaseStaticIpRequest& request) const;
-
-        /**
-         * An Async wrapper for ReleaseStaticIp that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ReleaseStaticIpAsync(const Model::ReleaseStaticIpRequest& request, const ReleaseStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes currently cached content from your Amazon Lightsail content delivery
@@ -2975,15 +1821,6 @@ namespace Lightsail
          */
         virtual Model::ResetDistributionCacheOutcome ResetDistributionCache(const Model::ResetDistributionCacheRequest& request) const;
 
-        /**
-         * A Callable wrapper for ResetDistributionCache that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ResetDistributionCacheOutcomeCallable ResetDistributionCacheCallable(const Model::ResetDistributionCacheRequest& request) const;
-
-        /**
-         * An Async wrapper for ResetDistributionCache that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ResetDistributionCacheAsync(const Model::ResetDistributionCacheRequest& request, const ResetDistributionCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sends a verification request to an email contact method to ensure it's owned
@@ -3005,15 +1842,6 @@ namespace Lightsail
          */
         virtual Model::SendContactMethodVerificationOutcome SendContactMethodVerification(const Model::SendContactMethodVerificationRequest& request) const;
 
-        /**
-         * A Callable wrapper for SendContactMethodVerification that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SendContactMethodVerificationOutcomeCallable SendContactMethodVerificationCallable(const Model::SendContactMethodVerificationRequest& request) const;
-
-        /**
-         * An Async wrapper for SendContactMethodVerification that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SendContactMethodVerificationAsync(const Model::SendContactMethodVerificationRequest& request, const SendContactMethodVerificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets the IP address type for an Amazon Lightsail resource.</p> <p>Use this
@@ -3025,15 +1853,6 @@ namespace Lightsail
          */
         virtual Model::SetIpAddressTypeOutcome SetIpAddressType(const Model::SetIpAddressTypeRequest& request) const;
 
-        /**
-         * A Callable wrapper for SetIpAddressType that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SetIpAddressTypeOutcomeCallable SetIpAddressTypeCallable(const Model::SetIpAddressTypeRequest& request) const;
-
-        /**
-         * An Async wrapper for SetIpAddressType that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SetIpAddressTypeAsync(const Model::SetIpAddressTypeRequest& request, const SetIpAddressTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets the Amazon Lightsail resources that can access the specified Lightsail
@@ -3044,15 +1863,6 @@ namespace Lightsail
          */
         virtual Model::SetResourceAccessForBucketOutcome SetResourceAccessForBucket(const Model::SetResourceAccessForBucketRequest& request) const;
 
-        /**
-         * A Callable wrapper for SetResourceAccessForBucket that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SetResourceAccessForBucketOutcomeCallable SetResourceAccessForBucketCallable(const Model::SetResourceAccessForBucketRequest& request) const;
-
-        /**
-         * An Async wrapper for SetResourceAccessForBucket that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SetResourceAccessForBucketAsync(const Model::SetResourceAccessForBucketRequest& request, const SetResourceAccessForBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts a specific Amazon Lightsail instance from a stopped state. To restart
@@ -3073,15 +1883,6 @@ namespace Lightsail
          */
         virtual Model::StartInstanceOutcome StartInstance(const Model::StartInstanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartInstance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartInstanceOutcomeCallable StartInstanceCallable(const Model::StartInstanceRequest& request) const;
-
-        /**
-         * An Async wrapper for StartInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartInstanceAsync(const Model::StartInstanceRequest& request, const StartInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts a specific database from a stopped state in Amazon Lightsail. To
@@ -3096,15 +1897,6 @@ namespace Lightsail
          */
         virtual Model::StartRelationalDatabaseOutcome StartRelationalDatabase(const Model::StartRelationalDatabaseRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartRelationalDatabase that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartRelationalDatabaseOutcomeCallable StartRelationalDatabaseCallable(const Model::StartRelationalDatabaseRequest& request) const;
-
-        /**
-         * An Async wrapper for StartRelationalDatabase that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartRelationalDatabaseAsync(const Model::StartRelationalDatabaseRequest& request, const StartRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops a specific Amazon Lightsail instance that is currently running.</p>
@@ -3124,15 +1916,6 @@ namespace Lightsail
          */
         virtual Model::StopInstanceOutcome StopInstance(const Model::StopInstanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopInstance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopInstanceOutcomeCallable StopInstanceCallable(const Model::StopInstanceRequest& request) const;
-
-        /**
-         * An Async wrapper for StopInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopInstanceAsync(const Model::StopInstanceRequest& request, const StopInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops a specific database that is currently running in Amazon Lightsail.</p>
@@ -3146,15 +1929,6 @@ namespace Lightsail
          */
         virtual Model::StopRelationalDatabaseOutcome StopRelationalDatabase(const Model::StopRelationalDatabaseRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopRelationalDatabase that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopRelationalDatabaseOutcomeCallable StopRelationalDatabaseCallable(const Model::StopRelationalDatabaseRequest& request) const;
-
-        /**
-         * An Async wrapper for StopRelationalDatabase that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopRelationalDatabaseAsync(const Model::StopRelationalDatabaseRequest& request, const StopRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds one or more tags to the specified Amazon Lightsail resource. Each
@@ -3173,15 +1947,6 @@ namespace Lightsail
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Tests an alarm by displaying a banner on the Amazon Lightsail console. If a
@@ -3198,15 +1963,6 @@ namespace Lightsail
          */
         virtual Model::TestAlarmOutcome TestAlarm(const Model::TestAlarmRequest& request) const;
 
-        /**
-         * A Callable wrapper for TestAlarm that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TestAlarmOutcomeCallable TestAlarmCallable(const Model::TestAlarmRequest& request) const;
-
-        /**
-         * An Async wrapper for TestAlarm that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TestAlarmAsync(const Model::TestAlarmRequest& request, const TestAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Unpeers the Lightsail VPC from the user's default VPC.</p><p><h3>See
@@ -3216,15 +1972,6 @@ namespace Lightsail
          */
         virtual Model::UnpeerVpcOutcome UnpeerVpc(const Model::UnpeerVpcRequest& request) const;
 
-        /**
-         * A Callable wrapper for UnpeerVpc that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UnpeerVpcOutcomeCallable UnpeerVpcCallable(const Model::UnpeerVpcRequest& request) const;
-
-        /**
-         * An Async wrapper for UnpeerVpc that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UnpeerVpcAsync(const Model::UnpeerVpcRequest& request, const UnpeerVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified set of tag keys and their values from the specified
@@ -3239,15 +1986,6 @@ namespace Lightsail
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an existing Amazon Lightsail bucket.</p> <p>Use this action to update
@@ -3259,15 +1997,6 @@ namespace Lightsail
          */
         virtual Model::UpdateBucketOutcome UpdateBucket(const Model::UpdateBucketRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateBucket that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateBucketOutcomeCallable UpdateBucketCallable(const Model::UpdateBucketRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateBucket that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateBucketAsync(const Model::UpdateBucketRequest& request, const UpdateBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the bundle, or storage plan, of an existing Amazon Lightsail
@@ -3291,15 +2020,6 @@ namespace Lightsail
          */
         virtual Model::UpdateBucketBundleOutcome UpdateBucketBundle(const Model::UpdateBucketBundleRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateBucketBundle that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateBucketBundleOutcomeCallable UpdateBucketBundleCallable(const Model::UpdateBucketBundleRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateBucketBundle that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateBucketBundleAsync(const Model::UpdateBucketBundleRequest& request, const UpdateBucketBundleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the configuration of your Amazon Lightsail container service, such as
@@ -3309,15 +2029,6 @@ namespace Lightsail
          */
         virtual Model::UpdateContainerServiceOutcome UpdateContainerService(const Model::UpdateContainerServiceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateContainerService that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateContainerServiceOutcomeCallable UpdateContainerServiceCallable(const Model::UpdateContainerServiceRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateContainerService that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateContainerServiceAsync(const Model::UpdateContainerServiceRequest& request, const UpdateContainerServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an existing Amazon Lightsail content delivery network (CDN)
@@ -3328,15 +2039,6 @@ namespace Lightsail
          */
         virtual Model::UpdateDistributionOutcome UpdateDistribution(const Model::UpdateDistributionRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateDistribution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateDistributionOutcomeCallable UpdateDistributionCallable(const Model::UpdateDistributionRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateDistribution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateDistributionAsync(const Model::UpdateDistributionRequest& request, const UpdateDistributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the bundle of your Amazon Lightsail content delivery network (CDN)
@@ -3354,15 +2056,6 @@ namespace Lightsail
          */
         virtual Model::UpdateDistributionBundleOutcome UpdateDistributionBundle(const Model::UpdateDistributionBundleRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateDistributionBundle that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateDistributionBundleOutcomeCallable UpdateDistributionBundleCallable(const Model::UpdateDistributionBundleRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateDistributionBundle that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateDistributionBundleAsync(const Model::UpdateDistributionBundleRequest& request, const UpdateDistributionBundleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a domain recordset after it is created.</p> <p>The <code>update
@@ -3376,15 +2069,6 @@ namespace Lightsail
          */
         virtual Model::UpdateDomainEntryOutcome UpdateDomainEntry(const Model::UpdateDomainEntryRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateDomainEntry that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateDomainEntryOutcomeCallable UpdateDomainEntryCallable(const Model::UpdateDomainEntryRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateDomainEntry that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateDomainEntryAsync(const Model::UpdateDomainEntryRequest& request, const UpdateDomainEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the Amazon Lightsail instance metadata parameters on a running or
@@ -3402,15 +2086,6 @@ namespace Lightsail
          */
         virtual Model::UpdateInstanceMetadataOptionsOutcome UpdateInstanceMetadataOptions(const Model::UpdateInstanceMetadataOptionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateInstanceMetadataOptions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateInstanceMetadataOptionsOutcomeCallable UpdateInstanceMetadataOptionsCallable(const Model::UpdateInstanceMetadataOptionsRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateInstanceMetadataOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateInstanceMetadataOptionsAsync(const Model::UpdateInstanceMetadataOptionsRequest& request, const UpdateInstanceMetadataOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the specified attribute for a load balancer. You can only update one
@@ -3425,15 +2100,6 @@ namespace Lightsail
          */
         virtual Model::UpdateLoadBalancerAttributeOutcome UpdateLoadBalancerAttribute(const Model::UpdateLoadBalancerAttributeRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateLoadBalancerAttribute that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateLoadBalancerAttributeOutcomeCallable UpdateLoadBalancerAttributeCallable(const Model::UpdateLoadBalancerAttributeRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateLoadBalancerAttribute that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateLoadBalancerAttributeAsync(const Model::UpdateLoadBalancerAttributeRequest& request, const UpdateLoadBalancerAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Allows the update of one or more attributes of a database in Amazon
@@ -3449,15 +2115,6 @@ namespace Lightsail
          */
         virtual Model::UpdateRelationalDatabaseOutcome UpdateRelationalDatabase(const Model::UpdateRelationalDatabaseRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateRelationalDatabase that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateRelationalDatabaseOutcomeCallable UpdateRelationalDatabaseCallable(const Model::UpdateRelationalDatabaseRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateRelationalDatabase that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateRelationalDatabaseAsync(const Model::UpdateRelationalDatabaseRequest& request, const UpdateRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Allows the update of one or more parameters of a database in Amazon
@@ -3478,15 +2135,6 @@ namespace Lightsail
          */
         virtual Model::UpdateRelationalDatabaseParametersOutcome UpdateRelationalDatabaseParameters(const Model::UpdateRelationalDatabaseParametersRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateRelationalDatabaseParameters that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateRelationalDatabaseParametersOutcomeCallable UpdateRelationalDatabaseParametersCallable(const Model::UpdateRelationalDatabaseParametersRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateRelationalDatabaseParameters that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateRelationalDatabaseParametersAsync(const Model::UpdateRelationalDatabaseParametersRequest& request, const UpdateRelationalDatabaseParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

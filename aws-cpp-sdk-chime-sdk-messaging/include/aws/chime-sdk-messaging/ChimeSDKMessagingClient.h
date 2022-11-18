@@ -7,8 +7,10 @@
 #include <aws/chime-sdk-messaging/ChimeSDKMessaging_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/chime-sdk-messaging/ChimeSDKMessagingServiceClientModel.h>
+#include <aws/chime-sdk-messaging/ChimeSDKMessagingLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -78,6 +80,47 @@ namespace ChimeSDKMessaging
         virtual ~ChimeSDKMessagingClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Associates a channel flow with a channel. Once associated, all messages to
          * that channel go through channel flow processors. To stop processing, use the
@@ -91,15 +134,6 @@ namespace ChimeSDKMessaging
          */
         virtual Model::AssociateChannelFlowOutcome AssociateChannelFlow(const Model::AssociateChannelFlowRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateChannelFlow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateChannelFlowOutcomeCallable AssociateChannelFlowCallable(const Model::AssociateChannelFlowRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateChannelFlow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateChannelFlowAsync(const Model::AssociateChannelFlowRequest& request, const AssociateChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds a specified number of users to a channel. </p><p><h3>See Also:</h3>   <a
@@ -108,15 +142,6 @@ namespace ChimeSDKMessaging
          */
         virtual Model::BatchCreateChannelMembershipOutcome BatchCreateChannelMembership(const Model::BatchCreateChannelMembershipRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchCreateChannelMembership that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchCreateChannelMembershipOutcomeCallable BatchCreateChannelMembershipCallable(const Model::BatchCreateChannelMembershipRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchCreateChannelMembership that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchCreateChannelMembershipAsync(const Model::BatchCreateChannelMembershipRequest& request, const BatchCreateChannelMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Calls back Chime SDK Messaging with a processing response message. This
@@ -129,15 +154,6 @@ namespace ChimeSDKMessaging
          */
         virtual Model::ChannelFlowCallbackOutcome ChannelFlowCallback(const Model::ChannelFlowCallbackRequest& request) const;
 
-        /**
-         * A Callable wrapper for ChannelFlowCallback that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ChannelFlowCallbackOutcomeCallable ChannelFlowCallbackCallable(const Model::ChannelFlowCallbackRequest& request) const;
-
-        /**
-         * An Async wrapper for ChannelFlowCallback that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ChannelFlowCallbackAsync(const Model::ChannelFlowCallbackRequest& request, const ChannelFlowCallbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a channel to which you can add users and send messages.</p> <p>
@@ -150,15 +166,6 @@ namespace ChimeSDKMessaging
          */
         virtual Model::CreateChannelOutcome CreateChannel(const Model::CreateChannelRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateChannel that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateChannelOutcomeCallable CreateChannelCallable(const Model::CreateChannelRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateChannel that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateChannelAsync(const Model::CreateChannelRequest& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Permanently bans a member from a channel. Moderators can't add banned members
@@ -174,15 +181,6 @@ namespace ChimeSDKMessaging
          */
         virtual Model::CreateChannelBanOutcome CreateChannelBan(const Model::CreateChannelBanRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateChannelBan that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateChannelBanOutcomeCallable CreateChannelBanCallable(const Model::CreateChannelBanRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateChannelBan that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateChannelBanAsync(const Model::CreateChannelBanRequest& request, const CreateChannelBanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a channel flow, a container for processors. Processors are AWS Lambda
@@ -202,15 +200,6 @@ namespace ChimeSDKMessaging
          */
         virtual Model::CreateChannelFlowOutcome CreateChannelFlow(const Model::CreateChannelFlowRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateChannelFlow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateChannelFlowOutcomeCallable CreateChannelFlowCallable(const Model::CreateChannelFlowRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateChannelFlow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateChannelFlowAsync(const Model::CreateChannelFlowRequest& request, const CreateChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds a user to a channel. The <code>InvitedBy</code> field in
@@ -229,15 +218,6 @@ namespace ChimeSDKMessaging
          */
         virtual Model::CreateChannelMembershipOutcome CreateChannelMembership(const Model::CreateChannelMembershipRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateChannelMembership that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateChannelMembershipOutcomeCallable CreateChannelMembershipCallable(const Model::CreateChannelMembershipRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateChannelMembership that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateChannelMembershipAsync(const Model::CreateChannelMembershipRequest& request, const CreateChannelMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new <code>ChannelModerator</code>. A channel moderator can:</p>
@@ -253,15 +233,6 @@ namespace ChimeSDKMessaging
          */
         virtual Model::CreateChannelModeratorOutcome CreateChannelModerator(const Model::CreateChannelModeratorRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateChannelModerator that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateChannelModeratorOutcomeCallable CreateChannelModeratorCallable(const Model::CreateChannelModeratorRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateChannelModerator that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateChannelModeratorAsync(const Model::CreateChannelModeratorRequest& request, const CreateChannelModeratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Immediately makes a channel and its memberships inaccessible and marks them
@@ -274,15 +245,6 @@ namespace ChimeSDKMessaging
          */
         virtual Model::DeleteChannelOutcome DeleteChannel(const Model::DeleteChannelRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteChannel that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteChannelOutcomeCallable DeleteChannelCallable(const Model::DeleteChannelRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteChannel that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteChannelAsync(const Model::DeleteChannelRequest& request, const DeleteChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes a user from a channel's ban list.</p>  <p>The
@@ -294,15 +256,6 @@ namespace ChimeSDKMessaging
          */
         virtual Model::DeleteChannelBanOutcome DeleteChannelBan(const Model::DeleteChannelBanRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteChannelBan that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteChannelBanOutcomeCallable DeleteChannelBanCallable(const Model::DeleteChannelBanRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteChannelBan that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteChannelBanAsync(const Model::DeleteChannelBanRequest& request, const DeleteChannelBanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a channel flow, an irreversible process. This is a developer API.</p>
@@ -316,15 +269,6 @@ namespace ChimeSDKMessaging
          */
         virtual Model::DeleteChannelFlowOutcome DeleteChannelFlow(const Model::DeleteChannelFlowRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteChannelFlow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteChannelFlowOutcomeCallable DeleteChannelFlowCallable(const Model::DeleteChannelFlowRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteChannelFlow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteChannelFlowAsync(const Model::DeleteChannelFlowRequest& request, const DeleteChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes a member from a channel.</p>  <p>The
@@ -336,15 +280,6 @@ namespace ChimeSDKMessaging
          */
         virtual Model::DeleteChannelMembershipOutcome DeleteChannelMembership(const Model::DeleteChannelMembershipRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteChannelMembership that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteChannelMembershipOutcomeCallable DeleteChannelMembershipCallable(const Model::DeleteChannelMembershipRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteChannelMembership that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteChannelMembershipAsync(const Model::DeleteChannelMembershipRequest& request, const DeleteChannelMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a channel message. Only admins can perform this action. Deletion
@@ -358,15 +293,6 @@ namespace ChimeSDKMessaging
          */
         virtual Model::DeleteChannelMessageOutcome DeleteChannelMessage(const Model::DeleteChannelMessageRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteChannelMessage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteChannelMessageOutcomeCallable DeleteChannelMessageCallable(const Model::DeleteChannelMessageRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteChannelMessage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteChannelMessageAsync(const Model::DeleteChannelMessageRequest& request, const DeleteChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a channel moderator.</p>  <p>The
@@ -378,15 +304,6 @@ namespace ChimeSDKMessaging
          */
         virtual Model::DeleteChannelModeratorOutcome DeleteChannelModerator(const Model::DeleteChannelModeratorRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteChannelModerator that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteChannelModeratorOutcomeCallable DeleteChannelModeratorCallable(const Model::DeleteChannelModeratorRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteChannelModerator that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteChannelModeratorAsync(const Model::DeleteChannelModeratorRequest& request, const DeleteChannelModeratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the full details of a channel in an Amazon Chime
@@ -399,15 +316,6 @@ namespace ChimeSDKMessaging
          */
         virtual Model::DescribeChannelOutcome DescribeChannel(const Model::DescribeChannelRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeChannel that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeChannelOutcomeCallable DescribeChannelCallable(const Model::DescribeChannelRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeChannel that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeChannelAsync(const Model::DescribeChannelRequest& request, const DescribeChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the full details of a channel ban.</p>  <p>The
@@ -419,15 +327,6 @@ namespace ChimeSDKMessaging
          */
         virtual Model::DescribeChannelBanOutcome DescribeChannelBan(const Model::DescribeChannelBanRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeChannelBan that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeChannelBanOutcomeCallable DescribeChannelBanCallable(const Model::DescribeChannelBanRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeChannelBan that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeChannelBanAsync(const Model::DescribeChannelBanRequest& request, const DescribeChannelBanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the full details of a channel flow in an Amazon Chime
@@ -437,15 +336,6 @@ namespace ChimeSDKMessaging
          */
         virtual Model::DescribeChannelFlowOutcome DescribeChannelFlow(const Model::DescribeChannelFlowRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeChannelFlow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeChannelFlowOutcomeCallable DescribeChannelFlowCallable(const Model::DescribeChannelFlowRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeChannelFlow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeChannelFlowAsync(const Model::DescribeChannelFlowRequest& request, const DescribeChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the full details of a user's channel membership.</p>  <p>The
@@ -457,15 +347,6 @@ namespace ChimeSDKMessaging
          */
         virtual Model::DescribeChannelMembershipOutcome DescribeChannelMembership(const Model::DescribeChannelMembershipRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeChannelMembership that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeChannelMembershipOutcomeCallable DescribeChannelMembershipCallable(const Model::DescribeChannelMembershipRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeChannelMembership that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeChannelMembershipAsync(const Model::DescribeChannelMembershipRequest& request, const DescribeChannelMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns the details of a channel based on the membership of the specified
@@ -478,15 +359,6 @@ namespace ChimeSDKMessaging
          */
         virtual Model::DescribeChannelMembershipForAppInstanceUserOutcome DescribeChannelMembershipForAppInstanceUser(const Model::DescribeChannelMembershipForAppInstanceUserRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeChannelMembershipForAppInstanceUser that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeChannelMembershipForAppInstanceUserOutcomeCallable DescribeChannelMembershipForAppInstanceUserCallable(const Model::DescribeChannelMembershipForAppInstanceUserRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeChannelMembershipForAppInstanceUser that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeChannelMembershipForAppInstanceUserAsync(const Model::DescribeChannelMembershipForAppInstanceUserRequest& request, const DescribeChannelMembershipForAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the full details of a channel moderated by the specified
@@ -499,15 +371,6 @@ namespace ChimeSDKMessaging
          */
         virtual Model::DescribeChannelModeratedByAppInstanceUserOutcome DescribeChannelModeratedByAppInstanceUser(const Model::DescribeChannelModeratedByAppInstanceUserRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeChannelModeratedByAppInstanceUser that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeChannelModeratedByAppInstanceUserOutcomeCallable DescribeChannelModeratedByAppInstanceUserCallable(const Model::DescribeChannelModeratedByAppInstanceUserRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeChannelModeratedByAppInstanceUser that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeChannelModeratedByAppInstanceUserAsync(const Model::DescribeChannelModeratedByAppInstanceUserRequest& request, const DescribeChannelModeratedByAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the full details of a single ChannelModerator.</p>  <p>The
@@ -519,15 +382,6 @@ namespace ChimeSDKMessaging
          */
         virtual Model::DescribeChannelModeratorOutcome DescribeChannelModerator(const Model::DescribeChannelModeratorRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeChannelModerator that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeChannelModeratorOutcomeCallable DescribeChannelModeratorCallable(const Model::DescribeChannelModeratorRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeChannelModerator that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeChannelModeratorAsync(const Model::DescribeChannelModeratorRequest& request, const DescribeChannelModeratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates a channel flow from all its channels. Once disassociated, all
@@ -541,15 +395,6 @@ namespace ChimeSDKMessaging
          */
         virtual Model::DisassociateChannelFlowOutcome DisassociateChannelFlow(const Model::DisassociateChannelFlowRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateChannelFlow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateChannelFlowOutcomeCallable DisassociateChannelFlowCallable(const Model::DisassociateChannelFlowRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateChannelFlow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateChannelFlowAsync(const Model::DisassociateChannelFlowRequest& request, const DisassociateChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the membership preferences of an <code>AppInstanceUser</code> for the
@@ -564,15 +409,6 @@ namespace ChimeSDKMessaging
          */
         virtual Model::GetChannelMembershipPreferencesOutcome GetChannelMembershipPreferences(const Model::GetChannelMembershipPreferencesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetChannelMembershipPreferences that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetChannelMembershipPreferencesOutcomeCallable GetChannelMembershipPreferencesCallable(const Model::GetChannelMembershipPreferencesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetChannelMembershipPreferences that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetChannelMembershipPreferencesAsync(const Model::GetChannelMembershipPreferencesRequest& request, const GetChannelMembershipPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the full details of a channel message.</p>  <p>The
@@ -584,15 +420,6 @@ namespace ChimeSDKMessaging
          */
         virtual Model::GetChannelMessageOutcome GetChannelMessage(const Model::GetChannelMessageRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetChannelMessage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetChannelMessageOutcomeCallable GetChannelMessageCallable(const Model::GetChannelMessageRequest& request) const;
-
-        /**
-         * An Async wrapper for GetChannelMessage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetChannelMessageAsync(const Model::GetChannelMessageRequest& request, const GetChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets message status for a specified <code>messageId</code>. Use this API to
@@ -614,15 +441,6 @@ namespace ChimeSDKMessaging
          */
         virtual Model::GetChannelMessageStatusOutcome GetChannelMessageStatus(const Model::GetChannelMessageStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetChannelMessageStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetChannelMessageStatusOutcomeCallable GetChannelMessageStatusCallable(const Model::GetChannelMessageStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for GetChannelMessageStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetChannelMessageStatusAsync(const Model::GetChannelMessageStatusRequest& request, const GetChannelMessageStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The details of the endpoint for the messaging session.</p><p><h3>See
@@ -632,15 +450,6 @@ namespace ChimeSDKMessaging
          */
         virtual Model::GetMessagingSessionEndpointOutcome GetMessagingSessionEndpoint(const Model::GetMessagingSessionEndpointRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetMessagingSessionEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetMessagingSessionEndpointOutcomeCallable GetMessagingSessionEndpointCallable(const Model::GetMessagingSessionEndpointRequest& request) const;
-
-        /**
-         * An Async wrapper for GetMessagingSessionEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetMessagingSessionEndpointAsync(const Model::GetMessagingSessionEndpointRequest& request, const GetMessagingSessionEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all the users banned from a particular channel.</p>  <p>The
@@ -652,15 +461,6 @@ namespace ChimeSDKMessaging
          */
         virtual Model::ListChannelBansOutcome ListChannelBans(const Model::ListChannelBansRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListChannelBans that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListChannelBansOutcomeCallable ListChannelBansCallable(const Model::ListChannelBansRequest& request) const;
-
-        /**
-         * An Async wrapper for ListChannelBans that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListChannelBansAsync(const Model::ListChannelBansRequest& request, const ListChannelBansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a paginated lists of all the channel flows created under a single
@@ -670,15 +470,6 @@ namespace ChimeSDKMessaging
          */
         virtual Model::ListChannelFlowsOutcome ListChannelFlows(const Model::ListChannelFlowsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListChannelFlows that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListChannelFlowsOutcomeCallable ListChannelFlowsCallable(const Model::ListChannelFlowsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListChannelFlows that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListChannelFlowsAsync(const Model::ListChannelFlowsRequest& request, const ListChannelFlowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all channel memberships in a channel.</p>  <p>The
@@ -693,15 +484,6 @@ namespace ChimeSDKMessaging
          */
         virtual Model::ListChannelMembershipsOutcome ListChannelMemberships(const Model::ListChannelMembershipsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListChannelMemberships that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListChannelMembershipsOutcomeCallable ListChannelMembershipsCallable(const Model::ListChannelMembershipsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListChannelMemberships that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListChannelMembershipsAsync(const Model::ListChannelMembershipsRequest& request, const ListChannelMembershipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Lists all channels that a particular <code>AppInstanceUser</code> is a part
@@ -715,15 +497,6 @@ namespace ChimeSDKMessaging
          */
         virtual Model::ListChannelMembershipsForAppInstanceUserOutcome ListChannelMembershipsForAppInstanceUser(const Model::ListChannelMembershipsForAppInstanceUserRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListChannelMembershipsForAppInstanceUser that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListChannelMembershipsForAppInstanceUserOutcomeCallable ListChannelMembershipsForAppInstanceUserCallable(const Model::ListChannelMembershipsForAppInstanceUserRequest& request) const;
-
-        /**
-         * An Async wrapper for ListChannelMembershipsForAppInstanceUser that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListChannelMembershipsForAppInstanceUserAsync(const Model::ListChannelMembershipsForAppInstanceUserRequest& request, const ListChannelMembershipsForAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List all the messages in a channel. Returns a paginated list of
@@ -739,15 +512,6 @@ namespace ChimeSDKMessaging
          */
         virtual Model::ListChannelMessagesOutcome ListChannelMessages(const Model::ListChannelMessagesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListChannelMessages that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListChannelMessagesOutcomeCallable ListChannelMessagesCallable(const Model::ListChannelMessagesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListChannelMessages that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListChannelMessagesAsync(const Model::ListChannelMessagesRequest& request, const ListChannelMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all the moderators for a channel.</p>  <p>The
@@ -759,15 +523,6 @@ namespace ChimeSDKMessaging
          */
         virtual Model::ListChannelModeratorsOutcome ListChannelModerators(const Model::ListChannelModeratorsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListChannelModerators that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListChannelModeratorsOutcomeCallable ListChannelModeratorsCallable(const Model::ListChannelModeratorsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListChannelModerators that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListChannelModeratorsAsync(const Model::ListChannelModeratorsRequest& request, const ListChannelModeratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all Channels created under a single Chime App as a paginated list. You
@@ -784,15 +539,6 @@ namespace ChimeSDKMessaging
          */
         virtual Model::ListChannelsOutcome ListChannels(const Model::ListChannelsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListChannels that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListChannelsOutcomeCallable ListChannelsCallable(const Model::ListChannelsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListChannels that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListChannelsAsync(const Model::ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all channels associated with a specified channel flow. You can
@@ -804,15 +550,6 @@ namespace ChimeSDKMessaging
          */
         virtual Model::ListChannelsAssociatedWithChannelFlowOutcome ListChannelsAssociatedWithChannelFlow(const Model::ListChannelsAssociatedWithChannelFlowRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListChannelsAssociatedWithChannelFlow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListChannelsAssociatedWithChannelFlowOutcomeCallable ListChannelsAssociatedWithChannelFlowCallable(const Model::ListChannelsAssociatedWithChannelFlowRequest& request) const;
-
-        /**
-         * An Async wrapper for ListChannelsAssociatedWithChannelFlow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListChannelsAssociatedWithChannelFlowAsync(const Model::ListChannelsAssociatedWithChannelFlowRequest& request, const ListChannelsAssociatedWithChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>A list of the channels moderated by an <code>AppInstanceUser</code>.</p>
@@ -824,15 +561,6 @@ namespace ChimeSDKMessaging
          */
         virtual Model::ListChannelsModeratedByAppInstanceUserOutcome ListChannelsModeratedByAppInstanceUser(const Model::ListChannelsModeratedByAppInstanceUserRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListChannelsModeratedByAppInstanceUser that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListChannelsModeratedByAppInstanceUserOutcomeCallable ListChannelsModeratedByAppInstanceUserCallable(const Model::ListChannelsModeratedByAppInstanceUserRequest& request) const;
-
-        /**
-         * An Async wrapper for ListChannelsModeratedByAppInstanceUser that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListChannelsModeratedByAppInstanceUserAsync(const Model::ListChannelsModeratedByAppInstanceUserRequest& request, const ListChannelsModeratedByAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all the SubChannels in an elastic channel when given a channel ID.
@@ -843,15 +571,6 @@ namespace ChimeSDKMessaging
          */
         virtual Model::ListSubChannelsOutcome ListSubChannels(const Model::ListSubChannelsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSubChannels that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListSubChannelsOutcomeCallable ListSubChannelsCallable(const Model::ListSubChannelsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSubChannels that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListSubChannelsAsync(const Model::ListSubChannelsRequest& request, const ListSubChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the tags applied to an Amazon Chime SDK messaging
@@ -861,15 +580,6 @@ namespace ChimeSDKMessaging
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets the membership preferences of an <code>AppInstanceUser</code> for the
@@ -884,15 +594,6 @@ namespace ChimeSDKMessaging
          */
         virtual Model::PutChannelMembershipPreferencesOutcome PutChannelMembershipPreferences(const Model::PutChannelMembershipPreferencesRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutChannelMembershipPreferences that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutChannelMembershipPreferencesOutcomeCallable PutChannelMembershipPreferencesCallable(const Model::PutChannelMembershipPreferencesRequest& request) const;
-
-        /**
-         * An Async wrapper for PutChannelMembershipPreferences that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutChannelMembershipPreferencesAsync(const Model::PutChannelMembershipPreferencesRequest& request, const PutChannelMembershipPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Redacts message content, but not metadata. The message exists in the back
@@ -905,15 +606,6 @@ namespace ChimeSDKMessaging
          */
         virtual Model::RedactChannelMessageOutcome RedactChannelMessage(const Model::RedactChannelMessageRequest& request) const;
 
-        /**
-         * A Callable wrapper for RedactChannelMessage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RedactChannelMessageOutcomeCallable RedactChannelMessageCallable(const Model::RedactChannelMessageRequest& request) const;
-
-        /**
-         * An Async wrapper for RedactChannelMessage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RedactChannelMessageAsync(const Model::RedactChannelMessageRequest& request, const RedactChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Allows <code>ChimeBearer</code> to search channels by channel members.
@@ -924,15 +616,6 @@ namespace ChimeSDKMessaging
          */
         virtual Model::SearchChannelsOutcome SearchChannels(const Model::SearchChannelsRequest& request) const;
 
-        /**
-         * A Callable wrapper for SearchChannels that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SearchChannelsOutcomeCallable SearchChannelsCallable(const Model::SearchChannelsRequest& request) const;
-
-        /**
-         * An Async wrapper for SearchChannels that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SearchChannelsAsync(const Model::SearchChannelsRequest& request, const SearchChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sends a message to a particular channel that the member is a part of.</p>
@@ -946,15 +629,6 @@ namespace ChimeSDKMessaging
          */
         virtual Model::SendChannelMessageOutcome SendChannelMessage(const Model::SendChannelMessageRequest& request) const;
 
-        /**
-         * A Callable wrapper for SendChannelMessage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SendChannelMessageOutcomeCallable SendChannelMessageCallable(const Model::SendChannelMessageRequest& request) const;
-
-        /**
-         * An Async wrapper for SendChannelMessage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SendChannelMessageAsync(const Model::SendChannelMessageRequest& request, const SendChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Applies the specified tags to the specified Amazon Chime SDK messaging
@@ -964,15 +638,6 @@ namespace ChimeSDKMessaging
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified tags from the specified Amazon Chime SDK messaging
@@ -982,15 +647,6 @@ namespace ChimeSDKMessaging
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Update a channel's attributes.</p> <p> <b>Restriction</b>: You can't change a
@@ -1003,15 +659,6 @@ namespace ChimeSDKMessaging
          */
         virtual Model::UpdateChannelOutcome UpdateChannel(const Model::UpdateChannelRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateChannel that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateChannelOutcomeCallable UpdateChannelCallable(const Model::UpdateChannelRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateChannel that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateChannelAsync(const Model::UpdateChannelRequest& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates channel flow attributes. This is a developer API.</p><p><h3>See
@@ -1021,15 +668,6 @@ namespace ChimeSDKMessaging
          */
         virtual Model::UpdateChannelFlowOutcome UpdateChannelFlow(const Model::UpdateChannelFlowRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateChannelFlow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateChannelFlowOutcomeCallable UpdateChannelFlowCallable(const Model::UpdateChannelFlowRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateChannelFlow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateChannelFlowAsync(const Model::UpdateChannelFlowRequest& request, const UpdateChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the content of a message.</p>  <p>The
@@ -1041,15 +679,6 @@ namespace ChimeSDKMessaging
          */
         virtual Model::UpdateChannelMessageOutcome UpdateChannelMessage(const Model::UpdateChannelMessageRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateChannelMessage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateChannelMessageOutcomeCallable UpdateChannelMessageCallable(const Model::UpdateChannelMessageRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateChannelMessage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateChannelMessageAsync(const Model::UpdateChannelMessageRequest& request, const UpdateChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The details of the time when a user last read messages in a channel.</p>
@@ -1061,15 +690,6 @@ namespace ChimeSDKMessaging
          */
         virtual Model::UpdateChannelReadMarkerOutcome UpdateChannelReadMarker(const Model::UpdateChannelReadMarkerRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateChannelReadMarker that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateChannelReadMarkerOutcomeCallable UpdateChannelReadMarkerCallable(const Model::UpdateChannelReadMarkerRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateChannelReadMarker that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateChannelReadMarkerAsync(const Model::UpdateChannelReadMarkerRequest& request, const UpdateChannelReadMarkerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

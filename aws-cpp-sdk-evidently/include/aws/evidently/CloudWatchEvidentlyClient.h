@@ -7,8 +7,10 @@
 #include <aws/evidently/CloudWatchEvidently_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/evidently/CloudWatchEvidentlyServiceClientModel.h>
+#include <aws/evidently/CloudWatchEvidentlyLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -82,6 +84,47 @@ namespace CloudWatchEvidently
         virtual ~CloudWatchEvidentlyClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>This operation assigns feature variation to user sessions. For each user
          * session, you pass in an <code>entityID</code> that represents the user.
@@ -105,15 +148,6 @@ namespace CloudWatchEvidently
          */
         virtual Model::BatchEvaluateFeatureOutcome BatchEvaluateFeature(const Model::BatchEvaluateFeatureRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchEvaluateFeature that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchEvaluateFeatureOutcomeCallable BatchEvaluateFeatureCallable(const Model::BatchEvaluateFeatureRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchEvaluateFeature that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchEvaluateFeatureAsync(const Model::BatchEvaluateFeatureRequest& request, const BatchEvaluateFeatureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an Evidently <i>experiment</i>. Before you create an experiment, you
@@ -133,15 +167,6 @@ namespace CloudWatchEvidently
          */
         virtual Model::CreateExperimentOutcome CreateExperiment(const Model::CreateExperimentRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateExperiment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateExperimentOutcomeCallable CreateExperimentCallable(const Model::CreateExperimentRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateExperiment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateExperimentAsync(const Model::CreateExperimentRequest& request, const CreateExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an Evidently <i>feature</i> that you want to launch or test. You can
@@ -157,15 +182,6 @@ namespace CloudWatchEvidently
          */
         virtual Model::CreateFeatureOutcome CreateFeature(const Model::CreateFeatureRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateFeature that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateFeatureOutcomeCallable CreateFeatureCallable(const Model::CreateFeatureRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateFeature that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateFeatureAsync(const Model::CreateFeatureRequest& request, const CreateFeatureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a <i>launch</i> of a given feature. Before you create a launch, you
@@ -183,15 +199,6 @@ namespace CloudWatchEvidently
          */
         virtual Model::CreateLaunchOutcome CreateLaunch(const Model::CreateLaunchRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateLaunch that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateLaunchOutcomeCallable CreateLaunchCallable(const Model::CreateLaunchRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateLaunch that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateLaunchAsync(const Model::CreateLaunchRequest& request, const CreateLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a project, which is the logical object in Evidently that can contain
@@ -204,15 +211,6 @@ namespace CloudWatchEvidently
          */
         virtual Model::CreateProjectOutcome CreateProject(const Model::CreateProjectRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateProject that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateProjectOutcomeCallable CreateProjectCallable(const Model::CreateProjectRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateProject that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateProjectAsync(const Model::CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Use this operation to define a <i>segment</i> of your audience. A segment is
@@ -237,15 +235,6 @@ namespace CloudWatchEvidently
          */
         virtual Model::CreateSegmentOutcome CreateSegment(const Model::CreateSegmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateSegment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateSegmentOutcomeCallable CreateSegmentCallable(const Model::CreateSegmentRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateSegment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateSegmentAsync(const Model::CreateSegmentRequest& request, const CreateSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an Evidently experiment. The feature used for the experiment is not
@@ -257,15 +246,6 @@ namespace CloudWatchEvidently
          */
         virtual Model::DeleteExperimentOutcome DeleteExperiment(const Model::DeleteExperimentRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteExperiment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteExperimentOutcomeCallable DeleteExperimentCallable(const Model::DeleteExperimentRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteExperiment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteExperimentAsync(const Model::DeleteExperimentRequest& request, const DeleteExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an Evidently feature.</p><p><h3>See Also:</h3>   <a
@@ -274,15 +254,6 @@ namespace CloudWatchEvidently
          */
         virtual Model::DeleteFeatureOutcome DeleteFeature(const Model::DeleteFeatureRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteFeature that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteFeatureOutcomeCallable DeleteFeatureCallable(const Model::DeleteFeatureRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteFeature that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteFeatureAsync(const Model::DeleteFeatureRequest& request, const DeleteFeatureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an Evidently launch. The feature used for the launch is not
@@ -294,15 +265,6 @@ namespace CloudWatchEvidently
          */
         virtual Model::DeleteLaunchOutcome DeleteLaunch(const Model::DeleteLaunchRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteLaunch that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteLaunchOutcomeCallable DeleteLaunchCallable(const Model::DeleteLaunchRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteLaunch that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteLaunchAsync(const Model::DeleteLaunchRequest& request, const DeleteLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an Evidently project. Before you can delete a project, you must
@@ -314,15 +276,6 @@ namespace CloudWatchEvidently
          */
         virtual Model::DeleteProjectOutcome DeleteProject(const Model::DeleteProjectRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteProject that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteProjectOutcomeCallable DeleteProjectCallable(const Model::DeleteProjectRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteProject that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteProjectAsync(const Model::DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a segment. You can't delete a segment that is being used in a launch
@@ -333,15 +286,6 @@ namespace CloudWatchEvidently
          */
         virtual Model::DeleteSegmentOutcome DeleteSegment(const Model::DeleteSegmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteSegment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteSegmentOutcomeCallable DeleteSegmentCallable(const Model::DeleteSegmentRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteSegment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteSegmentAsync(const Model::DeleteSegmentRequest& request, const DeleteSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation assigns a feature variation to one given user session. You
@@ -378,15 +322,6 @@ namespace CloudWatchEvidently
          */
         virtual Model::EvaluateFeatureOutcome EvaluateFeature(const Model::EvaluateFeatureRequest& request) const;
 
-        /**
-         * A Callable wrapper for EvaluateFeature that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EvaluateFeatureOutcomeCallable EvaluateFeatureCallable(const Model::EvaluateFeatureRequest& request) const;
-
-        /**
-         * An Async wrapper for EvaluateFeature that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EvaluateFeatureAsync(const Model::EvaluateFeatureRequest& request, const EvaluateFeatureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the details about one experiment. You must already know the
@@ -398,15 +333,6 @@ namespace CloudWatchEvidently
          */
         virtual Model::GetExperimentOutcome GetExperiment(const Model::GetExperimentRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetExperiment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetExperimentOutcomeCallable GetExperimentCallable(const Model::GetExperimentRequest& request) const;
-
-        /**
-         * An Async wrapper for GetExperiment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetExperimentAsync(const Model::GetExperimentRequest& request, const GetExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the results of a running or completed experiment. No results are
@@ -423,15 +349,6 @@ namespace CloudWatchEvidently
          */
         virtual Model::GetExperimentResultsOutcome GetExperimentResults(const Model::GetExperimentResultsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetExperimentResults that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetExperimentResultsOutcomeCallable GetExperimentResultsCallable(const Model::GetExperimentResultsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetExperimentResults that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetExperimentResultsAsync(const Model::GetExperimentResultsRequest& request, const GetExperimentResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the details about one feature. You must already know the feature
@@ -443,15 +360,6 @@ namespace CloudWatchEvidently
          */
         virtual Model::GetFeatureOutcome GetFeature(const Model::GetFeatureRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetFeature that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetFeatureOutcomeCallable GetFeatureCallable(const Model::GetFeatureRequest& request) const;
-
-        /**
-         * An Async wrapper for GetFeature that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetFeatureAsync(const Model::GetFeatureRequest& request, const GetFeatureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the details about one launch. You must already know the launch name.
@@ -463,15 +371,6 @@ namespace CloudWatchEvidently
          */
         virtual Model::GetLaunchOutcome GetLaunch(const Model::GetLaunchRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetLaunch that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetLaunchOutcomeCallable GetLaunchCallable(const Model::GetLaunchRequest& request) const;
-
-        /**
-         * An Async wrapper for GetLaunch that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetLaunchAsync(const Model::GetLaunchRequest& request, const GetLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the details about one launch. You must already know the project name.
@@ -483,15 +382,6 @@ namespace CloudWatchEvidently
          */
         virtual Model::GetProjectOutcome GetProject(const Model::GetProjectRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetProject that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetProjectOutcomeCallable GetProjectCallable(const Model::GetProjectRequest& request) const;
-
-        /**
-         * An Async wrapper for GetProject that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetProjectAsync(const Model::GetProjectRequest& request, const GetProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the specified segment. Specify the segment you want
@@ -501,15 +391,6 @@ namespace CloudWatchEvidently
          */
         virtual Model::GetSegmentOutcome GetSegment(const Model::GetSegmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSegment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSegmentOutcomeCallable GetSegmentCallable(const Model::GetSegmentRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSegment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSegmentAsync(const Model::GetSegmentRequest& request, const GetSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns configuration details about all the experiments in the specified
@@ -519,15 +400,6 @@ namespace CloudWatchEvidently
          */
         virtual Model::ListExperimentsOutcome ListExperiments(const Model::ListExperimentsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListExperiments that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListExperimentsOutcomeCallable ListExperimentsCallable(const Model::ListExperimentsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListExperiments that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListExperimentsAsync(const Model::ListExperimentsRequest& request, const ListExperimentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns configuration details about all the features in the specified
@@ -537,15 +409,6 @@ namespace CloudWatchEvidently
          */
         virtual Model::ListFeaturesOutcome ListFeatures(const Model::ListFeaturesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListFeatures that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListFeaturesOutcomeCallable ListFeaturesCallable(const Model::ListFeaturesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListFeatures that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListFeaturesAsync(const Model::ListFeaturesRequest& request, const ListFeaturesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns configuration details about all the launches in the specified
@@ -555,15 +418,6 @@ namespace CloudWatchEvidently
          */
         virtual Model::ListLaunchesOutcome ListLaunches(const Model::ListLaunchesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListLaunches that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListLaunchesOutcomeCallable ListLaunchesCallable(const Model::ListLaunchesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListLaunches that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListLaunchesAsync(const Model::ListLaunchesRequest& request, const ListLaunchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns configuration details about all the projects in the current Region in
@@ -573,15 +427,6 @@ namespace CloudWatchEvidently
          */
         virtual Model::ListProjectsOutcome ListProjects(const Model::ListProjectsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListProjects that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListProjectsOutcomeCallable ListProjectsCallable(const Model::ListProjectsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListProjects that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListProjectsAsync(const Model::ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Use this operation to find which experiments or launches are using a
@@ -591,15 +436,6 @@ namespace CloudWatchEvidently
          */
         virtual Model::ListSegmentReferencesOutcome ListSegmentReferences(const Model::ListSegmentReferencesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSegmentReferences that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListSegmentReferencesOutcomeCallable ListSegmentReferencesCallable(const Model::ListSegmentReferencesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSegmentReferences that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListSegmentReferencesAsync(const Model::ListSegmentReferencesRequest& request, const ListSegmentReferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of audience segments that you have created in your account in
@@ -609,15 +445,6 @@ namespace CloudWatchEvidently
          */
         virtual Model::ListSegmentsOutcome ListSegments(const Model::ListSegmentsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSegments that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListSegmentsOutcomeCallable ListSegmentsCallable(const Model::ListSegmentsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSegments that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListSegmentsAsync(const Model::ListSegmentsRequest& request, const ListSegmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Displays the tags associated with an Evidently resource.</p><p><h3>See
@@ -627,15 +454,6 @@ namespace CloudWatchEvidently
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sends performance events to Evidently. These events can be used to evaluate a
@@ -645,15 +463,6 @@ namespace CloudWatchEvidently
          */
         virtual Model::PutProjectEventsOutcome PutProjectEvents(const Model::PutProjectEventsRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutProjectEvents that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutProjectEventsOutcomeCallable PutProjectEventsCallable(const Model::PutProjectEventsRequest& request) const;
-
-        /**
-         * An Async wrapper for PutProjectEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutProjectEventsAsync(const Model::PutProjectEventsRequest& request, const PutProjectEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts an existing experiment. To create an experiment, use <a
@@ -664,15 +473,6 @@ namespace CloudWatchEvidently
          */
         virtual Model::StartExperimentOutcome StartExperiment(const Model::StartExperimentRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartExperiment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartExperimentOutcomeCallable StartExperimentCallable(const Model::StartExperimentRequest& request) const;
-
-        /**
-         * An Async wrapper for StartExperiment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartExperimentAsync(const Model::StartExperimentRequest& request, const StartExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts an existing launch. To create a launch, use <a
@@ -683,15 +483,6 @@ namespace CloudWatchEvidently
          */
         virtual Model::StartLaunchOutcome StartLaunch(const Model::StartLaunchRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartLaunch that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartLaunchOutcomeCallable StartLaunchCallable(const Model::StartLaunchRequest& request) const;
-
-        /**
-         * An Async wrapper for StartLaunch that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartLaunchAsync(const Model::StartLaunchRequest& request, const StartLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops an experiment that is currently running. If you stop an experiment, you
@@ -701,15 +492,6 @@ namespace CloudWatchEvidently
          */
         virtual Model::StopExperimentOutcome StopExperiment(const Model::StopExperimentRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopExperiment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopExperimentOutcomeCallable StopExperimentCallable(const Model::StopExperimentRequest& request) const;
-
-        /**
-         * An Async wrapper for StopExperiment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopExperimentAsync(const Model::StopExperimentRequest& request, const StopExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops a launch that is currently running. After you stop a launch, you will
@@ -723,15 +505,6 @@ namespace CloudWatchEvidently
          */
         virtual Model::StopLaunchOutcome StopLaunch(const Model::StopLaunchRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopLaunch that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopLaunchOutcomeCallable StopLaunchCallable(const Model::StopLaunchRequest& request) const;
-
-        /**
-         * An Async wrapper for StopLaunch that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopLaunchAsync(const Model::StopLaunchRequest& request, const StopLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Assigns one or more tags (key-value pairs) to the specified CloudWatch
@@ -753,15 +526,6 @@ namespace CloudWatchEvidently
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Use this operation to test a rules pattern that you plan to use to create an
@@ -773,15 +537,6 @@ namespace CloudWatchEvidently
          */
         virtual Model::TestSegmentPatternOutcome TestSegmentPattern(const Model::TestSegmentPatternRequest& request) const;
 
-        /**
-         * A Callable wrapper for TestSegmentPattern that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TestSegmentPatternOutcomeCallable TestSegmentPatternCallable(const Model::TestSegmentPatternRequest& request) const;
-
-        /**
-         * An Async wrapper for TestSegmentPattern that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TestSegmentPatternAsync(const Model::TestSegmentPatternRequest& request, const TestSegmentPatternResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes one or more tags from the specified resource.</p><p><h3>See
@@ -791,15 +546,6 @@ namespace CloudWatchEvidently
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an Evidently experiment. </p> <p>Don't use this operation to update
@@ -811,15 +557,6 @@ namespace CloudWatchEvidently
          */
         virtual Model::UpdateExperimentOutcome UpdateExperiment(const Model::UpdateExperimentRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateExperiment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateExperimentOutcomeCallable UpdateExperimentCallable(const Model::UpdateExperimentRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateExperiment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateExperimentAsync(const Model::UpdateExperimentRequest& request, const UpdateExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an existing feature.</p> <p>You can't use this operation to update
@@ -831,15 +568,6 @@ namespace CloudWatchEvidently
          */
         virtual Model::UpdateFeatureOutcome UpdateFeature(const Model::UpdateFeatureRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateFeature that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateFeatureOutcomeCallable UpdateFeatureCallable(const Model::UpdateFeatureRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateFeature that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateFeatureAsync(const Model::UpdateFeatureRequest& request, const UpdateFeatureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a launch of a given feature. </p> <p>Don't use this operation to
@@ -851,15 +579,6 @@ namespace CloudWatchEvidently
          */
         virtual Model::UpdateLaunchOutcome UpdateLaunch(const Model::UpdateLaunchRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateLaunch that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateLaunchOutcomeCallable UpdateLaunchCallable(const Model::UpdateLaunchRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateLaunch that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateLaunchAsync(const Model::UpdateLaunchRequest& request, const UpdateLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the description of an existing project.</p> <p>To create a new
@@ -877,15 +596,6 @@ namespace CloudWatchEvidently
          */
         virtual Model::UpdateProjectOutcome UpdateProject(const Model::UpdateProjectRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateProject that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateProjectOutcomeCallable UpdateProjectCallable(const Model::UpdateProjectRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateProject that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateProjectAsync(const Model::UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the data storage options for this project. If you store evaluation
@@ -899,15 +609,6 @@ namespace CloudWatchEvidently
          */
         virtual Model::UpdateProjectDataDeliveryOutcome UpdateProjectDataDelivery(const Model::UpdateProjectDataDeliveryRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateProjectDataDelivery that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateProjectDataDeliveryOutcomeCallable UpdateProjectDataDeliveryCallable(const Model::UpdateProjectDataDeliveryRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateProjectDataDelivery that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateProjectDataDeliveryAsync(const Model::UpdateProjectDataDeliveryRequest& request, const UpdateProjectDataDeliveryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

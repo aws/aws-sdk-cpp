@@ -7,8 +7,10 @@
 #include <aws/health/Health_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/health/HealthServiceClientModel.h>
+#include <aws/health/HealthLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -111,6 +113,47 @@ namespace Health
         virtual ~HealthClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Returns a list of accounts in the organization from Organizations that are
          * affected by the provided event. For more information about the different types
@@ -127,15 +170,6 @@ namespace Health
          */
         virtual Model::DescribeAffectedAccountsForOrganizationOutcome DescribeAffectedAccountsForOrganization(const Model::DescribeAffectedAccountsForOrganizationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAffectedAccountsForOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAffectedAccountsForOrganizationOutcomeCallable DescribeAffectedAccountsForOrganizationCallable(const Model::DescribeAffectedAccountsForOrganizationRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAffectedAccountsForOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAffectedAccountsForOrganizationAsync(const Model::DescribeAffectedAccountsForOrganizationRequest& request, const DescribeAffectedAccountsForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of entities that have been affected by the specified events,
@@ -157,15 +191,6 @@ namespace Health
          */
         virtual Model::DescribeAffectedEntitiesOutcome DescribeAffectedEntities(const Model::DescribeAffectedEntitiesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAffectedEntities that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAffectedEntitiesOutcomeCallable DescribeAffectedEntitiesCallable(const Model::DescribeAffectedEntitiesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAffectedEntities that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAffectedEntitiesAsync(const Model::DescribeAffectedEntitiesRequest& request, const DescribeAffectedEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of entities that have been affected by one or more events for
@@ -190,15 +215,6 @@ namespace Health
          */
         virtual Model::DescribeAffectedEntitiesForOrganizationOutcome DescribeAffectedEntitiesForOrganization(const Model::DescribeAffectedEntitiesForOrganizationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAffectedEntitiesForOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAffectedEntitiesForOrganizationOutcomeCallable DescribeAffectedEntitiesForOrganizationCallable(const Model::DescribeAffectedEntitiesForOrganizationRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAffectedEntitiesForOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAffectedEntitiesForOrganizationAsync(const Model::DescribeAffectedEntitiesForOrganizationRequest& request, const DescribeAffectedEntitiesForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the number of entities that are affected by each of the specified
@@ -208,15 +224,6 @@ namespace Health
          */
         virtual Model::DescribeEntityAggregatesOutcome DescribeEntityAggregates(const Model::DescribeEntityAggregatesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEntityAggregates that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEntityAggregatesOutcomeCallable DescribeEntityAggregatesCallable(const Model::DescribeEntityAggregatesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEntityAggregates that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEntityAggregatesAsync(const Model::DescribeEntityAggregatesRequest& request, const DescribeEntityAggregatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the number of events of each event type (issue, scheduled change, and
@@ -229,15 +236,6 @@ namespace Health
          */
         virtual Model::DescribeEventAggregatesOutcome DescribeEventAggregates(const Model::DescribeEventAggregatesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEventAggregates that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEventAggregatesOutcomeCallable DescribeEventAggregatesCallable(const Model::DescribeEventAggregatesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEventAggregates that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEventAggregatesAsync(const Model::DescribeEventAggregatesRequest& request, const DescribeEventAggregatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns detailed information about one or more specified events. Information
@@ -260,15 +258,6 @@ namespace Health
          */
         virtual Model::DescribeEventDetailsOutcome DescribeEventDetails(const Model::DescribeEventDetailsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEventDetails that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEventDetailsOutcomeCallable DescribeEventDetailsCallable(const Model::DescribeEventDetailsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEventDetails that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEventDetailsAsync(const Model::DescribeEventDetailsRequest& request, const DescribeEventDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns detailed information about one or more specified events for one or
@@ -305,15 +294,6 @@ namespace Health
          */
         virtual Model::DescribeEventDetailsForOrganizationOutcome DescribeEventDetailsForOrganization(const Model::DescribeEventDetailsForOrganizationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEventDetailsForOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEventDetailsForOrganizationOutcomeCallable DescribeEventDetailsForOrganizationCallable(const Model::DescribeEventDetailsForOrganizationRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEventDetailsForOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEventDetailsForOrganizationAsync(const Model::DescribeEventDetailsForOrganizationRequest& request, const DescribeEventDetailsForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the event types that meet the specified filter criteria. You can use
@@ -330,15 +310,6 @@ namespace Health
          */
         virtual Model::DescribeEventTypesOutcome DescribeEventTypes(const Model::DescribeEventTypesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEventTypes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEventTypesOutcomeCallable DescribeEventTypesCallable(const Model::DescribeEventTypesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEventTypes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEventTypesAsync(const Model::DescribeEventTypesRequest& request, const DescribeEventTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns information about events that meet the specified filter criteria.
@@ -368,15 +339,6 @@ namespace Health
          */
         virtual Model::DescribeEventsOutcome DescribeEvents(const Model::DescribeEventsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEvents that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEventsOutcomeCallable DescribeEventsCallable(const Model::DescribeEventsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEventsAsync(const Model::DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about events across your organization in Organizations.
@@ -407,15 +369,6 @@ namespace Health
          */
         virtual Model::DescribeEventsForOrganizationOutcome DescribeEventsForOrganization(const Model::DescribeEventsForOrganizationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEventsForOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEventsForOrganizationOutcomeCallable DescribeEventsForOrganizationCallable(const Model::DescribeEventsForOrganizationRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEventsForOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEventsForOrganizationAsync(const Model::DescribeEventsForOrganizationRequest& request, const DescribeEventsForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation provides status information on enabling or disabling Health to

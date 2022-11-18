@@ -7,8 +7,10 @@
 #include <aws/redshift-data/RedshiftDataAPIService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/redshift-data/RedshiftDataAPIServiceServiceClientModel.h>
+#include <aws/redshift-data/RedshiftDataAPIServiceLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -79,6 +81,47 @@ namespace RedshiftDataAPIService
         virtual ~RedshiftDataAPIServiceClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Runs one or more SQL statements, which can be data manipulation language
          * (DML) or data definition language (DDL). Depending on the authorization method,
@@ -99,15 +142,6 @@ namespace RedshiftDataAPIService
          */
         virtual Model::BatchExecuteStatementOutcome BatchExecuteStatement(const Model::BatchExecuteStatementRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchExecuteStatement that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchExecuteStatementOutcomeCallable BatchExecuteStatementCallable(const Model::BatchExecuteStatementRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchExecuteStatement that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchExecuteStatementAsync(const Model::BatchExecuteStatementRequest& request, const BatchExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Cancels a running query. To be canceled, a query must be running.
@@ -117,15 +151,6 @@ namespace RedshiftDataAPIService
          */
         virtual Model::CancelStatementOutcome CancelStatement(const Model::CancelStatementRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelStatement that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelStatementOutcomeCallable CancelStatementCallable(const Model::CancelStatementRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelStatement that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelStatementAsync(const Model::CancelStatementRequest& request, const CancelStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the details about a specific instance when a query was run by the
@@ -137,15 +162,6 @@ namespace RedshiftDataAPIService
          */
         virtual Model::DescribeStatementOutcome DescribeStatement(const Model::DescribeStatementRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeStatement that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeStatementOutcomeCallable DescribeStatementCallable(const Model::DescribeStatementRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeStatement that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeStatementAsync(const Model::DescribeStatementRequest& request, const DescribeStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the detailed information about a table from metadata in the
@@ -168,15 +184,6 @@ namespace RedshiftDataAPIService
          */
         virtual Model::DescribeTableOutcome DescribeTable(const Model::DescribeTableRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTable that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTableOutcomeCallable DescribeTableCallable(const Model::DescribeTableRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTable that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTableAsync(const Model::DescribeTableRequest& request, const DescribeTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Runs an SQL statement, which can be data manipulation language (DML) or data
@@ -199,15 +206,6 @@ namespace RedshiftDataAPIService
          */
         virtual Model::ExecuteStatementOutcome ExecuteStatement(const Model::ExecuteStatementRequest& request) const;
 
-        /**
-         * A Callable wrapper for ExecuteStatement that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ExecuteStatementOutcomeCallable ExecuteStatementCallable(const Model::ExecuteStatementRequest& request) const;
-
-        /**
-         * An Async wrapper for ExecuteStatement that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ExecuteStatementAsync(const Model::ExecuteStatementRequest& request, const ExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Fetches the temporarily cached result of an SQL statement. A token is
@@ -217,15 +215,6 @@ namespace RedshiftDataAPIService
          */
         virtual Model::GetStatementResultOutcome GetStatementResult(const Model::GetStatementResultRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetStatementResult that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetStatementResultOutcomeCallable GetStatementResultCallable(const Model::GetStatementResultRequest& request) const;
-
-        /**
-         * An Async wrapper for GetStatementResult that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetStatementResultAsync(const Model::GetStatementResultRequest& request, const GetStatementResultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List the databases in a cluster. A token is returned to page through the
@@ -247,15 +236,6 @@ namespace RedshiftDataAPIService
          */
         virtual Model::ListDatabasesOutcome ListDatabases(const Model::ListDatabasesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDatabases that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDatabasesOutcomeCallable ListDatabasesCallable(const Model::ListDatabasesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDatabases that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDatabasesAsync(const Model::ListDatabasesRequest& request, const ListDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the schemas in a database. A token is returned to page through the
@@ -277,15 +257,6 @@ namespace RedshiftDataAPIService
          */
         virtual Model::ListSchemasOutcome ListSchemas(const Model::ListSchemasRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSchemas that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListSchemasOutcomeCallable ListSchemasCallable(const Model::ListSchemasRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSchemas that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListSchemasAsync(const Model::ListSchemasRequest& request, const ListSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List of SQL statements. By default, only finished statements are shown. A
@@ -296,15 +267,6 @@ namespace RedshiftDataAPIService
          */
         virtual Model::ListStatementsOutcome ListStatements(const Model::ListStatementsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListStatements that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListStatementsOutcomeCallable ListStatementsCallable(const Model::ListStatementsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListStatements that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListStatementsAsync(const Model::ListStatementsRequest& request, const ListStatementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List the tables in a database. If neither <code>SchemaPattern</code> nor
@@ -328,15 +290,6 @@ namespace RedshiftDataAPIService
          */
         virtual Model::ListTablesOutcome ListTables(const Model::ListTablesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTables that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTablesOutcomeCallable ListTablesCallable(const Model::ListTablesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTables that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTablesAsync(const Model::ListTablesRequest& request, const ListTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

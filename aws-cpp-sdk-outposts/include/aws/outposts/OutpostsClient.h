@@ -7,8 +7,10 @@
 #include <aws/outposts/Outposts_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/outposts/OutpostsServiceClientModel.h>
+#include <aws/outposts/OutpostsLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -79,6 +81,47 @@ namespace Outposts
         virtual ~OutpostsClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Cancels the specified order for an Outpost.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/CancelOrder">AWS
@@ -86,15 +129,6 @@ namespace Outposts
          */
         virtual Model::CancelOrderOutcome CancelOrder(const Model::CancelOrderRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelOrder that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelOrderOutcomeCallable CancelOrderCallable(const Model::CancelOrderRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelOrder that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelOrderAsync(const Model::CancelOrderRequest& request, const CancelOrderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an order for an Outpost.</p><p><h3>See Also:</h3>   <a
@@ -103,15 +137,6 @@ namespace Outposts
          */
         virtual Model::CreateOrderOutcome CreateOrder(const Model::CreateOrderRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateOrder that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateOrderOutcomeCallable CreateOrderCallable(const Model::CreateOrderRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateOrder that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateOrderAsync(const Model::CreateOrderRequest& request, const CreateOrderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an Outpost.</p> <p>You can specify either an Availability one or an
@@ -121,15 +146,6 @@ namespace Outposts
          */
         virtual Model::CreateOutpostOutcome CreateOutpost(const Model::CreateOutpostRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateOutpost that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateOutpostOutcomeCallable CreateOutpostCallable(const Model::CreateOutpostRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateOutpost that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateOutpostAsync(const Model::CreateOutpostRequest& request, const CreateOutpostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Creates a site for an Outpost. </p><p><h3>See Also:</h3>   <a
@@ -138,15 +154,6 @@ namespace Outposts
          */
         virtual Model::CreateSiteOutcome CreateSite(const Model::CreateSiteRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateSite that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateSiteOutcomeCallable CreateSiteCallable(const Model::CreateSiteRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateSite that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateSiteAsync(const Model::CreateSiteRequest& request, const CreateSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified Outpost.</p><p><h3>See Also:</h3>   <a
@@ -155,15 +162,6 @@ namespace Outposts
          */
         virtual Model::DeleteOutpostOutcome DeleteOutpost(const Model::DeleteOutpostRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteOutpost that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteOutpostOutcomeCallable DeleteOutpostCallable(const Model::DeleteOutpostRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteOutpost that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteOutpostAsync(const Model::DeleteOutpostRequest& request, const DeleteOutpostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified site.</p><p><h3>See Also:</h3>   <a
@@ -172,15 +170,6 @@ namespace Outposts
          */
         virtual Model::DeleteSiteOutcome DeleteSite(const Model::DeleteSiteRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteSite that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteSiteOutcomeCallable DeleteSiteCallable(const Model::DeleteSiteRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteSite that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteSiteAsync(const Model::DeleteSiteRequest& request, const DeleteSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the specified catalog item.</p><p><h3>See Also:</h3>  
@@ -190,15 +179,6 @@ namespace Outposts
          */
         virtual Model::GetCatalogItemOutcome GetCatalogItem(const Model::GetCatalogItemRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetCatalogItem that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetCatalogItemOutcomeCallable GetCatalogItemCallable(const Model::GetCatalogItemRequest& request) const;
-
-        /**
-         * An Async wrapper for GetCatalogItem that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetCatalogItemAsync(const Model::GetCatalogItemRequest& request, const GetCatalogItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p> Amazon Web Services uses this action to install Outpost servers.</p>
@@ -216,15 +196,6 @@ namespace Outposts
          */
         virtual Model::GetConnectionOutcome GetConnection(const Model::GetConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetConnectionOutcomeCallable GetConnectionCallable(const Model::GetConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for GetConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetConnectionAsync(const Model::GetConnectionRequest& request, const GetConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the specified order.</p><p><h3>See Also:</h3>   <a
@@ -233,15 +204,6 @@ namespace Outposts
          */
         virtual Model::GetOrderOutcome GetOrder(const Model::GetOrderRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetOrder that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetOrderOutcomeCallable GetOrderCallable(const Model::GetOrderRequest& request) const;
-
-        /**
-         * An Async wrapper for GetOrder that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetOrderAsync(const Model::GetOrderRequest& request, const GetOrderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the specified Outpost.</p><p><h3>See Also:</h3>   <a
@@ -250,15 +212,6 @@ namespace Outposts
          */
         virtual Model::GetOutpostOutcome GetOutpost(const Model::GetOutpostRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetOutpost that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetOutpostOutcomeCallable GetOutpostCallable(const Model::GetOutpostRequest& request) const;
-
-        /**
-         * An Async wrapper for GetOutpost that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetOutpostAsync(const Model::GetOutpostRequest& request, const GetOutpostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the instance types for the specified Outpost.</p><p><h3>See Also:</h3>  
@@ -268,15 +221,6 @@ namespace Outposts
          */
         virtual Model::GetOutpostInstanceTypesOutcome GetOutpostInstanceTypes(const Model::GetOutpostInstanceTypesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetOutpostInstanceTypes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetOutpostInstanceTypesOutcomeCallable GetOutpostInstanceTypesCallable(const Model::GetOutpostInstanceTypesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetOutpostInstanceTypes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetOutpostInstanceTypesAsync(const Model::GetOutpostInstanceTypesRequest& request, const GetOutpostInstanceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the specified Outpost site.</p><p><h3>See Also:</h3>  
@@ -285,15 +229,6 @@ namespace Outposts
          */
         virtual Model::GetSiteOutcome GetSite(const Model::GetSiteRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSite that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSiteOutcomeCallable GetSiteCallable(const Model::GetSiteRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSite that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSiteAsync(const Model::GetSiteRequest& request, const GetSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Gets the site address of the specified site. </p><p><h3>See Also:</h3>   <a
@@ -302,15 +237,6 @@ namespace Outposts
          */
         virtual Model::GetSiteAddressOutcome GetSiteAddress(const Model::GetSiteAddressRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSiteAddress that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSiteAddressOutcomeCallable GetSiteAddressCallable(const Model::GetSiteAddressRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSiteAddress that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSiteAddressAsync(const Model::GetSiteAddressRequest& request, const GetSiteAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the hardware assets for the specified Outpost.</p> <p>Use filters to
@@ -323,15 +249,6 @@ namespace Outposts
          */
         virtual Model::ListAssetsOutcome ListAssets(const Model::ListAssetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAssets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAssetsOutcomeCallable ListAssetsCallable(const Model::ListAssetsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAssets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAssetsAsync(const Model::ListAssetsRequest& request, const ListAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the items in the catalog.</p> <p>Use filters to return specific
@@ -344,15 +261,6 @@ namespace Outposts
          */
         virtual Model::ListCatalogItemsOutcome ListCatalogItems(const Model::ListCatalogItemsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListCatalogItems that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListCatalogItemsOutcomeCallable ListCatalogItemsCallable(const Model::ListCatalogItemsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListCatalogItems that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListCatalogItemsAsync(const Model::ListCatalogItemsRequest& request, const ListCatalogItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the Outpost orders for your Amazon Web Services account.</p><p><h3>See
@@ -362,15 +270,6 @@ namespace Outposts
          */
         virtual Model::ListOrdersOutcome ListOrders(const Model::ListOrdersRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListOrders that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListOrdersOutcomeCallable ListOrdersCallable(const Model::ListOrdersRequest& request) const;
-
-        /**
-         * An Async wrapper for ListOrders that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListOrdersAsync(const Model::ListOrdersRequest& request, const ListOrdersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the Outposts for your Amazon Web Services account.</p> <p>Use filters
@@ -383,15 +282,6 @@ namespace Outposts
          */
         virtual Model::ListOutpostsOutcome ListOutposts(const Model::ListOutpostsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListOutposts that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListOutpostsOutcomeCallable ListOutpostsCallable(const Model::ListOutpostsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListOutposts that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListOutpostsAsync(const Model::ListOutpostsRequest& request, const ListOutpostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the Outpost sites for your Amazon Web Services account. Use filters to
@@ -405,15 +295,6 @@ namespace Outposts
          */
         virtual Model::ListSitesOutcome ListSites(const Model::ListSitesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSites that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListSitesOutcomeCallable ListSitesCallable(const Model::ListSitesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSites that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListSitesAsync(const Model::ListSitesRequest& request, const ListSitesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the tags for the specified resource.</p><p><h3>See Also:</h3>   <a
@@ -422,15 +303,6 @@ namespace Outposts
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p> Amazon Web Services uses this action to install Outpost servers.</p>
@@ -448,15 +320,6 @@ namespace Outposts
          */
         virtual Model::StartConnectionOutcome StartConnection(const Model::StartConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartConnectionOutcomeCallable StartConnectionCallable(const Model::StartConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for StartConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartConnectionAsync(const Model::StartConnectionRequest& request, const StartConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds tags to the specified resource.</p><p><h3>See Also:</h3>   <a
@@ -465,15 +328,6 @@ namespace Outposts
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes tags from the specified resource.</p><p><h3>See Also:</h3>   <a
@@ -482,15 +336,6 @@ namespace Outposts
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Updates an Outpost. </p><p><h3>See Also:</h3>   <a
@@ -499,15 +344,6 @@ namespace Outposts
          */
         virtual Model::UpdateOutpostOutcome UpdateOutpost(const Model::UpdateOutpostRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateOutpost that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateOutpostOutcomeCallable UpdateOutpostCallable(const Model::UpdateOutpostRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateOutpost that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateOutpostAsync(const Model::UpdateOutpostRequest& request, const UpdateOutpostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the specified site.</p><p><h3>See Also:</h3>   <a
@@ -516,15 +352,6 @@ namespace Outposts
          */
         virtual Model::UpdateSiteOutcome UpdateSite(const Model::UpdateSiteRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateSite that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateSiteOutcomeCallable UpdateSiteCallable(const Model::UpdateSiteRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateSite that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateSiteAsync(const Model::UpdateSiteRequest& request, const UpdateSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the address of the specified site.</p> <p>You can't update a site
@@ -537,15 +364,6 @@ namespace Outposts
          */
         virtual Model::UpdateSiteAddressOutcome UpdateSiteAddress(const Model::UpdateSiteAddressRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateSiteAddress that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateSiteAddressOutcomeCallable UpdateSiteAddressCallable(const Model::UpdateSiteAddressRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateSiteAddress that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateSiteAddressAsync(const Model::UpdateSiteAddressRequest& request, const UpdateSiteAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Update the physical and logistical details for a rack at a site. For more
@@ -560,15 +378,6 @@ namespace Outposts
          */
         virtual Model::UpdateSiteRackPhysicalPropertiesOutcome UpdateSiteRackPhysicalProperties(const Model::UpdateSiteRackPhysicalPropertiesRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateSiteRackPhysicalProperties that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateSiteRackPhysicalPropertiesOutcomeCallable UpdateSiteRackPhysicalPropertiesCallable(const Model::UpdateSiteRackPhysicalPropertiesRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateSiteRackPhysicalProperties that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateSiteRackPhysicalPropertiesAsync(const Model::UpdateSiteRackPhysicalPropertiesRequest& request, const UpdateSiteRackPhysicalPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

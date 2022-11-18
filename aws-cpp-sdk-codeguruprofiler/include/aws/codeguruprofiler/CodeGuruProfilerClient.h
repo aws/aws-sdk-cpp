@@ -7,8 +7,10 @@
 #include <aws/codeguruprofiler/CodeGuruProfiler_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/codeguruprofiler/CodeGuruProfilerServiceClientModel.h>
+#include <aws/codeguruprofiler/CodeGuruProfilerLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -89,6 +91,47 @@ namespace CodeGuruProfiler
         virtual ~CodeGuruProfilerClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Add up to 2 anomaly notifications channels for a profiling
          * group.</p><p><h3>See Also:</h3>   <a
@@ -97,15 +140,6 @@ namespace CodeGuruProfiler
          */
         virtual Model::AddNotificationChannelsOutcome AddNotificationChannels(const Model::AddNotificationChannelsRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddNotificationChannels that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddNotificationChannelsOutcomeCallable AddNotificationChannelsCallable(const Model::AddNotificationChannelsRequest& request) const;
-
-        /**
-         * An Async wrapper for AddNotificationChannels that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddNotificationChannelsAsync(const Model::AddNotificationChannelsRequest& request, const AddNotificationChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns the time series of values for a requested list of frame metrics from
@@ -115,15 +149,6 @@ namespace CodeGuruProfiler
          */
         virtual Model::BatchGetFrameMetricDataOutcome BatchGetFrameMetricData(const Model::BatchGetFrameMetricDataRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchGetFrameMetricData that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchGetFrameMetricDataOutcomeCallable BatchGetFrameMetricDataCallable(const Model::BatchGetFrameMetricDataRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchGetFrameMetricData that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchGetFrameMetricDataAsync(const Model::BatchGetFrameMetricDataRequest& request, const BatchGetFrameMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Used by profiler agents to report their current state and to receive remote
@@ -135,15 +160,6 @@ namespace CodeGuruProfiler
          */
         virtual Model::ConfigureAgentOutcome ConfigureAgent(const Model::ConfigureAgentRequest& request) const;
 
-        /**
-         * A Callable wrapper for ConfigureAgent that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ConfigureAgentOutcomeCallable ConfigureAgentCallable(const Model::ConfigureAgentRequest& request) const;
-
-        /**
-         * An Async wrapper for ConfigureAgent that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ConfigureAgentAsync(const Model::ConfigureAgentRequest& request, const ConfigureAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a profiling group.</p><p><h3>See Also:</h3>   <a
@@ -152,15 +168,6 @@ namespace CodeGuruProfiler
          */
         virtual Model::CreateProfilingGroupOutcome CreateProfilingGroup(const Model::CreateProfilingGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateProfilingGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateProfilingGroupOutcomeCallable CreateProfilingGroupCallable(const Model::CreateProfilingGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateProfilingGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateProfilingGroupAsync(const Model::CreateProfilingGroupRequest& request, const CreateProfilingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a profiling group.</p><p><h3>See Also:</h3>   <a
@@ -169,15 +176,6 @@ namespace CodeGuruProfiler
          */
         virtual Model::DeleteProfilingGroupOutcome DeleteProfilingGroup(const Model::DeleteProfilingGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteProfilingGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteProfilingGroupOutcomeCallable DeleteProfilingGroupCallable(const Model::DeleteProfilingGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteProfilingGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteProfilingGroupAsync(const Model::DeleteProfilingGroupRequest& request, const DeleteProfilingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a <a
@@ -189,15 +187,6 @@ namespace CodeGuruProfiler
          */
         virtual Model::DescribeProfilingGroupOutcome DescribeProfilingGroup(const Model::DescribeProfilingGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeProfilingGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeProfilingGroupOutcomeCallable DescribeProfilingGroupCallable(const Model::DescribeProfilingGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeProfilingGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeProfilingGroupAsync(const Model::DescribeProfilingGroupRequest& request, const DescribeProfilingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a list of <a
@@ -209,15 +198,6 @@ namespace CodeGuruProfiler
          */
         virtual Model::GetFindingsReportAccountSummaryOutcome GetFindingsReportAccountSummary(const Model::GetFindingsReportAccountSummaryRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetFindingsReportAccountSummary that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetFindingsReportAccountSummaryOutcomeCallable GetFindingsReportAccountSummaryCallable(const Model::GetFindingsReportAccountSummaryRequest& request) const;
-
-        /**
-         * An Async wrapper for GetFindingsReportAccountSummary that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetFindingsReportAccountSummaryAsync(const Model::GetFindingsReportAccountSummaryRequest& request, const GetFindingsReportAccountSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get the current configuration for anomaly notifications for a profiling
@@ -227,15 +207,6 @@ namespace CodeGuruProfiler
          */
         virtual Model::GetNotificationConfigurationOutcome GetNotificationConfiguration(const Model::GetNotificationConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetNotificationConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetNotificationConfigurationOutcomeCallable GetNotificationConfigurationCallable(const Model::GetNotificationConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetNotificationConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetNotificationConfigurationAsync(const Model::GetNotificationConfigurationRequest& request, const GetNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns the JSON-formatted resource-based policy on a profiling group.
@@ -245,15 +216,6 @@ namespace CodeGuruProfiler
          */
         virtual Model::GetPolicyOutcome GetPolicy(const Model::GetPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetPolicyOutcomeCallable GetPolicyCallable(const Model::GetPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetPolicyAsync(const Model::GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Gets the aggregated profile of a profiling group for a specified time range.
@@ -301,15 +263,6 @@ namespace CodeGuruProfiler
          */
         virtual Model::GetProfileOutcome GetProfile(const Model::GetProfileRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetProfile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetProfileOutcomeCallable GetProfileCallable(const Model::GetProfileRequest& request) const;
-
-        /**
-         * An Async wrapper for GetProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetProfileAsync(const Model::GetProfileRequest& request, const GetProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a list of <a
@@ -325,15 +278,6 @@ namespace CodeGuruProfiler
          */
         virtual Model::GetRecommendationsOutcome GetRecommendations(const Model::GetRecommendationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRecommendations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRecommendationsOutcomeCallable GetRecommendationsCallable(const Model::GetRecommendationsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRecommendations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRecommendationsAsync(const Model::GetRecommendationsRequest& request, const GetRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List the available reports for a given profiling group and time
@@ -343,15 +287,6 @@ namespace CodeGuruProfiler
          */
         virtual Model::ListFindingsReportsOutcome ListFindingsReports(const Model::ListFindingsReportsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListFindingsReports that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListFindingsReportsOutcomeCallable ListFindingsReportsCallable(const Model::ListFindingsReportsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListFindingsReports that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListFindingsReportsAsync(const Model::ListFindingsReportsRequest& request, const ListFindingsReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the start times of the available aggregated profiles of a profiling
@@ -362,15 +297,6 @@ namespace CodeGuruProfiler
          */
         virtual Model::ListProfileTimesOutcome ListProfileTimes(const Model::ListProfileTimesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListProfileTimes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListProfileTimesOutcomeCallable ListProfileTimesCallable(const Model::ListProfileTimesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListProfileTimes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListProfileTimesAsync(const Model::ListProfileTimesRequest& request, const ListProfileTimesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a list of profiling groups. The profiling groups are returned as <a
@@ -382,15 +308,6 @@ namespace CodeGuruProfiler
          */
         virtual Model::ListProfilingGroupsOutcome ListProfilingGroups(const Model::ListProfilingGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListProfilingGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListProfilingGroupsOutcomeCallable ListProfilingGroupsCallable(const Model::ListProfilingGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListProfilingGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListProfilingGroupsAsync(const Model::ListProfilingGroupsRequest& request, const ListProfilingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a list of the tags that are assigned to a specified resource.
@@ -400,15 +317,6 @@ namespace CodeGuruProfiler
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Submits profiling data to an aggregated profile of a profiling group. To get
@@ -420,15 +328,6 @@ namespace CodeGuruProfiler
          */
         virtual Model::PostAgentProfileOutcome PostAgentProfile(const Model::PostAgentProfileRequest& request) const;
 
-        /**
-         * A Callable wrapper for PostAgentProfile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PostAgentProfileOutcomeCallable PostAgentProfileCallable(const Model::PostAgentProfileRequest& request) const;
-
-        /**
-         * An Async wrapper for PostAgentProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PostAgentProfileAsync(const Model::PostAgentProfileRequest& request, const PostAgentProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Adds permissions to a profiling group's resource-based policy that are
@@ -458,15 +357,6 @@ namespace CodeGuruProfiler
          */
         virtual Model::PutPermissionOutcome PutPermission(const Model::PutPermissionRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutPermission that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutPermissionOutcomeCallable PutPermissionCallable(const Model::PutPermissionRequest& request) const;
-
-        /**
-         * An Async wrapper for PutPermission that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutPermissionAsync(const Model::PutPermissionRequest& request, const PutPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Remove one anomaly notifications channel for a profiling group.</p><p><h3>See
@@ -476,15 +366,6 @@ namespace CodeGuruProfiler
          */
         virtual Model::RemoveNotificationChannelOutcome RemoveNotificationChannel(const Model::RemoveNotificationChannelRequest& request) const;
 
-        /**
-         * A Callable wrapper for RemoveNotificationChannel that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RemoveNotificationChannelOutcomeCallable RemoveNotificationChannelCallable(const Model::RemoveNotificationChannelRequest& request) const;
-
-        /**
-         * An Async wrapper for RemoveNotificationChannel that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RemoveNotificationChannelAsync(const Model::RemoveNotificationChannelRequest& request, const RemoveNotificationChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Removes permissions from a profiling group's resource-based policy that are
@@ -503,15 +384,6 @@ namespace CodeGuruProfiler
          */
         virtual Model::RemovePermissionOutcome RemovePermission(const Model::RemovePermissionRequest& request) const;
 
-        /**
-         * A Callable wrapper for RemovePermission that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RemovePermissionOutcomeCallable RemovePermissionCallable(const Model::RemovePermissionRequest& request) const;
-
-        /**
-         * An Async wrapper for RemovePermission that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RemovePermissionAsync(const Model::RemovePermissionRequest& request, const RemovePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sends feedback to CodeGuru Profiler about whether the anomaly detected by the
@@ -521,15 +393,6 @@ namespace CodeGuruProfiler
          */
         virtual Model::SubmitFeedbackOutcome SubmitFeedback(const Model::SubmitFeedbackRequest& request) const;
 
-        /**
-         * A Callable wrapper for SubmitFeedback that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SubmitFeedbackOutcomeCallable SubmitFeedbackCallable(const Model::SubmitFeedbackRequest& request) const;
-
-        /**
-         * An Async wrapper for SubmitFeedback that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SubmitFeedbackAsync(const Model::SubmitFeedbackRequest& request, const SubmitFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Use to assign one or more tags to a resource. </p><p><h3>See Also:</h3>   <a
@@ -538,15 +401,6 @@ namespace CodeGuruProfiler
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Use to remove one or more tags from a resource. </p><p><h3>See Also:</h3>  
@@ -556,15 +410,6 @@ namespace CodeGuruProfiler
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a profiling group.</p><p><h3>See Also:</h3>   <a
@@ -573,15 +418,6 @@ namespace CodeGuruProfiler
          */
         virtual Model::UpdateProfilingGroupOutcome UpdateProfilingGroup(const Model::UpdateProfilingGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateProfilingGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateProfilingGroupOutcomeCallable UpdateProfilingGroupCallable(const Model::UpdateProfilingGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateProfilingGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateProfilingGroupAsync(const Model::UpdateProfilingGroupRequest& request, const UpdateProfilingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

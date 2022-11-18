@@ -7,8 +7,10 @@
 #include <aws/route53-recovery-cluster/Route53RecoveryCluster_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/route53-recovery-cluster/Route53RecoveryClusterServiceClientModel.h>
+#include <aws/route53-recovery-cluster/Route53RecoveryClusterLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -115,6 +117,47 @@ namespace Route53RecoveryCluster
         virtual ~Route53RecoveryClusterClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Get the state for a routing control. A routing control is a simple on/off
          * switch that you can use to route traffic to cells. When a routing control state
@@ -145,15 +188,6 @@ namespace Route53RecoveryCluster
          */
         virtual Model::GetRoutingControlStateOutcome GetRoutingControlState(const Model::GetRoutingControlStateRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRoutingControlState that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRoutingControlStateOutcomeCallable GetRoutingControlStateCallable(const Model::GetRoutingControlStateRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRoutingControlState that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRoutingControlStateAsync(const Model::GetRoutingControlStateRequest& request, const GetRoutingControlStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List routing control names and Amazon Resource Names (ARNs), as well as the
@@ -185,15 +219,6 @@ namespace Route53RecoveryCluster
          */
         virtual Model::ListRoutingControlsOutcome ListRoutingControls(const Model::ListRoutingControlsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListRoutingControls that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListRoutingControlsOutcomeCallable ListRoutingControlsCallable(const Model::ListRoutingControlsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListRoutingControls that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListRoutingControlsAsync(const Model::ListRoutingControlsRequest& request, const ListRoutingControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Set the state of the routing control to reroute traffic. You can set the
@@ -229,15 +254,6 @@ namespace Route53RecoveryCluster
          */
         virtual Model::UpdateRoutingControlStateOutcome UpdateRoutingControlState(const Model::UpdateRoutingControlStateRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateRoutingControlState that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateRoutingControlStateOutcomeCallable UpdateRoutingControlStateCallable(const Model::UpdateRoutingControlStateRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateRoutingControlState that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateRoutingControlStateAsync(const Model::UpdateRoutingControlStateRequest& request, const UpdateRoutingControlStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Set multiple routing control states. You can set the value for each state to
@@ -273,15 +289,6 @@ namespace Route53RecoveryCluster
          */
         virtual Model::UpdateRoutingControlStatesOutcome UpdateRoutingControlStates(const Model::UpdateRoutingControlStatesRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateRoutingControlStates that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateRoutingControlStatesOutcomeCallable UpdateRoutingControlStatesCallable(const Model::UpdateRoutingControlStatesRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateRoutingControlStates that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateRoutingControlStatesAsync(const Model::UpdateRoutingControlStatesRequest& request, const UpdateRoutingControlStatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

@@ -7,8 +7,10 @@
 #include <aws/timestream-query/TimestreamQuery_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/timestream-query/TimestreamQueryServiceClientModel.h>
+#include <aws/timestream-query/TimestreamQueryLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -73,6 +75,47 @@ namespace TimestreamQuery
         virtual ~TimestreamQueryClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p> Cancels a query that has been issued. Cancellation is provided only if the
          * query has not completed running before the cancellation request was issued.
@@ -86,15 +129,6 @@ namespace TimestreamQuery
          */
         virtual Model::CancelQueryOutcome CancelQuery(const Model::CancelQueryRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelQuery that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelQueryOutcomeCallable CancelQueryCallable(const Model::CancelQueryRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelQuery that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelQueryAsync(const Model::CancelQueryRequest& request, const CancelQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Create a scheduled query that will be run on your behalf at the configured
@@ -107,15 +141,6 @@ namespace TimestreamQuery
          */
         virtual Model::CreateScheduledQueryOutcome CreateScheduledQuery(const Model::CreateScheduledQueryRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateScheduledQuery that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateScheduledQueryOutcomeCallable CreateScheduledQueryCallable(const Model::CreateScheduledQueryRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateScheduledQuery that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateScheduledQueryAsync(const Model::CreateScheduledQueryRequest& request, const CreateScheduledQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a given scheduled query. This is an irreversible operation.
@@ -125,15 +150,6 @@ namespace TimestreamQuery
          */
         virtual Model::DeleteScheduledQueryOutcome DeleteScheduledQuery(const Model::DeleteScheduledQueryRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteScheduledQuery that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteScheduledQueryOutcomeCallable DeleteScheduledQueryCallable(const Model::DeleteScheduledQueryRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteScheduledQuery that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteScheduledQueryAsync(const Model::DeleteScheduledQueryRequest& request, const DeleteScheduledQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>DescribeEndpoints returns a list of available endpoints to make Timestream
@@ -155,15 +171,6 @@ namespace TimestreamQuery
          */
         virtual Model::DescribeEndpointsOutcome DescribeEndpoints(const Model::DescribeEndpointsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEndpointsOutcomeCallable DescribeEndpointsCallable(const Model::DescribeEndpointsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEndpointsAsync(const Model::DescribeEndpointsRequest& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides detailed information about a scheduled query.</p><p><h3>See
@@ -173,15 +180,6 @@ namespace TimestreamQuery
          */
         virtual Model::DescribeScheduledQueryOutcome DescribeScheduledQuery(const Model::DescribeScheduledQueryRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeScheduledQuery that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeScheduledQueryOutcomeCallable DescribeScheduledQueryCallable(const Model::DescribeScheduledQueryRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeScheduledQuery that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeScheduledQueryAsync(const Model::DescribeScheduledQueryRequest& request, const DescribeScheduledQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> You can use this API to run a scheduled query manually. </p><p><h3>See
@@ -191,15 +189,6 @@ namespace TimestreamQuery
          */
         virtual Model::ExecuteScheduledQueryOutcome ExecuteScheduledQuery(const Model::ExecuteScheduledQueryRequest& request) const;
 
-        /**
-         * A Callable wrapper for ExecuteScheduledQuery that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ExecuteScheduledQueryOutcomeCallable ExecuteScheduledQueryCallable(const Model::ExecuteScheduledQueryRequest& request) const;
-
-        /**
-         * An Async wrapper for ExecuteScheduledQuery that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ExecuteScheduledQueryAsync(const Model::ExecuteScheduledQueryRequest& request, const ExecuteScheduledQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of all scheduled queries in the caller's Amazon account and
@@ -210,15 +199,6 @@ namespace TimestreamQuery
          */
         virtual Model::ListScheduledQueriesOutcome ListScheduledQueries(const Model::ListScheduledQueriesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListScheduledQueries that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListScheduledQueriesOutcomeCallable ListScheduledQueriesCallable(const Model::ListScheduledQueriesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListScheduledQueries that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListScheduledQueriesAsync(const Model::ListScheduledQueriesRequest& request, const ListScheduledQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List all tags on a Timestream query resource.</p><p><h3>See Also:</h3>   <a
@@ -227,15 +207,6 @@ namespace TimestreamQuery
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>A synchronous operation that allows you to submit a query with parameters to
@@ -247,15 +218,6 @@ namespace TimestreamQuery
          */
         virtual Model::PrepareQueryOutcome PrepareQuery(const Model::PrepareQueryRequest& request) const;
 
-        /**
-         * A Callable wrapper for PrepareQuery that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PrepareQueryOutcomeCallable PrepareQueryCallable(const Model::PrepareQueryRequest& request) const;
-
-        /**
-         * An Async wrapper for PrepareQuery that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PrepareQueryAsync(const Model::PrepareQueryRequest& request, const PrepareQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> <code>Query</code> is a synchronous operation that enables you to run a
@@ -281,15 +243,6 @@ namespace TimestreamQuery
          */
         virtual Model::QueryOutcome Query(const Model::QueryRequest& request) const;
 
-        /**
-         * A Callable wrapper for Query that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::QueryOutcomeCallable QueryCallable(const Model::QueryRequest& request) const;
-
-        /**
-         * An Async wrapper for Query that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void QueryAsync(const Model::QueryRequest& request, const QueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associate a set of tags with a Timestream resource. You can then activate
@@ -300,15 +253,6 @@ namespace TimestreamQuery
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the association of tags from a Timestream query
@@ -318,15 +262,6 @@ namespace TimestreamQuery
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Update a scheduled query.</p><p><h3>See Also:</h3>   <a
@@ -335,15 +270,6 @@ namespace TimestreamQuery
          */
         virtual Model::UpdateScheduledQueryOutcome UpdateScheduledQuery(const Model::UpdateScheduledQueryRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateScheduledQuery that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateScheduledQueryOutcomeCallable UpdateScheduledQueryCallable(const Model::UpdateScheduledQueryRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateScheduledQuery that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateScheduledQueryAsync(const Model::UpdateScheduledQueryRequest& request, const UpdateScheduledQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

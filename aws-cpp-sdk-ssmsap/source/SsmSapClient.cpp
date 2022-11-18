@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -174,21 +175,8 @@ DeleteResourcePermissionOutcome SsmSapClient::DeleteResourcePermission(const Del
   return DeleteResourcePermissionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
-DeleteResourcePermissionOutcomeCallable SsmSapClient::DeleteResourcePermissionCallable(const DeleteResourcePermissionRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< DeleteResourcePermissionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteResourcePermission(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void SsmSapClient::DeleteResourcePermissionAsync(const DeleteResourcePermissionRequest& request, const DeleteResourcePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteResourcePermission(request), context);
-    } );
-}
+
 
 DeregisterApplicationOutcome SsmSapClient::DeregisterApplication(const DeregisterApplicationRequest& request) const
 {
@@ -199,21 +187,8 @@ DeregisterApplicationOutcome SsmSapClient::DeregisterApplication(const Deregiste
   return DeregisterApplicationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
-DeregisterApplicationOutcomeCallable SsmSapClient::DeregisterApplicationCallable(const DeregisterApplicationRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< DeregisterApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeregisterApplication(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void SsmSapClient::DeregisterApplicationAsync(const DeregisterApplicationRequest& request, const DeregisterApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeregisterApplication(request), context);
-    } );
-}
+
 
 GetApplicationOutcome SsmSapClient::GetApplication(const GetApplicationRequest& request) const
 {
@@ -224,21 +199,8 @@ GetApplicationOutcome SsmSapClient::GetApplication(const GetApplicationRequest& 
   return GetApplicationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
-GetApplicationOutcomeCallable SsmSapClient::GetApplicationCallable(const GetApplicationRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< GetApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetApplication(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void SsmSapClient::GetApplicationAsync(const GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetApplication(request), context);
-    } );
-}
+
 
 GetComponentOutcome SsmSapClient::GetComponent(const GetComponentRequest& request) const
 {
@@ -249,21 +211,8 @@ GetComponentOutcome SsmSapClient::GetComponent(const GetComponentRequest& reques
   return GetComponentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
-GetComponentOutcomeCallable SsmSapClient::GetComponentCallable(const GetComponentRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< GetComponentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetComponent(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void SsmSapClient::GetComponentAsync(const GetComponentRequest& request, const GetComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetComponent(request), context);
-    } );
-}
+
 
 GetDatabaseOutcome SsmSapClient::GetDatabase(const GetDatabaseRequest& request) const
 {
@@ -274,21 +223,8 @@ GetDatabaseOutcome SsmSapClient::GetDatabase(const GetDatabaseRequest& request) 
   return GetDatabaseOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
-GetDatabaseOutcomeCallable SsmSapClient::GetDatabaseCallable(const GetDatabaseRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< GetDatabaseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDatabase(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void SsmSapClient::GetDatabaseAsync(const GetDatabaseRequest& request, const GetDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetDatabase(request), context);
-    } );
-}
+
 
 GetOperationOutcome SsmSapClient::GetOperation(const GetOperationRequest& request) const
 {
@@ -299,21 +235,8 @@ GetOperationOutcome SsmSapClient::GetOperation(const GetOperationRequest& reques
   return GetOperationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
-GetOperationOutcomeCallable SsmSapClient::GetOperationCallable(const GetOperationRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< GetOperationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetOperation(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void SsmSapClient::GetOperationAsync(const GetOperationRequest& request, const GetOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetOperation(request), context);
-    } );
-}
+
 
 GetResourcePermissionOutcome SsmSapClient::GetResourcePermission(const GetResourcePermissionRequest& request) const
 {
@@ -324,21 +247,8 @@ GetResourcePermissionOutcome SsmSapClient::GetResourcePermission(const GetResour
   return GetResourcePermissionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
-GetResourcePermissionOutcomeCallable SsmSapClient::GetResourcePermissionCallable(const GetResourcePermissionRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< GetResourcePermissionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetResourcePermission(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void SsmSapClient::GetResourcePermissionAsync(const GetResourcePermissionRequest& request, const GetResourcePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetResourcePermission(request), context);
-    } );
-}
+
 
 ListApplicationsOutcome SsmSapClient::ListApplications(const ListApplicationsRequest& request) const
 {
@@ -349,21 +259,8 @@ ListApplicationsOutcome SsmSapClient::ListApplications(const ListApplicationsReq
   return ListApplicationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
-ListApplicationsOutcomeCallable SsmSapClient::ListApplicationsCallable(const ListApplicationsRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< ListApplicationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListApplications(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void SsmSapClient::ListApplicationsAsync(const ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListApplications(request), context);
-    } );
-}
+
 
 ListComponentsOutcome SsmSapClient::ListComponents(const ListComponentsRequest& request) const
 {
@@ -374,21 +271,8 @@ ListComponentsOutcome SsmSapClient::ListComponents(const ListComponentsRequest& 
   return ListComponentsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
-ListComponentsOutcomeCallable SsmSapClient::ListComponentsCallable(const ListComponentsRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< ListComponentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListComponents(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void SsmSapClient::ListComponentsAsync(const ListComponentsRequest& request, const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListComponents(request), context);
-    } );
-}
+
 
 ListDatabasesOutcome SsmSapClient::ListDatabases(const ListDatabasesRequest& request) const
 {
@@ -399,21 +283,8 @@ ListDatabasesOutcome SsmSapClient::ListDatabases(const ListDatabasesRequest& req
   return ListDatabasesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
-ListDatabasesOutcomeCallable SsmSapClient::ListDatabasesCallable(const ListDatabasesRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< ListDatabasesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDatabases(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void SsmSapClient::ListDatabasesAsync(const ListDatabasesRequest& request, const ListDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDatabases(request), context);
-    } );
-}
+
 
 ListTagsForResourceOutcome SsmSapClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
@@ -430,21 +301,8 @@ ListTagsForResourceOutcome SsmSapClient::ListTagsForResource(const ListTagsForRe
   return ListTagsForResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
-ListTagsForResourceOutcomeCallable SsmSapClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void SsmSapClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
-}
+
 
 PutResourcePermissionOutcome SsmSapClient::PutResourcePermission(const PutResourcePermissionRequest& request) const
 {
@@ -455,21 +313,8 @@ PutResourcePermissionOutcome SsmSapClient::PutResourcePermission(const PutResour
   return PutResourcePermissionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
-PutResourcePermissionOutcomeCallable SsmSapClient::PutResourcePermissionCallable(const PutResourcePermissionRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< PutResourcePermissionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutResourcePermission(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void SsmSapClient::PutResourcePermissionAsync(const PutResourcePermissionRequest& request, const PutResourcePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutResourcePermission(request), context);
-    } );
-}
+
 
 RegisterApplicationOutcome SsmSapClient::RegisterApplication(const RegisterApplicationRequest& request) const
 {
@@ -480,21 +325,8 @@ RegisterApplicationOutcome SsmSapClient::RegisterApplication(const RegisterAppli
   return RegisterApplicationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
-RegisterApplicationOutcomeCallable SsmSapClient::RegisterApplicationCallable(const RegisterApplicationRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< RegisterApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterApplication(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void SsmSapClient::RegisterApplicationAsync(const RegisterApplicationRequest& request, const RegisterApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RegisterApplication(request), context);
-    } );
-}
+
 
 TagResourceOutcome SsmSapClient::TagResource(const TagResourceRequest& request) const
 {
@@ -511,21 +343,8 @@ TagResourceOutcome SsmSapClient::TagResource(const TagResourceRequest& request) 
   return TagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
-TagResourceOutcomeCallable SsmSapClient::TagResourceCallable(const TagResourceRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void SsmSapClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
-}
+
 
 UntagResourceOutcome SsmSapClient::UntagResource(const UntagResourceRequest& request) const
 {
@@ -547,21 +366,8 @@ UntagResourceOutcome SsmSapClient::UntagResource(const UntagResourceRequest& req
   return UntagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
-UntagResourceOutcomeCallable SsmSapClient::UntagResourceCallable(const UntagResourceRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void SsmSapClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
-}
+
 
 UpdateApplicationSettingsOutcome SsmSapClient::UpdateApplicationSettings(const UpdateApplicationSettingsRequest& request) const
 {
@@ -572,19 +378,6 @@ UpdateApplicationSettingsOutcome SsmSapClient::UpdateApplicationSettings(const U
   return UpdateApplicationSettingsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
-UpdateApplicationSettingsOutcomeCallable SsmSapClient::UpdateApplicationSettingsCallable(const UpdateApplicationSettingsRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< UpdateApplicationSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateApplicationSettings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void SsmSapClient::UpdateApplicationSettingsAsync(const UpdateApplicationSettingsRequest& request, const UpdateApplicationSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateApplicationSettings(request), context);
-    } );
-}
+
 

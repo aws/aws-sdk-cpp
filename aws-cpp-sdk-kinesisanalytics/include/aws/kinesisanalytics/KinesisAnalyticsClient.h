@@ -7,8 +7,10 @@
 #include <aws/kinesisanalytics/KinesisAnalytics_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kinesisanalytics/KinesisAnalyticsServiceClientModel.h>
+#include <aws/kinesisanalytics/KinesisAnalyticsLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -80,6 +82,47 @@ namespace KinesisAnalytics
         virtual ~KinesisAnalyticsClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          *  <p>This documentation is for version 1 of the Amazon Kinesis Data
          * Analytics API, which only supports SQL applications. Version 2 of the API
@@ -95,15 +138,6 @@ namespace KinesisAnalytics
          */
         virtual Model::AddApplicationCloudWatchLoggingOptionOutcome AddApplicationCloudWatchLoggingOption(const Model::AddApplicationCloudWatchLoggingOptionRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddApplicationCloudWatchLoggingOption that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddApplicationCloudWatchLoggingOptionOutcomeCallable AddApplicationCloudWatchLoggingOptionCallable(const Model::AddApplicationCloudWatchLoggingOptionRequest& request) const;
-
-        /**
-         * An Async wrapper for AddApplicationCloudWatchLoggingOption that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddApplicationCloudWatchLoggingOptionAsync(const Model::AddApplicationCloudWatchLoggingOptionRequest& request, const AddApplicationCloudWatchLoggingOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This documentation is for version 1 of the Amazon Kinesis Data
@@ -129,15 +163,6 @@ namespace KinesisAnalytics
          */
         virtual Model::AddApplicationInputOutcome AddApplicationInput(const Model::AddApplicationInputRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddApplicationInput that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddApplicationInputOutcomeCallable AddApplicationInputCallable(const Model::AddApplicationInputRequest& request) const;
-
-        /**
-         * An Async wrapper for AddApplicationInput that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddApplicationInputAsync(const Model::AddApplicationInputRequest& request, const AddApplicationInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This documentation is for version 1 of the Amazon Kinesis Data
@@ -155,15 +180,6 @@ namespace KinesisAnalytics
          */
         virtual Model::AddApplicationInputProcessingConfigurationOutcome AddApplicationInputProcessingConfiguration(const Model::AddApplicationInputProcessingConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddApplicationInputProcessingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddApplicationInputProcessingConfigurationOutcomeCallable AddApplicationInputProcessingConfigurationCallable(const Model::AddApplicationInputProcessingConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for AddApplicationInputProcessingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddApplicationInputProcessingConfigurationAsync(const Model::AddApplicationInputProcessingConfigurationRequest& request, const AddApplicationInputProcessingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This documentation is for version 1 of the Amazon Kinesis Data
@@ -197,15 +213,6 @@ namespace KinesisAnalytics
          */
         virtual Model::AddApplicationOutputOutcome AddApplicationOutput(const Model::AddApplicationOutputRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddApplicationOutput that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddApplicationOutputOutcomeCallable AddApplicationOutputCallable(const Model::AddApplicationOutputRequest& request) const;
-
-        /**
-         * An Async wrapper for AddApplicationOutput that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddApplicationOutputAsync(const Model::AddApplicationOutputRequest& request, const AddApplicationOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This documentation is for version 1 of the Amazon Kinesis Data
@@ -231,15 +238,6 @@ namespace KinesisAnalytics
          */
         virtual Model::AddApplicationReferenceDataSourceOutcome AddApplicationReferenceDataSource(const Model::AddApplicationReferenceDataSourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddApplicationReferenceDataSource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddApplicationReferenceDataSourceOutcomeCallable AddApplicationReferenceDataSourceCallable(const Model::AddApplicationReferenceDataSourceRequest& request) const;
-
-        /**
-         * An Async wrapper for AddApplicationReferenceDataSource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddApplicationReferenceDataSourceAsync(const Model::AddApplicationReferenceDataSourceRequest& request, const AddApplicationReferenceDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This documentation is for version 1 of the Amazon Kinesis Data
@@ -273,15 +271,6 @@ namespace KinesisAnalytics
          */
         virtual Model::CreateApplicationOutcome CreateApplication(const Model::CreateApplicationRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateApplication that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateApplicationOutcomeCallable CreateApplicationCallable(const Model::CreateApplicationRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateApplicationAsync(const Model::CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This documentation is for version 1 of the Amazon Kinesis Data
@@ -299,15 +288,6 @@ namespace KinesisAnalytics
          */
         virtual Model::DeleteApplicationOutcome DeleteApplication(const Model::DeleteApplicationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteApplication that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteApplicationOutcomeCallable DeleteApplicationCallable(const Model::DeleteApplicationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteApplicationAsync(const Model::DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This documentation is for version 1 of the Amazon Kinesis Data
@@ -324,15 +304,6 @@ namespace KinesisAnalytics
          */
         virtual Model::DeleteApplicationCloudWatchLoggingOptionOutcome DeleteApplicationCloudWatchLoggingOption(const Model::DeleteApplicationCloudWatchLoggingOptionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteApplicationCloudWatchLoggingOption that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteApplicationCloudWatchLoggingOptionOutcomeCallable DeleteApplicationCloudWatchLoggingOptionCallable(const Model::DeleteApplicationCloudWatchLoggingOptionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteApplicationCloudWatchLoggingOption that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteApplicationCloudWatchLoggingOptionAsync(const Model::DeleteApplicationCloudWatchLoggingOptionRequest& request, const DeleteApplicationCloudWatchLoggingOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This documentation is for version 1 of the Amazon Kinesis Data
@@ -347,15 +318,6 @@ namespace KinesisAnalytics
          */
         virtual Model::DeleteApplicationInputProcessingConfigurationOutcome DeleteApplicationInputProcessingConfiguration(const Model::DeleteApplicationInputProcessingConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteApplicationInputProcessingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteApplicationInputProcessingConfigurationOutcomeCallable DeleteApplicationInputProcessingConfigurationCallable(const Model::DeleteApplicationInputProcessingConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteApplicationInputProcessingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteApplicationInputProcessingConfigurationAsync(const Model::DeleteApplicationInputProcessingConfigurationRequest& request, const DeleteApplicationInputProcessingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This documentation is for version 1 of the Amazon Kinesis Data
@@ -373,15 +335,6 @@ namespace KinesisAnalytics
          */
         virtual Model::DeleteApplicationOutputOutcome DeleteApplicationOutput(const Model::DeleteApplicationOutputRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteApplicationOutput that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteApplicationOutputOutcomeCallable DeleteApplicationOutputCallable(const Model::DeleteApplicationOutputRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteApplicationOutput that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteApplicationOutputAsync(const Model::DeleteApplicationOutputRequest& request, const DeleteApplicationOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This documentation is for version 1 of the Amazon Kinesis Data
@@ -401,15 +354,6 @@ namespace KinesisAnalytics
          */
         virtual Model::DeleteApplicationReferenceDataSourceOutcome DeleteApplicationReferenceDataSource(const Model::DeleteApplicationReferenceDataSourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteApplicationReferenceDataSource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteApplicationReferenceDataSourceOutcomeCallable DeleteApplicationReferenceDataSourceCallable(const Model::DeleteApplicationReferenceDataSourceRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteApplicationReferenceDataSource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteApplicationReferenceDataSourceAsync(const Model::DeleteApplicationReferenceDataSourceRequest& request, const DeleteApplicationReferenceDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This documentation is for version 1 of the Amazon Kinesis Data
@@ -430,15 +374,6 @@ namespace KinesisAnalytics
          */
         virtual Model::DescribeApplicationOutcome DescribeApplication(const Model::DescribeApplicationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeApplication that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeApplicationOutcomeCallable DescribeApplicationCallable(const Model::DescribeApplicationRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeApplicationAsync(const Model::DescribeApplicationRequest& request, const DescribeApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This documentation is for version 1 of the Amazon Kinesis Data
@@ -462,15 +397,6 @@ namespace KinesisAnalytics
          */
         virtual Model::DiscoverInputSchemaOutcome DiscoverInputSchema(const Model::DiscoverInputSchemaRequest& request) const;
 
-        /**
-         * A Callable wrapper for DiscoverInputSchema that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DiscoverInputSchemaOutcomeCallable DiscoverInputSchemaCallable(const Model::DiscoverInputSchemaRequest& request) const;
-
-        /**
-         * An Async wrapper for DiscoverInputSchema that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DiscoverInputSchemaAsync(const Model::DiscoverInputSchemaRequest& request, const DiscoverInputSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This documentation is for version 1 of the Amazon Kinesis Data
@@ -494,15 +420,6 @@ namespace KinesisAnalytics
          */
         virtual Model::ListApplicationsOutcome ListApplications(const Model::ListApplicationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListApplications that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListApplicationsOutcomeCallable ListApplicationsCallable(const Model::ListApplicationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListApplications that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListApplicationsAsync(const Model::ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the list of key-value tags assigned to the application. For more
@@ -514,15 +431,6 @@ namespace KinesisAnalytics
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This documentation is for version 1 of the Amazon Kinesis Data
@@ -548,15 +456,6 @@ namespace KinesisAnalytics
          */
         virtual Model::StartApplicationOutcome StartApplication(const Model::StartApplicationRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartApplication that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartApplicationOutcomeCallable StartApplicationCallable(const Model::StartApplicationRequest& request) const;
-
-        /**
-         * An Async wrapper for StartApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartApplicationAsync(const Model::StartApplicationRequest& request, const StartApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This documentation is for version 1 of the Amazon Kinesis Data
@@ -578,15 +477,6 @@ namespace KinesisAnalytics
          */
         virtual Model::StopApplicationOutcome StopApplication(const Model::StopApplicationRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopApplication that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopApplicationOutcomeCallable StopApplicationCallable(const Model::StopApplicationRequest& request) const;
-
-        /**
-         * An Async wrapper for StopApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopApplicationAsync(const Model::StopApplicationRequest& request, const StopApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds one or more key-value tags to a Kinesis Analytics application. Note that
@@ -599,15 +489,6 @@ namespace KinesisAnalytics
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes one or more tags from a Kinesis Analytics application. For more
@@ -619,15 +500,6 @@ namespace KinesisAnalytics
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This documentation is for version 1 of the Amazon Kinesis Data
@@ -646,15 +518,6 @@ namespace KinesisAnalytics
          */
         virtual Model::UpdateApplicationOutcome UpdateApplication(const Model::UpdateApplicationRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateApplication that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateApplicationOutcomeCallable UpdateApplicationCallable(const Model::UpdateApplicationRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateApplicationAsync(const Model::UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

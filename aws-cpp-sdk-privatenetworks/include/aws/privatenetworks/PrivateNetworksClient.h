@@ -7,8 +7,10 @@
 #include <aws/privatenetworks/PrivateNetworks_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/privatenetworks/PrivateNetworksServiceClientModel.h>
+#include <aws/privatenetworks/PrivateNetworksLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -77,6 +79,47 @@ namespace PrivateNetworks
         virtual ~PrivateNetworksClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Acknowledges that the specified network order was received.</p><p><h3>See
          * Also:</h3>   <a
@@ -85,15 +128,6 @@ namespace PrivateNetworks
          */
         virtual Model::AcknowledgeOrderReceiptOutcome AcknowledgeOrderReceipt(const Model::AcknowledgeOrderReceiptRequest& request) const;
 
-        /**
-         * A Callable wrapper for AcknowledgeOrderReceipt that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AcknowledgeOrderReceiptOutcomeCallable AcknowledgeOrderReceiptCallable(const Model::AcknowledgeOrderReceiptRequest& request) const;
-
-        /**
-         * An Async wrapper for AcknowledgeOrderReceipt that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AcknowledgeOrderReceiptAsync(const Model::AcknowledgeOrderReceiptRequest& request, const AcknowledgeOrderReceiptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Activates the specified device identifier.</p><p><h3>See Also:</h3>   <a
@@ -102,15 +136,6 @@ namespace PrivateNetworks
          */
         virtual Model::ActivateDeviceIdentifierOutcome ActivateDeviceIdentifier(const Model::ActivateDeviceIdentifierRequest& request) const;
 
-        /**
-         * A Callable wrapper for ActivateDeviceIdentifier that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ActivateDeviceIdentifierOutcomeCallable ActivateDeviceIdentifierCallable(const Model::ActivateDeviceIdentifierRequest& request) const;
-
-        /**
-         * An Async wrapper for ActivateDeviceIdentifier that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ActivateDeviceIdentifierAsync(const Model::ActivateDeviceIdentifierRequest& request, const ActivateDeviceIdentifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Activates the specified network site.</p><p><h3>See Also:</h3>   <a
@@ -119,15 +144,6 @@ namespace PrivateNetworks
          */
         virtual Model::ActivateNetworkSiteOutcome ActivateNetworkSite(const Model::ActivateNetworkSiteRequest& request) const;
 
-        /**
-         * A Callable wrapper for ActivateNetworkSite that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ActivateNetworkSiteOutcomeCallable ActivateNetworkSiteCallable(const Model::ActivateNetworkSiteRequest& request) const;
-
-        /**
-         * An Async wrapper for ActivateNetworkSite that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ActivateNetworkSiteAsync(const Model::ActivateNetworkSiteRequest& request, const ActivateNetworkSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Configures the specified network resource. </p> <p> Use this action to
@@ -142,15 +158,6 @@ namespace PrivateNetworks
          */
         virtual Model::ConfigureAccessPointOutcome ConfigureAccessPoint(const Model::ConfigureAccessPointRequest& request) const;
 
-        /**
-         * A Callable wrapper for ConfigureAccessPoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ConfigureAccessPointOutcomeCallable ConfigureAccessPointCallable(const Model::ConfigureAccessPointRequest& request) const;
-
-        /**
-         * An Async wrapper for ConfigureAccessPoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ConfigureAccessPointAsync(const Model::ConfigureAccessPointRequest& request, const ConfigureAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a network.</p><p><h3>See Also:</h3>   <a
@@ -159,15 +166,6 @@ namespace PrivateNetworks
          */
         virtual Model::CreateNetworkOutcome CreateNetwork(const Model::CreateNetworkRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateNetwork that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateNetworkOutcomeCallable CreateNetworkCallable(const Model::CreateNetworkRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateNetwork that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateNetworkAsync(const Model::CreateNetworkRequest& request, const CreateNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a network site.</p><p><h3>See Also:</h3>   <a
@@ -176,15 +174,6 @@ namespace PrivateNetworks
          */
         virtual Model::CreateNetworkSiteOutcome CreateNetworkSite(const Model::CreateNetworkSiteRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateNetworkSite that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateNetworkSiteOutcomeCallable CreateNetworkSiteCallable(const Model::CreateNetworkSiteRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateNetworkSite that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateNetworkSiteAsync(const Model::CreateNetworkSiteRequest& request, const CreateNetworkSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deactivates the specified device identifier.</p><p><h3>See Also:</h3>   <a
@@ -193,15 +182,6 @@ namespace PrivateNetworks
          */
         virtual Model::DeactivateDeviceIdentifierOutcome DeactivateDeviceIdentifier(const Model::DeactivateDeviceIdentifierRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeactivateDeviceIdentifier that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeactivateDeviceIdentifierOutcomeCallable DeactivateDeviceIdentifierCallable(const Model::DeactivateDeviceIdentifierRequest& request) const;
-
-        /**
-         * An Async wrapper for DeactivateDeviceIdentifier that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeactivateDeviceIdentifierAsync(const Model::DeactivateDeviceIdentifierRequest& request, const DeactivateDeviceIdentifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified network. You must delete network sites before you
@@ -214,15 +194,6 @@ namespace PrivateNetworks
          */
         virtual Model::DeleteNetworkOutcome DeleteNetwork(const Model::DeleteNetworkRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteNetwork that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteNetworkOutcomeCallable DeleteNetworkCallable(const Model::DeleteNetworkRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteNetwork that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteNetworkAsync(const Model::DeleteNetworkRequest& request, const DeleteNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified network site. Return the hardware after you delete the
@@ -236,15 +207,6 @@ namespace PrivateNetworks
          */
         virtual Model::DeleteNetworkSiteOutcome DeleteNetworkSite(const Model::DeleteNetworkSiteRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteNetworkSite that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteNetworkSiteOutcomeCallable DeleteNetworkSiteCallable(const Model::DeleteNetworkSiteRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteNetworkSite that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteNetworkSiteAsync(const Model::DeleteNetworkSiteRequest& request, const DeleteNetworkSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the specified device identifier.</p><p><h3>See Also:</h3>   <a
@@ -253,15 +215,6 @@ namespace PrivateNetworks
          */
         virtual Model::GetDeviceIdentifierOutcome GetDeviceIdentifier(const Model::GetDeviceIdentifierRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDeviceIdentifier that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDeviceIdentifierOutcomeCallable GetDeviceIdentifierCallable(const Model::GetDeviceIdentifierRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDeviceIdentifier that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDeviceIdentifierAsync(const Model::GetDeviceIdentifierRequest& request, const GetDeviceIdentifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the specified network.</p><p><h3>See Also:</h3>   <a
@@ -270,15 +223,6 @@ namespace PrivateNetworks
          */
         virtual Model::GetNetworkOutcome GetNetwork(const Model::GetNetworkRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetNetwork that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetNetworkOutcomeCallable GetNetworkCallable(const Model::GetNetworkRequest& request) const;
-
-        /**
-         * An Async wrapper for GetNetwork that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetNetworkAsync(const Model::GetNetworkRequest& request, const GetNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the specified network resource.</p><p><h3>See Also:</h3>   <a
@@ -287,15 +231,6 @@ namespace PrivateNetworks
          */
         virtual Model::GetNetworkResourceOutcome GetNetworkResource(const Model::GetNetworkResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetNetworkResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetNetworkResourceOutcomeCallable GetNetworkResourceCallable(const Model::GetNetworkResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for GetNetworkResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetNetworkResourceAsync(const Model::GetNetworkResourceRequest& request, const GetNetworkResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the specified network site.</p><p><h3>See Also:</h3>   <a
@@ -304,15 +239,6 @@ namespace PrivateNetworks
          */
         virtual Model::GetNetworkSiteOutcome GetNetworkSite(const Model::GetNetworkSiteRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetNetworkSite that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetNetworkSiteOutcomeCallable GetNetworkSiteCallable(const Model::GetNetworkSiteRequest& request) const;
-
-        /**
-         * An Async wrapper for GetNetworkSite that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetNetworkSiteAsync(const Model::GetNetworkSiteRequest& request, const GetNetworkSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the specified order.</p><p><h3>See Also:</h3>   <a
@@ -321,15 +247,6 @@ namespace PrivateNetworks
          */
         virtual Model::GetOrderOutcome GetOrder(const Model::GetOrderRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetOrder that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetOrderOutcomeCallable GetOrderCallable(const Model::GetOrderRequest& request) const;
-
-        /**
-         * An Async wrapper for GetOrder that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetOrderAsync(const Model::GetOrderRequest& request, const GetOrderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists device identifiers. Add filters to your request to return a more
@@ -343,15 +260,6 @@ namespace PrivateNetworks
          */
         virtual Model::ListDeviceIdentifiersOutcome ListDeviceIdentifiers(const Model::ListDeviceIdentifiersRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDeviceIdentifiers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDeviceIdentifiersOutcomeCallable ListDeviceIdentifiersCallable(const Model::ListDeviceIdentifiersRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDeviceIdentifiers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDeviceIdentifiersAsync(const Model::ListDeviceIdentifiersRequest& request, const ListDeviceIdentifiersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists network resources. Add filters to your request to return a more
@@ -364,15 +272,6 @@ namespace PrivateNetworks
          */
         virtual Model::ListNetworkResourcesOutcome ListNetworkResources(const Model::ListNetworkResourcesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListNetworkResources that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListNetworkResourcesOutcomeCallable ListNetworkResourcesCallable(const Model::ListNetworkResourcesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListNetworkResources that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListNetworkResourcesAsync(const Model::ListNetworkResourcesRequest& request, const ListNetworkResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists network sites. Add filters to your request to return a more specific
@@ -383,15 +282,6 @@ namespace PrivateNetworks
          */
         virtual Model::ListNetworkSitesOutcome ListNetworkSites(const Model::ListNetworkSitesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListNetworkSites that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListNetworkSitesOutcomeCallable ListNetworkSitesCallable(const Model::ListNetworkSitesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListNetworkSites that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListNetworkSitesAsync(const Model::ListNetworkSitesRequest& request, const ListNetworkSitesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists networks. Add filters to your request to return a more specific list of
@@ -402,15 +292,6 @@ namespace PrivateNetworks
          */
         virtual Model::ListNetworksOutcome ListNetworks(const Model::ListNetworksRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListNetworks that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListNetworksOutcomeCallable ListNetworksCallable(const Model::ListNetworksRequest& request) const;
-
-        /**
-         * An Async wrapper for ListNetworks that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListNetworksAsync(const Model::ListNetworksRequest& request, const ListNetworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists orders. Add filters to your request to return a more specific list of
@@ -423,15 +304,6 @@ namespace PrivateNetworks
          */
         virtual Model::ListOrdersOutcome ListOrders(const Model::ListOrdersRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListOrders that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListOrdersOutcomeCallable ListOrdersCallable(const Model::ListOrdersRequest& request) const;
-
-        /**
-         * An Async wrapper for ListOrders that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListOrdersAsync(const Model::ListOrdersRequest& request, const ListOrdersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the tags for the specified resource.</p><p><h3>See Also:</h3>   <a
@@ -440,15 +312,6 @@ namespace PrivateNetworks
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Checks the health of the service.</p><p><h3>See Also:</h3>   <a
@@ -473,15 +336,6 @@ namespace PrivateNetworks
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes tags from the specified resource.</p><p><h3>See Also:</h3>   <a
@@ -490,15 +344,6 @@ namespace PrivateNetworks
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the specified network site.</p><p><h3>See Also:</h3>   <a
@@ -507,15 +352,6 @@ namespace PrivateNetworks
          */
         virtual Model::UpdateNetworkSiteOutcome UpdateNetworkSite(const Model::UpdateNetworkSiteRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateNetworkSite that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateNetworkSiteOutcomeCallable UpdateNetworkSiteCallable(const Model::UpdateNetworkSiteRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateNetworkSite that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateNetworkSiteAsync(const Model::UpdateNetworkSiteRequest& request, const UpdateNetworkSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the specified network site plan.</p><p><h3>See Also:</h3>   <a
@@ -524,15 +360,6 @@ namespace PrivateNetworks
          */
         virtual Model::UpdateNetworkSitePlanOutcome UpdateNetworkSitePlan(const Model::UpdateNetworkSitePlanRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateNetworkSitePlan that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateNetworkSitePlanOutcomeCallable UpdateNetworkSitePlanCallable(const Model::UpdateNetworkSitePlanRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateNetworkSitePlan that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateNetworkSitePlanAsync(const Model::UpdateNetworkSitePlanRequest& request, const UpdateNetworkSitePlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

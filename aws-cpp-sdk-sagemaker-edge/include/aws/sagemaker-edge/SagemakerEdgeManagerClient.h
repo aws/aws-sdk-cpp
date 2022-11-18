@@ -7,8 +7,10 @@
 #include <aws/sagemaker-edge/SagemakerEdgeManager_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/sagemaker-edge/SagemakerEdgeManagerServiceClientModel.h>
+#include <aws/sagemaker-edge/SagemakerEdgeManagerLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -74,6 +76,47 @@ namespace SagemakerEdgeManager
         virtual ~SagemakerEdgeManagerClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Use to get the active deployments from a device.</p><p><h3>See Also:</h3>  
          * <a
@@ -82,15 +125,6 @@ namespace SagemakerEdgeManager
          */
         virtual Model::GetDeploymentsOutcome GetDeployments(const Model::GetDeploymentsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDeployments that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDeploymentsOutcomeCallable GetDeploymentsCallable(const Model::GetDeploymentsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDeployments that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDeploymentsAsync(const Model::GetDeploymentsRequest& request, const GetDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Use to check if a device is registered with SageMaker Edge
@@ -100,15 +134,6 @@ namespace SagemakerEdgeManager
          */
         virtual Model::GetDeviceRegistrationOutcome GetDeviceRegistration(const Model::GetDeviceRegistrationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDeviceRegistration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDeviceRegistrationOutcomeCallable GetDeviceRegistrationCallable(const Model::GetDeviceRegistrationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDeviceRegistration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDeviceRegistrationAsync(const Model::GetDeviceRegistrationRequest& request, const GetDeviceRegistrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Use to get the current status of devices registered on SageMaker Edge
@@ -118,15 +143,6 @@ namespace SagemakerEdgeManager
          */
         virtual Model::SendHeartbeatOutcome SendHeartbeat(const Model::SendHeartbeatRequest& request) const;
 
-        /**
-         * A Callable wrapper for SendHeartbeat that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SendHeartbeatOutcomeCallable SendHeartbeatCallable(const Model::SendHeartbeatRequest& request) const;
-
-        /**
-         * An Async wrapper for SendHeartbeat that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SendHeartbeatAsync(const Model::SendHeartbeatRequest& request, const SendHeartbeatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

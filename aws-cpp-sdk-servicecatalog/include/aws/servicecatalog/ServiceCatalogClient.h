@@ -7,8 +7,10 @@
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/servicecatalog/ServiceCatalogServiceClientModel.h>
+#include <aws/servicecatalog/ServiceCatalogLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -79,6 +81,47 @@ namespace ServiceCatalog
         virtual ~ServiceCatalogClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Accepts an offer to share the specified portfolio.</p><p><h3>See Also:</h3>  
          * <a
@@ -87,15 +130,6 @@ namespace ServiceCatalog
          */
         virtual Model::AcceptPortfolioShareOutcome AcceptPortfolioShare(const Model::AcceptPortfolioShareRequest& request) const;
 
-        /**
-         * A Callable wrapper for AcceptPortfolioShare that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AcceptPortfolioShareOutcomeCallable AcceptPortfolioShareCallable(const Model::AcceptPortfolioShareRequest& request) const;
-
-        /**
-         * An Async wrapper for AcceptPortfolioShare that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AcceptPortfolioShareAsync(const Model::AcceptPortfolioShareRequest& request, const AcceptPortfolioShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates the specified budget with the specified resource.</p><p><h3>See
@@ -105,15 +139,6 @@ namespace ServiceCatalog
          */
         virtual Model::AssociateBudgetWithResourceOutcome AssociateBudgetWithResource(const Model::AssociateBudgetWithResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateBudgetWithResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateBudgetWithResourceOutcomeCallable AssociateBudgetWithResourceCallable(const Model::AssociateBudgetWithResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateBudgetWithResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateBudgetWithResourceAsync(const Model::AssociateBudgetWithResourceRequest& request, const AssociateBudgetWithResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates the specified principal ARN with the specified
@@ -123,15 +148,6 @@ namespace ServiceCatalog
          */
         virtual Model::AssociatePrincipalWithPortfolioOutcome AssociatePrincipalWithPortfolio(const Model::AssociatePrincipalWithPortfolioRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociatePrincipalWithPortfolio that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociatePrincipalWithPortfolioOutcomeCallable AssociatePrincipalWithPortfolioCallable(const Model::AssociatePrincipalWithPortfolioRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociatePrincipalWithPortfolio that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociatePrincipalWithPortfolioAsync(const Model::AssociatePrincipalWithPortfolioRequest& request, const AssociatePrincipalWithPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates the specified product with the specified portfolio.</p> <p>A
@@ -142,15 +158,6 @@ namespace ServiceCatalog
          */
         virtual Model::AssociateProductWithPortfolioOutcome AssociateProductWithPortfolio(const Model::AssociateProductWithPortfolioRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateProductWithPortfolio that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateProductWithPortfolioOutcomeCallable AssociateProductWithPortfolioCallable(const Model::AssociateProductWithPortfolioRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateProductWithPortfolio that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateProductWithPortfolioAsync(const Model::AssociateProductWithPortfolioRequest& request, const AssociateProductWithPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates a self-service action with a provisioning artifact.</p><p><h3>See
@@ -160,15 +167,6 @@ namespace ServiceCatalog
          */
         virtual Model::AssociateServiceActionWithProvisioningArtifactOutcome AssociateServiceActionWithProvisioningArtifact(const Model::AssociateServiceActionWithProvisioningArtifactRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateServiceActionWithProvisioningArtifact that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateServiceActionWithProvisioningArtifactOutcomeCallable AssociateServiceActionWithProvisioningArtifactCallable(const Model::AssociateServiceActionWithProvisioningArtifactRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateServiceActionWithProvisioningArtifact that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateServiceActionWithProvisioningArtifactAsync(const Model::AssociateServiceActionWithProvisioningArtifactRequest& request, const AssociateServiceActionWithProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associate the specified TagOption with the specified portfolio or
@@ -178,15 +176,6 @@ namespace ServiceCatalog
          */
         virtual Model::AssociateTagOptionWithResourceOutcome AssociateTagOptionWithResource(const Model::AssociateTagOptionWithResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateTagOptionWithResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateTagOptionWithResourceOutcomeCallable AssociateTagOptionWithResourceCallable(const Model::AssociateTagOptionWithResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateTagOptionWithResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateTagOptionWithResourceAsync(const Model::AssociateTagOptionWithResourceRequest& request, const AssociateTagOptionWithResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates multiple self-service actions with provisioning
@@ -196,15 +185,6 @@ namespace ServiceCatalog
          */
         virtual Model::BatchAssociateServiceActionWithProvisioningArtifactOutcome BatchAssociateServiceActionWithProvisioningArtifact(const Model::BatchAssociateServiceActionWithProvisioningArtifactRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchAssociateServiceActionWithProvisioningArtifact that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchAssociateServiceActionWithProvisioningArtifactOutcomeCallable BatchAssociateServiceActionWithProvisioningArtifactCallable(const Model::BatchAssociateServiceActionWithProvisioningArtifactRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchAssociateServiceActionWithProvisioningArtifact that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchAssociateServiceActionWithProvisioningArtifactAsync(const Model::BatchAssociateServiceActionWithProvisioningArtifactRequest& request, const BatchAssociateServiceActionWithProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates a batch of self-service actions from the specified provisioning
@@ -214,15 +194,6 @@ namespace ServiceCatalog
          */
         virtual Model::BatchDisassociateServiceActionFromProvisioningArtifactOutcome BatchDisassociateServiceActionFromProvisioningArtifact(const Model::BatchDisassociateServiceActionFromProvisioningArtifactRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchDisassociateServiceActionFromProvisioningArtifact that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchDisassociateServiceActionFromProvisioningArtifactOutcomeCallable BatchDisassociateServiceActionFromProvisioningArtifactCallable(const Model::BatchDisassociateServiceActionFromProvisioningArtifactRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchDisassociateServiceActionFromProvisioningArtifact that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchDisassociateServiceActionFromProvisioningArtifactAsync(const Model::BatchDisassociateServiceActionFromProvisioningArtifactRequest& request, const BatchDisassociateServiceActionFromProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Copies the specified source product to the specified target product or a new
@@ -237,15 +208,6 @@ namespace ServiceCatalog
          */
         virtual Model::CopyProductOutcome CopyProduct(const Model::CopyProductRequest& request) const;
 
-        /**
-         * A Callable wrapper for CopyProduct that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CopyProductOutcomeCallable CopyProductCallable(const Model::CopyProductRequest& request) const;
-
-        /**
-         * An Async wrapper for CopyProduct that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CopyProductAsync(const Model::CopyProductRequest& request, const CopyProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a constraint.</p> <p>A delegated admin is authorized to invoke this
@@ -255,15 +217,6 @@ namespace ServiceCatalog
          */
         virtual Model::CreateConstraintOutcome CreateConstraint(const Model::CreateConstraintRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateConstraint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateConstraintOutcomeCallable CreateConstraintCallable(const Model::CreateConstraintRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateConstraint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateConstraintAsync(const Model::CreateConstraintRequest& request, const CreateConstraintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a portfolio.</p> <p>A delegated admin is authorized to invoke this
@@ -273,15 +226,6 @@ namespace ServiceCatalog
          */
         virtual Model::CreatePortfolioOutcome CreatePortfolio(const Model::CreatePortfolioRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreatePortfolio that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreatePortfolioOutcomeCallable CreatePortfolioCallable(const Model::CreatePortfolioRequest& request) const;
-
-        /**
-         * An Async wrapper for CreatePortfolio that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreatePortfolioAsync(const Model::CreatePortfolioRequest& request, const CreatePortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Shares the specified portfolio with the specified account or organization
@@ -301,15 +245,6 @@ namespace ServiceCatalog
          */
         virtual Model::CreatePortfolioShareOutcome CreatePortfolioShare(const Model::CreatePortfolioShareRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreatePortfolioShare that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreatePortfolioShareOutcomeCallable CreatePortfolioShareCallable(const Model::CreatePortfolioShareRequest& request) const;
-
-        /**
-         * An Async wrapper for CreatePortfolioShare that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreatePortfolioShareAsync(const Model::CreatePortfolioShareRequest& request, const CreatePortfolioShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a product.</p> <p>A delegated admin is authorized to invoke this
@@ -322,15 +257,6 @@ namespace ServiceCatalog
          */
         virtual Model::CreateProductOutcome CreateProduct(const Model::CreateProductRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateProduct that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateProductOutcomeCallable CreateProductCallable(const Model::CreateProductRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateProduct that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateProductAsync(const Model::CreateProductRequest& request, const CreateProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a plan.</p> <p>A plan includes the list of resources to be created
@@ -346,15 +272,6 @@ namespace ServiceCatalog
          */
         virtual Model::CreateProvisionedProductPlanOutcome CreateProvisionedProductPlan(const Model::CreateProvisionedProductPlanRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateProvisionedProductPlan that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateProvisionedProductPlanOutcomeCallable CreateProvisionedProductPlanCallable(const Model::CreateProvisionedProductPlanRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateProvisionedProductPlan that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateProvisionedProductPlanAsync(const Model::CreateProvisionedProductPlanRequest& request, const CreateProvisionedProductPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a provisioning artifact (also known as a version) for the specified
@@ -368,15 +285,6 @@ namespace ServiceCatalog
          */
         virtual Model::CreateProvisioningArtifactOutcome CreateProvisioningArtifact(const Model::CreateProvisioningArtifactRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateProvisioningArtifact that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateProvisioningArtifactOutcomeCallable CreateProvisioningArtifactCallable(const Model::CreateProvisioningArtifactRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateProvisioningArtifact that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateProvisioningArtifactAsync(const Model::CreateProvisioningArtifactRequest& request, const CreateProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a self-service action.</p><p><h3>See Also:</h3>   <a
@@ -385,15 +293,6 @@ namespace ServiceCatalog
          */
         virtual Model::CreateServiceActionOutcome CreateServiceAction(const Model::CreateServiceActionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateServiceAction that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateServiceActionOutcomeCallable CreateServiceActionCallable(const Model::CreateServiceActionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateServiceAction that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateServiceActionAsync(const Model::CreateServiceActionRequest& request, const CreateServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a TagOption.</p><p><h3>See Also:</h3>   <a
@@ -402,15 +301,6 @@ namespace ServiceCatalog
          */
         virtual Model::CreateTagOptionOutcome CreateTagOption(const Model::CreateTagOptionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateTagOption that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateTagOptionOutcomeCallable CreateTagOptionCallable(const Model::CreateTagOptionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateTagOption that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateTagOptionAsync(const Model::CreateTagOptionRequest& request, const CreateTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified constraint.</p> <p>A delegated admin is authorized to
@@ -420,15 +310,6 @@ namespace ServiceCatalog
          */
         virtual Model::DeleteConstraintOutcome DeleteConstraint(const Model::DeleteConstraintRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteConstraint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteConstraintOutcomeCallable DeleteConstraintCallable(const Model::DeleteConstraintRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteConstraint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteConstraintAsync(const Model::DeleteConstraintRequest& request, const DeleteConstraintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified portfolio.</p> <p>You cannot delete a portfolio if it
@@ -440,15 +321,6 @@ namespace ServiceCatalog
          */
         virtual Model::DeletePortfolioOutcome DeletePortfolio(const Model::DeletePortfolioRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeletePortfolio that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeletePortfolioOutcomeCallable DeletePortfolioCallable(const Model::DeletePortfolioRequest& request) const;
-
-        /**
-         * An Async wrapper for DeletePortfolio that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeletePortfolioAsync(const Model::DeletePortfolioRequest& request, const DeletePortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops sharing the specified portfolio with the specified account or
@@ -461,15 +333,6 @@ namespace ServiceCatalog
          */
         virtual Model::DeletePortfolioShareOutcome DeletePortfolioShare(const Model::DeletePortfolioShareRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeletePortfolioShare that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeletePortfolioShareOutcomeCallable DeletePortfolioShareCallable(const Model::DeletePortfolioShareRequest& request) const;
-
-        /**
-         * An Async wrapper for DeletePortfolioShare that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeletePortfolioShareAsync(const Model::DeletePortfolioShareRequest& request, const DeletePortfolioShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified product.</p> <p>You cannot delete a product if it was
@@ -480,15 +343,6 @@ namespace ServiceCatalog
          */
         virtual Model::DeleteProductOutcome DeleteProduct(const Model::DeleteProductRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteProduct that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteProductOutcomeCallable DeleteProductCallable(const Model::DeleteProductRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteProduct that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteProductAsync(const Model::DeleteProductRequest& request, const DeleteProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified plan.</p><p><h3>See Also:</h3>   <a
@@ -497,15 +351,6 @@ namespace ServiceCatalog
          */
         virtual Model::DeleteProvisionedProductPlanOutcome DeleteProvisionedProductPlan(const Model::DeleteProvisionedProductPlanRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteProvisionedProductPlan that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteProvisionedProductPlanOutcomeCallable DeleteProvisionedProductPlanCallable(const Model::DeleteProvisionedProductPlanRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteProvisionedProductPlan that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteProvisionedProductPlanAsync(const Model::DeleteProvisionedProductPlanRequest& request, const DeleteProvisionedProductPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified provisioning artifact (also known as a version) for the
@@ -518,15 +363,6 @@ namespace ServiceCatalog
          */
         virtual Model::DeleteProvisioningArtifactOutcome DeleteProvisioningArtifact(const Model::DeleteProvisioningArtifactRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteProvisioningArtifact that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteProvisioningArtifactOutcomeCallable DeleteProvisioningArtifactCallable(const Model::DeleteProvisioningArtifactRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteProvisioningArtifact that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteProvisioningArtifactAsync(const Model::DeleteProvisioningArtifactRequest& request, const DeleteProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a self-service action.</p><p><h3>See Also:</h3>   <a
@@ -535,15 +371,6 @@ namespace ServiceCatalog
          */
         virtual Model::DeleteServiceActionOutcome DeleteServiceAction(const Model::DeleteServiceActionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteServiceAction that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteServiceActionOutcomeCallable DeleteServiceActionCallable(const Model::DeleteServiceActionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteServiceAction that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteServiceActionAsync(const Model::DeleteServiceActionRequest& request, const DeleteServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified TagOption.</p> <p>You cannot delete a TagOption if it
@@ -553,15 +380,6 @@ namespace ServiceCatalog
          */
         virtual Model::DeleteTagOptionOutcome DeleteTagOption(const Model::DeleteTagOptionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteTagOption that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteTagOptionOutcomeCallable DeleteTagOptionCallable(const Model::DeleteTagOptionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteTagOption that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteTagOptionAsync(const Model::DeleteTagOptionRequest& request, const DeleteTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the specified constraint.</p><p><h3>See Also:</h3>  
@@ -571,15 +389,6 @@ namespace ServiceCatalog
          */
         virtual Model::DescribeConstraintOutcome DescribeConstraint(const Model::DescribeConstraintRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeConstraint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeConstraintOutcomeCallable DescribeConstraintCallable(const Model::DescribeConstraintRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeConstraint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeConstraintAsync(const Model::DescribeConstraintRequest& request, const DescribeConstraintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the status of the specified copy product operation.</p><p><h3>See
@@ -589,15 +398,6 @@ namespace ServiceCatalog
          */
         virtual Model::DescribeCopyProductStatusOutcome DescribeCopyProductStatus(const Model::DescribeCopyProductStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeCopyProductStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeCopyProductStatusOutcomeCallable DescribeCopyProductStatusCallable(const Model::DescribeCopyProductStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeCopyProductStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeCopyProductStatusAsync(const Model::DescribeCopyProductStatusRequest& request, const DescribeCopyProductStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the specified portfolio.</p> <p>A delegated admin is
@@ -607,15 +407,6 @@ namespace ServiceCatalog
          */
         virtual Model::DescribePortfolioOutcome DescribePortfolio(const Model::DescribePortfolioRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribePortfolio that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribePortfolioOutcomeCallable DescribePortfolioCallable(const Model::DescribePortfolioRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribePortfolio that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribePortfolioAsync(const Model::DescribePortfolioRequest& request, const DescribePortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the status of the specified portfolio share operation. This API can only
@@ -626,15 +417,6 @@ namespace ServiceCatalog
          */
         virtual Model::DescribePortfolioShareStatusOutcome DescribePortfolioShareStatus(const Model::DescribePortfolioShareStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribePortfolioShareStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribePortfolioShareStatusOutcomeCallable DescribePortfolioShareStatusCallable(const Model::DescribePortfolioShareStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribePortfolioShareStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribePortfolioShareStatusAsync(const Model::DescribePortfolioShareStatusRequest& request, const DescribePortfolioShareStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a summary of each of the portfolio shares that were created for the
@@ -648,15 +430,6 @@ namespace ServiceCatalog
          */
         virtual Model::DescribePortfolioSharesOutcome DescribePortfolioShares(const Model::DescribePortfolioSharesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribePortfolioShares that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribePortfolioSharesOutcomeCallable DescribePortfolioSharesCallable(const Model::DescribePortfolioSharesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribePortfolioShares that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribePortfolioSharesAsync(const Model::DescribePortfolioSharesRequest& request, const DescribePortfolioSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the specified product.</p><p><h3>See Also:</h3>   <a
@@ -665,15 +438,6 @@ namespace ServiceCatalog
          */
         virtual Model::DescribeProductOutcome DescribeProduct(const Model::DescribeProductRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeProduct that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeProductOutcomeCallable DescribeProductCallable(const Model::DescribeProductRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeProduct that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeProductAsync(const Model::DescribeProductRequest& request, const DescribeProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the specified product. This operation is run with
@@ -683,15 +447,6 @@ namespace ServiceCatalog
          */
         virtual Model::DescribeProductAsAdminOutcome DescribeProductAsAdmin(const Model::DescribeProductAsAdminRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeProductAsAdmin that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeProductAsAdminOutcomeCallable DescribeProductAsAdminCallable(const Model::DescribeProductAsAdminRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeProductAsAdmin that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeProductAsAdminAsync(const Model::DescribeProductAsAdminRequest& request, const DescribeProductAsAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the specified product.</p><p><h3>See Also:</h3>   <a
@@ -700,15 +455,6 @@ namespace ServiceCatalog
          */
         virtual Model::DescribeProductViewOutcome DescribeProductView(const Model::DescribeProductViewRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeProductView that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeProductViewOutcomeCallable DescribeProductViewCallable(const Model::DescribeProductViewRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeProductView that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeProductViewAsync(const Model::DescribeProductViewRequest& request, const DescribeProductViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the specified provisioned product.</p><p><h3>See
@@ -718,15 +464,6 @@ namespace ServiceCatalog
          */
         virtual Model::DescribeProvisionedProductOutcome DescribeProvisionedProduct(const Model::DescribeProvisionedProductRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeProvisionedProduct that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeProvisionedProductOutcomeCallable DescribeProvisionedProductCallable(const Model::DescribeProvisionedProductRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeProvisionedProduct that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeProvisionedProductAsync(const Model::DescribeProvisionedProductRequest& request, const DescribeProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the resource changes for the specified
@@ -736,15 +473,6 @@ namespace ServiceCatalog
          */
         virtual Model::DescribeProvisionedProductPlanOutcome DescribeProvisionedProductPlan(const Model::DescribeProvisionedProductPlanRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeProvisionedProductPlan that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeProvisionedProductPlanOutcomeCallable DescribeProvisionedProductPlanCallable(const Model::DescribeProvisionedProductPlanRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeProvisionedProductPlan that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeProvisionedProductPlanAsync(const Model::DescribeProvisionedProductPlanRequest& request, const DescribeProvisionedProductPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the specified provisioning artifact (also known as a
@@ -754,15 +482,6 @@ namespace ServiceCatalog
          */
         virtual Model::DescribeProvisioningArtifactOutcome DescribeProvisioningArtifact(const Model::DescribeProvisioningArtifactRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeProvisioningArtifact that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeProvisioningArtifactOutcomeCallable DescribeProvisioningArtifactCallable(const Model::DescribeProvisioningArtifactRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeProvisioningArtifact that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeProvisioningArtifactAsync(const Model::DescribeProvisioningArtifactRequest& request, const DescribeProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the configuration required to provision the specified
@@ -780,15 +499,6 @@ namespace ServiceCatalog
          */
         virtual Model::DescribeProvisioningParametersOutcome DescribeProvisioningParameters(const Model::DescribeProvisioningParametersRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeProvisioningParameters that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeProvisioningParametersOutcomeCallable DescribeProvisioningParametersCallable(const Model::DescribeProvisioningParametersRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeProvisioningParameters that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeProvisioningParametersAsync(const Model::DescribeProvisioningParametersRequest& request, const DescribeProvisioningParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the specified request operation.</p> <p>Use this
@@ -805,15 +515,6 @@ namespace ServiceCatalog
          */
         virtual Model::DescribeRecordOutcome DescribeRecord(const Model::DescribeRecordRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeRecord that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeRecordOutcomeCallable DescribeRecordCallable(const Model::DescribeRecordRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeRecord that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeRecordAsync(const Model::DescribeRecordRequest& request, const DescribeRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a self-service action.</p><p><h3>See Also:</h3>   <a
@@ -822,15 +523,6 @@ namespace ServiceCatalog
          */
         virtual Model::DescribeServiceActionOutcome DescribeServiceAction(const Model::DescribeServiceActionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeServiceAction that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeServiceActionOutcomeCallable DescribeServiceActionCallable(const Model::DescribeServiceActionRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeServiceAction that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeServiceActionAsync(const Model::DescribeServiceActionRequest& request, const DescribeServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Finds the default parameters for a specific self-service action on a specific
@@ -841,15 +533,6 @@ namespace ServiceCatalog
          */
         virtual Model::DescribeServiceActionExecutionParametersOutcome DescribeServiceActionExecutionParameters(const Model::DescribeServiceActionExecutionParametersRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeServiceActionExecutionParameters that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeServiceActionExecutionParametersOutcomeCallable DescribeServiceActionExecutionParametersCallable(const Model::DescribeServiceActionExecutionParametersRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeServiceActionExecutionParameters that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeServiceActionExecutionParametersAsync(const Model::DescribeServiceActionExecutionParametersRequest& request, const DescribeServiceActionExecutionParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the specified TagOption.</p><p><h3>See Also:</h3>   <a
@@ -858,15 +541,6 @@ namespace ServiceCatalog
          */
         virtual Model::DescribeTagOptionOutcome DescribeTagOption(const Model::DescribeTagOptionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTagOption that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTagOptionOutcomeCallable DescribeTagOptionCallable(const Model::DescribeTagOptionRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTagOption that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTagOptionAsync(const Model::DescribeTagOptionRequest& request, const DescribeTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disable portfolio sharing through the Organizations service. This command
@@ -888,15 +562,6 @@ namespace ServiceCatalog
          */
         virtual Model::DisableAWSOrganizationsAccessOutcome DisableAWSOrganizationsAccess(const Model::DisableAWSOrganizationsAccessRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisableAWSOrganizationsAccess that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisableAWSOrganizationsAccessOutcomeCallable DisableAWSOrganizationsAccessCallable(const Model::DisableAWSOrganizationsAccessRequest& request) const;
-
-        /**
-         * An Async wrapper for DisableAWSOrganizationsAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisableAWSOrganizationsAccessAsync(const Model::DisableAWSOrganizationsAccessRequest& request, const DisableAWSOrganizationsAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates the specified budget from the specified resource.</p><p><h3>See
@@ -906,15 +571,6 @@ namespace ServiceCatalog
          */
         virtual Model::DisassociateBudgetFromResourceOutcome DisassociateBudgetFromResource(const Model::DisassociateBudgetFromResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateBudgetFromResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateBudgetFromResourceOutcomeCallable DisassociateBudgetFromResourceCallable(const Model::DisassociateBudgetFromResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateBudgetFromResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateBudgetFromResourceAsync(const Model::DisassociateBudgetFromResourceRequest& request, const DisassociateBudgetFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates a previously associated principal ARN from a specified
@@ -924,15 +580,6 @@ namespace ServiceCatalog
          */
         virtual Model::DisassociatePrincipalFromPortfolioOutcome DisassociatePrincipalFromPortfolio(const Model::DisassociatePrincipalFromPortfolioRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociatePrincipalFromPortfolio that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociatePrincipalFromPortfolioOutcomeCallable DisassociatePrincipalFromPortfolioCallable(const Model::DisassociatePrincipalFromPortfolioRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociatePrincipalFromPortfolio that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociatePrincipalFromPortfolioAsync(const Model::DisassociatePrincipalFromPortfolioRequest& request, const DisassociatePrincipalFromPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates the specified product from the specified portfolio. </p> <p>A
@@ -943,15 +590,6 @@ namespace ServiceCatalog
          */
         virtual Model::DisassociateProductFromPortfolioOutcome DisassociateProductFromPortfolio(const Model::DisassociateProductFromPortfolioRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateProductFromPortfolio that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateProductFromPortfolioOutcomeCallable DisassociateProductFromPortfolioCallable(const Model::DisassociateProductFromPortfolioRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateProductFromPortfolio that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateProductFromPortfolioAsync(const Model::DisassociateProductFromPortfolioRequest& request, const DisassociateProductFromPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates the specified self-service action association from the
@@ -961,15 +599,6 @@ namespace ServiceCatalog
          */
         virtual Model::DisassociateServiceActionFromProvisioningArtifactOutcome DisassociateServiceActionFromProvisioningArtifact(const Model::DisassociateServiceActionFromProvisioningArtifactRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateServiceActionFromProvisioningArtifact that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateServiceActionFromProvisioningArtifactOutcomeCallable DisassociateServiceActionFromProvisioningArtifactCallable(const Model::DisassociateServiceActionFromProvisioningArtifactRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateServiceActionFromProvisioningArtifact that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateServiceActionFromProvisioningArtifactAsync(const Model::DisassociateServiceActionFromProvisioningArtifactRequest& request, const DisassociateServiceActionFromProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates the specified TagOption from the specified
@@ -979,15 +608,6 @@ namespace ServiceCatalog
          */
         virtual Model::DisassociateTagOptionFromResourceOutcome DisassociateTagOptionFromResource(const Model::DisassociateTagOptionFromResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateTagOptionFromResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateTagOptionFromResourceOutcomeCallable DisassociateTagOptionFromResourceCallable(const Model::DisassociateTagOptionFromResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateTagOptionFromResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateTagOptionFromResourceAsync(const Model::DisassociateTagOptionFromResourceRequest& request, const DisassociateTagOptionFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enable portfolio sharing feature through Organizations. This API will allow
@@ -1012,15 +632,6 @@ namespace ServiceCatalog
          */
         virtual Model::EnableAWSOrganizationsAccessOutcome EnableAWSOrganizationsAccess(const Model::EnableAWSOrganizationsAccessRequest& request) const;
 
-        /**
-         * A Callable wrapper for EnableAWSOrganizationsAccess that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnableAWSOrganizationsAccessOutcomeCallable EnableAWSOrganizationsAccessCallable(const Model::EnableAWSOrganizationsAccessRequest& request) const;
-
-        /**
-         * An Async wrapper for EnableAWSOrganizationsAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnableAWSOrganizationsAccessAsync(const Model::EnableAWSOrganizationsAccessRequest& request, const EnableAWSOrganizationsAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provisions or modifies a product based on the resource changes for the
@@ -1030,15 +641,6 @@ namespace ServiceCatalog
          */
         virtual Model::ExecuteProvisionedProductPlanOutcome ExecuteProvisionedProductPlan(const Model::ExecuteProvisionedProductPlanRequest& request) const;
 
-        /**
-         * A Callable wrapper for ExecuteProvisionedProductPlan that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ExecuteProvisionedProductPlanOutcomeCallable ExecuteProvisionedProductPlanCallable(const Model::ExecuteProvisionedProductPlanRequest& request) const;
-
-        /**
-         * An Async wrapper for ExecuteProvisionedProductPlan that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ExecuteProvisionedProductPlanAsync(const Model::ExecuteProvisionedProductPlanRequest& request, const ExecuteProvisionedProductPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Executes a self-service action against a provisioned product.</p><p><h3>See
@@ -1048,15 +650,6 @@ namespace ServiceCatalog
          */
         virtual Model::ExecuteProvisionedProductServiceActionOutcome ExecuteProvisionedProductServiceAction(const Model::ExecuteProvisionedProductServiceActionRequest& request) const;
 
-        /**
-         * A Callable wrapper for ExecuteProvisionedProductServiceAction that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ExecuteProvisionedProductServiceActionOutcomeCallable ExecuteProvisionedProductServiceActionCallable(const Model::ExecuteProvisionedProductServiceActionRequest& request) const;
-
-        /**
-         * An Async wrapper for ExecuteProvisionedProductServiceAction that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ExecuteProvisionedProductServiceActionAsync(const Model::ExecuteProvisionedProductServiceActionRequest& request, const ExecuteProvisionedProductServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get the Access Status for Organizations portfolio share feature. This API can
@@ -1067,15 +660,6 @@ namespace ServiceCatalog
          */
         virtual Model::GetAWSOrganizationsAccessStatusOutcome GetAWSOrganizationsAccessStatus(const Model::GetAWSOrganizationsAccessStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAWSOrganizationsAccessStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAWSOrganizationsAccessStatusOutcomeCallable GetAWSOrganizationsAccessStatusCallable(const Model::GetAWSOrganizationsAccessStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAWSOrganizationsAccessStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAWSOrganizationsAccessStatusAsync(const Model::GetAWSOrganizationsAccessStatusRequest& request, const GetAWSOrganizationsAccessStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This API takes either a <code>ProvisonedProductId</code> or a
@@ -1087,15 +671,6 @@ namespace ServiceCatalog
          */
         virtual Model::GetProvisionedProductOutputsOutcome GetProvisionedProductOutputs(const Model::GetProvisionedProductOutputsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetProvisionedProductOutputs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetProvisionedProductOutputsOutcomeCallable GetProvisionedProductOutputsCallable(const Model::GetProvisionedProductOutputsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetProvisionedProductOutputs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetProvisionedProductOutputsAsync(const Model::GetProvisionedProductOutputsRequest& request, const GetProvisionedProductOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Requests the import of a resource as a Amazon Web Services Service Catalog
@@ -1119,15 +694,6 @@ namespace ServiceCatalog
          */
         virtual Model::ImportAsProvisionedProductOutcome ImportAsProvisionedProduct(const Model::ImportAsProvisionedProductRequest& request) const;
 
-        /**
-         * A Callable wrapper for ImportAsProvisionedProduct that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ImportAsProvisionedProductOutcomeCallable ImportAsProvisionedProductCallable(const Model::ImportAsProvisionedProductRequest& request) const;
-
-        /**
-         * An Async wrapper for ImportAsProvisionedProduct that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ImportAsProvisionedProductAsync(const Model::ImportAsProvisionedProductRequest& request, const ImportAsProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all imported portfolios for which account-to-account shares were
@@ -1139,15 +705,6 @@ namespace ServiceCatalog
          */
         virtual Model::ListAcceptedPortfolioSharesOutcome ListAcceptedPortfolioShares(const Model::ListAcceptedPortfolioSharesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAcceptedPortfolioShares that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAcceptedPortfolioSharesOutcomeCallable ListAcceptedPortfolioSharesCallable(const Model::ListAcceptedPortfolioSharesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAcceptedPortfolioShares that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAcceptedPortfolioSharesAsync(const Model::ListAcceptedPortfolioSharesRequest& request, const ListAcceptedPortfolioSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all the budgets associated to the specified resource.</p><p><h3>See
@@ -1157,15 +714,6 @@ namespace ServiceCatalog
          */
         virtual Model::ListBudgetsForResourceOutcome ListBudgetsForResource(const Model::ListBudgetsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListBudgetsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListBudgetsForResourceOutcomeCallable ListBudgetsForResourceCallable(const Model::ListBudgetsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListBudgetsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListBudgetsForResourceAsync(const Model::ListBudgetsForResourceRequest& request, const ListBudgetsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the constraints for the specified portfolio and product.</p><p><h3>See
@@ -1175,15 +723,6 @@ namespace ServiceCatalog
          */
         virtual Model::ListConstraintsForPortfolioOutcome ListConstraintsForPortfolio(const Model::ListConstraintsForPortfolioRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListConstraintsForPortfolio that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListConstraintsForPortfolioOutcomeCallable ListConstraintsForPortfolioCallable(const Model::ListConstraintsForPortfolioRequest& request) const;
-
-        /**
-         * An Async wrapper for ListConstraintsForPortfolio that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListConstraintsForPortfolioAsync(const Model::ListConstraintsForPortfolioRequest& request, const ListConstraintsForPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the paths to the specified product. A path is how the user has access
@@ -1195,15 +734,6 @@ namespace ServiceCatalog
          */
         virtual Model::ListLaunchPathsOutcome ListLaunchPaths(const Model::ListLaunchPathsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListLaunchPaths that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListLaunchPathsOutcomeCallable ListLaunchPathsCallable(const Model::ListLaunchPathsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListLaunchPaths that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListLaunchPathsAsync(const Model::ListLaunchPathsRequest& request, const ListLaunchPathsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the organization nodes that have access to the specified portfolio.
@@ -1215,15 +745,6 @@ namespace ServiceCatalog
          */
         virtual Model::ListOrganizationPortfolioAccessOutcome ListOrganizationPortfolioAccess(const Model::ListOrganizationPortfolioAccessRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListOrganizationPortfolioAccess that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListOrganizationPortfolioAccessOutcomeCallable ListOrganizationPortfolioAccessCallable(const Model::ListOrganizationPortfolioAccessRequest& request) const;
-
-        /**
-         * An Async wrapper for ListOrganizationPortfolioAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListOrganizationPortfolioAccessAsync(const Model::ListOrganizationPortfolioAccessRequest& request, const ListOrganizationPortfolioAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the account IDs that have access to the specified portfolio.</p> <p>A
@@ -1235,15 +756,6 @@ namespace ServiceCatalog
          */
         virtual Model::ListPortfolioAccessOutcome ListPortfolioAccess(const Model::ListPortfolioAccessRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPortfolioAccess that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPortfolioAccessOutcomeCallable ListPortfolioAccessCallable(const Model::ListPortfolioAccessRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPortfolioAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPortfolioAccessAsync(const Model::ListPortfolioAccessRequest& request, const ListPortfolioAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all portfolios in the catalog.</p><p><h3>See Also:</h3>   <a
@@ -1252,15 +764,6 @@ namespace ServiceCatalog
          */
         virtual Model::ListPortfoliosOutcome ListPortfolios(const Model::ListPortfoliosRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPortfolios that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPortfoliosOutcomeCallable ListPortfoliosCallable(const Model::ListPortfoliosRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPortfolios that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPortfoliosAsync(const Model::ListPortfoliosRequest& request, const ListPortfoliosResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all portfolios that the specified product is associated
@@ -1270,15 +773,6 @@ namespace ServiceCatalog
          */
         virtual Model::ListPortfoliosForProductOutcome ListPortfoliosForProduct(const Model::ListPortfoliosForProductRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPortfoliosForProduct that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPortfoliosForProductOutcomeCallable ListPortfoliosForProductCallable(const Model::ListPortfoliosForProductRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPortfoliosForProduct that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPortfoliosForProductAsync(const Model::ListPortfoliosForProductRequest& request, const ListPortfoliosForProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all principal ARNs associated with the specified
@@ -1288,15 +782,6 @@ namespace ServiceCatalog
          */
         virtual Model::ListPrincipalsForPortfolioOutcome ListPrincipalsForPortfolio(const Model::ListPrincipalsForPortfolioRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPrincipalsForPortfolio that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPrincipalsForPortfolioOutcomeCallable ListPrincipalsForPortfolioCallable(const Model::ListPrincipalsForPortfolioRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPrincipalsForPortfolio that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPrincipalsForPortfolioAsync(const Model::ListPrincipalsForPortfolioRequest& request, const ListPrincipalsForPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the plans for the specified provisioned product or all plans to which
@@ -1306,15 +791,6 @@ namespace ServiceCatalog
          */
         virtual Model::ListProvisionedProductPlansOutcome ListProvisionedProductPlans(const Model::ListProvisionedProductPlansRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListProvisionedProductPlans that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListProvisionedProductPlansOutcomeCallable ListProvisionedProductPlansCallable(const Model::ListProvisionedProductPlansRequest& request) const;
-
-        /**
-         * An Async wrapper for ListProvisionedProductPlans that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListProvisionedProductPlansAsync(const Model::ListProvisionedProductPlansRequest& request, const ListProvisionedProductPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all provisioning artifacts (also known as versions) for the specified
@@ -1324,15 +800,6 @@ namespace ServiceCatalog
          */
         virtual Model::ListProvisioningArtifactsOutcome ListProvisioningArtifacts(const Model::ListProvisioningArtifactsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListProvisioningArtifacts that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListProvisioningArtifactsOutcomeCallable ListProvisioningArtifactsCallable(const Model::ListProvisioningArtifactsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListProvisioningArtifacts that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListProvisioningArtifactsAsync(const Model::ListProvisioningArtifactsRequest& request, const ListProvisioningArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all provisioning artifacts (also known as versions) for the specified
@@ -1342,15 +809,6 @@ namespace ServiceCatalog
          */
         virtual Model::ListProvisioningArtifactsForServiceActionOutcome ListProvisioningArtifactsForServiceAction(const Model::ListProvisioningArtifactsForServiceActionRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListProvisioningArtifactsForServiceAction that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListProvisioningArtifactsForServiceActionOutcomeCallable ListProvisioningArtifactsForServiceActionCallable(const Model::ListProvisioningArtifactsForServiceActionRequest& request) const;
-
-        /**
-         * An Async wrapper for ListProvisioningArtifactsForServiceAction that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListProvisioningArtifactsForServiceActionAsync(const Model::ListProvisioningArtifactsForServiceActionRequest& request, const ListProvisioningArtifactsForServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the specified requests or all performed requests.</p><p><h3>See
@@ -1360,15 +818,6 @@ namespace ServiceCatalog
          */
         virtual Model::ListRecordHistoryOutcome ListRecordHistory(const Model::ListRecordHistoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListRecordHistory that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListRecordHistoryOutcomeCallable ListRecordHistoryCallable(const Model::ListRecordHistoryRequest& request) const;
-
-        /**
-         * An Async wrapper for ListRecordHistory that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListRecordHistoryAsync(const Model::ListRecordHistoryRequest& request, const ListRecordHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the resources associated with the specified TagOption.</p><p><h3>See
@@ -1378,15 +827,6 @@ namespace ServiceCatalog
          */
         virtual Model::ListResourcesForTagOptionOutcome ListResourcesForTagOption(const Model::ListResourcesForTagOptionRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListResourcesForTagOption that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListResourcesForTagOptionOutcomeCallable ListResourcesForTagOptionCallable(const Model::ListResourcesForTagOptionRequest& request) const;
-
-        /**
-         * An Async wrapper for ListResourcesForTagOption that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListResourcesForTagOptionAsync(const Model::ListResourcesForTagOptionRequest& request, const ListResourcesForTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all self-service actions.</p><p><h3>See Also:</h3>   <a
@@ -1395,15 +835,6 @@ namespace ServiceCatalog
          */
         virtual Model::ListServiceActionsOutcome ListServiceActions(const Model::ListServiceActionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListServiceActions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListServiceActionsOutcomeCallable ListServiceActionsCallable(const Model::ListServiceActionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListServiceActions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListServiceActionsAsync(const Model::ListServiceActionsRequest& request, const ListServiceActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a paginated list of self-service actions associated with the
@@ -1413,15 +844,6 @@ namespace ServiceCatalog
          */
         virtual Model::ListServiceActionsForProvisioningArtifactOutcome ListServiceActionsForProvisioningArtifact(const Model::ListServiceActionsForProvisioningArtifactRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListServiceActionsForProvisioningArtifact that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListServiceActionsForProvisioningArtifactOutcomeCallable ListServiceActionsForProvisioningArtifactCallable(const Model::ListServiceActionsForProvisioningArtifactRequest& request) const;
-
-        /**
-         * An Async wrapper for ListServiceActionsForProvisioningArtifact that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListServiceActionsForProvisioningArtifactAsync(const Model::ListServiceActionsForProvisioningArtifactRequest& request, const ListServiceActionsForProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns summary information about stack instances that are associated with
@@ -1433,15 +855,6 @@ namespace ServiceCatalog
          */
         virtual Model::ListStackInstancesForProvisionedProductOutcome ListStackInstancesForProvisionedProduct(const Model::ListStackInstancesForProvisionedProductRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListStackInstancesForProvisionedProduct that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListStackInstancesForProvisionedProductOutcomeCallable ListStackInstancesForProvisionedProductCallable(const Model::ListStackInstancesForProvisionedProductRequest& request) const;
-
-        /**
-         * An Async wrapper for ListStackInstancesForProvisionedProduct that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListStackInstancesForProvisionedProductAsync(const Model::ListStackInstancesForProvisionedProductRequest& request, const ListStackInstancesForProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the specified TagOptions or all TagOptions.</p><p><h3>See Also:</h3>  
@@ -1451,15 +864,6 @@ namespace ServiceCatalog
          */
         virtual Model::ListTagOptionsOutcome ListTagOptions(const Model::ListTagOptionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagOptions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagOptionsOutcomeCallable ListTagOptionsCallable(const Model::ListTagOptionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagOptionsAsync(const Model::ListTagOptionsRequest& request, const ListTagOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provisions the specified product.</p> <p>A provisioned product is a resourced
@@ -1476,15 +880,6 @@ namespace ServiceCatalog
          */
         virtual Model::ProvisionProductOutcome ProvisionProduct(const Model::ProvisionProductRequest& request) const;
 
-        /**
-         * A Callable wrapper for ProvisionProduct that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ProvisionProductOutcomeCallable ProvisionProductCallable(const Model::ProvisionProductRequest& request) const;
-
-        /**
-         * An Async wrapper for ProvisionProduct that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ProvisionProductAsync(const Model::ProvisionProductRequest& request, const ProvisionProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Rejects an offer to share the specified portfolio.</p><p><h3>See Also:</h3>  
@@ -1494,15 +889,6 @@ namespace ServiceCatalog
          */
         virtual Model::RejectPortfolioShareOutcome RejectPortfolioShare(const Model::RejectPortfolioShareRequest& request) const;
 
-        /**
-         * A Callable wrapper for RejectPortfolioShare that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RejectPortfolioShareOutcomeCallable RejectPortfolioShareCallable(const Model::RejectPortfolioShareRequest& request) const;
-
-        /**
-         * An Async wrapper for RejectPortfolioShare that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RejectPortfolioShareAsync(const Model::RejectPortfolioShareRequest& request, const RejectPortfolioShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the provisioned products that are available (not terminated).</p> <p>To
@@ -1513,15 +899,6 @@ namespace ServiceCatalog
          */
         virtual Model::ScanProvisionedProductsOutcome ScanProvisionedProducts(const Model::ScanProvisionedProductsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ScanProvisionedProducts that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ScanProvisionedProductsOutcomeCallable ScanProvisionedProductsCallable(const Model::ScanProvisionedProductsRequest& request) const;
-
-        /**
-         * An Async wrapper for ScanProvisionedProducts that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ScanProvisionedProductsAsync(const Model::ScanProvisionedProductsRequest& request, const ScanProvisionedProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the products to which the caller has
@@ -1531,15 +908,6 @@ namespace ServiceCatalog
          */
         virtual Model::SearchProductsOutcome SearchProducts(const Model::SearchProductsRequest& request) const;
 
-        /**
-         * A Callable wrapper for SearchProducts that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SearchProductsOutcomeCallable SearchProductsCallable(const Model::SearchProductsRequest& request) const;
-
-        /**
-         * An Async wrapper for SearchProducts that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SearchProductsAsync(const Model::SearchProductsRequest& request, const SearchProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the products for the specified portfolio or all
@@ -1549,15 +917,6 @@ namespace ServiceCatalog
          */
         virtual Model::SearchProductsAsAdminOutcome SearchProductsAsAdmin(const Model::SearchProductsAsAdminRequest& request) const;
 
-        /**
-         * A Callable wrapper for SearchProductsAsAdmin that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SearchProductsAsAdminOutcomeCallable SearchProductsAsAdminCallable(const Model::SearchProductsAsAdminRequest& request) const;
-
-        /**
-         * An Async wrapper for SearchProductsAsAdmin that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SearchProductsAsAdminAsync(const Model::SearchProductsAsAdminRequest& request, const SearchProductsAsAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the provisioned products that meet the specified
@@ -1571,15 +930,6 @@ namespace ServiceCatalog
          */
         virtual Model::SearchProvisionedProductsOutcome SearchProvisionedProducts(const Model::SearchProvisionedProductsRequest& request) const;
 
-        /**
-         * A Callable wrapper for SearchProvisionedProducts that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SearchProvisionedProductsOutcomeCallable SearchProvisionedProductsCallable(const Model::SearchProvisionedProductsRequest& request) const;
-
-        /**
-         * An Async wrapper for SearchProvisionedProducts that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SearchProvisionedProductsAsync(const Model::SearchProvisionedProductsRequest& request, const SearchProvisionedProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Terminates the specified provisioned product.</p> <p>This operation does not
@@ -1591,15 +941,6 @@ namespace ServiceCatalog
          */
         virtual Model::TerminateProvisionedProductOutcome TerminateProvisionedProduct(const Model::TerminateProvisionedProductRequest& request) const;
 
-        /**
-         * A Callable wrapper for TerminateProvisionedProduct that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TerminateProvisionedProductOutcomeCallable TerminateProvisionedProductCallable(const Model::TerminateProvisionedProductRequest& request) const;
-
-        /**
-         * An Async wrapper for TerminateProvisionedProduct that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TerminateProvisionedProductAsync(const Model::TerminateProvisionedProductRequest& request, const TerminateProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the specified constraint.</p><p><h3>See Also:</h3>   <a
@@ -1608,15 +949,6 @@ namespace ServiceCatalog
          */
         virtual Model::UpdateConstraintOutcome UpdateConstraint(const Model::UpdateConstraintRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateConstraint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateConstraintOutcomeCallable UpdateConstraintCallable(const Model::UpdateConstraintRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateConstraint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateConstraintAsync(const Model::UpdateConstraintRequest& request, const UpdateConstraintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the specified portfolio.</p> <p>You cannot update a product that was
@@ -1626,15 +958,6 @@ namespace ServiceCatalog
          */
         virtual Model::UpdatePortfolioOutcome UpdatePortfolio(const Model::UpdatePortfolioRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdatePortfolio that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdatePortfolioOutcomeCallable UpdatePortfolioCallable(const Model::UpdatePortfolioRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdatePortfolio that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdatePortfolioAsync(const Model::UpdatePortfolioRequest& request, const UpdatePortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the specified portfolio share. You can use this API to enable or
@@ -1654,15 +977,6 @@ namespace ServiceCatalog
          */
         virtual Model::UpdatePortfolioShareOutcome UpdatePortfolioShare(const Model::UpdatePortfolioShareRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdatePortfolioShare that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdatePortfolioShareOutcomeCallable UpdatePortfolioShareCallable(const Model::UpdatePortfolioShareRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdatePortfolioShare that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdatePortfolioShareAsync(const Model::UpdatePortfolioShareRequest& request, const UpdatePortfolioShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the specified product.</p><p><h3>See Also:</h3>   <a
@@ -1671,15 +985,6 @@ namespace ServiceCatalog
          */
         virtual Model::UpdateProductOutcome UpdateProduct(const Model::UpdateProductRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateProduct that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateProductOutcomeCallable UpdateProductCallable(const Model::UpdateProductRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateProduct that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateProductAsync(const Model::UpdateProductRequest& request, const UpdateProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Requests updates to the configuration of the specified provisioned
@@ -1693,15 +998,6 @@ namespace ServiceCatalog
          */
         virtual Model::UpdateProvisionedProductOutcome UpdateProvisionedProduct(const Model::UpdateProvisionedProductRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateProvisionedProduct that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateProvisionedProductOutcomeCallable UpdateProvisionedProductCallable(const Model::UpdateProvisionedProductRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateProvisionedProduct that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateProvisionedProductAsync(const Model::UpdateProvisionedProductRequest& request, const UpdateProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Requests updates to the properties of the specified provisioned
@@ -1711,15 +1007,6 @@ namespace ServiceCatalog
          */
         virtual Model::UpdateProvisionedProductPropertiesOutcome UpdateProvisionedProductProperties(const Model::UpdateProvisionedProductPropertiesRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateProvisionedProductProperties that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateProvisionedProductPropertiesOutcomeCallable UpdateProvisionedProductPropertiesCallable(const Model::UpdateProvisionedProductPropertiesRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateProvisionedProductProperties that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateProvisionedProductPropertiesAsync(const Model::UpdateProvisionedProductPropertiesRequest& request, const UpdateProvisionedProductPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the specified provisioning artifact (also known as a version) for the
@@ -1730,15 +1017,6 @@ namespace ServiceCatalog
          */
         virtual Model::UpdateProvisioningArtifactOutcome UpdateProvisioningArtifact(const Model::UpdateProvisioningArtifactRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateProvisioningArtifact that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateProvisioningArtifactOutcomeCallable UpdateProvisioningArtifactCallable(const Model::UpdateProvisioningArtifactRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateProvisioningArtifact that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateProvisioningArtifactAsync(const Model::UpdateProvisioningArtifactRequest& request, const UpdateProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a self-service action.</p><p><h3>See Also:</h3>   <a
@@ -1747,15 +1025,6 @@ namespace ServiceCatalog
          */
         virtual Model::UpdateServiceActionOutcome UpdateServiceAction(const Model::UpdateServiceActionRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateServiceAction that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateServiceActionOutcomeCallable UpdateServiceActionCallable(const Model::UpdateServiceActionRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateServiceAction that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateServiceActionAsync(const Model::UpdateServiceActionRequest& request, const UpdateServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the specified TagOption.</p><p><h3>See Also:</h3>   <a
@@ -1764,15 +1033,6 @@ namespace ServiceCatalog
          */
         virtual Model::UpdateTagOptionOutcome UpdateTagOption(const Model::UpdateTagOptionRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateTagOption that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateTagOptionOutcomeCallable UpdateTagOptionCallable(const Model::UpdateTagOptionRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateTagOption that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateTagOptionAsync(const Model::UpdateTagOptionRequest& request, const UpdateTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

@@ -7,8 +7,10 @@
 #include <aws/scheduler/Scheduler_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/scheduler/SchedulerServiceClientModel.h>
+#include <aws/scheduler/SchedulerLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -78,6 +80,47 @@ namespace Scheduler
         virtual ~SchedulerClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Creates the specified schedule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/CreateSchedule">AWS
@@ -85,15 +128,6 @@ namespace Scheduler
          */
         virtual Model::CreateScheduleOutcome CreateSchedule(const Model::CreateScheduleRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateSchedule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateScheduleOutcomeCallable CreateScheduleCallable(const Model::CreateScheduleRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateSchedule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateScheduleAsync(const Model::CreateScheduleRequest& request, const CreateScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates the specified schedule group.</p><p><h3>See Also:</h3>   <a
@@ -102,15 +136,6 @@ namespace Scheduler
          */
         virtual Model::CreateScheduleGroupOutcome CreateScheduleGroup(const Model::CreateScheduleGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateScheduleGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateScheduleGroupOutcomeCallable CreateScheduleGroupCallable(const Model::CreateScheduleGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateScheduleGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateScheduleGroupAsync(const Model::CreateScheduleGroupRequest& request, const CreateScheduleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified schedule.</p><p><h3>See Also:</h3>   <a
@@ -119,15 +144,6 @@ namespace Scheduler
          */
         virtual Model::DeleteScheduleOutcome DeleteSchedule(const Model::DeleteScheduleRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteSchedule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteScheduleOutcomeCallable DeleteScheduleCallable(const Model::DeleteScheduleRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteSchedule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteScheduleAsync(const Model::DeleteScheduleRequest& request, const DeleteScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified schedule group. Deleting a schedule group results in
@@ -143,15 +159,6 @@ namespace Scheduler
          */
         virtual Model::DeleteScheduleGroupOutcome DeleteScheduleGroup(const Model::DeleteScheduleGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteScheduleGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteScheduleGroupOutcomeCallable DeleteScheduleGroupCallable(const Model::DeleteScheduleGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteScheduleGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteScheduleGroupAsync(const Model::DeleteScheduleGroupRequest& request, const DeleteScheduleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the specified schedule.</p><p><h3>See Also:</h3>   <a
@@ -160,15 +167,6 @@ namespace Scheduler
          */
         virtual Model::GetScheduleOutcome GetSchedule(const Model::GetScheduleRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSchedule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetScheduleOutcomeCallable GetScheduleCallable(const Model::GetScheduleRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSchedule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetScheduleAsync(const Model::GetScheduleRequest& request, const GetScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the specified schedule group.</p><p><h3>See Also:</h3>   <a
@@ -177,15 +175,6 @@ namespace Scheduler
          */
         virtual Model::GetScheduleGroupOutcome GetScheduleGroup(const Model::GetScheduleGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetScheduleGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetScheduleGroupOutcomeCallable GetScheduleGroupCallable(const Model::GetScheduleGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for GetScheduleGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetScheduleGroupAsync(const Model::GetScheduleGroupRequest& request, const GetScheduleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a paginated list of your schedule groups.</p><p><h3>See Also:</h3>  
@@ -195,15 +184,6 @@ namespace Scheduler
          */
         virtual Model::ListScheduleGroupsOutcome ListScheduleGroups(const Model::ListScheduleGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListScheduleGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListScheduleGroupsOutcomeCallable ListScheduleGroupsCallable(const Model::ListScheduleGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListScheduleGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListScheduleGroupsAsync(const Model::ListScheduleGroupsRequest& request, const ListScheduleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a paginated list of your EventBridge Scheduler
@@ -213,15 +193,6 @@ namespace Scheduler
          */
         virtual Model::ListSchedulesOutcome ListSchedules(const Model::ListSchedulesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSchedules that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListSchedulesOutcomeCallable ListSchedulesCallable(const Model::ListSchedulesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSchedules that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListSchedulesAsync(const Model::ListSchedulesRequest& request, const ListSchedulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the tags associated with the Scheduler resource.</p><p><h3>See
@@ -231,15 +202,6 @@ namespace Scheduler
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Assigns one or more tags (key-value pairs) to the specified EventBridge
@@ -250,15 +212,6 @@ namespace Scheduler
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes one or more tags from the specified EventBridge Scheduler schedule
@@ -268,15 +221,6 @@ namespace Scheduler
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Updates the specified schedule. When you call <code>UpdateSchedule</code>,
@@ -292,15 +236,6 @@ namespace Scheduler
          */
         virtual Model::UpdateScheduleOutcome UpdateSchedule(const Model::UpdateScheduleRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateSchedule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateScheduleOutcomeCallable UpdateScheduleCallable(const Model::UpdateScheduleRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateSchedule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateScheduleAsync(const Model::UpdateScheduleRequest& request, const UpdateScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

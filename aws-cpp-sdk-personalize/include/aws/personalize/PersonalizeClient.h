@@ -7,8 +7,10 @@
 #include <aws/personalize/Personalize_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/personalize/PersonalizeServiceClientModel.h>
+#include <aws/personalize/PersonalizeLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -74,6 +76,47 @@ namespace Personalize
         virtual ~PersonalizeClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Creates a batch inference job. The operation can handle up to 50 million
          * records and the input file must be in JSON format. For more information, see <a
@@ -84,15 +127,6 @@ namespace Personalize
          */
         virtual Model::CreateBatchInferenceJobOutcome CreateBatchInferenceJob(const Model::CreateBatchInferenceJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateBatchInferenceJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateBatchInferenceJobOutcomeCallable CreateBatchInferenceJobCallable(const Model::CreateBatchInferenceJobRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateBatchInferenceJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateBatchInferenceJobAsync(const Model::CreateBatchInferenceJobRequest& request, const CreateBatchInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a batch segment job. The operation can handle up to 50 million
@@ -104,15 +138,6 @@ namespace Personalize
          */
         virtual Model::CreateBatchSegmentJobOutcome CreateBatchSegmentJob(const Model::CreateBatchSegmentJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateBatchSegmentJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateBatchSegmentJobOutcomeCallable CreateBatchSegmentJobCallable(const Model::CreateBatchSegmentJobRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateBatchSegmentJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateBatchSegmentJobAsync(const Model::CreateBatchSegmentJobRequest& request, const CreateBatchSegmentJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a campaign that deploys a solution version. When a client calls the
@@ -156,15 +181,6 @@ namespace Personalize
          */
         virtual Model::CreateCampaignOutcome CreateCampaign(const Model::CreateCampaignRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateCampaign that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateCampaignOutcomeCallable CreateCampaignCallable(const Model::CreateCampaignRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateCampaign that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateCampaignAsync(const Model::CreateCampaignRequest& request, const CreateCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an empty dataset and adds it to the specified dataset group. Use <a
@@ -193,15 +209,6 @@ namespace Personalize
          */
         virtual Model::CreateDatasetOutcome CreateDataset(const Model::CreateDatasetRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDataset that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDatasetOutcomeCallable CreateDatasetCallable(const Model::CreateDatasetRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDataset that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDatasetAsync(const Model::CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Creates a job that exports data from your dataset to an Amazon S3 bucket. To
@@ -223,15 +230,6 @@ namespace Personalize
          */
         virtual Model::CreateDatasetExportJobOutcome CreateDatasetExportJob(const Model::CreateDatasetExportJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDatasetExportJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDatasetExportJobOutcomeCallable CreateDatasetExportJobCallable(const Model::CreateDatasetExportJobRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDatasetExportJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDatasetExportJobAsync(const Model::CreateDatasetExportJobRequest& request, const CreateDatasetExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an empty dataset group. A dataset group is a container for Amazon
@@ -274,15 +272,6 @@ namespace Personalize
          */
         virtual Model::CreateDatasetGroupOutcome CreateDatasetGroup(const Model::CreateDatasetGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDatasetGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDatasetGroupOutcomeCallable CreateDatasetGroupCallable(const Model::CreateDatasetGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDatasetGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDatasetGroupAsync(const Model::CreateDatasetGroupRequest& request, const CreateDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a job that imports training data from your data source (an Amazon S3
@@ -316,15 +305,6 @@ namespace Personalize
          */
         virtual Model::CreateDatasetImportJobOutcome CreateDatasetImportJob(const Model::CreateDatasetImportJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDatasetImportJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDatasetImportJobOutcomeCallable CreateDatasetImportJobCallable(const Model::CreateDatasetImportJobRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDatasetImportJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDatasetImportJobAsync(const Model::CreateDatasetImportJobRequest& request, const CreateDatasetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an event tracker that you use when adding event data to a specified
@@ -357,15 +337,6 @@ namespace Personalize
          */
         virtual Model::CreateEventTrackerOutcome CreateEventTracker(const Model::CreateEventTrackerRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateEventTracker that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateEventTrackerOutcomeCallable CreateEventTrackerCallable(const Model::CreateEventTrackerRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateEventTracker that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateEventTrackerAsync(const Model::CreateEventTrackerRequest& request, const CreateEventTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a recommendation filter. For more information, see <a
@@ -376,15 +347,6 @@ namespace Personalize
          */
         virtual Model::CreateFilterOutcome CreateFilter(const Model::CreateFilterRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateFilter that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateFilterOutcomeCallable CreateFilterCallable(const Model::CreateFilterRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateFilter that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateFilterAsync(const Model::CreateFilterRequest& request, const CreateFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a metric attribution. A metric attribution creates reports on the
@@ -398,15 +360,6 @@ namespace Personalize
          */
         virtual Model::CreateMetricAttributionOutcome CreateMetricAttribution(const Model::CreateMetricAttributionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateMetricAttribution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateMetricAttributionOutcomeCallable CreateMetricAttributionCallable(const Model::CreateMetricAttributionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateMetricAttribution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateMetricAttributionAsync(const Model::CreateMetricAttributionRequest& request, const CreateMetricAttributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a recommender with the recipe (a Domain dataset group use case) you
@@ -457,15 +410,6 @@ namespace Personalize
          */
         virtual Model::CreateRecommenderOutcome CreateRecommender(const Model::CreateRecommenderRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateRecommender that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateRecommenderOutcomeCallable CreateRecommenderCallable(const Model::CreateRecommenderRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateRecommender that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateRecommenderAsync(const Model::CreateRecommenderRequest& request, const CreateRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an Amazon Personalize schema from the specified schema string. The
@@ -487,15 +431,6 @@ namespace Personalize
          */
         virtual Model::CreateSchemaOutcome CreateSchema(const Model::CreateSchemaRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateSchema that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateSchemaOutcomeCallable CreateSchemaCallable(const Model::CreateSchemaRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateSchema that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateSchemaAsync(const Model::CreateSchemaRequest& request, const CreateSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates the configuration for training a model. A trained model is known as a
@@ -543,15 +478,6 @@ namespace Personalize
          */
         virtual Model::CreateSolutionOutcome CreateSolution(const Model::CreateSolutionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateSolution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateSolutionOutcomeCallable CreateSolutionCallable(const Model::CreateSolutionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateSolution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateSolutionAsync(const Model::CreateSolutionRequest& request, const CreateSolutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Trains or retrains an active solution in a Custom dataset group. A solution
@@ -586,15 +512,6 @@ namespace Personalize
          */
         virtual Model::CreateSolutionVersionOutcome CreateSolutionVersion(const Model::CreateSolutionVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateSolutionVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateSolutionVersionOutcomeCallable CreateSolutionVersionCallable(const Model::CreateSolutionVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateSolutionVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateSolutionVersionAsync(const Model::CreateSolutionVersionRequest& request, const CreateSolutionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes a campaign by deleting the solution deployment. The solution that the
@@ -609,15 +526,6 @@ namespace Personalize
          */
         virtual Model::DeleteCampaignOutcome DeleteCampaign(const Model::DeleteCampaignRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteCampaign that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteCampaignOutcomeCallable DeleteCampaignCallable(const Model::DeleteCampaignRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteCampaign that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteCampaignAsync(const Model::DeleteCampaignRequest& request, const DeleteCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a dataset. You can't delete a dataset if an associated
@@ -630,15 +538,6 @@ namespace Personalize
          */
         virtual Model::DeleteDatasetOutcome DeleteDataset(const Model::DeleteDatasetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDataset that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDatasetOutcomeCallable DeleteDatasetCallable(const Model::DeleteDatasetRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDataset that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDatasetAsync(const Model::DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a dataset group. Before you delete a dataset group, you must delete
@@ -650,15 +549,6 @@ namespace Personalize
          */
         virtual Model::DeleteDatasetGroupOutcome DeleteDatasetGroup(const Model::DeleteDatasetGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDatasetGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDatasetGroupOutcomeCallable DeleteDatasetGroupCallable(const Model::DeleteDatasetGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDatasetGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDatasetGroupAsync(const Model::DeleteDatasetGroupRequest& request, const DeleteDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the event tracker. Does not delete the event-interactions dataset
@@ -671,15 +561,6 @@ namespace Personalize
          */
         virtual Model::DeleteEventTrackerOutcome DeleteEventTracker(const Model::DeleteEventTrackerRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteEventTracker that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteEventTrackerOutcomeCallable DeleteEventTrackerCallable(const Model::DeleteEventTrackerRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteEventTracker that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteEventTrackerAsync(const Model::DeleteEventTrackerRequest& request, const DeleteEventTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a filter.</p><p><h3>See Also:</h3>   <a
@@ -688,15 +569,6 @@ namespace Personalize
          */
         virtual Model::DeleteFilterOutcome DeleteFilter(const Model::DeleteFilterRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteFilter that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteFilterOutcomeCallable DeleteFilterCallable(const Model::DeleteFilterRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteFilter that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteFilterAsync(const Model::DeleteFilterRequest& request, const DeleteFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a metric attribution.</p><p><h3>See Also:</h3>   <a
@@ -705,15 +577,6 @@ namespace Personalize
          */
         virtual Model::DeleteMetricAttributionOutcome DeleteMetricAttribution(const Model::DeleteMetricAttributionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteMetricAttribution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteMetricAttributionOutcomeCallable DeleteMetricAttributionCallable(const Model::DeleteMetricAttributionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteMetricAttribution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteMetricAttributionAsync(const Model::DeleteMetricAttributionRequest& request, const DeleteMetricAttributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deactivates and removes a recommender. A deleted recommender can no longer be
@@ -725,15 +588,6 @@ namespace Personalize
          */
         virtual Model::DeleteRecommenderOutcome DeleteRecommender(const Model::DeleteRecommenderRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteRecommender that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteRecommenderOutcomeCallable DeleteRecommenderCallable(const Model::DeleteRecommenderRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteRecommender that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteRecommenderAsync(const Model::DeleteRecommenderRequest& request, const DeleteRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a schema. Before deleting a schema, you must delete all datasets
@@ -745,15 +599,6 @@ namespace Personalize
          */
         virtual Model::DeleteSchemaOutcome DeleteSchema(const Model::DeleteSchemaRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteSchema that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteSchemaOutcomeCallable DeleteSchemaCallable(const Model::DeleteSchemaRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteSchema that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteSchemaAsync(const Model::DeleteSchemaRequest& request, const DeleteSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes all versions of a solution and the <code>Solution</code> object
@@ -770,15 +615,6 @@ namespace Personalize
          */
         virtual Model::DeleteSolutionOutcome DeleteSolution(const Model::DeleteSolutionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteSolution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteSolutionOutcomeCallable DeleteSolutionCallable(const Model::DeleteSolutionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteSolution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteSolutionAsync(const Model::DeleteSolutionRequest& request, const DeleteSolutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the given algorithm.</p><p><h3>See Also:</h3>   <a
@@ -787,15 +623,6 @@ namespace Personalize
          */
         virtual Model::DescribeAlgorithmOutcome DescribeAlgorithm(const Model::DescribeAlgorithmRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAlgorithm that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAlgorithmOutcomeCallable DescribeAlgorithmCallable(const Model::DescribeAlgorithmRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAlgorithm that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAlgorithmAsync(const Model::DescribeAlgorithmRequest& request, const DescribeAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the properties of a batch inference job including name, Amazon Resource
@@ -806,15 +633,6 @@ namespace Personalize
          */
         virtual Model::DescribeBatchInferenceJobOutcome DescribeBatchInferenceJob(const Model::DescribeBatchInferenceJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeBatchInferenceJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeBatchInferenceJobOutcomeCallable DescribeBatchInferenceJobCallable(const Model::DescribeBatchInferenceJobRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeBatchInferenceJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeBatchInferenceJobAsync(const Model::DescribeBatchInferenceJobRequest& request, const DescribeBatchInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the properties of a batch segment job including name, Amazon Resource
@@ -825,15 +643,6 @@ namespace Personalize
          */
         virtual Model::DescribeBatchSegmentJobOutcome DescribeBatchSegmentJob(const Model::DescribeBatchSegmentJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeBatchSegmentJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeBatchSegmentJobOutcomeCallable DescribeBatchSegmentJobCallable(const Model::DescribeBatchSegmentJobRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeBatchSegmentJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeBatchSegmentJobAsync(const Model::DescribeBatchSegmentJobRequest& request, const DescribeBatchSegmentJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the given campaign, including its status.</p> <p>A campaign can be
@@ -849,15 +658,6 @@ namespace Personalize
          */
         virtual Model::DescribeCampaignOutcome DescribeCampaign(const Model::DescribeCampaignRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeCampaign that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeCampaignOutcomeCallable DescribeCampaignCallable(const Model::DescribeCampaignRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeCampaign that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeCampaignAsync(const Model::DescribeCampaignRequest& request, const DescribeCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the given dataset. For more information on datasets, see <a
@@ -868,15 +668,6 @@ namespace Personalize
          */
         virtual Model::DescribeDatasetOutcome DescribeDataset(const Model::DescribeDatasetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDataset that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDatasetOutcomeCallable DescribeDatasetCallable(const Model::DescribeDatasetRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDataset that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDatasetAsync(const Model::DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the dataset export job created by <a
@@ -887,15 +678,6 @@ namespace Personalize
          */
         virtual Model::DescribeDatasetExportJobOutcome DescribeDatasetExportJob(const Model::DescribeDatasetExportJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDatasetExportJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDatasetExportJobOutcomeCallable DescribeDatasetExportJobCallable(const Model::DescribeDatasetExportJobRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDatasetExportJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDatasetExportJobAsync(const Model::DescribeDatasetExportJobRequest& request, const DescribeDatasetExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the given dataset group. For more information on dataset groups,
@@ -907,15 +689,6 @@ namespace Personalize
          */
         virtual Model::DescribeDatasetGroupOutcome DescribeDatasetGroup(const Model::DescribeDatasetGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDatasetGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDatasetGroupOutcomeCallable DescribeDatasetGroupCallable(const Model::DescribeDatasetGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDatasetGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDatasetGroupAsync(const Model::DescribeDatasetGroupRequest& request, const DescribeDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the dataset import job created by <a
@@ -926,15 +699,6 @@ namespace Personalize
          */
         virtual Model::DescribeDatasetImportJobOutcome DescribeDatasetImportJob(const Model::DescribeDatasetImportJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDatasetImportJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDatasetImportJobOutcomeCallable DescribeDatasetImportJobCallable(const Model::DescribeDatasetImportJobRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDatasetImportJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDatasetImportJobAsync(const Model::DescribeDatasetImportJobRequest& request, const DescribeDatasetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes an event tracker. The response includes the <code>trackingId</code>
@@ -947,15 +711,6 @@ namespace Personalize
          */
         virtual Model::DescribeEventTrackerOutcome DescribeEventTracker(const Model::DescribeEventTrackerRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEventTracker that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEventTrackerOutcomeCallable DescribeEventTrackerCallable(const Model::DescribeEventTrackerRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEventTracker that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEventTrackerAsync(const Model::DescribeEventTrackerRequest& request, const DescribeEventTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the given feature transformation.</p><p><h3>See Also:</h3>   <a
@@ -964,15 +719,6 @@ namespace Personalize
          */
         virtual Model::DescribeFeatureTransformationOutcome DescribeFeatureTransformation(const Model::DescribeFeatureTransformationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeFeatureTransformation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeFeatureTransformationOutcomeCallable DescribeFeatureTransformationCallable(const Model::DescribeFeatureTransformationRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeFeatureTransformation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeFeatureTransformationAsync(const Model::DescribeFeatureTransformationRequest& request, const DescribeFeatureTransformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a filter's properties.</p><p><h3>See Also:</h3>   <a
@@ -981,15 +727,6 @@ namespace Personalize
          */
         virtual Model::DescribeFilterOutcome DescribeFilter(const Model::DescribeFilterRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeFilter that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeFilterOutcomeCallable DescribeFilterCallable(const Model::DescribeFilterRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeFilter that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeFilterAsync(const Model::DescribeFilterRequest& request, const DescribeFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a metric attribution.</p><p><h3>See Also:</h3>   <a
@@ -998,15 +735,6 @@ namespace Personalize
          */
         virtual Model::DescribeMetricAttributionOutcome DescribeMetricAttribution(const Model::DescribeMetricAttributionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeMetricAttribution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeMetricAttributionOutcomeCallable DescribeMetricAttributionCallable(const Model::DescribeMetricAttributionRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeMetricAttribution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeMetricAttributionAsync(const Model::DescribeMetricAttributionRequest& request, const DescribeMetricAttributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a recipe.</p> <p>A recipe contains three items:</p> <ul> <li> <p>An
@@ -1026,15 +754,6 @@ namespace Personalize
          */
         virtual Model::DescribeRecipeOutcome DescribeRecipe(const Model::DescribeRecipeRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeRecipe that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeRecipeOutcomeCallable DescribeRecipeCallable(const Model::DescribeRecipeRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeRecipe that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeRecipeAsync(const Model::DescribeRecipeRequest& request, const DescribeRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the given recommender, including its status.</p> <p>A recommender
@@ -1053,15 +772,6 @@ namespace Personalize
          */
         virtual Model::DescribeRecommenderOutcome DescribeRecommender(const Model::DescribeRecommenderRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeRecommender that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeRecommenderOutcomeCallable DescribeRecommenderCallable(const Model::DescribeRecommenderRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeRecommender that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeRecommenderAsync(const Model::DescribeRecommenderRequest& request, const DescribeRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a schema. For more information on schemas, see <a
@@ -1072,15 +782,6 @@ namespace Personalize
          */
         virtual Model::DescribeSchemaOutcome DescribeSchema(const Model::DescribeSchemaRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeSchema that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeSchemaOutcomeCallable DescribeSchemaCallable(const Model::DescribeSchemaRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeSchema that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeSchemaAsync(const Model::DescribeSchemaRequest& request, const DescribeSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a solution. For more information on solutions, see <a
@@ -1091,15 +792,6 @@ namespace Personalize
          */
         virtual Model::DescribeSolutionOutcome DescribeSolution(const Model::DescribeSolutionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeSolution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeSolutionOutcomeCallable DescribeSolutionCallable(const Model::DescribeSolutionRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeSolution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeSolutionAsync(const Model::DescribeSolutionRequest& request, const DescribeSolutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a specific version of a solution. For more information on
@@ -1111,15 +803,6 @@ namespace Personalize
          */
         virtual Model::DescribeSolutionVersionOutcome DescribeSolutionVersion(const Model::DescribeSolutionVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeSolutionVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeSolutionVersionOutcomeCallable DescribeSolutionVersionCallable(const Model::DescribeSolutionVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeSolutionVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeSolutionVersionAsync(const Model::DescribeSolutionVersionRequest& request, const DescribeSolutionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the metrics for the specified solution version.</p><p><h3>See Also:</h3>
@@ -1129,15 +812,6 @@ namespace Personalize
          */
         virtual Model::GetSolutionMetricsOutcome GetSolutionMetrics(const Model::GetSolutionMetricsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSolutionMetrics that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSolutionMetricsOutcomeCallable GetSolutionMetricsCallable(const Model::GetSolutionMetricsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSolutionMetrics that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSolutionMetricsAsync(const Model::GetSolutionMetricsRequest& request, const GetSolutionMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of the batch inference jobs that have been performed off of a
@@ -1147,15 +821,6 @@ namespace Personalize
          */
         virtual Model::ListBatchInferenceJobsOutcome ListBatchInferenceJobs(const Model::ListBatchInferenceJobsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListBatchInferenceJobs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListBatchInferenceJobsOutcomeCallable ListBatchInferenceJobsCallable(const Model::ListBatchInferenceJobsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListBatchInferenceJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListBatchInferenceJobsAsync(const Model::ListBatchInferenceJobsRequest& request, const ListBatchInferenceJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of the batch segment jobs that have been performed off of a
@@ -1165,15 +830,6 @@ namespace Personalize
          */
         virtual Model::ListBatchSegmentJobsOutcome ListBatchSegmentJobs(const Model::ListBatchSegmentJobsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListBatchSegmentJobs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListBatchSegmentJobsOutcomeCallable ListBatchSegmentJobsCallable(const Model::ListBatchSegmentJobsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListBatchSegmentJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListBatchSegmentJobsAsync(const Model::ListBatchSegmentJobsRequest& request, const ListBatchSegmentJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of campaigns that use the given solution. When a solution is
@@ -1187,15 +843,6 @@ namespace Personalize
          */
         virtual Model::ListCampaignsOutcome ListCampaigns(const Model::ListCampaignsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListCampaigns that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListCampaignsOutcomeCallable ListCampaignsCallable(const Model::ListCampaignsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListCampaigns that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListCampaignsAsync(const Model::ListCampaignsRequest& request, const ListCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of dataset export jobs that use the given dataset. When a
@@ -1212,15 +859,6 @@ namespace Personalize
          */
         virtual Model::ListDatasetExportJobsOutcome ListDatasetExportJobs(const Model::ListDatasetExportJobsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDatasetExportJobs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDatasetExportJobsOutcomeCallable ListDatasetExportJobsCallable(const Model::ListDatasetExportJobsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDatasetExportJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDatasetExportJobsAsync(const Model::ListDatasetExportJobsRequest& request, const ListDatasetExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of dataset groups. The response provides the properties for
@@ -1233,15 +871,6 @@ namespace Personalize
          */
         virtual Model::ListDatasetGroupsOutcome ListDatasetGroups(const Model::ListDatasetGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDatasetGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDatasetGroupsOutcomeCallable ListDatasetGroupsCallable(const Model::ListDatasetGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDatasetGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDatasetGroupsAsync(const Model::ListDatasetGroupsRequest& request, const ListDatasetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of dataset import jobs that use the given dataset. When a
@@ -1258,15 +887,6 @@ namespace Personalize
          */
         virtual Model::ListDatasetImportJobsOutcome ListDatasetImportJobs(const Model::ListDatasetImportJobsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDatasetImportJobs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDatasetImportJobsOutcomeCallable ListDatasetImportJobsCallable(const Model::ListDatasetImportJobsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDatasetImportJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDatasetImportJobsAsync(const Model::ListDatasetImportJobsRequest& request, const ListDatasetImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the list of datasets contained in the given dataset group. The
@@ -1279,15 +899,6 @@ namespace Personalize
          */
         virtual Model::ListDatasetsOutcome ListDatasets(const Model::ListDatasetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDatasets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDatasetsOutcomeCallable ListDatasetsCallable(const Model::ListDatasetsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDatasets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDatasetsAsync(const Model::ListDatasetsRequest& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the list of event trackers associated with the account. The response
@@ -1300,15 +911,6 @@ namespace Personalize
          */
         virtual Model::ListEventTrackersOutcome ListEventTrackers(const Model::ListEventTrackersRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListEventTrackers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListEventTrackersOutcomeCallable ListEventTrackersCallable(const Model::ListEventTrackersRequest& request) const;
-
-        /**
-         * An Async wrapper for ListEventTrackers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListEventTrackersAsync(const Model::ListEventTrackersRequest& request, const ListEventTrackersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all filters that belong to a given dataset group.</p><p><h3>See
@@ -1318,15 +920,6 @@ namespace Personalize
          */
         virtual Model::ListFiltersOutcome ListFilters(const Model::ListFiltersRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListFilters that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListFiltersOutcomeCallable ListFiltersCallable(const Model::ListFiltersRequest& request) const;
-
-        /**
-         * An Async wrapper for ListFilters that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListFiltersAsync(const Model::ListFiltersRequest& request, const ListFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the metrics for the metric attribution.</p><p><h3>See Also:</h3>   <a
@@ -1335,15 +928,6 @@ namespace Personalize
          */
         virtual Model::ListMetricAttributionMetricsOutcome ListMetricAttributionMetrics(const Model::ListMetricAttributionMetricsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListMetricAttributionMetrics that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListMetricAttributionMetricsOutcomeCallable ListMetricAttributionMetricsCallable(const Model::ListMetricAttributionMetricsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListMetricAttributionMetrics that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListMetricAttributionMetricsAsync(const Model::ListMetricAttributionMetricsRequest& request, const ListMetricAttributionMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists metric attributions.</p><p><h3>See Also:</h3>   <a
@@ -1352,15 +936,6 @@ namespace Personalize
          */
         virtual Model::ListMetricAttributionsOutcome ListMetricAttributions(const Model::ListMetricAttributionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListMetricAttributions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListMetricAttributionsOutcomeCallable ListMetricAttributionsCallable(const Model::ListMetricAttributionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListMetricAttributions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListMetricAttributionsAsync(const Model::ListMetricAttributionsRequest& request, const ListMetricAttributionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of available recipes. The response provides the properties for
@@ -1371,15 +946,6 @@ namespace Personalize
          */
         virtual Model::ListRecipesOutcome ListRecipes(const Model::ListRecipesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListRecipes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListRecipesOutcomeCallable ListRecipesCallable(const Model::ListRecipesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListRecipes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListRecipesAsync(const Model::ListRecipesRequest& request, const ListRecipesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of recommenders in a given Domain dataset group. When a Domain
@@ -1393,15 +959,6 @@ namespace Personalize
          */
         virtual Model::ListRecommendersOutcome ListRecommenders(const Model::ListRecommendersRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListRecommenders that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListRecommendersOutcomeCallable ListRecommendersCallable(const Model::ListRecommendersRequest& request) const;
-
-        /**
-         * An Async wrapper for ListRecommenders that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListRecommendersAsync(const Model::ListRecommendersRequest& request, const ListRecommendersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the list of schemas associated with the account. The response
@@ -1414,15 +971,6 @@ namespace Personalize
          */
         virtual Model::ListSchemasOutcome ListSchemas(const Model::ListSchemasRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSchemas that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListSchemasOutcomeCallable ListSchemasCallable(const Model::ListSchemasRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSchemas that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListSchemasAsync(const Model::ListSchemasRequest& request, const ListSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of solution versions for the given solution. When a solution
@@ -1434,15 +982,6 @@ namespace Personalize
          */
         virtual Model::ListSolutionVersionsOutcome ListSolutionVersions(const Model::ListSolutionVersionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSolutionVersions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListSolutionVersionsOutcomeCallable ListSolutionVersionsCallable(const Model::ListSolutionVersionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSolutionVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListSolutionVersionsAsync(const Model::ListSolutionVersionsRequest& request, const ListSolutionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of solutions that use the given dataset group. When a dataset
@@ -1456,15 +995,6 @@ namespace Personalize
          */
         virtual Model::ListSolutionsOutcome ListSolutions(const Model::ListSolutionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSolutions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListSolutionsOutcomeCallable ListSolutionsCallable(const Model::ListSolutionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSolutions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListSolutionsAsync(const Model::ListSolutionsRequest& request, const ListSolutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get a list of <a
@@ -1475,15 +1005,6 @@ namespace Personalize
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts a recommender that is INACTIVE. Starting a recommender does not create
@@ -1494,15 +1015,6 @@ namespace Personalize
          */
         virtual Model::StartRecommenderOutcome StartRecommender(const Model::StartRecommenderRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartRecommender that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartRecommenderOutcomeCallable StartRecommenderCallable(const Model::StartRecommenderRequest& request) const;
-
-        /**
-         * An Async wrapper for StartRecommender that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartRecommenderAsync(const Model::StartRecommenderRequest& request, const StartRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops a recommender that is ACTIVE. Stopping a recommender halts billing and
@@ -1512,15 +1024,6 @@ namespace Personalize
          */
         virtual Model::StopRecommenderOutcome StopRecommender(const Model::StopRecommenderRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopRecommender that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopRecommenderOutcomeCallable StopRecommenderCallable(const Model::StopRecommenderRequest& request) const;
-
-        /**
-         * An Async wrapper for StopRecommender that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopRecommenderAsync(const Model::StopRecommenderRequest& request, const StopRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops creating a solution version that is in a state of CREATE_PENDING or
@@ -1536,15 +1039,6 @@ namespace Personalize
          */
         virtual Model::StopSolutionVersionCreationOutcome StopSolutionVersionCreation(const Model::StopSolutionVersionCreationRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopSolutionVersionCreation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopSolutionVersionCreationOutcomeCallable StopSolutionVersionCreationCallable(const Model::StopSolutionVersionCreationRequest& request) const;
-
-        /**
-         * An Async wrapper for StopSolutionVersionCreation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopSolutionVersionCreationAsync(const Model::StopSolutionVersionCreationRequest& request, const StopSolutionVersionCreationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Add a list of tags to a resource.</p><p><h3>See Also:</h3>   <a
@@ -1553,15 +1047,6 @@ namespace Personalize
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Remove <a
@@ -1572,15 +1057,6 @@ namespace Personalize
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a campaign by either deploying a new solution or changing the value
@@ -1600,15 +1076,6 @@ namespace Personalize
          */
         virtual Model::UpdateCampaignOutcome UpdateCampaign(const Model::UpdateCampaignRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateCampaign that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateCampaignOutcomeCallable UpdateCampaignCallable(const Model::UpdateCampaignRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateCampaign that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateCampaignAsync(const Model::UpdateCampaignRequest& request, const UpdateCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a metric attribution.</p><p><h3>See Also:</h3>   <a
@@ -1617,15 +1084,6 @@ namespace Personalize
          */
         virtual Model::UpdateMetricAttributionOutcome UpdateMetricAttribution(const Model::UpdateMetricAttributionRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateMetricAttribution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateMetricAttributionOutcomeCallable UpdateMetricAttributionCallable(const Model::UpdateMetricAttributionRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateMetricAttribution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateMetricAttributionAsync(const Model::UpdateMetricAttributionRequest& request, const UpdateMetricAttributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the recommender to modify the recommender
@@ -1635,15 +1093,6 @@ namespace Personalize
          */
         virtual Model::UpdateRecommenderOutcome UpdateRecommender(const Model::UpdateRecommenderRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateRecommender that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateRecommenderOutcomeCallable UpdateRecommenderCallable(const Model::UpdateRecommenderRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateRecommender that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateRecommenderAsync(const Model::UpdateRecommenderRequest& request, const UpdateRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

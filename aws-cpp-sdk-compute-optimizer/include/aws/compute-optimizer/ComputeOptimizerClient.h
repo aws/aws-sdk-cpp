@@ -7,8 +7,10 @@
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/compute-optimizer/ComputeOptimizerServiceClientModel.h>
+#include <aws/compute-optimizer/ComputeOptimizerLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -86,6 +88,47 @@ namespace ComputeOptimizer
         virtual ~ComputeOptimizerClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Deletes a recommendation preference, such as enhanced infrastructure
          * metrics.</p> <p>For more information, see <a
@@ -97,15 +140,6 @@ namespace ComputeOptimizer
          */
         virtual Model::DeleteRecommendationPreferencesOutcome DeleteRecommendationPreferences(const Model::DeleteRecommendationPreferencesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteRecommendationPreferences that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteRecommendationPreferencesOutcomeCallable DeleteRecommendationPreferencesCallable(const Model::DeleteRecommendationPreferencesRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteRecommendationPreferences that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteRecommendationPreferencesAsync(const Model::DeleteRecommendationPreferencesRequest& request, const DeleteRecommendationPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes recommendation export jobs created in the last seven days.</p>
@@ -118,15 +152,6 @@ namespace ComputeOptimizer
          */
         virtual Model::DescribeRecommendationExportJobsOutcome DescribeRecommendationExportJobs(const Model::DescribeRecommendationExportJobsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeRecommendationExportJobs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeRecommendationExportJobsOutcomeCallable DescribeRecommendationExportJobsCallable(const Model::DescribeRecommendationExportJobsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeRecommendationExportJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeRecommendationExportJobsAsync(const Model::DescribeRecommendationExportJobsRequest& request, const DescribeRecommendationExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Exports optimization recommendations for Auto Scaling groups.</p>
@@ -143,15 +168,6 @@ namespace ComputeOptimizer
          */
         virtual Model::ExportAutoScalingGroupRecommendationsOutcome ExportAutoScalingGroupRecommendations(const Model::ExportAutoScalingGroupRecommendationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ExportAutoScalingGroupRecommendations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ExportAutoScalingGroupRecommendationsOutcomeCallable ExportAutoScalingGroupRecommendationsCallable(const Model::ExportAutoScalingGroupRecommendationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ExportAutoScalingGroupRecommendations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ExportAutoScalingGroupRecommendationsAsync(const Model::ExportAutoScalingGroupRecommendationsRequest& request, const ExportAutoScalingGroupRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Exports optimization recommendations for Amazon EBS volumes.</p>
@@ -168,15 +184,6 @@ namespace ComputeOptimizer
          */
         virtual Model::ExportEBSVolumeRecommendationsOutcome ExportEBSVolumeRecommendations(const Model::ExportEBSVolumeRecommendationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ExportEBSVolumeRecommendations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ExportEBSVolumeRecommendationsOutcomeCallable ExportEBSVolumeRecommendationsCallable(const Model::ExportEBSVolumeRecommendationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ExportEBSVolumeRecommendations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ExportEBSVolumeRecommendationsAsync(const Model::ExportEBSVolumeRecommendationsRequest& request, const ExportEBSVolumeRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Exports optimization recommendations for Amazon EC2 instances.</p>
@@ -193,15 +200,6 @@ namespace ComputeOptimizer
          */
         virtual Model::ExportEC2InstanceRecommendationsOutcome ExportEC2InstanceRecommendations(const Model::ExportEC2InstanceRecommendationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ExportEC2InstanceRecommendations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ExportEC2InstanceRecommendationsOutcomeCallable ExportEC2InstanceRecommendationsCallable(const Model::ExportEC2InstanceRecommendationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ExportEC2InstanceRecommendations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ExportEC2InstanceRecommendationsAsync(const Model::ExportEC2InstanceRecommendationsRequest& request, const ExportEC2InstanceRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Exports optimization recommendations for Lambda functions.</p>
@@ -218,15 +216,6 @@ namespace ComputeOptimizer
          */
         virtual Model::ExportLambdaFunctionRecommendationsOutcome ExportLambdaFunctionRecommendations(const Model::ExportLambdaFunctionRecommendationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ExportLambdaFunctionRecommendations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ExportLambdaFunctionRecommendationsOutcomeCallable ExportLambdaFunctionRecommendationsCallable(const Model::ExportLambdaFunctionRecommendationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ExportLambdaFunctionRecommendations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ExportLambdaFunctionRecommendationsAsync(const Model::ExportLambdaFunctionRecommendationsRequest& request, const ExportLambdaFunctionRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns Auto Scaling group recommendations.</p> <p>Compute Optimizer
@@ -240,15 +229,6 @@ namespace ComputeOptimizer
          */
         virtual Model::GetAutoScalingGroupRecommendationsOutcome GetAutoScalingGroupRecommendations(const Model::GetAutoScalingGroupRecommendationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAutoScalingGroupRecommendations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAutoScalingGroupRecommendationsOutcomeCallable GetAutoScalingGroupRecommendationsCallable(const Model::GetAutoScalingGroupRecommendationsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAutoScalingGroupRecommendations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAutoScalingGroupRecommendationsAsync(const Model::GetAutoScalingGroupRecommendationsRequest& request, const GetAutoScalingGroupRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns Amazon Elastic Block Store (Amazon EBS) volume recommendations.</p>
@@ -262,15 +242,6 @@ namespace ComputeOptimizer
          */
         virtual Model::GetEBSVolumeRecommendationsOutcome GetEBSVolumeRecommendations(const Model::GetEBSVolumeRecommendationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetEBSVolumeRecommendations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetEBSVolumeRecommendationsOutcomeCallable GetEBSVolumeRecommendationsCallable(const Model::GetEBSVolumeRecommendationsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetEBSVolumeRecommendations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetEBSVolumeRecommendationsAsync(const Model::GetEBSVolumeRecommendationsRequest& request, const GetEBSVolumeRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns Amazon EC2 instance recommendations.</p> <p>Compute Optimizer
@@ -285,15 +256,6 @@ namespace ComputeOptimizer
          */
         virtual Model::GetEC2InstanceRecommendationsOutcome GetEC2InstanceRecommendations(const Model::GetEC2InstanceRecommendationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetEC2InstanceRecommendations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetEC2InstanceRecommendationsOutcomeCallable GetEC2InstanceRecommendationsCallable(const Model::GetEC2InstanceRecommendationsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetEC2InstanceRecommendations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetEC2InstanceRecommendationsAsync(const Model::GetEC2InstanceRecommendationsRequest& request, const GetEC2InstanceRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the projected utilization metrics of Amazon EC2 instance
@@ -310,15 +272,6 @@ namespace ComputeOptimizer
          */
         virtual Model::GetEC2RecommendationProjectedMetricsOutcome GetEC2RecommendationProjectedMetrics(const Model::GetEC2RecommendationProjectedMetricsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetEC2RecommendationProjectedMetrics that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetEC2RecommendationProjectedMetricsOutcomeCallable GetEC2RecommendationProjectedMetricsCallable(const Model::GetEC2RecommendationProjectedMetricsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetEC2RecommendationProjectedMetrics that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetEC2RecommendationProjectedMetricsAsync(const Model::GetEC2RecommendationProjectedMetricsRequest& request, const GetEC2RecommendationProjectedMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the recommendation preferences that are in effect for a given
@@ -333,15 +286,6 @@ namespace ComputeOptimizer
          */
         virtual Model::GetEffectiveRecommendationPreferencesOutcome GetEffectiveRecommendationPreferences(const Model::GetEffectiveRecommendationPreferencesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetEffectiveRecommendationPreferences that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetEffectiveRecommendationPreferencesOutcomeCallable GetEffectiveRecommendationPreferencesCallable(const Model::GetEffectiveRecommendationPreferencesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetEffectiveRecommendationPreferences that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetEffectiveRecommendationPreferencesAsync(const Model::GetEffectiveRecommendationPreferencesRequest& request, const GetEffectiveRecommendationPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the enrollment (opt in) status of an account to the Compute Optimizer
@@ -355,15 +299,6 @@ namespace ComputeOptimizer
          */
         virtual Model::GetEnrollmentStatusOutcome GetEnrollmentStatus(const Model::GetEnrollmentStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetEnrollmentStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetEnrollmentStatusOutcomeCallable GetEnrollmentStatusCallable(const Model::GetEnrollmentStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for GetEnrollmentStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetEnrollmentStatusAsync(const Model::GetEnrollmentStatusRequest& request, const GetEnrollmentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the Compute Optimizer enrollment (opt-in) status of organization
@@ -375,15 +310,6 @@ namespace ComputeOptimizer
          */
         virtual Model::GetEnrollmentStatusesForOrganizationOutcome GetEnrollmentStatusesForOrganization(const Model::GetEnrollmentStatusesForOrganizationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetEnrollmentStatusesForOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetEnrollmentStatusesForOrganizationOutcomeCallable GetEnrollmentStatusesForOrganizationCallable(const Model::GetEnrollmentStatusesForOrganizationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetEnrollmentStatusesForOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetEnrollmentStatusesForOrganizationAsync(const Model::GetEnrollmentStatusesForOrganizationRequest& request, const GetEnrollmentStatusesForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns Lambda function recommendations.</p> <p>Compute Optimizer generates
@@ -397,15 +323,6 @@ namespace ComputeOptimizer
          */
         virtual Model::GetLambdaFunctionRecommendationsOutcome GetLambdaFunctionRecommendations(const Model::GetLambdaFunctionRecommendationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetLambdaFunctionRecommendations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetLambdaFunctionRecommendationsOutcomeCallable GetLambdaFunctionRecommendationsCallable(const Model::GetLambdaFunctionRecommendationsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetLambdaFunctionRecommendations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetLambdaFunctionRecommendationsAsync(const Model::GetLambdaFunctionRecommendationsRequest& request, const GetLambdaFunctionRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns existing recommendation preferences, such as enhanced infrastructure
@@ -421,15 +338,6 @@ namespace ComputeOptimizer
          */
         virtual Model::GetRecommendationPreferencesOutcome GetRecommendationPreferences(const Model::GetRecommendationPreferencesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRecommendationPreferences that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRecommendationPreferencesOutcomeCallable GetRecommendationPreferencesCallable(const Model::GetRecommendationPreferencesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRecommendationPreferences that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRecommendationPreferencesAsync(const Model::GetRecommendationPreferencesRequest& request, const GetRecommendationPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the optimization findings for an account.</p> <p>It returns the
@@ -446,15 +354,6 @@ namespace ComputeOptimizer
          */
         virtual Model::GetRecommendationSummariesOutcome GetRecommendationSummaries(const Model::GetRecommendationSummariesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRecommendationSummaries that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRecommendationSummariesOutcomeCallable GetRecommendationSummariesCallable(const Model::GetRecommendationSummariesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRecommendationSummaries that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRecommendationSummariesAsync(const Model::GetRecommendationSummariesRequest& request, const GetRecommendationSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new recommendation preference or updates an existing recommendation
@@ -468,15 +367,6 @@ namespace ComputeOptimizer
          */
         virtual Model::PutRecommendationPreferencesOutcome PutRecommendationPreferences(const Model::PutRecommendationPreferencesRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutRecommendationPreferences that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutRecommendationPreferencesOutcomeCallable PutRecommendationPreferencesCallable(const Model::PutRecommendationPreferencesRequest& request) const;
-
-        /**
-         * An Async wrapper for PutRecommendationPreferences that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutRecommendationPreferencesAsync(const Model::PutRecommendationPreferencesRequest& request, const PutRecommendationPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the enrollment (opt in and opt out) status of an account to the
@@ -498,15 +388,6 @@ namespace ComputeOptimizer
          */
         virtual Model::UpdateEnrollmentStatusOutcome UpdateEnrollmentStatus(const Model::UpdateEnrollmentStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateEnrollmentStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateEnrollmentStatusOutcomeCallable UpdateEnrollmentStatusCallable(const Model::UpdateEnrollmentStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateEnrollmentStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateEnrollmentStatusAsync(const Model::UpdateEnrollmentStatusRequest& request, const UpdateEnrollmentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

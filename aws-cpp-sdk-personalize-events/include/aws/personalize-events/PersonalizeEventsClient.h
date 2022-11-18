@@ -7,8 +7,10 @@
 #include <aws/personalize-events/PersonalizeEvents_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/personalize-events/PersonalizeEventsServiceClientModel.h>
+#include <aws/personalize-events/PersonalizeEventsLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -77,6 +79,47 @@ namespace PersonalizeEvents
         virtual ~PersonalizeEventsClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Records user interaction event data. For more information see <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html">Recording
@@ -86,15 +129,6 @@ namespace PersonalizeEvents
          */
         virtual Model::PutEventsOutcome PutEvents(const Model::PutEventsRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutEvents that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutEventsOutcomeCallable PutEventsCallable(const Model::PutEventsRequest& request) const;
-
-        /**
-         * An Async wrapper for PutEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutEventsAsync(const Model::PutEventsRequest& request, const PutEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds one or more items to an Items dataset. For more information see <a
@@ -105,15 +139,6 @@ namespace PersonalizeEvents
          */
         virtual Model::PutItemsOutcome PutItems(const Model::PutItemsRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutItems that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutItemsOutcomeCallable PutItemsCallable(const Model::PutItemsRequest& request) const;
-
-        /**
-         * An Async wrapper for PutItems that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutItemsAsync(const Model::PutItemsRequest& request, const PutItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds one or more users to a Users dataset. For more information see <a
@@ -124,15 +149,6 @@ namespace PersonalizeEvents
          */
         virtual Model::PutUsersOutcome PutUsers(const Model::PutUsersRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutUsers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutUsersOutcomeCallable PutUsersCallable(const Model::PutUsersRequest& request) const;
-
-        /**
-         * An Async wrapper for PutUsers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutUsersAsync(const Model::PutUsersRequest& request, const PutUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

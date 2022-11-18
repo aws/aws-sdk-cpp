@@ -7,8 +7,10 @@
 #include <aws/kendra/Kendra_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kendra/KendraServiceClientModel.h>
+#include <aws/kendra/KendraLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -73,6 +75,47 @@ namespace kendra
         virtual ~KendraClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Grants users or groups in your IAM Identity Center identity source access to
          * your Amazon Kendra experience. You can create an Amazon Kendra experience such
@@ -85,15 +128,6 @@ namespace kendra
          */
         virtual Model::AssociateEntitiesToExperienceOutcome AssociateEntitiesToExperience(const Model::AssociateEntitiesToExperienceRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateEntitiesToExperience that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateEntitiesToExperienceOutcomeCallable AssociateEntitiesToExperienceCallable(const Model::AssociateEntitiesToExperienceRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateEntitiesToExperience that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateEntitiesToExperienceAsync(const Model::AssociateEntitiesToExperienceRequest& request, const AssociateEntitiesToExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Defines the specific permissions of users or groups in your IAM Identity
@@ -107,15 +141,6 @@ namespace kendra
          */
         virtual Model::AssociatePersonasToEntitiesOutcome AssociatePersonasToEntities(const Model::AssociatePersonasToEntitiesRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociatePersonasToEntities that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociatePersonasToEntitiesOutcomeCallable AssociatePersonasToEntitiesCallable(const Model::AssociatePersonasToEntitiesRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociatePersonasToEntities that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociatePersonasToEntitiesAsync(const Model::AssociatePersonasToEntitiesRequest& request, const AssociatePersonasToEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes one or more documents from an index. The documents must have been
@@ -128,15 +153,6 @@ namespace kendra
          */
         virtual Model::BatchDeleteDocumentOutcome BatchDeleteDocument(const Model::BatchDeleteDocumentRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchDeleteDocument that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchDeleteDocumentOutcomeCallable BatchDeleteDocumentCallable(const Model::BatchDeleteDocumentRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchDeleteDocument that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchDeleteDocumentAsync(const Model::BatchDeleteDocumentRequest& request, const BatchDeleteDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the indexing status for one or more documents submitted with the <a
@@ -156,15 +172,6 @@ namespace kendra
          */
         virtual Model::BatchGetDocumentStatusOutcome BatchGetDocumentStatus(const Model::BatchGetDocumentStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchGetDocumentStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchGetDocumentStatusOutcomeCallable BatchGetDocumentStatusCallable(const Model::BatchGetDocumentStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchGetDocumentStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchGetDocumentStatusAsync(const Model::BatchGetDocumentStatusRequest& request, const BatchGetDocumentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds one or more documents to an index.</p> <p>The
@@ -183,15 +190,6 @@ namespace kendra
          */
         virtual Model::BatchPutDocumentOutcome BatchPutDocument(const Model::BatchPutDocumentRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchPutDocument that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchPutDocumentOutcomeCallable BatchPutDocumentCallable(const Model::BatchPutDocumentRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchPutDocument that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchPutDocumentAsync(const Model::BatchPutDocumentRequest& request, const BatchPutDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Clears existing query suggestions from an index.</p> <p>This deletes existing
@@ -207,15 +205,6 @@ namespace kendra
          */
         virtual Model::ClearQuerySuggestionsOutcome ClearQuerySuggestions(const Model::ClearQuerySuggestionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ClearQuerySuggestions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ClearQuerySuggestionsOutcomeCallable ClearQuerySuggestionsCallable(const Model::ClearQuerySuggestionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ClearQuerySuggestions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ClearQuerySuggestionsAsync(const Model::ClearQuerySuggestionsRequest& request, const ClearQuerySuggestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an access configuration for your documents. This includes user and
@@ -246,15 +235,6 @@ namespace kendra
          */
         virtual Model::CreateAccessControlConfigurationOutcome CreateAccessControlConfiguration(const Model::CreateAccessControlConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateAccessControlConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateAccessControlConfigurationOutcomeCallable CreateAccessControlConfigurationCallable(const Model::CreateAccessControlConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateAccessControlConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateAccessControlConfigurationAsync(const Model::CreateAccessControlConfigurationRequest& request, const CreateAccessControlConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a data source connector that you want to use with an Amazon Kendra
@@ -277,15 +257,6 @@ namespace kendra
          */
         virtual Model::CreateDataSourceOutcome CreateDataSource(const Model::CreateDataSourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDataSource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDataSourceOutcomeCallable CreateDataSourceCallable(const Model::CreateDataSourceRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDataSource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDataSourceAsync(const Model::CreateDataSourceRequest& request, const CreateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an Amazon Kendra experience such as a search application. For more
@@ -298,15 +269,6 @@ namespace kendra
          */
         virtual Model::CreateExperienceOutcome CreateExperience(const Model::CreateExperienceRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateExperience that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateExperienceOutcomeCallable CreateExperienceCallable(const Model::CreateExperienceRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateExperience that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateExperienceAsync(const Model::CreateExperienceRequest& request, const CreateExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an new set of frequently asked question (FAQ) questions and
@@ -319,15 +281,6 @@ namespace kendra
          */
         virtual Model::CreateFaqOutcome CreateFaq(const Model::CreateFaqRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateFaq that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateFaqOutcomeCallable CreateFaqCallable(const Model::CreateFaqRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateFaq that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateFaqAsync(const Model::CreateFaqRequest& request, const CreateFaqResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an Amazon Kendra index. Index creation is an asynchronous API. To
@@ -348,15 +301,6 @@ namespace kendra
          */
         virtual Model::CreateIndexOutcome CreateIndex(const Model::CreateIndexRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateIndex that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateIndexOutcomeCallable CreateIndexCallable(const Model::CreateIndexRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateIndex that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateIndexAsync(const Model::CreateIndexRequest& request, const CreateIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a block list to exlcude certain queries from suggestions.</p> <p>Any
@@ -377,15 +321,6 @@ namespace kendra
          */
         virtual Model::CreateQuerySuggestionsBlockListOutcome CreateQuerySuggestionsBlockList(const Model::CreateQuerySuggestionsBlockListRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateQuerySuggestionsBlockList that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateQuerySuggestionsBlockListOutcomeCallable CreateQuerySuggestionsBlockListCallable(const Model::CreateQuerySuggestionsBlockListRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateQuerySuggestionsBlockList that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateQuerySuggestionsBlockListAsync(const Model::CreateQuerySuggestionsBlockListRequest& request, const CreateQuerySuggestionsBlockListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a thesaurus for an index. The thesaurus contains a list of synonyms
@@ -398,15 +333,6 @@ namespace kendra
          */
         virtual Model::CreateThesaurusOutcome CreateThesaurus(const Model::CreateThesaurusRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateThesaurus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateThesaurusOutcomeCallable CreateThesaurusCallable(const Model::CreateThesaurusRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateThesaurus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateThesaurusAsync(const Model::CreateThesaurusRequest& request, const CreateThesaurusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an access control configuration that you created for your documents
@@ -419,15 +345,6 @@ namespace kendra
          */
         virtual Model::DeleteAccessControlConfigurationOutcome DeleteAccessControlConfiguration(const Model::DeleteAccessControlConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAccessControlConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAccessControlConfigurationOutcomeCallable DeleteAccessControlConfigurationCallable(const Model::DeleteAccessControlConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAccessControlConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAccessControlConfigurationAsync(const Model::DeleteAccessControlConfigurationRequest& request, const DeleteAccessControlConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an Amazon Kendra data source connector. An exception is not thrown if
@@ -442,15 +359,6 @@ namespace kendra
          */
         virtual Model::DeleteDataSourceOutcome DeleteDataSource(const Model::DeleteDataSourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDataSource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDataSourceOutcomeCallable DeleteDataSourceCallable(const Model::DeleteDataSourceRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDataSource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDataSourceAsync(const Model::DeleteDataSourceRequest& request, const DeleteDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes your Amazon Kendra experience such as a search application. For more
@@ -462,15 +370,6 @@ namespace kendra
          */
         virtual Model::DeleteExperienceOutcome DeleteExperience(const Model::DeleteExperienceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteExperience that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteExperienceOutcomeCallable DeleteExperienceCallable(const Model::DeleteExperienceRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteExperience that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteExperienceAsync(const Model::DeleteExperienceRequest& request, const DeleteExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes an FAQ from an index.</p><p><h3>See Also:</h3>   <a
@@ -479,15 +378,6 @@ namespace kendra
          */
         virtual Model::DeleteFaqOutcome DeleteFaq(const Model::DeleteFaqRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteFaq that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteFaqOutcomeCallable DeleteFaqCallable(const Model::DeleteFaqRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteFaq that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteFaqAsync(const Model::DeleteFaqRequest& request, const DeleteFaqResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an existing Amazon Kendra index. An exception is not thrown if the
@@ -499,15 +389,6 @@ namespace kendra
          */
         virtual Model::DeleteIndexOutcome DeleteIndex(const Model::DeleteIndexRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteIndex that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteIndexOutcomeCallable DeleteIndexCallable(const Model::DeleteIndexRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteIndex that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteIndexAsync(const Model::DeleteIndexRequest& request, const DeleteIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a group so that all users and sub groups that belong to the group can
@@ -528,15 +409,6 @@ namespace kendra
          */
         virtual Model::DeletePrincipalMappingOutcome DeletePrincipalMapping(const Model::DeletePrincipalMappingRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeletePrincipalMapping that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeletePrincipalMappingOutcomeCallable DeletePrincipalMappingCallable(const Model::DeletePrincipalMappingRequest& request) const;
-
-        /**
-         * An Async wrapper for DeletePrincipalMapping that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeletePrincipalMappingAsync(const Model::DeletePrincipalMappingRequest& request, const DeletePrincipalMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a block list used for query suggestions for an index.</p> <p>A
@@ -550,15 +422,6 @@ namespace kendra
          */
         virtual Model::DeleteQuerySuggestionsBlockListOutcome DeleteQuerySuggestionsBlockList(const Model::DeleteQuerySuggestionsBlockListRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteQuerySuggestionsBlockList that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteQuerySuggestionsBlockListOutcomeCallable DeleteQuerySuggestionsBlockListCallable(const Model::DeleteQuerySuggestionsBlockListRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteQuerySuggestionsBlockList that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteQuerySuggestionsBlockListAsync(const Model::DeleteQuerySuggestionsBlockListRequest& request, const DeleteQuerySuggestionsBlockListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an existing Amazon Kendra thesaurus. </p><p><h3>See Also:</h3>   <a
@@ -567,15 +430,6 @@ namespace kendra
          */
         virtual Model::DeleteThesaurusOutcome DeleteThesaurus(const Model::DeleteThesaurusRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteThesaurus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteThesaurusOutcomeCallable DeleteThesaurusCallable(const Model::DeleteThesaurusRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteThesaurus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteThesaurusAsync(const Model::DeleteThesaurusRequest& request, const DeleteThesaurusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about an access control configuration that you created for
@@ -588,15 +442,6 @@ namespace kendra
          */
         virtual Model::DescribeAccessControlConfigurationOutcome DescribeAccessControlConfiguration(const Model::DescribeAccessControlConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAccessControlConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAccessControlConfigurationOutcomeCallable DescribeAccessControlConfigurationCallable(const Model::DescribeAccessControlConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAccessControlConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAccessControlConfigurationAsync(const Model::DescribeAccessControlConfigurationRequest& request, const DescribeAccessControlConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about an Amazon Kendra data source connector.</p><p><h3>See
@@ -606,15 +451,6 @@ namespace kendra
          */
         virtual Model::DescribeDataSourceOutcome DescribeDataSource(const Model::DescribeDataSourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDataSource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDataSourceOutcomeCallable DescribeDataSourceCallable(const Model::DescribeDataSourceRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDataSource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDataSourceAsync(const Model::DescribeDataSourceRequest& request, const DescribeDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about your Amazon Kendra experience such as a search
@@ -627,15 +463,6 @@ namespace kendra
          */
         virtual Model::DescribeExperienceOutcome DescribeExperience(const Model::DescribeExperienceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeExperience that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeExperienceOutcomeCallable DescribeExperienceCallable(const Model::DescribeExperienceRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeExperience that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeExperienceAsync(const Model::DescribeExperienceRequest& request, const DescribeExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about an FAQ list.</p><p><h3>See Also:</h3>   <a
@@ -644,15 +471,6 @@ namespace kendra
          */
         virtual Model::DescribeFaqOutcome DescribeFaq(const Model::DescribeFaqRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeFaq that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeFaqOutcomeCallable DescribeFaqCallable(const Model::DescribeFaqRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeFaq that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeFaqAsync(const Model::DescribeFaqRequest& request, const DescribeFaqResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about an existing Amazon Kendra index.</p><p><h3>See
@@ -662,15 +480,6 @@ namespace kendra
          */
         virtual Model::DescribeIndexOutcome DescribeIndex(const Model::DescribeIndexRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeIndex that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeIndexOutcomeCallable DescribeIndexCallable(const Model::DescribeIndexRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeIndex that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeIndexAsync(const Model::DescribeIndexRequest& request, const DescribeIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the processing of <code>PUT</code> and <code>DELETE</code> actions
@@ -686,15 +495,6 @@ namespace kendra
          */
         virtual Model::DescribePrincipalMappingOutcome DescribePrincipalMapping(const Model::DescribePrincipalMappingRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribePrincipalMapping that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribePrincipalMappingOutcomeCallable DescribePrincipalMappingCallable(const Model::DescribePrincipalMappingRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribePrincipalMapping that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribePrincipalMappingAsync(const Model::DescribePrincipalMappingRequest& request, const DescribePrincipalMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about a block list used for query suggestions for an
@@ -707,15 +507,6 @@ namespace kendra
          */
         virtual Model::DescribeQuerySuggestionsBlockListOutcome DescribeQuerySuggestionsBlockList(const Model::DescribeQuerySuggestionsBlockListRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeQuerySuggestionsBlockList that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeQuerySuggestionsBlockListOutcomeCallable DescribeQuerySuggestionsBlockListCallable(const Model::DescribeQuerySuggestionsBlockListRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeQuerySuggestionsBlockList that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeQuerySuggestionsBlockListAsync(const Model::DescribeQuerySuggestionsBlockListRequest& request, const DescribeQuerySuggestionsBlockListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information on the settings of query suggestions for an index.</p>
@@ -727,15 +518,6 @@ namespace kendra
          */
         virtual Model::DescribeQuerySuggestionsConfigOutcome DescribeQuerySuggestionsConfig(const Model::DescribeQuerySuggestionsConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeQuerySuggestionsConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeQuerySuggestionsConfigOutcomeCallable DescribeQuerySuggestionsConfigCallable(const Model::DescribeQuerySuggestionsConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeQuerySuggestionsConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeQuerySuggestionsConfigAsync(const Model::DescribeQuerySuggestionsConfigRequest& request, const DescribeQuerySuggestionsConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about an existing Amazon Kendra thesaurus.</p><p><h3>See
@@ -745,15 +527,6 @@ namespace kendra
          */
         virtual Model::DescribeThesaurusOutcome DescribeThesaurus(const Model::DescribeThesaurusRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeThesaurus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeThesaurusOutcomeCallable DescribeThesaurusCallable(const Model::DescribeThesaurusRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeThesaurus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeThesaurusAsync(const Model::DescribeThesaurusRequest& request, const DescribeThesaurusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Prevents users or groups in your IAM Identity Center identity source from
@@ -767,15 +540,6 @@ namespace kendra
          */
         virtual Model::DisassociateEntitiesFromExperienceOutcome DisassociateEntitiesFromExperience(const Model::DisassociateEntitiesFromExperienceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateEntitiesFromExperience that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateEntitiesFromExperienceOutcomeCallable DisassociateEntitiesFromExperienceCallable(const Model::DisassociateEntitiesFromExperienceRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateEntitiesFromExperience that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateEntitiesFromExperienceAsync(const Model::DisassociateEntitiesFromExperienceRequest& request, const DisassociateEntitiesFromExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specific permissions of users or groups in your IAM Identity
@@ -789,15 +553,6 @@ namespace kendra
          */
         virtual Model::DisassociatePersonasFromEntitiesOutcome DisassociatePersonasFromEntities(const Model::DisassociatePersonasFromEntitiesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociatePersonasFromEntities that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociatePersonasFromEntitiesOutcomeCallable DisassociatePersonasFromEntitiesCallable(const Model::DisassociatePersonasFromEntitiesRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociatePersonasFromEntities that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociatePersonasFromEntitiesAsync(const Model::DisassociatePersonasFromEntitiesRequest& request, const DisassociatePersonasFromEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Fetches the queries that are suggested to your users.</p> <p>
@@ -808,15 +563,6 @@ namespace kendra
          */
         virtual Model::GetQuerySuggestionsOutcome GetQuerySuggestions(const Model::GetQuerySuggestionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetQuerySuggestions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetQuerySuggestionsOutcomeCallable GetQuerySuggestionsCallable(const Model::GetQuerySuggestionsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetQuerySuggestions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetQuerySuggestionsAsync(const Model::GetQuerySuggestionsRequest& request, const GetQuerySuggestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves search metrics data. The data provides a snapshot of how your users
@@ -827,15 +573,6 @@ namespace kendra
          */
         virtual Model::GetSnapshotsOutcome GetSnapshots(const Model::GetSnapshotsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSnapshots that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSnapshotsOutcomeCallable GetSnapshotsCallable(const Model::GetSnapshotsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSnapshots that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSnapshotsAsync(const Model::GetSnapshotsRequest& request, const GetSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists one or more access control configurations for an index. This includes
@@ -847,15 +584,6 @@ namespace kendra
          */
         virtual Model::ListAccessControlConfigurationsOutcome ListAccessControlConfigurations(const Model::ListAccessControlConfigurationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAccessControlConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAccessControlConfigurationsOutcomeCallable ListAccessControlConfigurationsCallable(const Model::ListAccessControlConfigurationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAccessControlConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAccessControlConfigurationsAsync(const Model::ListAccessControlConfigurationsRequest& request, const ListAccessControlConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets statistics about synchronizing a data source connector.</p><p><h3>See
@@ -865,15 +593,6 @@ namespace kendra
          */
         virtual Model::ListDataSourceSyncJobsOutcome ListDataSourceSyncJobs(const Model::ListDataSourceSyncJobsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDataSourceSyncJobs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDataSourceSyncJobsOutcomeCallable ListDataSourceSyncJobsCallable(const Model::ListDataSourceSyncJobsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDataSourceSyncJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDataSourceSyncJobsAsync(const Model::ListDataSourceSyncJobsRequest& request, const ListDataSourceSyncJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the data source connectors that you have created.</p><p><h3>See
@@ -883,15 +602,6 @@ namespace kendra
          */
         virtual Model::ListDataSourcesOutcome ListDataSources(const Model::ListDataSourcesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDataSources that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDataSourcesOutcomeCallable ListDataSourcesCallable(const Model::ListDataSourcesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDataSources that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDataSourcesAsync(const Model::ListDataSourcesRequest& request, const ListDataSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists specific permissions of users and groups with access to your Amazon
@@ -901,15 +611,6 @@ namespace kendra
          */
         virtual Model::ListEntityPersonasOutcome ListEntityPersonas(const Model::ListEntityPersonasRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListEntityPersonas that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListEntityPersonasOutcomeCallable ListEntityPersonasCallable(const Model::ListEntityPersonasRequest& request) const;
-
-        /**
-         * An Async wrapper for ListEntityPersonas that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListEntityPersonasAsync(const Model::ListEntityPersonasRequest& request, const ListEntityPersonasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists users or groups in your IAM Identity Center identity source that are
@@ -923,15 +624,6 @@ namespace kendra
          */
         virtual Model::ListExperienceEntitiesOutcome ListExperienceEntities(const Model::ListExperienceEntitiesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListExperienceEntities that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListExperienceEntitiesOutcomeCallable ListExperienceEntitiesCallable(const Model::ListExperienceEntitiesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListExperienceEntities that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListExperienceEntitiesAsync(const Model::ListExperienceEntitiesRequest& request, const ListExperienceEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists one or more Amazon Kendra experiences. You can create an Amazon Kendra
@@ -944,15 +636,6 @@ namespace kendra
          */
         virtual Model::ListExperiencesOutcome ListExperiences(const Model::ListExperiencesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListExperiences that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListExperiencesOutcomeCallable ListExperiencesCallable(const Model::ListExperiencesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListExperiences that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListExperiencesAsync(const Model::ListExperiencesRequest& request, const ListExperiencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of FAQ lists associated with an index.</p><p><h3>See Also:</h3>  
@@ -961,15 +644,6 @@ namespace kendra
          */
         virtual Model::ListFaqsOutcome ListFaqs(const Model::ListFaqsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListFaqs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListFaqsOutcomeCallable ListFaqsCallable(const Model::ListFaqsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListFaqs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListFaqsAsync(const Model::ListFaqsRequest& request, const ListFaqsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides a list of groups that are mapped to users before a given ordering or
@@ -981,15 +655,6 @@ namespace kendra
          */
         virtual Model::ListGroupsOlderThanOrderingIdOutcome ListGroupsOlderThanOrderingId(const Model::ListGroupsOlderThanOrderingIdRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListGroupsOlderThanOrderingId that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListGroupsOlderThanOrderingIdOutcomeCallable ListGroupsOlderThanOrderingIdCallable(const Model::ListGroupsOlderThanOrderingIdRequest& request) const;
-
-        /**
-         * An Async wrapper for ListGroupsOlderThanOrderingId that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListGroupsOlderThanOrderingIdAsync(const Model::ListGroupsOlderThanOrderingIdRequest& request, const ListGroupsOlderThanOrderingIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the Amazon Kendra indexes that you created.</p><p><h3>See Also:</h3>  
@@ -999,15 +664,6 @@ namespace kendra
          */
         virtual Model::ListIndicesOutcome ListIndices(const Model::ListIndicesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListIndices that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListIndicesOutcomeCallable ListIndicesCallable(const Model::ListIndicesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListIndices that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListIndicesAsync(const Model::ListIndicesRequest& request, const ListIndicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the block lists used for query suggestions for an index.</p> <p>For
@@ -1021,15 +677,6 @@ namespace kendra
          */
         virtual Model::ListQuerySuggestionsBlockListsOutcome ListQuerySuggestionsBlockLists(const Model::ListQuerySuggestionsBlockListsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListQuerySuggestionsBlockLists that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListQuerySuggestionsBlockListsOutcomeCallable ListQuerySuggestionsBlockListsCallable(const Model::ListQuerySuggestionsBlockListsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListQuerySuggestionsBlockLists that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListQuerySuggestionsBlockListsAsync(const Model::ListQuerySuggestionsBlockListsRequest& request, const ListQuerySuggestionsBlockListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of tags associated with a specified resource. Indexes, FAQs, and
@@ -1039,15 +686,6 @@ namespace kendra
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the thesauri for an index.</p><p><h3>See Also:</h3>   <a
@@ -1056,15 +694,6 @@ namespace kendra
          */
         virtual Model::ListThesauriOutcome ListThesauri(const Model::ListThesauriRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListThesauri that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListThesauriOutcomeCallable ListThesauriCallable(const Model::ListThesauriRequest& request) const;
-
-        /**
-         * An Async wrapper for ListThesauri that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListThesauriAsync(const Model::ListThesauriRequest& request, const ListThesauriResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Maps users to their groups so that you only need to provide the user ID when
@@ -1086,15 +715,6 @@ namespace kendra
          */
         virtual Model::PutPrincipalMappingOutcome PutPrincipalMapping(const Model::PutPrincipalMappingRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutPrincipalMapping that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutPrincipalMappingOutcomeCallable PutPrincipalMappingCallable(const Model::PutPrincipalMappingRequest& request) const;
-
-        /**
-         * An Async wrapper for PutPrincipalMapping that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutPrincipalMappingAsync(const Model::PutPrincipalMappingRequest& request, const PutPrincipalMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Searches an active index. Use this API to search your documents using query.
@@ -1113,15 +733,6 @@ namespace kendra
          */
         virtual Model::QueryOutcome Query(const Model::QueryRequest& request) const;
 
-        /**
-         * A Callable wrapper for Query that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::QueryOutcomeCallable QueryCallable(const Model::QueryRequest& request) const;
-
-        /**
-         * An Async wrapper for Query that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void QueryAsync(const Model::QueryRequest& request, const QueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts a synchronization job for a data source connector. If a
@@ -1132,15 +743,6 @@ namespace kendra
          */
         virtual Model::StartDataSourceSyncJobOutcome StartDataSourceSyncJob(const Model::StartDataSourceSyncJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartDataSourceSyncJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartDataSourceSyncJobOutcomeCallable StartDataSourceSyncJobCallable(const Model::StartDataSourceSyncJobRequest& request) const;
-
-        /**
-         * An Async wrapper for StartDataSourceSyncJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartDataSourceSyncJobAsync(const Model::StartDataSourceSyncJobRequest& request, const StartDataSourceSyncJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops a synchronization job that is currently running. You can't stop a
@@ -1150,15 +752,6 @@ namespace kendra
          */
         virtual Model::StopDataSourceSyncJobOutcome StopDataSourceSyncJob(const Model::StopDataSourceSyncJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopDataSourceSyncJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopDataSourceSyncJobOutcomeCallable StopDataSourceSyncJobCallable(const Model::StopDataSourceSyncJobRequest& request) const;
-
-        /**
-         * An Async wrapper for StopDataSourceSyncJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopDataSourceSyncJobAsync(const Model::StopDataSourceSyncJobRequest& request, const StopDataSourceSyncJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables you to provide feedback to Amazon Kendra to improve the performance
@@ -1169,15 +762,6 @@ namespace kendra
          */
         virtual Model::SubmitFeedbackOutcome SubmitFeedback(const Model::SubmitFeedbackRequest& request) const;
 
-        /**
-         * A Callable wrapper for SubmitFeedback that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SubmitFeedbackOutcomeCallable SubmitFeedbackCallable(const Model::SubmitFeedbackRequest& request) const;
-
-        /**
-         * An Async wrapper for SubmitFeedback that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SubmitFeedbackAsync(const Model::SubmitFeedbackRequest& request, const SubmitFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds the specified tag to the specified index, FAQ, or data source resource.
@@ -1188,15 +772,6 @@ namespace kendra
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes a tag from an index, FAQ, or a data source.</p><p><h3>See Also:</h3> 
@@ -1206,15 +781,6 @@ namespace kendra
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an access control configuration for your documents in an index. This
@@ -1244,15 +810,6 @@ namespace kendra
          */
         virtual Model::UpdateAccessControlConfigurationOutcome UpdateAccessControlConfiguration(const Model::UpdateAccessControlConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateAccessControlConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateAccessControlConfigurationOutcomeCallable UpdateAccessControlConfigurationCallable(const Model::UpdateAccessControlConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateAccessControlConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateAccessControlConfigurationAsync(const Model::UpdateAccessControlConfigurationRequest& request, const UpdateAccessControlConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an existing Amazon Kendra data source connector.</p><p><h3>See
@@ -1262,15 +819,6 @@ namespace kendra
          */
         virtual Model::UpdateDataSourceOutcome UpdateDataSource(const Model::UpdateDataSourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateDataSource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateDataSourceOutcomeCallable UpdateDataSourceCallable(const Model::UpdateDataSourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateDataSource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateDataSourceAsync(const Model::UpdateDataSourceRequest& request, const UpdateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates your Amazon Kendra experience such as a search application. For more
@@ -1282,15 +830,6 @@ namespace kendra
          */
         virtual Model::UpdateExperienceOutcome UpdateExperience(const Model::UpdateExperienceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateExperience that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateExperienceOutcomeCallable UpdateExperienceCallable(const Model::UpdateExperienceRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateExperience that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateExperienceAsync(const Model::UpdateExperienceRequest& request, const UpdateExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an existing Amazon Kendra index.</p><p><h3>See Also:</h3>   <a
@@ -1299,15 +838,6 @@ namespace kendra
          */
         virtual Model::UpdateIndexOutcome UpdateIndex(const Model::UpdateIndexRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateIndex that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateIndexOutcomeCallable UpdateIndexCallable(const Model::UpdateIndexRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateIndex that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateIndexAsync(const Model::UpdateIndexRequest& request, const UpdateIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a block list used for query suggestions for an index.</p> <p>Updates
@@ -1324,15 +854,6 @@ namespace kendra
          */
         virtual Model::UpdateQuerySuggestionsBlockListOutcome UpdateQuerySuggestionsBlockList(const Model::UpdateQuerySuggestionsBlockListRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateQuerySuggestionsBlockList that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateQuerySuggestionsBlockListOutcomeCallable UpdateQuerySuggestionsBlockListCallable(const Model::UpdateQuerySuggestionsBlockListRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateQuerySuggestionsBlockList that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateQuerySuggestionsBlockListAsync(const Model::UpdateQuerySuggestionsBlockListRequest& request, const UpdateQuerySuggestionsBlockListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the settings of query suggestions for an index.</p> <p>Amazon Kendra
@@ -1350,15 +871,6 @@ namespace kendra
          */
         virtual Model::UpdateQuerySuggestionsConfigOutcome UpdateQuerySuggestionsConfig(const Model::UpdateQuerySuggestionsConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateQuerySuggestionsConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateQuerySuggestionsConfigOutcomeCallable UpdateQuerySuggestionsConfigCallable(const Model::UpdateQuerySuggestionsConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateQuerySuggestionsConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateQuerySuggestionsConfigAsync(const Model::UpdateQuerySuggestionsConfigRequest& request, const UpdateQuerySuggestionsConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a thesaurus for an index.</p><p><h3>See Also:</h3>   <a
@@ -1367,15 +879,6 @@ namespace kendra
          */
         virtual Model::UpdateThesaurusOutcome UpdateThesaurus(const Model::UpdateThesaurusRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateThesaurus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateThesaurusOutcomeCallable UpdateThesaurusCallable(const Model::UpdateThesaurusRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateThesaurus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateThesaurusAsync(const Model::UpdateThesaurusRequest& request, const UpdateThesaurusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

@@ -7,8 +7,10 @@
 #include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/workspaces-web/WorkSpacesWebServiceClientModel.h>
+#include <aws/workspaces-web/WorkSpacesWebLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -79,6 +81,47 @@ namespace WorkSpacesWeb
         virtual ~WorkSpacesWebClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Associates a browser settings resource with a web portal.</p><p><h3>See
          * Also:</h3>   <a
@@ -87,15 +130,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::AssociateBrowserSettingsOutcome AssociateBrowserSettings(const Model::AssociateBrowserSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateBrowserSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateBrowserSettingsOutcomeCallable AssociateBrowserSettingsCallable(const Model::AssociateBrowserSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateBrowserSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateBrowserSettingsAsync(const Model::AssociateBrowserSettingsRequest& request, const AssociateBrowserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates a network settings resource with a web portal.</p><p><h3>See
@@ -105,15 +139,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::AssociateNetworkSettingsOutcome AssociateNetworkSettings(const Model::AssociateNetworkSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateNetworkSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateNetworkSettingsOutcomeCallable AssociateNetworkSettingsCallable(const Model::AssociateNetworkSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateNetworkSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateNetworkSettingsAsync(const Model::AssociateNetworkSettingsRequest& request, const AssociateNetworkSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates a trust store with a web portal.</p><p><h3>See Also:</h3>   <a
@@ -122,15 +147,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::AssociateTrustStoreOutcome AssociateTrustStore(const Model::AssociateTrustStoreRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateTrustStore that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateTrustStoreOutcomeCallable AssociateTrustStoreCallable(const Model::AssociateTrustStoreRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateTrustStore that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateTrustStoreAsync(const Model::AssociateTrustStoreRequest& request, const AssociateTrustStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates a user access logging settings resource with a web
@@ -140,15 +156,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::AssociateUserAccessLoggingSettingsOutcome AssociateUserAccessLoggingSettings(const Model::AssociateUserAccessLoggingSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateUserAccessLoggingSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateUserAccessLoggingSettingsOutcomeCallable AssociateUserAccessLoggingSettingsCallable(const Model::AssociateUserAccessLoggingSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateUserAccessLoggingSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateUserAccessLoggingSettingsAsync(const Model::AssociateUserAccessLoggingSettingsRequest& request, const AssociateUserAccessLoggingSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates a user settings resource with a web portal.</p><p><h3>See
@@ -158,15 +165,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::AssociateUserSettingsOutcome AssociateUserSettings(const Model::AssociateUserSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateUserSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateUserSettingsOutcomeCallable AssociateUserSettingsCallable(const Model::AssociateUserSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateUserSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateUserSettingsAsync(const Model::AssociateUserSettingsRequest& request, const AssociateUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a browser settings resource that can be associated with a web portal.
@@ -178,15 +176,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::CreateBrowserSettingsOutcome CreateBrowserSettings(const Model::CreateBrowserSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateBrowserSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateBrowserSettingsOutcomeCallable CreateBrowserSettingsCallable(const Model::CreateBrowserSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateBrowserSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateBrowserSettingsAsync(const Model::CreateBrowserSettingsRequest& request, const CreateBrowserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an identity provider resource that is then associated with a web
@@ -196,15 +185,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::CreateIdentityProviderOutcome CreateIdentityProvider(const Model::CreateIdentityProviderRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateIdentityProvider that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateIdentityProviderOutcomeCallable CreateIdentityProviderCallable(const Model::CreateIdentityProviderRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateIdentityProvider that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateIdentityProviderAsync(const Model::CreateIdentityProviderRequest& request, const CreateIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a network settings resource that can be associated with a web portal.
@@ -215,15 +195,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::CreateNetworkSettingsOutcome CreateNetworkSettings(const Model::CreateNetworkSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateNetworkSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateNetworkSettingsOutcomeCallable CreateNetworkSettingsCallable(const Model::CreateNetworkSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateNetworkSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateNetworkSettingsAsync(const Model::CreateNetworkSettingsRequest& request, const CreateNetworkSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a web portal.</p><p><h3>See Also:</h3>   <a
@@ -232,15 +203,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::CreatePortalOutcome CreatePortal(const Model::CreatePortalRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreatePortal that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreatePortalOutcomeCallable CreatePortalCallable(const Model::CreatePortalRequest& request) const;
-
-        /**
-         * An Async wrapper for CreatePortal that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreatePortalAsync(const Model::CreatePortalRequest& request, const CreatePortalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a trust store that can be associated with a web portal. A trust store
@@ -254,15 +216,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::CreateTrustStoreOutcome CreateTrustStore(const Model::CreateTrustStoreRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateTrustStore that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateTrustStoreOutcomeCallable CreateTrustStoreCallable(const Model::CreateTrustStoreRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateTrustStore that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateTrustStoreAsync(const Model::CreateTrustStoreRequest& request, const CreateTrustStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a user access logging settings resource that can be associated with a
@@ -272,15 +225,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::CreateUserAccessLoggingSettingsOutcome CreateUserAccessLoggingSettings(const Model::CreateUserAccessLoggingSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateUserAccessLoggingSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateUserAccessLoggingSettingsOutcomeCallable CreateUserAccessLoggingSettingsCallable(const Model::CreateUserAccessLoggingSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateUserAccessLoggingSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateUserAccessLoggingSettingsAsync(const Model::CreateUserAccessLoggingSettingsRequest& request, const CreateUserAccessLoggingSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a user settings resource that can be associated with a web portal.
@@ -292,15 +236,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::CreateUserSettingsOutcome CreateUserSettings(const Model::CreateUserSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateUserSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateUserSettingsOutcomeCallable CreateUserSettingsCallable(const Model::CreateUserSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateUserSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateUserSettingsAsync(const Model::CreateUserSettingsRequest& request, const CreateUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes browser settings.</p><p><h3>See Also:</h3>   <a
@@ -309,15 +244,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::DeleteBrowserSettingsOutcome DeleteBrowserSettings(const Model::DeleteBrowserSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteBrowserSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteBrowserSettingsOutcomeCallable DeleteBrowserSettingsCallable(const Model::DeleteBrowserSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteBrowserSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteBrowserSettingsAsync(const Model::DeleteBrowserSettingsRequest& request, const DeleteBrowserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the identity provider.</p><p><h3>See Also:</h3>   <a
@@ -326,15 +252,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::DeleteIdentityProviderOutcome DeleteIdentityProvider(const Model::DeleteIdentityProviderRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteIdentityProvider that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteIdentityProviderOutcomeCallable DeleteIdentityProviderCallable(const Model::DeleteIdentityProviderRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteIdentityProvider that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteIdentityProviderAsync(const Model::DeleteIdentityProviderRequest& request, const DeleteIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes network settings.</p><p><h3>See Also:</h3>   <a
@@ -343,15 +260,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::DeleteNetworkSettingsOutcome DeleteNetworkSettings(const Model::DeleteNetworkSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteNetworkSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteNetworkSettingsOutcomeCallable DeleteNetworkSettingsCallable(const Model::DeleteNetworkSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteNetworkSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteNetworkSettingsAsync(const Model::DeleteNetworkSettingsRequest& request, const DeleteNetworkSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a web portal.</p><p><h3>See Also:</h3>   <a
@@ -360,15 +268,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::DeletePortalOutcome DeletePortal(const Model::DeletePortalRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeletePortal that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeletePortalOutcomeCallable DeletePortalCallable(const Model::DeletePortalRequest& request) const;
-
-        /**
-         * An Async wrapper for DeletePortal that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeletePortalAsync(const Model::DeletePortalRequest& request, const DeletePortalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the trust store.</p><p><h3>See Also:</h3>   <a
@@ -377,15 +276,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::DeleteTrustStoreOutcome DeleteTrustStore(const Model::DeleteTrustStoreRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteTrustStore that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteTrustStoreOutcomeCallable DeleteTrustStoreCallable(const Model::DeleteTrustStoreRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteTrustStore that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteTrustStoreAsync(const Model::DeleteTrustStoreRequest& request, const DeleteTrustStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes user access logging settings.</p><p><h3>See Also:</h3>   <a
@@ -394,15 +284,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::DeleteUserAccessLoggingSettingsOutcome DeleteUserAccessLoggingSettings(const Model::DeleteUserAccessLoggingSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteUserAccessLoggingSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteUserAccessLoggingSettingsOutcomeCallable DeleteUserAccessLoggingSettingsCallable(const Model::DeleteUserAccessLoggingSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteUserAccessLoggingSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteUserAccessLoggingSettingsAsync(const Model::DeleteUserAccessLoggingSettingsRequest& request, const DeleteUserAccessLoggingSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes user settings.</p><p><h3>See Also:</h3>   <a
@@ -411,15 +292,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::DeleteUserSettingsOutcome DeleteUserSettings(const Model::DeleteUserSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteUserSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteUserSettingsOutcomeCallable DeleteUserSettingsCallable(const Model::DeleteUserSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteUserSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteUserSettingsAsync(const Model::DeleteUserSettingsRequest& request, const DeleteUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates browser settings from a web portal.</p><p><h3>See Also:</h3>  
@@ -429,15 +301,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::DisassociateBrowserSettingsOutcome DisassociateBrowserSettings(const Model::DisassociateBrowserSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateBrowserSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateBrowserSettingsOutcomeCallable DisassociateBrowserSettingsCallable(const Model::DisassociateBrowserSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateBrowserSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateBrowserSettingsAsync(const Model::DisassociateBrowserSettingsRequest& request, const DisassociateBrowserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates network settings from a web portal.</p><p><h3>See Also:</h3>  
@@ -447,15 +310,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::DisassociateNetworkSettingsOutcome DisassociateNetworkSettings(const Model::DisassociateNetworkSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateNetworkSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateNetworkSettingsOutcomeCallable DisassociateNetworkSettingsCallable(const Model::DisassociateNetworkSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateNetworkSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateNetworkSettingsAsync(const Model::DisassociateNetworkSettingsRequest& request, const DisassociateNetworkSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates a trust store from a web portal.</p><p><h3>See Also:</h3>   <a
@@ -464,15 +318,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::DisassociateTrustStoreOutcome DisassociateTrustStore(const Model::DisassociateTrustStoreRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateTrustStore that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateTrustStoreOutcomeCallable DisassociateTrustStoreCallable(const Model::DisassociateTrustStoreRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateTrustStore that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateTrustStoreAsync(const Model::DisassociateTrustStoreRequest& request, const DisassociateTrustStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates user access logging settings from a web portal.</p><p><h3>See
@@ -482,15 +327,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::DisassociateUserAccessLoggingSettingsOutcome DisassociateUserAccessLoggingSettings(const Model::DisassociateUserAccessLoggingSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateUserAccessLoggingSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateUserAccessLoggingSettingsOutcomeCallable DisassociateUserAccessLoggingSettingsCallable(const Model::DisassociateUserAccessLoggingSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateUserAccessLoggingSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateUserAccessLoggingSettingsAsync(const Model::DisassociateUserAccessLoggingSettingsRequest& request, const DisassociateUserAccessLoggingSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates user settings from a web portal.</p><p><h3>See Also:</h3>   <a
@@ -499,15 +335,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::DisassociateUserSettingsOutcome DisassociateUserSettings(const Model::DisassociateUserSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateUserSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateUserSettingsOutcomeCallable DisassociateUserSettingsCallable(const Model::DisassociateUserSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateUserSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateUserSettingsAsync(const Model::DisassociateUserSettingsRequest& request, const DisassociateUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets browser settings.</p><p><h3>See Also:</h3>   <a
@@ -516,15 +343,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::GetBrowserSettingsOutcome GetBrowserSettings(const Model::GetBrowserSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBrowserSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBrowserSettingsOutcomeCallable GetBrowserSettingsCallable(const Model::GetBrowserSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBrowserSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBrowserSettingsAsync(const Model::GetBrowserSettingsRequest& request, const GetBrowserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the identity provider.</p><p><h3>See Also:</h3>   <a
@@ -533,15 +351,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::GetIdentityProviderOutcome GetIdentityProvider(const Model::GetIdentityProviderRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetIdentityProvider that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetIdentityProviderOutcomeCallable GetIdentityProviderCallable(const Model::GetIdentityProviderRequest& request) const;
-
-        /**
-         * An Async wrapper for GetIdentityProvider that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetIdentityProviderAsync(const Model::GetIdentityProviderRequest& request, const GetIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the network settings.</p><p><h3>See Also:</h3>   <a
@@ -550,15 +359,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::GetNetworkSettingsOutcome GetNetworkSettings(const Model::GetNetworkSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetNetworkSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetNetworkSettingsOutcomeCallable GetNetworkSettingsCallable(const Model::GetNetworkSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetNetworkSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetNetworkSettingsAsync(const Model::GetNetworkSettingsRequest& request, const GetNetworkSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the web portal.</p><p><h3>See Also:</h3>   <a
@@ -567,15 +367,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::GetPortalOutcome GetPortal(const Model::GetPortalRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetPortal that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetPortalOutcomeCallable GetPortalCallable(const Model::GetPortalRequest& request) const;
-
-        /**
-         * An Async wrapper for GetPortal that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetPortalAsync(const Model::GetPortalRequest& request, const GetPortalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the service provider metadata.</p><p><h3>See Also:</h3>   <a
@@ -584,15 +375,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::GetPortalServiceProviderMetadataOutcome GetPortalServiceProviderMetadata(const Model::GetPortalServiceProviderMetadataRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetPortalServiceProviderMetadata that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetPortalServiceProviderMetadataOutcomeCallable GetPortalServiceProviderMetadataCallable(const Model::GetPortalServiceProviderMetadataRequest& request) const;
-
-        /**
-         * An Async wrapper for GetPortalServiceProviderMetadata that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetPortalServiceProviderMetadataAsync(const Model::GetPortalServiceProviderMetadataRequest& request, const GetPortalServiceProviderMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the trust store.</p><p><h3>See Also:</h3>   <a
@@ -601,15 +383,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::GetTrustStoreOutcome GetTrustStore(const Model::GetTrustStoreRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetTrustStore that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetTrustStoreOutcomeCallable GetTrustStoreCallable(const Model::GetTrustStoreRequest& request) const;
-
-        /**
-         * An Async wrapper for GetTrustStore that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetTrustStoreAsync(const Model::GetTrustStoreRequest& request, const GetTrustStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the trust store certificate.</p><p><h3>See Also:</h3>   <a
@@ -618,15 +391,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::GetTrustStoreCertificateOutcome GetTrustStoreCertificate(const Model::GetTrustStoreCertificateRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetTrustStoreCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetTrustStoreCertificateOutcomeCallable GetTrustStoreCertificateCallable(const Model::GetTrustStoreCertificateRequest& request) const;
-
-        /**
-         * An Async wrapper for GetTrustStoreCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetTrustStoreCertificateAsync(const Model::GetTrustStoreCertificateRequest& request, const GetTrustStoreCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets user access logging settings.</p><p><h3>See Also:</h3>   <a
@@ -635,15 +399,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::GetUserAccessLoggingSettingsOutcome GetUserAccessLoggingSettings(const Model::GetUserAccessLoggingSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetUserAccessLoggingSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetUserAccessLoggingSettingsOutcomeCallable GetUserAccessLoggingSettingsCallable(const Model::GetUserAccessLoggingSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetUserAccessLoggingSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetUserAccessLoggingSettingsAsync(const Model::GetUserAccessLoggingSettingsRequest& request, const GetUserAccessLoggingSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets user settings.</p><p><h3>See Also:</h3>   <a
@@ -652,15 +407,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::GetUserSettingsOutcome GetUserSettings(const Model::GetUserSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetUserSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetUserSettingsOutcomeCallable GetUserSettingsCallable(const Model::GetUserSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetUserSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetUserSettingsAsync(const Model::GetUserSettingsRequest& request, const GetUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list of browser settings.</p><p><h3>See Also:</h3>   <a
@@ -669,15 +415,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::ListBrowserSettingsOutcome ListBrowserSettings(const Model::ListBrowserSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListBrowserSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListBrowserSettingsOutcomeCallable ListBrowserSettingsCallable(const Model::ListBrowserSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListBrowserSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListBrowserSettingsAsync(const Model::ListBrowserSettingsRequest& request, const ListBrowserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list of identity providers for a specific web
@@ -687,15 +424,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::ListIdentityProvidersOutcome ListIdentityProviders(const Model::ListIdentityProvidersRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListIdentityProviders that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListIdentityProvidersOutcomeCallable ListIdentityProvidersCallable(const Model::ListIdentityProvidersRequest& request) const;
-
-        /**
-         * An Async wrapper for ListIdentityProviders that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListIdentityProvidersAsync(const Model::ListIdentityProvidersRequest& request, const ListIdentityProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list of network settings.</p><p><h3>See Also:</h3>   <a
@@ -704,15 +432,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::ListNetworkSettingsOutcome ListNetworkSettings(const Model::ListNetworkSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListNetworkSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListNetworkSettingsOutcomeCallable ListNetworkSettingsCallable(const Model::ListNetworkSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListNetworkSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListNetworkSettingsAsync(const Model::ListNetworkSettingsRequest& request, const ListNetworkSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list or web portals.</p><p><h3>See Also:</h3>   <a
@@ -721,15 +440,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::ListPortalsOutcome ListPortals(const Model::ListPortalsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPortals that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPortalsOutcomeCallable ListPortalsCallable(const Model::ListPortalsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPortals that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPortalsAsync(const Model::ListPortalsRequest& request, const ListPortalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list of tags for a resource.</p><p><h3>See Also:</h3>   <a
@@ -738,15 +448,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list of trust store certificates.</p><p><h3>See Also:</h3>   <a
@@ -755,15 +456,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::ListTrustStoreCertificatesOutcome ListTrustStoreCertificates(const Model::ListTrustStoreCertificatesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTrustStoreCertificates that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTrustStoreCertificatesOutcomeCallable ListTrustStoreCertificatesCallable(const Model::ListTrustStoreCertificatesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTrustStoreCertificates that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTrustStoreCertificatesAsync(const Model::ListTrustStoreCertificatesRequest& request, const ListTrustStoreCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list of trust stores.</p><p><h3>See Also:</h3>   <a
@@ -772,15 +464,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::ListTrustStoresOutcome ListTrustStores(const Model::ListTrustStoresRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTrustStores that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTrustStoresOutcomeCallable ListTrustStoresCallable(const Model::ListTrustStoresRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTrustStores that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTrustStoresAsync(const Model::ListTrustStoresRequest& request, const ListTrustStoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list of user access logging settings.</p><p><h3>See Also:</h3>  
@@ -790,15 +473,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::ListUserAccessLoggingSettingsOutcome ListUserAccessLoggingSettings(const Model::ListUserAccessLoggingSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListUserAccessLoggingSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListUserAccessLoggingSettingsOutcomeCallable ListUserAccessLoggingSettingsCallable(const Model::ListUserAccessLoggingSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListUserAccessLoggingSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListUserAccessLoggingSettingsAsync(const Model::ListUserAccessLoggingSettingsRequest& request, const ListUserAccessLoggingSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list of user settings.</p><p><h3>See Also:</h3>   <a
@@ -807,15 +481,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::ListUserSettingsOutcome ListUserSettings(const Model::ListUserSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListUserSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListUserSettingsOutcomeCallable ListUserSettingsCallable(const Model::ListUserSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListUserSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListUserSettingsAsync(const Model::ListUserSettingsRequest& request, const ListUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds or overwrites one or more tags for the specified resource.</p><p><h3>See
@@ -825,15 +490,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes one or more tags from the specified resource.</p><p><h3>See
@@ -843,15 +499,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates browser settings.</p><p><h3>See Also:</h3>   <a
@@ -860,15 +507,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::UpdateBrowserSettingsOutcome UpdateBrowserSettings(const Model::UpdateBrowserSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateBrowserSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateBrowserSettingsOutcomeCallable UpdateBrowserSettingsCallable(const Model::UpdateBrowserSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateBrowserSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateBrowserSettingsAsync(const Model::UpdateBrowserSettingsRequest& request, const UpdateBrowserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the identity provider. </p><p><h3>See Also:</h3>   <a
@@ -877,15 +515,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::UpdateIdentityProviderOutcome UpdateIdentityProvider(const Model::UpdateIdentityProviderRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateIdentityProvider that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateIdentityProviderOutcomeCallable UpdateIdentityProviderCallable(const Model::UpdateIdentityProviderRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateIdentityProvider that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateIdentityProviderAsync(const Model::UpdateIdentityProviderRequest& request, const UpdateIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates network settings.</p><p><h3>See Also:</h3>   <a
@@ -894,15 +523,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::UpdateNetworkSettingsOutcome UpdateNetworkSettings(const Model::UpdateNetworkSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateNetworkSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateNetworkSettingsOutcomeCallable UpdateNetworkSettingsCallable(const Model::UpdateNetworkSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateNetworkSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateNetworkSettingsAsync(const Model::UpdateNetworkSettingsRequest& request, const UpdateNetworkSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a web portal.</p><p><h3>See Also:</h3>   <a
@@ -911,15 +531,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::UpdatePortalOutcome UpdatePortal(const Model::UpdatePortalRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdatePortal that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdatePortalOutcomeCallable UpdatePortalCallable(const Model::UpdatePortalRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdatePortal that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdatePortalAsync(const Model::UpdatePortalRequest& request, const UpdatePortalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the trust store.</p><p><h3>See Also:</h3>   <a
@@ -928,15 +539,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::UpdateTrustStoreOutcome UpdateTrustStore(const Model::UpdateTrustStoreRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateTrustStore that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateTrustStoreOutcomeCallable UpdateTrustStoreCallable(const Model::UpdateTrustStoreRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateTrustStore that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateTrustStoreAsync(const Model::UpdateTrustStoreRequest& request, const UpdateTrustStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the user access logging settings.</p><p><h3>See Also:</h3>   <a
@@ -945,15 +547,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::UpdateUserAccessLoggingSettingsOutcome UpdateUserAccessLoggingSettings(const Model::UpdateUserAccessLoggingSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateUserAccessLoggingSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateUserAccessLoggingSettingsOutcomeCallable UpdateUserAccessLoggingSettingsCallable(const Model::UpdateUserAccessLoggingSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateUserAccessLoggingSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateUserAccessLoggingSettingsAsync(const Model::UpdateUserAccessLoggingSettingsRequest& request, const UpdateUserAccessLoggingSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the user settings.</p><p><h3>See Also:</h3>   <a
@@ -962,15 +555,6 @@ namespace WorkSpacesWeb
          */
         virtual Model::UpdateUserSettingsOutcome UpdateUserSettings(const Model::UpdateUserSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateUserSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateUserSettingsOutcomeCallable UpdateUserSettingsCallable(const Model::UpdateUserSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateUserSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateUserSettingsAsync(const Model::UpdateUserSettingsRequest& request, const UpdateUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

@@ -7,8 +7,10 @@
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/batch/BatchServiceClientModel.h>
+#include <aws/batch/BatchLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -86,6 +88,47 @@ namespace Batch
         virtual ~BatchClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Cancels a job in an Batch job queue. Jobs that are in the
          * <code>SUBMITTED</code>, <code>PENDING</code>, or <code>RUNNABLE</code> state are
@@ -98,15 +141,6 @@ namespace Batch
          */
         virtual Model::CancelJobOutcome CancelJob(const Model::CancelJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelJobOutcomeCallable CancelJobCallable(const Model::CancelJobRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelJobAsync(const Model::CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an Batch compute environment. You can create <code>MANAGED</code> or
@@ -190,15 +224,6 @@ namespace Batch
          */
         virtual Model::CreateComputeEnvironmentOutcome CreateComputeEnvironment(const Model::CreateComputeEnvironmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateComputeEnvironment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateComputeEnvironmentOutcomeCallable CreateComputeEnvironmentCallable(const Model::CreateComputeEnvironmentRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateComputeEnvironment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateComputeEnvironmentAsync(const Model::CreateComputeEnvironmentRequest& request, const CreateComputeEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an Batch job queue. When you create a job queue, you associate one or
@@ -214,15 +239,6 @@ namespace Batch
          */
         virtual Model::CreateJobQueueOutcome CreateJobQueue(const Model::CreateJobQueueRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateJobQueue that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateJobQueueOutcomeCallable CreateJobQueueCallable(const Model::CreateJobQueueRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateJobQueue that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateJobQueueAsync(const Model::CreateJobQueueRequest& request, const CreateJobQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an Batch scheduling policy.</p><p><h3>See Also:</h3>   <a
@@ -231,15 +247,6 @@ namespace Batch
          */
         virtual Model::CreateSchedulingPolicyOutcome CreateSchedulingPolicy(const Model::CreateSchedulingPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateSchedulingPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateSchedulingPolicyOutcomeCallable CreateSchedulingPolicyCallable(const Model::CreateSchedulingPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateSchedulingPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateSchedulingPolicyAsync(const Model::CreateSchedulingPolicyRequest& request, const CreateSchedulingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an Batch compute environment.</p> <p>Before you can delete a compute
@@ -254,15 +261,6 @@ namespace Batch
          */
         virtual Model::DeleteComputeEnvironmentOutcome DeleteComputeEnvironment(const Model::DeleteComputeEnvironmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteComputeEnvironment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteComputeEnvironmentOutcomeCallable DeleteComputeEnvironmentCallable(const Model::DeleteComputeEnvironmentRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteComputeEnvironment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteComputeEnvironmentAsync(const Model::DeleteComputeEnvironmentRequest& request, const DeleteComputeEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified job queue. You must first disable submissions for a
@@ -276,15 +274,6 @@ namespace Batch
          */
         virtual Model::DeleteJobQueueOutcome DeleteJobQueue(const Model::DeleteJobQueueRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteJobQueue that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteJobQueueOutcomeCallable DeleteJobQueueCallable(const Model::DeleteJobQueueRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteJobQueue that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteJobQueueAsync(const Model::DeleteJobQueueRequest& request, const DeleteJobQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified scheduling policy.</p> <p>You can't delete a scheduling
@@ -294,15 +283,6 @@ namespace Batch
          */
         virtual Model::DeleteSchedulingPolicyOutcome DeleteSchedulingPolicy(const Model::DeleteSchedulingPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteSchedulingPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteSchedulingPolicyOutcomeCallable DeleteSchedulingPolicyCallable(const Model::DeleteSchedulingPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteSchedulingPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteSchedulingPolicyAsync(const Model::DeleteSchedulingPolicyRequest& request, const DeleteSchedulingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deregisters an Batch job definition. Job definitions are permanently deleted
@@ -312,15 +292,6 @@ namespace Batch
          */
         virtual Model::DeregisterJobDefinitionOutcome DeregisterJobDefinition(const Model::DeregisterJobDefinitionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeregisterJobDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeregisterJobDefinitionOutcomeCallable DeregisterJobDefinitionCallable(const Model::DeregisterJobDefinitionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeregisterJobDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeregisterJobDefinitionAsync(const Model::DeregisterJobDefinitionRequest& request, const DeregisterJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more of your compute environments.</p> <p>If you're using an
@@ -333,15 +304,6 @@ namespace Batch
          */
         virtual Model::DescribeComputeEnvironmentsOutcome DescribeComputeEnvironments(const Model::DescribeComputeEnvironmentsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeComputeEnvironments that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeComputeEnvironmentsOutcomeCallable DescribeComputeEnvironmentsCallable(const Model::DescribeComputeEnvironmentsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeComputeEnvironments that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeComputeEnvironmentsAsync(const Model::DescribeComputeEnvironmentsRequest& request, const DescribeComputeEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a list of job definitions. You can specify a <code>status</code>
@@ -352,15 +314,6 @@ namespace Batch
          */
         virtual Model::DescribeJobDefinitionsOutcome DescribeJobDefinitions(const Model::DescribeJobDefinitionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeJobDefinitions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeJobDefinitionsOutcomeCallable DescribeJobDefinitionsCallable(const Model::DescribeJobDefinitionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeJobDefinitions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeJobDefinitionsAsync(const Model::DescribeJobDefinitionsRequest& request, const DescribeJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more of your job queues.</p><p><h3>See Also:</h3>   <a
@@ -369,15 +322,6 @@ namespace Batch
          */
         virtual Model::DescribeJobQueuesOutcome DescribeJobQueues(const Model::DescribeJobQueuesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeJobQueues that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeJobQueuesOutcomeCallable DescribeJobQueuesCallable(const Model::DescribeJobQueuesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeJobQueues that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeJobQueuesAsync(const Model::DescribeJobQueuesRequest& request, const DescribeJobQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a list of Batch jobs.</p><p><h3>See Also:</h3>   <a
@@ -386,15 +330,6 @@ namespace Batch
          */
         virtual Model::DescribeJobsOutcome DescribeJobs(const Model::DescribeJobsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeJobs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeJobsOutcomeCallable DescribeJobsCallable(const Model::DescribeJobsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeJobsAsync(const Model::DescribeJobsRequest& request, const DescribeJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more of your scheduling policies.</p><p><h3>See Also:</h3>  
@@ -404,15 +339,6 @@ namespace Batch
          */
         virtual Model::DescribeSchedulingPoliciesOutcome DescribeSchedulingPolicies(const Model::DescribeSchedulingPoliciesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeSchedulingPolicies that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeSchedulingPoliciesOutcomeCallable DescribeSchedulingPoliciesCallable(const Model::DescribeSchedulingPoliciesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeSchedulingPolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeSchedulingPoliciesAsync(const Model::DescribeSchedulingPoliciesRequest& request, const DescribeSchedulingPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of Batch jobs.</p> <p>You must specify only one of the
@@ -427,15 +353,6 @@ namespace Batch
          */
         virtual Model::ListJobsOutcome ListJobs(const Model::ListJobsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListJobs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListJobsOutcomeCallable ListJobsCallable(const Model::ListJobsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListJobsAsync(const Model::ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of Batch scheduling policies.</p><p><h3>See Also:</h3>   <a
@@ -444,15 +361,6 @@ namespace Batch
          */
         virtual Model::ListSchedulingPoliciesOutcome ListSchedulingPolicies(const Model::ListSchedulingPoliciesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSchedulingPolicies that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListSchedulingPoliciesOutcomeCallable ListSchedulingPoliciesCallable(const Model::ListSchedulingPoliciesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSchedulingPolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListSchedulingPoliciesAsync(const Model::ListSchedulingPoliciesRequest& request, const ListSchedulingPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the tags for an Batch resource. Batch resources that support tags are
@@ -464,15 +372,6 @@ namespace Batch
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Registers an Batch job definition.</p><p><h3>See Also:</h3>   <a
@@ -481,15 +380,6 @@ namespace Batch
          */
         virtual Model::RegisterJobDefinitionOutcome RegisterJobDefinition(const Model::RegisterJobDefinitionRequest& request) const;
 
-        /**
-         * A Callable wrapper for RegisterJobDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RegisterJobDefinitionOutcomeCallable RegisterJobDefinitionCallable(const Model::RegisterJobDefinitionRequest& request) const;
-
-        /**
-         * An Async wrapper for RegisterJobDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RegisterJobDefinitionAsync(const Model::RegisterJobDefinitionRequest& request, const RegisterJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Submits an Batch job from a job definition. Parameters that are specified
@@ -510,15 +400,6 @@ namespace Batch
          */
         virtual Model::SubmitJobOutcome SubmitJob(const Model::SubmitJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for SubmitJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SubmitJobOutcomeCallable SubmitJobCallable(const Model::SubmitJobRequest& request) const;
-
-        /**
-         * An Async wrapper for SubmitJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SubmitJobAsync(const Model::SubmitJobRequest& request, const SubmitJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates the specified tags to a resource with the specified
@@ -533,15 +414,6 @@ namespace Batch
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Terminates a job in a job queue. Jobs that are in the <code>STARTING</code>
@@ -553,15 +425,6 @@ namespace Batch
          */
         virtual Model::TerminateJobOutcome TerminateJob(const Model::TerminateJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for TerminateJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TerminateJobOutcomeCallable TerminateJobCallable(const Model::TerminateJobRequest& request) const;
-
-        /**
-         * An Async wrapper for TerminateJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TerminateJobAsync(const Model::TerminateJobRequest& request, const TerminateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes specified tags from an Batch resource.</p><p><h3>See Also:</h3>   <a
@@ -570,15 +433,6 @@ namespace Batch
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an Batch compute environment.</p><p><h3>See Also:</h3>   <a
@@ -587,15 +441,6 @@ namespace Batch
          */
         virtual Model::UpdateComputeEnvironmentOutcome UpdateComputeEnvironment(const Model::UpdateComputeEnvironmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateComputeEnvironment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateComputeEnvironmentOutcomeCallable UpdateComputeEnvironmentCallable(const Model::UpdateComputeEnvironmentRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateComputeEnvironment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateComputeEnvironmentAsync(const Model::UpdateComputeEnvironmentRequest& request, const UpdateComputeEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a job queue.</p><p><h3>See Also:</h3>   <a
@@ -604,15 +449,6 @@ namespace Batch
          */
         virtual Model::UpdateJobQueueOutcome UpdateJobQueue(const Model::UpdateJobQueueRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateJobQueue that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateJobQueueOutcomeCallable UpdateJobQueueCallable(const Model::UpdateJobQueueRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateJobQueue that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateJobQueueAsync(const Model::UpdateJobQueueRequest& request, const UpdateJobQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a scheduling policy.</p><p><h3>See Also:</h3>   <a
@@ -621,15 +457,6 @@ namespace Batch
          */
         virtual Model::UpdateSchedulingPolicyOutcome UpdateSchedulingPolicy(const Model::UpdateSchedulingPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateSchedulingPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateSchedulingPolicyOutcomeCallable UpdateSchedulingPolicyCallable(const Model::UpdateSchedulingPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateSchedulingPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateSchedulingPolicyAsync(const Model::UpdateSchedulingPolicyRequest& request, const UpdateSchedulingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

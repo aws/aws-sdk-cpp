@@ -7,8 +7,10 @@
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/directconnect/DirectConnectServiceClientModel.h>
+#include <aws/directconnect/DirectConnectLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -81,6 +83,47 @@ namespace DirectConnect
         virtual ~DirectConnectClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Accepts a proposal request to attach a virtual private gateway or transit
          * gateway to a Direct Connect gateway.</p><p><h3>See Also:</h3>   <a
@@ -89,15 +132,6 @@ namespace DirectConnect
          */
         virtual Model::AcceptDirectConnectGatewayAssociationProposalOutcome AcceptDirectConnectGatewayAssociationProposal(const Model::AcceptDirectConnectGatewayAssociationProposalRequest& request) const;
 
-        /**
-         * A Callable wrapper for AcceptDirectConnectGatewayAssociationProposal that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AcceptDirectConnectGatewayAssociationProposalOutcomeCallable AcceptDirectConnectGatewayAssociationProposalCallable(const Model::AcceptDirectConnectGatewayAssociationProposalRequest& request) const;
-
-        /**
-         * An Async wrapper for AcceptDirectConnectGatewayAssociationProposal that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AcceptDirectConnectGatewayAssociationProposalAsync(const Model::AcceptDirectConnectGatewayAssociationProposalRequest& request, const AcceptDirectConnectGatewayAssociationProposalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a hosted connection on the specified interconnect or a link
@@ -113,15 +147,6 @@ namespace DirectConnect
          */
         virtual Model::AllocateHostedConnectionOutcome AllocateHostedConnection(const Model::AllocateHostedConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for AllocateHostedConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AllocateHostedConnectionOutcomeCallable AllocateHostedConnectionCallable(const Model::AllocateHostedConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for AllocateHostedConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AllocateHostedConnectionAsync(const Model::AllocateHostedConnectionRequest& request, const AllocateHostedConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provisions a private virtual interface to be owned by the specified Amazon
@@ -134,15 +159,6 @@ namespace DirectConnect
          */
         virtual Model::AllocatePrivateVirtualInterfaceOutcome AllocatePrivateVirtualInterface(const Model::AllocatePrivateVirtualInterfaceRequest& request) const;
 
-        /**
-         * A Callable wrapper for AllocatePrivateVirtualInterface that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AllocatePrivateVirtualInterfaceOutcomeCallable AllocatePrivateVirtualInterfaceCallable(const Model::AllocatePrivateVirtualInterfaceRequest& request) const;
-
-        /**
-         * An Async wrapper for AllocatePrivateVirtualInterface that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AllocatePrivateVirtualInterfaceAsync(const Model::AllocatePrivateVirtualInterfaceRequest& request, const AllocatePrivateVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provisions a public virtual interface to be owned by the specified Amazon Web
@@ -160,15 +176,6 @@ namespace DirectConnect
          */
         virtual Model::AllocatePublicVirtualInterfaceOutcome AllocatePublicVirtualInterface(const Model::AllocatePublicVirtualInterfaceRequest& request) const;
 
-        /**
-         * A Callable wrapper for AllocatePublicVirtualInterface that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AllocatePublicVirtualInterfaceOutcomeCallable AllocatePublicVirtualInterfaceCallable(const Model::AllocatePublicVirtualInterfaceRequest& request) const;
-
-        /**
-         * An Async wrapper for AllocatePublicVirtualInterface that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AllocatePublicVirtualInterfaceAsync(const Model::AllocatePublicVirtualInterfaceRequest& request, const AllocatePublicVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provisions a transit virtual interface to be owned by the specified Amazon
@@ -185,15 +192,6 @@ namespace DirectConnect
          */
         virtual Model::AllocateTransitVirtualInterfaceOutcome AllocateTransitVirtualInterface(const Model::AllocateTransitVirtualInterfaceRequest& request) const;
 
-        /**
-         * A Callable wrapper for AllocateTransitVirtualInterface that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AllocateTransitVirtualInterfaceOutcomeCallable AllocateTransitVirtualInterfaceCallable(const Model::AllocateTransitVirtualInterfaceRequest& request) const;
-
-        /**
-         * An Async wrapper for AllocateTransitVirtualInterface that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AllocateTransitVirtualInterfaceAsync(const Model::AllocateTransitVirtualInterfaceRequest& request, const AllocateTransitVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates an existing connection with a link aggregation group (LAG). The
@@ -216,15 +214,6 @@ namespace DirectConnect
          */
         virtual Model::AssociateConnectionWithLagOutcome AssociateConnectionWithLag(const Model::AssociateConnectionWithLagRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateConnectionWithLag that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateConnectionWithLagOutcomeCallable AssociateConnectionWithLagCallable(const Model::AssociateConnectionWithLagRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateConnectionWithLag that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateConnectionWithLagAsync(const Model::AssociateConnectionWithLagRequest& request, const AssociateConnectionWithLagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates a hosted connection and its virtual interfaces with a link
@@ -239,15 +228,6 @@ namespace DirectConnect
          */
         virtual Model::AssociateHostedConnectionOutcome AssociateHostedConnection(const Model::AssociateHostedConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateHostedConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateHostedConnectionOutcomeCallable AssociateHostedConnectionCallable(const Model::AssociateHostedConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateHostedConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateHostedConnectionAsync(const Model::AssociateHostedConnectionRequest& request, const AssociateHostedConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates a MAC Security (MACsec) Connection Key Name (CKN)/ Connectivity
@@ -263,15 +243,6 @@ namespace DirectConnect
          */
         virtual Model::AssociateMacSecKeyOutcome AssociateMacSecKey(const Model::AssociateMacSecKeyRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateMacSecKey that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateMacSecKeyOutcomeCallable AssociateMacSecKeyCallable(const Model::AssociateMacSecKeyRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateMacSecKey that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateMacSecKeyAsync(const Model::AssociateMacSecKeyRequest& request, const AssociateMacSecKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates a virtual interface with a specified link aggregation group (LAG)
@@ -290,15 +261,6 @@ namespace DirectConnect
          */
         virtual Model::AssociateVirtualInterfaceOutcome AssociateVirtualInterface(const Model::AssociateVirtualInterfaceRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateVirtualInterface that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateVirtualInterfaceOutcomeCallable AssociateVirtualInterfaceCallable(const Model::AssociateVirtualInterfaceRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateVirtualInterface that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateVirtualInterfaceAsync(const Model::AssociateVirtualInterfaceRequest& request, const AssociateVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Confirms the creation of the specified hosted connection on an
@@ -310,15 +272,6 @@ namespace DirectConnect
          */
         virtual Model::ConfirmConnectionOutcome ConfirmConnection(const Model::ConfirmConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for ConfirmConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ConfirmConnectionOutcomeCallable ConfirmConnectionCallable(const Model::ConfirmConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for ConfirmConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ConfirmConnectionAsync(const Model::ConfirmConnectionRequest& request, const ConfirmConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The confirmation of the terms of agreement when creating the connection/link
@@ -328,15 +281,6 @@ namespace DirectConnect
          */
         virtual Model::ConfirmCustomerAgreementOutcome ConfirmCustomerAgreement(const Model::ConfirmCustomerAgreementRequest& request) const;
 
-        /**
-         * A Callable wrapper for ConfirmCustomerAgreement that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ConfirmCustomerAgreementOutcomeCallable ConfirmCustomerAgreementCallable(const Model::ConfirmCustomerAgreementRequest& request) const;
-
-        /**
-         * An Async wrapper for ConfirmCustomerAgreement that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ConfirmCustomerAgreementAsync(const Model::ConfirmCustomerAgreementRequest& request, const ConfirmCustomerAgreementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Accepts ownership of a private virtual interface created by another Amazon
@@ -349,15 +293,6 @@ namespace DirectConnect
          */
         virtual Model::ConfirmPrivateVirtualInterfaceOutcome ConfirmPrivateVirtualInterface(const Model::ConfirmPrivateVirtualInterfaceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ConfirmPrivateVirtualInterface that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ConfirmPrivateVirtualInterfaceOutcomeCallable ConfirmPrivateVirtualInterfaceCallable(const Model::ConfirmPrivateVirtualInterfaceRequest& request) const;
-
-        /**
-         * An Async wrapper for ConfirmPrivateVirtualInterface that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ConfirmPrivateVirtualInterfaceAsync(const Model::ConfirmPrivateVirtualInterfaceRequest& request, const ConfirmPrivateVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Accepts ownership of a public virtual interface created by another Amazon Web
@@ -369,15 +304,6 @@ namespace DirectConnect
          */
         virtual Model::ConfirmPublicVirtualInterfaceOutcome ConfirmPublicVirtualInterface(const Model::ConfirmPublicVirtualInterfaceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ConfirmPublicVirtualInterface that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ConfirmPublicVirtualInterfaceOutcomeCallable ConfirmPublicVirtualInterfaceCallable(const Model::ConfirmPublicVirtualInterfaceRequest& request) const;
-
-        /**
-         * An Async wrapper for ConfirmPublicVirtualInterface that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ConfirmPublicVirtualInterfaceAsync(const Model::ConfirmPublicVirtualInterfaceRequest& request, const ConfirmPublicVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Accepts ownership of a transit virtual interface created by another Amazon
@@ -389,15 +315,6 @@ namespace DirectConnect
          */
         virtual Model::ConfirmTransitVirtualInterfaceOutcome ConfirmTransitVirtualInterface(const Model::ConfirmTransitVirtualInterfaceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ConfirmTransitVirtualInterface that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ConfirmTransitVirtualInterfaceOutcomeCallable ConfirmTransitVirtualInterfaceCallable(const Model::ConfirmTransitVirtualInterfaceRequest& request) const;
-
-        /**
-         * An Async wrapper for ConfirmTransitVirtualInterface that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ConfirmTransitVirtualInterfaceAsync(const Model::ConfirmTransitVirtualInterfaceRequest& request, const ConfirmTransitVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a BGP peer on the specified virtual interface.</p> <p>You must create
@@ -416,15 +333,6 @@ namespace DirectConnect
          */
         virtual Model::CreateBGPPeerOutcome CreateBGPPeer(const Model::CreateBGPPeerRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateBGPPeer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateBGPPeerOutcomeCallable CreateBGPPeerCallable(const Model::CreateBGPPeerRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateBGPPeer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateBGPPeerAsync(const Model::CreateBGPPeerRequest& request, const CreateBGPPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a connection between a customer network and a specific Direct Connect
@@ -442,15 +350,6 @@ namespace DirectConnect
          */
         virtual Model::CreateConnectionOutcome CreateConnection(const Model::CreateConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateConnectionOutcomeCallable CreateConnectionCallable(const Model::CreateConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateConnectionAsync(const Model::CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a Direct Connect gateway, which is an intermediate object that
@@ -466,15 +365,6 @@ namespace DirectConnect
          */
         virtual Model::CreateDirectConnectGatewayOutcome CreateDirectConnectGateway(const Model::CreateDirectConnectGatewayRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDirectConnectGateway that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDirectConnectGatewayOutcomeCallable CreateDirectConnectGatewayCallable(const Model::CreateDirectConnectGatewayRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDirectConnectGateway that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDirectConnectGatewayAsync(const Model::CreateDirectConnectGatewayRequest& request, const CreateDirectConnectGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an association between a Direct Connect gateway and a virtual private
@@ -485,15 +375,6 @@ namespace DirectConnect
          */
         virtual Model::CreateDirectConnectGatewayAssociationOutcome CreateDirectConnectGatewayAssociation(const Model::CreateDirectConnectGatewayAssociationRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDirectConnectGatewayAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDirectConnectGatewayAssociationOutcomeCallable CreateDirectConnectGatewayAssociationCallable(const Model::CreateDirectConnectGatewayAssociationRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDirectConnectGatewayAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDirectConnectGatewayAssociationAsync(const Model::CreateDirectConnectGatewayAssociationRequest& request, const CreateDirectConnectGatewayAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a proposal to associate the specified virtual private gateway or
@@ -506,15 +387,6 @@ namespace DirectConnect
          */
         virtual Model::CreateDirectConnectGatewayAssociationProposalOutcome CreateDirectConnectGatewayAssociationProposal(const Model::CreateDirectConnectGatewayAssociationProposalRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDirectConnectGatewayAssociationProposal that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDirectConnectGatewayAssociationProposalOutcomeCallable CreateDirectConnectGatewayAssociationProposalCallable(const Model::CreateDirectConnectGatewayAssociationProposalRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDirectConnectGatewayAssociationProposal that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDirectConnectGatewayAssociationProposalAsync(const Model::CreateDirectConnectGatewayAssociationProposalRequest& request, const CreateDirectConnectGatewayAssociationProposalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an interconnect between an Direct Connect Partner's network and a
@@ -540,15 +412,6 @@ namespace DirectConnect
          */
         virtual Model::CreateInterconnectOutcome CreateInterconnect(const Model::CreateInterconnectRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateInterconnect that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateInterconnectOutcomeCallable CreateInterconnectCallable(const Model::CreateInterconnectRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateInterconnect that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateInterconnectAsync(const Model::CreateInterconnectRequest& request, const CreateInterconnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a link aggregation group (LAG) with the specified number of bundled
@@ -576,15 +439,6 @@ namespace DirectConnect
          */
         virtual Model::CreateLagOutcome CreateLag(const Model::CreateLagRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateLag that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateLagOutcomeCallable CreateLagCallable(const Model::CreateLagRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateLag that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateLagAsync(const Model::CreateLagRequest& request, const CreateLagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a private virtual interface. A virtual interface is the VLAN that
@@ -606,15 +460,6 @@ namespace DirectConnect
          */
         virtual Model::CreatePrivateVirtualInterfaceOutcome CreatePrivateVirtualInterface(const Model::CreatePrivateVirtualInterfaceRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreatePrivateVirtualInterface that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreatePrivateVirtualInterfaceOutcomeCallable CreatePrivateVirtualInterfaceCallable(const Model::CreatePrivateVirtualInterfaceRequest& request) const;
-
-        /**
-         * An Async wrapper for CreatePrivateVirtualInterface that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreatePrivateVirtualInterfaceAsync(const Model::CreatePrivateVirtualInterfaceRequest& request, const CreatePrivateVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a public virtual interface. A virtual interface is the VLAN that
@@ -629,15 +474,6 @@ namespace DirectConnect
          */
         virtual Model::CreatePublicVirtualInterfaceOutcome CreatePublicVirtualInterface(const Model::CreatePublicVirtualInterfaceRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreatePublicVirtualInterface that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreatePublicVirtualInterfaceOutcomeCallable CreatePublicVirtualInterfaceCallable(const Model::CreatePublicVirtualInterfaceRequest& request) const;
-
-        /**
-         * An Async wrapper for CreatePublicVirtualInterface that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreatePublicVirtualInterfaceAsync(const Model::CreatePublicVirtualInterfaceRequest& request, const CreatePublicVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a transit virtual interface. A transit virtual interface should be
@@ -661,15 +497,6 @@ namespace DirectConnect
          */
         virtual Model::CreateTransitVirtualInterfaceOutcome CreateTransitVirtualInterface(const Model::CreateTransitVirtualInterfaceRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateTransitVirtualInterface that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateTransitVirtualInterfaceOutcomeCallable CreateTransitVirtualInterfaceCallable(const Model::CreateTransitVirtualInterfaceRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateTransitVirtualInterface that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateTransitVirtualInterfaceAsync(const Model::CreateTransitVirtualInterfaceRequest& request, const CreateTransitVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified BGP peer on the specified virtual interface with the
@@ -680,15 +507,6 @@ namespace DirectConnect
          */
         virtual Model::DeleteBGPPeerOutcome DeleteBGPPeer(const Model::DeleteBGPPeerRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteBGPPeer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteBGPPeerOutcomeCallable DeleteBGPPeerCallable(const Model::DeleteBGPPeerRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteBGPPeer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteBGPPeerAsync(const Model::DeleteBGPPeerRequest& request, const DeleteBGPPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified connection.</p> <p>Deleting a connection only stops the
@@ -700,15 +518,6 @@ namespace DirectConnect
          */
         virtual Model::DeleteConnectionOutcome DeleteConnection(const Model::DeleteConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteConnectionOutcomeCallable DeleteConnectionCallable(const Model::DeleteConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteConnectionAsync(const Model::DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified Direct Connect gateway. You must first delete all
@@ -720,15 +529,6 @@ namespace DirectConnect
          */
         virtual Model::DeleteDirectConnectGatewayOutcome DeleteDirectConnectGateway(const Model::DeleteDirectConnectGatewayRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDirectConnectGateway that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDirectConnectGatewayOutcomeCallable DeleteDirectConnectGatewayCallable(const Model::DeleteDirectConnectGatewayRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDirectConnectGateway that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDirectConnectGatewayAsync(const Model::DeleteDirectConnectGatewayRequest& request, const DeleteDirectConnectGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the association between the specified Direct Connect gateway and
@@ -742,15 +542,6 @@ namespace DirectConnect
          */
         virtual Model::DeleteDirectConnectGatewayAssociationOutcome DeleteDirectConnectGatewayAssociation(const Model::DeleteDirectConnectGatewayAssociationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDirectConnectGatewayAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDirectConnectGatewayAssociationOutcomeCallable DeleteDirectConnectGatewayAssociationCallable(const Model::DeleteDirectConnectGatewayAssociationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDirectConnectGatewayAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDirectConnectGatewayAssociationAsync(const Model::DeleteDirectConnectGatewayAssociationRequest& request, const DeleteDirectConnectGatewayAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the association proposal request between the specified Direct Connect
@@ -761,15 +552,6 @@ namespace DirectConnect
          */
         virtual Model::DeleteDirectConnectGatewayAssociationProposalOutcome DeleteDirectConnectGatewayAssociationProposal(const Model::DeleteDirectConnectGatewayAssociationProposalRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDirectConnectGatewayAssociationProposal that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDirectConnectGatewayAssociationProposalOutcomeCallable DeleteDirectConnectGatewayAssociationProposalCallable(const Model::DeleteDirectConnectGatewayAssociationProposalRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDirectConnectGatewayAssociationProposal that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDirectConnectGatewayAssociationProposalAsync(const Model::DeleteDirectConnectGatewayAssociationProposalRequest& request, const DeleteDirectConnectGatewayAssociationProposalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified interconnect.</p>  <p>Intended for use by Direct
@@ -779,15 +561,6 @@ namespace DirectConnect
          */
         virtual Model::DeleteInterconnectOutcome DeleteInterconnect(const Model::DeleteInterconnectRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteInterconnect that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteInterconnectOutcomeCallable DeleteInterconnectCallable(const Model::DeleteInterconnectRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteInterconnect that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteInterconnectAsync(const Model::DeleteInterconnectRequest& request, const DeleteInterconnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified link aggregation group (LAG). You cannot delete a LAG
@@ -798,15 +571,6 @@ namespace DirectConnect
          */
         virtual Model::DeleteLagOutcome DeleteLag(const Model::DeleteLagRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteLag that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteLagOutcomeCallable DeleteLagCallable(const Model::DeleteLagRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteLag that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteLagAsync(const Model::DeleteLagRequest& request, const DeleteLagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a virtual interface.</p><p><h3>See Also:</h3>   <a
@@ -815,15 +579,6 @@ namespace DirectConnect
          */
         virtual Model::DeleteVirtualInterfaceOutcome DeleteVirtualInterface(const Model::DeleteVirtualInterfaceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteVirtualInterface that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteVirtualInterfaceOutcomeCallable DeleteVirtualInterfaceCallable(const Model::DeleteVirtualInterfaceRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteVirtualInterface that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteVirtualInterfaceAsync(const Model::DeleteVirtualInterfaceRequest& request, const DeleteVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Displays the specified connection or all connections in this
@@ -833,15 +588,6 @@ namespace DirectConnect
          */
         virtual Model::DescribeConnectionsOutcome DescribeConnections(const Model::DescribeConnectionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeConnections that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeConnectionsOutcomeCallable DescribeConnectionsCallable(const Model::DescribeConnectionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeConnections that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeConnectionsAsync(const Model::DescribeConnectionsRequest& request, const DescribeConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get and view a list of customer agreements, along with their signed status
@@ -870,15 +616,6 @@ namespace DirectConnect
          */
         virtual Model::DescribeDirectConnectGatewayAssociationProposalsOutcome DescribeDirectConnectGatewayAssociationProposals(const Model::DescribeDirectConnectGatewayAssociationProposalsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDirectConnectGatewayAssociationProposals that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDirectConnectGatewayAssociationProposalsOutcomeCallable DescribeDirectConnectGatewayAssociationProposalsCallable(const Model::DescribeDirectConnectGatewayAssociationProposalsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDirectConnectGatewayAssociationProposals that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDirectConnectGatewayAssociationProposalsAsync(const Model::DescribeDirectConnectGatewayAssociationProposalsRequest& request, const DescribeDirectConnectGatewayAssociationProposalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the associations between your Direct Connect gateways and virtual
@@ -898,15 +635,6 @@ namespace DirectConnect
          */
         virtual Model::DescribeDirectConnectGatewayAssociationsOutcome DescribeDirectConnectGatewayAssociations(const Model::DescribeDirectConnectGatewayAssociationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDirectConnectGatewayAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDirectConnectGatewayAssociationsOutcomeCallable DescribeDirectConnectGatewayAssociationsCallable(const Model::DescribeDirectConnectGatewayAssociationsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDirectConnectGatewayAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDirectConnectGatewayAssociationsAsync(const Model::DescribeDirectConnectGatewayAssociationsRequest& request, const DescribeDirectConnectGatewayAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the attachments between your Direct Connect gateways and virtual
@@ -922,15 +650,6 @@ namespace DirectConnect
          */
         virtual Model::DescribeDirectConnectGatewayAttachmentsOutcome DescribeDirectConnectGatewayAttachments(const Model::DescribeDirectConnectGatewayAttachmentsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDirectConnectGatewayAttachments that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDirectConnectGatewayAttachmentsOutcomeCallable DescribeDirectConnectGatewayAttachmentsCallable(const Model::DescribeDirectConnectGatewayAttachmentsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDirectConnectGatewayAttachments that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDirectConnectGatewayAttachmentsAsync(const Model::DescribeDirectConnectGatewayAttachmentsRequest& request, const DescribeDirectConnectGatewayAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all your Direct Connect gateways or only the specified Direct Connect
@@ -941,15 +660,6 @@ namespace DirectConnect
          */
         virtual Model::DescribeDirectConnectGatewaysOutcome DescribeDirectConnectGateways(const Model::DescribeDirectConnectGatewaysRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDirectConnectGateways that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDirectConnectGatewaysOutcomeCallable DescribeDirectConnectGatewaysCallable(const Model::DescribeDirectConnectGatewaysRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDirectConnectGateways that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDirectConnectGatewaysAsync(const Model::DescribeDirectConnectGatewaysRequest& request, const DescribeDirectConnectGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the hosted connections that have been provisioned on the specified
@@ -960,15 +670,6 @@ namespace DirectConnect
          */
         virtual Model::DescribeHostedConnectionsOutcome DescribeHostedConnections(const Model::DescribeHostedConnectionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeHostedConnections that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeHostedConnectionsOutcomeCallable DescribeHostedConnectionsCallable(const Model::DescribeHostedConnectionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeHostedConnections that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeHostedConnectionsAsync(const Model::DescribeHostedConnectionsRequest& request, const DescribeHostedConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the interconnects owned by the Amazon Web Services account or only the
@@ -978,15 +679,6 @@ namespace DirectConnect
          */
         virtual Model::DescribeInterconnectsOutcome DescribeInterconnects(const Model::DescribeInterconnectsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeInterconnects that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeInterconnectsOutcomeCallable DescribeInterconnectsCallable(const Model::DescribeInterconnectsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeInterconnects that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeInterconnectsAsync(const Model::DescribeInterconnectsRequest& request, const DescribeInterconnectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes all your link aggregation groups (LAG) or the specified
@@ -996,15 +688,6 @@ namespace DirectConnect
          */
         virtual Model::DescribeLagsOutcome DescribeLags(const Model::DescribeLagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeLags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeLagsOutcomeCallable DescribeLagsCallable(const Model::DescribeLagsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeLags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeLagsAsync(const Model::DescribeLagsRequest& request, const DescribeLagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the LOA-CFA for a connection, interconnect, or link aggregation group
@@ -1019,15 +702,6 @@ namespace DirectConnect
          */
         virtual Model::DescribeLoaOutcome DescribeLoa(const Model::DescribeLoaRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeLoa that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeLoaOutcomeCallable DescribeLoaCallable(const Model::DescribeLoaRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeLoa that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeLoaAsync(const Model::DescribeLoaRequest& request, const DescribeLoaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the Direct Connect locations in the current Amazon Web Services Region.
@@ -1055,15 +729,6 @@ namespace DirectConnect
          */
         virtual Model::DescribeRouterConfigurationOutcome DescribeRouterConfiguration(const Model::DescribeRouterConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeRouterConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeRouterConfigurationOutcomeCallable DescribeRouterConfigurationCallable(const Model::DescribeRouterConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeRouterConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeRouterConfigurationAsync(const Model::DescribeRouterConfigurationRequest& request, const DescribeRouterConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the tags associated with the specified Direct Connect
@@ -1073,15 +738,6 @@ namespace DirectConnect
          */
         virtual Model::DescribeTagsOutcome DescribeTags(const Model::DescribeTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTagsOutcomeCallable DescribeTagsCallable(const Model::DescribeTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTagsAsync(const Model::DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the virtual private gateways owned by the Amazon Web Services
@@ -1114,15 +770,6 @@ namespace DirectConnect
          */
         virtual Model::DescribeVirtualInterfacesOutcome DescribeVirtualInterfaces(const Model::DescribeVirtualInterfacesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeVirtualInterfaces that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeVirtualInterfacesOutcomeCallable DescribeVirtualInterfacesCallable(const Model::DescribeVirtualInterfacesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeVirtualInterfaces that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeVirtualInterfacesAsync(const Model::DescribeVirtualInterfacesRequest& request, const DescribeVirtualInterfacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates a connection from a link aggregation group (LAG). The
@@ -1141,15 +788,6 @@ namespace DirectConnect
          */
         virtual Model::DisassociateConnectionFromLagOutcome DisassociateConnectionFromLag(const Model::DisassociateConnectionFromLagRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateConnectionFromLag that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateConnectionFromLagOutcomeCallable DisassociateConnectionFromLagCallable(const Model::DisassociateConnectionFromLagRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateConnectionFromLag that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateConnectionFromLagAsync(const Model::DisassociateConnectionFromLagRequest& request, const DisassociateConnectionFromLagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the association between a MAC Security (MACsec) security key and an
@@ -1159,15 +797,6 @@ namespace DirectConnect
          */
         virtual Model::DisassociateMacSecKeyOutcome DisassociateMacSecKey(const Model::DisassociateMacSecKeyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateMacSecKey that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateMacSecKeyOutcomeCallable DisassociateMacSecKeyCallable(const Model::DisassociateMacSecKeyRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateMacSecKey that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateMacSecKeyAsync(const Model::DisassociateMacSecKeyRequest& request, const DisassociateMacSecKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the virtual interface failover test history.</p><p><h3>See Also:</h3>  
@@ -1177,15 +806,6 @@ namespace DirectConnect
          */
         virtual Model::ListVirtualInterfaceTestHistoryOutcome ListVirtualInterfaceTestHistory(const Model::ListVirtualInterfaceTestHistoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListVirtualInterfaceTestHistory that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListVirtualInterfaceTestHistoryOutcomeCallable ListVirtualInterfaceTestHistoryCallable(const Model::ListVirtualInterfaceTestHistoryRequest& request) const;
-
-        /**
-         * An Async wrapper for ListVirtualInterfaceTestHistory that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListVirtualInterfaceTestHistoryAsync(const Model::ListVirtualInterfaceTestHistoryRequest& request, const ListVirtualInterfaceTestHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts the virtual interface failover test that verifies your configuration
@@ -1203,15 +823,6 @@ namespace DirectConnect
          */
         virtual Model::StartBgpFailoverTestOutcome StartBgpFailoverTest(const Model::StartBgpFailoverTestRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartBgpFailoverTest that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartBgpFailoverTestOutcomeCallable StartBgpFailoverTestCallable(const Model::StartBgpFailoverTestRequest& request) const;
-
-        /**
-         * An Async wrapper for StartBgpFailoverTest that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartBgpFailoverTestAsync(const Model::StartBgpFailoverTestRequest& request, const StartBgpFailoverTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops the virtual interface failover test.</p><p><h3>See Also:</h3>   <a
@@ -1220,15 +831,6 @@ namespace DirectConnect
          */
         virtual Model::StopBgpFailoverTestOutcome StopBgpFailoverTest(const Model::StopBgpFailoverTestRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopBgpFailoverTest that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopBgpFailoverTestOutcomeCallable StopBgpFailoverTestCallable(const Model::StopBgpFailoverTestRequest& request) const;
-
-        /**
-         * An Async wrapper for StopBgpFailoverTest that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopBgpFailoverTestAsync(const Model::StopBgpFailoverTestRequest& request, const StopBgpFailoverTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds the specified tags to the specified Direct Connect resource. Each
@@ -1240,15 +842,6 @@ namespace DirectConnect
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes one or more tags from the specified Direct Connect
@@ -1258,15 +851,6 @@ namespace DirectConnect
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the Direct Connect dedicated connection configuration.</p> <p>You can
@@ -1278,15 +862,6 @@ namespace DirectConnect
          */
         virtual Model::UpdateConnectionOutcome UpdateConnection(const Model::UpdateConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateConnectionOutcomeCallable UpdateConnectionCallable(const Model::UpdateConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateConnectionAsync(const Model::UpdateConnectionRequest& request, const UpdateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the name of a current Direct Connect gateway.</p><p><h3>See
@@ -1296,15 +871,6 @@ namespace DirectConnect
          */
         virtual Model::UpdateDirectConnectGatewayOutcome UpdateDirectConnectGateway(const Model::UpdateDirectConnectGatewayRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateDirectConnectGateway that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateDirectConnectGatewayOutcomeCallable UpdateDirectConnectGatewayCallable(const Model::UpdateDirectConnectGatewayRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateDirectConnectGateway that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateDirectConnectGatewayAsync(const Model::UpdateDirectConnectGatewayRequest& request, const UpdateDirectConnectGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the specified attributes of the Direct Connect gateway
@@ -1315,15 +881,6 @@ namespace DirectConnect
          */
         virtual Model::UpdateDirectConnectGatewayAssociationOutcome UpdateDirectConnectGatewayAssociation(const Model::UpdateDirectConnectGatewayAssociationRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateDirectConnectGatewayAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateDirectConnectGatewayAssociationOutcomeCallable UpdateDirectConnectGatewayAssociationCallable(const Model::UpdateDirectConnectGatewayAssociationRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateDirectConnectGatewayAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateDirectConnectGatewayAssociationAsync(const Model::UpdateDirectConnectGatewayAssociationRequest& request, const UpdateDirectConnectGatewayAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the attributes of the specified link aggregation group (LAG).</p>
@@ -1341,15 +898,6 @@ namespace DirectConnect
          */
         virtual Model::UpdateLagOutcome UpdateLag(const Model::UpdateLagRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateLag that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateLagOutcomeCallable UpdateLagCallable(const Model::UpdateLagRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateLag that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateLagAsync(const Model::UpdateLagRequest& request, const UpdateLagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the specified attributes of the specified virtual private
@@ -1366,15 +914,6 @@ namespace DirectConnect
          */
         virtual Model::UpdateVirtualInterfaceAttributesOutcome UpdateVirtualInterfaceAttributes(const Model::UpdateVirtualInterfaceAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateVirtualInterfaceAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateVirtualInterfaceAttributesOutcomeCallable UpdateVirtualInterfaceAttributesCallable(const Model::UpdateVirtualInterfaceAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateVirtualInterfaceAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateVirtualInterfaceAttributesAsync(const Model::UpdateVirtualInterfaceAttributesRequest& request, const UpdateVirtualInterfaceAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

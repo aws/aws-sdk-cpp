@@ -7,8 +7,10 @@
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/rekognition/RekognitionServiceClientModel.h>
+#include <aws/rekognition/RekognitionLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -206,6 +208,47 @@ namespace Rekognition
         virtual ~RekognitionClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Compares a face in the <i>source</i> input image with each of the 100 largest
          * faces detected in the <i>target</i> input image. </p> <p> If the source image
@@ -256,15 +299,6 @@ namespace Rekognition
          */
         virtual Model::CompareFacesOutcome CompareFaces(const Model::CompareFacesRequest& request) const;
 
-        /**
-         * A Callable wrapper for CompareFaces that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CompareFacesOutcomeCallable CompareFacesCallable(const Model::CompareFacesRequest& request) const;
-
-        /**
-         * An Async wrapper for CompareFaces that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CompareFacesAsync(const Model::CompareFacesRequest& request, const CompareFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Copies a version of an Amazon Rekognition Custom Labels model from a source
@@ -290,15 +324,6 @@ namespace Rekognition
          */
         virtual Model::CopyProjectVersionOutcome CopyProjectVersion(const Model::CopyProjectVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CopyProjectVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CopyProjectVersionOutcomeCallable CopyProjectVersionCallable(const Model::CopyProjectVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for CopyProjectVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CopyProjectVersionAsync(const Model::CopyProjectVersionRequest& request, const CopyProjectVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a collection in an AWS Region. You can add faces to the collection
@@ -317,15 +342,6 @@ namespace Rekognition
          */
         virtual Model::CreateCollectionOutcome CreateCollection(const Model::CreateCollectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateCollection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateCollectionOutcomeCallable CreateCollectionCallable(const Model::CreateCollectionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateCollection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateCollectionAsync(const Model::CreateCollectionRequest& request, const CreateCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new Amazon Rekognition Custom Labels dataset. You can create a
@@ -354,15 +370,6 @@ namespace Rekognition
          */
         virtual Model::CreateDatasetOutcome CreateDataset(const Model::CreateDatasetRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDataset that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDatasetOutcomeCallable CreateDatasetCallable(const Model::CreateDatasetRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDataset that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDatasetAsync(const Model::CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new Amazon Rekognition Custom Labels project. A project is a group
@@ -375,15 +382,6 @@ namespace Rekognition
          */
         virtual Model::CreateProjectOutcome CreateProject(const Model::CreateProjectRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateProject that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateProjectOutcomeCallable CreateProjectCallable(const Model::CreateProjectRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateProject that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateProjectAsync(const Model::CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new version of a model and begins training. Models are managed as
@@ -417,15 +415,6 @@ namespace Rekognition
          */
         virtual Model::CreateProjectVersionOutcome CreateProjectVersion(const Model::CreateProjectVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateProjectVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateProjectVersionOutcomeCallable CreateProjectVersionCallable(const Model::CreateProjectVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateProjectVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateProjectVersionAsync(const Model::CreateProjectVersionRequest& request, const CreateProjectVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an Amazon Rekognition stream processor that you can use to detect and
@@ -461,15 +450,6 @@ namespace Rekognition
          */
         virtual Model::CreateStreamProcessorOutcome CreateStreamProcessor(const Model::CreateStreamProcessorRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateStreamProcessor that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateStreamProcessorOutcomeCallable CreateStreamProcessorCallable(const Model::CreateStreamProcessorRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateStreamProcessor that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateStreamProcessorAsync(const Model::CreateStreamProcessorRequest& request, const CreateStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified collection. Note that this operation removes all faces
@@ -482,15 +462,6 @@ namespace Rekognition
          */
         virtual Model::DeleteCollectionOutcome DeleteCollection(const Model::DeleteCollectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteCollection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteCollectionOutcomeCallable DeleteCollectionCallable(const Model::DeleteCollectionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteCollection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteCollectionAsync(const Model::DeleteCollectionRequest& request, const DeleteCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an existing Amazon Rekognition Custom Labels dataset. Deleting a
@@ -508,15 +479,6 @@ namespace Rekognition
          */
         virtual Model::DeleteDatasetOutcome DeleteDataset(const Model::DeleteDatasetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDataset that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDatasetOutcomeCallable DeleteDatasetCallable(const Model::DeleteDatasetRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDataset that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDatasetAsync(const Model::DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes faces from a collection. You specify a collection ID and an array of
@@ -528,15 +490,6 @@ namespace Rekognition
          */
         virtual Model::DeleteFacesOutcome DeleteFaces(const Model::DeleteFacesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteFaces that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteFacesOutcomeCallable DeleteFacesCallable(const Model::DeleteFacesRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteFaces that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteFacesAsync(const Model::DeleteFacesRequest& request, const DeleteFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an Amazon Rekognition Custom Labels project. To delete a project you
@@ -553,15 +506,6 @@ namespace Rekognition
          */
         virtual Model::DeleteProjectOutcome DeleteProject(const Model::DeleteProjectRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteProject that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteProjectOutcomeCallable DeleteProjectCallable(const Model::DeleteProjectRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteProject that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteProjectAsync(const Model::DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an existing project policy.</p> <p>To get a list of project policies
@@ -572,15 +516,6 @@ namespace Rekognition
          */
         virtual Model::DeleteProjectPolicyOutcome DeleteProjectPolicy(const Model::DeleteProjectPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteProjectPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteProjectPolicyOutcomeCallable DeleteProjectPolicyCallable(const Model::DeleteProjectPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteProjectPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteProjectPolicyAsync(const Model::DeleteProjectPolicyRequest& request, const DeleteProjectPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an Amazon Rekognition Custom Labels model. </p> <p>You can't delete a
@@ -595,15 +530,6 @@ namespace Rekognition
          */
         virtual Model::DeleteProjectVersionOutcome DeleteProjectVersion(const Model::DeleteProjectVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteProjectVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteProjectVersionOutcomeCallable DeleteProjectVersionCallable(const Model::DeleteProjectVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteProjectVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteProjectVersionAsync(const Model::DeleteProjectVersionRequest& request, const DeleteProjectVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the stream processor identified by <code>Name</code>. You assign the
@@ -616,15 +542,6 @@ namespace Rekognition
          */
         virtual Model::DeleteStreamProcessorOutcome DeleteStreamProcessor(const Model::DeleteStreamProcessorRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteStreamProcessor that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteStreamProcessorOutcomeCallable DeleteStreamProcessorCallable(const Model::DeleteStreamProcessorRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteStreamProcessor that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteStreamProcessorAsync(const Model::DeleteStreamProcessorRequest& request, const DeleteStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified collection. You can use
@@ -637,15 +554,6 @@ namespace Rekognition
          */
         virtual Model::DescribeCollectionOutcome DescribeCollection(const Model::DescribeCollectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeCollection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeCollectionOutcomeCallable DescribeCollectionCallable(const Model::DescribeCollectionRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeCollection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeCollectionAsync(const Model::DescribeCollectionRequest& request, const DescribeCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Describes an Amazon Rekognition Custom Labels dataset. You can get
@@ -658,15 +566,6 @@ namespace Rekognition
          */
         virtual Model::DescribeDatasetOutcome DescribeDataset(const Model::DescribeDatasetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDataset that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDatasetOutcomeCallable DescribeDatasetCallable(const Model::DescribeDatasetRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDataset that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDatasetAsync(const Model::DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists and describes the versions of a model in an Amazon Rekognition Custom
@@ -680,15 +579,6 @@ namespace Rekognition
          */
         virtual Model::DescribeProjectVersionsOutcome DescribeProjectVersions(const Model::DescribeProjectVersionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeProjectVersions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeProjectVersionsOutcomeCallable DescribeProjectVersionsCallable(const Model::DescribeProjectVersionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeProjectVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeProjectVersionsAsync(const Model::DescribeProjectVersionsRequest& request, const DescribeProjectVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about your Amazon Rekognition Custom Labels projects. </p>
@@ -699,15 +589,6 @@ namespace Rekognition
          */
         virtual Model::DescribeProjectsOutcome DescribeProjects(const Model::DescribeProjectsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeProjects that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeProjectsOutcomeCallable DescribeProjectsCallable(const Model::DescribeProjectsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeProjects that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeProjectsAsync(const Model::DescribeProjectsRequest& request, const DescribeProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides information about a stream processor created by
@@ -719,15 +600,6 @@ namespace Rekognition
          */
         virtual Model::DescribeStreamProcessorOutcome DescribeStreamProcessor(const Model::DescribeStreamProcessorRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeStreamProcessor that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeStreamProcessorOutcomeCallable DescribeStreamProcessorCallable(const Model::DescribeStreamProcessorRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeStreamProcessor that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeStreamProcessorAsync(const Model::DescribeStreamProcessorRequest& request, const DescribeStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Detects custom labels in a supplied image by using an Amazon Rekognition
@@ -766,15 +638,6 @@ namespace Rekognition
          */
         virtual Model::DetectCustomLabelsOutcome DetectCustomLabels(const Model::DetectCustomLabelsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DetectCustomLabels that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DetectCustomLabelsOutcomeCallable DetectCustomLabelsCallable(const Model::DetectCustomLabelsRequest& request) const;
-
-        /**
-         * An Async wrapper for DetectCustomLabels that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DetectCustomLabelsAsync(const Model::DetectCustomLabelsRequest& request, const DetectCustomLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Detects faces within an image that is provided as input.</p> <p>
@@ -798,15 +661,6 @@ namespace Rekognition
          */
         virtual Model::DetectFacesOutcome DetectFaces(const Model::DetectFacesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DetectFaces that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DetectFacesOutcomeCallable DetectFacesCallable(const Model::DetectFacesRequest& request) const;
-
-        /**
-         * An Async wrapper for DetectFaces that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DetectFacesAsync(const Model::DetectFacesRequest& request, const DetectFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Detects instances of real-world entities within an image (JPEG or PNG)
@@ -882,15 +736,6 @@ namespace Rekognition
          */
         virtual Model::DetectLabelsOutcome DetectLabels(const Model::DetectLabelsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DetectLabels that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DetectLabelsOutcomeCallable DetectLabelsCallable(const Model::DetectLabelsRequest& request) const;
-
-        /**
-         * An Async wrapper for DetectLabels that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DetectLabelsAsync(const Model::DetectLabelsRequest& request, const DetectLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Detects unsafe content in a specified JPEG or PNG format image. Use
@@ -909,15 +754,6 @@ namespace Rekognition
          */
         virtual Model::DetectModerationLabelsOutcome DetectModerationLabels(const Model::DetectModerationLabelsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DetectModerationLabels that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DetectModerationLabelsOutcomeCallable DetectModerationLabelsCallable(const Model::DetectModerationLabelsRequest& request) const;
-
-        /**
-         * An Async wrapper for DetectModerationLabels that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DetectModerationLabelsAsync(const Model::DetectModerationLabelsRequest& request, const DetectModerationLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Detects Personal Protective Equipment (PPE) worn by people detected in an
@@ -948,15 +784,6 @@ namespace Rekognition
          */
         virtual Model::DetectProtectiveEquipmentOutcome DetectProtectiveEquipment(const Model::DetectProtectiveEquipmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for DetectProtectiveEquipment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DetectProtectiveEquipmentOutcomeCallable DetectProtectiveEquipmentCallable(const Model::DetectProtectiveEquipmentRequest& request) const;
-
-        /**
-         * An Async wrapper for DetectProtectiveEquipment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DetectProtectiveEquipmentAsync(const Model::DetectProtectiveEquipmentRequest& request, const DetectProtectiveEquipmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Detects text in the input image and converts it into machine-readable
@@ -988,15 +815,6 @@ namespace Rekognition
          */
         virtual Model::DetectTextOutcome DetectText(const Model::DetectTextRequest& request) const;
 
-        /**
-         * A Callable wrapper for DetectText that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DetectTextOutcomeCallable DetectTextCallable(const Model::DetectTextRequest& request) const;
-
-        /**
-         * An Async wrapper for DetectText that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DetectTextAsync(const Model::DetectTextRequest& request, const DetectTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Distributes the entries (images) in a training dataset across the training
@@ -1020,15 +838,6 @@ namespace Rekognition
          */
         virtual Model::DistributeDatasetEntriesOutcome DistributeDatasetEntries(const Model::DistributeDatasetEntriesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DistributeDatasetEntries that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DistributeDatasetEntriesOutcomeCallable DistributeDatasetEntriesCallable(const Model::DistributeDatasetEntriesRequest& request) const;
-
-        /**
-         * An Async wrapper for DistributeDatasetEntries that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DistributeDatasetEntriesAsync(const Model::DistributeDatasetEntriesRequest& request, const DistributeDatasetEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the name and additional information about a celebrity based on their
@@ -1043,15 +852,6 @@ namespace Rekognition
          */
         virtual Model::GetCelebrityInfoOutcome GetCelebrityInfo(const Model::GetCelebrityInfoRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetCelebrityInfo that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetCelebrityInfoOutcomeCallable GetCelebrityInfoCallable(const Model::GetCelebrityInfoRequest& request) const;
-
-        /**
-         * An Async wrapper for GetCelebrityInfo that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetCelebrityInfoAsync(const Model::GetCelebrityInfoRequest& request, const GetCelebrityInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the celebrity recognition results for a Amazon Rekognition Video
@@ -1102,15 +902,6 @@ namespace Rekognition
          */
         virtual Model::GetCelebrityRecognitionOutcome GetCelebrityRecognition(const Model::GetCelebrityRecognitionRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetCelebrityRecognition that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetCelebrityRecognitionOutcomeCallable GetCelebrityRecognitionCallable(const Model::GetCelebrityRecognitionRequest& request) const;
-
-        /**
-         * An Async wrapper for GetCelebrityRecognition that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetCelebrityRecognitionAsync(const Model::GetCelebrityRecognitionRequest& request, const GetCelebrityRecognitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the inappropriate, unwanted, or offensive content analysis results for a
@@ -1152,15 +943,6 @@ namespace Rekognition
          */
         virtual Model::GetContentModerationOutcome GetContentModeration(const Model::GetContentModerationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetContentModeration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetContentModerationOutcomeCallable GetContentModerationCallable(const Model::GetContentModerationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetContentModeration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetContentModerationAsync(const Model::GetContentModerationRequest& request, const GetContentModerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets face detection results for a Amazon Rekognition Video analysis started
@@ -1187,15 +969,6 @@ namespace Rekognition
          */
         virtual Model::GetFaceDetectionOutcome GetFaceDetection(const Model::GetFaceDetectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetFaceDetection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetFaceDetectionOutcomeCallable GetFaceDetectionCallable(const Model::GetFaceDetectionRequest& request) const;
-
-        /**
-         * An Async wrapper for GetFaceDetection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetFaceDetectionAsync(const Model::GetFaceDetectionRequest& request, const GetFaceDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the face search results for Amazon Rekognition Video face search started
@@ -1231,15 +1004,6 @@ namespace Rekognition
          */
         virtual Model::GetFaceSearchOutcome GetFaceSearch(const Model::GetFaceSearchRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetFaceSearch that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetFaceSearchOutcomeCallable GetFaceSearchCallable(const Model::GetFaceSearchRequest& request) const;
-
-        /**
-         * An Async wrapper for GetFaceSearch that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetFaceSearchAsync(const Model::GetFaceSearchRequest& request, const GetFaceSearchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the label detection results of a Amazon Rekognition Video analysis
@@ -1272,15 +1036,6 @@ namespace Rekognition
          */
         virtual Model::GetLabelDetectionOutcome GetLabelDetection(const Model::GetLabelDetectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetLabelDetection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetLabelDetectionOutcomeCallable GetLabelDetectionCallable(const Model::GetLabelDetectionRequest& request) const;
-
-        /**
-         * An Async wrapper for GetLabelDetection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetLabelDetectionAsync(const Model::GetLabelDetectionRequest& request, const GetLabelDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the path tracking results of a Amazon Rekognition Video analysis started
@@ -1316,15 +1071,6 @@ namespace Rekognition
          */
         virtual Model::GetPersonTrackingOutcome GetPersonTracking(const Model::GetPersonTrackingRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetPersonTracking that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetPersonTrackingOutcomeCallable GetPersonTrackingCallable(const Model::GetPersonTrackingRequest& request) const;
-
-        /**
-         * An Async wrapper for GetPersonTracking that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetPersonTrackingAsync(const Model::GetPersonTrackingRequest& request, const GetPersonTrackingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the segment detection results of a Amazon Rekognition Video analysis
@@ -1362,15 +1108,6 @@ namespace Rekognition
          */
         virtual Model::GetSegmentDetectionOutcome GetSegmentDetection(const Model::GetSegmentDetectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSegmentDetection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSegmentDetectionOutcomeCallable GetSegmentDetectionCallable(const Model::GetSegmentDetectionRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSegmentDetection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSegmentDetectionAsync(const Model::GetSegmentDetectionRequest& request, const GetSegmentDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the text detection results of a Amazon Rekognition Video analysis
@@ -1402,15 +1139,6 @@ namespace Rekognition
          */
         virtual Model::GetTextDetectionOutcome GetTextDetection(const Model::GetTextDetectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetTextDetection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetTextDetectionOutcomeCallable GetTextDetectionCallable(const Model::GetTextDetectionRequest& request) const;
-
-        /**
-         * An Async wrapper for GetTextDetection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetTextDetectionAsync(const Model::GetTextDetectionRequest& request, const GetTextDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Detects faces in the input image and adds them to the specified collection.
@@ -1483,15 +1211,6 @@ namespace Rekognition
          */
         virtual Model::IndexFacesOutcome IndexFaces(const Model::IndexFacesRequest& request) const;
 
-        /**
-         * A Callable wrapper for IndexFaces that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::IndexFacesOutcomeCallable IndexFacesCallable(const Model::IndexFacesRequest& request) const;
-
-        /**
-         * An Async wrapper for IndexFaces that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void IndexFacesAsync(const Model::IndexFacesRequest& request, const IndexFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns list of collection IDs in your account. If the result is truncated,
@@ -1505,15 +1224,6 @@ namespace Rekognition
          */
         virtual Model::ListCollectionsOutcome ListCollections(const Model::ListCollectionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListCollections that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListCollectionsOutcomeCallable ListCollectionsCallable(const Model::ListCollectionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListCollections that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListCollectionsAsync(const Model::ListCollectionsRequest& request, const ListCollectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Lists the entries (images) within a dataset. An entry is a JSON Line that
@@ -1535,15 +1245,6 @@ namespace Rekognition
          */
         virtual Model::ListDatasetEntriesOutcome ListDatasetEntries(const Model::ListDatasetEntriesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDatasetEntries that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDatasetEntriesOutcomeCallable ListDatasetEntriesCallable(const Model::ListDatasetEntriesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDatasetEntries that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDatasetEntriesAsync(const Model::ListDatasetEntriesRequest& request, const ListDatasetEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the labels in a dataset. Amazon Rekognition Custom Labels uses labels
@@ -1558,15 +1259,6 @@ namespace Rekognition
          */
         virtual Model::ListDatasetLabelsOutcome ListDatasetLabels(const Model::ListDatasetLabelsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDatasetLabels that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDatasetLabelsOutcomeCallable ListDatasetLabelsCallable(const Model::ListDatasetLabelsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDatasetLabels that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDatasetLabelsAsync(const Model::ListDatasetLabelsRequest& request, const ListDatasetLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns metadata for faces in the specified collection. This metadata
@@ -1580,15 +1272,6 @@ namespace Rekognition
          */
         virtual Model::ListFacesOutcome ListFaces(const Model::ListFacesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListFaces that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListFacesOutcomeCallable ListFacesCallable(const Model::ListFacesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListFaces that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListFacesAsync(const Model::ListFacesRequest& request, const ListFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of the project policies attached to a project.</p> <p>To attach a
@@ -1600,15 +1283,6 @@ namespace Rekognition
          */
         virtual Model::ListProjectPoliciesOutcome ListProjectPolicies(const Model::ListProjectPoliciesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListProjectPolicies that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListProjectPoliciesOutcomeCallable ListProjectPoliciesCallable(const Model::ListProjectPoliciesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListProjectPolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListProjectPoliciesAsync(const Model::ListProjectPoliciesRequest& request, const ListProjectPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of stream processors that you have created with
@@ -1618,15 +1292,6 @@ namespace Rekognition
          */
         virtual Model::ListStreamProcessorsOutcome ListStreamProcessors(const Model::ListStreamProcessorsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListStreamProcessors that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListStreamProcessorsOutcomeCallable ListStreamProcessorsCallable(const Model::ListStreamProcessorsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListStreamProcessors that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListStreamProcessorsAsync(const Model::ListStreamProcessorsRequest& request, const ListStreamProcessorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a list of tags in an Amazon Rekognition collection, stream
@@ -1638,15 +1303,6 @@ namespace Rekognition
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Attaches a project policy to a Amazon Rekognition Custom Labels project in a
@@ -1668,15 +1324,6 @@ namespace Rekognition
          */
         virtual Model::PutProjectPolicyOutcome PutProjectPolicy(const Model::PutProjectPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutProjectPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutProjectPolicyOutcomeCallable PutProjectPolicyCallable(const Model::PutProjectPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for PutProjectPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutProjectPolicyAsync(const Model::PutProjectPolicyRequest& request, const PutProjectPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns an array of celebrities recognized in the input image. For more
@@ -1710,15 +1357,6 @@ namespace Rekognition
          */
         virtual Model::RecognizeCelebritiesOutcome RecognizeCelebrities(const Model::RecognizeCelebritiesRequest& request) const;
 
-        /**
-         * A Callable wrapper for RecognizeCelebrities that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RecognizeCelebritiesOutcomeCallable RecognizeCelebritiesCallable(const Model::RecognizeCelebritiesRequest& request) const;
-
-        /**
-         * An Async wrapper for RecognizeCelebrities that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RecognizeCelebritiesAsync(const Model::RecognizeCelebritiesRequest& request, const RecognizeCelebritiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>For a given input face ID, searches for matching faces in the collection the
@@ -1740,15 +1378,6 @@ namespace Rekognition
          */
         virtual Model::SearchFacesOutcome SearchFaces(const Model::SearchFacesRequest& request) const;
 
-        /**
-         * A Callable wrapper for SearchFaces that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SearchFacesOutcomeCallable SearchFacesCallable(const Model::SearchFacesRequest& request) const;
-
-        /**
-         * An Async wrapper for SearchFaces that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SearchFacesAsync(const Model::SearchFacesRequest& request, const SearchFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>For a given input image, first detects the largest face in the image, and
@@ -1790,15 +1419,6 @@ namespace Rekognition
          */
         virtual Model::SearchFacesByImageOutcome SearchFacesByImage(const Model::SearchFacesByImageRequest& request) const;
 
-        /**
-         * A Callable wrapper for SearchFacesByImage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SearchFacesByImageOutcomeCallable SearchFacesByImageCallable(const Model::SearchFacesByImageRequest& request) const;
-
-        /**
-         * An Async wrapper for SearchFacesByImage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SearchFacesByImageAsync(const Model::SearchFacesByImageRequest& request, const SearchFacesByImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts asynchronous recognition of celebrities in a stored video.</p>
@@ -1820,15 +1440,6 @@ namespace Rekognition
          */
         virtual Model::StartCelebrityRecognitionOutcome StartCelebrityRecognition(const Model::StartCelebrityRecognitionRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartCelebrityRecognition that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartCelebrityRecognitionOutcomeCallable StartCelebrityRecognitionCallable(const Model::StartCelebrityRecognitionRequest& request) const;
-
-        /**
-         * An Async wrapper for StartCelebrityRecognition that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartCelebrityRecognitionAsync(const Model::StartCelebrityRecognitionRequest& request, const StartCelebrityRecognitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Starts asynchronous detection of inappropriate, unwanted, or offensive
@@ -1854,15 +1465,6 @@ namespace Rekognition
          */
         virtual Model::StartContentModerationOutcome StartContentModeration(const Model::StartContentModerationRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartContentModeration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartContentModerationOutcomeCallable StartContentModerationCallable(const Model::StartContentModerationRequest& request) const;
-
-        /**
-         * An Async wrapper for StartContentModeration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartContentModerationAsync(const Model::StartContentModerationRequest& request, const StartContentModerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts asynchronous detection of faces in a stored video.</p> <p>Amazon
@@ -1884,15 +1486,6 @@ namespace Rekognition
          */
         virtual Model::StartFaceDetectionOutcome StartFaceDetection(const Model::StartFaceDetectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartFaceDetection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartFaceDetectionOutcomeCallable StartFaceDetectionCallable(const Model::StartFaceDetectionRequest& request) const;
-
-        /**
-         * An Async wrapper for StartFaceDetection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartFaceDetectionAsync(const Model::StartFaceDetectionRequest& request, const StartFaceDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts the asynchronous search for faces in a collection that match the faces
@@ -1914,15 +1507,6 @@ namespace Rekognition
          */
         virtual Model::StartFaceSearchOutcome StartFaceSearch(const Model::StartFaceSearchRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartFaceSearch that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartFaceSearchOutcomeCallable StartFaceSearchCallable(const Model::StartFaceSearchRequest& request) const;
-
-        /**
-         * An Async wrapper for StartFaceSearch that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartFaceSearchAsync(const Model::StartFaceSearchRequest& request, const StartFaceSearchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts asynchronous detection of labels in a stored video.</p> <p>Amazon
@@ -1946,15 +1530,6 @@ namespace Rekognition
          */
         virtual Model::StartLabelDetectionOutcome StartLabelDetection(const Model::StartLabelDetectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartLabelDetection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartLabelDetectionOutcomeCallable StartLabelDetectionCallable(const Model::StartLabelDetectionRequest& request) const;
-
-        /**
-         * An Async wrapper for StartLabelDetection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartLabelDetectionAsync(const Model::StartLabelDetectionRequest& request, const StartLabelDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts the asynchronous tracking of a person's path in a stored video.</p>
@@ -1974,15 +1549,6 @@ namespace Rekognition
          */
         virtual Model::StartPersonTrackingOutcome StartPersonTracking(const Model::StartPersonTrackingRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartPersonTracking that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartPersonTrackingOutcomeCallable StartPersonTrackingCallable(const Model::StartPersonTrackingRequest& request) const;
-
-        /**
-         * An Async wrapper for StartPersonTracking that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartPersonTrackingAsync(const Model::StartPersonTrackingRequest& request, const StartPersonTrackingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts the running of the version of a model. Starting a model takes a while
@@ -2000,15 +1566,6 @@ namespace Rekognition
          */
         virtual Model::StartProjectVersionOutcome StartProjectVersion(const Model::StartProjectVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartProjectVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartProjectVersionOutcomeCallable StartProjectVersionCallable(const Model::StartProjectVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for StartProjectVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartProjectVersionAsync(const Model::StartProjectVersionRequest& request, const StartProjectVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts asynchronous detection of segment detection in a stored video.</p>
@@ -2035,15 +1592,6 @@ namespace Rekognition
          */
         virtual Model::StartSegmentDetectionOutcome StartSegmentDetection(const Model::StartSegmentDetectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartSegmentDetection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartSegmentDetectionOutcomeCallable StartSegmentDetectionCallable(const Model::StartSegmentDetectionRequest& request) const;
-
-        /**
-         * An Async wrapper for StartSegmentDetection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartSegmentDetectionAsync(const Model::StartSegmentDetectionRequest& request, const StartSegmentDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts processing a stream processor. You create a stream processor by
@@ -2058,15 +1606,6 @@ namespace Rekognition
          */
         virtual Model::StartStreamProcessorOutcome StartStreamProcessor(const Model::StartStreamProcessorRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartStreamProcessor that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartStreamProcessorOutcomeCallable StartStreamProcessorCallable(const Model::StartStreamProcessorRequest& request) const;
-
-        /**
-         * An Async wrapper for StartStreamProcessor that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartStreamProcessorAsync(const Model::StartStreamProcessorRequest& request, const StartStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts asynchronous detection of text in a stored video.</p> <p>Amazon
@@ -2086,15 +1625,6 @@ namespace Rekognition
          */
         virtual Model::StartTextDetectionOutcome StartTextDetection(const Model::StartTextDetectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartTextDetection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartTextDetectionOutcomeCallable StartTextDetectionCallable(const Model::StartTextDetectionRequest& request) const;
-
-        /**
-         * An Async wrapper for StartTextDetection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartTextDetectionAsync(const Model::StartTextDetectionRequest& request, const StartTextDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops a running model. The operation might take a while to complete. To check
@@ -2105,15 +1635,6 @@ namespace Rekognition
          */
         virtual Model::StopProjectVersionOutcome StopProjectVersion(const Model::StopProjectVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopProjectVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopProjectVersionOutcomeCallable StopProjectVersionCallable(const Model::StopProjectVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for StopProjectVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopProjectVersionAsync(const Model::StopProjectVersionRequest& request, const StopProjectVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops a running stream processor that was created by
@@ -2123,15 +1644,6 @@ namespace Rekognition
          */
         virtual Model::StopStreamProcessorOutcome StopStreamProcessor(const Model::StopStreamProcessorRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopStreamProcessor that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopStreamProcessorOutcomeCallable StopStreamProcessorCallable(const Model::StopStreamProcessorRequest& request) const;
-
-        /**
-         * An Async wrapper for StopStreamProcessor that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopStreamProcessorAsync(const Model::StopStreamProcessorRequest& request, const StopStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Adds one or more key-value tags to an Amazon Rekognition collection, stream
@@ -2144,15 +1656,6 @@ namespace Rekognition
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Removes one or more tags from an Amazon Rekognition collection, stream
@@ -2164,15 +1667,6 @@ namespace Rekognition
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds or updates one or more entries (images) in a dataset. An entry is a JSON
@@ -2203,15 +1697,6 @@ namespace Rekognition
          */
         virtual Model::UpdateDatasetEntriesOutcome UpdateDatasetEntries(const Model::UpdateDatasetEntriesRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateDatasetEntries that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateDatasetEntriesOutcomeCallable UpdateDatasetEntriesCallable(const Model::UpdateDatasetEntriesRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateDatasetEntries that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateDatasetEntriesAsync(const Model::UpdateDatasetEntriesRequest& request, const UpdateDatasetEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Allows you to update a stream processor. You can change some settings and
@@ -2222,15 +1707,6 @@ namespace Rekognition
          */
         virtual Model::UpdateStreamProcessorOutcome UpdateStreamProcessor(const Model::UpdateStreamProcessorRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateStreamProcessor that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateStreamProcessorOutcomeCallable UpdateStreamProcessorCallable(const Model::UpdateStreamProcessorRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateStreamProcessor that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateStreamProcessorAsync(const Model::UpdateStreamProcessorRequest& request, const UpdateStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

@@ -7,8 +7,10 @@
 #include <aws/proton/Proton_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/proton/ProtonServiceClientModel.h>
+#include <aws/proton/ProtonLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -158,6 +160,47 @@ namespace Proton
         virtual ~ProtonClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>In a management account, an environment account connection request is
          * accepted. When the environment account connection request is accepted, Proton
@@ -172,15 +215,6 @@ namespace Proton
          */
         virtual Model::AcceptEnvironmentAccountConnectionOutcome AcceptEnvironmentAccountConnection(const Model::AcceptEnvironmentAccountConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for AcceptEnvironmentAccountConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AcceptEnvironmentAccountConnectionOutcomeCallable AcceptEnvironmentAccountConnectionCallable(const Model::AcceptEnvironmentAccountConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for AcceptEnvironmentAccountConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AcceptEnvironmentAccountConnectionAsync(const Model::AcceptEnvironmentAccountConnectionRequest& request, const AcceptEnvironmentAccountConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Attempts to cancel a component deployment (for a component that is in the
@@ -193,15 +227,6 @@ namespace Proton
          */
         virtual Model::CancelComponentDeploymentOutcome CancelComponentDeployment(const Model::CancelComponentDeploymentRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelComponentDeployment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelComponentDeploymentOutcomeCallable CancelComponentDeploymentCallable(const Model::CancelComponentDeploymentRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelComponentDeployment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelComponentDeploymentAsync(const Model::CancelComponentDeploymentRequest& request, const CancelComponentDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Attempts to cancel an environment deployment on an <a>UpdateEnvironment</a>
@@ -221,15 +246,6 @@ namespace Proton
          */
         virtual Model::CancelEnvironmentDeploymentOutcome CancelEnvironmentDeployment(const Model::CancelEnvironmentDeploymentRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelEnvironmentDeployment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelEnvironmentDeploymentOutcomeCallable CancelEnvironmentDeploymentCallable(const Model::CancelEnvironmentDeploymentRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelEnvironmentDeployment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelEnvironmentDeploymentAsync(const Model::CancelEnvironmentDeploymentRequest& request, const CancelEnvironmentDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Attempts to cancel a service instance deployment on an
@@ -249,15 +265,6 @@ namespace Proton
          */
         virtual Model::CancelServiceInstanceDeploymentOutcome CancelServiceInstanceDeployment(const Model::CancelServiceInstanceDeploymentRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelServiceInstanceDeployment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelServiceInstanceDeploymentOutcomeCallable CancelServiceInstanceDeploymentCallable(const Model::CancelServiceInstanceDeploymentRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelServiceInstanceDeployment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelServiceInstanceDeploymentAsync(const Model::CancelServiceInstanceDeploymentRequest& request, const CancelServiceInstanceDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Attempts to cancel a service pipeline deployment on an
@@ -277,15 +284,6 @@ namespace Proton
          */
         virtual Model::CancelServicePipelineDeploymentOutcome CancelServicePipelineDeployment(const Model::CancelServicePipelineDeploymentRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelServicePipelineDeployment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelServicePipelineDeploymentOutcomeCallable CancelServicePipelineDeploymentCallable(const Model::CancelServicePipelineDeploymentRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelServicePipelineDeployment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelServicePipelineDeploymentAsync(const Model::CancelServicePipelineDeploymentRequest& request, const CancelServicePipelineDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Create an Proton component. A component is an infrastructure extension for a
@@ -297,15 +295,6 @@ namespace Proton
          */
         virtual Model::CreateComponentOutcome CreateComponent(const Model::CreateComponentRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateComponent that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateComponentOutcomeCallable CreateComponentCallable(const Model::CreateComponentRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateComponent that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateComponentAsync(const Model::CreateComponentRequest& request, const CreateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deploy a new environment. An Proton environment is created from an
@@ -325,15 +314,6 @@ namespace Proton
          */
         virtual Model::CreateEnvironmentOutcome CreateEnvironment(const Model::CreateEnvironmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateEnvironment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateEnvironmentOutcomeCallable CreateEnvironmentCallable(const Model::CreateEnvironmentRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateEnvironment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateEnvironmentAsync(const Model::CreateEnvironmentRequest& request, const CreateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Create an environment account connection in an environment account so that
@@ -350,15 +330,6 @@ namespace Proton
          */
         virtual Model::CreateEnvironmentAccountConnectionOutcome CreateEnvironmentAccountConnection(const Model::CreateEnvironmentAccountConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateEnvironmentAccountConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateEnvironmentAccountConnectionOutcomeCallable CreateEnvironmentAccountConnectionCallable(const Model::CreateEnvironmentAccountConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateEnvironmentAccountConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateEnvironmentAccountConnectionAsync(const Model::CreateEnvironmentAccountConnectionRequest& request, const CreateEnvironmentAccountConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Create an environment template for Proton. For more information, see <a
@@ -381,15 +352,6 @@ namespace Proton
          */
         virtual Model::CreateEnvironmentTemplateOutcome CreateEnvironmentTemplate(const Model::CreateEnvironmentTemplateRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateEnvironmentTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateEnvironmentTemplateOutcomeCallable CreateEnvironmentTemplateCallable(const Model::CreateEnvironmentTemplateRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateEnvironmentTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateEnvironmentTemplateAsync(const Model::CreateEnvironmentTemplateRequest& request, const CreateEnvironmentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Create a new major or minor version of an environment template. A major
@@ -401,15 +363,6 @@ namespace Proton
          */
         virtual Model::CreateEnvironmentTemplateVersionOutcome CreateEnvironmentTemplateVersion(const Model::CreateEnvironmentTemplateVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateEnvironmentTemplateVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateEnvironmentTemplateVersionOutcomeCallable CreateEnvironmentTemplateVersionCallable(const Model::CreateEnvironmentTemplateVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateEnvironmentTemplateVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateEnvironmentTemplateVersionAsync(const Model::CreateEnvironmentTemplateVersionRequest& request, const CreateEnvironmentTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Create and register a link to a repository. Proton uses the link to
@@ -431,15 +384,6 @@ namespace Proton
          */
         virtual Model::CreateRepositoryOutcome CreateRepository(const Model::CreateRepositoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateRepository that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateRepositoryOutcomeCallable CreateRepositoryCallable(const Model::CreateRepositoryRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateRepository that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateRepositoryAsync(const Model::CreateRepositoryRequest& request, const CreateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Create an Proton service. An Proton service is an instantiation of a service
@@ -452,15 +396,6 @@ namespace Proton
          */
         virtual Model::CreateServiceOutcome CreateService(const Model::CreateServiceRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateService that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateServiceOutcomeCallable CreateServiceCallable(const Model::CreateServiceRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateService that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateServiceAsync(const Model::CreateServiceRequest& request, const CreateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Create a service template. The administrator creates a service template to
@@ -476,15 +411,6 @@ namespace Proton
          */
         virtual Model::CreateServiceTemplateOutcome CreateServiceTemplate(const Model::CreateServiceTemplateRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateServiceTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateServiceTemplateOutcomeCallable CreateServiceTemplateCallable(const Model::CreateServiceTemplateRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateServiceTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateServiceTemplateAsync(const Model::CreateServiceTemplateRequest& request, const CreateServiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Create a new major or minor version of a service template. A major version of
@@ -496,15 +422,6 @@ namespace Proton
          */
         virtual Model::CreateServiceTemplateVersionOutcome CreateServiceTemplateVersion(const Model::CreateServiceTemplateVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateServiceTemplateVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateServiceTemplateVersionOutcomeCallable CreateServiceTemplateVersionCallable(const Model::CreateServiceTemplateVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateServiceTemplateVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateServiceTemplateVersionAsync(const Model::CreateServiceTemplateVersionRequest& request, const CreateServiceTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Set up a template to create new template versions automatically by tracking a
@@ -522,15 +439,6 @@ namespace Proton
          */
         virtual Model::CreateTemplateSyncConfigOutcome CreateTemplateSyncConfig(const Model::CreateTemplateSyncConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateTemplateSyncConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateTemplateSyncConfigOutcomeCallable CreateTemplateSyncConfigCallable(const Model::CreateTemplateSyncConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateTemplateSyncConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateTemplateSyncConfigAsync(const Model::CreateTemplateSyncConfigRequest& request, const CreateTemplateSyncConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Delete an Proton component resource.</p> <p>For more information about
@@ -542,15 +450,6 @@ namespace Proton
          */
         virtual Model::DeleteComponentOutcome DeleteComponent(const Model::DeleteComponentRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteComponent that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteComponentOutcomeCallable DeleteComponentCallable(const Model::DeleteComponentRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteComponent that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteComponentAsync(const Model::DeleteComponentRequest& request, const DeleteComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Delete an environment.</p><p><h3>See Also:</h3>   <a
@@ -559,15 +458,6 @@ namespace Proton
          */
         virtual Model::DeleteEnvironmentOutcome DeleteEnvironment(const Model::DeleteEnvironmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteEnvironment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteEnvironmentOutcomeCallable DeleteEnvironmentCallable(const Model::DeleteEnvironmentRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteEnvironment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteEnvironmentAsync(const Model::DeleteEnvironmentRequest& request, const DeleteEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>In an environment account, delete an environment account connection.</p>
@@ -585,15 +475,6 @@ namespace Proton
          */
         virtual Model::DeleteEnvironmentAccountConnectionOutcome DeleteEnvironmentAccountConnection(const Model::DeleteEnvironmentAccountConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteEnvironmentAccountConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteEnvironmentAccountConnectionOutcomeCallable DeleteEnvironmentAccountConnectionCallable(const Model::DeleteEnvironmentAccountConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteEnvironmentAccountConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteEnvironmentAccountConnectionAsync(const Model::DeleteEnvironmentAccountConnectionRequest& request, const DeleteEnvironmentAccountConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>If no other major or minor versions of an environment template exist, delete
@@ -603,15 +484,6 @@ namespace Proton
          */
         virtual Model::DeleteEnvironmentTemplateOutcome DeleteEnvironmentTemplate(const Model::DeleteEnvironmentTemplateRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteEnvironmentTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteEnvironmentTemplateOutcomeCallable DeleteEnvironmentTemplateCallable(const Model::DeleteEnvironmentTemplateRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteEnvironmentTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteEnvironmentTemplateAsync(const Model::DeleteEnvironmentTemplateRequest& request, const DeleteEnvironmentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>If no other minor versions of an environment template exist, delete a major
@@ -630,15 +502,6 @@ namespace Proton
          */
         virtual Model::DeleteEnvironmentTemplateVersionOutcome DeleteEnvironmentTemplateVersion(const Model::DeleteEnvironmentTemplateVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteEnvironmentTemplateVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteEnvironmentTemplateVersionOutcomeCallable DeleteEnvironmentTemplateVersionCallable(const Model::DeleteEnvironmentTemplateVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteEnvironmentTemplateVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteEnvironmentTemplateVersionAsync(const Model::DeleteEnvironmentTemplateVersionRequest& request, const DeleteEnvironmentTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>De-register and unlink your repository.</p><p><h3>See Also:</h3>   <a
@@ -647,15 +510,6 @@ namespace Proton
          */
         virtual Model::DeleteRepositoryOutcome DeleteRepository(const Model::DeleteRepositoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteRepository that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteRepositoryOutcomeCallable DeleteRepositoryCallable(const Model::DeleteRepositoryRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteRepository that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteRepositoryAsync(const Model::DeleteRepositoryRequest& request, const DeleteRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Delete a service, with its instances and pipeline.</p>  <p>You can't
@@ -669,15 +523,6 @@ namespace Proton
          */
         virtual Model::DeleteServiceOutcome DeleteService(const Model::DeleteServiceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteService that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteServiceOutcomeCallable DeleteServiceCallable(const Model::DeleteServiceRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteService that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteServiceAsync(const Model::DeleteServiceRequest& request, const DeleteServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>If no other major or minor versions of the service template exist, delete the
@@ -687,15 +532,6 @@ namespace Proton
          */
         virtual Model::DeleteServiceTemplateOutcome DeleteServiceTemplate(const Model::DeleteServiceTemplateRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteServiceTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteServiceTemplateOutcomeCallable DeleteServiceTemplateCallable(const Model::DeleteServiceTemplateRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteServiceTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteServiceTemplateAsync(const Model::DeleteServiceTemplateRequest& request, const DeleteServiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>If no other minor versions of a service template exist, delete a major
@@ -713,15 +549,6 @@ namespace Proton
          */
         virtual Model::DeleteServiceTemplateVersionOutcome DeleteServiceTemplateVersion(const Model::DeleteServiceTemplateVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteServiceTemplateVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteServiceTemplateVersionOutcomeCallable DeleteServiceTemplateVersionCallable(const Model::DeleteServiceTemplateVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteServiceTemplateVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteServiceTemplateVersionAsync(const Model::DeleteServiceTemplateVersionRequest& request, const DeleteServiceTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Delete a template sync configuration.</p><p><h3>See Also:</h3>   <a
@@ -730,15 +557,6 @@ namespace Proton
          */
         virtual Model::DeleteTemplateSyncConfigOutcome DeleteTemplateSyncConfig(const Model::DeleteTemplateSyncConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteTemplateSyncConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteTemplateSyncConfigOutcomeCallable DeleteTemplateSyncConfigCallable(const Model::DeleteTemplateSyncConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteTemplateSyncConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteTemplateSyncConfigAsync(const Model::DeleteTemplateSyncConfigRequest& request, const DeleteTemplateSyncConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get detail data for Proton account-wide settings.</p><p><h3>See Also:</h3>  
@@ -748,15 +566,6 @@ namespace Proton
          */
         virtual Model::GetAccountSettingsOutcome GetAccountSettings(const Model::GetAccountSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAccountSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAccountSettingsOutcomeCallable GetAccountSettingsCallable(const Model::GetAccountSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAccountSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAccountSettingsAsync(const Model::GetAccountSettingsRequest& request, const GetAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get detailed data for a component.</p> <p>For more information about
@@ -768,15 +577,6 @@ namespace Proton
          */
         virtual Model::GetComponentOutcome GetComponent(const Model::GetComponentRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetComponent that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetComponentOutcomeCallable GetComponentCallable(const Model::GetComponentRequest& request) const;
-
-        /**
-         * An Async wrapper for GetComponent that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetComponentAsync(const Model::GetComponentRequest& request, const GetComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get detailed data for an environment.</p><p><h3>See Also:</h3>   <a
@@ -785,15 +585,6 @@ namespace Proton
          */
         virtual Model::GetEnvironmentOutcome GetEnvironment(const Model::GetEnvironmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetEnvironment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetEnvironmentOutcomeCallable GetEnvironmentCallable(const Model::GetEnvironmentRequest& request) const;
-
-        /**
-         * An Async wrapper for GetEnvironment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetEnvironmentAsync(const Model::GetEnvironmentRequest& request, const GetEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>In an environment account, get the detailed data for an environment account
@@ -806,15 +597,6 @@ namespace Proton
          */
         virtual Model::GetEnvironmentAccountConnectionOutcome GetEnvironmentAccountConnection(const Model::GetEnvironmentAccountConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetEnvironmentAccountConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetEnvironmentAccountConnectionOutcomeCallable GetEnvironmentAccountConnectionCallable(const Model::GetEnvironmentAccountConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for GetEnvironmentAccountConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetEnvironmentAccountConnectionAsync(const Model::GetEnvironmentAccountConnectionRequest& request, const GetEnvironmentAccountConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get detailed data for an environment template.</p><p><h3>See Also:</h3>   <a
@@ -823,15 +605,6 @@ namespace Proton
          */
         virtual Model::GetEnvironmentTemplateOutcome GetEnvironmentTemplate(const Model::GetEnvironmentTemplateRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetEnvironmentTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetEnvironmentTemplateOutcomeCallable GetEnvironmentTemplateCallable(const Model::GetEnvironmentTemplateRequest& request) const;
-
-        /**
-         * An Async wrapper for GetEnvironmentTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetEnvironmentTemplateAsync(const Model::GetEnvironmentTemplateRequest& request, const GetEnvironmentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get detailed data for a major or minor version of an environment
@@ -841,15 +614,6 @@ namespace Proton
          */
         virtual Model::GetEnvironmentTemplateVersionOutcome GetEnvironmentTemplateVersion(const Model::GetEnvironmentTemplateVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetEnvironmentTemplateVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetEnvironmentTemplateVersionOutcomeCallable GetEnvironmentTemplateVersionCallable(const Model::GetEnvironmentTemplateVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for GetEnvironmentTemplateVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetEnvironmentTemplateVersionAsync(const Model::GetEnvironmentTemplateVersionRequest& request, const GetEnvironmentTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get detail data for a linked repository.</p><p><h3>See Also:</h3>   <a
@@ -858,15 +622,6 @@ namespace Proton
          */
         virtual Model::GetRepositoryOutcome GetRepository(const Model::GetRepositoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRepository that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRepositoryOutcomeCallable GetRepositoryCallable(const Model::GetRepositoryRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRepository that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRepositoryAsync(const Model::GetRepositoryRequest& request, const GetRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get the sync status of a repository used for Proton template sync. For more
@@ -883,15 +638,6 @@ namespace Proton
          */
         virtual Model::GetRepositorySyncStatusOutcome GetRepositorySyncStatus(const Model::GetRepositorySyncStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRepositorySyncStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRepositorySyncStatusOutcomeCallable GetRepositorySyncStatusCallable(const Model::GetRepositorySyncStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRepositorySyncStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRepositorySyncStatusAsync(const Model::GetRepositorySyncStatusRequest& request, const GetRepositorySyncStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get detailed data for a service.</p><p><h3>See Also:</h3>   <a
@@ -900,15 +646,6 @@ namespace Proton
          */
         virtual Model::GetServiceOutcome GetService(const Model::GetServiceRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetService that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetServiceOutcomeCallable GetServiceCallable(const Model::GetServiceRequest& request) const;
-
-        /**
-         * An Async wrapper for GetService that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetServiceAsync(const Model::GetServiceRequest& request, const GetServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get detailed data for a service instance. A service instance is an
@@ -919,15 +656,6 @@ namespace Proton
          */
         virtual Model::GetServiceInstanceOutcome GetServiceInstance(const Model::GetServiceInstanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetServiceInstance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetServiceInstanceOutcomeCallable GetServiceInstanceCallable(const Model::GetServiceInstanceRequest& request) const;
-
-        /**
-         * An Async wrapper for GetServiceInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetServiceInstanceAsync(const Model::GetServiceInstanceRequest& request, const GetServiceInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get detailed data for a service template.</p><p><h3>See Also:</h3>   <a
@@ -936,15 +664,6 @@ namespace Proton
          */
         virtual Model::GetServiceTemplateOutcome GetServiceTemplate(const Model::GetServiceTemplateRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetServiceTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetServiceTemplateOutcomeCallable GetServiceTemplateCallable(const Model::GetServiceTemplateRequest& request) const;
-
-        /**
-         * An Async wrapper for GetServiceTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetServiceTemplateAsync(const Model::GetServiceTemplateRequest& request, const GetServiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get detailed data for a major or minor version of a service
@@ -954,15 +673,6 @@ namespace Proton
          */
         virtual Model::GetServiceTemplateVersionOutcome GetServiceTemplateVersion(const Model::GetServiceTemplateVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetServiceTemplateVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetServiceTemplateVersionOutcomeCallable GetServiceTemplateVersionCallable(const Model::GetServiceTemplateVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for GetServiceTemplateVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetServiceTemplateVersionAsync(const Model::GetServiceTemplateVersionRequest& request, const GetServiceTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get detail data for a template sync configuration.</p><p><h3>See Also:</h3>  
@@ -972,15 +682,6 @@ namespace Proton
          */
         virtual Model::GetTemplateSyncConfigOutcome GetTemplateSyncConfig(const Model::GetTemplateSyncConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetTemplateSyncConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetTemplateSyncConfigOutcomeCallable GetTemplateSyncConfigCallable(const Model::GetTemplateSyncConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for GetTemplateSyncConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetTemplateSyncConfigAsync(const Model::GetTemplateSyncConfigRequest& request, const GetTemplateSyncConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get the status of a template sync.</p><p><h3>See Also:</h3>   <a
@@ -989,15 +690,6 @@ namespace Proton
          */
         virtual Model::GetTemplateSyncStatusOutcome GetTemplateSyncStatus(const Model::GetTemplateSyncStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetTemplateSyncStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetTemplateSyncStatusOutcomeCallable GetTemplateSyncStatusCallable(const Model::GetTemplateSyncStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for GetTemplateSyncStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetTemplateSyncStatusAsync(const Model::GetTemplateSyncStatusRequest& request, const GetTemplateSyncStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get a list of component Infrastructure as Code (IaC) outputs.</p> <p>For more
@@ -1009,15 +701,6 @@ namespace Proton
          */
         virtual Model::ListComponentOutputsOutcome ListComponentOutputs(const Model::ListComponentOutputsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListComponentOutputs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListComponentOutputsOutcomeCallable ListComponentOutputsCallable(const Model::ListComponentOutputsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListComponentOutputs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListComponentOutputsAsync(const Model::ListComponentOutputsRequest& request, const ListComponentOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List provisioned resources for a component with details.</p> <p>For more
@@ -1029,15 +712,6 @@ namespace Proton
          */
         virtual Model::ListComponentProvisionedResourcesOutcome ListComponentProvisionedResources(const Model::ListComponentProvisionedResourcesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListComponentProvisionedResources that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListComponentProvisionedResourcesOutcomeCallable ListComponentProvisionedResourcesCallable(const Model::ListComponentProvisionedResourcesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListComponentProvisionedResources that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListComponentProvisionedResourcesAsync(const Model::ListComponentProvisionedResourcesRequest& request, const ListComponentProvisionedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List components with summary data. You can filter the result list by
@@ -1050,15 +724,6 @@ namespace Proton
          */
         virtual Model::ListComponentsOutcome ListComponents(const Model::ListComponentsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListComponents that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListComponentsOutcomeCallable ListComponentsCallable(const Model::ListComponentsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListComponents that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListComponentsAsync(const Model::ListComponentsRequest& request, const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>View a list of environment account connections.</p> <p>For more information,
@@ -1071,15 +736,6 @@ namespace Proton
          */
         virtual Model::ListEnvironmentAccountConnectionsOutcome ListEnvironmentAccountConnections(const Model::ListEnvironmentAccountConnectionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListEnvironmentAccountConnections that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListEnvironmentAccountConnectionsOutcomeCallable ListEnvironmentAccountConnectionsCallable(const Model::ListEnvironmentAccountConnectionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListEnvironmentAccountConnections that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListEnvironmentAccountConnectionsAsync(const Model::ListEnvironmentAccountConnectionsRequest& request, const ListEnvironmentAccountConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List the infrastructure as code outputs for your environment.</p><p><h3>See
@@ -1089,15 +745,6 @@ namespace Proton
          */
         virtual Model::ListEnvironmentOutputsOutcome ListEnvironmentOutputs(const Model::ListEnvironmentOutputsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListEnvironmentOutputs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListEnvironmentOutputsOutcomeCallable ListEnvironmentOutputsCallable(const Model::ListEnvironmentOutputsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListEnvironmentOutputs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListEnvironmentOutputsAsync(const Model::ListEnvironmentOutputsRequest& request, const ListEnvironmentOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List the provisioned resources for your environment.</p><p><h3>See Also:</h3>
@@ -1107,15 +754,6 @@ namespace Proton
          */
         virtual Model::ListEnvironmentProvisionedResourcesOutcome ListEnvironmentProvisionedResources(const Model::ListEnvironmentProvisionedResourcesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListEnvironmentProvisionedResources that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListEnvironmentProvisionedResourcesOutcomeCallable ListEnvironmentProvisionedResourcesCallable(const Model::ListEnvironmentProvisionedResourcesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListEnvironmentProvisionedResources that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListEnvironmentProvisionedResourcesAsync(const Model::ListEnvironmentProvisionedResourcesRequest& request, const ListEnvironmentProvisionedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List major or minor versions of an environment template with detail
@@ -1125,15 +763,6 @@ namespace Proton
          */
         virtual Model::ListEnvironmentTemplateVersionsOutcome ListEnvironmentTemplateVersions(const Model::ListEnvironmentTemplateVersionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListEnvironmentTemplateVersions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListEnvironmentTemplateVersionsOutcomeCallable ListEnvironmentTemplateVersionsCallable(const Model::ListEnvironmentTemplateVersionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListEnvironmentTemplateVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListEnvironmentTemplateVersionsAsync(const Model::ListEnvironmentTemplateVersionsRequest& request, const ListEnvironmentTemplateVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List environment templates.</p><p><h3>See Also:</h3>   <a
@@ -1142,15 +771,6 @@ namespace Proton
          */
         virtual Model::ListEnvironmentTemplatesOutcome ListEnvironmentTemplates(const Model::ListEnvironmentTemplatesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListEnvironmentTemplates that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListEnvironmentTemplatesOutcomeCallable ListEnvironmentTemplatesCallable(const Model::ListEnvironmentTemplatesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListEnvironmentTemplates that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListEnvironmentTemplatesAsync(const Model::ListEnvironmentTemplatesRequest& request, const ListEnvironmentTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List environments with detail data summaries.</p><p><h3>See Also:</h3>   <a
@@ -1159,15 +779,6 @@ namespace Proton
          */
         virtual Model::ListEnvironmentsOutcome ListEnvironments(const Model::ListEnvironmentsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListEnvironments that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListEnvironmentsOutcomeCallable ListEnvironmentsCallable(const Model::ListEnvironmentsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListEnvironments that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListEnvironmentsAsync(const Model::ListEnvironmentsRequest& request, const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List linked repositories with detail data.</p><p><h3>See Also:</h3>   <a
@@ -1176,15 +787,6 @@ namespace Proton
          */
         virtual Model::ListRepositoriesOutcome ListRepositories(const Model::ListRepositoriesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListRepositories that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListRepositoriesOutcomeCallable ListRepositoriesCallable(const Model::ListRepositoriesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListRepositories that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListRepositoriesAsync(const Model::ListRepositoriesRequest& request, const ListRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List repository sync definitions with detail data.</p><p><h3>See Also:</h3>  
@@ -1194,15 +796,6 @@ namespace Proton
          */
         virtual Model::ListRepositorySyncDefinitionsOutcome ListRepositorySyncDefinitions(const Model::ListRepositorySyncDefinitionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListRepositorySyncDefinitions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListRepositorySyncDefinitionsOutcomeCallable ListRepositorySyncDefinitionsCallable(const Model::ListRepositorySyncDefinitionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListRepositorySyncDefinitions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListRepositorySyncDefinitionsAsync(const Model::ListRepositorySyncDefinitionsRequest& request, const ListRepositorySyncDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get a list service of instance Infrastructure as Code (IaC)
@@ -1212,15 +805,6 @@ namespace Proton
          */
         virtual Model::ListServiceInstanceOutputsOutcome ListServiceInstanceOutputs(const Model::ListServiceInstanceOutputsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListServiceInstanceOutputs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListServiceInstanceOutputsOutcomeCallable ListServiceInstanceOutputsCallable(const Model::ListServiceInstanceOutputsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListServiceInstanceOutputs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListServiceInstanceOutputsAsync(const Model::ListServiceInstanceOutputsRequest& request, const ListServiceInstanceOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List provisioned resources for a service instance with details.</p><p><h3>See
@@ -1230,15 +814,6 @@ namespace Proton
          */
         virtual Model::ListServiceInstanceProvisionedResourcesOutcome ListServiceInstanceProvisionedResources(const Model::ListServiceInstanceProvisionedResourcesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListServiceInstanceProvisionedResources that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListServiceInstanceProvisionedResourcesOutcomeCallable ListServiceInstanceProvisionedResourcesCallable(const Model::ListServiceInstanceProvisionedResourcesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListServiceInstanceProvisionedResources that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListServiceInstanceProvisionedResourcesAsync(const Model::ListServiceInstanceProvisionedResourcesRequest& request, const ListServiceInstanceProvisionedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List service instances with summary data. This action lists service instances
@@ -1249,15 +824,6 @@ namespace Proton
          */
         virtual Model::ListServiceInstancesOutcome ListServiceInstances(const Model::ListServiceInstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListServiceInstances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListServiceInstancesOutcomeCallable ListServiceInstancesCallable(const Model::ListServiceInstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListServiceInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListServiceInstancesAsync(const Model::ListServiceInstancesRequest& request, const ListServiceInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get a list of service pipeline Infrastructure as Code (IaC)
@@ -1267,15 +833,6 @@ namespace Proton
          */
         virtual Model::ListServicePipelineOutputsOutcome ListServicePipelineOutputs(const Model::ListServicePipelineOutputsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListServicePipelineOutputs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListServicePipelineOutputsOutcomeCallable ListServicePipelineOutputsCallable(const Model::ListServicePipelineOutputsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListServicePipelineOutputs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListServicePipelineOutputsAsync(const Model::ListServicePipelineOutputsRequest& request, const ListServicePipelineOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List provisioned resources for a service and pipeline with
@@ -1285,15 +842,6 @@ namespace Proton
          */
         virtual Model::ListServicePipelineProvisionedResourcesOutcome ListServicePipelineProvisionedResources(const Model::ListServicePipelineProvisionedResourcesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListServicePipelineProvisionedResources that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListServicePipelineProvisionedResourcesOutcomeCallable ListServicePipelineProvisionedResourcesCallable(const Model::ListServicePipelineProvisionedResourcesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListServicePipelineProvisionedResources that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListServicePipelineProvisionedResourcesAsync(const Model::ListServicePipelineProvisionedResourcesRequest& request, const ListServicePipelineProvisionedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List major or minor versions of a service template with detail
@@ -1303,15 +851,6 @@ namespace Proton
          */
         virtual Model::ListServiceTemplateVersionsOutcome ListServiceTemplateVersions(const Model::ListServiceTemplateVersionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListServiceTemplateVersions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListServiceTemplateVersionsOutcomeCallable ListServiceTemplateVersionsCallable(const Model::ListServiceTemplateVersionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListServiceTemplateVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListServiceTemplateVersionsAsync(const Model::ListServiceTemplateVersionsRequest& request, const ListServiceTemplateVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List service templates with detail data.</p><p><h3>See Also:</h3>   <a
@@ -1320,15 +859,6 @@ namespace Proton
          */
         virtual Model::ListServiceTemplatesOutcome ListServiceTemplates(const Model::ListServiceTemplatesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListServiceTemplates that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListServiceTemplatesOutcomeCallable ListServiceTemplatesCallable(const Model::ListServiceTemplatesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListServiceTemplates that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListServiceTemplatesAsync(const Model::ListServiceTemplatesRequest& request, const ListServiceTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List services with summaries of detail data.</p><p><h3>See Also:</h3>   <a
@@ -1337,15 +867,6 @@ namespace Proton
          */
         virtual Model::ListServicesOutcome ListServices(const Model::ListServicesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListServices that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListServicesOutcomeCallable ListServicesCallable(const Model::ListServicesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListServices that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListServicesAsync(const Model::ListServicesRequest& request, const ListServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List tags for a resource. For more information, see <a
@@ -1357,15 +878,6 @@ namespace Proton
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Notify Proton of status changes to a provisioned resource when you use
@@ -1377,15 +889,6 @@ namespace Proton
          */
         virtual Model::NotifyResourceDeploymentStatusChangeOutcome NotifyResourceDeploymentStatusChange(const Model::NotifyResourceDeploymentStatusChangeRequest& request) const;
 
-        /**
-         * A Callable wrapper for NotifyResourceDeploymentStatusChange that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::NotifyResourceDeploymentStatusChangeOutcomeCallable NotifyResourceDeploymentStatusChangeCallable(const Model::NotifyResourceDeploymentStatusChangeRequest& request) const;
-
-        /**
-         * An Async wrapper for NotifyResourceDeploymentStatusChange that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void NotifyResourceDeploymentStatusChangeAsync(const Model::NotifyResourceDeploymentStatusChangeRequest& request, const NotifyResourceDeploymentStatusChangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>In a management account, reject an environment account connection from
@@ -1402,15 +905,6 @@ namespace Proton
          */
         virtual Model::RejectEnvironmentAccountConnectionOutcome RejectEnvironmentAccountConnection(const Model::RejectEnvironmentAccountConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for RejectEnvironmentAccountConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RejectEnvironmentAccountConnectionOutcomeCallable RejectEnvironmentAccountConnectionCallable(const Model::RejectEnvironmentAccountConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for RejectEnvironmentAccountConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RejectEnvironmentAccountConnectionAsync(const Model::RejectEnvironmentAccountConnectionRequest& request, const RejectEnvironmentAccountConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Tag a resource. A tag is a key-value pair of metadata that you associate with
@@ -1423,15 +917,6 @@ namespace Proton
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Remove a customer tag from a resource. A tag is a key-value pair of metadata
@@ -1444,15 +929,6 @@ namespace Proton
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Update Proton settings that are used for multiple services in the Amazon Web
@@ -1462,15 +938,6 @@ namespace Proton
          */
         virtual Model::UpdateAccountSettingsOutcome UpdateAccountSettings(const Model::UpdateAccountSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateAccountSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateAccountSettingsOutcomeCallable UpdateAccountSettingsCallable(const Model::UpdateAccountSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateAccountSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateAccountSettingsAsync(const Model::UpdateAccountSettingsRequest& request, const UpdateAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Update a component.</p> <p>There are a few modes for updating a component.
@@ -1485,15 +952,6 @@ namespace Proton
          */
         virtual Model::UpdateComponentOutcome UpdateComponent(const Model::UpdateComponentRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateComponent that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateComponentOutcomeCallable UpdateComponentCallable(const Model::UpdateComponentRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateComponent that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateComponentAsync(const Model::UpdateComponentRequest& request, const UpdateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Update an environment.</p> <p>If the environment is associated with an
@@ -1542,15 +1000,6 @@ namespace Proton
          */
         virtual Model::UpdateEnvironmentOutcome UpdateEnvironment(const Model::UpdateEnvironmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateEnvironment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateEnvironmentOutcomeCallable UpdateEnvironmentCallable(const Model::UpdateEnvironmentRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateEnvironment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateEnvironmentAsync(const Model::UpdateEnvironmentRequest& request, const UpdateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>In an environment account, update an environment account connection to use a
@@ -1563,15 +1012,6 @@ namespace Proton
          */
         virtual Model::UpdateEnvironmentAccountConnectionOutcome UpdateEnvironmentAccountConnection(const Model::UpdateEnvironmentAccountConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateEnvironmentAccountConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateEnvironmentAccountConnectionOutcomeCallable UpdateEnvironmentAccountConnectionCallable(const Model::UpdateEnvironmentAccountConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateEnvironmentAccountConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateEnvironmentAccountConnectionAsync(const Model::UpdateEnvironmentAccountConnectionRequest& request, const UpdateEnvironmentAccountConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Update an environment template.</p><p><h3>See Also:</h3>   <a
@@ -1580,15 +1020,6 @@ namespace Proton
          */
         virtual Model::UpdateEnvironmentTemplateOutcome UpdateEnvironmentTemplate(const Model::UpdateEnvironmentTemplateRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateEnvironmentTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateEnvironmentTemplateOutcomeCallable UpdateEnvironmentTemplateCallable(const Model::UpdateEnvironmentTemplateRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateEnvironmentTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateEnvironmentTemplateAsync(const Model::UpdateEnvironmentTemplateRequest& request, const UpdateEnvironmentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Update a major or minor version of an environment template.</p><p><h3>See
@@ -1598,15 +1029,6 @@ namespace Proton
          */
         virtual Model::UpdateEnvironmentTemplateVersionOutcome UpdateEnvironmentTemplateVersion(const Model::UpdateEnvironmentTemplateVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateEnvironmentTemplateVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateEnvironmentTemplateVersionOutcomeCallable UpdateEnvironmentTemplateVersionCallable(const Model::UpdateEnvironmentTemplateVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateEnvironmentTemplateVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateEnvironmentTemplateVersionAsync(const Model::UpdateEnvironmentTemplateVersionRequest& request, const UpdateEnvironmentTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Edit a service description or use a spec to add and delete service
@@ -1624,15 +1046,6 @@ namespace Proton
          */
         virtual Model::UpdateServiceOutcome UpdateService(const Model::UpdateServiceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateService that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateServiceOutcomeCallable UpdateServiceCallable(const Model::UpdateServiceRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateService that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateServiceAsync(const Model::UpdateServiceRequest& request, const UpdateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Update a service instance.</p> <p>There are a few modes for updating a
@@ -1648,15 +1061,6 @@ namespace Proton
          */
         virtual Model::UpdateServiceInstanceOutcome UpdateServiceInstance(const Model::UpdateServiceInstanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateServiceInstance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateServiceInstanceOutcomeCallable UpdateServiceInstanceCallable(const Model::UpdateServiceInstanceRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateServiceInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateServiceInstanceAsync(const Model::UpdateServiceInstanceRequest& request, const UpdateServiceInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Update the service pipeline.</p> <p>There are four modes for updating a
@@ -1681,15 +1085,6 @@ namespace Proton
          */
         virtual Model::UpdateServicePipelineOutcome UpdateServicePipeline(const Model::UpdateServicePipelineRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateServicePipeline that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateServicePipelineOutcomeCallable UpdateServicePipelineCallable(const Model::UpdateServicePipelineRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateServicePipeline that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateServicePipelineAsync(const Model::UpdateServicePipelineRequest& request, const UpdateServicePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Update a service template.</p><p><h3>See Also:</h3>   <a
@@ -1698,15 +1093,6 @@ namespace Proton
          */
         virtual Model::UpdateServiceTemplateOutcome UpdateServiceTemplate(const Model::UpdateServiceTemplateRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateServiceTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateServiceTemplateOutcomeCallable UpdateServiceTemplateCallable(const Model::UpdateServiceTemplateRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateServiceTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateServiceTemplateAsync(const Model::UpdateServiceTemplateRequest& request, const UpdateServiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Update a major or minor version of a service template.</p><p><h3>See
@@ -1716,15 +1102,6 @@ namespace Proton
          */
         virtual Model::UpdateServiceTemplateVersionOutcome UpdateServiceTemplateVersion(const Model::UpdateServiceTemplateVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateServiceTemplateVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateServiceTemplateVersionOutcomeCallable UpdateServiceTemplateVersionCallable(const Model::UpdateServiceTemplateVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateServiceTemplateVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateServiceTemplateVersionAsync(const Model::UpdateServiceTemplateVersionRequest& request, const UpdateServiceTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Update template sync configuration parameters, except for the
@@ -1737,15 +1114,6 @@ namespace Proton
          */
         virtual Model::UpdateTemplateSyncConfigOutcome UpdateTemplateSyncConfig(const Model::UpdateTemplateSyncConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateTemplateSyncConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateTemplateSyncConfigOutcomeCallable UpdateTemplateSyncConfigCallable(const Model::UpdateTemplateSyncConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateTemplateSyncConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateTemplateSyncConfigAsync(const Model::UpdateTemplateSyncConfigRequest& request, const UpdateTemplateSyncConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

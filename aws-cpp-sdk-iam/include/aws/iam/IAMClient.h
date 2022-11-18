@@ -8,8 +8,10 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/iam/IAMServiceClientModel.h>
+#include <aws/iam/IAMLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -82,6 +84,47 @@ namespace IAM
         virtual ~IAMClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
        /**
         * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
         */
@@ -99,15 +142,6 @@ namespace IAM
          */
         virtual Model::AddClientIDToOpenIDConnectProviderOutcome AddClientIDToOpenIDConnectProvider(const Model::AddClientIDToOpenIDConnectProviderRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddClientIDToOpenIDConnectProvider that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddClientIDToOpenIDConnectProviderOutcomeCallable AddClientIDToOpenIDConnectProviderCallable(const Model::AddClientIDToOpenIDConnectProviderRequest& request) const;
-
-        /**
-         * An Async wrapper for AddClientIDToOpenIDConnectProvider that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddClientIDToOpenIDConnectProviderAsync(const Model::AddClientIDToOpenIDConnectProviderRequest& request, const AddClientIDToOpenIDConnectProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds the specified IAM role to the specified instance profile. An instance
@@ -132,15 +166,6 @@ namespace IAM
          */
         virtual Model::AddRoleToInstanceProfileOutcome AddRoleToInstanceProfile(const Model::AddRoleToInstanceProfileRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddRoleToInstanceProfile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddRoleToInstanceProfileOutcomeCallable AddRoleToInstanceProfileCallable(const Model::AddRoleToInstanceProfileRequest& request) const;
-
-        /**
-         * An Async wrapper for AddRoleToInstanceProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddRoleToInstanceProfileAsync(const Model::AddRoleToInstanceProfileRequest& request, const AddRoleToInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds the specified user to the specified group.</p><p><h3>See Also:</h3>   <a
@@ -149,15 +174,6 @@ namespace IAM
          */
         virtual Model::AddUserToGroupOutcome AddUserToGroup(const Model::AddUserToGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddUserToGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddUserToGroupOutcomeCallable AddUserToGroupCallable(const Model::AddUserToGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for AddUserToGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddUserToGroupAsync(const Model::AddUserToGroupRequest& request, const AddUserToGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Attaches the specified managed policy to the specified IAM group.</p> <p>You
@@ -175,15 +191,6 @@ namespace IAM
          */
         virtual Model::AttachGroupPolicyOutcome AttachGroupPolicy(const Model::AttachGroupPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for AttachGroupPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AttachGroupPolicyOutcomeCallable AttachGroupPolicyCallable(const Model::AttachGroupPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for AttachGroupPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AttachGroupPolicyAsync(const Model::AttachGroupPolicyRequest& request, const AttachGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Attaches the specified managed policy to the specified IAM role. When you
@@ -204,15 +211,6 @@ namespace IAM
          */
         virtual Model::AttachRolePolicyOutcome AttachRolePolicy(const Model::AttachRolePolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for AttachRolePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AttachRolePolicyOutcomeCallable AttachRolePolicyCallable(const Model::AttachRolePolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for AttachRolePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AttachRolePolicyAsync(const Model::AttachRolePolicyRequest& request, const AttachRolePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Attaches the specified managed policy to the specified user.</p> <p>You use
@@ -230,15 +228,6 @@ namespace IAM
          */
         virtual Model::AttachUserPolicyOutcome AttachUserPolicy(const Model::AttachUserPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for AttachUserPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AttachUserPolicyOutcomeCallable AttachUserPolicyCallable(const Model::AttachUserPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for AttachUserPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AttachUserPolicyAsync(const Model::AttachUserPolicyRequest& request, const AttachUserPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Changes the password of the IAM user who is calling this operation. This
@@ -256,15 +245,6 @@ namespace IAM
          */
         virtual Model::ChangePasswordOutcome ChangePassword(const Model::ChangePasswordRequest& request) const;
 
-        /**
-         * A Callable wrapper for ChangePassword that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ChangePasswordOutcomeCallable ChangePasswordCallable(const Model::ChangePasswordRequest& request) const;
-
-        /**
-         * An Async wrapper for ChangePassword that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ChangePasswordAsync(const Model::ChangePasswordRequest& request, const ChangePasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Creates a new Amazon Web Services secret access key and corresponding Amazon
@@ -288,15 +268,6 @@ namespace IAM
          */
         virtual Model::CreateAccessKeyOutcome CreateAccessKey(const Model::CreateAccessKeyRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateAccessKey that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateAccessKeyOutcomeCallable CreateAccessKeyCallable(const Model::CreateAccessKeyRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateAccessKey that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateAccessKeyAsync(const Model::CreateAccessKeyRequest& request, const CreateAccessKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an alias for your Amazon Web Services account. For information about
@@ -309,15 +280,6 @@ namespace IAM
          */
         virtual Model::CreateAccountAliasOutcome CreateAccountAlias(const Model::CreateAccountAliasRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateAccountAlias that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateAccountAliasOutcomeCallable CreateAccountAliasCallable(const Model::CreateAccountAliasRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateAccountAlias that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateAccountAliasAsync(const Model::CreateAccountAliasRequest& request, const CreateAccountAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new group.</p> <p> For information about the number of groups you
@@ -329,15 +291,6 @@ namespace IAM
          */
         virtual Model::CreateGroupOutcome CreateGroup(const Model::CreateGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateGroupOutcomeCallable CreateGroupCallable(const Model::CreateGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateGroupAsync(const Model::CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Creates a new instance profile. For information about instance profiles, see
@@ -354,15 +307,6 @@ namespace IAM
          */
         virtual Model::CreateInstanceProfileOutcome CreateInstanceProfile(const Model::CreateInstanceProfileRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateInstanceProfile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateInstanceProfileOutcomeCallable CreateInstanceProfileCallable(const Model::CreateInstanceProfileRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateInstanceProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateInstanceProfileAsync(const Model::CreateInstanceProfileRequest& request, const CreateInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a password for the specified IAM user. A password allows an IAM user
@@ -379,15 +323,6 @@ namespace IAM
          */
         virtual Model::CreateLoginProfileOutcome CreateLoginProfile(const Model::CreateLoginProfileRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateLoginProfile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateLoginProfileOutcomeCallable CreateLoginProfileCallable(const Model::CreateLoginProfileRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateLoginProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateLoginProfileAsync(const Model::CreateLoginProfileRequest& request, const CreateLoginProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an IAM entity to describe an identity provider (IdP) that supports <a
@@ -424,15 +359,6 @@ namespace IAM
          */
         virtual Model::CreateOpenIDConnectProviderOutcome CreateOpenIDConnectProvider(const Model::CreateOpenIDConnectProviderRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateOpenIDConnectProvider that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateOpenIDConnectProviderOutcomeCallable CreateOpenIDConnectProviderCallable(const Model::CreateOpenIDConnectProviderRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateOpenIDConnectProvider that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateOpenIDConnectProviderAsync(const Model::CreateOpenIDConnectProviderRequest& request, const CreateOpenIDConnectProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new managed policy for your Amazon Web Services account.</p>
@@ -453,15 +379,6 @@ namespace IAM
          */
         virtual Model::CreatePolicyOutcome CreatePolicy(const Model::CreatePolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreatePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreatePolicyOutcomeCallable CreatePolicyCallable(const Model::CreatePolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for CreatePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreatePolicyAsync(const Model::CreatePolicyRequest& request, const CreatePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new version of the specified managed policy. To update a managed
@@ -480,15 +397,6 @@ namespace IAM
          */
         virtual Model::CreatePolicyVersionOutcome CreatePolicyVersion(const Model::CreatePolicyVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreatePolicyVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreatePolicyVersionOutcomeCallable CreatePolicyVersionCallable(const Model::CreatePolicyVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreatePolicyVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreatePolicyVersionAsync(const Model::CreatePolicyVersionRequest& request, const CreatePolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new role for your Amazon Web Services account. For more information
@@ -503,15 +411,6 @@ namespace IAM
          */
         virtual Model::CreateRoleOutcome CreateRole(const Model::CreateRoleRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateRole that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateRoleOutcomeCallable CreateRoleCallable(const Model::CreateRoleRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateRole that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateRoleAsync(const Model::CreateRoleRequest& request, const CreateRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an IAM resource that describes an identity provider (IdP) that
@@ -539,15 +438,6 @@ namespace IAM
          */
         virtual Model::CreateSAMLProviderOutcome CreateSAMLProvider(const Model::CreateSAMLProviderRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateSAMLProvider that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateSAMLProviderOutcomeCallable CreateSAMLProviderCallable(const Model::CreateSAMLProviderRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateSAMLProvider that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateSAMLProviderAsync(const Model::CreateSAMLProviderRequest& request, const CreateSAMLProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an IAM role that is linked to a specific Amazon Web Services service.
@@ -566,15 +456,6 @@ namespace IAM
          */
         virtual Model::CreateServiceLinkedRoleOutcome CreateServiceLinkedRole(const Model::CreateServiceLinkedRoleRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateServiceLinkedRole that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateServiceLinkedRoleOutcomeCallable CreateServiceLinkedRoleCallable(const Model::CreateServiceLinkedRoleRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateServiceLinkedRole that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateServiceLinkedRoleAsync(const Model::CreateServiceLinkedRoleRequest& request, const CreateServiceLinkedRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Generates a set of credentials consisting of a user name and password that
@@ -594,15 +475,6 @@ namespace IAM
          */
         virtual Model::CreateServiceSpecificCredentialOutcome CreateServiceSpecificCredential(const Model::CreateServiceSpecificCredentialRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateServiceSpecificCredential that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateServiceSpecificCredentialOutcomeCallable CreateServiceSpecificCredentialCallable(const Model::CreateServiceSpecificCredentialRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateServiceSpecificCredential that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateServiceSpecificCredentialAsync(const Model::CreateServiceSpecificCredentialRequest& request, const CreateServiceSpecificCredentialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new IAM user for your Amazon Web Services account.</p> <p> For
@@ -614,15 +486,6 @@ namespace IAM
          */
         virtual Model::CreateUserOutcome CreateUser(const Model::CreateUserRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateUser that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateUserOutcomeCallable CreateUserCallable(const Model::CreateUserRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateUser that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateUserAsync(const Model::CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new virtual MFA device for the Amazon Web Services account. After
@@ -645,15 +508,6 @@ namespace IAM
          */
         virtual Model::CreateVirtualMFADeviceOutcome CreateVirtualMFADevice(const Model::CreateVirtualMFADeviceRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateVirtualMFADevice that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateVirtualMFADeviceOutcomeCallable CreateVirtualMFADeviceCallable(const Model::CreateVirtualMFADeviceRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateVirtualMFADevice that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateVirtualMFADeviceAsync(const Model::CreateVirtualMFADeviceRequest& request, const CreateVirtualMFADeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deactivates the specified MFA device and removes it from association with the
@@ -667,15 +521,6 @@ namespace IAM
          */
         virtual Model::DeactivateMFADeviceOutcome DeactivateMFADevice(const Model::DeactivateMFADeviceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeactivateMFADevice that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeactivateMFADeviceOutcomeCallable DeactivateMFADeviceCallable(const Model::DeactivateMFADeviceRequest& request) const;
-
-        /**
-         * An Async wrapper for DeactivateMFADevice that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeactivateMFADeviceAsync(const Model::DeactivateMFADeviceRequest& request, const DeactivateMFADeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the access key pair associated with the specified IAM user.</p> <p>If
@@ -690,15 +535,6 @@ namespace IAM
          */
         virtual Model::DeleteAccessKeyOutcome DeleteAccessKey(const Model::DeleteAccessKeyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAccessKey that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAccessKeyOutcomeCallable DeleteAccessKeyCallable(const Model::DeleteAccessKeyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAccessKey that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAccessKeyAsync(const Model::DeleteAccessKeyRequest& request, const DeleteAccessKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Deletes the specified Amazon Web Services account alias. For information
@@ -711,15 +547,6 @@ namespace IAM
          */
         virtual Model::DeleteAccountAliasOutcome DeleteAccountAlias(const Model::DeleteAccountAliasRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAccountAlias that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAccountAliasOutcomeCallable DeleteAccountAliasCallable(const Model::DeleteAccountAliasRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAccountAlias that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAccountAliasAsync(const Model::DeleteAccountAliasRequest& request, const DeleteAccountAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the password policy for the Amazon Web Services account. There are no
@@ -729,15 +556,6 @@ namespace IAM
          */
         virtual Model::DeleteAccountPasswordPolicyOutcome DeleteAccountPasswordPolicy(const Model::DeleteAccountPasswordPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAccountPasswordPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAccountPasswordPolicyOutcomeCallable DeleteAccountPasswordPolicyCallable(const Model::DeleteAccountPasswordPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAccountPasswordPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAccountPasswordPolicyAsync(const Model::DeleteAccountPasswordPolicyRequest& request, const DeleteAccountPasswordPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified IAM group. The group must not contain any users or have
@@ -747,15 +565,6 @@ namespace IAM
          */
         virtual Model::DeleteGroupOutcome DeleteGroup(const Model::DeleteGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteGroupOutcomeCallable DeleteGroupCallable(const Model::DeleteGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteGroupAsync(const Model::DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified inline policy that is embedded in the specified IAM
@@ -770,15 +579,6 @@ namespace IAM
          */
         virtual Model::DeleteGroupPolicyOutcome DeleteGroupPolicy(const Model::DeleteGroupPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteGroupPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteGroupPolicyOutcomeCallable DeleteGroupPolicyCallable(const Model::DeleteGroupPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteGroupPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteGroupPolicyAsync(const Model::DeleteGroupPolicyRequest& request, const DeleteGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified instance profile. The instance profile must not have an
@@ -794,15 +594,6 @@ namespace IAM
          */
         virtual Model::DeleteInstanceProfileOutcome DeleteInstanceProfile(const Model::DeleteInstanceProfileRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteInstanceProfile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteInstanceProfileOutcomeCallable DeleteInstanceProfileCallable(const Model::DeleteInstanceProfileRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteInstanceProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteInstanceProfileAsync(const Model::DeleteInstanceProfileRequest& request, const DeleteInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the password for the specified IAM user, For more information, see <a
@@ -822,15 +613,6 @@ namespace IAM
          */
         virtual Model::DeleteLoginProfileOutcome DeleteLoginProfile(const Model::DeleteLoginProfileRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteLoginProfile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteLoginProfileOutcomeCallable DeleteLoginProfileCallable(const Model::DeleteLoginProfileRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteLoginProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteLoginProfileAsync(const Model::DeleteLoginProfileRequest& request, const DeleteLoginProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an OpenID Connect identity provider (IdP) resource object in IAM.</p>
@@ -844,15 +626,6 @@ namespace IAM
          */
         virtual Model::DeleteOpenIDConnectProviderOutcome DeleteOpenIDConnectProvider(const Model::DeleteOpenIDConnectProviderRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteOpenIDConnectProvider that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteOpenIDConnectProviderOutcomeCallable DeleteOpenIDConnectProviderCallable(const Model::DeleteOpenIDConnectProviderRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteOpenIDConnectProvider that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteOpenIDConnectProviderAsync(const Model::DeleteOpenIDConnectProviderRequest& request, const DeleteOpenIDConnectProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified managed policy.</p> <p>Before you can delete a managed
@@ -878,15 +651,6 @@ namespace IAM
          */
         virtual Model::DeletePolicyOutcome DeletePolicy(const Model::DeletePolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeletePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeletePolicyOutcomeCallable DeletePolicyCallable(const Model::DeletePolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeletePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeletePolicyAsync(const Model::DeletePolicyRequest& request, const DeletePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified version from the specified managed policy.</p> <p>You
@@ -903,15 +667,6 @@ namespace IAM
          */
         virtual Model::DeletePolicyVersionOutcome DeletePolicyVersion(const Model::DeletePolicyVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeletePolicyVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeletePolicyVersionOutcomeCallable DeletePolicyVersionCallable(const Model::DeletePolicyVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeletePolicyVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeletePolicyVersionAsync(const Model::DeletePolicyVersionRequest& request, const DeletePolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified role. The role must not have any policies attached. For
@@ -926,15 +681,6 @@ namespace IAM
          */
         virtual Model::DeleteRoleOutcome DeleteRole(const Model::DeleteRoleRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteRole that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteRoleOutcomeCallable DeleteRoleCallable(const Model::DeleteRoleRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteRole that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteRoleAsync(const Model::DeleteRoleRequest& request, const DeleteRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the permissions boundary for the specified IAM role. </p> 
@@ -947,15 +693,6 @@ namespace IAM
          */
         virtual Model::DeleteRolePermissionsBoundaryOutcome DeleteRolePermissionsBoundary(const Model::DeleteRolePermissionsBoundaryRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteRolePermissionsBoundary that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteRolePermissionsBoundaryOutcomeCallable DeleteRolePermissionsBoundaryCallable(const Model::DeleteRolePermissionsBoundaryRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteRolePermissionsBoundary that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteRolePermissionsBoundaryAsync(const Model::DeleteRolePermissionsBoundaryRequest& request, const DeleteRolePermissionsBoundaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified inline policy that is embedded in the specified IAM
@@ -970,15 +707,6 @@ namespace IAM
          */
         virtual Model::DeleteRolePolicyOutcome DeleteRolePolicy(const Model::DeleteRolePolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteRolePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteRolePolicyOutcomeCallable DeleteRolePolicyCallable(const Model::DeleteRolePolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteRolePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteRolePolicyAsync(const Model::DeleteRolePolicyRequest& request, const DeleteRolePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a SAML provider resource in IAM.</p> <p>Deleting the provider
@@ -993,15 +721,6 @@ namespace IAM
          */
         virtual Model::DeleteSAMLProviderOutcome DeleteSAMLProvider(const Model::DeleteSAMLProviderRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteSAMLProvider that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteSAMLProviderOutcomeCallable DeleteSAMLProviderCallable(const Model::DeleteSAMLProviderRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteSAMLProvider that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteSAMLProviderAsync(const Model::DeleteSAMLProviderRequest& request, const DeleteSAMLProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified SSH public key.</p> <p>The SSH public key deleted by
@@ -1016,15 +735,6 @@ namespace IAM
          */
         virtual Model::DeleteSSHPublicKeyOutcome DeleteSSHPublicKey(const Model::DeleteSSHPublicKeyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteSSHPublicKey that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteSSHPublicKeyOutcomeCallable DeleteSSHPublicKeyCallable(const Model::DeleteSSHPublicKeyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteSSHPublicKey that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteSSHPublicKeyAsync(const Model::DeleteSSHPublicKeyRequest& request, const DeleteSSHPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified server certificate.</p> <p>For more information about
@@ -1048,15 +758,6 @@ namespace IAM
          */
         virtual Model::DeleteServerCertificateOutcome DeleteServerCertificate(const Model::DeleteServerCertificateRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteServerCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteServerCertificateOutcomeCallable DeleteServerCertificateCallable(const Model::DeleteServerCertificateRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteServerCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteServerCertificateAsync(const Model::DeleteServerCertificateRequest& request, const DeleteServerCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Submits a service-linked role deletion request and returns a
@@ -1084,15 +785,6 @@ namespace IAM
          */
         virtual Model::DeleteServiceLinkedRoleOutcome DeleteServiceLinkedRole(const Model::DeleteServiceLinkedRoleRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteServiceLinkedRole that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteServiceLinkedRoleOutcomeCallable DeleteServiceLinkedRoleCallable(const Model::DeleteServiceLinkedRoleRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteServiceLinkedRole that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteServiceLinkedRoleAsync(const Model::DeleteServiceLinkedRoleRequest& request, const DeleteServiceLinkedRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified service-specific credential.</p><p><h3>See Also:</h3>  
@@ -1102,15 +794,6 @@ namespace IAM
          */
         virtual Model::DeleteServiceSpecificCredentialOutcome DeleteServiceSpecificCredential(const Model::DeleteServiceSpecificCredentialRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteServiceSpecificCredential that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteServiceSpecificCredentialOutcomeCallable DeleteServiceSpecificCredentialCallable(const Model::DeleteServiceSpecificCredentialRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteServiceSpecificCredential that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteServiceSpecificCredentialAsync(const Model::DeleteServiceSpecificCredentialRequest& request, const DeleteServiceSpecificCredentialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a signing certificate associated with the specified IAM user.</p>
@@ -1125,15 +808,6 @@ namespace IAM
          */
         virtual Model::DeleteSigningCertificateOutcome DeleteSigningCertificate(const Model::DeleteSigningCertificateRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteSigningCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteSigningCertificateOutcomeCallable DeleteSigningCertificateCallable(const Model::DeleteSigningCertificateRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteSigningCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteSigningCertificateAsync(const Model::DeleteSigningCertificateRequest& request, const DeleteSigningCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified IAM user. Unlike the Amazon Web Services Management
@@ -1157,15 +831,6 @@ namespace IAM
          */
         virtual Model::DeleteUserOutcome DeleteUser(const Model::DeleteUserRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteUser that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteUserOutcomeCallable DeleteUserCallable(const Model::DeleteUserRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteUser that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteUserAsync(const Model::DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the permissions boundary for the specified IAM user.</p> 
@@ -1177,15 +842,6 @@ namespace IAM
          */
         virtual Model::DeleteUserPermissionsBoundaryOutcome DeleteUserPermissionsBoundary(const Model::DeleteUserPermissionsBoundaryRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteUserPermissionsBoundary that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteUserPermissionsBoundaryOutcomeCallable DeleteUserPermissionsBoundaryCallable(const Model::DeleteUserPermissionsBoundaryRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteUserPermissionsBoundary that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteUserPermissionsBoundaryAsync(const Model::DeleteUserPermissionsBoundaryRequest& request, const DeleteUserPermissionsBoundaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified inline policy that is embedded in the specified IAM
@@ -1200,15 +856,6 @@ namespace IAM
          */
         virtual Model::DeleteUserPolicyOutcome DeleteUserPolicy(const Model::DeleteUserPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteUserPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteUserPolicyOutcomeCallable DeleteUserPolicyCallable(const Model::DeleteUserPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteUserPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteUserPolicyAsync(const Model::DeleteUserPolicyRequest& request, const DeleteUserPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a virtual MFA device.</p>  <p> You must deactivate a user's
@@ -1220,15 +867,6 @@ namespace IAM
          */
         virtual Model::DeleteVirtualMFADeviceOutcome DeleteVirtualMFADevice(const Model::DeleteVirtualMFADeviceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteVirtualMFADevice that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteVirtualMFADeviceOutcomeCallable DeleteVirtualMFADeviceCallable(const Model::DeleteVirtualMFADeviceRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteVirtualMFADevice that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteVirtualMFADeviceAsync(const Model::DeleteVirtualMFADeviceRequest& request, const DeleteVirtualMFADeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified managed policy from the specified IAM group.</p> <p>A
@@ -1242,15 +880,6 @@ namespace IAM
          */
         virtual Model::DetachGroupPolicyOutcome DetachGroupPolicy(const Model::DetachGroupPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DetachGroupPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DetachGroupPolicyOutcomeCallable DetachGroupPolicyCallable(const Model::DetachGroupPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DetachGroupPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DetachGroupPolicyAsync(const Model::DetachGroupPolicyRequest& request, const DetachGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified managed policy from the specified role.</p> <p>A role
@@ -1264,15 +893,6 @@ namespace IAM
          */
         virtual Model::DetachRolePolicyOutcome DetachRolePolicy(const Model::DetachRolePolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DetachRolePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DetachRolePolicyOutcomeCallable DetachRolePolicyCallable(const Model::DetachRolePolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DetachRolePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DetachRolePolicyAsync(const Model::DetachRolePolicyRequest& request, const DetachRolePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified managed policy from the specified user.</p> <p>A user
@@ -1286,15 +906,6 @@ namespace IAM
          */
         virtual Model::DetachUserPolicyOutcome DetachUserPolicy(const Model::DetachUserPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DetachUserPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DetachUserPolicyOutcomeCallable DetachUserPolicyCallable(const Model::DetachUserPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DetachUserPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DetachUserPolicyAsync(const Model::DetachUserPolicyRequest& request, const DetachUserPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables the specified MFA device and associates it with the specified IAM
@@ -1305,15 +916,6 @@ namespace IAM
          */
         virtual Model::EnableMFADeviceOutcome EnableMFADevice(const Model::EnableMFADeviceRequest& request) const;
 
-        /**
-         * A Callable wrapper for EnableMFADevice that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnableMFADeviceOutcomeCallable EnableMFADeviceCallable(const Model::EnableMFADeviceRequest& request) const;
-
-        /**
-         * An Async wrapper for EnableMFADevice that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnableMFADeviceAsync(const Model::EnableMFADeviceRequest& request, const EnableMFADeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Generates a credential report for the Amazon Web Services account. For more
@@ -1326,15 +928,6 @@ namespace IAM
          */
         virtual Model::GenerateCredentialReportOutcome GenerateCredentialReport(const Model::GenerateCredentialReportRequest& request) const;
 
-        /**
-         * A Callable wrapper for GenerateCredentialReport that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GenerateCredentialReportOutcomeCallable GenerateCredentialReportCallable(const Model::GenerateCredentialReportRequest& request) const;
-
-        /**
-         * An Async wrapper for GenerateCredentialReport that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GenerateCredentialReportAsync(const Model::GenerateCredentialReportRequest& request, const GenerateCredentialReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Generates a report for service last accessed data for Organizations. You can
@@ -1438,15 +1031,6 @@ namespace IAM
          */
         virtual Model::GenerateOrganizationsAccessReportOutcome GenerateOrganizationsAccessReport(const Model::GenerateOrganizationsAccessReportRequest& request) const;
 
-        /**
-         * A Callable wrapper for GenerateOrganizationsAccessReport that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GenerateOrganizationsAccessReportOutcomeCallable GenerateOrganizationsAccessReportCallable(const Model::GenerateOrganizationsAccessReportRequest& request) const;
-
-        /**
-         * An Async wrapper for GenerateOrganizationsAccessReport that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GenerateOrganizationsAccessReportAsync(const Model::GenerateOrganizationsAccessReportRequest& request, const GenerateOrganizationsAccessReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Generates a report that includes details about when an IAM resource (user,
@@ -1502,15 +1086,6 @@ namespace IAM
          */
         virtual Model::GenerateServiceLastAccessedDetailsOutcome GenerateServiceLastAccessedDetails(const Model::GenerateServiceLastAccessedDetailsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GenerateServiceLastAccessedDetails that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GenerateServiceLastAccessedDetailsOutcomeCallable GenerateServiceLastAccessedDetailsCallable(const Model::GenerateServiceLastAccessedDetailsRequest& request) const;
-
-        /**
-         * An Async wrapper for GenerateServiceLastAccessedDetails that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GenerateServiceLastAccessedDetailsAsync(const Model::GenerateServiceLastAccessedDetailsRequest& request, const GenerateServiceLastAccessedDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about when the specified access key was last used. The
@@ -1522,15 +1097,6 @@ namespace IAM
          */
         virtual Model::GetAccessKeyLastUsedOutcome GetAccessKeyLastUsed(const Model::GetAccessKeyLastUsedRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAccessKeyLastUsed that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAccessKeyLastUsedOutcomeCallable GetAccessKeyLastUsedCallable(const Model::GetAccessKeyLastUsedRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAccessKeyLastUsed that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAccessKeyLastUsedAsync(const Model::GetAccessKeyLastUsedRequest& request, const GetAccessKeyLastUsedResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about all IAM users, groups, roles, and policies in
@@ -1551,15 +1117,6 @@ namespace IAM
          */
         virtual Model::GetAccountAuthorizationDetailsOutcome GetAccountAuthorizationDetails(const Model::GetAccountAuthorizationDetailsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAccountAuthorizationDetails that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAccountAuthorizationDetailsOutcomeCallable GetAccountAuthorizationDetailsCallable(const Model::GetAccountAuthorizationDetailsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAccountAuthorizationDetails that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAccountAuthorizationDetailsAsync(const Model::GetAccountAuthorizationDetailsRequest& request, const GetAccountAuthorizationDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the password policy for the Amazon Web Services account. This tells
@@ -1573,15 +1130,6 @@ namespace IAM
          */
         virtual Model::GetAccountPasswordPolicyOutcome GetAccountPasswordPolicy(const Model::GetAccountPasswordPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAccountPasswordPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAccountPasswordPolicyOutcomeCallable GetAccountPasswordPolicyCallable(const Model::GetAccountPasswordPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAccountPasswordPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAccountPasswordPolicyAsync(const Model::GetAccountPasswordPolicyRequest& request, const GetAccountPasswordPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about IAM entity usage and IAM quotas in the Amazon Web
@@ -1593,15 +1141,6 @@ namespace IAM
          */
         virtual Model::GetAccountSummaryOutcome GetAccountSummary(const Model::GetAccountSummaryRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAccountSummary that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAccountSummaryOutcomeCallable GetAccountSummaryCallable(const Model::GetAccountSummaryRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAccountSummary that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAccountSummaryAsync(const Model::GetAccountSummaryRequest& request, const GetAccountSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of all of the context keys referenced in the input policies. The
@@ -1620,15 +1159,6 @@ namespace IAM
          */
         virtual Model::GetContextKeysForCustomPolicyOutcome GetContextKeysForCustomPolicy(const Model::GetContextKeysForCustomPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetContextKeysForCustomPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetContextKeysForCustomPolicyOutcomeCallable GetContextKeysForCustomPolicyCallable(const Model::GetContextKeysForCustomPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetContextKeysForCustomPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetContextKeysForCustomPolicyAsync(const Model::GetContextKeysForCustomPolicyRequest& request, const GetContextKeysForCustomPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of all of the context keys referenced in all the IAM policies
@@ -1652,15 +1182,6 @@ namespace IAM
          */
         virtual Model::GetContextKeysForPrincipalPolicyOutcome GetContextKeysForPrincipalPolicy(const Model::GetContextKeysForPrincipalPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetContextKeysForPrincipalPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetContextKeysForPrincipalPolicyOutcomeCallable GetContextKeysForPrincipalPolicyCallable(const Model::GetContextKeysForPrincipalPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetContextKeysForPrincipalPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetContextKeysForPrincipalPolicyAsync(const Model::GetContextKeysForPrincipalPolicyRequest& request, const GetContextKeysForPrincipalPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Retrieves a credential report for the Amazon Web Services account. For more
@@ -1673,15 +1194,6 @@ namespace IAM
          */
         virtual Model::GetCredentialReportOutcome GetCredentialReport(const Model::GetCredentialReportRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetCredentialReport that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetCredentialReportOutcomeCallable GetCredentialReportCallable(const Model::GetCredentialReportRequest& request) const;
-
-        /**
-         * An Async wrapper for GetCredentialReport that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetCredentialReportAsync(const Model::GetCredentialReportRequest& request, const GetCredentialReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a list of IAM users that are in the specified IAM group. You can
@@ -1692,15 +1204,6 @@ namespace IAM
          */
         virtual Model::GetGroupOutcome GetGroup(const Model::GetGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetGroupOutcomeCallable GetGroupCallable(const Model::GetGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for GetGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetGroupAsync(const Model::GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the specified inline policy document that is embedded in the
@@ -1722,15 +1225,6 @@ namespace IAM
          */
         virtual Model::GetGroupPolicyOutcome GetGroupPolicy(const Model::GetGroupPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetGroupPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetGroupPolicyOutcomeCallable GetGroupPolicyCallable(const Model::GetGroupPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetGroupPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetGroupPolicyAsync(const Model::GetGroupPolicyRequest& request, const GetGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Retrieves information about the specified instance profile, including the
@@ -1744,15 +1238,6 @@ namespace IAM
          */
         virtual Model::GetInstanceProfileOutcome GetInstanceProfile(const Model::GetInstanceProfileRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetInstanceProfile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetInstanceProfileOutcomeCallable GetInstanceProfileCallable(const Model::GetInstanceProfileRequest& request) const;
-
-        /**
-         * An Async wrapper for GetInstanceProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetInstanceProfileAsync(const Model::GetInstanceProfileRequest& request, const GetInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the user name for the specified IAM user. A login profile is
@@ -1772,15 +1257,6 @@ namespace IAM
          */
         virtual Model::GetLoginProfileOutcome GetLoginProfile(const Model::GetLoginProfileRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetLoginProfile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetLoginProfileOutcomeCallable GetLoginProfileCallable(const Model::GetLoginProfileRequest& request) const;
-
-        /**
-         * An Async wrapper for GetLoginProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetLoginProfileAsync(const Model::GetLoginProfileRequest& request, const GetLoginProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the specified OpenID Connect (OIDC) provider
@@ -1790,15 +1266,6 @@ namespace IAM
          */
         virtual Model::GetOpenIDConnectProviderOutcome GetOpenIDConnectProvider(const Model::GetOpenIDConnectProviderRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetOpenIDConnectProvider that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetOpenIDConnectProviderOutcomeCallable GetOpenIDConnectProviderCallable(const Model::GetOpenIDConnectProviderRequest& request) const;
-
-        /**
-         * An Async wrapper for GetOpenIDConnectProvider that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetOpenIDConnectProviderAsync(const Model::GetOpenIDConnectProviderRequest& request, const GetOpenIDConnectProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the service last accessed data report for Organizations that was
@@ -1823,15 +1290,6 @@ namespace IAM
          */
         virtual Model::GetOrganizationsAccessReportOutcome GetOrganizationsAccessReport(const Model::GetOrganizationsAccessReportRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetOrganizationsAccessReport that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetOrganizationsAccessReportOutcomeCallable GetOrganizationsAccessReportCallable(const Model::GetOrganizationsAccessReportRequest& request) const;
-
-        /**
-         * An Async wrapper for GetOrganizationsAccessReport that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetOrganizationsAccessReportAsync(const Model::GetOrganizationsAccessReportRequest& request, const GetOrganizationsAccessReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about the specified managed policy, including the
@@ -1853,15 +1311,6 @@ namespace IAM
          */
         virtual Model::GetPolicyOutcome GetPolicy(const Model::GetPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetPolicyOutcomeCallable GetPolicyCallable(const Model::GetPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetPolicyAsync(const Model::GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about the specified version of the specified managed
@@ -1888,15 +1337,6 @@ namespace IAM
          */
         virtual Model::GetPolicyVersionOutcome GetPolicyVersion(const Model::GetPolicyVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetPolicyVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetPolicyVersionOutcomeCallable GetPolicyVersionCallable(const Model::GetPolicyVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for GetPolicyVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetPolicyVersionAsync(const Model::GetPolicyVersionRequest& request, const GetPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about the specified role, including the role's path,
@@ -1915,15 +1355,6 @@ namespace IAM
          */
         virtual Model::GetRoleOutcome GetRole(const Model::GetRoleRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRole that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRoleOutcomeCallable GetRoleCallable(const Model::GetRoleRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRole that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRoleAsync(const Model::GetRoleRequest& request, const GetRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the specified inline policy document that is embedded with the
@@ -1948,15 +1379,6 @@ namespace IAM
          */
         virtual Model::GetRolePolicyOutcome GetRolePolicy(const Model::GetRolePolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRolePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRolePolicyOutcomeCallable GetRolePolicyCallable(const Model::GetRolePolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRolePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRolePolicyAsync(const Model::GetRolePolicyRequest& request, const GetRolePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the SAML provider metadocument that was uploaded when the IAM SAML
@@ -1969,15 +1391,6 @@ namespace IAM
          */
         virtual Model::GetSAMLProviderOutcome GetSAMLProvider(const Model::GetSAMLProviderRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSAMLProvider that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSAMLProviderOutcomeCallable GetSAMLProviderCallable(const Model::GetSAMLProviderRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSAMLProvider that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSAMLProviderAsync(const Model::GetSAMLProviderRequest& request, const GetSAMLProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the specified SSH public key, including metadata about the key.</p>
@@ -1993,15 +1406,6 @@ namespace IAM
          */
         virtual Model::GetSSHPublicKeyOutcome GetSSHPublicKey(const Model::GetSSHPublicKeyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSSHPublicKey that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSSHPublicKeyOutcomeCallable GetSSHPublicKeyCallable(const Model::GetSSHPublicKeyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSSHPublicKey that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSSHPublicKeyAsync(const Model::GetSSHPublicKeyRequest& request, const GetSSHPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about the specified server certificate stored in
@@ -2015,15 +1419,6 @@ namespace IAM
          */
         virtual Model::GetServerCertificateOutcome GetServerCertificate(const Model::GetServerCertificateRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetServerCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetServerCertificateOutcomeCallable GetServerCertificateCallable(const Model::GetServerCertificateRequest& request) const;
-
-        /**
-         * An Async wrapper for GetServerCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetServerCertificateAsync(const Model::GetServerCertificateRequest& request, const GetServerCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a service last accessed report that was created using the
@@ -2069,15 +1464,6 @@ namespace IAM
          */
         virtual Model::GetServiceLastAccessedDetailsOutcome GetServiceLastAccessedDetails(const Model::GetServiceLastAccessedDetailsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetServiceLastAccessedDetails that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetServiceLastAccessedDetailsOutcomeCallable GetServiceLastAccessedDetailsCallable(const Model::GetServiceLastAccessedDetailsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetServiceLastAccessedDetails that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetServiceLastAccessedDetailsAsync(const Model::GetServiceLastAccessedDetailsRequest& request, const GetServiceLastAccessedDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>After you generate a group or policy report using the
@@ -2102,15 +1488,6 @@ namespace IAM
          */
         virtual Model::GetServiceLastAccessedDetailsWithEntitiesOutcome GetServiceLastAccessedDetailsWithEntities(const Model::GetServiceLastAccessedDetailsWithEntitiesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetServiceLastAccessedDetailsWithEntities that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetServiceLastAccessedDetailsWithEntitiesOutcomeCallable GetServiceLastAccessedDetailsWithEntitiesCallable(const Model::GetServiceLastAccessedDetailsWithEntitiesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetServiceLastAccessedDetailsWithEntities that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetServiceLastAccessedDetailsWithEntitiesAsync(const Model::GetServiceLastAccessedDetailsWithEntitiesRequest& request, const GetServiceLastAccessedDetailsWithEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the status of your service-linked role deletion. After you use
@@ -2125,15 +1502,6 @@ namespace IAM
          */
         virtual Model::GetServiceLinkedRoleDeletionStatusOutcome GetServiceLinkedRoleDeletionStatus(const Model::GetServiceLinkedRoleDeletionStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetServiceLinkedRoleDeletionStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetServiceLinkedRoleDeletionStatusOutcomeCallable GetServiceLinkedRoleDeletionStatusCallable(const Model::GetServiceLinkedRoleDeletionStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for GetServiceLinkedRoleDeletionStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetServiceLinkedRoleDeletionStatusAsync(const Model::GetServiceLinkedRoleDeletionStatusRequest& request, const GetServiceLinkedRoleDeletionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about the specified IAM user, including the user's
@@ -2146,15 +1514,6 @@ namespace IAM
          */
         virtual Model::GetUserOutcome GetUser(const Model::GetUserRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetUser that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetUserOutcomeCallable GetUserCallable(const Model::GetUserRequest& request) const;
-
-        /**
-         * An Async wrapper for GetUser that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetUserAsync(const Model::GetUserRequest& request, const GetUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the specified inline policy document that is embedded in the
@@ -2176,15 +1535,6 @@ namespace IAM
          */
         virtual Model::GetUserPolicyOutcome GetUserPolicy(const Model::GetUserPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetUserPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetUserPolicyOutcomeCallable GetUserPolicyCallable(const Model::GetUserPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetUserPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetUserPolicyAsync(const Model::GetUserPolicyRequest& request, const GetUserPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the access key IDs associated with the specified
@@ -2206,15 +1556,6 @@ namespace IAM
          */
         virtual Model::ListAccessKeysOutcome ListAccessKeys(const Model::ListAccessKeysRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAccessKeys that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAccessKeysOutcomeCallable ListAccessKeysCallable(const Model::ListAccessKeysRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAccessKeys that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAccessKeysAsync(const Model::ListAccessKeysRequest& request, const ListAccessKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the account alias associated with the Amazon Web Services account
@@ -2228,15 +1569,6 @@ namespace IAM
          */
         virtual Model::ListAccountAliasesOutcome ListAccountAliases(const Model::ListAccountAliasesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAccountAliases that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAccountAliasesOutcomeCallable ListAccountAliasesCallable(const Model::ListAccountAliasesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAccountAliases that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAccountAliasesAsync(const Model::ListAccountAliasesRequest& request, const ListAccountAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all managed policies that are attached to the specified IAM group.</p>
@@ -2255,15 +1587,6 @@ namespace IAM
          */
         virtual Model::ListAttachedGroupPoliciesOutcome ListAttachedGroupPolicies(const Model::ListAttachedGroupPoliciesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAttachedGroupPolicies that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAttachedGroupPoliciesOutcomeCallable ListAttachedGroupPoliciesCallable(const Model::ListAttachedGroupPoliciesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAttachedGroupPolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAttachedGroupPoliciesAsync(const Model::ListAttachedGroupPoliciesRequest& request, const ListAttachedGroupPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all managed policies that are attached to the specified IAM role.</p>
@@ -2282,15 +1605,6 @@ namespace IAM
          */
         virtual Model::ListAttachedRolePoliciesOutcome ListAttachedRolePolicies(const Model::ListAttachedRolePoliciesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAttachedRolePolicies that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAttachedRolePoliciesOutcomeCallable ListAttachedRolePoliciesCallable(const Model::ListAttachedRolePoliciesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAttachedRolePolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAttachedRolePoliciesAsync(const Model::ListAttachedRolePoliciesRequest& request, const ListAttachedRolePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all managed policies that are attached to the specified IAM user.</p>
@@ -2309,15 +1623,6 @@ namespace IAM
          */
         virtual Model::ListAttachedUserPoliciesOutcome ListAttachedUserPolicies(const Model::ListAttachedUserPoliciesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAttachedUserPolicies that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAttachedUserPoliciesOutcomeCallable ListAttachedUserPoliciesCallable(const Model::ListAttachedUserPoliciesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAttachedUserPolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAttachedUserPoliciesAsync(const Model::ListAttachedUserPoliciesRequest& request, const ListAttachedUserPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all IAM users, groups, and roles that the specified managed policy is
@@ -2332,15 +1637,6 @@ namespace IAM
          */
         virtual Model::ListEntitiesForPolicyOutcome ListEntitiesForPolicy(const Model::ListEntitiesForPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListEntitiesForPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListEntitiesForPolicyOutcomeCallable ListEntitiesForPolicyCallable(const Model::ListEntitiesForPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for ListEntitiesForPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListEntitiesForPolicyAsync(const Model::ListEntitiesForPolicyRequest& request, const ListEntitiesForPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the names of the inline policies that are embedded in the specified IAM
@@ -2357,15 +1653,6 @@ namespace IAM
          */
         virtual Model::ListGroupPoliciesOutcome ListGroupPolicies(const Model::ListGroupPoliciesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListGroupPolicies that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListGroupPoliciesOutcomeCallable ListGroupPoliciesCallable(const Model::ListGroupPoliciesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListGroupPolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListGroupPoliciesAsync(const Model::ListGroupPoliciesRequest& request, const ListGroupPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the IAM groups that have the specified path prefix.</p> <p> You can
@@ -2376,15 +1663,6 @@ namespace IAM
          */
         virtual Model::ListGroupsOutcome ListGroups(const Model::ListGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListGroupsOutcomeCallable ListGroupsCallable(const Model::ListGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListGroupsAsync(const Model::ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the IAM groups that the specified IAM user belongs to.</p> <p>You can
@@ -2395,15 +1673,6 @@ namespace IAM
          */
         virtual Model::ListGroupsForUserOutcome ListGroupsForUser(const Model::ListGroupsForUserRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListGroupsForUser that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListGroupsForUserOutcomeCallable ListGroupsForUserCallable(const Model::ListGroupsForUserRequest& request) const;
-
-        /**
-         * An Async wrapper for ListGroupsForUser that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListGroupsForUserAsync(const Model::ListGroupsForUserRequest& request, const ListGroupsForUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the tags that are attached to the specified IAM instance profile. The
@@ -2416,15 +1685,6 @@ namespace IAM
          */
         virtual Model::ListInstanceProfileTagsOutcome ListInstanceProfileTags(const Model::ListInstanceProfileTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListInstanceProfileTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListInstanceProfileTagsOutcomeCallable ListInstanceProfileTagsCallable(const Model::ListInstanceProfileTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListInstanceProfileTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListInstanceProfileTagsAsync(const Model::ListInstanceProfileTagsRequest& request, const ListInstanceProfileTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the instance profiles that have the specified path prefix. If there are
@@ -2443,15 +1703,6 @@ namespace IAM
          */
         virtual Model::ListInstanceProfilesOutcome ListInstanceProfiles(const Model::ListInstanceProfilesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListInstanceProfiles that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListInstanceProfilesOutcomeCallable ListInstanceProfilesCallable(const Model::ListInstanceProfilesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListInstanceProfiles that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListInstanceProfilesAsync(const Model::ListInstanceProfilesRequest& request, const ListInstanceProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the instance profiles that have the specified associated IAM role. If
@@ -2466,15 +1717,6 @@ namespace IAM
          */
         virtual Model::ListInstanceProfilesForRoleOutcome ListInstanceProfilesForRole(const Model::ListInstanceProfilesForRoleRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListInstanceProfilesForRole that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListInstanceProfilesForRoleOutcomeCallable ListInstanceProfilesForRoleCallable(const Model::ListInstanceProfilesForRoleRequest& request) const;
-
-        /**
-         * An Async wrapper for ListInstanceProfilesForRole that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListInstanceProfilesForRoleAsync(const Model::ListInstanceProfilesForRoleRequest& request, const ListInstanceProfilesForRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the tags that are attached to the specified IAM virtual multi-factor
@@ -2487,15 +1729,6 @@ namespace IAM
          */
         virtual Model::ListMFADeviceTagsOutcome ListMFADeviceTags(const Model::ListMFADeviceTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListMFADeviceTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListMFADeviceTagsOutcomeCallable ListMFADeviceTagsCallable(const Model::ListMFADeviceTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListMFADeviceTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListMFADeviceTagsAsync(const Model::ListMFADeviceTagsRequest& request, const ListMFADeviceTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the MFA devices for an IAM user. If the request includes a IAM user
@@ -2510,15 +1743,6 @@ namespace IAM
          */
         virtual Model::ListMFADevicesOutcome ListMFADevices(const Model::ListMFADevicesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListMFADevices that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListMFADevicesOutcomeCallable ListMFADevicesCallable(const Model::ListMFADevicesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListMFADevices that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListMFADevicesAsync(const Model::ListMFADevicesRequest& request, const ListMFADevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the tags that are attached to the specified OpenID Connect
@@ -2533,15 +1757,6 @@ namespace IAM
          */
         virtual Model::ListOpenIDConnectProviderTagsOutcome ListOpenIDConnectProviderTags(const Model::ListOpenIDConnectProviderTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListOpenIDConnectProviderTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListOpenIDConnectProviderTagsOutcomeCallable ListOpenIDConnectProviderTagsCallable(const Model::ListOpenIDConnectProviderTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListOpenIDConnectProviderTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListOpenIDConnectProviderTagsAsync(const Model::ListOpenIDConnectProviderTagsRequest& request, const ListOpenIDConnectProviderTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists information about the IAM OpenID Connect (OIDC) provider resource
@@ -2556,15 +1771,6 @@ namespace IAM
          */
         virtual Model::ListOpenIDConnectProvidersOutcome ListOpenIDConnectProviders(const Model::ListOpenIDConnectProvidersRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListOpenIDConnectProviders that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListOpenIDConnectProvidersOutcomeCallable ListOpenIDConnectProvidersCallable(const Model::ListOpenIDConnectProvidersRequest& request) const;
-
-        /**
-         * An Async wrapper for ListOpenIDConnectProviders that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListOpenIDConnectProvidersAsync(const Model::ListOpenIDConnectProvidersRequest& request, const ListOpenIDConnectProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all the managed policies that are available in your Amazon Web Services
@@ -2588,15 +1794,6 @@ namespace IAM
          */
         virtual Model::ListPoliciesOutcome ListPolicies(const Model::ListPoliciesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPolicies that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPoliciesOutcomeCallable ListPoliciesCallable(const Model::ListPoliciesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPoliciesAsync(const Model::ListPoliciesRequest& request, const ListPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list of policies that the IAM identity (user, group, or role) can
@@ -2632,15 +1829,6 @@ namespace IAM
          */
         virtual Model::ListPoliciesGrantingServiceAccessOutcome ListPoliciesGrantingServiceAccess(const Model::ListPoliciesGrantingServiceAccessRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPoliciesGrantingServiceAccess that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPoliciesGrantingServiceAccessOutcomeCallable ListPoliciesGrantingServiceAccessCallable(const Model::ListPoliciesGrantingServiceAccessRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPoliciesGrantingServiceAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPoliciesGrantingServiceAccessAsync(const Model::ListPoliciesGrantingServiceAccessRequest& request, const ListPoliciesGrantingServiceAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the tags that are attached to the specified IAM customer managed
@@ -2653,15 +1841,6 @@ namespace IAM
          */
         virtual Model::ListPolicyTagsOutcome ListPolicyTags(const Model::ListPolicyTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPolicyTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPolicyTagsOutcomeCallable ListPolicyTagsCallable(const Model::ListPolicyTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPolicyTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPolicyTagsAsync(const Model::ListPolicyTagsRequest& request, const ListPolicyTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists information about the versions of the specified managed policy,
@@ -2675,15 +1854,6 @@ namespace IAM
          */
         virtual Model::ListPolicyVersionsOutcome ListPolicyVersions(const Model::ListPolicyVersionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPolicyVersions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPolicyVersionsOutcomeCallable ListPolicyVersionsCallable(const Model::ListPolicyVersionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPolicyVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPolicyVersionsAsync(const Model::ListPolicyVersionsRequest& request, const ListPolicyVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the names of the inline policies that are embedded in the specified IAM
@@ -2700,15 +1870,6 @@ namespace IAM
          */
         virtual Model::ListRolePoliciesOutcome ListRolePolicies(const Model::ListRolePoliciesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListRolePolicies that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListRolePoliciesOutcomeCallable ListRolePoliciesCallable(const Model::ListRolePoliciesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListRolePolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListRolePoliciesAsync(const Model::ListRolePoliciesRequest& request, const ListRolePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the tags that are attached to the specified role. The returned list of
@@ -2720,15 +1881,6 @@ namespace IAM
          */
         virtual Model::ListRoleTagsOutcome ListRoleTags(const Model::ListRoleTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListRoleTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListRoleTagsOutcomeCallable ListRoleTagsCallable(const Model::ListRoleTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListRoleTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListRoleTagsAsync(const Model::ListRoleTagsRequest& request, const ListRoleTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the IAM roles that have the specified path prefix. If there are none,
@@ -2745,15 +1897,6 @@ namespace IAM
          */
         virtual Model::ListRolesOutcome ListRoles(const Model::ListRolesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListRoles that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListRolesOutcomeCallable ListRolesCallable(const Model::ListRolesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListRoles that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListRolesAsync(const Model::ListRolesRequest& request, const ListRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the tags that are attached to the specified Security Assertion Markup
@@ -2768,15 +1911,6 @@ namespace IAM
          */
         virtual Model::ListSAMLProviderTagsOutcome ListSAMLProviderTags(const Model::ListSAMLProviderTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSAMLProviderTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListSAMLProviderTagsOutcomeCallable ListSAMLProviderTagsCallable(const Model::ListSAMLProviderTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSAMLProviderTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListSAMLProviderTagsAsync(const Model::ListSAMLProviderTagsRequest& request, const ListSAMLProviderTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the SAML provider resource objects defined in IAM in the account. IAM
@@ -2792,15 +1926,6 @@ namespace IAM
          */
         virtual Model::ListSAMLProvidersOutcome ListSAMLProviders(const Model::ListSAMLProvidersRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSAMLProviders that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListSAMLProvidersOutcomeCallable ListSAMLProvidersCallable(const Model::ListSAMLProvidersRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSAMLProviders that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListSAMLProvidersAsync(const Model::ListSAMLProvidersRequest& request, const ListSAMLProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the SSH public keys associated with the specified
@@ -2818,15 +1943,6 @@ namespace IAM
          */
         virtual Model::ListSSHPublicKeysOutcome ListSSHPublicKeys(const Model::ListSSHPublicKeysRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSSHPublicKeys that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListSSHPublicKeysOutcomeCallable ListSSHPublicKeysCallable(const Model::ListSSHPublicKeysRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSSHPublicKeys that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListSSHPublicKeysAsync(const Model::ListSSHPublicKeysRequest& request, const ListSSHPublicKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the tags that are attached to the specified IAM server certificate. The
@@ -2845,15 +1961,6 @@ namespace IAM
          */
         virtual Model::ListServerCertificateTagsOutcome ListServerCertificateTags(const Model::ListServerCertificateTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListServerCertificateTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListServerCertificateTagsOutcomeCallable ListServerCertificateTagsCallable(const Model::ListServerCertificateTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListServerCertificateTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListServerCertificateTagsAsync(const Model::ListServerCertificateTagsRequest& request, const ListServerCertificateTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the server certificates stored in IAM that have the specified path
@@ -2874,15 +1981,6 @@ namespace IAM
          */
         virtual Model::ListServerCertificatesOutcome ListServerCertificates(const Model::ListServerCertificatesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListServerCertificates that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListServerCertificatesOutcomeCallable ListServerCertificatesCallable(const Model::ListServerCertificatesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListServerCertificates that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListServerCertificatesAsync(const Model::ListServerCertificatesRequest& request, const ListServerCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the service-specific credentials associated with
@@ -2899,15 +1997,6 @@ namespace IAM
          */
         virtual Model::ListServiceSpecificCredentialsOutcome ListServiceSpecificCredentials(const Model::ListServiceSpecificCredentialsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListServiceSpecificCredentials that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListServiceSpecificCredentialsOutcomeCallable ListServiceSpecificCredentialsCallable(const Model::ListServiceSpecificCredentialsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListServiceSpecificCredentials that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListServiceSpecificCredentialsAsync(const Model::ListServiceSpecificCredentialsRequest& request, const ListServiceSpecificCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the signing certificates associated with the
@@ -2926,15 +2015,6 @@ namespace IAM
          */
         virtual Model::ListSigningCertificatesOutcome ListSigningCertificates(const Model::ListSigningCertificatesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSigningCertificates that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListSigningCertificatesOutcomeCallable ListSigningCertificatesCallable(const Model::ListSigningCertificatesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSigningCertificates that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListSigningCertificatesAsync(const Model::ListSigningCertificatesRequest& request, const ListSigningCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the names of the inline policies embedded in the specified IAM
@@ -2951,15 +2031,6 @@ namespace IAM
          */
         virtual Model::ListUserPoliciesOutcome ListUserPolicies(const Model::ListUserPoliciesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListUserPolicies that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListUserPoliciesOutcomeCallable ListUserPoliciesCallable(const Model::ListUserPoliciesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListUserPolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListUserPoliciesAsync(const Model::ListUserPoliciesRequest& request, const ListUserPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the tags that are attached to the specified IAM user. The returned list
@@ -2971,15 +2042,6 @@ namespace IAM
          */
         virtual Model::ListUserTagsOutcome ListUserTags(const Model::ListUserTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListUserTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListUserTagsOutcomeCallable ListUserTagsCallable(const Model::ListUserTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListUserTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListUserTagsAsync(const Model::ListUserTagsRequest& request, const ListUserTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the IAM users that have the specified path prefix. If no path prefix is
@@ -2996,15 +2058,6 @@ namespace IAM
          */
         virtual Model::ListUsersOutcome ListUsers(const Model::ListUsersRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListUsers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListUsersOutcomeCallable ListUsersCallable(const Model::ListUsersRequest& request) const;
-
-        /**
-         * An Async wrapper for ListUsers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListUsersAsync(const Model::ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the virtual MFA devices defined in the Amazon Web Services account by
@@ -3022,15 +2075,6 @@ namespace IAM
          */
         virtual Model::ListVirtualMFADevicesOutcome ListVirtualMFADevices(const Model::ListVirtualMFADevicesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListVirtualMFADevices that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListVirtualMFADevicesOutcomeCallable ListVirtualMFADevicesCallable(const Model::ListVirtualMFADevicesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListVirtualMFADevices that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListVirtualMFADevicesAsync(const Model::ListVirtualMFADevicesRequest& request, const ListVirtualMFADevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds or updates an inline policy document that is embedded in the specified
@@ -3055,15 +2099,6 @@ namespace IAM
          */
         virtual Model::PutGroupPolicyOutcome PutGroupPolicy(const Model::PutGroupPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutGroupPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutGroupPolicyOutcomeCallable PutGroupPolicyCallable(const Model::PutGroupPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for PutGroupPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutGroupPolicyAsync(const Model::PutGroupPolicyRequest& request, const PutGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds or updates the policy that is specified as the IAM role's permissions
@@ -3083,15 +2118,6 @@ namespace IAM
          */
         virtual Model::PutRolePermissionsBoundaryOutcome PutRolePermissionsBoundary(const Model::PutRolePermissionsBoundaryRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutRolePermissionsBoundary that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutRolePermissionsBoundaryOutcomeCallable PutRolePermissionsBoundaryCallable(const Model::PutRolePermissionsBoundaryRequest& request) const;
-
-        /**
-         * An Async wrapper for PutRolePermissionsBoundary that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutRolePermissionsBoundaryAsync(const Model::PutRolePermissionsBoundaryRequest& request, const PutRolePermissionsBoundaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds or updates an inline policy document that is embedded in the specified
@@ -3122,15 +2148,6 @@ namespace IAM
          */
         virtual Model::PutRolePolicyOutcome PutRolePolicy(const Model::PutRolePolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutRolePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutRolePolicyOutcomeCallable PutRolePolicyCallable(const Model::PutRolePolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for PutRolePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutRolePolicyAsync(const Model::PutRolePolicyRequest& request, const PutRolePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds or updates the policy that is specified as the IAM user's permissions
@@ -3149,15 +2166,6 @@ namespace IAM
          */
         virtual Model::PutUserPermissionsBoundaryOutcome PutUserPermissionsBoundary(const Model::PutUserPermissionsBoundaryRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutUserPermissionsBoundary that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutUserPermissionsBoundaryOutcomeCallable PutUserPermissionsBoundaryCallable(const Model::PutUserPermissionsBoundaryRequest& request) const;
-
-        /**
-         * An Async wrapper for PutUserPermissionsBoundary that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutUserPermissionsBoundaryAsync(const Model::PutUserPermissionsBoundaryRequest& request, const PutUserPermissionsBoundaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds or updates an inline policy document that is embedded in the specified
@@ -3181,15 +2189,6 @@ namespace IAM
          */
         virtual Model::PutUserPolicyOutcome PutUserPolicy(const Model::PutUserPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutUserPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutUserPolicyOutcomeCallable PutUserPolicyCallable(const Model::PutUserPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for PutUserPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutUserPolicyAsync(const Model::PutUserPolicyRequest& request, const PutUserPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified client ID (also known as audience) from the list of
@@ -3202,15 +2201,6 @@ namespace IAM
          */
         virtual Model::RemoveClientIDFromOpenIDConnectProviderOutcome RemoveClientIDFromOpenIDConnectProvider(const Model::RemoveClientIDFromOpenIDConnectProviderRequest& request) const;
 
-        /**
-         * A Callable wrapper for RemoveClientIDFromOpenIDConnectProvider that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RemoveClientIDFromOpenIDConnectProviderOutcomeCallable RemoveClientIDFromOpenIDConnectProviderCallable(const Model::RemoveClientIDFromOpenIDConnectProviderRequest& request) const;
-
-        /**
-         * An Async wrapper for RemoveClientIDFromOpenIDConnectProvider that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RemoveClientIDFromOpenIDConnectProviderAsync(const Model::RemoveClientIDFromOpenIDConnectProviderRequest& request, const RemoveClientIDFromOpenIDConnectProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified IAM role from the specified EC2 instance profile.</p>
@@ -3228,15 +2218,6 @@ namespace IAM
          */
         virtual Model::RemoveRoleFromInstanceProfileOutcome RemoveRoleFromInstanceProfile(const Model::RemoveRoleFromInstanceProfileRequest& request) const;
 
-        /**
-         * A Callable wrapper for RemoveRoleFromInstanceProfile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RemoveRoleFromInstanceProfileOutcomeCallable RemoveRoleFromInstanceProfileCallable(const Model::RemoveRoleFromInstanceProfileRequest& request) const;
-
-        /**
-         * An Async wrapper for RemoveRoleFromInstanceProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RemoveRoleFromInstanceProfileAsync(const Model::RemoveRoleFromInstanceProfileRequest& request, const RemoveRoleFromInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified user from the specified group.</p><p><h3>See Also:</h3>
@@ -3246,15 +2227,6 @@ namespace IAM
          */
         virtual Model::RemoveUserFromGroupOutcome RemoveUserFromGroup(const Model::RemoveUserFromGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for RemoveUserFromGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RemoveUserFromGroupOutcomeCallable RemoveUserFromGroupCallable(const Model::RemoveUserFromGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for RemoveUserFromGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RemoveUserFromGroupAsync(const Model::RemoveUserFromGroupRequest& request, const RemoveUserFromGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Resets the password for a service-specific credential. The new password is
@@ -3266,15 +2238,6 @@ namespace IAM
          */
         virtual Model::ResetServiceSpecificCredentialOutcome ResetServiceSpecificCredential(const Model::ResetServiceSpecificCredentialRequest& request) const;
 
-        /**
-         * A Callable wrapper for ResetServiceSpecificCredential that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ResetServiceSpecificCredentialOutcomeCallable ResetServiceSpecificCredentialCallable(const Model::ResetServiceSpecificCredentialRequest& request) const;
-
-        /**
-         * An Async wrapper for ResetServiceSpecificCredential that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ResetServiceSpecificCredentialAsync(const Model::ResetServiceSpecificCredentialRequest& request, const ResetServiceSpecificCredentialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Synchronizes the specified MFA device with its IAM resource object on the
@@ -3288,15 +2251,6 @@ namespace IAM
          */
         virtual Model::ResyncMFADeviceOutcome ResyncMFADevice(const Model::ResyncMFADeviceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ResyncMFADevice that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ResyncMFADeviceOutcomeCallable ResyncMFADeviceCallable(const Model::ResyncMFADeviceRequest& request) const;
-
-        /**
-         * An Async wrapper for ResyncMFADevice that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ResyncMFADeviceAsync(const Model::ResyncMFADeviceRequest& request, const ResyncMFADeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets the specified version of the specified policy as the policy's default
@@ -3312,15 +2266,6 @@ namespace IAM
          */
         virtual Model::SetDefaultPolicyVersionOutcome SetDefaultPolicyVersion(const Model::SetDefaultPolicyVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for SetDefaultPolicyVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SetDefaultPolicyVersionOutcomeCallable SetDefaultPolicyVersionCallable(const Model::SetDefaultPolicyVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for SetDefaultPolicyVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SetDefaultPolicyVersionAsync(const Model::SetDefaultPolicyVersionRequest& request, const SetDefaultPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets the specified version of the global endpoint token as the token version
@@ -3350,15 +2295,6 @@ namespace IAM
          */
         virtual Model::SetSecurityTokenServicePreferencesOutcome SetSecurityTokenServicePreferences(const Model::SetSecurityTokenServicePreferencesRequest& request) const;
 
-        /**
-         * A Callable wrapper for SetSecurityTokenServicePreferences that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SetSecurityTokenServicePreferencesOutcomeCallable SetSecurityTokenServicePreferencesCallable(const Model::SetSecurityTokenServicePreferencesRequest& request) const;
-
-        /**
-         * An Async wrapper for SetSecurityTokenServicePreferences that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SetSecurityTokenServicePreferencesAsync(const Model::SetSecurityTokenServicePreferencesRequest& request, const SetSecurityTokenServicePreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Simulate how a set of IAM policies and optionally a resource-based policy
@@ -3384,15 +2320,6 @@ namespace IAM
          */
         virtual Model::SimulateCustomPolicyOutcome SimulateCustomPolicy(const Model::SimulateCustomPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for SimulateCustomPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SimulateCustomPolicyOutcomeCallable SimulateCustomPolicyCallable(const Model::SimulateCustomPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for SimulateCustomPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SimulateCustomPolicyAsync(const Model::SimulateCustomPolicyRequest& request, const SimulateCustomPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Simulate how a set of IAM policies attached to an IAM entity works with a
@@ -3426,15 +2353,6 @@ namespace IAM
          */
         virtual Model::SimulatePrincipalPolicyOutcome SimulatePrincipalPolicy(const Model::SimulatePrincipalPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for SimulatePrincipalPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SimulatePrincipalPolicyOutcomeCallable SimulatePrincipalPolicyCallable(const Model::SimulatePrincipalPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for SimulatePrincipalPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SimulatePrincipalPolicyAsync(const Model::SimulatePrincipalPolicyRequest& request, const SimulatePrincipalPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds one or more tags to an IAM instance profile. If a tag with the same key
@@ -3465,15 +2383,6 @@ namespace IAM
          */
         virtual Model::TagInstanceProfileOutcome TagInstanceProfile(const Model::TagInstanceProfileRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagInstanceProfile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagInstanceProfileOutcomeCallable TagInstanceProfileCallable(const Model::TagInstanceProfileRequest& request) const;
-
-        /**
-         * An Async wrapper for TagInstanceProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagInstanceProfileAsync(const Model::TagInstanceProfileRequest& request, const TagInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds one or more tags to an IAM virtual multi-factor authentication (MFA)
@@ -3505,15 +2414,6 @@ namespace IAM
          */
         virtual Model::TagMFADeviceOutcome TagMFADevice(const Model::TagMFADeviceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagMFADevice that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagMFADeviceOutcomeCallable TagMFADeviceCallable(const Model::TagMFADeviceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagMFADevice that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagMFADeviceAsync(const Model::TagMFADeviceRequest& request, const TagMFADeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds one or more tags to an OpenID Connect (OIDC)-compatible identity
@@ -3546,15 +2446,6 @@ namespace IAM
          */
         virtual Model::TagOpenIDConnectProviderOutcome TagOpenIDConnectProvider(const Model::TagOpenIDConnectProviderRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagOpenIDConnectProvider that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagOpenIDConnectProviderOutcomeCallable TagOpenIDConnectProviderCallable(const Model::TagOpenIDConnectProviderRequest& request) const;
-
-        /**
-         * An Async wrapper for TagOpenIDConnectProvider that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagOpenIDConnectProviderAsync(const Model::TagOpenIDConnectProviderRequest& request, const TagOpenIDConnectProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds one or more tags to an IAM customer managed policy. If a tag with the
@@ -3585,15 +2476,6 @@ namespace IAM
          */
         virtual Model::TagPolicyOutcome TagPolicy(const Model::TagPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagPolicyOutcomeCallable TagPolicyCallable(const Model::TagPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for TagPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagPolicyAsync(const Model::TagPolicyRequest& request, const TagPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds one or more tags to an IAM role. The role can be a regular role or a
@@ -3630,15 +2512,6 @@ namespace IAM
          */
         virtual Model::TagRoleOutcome TagRole(const Model::TagRoleRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagRole that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagRoleOutcomeCallable TagRoleCallable(const Model::TagRoleRequest& request) const;
-
-        /**
-         * An Async wrapper for TagRole that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagRoleAsync(const Model::TagRoleRequest& request, const TagRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds one or more tags to a Security Assertion Markup Language (SAML) identity
@@ -3672,15 +2545,6 @@ namespace IAM
          */
         virtual Model::TagSAMLProviderOutcome TagSAMLProvider(const Model::TagSAMLProviderRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagSAMLProvider that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagSAMLProviderOutcomeCallable TagSAMLProviderCallable(const Model::TagSAMLProviderRequest& request) const;
-
-        /**
-         * An Async wrapper for TagSAMLProvider that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagSAMLProviderAsync(const Model::TagSAMLProviderRequest& request, const TagSAMLProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds one or more tags to an IAM server certificate. If a tag with the same
@@ -3719,15 +2583,6 @@ namespace IAM
          */
         virtual Model::TagServerCertificateOutcome TagServerCertificate(const Model::TagServerCertificateRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagServerCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagServerCertificateOutcomeCallable TagServerCertificateCallable(const Model::TagServerCertificateRequest& request) const;
-
-        /**
-         * An Async wrapper for TagServerCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagServerCertificateAsync(const Model::TagServerCertificateRequest& request, const TagServerCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds one or more tags to an IAM user. If a tag with the same key name already
@@ -3763,15 +2618,6 @@ namespace IAM
          */
         virtual Model::TagUserOutcome TagUser(const Model::TagUserRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagUser that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagUserOutcomeCallable TagUserCallable(const Model::TagUserRequest& request) const;
-
-        /**
-         * An Async wrapper for TagUser that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagUserAsync(const Model::TagUserRequest& request, const TagUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified tags from the IAM instance profile. For more
@@ -3783,15 +2629,6 @@ namespace IAM
          */
         virtual Model::UntagInstanceProfileOutcome UntagInstanceProfile(const Model::UntagInstanceProfileRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagInstanceProfile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagInstanceProfileOutcomeCallable UntagInstanceProfileCallable(const Model::UntagInstanceProfileRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagInstanceProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagInstanceProfileAsync(const Model::UntagInstanceProfileRequest& request, const UntagInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified tags from the IAM virtual multi-factor authentication
@@ -3803,15 +2640,6 @@ namespace IAM
          */
         virtual Model::UntagMFADeviceOutcome UntagMFADevice(const Model::UntagMFADeviceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagMFADevice that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagMFADeviceOutcomeCallable UntagMFADeviceCallable(const Model::UntagMFADeviceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagMFADevice that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagMFADeviceAsync(const Model::UntagMFADeviceRequest& request, const UntagMFADeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified tags from the specified OpenID Connect
@@ -3826,15 +2654,6 @@ namespace IAM
          */
         virtual Model::UntagOpenIDConnectProviderOutcome UntagOpenIDConnectProvider(const Model::UntagOpenIDConnectProviderRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagOpenIDConnectProvider that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagOpenIDConnectProviderOutcomeCallable UntagOpenIDConnectProviderCallable(const Model::UntagOpenIDConnectProviderRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagOpenIDConnectProvider that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagOpenIDConnectProviderAsync(const Model::UntagOpenIDConnectProviderRequest& request, const UntagOpenIDConnectProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified tags from the customer managed policy. For more
@@ -3846,15 +2665,6 @@ namespace IAM
          */
         virtual Model::UntagPolicyOutcome UntagPolicy(const Model::UntagPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagPolicyOutcomeCallable UntagPolicyCallable(const Model::UntagPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagPolicyAsync(const Model::UntagPolicyRequest& request, const UntagPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified tags from the role. For more information about tagging,
@@ -3866,15 +2676,6 @@ namespace IAM
          */
         virtual Model::UntagRoleOutcome UntagRole(const Model::UntagRoleRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagRole that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagRoleOutcomeCallable UntagRoleCallable(const Model::UntagRoleRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagRole that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagRoleAsync(const Model::UntagRoleRequest& request, const UntagRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified tags from the specified Security Assertion Markup
@@ -3889,15 +2690,6 @@ namespace IAM
          */
         virtual Model::UntagSAMLProviderOutcome UntagSAMLProvider(const Model::UntagSAMLProviderRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagSAMLProvider that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagSAMLProviderOutcomeCallable UntagSAMLProviderCallable(const Model::UntagSAMLProviderRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagSAMLProvider that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagSAMLProviderAsync(const Model::UntagSAMLProviderRequest& request, const UntagSAMLProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified tags from the IAM server certificate. For more
@@ -3915,15 +2707,6 @@ namespace IAM
          */
         virtual Model::UntagServerCertificateOutcome UntagServerCertificate(const Model::UntagServerCertificateRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagServerCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagServerCertificateOutcomeCallable UntagServerCertificateCallable(const Model::UntagServerCertificateRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagServerCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagServerCertificateAsync(const Model::UntagServerCertificateRequest& request, const UntagServerCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified tags from the user. For more information about tagging,
@@ -3935,15 +2718,6 @@ namespace IAM
          */
         virtual Model::UntagUserOutcome UntagUser(const Model::UntagUserRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagUser that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagUserOutcomeCallable UntagUserCallable(const Model::UntagUserRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagUser that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagUserAsync(const Model::UntagUserRequest& request, const UntagUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Changes the status of the specified access key from Active to Inactive, or
@@ -3965,15 +2739,6 @@ namespace IAM
          */
         virtual Model::UpdateAccessKeyOutcome UpdateAccessKey(const Model::UpdateAccessKeyRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateAccessKey that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateAccessKeyOutcomeCallable UpdateAccessKeyCallable(const Model::UpdateAccessKeyRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateAccessKey that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateAccessKeyAsync(const Model::UpdateAccessKeyRequest& request, const UpdateAccessKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the password policy settings for the Amazon Web Services account.</p>
@@ -3992,15 +2757,6 @@ namespace IAM
          */
         virtual Model::UpdateAccountPasswordPolicyOutcome UpdateAccountPasswordPolicy(const Model::UpdateAccountPasswordPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateAccountPasswordPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateAccountPasswordPolicyOutcomeCallable UpdateAccountPasswordPolicyCallable(const Model::UpdateAccountPasswordPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateAccountPasswordPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateAccountPasswordPolicyAsync(const Model::UpdateAccountPasswordPolicyRequest& request, const UpdateAccountPasswordPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the policy that grants an IAM entity permission to assume a role.
@@ -4014,15 +2770,6 @@ namespace IAM
          */
         virtual Model::UpdateAssumeRolePolicyOutcome UpdateAssumeRolePolicy(const Model::UpdateAssumeRolePolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateAssumeRolePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateAssumeRolePolicyOutcomeCallable UpdateAssumeRolePolicyCallable(const Model::UpdateAssumeRolePolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateAssumeRolePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateAssumeRolePolicyAsync(const Model::UpdateAssumeRolePolicyRequest& request, const UpdateAssumeRolePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the name and/or the path of the specified IAM group.</p> 
@@ -4043,15 +2790,6 @@ namespace IAM
          */
         virtual Model::UpdateGroupOutcome UpdateGroup(const Model::UpdateGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateGroupOutcomeCallable UpdateGroupCallable(const Model::UpdateGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateGroupAsync(const Model::UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Changes the password for the specified IAM user. You can use the CLI, the
@@ -4067,15 +2805,6 @@ namespace IAM
          */
         virtual Model::UpdateLoginProfileOutcome UpdateLoginProfile(const Model::UpdateLoginProfileRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateLoginProfile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateLoginProfileOutcomeCallable UpdateLoginProfileCallable(const Model::UpdateLoginProfileRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateLoginProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateLoginProfileAsync(const Model::UpdateLoginProfileRequest& request, const UpdateLoginProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Replaces the existing list of server certificate thumbprints associated with
@@ -4101,15 +2830,6 @@ namespace IAM
          */
         virtual Model::UpdateOpenIDConnectProviderThumbprintOutcome UpdateOpenIDConnectProviderThumbprint(const Model::UpdateOpenIDConnectProviderThumbprintRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateOpenIDConnectProviderThumbprint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateOpenIDConnectProviderThumbprintOutcomeCallable UpdateOpenIDConnectProviderThumbprintCallable(const Model::UpdateOpenIDConnectProviderThumbprintRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateOpenIDConnectProviderThumbprint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateOpenIDConnectProviderThumbprintAsync(const Model::UpdateOpenIDConnectProviderThumbprintRequest& request, const UpdateOpenIDConnectProviderThumbprintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the description or maximum session duration setting of a
@@ -4119,15 +2839,6 @@ namespace IAM
          */
         virtual Model::UpdateRoleOutcome UpdateRole(const Model::UpdateRoleRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateRole that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateRoleOutcomeCallable UpdateRoleCallable(const Model::UpdateRoleRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateRole that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateRoleAsync(const Model::UpdateRoleRequest& request, const UpdateRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Use <a>UpdateRole</a> instead.</p> <p>Modifies only the description of a
@@ -4139,15 +2850,6 @@ namespace IAM
          */
         virtual Model::UpdateRoleDescriptionOutcome UpdateRoleDescription(const Model::UpdateRoleDescriptionRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateRoleDescription that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateRoleDescriptionOutcomeCallable UpdateRoleDescriptionCallable(const Model::UpdateRoleDescriptionRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateRoleDescription that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateRoleDescriptionAsync(const Model::UpdateRoleDescriptionRequest& request, const UpdateRoleDescriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the metadata document for an existing SAML provider resource
@@ -4159,15 +2861,6 @@ namespace IAM
          */
         virtual Model::UpdateSAMLProviderOutcome UpdateSAMLProvider(const Model::UpdateSAMLProviderRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateSAMLProvider that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateSAMLProviderOutcomeCallable UpdateSAMLProviderCallable(const Model::UpdateSAMLProviderRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateSAMLProvider that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateSAMLProviderAsync(const Model::UpdateSAMLProviderRequest& request, const UpdateSAMLProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets the status of an IAM user's SSH public key to active or inactive. SSH
@@ -4185,15 +2878,6 @@ namespace IAM
          */
         virtual Model::UpdateSSHPublicKeyOutcome UpdateSSHPublicKey(const Model::UpdateSSHPublicKeyRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateSSHPublicKey that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateSSHPublicKeyOutcomeCallable UpdateSSHPublicKeyCallable(const Model::UpdateSSHPublicKeyRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateSSHPublicKey that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateSSHPublicKeyAsync(const Model::UpdateSSHPublicKeyRequest& request, const UpdateSSHPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the name and/or the path of the specified server certificate stored
@@ -4222,15 +2906,6 @@ namespace IAM
          */
         virtual Model::UpdateServerCertificateOutcome UpdateServerCertificate(const Model::UpdateServerCertificateRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateServerCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateServerCertificateOutcomeCallable UpdateServerCertificateCallable(const Model::UpdateServerCertificateRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateServerCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateServerCertificateAsync(const Model::UpdateServerCertificateRequest& request, const UpdateServerCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets the status of a service-specific credential to <code>Active</code> or
@@ -4243,15 +2918,6 @@ namespace IAM
          */
         virtual Model::UpdateServiceSpecificCredentialOutcome UpdateServiceSpecificCredential(const Model::UpdateServiceSpecificCredentialRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateServiceSpecificCredential that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateServiceSpecificCredentialOutcomeCallable UpdateServiceSpecificCredentialCallable(const Model::UpdateServiceSpecificCredentialRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateServiceSpecificCredential that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateServiceSpecificCredentialAsync(const Model::UpdateServiceSpecificCredentialRequest& request, const UpdateServiceSpecificCredentialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Changes the status of the specified user signing certificate from active to
@@ -4268,15 +2934,6 @@ namespace IAM
          */
         virtual Model::UpdateSigningCertificateOutcome UpdateSigningCertificate(const Model::UpdateSigningCertificateRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateSigningCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateSigningCertificateOutcomeCallable UpdateSigningCertificateCallable(const Model::UpdateSigningCertificateRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateSigningCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateSigningCertificateAsync(const Model::UpdateSigningCertificateRequest& request, const UpdateSigningCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the name and/or the path of the specified IAM user.</p> 
@@ -4297,15 +2954,6 @@ namespace IAM
          */
         virtual Model::UpdateUserOutcome UpdateUser(const Model::UpdateUserRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateUser that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateUserOutcomeCallable UpdateUserCallable(const Model::UpdateUserRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateUser that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateUserAsync(const Model::UpdateUserRequest& request, const UpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Uploads an SSH public key and associates it with the specified IAM user.</p>
@@ -4321,15 +2969,6 @@ namespace IAM
          */
         virtual Model::UploadSSHPublicKeyOutcome UploadSSHPublicKey(const Model::UploadSSHPublicKeyRequest& request) const;
 
-        /**
-         * A Callable wrapper for UploadSSHPublicKey that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UploadSSHPublicKeyOutcomeCallable UploadSSHPublicKeyCallable(const Model::UploadSSHPublicKeyRequest& request) const;
-
-        /**
-         * An Async wrapper for UploadSSHPublicKey that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UploadSSHPublicKeyAsync(const Model::UploadSSHPublicKeyRequest& request, const UploadSSHPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Uploads a server certificate entity for the Amazon Web Services account. The
@@ -4366,15 +3005,6 @@ namespace IAM
          */
         virtual Model::UploadServerCertificateOutcome UploadServerCertificate(const Model::UploadServerCertificateRequest& request) const;
 
-        /**
-         * A Callable wrapper for UploadServerCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UploadServerCertificateOutcomeCallable UploadServerCertificateCallable(const Model::UploadServerCertificateRequest& request) const;
-
-        /**
-         * An Async wrapper for UploadServerCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UploadServerCertificateAsync(const Model::UploadServerCertificateRequest& request, const UploadServerCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Uploads an X.509 signing certificate and associates it with the specified IAM
@@ -4405,15 +3035,6 @@ namespace IAM
          */
         virtual Model::UploadSigningCertificateOutcome UploadSigningCertificate(const Model::UploadSigningCertificateRequest& request) const;
 
-        /**
-         * A Callable wrapper for UploadSigningCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UploadSigningCertificateOutcomeCallable UploadSigningCertificateCallable(const Model::UploadSigningCertificateRequest& request) const;
-
-        /**
-         * An Async wrapper for UploadSigningCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UploadSigningCertificateAsync(const Model::UploadSigningCertificateRequest& request, const UploadSigningCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
         void OverrideEndpoint(const Aws::String& endpoint);

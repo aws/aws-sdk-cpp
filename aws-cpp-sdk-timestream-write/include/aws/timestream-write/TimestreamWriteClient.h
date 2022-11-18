@@ -7,8 +7,10 @@
 #include <aws/timestream-write/TimestreamWrite_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/timestream-write/TimestreamWriteServiceClientModel.h>
+#include <aws/timestream-write/TimestreamWriteLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -85,6 +87,47 @@ namespace TimestreamWrite
         virtual ~TimestreamWriteClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Creates a new Timestream database. If the KMS key is not specified, the
          * database will be encrypted with a Timestream managed KMS key located in your
@@ -100,15 +143,6 @@ namespace TimestreamWrite
          */
         virtual Model::CreateDatabaseOutcome CreateDatabase(const Model::CreateDatabaseRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDatabase that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDatabaseOutcomeCallable CreateDatabaseCallable(const Model::CreateDatabaseRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDatabase that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDatabaseAsync(const Model::CreateDatabaseRequest& request, const CreateDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The CreateTable operation adds a new table to an existing database in your
@@ -126,15 +160,6 @@ namespace TimestreamWrite
          */
         virtual Model::CreateTableOutcome CreateTable(const Model::CreateTableRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateTable that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateTableOutcomeCallable CreateTableCallable(const Model::CreateTableRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateTable that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateTableAsync(const Model::CreateTableRequest& request, const CreateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a given Timestream database. <i>This is an irreversible operation.
@@ -151,15 +176,6 @@ namespace TimestreamWrite
          */
         virtual Model::DeleteDatabaseOutcome DeleteDatabase(const Model::DeleteDatabaseRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDatabase that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDatabaseOutcomeCallable DeleteDatabaseCallable(const Model::DeleteDatabaseRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDatabase that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDatabaseAsync(const Model::DeleteDatabaseRequest& request, const DeleteDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a given Timestream table. This is an irreversible operation. After a
@@ -174,15 +190,6 @@ namespace TimestreamWrite
          */
         virtual Model::DeleteTableOutcome DeleteTable(const Model::DeleteTableRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteTable that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteTableOutcomeCallable DeleteTableCallable(const Model::DeleteTableRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteTable that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteTableAsync(const Model::DeleteTableRequest& request, const DeleteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the database, including the database name, time
@@ -197,15 +204,6 @@ namespace TimestreamWrite
          */
         virtual Model::DescribeDatabaseOutcome DescribeDatabase(const Model::DescribeDatabaseRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDatabase that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDatabaseOutcomeCallable DescribeDatabaseCallable(const Model::DescribeDatabaseRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDatabase that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDatabaseAsync(const Model::DescribeDatabaseRequest& request, const DescribeDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>DescribeEndpoints returns a list of available endpoints to make Timestream
@@ -227,15 +225,6 @@ namespace TimestreamWrite
          */
         virtual Model::DescribeEndpointsOutcome DescribeEndpoints(const Model::DescribeEndpointsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEndpointsOutcomeCallable DescribeEndpointsCallable(const Model::DescribeEndpointsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEndpointsAsync(const Model::DescribeEndpointsRequest& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the table, including the table name, database name,
@@ -249,15 +238,6 @@ namespace TimestreamWrite
          */
         virtual Model::DescribeTableOutcome DescribeTable(const Model::DescribeTableRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTable that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTableOutcomeCallable DescribeTableCallable(const Model::DescribeTableRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTable that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTableAsync(const Model::DescribeTableRequest& request, const DescribeTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of your Timestream databases. <a
@@ -270,15 +250,6 @@ namespace TimestreamWrite
          */
         virtual Model::ListDatabasesOutcome ListDatabases(const Model::ListDatabasesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDatabases that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDatabasesOutcomeCallable ListDatabasesCallable(const Model::ListDatabasesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDatabases that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDatabasesAsync(const Model::ListDatabasesRequest& request, const ListDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>A list of tables, along with the name, status and retention properties of
@@ -290,15 +261,6 @@ namespace TimestreamWrite
          */
         virtual Model::ListTablesOutcome ListTables(const Model::ListTablesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTables that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTablesOutcomeCallable ListTablesCallable(const Model::ListTablesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTables that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTablesAsync(const Model::ListTablesRequest& request, const ListTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> List all tags on a Timestream resource. </p><p><h3>See Also:</h3>   <a
@@ -307,15 +269,6 @@ namespace TimestreamWrite
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Associate a set of tags with a Timestream resource. You can then activate
@@ -326,15 +279,6 @@ namespace TimestreamWrite
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Removes the association of tags from a Timestream resource. </p><p><h3>See
@@ -344,15 +288,6 @@ namespace TimestreamWrite
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Modifies the KMS key for an existing database. While updating the database,
@@ -366,15 +301,6 @@ namespace TimestreamWrite
          */
         virtual Model::UpdateDatabaseOutcome UpdateDatabase(const Model::UpdateDatabaseRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateDatabase that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateDatabaseOutcomeCallable UpdateDatabaseCallable(const Model::UpdateDatabaseRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateDatabase that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateDatabaseAsync(const Model::UpdateDatabaseRequest& request, const UpdateDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the retention duration of the memory store and magnetic store for
@@ -391,15 +317,6 @@ namespace TimestreamWrite
          */
         virtual Model::UpdateTableOutcome UpdateTable(const Model::UpdateTableRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateTable that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateTableOutcomeCallable UpdateTableCallable(const Model::UpdateTableRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateTable that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateTableAsync(const Model::UpdateTableRequest& request, const UpdateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The WriteRecords operation enables you to write your time series data into
@@ -448,15 +365,6 @@ namespace TimestreamWrite
          */
         virtual Model::WriteRecordsOutcome WriteRecords(const Model::WriteRecordsRequest& request) const;
 
-        /**
-         * A Callable wrapper for WriteRecords that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::WriteRecordsOutcomeCallable WriteRecordsCallable(const Model::WriteRecordsRequest& request) const;
-
-        /**
-         * An Async wrapper for WriteRecords that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void WriteRecordsAsync(const Model::WriteRecordsRequest& request, const WriteRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

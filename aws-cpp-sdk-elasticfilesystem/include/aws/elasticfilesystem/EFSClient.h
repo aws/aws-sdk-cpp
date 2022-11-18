@@ -7,8 +7,10 @@
 #include <aws/elasticfilesystem/EFS_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/elasticfilesystem/EFSServiceClientModel.h>
+#include <aws/elasticfilesystem/EFSLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -82,6 +84,47 @@ namespace EFS
         virtual ~EFSClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Creates an EFS access point. An access point is an application-specific view
          * into an EFS file system that applies an operating system user and group, and a
@@ -99,15 +142,6 @@ namespace EFS
          */
         virtual Model::CreateAccessPointOutcome CreateAccessPoint(const Model::CreateAccessPointRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateAccessPoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateAccessPointOutcomeCallable CreateAccessPointCallable(const Model::CreateAccessPointRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateAccessPoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateAccessPointAsync(const Model::CreateAccessPointRequest& request, const CreateAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new, empty file system. The operation requires a creation token in
@@ -159,15 +193,6 @@ namespace EFS
          */
         virtual Model::CreateFileSystemOutcome CreateFileSystem(const Model::CreateFileSystemRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateFileSystem that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateFileSystemOutcomeCallable CreateFileSystemCallable(const Model::CreateFileSystemRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateFileSystem that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateFileSystemAsync(const Model::CreateFileSystemRequest& request, const CreateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a mount target for a file system. You can then mount the file system
@@ -255,15 +280,6 @@ namespace EFS
          */
         virtual Model::CreateMountTargetOutcome CreateMountTarget(const Model::CreateMountTargetRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateMountTarget that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateMountTargetOutcomeCallable CreateMountTargetCallable(const Model::CreateMountTargetRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateMountTarget that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateMountTargetAsync(const Model::CreateMountTargetRequest& request, const CreateMountTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a replication configuration that replicates an existing EFS file
@@ -316,15 +332,6 @@ namespace EFS
          */
         virtual Model::CreateReplicationConfigurationOutcome CreateReplicationConfiguration(const Model::CreateReplicationConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateReplicationConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateReplicationConfigurationOutcomeCallable CreateReplicationConfigurationCallable(const Model::CreateReplicationConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateReplicationConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateReplicationConfigurationAsync(const Model::CreateReplicationConfigurationRequest& request, const CreateReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified access point. After deletion is complete, new clients
@@ -338,15 +345,6 @@ namespace EFS
          */
         virtual Model::DeleteAccessPointOutcome DeleteAccessPoint(const Model::DeleteAccessPointRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAccessPoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAccessPointOutcomeCallable DeleteAccessPointCallable(const Model::DeleteAccessPointRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAccessPoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAccessPointAsync(const Model::DeleteAccessPointRequest& request, const DeleteAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a file system, permanently severing access to its contents. Upon
@@ -372,15 +370,6 @@ namespace EFS
          */
         virtual Model::DeleteFileSystemOutcome DeleteFileSystem(const Model::DeleteFileSystemRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteFileSystem that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteFileSystemOutcomeCallable DeleteFileSystemCallable(const Model::DeleteFileSystemRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteFileSystem that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteFileSystemAsync(const Model::DeleteFileSystemRequest& request, const DeleteFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the <code>FileSystemPolicy</code> for the specified file system. The
@@ -395,15 +384,6 @@ namespace EFS
          */
         virtual Model::DeleteFileSystemPolicyOutcome DeleteFileSystemPolicy(const Model::DeleteFileSystemPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteFileSystemPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteFileSystemPolicyOutcomeCallable DeleteFileSystemPolicyCallable(const Model::DeleteFileSystemPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteFileSystemPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteFileSystemPolicyAsync(const Model::DeleteFileSystemPolicyRequest& request, const DeleteFileSystemPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified mount target.</p> <p>This operation forcibly breaks any
@@ -429,15 +409,6 @@ namespace EFS
          */
         virtual Model::DeleteMountTargetOutcome DeleteMountTarget(const Model::DeleteMountTargetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteMountTarget that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteMountTargetOutcomeCallable DeleteMountTargetCallable(const Model::DeleteMountTargetRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteMountTarget that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteMountTargetAsync(const Model::DeleteMountTargetRequest& request, const DeleteMountTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an existing replication configuration. To delete a replication
@@ -452,15 +423,6 @@ namespace EFS
          */
         virtual Model::DeleteReplicationConfigurationOutcome DeleteReplicationConfiguration(const Model::DeleteReplicationConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteReplicationConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteReplicationConfigurationOutcomeCallable DeleteReplicationConfigurationCallable(const Model::DeleteReplicationConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteReplicationConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteReplicationConfigurationAsync(const Model::DeleteReplicationConfigurationRequest& request, const DeleteReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the description of a specific Amazon EFS access point if the
@@ -475,15 +437,6 @@ namespace EFS
          */
         virtual Model::DescribeAccessPointsOutcome DescribeAccessPoints(const Model::DescribeAccessPointsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAccessPoints that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAccessPointsOutcomeCallable DescribeAccessPointsCallable(const Model::DescribeAccessPointsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAccessPoints that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAccessPointsAsync(const Model::DescribeAccessPointsRequest& request, const DescribeAccessPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the account preferences settings for the Amazon Web Services account
@@ -496,15 +449,6 @@ namespace EFS
          */
         virtual Model::DescribeAccountPreferencesOutcome DescribeAccountPreferences(const Model::DescribeAccountPreferencesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAccountPreferences that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAccountPreferencesOutcomeCallable DescribeAccountPreferencesCallable(const Model::DescribeAccountPreferencesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAccountPreferences that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAccountPreferencesAsync(const Model::DescribeAccountPreferencesRequest& request, const DescribeAccountPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the backup policy for the specified EFS file system.</p><p><h3>See
@@ -514,15 +458,6 @@ namespace EFS
          */
         virtual Model::DescribeBackupPolicyOutcome DescribeBackupPolicy(const Model::DescribeBackupPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeBackupPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeBackupPolicyOutcomeCallable DescribeBackupPolicyCallable(const Model::DescribeBackupPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeBackupPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeBackupPolicyAsync(const Model::DescribeBackupPolicyRequest& request, const DescribeBackupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the <code>FileSystemPolicy</code> for the specified EFS file
@@ -534,15 +469,6 @@ namespace EFS
          */
         virtual Model::DescribeFileSystemPolicyOutcome DescribeFileSystemPolicy(const Model::DescribeFileSystemPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeFileSystemPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeFileSystemPolicyOutcomeCallable DescribeFileSystemPolicyCallable(const Model::DescribeFileSystemPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeFileSystemPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeFileSystemPolicyAsync(const Model::DescribeFileSystemPolicyRequest& request, const DescribeFileSystemPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the description of a specific Amazon EFS file system if either the
@@ -572,15 +498,6 @@ namespace EFS
          */
         virtual Model::DescribeFileSystemsOutcome DescribeFileSystems(const Model::DescribeFileSystemsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeFileSystems that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeFileSystemsOutcomeCallable DescribeFileSystemsCallable(const Model::DescribeFileSystemsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeFileSystems that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeFileSystemsAsync(const Model::DescribeFileSystemsRequest& request, const DescribeFileSystemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the current <code>LifecycleConfiguration</code> object for the
@@ -598,15 +515,6 @@ namespace EFS
          */
         virtual Model::DescribeLifecycleConfigurationOutcome DescribeLifecycleConfiguration(const Model::DescribeLifecycleConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeLifecycleConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeLifecycleConfigurationOutcomeCallable DescribeLifecycleConfigurationCallable(const Model::DescribeLifecycleConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeLifecycleConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeLifecycleConfigurationAsync(const Model::DescribeLifecycleConfigurationRequest& request, const DescribeLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the security groups currently in effect for a mount target. This
@@ -623,15 +531,6 @@ namespace EFS
          */
         virtual Model::DescribeMountTargetSecurityGroupsOutcome DescribeMountTargetSecurityGroups(const Model::DescribeMountTargetSecurityGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeMountTargetSecurityGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeMountTargetSecurityGroupsOutcomeCallable DescribeMountTargetSecurityGroupsCallable(const Model::DescribeMountTargetSecurityGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeMountTargetSecurityGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeMountTargetSecurityGroupsAsync(const Model::DescribeMountTargetSecurityGroupsRequest& request, const DescribeMountTargetSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the descriptions of all the current mount targets, or a specific
@@ -647,15 +546,6 @@ namespace EFS
          */
         virtual Model::DescribeMountTargetsOutcome DescribeMountTargets(const Model::DescribeMountTargetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeMountTargets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeMountTargetsOutcomeCallable DescribeMountTargetsCallable(const Model::DescribeMountTargetsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeMountTargets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeMountTargetsAsync(const Model::DescribeMountTargetsRequest& request, const DescribeMountTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the replication configuration for a specific file system. If a file
@@ -667,15 +557,6 @@ namespace EFS
          */
         virtual Model::DescribeReplicationConfigurationsOutcome DescribeReplicationConfigurations(const Model::DescribeReplicationConfigurationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeReplicationConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeReplicationConfigurationsOutcomeCallable DescribeReplicationConfigurationsCallable(const Model::DescribeReplicationConfigurationsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeReplicationConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeReplicationConfigurationsAsync(const Model::DescribeReplicationConfigurationsRequest& request, const DescribeReplicationConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all tags for a top-level EFS resource. You must provide the ID of the
@@ -687,15 +568,6 @@ namespace EFS
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the set of security groups in effect for a mount target.</p> <p>When
@@ -715,15 +587,6 @@ namespace EFS
          */
         virtual Model::ModifyMountTargetSecurityGroupsOutcome ModifyMountTargetSecurityGroups(const Model::ModifyMountTargetSecurityGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyMountTargetSecurityGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyMountTargetSecurityGroupsOutcomeCallable ModifyMountTargetSecurityGroupsCallable(const Model::ModifyMountTargetSecurityGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyMountTargetSecurityGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyMountTargetSecurityGroupsAsync(const Model::ModifyMountTargetSecurityGroupsRequest& request, const ModifyMountTargetSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Use this operation to set the account preference in the current Amazon Web
@@ -743,15 +606,6 @@ namespace EFS
          */
         virtual Model::PutAccountPreferencesOutcome PutAccountPreferences(const Model::PutAccountPreferencesRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutAccountPreferences that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutAccountPreferencesOutcomeCallable PutAccountPreferencesCallable(const Model::PutAccountPreferencesRequest& request) const;
-
-        /**
-         * An Async wrapper for PutAccountPreferences that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutAccountPreferencesAsync(const Model::PutAccountPreferencesRequest& request, const PutAccountPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the file system's backup policy. Use this action to start or stop
@@ -761,15 +615,6 @@ namespace EFS
          */
         virtual Model::PutBackupPolicyOutcome PutBackupPolicy(const Model::PutBackupPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutBackupPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutBackupPolicyOutcomeCallable PutBackupPolicyCallable(const Model::PutBackupPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for PutBackupPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutBackupPolicyAsync(const Model::PutBackupPolicyRequest& request, const PutBackupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Applies an Amazon EFS <code>FileSystemPolicy</code> to an Amazon EFS file
@@ -789,15 +634,6 @@ namespace EFS
          */
         virtual Model::PutFileSystemPolicyOutcome PutFileSystemPolicy(const Model::PutFileSystemPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutFileSystemPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutFileSystemPolicyOutcomeCallable PutFileSystemPolicyCallable(const Model::PutFileSystemPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for PutFileSystemPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutFileSystemPolicyAsync(const Model::PutFileSystemPolicyRequest& request, const PutFileSystemPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Use this action to manage EFS lifecycle management and intelligent tiering. A
@@ -840,15 +676,6 @@ namespace EFS
          */
         virtual Model::PutLifecycleConfigurationOutcome PutLifecycleConfiguration(const Model::PutLifecycleConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutLifecycleConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutLifecycleConfigurationOutcomeCallable PutLifecycleConfigurationCallable(const Model::PutLifecycleConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for PutLifecycleConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutLifecycleConfigurationAsync(const Model::PutLifecycleConfigurationRequest& request, const PutLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a tag for an EFS resource. You can create tags for EFS file systems
@@ -860,15 +687,6 @@ namespace EFS
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes tags from an EFS resource. You can remove tags from EFS file systems
@@ -880,15 +698,6 @@ namespace EFS
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the throughput mode or the amount of provisioned throughput of an
@@ -898,15 +707,6 @@ namespace EFS
          */
         virtual Model::UpdateFileSystemOutcome UpdateFileSystem(const Model::UpdateFileSystemRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateFileSystem that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateFileSystemOutcomeCallable UpdateFileSystemCallable(const Model::UpdateFileSystemRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateFileSystem that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateFileSystemAsync(const Model::UpdateFileSystemRequest& request, const UpdateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

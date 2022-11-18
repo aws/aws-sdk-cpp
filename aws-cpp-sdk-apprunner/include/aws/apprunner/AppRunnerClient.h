@@ -7,8 +7,10 @@
 #include <aws/apprunner/AppRunner_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/apprunner/AppRunnerServiceClientModel.h>
+#include <aws/apprunner/AppRunnerLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -92,6 +94,47 @@ namespace AppRunner
         virtual ~AppRunnerClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Associate your own domain name with the App Runner subdomain URL of your App
          * Runner service.</p> <p>After you call <code>AssociateCustomDomain</code> and
@@ -108,15 +151,6 @@ namespace AppRunner
          */
         virtual Model::AssociateCustomDomainOutcome AssociateCustomDomain(const Model::AssociateCustomDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateCustomDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateCustomDomainOutcomeCallable AssociateCustomDomainCallable(const Model::AssociateCustomDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateCustomDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateCustomDomainAsync(const Model::AssociateCustomDomainRequest& request, const AssociateCustomDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Create an App Runner automatic scaling configuration resource. App Runner
@@ -139,15 +173,6 @@ namespace AppRunner
          */
         virtual Model::CreateAutoScalingConfigurationOutcome CreateAutoScalingConfiguration(const Model::CreateAutoScalingConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateAutoScalingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateAutoScalingConfigurationOutcomeCallable CreateAutoScalingConfigurationCallable(const Model::CreateAutoScalingConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateAutoScalingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateAutoScalingConfigurationAsync(const Model::CreateAutoScalingConfigurationRequest& request, const CreateAutoScalingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Create an App Runner connection resource. App Runner requires a connection
@@ -161,15 +186,6 @@ namespace AppRunner
          */
         virtual Model::CreateConnectionOutcome CreateConnection(const Model::CreateConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateConnectionOutcomeCallable CreateConnectionCallable(const Model::CreateConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateConnectionAsync(const Model::CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Create an App Runner observability configuration resource. App Runner
@@ -192,15 +208,6 @@ namespace AppRunner
          */
         virtual Model::CreateObservabilityConfigurationOutcome CreateObservabilityConfiguration(const Model::CreateObservabilityConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateObservabilityConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateObservabilityConfigurationOutcomeCallable CreateObservabilityConfigurationCallable(const Model::CreateObservabilityConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateObservabilityConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateObservabilityConfigurationAsync(const Model::CreateObservabilityConfigurationRequest& request, const CreateObservabilityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Create an App Runner service. After the service is created, the action also
@@ -213,15 +220,6 @@ namespace AppRunner
          */
         virtual Model::CreateServiceOutcome CreateService(const Model::CreateServiceRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateService that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateServiceOutcomeCallable CreateServiceCallable(const Model::CreateServiceRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateService that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateServiceAsync(const Model::CreateServiceRequest& request, const CreateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Create an App Runner VPC connector resource. App Runner requires this
@@ -232,15 +230,6 @@ namespace AppRunner
          */
         virtual Model::CreateVpcConnectorOutcome CreateVpcConnector(const Model::CreateVpcConnectorRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateVpcConnector that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateVpcConnectorOutcomeCallable CreateVpcConnectorCallable(const Model::CreateVpcConnectorRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateVpcConnector that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateVpcConnectorAsync(const Model::CreateVpcConnectorRequest& request, const CreateVpcConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Create an App Runner VPC Ingress Connection resource. App Runner requires
@@ -251,15 +240,6 @@ namespace AppRunner
          */
         virtual Model::CreateVpcIngressConnectionOutcome CreateVpcIngressConnection(const Model::CreateVpcIngressConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateVpcIngressConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateVpcIngressConnectionOutcomeCallable CreateVpcIngressConnectionCallable(const Model::CreateVpcIngressConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateVpcIngressConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateVpcIngressConnectionAsync(const Model::CreateVpcIngressConnectionRequest& request, const CreateVpcIngressConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Delete an App Runner automatic scaling configuration resource. You can delete
@@ -271,15 +251,6 @@ namespace AppRunner
          */
         virtual Model::DeleteAutoScalingConfigurationOutcome DeleteAutoScalingConfiguration(const Model::DeleteAutoScalingConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAutoScalingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAutoScalingConfigurationOutcomeCallable DeleteAutoScalingConfigurationCallable(const Model::DeleteAutoScalingConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAutoScalingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAutoScalingConfigurationAsync(const Model::DeleteAutoScalingConfigurationRequest& request, const DeleteAutoScalingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Delete an App Runner connection. You must first ensure that there are no
@@ -290,15 +261,6 @@ namespace AppRunner
          */
         virtual Model::DeleteConnectionOutcome DeleteConnection(const Model::DeleteConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteConnectionOutcomeCallable DeleteConnectionCallable(const Model::DeleteConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteConnectionAsync(const Model::DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Delete an App Runner observability configuration resource. You can delete a
@@ -310,15 +272,6 @@ namespace AppRunner
          */
         virtual Model::DeleteObservabilityConfigurationOutcome DeleteObservabilityConfiguration(const Model::DeleteObservabilityConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteObservabilityConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteObservabilityConfigurationOutcomeCallable DeleteObservabilityConfigurationCallable(const Model::DeleteObservabilityConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteObservabilityConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteObservabilityConfigurationAsync(const Model::DeleteObservabilityConfigurationRequest& request, const DeleteObservabilityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Delete an App Runner service.</p> <p>This is an asynchronous operation. On a
@@ -331,15 +284,6 @@ namespace AppRunner
          */
         virtual Model::DeleteServiceOutcome DeleteService(const Model::DeleteServiceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteService that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteServiceOutcomeCallable DeleteServiceCallable(const Model::DeleteServiceRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteService that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteServiceAsync(const Model::DeleteServiceRequest& request, const DeleteServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Delete an App Runner VPC connector resource. You can't delete a connector
@@ -349,15 +293,6 @@ namespace AppRunner
          */
         virtual Model::DeleteVpcConnectorOutcome DeleteVpcConnector(const Model::DeleteVpcConnectorRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteVpcConnector that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteVpcConnectorOutcomeCallable DeleteVpcConnectorCallable(const Model::DeleteVpcConnectorRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteVpcConnector that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteVpcConnectorAsync(const Model::DeleteVpcConnectorRequest& request, const DeleteVpcConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Delete an App Runner VPC Ingress Connection resource that's associated with
@@ -371,15 +306,6 @@ namespace AppRunner
          */
         virtual Model::DeleteVpcIngressConnectionOutcome DeleteVpcIngressConnection(const Model::DeleteVpcIngressConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteVpcIngressConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteVpcIngressConnectionOutcomeCallable DeleteVpcIngressConnectionCallable(const Model::DeleteVpcIngressConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteVpcIngressConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteVpcIngressConnectionAsync(const Model::DeleteVpcIngressConnectionRequest& request, const DeleteVpcIngressConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Return a full description of an App Runner automatic scaling configuration
@@ -389,15 +315,6 @@ namespace AppRunner
          */
         virtual Model::DescribeAutoScalingConfigurationOutcome DescribeAutoScalingConfiguration(const Model::DescribeAutoScalingConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAutoScalingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAutoScalingConfigurationOutcomeCallable DescribeAutoScalingConfigurationCallable(const Model::DescribeAutoScalingConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAutoScalingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAutoScalingConfigurationAsync(const Model::DescribeAutoScalingConfigurationRequest& request, const DescribeAutoScalingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Return a description of custom domain names that are associated with an App
@@ -407,15 +324,6 @@ namespace AppRunner
          */
         virtual Model::DescribeCustomDomainsOutcome DescribeCustomDomains(const Model::DescribeCustomDomainsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeCustomDomains that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeCustomDomainsOutcomeCallable DescribeCustomDomainsCallable(const Model::DescribeCustomDomainsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeCustomDomains that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeCustomDomainsAsync(const Model::DescribeCustomDomainsRequest& request, const DescribeCustomDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Return a full description of an App Runner observability configuration
@@ -425,15 +333,6 @@ namespace AppRunner
          */
         virtual Model::DescribeObservabilityConfigurationOutcome DescribeObservabilityConfiguration(const Model::DescribeObservabilityConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeObservabilityConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeObservabilityConfigurationOutcomeCallable DescribeObservabilityConfigurationCallable(const Model::DescribeObservabilityConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeObservabilityConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeObservabilityConfigurationAsync(const Model::DescribeObservabilityConfigurationRequest& request, const DescribeObservabilityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Return a full description of an App Runner service.</p><p><h3>See Also:</h3> 
@@ -443,15 +342,6 @@ namespace AppRunner
          */
         virtual Model::DescribeServiceOutcome DescribeService(const Model::DescribeServiceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeService that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeServiceOutcomeCallable DescribeServiceCallable(const Model::DescribeServiceRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeService that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeServiceAsync(const Model::DescribeServiceRequest& request, const DescribeServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Return a description of an App Runner VPC connector resource.</p><p><h3>See
@@ -461,15 +351,6 @@ namespace AppRunner
          */
         virtual Model::DescribeVpcConnectorOutcome DescribeVpcConnector(const Model::DescribeVpcConnectorRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeVpcConnector that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeVpcConnectorOutcomeCallable DescribeVpcConnectorCallable(const Model::DescribeVpcConnectorRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeVpcConnector that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeVpcConnectorAsync(const Model::DescribeVpcConnectorRequest& request, const DescribeVpcConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Return a full description of an App Runner VPC Ingress Connection
@@ -479,15 +360,6 @@ namespace AppRunner
          */
         virtual Model::DescribeVpcIngressConnectionOutcome DescribeVpcIngressConnection(const Model::DescribeVpcIngressConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeVpcIngressConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeVpcIngressConnectionOutcomeCallable DescribeVpcIngressConnectionCallable(const Model::DescribeVpcIngressConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeVpcIngressConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeVpcIngressConnectionAsync(const Model::DescribeVpcIngressConnectionRequest& request, const DescribeVpcIngressConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociate a custom domain name from an App Runner service.</p>
@@ -501,15 +373,6 @@ namespace AppRunner
          */
         virtual Model::DisassociateCustomDomainOutcome DisassociateCustomDomain(const Model::DisassociateCustomDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateCustomDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateCustomDomainOutcomeCallable DisassociateCustomDomainCallable(const Model::DisassociateCustomDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateCustomDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateCustomDomainAsync(const Model::DisassociateCustomDomainRequest& request, const DisassociateCustomDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of active App Runner automatic scaling configurations in your
@@ -524,15 +387,6 @@ namespace AppRunner
          */
         virtual Model::ListAutoScalingConfigurationsOutcome ListAutoScalingConfigurations(const Model::ListAutoScalingConfigurationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAutoScalingConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAutoScalingConfigurationsOutcomeCallable ListAutoScalingConfigurationsCallable(const Model::ListAutoScalingConfigurationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAutoScalingConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAutoScalingConfigurationsAsync(const Model::ListAutoScalingConfigurationsRequest& request, const ListAutoScalingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of App Runner connections that are associated with your Amazon
@@ -542,15 +396,6 @@ namespace AppRunner
          */
         virtual Model::ListConnectionsOutcome ListConnections(const Model::ListConnectionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListConnections that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListConnectionsOutcomeCallable ListConnectionsCallable(const Model::ListConnectionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListConnections that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListConnectionsAsync(const Model::ListConnectionsRequest& request, const ListConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of active App Runner observability configurations in your
@@ -565,15 +410,6 @@ namespace AppRunner
          */
         virtual Model::ListObservabilityConfigurationsOutcome ListObservabilityConfigurations(const Model::ListObservabilityConfigurationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListObservabilityConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListObservabilityConfigurationsOutcomeCallable ListObservabilityConfigurationsCallable(const Model::ListObservabilityConfigurationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListObservabilityConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListObservabilityConfigurationsAsync(const Model::ListObservabilityConfigurationsRequest& request, const ListObservabilityConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Return a list of operations that occurred on an App Runner service.</p>
@@ -585,15 +421,6 @@ namespace AppRunner
          */
         virtual Model::ListOperationsOutcome ListOperations(const Model::ListOperationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListOperations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListOperationsOutcomeCallable ListOperationsCallable(const Model::ListOperationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListOperations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListOperationsAsync(const Model::ListOperationsRequest& request, const ListOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of running App Runner services in your Amazon Web Services
@@ -603,15 +430,6 @@ namespace AppRunner
          */
         virtual Model::ListServicesOutcome ListServices(const Model::ListServicesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListServices that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListServicesOutcomeCallable ListServicesCallable(const Model::ListServicesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListServices that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListServicesAsync(const Model::ListServicesRequest& request, const ListServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List tags that are associated with for an App Runner resource. The response
@@ -621,15 +439,6 @@ namespace AppRunner
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of App Runner VPC connectors in your Amazon Web Services
@@ -639,15 +448,6 @@ namespace AppRunner
          */
         virtual Model::ListVpcConnectorsOutcome ListVpcConnectors(const Model::ListVpcConnectorsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListVpcConnectors that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListVpcConnectorsOutcomeCallable ListVpcConnectorsCallable(const Model::ListVpcConnectorsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListVpcConnectors that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListVpcConnectorsAsync(const Model::ListVpcConnectorsRequest& request, const ListVpcConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Return a list of App Runner VPC Ingress Connections in your Amazon Web
@@ -657,15 +457,6 @@ namespace AppRunner
          */
         virtual Model::ListVpcIngressConnectionsOutcome ListVpcIngressConnections(const Model::ListVpcIngressConnectionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListVpcIngressConnections that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListVpcIngressConnectionsOutcomeCallable ListVpcIngressConnectionsCallable(const Model::ListVpcIngressConnectionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListVpcIngressConnections that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListVpcIngressConnectionsAsync(const Model::ListVpcIngressConnectionsRequest& request, const ListVpcIngressConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Pause an active App Runner service. App Runner reduces compute capacity for
@@ -678,15 +469,6 @@ namespace AppRunner
          */
         virtual Model::PauseServiceOutcome PauseService(const Model::PauseServiceRequest& request) const;
 
-        /**
-         * A Callable wrapper for PauseService that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PauseServiceOutcomeCallable PauseServiceCallable(const Model::PauseServiceRequest& request) const;
-
-        /**
-         * An Async wrapper for PauseService that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PauseServiceAsync(const Model::PauseServiceRequest& request, const PauseServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Resume an active App Runner service. App Runner provisions compute capacity
@@ -698,15 +480,6 @@ namespace AppRunner
          */
         virtual Model::ResumeServiceOutcome ResumeService(const Model::ResumeServiceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ResumeService that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ResumeServiceOutcomeCallable ResumeServiceCallable(const Model::ResumeServiceRequest& request) const;
-
-        /**
-         * An Async wrapper for ResumeService that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ResumeServiceAsync(const Model::ResumeServiceRequest& request, const ResumeServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Initiate a manual deployment of the latest commit in a source code repository
@@ -723,15 +496,6 @@ namespace AppRunner
          */
         virtual Model::StartDeploymentOutcome StartDeployment(const Model::StartDeploymentRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartDeployment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartDeploymentOutcomeCallable StartDeploymentCallable(const Model::StartDeploymentRequest& request) const;
-
-        /**
-         * An Async wrapper for StartDeployment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartDeploymentAsync(const Model::StartDeploymentRequest& request, const StartDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Add tags to, or update the tag values of, an App Runner resource. A tag is a
@@ -741,15 +505,6 @@ namespace AppRunner
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Remove tags from an App Runner resource.</p><p><h3>See Also:</h3>   <a
@@ -758,15 +513,6 @@ namespace AppRunner
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Update an App Runner service. You can update the source configuration and
@@ -784,15 +530,6 @@ namespace AppRunner
          */
         virtual Model::UpdateServiceOutcome UpdateService(const Model::UpdateServiceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateService that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateServiceOutcomeCallable UpdateServiceCallable(const Model::UpdateServiceRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateService that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateServiceAsync(const Model::UpdateServiceRequest& request, const UpdateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Update an existing App Runner VPC Ingress Connection resource. The VPC
@@ -804,15 +541,6 @@ namespace AppRunner
          */
         virtual Model::UpdateVpcIngressConnectionOutcome UpdateVpcIngressConnection(const Model::UpdateVpcIngressConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateVpcIngressConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateVpcIngressConnectionOutcomeCallable UpdateVpcIngressConnectionCallable(const Model::UpdateVpcIngressConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateVpcIngressConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateVpcIngressConnectionAsync(const Model::UpdateVpcIngressConnectionRequest& request, const UpdateVpcIngressConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

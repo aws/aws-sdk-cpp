@@ -7,8 +7,10 @@
 #include <aws/sso/SSO_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/sso/SSOServiceClientModel.h>
+#include <aws/sso/SSOLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -89,6 +91,47 @@ namespace SSO
         virtual ~SSOClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Returns the STS short-term credentials for a given role name that is assigned
          * to the user.</p><p><h3>See Also:</h3>   <a
@@ -97,15 +140,6 @@ namespace SSO
          */
         virtual Model::GetRoleCredentialsOutcome GetRoleCredentials(const Model::GetRoleCredentialsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRoleCredentials that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRoleCredentialsOutcomeCallable GetRoleCredentialsCallable(const Model::GetRoleCredentialsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRoleCredentials that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRoleCredentialsAsync(const Model::GetRoleCredentialsRequest& request, const GetRoleCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all roles that are assigned to the user for a given AWS
@@ -115,15 +149,6 @@ namespace SSO
          */
         virtual Model::ListAccountRolesOutcome ListAccountRoles(const Model::ListAccountRolesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAccountRoles that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAccountRolesOutcomeCallable ListAccountRolesCallable(const Model::ListAccountRolesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAccountRoles that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAccountRolesAsync(const Model::ListAccountRolesRequest& request, const ListAccountRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all AWS accounts assigned to the user. These AWS accounts are assigned
@@ -136,15 +161,6 @@ namespace SSO
          */
         virtual Model::ListAccountsOutcome ListAccounts(const Model::ListAccountsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAccounts that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAccountsOutcomeCallable ListAccountsCallable(const Model::ListAccountsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAccounts that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAccountsAsync(const Model::ListAccountsRequest& request, const ListAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the locally stored SSO tokens from the client-side cache and sends an
@@ -166,15 +182,6 @@ namespace SSO
          */
         virtual Model::LogoutOutcome Logout(const Model::LogoutRequest& request) const;
 
-        /**
-         * A Callable wrapper for Logout that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::LogoutOutcomeCallable LogoutCallable(const Model::LogoutRequest& request) const;
-
-        /**
-         * An Async wrapper for Logout that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void LogoutAsync(const Model::LogoutRequest& request, const LogoutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

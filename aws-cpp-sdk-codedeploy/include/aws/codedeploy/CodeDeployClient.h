@@ -7,8 +7,10 @@
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/codedeploy/CodeDeployServiceClientModel.h>
+#include <aws/codedeploy/CodeDeployLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -127,6 +129,47 @@ namespace CodeDeploy
         virtual ~CodeDeployClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Adds tags to on-premises instances.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/AddTagsToOnPremisesInstances">AWS
@@ -134,15 +177,6 @@ namespace CodeDeploy
          */
         virtual Model::AddTagsToOnPremisesInstancesOutcome AddTagsToOnPremisesInstances(const Model::AddTagsToOnPremisesInstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddTagsToOnPremisesInstances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddTagsToOnPremisesInstancesOutcomeCallable AddTagsToOnPremisesInstancesCallable(const Model::AddTagsToOnPremisesInstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for AddTagsToOnPremisesInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddTagsToOnPremisesInstancesAsync(const Model::AddTagsToOnPremisesInstancesRequest& request, const AddTagsToOnPremisesInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about one or more application revisions. The maximum number
@@ -153,15 +187,6 @@ namespace CodeDeploy
          */
         virtual Model::BatchGetApplicationRevisionsOutcome BatchGetApplicationRevisions(const Model::BatchGetApplicationRevisionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchGetApplicationRevisions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchGetApplicationRevisionsOutcomeCallable BatchGetApplicationRevisionsCallable(const Model::BatchGetApplicationRevisionsRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchGetApplicationRevisions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchGetApplicationRevisionsAsync(const Model::BatchGetApplicationRevisionsRequest& request, const BatchGetApplicationRevisionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about one or more applications. The maximum number of
@@ -171,15 +196,6 @@ namespace CodeDeploy
          */
         virtual Model::BatchGetApplicationsOutcome BatchGetApplications(const Model::BatchGetApplicationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchGetApplications that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchGetApplicationsOutcomeCallable BatchGetApplicationsCallable(const Model::BatchGetApplicationsRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchGetApplications that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchGetApplicationsAsync(const Model::BatchGetApplicationsRequest& request, const BatchGetApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about one or more deployment groups.</p><p><h3>See
@@ -189,15 +205,6 @@ namespace CodeDeploy
          */
         virtual Model::BatchGetDeploymentGroupsOutcome BatchGetDeploymentGroups(const Model::BatchGetDeploymentGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchGetDeploymentGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchGetDeploymentGroupsOutcomeCallable BatchGetDeploymentGroupsCallable(const Model::BatchGetDeploymentGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchGetDeploymentGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchGetDeploymentGroupsAsync(const Model::BatchGetDeploymentGroupsRequest& request, const BatchGetDeploymentGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns an array of one or more targets associated with a deployment. This
@@ -216,15 +223,6 @@ namespace CodeDeploy
          */
         virtual Model::BatchGetDeploymentTargetsOutcome BatchGetDeploymentTargets(const Model::BatchGetDeploymentTargetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchGetDeploymentTargets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchGetDeploymentTargetsOutcomeCallable BatchGetDeploymentTargetsCallable(const Model::BatchGetDeploymentTargetsRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchGetDeploymentTargets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchGetDeploymentTargetsAsync(const Model::BatchGetDeploymentTargetsRequest& request, const BatchGetDeploymentTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about one or more deployments. The maximum number of
@@ -234,15 +232,6 @@ namespace CodeDeploy
          */
         virtual Model::BatchGetDeploymentsOutcome BatchGetDeployments(const Model::BatchGetDeploymentsRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchGetDeployments that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchGetDeploymentsOutcomeCallable BatchGetDeploymentsCallable(const Model::BatchGetDeploymentsRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchGetDeployments that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchGetDeploymentsAsync(const Model::BatchGetDeploymentsRequest& request, const BatchGetDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about one or more on-premises instances. The maximum number
@@ -253,15 +242,6 @@ namespace CodeDeploy
          */
         virtual Model::BatchGetOnPremisesInstancesOutcome BatchGetOnPremisesInstances(const Model::BatchGetOnPremisesInstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchGetOnPremisesInstances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchGetOnPremisesInstancesOutcomeCallable BatchGetOnPremisesInstancesCallable(const Model::BatchGetOnPremisesInstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchGetOnPremisesInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchGetOnPremisesInstancesAsync(const Model::BatchGetOnPremisesInstancesRequest& request, const BatchGetOnPremisesInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>For a blue/green deployment, starts the process of rerouting traffic from
@@ -275,15 +255,6 @@ namespace CodeDeploy
          */
         virtual Model::ContinueDeploymentOutcome ContinueDeployment(const Model::ContinueDeploymentRequest& request) const;
 
-        /**
-         * A Callable wrapper for ContinueDeployment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ContinueDeploymentOutcomeCallable ContinueDeploymentCallable(const Model::ContinueDeploymentRequest& request) const;
-
-        /**
-         * An Async wrapper for ContinueDeployment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ContinueDeploymentAsync(const Model::ContinueDeploymentRequest& request, const ContinueDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an application.</p><p><h3>See Also:</h3>   <a
@@ -292,15 +263,6 @@ namespace CodeDeploy
          */
         virtual Model::CreateApplicationOutcome CreateApplication(const Model::CreateApplicationRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateApplication that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateApplicationOutcomeCallable CreateApplicationCallable(const Model::CreateApplicationRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateApplicationAsync(const Model::CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deploys an application revision through the specified deployment
@@ -310,15 +272,6 @@ namespace CodeDeploy
          */
         virtual Model::CreateDeploymentOutcome CreateDeployment(const Model::CreateDeploymentRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDeployment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDeploymentOutcomeCallable CreateDeploymentCallable(const Model::CreateDeploymentRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDeployment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDeploymentAsync(const Model::CreateDeploymentRequest& request, const CreateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Creates a deployment configuration. </p><p><h3>See Also:</h3>   <a
@@ -327,15 +280,6 @@ namespace CodeDeploy
          */
         virtual Model::CreateDeploymentConfigOutcome CreateDeploymentConfig(const Model::CreateDeploymentConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDeploymentConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDeploymentConfigOutcomeCallable CreateDeploymentConfigCallable(const Model::CreateDeploymentConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDeploymentConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDeploymentConfigAsync(const Model::CreateDeploymentConfigRequest& request, const CreateDeploymentConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a deployment group to which application revisions are
@@ -345,15 +289,6 @@ namespace CodeDeploy
          */
         virtual Model::CreateDeploymentGroupOutcome CreateDeploymentGroup(const Model::CreateDeploymentGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDeploymentGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDeploymentGroupOutcomeCallable CreateDeploymentGroupCallable(const Model::CreateDeploymentGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDeploymentGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDeploymentGroupAsync(const Model::CreateDeploymentGroupRequest& request, const CreateDeploymentGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an application.</p><p><h3>See Also:</h3>   <a
@@ -362,15 +297,6 @@ namespace CodeDeploy
          */
         virtual Model::DeleteApplicationOutcome DeleteApplication(const Model::DeleteApplicationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteApplication that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteApplicationOutcomeCallable DeleteApplicationCallable(const Model::DeleteApplicationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteApplicationAsync(const Model::DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a deployment configuration.</p>  <p>A deployment configuration
@@ -381,15 +307,6 @@ namespace CodeDeploy
          */
         virtual Model::DeleteDeploymentConfigOutcome DeleteDeploymentConfig(const Model::DeleteDeploymentConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDeploymentConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDeploymentConfigOutcomeCallable DeleteDeploymentConfigCallable(const Model::DeleteDeploymentConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDeploymentConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDeploymentConfigAsync(const Model::DeleteDeploymentConfigRequest& request, const DeleteDeploymentConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a deployment group.</p><p><h3>See Also:</h3>   <a
@@ -398,15 +315,6 @@ namespace CodeDeploy
          */
         virtual Model::DeleteDeploymentGroupOutcome DeleteDeploymentGroup(const Model::DeleteDeploymentGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDeploymentGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDeploymentGroupOutcomeCallable DeleteDeploymentGroupCallable(const Model::DeleteDeploymentGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDeploymentGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDeploymentGroupAsync(const Model::DeleteDeploymentGroupRequest& request, const DeleteDeploymentGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a GitHub account connection.</p><p><h3>See Also:</h3>   <a
@@ -415,15 +323,6 @@ namespace CodeDeploy
          */
         virtual Model::DeleteGitHubAccountTokenOutcome DeleteGitHubAccountToken(const Model::DeleteGitHubAccountTokenRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteGitHubAccountToken that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteGitHubAccountTokenOutcomeCallable DeleteGitHubAccountTokenCallable(const Model::DeleteGitHubAccountTokenRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteGitHubAccountToken that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteGitHubAccountTokenAsync(const Model::DeleteGitHubAccountTokenRequest& request, const DeleteGitHubAccountTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes resources linked to an external ID.</p><p><h3>See Also:</h3>   <a
@@ -432,15 +331,6 @@ namespace CodeDeploy
          */
         virtual Model::DeleteResourcesByExternalIdOutcome DeleteResourcesByExternalId(const Model::DeleteResourcesByExternalIdRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteResourcesByExternalId that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteResourcesByExternalIdOutcomeCallable DeleteResourcesByExternalIdCallable(const Model::DeleteResourcesByExternalIdRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteResourcesByExternalId that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteResourcesByExternalIdAsync(const Model::DeleteResourcesByExternalIdRequest& request, const DeleteResourcesByExternalIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deregisters an on-premises instance.</p><p><h3>See Also:</h3>   <a
@@ -449,15 +339,6 @@ namespace CodeDeploy
          */
         virtual Model::DeregisterOnPremisesInstanceOutcome DeregisterOnPremisesInstance(const Model::DeregisterOnPremisesInstanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeregisterOnPremisesInstance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeregisterOnPremisesInstanceOutcomeCallable DeregisterOnPremisesInstanceCallable(const Model::DeregisterOnPremisesInstanceRequest& request) const;
-
-        /**
-         * An Async wrapper for DeregisterOnPremisesInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeregisterOnPremisesInstanceAsync(const Model::DeregisterOnPremisesInstanceRequest& request, const DeregisterOnPremisesInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about an application.</p><p><h3>See Also:</h3>   <a
@@ -466,15 +347,6 @@ namespace CodeDeploy
          */
         virtual Model::GetApplicationOutcome GetApplication(const Model::GetApplicationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetApplication that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetApplicationOutcomeCallable GetApplicationCallable(const Model::GetApplicationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetApplicationAsync(const Model::GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about an application revision.</p><p><h3>See Also:</h3>   <a
@@ -483,15 +355,6 @@ namespace CodeDeploy
          */
         virtual Model::GetApplicationRevisionOutcome GetApplicationRevision(const Model::GetApplicationRevisionRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetApplicationRevision that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetApplicationRevisionOutcomeCallable GetApplicationRevisionCallable(const Model::GetApplicationRevisionRequest& request) const;
-
-        /**
-         * An Async wrapper for GetApplicationRevision that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetApplicationRevisionAsync(const Model::GetApplicationRevisionRequest& request, const GetApplicationRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about a deployment.</p>  <p> The <code>content</code>
@@ -504,15 +367,6 @@ namespace CodeDeploy
          */
         virtual Model::GetDeploymentOutcome GetDeployment(const Model::GetDeploymentRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDeployment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDeploymentOutcomeCallable GetDeploymentCallable(const Model::GetDeploymentRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDeployment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDeploymentAsync(const Model::GetDeploymentRequest& request, const GetDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about a deployment configuration.</p><p><h3>See Also:</h3>  
@@ -522,15 +376,6 @@ namespace CodeDeploy
          */
         virtual Model::GetDeploymentConfigOutcome GetDeploymentConfig(const Model::GetDeploymentConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDeploymentConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDeploymentConfigOutcomeCallable GetDeploymentConfigCallable(const Model::GetDeploymentConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDeploymentConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDeploymentConfigAsync(const Model::GetDeploymentConfigRequest& request, const GetDeploymentConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about a deployment group.</p><p><h3>See Also:</h3>   <a
@@ -539,15 +384,6 @@ namespace CodeDeploy
          */
         virtual Model::GetDeploymentGroupOutcome GetDeploymentGroup(const Model::GetDeploymentGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDeploymentGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDeploymentGroupOutcomeCallable GetDeploymentGroupCallable(const Model::GetDeploymentGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDeploymentGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDeploymentGroupAsync(const Model::GetDeploymentGroupRequest& request, const GetDeploymentGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns information about a deployment target. </p><p><h3>See Also:</h3>  
@@ -557,15 +393,6 @@ namespace CodeDeploy
          */
         virtual Model::GetDeploymentTargetOutcome GetDeploymentTarget(const Model::GetDeploymentTargetRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDeploymentTarget that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDeploymentTargetOutcomeCallable GetDeploymentTargetCallable(const Model::GetDeploymentTargetRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDeploymentTarget that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDeploymentTargetAsync(const Model::GetDeploymentTargetRequest& request, const GetDeploymentTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Gets information about an on-premises instance. </p><p><h3>See Also:</h3>  
@@ -575,15 +402,6 @@ namespace CodeDeploy
          */
         virtual Model::GetOnPremisesInstanceOutcome GetOnPremisesInstance(const Model::GetOnPremisesInstanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetOnPremisesInstance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetOnPremisesInstanceOutcomeCallable GetOnPremisesInstanceCallable(const Model::GetOnPremisesInstanceRequest& request) const;
-
-        /**
-         * An Async wrapper for GetOnPremisesInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetOnPremisesInstanceAsync(const Model::GetOnPremisesInstanceRequest& request, const GetOnPremisesInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists information about revisions for an application.</p><p><h3>See
@@ -593,15 +411,6 @@ namespace CodeDeploy
          */
         virtual Model::ListApplicationRevisionsOutcome ListApplicationRevisions(const Model::ListApplicationRevisionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListApplicationRevisions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListApplicationRevisionsOutcomeCallable ListApplicationRevisionsCallable(const Model::ListApplicationRevisionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListApplicationRevisions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListApplicationRevisionsAsync(const Model::ListApplicationRevisionsRequest& request, const ListApplicationRevisionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the applications registered with the IAM user or Amazon Web Services
@@ -611,15 +420,6 @@ namespace CodeDeploy
          */
         virtual Model::ListApplicationsOutcome ListApplications(const Model::ListApplicationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListApplications that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListApplicationsOutcomeCallable ListApplicationsCallable(const Model::ListApplicationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListApplications that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListApplicationsAsync(const Model::ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the deployment configurations with the IAM user or Amazon Web Services
@@ -629,15 +429,6 @@ namespace CodeDeploy
          */
         virtual Model::ListDeploymentConfigsOutcome ListDeploymentConfigs(const Model::ListDeploymentConfigsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDeploymentConfigs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDeploymentConfigsOutcomeCallable ListDeploymentConfigsCallable(const Model::ListDeploymentConfigsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDeploymentConfigs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDeploymentConfigsAsync(const Model::ListDeploymentConfigsRequest& request, const ListDeploymentConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the deployment groups for an application registered with the IAM user
@@ -647,15 +438,6 @@ namespace CodeDeploy
          */
         virtual Model::ListDeploymentGroupsOutcome ListDeploymentGroups(const Model::ListDeploymentGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDeploymentGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDeploymentGroupsOutcomeCallable ListDeploymentGroupsCallable(const Model::ListDeploymentGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDeploymentGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDeploymentGroupsAsync(const Model::ListDeploymentGroupsRequest& request, const ListDeploymentGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns an array of target IDs that are associated a deployment.
@@ -665,15 +447,6 @@ namespace CodeDeploy
          */
         virtual Model::ListDeploymentTargetsOutcome ListDeploymentTargets(const Model::ListDeploymentTargetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDeploymentTargets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDeploymentTargetsOutcomeCallable ListDeploymentTargetsCallable(const Model::ListDeploymentTargetsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDeploymentTargets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDeploymentTargetsAsync(const Model::ListDeploymentTargetsRequest& request, const ListDeploymentTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the deployments in a deployment group for an application registered
@@ -683,15 +456,6 @@ namespace CodeDeploy
          */
         virtual Model::ListDeploymentsOutcome ListDeployments(const Model::ListDeploymentsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDeployments that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDeploymentsOutcomeCallable ListDeploymentsCallable(const Model::ListDeploymentsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDeployments that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDeploymentsAsync(const Model::ListDeploymentsRequest& request, const ListDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the names of stored connections to GitHub accounts.</p><p><h3>See
@@ -701,15 +465,6 @@ namespace CodeDeploy
          */
         virtual Model::ListGitHubAccountTokenNamesOutcome ListGitHubAccountTokenNames(const Model::ListGitHubAccountTokenNamesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListGitHubAccountTokenNames that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListGitHubAccountTokenNamesOutcomeCallable ListGitHubAccountTokenNamesCallable(const Model::ListGitHubAccountTokenNamesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListGitHubAccountTokenNames that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListGitHubAccountTokenNamesAsync(const Model::ListGitHubAccountTokenNamesRequest& request, const ListGitHubAccountTokenNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of names for one or more on-premises instances.</p> <p>Unless
@@ -721,15 +476,6 @@ namespace CodeDeploy
          */
         virtual Model::ListOnPremisesInstancesOutcome ListOnPremisesInstances(const Model::ListOnPremisesInstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListOnPremisesInstances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListOnPremisesInstancesOutcomeCallable ListOnPremisesInstancesCallable(const Model::ListOnPremisesInstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListOnPremisesInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListOnPremisesInstancesAsync(const Model::ListOnPremisesInstancesRequest& request, const ListOnPremisesInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a list of tags for the resource identified by a specified Amazon
@@ -740,15 +486,6 @@ namespace CodeDeploy
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Sets the result of a Lambda validation function. The function validates
@@ -769,15 +506,6 @@ namespace CodeDeploy
          */
         virtual Model::PutLifecycleEventHookExecutionStatusOutcome PutLifecycleEventHookExecutionStatus(const Model::PutLifecycleEventHookExecutionStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutLifecycleEventHookExecutionStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutLifecycleEventHookExecutionStatusOutcomeCallable PutLifecycleEventHookExecutionStatusCallable(const Model::PutLifecycleEventHookExecutionStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for PutLifecycleEventHookExecutionStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutLifecycleEventHookExecutionStatusAsync(const Model::PutLifecycleEventHookExecutionStatusRequest& request, const PutLifecycleEventHookExecutionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Registers with CodeDeploy a revision for the specified
@@ -787,15 +515,6 @@ namespace CodeDeploy
          */
         virtual Model::RegisterApplicationRevisionOutcome RegisterApplicationRevision(const Model::RegisterApplicationRevisionRequest& request) const;
 
-        /**
-         * A Callable wrapper for RegisterApplicationRevision that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RegisterApplicationRevisionOutcomeCallable RegisterApplicationRevisionCallable(const Model::RegisterApplicationRevisionRequest& request) const;
-
-        /**
-         * An Async wrapper for RegisterApplicationRevision that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RegisterApplicationRevisionAsync(const Model::RegisterApplicationRevisionRequest& request, const RegisterApplicationRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Registers an on-premises instance.</p>  <p>Only one IAM ARN (an IAM
@@ -806,15 +525,6 @@ namespace CodeDeploy
          */
         virtual Model::RegisterOnPremisesInstanceOutcome RegisterOnPremisesInstance(const Model::RegisterOnPremisesInstanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for RegisterOnPremisesInstance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RegisterOnPremisesInstanceOutcomeCallable RegisterOnPremisesInstanceCallable(const Model::RegisterOnPremisesInstanceRequest& request) const;
-
-        /**
-         * An Async wrapper for RegisterOnPremisesInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RegisterOnPremisesInstanceAsync(const Model::RegisterOnPremisesInstanceRequest& request, const RegisterOnPremisesInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes one or more tags from one or more on-premises
@@ -824,15 +534,6 @@ namespace CodeDeploy
          */
         virtual Model::RemoveTagsFromOnPremisesInstancesOutcome RemoveTagsFromOnPremisesInstances(const Model::RemoveTagsFromOnPremisesInstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for RemoveTagsFromOnPremisesInstances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RemoveTagsFromOnPremisesInstancesOutcomeCallable RemoveTagsFromOnPremisesInstancesCallable(const Model::RemoveTagsFromOnPremisesInstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for RemoveTagsFromOnPremisesInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RemoveTagsFromOnPremisesInstancesAsync(const Model::RemoveTagsFromOnPremisesInstancesRequest& request, const RemoveTagsFromOnPremisesInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Attempts to stop an ongoing deployment.</p><p><h3>See Also:</h3>   <a
@@ -841,15 +542,6 @@ namespace CodeDeploy
          */
         virtual Model::StopDeploymentOutcome StopDeployment(const Model::StopDeploymentRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopDeployment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopDeploymentOutcomeCallable StopDeploymentCallable(const Model::StopDeploymentRequest& request) const;
-
-        /**
-         * An Async wrapper for StopDeployment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopDeploymentAsync(const Model::StopDeploymentRequest& request, const StopDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Associates the list of tags in the input <code>Tags</code> parameter with
@@ -860,15 +552,6 @@ namespace CodeDeploy
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Disassociates a resource from a list of tags. The resource is identified by
@@ -880,15 +563,6 @@ namespace CodeDeploy
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Changes the name of an application.</p><p><h3>See Also:</h3>   <a
@@ -897,15 +571,6 @@ namespace CodeDeploy
          */
         virtual Model::UpdateApplicationOutcome UpdateApplication(const Model::UpdateApplicationRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateApplication that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateApplicationOutcomeCallable UpdateApplicationCallable(const Model::UpdateApplicationRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateApplicationAsync(const Model::UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Changes information about a deployment group.</p><p><h3>See Also:</h3>   <a
@@ -914,15 +579,6 @@ namespace CodeDeploy
          */
         virtual Model::UpdateDeploymentGroupOutcome UpdateDeploymentGroup(const Model::UpdateDeploymentGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateDeploymentGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateDeploymentGroupOutcomeCallable UpdateDeploymentGroupCallable(const Model::UpdateDeploymentGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateDeploymentGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateDeploymentGroupAsync(const Model::UpdateDeploymentGroupRequest& request, const UpdateDeploymentGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

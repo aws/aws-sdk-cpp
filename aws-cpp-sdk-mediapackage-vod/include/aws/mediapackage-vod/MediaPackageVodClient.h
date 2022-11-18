@@ -7,8 +7,10 @@
 #include <aws/mediapackage-vod/MediaPackageVod_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mediapackage-vod/MediaPackageVodServiceClientModel.h>
+#include <aws/mediapackage-vod/MediaPackageVodLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -73,6 +75,47 @@ namespace MediaPackageVod
         virtual ~MediaPackageVodClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * Changes the packaging group's properities to configure log
          * subscription<p><h3>See Also:</h3>   <a
@@ -81,15 +124,6 @@ namespace MediaPackageVod
          */
         virtual Model::ConfigureLogsOutcome ConfigureLogs(const Model::ConfigureLogsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ConfigureLogs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ConfigureLogsOutcomeCallable ConfigureLogsCallable(const Model::ConfigureLogsRequest& request) const;
-
-        /**
-         * An Async wrapper for ConfigureLogs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ConfigureLogsAsync(const Model::ConfigureLogsRequest& request, const ConfigureLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Creates a new MediaPackage VOD Asset resource.<p><h3>See Also:</h3>   <a
@@ -98,15 +132,6 @@ namespace MediaPackageVod
          */
         virtual Model::CreateAssetOutcome CreateAsset(const Model::CreateAssetRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateAsset that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateAssetOutcomeCallable CreateAssetCallable(const Model::CreateAssetRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateAsset that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateAssetAsync(const Model::CreateAssetRequest& request, const CreateAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Creates a new MediaPackage VOD PackagingConfiguration resource.<p><h3>See
@@ -116,15 +141,6 @@ namespace MediaPackageVod
          */
         virtual Model::CreatePackagingConfigurationOutcome CreatePackagingConfiguration(const Model::CreatePackagingConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreatePackagingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreatePackagingConfigurationOutcomeCallable CreatePackagingConfigurationCallable(const Model::CreatePackagingConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for CreatePackagingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreatePackagingConfigurationAsync(const Model::CreatePackagingConfigurationRequest& request, const CreatePackagingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Creates a new MediaPackage VOD PackagingGroup resource.<p><h3>See Also:</h3>  
@@ -134,15 +150,6 @@ namespace MediaPackageVod
          */
         virtual Model::CreatePackagingGroupOutcome CreatePackagingGroup(const Model::CreatePackagingGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreatePackagingGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreatePackagingGroupOutcomeCallable CreatePackagingGroupCallable(const Model::CreatePackagingGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for CreatePackagingGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreatePackagingGroupAsync(const Model::CreatePackagingGroupRequest& request, const CreatePackagingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Deletes an existing MediaPackage VOD Asset resource.<p><h3>See Also:</h3>   <a
@@ -151,15 +158,6 @@ namespace MediaPackageVod
          */
         virtual Model::DeleteAssetOutcome DeleteAsset(const Model::DeleteAssetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAsset that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAssetOutcomeCallable DeleteAssetCallable(const Model::DeleteAssetRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAsset that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAssetAsync(const Model::DeleteAssetRequest& request, const DeleteAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Deletes a MediaPackage VOD PackagingConfiguration resource.<p><h3>See Also:</h3>
@@ -169,15 +167,6 @@ namespace MediaPackageVod
          */
         virtual Model::DeletePackagingConfigurationOutcome DeletePackagingConfiguration(const Model::DeletePackagingConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeletePackagingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeletePackagingConfigurationOutcomeCallable DeletePackagingConfigurationCallable(const Model::DeletePackagingConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeletePackagingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeletePackagingConfigurationAsync(const Model::DeletePackagingConfigurationRequest& request, const DeletePackagingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Deletes a MediaPackage VOD PackagingGroup resource.<p><h3>See Also:</h3>   <a
@@ -186,15 +175,6 @@ namespace MediaPackageVod
          */
         virtual Model::DeletePackagingGroupOutcome DeletePackagingGroup(const Model::DeletePackagingGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeletePackagingGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeletePackagingGroupOutcomeCallable DeletePackagingGroupCallable(const Model::DeletePackagingGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DeletePackagingGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeletePackagingGroupAsync(const Model::DeletePackagingGroupRequest& request, const DeletePackagingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Returns a description of a MediaPackage VOD Asset resource.<p><h3>See Also:</h3>
@@ -204,15 +184,6 @@ namespace MediaPackageVod
          */
         virtual Model::DescribeAssetOutcome DescribeAsset(const Model::DescribeAssetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAsset that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAssetOutcomeCallable DescribeAssetCallable(const Model::DescribeAssetRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAsset that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAssetAsync(const Model::DescribeAssetRequest& request, const DescribeAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Returns a description of a MediaPackage VOD PackagingConfiguration
@@ -222,15 +193,6 @@ namespace MediaPackageVod
          */
         virtual Model::DescribePackagingConfigurationOutcome DescribePackagingConfiguration(const Model::DescribePackagingConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribePackagingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribePackagingConfigurationOutcomeCallable DescribePackagingConfigurationCallable(const Model::DescribePackagingConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribePackagingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribePackagingConfigurationAsync(const Model::DescribePackagingConfigurationRequest& request, const DescribePackagingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Returns a description of a MediaPackage VOD PackagingGroup resource.<p><h3>See
@@ -240,15 +202,6 @@ namespace MediaPackageVod
          */
         virtual Model::DescribePackagingGroupOutcome DescribePackagingGroup(const Model::DescribePackagingGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribePackagingGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribePackagingGroupOutcomeCallable DescribePackagingGroupCallable(const Model::DescribePackagingGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribePackagingGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribePackagingGroupAsync(const Model::DescribePackagingGroupRequest& request, const DescribePackagingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Returns a collection of MediaPackage VOD Asset resources.<p><h3>See Also:</h3>  
@@ -258,15 +211,6 @@ namespace MediaPackageVod
          */
         virtual Model::ListAssetsOutcome ListAssets(const Model::ListAssetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAssets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAssetsOutcomeCallable ListAssetsCallable(const Model::ListAssetsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAssets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAssetsAsync(const Model::ListAssetsRequest& request, const ListAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Returns a collection of MediaPackage VOD PackagingConfiguration
@@ -276,15 +220,6 @@ namespace MediaPackageVod
          */
         virtual Model::ListPackagingConfigurationsOutcome ListPackagingConfigurations(const Model::ListPackagingConfigurationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPackagingConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPackagingConfigurationsOutcomeCallable ListPackagingConfigurationsCallable(const Model::ListPackagingConfigurationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPackagingConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPackagingConfigurationsAsync(const Model::ListPackagingConfigurationsRequest& request, const ListPackagingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Returns a collection of MediaPackage VOD PackagingGroup resources.<p><h3>See
@@ -294,15 +229,6 @@ namespace MediaPackageVod
          */
         virtual Model::ListPackagingGroupsOutcome ListPackagingGroups(const Model::ListPackagingGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPackagingGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPackagingGroupsOutcomeCallable ListPackagingGroupsCallable(const Model::ListPackagingGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPackagingGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPackagingGroupsAsync(const Model::ListPackagingGroupsRequest& request, const ListPackagingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Returns a list of the tags assigned to the specified resource.<p><h3>See
@@ -312,15 +238,6 @@ namespace MediaPackageVod
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Adds tags to the specified resource. You can specify one or more tags to
@@ -330,15 +247,6 @@ namespace MediaPackageVod
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Removes tags from the specified resource. You can specify one or more tags to
@@ -348,15 +256,6 @@ namespace MediaPackageVod
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Updates a specific packaging group. You can't change the id attribute or any
@@ -366,15 +265,6 @@ namespace MediaPackageVod
          */
         virtual Model::UpdatePackagingGroupOutcome UpdatePackagingGroup(const Model::UpdatePackagingGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdatePackagingGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdatePackagingGroupOutcomeCallable UpdatePackagingGroupCallable(const Model::UpdatePackagingGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdatePackagingGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdatePackagingGroupAsync(const Model::UpdatePackagingGroupRequest& request, const UpdatePackagingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

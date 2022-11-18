@@ -7,8 +7,10 @@
 #include <aws/wafv2/WAFV2_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/wafv2/WAFV2ServiceClientModel.h>
+#include <aws/wafv2/WAFV2LegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -121,6 +123,47 @@ namespace WAFV2
         virtual ~WAFV2Client();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Associates a web ACL with a regional application resource, to protect the
          * resource. A regional application can be an Application Load Balancer (ALB), an
@@ -147,15 +190,6 @@ namespace WAFV2
          */
         virtual Model::AssociateWebACLOutcome AssociateWebACL(const Model::AssociateWebACLRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateWebACL that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateWebACLOutcomeCallable AssociateWebACLCallable(const Model::AssociateWebACLRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateWebACL that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateWebACLAsync(const Model::AssociateWebACLRequest& request, const AssociateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the web ACL capacity unit (WCU) requirements for a specified scope
@@ -173,15 +207,6 @@ namespace WAFV2
          */
         virtual Model::CheckCapacityOutcome CheckCapacity(const Model::CheckCapacityRequest& request) const;
 
-        /**
-         * A Callable wrapper for CheckCapacity that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CheckCapacityOutcomeCallable CheckCapacityCallable(const Model::CheckCapacityRequest& request) const;
-
-        /**
-         * An Async wrapper for CheckCapacity that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CheckCapacityAsync(const Model::CheckCapacityRequest& request, const CheckCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an <a>IPSet</a>, which you use to identify web requests that
@@ -194,15 +219,6 @@ namespace WAFV2
          */
         virtual Model::CreateIPSetOutcome CreateIPSet(const Model::CreateIPSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateIPSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateIPSetOutcomeCallable CreateIPSetCallable(const Model::CreateIPSetRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateIPSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateIPSetAsync(const Model::CreateIPSetRequest& request, const CreateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a <a>RegexPatternSet</a>, which you reference in a
@@ -213,15 +229,6 @@ namespace WAFV2
          */
         virtual Model::CreateRegexPatternSetOutcome CreateRegexPatternSet(const Model::CreateRegexPatternSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateRegexPatternSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateRegexPatternSetOutcomeCallable CreateRegexPatternSetCallable(const Model::CreateRegexPatternSetRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateRegexPatternSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateRegexPatternSetAsync(const Model::CreateRegexPatternSetRequest& request, const CreateRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a <a>RuleGroup</a> per the specifications provided. </p> <p> A rule
@@ -235,15 +242,6 @@ namespace WAFV2
          */
         virtual Model::CreateRuleGroupOutcome CreateRuleGroup(const Model::CreateRuleGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateRuleGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateRuleGroupOutcomeCallable CreateRuleGroupCallable(const Model::CreateRuleGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateRuleGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateRuleGroupAsync(const Model::CreateRuleGroupRequest& request, const CreateRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a <a>WebACL</a> per the specifications provided.</p> <p> A web ACL
@@ -262,15 +260,6 @@ namespace WAFV2
          */
         virtual Model::CreateWebACLOutcome CreateWebACL(const Model::CreateWebACLRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateWebACL that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateWebACLOutcomeCallable CreateWebACLCallable(const Model::CreateWebACLRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateWebACL that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateWebACLAsync(const Model::CreateWebACLRequest& request, const CreateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes all rule groups that are managed by Firewall Manager for the
@@ -282,15 +271,6 @@ namespace WAFV2
          */
         virtual Model::DeleteFirewallManagerRuleGroupsOutcome DeleteFirewallManagerRuleGroups(const Model::DeleteFirewallManagerRuleGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteFirewallManagerRuleGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteFirewallManagerRuleGroupsOutcomeCallable DeleteFirewallManagerRuleGroupsCallable(const Model::DeleteFirewallManagerRuleGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteFirewallManagerRuleGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteFirewallManagerRuleGroupsAsync(const Model::DeleteFirewallManagerRuleGroupsRequest& request, const DeleteFirewallManagerRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified <a>IPSet</a>. </p><p><h3>See Also:</h3>   <a
@@ -299,15 +279,6 @@ namespace WAFV2
          */
         virtual Model::DeleteIPSetOutcome DeleteIPSet(const Model::DeleteIPSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteIPSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteIPSetOutcomeCallable DeleteIPSetCallable(const Model::DeleteIPSetRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteIPSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteIPSetAsync(const Model::DeleteIPSetRequest& request, const DeleteIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the <a>LoggingConfiguration</a> from the specified web
@@ -317,15 +288,6 @@ namespace WAFV2
          */
         virtual Model::DeleteLoggingConfigurationOutcome DeleteLoggingConfiguration(const Model::DeleteLoggingConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteLoggingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteLoggingConfigurationOutcomeCallable DeleteLoggingConfigurationCallable(const Model::DeleteLoggingConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteLoggingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteLoggingConfigurationAsync(const Model::DeleteLoggingConfigurationRequest& request, const DeleteLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Permanently deletes an IAM policy from the specified rule group.</p> <p>You
@@ -336,15 +298,6 @@ namespace WAFV2
          */
         virtual Model::DeletePermissionPolicyOutcome DeletePermissionPolicy(const Model::DeletePermissionPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeletePermissionPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeletePermissionPolicyOutcomeCallable DeletePermissionPolicyCallable(const Model::DeletePermissionPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeletePermissionPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeletePermissionPolicyAsync(const Model::DeletePermissionPolicyRequest& request, const DeletePermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified <a>RegexPatternSet</a>.</p><p><h3>See Also:</h3>   <a
@@ -353,15 +306,6 @@ namespace WAFV2
          */
         virtual Model::DeleteRegexPatternSetOutcome DeleteRegexPatternSet(const Model::DeleteRegexPatternSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteRegexPatternSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteRegexPatternSetOutcomeCallable DeleteRegexPatternSetCallable(const Model::DeleteRegexPatternSetRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteRegexPatternSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteRegexPatternSetAsync(const Model::DeleteRegexPatternSetRequest& request, const DeleteRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified <a>RuleGroup</a>.</p><p><h3>See Also:</h3>   <a
@@ -370,15 +314,6 @@ namespace WAFV2
          */
         virtual Model::DeleteRuleGroupOutcome DeleteRuleGroup(const Model::DeleteRuleGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteRuleGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteRuleGroupOutcomeCallable DeleteRuleGroupCallable(const Model::DeleteRuleGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteRuleGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteRuleGroupAsync(const Model::DeleteRuleGroupRequest& request, const DeleteRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified <a>WebACL</a>. </p> <p>You can only use this if
@@ -402,15 +337,6 @@ namespace WAFV2
          */
         virtual Model::DeleteWebACLOutcome DeleteWebACL(const Model::DeleteWebACLRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteWebACL that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteWebACLOutcomeCallable DeleteWebACLCallable(const Model::DeleteWebACLRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteWebACL that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteWebACLAsync(const Model::DeleteWebACLRequest& request, const DeleteWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides high-level information for a managed rule group, including
@@ -420,15 +346,6 @@ namespace WAFV2
          */
         virtual Model::DescribeManagedRuleGroupOutcome DescribeManagedRuleGroup(const Model::DescribeManagedRuleGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeManagedRuleGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeManagedRuleGroupOutcomeCallable DescribeManagedRuleGroupCallable(const Model::DescribeManagedRuleGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeManagedRuleGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeManagedRuleGroupAsync(const Model::DescribeManagedRuleGroupRequest& request, const DescribeManagedRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates the specified regional application resource from any existing
@@ -446,15 +363,6 @@ namespace WAFV2
          */
         virtual Model::DisassociateWebACLOutcome DisassociateWebACL(const Model::DisassociateWebACLRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateWebACL that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateWebACLOutcomeCallable DisassociateWebACLCallable(const Model::DisassociateWebACLRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateWebACL that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateWebACLAsync(const Model::DisassociateWebACLRequest& request, const DisassociateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Generates a presigned download URL for the specified release of the mobile
@@ -469,15 +377,6 @@ namespace WAFV2
          */
         virtual Model::GenerateMobileSdkReleaseUrlOutcome GenerateMobileSdkReleaseUrl(const Model::GenerateMobileSdkReleaseUrlRequest& request) const;
 
-        /**
-         * A Callable wrapper for GenerateMobileSdkReleaseUrl that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GenerateMobileSdkReleaseUrlOutcomeCallable GenerateMobileSdkReleaseUrlCallable(const Model::GenerateMobileSdkReleaseUrlRequest& request) const;
-
-        /**
-         * An Async wrapper for GenerateMobileSdkReleaseUrl that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GenerateMobileSdkReleaseUrlAsync(const Model::GenerateMobileSdkReleaseUrlRequest& request, const GenerateMobileSdkReleaseUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the specified <a>IPSet</a>.</p><p><h3>See Also:</h3>   <a
@@ -486,15 +385,6 @@ namespace WAFV2
          */
         virtual Model::GetIPSetOutcome GetIPSet(const Model::GetIPSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetIPSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetIPSetOutcomeCallable GetIPSetCallable(const Model::GetIPSetRequest& request) const;
-
-        /**
-         * An Async wrapper for GetIPSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetIPSetAsync(const Model::GetIPSetRequest& request, const GetIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the <a>LoggingConfiguration</a> for the specified web
@@ -504,15 +394,6 @@ namespace WAFV2
          */
         virtual Model::GetLoggingConfigurationOutcome GetLoggingConfiguration(const Model::GetLoggingConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetLoggingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetLoggingConfigurationOutcomeCallable GetLoggingConfigurationCallable(const Model::GetLoggingConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetLoggingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetLoggingConfigurationAsync(const Model::GetLoggingConfigurationRequest& request, const GetLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the specified managed rule set. </p>  <p>This is intended for
@@ -529,15 +410,6 @@ namespace WAFV2
          */
         virtual Model::GetManagedRuleSetOutcome GetManagedRuleSet(const Model::GetManagedRuleSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetManagedRuleSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetManagedRuleSetOutcomeCallable GetManagedRuleSetCallable(const Model::GetManagedRuleSetRequest& request) const;
-
-        /**
-         * An Async wrapper for GetManagedRuleSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetManagedRuleSetAsync(const Model::GetManagedRuleSetRequest& request, const GetManagedRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information for the specified mobile SDK release, including release
@@ -553,15 +425,6 @@ namespace WAFV2
          */
         virtual Model::GetMobileSdkReleaseOutcome GetMobileSdkRelease(const Model::GetMobileSdkReleaseRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetMobileSdkRelease that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetMobileSdkReleaseOutcomeCallable GetMobileSdkReleaseCallable(const Model::GetMobileSdkReleaseRequest& request) const;
-
-        /**
-         * An Async wrapper for GetMobileSdkRelease that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetMobileSdkReleaseAsync(const Model::GetMobileSdkReleaseRequest& request, const GetMobileSdkReleaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the IAM policy that is attached to the specified rule group.</p>
@@ -572,15 +435,6 @@ namespace WAFV2
          */
         virtual Model::GetPermissionPolicyOutcome GetPermissionPolicy(const Model::GetPermissionPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetPermissionPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetPermissionPolicyOutcomeCallable GetPermissionPolicyCallable(const Model::GetPermissionPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetPermissionPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetPermissionPolicyAsync(const Model::GetPermissionPolicyRequest& request, const GetPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the keys that are currently blocked by a rate-based rule instance.
@@ -602,15 +456,6 @@ namespace WAFV2
          */
         virtual Model::GetRateBasedStatementManagedKeysOutcome GetRateBasedStatementManagedKeys(const Model::GetRateBasedStatementManagedKeysRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRateBasedStatementManagedKeys that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRateBasedStatementManagedKeysOutcomeCallable GetRateBasedStatementManagedKeysCallable(const Model::GetRateBasedStatementManagedKeysRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRateBasedStatementManagedKeys that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRateBasedStatementManagedKeysAsync(const Model::GetRateBasedStatementManagedKeysRequest& request, const GetRateBasedStatementManagedKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the specified <a>RegexPatternSet</a>.</p><p><h3>See Also:</h3>   <a
@@ -619,15 +464,6 @@ namespace WAFV2
          */
         virtual Model::GetRegexPatternSetOutcome GetRegexPatternSet(const Model::GetRegexPatternSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRegexPatternSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRegexPatternSetOutcomeCallable GetRegexPatternSetCallable(const Model::GetRegexPatternSetRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRegexPatternSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRegexPatternSetAsync(const Model::GetRegexPatternSetRequest& request, const GetRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the specified <a>RuleGroup</a>.</p><p><h3>See Also:</h3>   <a
@@ -636,15 +472,6 @@ namespace WAFV2
          */
         virtual Model::GetRuleGroupOutcome GetRuleGroup(const Model::GetRuleGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRuleGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRuleGroupOutcomeCallable GetRuleGroupCallable(const Model::GetRuleGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRuleGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRuleGroupAsync(const Model::GetRuleGroupRequest& request, const GetRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets detailed information about a specified number of requests--a
@@ -663,15 +490,6 @@ namespace WAFV2
          */
         virtual Model::GetSampledRequestsOutcome GetSampledRequests(const Model::GetSampledRequestsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSampledRequests that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSampledRequestsOutcomeCallable GetSampledRequestsCallable(const Model::GetSampledRequestsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSampledRequests that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSampledRequestsAsync(const Model::GetSampledRequestsRequest& request, const GetSampledRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the specified <a>WebACL</a>.</p><p><h3>See Also:</h3>   <a
@@ -680,15 +498,6 @@ namespace WAFV2
          */
         virtual Model::GetWebACLOutcome GetWebACL(const Model::GetWebACLRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetWebACL that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetWebACLOutcomeCallable GetWebACLCallable(const Model::GetWebACLRequest& request) const;
-
-        /**
-         * An Async wrapper for GetWebACL that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetWebACLAsync(const Model::GetWebACLRequest& request, const GetWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the <a>WebACL</a> for the specified resource. </p><p><h3>See
@@ -698,15 +507,6 @@ namespace WAFV2
          */
         virtual Model::GetWebACLForResourceOutcome GetWebACLForResource(const Model::GetWebACLForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetWebACLForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetWebACLForResourceOutcomeCallable GetWebACLForResourceCallable(const Model::GetWebACLForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for GetWebACLForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetWebACLForResourceAsync(const Model::GetWebACLForResourceRequest& request, const GetWebACLForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of the available versions for the specified managed rule
@@ -716,15 +516,6 @@ namespace WAFV2
          */
         virtual Model::ListAvailableManagedRuleGroupVersionsOutcome ListAvailableManagedRuleGroupVersions(const Model::ListAvailableManagedRuleGroupVersionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAvailableManagedRuleGroupVersions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAvailableManagedRuleGroupVersionsOutcomeCallable ListAvailableManagedRuleGroupVersionsCallable(const Model::ListAvailableManagedRuleGroupVersionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAvailableManagedRuleGroupVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAvailableManagedRuleGroupVersionsAsync(const Model::ListAvailableManagedRuleGroupVersionsRequest& request, const ListAvailableManagedRuleGroupVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves an array of managed rule groups that are available for you to use.
@@ -736,15 +527,6 @@ namespace WAFV2
          */
         virtual Model::ListAvailableManagedRuleGroupsOutcome ListAvailableManagedRuleGroups(const Model::ListAvailableManagedRuleGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAvailableManagedRuleGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAvailableManagedRuleGroupsOutcomeCallable ListAvailableManagedRuleGroupsCallable(const Model::ListAvailableManagedRuleGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAvailableManagedRuleGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAvailableManagedRuleGroupsAsync(const Model::ListAvailableManagedRuleGroupsRequest& request, const ListAvailableManagedRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves an array of <a>IPSetSummary</a> objects for the IP sets that you
@@ -754,15 +536,6 @@ namespace WAFV2
          */
         virtual Model::ListIPSetsOutcome ListIPSets(const Model::ListIPSetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListIPSets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListIPSetsOutcomeCallable ListIPSetsCallable(const Model::ListIPSetsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListIPSets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListIPSetsAsync(const Model::ListIPSetsRequest& request, const ListIPSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves an array of your <a>LoggingConfiguration</a> objects.</p><p><h3>See
@@ -772,15 +545,6 @@ namespace WAFV2
          */
         virtual Model::ListLoggingConfigurationsOutcome ListLoggingConfigurations(const Model::ListLoggingConfigurationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListLoggingConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListLoggingConfigurationsOutcomeCallable ListLoggingConfigurationsCallable(const Model::ListLoggingConfigurationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListLoggingConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListLoggingConfigurationsAsync(const Model::ListLoggingConfigurationsRequest& request, const ListLoggingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the managed rule sets that you own. </p>  <p>This is intended
@@ -797,15 +561,6 @@ namespace WAFV2
          */
         virtual Model::ListManagedRuleSetsOutcome ListManagedRuleSets(const Model::ListManagedRuleSetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListManagedRuleSets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListManagedRuleSetsOutcomeCallable ListManagedRuleSetsCallable(const Model::ListManagedRuleSetsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListManagedRuleSets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListManagedRuleSetsAsync(const Model::ListManagedRuleSetsRequest& request, const ListManagedRuleSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list of the available releases for the mobile SDK and the
@@ -821,15 +576,6 @@ namespace WAFV2
          */
         virtual Model::ListMobileSdkReleasesOutcome ListMobileSdkReleases(const Model::ListMobileSdkReleasesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListMobileSdkReleases that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListMobileSdkReleasesOutcomeCallable ListMobileSdkReleasesCallable(const Model::ListMobileSdkReleasesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListMobileSdkReleases that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListMobileSdkReleasesAsync(const Model::ListMobileSdkReleasesRequest& request, const ListMobileSdkReleasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves an array of <a>RegexPatternSetSummary</a> objects for the regex
@@ -839,15 +585,6 @@ namespace WAFV2
          */
         virtual Model::ListRegexPatternSetsOutcome ListRegexPatternSets(const Model::ListRegexPatternSetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListRegexPatternSets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListRegexPatternSetsOutcomeCallable ListRegexPatternSetsCallable(const Model::ListRegexPatternSetsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListRegexPatternSets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListRegexPatternSetsAsync(const Model::ListRegexPatternSetsRequest& request, const ListRegexPatternSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves an array of the Amazon Resource Names (ARNs) for the regional
@@ -859,15 +596,6 @@ namespace WAFV2
          */
         virtual Model::ListResourcesForWebACLOutcome ListResourcesForWebACL(const Model::ListResourcesForWebACLRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListResourcesForWebACL that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListResourcesForWebACLOutcomeCallable ListResourcesForWebACLCallable(const Model::ListResourcesForWebACLRequest& request) const;
-
-        /**
-         * An Async wrapper for ListResourcesForWebACL that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListResourcesForWebACLAsync(const Model::ListResourcesForWebACLRequest& request, const ListResourcesForWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves an array of <a>RuleGroupSummary</a> objects for the rule groups
@@ -877,15 +605,6 @@ namespace WAFV2
          */
         virtual Model::ListRuleGroupsOutcome ListRuleGroups(const Model::ListRuleGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListRuleGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListRuleGroupsOutcomeCallable ListRuleGroupsCallable(const Model::ListRuleGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListRuleGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListRuleGroupsAsync(const Model::ListRuleGroupsRequest& request, const ListRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the <a>TagInfoForResource</a> for the specified resource. Tags are
@@ -901,15 +620,6 @@ namespace WAFV2
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves an array of <a>WebACLSummary</a> objects for the web ACLs that you
@@ -919,15 +629,6 @@ namespace WAFV2
          */
         virtual Model::ListWebACLsOutcome ListWebACLs(const Model::ListWebACLsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListWebACLs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListWebACLsOutcomeCallable ListWebACLsCallable(const Model::ListWebACLsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListWebACLs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListWebACLsAsync(const Model::ListWebACLsRequest& request, const ListWebACLsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables the specified <a>LoggingConfiguration</a>, to start logging from a
@@ -961,15 +662,6 @@ namespace WAFV2
          */
         virtual Model::PutLoggingConfigurationOutcome PutLoggingConfiguration(const Model::PutLoggingConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutLoggingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutLoggingConfigurationOutcomeCallable PutLoggingConfigurationCallable(const Model::PutLoggingConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for PutLoggingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutLoggingConfigurationAsync(const Model::PutLoggingConfigurationRequest& request, const PutLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Defines the versions of your managed rule set that you are offering to the
@@ -995,15 +687,6 @@ namespace WAFV2
          */
         virtual Model::PutManagedRuleSetVersionsOutcome PutManagedRuleSetVersions(const Model::PutManagedRuleSetVersionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutManagedRuleSetVersions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutManagedRuleSetVersionsOutcomeCallable PutManagedRuleSetVersionsCallable(const Model::PutManagedRuleSetVersionsRequest& request) const;
-
-        /**
-         * An Async wrapper for PutManagedRuleSetVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutManagedRuleSetVersionsAsync(const Model::PutManagedRuleSetVersionsRequest& request, const PutManagedRuleSetVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Attaches an IAM policy to the specified resource. Use this to share a rule
@@ -1019,15 +702,6 @@ namespace WAFV2
          */
         virtual Model::PutPermissionPolicyOutcome PutPermissionPolicy(const Model::PutPermissionPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutPermissionPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutPermissionPolicyOutcomeCallable PutPermissionPolicyCallable(const Model::PutPermissionPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for PutPermissionPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutPermissionPolicyAsync(const Model::PutPermissionPolicyRequest& request, const PutPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates tags with the specified Amazon Web Services resource. Tags are
@@ -1043,15 +717,6 @@ namespace WAFV2
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates tags from an Amazon Web Services resource. Tags are key:value
@@ -1064,15 +729,6 @@ namespace WAFV2
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the specified <a>IPSet</a>. </p>  <p>This operation completely
@@ -1097,15 +753,6 @@ namespace WAFV2
          */
         virtual Model::UpdateIPSetOutcome UpdateIPSet(const Model::UpdateIPSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateIPSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateIPSetOutcomeCallable UpdateIPSetCallable(const Model::UpdateIPSetRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateIPSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateIPSetAsync(const Model::UpdateIPSetRequest& request, const UpdateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the expiration information for your managed rule set. Use this to
@@ -1125,15 +772,6 @@ namespace WAFV2
          */
         virtual Model::UpdateManagedRuleSetVersionExpiryDateOutcome UpdateManagedRuleSetVersionExpiryDate(const Model::UpdateManagedRuleSetVersionExpiryDateRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateManagedRuleSetVersionExpiryDate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateManagedRuleSetVersionExpiryDateOutcomeCallable UpdateManagedRuleSetVersionExpiryDateCallable(const Model::UpdateManagedRuleSetVersionExpiryDateRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateManagedRuleSetVersionExpiryDate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateManagedRuleSetVersionExpiryDateAsync(const Model::UpdateManagedRuleSetVersionExpiryDateRequest& request, const UpdateManagedRuleSetVersionExpiryDateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the specified <a>RegexPatternSet</a>.</p>  <p>This operation
@@ -1159,15 +797,6 @@ namespace WAFV2
          */
         virtual Model::UpdateRegexPatternSetOutcome UpdateRegexPatternSet(const Model::UpdateRegexPatternSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateRegexPatternSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateRegexPatternSetOutcomeCallable UpdateRegexPatternSetCallable(const Model::UpdateRegexPatternSetRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateRegexPatternSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateRegexPatternSetAsync(const Model::UpdateRegexPatternSetRequest& request, const UpdateRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the specified <a>RuleGroup</a>.</p>  <p>This operation
@@ -1197,15 +826,6 @@ namespace WAFV2
          */
         virtual Model::UpdateRuleGroupOutcome UpdateRuleGroup(const Model::UpdateRuleGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateRuleGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateRuleGroupOutcomeCallable UpdateRuleGroupCallable(const Model::UpdateRuleGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateRuleGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateRuleGroupAsync(const Model::UpdateRuleGroupRequest& request, const UpdateRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the specified <a>WebACL</a>. While updating a web ACL, WAF provides
@@ -1240,15 +860,6 @@ namespace WAFV2
          */
         virtual Model::UpdateWebACLOutcome UpdateWebACL(const Model::UpdateWebACLRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateWebACL that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateWebACLOutcomeCallable UpdateWebACLCallable(const Model::UpdateWebACLRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateWebACL that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateWebACLAsync(const Model::UpdateWebACLRequest& request, const UpdateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

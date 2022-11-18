@@ -7,8 +7,10 @@
 #include <aws/translate/Translate_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/translate/TranslateServiceClientModel.h>
+#include <aws/translate/TranslateLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -74,6 +76,47 @@ namespace Translate
         virtual ~TranslateClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Creates a parallel data resource in Amazon Translate by importing an input
          * file from Amazon S3. Parallel data files contain examples that show how you want
@@ -85,15 +128,6 @@ namespace Translate
          */
         virtual Model::CreateParallelDataOutcome CreateParallelData(const Model::CreateParallelDataRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateParallelData that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateParallelDataOutcomeCallable CreateParallelDataCallable(const Model::CreateParallelDataRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateParallelData that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateParallelDataAsync(const Model::CreateParallelDataRequest& request, const CreateParallelDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a parallel data resource in Amazon Translate.</p><p><h3>See
@@ -103,15 +137,6 @@ namespace Translate
          */
         virtual Model::DeleteParallelDataOutcome DeleteParallelData(const Model::DeleteParallelDataRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteParallelData that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteParallelDataOutcomeCallable DeleteParallelDataCallable(const Model::DeleteParallelDataRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteParallelData that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteParallelDataAsync(const Model::DeleteParallelDataRequest& request, const DeleteParallelDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>A synchronous action that deletes a custom terminology.</p><p><h3>See
@@ -121,15 +146,6 @@ namespace Translate
          */
         virtual Model::DeleteTerminologyOutcome DeleteTerminology(const Model::DeleteTerminologyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteTerminology that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteTerminologyOutcomeCallable DeleteTerminologyCallable(const Model::DeleteTerminologyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteTerminology that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteTerminologyAsync(const Model::DeleteTerminologyRequest& request, const DeleteTerminologyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the properties associated with an asynchronous batch translation job
@@ -140,15 +156,6 @@ namespace Translate
          */
         virtual Model::DescribeTextTranslationJobOutcome DescribeTextTranslationJob(const Model::DescribeTextTranslationJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTextTranslationJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTextTranslationJobOutcomeCallable DescribeTextTranslationJobCallable(const Model::DescribeTextTranslationJobRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTextTranslationJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTextTranslationJobAsync(const Model::DescribeTextTranslationJobRequest& request, const DescribeTextTranslationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides information about a parallel data resource.</p><p><h3>See Also:</h3>
@@ -158,15 +165,6 @@ namespace Translate
          */
         virtual Model::GetParallelDataOutcome GetParallelData(const Model::GetParallelDataRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetParallelData that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetParallelDataOutcomeCallable GetParallelDataCallable(const Model::GetParallelDataRequest& request) const;
-
-        /**
-         * An Async wrapper for GetParallelData that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetParallelDataAsync(const Model::GetParallelDataRequest& request, const GetParallelDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a custom terminology.</p><p><h3>See Also:</h3>   <a
@@ -175,15 +173,6 @@ namespace Translate
          */
         virtual Model::GetTerminologyOutcome GetTerminology(const Model::GetTerminologyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetTerminology that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetTerminologyOutcomeCallable GetTerminologyCallable(const Model::GetTerminologyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetTerminology that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetTerminologyAsync(const Model::GetTerminologyRequest& request, const GetTerminologyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates or updates a custom terminology, depending on whether one already
@@ -199,15 +188,6 @@ namespace Translate
          */
         virtual Model::ImportTerminologyOutcome ImportTerminology(const Model::ImportTerminologyRequest& request) const;
 
-        /**
-         * A Callable wrapper for ImportTerminology that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ImportTerminologyOutcomeCallable ImportTerminologyCallable(const Model::ImportTerminologyRequest& request) const;
-
-        /**
-         * An Async wrapper for ImportTerminology that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ImportTerminologyAsync(const Model::ImportTerminologyRequest& request, const ImportTerminologyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides a list of languages (RFC-5646 codes and names) that Amazon Translate
@@ -217,15 +197,6 @@ namespace Translate
          */
         virtual Model::ListLanguagesOutcome ListLanguages(const Model::ListLanguagesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListLanguages that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListLanguagesOutcomeCallable ListLanguagesCallable(const Model::ListLanguagesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListLanguages that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListLanguagesAsync(const Model::ListLanguagesRequest& request, const ListLanguagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides a list of your parallel data resources in Amazon
@@ -235,15 +206,6 @@ namespace Translate
          */
         virtual Model::ListParallelDataOutcome ListParallelData(const Model::ListParallelDataRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListParallelData that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListParallelDataOutcomeCallable ListParallelDataCallable(const Model::ListParallelDataRequest& request) const;
-
-        /**
-         * An Async wrapper for ListParallelData that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListParallelDataAsync(const Model::ListParallelDataRequest& request, const ListParallelDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all tags associated with a given Amazon Translate resource. For more
@@ -255,15 +217,6 @@ namespace Translate
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides a list of custom terminologies associated with your
@@ -273,15 +226,6 @@ namespace Translate
          */
         virtual Model::ListTerminologiesOutcome ListTerminologies(const Model::ListTerminologiesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTerminologies that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTerminologiesOutcomeCallable ListTerminologiesCallable(const Model::ListTerminologiesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTerminologies that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTerminologiesAsync(const Model::ListTerminologiesRequest& request, const ListTerminologiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of the batch translation jobs that you have
@@ -291,15 +235,6 @@ namespace Translate
          */
         virtual Model::ListTextTranslationJobsOutcome ListTextTranslationJobs(const Model::ListTextTranslationJobsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTextTranslationJobs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTextTranslationJobsOutcomeCallable ListTextTranslationJobsCallable(const Model::ListTextTranslationJobsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTextTranslationJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTextTranslationJobsAsync(const Model::ListTextTranslationJobsRequest& request, const ListTextTranslationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts an asynchronous batch translation job. Use batch translation jobs to
@@ -319,15 +254,6 @@ namespace Translate
          */
         virtual Model::StartTextTranslationJobOutcome StartTextTranslationJob(const Model::StartTextTranslationJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartTextTranslationJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartTextTranslationJobOutcomeCallable StartTextTranslationJobCallable(const Model::StartTextTranslationJobRequest& request) const;
-
-        /**
-         * An Async wrapper for StartTextTranslationJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartTextTranslationJobAsync(const Model::StartTextTranslationJobRequest& request, const StartTextTranslationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops an asynchronous batch translation job that is in progress.</p> <p>If
@@ -345,15 +271,6 @@ namespace Translate
          */
         virtual Model::StopTextTranslationJobOutcome StopTextTranslationJob(const Model::StopTextTranslationJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopTextTranslationJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopTextTranslationJobOutcomeCallable StopTextTranslationJobCallable(const Model::StopTextTranslationJobRequest& request) const;
-
-        /**
-         * An Async wrapper for StopTextTranslationJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopTextTranslationJobAsync(const Model::StopTextTranslationJobRequest& request, const StopTextTranslationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates a specific tag with a resource. A tag is a key-value pair that
@@ -365,15 +282,6 @@ namespace Translate
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Translates input text from the source language to the target language. For a
@@ -385,15 +293,6 @@ namespace Translate
          */
         virtual Model::TranslateTextOutcome TranslateText(const Model::TranslateTextRequest& request) const;
 
-        /**
-         * A Callable wrapper for TranslateText that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TranslateTextOutcomeCallable TranslateTextCallable(const Model::TranslateTextRequest& request) const;
-
-        /**
-         * An Async wrapper for TranslateText that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TranslateTextAsync(const Model::TranslateTextRequest& request, const TranslateTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes a specific tag associated with an Amazon Translate resource. For more
@@ -405,15 +304,6 @@ namespace Translate
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a previously created parallel data resource by importing a new input
@@ -423,15 +313,6 @@ namespace Translate
          */
         virtual Model::UpdateParallelDataOutcome UpdateParallelData(const Model::UpdateParallelDataRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateParallelData that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateParallelDataOutcomeCallable UpdateParallelDataCallable(const Model::UpdateParallelDataRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateParallelData that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateParallelDataAsync(const Model::UpdateParallelDataRequest& request, const UpdateParallelDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

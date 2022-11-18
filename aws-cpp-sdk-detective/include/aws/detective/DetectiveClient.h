@@ -7,8 +7,10 @@
 #include <aws/detective/Detective_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/detective/DetectiveServiceClientModel.h>
+#include <aws/detective/DetectiveLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -117,6 +119,47 @@ namespace Detective
         virtual ~DetectiveClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Accepts an invitation for the member account to contribute data to a behavior
          * graph. This operation can only be called by an invited member account. </p>
@@ -127,15 +170,6 @@ namespace Detective
          */
         virtual Model::AcceptInvitationOutcome AcceptInvitation(const Model::AcceptInvitationRequest& request) const;
 
-        /**
-         * A Callable wrapper for AcceptInvitation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AcceptInvitationOutcomeCallable AcceptInvitationCallable(const Model::AcceptInvitationRequest& request) const;
-
-        /**
-         * An Async wrapper for AcceptInvitation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AcceptInvitationAsync(const Model::AcceptInvitationRequest& request, const AcceptInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets data source package information for the behavior graph.</p><p><h3>See
@@ -145,15 +179,6 @@ namespace Detective
          */
         virtual Model::BatchGetGraphMemberDatasourcesOutcome BatchGetGraphMemberDatasources(const Model::BatchGetGraphMemberDatasourcesRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchGetGraphMemberDatasources that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchGetGraphMemberDatasourcesOutcomeCallable BatchGetGraphMemberDatasourcesCallable(const Model::BatchGetGraphMemberDatasourcesRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchGetGraphMemberDatasources that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchGetGraphMemberDatasourcesAsync(const Model::BatchGetGraphMemberDatasourcesRequest& request, const BatchGetGraphMemberDatasourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information on the data source package history for an
@@ -163,15 +188,6 @@ namespace Detective
          */
         virtual Model::BatchGetMembershipDatasourcesOutcome BatchGetMembershipDatasources(const Model::BatchGetMembershipDatasourcesRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchGetMembershipDatasources that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchGetMembershipDatasourcesOutcomeCallable BatchGetMembershipDatasourcesCallable(const Model::BatchGetMembershipDatasourcesRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchGetMembershipDatasources that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchGetMembershipDatasourcesAsync(const Model::BatchGetMembershipDatasourcesRequest& request, const BatchGetMembershipDatasourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new behavior graph for the calling account, and sets that account
@@ -194,15 +210,6 @@ namespace Detective
          */
         virtual Model::CreateGraphOutcome CreateGraph(const Model::CreateGraphRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateGraph that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateGraphOutcomeCallable CreateGraphCallable(const Model::CreateGraphRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateGraph that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateGraphAsync(const Model::CreateGraphRequest& request, const CreateGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> <code>CreateMembers</code> is used to send invitations to accounts. For the
@@ -233,15 +240,6 @@ namespace Detective
          */
         virtual Model::CreateMembersOutcome CreateMembers(const Model::CreateMembersRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateMembers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateMembersOutcomeCallable CreateMembersCallable(const Model::CreateMembersRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateMembers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateMembersAsync(const Model::CreateMembersRequest& request, const CreateMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disables the specified behavior graph and queues it to be deleted. This
@@ -253,15 +251,6 @@ namespace Detective
          */
         virtual Model::DeleteGraphOutcome DeleteGraph(const Model::DeleteGraphRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteGraph that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteGraphOutcomeCallable DeleteGraphCallable(const Model::DeleteGraphRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteGraph that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteGraphAsync(const Model::DeleteGraphRequest& request, const DeleteGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified member accounts from the behavior graph. The removed
@@ -282,15 +271,6 @@ namespace Detective
          */
         virtual Model::DeleteMembersOutcome DeleteMembers(const Model::DeleteMembersRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteMembers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteMembersOutcomeCallable DeleteMembersCallable(const Model::DeleteMembersRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteMembers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteMembersAsync(const Model::DeleteMembersRequest& request, const DeleteMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the configuration for the organization behavior
@@ -302,15 +282,6 @@ namespace Detective
          */
         virtual Model::DescribeOrganizationConfigurationOutcome DescribeOrganizationConfiguration(const Model::DescribeOrganizationConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeOrganizationConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeOrganizationConfigurationOutcomeCallable DescribeOrganizationConfigurationCallable(const Model::DescribeOrganizationConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeOrganizationConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeOrganizationConfigurationAsync(const Model::DescribeOrganizationConfigurationRequest& request, const DescribeOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the Detective administrator account in the current Region. Deletes
@@ -349,15 +320,6 @@ namespace Detective
          */
         virtual Model::DisassociateMembershipOutcome DisassociateMembership(const Model::DisassociateMembershipRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateMembership that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateMembershipOutcomeCallable DisassociateMembershipCallable(const Model::DisassociateMembershipRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateMembership that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateMembershipAsync(const Model::DisassociateMembershipRequest& request, const DisassociateMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Designates the Detective administrator account for the organization in the
@@ -378,15 +340,6 @@ namespace Detective
          */
         virtual Model::EnableOrganizationAdminAccountOutcome EnableOrganizationAdminAccount(const Model::EnableOrganizationAdminAccountRequest& request) const;
 
-        /**
-         * A Callable wrapper for EnableOrganizationAdminAccount that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnableOrganizationAdminAccountOutcomeCallable EnableOrganizationAdminAccountCallable(const Model::EnableOrganizationAdminAccountRequest& request) const;
-
-        /**
-         * An Async wrapper for EnableOrganizationAdminAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnableOrganizationAdminAccountAsync(const Model::EnableOrganizationAdminAccountRequest& request, const EnableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the membership details for specified member accounts for a behavior
@@ -396,15 +349,6 @@ namespace Detective
          */
         virtual Model::GetMembersOutcome GetMembers(const Model::GetMembersRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetMembers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetMembersOutcomeCallable GetMembersCallable(const Model::GetMembersRequest& request) const;
-
-        /**
-         * An Async wrapper for GetMembers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetMembersAsync(const Model::GetMembersRequest& request, const GetMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists data source packages in the behavior graph.</p><p><h3>See Also:</h3>  
@@ -414,15 +358,6 @@ namespace Detective
          */
         virtual Model::ListDatasourcePackagesOutcome ListDatasourcePackages(const Model::ListDatasourcePackagesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDatasourcePackages that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDatasourcePackagesOutcomeCallable ListDatasourcePackagesCallable(const Model::ListDatasourcePackagesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDatasourcePackages that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDatasourcePackagesAsync(const Model::ListDatasourcePackagesRequest& request, const ListDatasourcePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the list of behavior graphs that the calling account is an
@@ -435,15 +370,6 @@ namespace Detective
          */
         virtual Model::ListGraphsOutcome ListGraphs(const Model::ListGraphsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListGraphs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListGraphsOutcomeCallable ListGraphsCallable(const Model::ListGraphsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListGraphs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListGraphsAsync(const Model::ListGraphsRequest& request, const ListGraphsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the list of open and accepted behavior graph invitations for the
@@ -458,15 +384,6 @@ namespace Detective
          */
         virtual Model::ListInvitationsOutcome ListInvitations(const Model::ListInvitationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListInvitations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListInvitationsOutcomeCallable ListInvitationsCallable(const Model::ListInvitationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListInvitations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListInvitationsAsync(const Model::ListInvitationsRequest& request, const ListInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the list of member accounts for a behavior graph.</p> <p>For
@@ -479,15 +396,6 @@ namespace Detective
          */
         virtual Model::ListMembersOutcome ListMembers(const Model::ListMembersRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListMembers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListMembersOutcomeCallable ListMembersCallable(const Model::ListMembersRequest& request) const;
-
-        /**
-         * An Async wrapper for ListMembers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListMembersAsync(const Model::ListMembersRequest& request, const ListMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the Detective administrator account for an
@@ -498,15 +406,6 @@ namespace Detective
          */
         virtual Model::ListOrganizationAdminAccountsOutcome ListOrganizationAdminAccounts(const Model::ListOrganizationAdminAccountsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListOrganizationAdminAccounts that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListOrganizationAdminAccountsOutcomeCallable ListOrganizationAdminAccountsCallable(const Model::ListOrganizationAdminAccountsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListOrganizationAdminAccounts that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListOrganizationAdminAccountsAsync(const Model::ListOrganizationAdminAccountsRequest& request, const ListOrganizationAdminAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the tag values that are assigned to a behavior graph.</p><p><h3>See
@@ -516,15 +415,6 @@ namespace Detective
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Rejects an invitation to contribute the account data to a behavior graph.
@@ -538,15 +428,6 @@ namespace Detective
          */
         virtual Model::RejectInvitationOutcome RejectInvitation(const Model::RejectInvitationRequest& request) const;
 
-        /**
-         * A Callable wrapper for RejectInvitation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RejectInvitationOutcomeCallable RejectInvitationCallable(const Model::RejectInvitationRequest& request) const;
-
-        /**
-         * An Async wrapper for RejectInvitation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RejectInvitationAsync(const Model::RejectInvitationRequest& request, const RejectInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sends a request to enable data ingest for a member account that has a status
@@ -560,15 +441,6 @@ namespace Detective
          */
         virtual Model::StartMonitoringMemberOutcome StartMonitoringMember(const Model::StartMonitoringMemberRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartMonitoringMember that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartMonitoringMemberOutcomeCallable StartMonitoringMemberCallable(const Model::StartMonitoringMemberRequest& request) const;
-
-        /**
-         * An Async wrapper for StartMonitoringMember that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartMonitoringMemberAsync(const Model::StartMonitoringMemberRequest& request, const StartMonitoringMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Applies tag values to a behavior graph.</p><p><h3>See Also:</h3>   <a
@@ -577,15 +449,6 @@ namespace Detective
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes tags from a behavior graph.</p><p><h3>See Also:</h3>   <a
@@ -594,15 +457,6 @@ namespace Detective
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts a data source packages for the behavior graph.</p><p><h3>See
@@ -612,15 +466,6 @@ namespace Detective
          */
         virtual Model::UpdateDatasourcePackagesOutcome UpdateDatasourcePackages(const Model::UpdateDatasourcePackagesRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateDatasourcePackages that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateDatasourcePackagesOutcomeCallable UpdateDatasourcePackagesCallable(const Model::UpdateDatasourcePackagesRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateDatasourcePackages that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateDatasourcePackagesAsync(const Model::UpdateDatasourcePackagesRequest& request, const UpdateDatasourcePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the configuration for the Organizations integration in the current
@@ -631,15 +476,6 @@ namespace Detective
          */
         virtual Model::UpdateOrganizationConfigurationOutcome UpdateOrganizationConfiguration(const Model::UpdateOrganizationConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateOrganizationConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateOrganizationConfigurationOutcomeCallable UpdateOrganizationConfigurationCallable(const Model::UpdateOrganizationConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateOrganizationConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateOrganizationConfigurationAsync(const Model::UpdateOrganizationConfigurationRequest& request, const UpdateOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

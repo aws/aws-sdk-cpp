@@ -7,8 +7,10 @@
 #include <aws/codestar/CodeStar_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/codestar/CodeStarServiceClientModel.h>
+#include <aws/codestar/CodeStarLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -102,6 +104,47 @@ namespace CodeStar
         virtual ~CodeStarClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Adds an IAM user to the team for an AWS CodeStar project.</p><p><h3>See
          * Also:</h3>   <a
@@ -110,15 +153,6 @@ namespace CodeStar
          */
         virtual Model::AssociateTeamMemberOutcome AssociateTeamMember(const Model::AssociateTeamMemberRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateTeamMember that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateTeamMemberOutcomeCallable AssociateTeamMemberCallable(const Model::AssociateTeamMemberRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateTeamMember that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateTeamMemberAsync(const Model::AssociateTeamMemberRequest& request, const AssociateTeamMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a project, including project resources. This action creates a project
@@ -130,15 +164,6 @@ namespace CodeStar
          */
         virtual Model::CreateProjectOutcome CreateProject(const Model::CreateProjectRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateProject that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateProjectOutcomeCallable CreateProjectCallable(const Model::CreateProjectRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateProject that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateProjectAsync(const Model::CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a profile for a user that includes user preferences, such as the
@@ -151,15 +176,6 @@ namespace CodeStar
          */
         virtual Model::CreateUserProfileOutcome CreateUserProfile(const Model::CreateUserProfileRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateUserProfile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateUserProfileOutcomeCallable CreateUserProfileCallable(const Model::CreateUserProfileRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateUserProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateUserProfileAsync(const Model::CreateUserProfileRequest& request, const CreateUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a project, including project resources. Does not delete users
@@ -170,15 +186,6 @@ namespace CodeStar
          */
         virtual Model::DeleteProjectOutcome DeleteProject(const Model::DeleteProjectRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteProject that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteProjectOutcomeCallable DeleteProjectCallable(const Model::DeleteProjectRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteProject that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteProjectAsync(const Model::DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a user profile in AWS CodeStar, including all personal preference
@@ -190,15 +197,6 @@ namespace CodeStar
          */
         virtual Model::DeleteUserProfileOutcome DeleteUserProfile(const Model::DeleteUserProfileRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteUserProfile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteUserProfileOutcomeCallable DeleteUserProfileCallable(const Model::DeleteUserProfileRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteUserProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteUserProfileAsync(const Model::DeleteUserProfileRequest& request, const DeleteUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a project and its resources.</p><p><h3>See Also:</h3>   <a
@@ -207,15 +205,6 @@ namespace CodeStar
          */
         virtual Model::DescribeProjectOutcome DescribeProject(const Model::DescribeProjectRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeProject that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeProjectOutcomeCallable DescribeProjectCallable(const Model::DescribeProjectRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeProject that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeProjectAsync(const Model::DescribeProjectRequest& request, const DescribeProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a user in AWS CodeStar and the user attributes across all
@@ -225,15 +214,6 @@ namespace CodeStar
          */
         virtual Model::DescribeUserProfileOutcome DescribeUserProfile(const Model::DescribeUserProfileRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeUserProfile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeUserProfileOutcomeCallable DescribeUserProfileCallable(const Model::DescribeUserProfileRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeUserProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeUserProfileAsync(const Model::DescribeUserProfileRequest& request, const DescribeUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes a user from a project. Removing a user from a project also removes
@@ -246,15 +226,6 @@ namespace CodeStar
          */
         virtual Model::DisassociateTeamMemberOutcome DisassociateTeamMember(const Model::DisassociateTeamMemberRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateTeamMember that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateTeamMemberOutcomeCallable DisassociateTeamMemberCallable(const Model::DisassociateTeamMemberRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateTeamMember that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateTeamMemberAsync(const Model::DisassociateTeamMemberRequest& request, const DisassociateTeamMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all projects in AWS CodeStar associated with your AWS
@@ -264,15 +235,6 @@ namespace CodeStar
          */
         virtual Model::ListProjectsOutcome ListProjects(const Model::ListProjectsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListProjects that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListProjectsOutcomeCallable ListProjectsCallable(const Model::ListProjectsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListProjects that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListProjectsAsync(const Model::ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists resources associated with a project in AWS CodeStar.</p><p><h3>See
@@ -282,15 +244,6 @@ namespace CodeStar
          */
         virtual Model::ListResourcesOutcome ListResources(const Model::ListResourcesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListResources that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListResourcesOutcomeCallable ListResourcesCallable(const Model::ListResourcesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListResources that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListResourcesAsync(const Model::ListResourcesRequest& request, const ListResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the tags for a project.</p><p><h3>See Also:</h3>   <a
@@ -299,15 +252,6 @@ namespace CodeStar
          */
         virtual Model::ListTagsForProjectOutcome ListTagsForProject(const Model::ListTagsForProjectRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForProject that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForProjectOutcomeCallable ListTagsForProjectCallable(const Model::ListTagsForProjectRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForProject that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForProjectAsync(const Model::ListTagsForProjectRequest& request, const ListTagsForProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all team members associated with a project.</p><p><h3>See Also:</h3>  
@@ -317,15 +261,6 @@ namespace CodeStar
          */
         virtual Model::ListTeamMembersOutcome ListTeamMembers(const Model::ListTeamMembersRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTeamMembers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTeamMembersOutcomeCallable ListTeamMembersCallable(const Model::ListTeamMembersRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTeamMembers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTeamMembersAsync(const Model::ListTeamMembersRequest& request, const ListTeamMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all the user profiles configured for your AWS account in AWS
@@ -335,15 +270,6 @@ namespace CodeStar
          */
         virtual Model::ListUserProfilesOutcome ListUserProfiles(const Model::ListUserProfilesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListUserProfiles that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListUserProfilesOutcomeCallable ListUserProfilesCallable(const Model::ListUserProfilesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListUserProfiles that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListUserProfilesAsync(const Model::ListUserProfilesRequest& request, const ListUserProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds tags to a project.</p><p><h3>See Also:</h3>   <a
@@ -352,15 +278,6 @@ namespace CodeStar
          */
         virtual Model::TagProjectOutcome TagProject(const Model::TagProjectRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagProject that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagProjectOutcomeCallable TagProjectCallable(const Model::TagProjectRequest& request) const;
-
-        /**
-         * An Async wrapper for TagProject that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagProjectAsync(const Model::TagProjectRequest& request, const TagProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes tags from a project.</p><p><h3>See Also:</h3>   <a
@@ -369,15 +286,6 @@ namespace CodeStar
          */
         virtual Model::UntagProjectOutcome UntagProject(const Model::UntagProjectRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagProject that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagProjectOutcomeCallable UntagProjectCallable(const Model::UntagProjectRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagProject that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagProjectAsync(const Model::UntagProjectRequest& request, const UntagProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a project in AWS CodeStar.</p><p><h3>See Also:</h3>   <a
@@ -386,15 +294,6 @@ namespace CodeStar
          */
         virtual Model::UpdateProjectOutcome UpdateProject(const Model::UpdateProjectRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateProject that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateProjectOutcomeCallable UpdateProjectCallable(const Model::UpdateProjectRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateProject that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateProjectAsync(const Model::UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a team member's attributes in an AWS CodeStar project. For example,
@@ -405,15 +304,6 @@ namespace CodeStar
          */
         virtual Model::UpdateTeamMemberOutcome UpdateTeamMember(const Model::UpdateTeamMemberRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateTeamMember that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateTeamMemberOutcomeCallable UpdateTeamMemberCallable(const Model::UpdateTeamMemberRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateTeamMember that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateTeamMemberAsync(const Model::UpdateTeamMemberRequest& request, const UpdateTeamMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a user's profile in AWS CodeStar. The user profile is not
@@ -425,15 +315,6 @@ namespace CodeStar
          */
         virtual Model::UpdateUserProfileOutcome UpdateUserProfile(const Model::UpdateUserProfileRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateUserProfile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateUserProfileOutcomeCallable UpdateUserProfileCallable(const Model::UpdateUserProfileRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateUserProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateUserProfileAsync(const Model::UpdateUserProfileRequest& request, const UpdateUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

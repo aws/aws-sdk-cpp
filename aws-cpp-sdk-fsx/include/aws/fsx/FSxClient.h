@@ -7,8 +7,10 @@
 #include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/fsx/FSxServiceClientModel.h>
+#include <aws/fsx/FSxLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -74,6 +76,47 @@ namespace FSx
         virtual ~FSxClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Use this action to associate one or more Domain Name Server (DNS) aliases
          * with an existing Amazon FSx for Windows File Server file system. A file system
@@ -94,15 +137,6 @@ namespace FSx
          */
         virtual Model::AssociateFileSystemAliasesOutcome AssociateFileSystemAliases(const Model::AssociateFileSystemAliasesRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateFileSystemAliases that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateFileSystemAliasesOutcomeCallable AssociateFileSystemAliasesCallable(const Model::AssociateFileSystemAliasesRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateFileSystemAliases that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateFileSystemAliasesAsync(const Model::AssociateFileSystemAliasesRequest& request, const AssociateFileSystemAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Cancels an existing Amazon FSx for Lustre data repository task if that task
@@ -117,15 +151,6 @@ namespace FSx
          */
         virtual Model::CancelDataRepositoryTaskOutcome CancelDataRepositoryTask(const Model::CancelDataRepositoryTaskRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelDataRepositoryTask that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelDataRepositoryTaskOutcomeCallable CancelDataRepositoryTaskCallable(const Model::CancelDataRepositoryTaskRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelDataRepositoryTask that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelDataRepositoryTaskAsync(const Model::CancelDataRepositoryTaskRequest& request, const CancelDataRepositoryTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Copies an existing backup within the same Amazon Web Services account to
@@ -161,15 +186,6 @@ namespace FSx
          */
         virtual Model::CopyBackupOutcome CopyBackup(const Model::CopyBackupRequest& request) const;
 
-        /**
-         * A Callable wrapper for CopyBackup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CopyBackupOutcomeCallable CopyBackupCallable(const Model::CopyBackupRequest& request) const;
-
-        /**
-         * An Async wrapper for CopyBackup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CopyBackupAsync(const Model::CopyBackupRequest& request, const CopyBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a backup of an existing Amazon FSx for Windows File Server file
@@ -217,15 +233,6 @@ namespace FSx
          */
         virtual Model::CreateBackupOutcome CreateBackup(const Model::CreateBackupRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateBackup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateBackupOutcomeCallable CreateBackupCallable(const Model::CreateBackupRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateBackup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateBackupAsync(const Model::CreateBackupRequest& request, const CreateBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an Amazon FSx for Lustre data repository association (DRA). A data
@@ -248,15 +255,6 @@ namespace FSx
          */
         virtual Model::CreateDataRepositoryAssociationOutcome CreateDataRepositoryAssociation(const Model::CreateDataRepositoryAssociationRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDataRepositoryAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDataRepositoryAssociationOutcomeCallable CreateDataRepositoryAssociationCallable(const Model::CreateDataRepositoryAssociationRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDataRepositoryAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDataRepositoryAssociationAsync(const Model::CreateDataRepositoryAssociationRequest& request, const CreateDataRepositoryAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an Amazon FSx for Lustre data repository task. You use data
@@ -277,15 +275,6 @@ namespace FSx
          */
         virtual Model::CreateDataRepositoryTaskOutcome CreateDataRepositoryTask(const Model::CreateDataRepositoryTaskRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDataRepositoryTask that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDataRepositoryTaskOutcomeCallable CreateDataRepositoryTaskCallable(const Model::CreateDataRepositoryTaskRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDataRepositoryTask that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDataRepositoryTaskAsync(const Model::CreateDataRepositoryTaskRequest& request, const CreateDataRepositoryTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new Amazon File Cache resource.</p> <p>You can use this operation
@@ -310,15 +299,6 @@ namespace FSx
          */
         virtual Model::CreateFileCacheOutcome CreateFileCache(const Model::CreateFileCacheRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateFileCache that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateFileCacheOutcomeCallable CreateFileCacheCallable(const Model::CreateFileCacheRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateFileCache that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateFileCacheAsync(const Model::CreateFileCacheRequest& request, const CreateFileCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new, empty Amazon FSx file system. You can create the following
@@ -355,15 +335,6 @@ namespace FSx
          */
         virtual Model::CreateFileSystemOutcome CreateFileSystem(const Model::CreateFileSystemRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateFileSystem that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateFileSystemOutcomeCallable CreateFileSystemCallable(const Model::CreateFileSystemRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateFileSystem that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateFileSystemAsync(const Model::CreateFileSystemRequest& request, const CreateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new Amazon FSx for Lustre, Amazon FSx for Windows File Server, or
@@ -397,15 +368,6 @@ namespace FSx
          */
         virtual Model::CreateFileSystemFromBackupOutcome CreateFileSystemFromBackup(const Model::CreateFileSystemFromBackupRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateFileSystemFromBackup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateFileSystemFromBackupOutcomeCallable CreateFileSystemFromBackupCallable(const Model::CreateFileSystemFromBackupRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateFileSystemFromBackup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateFileSystemFromBackupAsync(const Model::CreateFileSystemFromBackupRequest& request, const CreateFileSystemFromBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a snapshot of an existing Amazon FSx for OpenZFS volume. With
@@ -435,15 +397,6 @@ namespace FSx
          */
         virtual Model::CreateSnapshotOutcome CreateSnapshot(const Model::CreateSnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateSnapshotOutcomeCallable CreateSnapshotCallable(const Model::CreateSnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateSnapshotAsync(const Model::CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a storage virtual machine (SVM) for an Amazon FSx for ONTAP file
@@ -453,15 +406,6 @@ namespace FSx
          */
         virtual Model::CreateStorageVirtualMachineOutcome CreateStorageVirtualMachine(const Model::CreateStorageVirtualMachineRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateStorageVirtualMachine that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateStorageVirtualMachineOutcomeCallable CreateStorageVirtualMachineCallable(const Model::CreateStorageVirtualMachineRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateStorageVirtualMachine that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateStorageVirtualMachineAsync(const Model::CreateStorageVirtualMachineRequest& request, const CreateStorageVirtualMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an FSx for ONTAP or Amazon FSx for OpenZFS storage
@@ -471,15 +415,6 @@ namespace FSx
          */
         virtual Model::CreateVolumeOutcome CreateVolume(const Model::CreateVolumeRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateVolume that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateVolumeOutcomeCallable CreateVolumeCallable(const Model::CreateVolumeRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateVolume that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateVolumeAsync(const Model::CreateVolumeRequest& request, const CreateVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new Amazon FSx for NetApp ONTAP volume from an existing Amazon FSx
@@ -489,15 +424,6 @@ namespace FSx
          */
         virtual Model::CreateVolumeFromBackupOutcome CreateVolumeFromBackup(const Model::CreateVolumeFromBackupRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateVolumeFromBackup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateVolumeFromBackupOutcomeCallable CreateVolumeFromBackupCallable(const Model::CreateVolumeFromBackupRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateVolumeFromBackup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateVolumeFromBackupAsync(const Model::CreateVolumeFromBackupRequest& request, const CreateVolumeFromBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an Amazon FSx backup. After deletion, the backup no longer exists,
@@ -510,15 +436,6 @@ namespace FSx
          */
         virtual Model::DeleteBackupOutcome DeleteBackup(const Model::DeleteBackupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteBackup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteBackupOutcomeCallable DeleteBackupCallable(const Model::DeleteBackupRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteBackup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteBackupAsync(const Model::DeleteBackupRequest& request, const DeleteBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a data repository association on an Amazon FSx for Lustre file
@@ -533,15 +450,6 @@ namespace FSx
          */
         virtual Model::DeleteDataRepositoryAssociationOutcome DeleteDataRepositoryAssociation(const Model::DeleteDataRepositoryAssociationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDataRepositoryAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDataRepositoryAssociationOutcomeCallable DeleteDataRepositoryAssociationCallable(const Model::DeleteDataRepositoryAssociationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDataRepositoryAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDataRepositoryAssociationAsync(const Model::DeleteDataRepositoryAssociationRequest& request, const DeleteDataRepositoryAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an Amazon File Cache resource. After deletion, the cache no longer
@@ -559,15 +467,6 @@ namespace FSx
          */
         virtual Model::DeleteFileCacheOutcome DeleteFileCache(const Model::DeleteFileCacheRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteFileCache that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteFileCacheOutcomeCallable DeleteFileCacheCallable(const Model::DeleteFileCacheRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteFileCache that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteFileCacheAsync(const Model::DeleteFileCacheRequest& request, const DeleteFileCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a file system. After deletion, the file system no longer exists, and
@@ -595,15 +494,6 @@ namespace FSx
          */
         virtual Model::DeleteFileSystemOutcome DeleteFileSystem(const Model::DeleteFileSystemRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteFileSystem that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteFileSystemOutcomeCallable DeleteFileSystemCallable(const Model::DeleteFileSystemRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteFileSystem that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteFileSystemAsync(const Model::DeleteFileSystemRequest& request, const DeleteFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an Amazon FSx for OpenZFS snapshot. After deletion, the snapshot no
@@ -617,15 +507,6 @@ namespace FSx
          */
         virtual Model::DeleteSnapshotOutcome DeleteSnapshot(const Model::DeleteSnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteSnapshotOutcomeCallable DeleteSnapshotCallable(const Model::DeleteSnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteSnapshotAsync(const Model::DeleteSnapshotRequest& request, const DeleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an existing Amazon FSx for ONTAP storage virtual machine (SVM). Prior
@@ -636,15 +517,6 @@ namespace FSx
          */
         virtual Model::DeleteStorageVirtualMachineOutcome DeleteStorageVirtualMachine(const Model::DeleteStorageVirtualMachineRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteStorageVirtualMachine that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteStorageVirtualMachineOutcomeCallable DeleteStorageVirtualMachineCallable(const Model::DeleteStorageVirtualMachineRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteStorageVirtualMachine that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteStorageVirtualMachineAsync(const Model::DeleteStorageVirtualMachineRequest& request, const DeleteStorageVirtualMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS
@@ -654,15 +526,6 @@ namespace FSx
          */
         virtual Model::DeleteVolumeOutcome DeleteVolume(const Model::DeleteVolumeRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteVolume that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteVolumeOutcomeCallable DeleteVolumeCallable(const Model::DeleteVolumeRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteVolume that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteVolumeAsync(const Model::DeleteVolumeRequest& request, const DeleteVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the description of a specific Amazon FSx backup, if a
@@ -690,15 +553,6 @@ namespace FSx
          */
         virtual Model::DescribeBackupsOutcome DescribeBackups(const Model::DescribeBackupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeBackups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeBackupsOutcomeCallable DescribeBackupsCallable(const Model::DescribeBackupsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeBackups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeBackupsAsync(const Model::DescribeBackupsRequest& request, const DescribeBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the description of specific Amazon FSx for Lustre or Amazon File
@@ -727,15 +581,6 @@ namespace FSx
          */
         virtual Model::DescribeDataRepositoryAssociationsOutcome DescribeDataRepositoryAssociations(const Model::DescribeDataRepositoryAssociationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDataRepositoryAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDataRepositoryAssociationsOutcomeCallable DescribeDataRepositoryAssociationsCallable(const Model::DescribeDataRepositoryAssociationsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDataRepositoryAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDataRepositoryAssociationsAsync(const Model::DescribeDataRepositoryAssociationsRequest& request, const DescribeDataRepositoryAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the description of specific Amazon FSx for Lustre or Amazon File
@@ -756,15 +601,6 @@ namespace FSx
          */
         virtual Model::DescribeDataRepositoryTasksOutcome DescribeDataRepositoryTasks(const Model::DescribeDataRepositoryTasksRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDataRepositoryTasks that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDataRepositoryTasksOutcomeCallable DescribeDataRepositoryTasksCallable(const Model::DescribeDataRepositoryTasksRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDataRepositoryTasks that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDataRepositoryTasksAsync(const Model::DescribeDataRepositoryTasksRequest& request, const DescribeDataRepositoryTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the description of a specific Amazon File Cache resource, if a
@@ -794,15 +630,6 @@ namespace FSx
          */
         virtual Model::DescribeFileCachesOutcome DescribeFileCaches(const Model::DescribeFileCachesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeFileCaches that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeFileCachesOutcomeCallable DescribeFileCachesCallable(const Model::DescribeFileCachesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeFileCaches that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeFileCachesAsync(const Model::DescribeFileCachesRequest& request, const DescribeFileCachesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the DNS aliases that are associated with the specified Amazon FSx for
@@ -815,15 +642,6 @@ namespace FSx
          */
         virtual Model::DescribeFileSystemAliasesOutcome DescribeFileSystemAliases(const Model::DescribeFileSystemAliasesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeFileSystemAliases that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeFileSystemAliasesOutcomeCallable DescribeFileSystemAliasesCallable(const Model::DescribeFileSystemAliasesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeFileSystemAliases that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeFileSystemAliasesAsync(const Model::DescribeFileSystemAliasesRequest& request, const DescribeFileSystemAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the description of specific Amazon FSx file systems, if a
@@ -853,15 +671,6 @@ namespace FSx
          */
         virtual Model::DescribeFileSystemsOutcome DescribeFileSystems(const Model::DescribeFileSystemsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeFileSystems that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeFileSystemsOutcomeCallable DescribeFileSystemsCallable(const Model::DescribeFileSystemsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeFileSystems that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeFileSystemsAsync(const Model::DescribeFileSystemsRequest& request, const DescribeFileSystemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the description of specific Amazon FSx for OpenZFS snapshots, if a
@@ -889,15 +698,6 @@ namespace FSx
          */
         virtual Model::DescribeSnapshotsOutcome DescribeSnapshots(const Model::DescribeSnapshotsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeSnapshots that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeSnapshotsOutcomeCallable DescribeSnapshotsCallable(const Model::DescribeSnapshotsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeSnapshots that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeSnapshotsAsync(const Model::DescribeSnapshotsRequest& request, const DescribeSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more Amazon FSx for NetApp ONTAP storage virtual machines
@@ -907,15 +707,6 @@ namespace FSx
          */
         virtual Model::DescribeStorageVirtualMachinesOutcome DescribeStorageVirtualMachines(const Model::DescribeStorageVirtualMachinesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeStorageVirtualMachines that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeStorageVirtualMachinesOutcomeCallable DescribeStorageVirtualMachinesCallable(const Model::DescribeStorageVirtualMachinesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeStorageVirtualMachines that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeStorageVirtualMachinesAsync(const Model::DescribeStorageVirtualMachinesRequest& request, const DescribeStorageVirtualMachinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS
@@ -925,15 +716,6 @@ namespace FSx
          */
         virtual Model::DescribeVolumesOutcome DescribeVolumes(const Model::DescribeVolumesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeVolumes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeVolumesOutcomeCallable DescribeVolumesCallable(const Model::DescribeVolumesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeVolumes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeVolumesAsync(const Model::DescribeVolumesRequest& request, const DescribeVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Use this action to disassociate, or remove, one or more Domain Name Service
@@ -950,15 +732,6 @@ namespace FSx
          */
         virtual Model::DisassociateFileSystemAliasesOutcome DisassociateFileSystemAliases(const Model::DisassociateFileSystemAliasesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateFileSystemAliases that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateFileSystemAliasesOutcomeCallable DisassociateFileSystemAliasesCallable(const Model::DisassociateFileSystemAliasesRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateFileSystemAliases that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateFileSystemAliasesAsync(const Model::DisassociateFileSystemAliasesRequest& request, const DisassociateFileSystemAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists tags for Amazon FSx resources.</p> <p>When retrieving all tags, you can
@@ -984,15 +757,6 @@ namespace FSx
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Releases the file system lock from an Amazon FSx for OpenZFS file
@@ -1002,15 +766,6 @@ namespace FSx
          */
         virtual Model::ReleaseFileSystemNfsV3LocksOutcome ReleaseFileSystemNfsV3Locks(const Model::ReleaseFileSystemNfsV3LocksRequest& request) const;
 
-        /**
-         * A Callable wrapper for ReleaseFileSystemNfsV3Locks that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ReleaseFileSystemNfsV3LocksOutcomeCallable ReleaseFileSystemNfsV3LocksCallable(const Model::ReleaseFileSystemNfsV3LocksRequest& request) const;
-
-        /**
-         * An Async wrapper for ReleaseFileSystemNfsV3Locks that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ReleaseFileSystemNfsV3LocksAsync(const Model::ReleaseFileSystemNfsV3LocksRequest& request, const ReleaseFileSystemNfsV3LocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns an Amazon FSx for OpenZFS volume to the state saved by the specified
@@ -1020,15 +775,6 @@ namespace FSx
          */
         virtual Model::RestoreVolumeFromSnapshotOutcome RestoreVolumeFromSnapshot(const Model::RestoreVolumeFromSnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for RestoreVolumeFromSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RestoreVolumeFromSnapshotOutcomeCallable RestoreVolumeFromSnapshotCallable(const Model::RestoreVolumeFromSnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for RestoreVolumeFromSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RestoreVolumeFromSnapshotAsync(const Model::RestoreVolumeFromSnapshotRequest& request, const RestoreVolumeFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Tags an Amazon FSx resource.</p><p><h3>See Also:</h3>   <a
@@ -1037,15 +783,6 @@ namespace FSx
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This action removes a tag from an Amazon FSx resource.</p><p><h3>See
@@ -1055,15 +792,6 @@ namespace FSx
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the configuration of an existing data repository association on an
@@ -1075,15 +803,6 @@ namespace FSx
          */
         virtual Model::UpdateDataRepositoryAssociationOutcome UpdateDataRepositoryAssociation(const Model::UpdateDataRepositoryAssociationRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateDataRepositoryAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateDataRepositoryAssociationOutcomeCallable UpdateDataRepositoryAssociationCallable(const Model::UpdateDataRepositoryAssociationRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateDataRepositoryAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateDataRepositoryAssociationAsync(const Model::UpdateDataRepositoryAssociationRequest& request, const UpdateDataRepositoryAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the configuration of an existing Amazon File Cache resource. You can
@@ -1093,15 +812,6 @@ namespace FSx
          */
         virtual Model::UpdateFileCacheOutcome UpdateFileCache(const Model::UpdateFileCacheRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateFileCache that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateFileCacheOutcomeCallable UpdateFileCacheCallable(const Model::UpdateFileCacheRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateFileCache that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateFileCacheAsync(const Model::UpdateFileCacheRequest& request, const UpdateFileCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Use this operation to update the configuration of an existing Amazon FSx file
@@ -1141,15 +851,6 @@ namespace FSx
          */
         virtual Model::UpdateFileSystemOutcome UpdateFileSystem(const Model::UpdateFileSystemRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateFileSystem that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateFileSystemOutcomeCallable UpdateFileSystemCallable(const Model::UpdateFileSystemRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateFileSystem that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateFileSystemAsync(const Model::UpdateFileSystemRequest& request, const UpdateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the name of an Amazon FSx for OpenZFS snapshot.</p><p><h3>See
@@ -1159,15 +860,6 @@ namespace FSx
          */
         virtual Model::UpdateSnapshotOutcome UpdateSnapshot(const Model::UpdateSnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateSnapshotOutcomeCallable UpdateSnapshotCallable(const Model::UpdateSnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateSnapshotAsync(const Model::UpdateSnapshotRequest& request, const UpdateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an Amazon FSx for ONTAP storage virtual machine (SVM).</p><p><h3>See
@@ -1177,15 +869,6 @@ namespace FSx
          */
         virtual Model::UpdateStorageVirtualMachineOutcome UpdateStorageVirtualMachine(const Model::UpdateStorageVirtualMachineRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateStorageVirtualMachine that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateStorageVirtualMachineOutcomeCallable UpdateStorageVirtualMachineCallable(const Model::UpdateStorageVirtualMachineRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateStorageVirtualMachine that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateStorageVirtualMachineAsync(const Model::UpdateStorageVirtualMachineRequest& request, const UpdateStorageVirtualMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the configuration of an Amazon FSx for NetApp ONTAP or Amazon FSx for
@@ -1195,15 +878,6 @@ namespace FSx
          */
         virtual Model::UpdateVolumeOutcome UpdateVolume(const Model::UpdateVolumeRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateVolume that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateVolumeOutcomeCallable UpdateVolumeCallable(const Model::UpdateVolumeRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateVolume that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateVolumeAsync(const Model::UpdateVolumeRequest& request, const UpdateVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

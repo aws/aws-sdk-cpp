@@ -7,8 +7,10 @@
 #include <aws/workmailmessageflow/WorkMailMessageFlow_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/workmailmessageflow/WorkMailMessageFlowServiceClientModel.h>
+#include <aws/workmailmessageflow/WorkMailMessageFlowLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -74,6 +76,47 @@ namespace WorkMailMessageFlow
         virtual ~WorkMailMessageFlowClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Retrieves the raw content of an in-transit email message, in MIME
          * format.</p><p><h3>See Also:</h3>   <a
@@ -82,15 +125,6 @@ namespace WorkMailMessageFlow
          */
         virtual Model::GetRawMessageContentOutcome GetRawMessageContent(const Model::GetRawMessageContentRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRawMessageContent that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRawMessageContentOutcomeCallable GetRawMessageContentCallable(const Model::GetRawMessageContentRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRawMessageContent that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRawMessageContentAsync(const Model::GetRawMessageContentRequest& request, const GetRawMessageContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the raw content of an in-transit email message, in MIME format.</p>
@@ -110,15 +144,6 @@ namespace WorkMailMessageFlow
          */
         virtual Model::PutRawMessageContentOutcome PutRawMessageContent(const Model::PutRawMessageContentRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutRawMessageContent that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutRawMessageContentOutcomeCallable PutRawMessageContentCallable(const Model::PutRawMessageContentRequest& request) const;
-
-        /**
-         * An Async wrapper for PutRawMessageContent that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutRawMessageContentAsync(const Model::PutRawMessageContentRequest& request, const PutRawMessageContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

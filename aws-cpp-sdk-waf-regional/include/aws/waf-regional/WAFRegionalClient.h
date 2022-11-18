@@ -7,8 +7,10 @@
 #include <aws/waf-regional/WAFRegional_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/waf-regional/WAFRegionalServiceClientModel.h>
+#include <aws/waf-regional/WAFRegionalLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -93,6 +95,47 @@ namespace WAFRegional
         virtual ~WAFRegionalClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          *  <p>This is <b>AWS WAF Classic Regional</b> documentation. For more
          * information, see <a
@@ -109,15 +152,6 @@ namespace WAFRegional
          */
         virtual Model::AssociateWebACLOutcome AssociateWebACL(const Model::AssociateWebACLRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateWebACL that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateWebACLOutcomeCallable AssociateWebACLCallable(const Model::AssociateWebACLRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateWebACL that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateWebACLAsync(const Model::AssociateWebACLRequest& request, const AssociateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -152,15 +186,6 @@ namespace WAFRegional
          */
         virtual Model::CreateByteMatchSetOutcome CreateByteMatchSet(const Model::CreateByteMatchSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateByteMatchSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateByteMatchSetOutcomeCallable CreateByteMatchSetCallable(const Model::CreateByteMatchSetRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateByteMatchSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateByteMatchSetAsync(const Model::CreateByteMatchSetRequest& request, const CreateByteMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -193,15 +218,6 @@ namespace WAFRegional
          */
         virtual Model::CreateGeoMatchSetOutcome CreateGeoMatchSet(const Model::CreateGeoMatchSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateGeoMatchSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateGeoMatchSetOutcomeCallable CreateGeoMatchSetCallable(const Model::CreateGeoMatchSetRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateGeoMatchSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateGeoMatchSetAsync(const Model::CreateGeoMatchSetRequest& request, const CreateGeoMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -234,15 +250,6 @@ namespace WAFRegional
          */
         virtual Model::CreateIPSetOutcome CreateIPSet(const Model::CreateIPSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateIPSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateIPSetOutcomeCallable CreateIPSetCallable(const Model::CreateIPSetRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateIPSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateIPSetAsync(const Model::CreateIPSetRequest& request, const CreateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -306,15 +313,6 @@ namespace WAFRegional
          */
         virtual Model::CreateRateBasedRuleOutcome CreateRateBasedRule(const Model::CreateRateBasedRuleRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateRateBasedRule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateRateBasedRuleOutcomeCallable CreateRateBasedRuleCallable(const Model::CreateRateBasedRuleRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateRateBasedRule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateRateBasedRuleAsync(const Model::CreateRateBasedRuleRequest& request, const CreateRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -351,15 +349,6 @@ namespace WAFRegional
          */
         virtual Model::CreateRegexMatchSetOutcome CreateRegexMatchSet(const Model::CreateRegexMatchSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateRegexMatchSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateRegexMatchSetOutcomeCallable CreateRegexMatchSetCallable(const Model::CreateRegexMatchSetRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateRegexMatchSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateRegexMatchSetAsync(const Model::CreateRegexMatchSetRequest& request, const CreateRegexMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -391,15 +380,6 @@ namespace WAFRegional
          */
         virtual Model::CreateRegexPatternSetOutcome CreateRegexPatternSet(const Model::CreateRegexPatternSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateRegexPatternSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateRegexPatternSetOutcomeCallable CreateRegexPatternSetCallable(const Model::CreateRegexPatternSetRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateRegexPatternSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateRegexPatternSetAsync(const Model::CreateRegexPatternSetRequest& request, const CreateRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -444,15 +424,6 @@ namespace WAFRegional
          */
         virtual Model::CreateRuleOutcome CreateRule(const Model::CreateRuleRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateRule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateRuleOutcomeCallable CreateRuleCallable(const Model::CreateRuleRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateRule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateRuleAsync(const Model::CreateRuleRequest& request, const CreateRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -477,15 +448,6 @@ namespace WAFRegional
          */
         virtual Model::CreateRuleGroupOutcome CreateRuleGroup(const Model::CreateRuleGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateRuleGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateRuleGroupOutcomeCallable CreateRuleGroupCallable(const Model::CreateRuleGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateRuleGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateRuleGroupAsync(const Model::CreateRuleGroupRequest& request, const CreateRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -521,15 +483,6 @@ namespace WAFRegional
          */
         virtual Model::CreateSizeConstraintSetOutcome CreateSizeConstraintSet(const Model::CreateSizeConstraintSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateSizeConstraintSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateSizeConstraintSetOutcomeCallable CreateSizeConstraintSetCallable(const Model::CreateSizeConstraintSetRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateSizeConstraintSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateSizeConstraintSetAsync(const Model::CreateSizeConstraintSetRequest& request, const CreateSizeConstraintSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -561,15 +514,6 @@ namespace WAFRegional
          */
         virtual Model::CreateSqlInjectionMatchSetOutcome CreateSqlInjectionMatchSet(const Model::CreateSqlInjectionMatchSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateSqlInjectionMatchSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateSqlInjectionMatchSetOutcomeCallable CreateSqlInjectionMatchSetCallable(const Model::CreateSqlInjectionMatchSetRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateSqlInjectionMatchSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateSqlInjectionMatchSetAsync(const Model::CreateSqlInjectionMatchSetRequest& request, const CreateSqlInjectionMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -612,15 +556,6 @@ namespace WAFRegional
          */
         virtual Model::CreateWebACLOutcome CreateWebACL(const Model::CreateWebACLRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateWebACL that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateWebACLOutcomeCallable CreateWebACLCallable(const Model::CreateWebACLRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateWebACL that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateWebACLAsync(const Model::CreateWebACLRequest& request, const CreateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an AWS CloudFormation WAFV2 template for the specified web ACL in the
@@ -640,15 +575,6 @@ namespace WAFRegional
          */
         virtual Model::CreateWebACLMigrationStackOutcome CreateWebACLMigrationStack(const Model::CreateWebACLMigrationStackRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateWebACLMigrationStack that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateWebACLMigrationStackOutcomeCallable CreateWebACLMigrationStackCallable(const Model::CreateWebACLMigrationStackRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateWebACLMigrationStack that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateWebACLMigrationStackAsync(const Model::CreateWebACLMigrationStackRequest& request, const CreateWebACLMigrationStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -680,15 +606,6 @@ namespace WAFRegional
          */
         virtual Model::CreateXssMatchSetOutcome CreateXssMatchSet(const Model::CreateXssMatchSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateXssMatchSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateXssMatchSetOutcomeCallable CreateXssMatchSetCallable(const Model::CreateXssMatchSetRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateXssMatchSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateXssMatchSetAsync(const Model::CreateXssMatchSetRequest& request, const CreateXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -715,15 +632,6 @@ namespace WAFRegional
          */
         virtual Model::DeleteByteMatchSetOutcome DeleteByteMatchSet(const Model::DeleteByteMatchSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteByteMatchSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteByteMatchSetOutcomeCallable DeleteByteMatchSetCallable(const Model::DeleteByteMatchSetRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteByteMatchSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteByteMatchSetAsync(const Model::DeleteByteMatchSetRequest& request, const DeleteByteMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -750,15 +658,6 @@ namespace WAFRegional
          */
         virtual Model::DeleteGeoMatchSetOutcome DeleteGeoMatchSet(const Model::DeleteGeoMatchSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteGeoMatchSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteGeoMatchSetOutcomeCallable DeleteGeoMatchSetCallable(const Model::DeleteGeoMatchSetRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteGeoMatchSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteGeoMatchSetAsync(const Model::DeleteGeoMatchSetRequest& request, const DeleteGeoMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -784,15 +683,6 @@ namespace WAFRegional
          */
         virtual Model::DeleteIPSetOutcome DeleteIPSet(const Model::DeleteIPSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteIPSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteIPSetOutcomeCallable DeleteIPSetCallable(const Model::DeleteIPSetRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteIPSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteIPSetAsync(const Model::DeleteIPSetRequest& request, const DeleteIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -810,15 +700,6 @@ namespace WAFRegional
          */
         virtual Model::DeleteLoggingConfigurationOutcome DeleteLoggingConfiguration(const Model::DeleteLoggingConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteLoggingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteLoggingConfigurationOutcomeCallable DeleteLoggingConfigurationCallable(const Model::DeleteLoggingConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteLoggingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteLoggingConfigurationAsync(const Model::DeleteLoggingConfigurationRequest& request, const DeleteLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -836,15 +717,6 @@ namespace WAFRegional
          */
         virtual Model::DeletePermissionPolicyOutcome DeletePermissionPolicy(const Model::DeletePermissionPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeletePermissionPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeletePermissionPolicyOutcomeCallable DeletePermissionPolicyCallable(const Model::DeletePermissionPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeletePermissionPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeletePermissionPolicyAsync(const Model::DeletePermissionPolicyRequest& request, const DeletePermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -871,15 +743,6 @@ namespace WAFRegional
          */
         virtual Model::DeleteRateBasedRuleOutcome DeleteRateBasedRule(const Model::DeleteRateBasedRuleRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteRateBasedRule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteRateBasedRuleOutcomeCallable DeleteRateBasedRuleCallable(const Model::DeleteRateBasedRuleRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteRateBasedRule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteRateBasedRuleAsync(const Model::DeleteRateBasedRuleRequest& request, const DeleteRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -907,15 +770,6 @@ namespace WAFRegional
          */
         virtual Model::DeleteRegexMatchSetOutcome DeleteRegexMatchSet(const Model::DeleteRegexMatchSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteRegexMatchSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteRegexMatchSetOutcomeCallable DeleteRegexMatchSetCallable(const Model::DeleteRegexMatchSetRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteRegexMatchSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteRegexMatchSetAsync(const Model::DeleteRegexMatchSetRequest& request, const DeleteRegexMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -934,15 +788,6 @@ namespace WAFRegional
          */
         virtual Model::DeleteRegexPatternSetOutcome DeleteRegexPatternSet(const Model::DeleteRegexPatternSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteRegexPatternSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteRegexPatternSetOutcomeCallable DeleteRegexPatternSetCallable(const Model::DeleteRegexPatternSetRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteRegexPatternSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteRegexPatternSetAsync(const Model::DeleteRegexPatternSetRequest& request, const DeleteRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -969,15 +814,6 @@ namespace WAFRegional
          */
         virtual Model::DeleteRuleOutcome DeleteRule(const Model::DeleteRuleRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteRule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteRuleOutcomeCallable DeleteRuleCallable(const Model::DeleteRuleRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteRule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteRuleAsync(const Model::DeleteRuleRequest& request, const DeleteRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -1003,15 +839,6 @@ namespace WAFRegional
          */
         virtual Model::DeleteRuleGroupOutcome DeleteRuleGroup(const Model::DeleteRuleGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteRuleGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteRuleGroupOutcomeCallable DeleteRuleGroupCallable(const Model::DeleteRuleGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteRuleGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteRuleGroupAsync(const Model::DeleteRuleGroupRequest& request, const DeleteRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -1039,15 +866,6 @@ namespace WAFRegional
          */
         virtual Model::DeleteSizeConstraintSetOutcome DeleteSizeConstraintSet(const Model::DeleteSizeConstraintSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteSizeConstraintSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteSizeConstraintSetOutcomeCallable DeleteSizeConstraintSetCallable(const Model::DeleteSizeConstraintSetRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteSizeConstraintSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteSizeConstraintSetAsync(const Model::DeleteSizeConstraintSetRequest& request, const DeleteSizeConstraintSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -1075,15 +893,6 @@ namespace WAFRegional
          */
         virtual Model::DeleteSqlInjectionMatchSetOutcome DeleteSqlInjectionMatchSet(const Model::DeleteSqlInjectionMatchSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteSqlInjectionMatchSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteSqlInjectionMatchSetOutcomeCallable DeleteSqlInjectionMatchSetCallable(const Model::DeleteSqlInjectionMatchSetRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteSqlInjectionMatchSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteSqlInjectionMatchSetAsync(const Model::DeleteSqlInjectionMatchSetRequest& request, const DeleteSqlInjectionMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -1107,15 +916,6 @@ namespace WAFRegional
          */
         virtual Model::DeleteWebACLOutcome DeleteWebACL(const Model::DeleteWebACLRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteWebACL that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteWebACLOutcomeCallable DeleteWebACLCallable(const Model::DeleteWebACLRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteWebACL that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteWebACLAsync(const Model::DeleteWebACLRequest& request, const DeleteWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -1142,15 +942,6 @@ namespace WAFRegional
          */
         virtual Model::DeleteXssMatchSetOutcome DeleteXssMatchSet(const Model::DeleteXssMatchSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteXssMatchSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteXssMatchSetOutcomeCallable DeleteXssMatchSetCallable(const Model::DeleteXssMatchSetRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteXssMatchSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteXssMatchSetAsync(const Model::DeleteXssMatchSetRequest& request, const DeleteXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic Regional</b> documentation. For more
@@ -1168,15 +959,6 @@ namespace WAFRegional
          */
         virtual Model::DisassociateWebACLOutcome DisassociateWebACL(const Model::DisassociateWebACLRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateWebACL that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateWebACLOutcomeCallable DisassociateWebACLCallable(const Model::DisassociateWebACLRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateWebACL that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateWebACLAsync(const Model::DisassociateWebACLRequest& request, const DisassociateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -1194,15 +976,6 @@ namespace WAFRegional
          */
         virtual Model::GetByteMatchSetOutcome GetByteMatchSet(const Model::GetByteMatchSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetByteMatchSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetByteMatchSetOutcomeCallable GetByteMatchSetCallable(const Model::GetByteMatchSetRequest& request) const;
-
-        /**
-         * An Async wrapper for GetByteMatchSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetByteMatchSetAsync(const Model::GetByteMatchSetRequest& request, const GetByteMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -1231,15 +1004,6 @@ namespace WAFRegional
          */
         virtual Model::GetChangeTokenOutcome GetChangeToken(const Model::GetChangeTokenRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetChangeToken that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetChangeTokenOutcomeCallable GetChangeTokenCallable(const Model::GetChangeTokenRequest& request) const;
-
-        /**
-         * An Async wrapper for GetChangeToken that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetChangeTokenAsync(const Model::GetChangeTokenRequest& request, const GetChangeTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -1263,15 +1027,6 @@ namespace WAFRegional
          */
         virtual Model::GetChangeTokenStatusOutcome GetChangeTokenStatus(const Model::GetChangeTokenStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetChangeTokenStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetChangeTokenStatusOutcomeCallable GetChangeTokenStatusCallable(const Model::GetChangeTokenStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for GetChangeTokenStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetChangeTokenStatusAsync(const Model::GetChangeTokenStatusRequest& request, const GetChangeTokenStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -1289,15 +1044,6 @@ namespace WAFRegional
          */
         virtual Model::GetGeoMatchSetOutcome GetGeoMatchSet(const Model::GetGeoMatchSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetGeoMatchSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetGeoMatchSetOutcomeCallable GetGeoMatchSetCallable(const Model::GetGeoMatchSetRequest& request) const;
-
-        /**
-         * An Async wrapper for GetGeoMatchSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetGeoMatchSetAsync(const Model::GetGeoMatchSetRequest& request, const GetGeoMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -1314,15 +1060,6 @@ namespace WAFRegional
          */
         virtual Model::GetIPSetOutcome GetIPSet(const Model::GetIPSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetIPSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetIPSetOutcomeCallable GetIPSetCallable(const Model::GetIPSetRequest& request) const;
-
-        /**
-         * An Async wrapper for GetIPSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetIPSetAsync(const Model::GetIPSetRequest& request, const GetIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -1340,15 +1077,6 @@ namespace WAFRegional
          */
         virtual Model::GetLoggingConfigurationOutcome GetLoggingConfiguration(const Model::GetLoggingConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetLoggingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetLoggingConfigurationOutcomeCallable GetLoggingConfigurationCallable(const Model::GetLoggingConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetLoggingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetLoggingConfigurationAsync(const Model::GetLoggingConfigurationRequest& request, const GetLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -1365,15 +1093,6 @@ namespace WAFRegional
          */
         virtual Model::GetPermissionPolicyOutcome GetPermissionPolicy(const Model::GetPermissionPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetPermissionPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetPermissionPolicyOutcomeCallable GetPermissionPolicyCallable(const Model::GetPermissionPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetPermissionPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetPermissionPolicyAsync(const Model::GetPermissionPolicyRequest& request, const GetPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -1392,15 +1111,6 @@ namespace WAFRegional
          */
         virtual Model::GetRateBasedRuleOutcome GetRateBasedRule(const Model::GetRateBasedRuleRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRateBasedRule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRateBasedRuleOutcomeCallable GetRateBasedRuleCallable(const Model::GetRateBasedRuleRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRateBasedRule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRateBasedRuleAsync(const Model::GetRateBasedRuleRequest& request, const GetRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -1421,15 +1131,6 @@ namespace WAFRegional
          */
         virtual Model::GetRateBasedRuleManagedKeysOutcome GetRateBasedRuleManagedKeys(const Model::GetRateBasedRuleManagedKeysRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRateBasedRuleManagedKeys that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRateBasedRuleManagedKeysOutcomeCallable GetRateBasedRuleManagedKeysCallable(const Model::GetRateBasedRuleManagedKeysRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRateBasedRuleManagedKeys that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRateBasedRuleManagedKeysAsync(const Model::GetRateBasedRuleManagedKeysRequest& request, const GetRateBasedRuleManagedKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -1447,15 +1148,6 @@ namespace WAFRegional
          */
         virtual Model::GetRegexMatchSetOutcome GetRegexMatchSet(const Model::GetRegexMatchSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRegexMatchSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRegexMatchSetOutcomeCallable GetRegexMatchSetCallable(const Model::GetRegexMatchSetRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRegexMatchSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRegexMatchSetAsync(const Model::GetRegexMatchSetRequest& request, const GetRegexMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -1473,15 +1165,6 @@ namespace WAFRegional
          */
         virtual Model::GetRegexPatternSetOutcome GetRegexPatternSet(const Model::GetRegexPatternSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRegexPatternSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRegexPatternSetOutcomeCallable GetRegexPatternSetCallable(const Model::GetRegexPatternSetRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRegexPatternSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRegexPatternSetAsync(const Model::GetRegexPatternSetRequest& request, const GetRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -1499,15 +1182,6 @@ namespace WAFRegional
          */
         virtual Model::GetRuleOutcome GetRule(const Model::GetRuleRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRuleOutcomeCallable GetRuleCallable(const Model::GetRuleRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRuleAsync(const Model::GetRuleRequest& request, const GetRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -1527,15 +1201,6 @@ namespace WAFRegional
          */
         virtual Model::GetRuleGroupOutcome GetRuleGroup(const Model::GetRuleGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRuleGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRuleGroupOutcomeCallable GetRuleGroupCallable(const Model::GetRuleGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRuleGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRuleGroupAsync(const Model::GetRuleGroupRequest& request, const GetRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -1561,15 +1226,6 @@ namespace WAFRegional
          */
         virtual Model::GetSampledRequestsOutcome GetSampledRequests(const Model::GetSampledRequestsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSampledRequests that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSampledRequestsOutcomeCallable GetSampledRequestsCallable(const Model::GetSampledRequestsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSampledRequests that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSampledRequestsAsync(const Model::GetSampledRequestsRequest& request, const GetSampledRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -1587,15 +1243,6 @@ namespace WAFRegional
          */
         virtual Model::GetSizeConstraintSetOutcome GetSizeConstraintSet(const Model::GetSizeConstraintSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSizeConstraintSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSizeConstraintSetOutcomeCallable GetSizeConstraintSetCallable(const Model::GetSizeConstraintSetRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSizeConstraintSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSizeConstraintSetAsync(const Model::GetSizeConstraintSetRequest& request, const GetSizeConstraintSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -1613,15 +1260,6 @@ namespace WAFRegional
          */
         virtual Model::GetSqlInjectionMatchSetOutcome GetSqlInjectionMatchSet(const Model::GetSqlInjectionMatchSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSqlInjectionMatchSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSqlInjectionMatchSetOutcomeCallable GetSqlInjectionMatchSetCallable(const Model::GetSqlInjectionMatchSetRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSqlInjectionMatchSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSqlInjectionMatchSetAsync(const Model::GetSqlInjectionMatchSetRequest& request, const GetSqlInjectionMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -1638,15 +1276,6 @@ namespace WAFRegional
          */
         virtual Model::GetWebACLOutcome GetWebACL(const Model::GetWebACLRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetWebACL that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetWebACLOutcomeCallable GetWebACLCallable(const Model::GetWebACLRequest& request) const;
-
-        /**
-         * An Async wrapper for GetWebACL that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetWebACLAsync(const Model::GetWebACLRequest& request, const GetWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic Regional</b> documentation. For more
@@ -1664,15 +1293,6 @@ namespace WAFRegional
          */
         virtual Model::GetWebACLForResourceOutcome GetWebACLForResource(const Model::GetWebACLForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetWebACLForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetWebACLForResourceOutcomeCallable GetWebACLForResourceCallable(const Model::GetWebACLForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for GetWebACLForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetWebACLForResourceAsync(const Model::GetWebACLForResourceRequest& request, const GetWebACLForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -1690,15 +1310,6 @@ namespace WAFRegional
          */
         virtual Model::GetXssMatchSetOutcome GetXssMatchSet(const Model::GetXssMatchSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetXssMatchSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetXssMatchSetOutcomeCallable GetXssMatchSetCallable(const Model::GetXssMatchSetRequest& request) const;
-
-        /**
-         * An Async wrapper for GetXssMatchSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetXssMatchSetAsync(const Model::GetXssMatchSetRequest& request, const GetXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -1715,15 +1326,6 @@ namespace WAFRegional
          */
         virtual Model::ListActivatedRulesInRuleGroupOutcome ListActivatedRulesInRuleGroup(const Model::ListActivatedRulesInRuleGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListActivatedRulesInRuleGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListActivatedRulesInRuleGroupOutcomeCallable ListActivatedRulesInRuleGroupCallable(const Model::ListActivatedRulesInRuleGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for ListActivatedRulesInRuleGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListActivatedRulesInRuleGroupAsync(const Model::ListActivatedRulesInRuleGroupRequest& request, const ListActivatedRulesInRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -1740,15 +1342,6 @@ namespace WAFRegional
          */
         virtual Model::ListByteMatchSetsOutcome ListByteMatchSets(const Model::ListByteMatchSetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListByteMatchSets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListByteMatchSetsOutcomeCallable ListByteMatchSetsCallable(const Model::ListByteMatchSetsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListByteMatchSets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListByteMatchSetsAsync(const Model::ListByteMatchSetsRequest& request, const ListByteMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -1765,15 +1358,6 @@ namespace WAFRegional
          */
         virtual Model::ListGeoMatchSetsOutcome ListGeoMatchSets(const Model::ListGeoMatchSetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListGeoMatchSets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListGeoMatchSetsOutcomeCallable ListGeoMatchSetsCallable(const Model::ListGeoMatchSetsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListGeoMatchSets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListGeoMatchSetsAsync(const Model::ListGeoMatchSetsRequest& request, const ListGeoMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -1790,15 +1374,6 @@ namespace WAFRegional
          */
         virtual Model::ListIPSetsOutcome ListIPSets(const Model::ListIPSetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListIPSets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListIPSetsOutcomeCallable ListIPSetsCallable(const Model::ListIPSetsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListIPSets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListIPSetsAsync(const Model::ListIPSetsRequest& request, const ListIPSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -1815,15 +1390,6 @@ namespace WAFRegional
          */
         virtual Model::ListLoggingConfigurationsOutcome ListLoggingConfigurations(const Model::ListLoggingConfigurationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListLoggingConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListLoggingConfigurationsOutcomeCallable ListLoggingConfigurationsCallable(const Model::ListLoggingConfigurationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListLoggingConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListLoggingConfigurationsAsync(const Model::ListLoggingConfigurationsRequest& request, const ListLoggingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -1840,15 +1406,6 @@ namespace WAFRegional
          */
         virtual Model::ListRateBasedRulesOutcome ListRateBasedRules(const Model::ListRateBasedRulesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListRateBasedRules that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListRateBasedRulesOutcomeCallable ListRateBasedRulesCallable(const Model::ListRateBasedRulesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListRateBasedRules that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListRateBasedRulesAsync(const Model::ListRateBasedRulesRequest& request, const ListRateBasedRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -1865,15 +1422,6 @@ namespace WAFRegional
          */
         virtual Model::ListRegexMatchSetsOutcome ListRegexMatchSets(const Model::ListRegexMatchSetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListRegexMatchSets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListRegexMatchSetsOutcomeCallable ListRegexMatchSetsCallable(const Model::ListRegexMatchSetsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListRegexMatchSets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListRegexMatchSetsAsync(const Model::ListRegexMatchSetsRequest& request, const ListRegexMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -1890,15 +1438,6 @@ namespace WAFRegional
          */
         virtual Model::ListRegexPatternSetsOutcome ListRegexPatternSets(const Model::ListRegexPatternSetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListRegexPatternSets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListRegexPatternSetsOutcomeCallable ListRegexPatternSetsCallable(const Model::ListRegexPatternSetsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListRegexPatternSets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListRegexPatternSetsAsync(const Model::ListRegexPatternSetsRequest& request, const ListRegexPatternSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic Regional</b> documentation. For more
@@ -1915,15 +1454,6 @@ namespace WAFRegional
          */
         virtual Model::ListResourcesForWebACLOutcome ListResourcesForWebACL(const Model::ListResourcesForWebACLRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListResourcesForWebACL that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListResourcesForWebACLOutcomeCallable ListResourcesForWebACLCallable(const Model::ListResourcesForWebACLRequest& request) const;
-
-        /**
-         * An Async wrapper for ListResourcesForWebACL that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListResourcesForWebACLAsync(const Model::ListResourcesForWebACLRequest& request, const ListResourcesForWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -1940,15 +1470,6 @@ namespace WAFRegional
          */
         virtual Model::ListRuleGroupsOutcome ListRuleGroups(const Model::ListRuleGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListRuleGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListRuleGroupsOutcomeCallable ListRuleGroupsCallable(const Model::ListRuleGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListRuleGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListRuleGroupsAsync(const Model::ListRuleGroupsRequest& request, const ListRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -1965,15 +1486,6 @@ namespace WAFRegional
          */
         virtual Model::ListRulesOutcome ListRules(const Model::ListRulesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListRules that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListRulesOutcomeCallable ListRulesCallable(const Model::ListRulesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListRules that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListRulesAsync(const Model::ListRulesRequest& request, const ListRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -1990,15 +1502,6 @@ namespace WAFRegional
          */
         virtual Model::ListSizeConstraintSetsOutcome ListSizeConstraintSets(const Model::ListSizeConstraintSetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSizeConstraintSets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListSizeConstraintSetsOutcomeCallable ListSizeConstraintSetsCallable(const Model::ListSizeConstraintSetsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSizeConstraintSets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListSizeConstraintSetsAsync(const Model::ListSizeConstraintSetsRequest& request, const ListSizeConstraintSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -2015,15 +1518,6 @@ namespace WAFRegional
          */
         virtual Model::ListSqlInjectionMatchSetsOutcome ListSqlInjectionMatchSets(const Model::ListSqlInjectionMatchSetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSqlInjectionMatchSets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListSqlInjectionMatchSetsOutcomeCallable ListSqlInjectionMatchSetsCallable(const Model::ListSqlInjectionMatchSetsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSqlInjectionMatchSets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListSqlInjectionMatchSetsAsync(const Model::ListSqlInjectionMatchSetsRequest& request, const ListSqlInjectionMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -2041,15 +1535,6 @@ namespace WAFRegional
          */
         virtual Model::ListSubscribedRuleGroupsOutcome ListSubscribedRuleGroups(const Model::ListSubscribedRuleGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSubscribedRuleGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListSubscribedRuleGroupsOutcomeCallable ListSubscribedRuleGroupsCallable(const Model::ListSubscribedRuleGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSubscribedRuleGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListSubscribedRuleGroupsAsync(const Model::ListSubscribedRuleGroupsRequest& request, const ListSubscribedRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -2073,15 +1558,6 @@ namespace WAFRegional
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -2098,15 +1574,6 @@ namespace WAFRegional
          */
         virtual Model::ListWebACLsOutcome ListWebACLs(const Model::ListWebACLsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListWebACLs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListWebACLsOutcomeCallable ListWebACLsCallable(const Model::ListWebACLsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListWebACLs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListWebACLsAsync(const Model::ListWebACLsRequest& request, const ListWebACLsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -2123,15 +1590,6 @@ namespace WAFRegional
          */
         virtual Model::ListXssMatchSetsOutcome ListXssMatchSets(const Model::ListXssMatchSetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListXssMatchSets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListXssMatchSetsOutcomeCallable ListXssMatchSetsCallable(const Model::ListXssMatchSetsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListXssMatchSets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListXssMatchSetsAsync(const Model::ListXssMatchSetsRequest& request, const ListXssMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -2163,15 +1621,6 @@ namespace WAFRegional
          */
         virtual Model::PutLoggingConfigurationOutcome PutLoggingConfiguration(const Model::PutLoggingConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutLoggingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutLoggingConfigurationOutcomeCallable PutLoggingConfigurationCallable(const Model::PutLoggingConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for PutLoggingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutLoggingConfigurationAsync(const Model::PutLoggingConfigurationRequest& request, const PutLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -2205,15 +1654,6 @@ namespace WAFRegional
          */
         virtual Model::PutPermissionPolicyOutcome PutPermissionPolicy(const Model::PutPermissionPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutPermissionPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutPermissionPolicyOutcomeCallable PutPermissionPolicyCallable(const Model::PutPermissionPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for PutPermissionPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutPermissionPolicyAsync(const Model::PutPermissionPolicyRequest& request, const PutPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -2237,15 +1677,6 @@ namespace WAFRegional
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -2262,15 +1693,6 @@ namespace WAFRegional
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -2314,15 +1736,6 @@ namespace WAFRegional
          */
         virtual Model::UpdateByteMatchSetOutcome UpdateByteMatchSet(const Model::UpdateByteMatchSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateByteMatchSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateByteMatchSetOutcomeCallable UpdateByteMatchSetCallable(const Model::UpdateByteMatchSetRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateByteMatchSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateByteMatchSetAsync(const Model::UpdateByteMatchSetRequest& request, const UpdateByteMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -2359,15 +1772,6 @@ namespace WAFRegional
          */
         virtual Model::UpdateGeoMatchSetOutcome UpdateGeoMatchSet(const Model::UpdateGeoMatchSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateGeoMatchSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateGeoMatchSetOutcomeCallable UpdateGeoMatchSetCallable(const Model::UpdateGeoMatchSetRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateGeoMatchSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateGeoMatchSetAsync(const Model::UpdateGeoMatchSetRequest& request, const UpdateGeoMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -2420,15 +1824,6 @@ namespace WAFRegional
          */
         virtual Model::UpdateIPSetOutcome UpdateIPSet(const Model::UpdateIPSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateIPSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateIPSetOutcomeCallable UpdateIPSetCallable(const Model::UpdateIPSetRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateIPSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateIPSetAsync(const Model::UpdateIPSetRequest& request, const UpdateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -2473,15 +1868,6 @@ namespace WAFRegional
          */
         virtual Model::UpdateRateBasedRuleOutcome UpdateRateBasedRule(const Model::UpdateRateBasedRuleRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateRateBasedRule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateRateBasedRuleOutcomeCallable UpdateRateBasedRuleCallable(const Model::UpdateRateBasedRuleRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateRateBasedRule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateRateBasedRuleAsync(const Model::UpdateRateBasedRuleRequest& request, const UpdateRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -2524,15 +1910,6 @@ namespace WAFRegional
          */
         virtual Model::UpdateRegexMatchSetOutcome UpdateRegexMatchSet(const Model::UpdateRegexMatchSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateRegexMatchSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateRegexMatchSetOutcomeCallable UpdateRegexMatchSetCallable(const Model::UpdateRegexMatchSetRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateRegexMatchSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateRegexMatchSetAsync(const Model::UpdateRegexMatchSetRequest& request, const UpdateRegexMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -2568,15 +1945,6 @@ namespace WAFRegional
          */
         virtual Model::UpdateRegexPatternSetOutcome UpdateRegexPatternSet(const Model::UpdateRegexPatternSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateRegexPatternSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateRegexPatternSetOutcomeCallable UpdateRegexPatternSetCallable(const Model::UpdateRegexPatternSetRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateRegexPatternSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateRegexPatternSetAsync(const Model::UpdateRegexPatternSetRequest& request, const UpdateRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -2619,15 +1987,6 @@ namespace WAFRegional
          */
         virtual Model::UpdateRuleOutcome UpdateRule(const Model::UpdateRuleRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateRule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateRuleOutcomeCallable UpdateRuleCallable(const Model::UpdateRuleRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateRule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateRuleAsync(const Model::UpdateRuleRequest& request, const UpdateRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -2660,15 +2019,6 @@ namespace WAFRegional
          */
         virtual Model::UpdateRuleGroupOutcome UpdateRuleGroup(const Model::UpdateRuleGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateRuleGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateRuleGroupOutcomeCallable UpdateRuleGroupCallable(const Model::UpdateRuleGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateRuleGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateRuleGroupAsync(const Model::UpdateRuleGroupRequest& request, const UpdateRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -2715,15 +2065,6 @@ namespace WAFRegional
          */
         virtual Model::UpdateSizeConstraintSetOutcome UpdateSizeConstraintSet(const Model::UpdateSizeConstraintSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateSizeConstraintSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateSizeConstraintSetOutcomeCallable UpdateSizeConstraintSetCallable(const Model::UpdateSizeConstraintSetRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateSizeConstraintSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateSizeConstraintSetAsync(const Model::UpdateSizeConstraintSetRequest& request, const UpdateSizeConstraintSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -2766,15 +2107,6 @@ namespace WAFRegional
          */
         virtual Model::UpdateSqlInjectionMatchSetOutcome UpdateSqlInjectionMatchSet(const Model::UpdateSqlInjectionMatchSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateSqlInjectionMatchSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateSqlInjectionMatchSetOutcomeCallable UpdateSqlInjectionMatchSetCallable(const Model::UpdateSqlInjectionMatchSetRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateSqlInjectionMatchSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateSqlInjectionMatchSetAsync(const Model::UpdateSqlInjectionMatchSetRequest& request, const UpdateSqlInjectionMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -2838,15 +2170,6 @@ namespace WAFRegional
          */
         virtual Model::UpdateWebACLOutcome UpdateWebACL(const Model::UpdateWebACLRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateWebACL that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateWebACLOutcomeCallable UpdateWebACLCallable(const Model::UpdateWebACLRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateWebACL that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateWebACLAsync(const Model::UpdateWebACLRequest& request, const UpdateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -2888,15 +2211,6 @@ namespace WAFRegional
          */
         virtual Model::UpdateXssMatchSetOutcome UpdateXssMatchSet(const Model::UpdateXssMatchSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateXssMatchSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateXssMatchSetOutcomeCallable UpdateXssMatchSetCallable(const Model::UpdateXssMatchSetRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateXssMatchSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateXssMatchSetAsync(const Model::UpdateXssMatchSetRequest& request, const UpdateXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

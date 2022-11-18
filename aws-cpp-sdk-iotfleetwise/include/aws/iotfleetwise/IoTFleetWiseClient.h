@@ -7,8 +7,10 @@
 #include <aws/iotfleetwise/IoTFleetWise_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iotfleetwise/IoTFleetWiseServiceClientModel.h>
+#include <aws/iotfleetwise/IoTFleetWiseLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -81,6 +83,47 @@ namespace IoTFleetWise
         virtual ~IoTFleetWiseClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p> Adds, or associates, a vehicle with a fleet. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/AssociateVehicleFleet">AWS
@@ -88,15 +131,6 @@ namespace IoTFleetWise
          */
         virtual Model::AssociateVehicleFleetOutcome AssociateVehicleFleet(const Model::AssociateVehicleFleetRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateVehicleFleet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateVehicleFleetOutcomeCallable AssociateVehicleFleetCallable(const Model::AssociateVehicleFleetRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateVehicleFleet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateVehicleFleetAsync(const Model::AssociateVehicleFleetRequest& request, const AssociateVehicleFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Creates a group, or batch, of vehicles. </p>  <p> You must specify a
@@ -110,15 +144,6 @@ namespace IoTFleetWise
          */
         virtual Model::BatchCreateVehicleOutcome BatchCreateVehicle(const Model::BatchCreateVehicleRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchCreateVehicle that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchCreateVehicleOutcomeCallable BatchCreateVehicleCallable(const Model::BatchCreateVehicleRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchCreateVehicle that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchCreateVehicleAsync(const Model::BatchCreateVehicleRequest& request, const BatchCreateVehicleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Updates a group, or batch, of vehicles.</p>  <p> You must specify a
@@ -132,15 +157,6 @@ namespace IoTFleetWise
          */
         virtual Model::BatchUpdateVehicleOutcome BatchUpdateVehicle(const Model::BatchUpdateVehicleRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchUpdateVehicle that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchUpdateVehicleOutcomeCallable BatchUpdateVehicleCallable(const Model::BatchUpdateVehicleRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchUpdateVehicle that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchUpdateVehicleAsync(const Model::BatchUpdateVehicleRequest& request, const BatchUpdateVehicleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an orchestration of data collection rules. The Amazon Web Services
@@ -157,15 +173,6 @@ namespace IoTFleetWise
          */
         virtual Model::CreateCampaignOutcome CreateCampaign(const Model::CreateCampaignRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateCampaign that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateCampaignOutcomeCallable CreateCampaignCallable(const Model::CreateCampaignRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateCampaign that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateCampaignAsync(const Model::CreateCampaignRequest& request, const CreateCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates the decoder manifest associated with a model manifest. To create a
@@ -179,15 +186,6 @@ namespace IoTFleetWise
          */
         virtual Model::CreateDecoderManifestOutcome CreateDecoderManifest(const Model::CreateDecoderManifestRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDecoderManifest that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDecoderManifestOutcomeCallable CreateDecoderManifestCallable(const Model::CreateDecoderManifestRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDecoderManifest that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDecoderManifestAsync(const Model::CreateDecoderManifestRequest& request, const CreateDecoderManifestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Creates a fleet that represents a group of vehicles. </p>  <p>You must
@@ -201,15 +199,6 @@ namespace IoTFleetWise
          */
         virtual Model::CreateFleetOutcome CreateFleet(const Model::CreateFleetRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateFleet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateFleetOutcomeCallable CreateFleetCallable(const Model::CreateFleetRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateFleet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateFleetAsync(const Model::CreateFleetRequest& request, const CreateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Creates a vehicle model (model manifest) that specifies signals (attributes,
@@ -222,15 +211,6 @@ namespace IoTFleetWise
          */
         virtual Model::CreateModelManifestOutcome CreateModelManifest(const Model::CreateModelManifestRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateModelManifest that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateModelManifestOutcomeCallable CreateModelManifestCallable(const Model::CreateModelManifestRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateModelManifest that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateModelManifestAsync(const Model::CreateModelManifestRequest& request, const CreateModelManifestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Creates a collection of standardized signals that can be reused to create
@@ -240,15 +220,6 @@ namespace IoTFleetWise
          */
         virtual Model::CreateSignalCatalogOutcome CreateSignalCatalog(const Model::CreateSignalCatalogRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateSignalCatalog that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateSignalCatalogOutcomeCallable CreateSignalCatalogCallable(const Model::CreateSignalCatalogRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateSignalCatalog that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateSignalCatalogAsync(const Model::CreateSignalCatalogRequest& request, const CreateSignalCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Creates a vehicle, which is an instance of a vehicle model (model manifest).
@@ -265,15 +236,6 @@ namespace IoTFleetWise
          */
         virtual Model::CreateVehicleOutcome CreateVehicle(const Model::CreateVehicleRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateVehicle that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateVehicleOutcomeCallable CreateVehicleCallable(const Model::CreateVehicleRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateVehicle that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateVehicleAsync(const Model::CreateVehicleRequest& request, const CreateVehicleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Deletes a data collection campaign. Deleting a campaign suspends all data
@@ -283,15 +245,6 @@ namespace IoTFleetWise
          */
         virtual Model::DeleteCampaignOutcome DeleteCampaign(const Model::DeleteCampaignRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteCampaign that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteCampaignOutcomeCallable DeleteCampaignCallable(const Model::DeleteCampaignRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteCampaign that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteCampaignAsync(const Model::DeleteCampaignRequest& request, const DeleteCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Deletes a decoder manifest. You can't delete a decoder manifest if it has
@@ -303,15 +256,6 @@ namespace IoTFleetWise
          */
         virtual Model::DeleteDecoderManifestOutcome DeleteDecoderManifest(const Model::DeleteDecoderManifestRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDecoderManifest that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDecoderManifestOutcomeCallable DeleteDecoderManifestCallable(const Model::DeleteDecoderManifestRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDecoderManifest that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDecoderManifestAsync(const Model::DeleteDecoderManifestRequest& request, const DeleteDecoderManifestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Deletes a fleet. Before you delete a fleet, all vehicles must be dissociated
@@ -326,15 +270,6 @@ namespace IoTFleetWise
          */
         virtual Model::DeleteFleetOutcome DeleteFleet(const Model::DeleteFleetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteFleet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteFleetOutcomeCallable DeleteFleetCallable(const Model::DeleteFleetRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteFleet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteFleetAsync(const Model::DeleteFleetRequest& request, const DeleteFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Deletes a vehicle model (model manifest).</p>  <p>If the vehicle model
@@ -345,15 +280,6 @@ namespace IoTFleetWise
          */
         virtual Model::DeleteModelManifestOutcome DeleteModelManifest(const Model::DeleteModelManifestRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteModelManifest that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteModelManifestOutcomeCallable DeleteModelManifestCallable(const Model::DeleteModelManifestRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteModelManifest that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteModelManifestAsync(const Model::DeleteModelManifestRequest& request, const DeleteModelManifestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Deletes a signal catalog. </p>  <p>If the signal catalog is
@@ -364,15 +290,6 @@ namespace IoTFleetWise
          */
         virtual Model::DeleteSignalCatalogOutcome DeleteSignalCatalog(const Model::DeleteSignalCatalogRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteSignalCatalog that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteSignalCatalogOutcomeCallable DeleteSignalCatalogCallable(const Model::DeleteSignalCatalogRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteSignalCatalog that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteSignalCatalogAsync(const Model::DeleteSignalCatalogRequest& request, const DeleteSignalCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Deletes a vehicle and removes it from any campaigns.</p>  <p>If the
@@ -383,15 +300,6 @@ namespace IoTFleetWise
          */
         virtual Model::DeleteVehicleOutcome DeleteVehicle(const Model::DeleteVehicleRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteVehicle that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteVehicleOutcomeCallable DeleteVehicleCallable(const Model::DeleteVehicleRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteVehicle that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteVehicleAsync(const Model::DeleteVehicleRequest& request, const DeleteVehicleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes, or disassociates, a vehicle from a fleet. Disassociating a vehicle
@@ -404,15 +312,6 @@ namespace IoTFleetWise
          */
         virtual Model::DisassociateVehicleFleetOutcome DisassociateVehicleFleet(const Model::DisassociateVehicleFleetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateVehicleFleet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateVehicleFleetOutcomeCallable DisassociateVehicleFleetCallable(const Model::DisassociateVehicleFleetRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateVehicleFleet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateVehicleFleetAsync(const Model::DisassociateVehicleFleetRequest& request, const DisassociateVehicleFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Retrieves information about a campaign. </p><p><h3>See Also:</h3>   <a
@@ -421,15 +320,6 @@ namespace IoTFleetWise
          */
         virtual Model::GetCampaignOutcome GetCampaign(const Model::GetCampaignRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetCampaign that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetCampaignOutcomeCallable GetCampaignCallable(const Model::GetCampaignRequest& request) const;
-
-        /**
-         * An Async wrapper for GetCampaign that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetCampaignAsync(const Model::GetCampaignRequest& request, const GetCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Retrieves information about a created decoder manifest. </p><p><h3>See
@@ -439,15 +329,6 @@ namespace IoTFleetWise
          */
         virtual Model::GetDecoderManifestOutcome GetDecoderManifest(const Model::GetDecoderManifestRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDecoderManifest that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDecoderManifestOutcomeCallable GetDecoderManifestCallable(const Model::GetDecoderManifestRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDecoderManifest that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDecoderManifestAsync(const Model::GetDecoderManifestRequest& request, const GetDecoderManifestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Retrieves information about a fleet. </p><p><h3>See Also:</h3>   <a
@@ -456,15 +337,6 @@ namespace IoTFleetWise
          */
         virtual Model::GetFleetOutcome GetFleet(const Model::GetFleetRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetFleet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetFleetOutcomeCallable GetFleetCallable(const Model::GetFleetRequest& request) const;
-
-        /**
-         * An Async wrapper for GetFleet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetFleetAsync(const Model::GetFleetRequest& request, const GetFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the logging options.</p><p><h3>See Also:</h3>   <a
@@ -473,15 +345,6 @@ namespace IoTFleetWise
          */
         virtual Model::GetLoggingOptionsOutcome GetLoggingOptions(const Model::GetLoggingOptionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetLoggingOptions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetLoggingOptionsOutcomeCallable GetLoggingOptionsCallable(const Model::GetLoggingOptionsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetLoggingOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetLoggingOptionsAsync(const Model::GetLoggingOptionsRequest& request, const GetLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Retrieves information about a vehicle model (model manifest). </p><p><h3>See
@@ -491,15 +354,6 @@ namespace IoTFleetWise
          */
         virtual Model::GetModelManifestOutcome GetModelManifest(const Model::GetModelManifestRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetModelManifest that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetModelManifestOutcomeCallable GetModelManifestCallable(const Model::GetModelManifestRequest& request) const;
-
-        /**
-         * An Async wrapper for GetModelManifest that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetModelManifestAsync(const Model::GetModelManifestRequest& request, const GetModelManifestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Retrieves information about the status of registering your Amazon Web
@@ -514,15 +368,6 @@ namespace IoTFleetWise
          */
         virtual Model::GetRegisterAccountStatusOutcome GetRegisterAccountStatus(const Model::GetRegisterAccountStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRegisterAccountStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRegisterAccountStatusOutcomeCallable GetRegisterAccountStatusCallable(const Model::GetRegisterAccountStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRegisterAccountStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRegisterAccountStatusAsync(const Model::GetRegisterAccountStatusRequest& request, const GetRegisterAccountStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Retrieves information about a signal catalog. </p><p><h3>See Also:</h3>   <a
@@ -531,15 +376,6 @@ namespace IoTFleetWise
          */
         virtual Model::GetSignalCatalogOutcome GetSignalCatalog(const Model::GetSignalCatalogRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSignalCatalog that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSignalCatalogOutcomeCallable GetSignalCatalogCallable(const Model::GetSignalCatalogRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSignalCatalog that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSignalCatalogAsync(const Model::GetSignalCatalogRequest& request, const GetSignalCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Retrieves information about a vehicle. </p><p><h3>See Also:</h3>   <a
@@ -548,15 +384,6 @@ namespace IoTFleetWise
          */
         virtual Model::GetVehicleOutcome GetVehicle(const Model::GetVehicleRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetVehicle that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetVehicleOutcomeCallable GetVehicleCallable(const Model::GetVehicleRequest& request) const;
-
-        /**
-         * An Async wrapper for GetVehicle that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetVehicleAsync(const Model::GetVehicleRequest& request, const GetVehicleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Retrieves information about the status of a vehicle with any associated
@@ -566,15 +393,6 @@ namespace IoTFleetWise
          */
         virtual Model::GetVehicleStatusOutcome GetVehicleStatus(const Model::GetVehicleStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetVehicleStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetVehicleStatusOutcomeCallable GetVehicleStatusCallable(const Model::GetVehicleStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for GetVehicleStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetVehicleStatusAsync(const Model::GetVehicleStatusRequest& request, const GetVehicleStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Creates a decoder manifest using your existing CAN DBC file from your local
@@ -584,15 +402,6 @@ namespace IoTFleetWise
          */
         virtual Model::ImportDecoderManifestOutcome ImportDecoderManifest(const Model::ImportDecoderManifestRequest& request) const;
 
-        /**
-         * A Callable wrapper for ImportDecoderManifest that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ImportDecoderManifestOutcomeCallable ImportDecoderManifestCallable(const Model::ImportDecoderManifestRequest& request) const;
-
-        /**
-         * An Async wrapper for ImportDecoderManifest that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ImportDecoderManifestAsync(const Model::ImportDecoderManifestRequest& request, const ImportDecoderManifestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Creates a signal catalog using your existing VSS formatted content from your
@@ -602,15 +411,6 @@ namespace IoTFleetWise
          */
         virtual Model::ImportSignalCatalogOutcome ImportSignalCatalog(const Model::ImportSignalCatalogRequest& request) const;
 
-        /**
-         * A Callable wrapper for ImportSignalCatalog that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ImportSignalCatalogOutcomeCallable ImportSignalCatalogCallable(const Model::ImportSignalCatalogRequest& request) const;
-
-        /**
-         * An Async wrapper for ImportSignalCatalog that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ImportSignalCatalogAsync(const Model::ImportSignalCatalogRequest& request, const ImportSignalCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Lists information about created campaigns. </p>  <p>This API operation
@@ -621,15 +421,6 @@ namespace IoTFleetWise
          */
         virtual Model::ListCampaignsOutcome ListCampaigns(const Model::ListCampaignsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListCampaigns that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListCampaignsOutcomeCallable ListCampaignsCallable(const Model::ListCampaignsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListCampaigns that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListCampaignsAsync(const Model::ListCampaignsRequest& request, const ListCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Lists the network interfaces specified in a decoder manifest. </p> 
@@ -641,15 +432,6 @@ namespace IoTFleetWise
          */
         virtual Model::ListDecoderManifestNetworkInterfacesOutcome ListDecoderManifestNetworkInterfaces(const Model::ListDecoderManifestNetworkInterfacesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDecoderManifestNetworkInterfaces that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDecoderManifestNetworkInterfacesOutcomeCallable ListDecoderManifestNetworkInterfacesCallable(const Model::ListDecoderManifestNetworkInterfacesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDecoderManifestNetworkInterfaces that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDecoderManifestNetworkInterfacesAsync(const Model::ListDecoderManifestNetworkInterfacesRequest& request, const ListDecoderManifestNetworkInterfacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> A list of information about signal decoders specified in a decoder manifest.
@@ -661,15 +443,6 @@ namespace IoTFleetWise
          */
         virtual Model::ListDecoderManifestSignalsOutcome ListDecoderManifestSignals(const Model::ListDecoderManifestSignalsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDecoderManifestSignals that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDecoderManifestSignalsOutcomeCallable ListDecoderManifestSignalsCallable(const Model::ListDecoderManifestSignalsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDecoderManifestSignals that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDecoderManifestSignalsAsync(const Model::ListDecoderManifestSignalsRequest& request, const ListDecoderManifestSignalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Lists decoder manifests. </p>  <p>This API operation uses pagination.
@@ -680,15 +453,6 @@ namespace IoTFleetWise
          */
         virtual Model::ListDecoderManifestsOutcome ListDecoderManifests(const Model::ListDecoderManifestsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDecoderManifests that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDecoderManifestsOutcomeCallable ListDecoderManifestsCallable(const Model::ListDecoderManifestsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDecoderManifests that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDecoderManifestsAsync(const Model::ListDecoderManifestsRequest& request, const ListDecoderManifestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Retrieves information for each created fleet in an Amazon Web Services
@@ -700,15 +464,6 @@ namespace IoTFleetWise
          */
         virtual Model::ListFleetsOutcome ListFleets(const Model::ListFleetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListFleets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListFleetsOutcomeCallable ListFleetsCallable(const Model::ListFleetsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListFleets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListFleetsAsync(const Model::ListFleetsRequest& request, const ListFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list of IDs for all fleets that the vehicle is associated
@@ -720,15 +475,6 @@ namespace IoTFleetWise
          */
         virtual Model::ListFleetsForVehicleOutcome ListFleetsForVehicle(const Model::ListFleetsForVehicleRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListFleetsForVehicle that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListFleetsForVehicleOutcomeCallable ListFleetsForVehicleCallable(const Model::ListFleetsForVehicleRequest& request) const;
-
-        /**
-         * An Async wrapper for ListFleetsForVehicle that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListFleetsForVehicleAsync(const Model::ListFleetsForVehicleRequest& request, const ListFleetsForVehicleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Lists information about nodes specified in a vehicle model (model manifest).
@@ -740,15 +486,6 @@ namespace IoTFleetWise
          */
         virtual Model::ListModelManifestNodesOutcome ListModelManifestNodes(const Model::ListModelManifestNodesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListModelManifestNodes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListModelManifestNodesOutcomeCallable ListModelManifestNodesCallable(const Model::ListModelManifestNodesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListModelManifestNodes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListModelManifestNodesAsync(const Model::ListModelManifestNodesRequest& request, const ListModelManifestNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Retrieves a list of vehicle models (model manifests). </p>  <p>This
@@ -759,15 +496,6 @@ namespace IoTFleetWise
          */
         virtual Model::ListModelManifestsOutcome ListModelManifests(const Model::ListModelManifestsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListModelManifests that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListModelManifestsOutcomeCallable ListModelManifestsCallable(const Model::ListModelManifestsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListModelManifests that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListModelManifestsAsync(const Model::ListModelManifestsRequest& request, const ListModelManifestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Lists of information about the signals (nodes) specified in a signal
@@ -779,15 +507,6 @@ namespace IoTFleetWise
          */
         virtual Model::ListSignalCatalogNodesOutcome ListSignalCatalogNodes(const Model::ListSignalCatalogNodesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSignalCatalogNodes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListSignalCatalogNodesOutcomeCallable ListSignalCatalogNodesCallable(const Model::ListSignalCatalogNodesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSignalCatalogNodes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListSignalCatalogNodesAsync(const Model::ListSignalCatalogNodesRequest& request, const ListSignalCatalogNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Lists all the created signal catalogs in an Amazon Web Services account.
@@ -800,15 +519,6 @@ namespace IoTFleetWise
          */
         virtual Model::ListSignalCatalogsOutcome ListSignalCatalogs(const Model::ListSignalCatalogsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSignalCatalogs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListSignalCatalogsOutcomeCallable ListSignalCatalogsCallable(const Model::ListSignalCatalogsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSignalCatalogs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListSignalCatalogsAsync(const Model::ListSignalCatalogsRequest& request, const ListSignalCatalogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the tags (metadata) you have assigned to the resource.</p><p><h3>See
@@ -818,15 +528,6 @@ namespace IoTFleetWise
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Retrieves a list of summaries of created vehicles. </p>  <p>This API
@@ -837,15 +538,6 @@ namespace IoTFleetWise
          */
         virtual Model::ListVehiclesOutcome ListVehicles(const Model::ListVehiclesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListVehicles that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListVehiclesOutcomeCallable ListVehiclesCallable(const Model::ListVehiclesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListVehicles that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListVehiclesAsync(const Model::ListVehiclesRequest& request, const ListVehiclesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Retrieves a list of summaries of all vehicles associated with a fleet. </p>
@@ -857,15 +549,6 @@ namespace IoTFleetWise
          */
         virtual Model::ListVehiclesInFleetOutcome ListVehiclesInFleet(const Model::ListVehiclesInFleetRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListVehiclesInFleet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListVehiclesInFleetOutcomeCallable ListVehiclesInFleetCallable(const Model::ListVehiclesInFleetRequest& request) const;
-
-        /**
-         * An Async wrapper for ListVehiclesInFleet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListVehiclesInFleetAsync(const Model::ListVehiclesInFleetRequest& request, const ListVehiclesInFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates or updates the logging option.</p><p><h3>See Also:</h3>   <a
@@ -874,15 +557,6 @@ namespace IoTFleetWise
          */
         virtual Model::PutLoggingOptionsOutcome PutLoggingOptions(const Model::PutLoggingOptionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutLoggingOptions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutLoggingOptionsOutcomeCallable PutLoggingOptionsCallable(const Model::PutLoggingOptionsRequest& request) const;
-
-        /**
-         * An Async wrapper for PutLoggingOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutLoggingOptionsAsync(const Model::PutLoggingOptionsRequest& request, const PutLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Registers your Amazon Web Services account, IAM, and Amazon Timestream
@@ -906,15 +580,6 @@ namespace IoTFleetWise
          */
         virtual Model::RegisterAccountOutcome RegisterAccount(const Model::RegisterAccountRequest& request) const;
 
-        /**
-         * A Callable wrapper for RegisterAccount that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RegisterAccountOutcomeCallable RegisterAccountCallable(const Model::RegisterAccountRequest& request) const;
-
-        /**
-         * An Async wrapper for RegisterAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RegisterAccountAsync(const Model::RegisterAccountRequest& request, const RegisterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds to or modifies the tags of the given resource. Tags are metadata which
@@ -924,15 +589,6 @@ namespace IoTFleetWise
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the given tags (metadata) from the resource.</p><p><h3>See Also:</h3>
@@ -942,15 +598,6 @@ namespace IoTFleetWise
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Updates a campaign. </p><p><h3>See Also:</h3>   <a
@@ -959,15 +606,6 @@ namespace IoTFleetWise
          */
         virtual Model::UpdateCampaignOutcome UpdateCampaign(const Model::UpdateCampaignRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateCampaign that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateCampaignOutcomeCallable UpdateCampaignCallable(const Model::UpdateCampaignRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateCampaign that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateCampaignAsync(const Model::UpdateCampaignRequest& request, const UpdateCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Updates a decoder manifest.</p> <p>A decoder manifest can only be updated
@@ -978,15 +616,6 @@ namespace IoTFleetWise
          */
         virtual Model::UpdateDecoderManifestOutcome UpdateDecoderManifest(const Model::UpdateDecoderManifestRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateDecoderManifest that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateDecoderManifestOutcomeCallable UpdateDecoderManifestCallable(const Model::UpdateDecoderManifestRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateDecoderManifest that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateDecoderManifestAsync(const Model::UpdateDecoderManifestRequest& request, const UpdateDecoderManifestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Updates the description of an existing fleet. </p>  <p>If the fleet is
@@ -997,15 +626,6 @@ namespace IoTFleetWise
          */
         virtual Model::UpdateFleetOutcome UpdateFleet(const Model::UpdateFleetRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateFleet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateFleetOutcomeCallable UpdateFleetCallable(const Model::UpdateFleetRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateFleet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateFleetAsync(const Model::UpdateFleetRequest& request, const UpdateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Updates a vehicle model (model manifest). If created vehicles are associated
@@ -1015,15 +635,6 @@ namespace IoTFleetWise
          */
         virtual Model::UpdateModelManifestOutcome UpdateModelManifest(const Model::UpdateModelManifestRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateModelManifest that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateModelManifestOutcomeCallable UpdateModelManifestCallable(const Model::UpdateModelManifestRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateModelManifest that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateModelManifestAsync(const Model::UpdateModelManifestRequest& request, const UpdateModelManifestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Updates a signal catalog. </p><p><h3>See Also:</h3>   <a
@@ -1032,15 +643,6 @@ namespace IoTFleetWise
          */
         virtual Model::UpdateSignalCatalogOutcome UpdateSignalCatalog(const Model::UpdateSignalCatalogRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateSignalCatalog that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateSignalCatalogOutcomeCallable UpdateSignalCatalogCallable(const Model::UpdateSignalCatalogRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateSignalCatalog that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateSignalCatalogAsync(const Model::UpdateSignalCatalogRequest& request, const UpdateSignalCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Updates a vehicle. </p><p><h3>See Also:</h3>   <a
@@ -1049,15 +651,6 @@ namespace IoTFleetWise
          */
         virtual Model::UpdateVehicleOutcome UpdateVehicle(const Model::UpdateVehicleRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateVehicle that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateVehicleOutcomeCallable UpdateVehicleCallable(const Model::UpdateVehicleRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateVehicle that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateVehicleAsync(const Model::UpdateVehicleRequest& request, const UpdateVehicleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

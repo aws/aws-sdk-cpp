@@ -7,8 +7,10 @@
 #include <aws/devops-guru/DevOpsGuru_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/devops-guru/DevOpsGuruServiceClientModel.h>
+#include <aws/devops-guru/DevOpsGuruLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -90,6 +92,47 @@ namespace DevOpsGuru
         virtual ~DevOpsGuruClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p> Adds a notification channel to DevOps Guru. A notification channel is used
          * to notify you about important DevOps Guru events, such as when an insight is
@@ -115,15 +158,6 @@ namespace DevOpsGuru
          */
         virtual Model::AddNotificationChannelOutcome AddNotificationChannel(const Model::AddNotificationChannelRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddNotificationChannel that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddNotificationChannelOutcomeCallable AddNotificationChannelCallable(const Model::AddNotificationChannelRequest& request) const;
-
-        /**
-         * An Async wrapper for AddNotificationChannel that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddNotificationChannelAsync(const Model::AddNotificationChannelRequest& request, const AddNotificationChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the insight along with the associated anomalies, events and
@@ -133,15 +167,6 @@ namespace DevOpsGuru
          */
         virtual Model::DeleteInsightOutcome DeleteInsight(const Model::DeleteInsightRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteInsight that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteInsightOutcomeCallable DeleteInsightCallable(const Model::DeleteInsightRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteInsight that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteInsightAsync(const Model::DeleteInsightRequest& request, const DeleteInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns the number of open reactive insights, the number of open proactive
@@ -153,15 +178,6 @@ namespace DevOpsGuru
          */
         virtual Model::DescribeAccountHealthOutcome DescribeAccountHealth(const Model::DescribeAccountHealthRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAccountHealth that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAccountHealthOutcomeCallable DescribeAccountHealthCallable(const Model::DescribeAccountHealthRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAccountHealth that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAccountHealthAsync(const Model::DescribeAccountHealthRequest& request, const DescribeAccountHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> For the time range passed in, returns the number of open reactive insight
@@ -173,15 +189,6 @@ namespace DevOpsGuru
          */
         virtual Model::DescribeAccountOverviewOutcome DescribeAccountOverview(const Model::DescribeAccountOverviewRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAccountOverview that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAccountOverviewOutcomeCallable DescribeAccountOverviewCallable(const Model::DescribeAccountOverviewRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAccountOverview that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAccountOverviewAsync(const Model::DescribeAccountOverviewRequest& request, const DescribeAccountOverviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns details about an anomaly that you specify using its ID.
@@ -191,15 +198,6 @@ namespace DevOpsGuru
          */
         virtual Model::DescribeAnomalyOutcome DescribeAnomaly(const Model::DescribeAnomalyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAnomaly that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAnomalyOutcomeCallable DescribeAnomalyCallable(const Model::DescribeAnomalyRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAnomaly that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAnomalyAsync(const Model::DescribeAnomalyRequest& request, const DescribeAnomalyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the integration status of services that are integrated with DevOps
@@ -212,15 +210,6 @@ namespace DevOpsGuru
          */
         virtual Model::DescribeEventSourcesConfigOutcome DescribeEventSourcesConfig(const Model::DescribeEventSourcesConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEventSourcesConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEventSourcesConfigOutcomeCallable DescribeEventSourcesConfigCallable(const Model::DescribeEventSourcesConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEventSourcesConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEventSourcesConfigAsync(const Model::DescribeEventSourcesConfigRequest& request, const DescribeEventSourcesConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns the most recent feedback submitted in the current Amazon Web
@@ -230,15 +219,6 @@ namespace DevOpsGuru
          */
         virtual Model::DescribeFeedbackOutcome DescribeFeedback(const Model::DescribeFeedbackRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeFeedback that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeFeedbackOutcomeCallable DescribeFeedbackCallable(const Model::DescribeFeedbackRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeFeedback that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeFeedbackAsync(const Model::DescribeFeedbackRequest& request, const DescribeFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns details about an insight that you specify using its ID.
@@ -248,15 +228,6 @@ namespace DevOpsGuru
          */
         virtual Model::DescribeInsightOutcome DescribeInsight(const Model::DescribeInsightRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeInsight that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeInsightOutcomeCallable DescribeInsightCallable(const Model::DescribeInsightRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeInsight that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeInsightAsync(const Model::DescribeInsightRequest& request, const DescribeInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns active insights, predictive insights, and resource hours analyzed in
@@ -266,15 +237,6 @@ namespace DevOpsGuru
          */
         virtual Model::DescribeOrganizationHealthOutcome DescribeOrganizationHealth(const Model::DescribeOrganizationHealthRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeOrganizationHealth that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeOrganizationHealthOutcomeCallable DescribeOrganizationHealthCallable(const Model::DescribeOrganizationHealthRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeOrganizationHealth that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeOrganizationHealthAsync(const Model::DescribeOrganizationHealthRequest& request, const DescribeOrganizationHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns an overview of your organization's history based on the specified
@@ -285,15 +247,6 @@ namespace DevOpsGuru
          */
         virtual Model::DescribeOrganizationOverviewOutcome DescribeOrganizationOverview(const Model::DescribeOrganizationOverviewRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeOrganizationOverview that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeOrganizationOverviewOutcomeCallable DescribeOrganizationOverviewCallable(const Model::DescribeOrganizationOverviewRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeOrganizationOverview that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeOrganizationOverviewAsync(const Model::DescribeOrganizationOverviewRequest& request, const DescribeOrganizationOverviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides an overview of your system's health. If additional member accounts
@@ -304,15 +257,6 @@ namespace DevOpsGuru
          */
         virtual Model::DescribeOrganizationResourceCollectionHealthOutcome DescribeOrganizationResourceCollectionHealth(const Model::DescribeOrganizationResourceCollectionHealthRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeOrganizationResourceCollectionHealth that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeOrganizationResourceCollectionHealthOutcomeCallable DescribeOrganizationResourceCollectionHealthCallable(const Model::DescribeOrganizationResourceCollectionHealthRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeOrganizationResourceCollectionHealth that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeOrganizationResourceCollectionHealthAsync(const Model::DescribeOrganizationResourceCollectionHealthRequest& request, const DescribeOrganizationResourceCollectionHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns the number of open proactive insights, open reactive insights, and
@@ -329,15 +273,6 @@ namespace DevOpsGuru
          */
         virtual Model::DescribeResourceCollectionHealthOutcome DescribeResourceCollectionHealth(const Model::DescribeResourceCollectionHealthRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeResourceCollectionHealth that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeResourceCollectionHealthOutcomeCallable DescribeResourceCollectionHealthCallable(const Model::DescribeResourceCollectionHealthRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeResourceCollectionHealth that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeResourceCollectionHealthAsync(const Model::DescribeResourceCollectionHealthRequest& request, const DescribeResourceCollectionHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns the integration status of services that are integrated with DevOps
@@ -349,15 +284,6 @@ namespace DevOpsGuru
          */
         virtual Model::DescribeServiceIntegrationOutcome DescribeServiceIntegration(const Model::DescribeServiceIntegrationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeServiceIntegration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeServiceIntegrationOutcomeCallable DescribeServiceIntegrationCallable(const Model::DescribeServiceIntegrationRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeServiceIntegration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeServiceIntegrationAsync(const Model::DescribeServiceIntegrationRequest& request, const DescribeServiceIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns an estimate of the monthly cost for DevOps Guru to analyze your
@@ -371,15 +297,6 @@ namespace DevOpsGuru
          */
         virtual Model::GetCostEstimationOutcome GetCostEstimation(const Model::GetCostEstimationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetCostEstimation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetCostEstimationOutcomeCallable GetCostEstimationCallable(const Model::GetCostEstimationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetCostEstimation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetCostEstimationAsync(const Model::GetCostEstimationRequest& request, const GetCostEstimationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns lists Amazon Web Services resources that are of the specified
@@ -395,15 +312,6 @@ namespace DevOpsGuru
          */
         virtual Model::GetResourceCollectionOutcome GetResourceCollection(const Model::GetResourceCollectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetResourceCollection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetResourceCollectionOutcomeCallable GetResourceCollectionCallable(const Model::GetResourceCollectionRequest& request) const;
-
-        /**
-         * An Async wrapper for GetResourceCollection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetResourceCollectionAsync(const Model::GetResourceCollectionRequest& request, const GetResourceCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a list of the anomalies that belong to an insight that you specify
@@ -413,15 +321,6 @@ namespace DevOpsGuru
          */
         virtual Model::ListAnomaliesForInsightOutcome ListAnomaliesForInsight(const Model::ListAnomaliesForInsightRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAnomaliesForInsight that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAnomaliesForInsightOutcomeCallable ListAnomaliesForInsightCallable(const Model::ListAnomaliesForInsightRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAnomaliesForInsight that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAnomaliesForInsightAsync(const Model::ListAnomaliesForInsightRequest& request, const ListAnomaliesForInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns the list of log groups that contain log anomalies. </p><p><h3>See
@@ -431,15 +330,6 @@ namespace DevOpsGuru
          */
         virtual Model::ListAnomalousLogGroupsOutcome ListAnomalousLogGroups(const Model::ListAnomalousLogGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAnomalousLogGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAnomalousLogGroupsOutcomeCallable ListAnomalousLogGroupsCallable(const Model::ListAnomalousLogGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAnomalousLogGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAnomalousLogGroupsAsync(const Model::ListAnomalousLogGroupsRequest& request, const ListAnomalousLogGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a list of the events emitted by the resources that are evaluated by
@@ -450,15 +340,6 @@ namespace DevOpsGuru
          */
         virtual Model::ListEventsOutcome ListEvents(const Model::ListEventsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListEvents that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListEventsOutcomeCallable ListEventsCallable(const Model::ListEventsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListEventsAsync(const Model::ListEventsRequest& request, const ListEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a list of insights in your Amazon Web Services account. You can
@@ -470,15 +351,6 @@ namespace DevOpsGuru
          */
         virtual Model::ListInsightsOutcome ListInsights(const Model::ListInsightsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListInsights that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListInsightsOutcomeCallable ListInsightsCallable(const Model::ListInsightsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListInsights that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListInsightsAsync(const Model::ListInsightsRequest& request, const ListInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns the list of all log groups that are being monitored and tagged by
@@ -488,15 +360,6 @@ namespace DevOpsGuru
          */
         virtual Model::ListMonitoredResourcesOutcome ListMonitoredResources(const Model::ListMonitoredResourcesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListMonitoredResources that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListMonitoredResourcesOutcomeCallable ListMonitoredResourcesCallable(const Model::ListMonitoredResourcesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListMonitoredResources that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListMonitoredResourcesAsync(const Model::ListMonitoredResourcesRequest& request, const ListMonitoredResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a list of notification channels configured for DevOps Guru. Each
@@ -509,15 +372,6 @@ namespace DevOpsGuru
          */
         virtual Model::ListNotificationChannelsOutcome ListNotificationChannels(const Model::ListNotificationChannelsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListNotificationChannels that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListNotificationChannelsOutcomeCallable ListNotificationChannelsCallable(const Model::ListNotificationChannelsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListNotificationChannels that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListNotificationChannelsAsync(const Model::ListNotificationChannelsRequest& request, const ListNotificationChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of insights associated with the account or OU
@@ -527,15 +381,6 @@ namespace DevOpsGuru
          */
         virtual Model::ListOrganizationInsightsOutcome ListOrganizationInsights(const Model::ListOrganizationInsightsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListOrganizationInsights that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListOrganizationInsightsOutcomeCallable ListOrganizationInsightsCallable(const Model::ListOrganizationInsightsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListOrganizationInsights that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListOrganizationInsightsAsync(const Model::ListOrganizationInsightsRequest& request, const ListOrganizationInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a list of a specified insight's recommendations. Each recommendation
@@ -546,15 +391,6 @@ namespace DevOpsGuru
          */
         virtual Model::ListRecommendationsOutcome ListRecommendations(const Model::ListRecommendationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListRecommendations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListRecommendationsOutcomeCallable ListRecommendationsCallable(const Model::ListRecommendationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListRecommendations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListRecommendationsAsync(const Model::ListRecommendationsRequest& request, const ListRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Collects customer feedback about the specified insight. </p><p><h3>See
@@ -564,15 +400,6 @@ namespace DevOpsGuru
          */
         virtual Model::PutFeedbackOutcome PutFeedback(const Model::PutFeedbackRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutFeedback that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutFeedbackOutcomeCallable PutFeedbackCallable(const Model::PutFeedbackRequest& request) const;
-
-        /**
-         * An Async wrapper for PutFeedback that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutFeedbackAsync(const Model::PutFeedbackRequest& request, const PutFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Removes a notification channel from DevOps Guru. A notification channel is
@@ -583,15 +410,6 @@ namespace DevOpsGuru
          */
         virtual Model::RemoveNotificationChannelOutcome RemoveNotificationChannel(const Model::RemoveNotificationChannelRequest& request) const;
 
-        /**
-         * A Callable wrapper for RemoveNotificationChannel that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RemoveNotificationChannelOutcomeCallable RemoveNotificationChannelCallable(const Model::RemoveNotificationChannelRequest& request) const;
-
-        /**
-         * An Async wrapper for RemoveNotificationChannel that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RemoveNotificationChannelAsync(const Model::RemoveNotificationChannelRequest& request, const RemoveNotificationChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a list of insights in your Amazon Web Services account. You can
@@ -607,15 +425,6 @@ namespace DevOpsGuru
          */
         virtual Model::SearchInsightsOutcome SearchInsights(const Model::SearchInsightsRequest& request) const;
 
-        /**
-         * A Callable wrapper for SearchInsights that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SearchInsightsOutcomeCallable SearchInsightsCallable(const Model::SearchInsightsRequest& request) const;
-
-        /**
-         * An Async wrapper for SearchInsights that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SearchInsightsAsync(const Model::SearchInsightsRequest& request, const SearchInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a list of insights in your organization. You can specify which
@@ -631,15 +440,6 @@ namespace DevOpsGuru
          */
         virtual Model::SearchOrganizationInsightsOutcome SearchOrganizationInsights(const Model::SearchOrganizationInsightsRequest& request) const;
 
-        /**
-         * A Callable wrapper for SearchOrganizationInsights that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SearchOrganizationInsightsOutcomeCallable SearchOrganizationInsightsCallable(const Model::SearchOrganizationInsightsRequest& request) const;
-
-        /**
-         * An Async wrapper for SearchOrganizationInsights that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SearchOrganizationInsightsAsync(const Model::SearchOrganizationInsightsRequest& request, const SearchOrganizationInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts the creation of an estimate of the monthly cost to analyze your Amazon
@@ -649,15 +449,6 @@ namespace DevOpsGuru
          */
         virtual Model::StartCostEstimationOutcome StartCostEstimation(const Model::StartCostEstimationRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartCostEstimation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartCostEstimationOutcomeCallable StartCostEstimationCallable(const Model::StartCostEstimationRequest& request) const;
-
-        /**
-         * An Async wrapper for StartCostEstimation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartCostEstimationAsync(const Model::StartCostEstimationRequest& request, const StartCostEstimationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables or disables integration with a service that can be integrated with
@@ -669,15 +460,6 @@ namespace DevOpsGuru
          */
         virtual Model::UpdateEventSourcesConfigOutcome UpdateEventSourcesConfig(const Model::UpdateEventSourcesConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateEventSourcesConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateEventSourcesConfigOutcomeCallable UpdateEventSourcesConfigCallable(const Model::UpdateEventSourcesConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateEventSourcesConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateEventSourcesConfigAsync(const Model::UpdateEventSourcesConfigRequest& request, const UpdateEventSourcesConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Updates the collection of resources that DevOps Guru analyzes. The two types
@@ -693,15 +475,6 @@ namespace DevOpsGuru
          */
         virtual Model::UpdateResourceCollectionOutcome UpdateResourceCollection(const Model::UpdateResourceCollectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateResourceCollection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateResourceCollectionOutcomeCallable UpdateResourceCollectionCallable(const Model::UpdateResourceCollectionRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateResourceCollection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateResourceCollectionAsync(const Model::UpdateResourceCollectionRequest& request, const UpdateResourceCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Enables or disables integration with a service that can be integrated with
@@ -713,15 +486,6 @@ namespace DevOpsGuru
          */
         virtual Model::UpdateServiceIntegrationOutcome UpdateServiceIntegration(const Model::UpdateServiceIntegrationRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateServiceIntegration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateServiceIntegrationOutcomeCallable UpdateServiceIntegrationCallable(const Model::UpdateServiceIntegrationRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateServiceIntegration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateServiceIntegrationAsync(const Model::UpdateServiceIntegrationRequest& request, const UpdateServiceIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

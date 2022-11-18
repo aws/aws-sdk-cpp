@@ -8,8 +8,10 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/redshift/RedshiftServiceClientModel.h>
+#include <aws/redshift/RedshiftLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -95,6 +97,47 @@ namespace Redshift
         virtual ~RedshiftClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
        /**
         * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
         */
@@ -110,15 +153,6 @@ namespace Redshift
          */
         virtual Model::AcceptReservedNodeExchangeOutcome AcceptReservedNodeExchange(const Model::AcceptReservedNodeExchangeRequest& request) const;
 
-        /**
-         * A Callable wrapper for AcceptReservedNodeExchange that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AcceptReservedNodeExchangeOutcomeCallable AcceptReservedNodeExchangeCallable(const Model::AcceptReservedNodeExchangeRequest& request) const;
-
-        /**
-         * An Async wrapper for AcceptReservedNodeExchange that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AcceptReservedNodeExchangeAsync(const Model::AcceptReservedNodeExchangeRequest& request, const AcceptReservedNodeExchangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds a partner integration to a cluster. This operation authorizes a partner
@@ -130,15 +164,6 @@ namespace Redshift
          */
         virtual Model::AddPartnerOutcome AddPartner(const Model::AddPartnerRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddPartner that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddPartnerOutcomeCallable AddPartnerCallable(const Model::AddPartnerRequest& request) const;
-
-        /**
-         * An Async wrapper for AddPartner that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddPartnerAsync(const Model::AddPartnerRequest& request, const AddPartnerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>From a datashare consumer account, associates a datashare with the account
@@ -150,15 +175,6 @@ namespace Redshift
          */
         virtual Model::AssociateDataShareConsumerOutcome AssociateDataShareConsumer(const Model::AssociateDataShareConsumerRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateDataShareConsumer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateDataShareConsumerOutcomeCallable AssociateDataShareConsumerCallable(const Model::AssociateDataShareConsumerRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateDataShareConsumer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateDataShareConsumerAsync(const Model::AssociateDataShareConsumerRequest& request, const AssociateDataShareConsumerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds an inbound (ingress) rule to an Amazon Redshift security group.
@@ -185,15 +201,6 @@ namespace Redshift
          */
         virtual Model::AuthorizeClusterSecurityGroupIngressOutcome AuthorizeClusterSecurityGroupIngress(const Model::AuthorizeClusterSecurityGroupIngressRequest& request) const;
 
-        /**
-         * A Callable wrapper for AuthorizeClusterSecurityGroupIngress that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AuthorizeClusterSecurityGroupIngressOutcomeCallable AuthorizeClusterSecurityGroupIngressCallable(const Model::AuthorizeClusterSecurityGroupIngressRequest& request) const;
-
-        /**
-         * An Async wrapper for AuthorizeClusterSecurityGroupIngress that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AuthorizeClusterSecurityGroupIngressAsync(const Model::AuthorizeClusterSecurityGroupIngressRequest& request, const AuthorizeClusterSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>From a data producer account, authorizes the sharing of a datashare with one
@@ -205,15 +212,6 @@ namespace Redshift
          */
         virtual Model::AuthorizeDataShareOutcome AuthorizeDataShare(const Model::AuthorizeDataShareRequest& request) const;
 
-        /**
-         * A Callable wrapper for AuthorizeDataShare that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AuthorizeDataShareOutcomeCallable AuthorizeDataShareCallable(const Model::AuthorizeDataShareRequest& request) const;
-
-        /**
-         * An Async wrapper for AuthorizeDataShare that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AuthorizeDataShareAsync(const Model::AuthorizeDataShareRequest& request, const AuthorizeDataShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Grants access to a cluster.</p><p><h3>See Also:</h3>   <a
@@ -222,15 +220,6 @@ namespace Redshift
          */
         virtual Model::AuthorizeEndpointAccessOutcome AuthorizeEndpointAccess(const Model::AuthorizeEndpointAccessRequest& request) const;
 
-        /**
-         * A Callable wrapper for AuthorizeEndpointAccess that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AuthorizeEndpointAccessOutcomeCallable AuthorizeEndpointAccessCallable(const Model::AuthorizeEndpointAccessRequest& request) const;
-
-        /**
-         * An Async wrapper for AuthorizeEndpointAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AuthorizeEndpointAccessAsync(const Model::AuthorizeEndpointAccessRequest& request, const AuthorizeEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Authorizes the specified Amazon Web Services account to restore the specified
@@ -243,15 +232,6 @@ namespace Redshift
          */
         virtual Model::AuthorizeSnapshotAccessOutcome AuthorizeSnapshotAccess(const Model::AuthorizeSnapshotAccessRequest& request) const;
 
-        /**
-         * A Callable wrapper for AuthorizeSnapshotAccess that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AuthorizeSnapshotAccessOutcomeCallable AuthorizeSnapshotAccessCallable(const Model::AuthorizeSnapshotAccessRequest& request) const;
-
-        /**
-         * An Async wrapper for AuthorizeSnapshotAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AuthorizeSnapshotAccessAsync(const Model::AuthorizeSnapshotAccessRequest& request, const AuthorizeSnapshotAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a set of cluster snapshots.</p><p><h3>See Also:</h3>   <a
@@ -260,15 +240,6 @@ namespace Redshift
          */
         virtual Model::BatchDeleteClusterSnapshotsOutcome BatchDeleteClusterSnapshots(const Model::BatchDeleteClusterSnapshotsRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchDeleteClusterSnapshots that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchDeleteClusterSnapshotsOutcomeCallable BatchDeleteClusterSnapshotsCallable(const Model::BatchDeleteClusterSnapshotsRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchDeleteClusterSnapshots that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchDeleteClusterSnapshotsAsync(const Model::BatchDeleteClusterSnapshotsRequest& request, const BatchDeleteClusterSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the settings for a set of cluster snapshots.</p><p><h3>See
@@ -278,15 +249,6 @@ namespace Redshift
          */
         virtual Model::BatchModifyClusterSnapshotsOutcome BatchModifyClusterSnapshots(const Model::BatchModifyClusterSnapshotsRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchModifyClusterSnapshots that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchModifyClusterSnapshotsOutcomeCallable BatchModifyClusterSnapshotsCallable(const Model::BatchModifyClusterSnapshotsRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchModifyClusterSnapshots that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchModifyClusterSnapshotsAsync(const Model::BatchModifyClusterSnapshotsRequest& request, const BatchModifyClusterSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Cancels a resize operation for a cluster.</p><p><h3>See Also:</h3>   <a
@@ -295,15 +257,6 @@ namespace Redshift
          */
         virtual Model::CancelResizeOutcome CancelResize(const Model::CancelResizeRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelResize that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelResizeOutcomeCallable CancelResizeCallable(const Model::CancelResizeRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelResize that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelResizeAsync(const Model::CancelResizeRequest& request, const CancelResizeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Copies the specified automated cluster snapshot to a new manual cluster
@@ -322,15 +275,6 @@ namespace Redshift
          */
         virtual Model::CopyClusterSnapshotOutcome CopyClusterSnapshot(const Model::CopyClusterSnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for CopyClusterSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CopyClusterSnapshotOutcomeCallable CopyClusterSnapshotCallable(const Model::CopyClusterSnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for CopyClusterSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CopyClusterSnapshotAsync(const Model::CopyClusterSnapshotRequest& request, const CopyClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an authentication profile with the specified
@@ -340,15 +284,6 @@ namespace Redshift
          */
         virtual Model::CreateAuthenticationProfileOutcome CreateAuthenticationProfile(const Model::CreateAuthenticationProfileRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateAuthenticationProfile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateAuthenticationProfileOutcomeCallable CreateAuthenticationProfileCallable(const Model::CreateAuthenticationProfileRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateAuthenticationProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateAuthenticationProfileAsync(const Model::CreateAuthenticationProfileRequest& request, const CreateAuthenticationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new cluster with the specified parameters.</p> <p>To create a
@@ -364,15 +299,6 @@ namespace Redshift
          */
         virtual Model::CreateClusterOutcome CreateCluster(const Model::CreateClusterRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateCluster that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateClusterOutcomeCallable CreateClusterCallable(const Model::CreateClusterRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateClusterAsync(const Model::CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an Amazon Redshift parameter group.</p> <p>Creating parameter groups
@@ -390,15 +316,6 @@ namespace Redshift
          */
         virtual Model::CreateClusterParameterGroupOutcome CreateClusterParameterGroup(const Model::CreateClusterParameterGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateClusterParameterGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateClusterParameterGroupOutcomeCallable CreateClusterParameterGroupCallable(const Model::CreateClusterParameterGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateClusterParameterGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateClusterParameterGroupAsync(const Model::CreateClusterParameterGroupRequest& request, const CreateClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new Amazon Redshift security group. You use security groups to
@@ -412,15 +329,6 @@ namespace Redshift
          */
         virtual Model::CreateClusterSecurityGroupOutcome CreateClusterSecurityGroup(const Model::CreateClusterSecurityGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateClusterSecurityGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateClusterSecurityGroupOutcomeCallable CreateClusterSecurityGroupCallable(const Model::CreateClusterSecurityGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateClusterSecurityGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateClusterSecurityGroupAsync(const Model::CreateClusterSecurityGroupRequest& request, const CreateClusterSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a manual snapshot of the specified cluster. The cluster must be in
@@ -434,15 +342,6 @@ namespace Redshift
          */
         virtual Model::CreateClusterSnapshotOutcome CreateClusterSnapshot(const Model::CreateClusterSnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateClusterSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateClusterSnapshotOutcomeCallable CreateClusterSnapshotCallable(const Model::CreateClusterSnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateClusterSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateClusterSnapshotAsync(const Model::CreateClusterSnapshotRequest& request, const CreateClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new Amazon Redshift subnet group. You must provide a list of one or
@@ -457,15 +356,6 @@ namespace Redshift
          */
         virtual Model::CreateClusterSubnetGroupOutcome CreateClusterSubnetGroup(const Model::CreateClusterSubnetGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateClusterSubnetGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateClusterSubnetGroupOutcomeCallable CreateClusterSubnetGroupCallable(const Model::CreateClusterSubnetGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateClusterSubnetGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateClusterSubnetGroupAsync(const Model::CreateClusterSubnetGroupRequest& request, const CreateClusterSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a Redshift-managed VPC endpoint.</p><p><h3>See Also:</h3>   <a
@@ -474,15 +364,6 @@ namespace Redshift
          */
         virtual Model::CreateEndpointAccessOutcome CreateEndpointAccess(const Model::CreateEndpointAccessRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateEndpointAccess that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateEndpointAccessOutcomeCallable CreateEndpointAccessCallable(const Model::CreateEndpointAccessRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateEndpointAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateEndpointAccessAsync(const Model::CreateEndpointAccessRequest& request, const CreateEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an Amazon Redshift event notification subscription. This action
@@ -510,15 +391,6 @@ namespace Redshift
          */
         virtual Model::CreateEventSubscriptionOutcome CreateEventSubscription(const Model::CreateEventSubscriptionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateEventSubscription that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateEventSubscriptionOutcomeCallable CreateEventSubscriptionCallable(const Model::CreateEventSubscriptionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateEventSubscription that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateEventSubscriptionAsync(const Model::CreateEventSubscriptionRequest& request, const CreateEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an HSM client certificate that an Amazon Redshift cluster will use to
@@ -536,15 +408,6 @@ namespace Redshift
          */
         virtual Model::CreateHsmClientCertificateOutcome CreateHsmClientCertificate(const Model::CreateHsmClientCertificateRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateHsmClientCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateHsmClientCertificateOutcomeCallable CreateHsmClientCertificateCallable(const Model::CreateHsmClientCertificateRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateHsmClientCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateHsmClientCertificateAsync(const Model::CreateHsmClientCertificateRequest& request, const CreateHsmClientCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an HSM configuration that contains the information required by an
@@ -561,15 +424,6 @@ namespace Redshift
          */
         virtual Model::CreateHsmConfigurationOutcome CreateHsmConfiguration(const Model::CreateHsmConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateHsmConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateHsmConfigurationOutcomeCallable CreateHsmConfigurationCallable(const Model::CreateHsmConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateHsmConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateHsmConfigurationAsync(const Model::CreateHsmConfigurationRequest& request, const CreateHsmConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a scheduled action. A scheduled action contains a schedule and an
@@ -580,15 +434,6 @@ namespace Redshift
          */
         virtual Model::CreateScheduledActionOutcome CreateScheduledAction(const Model::CreateScheduledActionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateScheduledAction that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateScheduledActionOutcomeCallable CreateScheduledActionCallable(const Model::CreateScheduledActionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateScheduledAction that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateScheduledActionAsync(const Model::CreateScheduledActionRequest& request, const CreateScheduledActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a snapshot copy grant that permits Amazon Redshift to use an
@@ -603,15 +448,6 @@ namespace Redshift
          */
         virtual Model::CreateSnapshotCopyGrantOutcome CreateSnapshotCopyGrant(const Model::CreateSnapshotCopyGrantRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateSnapshotCopyGrant that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateSnapshotCopyGrantOutcomeCallable CreateSnapshotCopyGrantCallable(const Model::CreateSnapshotCopyGrantRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateSnapshotCopyGrant that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateSnapshotCopyGrantAsync(const Model::CreateSnapshotCopyGrantRequest& request, const CreateSnapshotCopyGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Create a snapshot schedule that can be associated to a cluster and which
@@ -621,15 +457,6 @@ namespace Redshift
          */
         virtual Model::CreateSnapshotScheduleOutcome CreateSnapshotSchedule(const Model::CreateSnapshotScheduleRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateSnapshotSchedule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateSnapshotScheduleOutcomeCallable CreateSnapshotScheduleCallable(const Model::CreateSnapshotScheduleRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateSnapshotSchedule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateSnapshotScheduleAsync(const Model::CreateSnapshotScheduleRequest& request, const CreateSnapshotScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds tags to a cluster.</p> <p>A resource can have up to 50 tags. If you try
@@ -642,15 +469,6 @@ namespace Redshift
          */
         virtual Model::CreateTagsOutcome CreateTags(const Model::CreateTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateTagsOutcomeCallable CreateTagsCallable(const Model::CreateTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateTagsAsync(const Model::CreateTagsRequest& request, const CreateTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a usage limit for a specified Amazon Redshift feature on a cluster.
@@ -661,15 +479,6 @@ namespace Redshift
          */
         virtual Model::CreateUsageLimitOutcome CreateUsageLimit(const Model::CreateUsageLimitRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateUsageLimit that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateUsageLimitOutcomeCallable CreateUsageLimitCallable(const Model::CreateUsageLimitRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateUsageLimit that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateUsageLimitAsync(const Model::CreateUsageLimitRequest& request, const CreateUsageLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>From a datashare producer account, removes authorization from the specified
@@ -679,15 +488,6 @@ namespace Redshift
          */
         virtual Model::DeauthorizeDataShareOutcome DeauthorizeDataShare(const Model::DeauthorizeDataShareRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeauthorizeDataShare that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeauthorizeDataShareOutcomeCallable DeauthorizeDataShareCallable(const Model::DeauthorizeDataShareRequest& request) const;
-
-        /**
-         * An Async wrapper for DeauthorizeDataShare that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeauthorizeDataShareAsync(const Model::DeauthorizeDataShareRequest& request, const DeauthorizeDataShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an authentication profile.</p><p><h3>See Also:</h3>   <a
@@ -696,15 +496,6 @@ namespace Redshift
          */
         virtual Model::DeleteAuthenticationProfileOutcome DeleteAuthenticationProfile(const Model::DeleteAuthenticationProfileRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAuthenticationProfile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAuthenticationProfileOutcomeCallable DeleteAuthenticationProfileCallable(const Model::DeleteAuthenticationProfileRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAuthenticationProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAuthenticationProfileAsync(const Model::DeleteAuthenticationProfileRequest& request, const DeleteAuthenticationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a previously provisioned cluster without its final snapshot being
@@ -729,15 +520,6 @@ namespace Redshift
          */
         virtual Model::DeleteClusterOutcome DeleteCluster(const Model::DeleteClusterRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteCluster that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteClusterOutcomeCallable DeleteClusterCallable(const Model::DeleteClusterRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteClusterAsync(const Model::DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a specified Amazon Redshift parameter group.</p>  <p>You cannot
@@ -748,15 +530,6 @@ namespace Redshift
          */
         virtual Model::DeleteClusterParameterGroupOutcome DeleteClusterParameterGroup(const Model::DeleteClusterParameterGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteClusterParameterGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteClusterParameterGroupOutcomeCallable DeleteClusterParameterGroupCallable(const Model::DeleteClusterParameterGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteClusterParameterGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteClusterParameterGroupAsync(const Model::DeleteClusterParameterGroupRequest& request, const DeleteClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an Amazon Redshift security group.</p>  <p>You cannot delete a
@@ -771,15 +544,6 @@ namespace Redshift
          */
         virtual Model::DeleteClusterSecurityGroupOutcome DeleteClusterSecurityGroup(const Model::DeleteClusterSecurityGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteClusterSecurityGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteClusterSecurityGroupOutcomeCallable DeleteClusterSecurityGroupCallable(const Model::DeleteClusterSecurityGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteClusterSecurityGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteClusterSecurityGroupAsync(const Model::DeleteClusterSecurityGroupRequest& request, const DeleteClusterSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified manual snapshot. The snapshot must be in the
@@ -795,15 +559,6 @@ namespace Redshift
          */
         virtual Model::DeleteClusterSnapshotOutcome DeleteClusterSnapshot(const Model::DeleteClusterSnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteClusterSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteClusterSnapshotOutcomeCallable DeleteClusterSnapshotCallable(const Model::DeleteClusterSnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteClusterSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteClusterSnapshotAsync(const Model::DeleteClusterSnapshotRequest& request, const DeleteClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified cluster subnet group.</p><p><h3>See Also:</h3>   <a
@@ -812,15 +567,6 @@ namespace Redshift
          */
         virtual Model::DeleteClusterSubnetGroupOutcome DeleteClusterSubnetGroup(const Model::DeleteClusterSubnetGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteClusterSubnetGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteClusterSubnetGroupOutcomeCallable DeleteClusterSubnetGroupCallable(const Model::DeleteClusterSubnetGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteClusterSubnetGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteClusterSubnetGroupAsync(const Model::DeleteClusterSubnetGroupRequest& request, const DeleteClusterSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a Redshift-managed VPC endpoint.</p><p><h3>See Also:</h3>   <a
@@ -829,15 +575,6 @@ namespace Redshift
          */
         virtual Model::DeleteEndpointAccessOutcome DeleteEndpointAccess(const Model::DeleteEndpointAccessRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteEndpointAccess that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteEndpointAccessOutcomeCallable DeleteEndpointAccessCallable(const Model::DeleteEndpointAccessRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteEndpointAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteEndpointAccessAsync(const Model::DeleteEndpointAccessRequest& request, const DeleteEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an Amazon Redshift event notification subscription.</p><p><h3>See
@@ -847,15 +584,6 @@ namespace Redshift
          */
         virtual Model::DeleteEventSubscriptionOutcome DeleteEventSubscription(const Model::DeleteEventSubscriptionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteEventSubscription that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteEventSubscriptionOutcomeCallable DeleteEventSubscriptionCallable(const Model::DeleteEventSubscriptionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteEventSubscription that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteEventSubscriptionAsync(const Model::DeleteEventSubscriptionRequest& request, const DeleteEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified HSM client certificate.</p><p><h3>See Also:</h3>   <a
@@ -864,15 +592,6 @@ namespace Redshift
          */
         virtual Model::DeleteHsmClientCertificateOutcome DeleteHsmClientCertificate(const Model::DeleteHsmClientCertificateRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteHsmClientCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteHsmClientCertificateOutcomeCallable DeleteHsmClientCertificateCallable(const Model::DeleteHsmClientCertificateRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteHsmClientCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteHsmClientCertificateAsync(const Model::DeleteHsmClientCertificateRequest& request, const DeleteHsmClientCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified Amazon Redshift HSM configuration.</p><p><h3>See
@@ -882,15 +601,6 @@ namespace Redshift
          */
         virtual Model::DeleteHsmConfigurationOutcome DeleteHsmConfiguration(const Model::DeleteHsmConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteHsmConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteHsmConfigurationOutcomeCallable DeleteHsmConfigurationCallable(const Model::DeleteHsmConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteHsmConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteHsmConfigurationAsync(const Model::DeleteHsmConfigurationRequest& request, const DeleteHsmConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a partner integration from a cluster. Data can still flow to the
@@ -901,15 +611,6 @@ namespace Redshift
          */
         virtual Model::DeletePartnerOutcome DeletePartner(const Model::DeletePartnerRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeletePartner that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeletePartnerOutcomeCallable DeletePartnerCallable(const Model::DeletePartnerRequest& request) const;
-
-        /**
-         * An Async wrapper for DeletePartner that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeletePartnerAsync(const Model::DeletePartnerRequest& request, const DeletePartnerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a scheduled action. </p><p><h3>See Also:</h3>   <a
@@ -918,15 +619,6 @@ namespace Redshift
          */
         virtual Model::DeleteScheduledActionOutcome DeleteScheduledAction(const Model::DeleteScheduledActionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteScheduledAction that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteScheduledActionOutcomeCallable DeleteScheduledActionCallable(const Model::DeleteScheduledActionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteScheduledAction that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteScheduledActionAsync(const Model::DeleteScheduledActionRequest& request, const DeleteScheduledActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified snapshot copy grant.</p><p><h3>See Also:</h3>   <a
@@ -935,15 +627,6 @@ namespace Redshift
          */
         virtual Model::DeleteSnapshotCopyGrantOutcome DeleteSnapshotCopyGrant(const Model::DeleteSnapshotCopyGrantRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteSnapshotCopyGrant that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteSnapshotCopyGrantOutcomeCallable DeleteSnapshotCopyGrantCallable(const Model::DeleteSnapshotCopyGrantRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteSnapshotCopyGrant that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteSnapshotCopyGrantAsync(const Model::DeleteSnapshotCopyGrantRequest& request, const DeleteSnapshotCopyGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a snapshot schedule.</p><p><h3>See Also:</h3>   <a
@@ -952,15 +635,6 @@ namespace Redshift
          */
         virtual Model::DeleteSnapshotScheduleOutcome DeleteSnapshotSchedule(const Model::DeleteSnapshotScheduleRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteSnapshotSchedule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteSnapshotScheduleOutcomeCallable DeleteSnapshotScheduleCallable(const Model::DeleteSnapshotScheduleRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteSnapshotSchedule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteSnapshotScheduleAsync(const Model::DeleteSnapshotScheduleRequest& request, const DeleteSnapshotScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes tags from a resource. You must provide the ARN of the resource from
@@ -970,15 +644,6 @@ namespace Redshift
          */
         virtual Model::DeleteTagsOutcome DeleteTags(const Model::DeleteTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteTagsOutcomeCallable DeleteTagsCallable(const Model::DeleteTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteTagsAsync(const Model::DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a usage limit from a cluster.</p><p><h3>See Also:</h3>   <a
@@ -987,15 +652,6 @@ namespace Redshift
          */
         virtual Model::DeleteUsageLimitOutcome DeleteUsageLimit(const Model::DeleteUsageLimitRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteUsageLimit that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteUsageLimitOutcomeCallable DeleteUsageLimitCallable(const Model::DeleteUsageLimitRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteUsageLimit that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteUsageLimitAsync(const Model::DeleteUsageLimitRequest& request, const DeleteUsageLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of attributes attached to an account</p><p><h3>See Also:</h3> 
@@ -1005,15 +661,6 @@ namespace Redshift
          */
         virtual Model::DescribeAccountAttributesOutcome DescribeAccountAttributes(const Model::DescribeAccountAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAccountAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAccountAttributesOutcomeCallable DescribeAccountAttributesCallable(const Model::DescribeAccountAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAccountAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAccountAttributesAsync(const Model::DescribeAccountAttributesRequest& request, const DescribeAccountAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes an authentication profile.</p><p><h3>See Also:</h3>   <a
@@ -1022,15 +669,6 @@ namespace Redshift
          */
         virtual Model::DescribeAuthenticationProfilesOutcome DescribeAuthenticationProfiles(const Model::DescribeAuthenticationProfilesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAuthenticationProfiles that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAuthenticationProfilesOutcomeCallable DescribeAuthenticationProfilesCallable(const Model::DescribeAuthenticationProfilesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAuthenticationProfiles that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAuthenticationProfilesAsync(const Model::DescribeAuthenticationProfilesRequest& request, const DescribeAuthenticationProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns an array of <code>ClusterDbRevision</code> objects.</p><p><h3>See
@@ -1040,15 +678,6 @@ namespace Redshift
          */
         virtual Model::DescribeClusterDbRevisionsOutcome DescribeClusterDbRevisions(const Model::DescribeClusterDbRevisionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeClusterDbRevisions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeClusterDbRevisionsOutcomeCallable DescribeClusterDbRevisionsCallable(const Model::DescribeClusterDbRevisionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeClusterDbRevisions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeClusterDbRevisionsAsync(const Model::DescribeClusterDbRevisionsRequest& request, const DescribeClusterDbRevisionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of Amazon Redshift parameter groups, including parameter
@@ -1072,15 +701,6 @@ namespace Redshift
          */
         virtual Model::DescribeClusterParameterGroupsOutcome DescribeClusterParameterGroups(const Model::DescribeClusterParameterGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeClusterParameterGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeClusterParameterGroupsOutcomeCallable DescribeClusterParameterGroupsCallable(const Model::DescribeClusterParameterGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeClusterParameterGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeClusterParameterGroupsAsync(const Model::DescribeClusterParameterGroupsRequest& request, const DescribeClusterParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a detailed list of parameters contained within the specified Amazon
@@ -1100,15 +720,6 @@ namespace Redshift
          */
         virtual Model::DescribeClusterParametersOutcome DescribeClusterParameters(const Model::DescribeClusterParametersRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeClusterParameters that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeClusterParametersOutcomeCallable DescribeClusterParametersCallable(const Model::DescribeClusterParametersRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeClusterParameters that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeClusterParametersAsync(const Model::DescribeClusterParametersRequest& request, const DescribeClusterParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about Amazon Redshift security groups. If the name of a
@@ -1131,15 +742,6 @@ namespace Redshift
          */
         virtual Model::DescribeClusterSecurityGroupsOutcome DescribeClusterSecurityGroups(const Model::DescribeClusterSecurityGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeClusterSecurityGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeClusterSecurityGroupsOutcomeCallable DescribeClusterSecurityGroupsCallable(const Model::DescribeClusterSecurityGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeClusterSecurityGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeClusterSecurityGroupsAsync(const Model::DescribeClusterSecurityGroupsRequest& request, const DescribeClusterSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns one or more snapshot objects, which contain metadata about your
@@ -1161,15 +763,6 @@ namespace Redshift
          */
         virtual Model::DescribeClusterSnapshotsOutcome DescribeClusterSnapshots(const Model::DescribeClusterSnapshotsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeClusterSnapshots that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeClusterSnapshotsOutcomeCallable DescribeClusterSnapshotsCallable(const Model::DescribeClusterSnapshotsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeClusterSnapshots that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeClusterSnapshotsAsync(const Model::DescribeClusterSnapshotsRequest& request, const DescribeClusterSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns one or more cluster subnet group objects, which contain metadata
@@ -1188,15 +781,6 @@ namespace Redshift
          */
         virtual Model::DescribeClusterSubnetGroupsOutcome DescribeClusterSubnetGroups(const Model::DescribeClusterSubnetGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeClusterSubnetGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeClusterSubnetGroupsOutcomeCallable DescribeClusterSubnetGroupsCallable(const Model::DescribeClusterSubnetGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeClusterSubnetGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeClusterSubnetGroupsAsync(const Model::DescribeClusterSubnetGroupsRequest& request, const DescribeClusterSubnetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of all the available maintenance tracks.</p><p><h3>See
@@ -1206,15 +790,6 @@ namespace Redshift
          */
         virtual Model::DescribeClusterTracksOutcome DescribeClusterTracks(const Model::DescribeClusterTracksRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeClusterTracks that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeClusterTracksOutcomeCallable DescribeClusterTracksCallable(const Model::DescribeClusterTracksRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeClusterTracks that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeClusterTracksAsync(const Model::DescribeClusterTracksRequest& request, const DescribeClusterTracksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns descriptions of the available Amazon Redshift cluster versions. You
@@ -1229,15 +804,6 @@ namespace Redshift
          */
         virtual Model::DescribeClusterVersionsOutcome DescribeClusterVersions(const Model::DescribeClusterVersionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeClusterVersions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeClusterVersionsOutcomeCallable DescribeClusterVersionsCallable(const Model::DescribeClusterVersionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeClusterVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeClusterVersionsAsync(const Model::DescribeClusterVersionsRequest& request, const DescribeClusterVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns properties of provisioned clusters including general cluster
@@ -1259,15 +825,6 @@ namespace Redshift
          */
         virtual Model::DescribeClustersOutcome DescribeClusters(const Model::DescribeClustersRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeClusters that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeClustersOutcomeCallable DescribeClustersCallable(const Model::DescribeClustersRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeClusters that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeClustersAsync(const Model::DescribeClustersRequest& request, const DescribeClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Shows the status of any inbound or outbound datashares available in the
@@ -1277,15 +834,6 @@ namespace Redshift
          */
         virtual Model::DescribeDataSharesOutcome DescribeDataShares(const Model::DescribeDataSharesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDataShares that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDataSharesOutcomeCallable DescribeDataSharesCallable(const Model::DescribeDataSharesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDataShares that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDataSharesAsync(const Model::DescribeDataSharesRequest& request, const DescribeDataSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of datashares where the account identifier being called is a
@@ -1295,15 +843,6 @@ namespace Redshift
          */
         virtual Model::DescribeDataSharesForConsumerOutcome DescribeDataSharesForConsumer(const Model::DescribeDataSharesForConsumerRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDataSharesForConsumer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDataSharesForConsumerOutcomeCallable DescribeDataSharesForConsumerCallable(const Model::DescribeDataSharesForConsumerRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDataSharesForConsumer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDataSharesForConsumerAsync(const Model::DescribeDataSharesForConsumerRequest& request, const DescribeDataSharesForConsumerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of datashares when the account identifier being called is a
@@ -1313,15 +852,6 @@ namespace Redshift
          */
         virtual Model::DescribeDataSharesForProducerOutcome DescribeDataSharesForProducer(const Model::DescribeDataSharesForProducerRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDataSharesForProducer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDataSharesForProducerOutcomeCallable DescribeDataSharesForProducerCallable(const Model::DescribeDataSharesForProducerRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDataSharesForProducer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDataSharesForProducerAsync(const Model::DescribeDataSharesForProducerRequest& request, const DescribeDataSharesForProducerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of parameter settings for the specified parameter group
@@ -1335,15 +865,6 @@ namespace Redshift
          */
         virtual Model::DescribeDefaultClusterParametersOutcome DescribeDefaultClusterParameters(const Model::DescribeDefaultClusterParametersRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDefaultClusterParameters that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDefaultClusterParametersOutcomeCallable DescribeDefaultClusterParametersCallable(const Model::DescribeDefaultClusterParametersRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDefaultClusterParameters that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDefaultClusterParametersAsync(const Model::DescribeDefaultClusterParametersRequest& request, const DescribeDefaultClusterParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a Redshift-managed VPC endpoint.</p><p><h3>See Also:</h3>   <a
@@ -1352,15 +873,6 @@ namespace Redshift
          */
         virtual Model::DescribeEndpointAccessOutcome DescribeEndpointAccess(const Model::DescribeEndpointAccessRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEndpointAccess that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEndpointAccessOutcomeCallable DescribeEndpointAccessCallable(const Model::DescribeEndpointAccessRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEndpointAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEndpointAccessAsync(const Model::DescribeEndpointAccessRequest& request, const DescribeEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes an endpoint authorization.</p><p><h3>See Also:</h3>   <a
@@ -1369,15 +881,6 @@ namespace Redshift
          */
         virtual Model::DescribeEndpointAuthorizationOutcome DescribeEndpointAuthorization(const Model::DescribeEndpointAuthorizationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEndpointAuthorization that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEndpointAuthorizationOutcomeCallable DescribeEndpointAuthorizationCallable(const Model::DescribeEndpointAuthorizationRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEndpointAuthorization that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEndpointAuthorizationAsync(const Model::DescribeEndpointAuthorizationRequest& request, const DescribeEndpointAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Displays a list of event categories for all event source types, or for a
@@ -1390,15 +893,6 @@ namespace Redshift
          */
         virtual Model::DescribeEventCategoriesOutcome DescribeEventCategories(const Model::DescribeEventCategoriesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEventCategories that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEventCategoriesOutcomeCallable DescribeEventCategoriesCallable(const Model::DescribeEventCategoriesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEventCategories that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEventCategoriesAsync(const Model::DescribeEventCategoriesRequest& request, const DescribeEventCategoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists descriptions of all the Amazon Redshift event notification
@@ -1417,15 +911,6 @@ namespace Redshift
          */
         virtual Model::DescribeEventSubscriptionsOutcome DescribeEventSubscriptions(const Model::DescribeEventSubscriptionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEventSubscriptions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEventSubscriptionsOutcomeCallable DescribeEventSubscriptionsCallable(const Model::DescribeEventSubscriptionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEventSubscriptions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEventSubscriptionsAsync(const Model::DescribeEventSubscriptionsRequest& request, const DescribeEventSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns events related to clusters, security groups, snapshots, and parameter
@@ -1438,15 +923,6 @@ namespace Redshift
          */
         virtual Model::DescribeEventsOutcome DescribeEvents(const Model::DescribeEventsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEvents that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEventsOutcomeCallable DescribeEventsCallable(const Model::DescribeEventsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEventsAsync(const Model::DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the specified HSM client certificate. If no
@@ -1465,15 +941,6 @@ namespace Redshift
          */
         virtual Model::DescribeHsmClientCertificatesOutcome DescribeHsmClientCertificates(const Model::DescribeHsmClientCertificatesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeHsmClientCertificates that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeHsmClientCertificatesOutcomeCallable DescribeHsmClientCertificatesCallable(const Model::DescribeHsmClientCertificatesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeHsmClientCertificates that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeHsmClientCertificatesAsync(const Model::DescribeHsmClientCertificatesRequest& request, const DescribeHsmClientCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the specified Amazon Redshift HSM configuration. If
@@ -1492,15 +959,6 @@ namespace Redshift
          */
         virtual Model::DescribeHsmConfigurationsOutcome DescribeHsmConfigurations(const Model::DescribeHsmConfigurationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeHsmConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeHsmConfigurationsOutcomeCallable DescribeHsmConfigurationsCallable(const Model::DescribeHsmConfigurationsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeHsmConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeHsmConfigurationsAsync(const Model::DescribeHsmConfigurationsRequest& request, const DescribeHsmConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes whether information, such as queries and connection attempts, is
@@ -1511,15 +969,6 @@ namespace Redshift
          */
         virtual Model::DescribeLoggingStatusOutcome DescribeLoggingStatus(const Model::DescribeLoggingStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeLoggingStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeLoggingStatusOutcomeCallable DescribeLoggingStatusCallable(const Model::DescribeLoggingStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeLoggingStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeLoggingStatusAsync(const Model::DescribeLoggingStatusRequest& request, const DescribeLoggingStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns properties of possible node configurations such as node type, number
@@ -1530,15 +979,6 @@ namespace Redshift
          */
         virtual Model::DescribeNodeConfigurationOptionsOutcome DescribeNodeConfigurationOptions(const Model::DescribeNodeConfigurationOptionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeNodeConfigurationOptions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeNodeConfigurationOptionsOutcomeCallable DescribeNodeConfigurationOptionsCallable(const Model::DescribeNodeConfigurationOptionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeNodeConfigurationOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeNodeConfigurationOptionsAsync(const Model::DescribeNodeConfigurationOptionsRequest& request, const DescribeNodeConfigurationOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of orderable cluster options. Before you create a new cluster
@@ -1556,15 +996,6 @@ namespace Redshift
          */
         virtual Model::DescribeOrderableClusterOptionsOutcome DescribeOrderableClusterOptions(const Model::DescribeOrderableClusterOptionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeOrderableClusterOptions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeOrderableClusterOptionsOutcomeCallable DescribeOrderableClusterOptionsCallable(const Model::DescribeOrderableClusterOptionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeOrderableClusterOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeOrderableClusterOptionsAsync(const Model::DescribeOrderableClusterOptionsRequest& request, const DescribeOrderableClusterOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the partner integrations defined for a
@@ -1574,15 +1005,6 @@ namespace Redshift
          */
         virtual Model::DescribePartnersOutcome DescribePartners(const Model::DescribePartnersRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribePartners that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribePartnersOutcomeCallable DescribePartnersCallable(const Model::DescribePartnersRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribePartners that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribePartnersAsync(const Model::DescribePartnersRequest& request, const DescribePartnersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns exchange status details and associated metadata for a reserved-node
@@ -1593,15 +1015,6 @@ namespace Redshift
          */
         virtual Model::DescribeReservedNodeExchangeStatusOutcome DescribeReservedNodeExchangeStatus(const Model::DescribeReservedNodeExchangeStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeReservedNodeExchangeStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeReservedNodeExchangeStatusOutcomeCallable DescribeReservedNodeExchangeStatusCallable(const Model::DescribeReservedNodeExchangeStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeReservedNodeExchangeStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeReservedNodeExchangeStatusAsync(const Model::DescribeReservedNodeExchangeStatusRequest& request, const DescribeReservedNodeExchangeStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of the available reserved node offerings by Amazon Redshift
@@ -1620,15 +1033,6 @@ namespace Redshift
          */
         virtual Model::DescribeReservedNodeOfferingsOutcome DescribeReservedNodeOfferings(const Model::DescribeReservedNodeOfferingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeReservedNodeOfferings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeReservedNodeOfferingsOutcomeCallable DescribeReservedNodeOfferingsCallable(const Model::DescribeReservedNodeOfferingsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeReservedNodeOfferings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeReservedNodeOfferingsAsync(const Model::DescribeReservedNodeOfferingsRequest& request, const DescribeReservedNodeOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the descriptions of the reserved nodes.</p><p><h3>See Also:</h3>   <a
@@ -1637,15 +1041,6 @@ namespace Redshift
          */
         virtual Model::DescribeReservedNodesOutcome DescribeReservedNodes(const Model::DescribeReservedNodesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeReservedNodes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeReservedNodesOutcomeCallable DescribeReservedNodesCallable(const Model::DescribeReservedNodesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeReservedNodes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeReservedNodesAsync(const Model::DescribeReservedNodesRequest& request, const DescribeReservedNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the last resize operation for the specified
@@ -1660,15 +1055,6 @@ namespace Redshift
          */
         virtual Model::DescribeResizeOutcome DescribeResize(const Model::DescribeResizeRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeResize that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeResizeOutcomeCallable DescribeResizeCallable(const Model::DescribeResizeRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeResize that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeResizeAsync(const Model::DescribeResizeRequest& request, const DescribeResizeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes properties of scheduled actions. </p><p><h3>See Also:</h3>   <a
@@ -1677,15 +1063,6 @@ namespace Redshift
          */
         virtual Model::DescribeScheduledActionsOutcome DescribeScheduledActions(const Model::DescribeScheduledActionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeScheduledActions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeScheduledActionsOutcomeCallable DescribeScheduledActionsCallable(const Model::DescribeScheduledActionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeScheduledActions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeScheduledActionsAsync(const Model::DescribeScheduledActionsRequest& request, const DescribeScheduledActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of snapshot copy grants owned by the Amazon Web Services
@@ -1699,15 +1076,6 @@ namespace Redshift
          */
         virtual Model::DescribeSnapshotCopyGrantsOutcome DescribeSnapshotCopyGrants(const Model::DescribeSnapshotCopyGrantsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeSnapshotCopyGrants that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeSnapshotCopyGrantsOutcomeCallable DescribeSnapshotCopyGrantsCallable(const Model::DescribeSnapshotCopyGrantsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeSnapshotCopyGrants that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeSnapshotCopyGrantsAsync(const Model::DescribeSnapshotCopyGrantsRequest& request, const DescribeSnapshotCopyGrantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of snapshot schedules. </p><p><h3>See Also:</h3>   <a
@@ -1716,15 +1084,6 @@ namespace Redshift
          */
         virtual Model::DescribeSnapshotSchedulesOutcome DescribeSnapshotSchedules(const Model::DescribeSnapshotSchedulesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeSnapshotSchedules that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeSnapshotSchedulesOutcomeCallable DescribeSnapshotSchedulesCallable(const Model::DescribeSnapshotSchedulesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeSnapshotSchedules that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeSnapshotSchedulesAsync(const Model::DescribeSnapshotSchedulesRequest& request, const DescribeSnapshotSchedulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns account level backups storage size and provisional
@@ -1734,15 +1093,6 @@ namespace Redshift
          */
         virtual Model::DescribeStorageOutcome DescribeStorage(const Model::DescribeStorageRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeStorage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeStorageOutcomeCallable DescribeStorageCallable(const Model::DescribeStorageRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeStorage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeStorageAsync(const Model::DescribeStorageRequest& request, const DescribeStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the status of one or more table restore requests made using the
@@ -1758,15 +1108,6 @@ namespace Redshift
          */
         virtual Model::DescribeTableRestoreStatusOutcome DescribeTableRestoreStatus(const Model::DescribeTableRestoreStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTableRestoreStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTableRestoreStatusOutcomeCallable DescribeTableRestoreStatusCallable(const Model::DescribeTableRestoreStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTableRestoreStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTableRestoreStatusAsync(const Model::DescribeTableRestoreStatusRequest& request, const DescribeTableRestoreStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of tags. You can return tags from a specific resource by
@@ -1790,15 +1131,6 @@ namespace Redshift
          */
         virtual Model::DescribeTagsOutcome DescribeTags(const Model::DescribeTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTagsOutcomeCallable DescribeTagsCallable(const Model::DescribeTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTagsAsync(const Model::DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Shows usage limits on a cluster. Results are filtered based on the
@@ -1817,15 +1149,6 @@ namespace Redshift
          */
         virtual Model::DescribeUsageLimitsOutcome DescribeUsageLimits(const Model::DescribeUsageLimitsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeUsageLimits that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeUsageLimitsOutcomeCallable DescribeUsageLimitsCallable(const Model::DescribeUsageLimitsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeUsageLimits that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeUsageLimitsAsync(const Model::DescribeUsageLimitsRequest& request, const DescribeUsageLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops logging information, such as queries and connection attempts, for the
@@ -1835,15 +1158,6 @@ namespace Redshift
          */
         virtual Model::DisableLoggingOutcome DisableLogging(const Model::DisableLoggingRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisableLogging that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisableLoggingOutcomeCallable DisableLoggingCallable(const Model::DisableLoggingRequest& request) const;
-
-        /**
-         * An Async wrapper for DisableLogging that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisableLoggingAsync(const Model::DisableLoggingRequest& request, const DisableLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disables the automatic copying of snapshots from one region to another region
@@ -1856,15 +1170,6 @@ namespace Redshift
          */
         virtual Model::DisableSnapshotCopyOutcome DisableSnapshotCopy(const Model::DisableSnapshotCopyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisableSnapshotCopy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisableSnapshotCopyOutcomeCallable DisableSnapshotCopyCallable(const Model::DisableSnapshotCopyRequest& request) const;
-
-        /**
-         * An Async wrapper for DisableSnapshotCopy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisableSnapshotCopyAsync(const Model::DisableSnapshotCopyRequest& request, const DisableSnapshotCopyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>From a datashare consumer account, remove association for the specified
@@ -1874,15 +1179,6 @@ namespace Redshift
          */
         virtual Model::DisassociateDataShareConsumerOutcome DisassociateDataShareConsumer(const Model::DisassociateDataShareConsumerRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateDataShareConsumer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateDataShareConsumerOutcomeCallable DisassociateDataShareConsumerCallable(const Model::DisassociateDataShareConsumerRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateDataShareConsumer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateDataShareConsumerAsync(const Model::DisassociateDataShareConsumerRequest& request, const DisassociateDataShareConsumerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts logging information, such as queries and connection attempts, for the
@@ -1892,15 +1188,6 @@ namespace Redshift
          */
         virtual Model::EnableLoggingOutcome EnableLogging(const Model::EnableLoggingRequest& request) const;
 
-        /**
-         * A Callable wrapper for EnableLogging that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnableLoggingOutcomeCallable EnableLoggingCallable(const Model::EnableLoggingRequest& request) const;
-
-        /**
-         * An Async wrapper for EnableLogging that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnableLoggingAsync(const Model::EnableLoggingRequest& request, const EnableLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables the automatic copy of snapshots from one region to another region for
@@ -1910,15 +1197,6 @@ namespace Redshift
          */
         virtual Model::EnableSnapshotCopyOutcome EnableSnapshotCopy(const Model::EnableSnapshotCopyRequest& request) const;
 
-        /**
-         * A Callable wrapper for EnableSnapshotCopy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnableSnapshotCopyOutcomeCallable EnableSnapshotCopyCallable(const Model::EnableSnapshotCopyRequest& request) const;
-
-        /**
-         * An Async wrapper for EnableSnapshotCopy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnableSnapshotCopyAsync(const Model::EnableSnapshotCopyRequest& request, const EnableSnapshotCopyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a database user name and temporary password with temporary
@@ -1950,15 +1228,6 @@ namespace Redshift
          */
         virtual Model::GetClusterCredentialsOutcome GetClusterCredentials(const Model::GetClusterCredentialsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetClusterCredentials that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetClusterCredentialsOutcomeCallable GetClusterCredentialsCallable(const Model::GetClusterCredentialsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetClusterCredentials that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetClusterCredentialsAsync(const Model::GetClusterCredentialsRequest& request, const GetClusterCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a database user name and temporary password with temporary
@@ -1979,15 +1248,6 @@ namespace Redshift
          */
         virtual Model::GetClusterCredentialsWithIAMOutcome GetClusterCredentialsWithIAM(const Model::GetClusterCredentialsWithIAMRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetClusterCredentialsWithIAM that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetClusterCredentialsWithIAMOutcomeCallable GetClusterCredentialsWithIAMCallable(const Model::GetClusterCredentialsWithIAMRequest& request) const;
-
-        /**
-         * An Async wrapper for GetClusterCredentialsWithIAM that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetClusterCredentialsWithIAMAsync(const Model::GetClusterCredentialsWithIAMRequest& request, const GetClusterCredentialsWithIAMResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the configuration options for the reserved-node exchange. These options
@@ -1999,15 +1259,6 @@ namespace Redshift
          */
         virtual Model::GetReservedNodeExchangeConfigurationOptionsOutcome GetReservedNodeExchangeConfigurationOptions(const Model::GetReservedNodeExchangeConfigurationOptionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetReservedNodeExchangeConfigurationOptions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetReservedNodeExchangeConfigurationOptionsOutcomeCallable GetReservedNodeExchangeConfigurationOptionsCallable(const Model::GetReservedNodeExchangeConfigurationOptionsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetReservedNodeExchangeConfigurationOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetReservedNodeExchangeConfigurationOptionsAsync(const Model::GetReservedNodeExchangeConfigurationOptionsRequest& request, const GetReservedNodeExchangeConfigurationOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns an array of DC2 ReservedNodeOfferings that matches the payment type,
@@ -2018,15 +1269,6 @@ namespace Redshift
          */
         virtual Model::GetReservedNodeExchangeOfferingsOutcome GetReservedNodeExchangeOfferings(const Model::GetReservedNodeExchangeOfferingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetReservedNodeExchangeOfferings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetReservedNodeExchangeOfferingsOutcomeCallable GetReservedNodeExchangeOfferingsCallable(const Model::GetReservedNodeExchangeOfferingsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetReservedNodeExchangeOfferings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetReservedNodeExchangeOfferingsAsync(const Model::GetReservedNodeExchangeOfferingsRequest& request, const GetReservedNodeExchangeOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation is retired. Calling this operation does not change AQUA
@@ -2037,15 +1279,6 @@ namespace Redshift
          */
         virtual Model::ModifyAquaConfigurationOutcome ModifyAquaConfiguration(const Model::ModifyAquaConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyAquaConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyAquaConfigurationOutcomeCallable ModifyAquaConfigurationCallable(const Model::ModifyAquaConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyAquaConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyAquaConfigurationAsync(const Model::ModifyAquaConfigurationRequest& request, const ModifyAquaConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies an authentication profile.</p><p><h3>See Also:</h3>   <a
@@ -2054,15 +1287,6 @@ namespace Redshift
          */
         virtual Model::ModifyAuthenticationProfileOutcome ModifyAuthenticationProfile(const Model::ModifyAuthenticationProfileRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyAuthenticationProfile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyAuthenticationProfileOutcomeCallable ModifyAuthenticationProfileCallable(const Model::ModifyAuthenticationProfileRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyAuthenticationProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyAuthenticationProfileAsync(const Model::ModifyAuthenticationProfileRequest& request, const ModifyAuthenticationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the settings for a cluster.</p> <p>You can also change node type and
@@ -2081,15 +1305,6 @@ namespace Redshift
          */
         virtual Model::ModifyClusterOutcome ModifyCluster(const Model::ModifyClusterRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyCluster that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyClusterOutcomeCallable ModifyClusterCallable(const Model::ModifyClusterRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyClusterAsync(const Model::ModifyClusterRequest& request, const ModifyClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the database revision of a cluster. The database revision is a
@@ -2100,15 +1315,6 @@ namespace Redshift
          */
         virtual Model::ModifyClusterDbRevisionOutcome ModifyClusterDbRevision(const Model::ModifyClusterDbRevisionRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyClusterDbRevision that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyClusterDbRevisionOutcomeCallable ModifyClusterDbRevisionCallable(const Model::ModifyClusterDbRevisionRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyClusterDbRevision that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyClusterDbRevisionAsync(const Model::ModifyClusterDbRevisionRequest& request, const ModifyClusterDbRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the list of Identity and Access Management (IAM) roles that can be
@@ -2123,15 +1329,6 @@ namespace Redshift
          */
         virtual Model::ModifyClusterIamRolesOutcome ModifyClusterIamRoles(const Model::ModifyClusterIamRolesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyClusterIamRoles that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyClusterIamRolesOutcomeCallable ModifyClusterIamRolesCallable(const Model::ModifyClusterIamRolesRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyClusterIamRoles that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyClusterIamRolesAsync(const Model::ModifyClusterIamRolesRequest& request, const ModifyClusterIamRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the maintenance settings of a cluster.</p><p><h3>See Also:</h3>   <a
@@ -2140,15 +1337,6 @@ namespace Redshift
          */
         virtual Model::ModifyClusterMaintenanceOutcome ModifyClusterMaintenance(const Model::ModifyClusterMaintenanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyClusterMaintenance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyClusterMaintenanceOutcomeCallable ModifyClusterMaintenanceCallable(const Model::ModifyClusterMaintenanceRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyClusterMaintenance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyClusterMaintenanceAsync(const Model::ModifyClusterMaintenanceRequest& request, const ModifyClusterMaintenanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the parameters of a parameter group. For the parameters parameter,
@@ -2162,15 +1350,6 @@ namespace Redshift
          */
         virtual Model::ModifyClusterParameterGroupOutcome ModifyClusterParameterGroup(const Model::ModifyClusterParameterGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyClusterParameterGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyClusterParameterGroupOutcomeCallable ModifyClusterParameterGroupCallable(const Model::ModifyClusterParameterGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyClusterParameterGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyClusterParameterGroupAsync(const Model::ModifyClusterParameterGroupRequest& request, const ModifyClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the settings for a snapshot.</p> <p>This exanmple modifies the
@@ -2181,15 +1360,6 @@ namespace Redshift
          */
         virtual Model::ModifyClusterSnapshotOutcome ModifyClusterSnapshot(const Model::ModifyClusterSnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyClusterSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyClusterSnapshotOutcomeCallable ModifyClusterSnapshotCallable(const Model::ModifyClusterSnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyClusterSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyClusterSnapshotAsync(const Model::ModifyClusterSnapshotRequest& request, const ModifyClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies a snapshot schedule for a cluster.</p><p><h3>See Also:</h3>   <a
@@ -2198,15 +1368,6 @@ namespace Redshift
          */
         virtual Model::ModifyClusterSnapshotScheduleOutcome ModifyClusterSnapshotSchedule(const Model::ModifyClusterSnapshotScheduleRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyClusterSnapshotSchedule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyClusterSnapshotScheduleOutcomeCallable ModifyClusterSnapshotScheduleCallable(const Model::ModifyClusterSnapshotScheduleRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyClusterSnapshotSchedule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyClusterSnapshotScheduleAsync(const Model::ModifyClusterSnapshotScheduleRequest& request, const ModifyClusterSnapshotScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies a cluster subnet group to include the specified list of VPC subnets.
@@ -2217,15 +1378,6 @@ namespace Redshift
          */
         virtual Model::ModifyClusterSubnetGroupOutcome ModifyClusterSubnetGroup(const Model::ModifyClusterSubnetGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyClusterSubnetGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyClusterSubnetGroupOutcomeCallable ModifyClusterSubnetGroupCallable(const Model::ModifyClusterSubnetGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyClusterSubnetGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyClusterSubnetGroupAsync(const Model::ModifyClusterSubnetGroupRequest& request, const ModifyClusterSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies a Redshift-managed VPC endpoint.</p><p><h3>See Also:</h3>   <a
@@ -2234,15 +1386,6 @@ namespace Redshift
          */
         virtual Model::ModifyEndpointAccessOutcome ModifyEndpointAccess(const Model::ModifyEndpointAccessRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyEndpointAccess that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyEndpointAccessOutcomeCallable ModifyEndpointAccessCallable(const Model::ModifyEndpointAccessRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyEndpointAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyEndpointAccessAsync(const Model::ModifyEndpointAccessRequest& request, const ModifyEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies an existing Amazon Redshift event notification
@@ -2252,15 +1395,6 @@ namespace Redshift
          */
         virtual Model::ModifyEventSubscriptionOutcome ModifyEventSubscription(const Model::ModifyEventSubscriptionRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyEventSubscription that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyEventSubscriptionOutcomeCallable ModifyEventSubscriptionCallable(const Model::ModifyEventSubscriptionRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyEventSubscription that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyEventSubscriptionAsync(const Model::ModifyEventSubscriptionRequest& request, const ModifyEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies a scheduled action. </p><p><h3>See Also:</h3>   <a
@@ -2269,15 +1403,6 @@ namespace Redshift
          */
         virtual Model::ModifyScheduledActionOutcome ModifyScheduledAction(const Model::ModifyScheduledActionRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyScheduledAction that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyScheduledActionOutcomeCallable ModifyScheduledActionCallable(const Model::ModifyScheduledActionRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyScheduledAction that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyScheduledActionAsync(const Model::ModifyScheduledActionRequest& request, const ModifyScheduledActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the number of days to retain snapshots in the destination Amazon Web
@@ -2293,15 +1418,6 @@ namespace Redshift
          */
         virtual Model::ModifySnapshotCopyRetentionPeriodOutcome ModifySnapshotCopyRetentionPeriod(const Model::ModifySnapshotCopyRetentionPeriodRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifySnapshotCopyRetentionPeriod that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifySnapshotCopyRetentionPeriodOutcomeCallable ModifySnapshotCopyRetentionPeriodCallable(const Model::ModifySnapshotCopyRetentionPeriodRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifySnapshotCopyRetentionPeriod that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifySnapshotCopyRetentionPeriodAsync(const Model::ModifySnapshotCopyRetentionPeriodRequest& request, const ModifySnapshotCopyRetentionPeriodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies a snapshot schedule. Any schedule associated with a cluster is
@@ -2311,15 +1427,6 @@ namespace Redshift
          */
         virtual Model::ModifySnapshotScheduleOutcome ModifySnapshotSchedule(const Model::ModifySnapshotScheduleRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifySnapshotSchedule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifySnapshotScheduleOutcomeCallable ModifySnapshotScheduleCallable(const Model::ModifySnapshotScheduleRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifySnapshotSchedule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifySnapshotScheduleAsync(const Model::ModifySnapshotScheduleRequest& request, const ModifySnapshotScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies a usage limit in a cluster. You can't modify the feature type or
@@ -2329,15 +1436,6 @@ namespace Redshift
          */
         virtual Model::ModifyUsageLimitOutcome ModifyUsageLimit(const Model::ModifyUsageLimitRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyUsageLimit that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyUsageLimitOutcomeCallable ModifyUsageLimitCallable(const Model::ModifyUsageLimitRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyUsageLimit that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyUsageLimitAsync(const Model::ModifyUsageLimitRequest& request, const ModifyUsageLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Pauses a cluster.</p><p><h3>See Also:</h3>   <a
@@ -2346,15 +1444,6 @@ namespace Redshift
          */
         virtual Model::PauseClusterOutcome PauseCluster(const Model::PauseClusterRequest& request) const;
 
-        /**
-         * A Callable wrapper for PauseCluster that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PauseClusterOutcomeCallable PauseClusterCallable(const Model::PauseClusterRequest& request) const;
-
-        /**
-         * An Async wrapper for PauseCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PauseClusterAsync(const Model::PauseClusterRequest& request, const PauseClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Allows you to purchase reserved nodes. Amazon Redshift offers a predefined
@@ -2371,15 +1460,6 @@ namespace Redshift
          */
         virtual Model::PurchaseReservedNodeOfferingOutcome PurchaseReservedNodeOffering(const Model::PurchaseReservedNodeOfferingRequest& request) const;
 
-        /**
-         * A Callable wrapper for PurchaseReservedNodeOffering that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PurchaseReservedNodeOfferingOutcomeCallable PurchaseReservedNodeOfferingCallable(const Model::PurchaseReservedNodeOfferingRequest& request) const;
-
-        /**
-         * An Async wrapper for PurchaseReservedNodeOffering that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PurchaseReservedNodeOfferingAsync(const Model::PurchaseReservedNodeOfferingRequest& request, const PurchaseReservedNodeOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Reboots a cluster. This action is taken as soon as possible. It results in a
@@ -2395,15 +1475,6 @@ namespace Redshift
          */
         virtual Model::RebootClusterOutcome RebootCluster(const Model::RebootClusterRequest& request) const;
 
-        /**
-         * A Callable wrapper for RebootCluster that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RebootClusterOutcomeCallable RebootClusterCallable(const Model::RebootClusterRequest& request) const;
-
-        /**
-         * An Async wrapper for RebootCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RebootClusterAsync(const Model::RebootClusterRequest& request, const RebootClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>From a datashare consumer account, rejects the specified
@@ -2413,15 +1484,6 @@ namespace Redshift
          */
         virtual Model::RejectDataShareOutcome RejectDataShare(const Model::RejectDataShareRequest& request) const;
 
-        /**
-         * A Callable wrapper for RejectDataShare that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RejectDataShareOutcomeCallable RejectDataShareCallable(const Model::RejectDataShareRequest& request) const;
-
-        /**
-         * An Async wrapper for RejectDataShare that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RejectDataShareAsync(const Model::RejectDataShareRequest& request, const RejectDataShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets one or more parameters of the specified parameter group to their default
@@ -2434,15 +1496,6 @@ namespace Redshift
          */
         virtual Model::ResetClusterParameterGroupOutcome ResetClusterParameterGroup(const Model::ResetClusterParameterGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for ResetClusterParameterGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ResetClusterParameterGroupOutcomeCallable ResetClusterParameterGroupCallable(const Model::ResetClusterParameterGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for ResetClusterParameterGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ResetClusterParameterGroupAsync(const Model::ResetClusterParameterGroupRequest& request, const ResetClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Changes the size of the cluster. You can change the cluster's type, or change
@@ -2462,15 +1515,6 @@ namespace Redshift
          */
         virtual Model::ResizeClusterOutcome ResizeCluster(const Model::ResizeClusterRequest& request) const;
 
-        /**
-         * A Callable wrapper for ResizeCluster that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ResizeClusterOutcomeCallable ResizeClusterCallable(const Model::ResizeClusterRequest& request) const;
-
-        /**
-         * An Async wrapper for ResizeCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ResizeClusterAsync(const Model::ResizeClusterRequest& request, const ResizeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new cluster from a snapshot. By default, Amazon Redshift creates
@@ -2491,15 +1535,6 @@ namespace Redshift
          */
         virtual Model::RestoreFromClusterSnapshotOutcome RestoreFromClusterSnapshot(const Model::RestoreFromClusterSnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for RestoreFromClusterSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RestoreFromClusterSnapshotOutcomeCallable RestoreFromClusterSnapshotCallable(const Model::RestoreFromClusterSnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for RestoreFromClusterSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RestoreFromClusterSnapshotAsync(const Model::RestoreFromClusterSnapshotRequest& request, const RestoreFromClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new table from a table in an Amazon Redshift cluster snapshot. You
@@ -2520,15 +1555,6 @@ namespace Redshift
          */
         virtual Model::RestoreTableFromClusterSnapshotOutcome RestoreTableFromClusterSnapshot(const Model::RestoreTableFromClusterSnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for RestoreTableFromClusterSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RestoreTableFromClusterSnapshotOutcomeCallable RestoreTableFromClusterSnapshotCallable(const Model::RestoreTableFromClusterSnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for RestoreTableFromClusterSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RestoreTableFromClusterSnapshotAsync(const Model::RestoreTableFromClusterSnapshotRequest& request, const RestoreTableFromClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Resumes a paused cluster.</p><p><h3>See Also:</h3>   <a
@@ -2537,15 +1563,6 @@ namespace Redshift
          */
         virtual Model::ResumeClusterOutcome ResumeCluster(const Model::ResumeClusterRequest& request) const;
 
-        /**
-         * A Callable wrapper for ResumeCluster that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ResumeClusterOutcomeCallable ResumeClusterCallable(const Model::ResumeClusterRequest& request) const;
-
-        /**
-         * An Async wrapper for ResumeCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ResumeClusterAsync(const Model::ResumeClusterRequest& request, const ResumeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Revokes an ingress rule in an Amazon Redshift security group for a previously
@@ -2560,15 +1577,6 @@ namespace Redshift
          */
         virtual Model::RevokeClusterSecurityGroupIngressOutcome RevokeClusterSecurityGroupIngress(const Model::RevokeClusterSecurityGroupIngressRequest& request) const;
 
-        /**
-         * A Callable wrapper for RevokeClusterSecurityGroupIngress that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RevokeClusterSecurityGroupIngressOutcomeCallable RevokeClusterSecurityGroupIngressCallable(const Model::RevokeClusterSecurityGroupIngressRequest& request) const;
-
-        /**
-         * An Async wrapper for RevokeClusterSecurityGroupIngress that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RevokeClusterSecurityGroupIngressAsync(const Model::RevokeClusterSecurityGroupIngressRequest& request, const RevokeClusterSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Revokes access to a cluster.</p><p><h3>See Also:</h3>   <a
@@ -2577,15 +1585,6 @@ namespace Redshift
          */
         virtual Model::RevokeEndpointAccessOutcome RevokeEndpointAccess(const Model::RevokeEndpointAccessRequest& request) const;
 
-        /**
-         * A Callable wrapper for RevokeEndpointAccess that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RevokeEndpointAccessOutcomeCallable RevokeEndpointAccessCallable(const Model::RevokeEndpointAccessRequest& request) const;
-
-        /**
-         * An Async wrapper for RevokeEndpointAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RevokeEndpointAccessAsync(const Model::RevokeEndpointAccessRequest& request, const RevokeEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the ability of the specified Amazon Web Services account to restore
@@ -2600,15 +1599,6 @@ namespace Redshift
          */
         virtual Model::RevokeSnapshotAccessOutcome RevokeSnapshotAccess(const Model::RevokeSnapshotAccessRequest& request) const;
 
-        /**
-         * A Callable wrapper for RevokeSnapshotAccess that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RevokeSnapshotAccessOutcomeCallable RevokeSnapshotAccessCallable(const Model::RevokeSnapshotAccessRequest& request) const;
-
-        /**
-         * An Async wrapper for RevokeSnapshotAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RevokeSnapshotAccessAsync(const Model::RevokeSnapshotAccessRequest& request, const RevokeSnapshotAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Rotates the encryption keys for a cluster.</p><p><h3>See Also:</h3>   <a
@@ -2617,15 +1607,6 @@ namespace Redshift
          */
         virtual Model::RotateEncryptionKeyOutcome RotateEncryptionKey(const Model::RotateEncryptionKeyRequest& request) const;
 
-        /**
-         * A Callable wrapper for RotateEncryptionKey that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RotateEncryptionKeyOutcomeCallable RotateEncryptionKeyCallable(const Model::RotateEncryptionKeyRequest& request) const;
-
-        /**
-         * An Async wrapper for RotateEncryptionKey that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RotateEncryptionKeyAsync(const Model::RotateEncryptionKeyRequest& request, const RotateEncryptionKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the status of a partner integration.</p><p><h3>See Also:</h3>   <a
@@ -2634,15 +1615,6 @@ namespace Redshift
          */
         virtual Model::UpdatePartnerStatusOutcome UpdatePartnerStatus(const Model::UpdatePartnerStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdatePartnerStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdatePartnerStatusOutcomeCallable UpdatePartnerStatusCallable(const Model::UpdatePartnerStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdatePartnerStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdatePartnerStatusAsync(const Model::UpdatePartnerStatusRequest& request, const UpdatePartnerStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
         void OverrideEndpoint(const Aws::String& endpoint);

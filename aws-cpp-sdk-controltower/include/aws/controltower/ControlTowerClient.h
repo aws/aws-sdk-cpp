@@ -7,8 +7,10 @@
 #include <aws/controltower/ControlTower_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/controltower/ControlTowerServiceClientModel.h>
+#include <aws/controltower/ControlTowerLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -116,6 +118,47 @@ namespace ControlTower
         virtual ~ControlTowerClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>This API call turns off a control. It starts an asynchronous operation that
          * deletes AWS resources on the specified organizational unit and the accounts it
@@ -126,15 +169,6 @@ namespace ControlTower
          */
         virtual Model::DisableControlOutcome DisableControl(const Model::DisableControlRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisableControl that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisableControlOutcomeCallable DisableControlCallable(const Model::DisableControlRequest& request) const;
-
-        /**
-         * An Async wrapper for DisableControl that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisableControlAsync(const Model::DisableControlRequest& request, const DisableControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This API call activates a control. It starts an asynchronous operation that
@@ -146,15 +180,6 @@ namespace ControlTower
          */
         virtual Model::EnableControlOutcome EnableControl(const Model::EnableControlRequest& request) const;
 
-        /**
-         * A Callable wrapper for EnableControl that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnableControlOutcomeCallable EnableControlCallable(const Model::EnableControlRequest& request) const;
-
-        /**
-         * An Async wrapper for EnableControl that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnableControlAsync(const Model::EnableControlRequest& request, const EnableControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the status of a particular <code>EnableControl</code> or
@@ -166,15 +191,6 @@ namespace ControlTower
          */
         virtual Model::GetControlOperationOutcome GetControlOperation(const Model::GetControlOperationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetControlOperation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetControlOperationOutcomeCallable GetControlOperationCallable(const Model::GetControlOperationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetControlOperation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetControlOperationAsync(const Model::GetControlOperationRequest& request, const GetControlOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the controls enabled by AWS Control Tower on the specified
@@ -184,15 +200,6 @@ namespace ControlTower
          */
         virtual Model::ListEnabledControlsOutcome ListEnabledControls(const Model::ListEnabledControlsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListEnabledControls that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListEnabledControlsOutcomeCallable ListEnabledControlsCallable(const Model::ListEnabledControlsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListEnabledControls that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListEnabledControlsAsync(const Model::ListEnabledControlsRequest& request, const ListEnabledControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

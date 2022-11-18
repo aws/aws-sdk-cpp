@@ -7,8 +7,10 @@
 #include <aws/cloudcontrol/CloudControlApi_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/cloudcontrol/CloudControlApiServiceClientModel.h>
+#include <aws/cloudcontrol/CloudControlApiLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -75,6 +77,47 @@ namespace CloudControlApi
         virtual ~CloudControlApiClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Cancels the specified resource operation request. For more information, see
          * <a
@@ -88,15 +131,6 @@ namespace CloudControlApi
          */
         virtual Model::CancelResourceRequestOutcome CancelResourceRequest(const Model::CancelResourceRequestRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelResourceRequest that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelResourceRequestOutcomeCallable CancelResourceRequestCallable(const Model::CancelResourceRequestRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelResourceRequest that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelResourceRequestAsync(const Model::CancelResourceRequestRequest& request, const CancelResourceRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates the specified resource. For more information, see <a
@@ -112,15 +146,6 @@ namespace CloudControlApi
          */
         virtual Model::CreateResourceOutcome CreateResource(const Model::CreateResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateResourceOutcomeCallable CreateResourceCallable(const Model::CreateResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateResourceAsync(const Model::CreateResourceRequest& request, const CreateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified resource. For details, see <a
@@ -136,15 +161,6 @@ namespace CloudControlApi
          */
         virtual Model::DeleteResourceOutcome DeleteResource(const Model::DeleteResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteResourceOutcomeCallable DeleteResourceCallable(const Model::DeleteResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteResourceAsync(const Model::DeleteResourceRequest& request, const DeleteResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the current state of the specified resource. For
@@ -159,15 +175,6 @@ namespace CloudControlApi
          */
         virtual Model::GetResourceOutcome GetResource(const Model::GetResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetResourceOutcomeCallable GetResourceCallable(const Model::GetResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for GetResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetResourceAsync(const Model::GetResourceRequest& request, const GetResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the current status of a resource operation request. For more
@@ -180,15 +187,6 @@ namespace CloudControlApi
          */
         virtual Model::GetResourceRequestStatusOutcome GetResourceRequestStatus(const Model::GetResourceRequestStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetResourceRequestStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetResourceRequestStatusOutcomeCallable GetResourceRequestStatusCallable(const Model::GetResourceRequestStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for GetResourceRequestStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetResourceRequestStatusAsync(const Model::GetResourceRequestStatusRequest& request, const GetResourceRequestStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns existing resource operation requests. This includes requests of all
@@ -202,15 +200,6 @@ namespace CloudControlApi
          */
         virtual Model::ListResourceRequestsOutcome ListResourceRequests(const Model::ListResourceRequestsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListResourceRequests that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListResourceRequestsOutcomeCallable ListResourceRequestsCallable(const Model::ListResourceRequestsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListResourceRequests that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListResourceRequestsAsync(const Model::ListResourceRequestsRequest& request, const ListResourceRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the specified resources. For more information, see
@@ -226,15 +215,6 @@ namespace CloudControlApi
          */
         virtual Model::ListResourcesOutcome ListResources(const Model::ListResourcesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListResources that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListResourcesOutcomeCallable ListResourcesCallable(const Model::ListResourcesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListResources that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListResourcesAsync(const Model::ListResourcesRequest& request, const ListResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the specified property values in the resource.</p> <p>You specify
@@ -259,15 +239,6 @@ namespace CloudControlApi
          */
         virtual Model::UpdateResourceOutcome UpdateResource(const Model::UpdateResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateResourceOutcomeCallable UpdateResourceCallable(const Model::UpdateResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateResourceAsync(const Model::UpdateResourceRequest& request, const UpdateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

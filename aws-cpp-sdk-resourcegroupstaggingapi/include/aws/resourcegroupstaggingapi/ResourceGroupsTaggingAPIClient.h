@@ -7,8 +7,10 @@
 #include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPI_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPIServiceClientModel.h>
+#include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPILegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -73,6 +75,47 @@ namespace ResourceGroupsTaggingAPI
         virtual ~ResourceGroupsTaggingAPIClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Describes the status of the <code>StartReportCreation</code> operation. </p>
          * <p>You can call this operation only from the organization's management account
@@ -82,15 +125,6 @@ namespace ResourceGroupsTaggingAPI
          */
         virtual Model::DescribeReportCreationOutcome DescribeReportCreation(const Model::DescribeReportCreationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeReportCreation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeReportCreationOutcomeCallable DescribeReportCreationCallable(const Model::DescribeReportCreationRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeReportCreation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeReportCreationAsync(const Model::DescribeReportCreationRequest& request, const DescribeReportCreationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a table that shows counts of resources that are noncompliant with
@@ -111,15 +145,6 @@ namespace ResourceGroupsTaggingAPI
          */
         virtual Model::GetComplianceSummaryOutcome GetComplianceSummary(const Model::GetComplianceSummaryRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetComplianceSummary that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetComplianceSummaryOutcomeCallable GetComplianceSummaryCallable(const Model::GetComplianceSummaryRequest& request) const;
-
-        /**
-         * An Async wrapper for GetComplianceSummary that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetComplianceSummaryAsync(const Model::GetComplianceSummaryRequest& request, const GetComplianceSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns all the tagged or previously tagged resources that are located in the
@@ -143,15 +168,6 @@ namespace ResourceGroupsTaggingAPI
          */
         virtual Model::GetResourcesOutcome GetResources(const Model::GetResourcesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetResources that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetResourcesOutcomeCallable GetResourcesCallable(const Model::GetResourcesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetResources that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetResourcesAsync(const Model::GetResourcesRequest& request, const GetResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns all tag keys currently in use in the specified Amazon Web Services
@@ -168,15 +184,6 @@ namespace ResourceGroupsTaggingAPI
          */
         virtual Model::GetTagKeysOutcome GetTagKeys(const Model::GetTagKeysRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetTagKeys that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetTagKeysOutcomeCallable GetTagKeysCallable(const Model::GetTagKeysRequest& request) const;
-
-        /**
-         * An Async wrapper for GetTagKeys that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetTagKeysAsync(const Model::GetTagKeysRequest& request, const GetTagKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns all tag values for the specified key that are used in the specified
@@ -193,15 +200,6 @@ namespace ResourceGroupsTaggingAPI
          */
         virtual Model::GetTagValuesOutcome GetTagValues(const Model::GetTagValuesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetTagValues that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetTagValuesOutcomeCallable GetTagValuesCallable(const Model::GetTagValuesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetTagValues that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetTagValuesAsync(const Model::GetTagValuesRequest& request, const GetTagValuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Generates a report that lists all tagged resources in the accounts across
@@ -217,15 +215,6 @@ namespace ResourceGroupsTaggingAPI
          */
         virtual Model::StartReportCreationOutcome StartReportCreation(const Model::StartReportCreationRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartReportCreation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartReportCreationOutcomeCallable StartReportCreationCallable(const Model::StartReportCreationRequest& request) const;
-
-        /**
-         * An Async wrapper for StartReportCreation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartReportCreationAsync(const Model::StartReportCreationRequest& request, const StartReportCreationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Applies one or more tags to the specified resources. Note the following:</p>
@@ -260,15 +249,6 @@ namespace ResourceGroupsTaggingAPI
          */
         virtual Model::TagResourcesOutcome TagResources(const Model::TagResourcesRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResources that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourcesOutcomeCallable TagResourcesCallable(const Model::TagResourcesRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResources that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourcesAsync(const Model::TagResourcesRequest& request, const TagResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified tags from the specified resources. When you specify a
@@ -292,15 +272,6 @@ namespace ResourceGroupsTaggingAPI
          */
         virtual Model::UntagResourcesOutcome UntagResources(const Model::UntagResourcesRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResources that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourcesOutcomeCallable UntagResourcesCallable(const Model::UntagResourcesRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResources that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourcesAsync(const Model::UntagResourcesRequest& request, const UntagResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

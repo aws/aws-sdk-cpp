@@ -7,8 +7,10 @@
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/dms/DatabaseMigrationServiceServiceClientModel.h>
+#include <aws/dms/DatabaseMigrationServiceLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -83,6 +85,47 @@ namespace DatabaseMigrationService
         virtual ~DatabaseMigrationServiceClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Adds metadata tags to an DMS resource, including replication instance,
          * endpoint, security group, and migration task. These tags can also be used with
@@ -95,15 +138,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::AddTagsToResourceOutcome AddTagsToResource(const Model::AddTagsToResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddTagsToResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddTagsToResourceOutcomeCallable AddTagsToResourceCallable(const Model::AddTagsToResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for AddTagsToResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddTagsToResourceAsync(const Model::AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Applies a pending maintenance action to a resource (for example, to a
@@ -113,15 +147,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::ApplyPendingMaintenanceActionOutcome ApplyPendingMaintenanceAction(const Model::ApplyPendingMaintenanceActionRequest& request) const;
 
-        /**
-         * A Callable wrapper for ApplyPendingMaintenanceAction that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ApplyPendingMaintenanceActionOutcomeCallable ApplyPendingMaintenanceActionCallable(const Model::ApplyPendingMaintenanceActionRequest& request) const;
-
-        /**
-         * An Async wrapper for ApplyPendingMaintenanceAction that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ApplyPendingMaintenanceActionAsync(const Model::ApplyPendingMaintenanceActionRequest& request, const ApplyPendingMaintenanceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Cancels a single premigration assessment run.</p> <p>This operation prevents
@@ -133,15 +158,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::CancelReplicationTaskAssessmentRunOutcome CancelReplicationTaskAssessmentRun(const Model::CancelReplicationTaskAssessmentRunRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelReplicationTaskAssessmentRun that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelReplicationTaskAssessmentRunOutcomeCallable CancelReplicationTaskAssessmentRunCallable(const Model::CancelReplicationTaskAssessmentRunRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelReplicationTaskAssessmentRun that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelReplicationTaskAssessmentRunAsync(const Model::CancelReplicationTaskAssessmentRunRequest& request, const CancelReplicationTaskAssessmentRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an endpoint using the provided settings.</p>  <p>For a MySQL
@@ -156,15 +172,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::CreateEndpointOutcome CreateEndpoint(const Model::CreateEndpointRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateEndpointOutcomeCallable CreateEndpointCallable(const Model::CreateEndpointRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateEndpointAsync(const Model::CreateEndpointRequest& request, const CreateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Creates an DMS event notification subscription. </p> <p>You can specify the
@@ -189,15 +196,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::CreateEventSubscriptionOutcome CreateEventSubscription(const Model::CreateEventSubscriptionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateEventSubscription that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateEventSubscriptionOutcomeCallable CreateEventSubscriptionCallable(const Model::CreateEventSubscriptionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateEventSubscription that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateEventSubscriptionAsync(const Model::CreateEventSubscriptionRequest& request, const CreateEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a Fleet Advisor collector using the specified
@@ -207,15 +205,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::CreateFleetAdvisorCollectorOutcome CreateFleetAdvisorCollector(const Model::CreateFleetAdvisorCollectorRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateFleetAdvisorCollector that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateFleetAdvisorCollectorOutcomeCallable CreateFleetAdvisorCollectorCallable(const Model::CreateFleetAdvisorCollectorRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateFleetAdvisorCollector that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateFleetAdvisorCollectorAsync(const Model::CreateFleetAdvisorCollectorRequest& request, const CreateFleetAdvisorCollectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates the replication instance using the specified parameters.</p> <p>DMS
@@ -232,15 +221,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::CreateReplicationInstanceOutcome CreateReplicationInstance(const Model::CreateReplicationInstanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateReplicationInstance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateReplicationInstanceOutcomeCallable CreateReplicationInstanceCallable(const Model::CreateReplicationInstanceRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateReplicationInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateReplicationInstanceAsync(const Model::CreateReplicationInstanceRequest& request, const CreateReplicationInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a replication subnet group given a list of the subnet IDs in a
@@ -253,15 +233,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::CreateReplicationSubnetGroupOutcome CreateReplicationSubnetGroup(const Model::CreateReplicationSubnetGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateReplicationSubnetGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateReplicationSubnetGroupOutcomeCallable CreateReplicationSubnetGroupCallable(const Model::CreateReplicationSubnetGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateReplicationSubnetGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateReplicationSubnetGroupAsync(const Model::CreateReplicationSubnetGroupRequest& request, const CreateReplicationSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a replication task using the specified parameters.</p><p><h3>See
@@ -271,15 +242,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::CreateReplicationTaskOutcome CreateReplicationTask(const Model::CreateReplicationTaskRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateReplicationTask that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateReplicationTaskOutcomeCallable CreateReplicationTaskCallable(const Model::CreateReplicationTaskRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateReplicationTask that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateReplicationTaskAsync(const Model::CreateReplicationTaskRequest& request, const CreateReplicationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified certificate. </p><p><h3>See Also:</h3>   <a
@@ -288,15 +250,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::DeleteCertificateOutcome DeleteCertificate(const Model::DeleteCertificateRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteCertificateOutcomeCallable DeleteCertificateCallable(const Model::DeleteCertificateRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteCertificateAsync(const Model::DeleteCertificateRequest& request, const DeleteCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the connection between a replication instance and an
@@ -306,15 +259,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::DeleteConnectionOutcome DeleteConnection(const Model::DeleteConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteConnectionOutcomeCallable DeleteConnectionCallable(const Model::DeleteConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteConnectionAsync(const Model::DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified endpoint.</p>  <p>All tasks associated with the
@@ -325,15 +269,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::DeleteEndpointOutcome DeleteEndpoint(const Model::DeleteEndpointRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteEndpointOutcomeCallable DeleteEndpointCallable(const Model::DeleteEndpointRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteEndpointAsync(const Model::DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Deletes an DMS event subscription. </p><p><h3>See Also:</h3>   <a
@@ -342,15 +277,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::DeleteEventSubscriptionOutcome DeleteEventSubscription(const Model::DeleteEventSubscriptionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteEventSubscription that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteEventSubscriptionOutcomeCallable DeleteEventSubscriptionCallable(const Model::DeleteEventSubscriptionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteEventSubscription that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteEventSubscriptionAsync(const Model::DeleteEventSubscriptionRequest& request, const DeleteEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified Fleet Advisor collector.</p><p><h3>See Also:</h3>   <a
@@ -359,15 +285,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::DeleteFleetAdvisorCollectorOutcome DeleteFleetAdvisorCollector(const Model::DeleteFleetAdvisorCollectorRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteFleetAdvisorCollector that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteFleetAdvisorCollectorOutcomeCallable DeleteFleetAdvisorCollectorCallable(const Model::DeleteFleetAdvisorCollectorRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteFleetAdvisorCollector that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteFleetAdvisorCollectorAsync(const Model::DeleteFleetAdvisorCollectorRequest& request, const DeleteFleetAdvisorCollectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified Fleet Advisor collector databases.</p><p><h3>See
@@ -377,15 +294,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::DeleteFleetAdvisorDatabasesOutcome DeleteFleetAdvisorDatabases(const Model::DeleteFleetAdvisorDatabasesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteFleetAdvisorDatabases that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteFleetAdvisorDatabasesOutcomeCallable DeleteFleetAdvisorDatabasesCallable(const Model::DeleteFleetAdvisorDatabasesRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteFleetAdvisorDatabases that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteFleetAdvisorDatabasesAsync(const Model::DeleteFleetAdvisorDatabasesRequest& request, const DeleteFleetAdvisorDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified replication instance.</p>  <p>You must delete any
@@ -396,15 +304,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::DeleteReplicationInstanceOutcome DeleteReplicationInstance(const Model::DeleteReplicationInstanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteReplicationInstance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteReplicationInstanceOutcomeCallable DeleteReplicationInstanceCallable(const Model::DeleteReplicationInstanceRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteReplicationInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteReplicationInstanceAsync(const Model::DeleteReplicationInstanceRequest& request, const DeleteReplicationInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a subnet group.</p><p><h3>See Also:</h3>   <a
@@ -413,15 +312,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::DeleteReplicationSubnetGroupOutcome DeleteReplicationSubnetGroup(const Model::DeleteReplicationSubnetGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteReplicationSubnetGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteReplicationSubnetGroupOutcomeCallable DeleteReplicationSubnetGroupCallable(const Model::DeleteReplicationSubnetGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteReplicationSubnetGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteReplicationSubnetGroupAsync(const Model::DeleteReplicationSubnetGroupRequest& request, const DeleteReplicationSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified replication task.</p><p><h3>See Also:</h3>   <a
@@ -430,15 +320,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::DeleteReplicationTaskOutcome DeleteReplicationTask(const Model::DeleteReplicationTaskRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteReplicationTask that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteReplicationTaskOutcomeCallable DeleteReplicationTaskCallable(const Model::DeleteReplicationTaskRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteReplicationTask that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteReplicationTaskAsync(const Model::DeleteReplicationTaskRequest& request, const DeleteReplicationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the record of a single premigration assessment run.</p> <p>This
@@ -450,15 +331,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::DeleteReplicationTaskAssessmentRunOutcome DeleteReplicationTaskAssessmentRun(const Model::DeleteReplicationTaskAssessmentRunRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteReplicationTaskAssessmentRun that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteReplicationTaskAssessmentRunOutcomeCallable DeleteReplicationTaskAssessmentRunCallable(const Model::DeleteReplicationTaskAssessmentRunRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteReplicationTaskAssessmentRun that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteReplicationTaskAssessmentRunAsync(const Model::DeleteReplicationTaskAssessmentRunRequest& request, const DeleteReplicationTaskAssessmentRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all of the DMS attributes for a customer account. These attributes
@@ -474,15 +346,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::DescribeAccountAttributesOutcome DescribeAccountAttributes(const Model::DescribeAccountAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAccountAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAccountAttributesOutcomeCallable DescribeAccountAttributesCallable(const Model::DescribeAccountAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAccountAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAccountAttributesAsync(const Model::DescribeAccountAttributesRequest& request, const DescribeAccountAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides a list of individual assessments that you can specify for a new
@@ -507,15 +370,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::DescribeApplicableIndividualAssessmentsOutcome DescribeApplicableIndividualAssessments(const Model::DescribeApplicableIndividualAssessmentsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeApplicableIndividualAssessments that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeApplicableIndividualAssessmentsOutcomeCallable DescribeApplicableIndividualAssessmentsCallable(const Model::DescribeApplicableIndividualAssessmentsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeApplicableIndividualAssessments that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeApplicableIndividualAssessmentsAsync(const Model::DescribeApplicableIndividualAssessmentsRequest& request, const DescribeApplicableIndividualAssessmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides a description of the certificate.</p><p><h3>See Also:</h3>   <a
@@ -524,15 +378,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::DescribeCertificatesOutcome DescribeCertificates(const Model::DescribeCertificatesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeCertificates that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeCertificatesOutcomeCallable DescribeCertificatesCallable(const Model::DescribeCertificatesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeCertificates that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeCertificatesAsync(const Model::DescribeCertificatesRequest& request, const DescribeCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the status of the connections that have been made between the
@@ -543,15 +388,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::DescribeConnectionsOutcome DescribeConnections(const Model::DescribeConnectionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeConnections that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeConnectionsOutcomeCallable DescribeConnectionsCallable(const Model::DescribeConnectionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeConnections that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeConnectionsAsync(const Model::DescribeConnectionsRequest& request, const DescribeConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the possible endpoint settings available when you
@@ -561,15 +397,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::DescribeEndpointSettingsOutcome DescribeEndpointSettings(const Model::DescribeEndpointSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEndpointSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEndpointSettingsOutcomeCallable DescribeEndpointSettingsCallable(const Model::DescribeEndpointSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEndpointSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEndpointSettingsAsync(const Model::DescribeEndpointSettingsRequest& request, const DescribeEndpointSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the type of endpoints available.</p><p><h3>See
@@ -579,15 +406,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::DescribeEndpointTypesOutcome DescribeEndpointTypes(const Model::DescribeEndpointTypesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEndpointTypes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEndpointTypesOutcomeCallable DescribeEndpointTypesCallable(const Model::DescribeEndpointTypesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEndpointTypes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEndpointTypesAsync(const Model::DescribeEndpointTypesRequest& request, const DescribeEndpointTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the endpoints for your account in the current
@@ -597,15 +415,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::DescribeEndpointsOutcome DescribeEndpoints(const Model::DescribeEndpointsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEndpointsOutcomeCallable DescribeEndpointsCallable(const Model::DescribeEndpointsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEndpointsAsync(const Model::DescribeEndpointsRequest& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists categories for all event source types, or, if specified, for a
@@ -619,15 +428,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::DescribeEventCategoriesOutcome DescribeEventCategories(const Model::DescribeEventCategoriesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEventCategories that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEventCategoriesOutcomeCallable DescribeEventCategoriesCallable(const Model::DescribeEventCategoriesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEventCategories that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEventCategoriesAsync(const Model::DescribeEventCategoriesRequest& request, const DescribeEventCategoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all the event subscriptions for a customer account. The description of
@@ -641,15 +441,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::DescribeEventSubscriptionsOutcome DescribeEventSubscriptions(const Model::DescribeEventSubscriptionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEventSubscriptions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEventSubscriptionsOutcomeCallable DescribeEventSubscriptionsCallable(const Model::DescribeEventSubscriptionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEventSubscriptions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEventSubscriptionsAsync(const Model::DescribeEventSubscriptionsRequest& request, const DescribeEventSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Lists events for a given source identifier and source type. You can also
@@ -662,15 +453,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::DescribeEventsOutcome DescribeEvents(const Model::DescribeEventsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEvents that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEventsOutcomeCallable DescribeEventsCallable(const Model::DescribeEventsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEventsAsync(const Model::DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of the Fleet Advisor collectors in your account.</p><p><h3>See
@@ -680,15 +462,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::DescribeFleetAdvisorCollectorsOutcome DescribeFleetAdvisorCollectors(const Model::DescribeFleetAdvisorCollectorsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeFleetAdvisorCollectors that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeFleetAdvisorCollectorsOutcomeCallable DescribeFleetAdvisorCollectorsCallable(const Model::DescribeFleetAdvisorCollectorsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeFleetAdvisorCollectors that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeFleetAdvisorCollectorsAsync(const Model::DescribeFleetAdvisorCollectorsRequest& request, const DescribeFleetAdvisorCollectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of Fleet Advisor databases in your account.</p><p><h3>See
@@ -698,15 +471,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::DescribeFleetAdvisorDatabasesOutcome DescribeFleetAdvisorDatabases(const Model::DescribeFleetAdvisorDatabasesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeFleetAdvisorDatabases that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeFleetAdvisorDatabasesOutcomeCallable DescribeFleetAdvisorDatabasesCallable(const Model::DescribeFleetAdvisorDatabasesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeFleetAdvisorDatabases that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeFleetAdvisorDatabasesAsync(const Model::DescribeFleetAdvisorDatabasesRequest& request, const DescribeFleetAdvisorDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides descriptions of large-scale assessment (LSA) analyses produced by
@@ -716,15 +480,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::DescribeFleetAdvisorLsaAnalysisOutcome DescribeFleetAdvisorLsaAnalysis(const Model::DescribeFleetAdvisorLsaAnalysisRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeFleetAdvisorLsaAnalysis that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeFleetAdvisorLsaAnalysisOutcomeCallable DescribeFleetAdvisorLsaAnalysisCallable(const Model::DescribeFleetAdvisorLsaAnalysisRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeFleetAdvisorLsaAnalysis that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeFleetAdvisorLsaAnalysisAsync(const Model::DescribeFleetAdvisorLsaAnalysisRequest& request, const DescribeFleetAdvisorLsaAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides descriptions of the schemas discovered by your Fleet Advisor
@@ -734,15 +489,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::DescribeFleetAdvisorSchemaObjectSummaryOutcome DescribeFleetAdvisorSchemaObjectSummary(const Model::DescribeFleetAdvisorSchemaObjectSummaryRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeFleetAdvisorSchemaObjectSummary that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeFleetAdvisorSchemaObjectSummaryOutcomeCallable DescribeFleetAdvisorSchemaObjectSummaryCallable(const Model::DescribeFleetAdvisorSchemaObjectSummaryRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeFleetAdvisorSchemaObjectSummary that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeFleetAdvisorSchemaObjectSummaryAsync(const Model::DescribeFleetAdvisorSchemaObjectSummaryRequest& request, const DescribeFleetAdvisorSchemaObjectSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of schemas detected by Fleet Advisor Collectors in your
@@ -752,15 +498,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::DescribeFleetAdvisorSchemasOutcome DescribeFleetAdvisorSchemas(const Model::DescribeFleetAdvisorSchemasRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeFleetAdvisorSchemas that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeFleetAdvisorSchemasOutcomeCallable DescribeFleetAdvisorSchemasCallable(const Model::DescribeFleetAdvisorSchemasRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeFleetAdvisorSchemas that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeFleetAdvisorSchemasAsync(const Model::DescribeFleetAdvisorSchemasRequest& request, const DescribeFleetAdvisorSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the replication instance types that can be created
@@ -770,15 +507,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::DescribeOrderableReplicationInstancesOutcome DescribeOrderableReplicationInstances(const Model::DescribeOrderableReplicationInstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeOrderableReplicationInstances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeOrderableReplicationInstancesOutcomeCallable DescribeOrderableReplicationInstancesCallable(const Model::DescribeOrderableReplicationInstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeOrderableReplicationInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeOrderableReplicationInstancesAsync(const Model::DescribeOrderableReplicationInstancesRequest& request, const DescribeOrderableReplicationInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>For internal use only</p><p><h3>See Also:</h3>   <a
@@ -787,15 +515,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::DescribePendingMaintenanceActionsOutcome DescribePendingMaintenanceActions(const Model::DescribePendingMaintenanceActionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribePendingMaintenanceActions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribePendingMaintenanceActionsOutcomeCallable DescribePendingMaintenanceActionsCallable(const Model::DescribePendingMaintenanceActionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribePendingMaintenanceActions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribePendingMaintenanceActionsAsync(const Model::DescribePendingMaintenanceActionsRequest& request, const DescribePendingMaintenanceActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the status of the RefreshSchemas operation.</p><p><h3>See Also:</h3> 
@@ -805,15 +524,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::DescribeRefreshSchemasStatusOutcome DescribeRefreshSchemasStatus(const Model::DescribeRefreshSchemasStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeRefreshSchemasStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeRefreshSchemasStatusOutcomeCallable DescribeRefreshSchemasStatusCallable(const Model::DescribeRefreshSchemasStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeRefreshSchemasStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeRefreshSchemasStatusAsync(const Model::DescribeRefreshSchemasStatusRequest& request, const DescribeRefreshSchemasStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the task logs for the specified task.</p><p><h3>See
@@ -823,15 +533,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::DescribeReplicationInstanceTaskLogsOutcome DescribeReplicationInstanceTaskLogs(const Model::DescribeReplicationInstanceTaskLogsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeReplicationInstanceTaskLogs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeReplicationInstanceTaskLogsOutcomeCallable DescribeReplicationInstanceTaskLogsCallable(const Model::DescribeReplicationInstanceTaskLogsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeReplicationInstanceTaskLogs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeReplicationInstanceTaskLogsAsync(const Model::DescribeReplicationInstanceTaskLogsRequest& request, const DescribeReplicationInstanceTaskLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about replication instances for your account in the
@@ -841,15 +542,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::DescribeReplicationInstancesOutcome DescribeReplicationInstances(const Model::DescribeReplicationInstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeReplicationInstances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeReplicationInstancesOutcomeCallable DescribeReplicationInstancesCallable(const Model::DescribeReplicationInstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeReplicationInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeReplicationInstancesAsync(const Model::DescribeReplicationInstancesRequest& request, const DescribeReplicationInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the replication subnet groups.</p><p><h3>See
@@ -859,15 +551,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::DescribeReplicationSubnetGroupsOutcome DescribeReplicationSubnetGroups(const Model::DescribeReplicationSubnetGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeReplicationSubnetGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeReplicationSubnetGroupsOutcomeCallable DescribeReplicationSubnetGroupsCallable(const Model::DescribeReplicationSubnetGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeReplicationSubnetGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeReplicationSubnetGroupsAsync(const Model::DescribeReplicationSubnetGroupsRequest& request, const DescribeReplicationSubnetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the task assessment results from the Amazon S3 bucket that DMS
@@ -881,15 +564,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::DescribeReplicationTaskAssessmentResultsOutcome DescribeReplicationTaskAssessmentResults(const Model::DescribeReplicationTaskAssessmentResultsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeReplicationTaskAssessmentResults that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeReplicationTaskAssessmentResultsOutcomeCallable DescribeReplicationTaskAssessmentResultsCallable(const Model::DescribeReplicationTaskAssessmentResultsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeReplicationTaskAssessmentResults that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeReplicationTaskAssessmentResultsAsync(const Model::DescribeReplicationTaskAssessmentResultsRequest& request, const DescribeReplicationTaskAssessmentResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a paginated list of premigration assessment runs based on filter
@@ -904,15 +578,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::DescribeReplicationTaskAssessmentRunsOutcome DescribeReplicationTaskAssessmentRuns(const Model::DescribeReplicationTaskAssessmentRunsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeReplicationTaskAssessmentRuns that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeReplicationTaskAssessmentRunsOutcomeCallable DescribeReplicationTaskAssessmentRunsCallable(const Model::DescribeReplicationTaskAssessmentRunsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeReplicationTaskAssessmentRuns that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeReplicationTaskAssessmentRunsAsync(const Model::DescribeReplicationTaskAssessmentRunsRequest& request, const DescribeReplicationTaskAssessmentRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a paginated list of individual assessments based on filter
@@ -924,15 +589,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::DescribeReplicationTaskIndividualAssessmentsOutcome DescribeReplicationTaskIndividualAssessments(const Model::DescribeReplicationTaskIndividualAssessmentsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeReplicationTaskIndividualAssessments that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeReplicationTaskIndividualAssessmentsOutcomeCallable DescribeReplicationTaskIndividualAssessmentsCallable(const Model::DescribeReplicationTaskIndividualAssessmentsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeReplicationTaskIndividualAssessments that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeReplicationTaskIndividualAssessmentsAsync(const Model::DescribeReplicationTaskIndividualAssessmentsRequest& request, const DescribeReplicationTaskIndividualAssessmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about replication tasks for your account in the current
@@ -942,15 +598,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::DescribeReplicationTasksOutcome DescribeReplicationTasks(const Model::DescribeReplicationTasksRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeReplicationTasks that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeReplicationTasksOutcomeCallable DescribeReplicationTasksCallable(const Model::DescribeReplicationTasksRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeReplicationTasks that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeReplicationTasksAsync(const Model::DescribeReplicationTasksRequest& request, const DescribeReplicationTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the schema for the specified endpoint.</p>
@@ -960,15 +607,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::DescribeSchemasOutcome DescribeSchemas(const Model::DescribeSchemasRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeSchemas that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeSchemasOutcomeCallable DescribeSchemasCallable(const Model::DescribeSchemasRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeSchemas that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeSchemasAsync(const Model::DescribeSchemasRequest& request, const DescribeSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns table statistics on the database migration task, including table
@@ -981,15 +619,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::DescribeTableStatisticsOutcome DescribeTableStatistics(const Model::DescribeTableStatisticsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTableStatistics that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTableStatisticsOutcomeCallable DescribeTableStatisticsCallable(const Model::DescribeTableStatisticsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTableStatistics that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTableStatisticsAsync(const Model::DescribeTableStatisticsRequest& request, const DescribeTableStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Uploads the specified certificate.</p><p><h3>See Also:</h3>   <a
@@ -998,15 +627,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::ImportCertificateOutcome ImportCertificate(const Model::ImportCertificateRequest& request) const;
 
-        /**
-         * A Callable wrapper for ImportCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ImportCertificateOutcomeCallable ImportCertificateCallable(const Model::ImportCertificateRequest& request) const;
-
-        /**
-         * An Async wrapper for ImportCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ImportCertificateAsync(const Model::ImportCertificateRequest& request, const ImportCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all metadata tags attached to an DMS resource, including replication
@@ -1018,15 +638,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the specified endpoint.</p>  <p>For a MySQL source or target
@@ -1041,15 +652,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::ModifyEndpointOutcome ModifyEndpoint(const Model::ModifyEndpointRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyEndpointOutcomeCallable ModifyEndpointCallable(const Model::ModifyEndpointRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyEndpointAsync(const Model::ModifyEndpointRequest& request, const ModifyEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies an existing DMS event notification subscription. </p><p><h3>See
@@ -1059,15 +661,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::ModifyEventSubscriptionOutcome ModifyEventSubscription(const Model::ModifyEventSubscriptionRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyEventSubscription that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyEventSubscriptionOutcomeCallable ModifyEventSubscriptionCallable(const Model::ModifyEventSubscriptionRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyEventSubscription that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyEventSubscriptionAsync(const Model::ModifyEventSubscriptionRequest& request, const ModifyEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the replication instance to apply new settings. You can change one
@@ -1079,15 +672,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::ModifyReplicationInstanceOutcome ModifyReplicationInstance(const Model::ModifyReplicationInstanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyReplicationInstance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyReplicationInstanceOutcomeCallable ModifyReplicationInstanceCallable(const Model::ModifyReplicationInstanceRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyReplicationInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyReplicationInstanceAsync(const Model::ModifyReplicationInstanceRequest& request, const ModifyReplicationInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the settings for the specified replication subnet
@@ -1097,15 +681,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::ModifyReplicationSubnetGroupOutcome ModifyReplicationSubnetGroup(const Model::ModifyReplicationSubnetGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyReplicationSubnetGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyReplicationSubnetGroupOutcomeCallable ModifyReplicationSubnetGroupCallable(const Model::ModifyReplicationSubnetGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyReplicationSubnetGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyReplicationSubnetGroupAsync(const Model::ModifyReplicationSubnetGroupRequest& request, const ModifyReplicationSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the specified replication task.</p> <p>You can't modify the task
@@ -1119,15 +694,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::ModifyReplicationTaskOutcome ModifyReplicationTask(const Model::ModifyReplicationTaskRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyReplicationTask that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyReplicationTaskOutcomeCallable ModifyReplicationTaskCallable(const Model::ModifyReplicationTaskRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyReplicationTask that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyReplicationTaskAsync(const Model::ModifyReplicationTaskRequest& request, const ModifyReplicationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Moves a replication task from its current replication instance to a different
@@ -1139,15 +705,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::MoveReplicationTaskOutcome MoveReplicationTask(const Model::MoveReplicationTaskRequest& request) const;
 
-        /**
-         * A Callable wrapper for MoveReplicationTask that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::MoveReplicationTaskOutcomeCallable MoveReplicationTaskCallable(const Model::MoveReplicationTaskRequest& request) const;
-
-        /**
-         * An Async wrapper for MoveReplicationTask that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void MoveReplicationTaskAsync(const Model::MoveReplicationTaskRequest& request, const MoveReplicationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Reboots a replication instance. Rebooting results in a momentary outage,
@@ -1158,15 +715,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::RebootReplicationInstanceOutcome RebootReplicationInstance(const Model::RebootReplicationInstanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for RebootReplicationInstance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RebootReplicationInstanceOutcomeCallable RebootReplicationInstanceCallable(const Model::RebootReplicationInstanceRequest& request) const;
-
-        /**
-         * An Async wrapper for RebootReplicationInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RebootReplicationInstanceAsync(const Model::RebootReplicationInstanceRequest& request, const RebootReplicationInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Populates the schema for the specified endpoint. This is an asynchronous
@@ -1178,15 +726,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::RefreshSchemasOutcome RefreshSchemas(const Model::RefreshSchemasRequest& request) const;
 
-        /**
-         * A Callable wrapper for RefreshSchemas that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RefreshSchemasOutcomeCallable RefreshSchemasCallable(const Model::RefreshSchemasRequest& request) const;
-
-        /**
-         * An Async wrapper for RefreshSchemas that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RefreshSchemasAsync(const Model::RefreshSchemasRequest& request, const RefreshSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Reloads the target database table with the source data. </p> <p>You can only
@@ -1198,15 +737,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::ReloadTablesOutcome ReloadTables(const Model::ReloadTablesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ReloadTables that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ReloadTablesOutcomeCallable ReloadTablesCallable(const Model::ReloadTablesRequest& request) const;
-
-        /**
-         * An Async wrapper for ReloadTables that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ReloadTablesAsync(const Model::ReloadTablesRequest& request, const ReloadTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes metadata tags from an DMS resource, including replication instance,
@@ -1218,15 +748,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::RemoveTagsFromResourceOutcome RemoveTagsFromResource(const Model::RemoveTagsFromResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for RemoveTagsFromResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RemoveTagsFromResourceOutcomeCallable RemoveTagsFromResourceCallable(const Model::RemoveTagsFromResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for RemoveTagsFromResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RemoveTagsFromResourceAsync(const Model::RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Runs large-scale assessment (LSA) analysis on every Fleet Advisor collector
@@ -1256,15 +777,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::StartReplicationTaskOutcome StartReplicationTask(const Model::StartReplicationTaskRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartReplicationTask that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartReplicationTaskOutcomeCallable StartReplicationTaskCallable(const Model::StartReplicationTaskRequest& request) const;
-
-        /**
-         * An Async wrapper for StartReplicationTask that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartReplicationTaskAsync(const Model::StartReplicationTaskRequest& request, const StartReplicationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Starts the replication task assessment for unsupported data types in the
@@ -1282,15 +794,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::StartReplicationTaskAssessmentOutcome StartReplicationTaskAssessment(const Model::StartReplicationTaskAssessmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartReplicationTaskAssessment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartReplicationTaskAssessmentOutcomeCallable StartReplicationTaskAssessmentCallable(const Model::StartReplicationTaskAssessmentRequest& request) const;
-
-        /**
-         * An Async wrapper for StartReplicationTaskAssessment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartReplicationTaskAssessmentAsync(const Model::StartReplicationTaskAssessmentRequest& request, const StartReplicationTaskAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts a new premigration assessment run for one or more individual
@@ -1306,15 +809,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::StartReplicationTaskAssessmentRunOutcome StartReplicationTaskAssessmentRun(const Model::StartReplicationTaskAssessmentRunRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartReplicationTaskAssessmentRun that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartReplicationTaskAssessmentRunOutcomeCallable StartReplicationTaskAssessmentRunCallable(const Model::StartReplicationTaskAssessmentRunRequest& request) const;
-
-        /**
-         * An Async wrapper for StartReplicationTaskAssessmentRun that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartReplicationTaskAssessmentRunAsync(const Model::StartReplicationTaskAssessmentRunRequest& request, const StartReplicationTaskAssessmentRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops the replication task.</p><p><h3>See Also:</h3>   <a
@@ -1323,15 +817,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::StopReplicationTaskOutcome StopReplicationTask(const Model::StopReplicationTaskRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopReplicationTask that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopReplicationTaskOutcomeCallable StopReplicationTaskCallable(const Model::StopReplicationTaskRequest& request) const;
-
-        /**
-         * An Async wrapper for StopReplicationTask that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopReplicationTaskAsync(const Model::StopReplicationTaskRequest& request, const StopReplicationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Tests the connection between the replication instance and the
@@ -1341,15 +826,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::TestConnectionOutcome TestConnection(const Model::TestConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for TestConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TestConnectionOutcomeCallable TestConnectionCallable(const Model::TestConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for TestConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TestConnectionAsync(const Model::TestConnectionRequest& request, const TestConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Migrates 10 active and enabled Amazon SNS subscriptions at a time and
@@ -1371,15 +847,6 @@ namespace DatabaseMigrationService
          */
         virtual Model::UpdateSubscriptionsToEventBridgeOutcome UpdateSubscriptionsToEventBridge(const Model::UpdateSubscriptionsToEventBridgeRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateSubscriptionsToEventBridge that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateSubscriptionsToEventBridgeOutcomeCallable UpdateSubscriptionsToEventBridgeCallable(const Model::UpdateSubscriptionsToEventBridgeRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateSubscriptionsToEventBridge that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateSubscriptionsToEventBridgeAsync(const Model::UpdateSubscriptionsToEventBridgeRequest& request, const UpdateSubscriptionsToEventBridgeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

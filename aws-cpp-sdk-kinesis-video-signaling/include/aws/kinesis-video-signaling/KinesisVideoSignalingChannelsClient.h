@@ -7,8 +7,10 @@
 #include <aws/kinesis-video-signaling/KinesisVideoSignalingChannels_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kinesis-video-signaling/KinesisVideoSignalingChannelsServiceClientModel.h>
+#include <aws/kinesis-video-signaling/KinesisVideoSignalingChannelsLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -76,6 +78,47 @@ namespace KinesisVideoSignalingChannels
         virtual ~KinesisVideoSignalingChannelsClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Gets the Interactive Connectivity Establishment (ICE) server configuration
          * information, including URIs, username, and password which can be used to
@@ -97,15 +140,6 @@ namespace KinesisVideoSignalingChannels
          */
         virtual Model::GetIceServerConfigOutcome GetIceServerConfig(const Model::GetIceServerConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetIceServerConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetIceServerConfigOutcomeCallable GetIceServerConfigCallable(const Model::GetIceServerConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for GetIceServerConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetIceServerConfigAsync(const Model::GetIceServerConfigRequest& request, const GetIceServerConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This API allows you to connect WebRTC-enabled devices with Alexa display
@@ -120,15 +154,6 @@ namespace KinesisVideoSignalingChannels
          */
         virtual Model::SendAlexaOfferToMasterOutcome SendAlexaOfferToMaster(const Model::SendAlexaOfferToMasterRequest& request) const;
 
-        /**
-         * A Callable wrapper for SendAlexaOfferToMaster that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SendAlexaOfferToMasterOutcomeCallable SendAlexaOfferToMasterCallable(const Model::SendAlexaOfferToMasterRequest& request) const;
-
-        /**
-         * An Async wrapper for SendAlexaOfferToMaster that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SendAlexaOfferToMasterAsync(const Model::SendAlexaOfferToMasterRequest& request, const SendAlexaOfferToMasterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

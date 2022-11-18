@@ -7,8 +7,10 @@
 #include <aws/iotsecuretunneling/IoTSecureTunneling_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iotsecuretunneling/IoTSecureTunnelingServiceClientModel.h>
+#include <aws/iotsecuretunneling/IoTSecureTunnelingLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -77,6 +79,47 @@ namespace IoTSecureTunneling
         virtual ~IoTSecureTunnelingClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Closes a tunnel identified by the unique tunnel id. When a
          * <code>CloseTunnel</code> request is received, we close the WebSocket connections
@@ -89,15 +132,6 @@ namespace IoTSecureTunneling
          */
         virtual Model::CloseTunnelOutcome CloseTunnel(const Model::CloseTunnelRequest& request) const;
 
-        /**
-         * A Callable wrapper for CloseTunnel that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CloseTunnelOutcomeCallable CloseTunnelCallable(const Model::CloseTunnelRequest& request) const;
-
-        /**
-         * An Async wrapper for CloseTunnel that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CloseTunnelAsync(const Model::CloseTunnelRequest& request, const CloseTunnelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about a tunnel identified by the unique tunnel id.</p>
@@ -109,15 +143,6 @@ namespace IoTSecureTunneling
          */
         virtual Model::DescribeTunnelOutcome DescribeTunnel(const Model::DescribeTunnelRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTunnel that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTunnelOutcomeCallable DescribeTunnelCallable(const Model::DescribeTunnelRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTunnel that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTunnelAsync(const Model::DescribeTunnelRequest& request, const DescribeTunnelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the tags for the specified resource.</p><p><h3>See Also:</h3>   <a
@@ -126,15 +151,6 @@ namespace IoTSecureTunneling
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List all tunnels for an Amazon Web Services account. Tunnels are listed by
@@ -147,15 +163,6 @@ namespace IoTSecureTunneling
          */
         virtual Model::ListTunnelsOutcome ListTunnels(const Model::ListTunnelsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTunnels that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTunnelsOutcomeCallable ListTunnelsCallable(const Model::ListTunnelsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTunnels that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTunnelsAsync(const Model::ListTunnelsRequest& request, const ListTunnelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new tunnel, and returns two client access tokens for clients to use
@@ -168,15 +175,6 @@ namespace IoTSecureTunneling
          */
         virtual Model::OpenTunnelOutcome OpenTunnel(const Model::OpenTunnelRequest& request) const;
 
-        /**
-         * A Callable wrapper for OpenTunnel that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::OpenTunnelOutcomeCallable OpenTunnelCallable(const Model::OpenTunnelRequest& request) const;
-
-        /**
-         * An Async wrapper for OpenTunnel that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void OpenTunnelAsync(const Model::OpenTunnelRequest& request, const OpenTunnelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Revokes the current client access token (CAT) and returns new CAT for clients
@@ -193,15 +191,6 @@ namespace IoTSecureTunneling
          */
         virtual Model::RotateTunnelAccessTokenOutcome RotateTunnelAccessToken(const Model::RotateTunnelAccessTokenRequest& request) const;
 
-        /**
-         * A Callable wrapper for RotateTunnelAccessToken that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RotateTunnelAccessTokenOutcomeCallable RotateTunnelAccessTokenCallable(const Model::RotateTunnelAccessTokenRequest& request) const;
-
-        /**
-         * An Async wrapper for RotateTunnelAccessToken that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RotateTunnelAccessTokenAsync(const Model::RotateTunnelAccessTokenRequest& request, const RotateTunnelAccessTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>A resource tag.</p><p><h3>See Also:</h3>   <a
@@ -210,15 +199,6 @@ namespace IoTSecureTunneling
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes a tag from a resource.</p><p><h3>See Also:</h3>   <a
@@ -227,15 +207,6 @@ namespace IoTSecureTunneling
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

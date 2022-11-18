@@ -7,8 +7,10 @@
 #include <aws/kinesis/Kinesis_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kinesis/KinesisServiceClientModel.h>
+#include <aws/kinesis/KinesisLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -75,6 +77,47 @@ namespace Kinesis
         virtual ~KinesisClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Adds or updates tags for the specified Kinesis data stream. You can assign up
          * to 50 tags to a data stream.</p> <p>If tags have already been assigned to the
@@ -86,15 +129,6 @@ namespace Kinesis
          */
         virtual Model::AddTagsToStreamOutcome AddTagsToStream(const Model::AddTagsToStreamRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddTagsToStream that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddTagsToStreamOutcomeCallable AddTagsToStreamCallable(const Model::AddTagsToStreamRequest& request) const;
-
-        /**
-         * An Async wrapper for AddTagsToStream that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddTagsToStreamAsync(const Model::AddTagsToStreamRequest& request, const AddTagsToStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a Kinesis data stream. A stream captures and transports data records
@@ -134,15 +168,6 @@ namespace Kinesis
          */
         virtual Model::CreateStreamOutcome CreateStream(const Model::CreateStreamRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateStream that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateStreamOutcomeCallable CreateStreamCallable(const Model::CreateStreamRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateStream that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateStreamAsync(const Model::CreateStreamRequest& request, const CreateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Decreases the Kinesis data stream's retention period, which is the length of
@@ -156,15 +181,6 @@ namespace Kinesis
          */
         virtual Model::DecreaseStreamRetentionPeriodOutcome DecreaseStreamRetentionPeriod(const Model::DecreaseStreamRetentionPeriodRequest& request) const;
 
-        /**
-         * A Callable wrapper for DecreaseStreamRetentionPeriod that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DecreaseStreamRetentionPeriodOutcomeCallable DecreaseStreamRetentionPeriodCallable(const Model::DecreaseStreamRetentionPeriodRequest& request) const;
-
-        /**
-         * An Async wrapper for DecreaseStreamRetentionPeriod that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DecreaseStreamRetentionPeriodAsync(const Model::DecreaseStreamRetentionPeriodRequest& request, const DecreaseStreamRetentionPeriodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a Kinesis data stream and all its shards and data. You must shut down
@@ -187,15 +203,6 @@ namespace Kinesis
          */
         virtual Model::DeleteStreamOutcome DeleteStream(const Model::DeleteStreamRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteStream that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteStreamOutcomeCallable DeleteStreamCallable(const Model::DeleteStreamRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteStream that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteStreamAsync(const Model::DeleteStreamRequest& request, const DeleteStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>To deregister a consumer, provide its ARN. Alternatively, you can provide the
@@ -212,15 +219,6 @@ namespace Kinesis
          */
         virtual Model::DeregisterStreamConsumerOutcome DeregisterStreamConsumer(const Model::DeregisterStreamConsumerRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeregisterStreamConsumer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeregisterStreamConsumerOutcomeCallable DeregisterStreamConsumerCallable(const Model::DeregisterStreamConsumerRequest& request) const;
-
-        /**
-         * An Async wrapper for DeregisterStreamConsumer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeregisterStreamConsumerAsync(const Model::DeregisterStreamConsumerRequest& request, const DeregisterStreamConsumerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the shard limits and usage for the account.</p> <p>If you update
@@ -232,15 +230,6 @@ namespace Kinesis
          */
         virtual Model::DescribeLimitsOutcome DescribeLimits(const Model::DescribeLimitsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeLimits that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeLimitsOutcomeCallable DescribeLimitsCallable(const Model::DescribeLimitsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeLimits that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeLimitsAsync(const Model::DescribeLimitsRequest& request, const DescribeLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified Kinesis data stream.</p>  <p>This API has been
@@ -266,15 +255,6 @@ namespace Kinesis
          */
         virtual Model::DescribeStreamOutcome DescribeStream(const Model::DescribeStreamRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeStream that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeStreamOutcomeCallable DescribeStreamCallable(const Model::DescribeStreamRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeStream that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeStreamAsync(const Model::DescribeStreamRequest& request, const DescribeStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>To get the description of a registered consumer, provide the ARN of the
@@ -291,15 +271,6 @@ namespace Kinesis
          */
         virtual Model::DescribeStreamConsumerOutcome DescribeStreamConsumer(const Model::DescribeStreamConsumerRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeStreamConsumer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeStreamConsumerOutcomeCallable DescribeStreamConsumerCallable(const Model::DescribeStreamConsumerRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeStreamConsumer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeStreamConsumerAsync(const Model::DescribeStreamConsumerRequest& request, const DescribeStreamConsumerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides a summarized description of the specified Kinesis data stream
@@ -313,15 +284,6 @@ namespace Kinesis
          */
         virtual Model::DescribeStreamSummaryOutcome DescribeStreamSummary(const Model::DescribeStreamSummaryRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeStreamSummary that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeStreamSummaryOutcomeCallable DescribeStreamSummaryCallable(const Model::DescribeStreamSummaryRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeStreamSummary that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeStreamSummaryAsync(const Model::DescribeStreamSummaryRequest& request, const DescribeStreamSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disables enhanced monitoring.</p><p><h3>See Also:</h3>   <a
@@ -330,15 +292,6 @@ namespace Kinesis
          */
         virtual Model::DisableEnhancedMonitoringOutcome DisableEnhancedMonitoring(const Model::DisableEnhancedMonitoringRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisableEnhancedMonitoring that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisableEnhancedMonitoringOutcomeCallable DisableEnhancedMonitoringCallable(const Model::DisableEnhancedMonitoringRequest& request) const;
-
-        /**
-         * An Async wrapper for DisableEnhancedMonitoring that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisableEnhancedMonitoringAsync(const Model::DisableEnhancedMonitoringRequest& request, const DisableEnhancedMonitoringResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables enhanced Kinesis data stream monitoring for shard-level
@@ -348,15 +301,6 @@ namespace Kinesis
          */
         virtual Model::EnableEnhancedMonitoringOutcome EnableEnhancedMonitoring(const Model::EnableEnhancedMonitoringRequest& request) const;
 
-        /**
-         * A Callable wrapper for EnableEnhancedMonitoring that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnableEnhancedMonitoringOutcomeCallable EnableEnhancedMonitoringCallable(const Model::EnableEnhancedMonitoringRequest& request) const;
-
-        /**
-         * An Async wrapper for EnableEnhancedMonitoring that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnableEnhancedMonitoringAsync(const Model::EnableEnhancedMonitoringRequest& request, const EnableEnhancedMonitoringResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets data records from a Kinesis data stream's shard.</p> <p>Specify a shard
@@ -419,15 +363,6 @@ namespace Kinesis
          */
         virtual Model::GetRecordsOutcome GetRecords(const Model::GetRecordsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRecords that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRecordsOutcomeCallable GetRecordsCallable(const Model::GetRecordsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRecords that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRecordsAsync(const Model::GetRecordsRequest& request, const GetRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets an Amazon Kinesis shard iterator. A shard iterator expires 5 minutes
@@ -470,15 +405,6 @@ namespace Kinesis
          */
         virtual Model::GetShardIteratorOutcome GetShardIterator(const Model::GetShardIteratorRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetShardIterator that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetShardIteratorOutcomeCallable GetShardIteratorCallable(const Model::GetShardIteratorRequest& request) const;
-
-        /**
-         * An Async wrapper for GetShardIterator that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetShardIteratorAsync(const Model::GetShardIteratorRequest& request, const GetShardIteratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Increases the Kinesis data stream's retention period, which is the length of
@@ -496,15 +422,6 @@ namespace Kinesis
          */
         virtual Model::IncreaseStreamRetentionPeriodOutcome IncreaseStreamRetentionPeriod(const Model::IncreaseStreamRetentionPeriodRequest& request) const;
 
-        /**
-         * A Callable wrapper for IncreaseStreamRetentionPeriod that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::IncreaseStreamRetentionPeriodOutcomeCallable IncreaseStreamRetentionPeriodCallable(const Model::IncreaseStreamRetentionPeriodRequest& request) const;
-
-        /**
-         * An Async wrapper for IncreaseStreamRetentionPeriod that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void IncreaseStreamRetentionPeriodAsync(const Model::IncreaseStreamRetentionPeriodRequest& request, const IncreaseStreamRetentionPeriodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the shards in a stream and provides information about each shard. This
@@ -525,15 +442,6 @@ namespace Kinesis
          */
         virtual Model::ListShardsOutcome ListShards(const Model::ListShardsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListShards that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListShardsOutcomeCallable ListShardsCallable(const Model::ListShardsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListShards that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListShardsAsync(const Model::ListShardsRequest& request, const ListShardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the consumers registered to receive data from a stream using enhanced
@@ -544,15 +452,6 @@ namespace Kinesis
          */
         virtual Model::ListStreamConsumersOutcome ListStreamConsumers(const Model::ListStreamConsumersRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListStreamConsumers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListStreamConsumersOutcomeCallable ListStreamConsumersCallable(const Model::ListStreamConsumersRequest& request) const;
-
-        /**
-         * An Async wrapper for ListStreamConsumers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListStreamConsumersAsync(const Model::ListStreamConsumersRequest& request, const ListStreamConsumersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists your Kinesis data streams.</p> <p>The number of streams may be too
@@ -574,15 +473,6 @@ namespace Kinesis
          */
         virtual Model::ListStreamsOutcome ListStreams(const Model::ListStreamsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListStreams that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListStreamsOutcomeCallable ListStreamsCallable(const Model::ListStreamsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListStreams that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListStreamsAsync(const Model::ListStreamsRequest& request, const ListStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the tags for the specified Kinesis data stream. This operation has a
@@ -592,15 +482,6 @@ namespace Kinesis
          */
         virtual Model::ListTagsForStreamOutcome ListTagsForStream(const Model::ListTagsForStreamRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForStream that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForStreamOutcomeCallable ListTagsForStreamCallable(const Model::ListTagsForStreamRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForStream that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForStreamAsync(const Model::ListTagsForStreamRequest& request, const ListTagsForStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Merges two adjacent shards in a Kinesis data stream and combines them into a
@@ -642,15 +523,6 @@ namespace Kinesis
          */
         virtual Model::MergeShardsOutcome MergeShards(const Model::MergeShardsRequest& request) const;
 
-        /**
-         * A Callable wrapper for MergeShards that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::MergeShardsOutcomeCallable MergeShardsCallable(const Model::MergeShardsRequest& request) const;
-
-        /**
-         * An Async wrapper for MergeShards that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void MergeShardsAsync(const Model::MergeShardsRequest& request, const MergeShardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Writes a single data record into an Amazon Kinesis data stream. Call
@@ -696,15 +568,6 @@ namespace Kinesis
          */
         virtual Model::PutRecordOutcome PutRecord(const Model::PutRecordRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutRecord that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutRecordOutcomeCallable PutRecordCallable(const Model::PutRecordRequest& request) const;
-
-        /**
-         * An Async wrapper for PutRecord that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutRecordAsync(const Model::PutRecordRequest& request, const PutRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Writes multiple data records into a Kinesis data stream in a single call
@@ -771,15 +634,6 @@ namespace Kinesis
          */
         virtual Model::PutRecordsOutcome PutRecords(const Model::PutRecordsRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutRecords that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutRecordsOutcomeCallable PutRecordsCallable(const Model::PutRecordsRequest& request) const;
-
-        /**
-         * An Async wrapper for PutRecords that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutRecordsAsync(const Model::PutRecordsRequest& request, const PutRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Registers a consumer with a Kinesis data stream. When you use this operation,
@@ -801,15 +655,6 @@ namespace Kinesis
          */
         virtual Model::RegisterStreamConsumerOutcome RegisterStreamConsumer(const Model::RegisterStreamConsumerRequest& request) const;
 
-        /**
-         * A Callable wrapper for RegisterStreamConsumer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RegisterStreamConsumerOutcomeCallable RegisterStreamConsumerCallable(const Model::RegisterStreamConsumerRequest& request) const;
-
-        /**
-         * An Async wrapper for RegisterStreamConsumer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RegisterStreamConsumerAsync(const Model::RegisterStreamConsumerRequest& request, const RegisterStreamConsumerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes tags from the specified Kinesis data stream. Removed tags are deleted
@@ -822,15 +667,6 @@ namespace Kinesis
          */
         virtual Model::RemoveTagsFromStreamOutcome RemoveTagsFromStream(const Model::RemoveTagsFromStreamRequest& request) const;
 
-        /**
-         * A Callable wrapper for RemoveTagsFromStream that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RemoveTagsFromStreamOutcomeCallable RemoveTagsFromStreamCallable(const Model::RemoveTagsFromStreamRequest& request) const;
-
-        /**
-         * An Async wrapper for RemoveTagsFromStream that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RemoveTagsFromStreamAsync(const Model::RemoveTagsFromStreamRequest& request, const RemoveTagsFromStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Splits a shard into two new shards in the Kinesis data stream, to increase
@@ -880,15 +716,6 @@ namespace Kinesis
          */
         virtual Model::SplitShardOutcome SplitShard(const Model::SplitShardRequest& request) const;
 
-        /**
-         * A Callable wrapper for SplitShard that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SplitShardOutcomeCallable SplitShardCallable(const Model::SplitShardRequest& request) const;
-
-        /**
-         * An Async wrapper for SplitShard that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SplitShardAsync(const Model::SplitShardRequest& request, const SplitShardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables or updates server-side encryption using an Amazon Web Services KMS
@@ -912,15 +739,6 @@ namespace Kinesis
          */
         virtual Model::StartStreamEncryptionOutcome StartStreamEncryption(const Model::StartStreamEncryptionRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartStreamEncryption that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartStreamEncryptionOutcomeCallable StartStreamEncryptionCallable(const Model::StartStreamEncryptionRequest& request) const;
-
-        /**
-         * An Async wrapper for StartStreamEncryption that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartStreamEncryptionAsync(const Model::StartStreamEncryptionRequest& request, const StartStreamEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disables server-side encryption for a specified stream. </p> <p>Stopping
@@ -943,15 +761,6 @@ namespace Kinesis
          */
         virtual Model::StopStreamEncryptionOutcome StopStreamEncryption(const Model::StopStreamEncryptionRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopStreamEncryption that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopStreamEncryptionOutcomeCallable StopStreamEncryptionCallable(const Model::StopStreamEncryptionRequest& request) const;
-
-        /**
-         * An Async wrapper for StopStreamEncryption that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopStreamEncryptionAsync(const Model::StopStreamEncryptionRequest& request, const StopStreamEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation establishes an HTTP/2 connection between the consumer you
@@ -984,15 +793,6 @@ namespace Kinesis
          */
         virtual Model::SubscribeToShardOutcome SubscribeToShard(Model::SubscribeToShardRequest& request) const;
 
-        /**
-         * A Callable wrapper for SubscribeToShard that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SubscribeToShardOutcomeCallable SubscribeToShardCallable(Model::SubscribeToShardRequest& request) const;
-
-        /**
-         * An Async wrapper for SubscribeToShard that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SubscribeToShardAsync(Model::SubscribeToShardRequest& request, const SubscribeToShardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the shard count of the specified stream to the specified number of
@@ -1030,15 +830,6 @@ namespace Kinesis
          */
         virtual Model::UpdateShardCountOutcome UpdateShardCount(const Model::UpdateShardCountRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateShardCount that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateShardCountOutcomeCallable UpdateShardCountCallable(const Model::UpdateShardCountRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateShardCount that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateShardCountAsync(const Model::UpdateShardCountRequest& request, const UpdateShardCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Updates the capacity mode of the data stream. Currently, in Kinesis Data
@@ -1050,15 +841,6 @@ namespace Kinesis
          */
         virtual Model::UpdateStreamModeOutcome UpdateStreamMode(const Model::UpdateStreamModeRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateStreamMode that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateStreamModeOutcomeCallable UpdateStreamModeCallable(const Model::UpdateStreamModeRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateStreamMode that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateStreamModeAsync(const Model::UpdateStreamModeRequest& request, const UpdateStreamModeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

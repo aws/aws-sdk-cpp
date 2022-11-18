@@ -7,8 +7,10 @@
 #include <aws/athena/Athena_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/athena/AthenaServiceClientModel.h>
+#include <aws/athena/AthenaLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -89,6 +91,47 @@ namespace Athena
         virtual ~AthenaClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Returns the details of a single named query or a list of up to 50 queries,
          * which you provide as an array of query ID strings. Requires you to have access
@@ -105,15 +148,6 @@ namespace Athena
          */
         virtual Model::BatchGetNamedQueryOutcome BatchGetNamedQuery(const Model::BatchGetNamedQueryRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchGetNamedQuery that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchGetNamedQueryOutcomeCallable BatchGetNamedQueryCallable(const Model::BatchGetNamedQueryRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchGetNamedQuery that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchGetNamedQueryAsync(const Model::BatchGetNamedQueryRequest& request, const BatchGetNamedQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the details of a single prepared statement or a list of up to 256
@@ -127,15 +161,6 @@ namespace Athena
          */
         virtual Model::BatchGetPreparedStatementOutcome BatchGetPreparedStatement(const Model::BatchGetPreparedStatementRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchGetPreparedStatement that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchGetPreparedStatementOutcomeCallable BatchGetPreparedStatementCallable(const Model::BatchGetPreparedStatementRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchGetPreparedStatement that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchGetPreparedStatementAsync(const Model::BatchGetPreparedStatementRequest& request, const BatchGetPreparedStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the details of a single query execution or a list of up to 50 query
@@ -150,15 +175,6 @@ namespace Athena
          */
         virtual Model::BatchGetQueryExecutionOutcome BatchGetQueryExecution(const Model::BatchGetQueryExecutionRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchGetQueryExecution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchGetQueryExecutionOutcomeCallable BatchGetQueryExecutionCallable(const Model::BatchGetQueryExecutionRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchGetQueryExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchGetQueryExecutionAsync(const Model::BatchGetQueryExecutionRequest& request, const BatchGetQueryExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates (registers) a data catalog with the specified name and properties.
@@ -169,15 +185,6 @@ namespace Athena
          */
         virtual Model::CreateDataCatalogOutcome CreateDataCatalog(const Model::CreateDataCatalogRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDataCatalog that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDataCatalogOutcomeCallable CreateDataCatalogCallable(const Model::CreateDataCatalogRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDataCatalog that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDataCatalogAsync(const Model::CreateDataCatalogRequest& request, const CreateDataCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a named query in the specified workgroup. Requires that you have
@@ -191,15 +198,6 @@ namespace Athena
          */
         virtual Model::CreateNamedQueryOutcome CreateNamedQuery(const Model::CreateNamedQueryRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateNamedQuery that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateNamedQueryOutcomeCallable CreateNamedQueryCallable(const Model::CreateNamedQueryRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateNamedQuery that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateNamedQueryAsync(const Model::CreateNamedQueryRequest& request, const CreateNamedQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a prepared statement for use with SQL queries in
@@ -209,15 +207,6 @@ namespace Athena
          */
         virtual Model::CreatePreparedStatementOutcome CreatePreparedStatement(const Model::CreatePreparedStatementRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreatePreparedStatement that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreatePreparedStatementOutcomeCallable CreatePreparedStatementCallable(const Model::CreatePreparedStatementRequest& request) const;
-
-        /**
-         * An Async wrapper for CreatePreparedStatement that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreatePreparedStatementAsync(const Model::CreatePreparedStatementRequest& request, const CreatePreparedStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a workgroup with the specified name.</p><p><h3>See Also:</h3>   <a
@@ -226,15 +215,6 @@ namespace Athena
          */
         virtual Model::CreateWorkGroupOutcome CreateWorkGroup(const Model::CreateWorkGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateWorkGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateWorkGroupOutcomeCallable CreateWorkGroupCallable(const Model::CreateWorkGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateWorkGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateWorkGroupAsync(const Model::CreateWorkGroupRequest& request, const CreateWorkGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a data catalog.</p><p><h3>See Also:</h3>   <a
@@ -243,15 +223,6 @@ namespace Athena
          */
         virtual Model::DeleteDataCatalogOutcome DeleteDataCatalog(const Model::DeleteDataCatalogRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDataCatalog that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDataCatalogOutcomeCallable DeleteDataCatalogCallable(const Model::DeleteDataCatalogRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDataCatalog that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDataCatalogAsync(const Model::DeleteDataCatalogRequest& request, const DeleteDataCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the named query if you have access to the workgroup in which the
@@ -265,15 +236,6 @@ namespace Athena
          */
         virtual Model::DeleteNamedQueryOutcome DeleteNamedQuery(const Model::DeleteNamedQueryRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteNamedQuery that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteNamedQueryOutcomeCallable DeleteNamedQueryCallable(const Model::DeleteNamedQueryRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteNamedQuery that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteNamedQueryAsync(const Model::DeleteNamedQueryRequest& request, const DeleteNamedQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the prepared statement with the specified name from the specified
@@ -283,15 +245,6 @@ namespace Athena
          */
         virtual Model::DeletePreparedStatementOutcome DeletePreparedStatement(const Model::DeletePreparedStatementRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeletePreparedStatement that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeletePreparedStatementOutcomeCallable DeletePreparedStatementCallable(const Model::DeletePreparedStatementRequest& request) const;
-
-        /**
-         * An Async wrapper for DeletePreparedStatement that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeletePreparedStatementAsync(const Model::DeletePreparedStatementRequest& request, const DeletePreparedStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the workgroup with the specified name. The primary workgroup cannot
@@ -301,15 +254,6 @@ namespace Athena
          */
         virtual Model::DeleteWorkGroupOutcome DeleteWorkGroup(const Model::DeleteWorkGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteWorkGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteWorkGroupOutcomeCallable DeleteWorkGroupCallable(const Model::DeleteWorkGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteWorkGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteWorkGroupAsync(const Model::DeleteWorkGroupRequest& request, const DeleteWorkGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the specified data catalog.</p><p><h3>See Also:</h3>   <a
@@ -318,15 +262,6 @@ namespace Athena
          */
         virtual Model::GetDataCatalogOutcome GetDataCatalog(const Model::GetDataCatalogRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDataCatalog that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDataCatalogOutcomeCallable GetDataCatalogCallable(const Model::GetDataCatalogRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDataCatalog that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDataCatalogAsync(const Model::GetDataCatalogRequest& request, const GetDataCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a database object for the specified database and data
@@ -336,15 +271,6 @@ namespace Athena
          */
         virtual Model::GetDatabaseOutcome GetDatabase(const Model::GetDatabaseRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDatabase that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDatabaseOutcomeCallable GetDatabaseCallable(const Model::GetDatabaseRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDatabase that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDatabaseAsync(const Model::GetDatabaseRequest& request, const GetDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a single query. Requires that you have access to
@@ -354,15 +280,6 @@ namespace Athena
          */
         virtual Model::GetNamedQueryOutcome GetNamedQuery(const Model::GetNamedQueryRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetNamedQuery that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetNamedQueryOutcomeCallable GetNamedQueryCallable(const Model::GetNamedQueryRequest& request) const;
-
-        /**
-         * An Async wrapper for GetNamedQuery that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetNamedQueryAsync(const Model::GetNamedQueryRequest& request, const GetNamedQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the prepared statement with the specified name from the specified
@@ -372,15 +289,6 @@ namespace Athena
          */
         virtual Model::GetPreparedStatementOutcome GetPreparedStatement(const Model::GetPreparedStatementRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetPreparedStatement that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetPreparedStatementOutcomeCallable GetPreparedStatementCallable(const Model::GetPreparedStatementRequest& request) const;
-
-        /**
-         * An Async wrapper for GetPreparedStatement that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetPreparedStatementAsync(const Model::GetPreparedStatementRequest& request, const GetPreparedStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a single execution of a query if you have access to
@@ -392,15 +300,6 @@ namespace Athena
          */
         virtual Model::GetQueryExecutionOutcome GetQueryExecution(const Model::GetQueryExecutionRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetQueryExecution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetQueryExecutionOutcomeCallable GetQueryExecutionCallable(const Model::GetQueryExecutionRequest& request) const;
-
-        /**
-         * An Async wrapper for GetQueryExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetQueryExecutionAsync(const Model::GetQueryExecutionRequest& request, const GetQueryExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Streams the results of a single query execution specified by
@@ -423,15 +322,6 @@ namespace Athena
          */
         virtual Model::GetQueryResultsOutcome GetQueryResults(const Model::GetQueryResultsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetQueryResults that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetQueryResultsOutcomeCallable GetQueryResultsCallable(const Model::GetQueryResultsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetQueryResults that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetQueryResultsAsync(const Model::GetQueryResultsRequest& request, const GetQueryResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns query execution runtime statistics related to a single execution of a
@@ -444,15 +334,6 @@ namespace Athena
          */
         virtual Model::GetQueryRuntimeStatisticsOutcome GetQueryRuntimeStatistics(const Model::GetQueryRuntimeStatisticsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetQueryRuntimeStatistics that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetQueryRuntimeStatisticsOutcomeCallable GetQueryRuntimeStatisticsCallable(const Model::GetQueryRuntimeStatisticsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetQueryRuntimeStatistics that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetQueryRuntimeStatisticsAsync(const Model::GetQueryRuntimeStatisticsRequest& request, const GetQueryRuntimeStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns table metadata for the specified catalog, database, and
@@ -462,15 +343,6 @@ namespace Athena
          */
         virtual Model::GetTableMetadataOutcome GetTableMetadata(const Model::GetTableMetadataRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetTableMetadata that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetTableMetadataOutcomeCallable GetTableMetadataCallable(const Model::GetTableMetadataRequest& request) const;
-
-        /**
-         * An Async wrapper for GetTableMetadata that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetTableMetadataAsync(const Model::GetTableMetadataRequest& request, const GetTableMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the workgroup with the specified
@@ -480,15 +352,6 @@ namespace Athena
          */
         virtual Model::GetWorkGroupOutcome GetWorkGroup(const Model::GetWorkGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetWorkGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetWorkGroupOutcomeCallable GetWorkGroupCallable(const Model::GetWorkGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for GetWorkGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetWorkGroupAsync(const Model::GetWorkGroupRequest& request, const GetWorkGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the data catalogs in the current Amazon Web Services
@@ -498,15 +361,6 @@ namespace Athena
          */
         virtual Model::ListDataCatalogsOutcome ListDataCatalogs(const Model::ListDataCatalogsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDataCatalogs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDataCatalogsOutcomeCallable ListDataCatalogsCallable(const Model::ListDataCatalogsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDataCatalogs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDataCatalogsAsync(const Model::ListDataCatalogsRequest& request, const ListDataCatalogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the databases in the specified data catalog.</p><p><h3>See Also:</h3>  
@@ -516,15 +370,6 @@ namespace Athena
          */
         virtual Model::ListDatabasesOutcome ListDatabases(const Model::ListDatabasesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDatabases that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDatabasesOutcomeCallable ListDatabasesCallable(const Model::ListDatabasesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDatabases that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDatabasesAsync(const Model::ListDatabasesRequest& request, const ListDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of engine versions that are available to choose from,
@@ -534,15 +379,6 @@ namespace Athena
          */
         virtual Model::ListEngineVersionsOutcome ListEngineVersions(const Model::ListEngineVersionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListEngineVersions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListEngineVersionsOutcomeCallable ListEngineVersionsCallable(const Model::ListEngineVersionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListEngineVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListEngineVersionsAsync(const Model::ListEngineVersionsRequest& request, const ListEngineVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides a list of available query IDs only for queries saved in the
@@ -558,15 +394,6 @@ namespace Athena
          */
         virtual Model::ListNamedQueriesOutcome ListNamedQueries(const Model::ListNamedQueriesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListNamedQueries that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListNamedQueriesOutcomeCallable ListNamedQueriesCallable(const Model::ListNamedQueriesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListNamedQueries that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListNamedQueriesAsync(const Model::ListNamedQueriesRequest& request, const ListNamedQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the prepared statements in the specified workgroup.</p><p><h3>See
@@ -576,15 +403,6 @@ namespace Athena
          */
         virtual Model::ListPreparedStatementsOutcome ListPreparedStatements(const Model::ListPreparedStatementsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPreparedStatements that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPreparedStatementsOutcomeCallable ListPreparedStatementsCallable(const Model::ListPreparedStatementsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPreparedStatements that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPreparedStatementsAsync(const Model::ListPreparedStatementsRequest& request, const ListPreparedStatementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides a list of available query execution IDs for the queries in the
@@ -600,15 +418,6 @@ namespace Athena
          */
         virtual Model::ListQueryExecutionsOutcome ListQueryExecutions(const Model::ListQueryExecutionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListQueryExecutions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListQueryExecutionsOutcomeCallable ListQueryExecutionsCallable(const Model::ListQueryExecutionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListQueryExecutions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListQueryExecutionsAsync(const Model::ListQueryExecutionsRequest& request, const ListQueryExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the metadata for the tables in the specified data catalog
@@ -618,15 +427,6 @@ namespace Athena
          */
         virtual Model::ListTableMetadataOutcome ListTableMetadata(const Model::ListTableMetadataRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTableMetadata that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTableMetadataOutcomeCallable ListTableMetadataCallable(const Model::ListTableMetadataRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTableMetadata that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTableMetadataAsync(const Model::ListTableMetadataRequest& request, const ListTableMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the tags associated with an Athena workgroup or data catalog
@@ -636,15 +436,6 @@ namespace Athena
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists available workgroups for the account.</p><p><h3>See Also:</h3>   <a
@@ -653,15 +444,6 @@ namespace Athena
          */
         virtual Model::ListWorkGroupsOutcome ListWorkGroups(const Model::ListWorkGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListWorkGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListWorkGroupsOutcomeCallable ListWorkGroupsCallable(const Model::ListWorkGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListWorkGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListWorkGroupsAsync(const Model::ListWorkGroupsRequest& request, const ListWorkGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Runs the SQL query statements contained in the <code>Query</code>. Requires
@@ -676,15 +458,6 @@ namespace Athena
          */
         virtual Model::StartQueryExecutionOutcome StartQueryExecution(const Model::StartQueryExecutionRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartQueryExecution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartQueryExecutionOutcomeCallable StartQueryExecutionCallable(const Model::StartQueryExecutionRequest& request) const;
-
-        /**
-         * An Async wrapper for StartQueryExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartQueryExecutionAsync(const Model::StartQueryExecutionRequest& request, const StartQueryExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops a query execution. Requires you to have access to the workgroup in
@@ -698,15 +471,6 @@ namespace Athena
          */
         virtual Model::StopQueryExecutionOutcome StopQueryExecution(const Model::StopQueryExecutionRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopQueryExecution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopQueryExecutionOutcomeCallable StopQueryExecutionCallable(const Model::StopQueryExecutionRequest& request) const;
-
-        /**
-         * An Async wrapper for StopQueryExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopQueryExecutionAsync(const Model::StopQueryExecutionRequest& request, const StopQueryExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds one or more tags to an Athena resource. A tag is a label that you assign
@@ -728,15 +492,6 @@ namespace Athena
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes one or more tags from a data catalog or workgroup
@@ -746,15 +501,6 @@ namespace Athena
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the data catalog that has the specified name.</p><p><h3>See
@@ -764,15 +510,6 @@ namespace Athena
          */
         virtual Model::UpdateDataCatalogOutcome UpdateDataCatalog(const Model::UpdateDataCatalogRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateDataCatalog that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateDataCatalogOutcomeCallable UpdateDataCatalogCallable(const Model::UpdateDataCatalogRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateDataCatalog that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateDataCatalogAsync(const Model::UpdateDataCatalogRequest& request, const UpdateDataCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a <a>NamedQuery</a> object. The database or workgroup cannot be
@@ -782,15 +519,6 @@ namespace Athena
          */
         virtual Model::UpdateNamedQueryOutcome UpdateNamedQuery(const Model::UpdateNamedQueryRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateNamedQuery that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateNamedQueryOutcomeCallable UpdateNamedQueryCallable(const Model::UpdateNamedQueryRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateNamedQuery that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateNamedQueryAsync(const Model::UpdateNamedQueryRequest& request, const UpdateNamedQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a prepared statement.</p><p><h3>See Also:</h3>   <a
@@ -799,15 +527,6 @@ namespace Athena
          */
         virtual Model::UpdatePreparedStatementOutcome UpdatePreparedStatement(const Model::UpdatePreparedStatementRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdatePreparedStatement that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdatePreparedStatementOutcomeCallable UpdatePreparedStatementCallable(const Model::UpdatePreparedStatementRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdatePreparedStatement that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdatePreparedStatementAsync(const Model::UpdatePreparedStatementRequest& request, const UpdatePreparedStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the workgroup with the specified name. The workgroup's name cannot be
@@ -817,15 +536,6 @@ namespace Athena
          */
         virtual Model::UpdateWorkGroupOutcome UpdateWorkGroup(const Model::UpdateWorkGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateWorkGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateWorkGroupOutcomeCallable UpdateWorkGroupCallable(const Model::UpdateWorkGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateWorkGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateWorkGroupAsync(const Model::UpdateWorkGroupRequest& request, const UpdateWorkGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

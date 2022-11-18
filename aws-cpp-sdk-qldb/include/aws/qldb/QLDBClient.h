@@ -7,8 +7,10 @@
 #include <aws/qldb/QLDB_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/qldb/QLDBServiceClientModel.h>
+#include <aws/qldb/QLDBLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -73,6 +75,47 @@ namespace QLDB
         virtual ~QLDBClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Ends a given Amazon QLDB journal stream. Before a stream can be canceled, its
          * current status must be <code>ACTIVE</code>.</p> <p>You can't restart a stream
@@ -84,15 +127,6 @@ namespace QLDB
          */
         virtual Model::CancelJournalKinesisStreamOutcome CancelJournalKinesisStream(const Model::CancelJournalKinesisStreamRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelJournalKinesisStream that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelJournalKinesisStreamOutcomeCallable CancelJournalKinesisStreamCallable(const Model::CancelJournalKinesisStreamRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelJournalKinesisStream that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelJournalKinesisStreamAsync(const Model::CancelJournalKinesisStreamRequest& request, const CancelJournalKinesisStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new ledger in your Amazon Web Services account in the current
@@ -102,15 +136,6 @@ namespace QLDB
          */
         virtual Model::CreateLedgerOutcome CreateLedger(const Model::CreateLedgerRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateLedger that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateLedgerOutcomeCallable CreateLedgerCallable(const Model::CreateLedgerRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateLedger that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateLedgerAsync(const Model::CreateLedgerRequest& request, const CreateLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a ledger and all of its contents. This action is irreversible.</p>
@@ -122,15 +147,6 @@ namespace QLDB
          */
         virtual Model::DeleteLedgerOutcome DeleteLedger(const Model::DeleteLedgerRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteLedger that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteLedgerOutcomeCallable DeleteLedgerCallable(const Model::DeleteLedgerRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteLedger that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteLedgerAsync(const Model::DeleteLedgerRequest& request, const DeleteLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns detailed information about a given Amazon QLDB journal stream. The
@@ -146,15 +162,6 @@ namespace QLDB
          */
         virtual Model::DescribeJournalKinesisStreamOutcome DescribeJournalKinesisStream(const Model::DescribeJournalKinesisStreamRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeJournalKinesisStream that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeJournalKinesisStreamOutcomeCallable DescribeJournalKinesisStreamCallable(const Model::DescribeJournalKinesisStreamRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeJournalKinesisStream that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeJournalKinesisStreamAsync(const Model::DescribeJournalKinesisStreamRequest& request, const DescribeJournalKinesisStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a journal export job, including the ledger name,
@@ -172,15 +179,6 @@ namespace QLDB
          */
         virtual Model::DescribeJournalS3ExportOutcome DescribeJournalS3Export(const Model::DescribeJournalS3ExportRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeJournalS3Export that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeJournalS3ExportOutcomeCallable DescribeJournalS3ExportCallable(const Model::DescribeJournalS3ExportRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeJournalS3Export that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeJournalS3ExportAsync(const Model::DescribeJournalS3ExportRequest& request, const DescribeJournalS3ExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a ledger, including its state, permissions mode,
@@ -191,15 +189,6 @@ namespace QLDB
          */
         virtual Model::DescribeLedgerOutcome DescribeLedger(const Model::DescribeLedgerRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeLedger that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeLedgerOutcomeCallable DescribeLedgerCallable(const Model::DescribeLedgerRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeLedger that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeLedgerAsync(const Model::DescribeLedgerRequest& request, const DescribeLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Exports journal contents within a date and time range from a ledger into a
@@ -223,15 +212,6 @@ namespace QLDB
          */
         virtual Model::ExportJournalToS3Outcome ExportJournalToS3(const Model::ExportJournalToS3Request& request) const;
 
-        /**
-         * A Callable wrapper for ExportJournalToS3 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ExportJournalToS3OutcomeCallable ExportJournalToS3Callable(const Model::ExportJournalToS3Request& request) const;
-
-        /**
-         * An Async wrapper for ExportJournalToS3 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ExportJournalToS3Async(const Model::ExportJournalToS3Request& request, const ExportJournalToS3ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a block object at a specified address in a journal. Also returns a
@@ -250,15 +230,6 @@ namespace QLDB
          */
         virtual Model::GetBlockOutcome GetBlock(const Model::GetBlockRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBlock that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBlockOutcomeCallable GetBlockCallable(const Model::GetBlockRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBlock that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBlockAsync(const Model::GetBlockRequest& request, const GetBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the digest of a ledger at the latest committed block in the journal.
@@ -269,15 +240,6 @@ namespace QLDB
          */
         virtual Model::GetDigestOutcome GetDigest(const Model::GetDigestRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDigest that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDigestOutcomeCallable GetDigestCallable(const Model::GetDigestRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDigest that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDigestAsync(const Model::GetDigestRequest& request, const GetDigestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a revision data object for a specified document ID and block address.
@@ -288,15 +250,6 @@ namespace QLDB
          */
         virtual Model::GetRevisionOutcome GetRevision(const Model::GetRevisionRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRevision that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRevisionOutcomeCallable GetRevisionCallable(const Model::GetRevisionRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRevision that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRevisionAsync(const Model::GetRevisionRequest& request, const GetRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns an array of all Amazon QLDB journal stream descriptors for a given
@@ -314,15 +267,6 @@ namespace QLDB
          */
         virtual Model::ListJournalKinesisStreamsForLedgerOutcome ListJournalKinesisStreamsForLedger(const Model::ListJournalKinesisStreamsForLedgerRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListJournalKinesisStreamsForLedger that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListJournalKinesisStreamsForLedgerOutcomeCallable ListJournalKinesisStreamsForLedgerCallable(const Model::ListJournalKinesisStreamsForLedgerRequest& request) const;
-
-        /**
-         * An Async wrapper for ListJournalKinesisStreamsForLedger that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListJournalKinesisStreamsForLedgerAsync(const Model::ListJournalKinesisStreamsForLedgerRequest& request, const ListJournalKinesisStreamsForLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns an array of journal export job descriptions for all ledgers that are
@@ -339,15 +283,6 @@ namespace QLDB
          */
         virtual Model::ListJournalS3ExportsOutcome ListJournalS3Exports(const Model::ListJournalS3ExportsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListJournalS3Exports that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListJournalS3ExportsOutcomeCallable ListJournalS3ExportsCallable(const Model::ListJournalS3ExportsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListJournalS3Exports that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListJournalS3ExportsAsync(const Model::ListJournalS3ExportsRequest& request, const ListJournalS3ExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns an array of journal export job descriptions for a specified
@@ -363,15 +298,6 @@ namespace QLDB
          */
         virtual Model::ListJournalS3ExportsForLedgerOutcome ListJournalS3ExportsForLedger(const Model::ListJournalS3ExportsForLedgerRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListJournalS3ExportsForLedger that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListJournalS3ExportsForLedgerOutcomeCallable ListJournalS3ExportsForLedgerCallable(const Model::ListJournalS3ExportsForLedgerRequest& request) const;
-
-        /**
-         * An Async wrapper for ListJournalS3ExportsForLedger that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListJournalS3ExportsForLedgerAsync(const Model::ListJournalS3ExportsForLedgerRequest& request, const ListJournalS3ExportsForLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns an array of ledger summaries that are associated with the current
@@ -383,15 +309,6 @@ namespace QLDB
          */
         virtual Model::ListLedgersOutcome ListLedgers(const Model::ListLedgersRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListLedgers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListLedgersOutcomeCallable ListLedgersCallable(const Model::ListLedgersRequest& request) const;
-
-        /**
-         * An Async wrapper for ListLedgers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListLedgersAsync(const Model::ListLedgersRequest& request, const ListLedgersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns all tags for a specified Amazon QLDB resource.</p><p><h3>See
@@ -401,15 +318,6 @@ namespace QLDB
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a journal stream for a given Amazon QLDB ledger. The stream captures
@@ -421,15 +329,6 @@ namespace QLDB
          */
         virtual Model::StreamJournalToKinesisOutcome StreamJournalToKinesis(const Model::StreamJournalToKinesisRequest& request) const;
 
-        /**
-         * A Callable wrapper for StreamJournalToKinesis that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StreamJournalToKinesisOutcomeCallable StreamJournalToKinesisCallable(const Model::StreamJournalToKinesisRequest& request) const;
-
-        /**
-         * An Async wrapper for StreamJournalToKinesis that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StreamJournalToKinesisAsync(const Model::StreamJournalToKinesisRequest& request, const StreamJournalToKinesisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds one or more tags to a specified Amazon QLDB resource.</p> <p>A resource
@@ -440,15 +339,6 @@ namespace QLDB
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes one or more tags from a specified Amazon QLDB resource. You can
@@ -458,15 +348,6 @@ namespace QLDB
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates properties on a ledger.</p><p><h3>See Also:</h3>   <a
@@ -475,15 +356,6 @@ namespace QLDB
          */
         virtual Model::UpdateLedgerOutcome UpdateLedger(const Model::UpdateLedgerRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateLedger that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateLedgerOutcomeCallable UpdateLedgerCallable(const Model::UpdateLedgerRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateLedger that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateLedgerAsync(const Model::UpdateLedgerRequest& request, const UpdateLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the permissions mode of a ledger.</p>  <p>Before you
@@ -498,15 +370,6 @@ namespace QLDB
          */
         virtual Model::UpdateLedgerPermissionsModeOutcome UpdateLedgerPermissionsMode(const Model::UpdateLedgerPermissionsModeRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateLedgerPermissionsMode that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateLedgerPermissionsModeOutcomeCallable UpdateLedgerPermissionsModeCallable(const Model::UpdateLedgerPermissionsModeRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateLedgerPermissionsMode that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateLedgerPermissionsModeAsync(const Model::UpdateLedgerPermissionsModeRequest& request, const UpdateLedgerPermissionsModeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

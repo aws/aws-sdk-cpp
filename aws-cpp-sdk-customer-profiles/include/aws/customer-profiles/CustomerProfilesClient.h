@@ -7,8 +7,10 @@
 #include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/customer-profiles/CustomerProfilesServiceClientModel.h>
+#include <aws/customer-profiles/CustomerProfilesLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -81,6 +83,47 @@ namespace CustomerProfiles
         virtual ~CustomerProfilesClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Associates a new key value with a specific profile, such as a Contact Record
          * ContactId.</p> <p>A profile object can have a single unique key and any number
@@ -91,15 +134,6 @@ namespace CustomerProfiles
          */
         virtual Model::AddProfileKeyOutcome AddProfileKey(const Model::AddProfileKeyRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddProfileKey that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddProfileKeyOutcomeCallable AddProfileKeyCallable(const Model::AddProfileKeyRequest& request) const;
-
-        /**
-         * An Async wrapper for AddProfileKey that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddProfileKeyAsync(const Model::AddProfileKeyRequest& request, const AddProfileKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a domain, which is a container for all customer data, such as
@@ -121,15 +155,6 @@ namespace CustomerProfiles
          */
         virtual Model::CreateDomainOutcome CreateDomain(const Model::CreateDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDomainOutcomeCallable CreateDomainCallable(const Model::CreateDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDomainAsync(const Model::CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Creates an integration workflow. An integration workflow is an async process
@@ -141,15 +166,6 @@ namespace CustomerProfiles
          */
         virtual Model::CreateIntegrationWorkflowOutcome CreateIntegrationWorkflow(const Model::CreateIntegrationWorkflowRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateIntegrationWorkflow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateIntegrationWorkflowOutcomeCallable CreateIntegrationWorkflowCallable(const Model::CreateIntegrationWorkflowRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateIntegrationWorkflow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateIntegrationWorkflowAsync(const Model::CreateIntegrationWorkflowRequest& request, const CreateIntegrationWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a standard profile.</p> <p>A standard profile represents the
@@ -160,15 +176,6 @@ namespace CustomerProfiles
          */
         virtual Model::CreateProfileOutcome CreateProfile(const Model::CreateProfileRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateProfile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateProfileOutcomeCallable CreateProfileCallable(const Model::CreateProfileRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateProfileAsync(const Model::CreateProfileRequest& request, const CreateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a specific domain and all of its customer data, such as customer
@@ -178,15 +185,6 @@ namespace CustomerProfiles
          */
         virtual Model::DeleteDomainOutcome DeleteDomain(const Model::DeleteDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDomainOutcomeCallable DeleteDomainCallable(const Model::DeleteDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDomainAsync(const Model::DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes an integration from a specific domain.</p><p><h3>See Also:</h3>   <a
@@ -195,15 +193,6 @@ namespace CustomerProfiles
          */
         virtual Model::DeleteIntegrationOutcome DeleteIntegration(const Model::DeleteIntegrationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteIntegration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteIntegrationOutcomeCallable DeleteIntegrationCallable(const Model::DeleteIntegrationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteIntegration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteIntegrationAsync(const Model::DeleteIntegrationRequest& request, const DeleteIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the standard customer profile and all data pertaining to the
@@ -213,15 +202,6 @@ namespace CustomerProfiles
          */
         virtual Model::DeleteProfileOutcome DeleteProfile(const Model::DeleteProfileRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteProfile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteProfileOutcomeCallable DeleteProfileCallable(const Model::DeleteProfileRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteProfileAsync(const Model::DeleteProfileRequest& request, const DeleteProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes a searchable key from a customer profile.</p><p><h3>See Also:</h3>  
@@ -231,15 +211,6 @@ namespace CustomerProfiles
          */
         virtual Model::DeleteProfileKeyOutcome DeleteProfileKey(const Model::DeleteProfileKeyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteProfileKey that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteProfileKeyOutcomeCallable DeleteProfileKeyCallable(const Model::DeleteProfileKeyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteProfileKey that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteProfileKeyAsync(const Model::DeleteProfileKeyRequest& request, const DeleteProfileKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes an object associated with a profile of a given
@@ -249,15 +220,6 @@ namespace CustomerProfiles
          */
         virtual Model::DeleteProfileObjectOutcome DeleteProfileObject(const Model::DeleteProfileObjectRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteProfileObject that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteProfileObjectOutcomeCallable DeleteProfileObjectCallable(const Model::DeleteProfileObjectRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteProfileObject that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteProfileObjectAsync(const Model::DeleteProfileObjectRequest& request, const DeleteProfileObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes a ProfileObjectType from a specific domain as well as removes all the
@@ -270,15 +232,6 @@ namespace CustomerProfiles
          */
         virtual Model::DeleteProfileObjectTypeOutcome DeleteProfileObjectType(const Model::DeleteProfileObjectTypeRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteProfileObjectType that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteProfileObjectTypeOutcomeCallable DeleteProfileObjectTypeCallable(const Model::DeleteProfileObjectTypeRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteProfileObjectType that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteProfileObjectTypeAsync(const Model::DeleteProfileObjectTypeRequest& request, const DeleteProfileObjectTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified workflow and all its corresponding resources. This is
@@ -288,15 +241,6 @@ namespace CustomerProfiles
          */
         virtual Model::DeleteWorkflowOutcome DeleteWorkflow(const Model::DeleteWorkflowRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteWorkflow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteWorkflowOutcomeCallable DeleteWorkflowCallable(const Model::DeleteWorkflowRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteWorkflow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteWorkflowAsync(const Model::DeleteWorkflowRequest& request, const DeleteWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Tests the auto-merging settings of your Identity Resolution Job without
@@ -317,15 +261,6 @@ namespace CustomerProfiles
          */
         virtual Model::GetAutoMergingPreviewOutcome GetAutoMergingPreview(const Model::GetAutoMergingPreviewRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAutoMergingPreview that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAutoMergingPreviewOutcomeCallable GetAutoMergingPreviewCallable(const Model::GetAutoMergingPreviewRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAutoMergingPreview that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAutoMergingPreviewAsync(const Model::GetAutoMergingPreviewRequest& request, const GetAutoMergingPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a specific domain.</p><p><h3>See Also:</h3>   <a
@@ -334,15 +269,6 @@ namespace CustomerProfiles
          */
         virtual Model::GetDomainOutcome GetDomain(const Model::GetDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDomainOutcomeCallable GetDomainCallable(const Model::GetDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDomainAsync(const Model::GetDomainRequest& request, const GetDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about an Identity Resolution Job in a specific domain.
@@ -356,15 +282,6 @@ namespace CustomerProfiles
          */
         virtual Model::GetIdentityResolutionJobOutcome GetIdentityResolutionJob(const Model::GetIdentityResolutionJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetIdentityResolutionJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetIdentityResolutionJobOutcomeCallable GetIdentityResolutionJobCallable(const Model::GetIdentityResolutionJobRequest& request) const;
-
-        /**
-         * An Async wrapper for GetIdentityResolutionJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetIdentityResolutionJobAsync(const Model::GetIdentityResolutionJobRequest& request, const GetIdentityResolutionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns an integration for a domain.</p><p><h3>See Also:</h3>   <a
@@ -373,15 +290,6 @@ namespace CustomerProfiles
          */
         virtual Model::GetIntegrationOutcome GetIntegration(const Model::GetIntegrationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetIntegration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetIntegrationOutcomeCallable GetIntegrationCallable(const Model::GetIntegrationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetIntegration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetIntegrationAsync(const Model::GetIntegrationRequest& request, const GetIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Before calling this API, use <a
@@ -417,15 +325,6 @@ namespace CustomerProfiles
          */
         virtual Model::GetMatchesOutcome GetMatches(const Model::GetMatchesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetMatches that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetMatchesOutcomeCallable GetMatchesCallable(const Model::GetMatchesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetMatches that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetMatchesAsync(const Model::GetMatchesRequest& request, const GetMatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the object types for a specific domain.</p><p><h3>See Also:</h3>   <a
@@ -434,15 +333,6 @@ namespace CustomerProfiles
          */
         virtual Model::GetProfileObjectTypeOutcome GetProfileObjectType(const Model::GetProfileObjectTypeRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetProfileObjectType that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetProfileObjectTypeOutcomeCallable GetProfileObjectTypeCallable(const Model::GetProfileObjectTypeRequest& request) const;
-
-        /**
-         * An Async wrapper for GetProfileObjectType that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetProfileObjectTypeAsync(const Model::GetProfileObjectTypeRequest& request, const GetProfileObjectTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the template information for a specific object type.</p> <p>A
@@ -456,15 +346,6 @@ namespace CustomerProfiles
          */
         virtual Model::GetProfileObjectTypeTemplateOutcome GetProfileObjectTypeTemplate(const Model::GetProfileObjectTypeTemplateRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetProfileObjectTypeTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetProfileObjectTypeTemplateOutcomeCallable GetProfileObjectTypeTemplateCallable(const Model::GetProfileObjectTypeTemplateRequest& request) const;
-
-        /**
-         * An Async wrapper for GetProfileObjectTypeTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetProfileObjectTypeTemplateAsync(const Model::GetProfileObjectTypeTemplateRequest& request, const GetProfileObjectTypeTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get details of specified workflow.</p><p><h3>See Also:</h3>   <a
@@ -473,15 +354,6 @@ namespace CustomerProfiles
          */
         virtual Model::GetWorkflowOutcome GetWorkflow(const Model::GetWorkflowRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetWorkflow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetWorkflowOutcomeCallable GetWorkflowCallable(const Model::GetWorkflowRequest& request) const;
-
-        /**
-         * An Async wrapper for GetWorkflow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetWorkflowAsync(const Model::GetWorkflowRequest& request, const GetWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get granular list of steps in workflow.</p><p><h3>See Also:</h3>   <a
@@ -490,15 +362,6 @@ namespace CustomerProfiles
          */
         virtual Model::GetWorkflowStepsOutcome GetWorkflowSteps(const Model::GetWorkflowStepsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetWorkflowSteps that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetWorkflowStepsOutcomeCallable GetWorkflowStepsCallable(const Model::GetWorkflowStepsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetWorkflowSteps that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetWorkflowStepsAsync(const Model::GetWorkflowStepsRequest& request, const GetWorkflowStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all of the integrations associated to a specific URI in the AWS
@@ -508,15 +371,6 @@ namespace CustomerProfiles
          */
         virtual Model::ListAccountIntegrationsOutcome ListAccountIntegrations(const Model::ListAccountIntegrationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAccountIntegrations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAccountIntegrationsOutcomeCallable ListAccountIntegrationsCallable(const Model::ListAccountIntegrationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAccountIntegrations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAccountIntegrationsAsync(const Model::ListAccountIntegrationsRequest& request, const ListAccountIntegrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of all the domains for an AWS account that have been
@@ -526,15 +380,6 @@ namespace CustomerProfiles
          */
         virtual Model::ListDomainsOutcome ListDomains(const Model::ListDomainsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDomains that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDomainsOutcomeCallable ListDomainsCallable(const Model::ListDomainsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDomains that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDomainsAsync(const Model::ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all of the Identity Resolution Jobs in your domain. The response sorts
@@ -544,15 +389,6 @@ namespace CustomerProfiles
          */
         virtual Model::ListIdentityResolutionJobsOutcome ListIdentityResolutionJobs(const Model::ListIdentityResolutionJobsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListIdentityResolutionJobs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListIdentityResolutionJobsOutcomeCallable ListIdentityResolutionJobsCallable(const Model::ListIdentityResolutionJobsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListIdentityResolutionJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListIdentityResolutionJobsAsync(const Model::ListIdentityResolutionJobsRequest& request, const ListIdentityResolutionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all of the integrations in your domain.</p><p><h3>See Also:</h3>   <a
@@ -561,15 +397,6 @@ namespace CustomerProfiles
          */
         virtual Model::ListIntegrationsOutcome ListIntegrations(const Model::ListIntegrationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListIntegrations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListIntegrationsOutcomeCallable ListIntegrationsCallable(const Model::ListIntegrationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListIntegrations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListIntegrationsAsync(const Model::ListIntegrationsRequest& request, const ListIntegrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all of the template information for object types.</p><p><h3>See
@@ -579,15 +406,6 @@ namespace CustomerProfiles
          */
         virtual Model::ListProfileObjectTypeTemplatesOutcome ListProfileObjectTypeTemplates(const Model::ListProfileObjectTypeTemplatesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListProfileObjectTypeTemplates that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListProfileObjectTypeTemplatesOutcomeCallable ListProfileObjectTypeTemplatesCallable(const Model::ListProfileObjectTypeTemplatesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListProfileObjectTypeTemplates that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListProfileObjectTypeTemplatesAsync(const Model::ListProfileObjectTypeTemplatesRequest& request, const ListProfileObjectTypeTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all of the templates available within the service.</p><p><h3>See
@@ -597,15 +415,6 @@ namespace CustomerProfiles
          */
         virtual Model::ListProfileObjectTypesOutcome ListProfileObjectTypes(const Model::ListProfileObjectTypesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListProfileObjectTypes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListProfileObjectTypesOutcomeCallable ListProfileObjectTypesCallable(const Model::ListProfileObjectTypesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListProfileObjectTypes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListProfileObjectTypesAsync(const Model::ListProfileObjectTypesRequest& request, const ListProfileObjectTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of objects associated with a profile of a given
@@ -615,15 +424,6 @@ namespace CustomerProfiles
          */
         virtual Model::ListProfileObjectsOutcome ListProfileObjects(const Model::ListProfileObjectsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListProfileObjects that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListProfileObjectsOutcomeCallable ListProfileObjectsCallable(const Model::ListProfileObjectsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListProfileObjects that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListProfileObjectsAsync(const Model::ListProfileObjectsRequest& request, const ListProfileObjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Displays the tags associated with an Amazon Connect Customer Profiles
@@ -634,15 +434,6 @@ namespace CustomerProfiles
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Query to list all workflows.</p><p><h3>See Also:</h3>   <a
@@ -651,15 +442,6 @@ namespace CustomerProfiles
          */
         virtual Model::ListWorkflowsOutcome ListWorkflows(const Model::ListWorkflowsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListWorkflows that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListWorkflowsOutcomeCallable ListWorkflowsCallable(const Model::ListWorkflowsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListWorkflows that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListWorkflowsAsync(const Model::ListWorkflowsRequest& request, const ListWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Runs an AWS Lambda job that does the following:</p> <ol> <li> <p>All the
@@ -685,15 +467,6 @@ namespace CustomerProfiles
          */
         virtual Model::MergeProfilesOutcome MergeProfiles(const Model::MergeProfilesRequest& request) const;
 
-        /**
-         * A Callable wrapper for MergeProfiles that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::MergeProfilesOutcomeCallable MergeProfilesCallable(const Model::MergeProfilesRequest& request) const;
-
-        /**
-         * An Async wrapper for MergeProfiles that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void MergeProfilesAsync(const Model::MergeProfilesRequest& request, const MergeProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds an integration between the service and a third-party service, which
@@ -708,15 +481,6 @@ namespace CustomerProfiles
          */
         virtual Model::PutIntegrationOutcome PutIntegration(const Model::PutIntegrationRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutIntegration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutIntegrationOutcomeCallable PutIntegrationCallable(const Model::PutIntegrationRequest& request) const;
-
-        /**
-         * An Async wrapper for PutIntegration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutIntegrationAsync(const Model::PutIntegrationRequest& request, const PutIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds additional objects to customer profiles of a given ObjectType.</p>
@@ -734,15 +498,6 @@ namespace CustomerProfiles
          */
         virtual Model::PutProfileObjectOutcome PutProfileObject(const Model::PutProfileObjectRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutProfileObject that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutProfileObjectOutcomeCallable PutProfileObjectCallable(const Model::PutProfileObjectRequest& request) const;
-
-        /**
-         * An Async wrapper for PutProfileObject that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutProfileObjectAsync(const Model::PutProfileObjectRequest& request, const PutProfileObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Defines a ProfileObjectType.</p> <p>To add or remove tags on an existing
@@ -756,15 +511,6 @@ namespace CustomerProfiles
          */
         virtual Model::PutProfileObjectTypeOutcome PutProfileObjectType(const Model::PutProfileObjectTypeRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutProfileObjectType that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutProfileObjectTypeOutcomeCallable PutProfileObjectTypeCallable(const Model::PutProfileObjectTypeRequest& request) const;
-
-        /**
-         * An Async wrapper for PutProfileObjectType that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutProfileObjectTypeAsync(const Model::PutProfileObjectTypeRequest& request, const PutProfileObjectTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Searches for profiles within a specific domain using one or more predefined
@@ -779,15 +525,6 @@ namespace CustomerProfiles
          */
         virtual Model::SearchProfilesOutcome SearchProfiles(const Model::SearchProfilesRequest& request) const;
 
-        /**
-         * A Callable wrapper for SearchProfiles that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SearchProfilesOutcomeCallable SearchProfilesCallable(const Model::SearchProfilesRequest& request) const;
-
-        /**
-         * An Async wrapper for SearchProfiles that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SearchProfilesAsync(const Model::SearchProfilesRequest& request, const SearchProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Assigns one or more tags (key-value pairs) to the specified Amazon Connect
@@ -807,15 +544,6 @@ namespace CustomerProfiles
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes one or more tags from the specified Amazon Connect Customer Profiles
@@ -826,15 +554,6 @@ namespace CustomerProfiles
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the properties of a domain, including creating or selecting a dead
@@ -856,15 +575,6 @@ namespace CustomerProfiles
          */
         virtual Model::UpdateDomainOutcome UpdateDomain(const Model::UpdateDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateDomainOutcomeCallable UpdateDomainCallable(const Model::UpdateDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateDomainAsync(const Model::UpdateDomainRequest& request, const UpdateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the properties of a profile. The ProfileId is required for updating a
@@ -877,15 +587,6 @@ namespace CustomerProfiles
          */
         virtual Model::UpdateProfileOutcome UpdateProfile(const Model::UpdateProfileRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateProfile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateProfileOutcomeCallable UpdateProfileCallable(const Model::UpdateProfileRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateProfileAsync(const Model::UpdateProfileRequest& request, const UpdateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

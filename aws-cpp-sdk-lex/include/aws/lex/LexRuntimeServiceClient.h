@@ -7,8 +7,10 @@
 #include <aws/lex/LexRuntimeService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/lex/LexRuntimeServiceServiceClientModel.h>
+#include <aws/lex/LexRuntimeServiceLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -83,6 +85,47 @@ namespace LexRuntimeService
         virtual ~LexRuntimeServiceClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Removes session information for a specified bot, alias, and user ID.
          * </p><p><h3>See Also:</h3>   <a
@@ -91,15 +134,6 @@ namespace LexRuntimeService
          */
         virtual Model::DeleteSessionOutcome DeleteSession(const Model::DeleteSessionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteSession that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteSessionOutcomeCallable DeleteSessionCallable(const Model::DeleteSessionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteSession that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteSessionAsync(const Model::DeleteSessionRequest& request, const DeleteSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns session information for a specified bot, alias, and user
@@ -109,15 +143,6 @@ namespace LexRuntimeService
          */
         virtual Model::GetSessionOutcome GetSession(const Model::GetSessionRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSession that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSessionOutcomeCallable GetSessionCallable(const Model::GetSessionRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSession that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSessionAsync(const Model::GetSessionRequest& request, const GetSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Sends user input (text or speech) to Amazon Lex. Clients use this API to
@@ -164,15 +189,6 @@ namespace LexRuntimeService
          */
         virtual Model::PostContentOutcome PostContent(const Model::PostContentRequest& request) const;
 
-        /**
-         * A Callable wrapper for PostContent that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PostContentOutcomeCallable PostContentCallable(const Model::PostContentRequest& request) const;
-
-        /**
-         * An Async wrapper for PostContent that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PostContentAsync(const Model::PostContentRequest& request, const PostContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sends user input to Amazon Lex. Client applications can use this API to send
@@ -216,15 +232,6 @@ namespace LexRuntimeService
          */
         virtual Model::PostTextOutcome PostText(const Model::PostTextRequest& request) const;
 
-        /**
-         * A Callable wrapper for PostText that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PostTextOutcomeCallable PostTextCallable(const Model::PostTextRequest& request) const;
-
-        /**
-         * An Async wrapper for PostText that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PostTextAsync(const Model::PostTextRequest& request, const PostTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new session or modifies an existing session with an Amazon Lex bot.
@@ -237,15 +244,6 @@ namespace LexRuntimeService
          */
         virtual Model::PutSessionOutcome PutSession(const Model::PutSessionRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutSession that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutSessionOutcomeCallable PutSessionCallable(const Model::PutSessionRequest& request) const;
-
-        /**
-         * An Async wrapper for PutSession that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutSessionAsync(const Model::PutSessionRequest& request, const PutSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

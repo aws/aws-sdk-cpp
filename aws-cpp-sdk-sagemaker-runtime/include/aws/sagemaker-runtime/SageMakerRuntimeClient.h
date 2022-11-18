@@ -7,8 +7,10 @@
 #include <aws/sagemaker-runtime/SageMakerRuntime_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/sagemaker-runtime/SageMakerRuntimeServiceClientModel.h>
+#include <aws/sagemaker-runtime/SageMakerRuntimeLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -73,6 +75,47 @@ namespace SageMakerRuntime
         virtual ~SageMakerRuntimeClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>After you deploy a model into production using Amazon SageMaker hosting
          * services, your client applications use this API to get inferences from the model
@@ -99,15 +142,6 @@ namespace SageMakerRuntime
          */
         virtual Model::InvokeEndpointOutcome InvokeEndpoint(const Model::InvokeEndpointRequest& request) const;
 
-        /**
-         * A Callable wrapper for InvokeEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::InvokeEndpointOutcomeCallable InvokeEndpointCallable(const Model::InvokeEndpointRequest& request) const;
-
-        /**
-         * An Async wrapper for InvokeEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void InvokeEndpointAsync(const Model::InvokeEndpointRequest& request, const InvokeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>After you deploy a model into production using Amazon SageMaker hosting
@@ -131,15 +165,6 @@ namespace SageMakerRuntime
          */
         virtual Model::InvokeEndpointAsyncOutcome InvokeEndpointAsync(const Model::InvokeEndpointAsyncRequest& request) const;
 
-        /**
-         * A Callable wrapper for InvokeEndpointAsync that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::InvokeEndpointAsyncOutcomeCallable InvokeEndpointAsyncCallable(const Model::InvokeEndpointAsyncRequest& request) const;
-
-        /**
-         * An Async wrapper for InvokeEndpointAsync that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void InvokeEndpointAsyncAsync(const Model::InvokeEndpointAsyncRequest& request, const InvokeEndpointAsyncResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

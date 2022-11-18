@@ -7,8 +7,10 @@
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/storagegateway/StorageGatewayServiceClientModel.h>
+#include <aws/storagegateway/StorageGatewayLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -116,6 +118,47 @@ namespace StorageGateway
         virtual ~StorageGatewayClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Activates the gateway you previously deployed on your host. In the activation
          * process, you specify information such as the Amazon Web Services Region that you
@@ -130,15 +173,6 @@ namespace StorageGateway
          */
         virtual Model::ActivateGatewayOutcome ActivateGateway(const Model::ActivateGatewayRequest& request) const;
 
-        /**
-         * A Callable wrapper for ActivateGateway that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ActivateGatewayOutcomeCallable ActivateGatewayCallable(const Model::ActivateGatewayRequest& request) const;
-
-        /**
-         * An Async wrapper for ActivateGateway that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ActivateGatewayAsync(const Model::ActivateGatewayRequest& request, const ActivateGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Configures one or more gateway local disks as cache for a gateway. This
@@ -153,15 +187,6 @@ namespace StorageGateway
          */
         virtual Model::AddCacheOutcome AddCache(const Model::AddCacheRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddCache that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddCacheOutcomeCallable AddCacheCallable(const Model::AddCacheRequest& request) const;
-
-        /**
-         * An Async wrapper for AddCache that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddCacheAsync(const Model::AddCacheRequest& request, const AddCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds one or more tags to the specified resource. You use tags to add metadata
@@ -179,15 +204,6 @@ namespace StorageGateway
          */
         virtual Model::AddTagsToResourceOutcome AddTagsToResource(const Model::AddTagsToResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddTagsToResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddTagsToResourceOutcomeCallable AddTagsToResourceCallable(const Model::AddTagsToResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for AddTagsToResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddTagsToResourceAsync(const Model::AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Configures one or more gateway local disks as upload buffer for a specified
@@ -200,15 +216,6 @@ namespace StorageGateway
          */
         virtual Model::AddUploadBufferOutcome AddUploadBuffer(const Model::AddUploadBufferRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddUploadBuffer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddUploadBufferOutcomeCallable AddUploadBufferCallable(const Model::AddUploadBufferRequest& request) const;
-
-        /**
-         * An Async wrapper for AddUploadBuffer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddUploadBufferAsync(const Model::AddUploadBufferRequest& request, const AddUploadBufferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Configures one or more gateway local disks as working storage for a gateway.
@@ -225,15 +232,6 @@ namespace StorageGateway
          */
         virtual Model::AddWorkingStorageOutcome AddWorkingStorage(const Model::AddWorkingStorageRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddWorkingStorage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddWorkingStorageOutcomeCallable AddWorkingStorageCallable(const Model::AddWorkingStorageRequest& request) const;
-
-        /**
-         * An Async wrapper for AddWorkingStorage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddWorkingStorageAsync(const Model::AddWorkingStorageRequest& request, const AddWorkingStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Assigns a tape to a tape pool for archiving. The tape assigned to a pool is
@@ -246,15 +244,6 @@ namespace StorageGateway
          */
         virtual Model::AssignTapePoolOutcome AssignTapePool(const Model::AssignTapePoolRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssignTapePool that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssignTapePoolOutcomeCallable AssignTapePoolCallable(const Model::AssignTapePoolRequest& request) const;
-
-        /**
-         * An Async wrapper for AssignTapePool that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssignTapePoolAsync(const Model::AssignTapePoolRequest& request, const AssignTapePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associate an Amazon FSx file system with the FSx File Gateway. After the
@@ -266,15 +255,6 @@ namespace StorageGateway
          */
         virtual Model::AssociateFileSystemOutcome AssociateFileSystem(const Model::AssociateFileSystemRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateFileSystem that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateFileSystemOutcomeCallable AssociateFileSystemCallable(const Model::AssociateFileSystemRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateFileSystem that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateFileSystemAsync(const Model::AssociateFileSystemRequest& request, const AssociateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Connects a volume to an iSCSI connection and then attaches the volume to the
@@ -287,15 +267,6 @@ namespace StorageGateway
          */
         virtual Model::AttachVolumeOutcome AttachVolume(const Model::AttachVolumeRequest& request) const;
 
-        /**
-         * A Callable wrapper for AttachVolume that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AttachVolumeOutcomeCallable AttachVolumeCallable(const Model::AttachVolumeRequest& request) const;
-
-        /**
-         * An Async wrapper for AttachVolume that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AttachVolumeAsync(const Model::AttachVolumeRequest& request, const AttachVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Cancels archiving of a virtual tape to the virtual tape shelf (VTS) after the
@@ -306,15 +277,6 @@ namespace StorageGateway
          */
         virtual Model::CancelArchivalOutcome CancelArchival(const Model::CancelArchivalRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelArchival that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelArchivalOutcomeCallable CancelArchivalCallable(const Model::CancelArchivalRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelArchival that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelArchivalAsync(const Model::CancelArchivalRequest& request, const CancelArchivalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Cancels retrieval of a virtual tape from the virtual tape shelf (VTS) to a
@@ -326,15 +288,6 @@ namespace StorageGateway
          */
         virtual Model::CancelRetrievalOutcome CancelRetrieval(const Model::CancelRetrievalRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelRetrieval that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelRetrievalOutcomeCallable CancelRetrievalCallable(const Model::CancelRetrievalRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelRetrieval that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelRetrievalAsync(const Model::CancelRetrievalRequest& request, const CancelRetrievalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a cached volume on a specified cached volume gateway. This operation
@@ -356,15 +309,6 @@ namespace StorageGateway
          */
         virtual Model::CreateCachediSCSIVolumeOutcome CreateCachediSCSIVolume(const Model::CreateCachediSCSIVolumeRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateCachediSCSIVolume that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateCachediSCSIVolumeOutcomeCallable CreateCachediSCSIVolumeCallable(const Model::CreateCachediSCSIVolumeRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateCachediSCSIVolume that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateCachediSCSIVolumeAsync(const Model::CreateCachediSCSIVolumeRequest& request, const CreateCachediSCSIVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a Network File System (NFS) file share on an existing S3 File
@@ -387,15 +331,6 @@ namespace StorageGateway
          */
         virtual Model::CreateNFSFileShareOutcome CreateNFSFileShare(const Model::CreateNFSFileShareRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateNFSFileShare that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateNFSFileShareOutcomeCallable CreateNFSFileShareCallable(const Model::CreateNFSFileShareRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateNFSFileShare that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateNFSFileShareAsync(const Model::CreateNFSFileShareRequest& request, const CreateNFSFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a Server Message Block (SMB) file share on an existing S3 File
@@ -418,15 +353,6 @@ namespace StorageGateway
          */
         virtual Model::CreateSMBFileShareOutcome CreateSMBFileShare(const Model::CreateSMBFileShareRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateSMBFileShare that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateSMBFileShareOutcomeCallable CreateSMBFileShareCallable(const Model::CreateSMBFileShareRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateSMBFileShare that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateSMBFileShareAsync(const Model::CreateSMBFileShareRequest& request, const CreateSMBFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Initiates a snapshot of a volume.</p> <p>Storage Gateway provides the ability
@@ -458,15 +384,6 @@ namespace StorageGateway
          */
         virtual Model::CreateSnapshotOutcome CreateSnapshot(const Model::CreateSnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateSnapshotOutcomeCallable CreateSnapshotCallable(const Model::CreateSnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateSnapshotAsync(const Model::CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Initiates a snapshot of a gateway from a volume recovery point. This
@@ -492,15 +409,6 @@ namespace StorageGateway
          */
         virtual Model::CreateSnapshotFromVolumeRecoveryPointOutcome CreateSnapshotFromVolumeRecoveryPoint(const Model::CreateSnapshotFromVolumeRecoveryPointRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateSnapshotFromVolumeRecoveryPoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateSnapshotFromVolumeRecoveryPointOutcomeCallable CreateSnapshotFromVolumeRecoveryPointCallable(const Model::CreateSnapshotFromVolumeRecoveryPointRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateSnapshotFromVolumeRecoveryPoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateSnapshotFromVolumeRecoveryPointAsync(const Model::CreateSnapshotFromVolumeRecoveryPointRequest& request, const CreateSnapshotFromVolumeRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a volume on a specified gateway. This operation is only supported in
@@ -518,15 +426,6 @@ namespace StorageGateway
          */
         virtual Model::CreateStorediSCSIVolumeOutcome CreateStorediSCSIVolume(const Model::CreateStorediSCSIVolumeRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateStorediSCSIVolume that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateStorediSCSIVolumeOutcomeCallable CreateStorediSCSIVolumeCallable(const Model::CreateStorediSCSIVolumeRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateStorediSCSIVolume that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateStorediSCSIVolumeAsync(const Model::CreateStorediSCSIVolumeRequest& request, const CreateStorediSCSIVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new custom tape pool. You can use custom tape pool to enable tape
@@ -537,15 +436,6 @@ namespace StorageGateway
          */
         virtual Model::CreateTapePoolOutcome CreateTapePool(const Model::CreateTapePoolRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateTapePool that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateTapePoolOutcomeCallable CreateTapePoolCallable(const Model::CreateTapePoolRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateTapePool that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateTapePoolAsync(const Model::CreateTapePoolRequest& request, const CreateTapePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a virtual tape by using your own barcode. You write data to the
@@ -560,15 +450,6 @@ namespace StorageGateway
          */
         virtual Model::CreateTapeWithBarcodeOutcome CreateTapeWithBarcode(const Model::CreateTapeWithBarcodeRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateTapeWithBarcode that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateTapeWithBarcodeOutcomeCallable CreateTapeWithBarcodeCallable(const Model::CreateTapeWithBarcodeRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateTapeWithBarcode that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateTapeWithBarcodeAsync(const Model::CreateTapeWithBarcodeRequest& request, const CreateTapeWithBarcodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates one or more virtual tapes. You write data to the virtual tapes and
@@ -581,15 +462,6 @@ namespace StorageGateway
          */
         virtual Model::CreateTapesOutcome CreateTapes(const Model::CreateTapesRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateTapes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateTapesOutcomeCallable CreateTapesCallable(const Model::CreateTapesRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateTapes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateTapesAsync(const Model::CreateTapesRequest& request, const CreateTapesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the automatic tape creation policy of a gateway. If you delete this
@@ -601,15 +473,6 @@ namespace StorageGateway
          */
         virtual Model::DeleteAutomaticTapeCreationPolicyOutcome DeleteAutomaticTapeCreationPolicy(const Model::DeleteAutomaticTapeCreationPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAutomaticTapeCreationPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAutomaticTapeCreationPolicyOutcomeCallable DeleteAutomaticTapeCreationPolicyCallable(const Model::DeleteAutomaticTapeCreationPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAutomaticTapeCreationPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAutomaticTapeCreationPolicyAsync(const Model::DeleteAutomaticTapeCreationPolicyRequest& request, const DeleteAutomaticTapeCreationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the bandwidth rate limits of a gateway. You can delete either the
@@ -623,15 +486,6 @@ namespace StorageGateway
          */
         virtual Model::DeleteBandwidthRateLimitOutcome DeleteBandwidthRateLimit(const Model::DeleteBandwidthRateLimitRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteBandwidthRateLimit that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteBandwidthRateLimitOutcomeCallable DeleteBandwidthRateLimitCallable(const Model::DeleteBandwidthRateLimitRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteBandwidthRateLimit that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteBandwidthRateLimitAsync(const Model::DeleteBandwidthRateLimitRequest& request, const DeleteBandwidthRateLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes Challenge-Handshake Authentication Protocol (CHAP) credentials for a
@@ -642,15 +496,6 @@ namespace StorageGateway
          */
         virtual Model::DeleteChapCredentialsOutcome DeleteChapCredentials(const Model::DeleteChapCredentialsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteChapCredentials that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteChapCredentialsOutcomeCallable DeleteChapCredentialsCallable(const Model::DeleteChapCredentialsRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteChapCredentials that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteChapCredentialsAsync(const Model::DeleteChapCredentialsRequest& request, const DeleteChapCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a file share from an S3 File Gateway. This operation is only
@@ -660,15 +505,6 @@ namespace StorageGateway
          */
         virtual Model::DeleteFileShareOutcome DeleteFileShare(const Model::DeleteFileShareRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteFileShare that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteFileShareOutcomeCallable DeleteFileShareCallable(const Model::DeleteFileShareRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteFileShare that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteFileShareAsync(const Model::DeleteFileShareRequest& request, const DeleteFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a gateway. To specify which gateway to delete, use the Amazon
@@ -691,15 +527,6 @@ namespace StorageGateway
          */
         virtual Model::DeleteGatewayOutcome DeleteGateway(const Model::DeleteGatewayRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteGateway that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteGatewayOutcomeCallable DeleteGatewayCallable(const Model::DeleteGatewayRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteGateway that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteGatewayAsync(const Model::DeleteGatewayRequest& request, const DeleteGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a snapshot of a volume.</p> <p>You can take snapshots of your gateway
@@ -719,15 +546,6 @@ namespace StorageGateway
          */
         virtual Model::DeleteSnapshotScheduleOutcome DeleteSnapshotSchedule(const Model::DeleteSnapshotScheduleRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteSnapshotSchedule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteSnapshotScheduleOutcomeCallable DeleteSnapshotScheduleCallable(const Model::DeleteSnapshotScheduleRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteSnapshotSchedule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteSnapshotScheduleAsync(const Model::DeleteSnapshotScheduleRequest& request, const DeleteSnapshotScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified virtual tape. This operation is only supported in the
@@ -737,15 +555,6 @@ namespace StorageGateway
          */
         virtual Model::DeleteTapeOutcome DeleteTape(const Model::DeleteTapeRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteTape that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteTapeOutcomeCallable DeleteTapeCallable(const Model::DeleteTapeRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteTape that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteTapeAsync(const Model::DeleteTapeRequest& request, const DeleteTapeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified virtual tape from the virtual tape shelf (VTS). This
@@ -756,15 +565,6 @@ namespace StorageGateway
          */
         virtual Model::DeleteTapeArchiveOutcome DeleteTapeArchive(const Model::DeleteTapeArchiveRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteTapeArchive that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteTapeArchiveOutcomeCallable DeleteTapeArchiveCallable(const Model::DeleteTapeArchiveRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteTapeArchive that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteTapeArchiveAsync(const Model::DeleteTapeArchiveRequest& request, const DeleteTapeArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Delete a custom tape pool. A custom tape pool can only be deleted if there
@@ -775,15 +575,6 @@ namespace StorageGateway
          */
         virtual Model::DeleteTapePoolOutcome DeleteTapePool(const Model::DeleteTapePoolRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteTapePool that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteTapePoolOutcomeCallable DeleteTapePoolCallable(const Model::DeleteTapePoolRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteTapePool that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteTapePoolAsync(const Model::DeleteTapePoolRequest& request, const DeleteTapePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified storage volume that you previously created using the
@@ -805,15 +596,6 @@ namespace StorageGateway
          */
         virtual Model::DeleteVolumeOutcome DeleteVolume(const Model::DeleteVolumeRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteVolume that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteVolumeOutcomeCallable DeleteVolumeCallable(const Model::DeleteVolumeRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteVolume that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteVolumeAsync(const Model::DeleteVolumeRequest& request, const DeleteVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the most recent high availability monitoring test
@@ -825,15 +607,6 @@ namespace StorageGateway
          */
         virtual Model::DescribeAvailabilityMonitorTestOutcome DescribeAvailabilityMonitorTest(const Model::DescribeAvailabilityMonitorTestRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAvailabilityMonitorTest that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAvailabilityMonitorTestOutcomeCallable DescribeAvailabilityMonitorTestCallable(const Model::DescribeAvailabilityMonitorTestRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAvailabilityMonitorTest that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAvailabilityMonitorTestAsync(const Model::DescribeAvailabilityMonitorTestRequest& request, const DescribeAvailabilityMonitorTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the bandwidth rate limits of a gateway. By default, these limits are
@@ -850,15 +623,6 @@ namespace StorageGateway
          */
         virtual Model::DescribeBandwidthRateLimitOutcome DescribeBandwidthRateLimit(const Model::DescribeBandwidthRateLimitRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeBandwidthRateLimit that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeBandwidthRateLimitOutcomeCallable DescribeBandwidthRateLimitCallable(const Model::DescribeBandwidthRateLimitRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeBandwidthRateLimit that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeBandwidthRateLimitAsync(const Model::DescribeBandwidthRateLimitRequest& request, const DescribeBandwidthRateLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns information about the bandwidth rate limit schedule of a gateway. By
@@ -881,15 +645,6 @@ namespace StorageGateway
          */
         virtual Model::DescribeBandwidthRateLimitScheduleOutcome DescribeBandwidthRateLimitSchedule(const Model::DescribeBandwidthRateLimitScheduleRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeBandwidthRateLimitSchedule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeBandwidthRateLimitScheduleOutcomeCallable DescribeBandwidthRateLimitScheduleCallable(const Model::DescribeBandwidthRateLimitScheduleRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeBandwidthRateLimitSchedule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeBandwidthRateLimitScheduleAsync(const Model::DescribeBandwidthRateLimitScheduleRequest& request, const DescribeBandwidthRateLimitScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the cache of a gateway. This operation is only
@@ -901,15 +656,6 @@ namespace StorageGateway
          */
         virtual Model::DescribeCacheOutcome DescribeCache(const Model::DescribeCacheRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeCache that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeCacheOutcomeCallable DescribeCacheCallable(const Model::DescribeCacheRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeCache that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeCacheAsync(const Model::DescribeCacheRequest& request, const DescribeCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a description of the gateway volumes specified in the request. This
@@ -922,15 +668,6 @@ namespace StorageGateway
          */
         virtual Model::DescribeCachediSCSIVolumesOutcome DescribeCachediSCSIVolumes(const Model::DescribeCachediSCSIVolumesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeCachediSCSIVolumes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeCachediSCSIVolumesOutcomeCallable DescribeCachediSCSIVolumesCallable(const Model::DescribeCachediSCSIVolumesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeCachediSCSIVolumes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeCachediSCSIVolumesAsync(const Model::DescribeCachediSCSIVolumesRequest& request, const DescribeCachediSCSIVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns an array of Challenge-Handshake Authentication Protocol (CHAP)
@@ -942,15 +679,6 @@ namespace StorageGateway
          */
         virtual Model::DescribeChapCredentialsOutcome DescribeChapCredentials(const Model::DescribeChapCredentialsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeChapCredentials that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeChapCredentialsOutcomeCallable DescribeChapCredentialsCallable(const Model::DescribeChapCredentialsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeChapCredentials that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeChapCredentialsAsync(const Model::DescribeChapCredentialsRequest& request, const DescribeChapCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the file system association information. This operation is only
@@ -960,15 +688,6 @@ namespace StorageGateway
          */
         virtual Model::DescribeFileSystemAssociationsOutcome DescribeFileSystemAssociations(const Model::DescribeFileSystemAssociationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeFileSystemAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeFileSystemAssociationsOutcomeCallable DescribeFileSystemAssociationsCallable(const Model::DescribeFileSystemAssociationsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeFileSystemAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeFileSystemAssociationsAsync(const Model::DescribeFileSystemAssociationsRequest& request, const DescribeFileSystemAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns metadata about a gateway such as its name, network interfaces,
@@ -980,15 +699,6 @@ namespace StorageGateway
          */
         virtual Model::DescribeGatewayInformationOutcome DescribeGatewayInformation(const Model::DescribeGatewayInformationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeGatewayInformation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeGatewayInformationOutcomeCallable DescribeGatewayInformationCallable(const Model::DescribeGatewayInformationRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeGatewayInformation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeGatewayInformationAsync(const Model::DescribeGatewayInformationRequest& request, const DescribeGatewayInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns your gateway's weekly maintenance start time including the day and
@@ -999,15 +709,6 @@ namespace StorageGateway
          */
         virtual Model::DescribeMaintenanceStartTimeOutcome DescribeMaintenanceStartTime(const Model::DescribeMaintenanceStartTimeRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeMaintenanceStartTime that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeMaintenanceStartTimeOutcomeCallable DescribeMaintenanceStartTimeCallable(const Model::DescribeMaintenanceStartTimeRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeMaintenanceStartTime that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeMaintenanceStartTimeAsync(const Model::DescribeMaintenanceStartTimeRequest& request, const DescribeMaintenanceStartTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a description for one or more Network File System (NFS) file shares from
@@ -1018,15 +719,6 @@ namespace StorageGateway
          */
         virtual Model::DescribeNFSFileSharesOutcome DescribeNFSFileShares(const Model::DescribeNFSFileSharesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeNFSFileShares that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeNFSFileSharesOutcomeCallable DescribeNFSFileSharesCallable(const Model::DescribeNFSFileSharesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeNFSFileShares that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeNFSFileSharesAsync(const Model::DescribeNFSFileSharesRequest& request, const DescribeNFSFileSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a description for one or more Server Message Block (SMB) file shares
@@ -1037,15 +729,6 @@ namespace StorageGateway
          */
         virtual Model::DescribeSMBFileSharesOutcome DescribeSMBFileShares(const Model::DescribeSMBFileSharesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeSMBFileShares that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeSMBFileSharesOutcomeCallable DescribeSMBFileSharesCallable(const Model::DescribeSMBFileSharesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeSMBFileShares that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeSMBFileSharesAsync(const Model::DescribeSMBFileSharesRequest& request, const DescribeSMBFileSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a description of a Server Message Block (SMB) file share settings from a
@@ -1056,15 +739,6 @@ namespace StorageGateway
          */
         virtual Model::DescribeSMBSettingsOutcome DescribeSMBSettings(const Model::DescribeSMBSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeSMBSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeSMBSettingsOutcomeCallable DescribeSMBSettingsCallable(const Model::DescribeSMBSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeSMBSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeSMBSettingsAsync(const Model::DescribeSMBSettingsRequest& request, const DescribeSMBSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the snapshot schedule for the specified gateway volume. The
@@ -1076,15 +750,6 @@ namespace StorageGateway
          */
         virtual Model::DescribeSnapshotScheduleOutcome DescribeSnapshotSchedule(const Model::DescribeSnapshotScheduleRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeSnapshotSchedule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeSnapshotScheduleOutcomeCallable DescribeSnapshotScheduleCallable(const Model::DescribeSnapshotScheduleRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeSnapshotSchedule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeSnapshotScheduleAsync(const Model::DescribeSnapshotScheduleRequest& request, const DescribeSnapshotScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the description of the gateway volumes specified in the request. The
@@ -1097,15 +762,6 @@ namespace StorageGateway
          */
         virtual Model::DescribeStorediSCSIVolumesOutcome DescribeStorediSCSIVolumes(const Model::DescribeStorediSCSIVolumesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeStorediSCSIVolumes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeStorediSCSIVolumesOutcomeCallable DescribeStorediSCSIVolumesCallable(const Model::DescribeStorediSCSIVolumesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeStorediSCSIVolumes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeStorediSCSIVolumesAsync(const Model::DescribeStorediSCSIVolumesRequest& request, const DescribeStorediSCSIVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a description of specified virtual tapes in the virtual tape shelf
@@ -1118,15 +774,6 @@ namespace StorageGateway
          */
         virtual Model::DescribeTapeArchivesOutcome DescribeTapeArchives(const Model::DescribeTapeArchivesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTapeArchives that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTapeArchivesOutcomeCallable DescribeTapeArchivesCallable(const Model::DescribeTapeArchivesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTapeArchives that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTapeArchivesAsync(const Model::DescribeTapeArchivesRequest& request, const DescribeTapeArchivesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of virtual tape recovery points that are available for the
@@ -1140,15 +787,6 @@ namespace StorageGateway
          */
         virtual Model::DescribeTapeRecoveryPointsOutcome DescribeTapeRecoveryPoints(const Model::DescribeTapeRecoveryPointsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTapeRecoveryPoints that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTapeRecoveryPointsOutcomeCallable DescribeTapeRecoveryPointsCallable(const Model::DescribeTapeRecoveryPointsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTapeRecoveryPoints that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTapeRecoveryPointsAsync(const Model::DescribeTapeRecoveryPointsRequest& request, const DescribeTapeRecoveryPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a description of the specified Amazon Resource Name (ARN) of virtual
@@ -1160,15 +798,6 @@ namespace StorageGateway
          */
         virtual Model::DescribeTapesOutcome DescribeTapes(const Model::DescribeTapesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTapes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTapesOutcomeCallable DescribeTapesCallable(const Model::DescribeTapesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTapes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTapesAsync(const Model::DescribeTapesRequest& request, const DescribeTapesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the upload buffer of a gateway. This operation is
@@ -1181,15 +810,6 @@ namespace StorageGateway
          */
         virtual Model::DescribeUploadBufferOutcome DescribeUploadBuffer(const Model::DescribeUploadBufferRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeUploadBuffer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeUploadBufferOutcomeCallable DescribeUploadBufferCallable(const Model::DescribeUploadBufferRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeUploadBuffer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeUploadBufferAsync(const Model::DescribeUploadBufferRequest& request, const DescribeUploadBufferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a description of virtual tape library (VTL) devices for the specified
@@ -1201,15 +821,6 @@ namespace StorageGateway
          */
         virtual Model::DescribeVTLDevicesOutcome DescribeVTLDevices(const Model::DescribeVTLDevicesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeVTLDevices that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeVTLDevicesOutcomeCallable DescribeVTLDevicesCallable(const Model::DescribeVTLDevicesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeVTLDevices that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeVTLDevicesAsync(const Model::DescribeVTLDevicesRequest& request, const DescribeVTLDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the working storage of a gateway. This operation is
@@ -1225,15 +836,6 @@ namespace StorageGateway
          */
         virtual Model::DescribeWorkingStorageOutcome DescribeWorkingStorage(const Model::DescribeWorkingStorageRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeWorkingStorage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeWorkingStorageOutcomeCallable DescribeWorkingStorageCallable(const Model::DescribeWorkingStorageRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeWorkingStorage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeWorkingStorageAsync(const Model::DescribeWorkingStorageRequest& request, const DescribeWorkingStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disconnects a volume from an iSCSI connection and then detaches the volume
@@ -1247,15 +849,6 @@ namespace StorageGateway
          */
         virtual Model::DetachVolumeOutcome DetachVolume(const Model::DetachVolumeRequest& request) const;
 
-        /**
-         * A Callable wrapper for DetachVolume that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DetachVolumeOutcomeCallable DetachVolumeCallable(const Model::DetachVolumeRequest& request) const;
-
-        /**
-         * An Async wrapper for DetachVolume that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DetachVolumeAsync(const Model::DetachVolumeRequest& request, const DetachVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disables a tape gateway when the gateway is no longer functioning. For
@@ -1269,15 +862,6 @@ namespace StorageGateway
          */
         virtual Model::DisableGatewayOutcome DisableGateway(const Model::DisableGatewayRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisableGateway that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisableGatewayOutcomeCallable DisableGatewayCallable(const Model::DisableGatewayRequest& request) const;
-
-        /**
-         * An Async wrapper for DisableGateway that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisableGatewayAsync(const Model::DisableGatewayRequest& request, const DisableGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates an Amazon FSx file system from the specified gateway. After the
@@ -1289,15 +873,6 @@ namespace StorageGateway
          */
         virtual Model::DisassociateFileSystemOutcome DisassociateFileSystem(const Model::DisassociateFileSystemRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateFileSystem that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateFileSystemOutcomeCallable DisassociateFileSystemCallable(const Model::DisassociateFileSystemRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateFileSystem that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateFileSystemAsync(const Model::DisassociateFileSystemRequest& request, const DisassociateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds a file gateway to an Active Directory domain. This operation is only
@@ -1308,15 +883,6 @@ namespace StorageGateway
          */
         virtual Model::JoinDomainOutcome JoinDomain(const Model::JoinDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for JoinDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::JoinDomainOutcomeCallable JoinDomainCallable(const Model::JoinDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for JoinDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void JoinDomainAsync(const Model::JoinDomainRequest& request, const JoinDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the automatic tape creation policies for a gateway. If there are no
@@ -1328,15 +894,6 @@ namespace StorageGateway
          */
         virtual Model::ListAutomaticTapeCreationPoliciesOutcome ListAutomaticTapeCreationPolicies(const Model::ListAutomaticTapeCreationPoliciesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAutomaticTapeCreationPolicies that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAutomaticTapeCreationPoliciesOutcomeCallable ListAutomaticTapeCreationPoliciesCallable(const Model::ListAutomaticTapeCreationPoliciesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAutomaticTapeCreationPolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAutomaticTapeCreationPoliciesAsync(const Model::ListAutomaticTapeCreationPoliciesRequest& request, const ListAutomaticTapeCreationPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of the file shares for a specific S3 File Gateway, or the list of
@@ -1347,15 +904,6 @@ namespace StorageGateway
          */
         virtual Model::ListFileSharesOutcome ListFileShares(const Model::ListFileSharesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListFileShares that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListFileSharesOutcomeCallable ListFileSharesCallable(const Model::ListFileSharesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListFileShares that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListFileSharesAsync(const Model::ListFileSharesRequest& request, const ListFileSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of <code>FileSystemAssociationSummary</code> objects. Each object
@@ -1366,15 +914,6 @@ namespace StorageGateway
          */
         virtual Model::ListFileSystemAssociationsOutcome ListFileSystemAssociations(const Model::ListFileSystemAssociationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListFileSystemAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListFileSystemAssociationsOutcomeCallable ListFileSystemAssociationsCallable(const Model::ListFileSystemAssociationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListFileSystemAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListFileSystemAssociationsAsync(const Model::ListFileSystemAssociationsRequest& request, const ListFileSystemAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists gateways owned by an Amazon Web Services account in an Amazon Web
@@ -1391,15 +930,6 @@ namespace StorageGateway
          */
         virtual Model::ListGatewaysOutcome ListGateways(const Model::ListGatewaysRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListGateways that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListGatewaysOutcomeCallable ListGatewaysCallable(const Model::ListGatewaysRequest& request) const;
-
-        /**
-         * An Async wrapper for ListGateways that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListGatewaysAsync(const Model::ListGatewaysRequest& request, const ListGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of the gateway's local disks. To specify which gateway to
@@ -1416,15 +946,6 @@ namespace StorageGateway
          */
         virtual Model::ListLocalDisksOutcome ListLocalDisks(const Model::ListLocalDisksRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListLocalDisks that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListLocalDisksOutcomeCallable ListLocalDisksCallable(const Model::ListLocalDisksRequest& request) const;
-
-        /**
-         * An Async wrapper for ListLocalDisks that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListLocalDisksAsync(const Model::ListLocalDisksRequest& request, const ListLocalDisksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the tags that have been added to the specified resource. This operation
@@ -1434,15 +955,6 @@ namespace StorageGateway
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists custom tape pools. You specify custom tape pools to list by specifying
@@ -1458,15 +970,6 @@ namespace StorageGateway
          */
         virtual Model::ListTapePoolsOutcome ListTapePools(const Model::ListTapePoolsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTapePools that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTapePoolsOutcomeCallable ListTapePoolsCallable(const Model::ListTapePoolsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTapePools that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTapePoolsAsync(const Model::ListTapePoolsRequest& request, const ListTapePoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists virtual tapes in your virtual tape library (VTL) and your virtual tape
@@ -1484,15 +987,6 @@ namespace StorageGateway
          */
         virtual Model::ListTapesOutcome ListTapes(const Model::ListTapesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTapes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTapesOutcomeCallable ListTapesCallable(const Model::ListTapesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTapes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTapesAsync(const Model::ListTapesRequest& request, const ListTapesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists iSCSI initiators that are connected to a volume. You can use this
@@ -1504,15 +998,6 @@ namespace StorageGateway
          */
         virtual Model::ListVolumeInitiatorsOutcome ListVolumeInitiators(const Model::ListVolumeInitiatorsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListVolumeInitiators that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListVolumeInitiatorsOutcomeCallable ListVolumeInitiatorsCallable(const Model::ListVolumeInitiatorsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListVolumeInitiators that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListVolumeInitiatorsAsync(const Model::ListVolumeInitiatorsRequest& request, const ListVolumeInitiatorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the recovery points for a specified gateway. This operation is only
@@ -1527,15 +1012,6 @@ namespace StorageGateway
          */
         virtual Model::ListVolumeRecoveryPointsOutcome ListVolumeRecoveryPoints(const Model::ListVolumeRecoveryPointsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListVolumeRecoveryPoints that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListVolumeRecoveryPointsOutcomeCallable ListVolumeRecoveryPointsCallable(const Model::ListVolumeRecoveryPointsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListVolumeRecoveryPoints that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListVolumeRecoveryPointsAsync(const Model::ListVolumeRecoveryPointsRequest& request, const ListVolumeRecoveryPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the iSCSI stored volumes of a gateway. Results are sorted by volume
@@ -1554,15 +1030,6 @@ namespace StorageGateway
          */
         virtual Model::ListVolumesOutcome ListVolumes(const Model::ListVolumesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListVolumes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListVolumesOutcomeCallable ListVolumesCallable(const Model::ListVolumesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListVolumes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListVolumesAsync(const Model::ListVolumesRequest& request, const ListVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sends you notification through CloudWatch Events when all files written to
@@ -1583,15 +1050,6 @@ namespace StorageGateway
          */
         virtual Model::NotifyWhenUploadedOutcome NotifyWhenUploaded(const Model::NotifyWhenUploadedRequest& request) const;
 
-        /**
-         * A Callable wrapper for NotifyWhenUploaded that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::NotifyWhenUploadedOutcomeCallable NotifyWhenUploadedCallable(const Model::NotifyWhenUploadedRequest& request) const;
-
-        /**
-         * An Async wrapper for NotifyWhenUploaded that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void NotifyWhenUploadedAsync(const Model::NotifyWhenUploadedRequest& request, const NotifyWhenUploadedResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Refreshes the cached inventory of objects for the specified file share. This
@@ -1634,15 +1092,6 @@ namespace StorageGateway
          */
         virtual Model::RefreshCacheOutcome RefreshCache(const Model::RefreshCacheRequest& request) const;
 
-        /**
-         * A Callable wrapper for RefreshCache that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RefreshCacheOutcomeCallable RefreshCacheCallable(const Model::RefreshCacheRequest& request) const;
-
-        /**
-         * An Async wrapper for RefreshCache that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RefreshCacheAsync(const Model::RefreshCacheRequest& request, const RefreshCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes one or more tags from the specified resource. This operation is
@@ -1652,15 +1101,6 @@ namespace StorageGateway
          */
         virtual Model::RemoveTagsFromResourceOutcome RemoveTagsFromResource(const Model::RemoveTagsFromResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for RemoveTagsFromResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RemoveTagsFromResourceOutcomeCallable RemoveTagsFromResourceCallable(const Model::RemoveTagsFromResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for RemoveTagsFromResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RemoveTagsFromResourceAsync(const Model::RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Resets all cache disks that have encountered an error and makes the disks
@@ -1680,15 +1120,6 @@ namespace StorageGateway
          */
         virtual Model::ResetCacheOutcome ResetCache(const Model::ResetCacheRequest& request) const;
 
-        /**
-         * A Callable wrapper for ResetCache that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ResetCacheOutcomeCallable ResetCacheCallable(const Model::ResetCacheRequest& request) const;
-
-        /**
-         * An Async wrapper for ResetCache that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ResetCacheAsync(const Model::ResetCacheRequest& request, const ResetCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves an archived virtual tape from the virtual tape shelf (VTS) to a
@@ -1705,15 +1136,6 @@ namespace StorageGateway
          */
         virtual Model::RetrieveTapeArchiveOutcome RetrieveTapeArchive(const Model::RetrieveTapeArchiveRequest& request) const;
 
-        /**
-         * A Callable wrapper for RetrieveTapeArchive that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RetrieveTapeArchiveOutcomeCallable RetrieveTapeArchiveCallable(const Model::RetrieveTapeArchiveRequest& request) const;
-
-        /**
-         * An Async wrapper for RetrieveTapeArchive that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RetrieveTapeArchiveAsync(const Model::RetrieveTapeArchiveRequest& request, const RetrieveTapeArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the recovery point for the specified virtual tape. This operation
@@ -1729,15 +1151,6 @@ namespace StorageGateway
          */
         virtual Model::RetrieveTapeRecoveryPointOutcome RetrieveTapeRecoveryPoint(const Model::RetrieveTapeRecoveryPointRequest& request) const;
 
-        /**
-         * A Callable wrapper for RetrieveTapeRecoveryPoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RetrieveTapeRecoveryPointOutcomeCallable RetrieveTapeRecoveryPointCallable(const Model::RetrieveTapeRecoveryPointRequest& request) const;
-
-        /**
-         * An Async wrapper for RetrieveTapeRecoveryPoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RetrieveTapeRecoveryPointAsync(const Model::RetrieveTapeRecoveryPointRequest& request, const RetrieveTapeRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets the password for your VM local console. When you log in to the local
@@ -1749,15 +1162,6 @@ namespace StorageGateway
          */
         virtual Model::SetLocalConsolePasswordOutcome SetLocalConsolePassword(const Model::SetLocalConsolePasswordRequest& request) const;
 
-        /**
-         * A Callable wrapper for SetLocalConsolePassword that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SetLocalConsolePasswordOutcomeCallable SetLocalConsolePasswordCallable(const Model::SetLocalConsolePasswordRequest& request) const;
-
-        /**
-         * An Async wrapper for SetLocalConsolePassword that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SetLocalConsolePasswordAsync(const Model::SetLocalConsolePasswordRequest& request, const SetLocalConsolePasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets the password for the guest user <code>smbguest</code>. The
@@ -1769,15 +1173,6 @@ namespace StorageGateway
          */
         virtual Model::SetSMBGuestPasswordOutcome SetSMBGuestPassword(const Model::SetSMBGuestPasswordRequest& request) const;
 
-        /**
-         * A Callable wrapper for SetSMBGuestPassword that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SetSMBGuestPasswordOutcomeCallable SetSMBGuestPasswordCallable(const Model::SetSMBGuestPasswordRequest& request) const;
-
-        /**
-         * An Async wrapper for SetSMBGuestPassword that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SetSMBGuestPasswordAsync(const Model::SetSMBGuestPasswordRequest& request, const SetSMBGuestPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Shuts down a gateway. To specify which gateway to shut down, use the Amazon
@@ -1802,15 +1197,6 @@ namespace StorageGateway
          */
         virtual Model::ShutdownGatewayOutcome ShutdownGateway(const Model::ShutdownGatewayRequest& request) const;
 
-        /**
-         * A Callable wrapper for ShutdownGateway that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ShutdownGatewayOutcomeCallable ShutdownGatewayCallable(const Model::ShutdownGatewayRequest& request) const;
-
-        /**
-         * An Async wrapper for ShutdownGateway that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ShutdownGatewayAsync(const Model::ShutdownGatewayRequest& request, const ShutdownGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Start a test that verifies that the specified gateway is configured for High
@@ -1825,15 +1211,6 @@ namespace StorageGateway
          */
         virtual Model::StartAvailabilityMonitorTestOutcome StartAvailabilityMonitorTest(const Model::StartAvailabilityMonitorTestRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartAvailabilityMonitorTest that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartAvailabilityMonitorTestOutcomeCallable StartAvailabilityMonitorTestCallable(const Model::StartAvailabilityMonitorTestRequest& request) const;
-
-        /**
-         * An Async wrapper for StartAvailabilityMonitorTest that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartAvailabilityMonitorTestAsync(const Model::StartAvailabilityMonitorTestRequest& request, const StartAvailabilityMonitorTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts a gateway that you previously shut down (see <a>ShutdownGateway</a>).
@@ -1851,15 +1228,6 @@ namespace StorageGateway
          */
         virtual Model::StartGatewayOutcome StartGateway(const Model::StartGatewayRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartGateway that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartGatewayOutcomeCallable StartGatewayCallable(const Model::StartGatewayRequest& request) const;
-
-        /**
-         * An Async wrapper for StartGateway that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartGatewayAsync(const Model::StartGatewayRequest& request, const StartGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the automatic tape creation policy of a gateway. Use this to update
@@ -1872,15 +1240,6 @@ namespace StorageGateway
          */
         virtual Model::UpdateAutomaticTapeCreationPolicyOutcome UpdateAutomaticTapeCreationPolicy(const Model::UpdateAutomaticTapeCreationPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateAutomaticTapeCreationPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateAutomaticTapeCreationPolicyOutcomeCallable UpdateAutomaticTapeCreationPolicyCallable(const Model::UpdateAutomaticTapeCreationPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateAutomaticTapeCreationPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateAutomaticTapeCreationPolicyAsync(const Model::UpdateAutomaticTapeCreationPolicyRequest& request, const UpdateAutomaticTapeCreationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the bandwidth rate limits of a gateway. You can update both the
@@ -1899,15 +1258,6 @@ namespace StorageGateway
          */
         virtual Model::UpdateBandwidthRateLimitOutcome UpdateBandwidthRateLimit(const Model::UpdateBandwidthRateLimitRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateBandwidthRateLimit that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateBandwidthRateLimitOutcomeCallable UpdateBandwidthRateLimitCallable(const Model::UpdateBandwidthRateLimitRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateBandwidthRateLimit that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateBandwidthRateLimitAsync(const Model::UpdateBandwidthRateLimitRequest& request, const UpdateBandwidthRateLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Updates the bandwidth rate limit schedule for a specified gateway. By
@@ -1921,15 +1271,6 @@ namespace StorageGateway
          */
         virtual Model::UpdateBandwidthRateLimitScheduleOutcome UpdateBandwidthRateLimitSchedule(const Model::UpdateBandwidthRateLimitScheduleRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateBandwidthRateLimitSchedule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateBandwidthRateLimitScheduleOutcomeCallable UpdateBandwidthRateLimitScheduleCallable(const Model::UpdateBandwidthRateLimitScheduleRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateBandwidthRateLimitSchedule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateBandwidthRateLimitScheduleAsync(const Model::UpdateBandwidthRateLimitScheduleRequest& request, const UpdateBandwidthRateLimitScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the Challenge-Handshake Authentication Protocol (CHAP) credentials
@@ -1944,15 +1285,6 @@ namespace StorageGateway
          */
         virtual Model::UpdateChapCredentialsOutcome UpdateChapCredentials(const Model::UpdateChapCredentialsRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateChapCredentials that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateChapCredentialsOutcomeCallable UpdateChapCredentialsCallable(const Model::UpdateChapCredentialsRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateChapCredentials that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateChapCredentialsAsync(const Model::UpdateChapCredentialsRequest& request, const UpdateChapCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a file system association. This operation is only supported in the
@@ -1962,15 +1294,6 @@ namespace StorageGateway
          */
         virtual Model::UpdateFileSystemAssociationOutcome UpdateFileSystemAssociation(const Model::UpdateFileSystemAssociationRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateFileSystemAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateFileSystemAssociationOutcomeCallable UpdateFileSystemAssociationCallable(const Model::UpdateFileSystemAssociationRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateFileSystemAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateFileSystemAssociationAsync(const Model::UpdateFileSystemAssociationRequest& request, const UpdateFileSystemAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a gateway's metadata, which includes the gateway's name and time
@@ -1984,15 +1307,6 @@ namespace StorageGateway
          */
         virtual Model::UpdateGatewayInformationOutcome UpdateGatewayInformation(const Model::UpdateGatewayInformationRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateGatewayInformation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateGatewayInformationOutcomeCallable UpdateGatewayInformationCallable(const Model::UpdateGatewayInformationRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateGatewayInformation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateGatewayInformationAsync(const Model::UpdateGatewayInformationRequest& request, const UpdateGatewayInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the gateway virtual machine (VM) software. The request immediately
@@ -2014,15 +1328,6 @@ namespace StorageGateway
          */
         virtual Model::UpdateGatewaySoftwareNowOutcome UpdateGatewaySoftwareNow(const Model::UpdateGatewaySoftwareNowRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateGatewaySoftwareNow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateGatewaySoftwareNowOutcomeCallable UpdateGatewaySoftwareNowCallable(const Model::UpdateGatewaySoftwareNowRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateGatewaySoftwareNow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateGatewaySoftwareNowAsync(const Model::UpdateGatewaySoftwareNowRequest& request, const UpdateGatewaySoftwareNowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a gateway's weekly maintenance start time information, including day
@@ -2033,15 +1338,6 @@ namespace StorageGateway
          */
         virtual Model::UpdateMaintenanceStartTimeOutcome UpdateMaintenanceStartTime(const Model::UpdateMaintenanceStartTimeRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateMaintenanceStartTime that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateMaintenanceStartTimeOutcomeCallable UpdateMaintenanceStartTimeCallable(const Model::UpdateMaintenanceStartTimeRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateMaintenanceStartTime that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateMaintenanceStartTimeAsync(const Model::UpdateMaintenanceStartTimeRequest& request, const UpdateMaintenanceStartTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a Network File System (NFS) file share. This operation is only
@@ -2057,15 +1353,6 @@ namespace StorageGateway
          */
         virtual Model::UpdateNFSFileShareOutcome UpdateNFSFileShare(const Model::UpdateNFSFileShareRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateNFSFileShare that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateNFSFileShareOutcomeCallable UpdateNFSFileShareCallable(const Model::UpdateNFSFileShareRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateNFSFileShare that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateNFSFileShareAsync(const Model::UpdateNFSFileShareRequest& request, const UpdateNFSFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a Server Message Block (SMB) file share. This operation is only
@@ -2087,15 +1374,6 @@ namespace StorageGateway
          */
         virtual Model::UpdateSMBFileShareOutcome UpdateSMBFileShare(const Model::UpdateSMBFileShareRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateSMBFileShare that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateSMBFileShareOutcomeCallable UpdateSMBFileShareCallable(const Model::UpdateSMBFileShareRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateSMBFileShare that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateSMBFileShareAsync(const Model::UpdateSMBFileShareRequest& request, const UpdateSMBFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Controls whether the shares on an S3 File Gateway are visible in a net view
@@ -2106,15 +1384,6 @@ namespace StorageGateway
          */
         virtual Model::UpdateSMBFileShareVisibilityOutcome UpdateSMBFileShareVisibility(const Model::UpdateSMBFileShareVisibilityRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateSMBFileShareVisibility that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateSMBFileShareVisibilityOutcomeCallable UpdateSMBFileShareVisibilityCallable(const Model::UpdateSMBFileShareVisibilityRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateSMBFileShareVisibility that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateSMBFileShareVisibilityAsync(const Model::UpdateSMBFileShareVisibilityRequest& request, const UpdateSMBFileShareVisibilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the list of Active Directory users and groups that have special
@@ -2124,15 +1393,6 @@ namespace StorageGateway
          */
         virtual Model::UpdateSMBLocalGroupsOutcome UpdateSMBLocalGroups(const Model::UpdateSMBLocalGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateSMBLocalGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateSMBLocalGroupsOutcomeCallable UpdateSMBLocalGroupsCallable(const Model::UpdateSMBLocalGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateSMBLocalGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateSMBLocalGroupsAsync(const Model::UpdateSMBLocalGroupsRequest& request, const UpdateSMBLocalGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the SMB security strategy on a file gateway. This action is only
@@ -2144,15 +1404,6 @@ namespace StorageGateway
          */
         virtual Model::UpdateSMBSecurityStrategyOutcome UpdateSMBSecurityStrategy(const Model::UpdateSMBSecurityStrategyRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateSMBSecurityStrategy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateSMBSecurityStrategyOutcomeCallable UpdateSMBSecurityStrategyCallable(const Model::UpdateSMBSecurityStrategyRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateSMBSecurityStrategy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateSMBSecurityStrategyAsync(const Model::UpdateSMBSecurityStrategyRequest& request, const UpdateSMBSecurityStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a snapshot schedule configured for a gateway volume. This operation
@@ -2168,15 +1419,6 @@ namespace StorageGateway
          */
         virtual Model::UpdateSnapshotScheduleOutcome UpdateSnapshotSchedule(const Model::UpdateSnapshotScheduleRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateSnapshotSchedule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateSnapshotScheduleOutcomeCallable UpdateSnapshotScheduleCallable(const Model::UpdateSnapshotScheduleRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateSnapshotSchedule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateSnapshotScheduleAsync(const Model::UpdateSnapshotScheduleRequest& request, const UpdateSnapshotScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the type of medium changer in a tape gateway. When you activate a
@@ -2189,15 +1431,6 @@ namespace StorageGateway
          */
         virtual Model::UpdateVTLDeviceTypeOutcome UpdateVTLDeviceType(const Model::UpdateVTLDeviceTypeRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateVTLDeviceType that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateVTLDeviceTypeOutcomeCallable UpdateVTLDeviceTypeCallable(const Model::UpdateVTLDeviceTypeRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateVTLDeviceType that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateVTLDeviceTypeAsync(const Model::UpdateVTLDeviceTypeRequest& request, const UpdateVTLDeviceTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

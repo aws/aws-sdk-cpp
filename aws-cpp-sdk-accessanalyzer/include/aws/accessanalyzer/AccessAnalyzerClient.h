@@ -7,8 +7,10 @@
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/accessanalyzer/AccessAnalyzerServiceClientModel.h>
+#include <aws/accessanalyzer/AccessAnalyzerLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -86,6 +88,47 @@ namespace AccessAnalyzer
         virtual ~AccessAnalyzerClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Retroactively applies the archive rule to existing findings that meet the
          * archive rule criteria.</p><p><h3>See Also:</h3>   <a
@@ -94,15 +137,6 @@ namespace AccessAnalyzer
          */
         virtual Model::ApplyArchiveRuleOutcome ApplyArchiveRule(const Model::ApplyArchiveRuleRequest& request) const;
 
-        /**
-         * A Callable wrapper for ApplyArchiveRule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ApplyArchiveRuleOutcomeCallable ApplyArchiveRuleCallable(const Model::ApplyArchiveRuleRequest& request) const;
-
-        /**
-         * An Async wrapper for ApplyArchiveRule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ApplyArchiveRuleAsync(const Model::ApplyArchiveRuleRequest& request, const ApplyArchiveRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Cancels the requested policy generation.</p><p><h3>See Also:</h3>   <a
@@ -111,15 +145,6 @@ namespace AccessAnalyzer
          */
         virtual Model::CancelPolicyGenerationOutcome CancelPolicyGeneration(const Model::CancelPolicyGenerationRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelPolicyGeneration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelPolicyGenerationOutcomeCallable CancelPolicyGenerationCallable(const Model::CancelPolicyGenerationRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelPolicyGeneration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelPolicyGenerationAsync(const Model::CancelPolicyGenerationRequest& request, const CancelPolicyGenerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an access preview that allows you to preview IAM Access Analyzer
@@ -130,15 +155,6 @@ namespace AccessAnalyzer
          */
         virtual Model::CreateAccessPreviewOutcome CreateAccessPreview(const Model::CreateAccessPreviewRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateAccessPreview that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateAccessPreviewOutcomeCallable CreateAccessPreviewCallable(const Model::CreateAccessPreviewRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateAccessPreview that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateAccessPreviewAsync(const Model::CreateAccessPreviewRequest& request, const CreateAccessPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an analyzer for your account.</p><p><h3>See Also:</h3>   <a
@@ -147,15 +163,6 @@ namespace AccessAnalyzer
          */
         virtual Model::CreateAnalyzerOutcome CreateAnalyzer(const Model::CreateAnalyzerRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateAnalyzer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateAnalyzerOutcomeCallable CreateAnalyzerCallable(const Model::CreateAnalyzerRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateAnalyzer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateAnalyzerAsync(const Model::CreateAnalyzerRequest& request, const CreateAnalyzerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an archive rule for the specified analyzer. Archive rules
@@ -170,15 +177,6 @@ namespace AccessAnalyzer
          */
         virtual Model::CreateArchiveRuleOutcome CreateArchiveRule(const Model::CreateArchiveRuleRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateArchiveRule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateArchiveRuleOutcomeCallable CreateArchiveRuleCallable(const Model::CreateArchiveRuleRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateArchiveRule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateArchiveRuleAsync(const Model::CreateArchiveRuleRequest& request, const CreateArchiveRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified analyzer. When you delete an analyzer, IAM Access
@@ -190,15 +188,6 @@ namespace AccessAnalyzer
          */
         virtual Model::DeleteAnalyzerOutcome DeleteAnalyzer(const Model::DeleteAnalyzerRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAnalyzer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAnalyzerOutcomeCallable DeleteAnalyzerCallable(const Model::DeleteAnalyzerRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAnalyzer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAnalyzerAsync(const Model::DeleteAnalyzerRequest& request, const DeleteAnalyzerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified archive rule.</p><p><h3>See Also:</h3>   <a
@@ -207,15 +196,6 @@ namespace AccessAnalyzer
          */
         virtual Model::DeleteArchiveRuleOutcome DeleteArchiveRule(const Model::DeleteArchiveRuleRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteArchiveRule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteArchiveRuleOutcomeCallable DeleteArchiveRuleCallable(const Model::DeleteArchiveRuleRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteArchiveRule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteArchiveRuleAsync(const Model::DeleteArchiveRuleRequest& request, const DeleteArchiveRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about an access preview for the specified
@@ -225,15 +205,6 @@ namespace AccessAnalyzer
          */
         virtual Model::GetAccessPreviewOutcome GetAccessPreview(const Model::GetAccessPreviewRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAccessPreview that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAccessPreviewOutcomeCallable GetAccessPreviewCallable(const Model::GetAccessPreviewRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAccessPreview that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAccessPreviewAsync(const Model::GetAccessPreviewRequest& request, const GetAccessPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about a resource that was analyzed.</p><p><h3>See
@@ -243,15 +214,6 @@ namespace AccessAnalyzer
          */
         virtual Model::GetAnalyzedResourceOutcome GetAnalyzedResource(const Model::GetAnalyzedResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAnalyzedResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAnalyzedResourceOutcomeCallable GetAnalyzedResourceCallable(const Model::GetAnalyzedResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAnalyzedResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAnalyzedResourceAsync(const Model::GetAnalyzedResourceRequest& request, const GetAnalyzedResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about the specified analyzer.</p><p><h3>See Also:</h3> 
@@ -261,15 +223,6 @@ namespace AccessAnalyzer
          */
         virtual Model::GetAnalyzerOutcome GetAnalyzer(const Model::GetAnalyzerRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAnalyzer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAnalyzerOutcomeCallable GetAnalyzerCallable(const Model::GetAnalyzerRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAnalyzer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAnalyzerAsync(const Model::GetAnalyzerRequest& request, const GetAnalyzerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about an archive rule.</p> <p>To learn about filter
@@ -282,15 +235,6 @@ namespace AccessAnalyzer
          */
         virtual Model::GetArchiveRuleOutcome GetArchiveRule(const Model::GetArchiveRuleRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetArchiveRule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetArchiveRuleOutcomeCallable GetArchiveRuleCallable(const Model::GetArchiveRuleRequest& request) const;
-
-        /**
-         * An Async wrapper for GetArchiveRule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetArchiveRuleAsync(const Model::GetArchiveRuleRequest& request, const GetArchiveRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about the specified finding.</p><p><h3>See Also:</h3>  
@@ -300,15 +244,6 @@ namespace AccessAnalyzer
          */
         virtual Model::GetFindingOutcome GetFinding(const Model::GetFindingRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetFinding that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetFindingOutcomeCallable GetFindingCallable(const Model::GetFindingRequest& request) const;
-
-        /**
-         * An Async wrapper for GetFinding that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetFindingAsync(const Model::GetFindingRequest& request, const GetFindingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the policy that was generated using
@@ -318,15 +253,6 @@ namespace AccessAnalyzer
          */
         virtual Model::GetGeneratedPolicyOutcome GetGeneratedPolicy(const Model::GetGeneratedPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetGeneratedPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetGeneratedPolicyOutcomeCallable GetGeneratedPolicyCallable(const Model::GetGeneratedPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetGeneratedPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetGeneratedPolicyAsync(const Model::GetGeneratedPolicyRequest& request, const GetGeneratedPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list of access preview findings generated by the specified access
@@ -336,15 +262,6 @@ namespace AccessAnalyzer
          */
         virtual Model::ListAccessPreviewFindingsOutcome ListAccessPreviewFindings(const Model::ListAccessPreviewFindingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAccessPreviewFindings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAccessPreviewFindingsOutcomeCallable ListAccessPreviewFindingsCallable(const Model::ListAccessPreviewFindingsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAccessPreviewFindings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAccessPreviewFindingsAsync(const Model::ListAccessPreviewFindingsRequest& request, const ListAccessPreviewFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list of access previews for the specified analyzer.</p><p><h3>See
@@ -354,15 +271,6 @@ namespace AccessAnalyzer
          */
         virtual Model::ListAccessPreviewsOutcome ListAccessPreviews(const Model::ListAccessPreviewsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAccessPreviews that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAccessPreviewsOutcomeCallable ListAccessPreviewsCallable(const Model::ListAccessPreviewsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAccessPreviews that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAccessPreviewsAsync(const Model::ListAccessPreviewsRequest& request, const ListAccessPreviewsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list of resources of the specified type that have been analyzed
@@ -372,15 +280,6 @@ namespace AccessAnalyzer
          */
         virtual Model::ListAnalyzedResourcesOutcome ListAnalyzedResources(const Model::ListAnalyzedResourcesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAnalyzedResources that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAnalyzedResourcesOutcomeCallable ListAnalyzedResourcesCallable(const Model::ListAnalyzedResourcesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAnalyzedResources that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAnalyzedResourcesAsync(const Model::ListAnalyzedResourcesRequest& request, const ListAnalyzedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list of analyzers.</p><p><h3>See Also:</h3>   <a
@@ -389,15 +288,6 @@ namespace AccessAnalyzer
          */
         virtual Model::ListAnalyzersOutcome ListAnalyzers(const Model::ListAnalyzersRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAnalyzers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAnalyzersOutcomeCallable ListAnalyzersCallable(const Model::ListAnalyzersRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAnalyzers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAnalyzersAsync(const Model::ListAnalyzersRequest& request, const ListAnalyzersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list of archive rules created for the specified
@@ -407,15 +297,6 @@ namespace AccessAnalyzer
          */
         virtual Model::ListArchiveRulesOutcome ListArchiveRules(const Model::ListArchiveRulesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListArchiveRules that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListArchiveRulesOutcomeCallable ListArchiveRulesCallable(const Model::ListArchiveRulesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListArchiveRules that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListArchiveRulesAsync(const Model::ListArchiveRulesRequest& request, const ListArchiveRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list of findings generated by the specified analyzer.</p> <p>To
@@ -428,15 +309,6 @@ namespace AccessAnalyzer
          */
         virtual Model::ListFindingsOutcome ListFindings(const Model::ListFindingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListFindings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListFindingsOutcomeCallable ListFindingsCallable(const Model::ListFindingsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListFindings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListFindingsAsync(const Model::ListFindingsRequest& request, const ListFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all of the policy generations requested in the last seven
@@ -446,15 +318,6 @@ namespace AccessAnalyzer
          */
         virtual Model::ListPolicyGenerationsOutcome ListPolicyGenerations(const Model::ListPolicyGenerationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPolicyGenerations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPolicyGenerationsOutcomeCallable ListPolicyGenerationsCallable(const Model::ListPolicyGenerationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPolicyGenerations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPolicyGenerationsAsync(const Model::ListPolicyGenerationsRequest& request, const ListPolicyGenerationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list of tags applied to the specified resource.</p><p><h3>See
@@ -464,15 +327,6 @@ namespace AccessAnalyzer
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts the policy generation request.</p><p><h3>See Also:</h3>   <a
@@ -481,15 +335,6 @@ namespace AccessAnalyzer
          */
         virtual Model::StartPolicyGenerationOutcome StartPolicyGeneration(const Model::StartPolicyGenerationRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartPolicyGeneration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartPolicyGenerationOutcomeCallable StartPolicyGenerationCallable(const Model::StartPolicyGenerationRequest& request) const;
-
-        /**
-         * An Async wrapper for StartPolicyGeneration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartPolicyGenerationAsync(const Model::StartPolicyGenerationRequest& request, const StartPolicyGenerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Immediately starts a scan of the policies applied to the specified
@@ -499,15 +344,6 @@ namespace AccessAnalyzer
          */
         virtual Model::StartResourceScanOutcome StartResourceScan(const Model::StartResourceScanRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartResourceScan that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartResourceScanOutcomeCallable StartResourceScanCallable(const Model::StartResourceScanRequest& request) const;
-
-        /**
-         * An Async wrapper for StartResourceScan that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartResourceScanAsync(const Model::StartResourceScanRequest& request, const StartResourceScanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds a tag to the specified resource.</p><p><h3>See Also:</h3>   <a
@@ -516,15 +352,6 @@ namespace AccessAnalyzer
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes a tag from the specified resource.</p><p><h3>See Also:</h3>   <a
@@ -533,15 +360,6 @@ namespace AccessAnalyzer
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the criteria and values for the specified archive rule.</p><p><h3>See
@@ -551,15 +369,6 @@ namespace AccessAnalyzer
          */
         virtual Model::UpdateArchiveRuleOutcome UpdateArchiveRule(const Model::UpdateArchiveRuleRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateArchiveRule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateArchiveRuleOutcomeCallable UpdateArchiveRuleCallable(const Model::UpdateArchiveRuleRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateArchiveRule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateArchiveRuleAsync(const Model::UpdateArchiveRuleRequest& request, const UpdateArchiveRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the status for the specified findings.</p><p><h3>See Also:</h3>   <a
@@ -568,15 +377,6 @@ namespace AccessAnalyzer
          */
         virtual Model::UpdateFindingsOutcome UpdateFindings(const Model::UpdateFindingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateFindings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateFindingsOutcomeCallable UpdateFindingsCallable(const Model::UpdateFindingsRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateFindings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateFindingsAsync(const Model::UpdateFindingsRequest& request, const UpdateFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Requests the validation of a policy and returns a list of findings. The
@@ -588,15 +388,6 @@ namespace AccessAnalyzer
          */
         virtual Model::ValidatePolicyOutcome ValidatePolicy(const Model::ValidatePolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for ValidatePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ValidatePolicyOutcomeCallable ValidatePolicyCallable(const Model::ValidatePolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for ValidatePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ValidatePolicyAsync(const Model::ValidatePolicyRequest& request, const ValidatePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

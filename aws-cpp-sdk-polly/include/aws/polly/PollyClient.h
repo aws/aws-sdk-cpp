@@ -7,8 +7,10 @@
 #include <aws/polly/Polly_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/polly/PollyServiceClientModel.h>
+#include <aws/polly/PollyLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -77,6 +79,47 @@ namespace Polly
         virtual ~PollyClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Deletes the specified pronunciation lexicon stored in an Amazon Web Services
          * Region. A lexicon which has been deleted is not available for speech synthesis,
@@ -89,15 +132,6 @@ namespace Polly
          */
         virtual Model::DeleteLexiconOutcome DeleteLexicon(const Model::DeleteLexiconRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteLexicon that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteLexiconOutcomeCallable DeleteLexiconCallable(const Model::DeleteLexiconRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteLexicon that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteLexiconAsync(const Model::DeleteLexiconRequest& request, const DeleteLexiconResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the list of voices that are available for use when requesting speech
@@ -118,15 +152,6 @@ namespace Polly
          */
         virtual Model::DescribeVoicesOutcome DescribeVoices(const Model::DescribeVoicesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeVoices that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeVoicesOutcomeCallable DescribeVoicesCallable(const Model::DescribeVoicesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeVoices that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeVoicesAsync(const Model::DescribeVoicesRequest& request, const DescribeVoicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the content of the specified pronunciation lexicon stored in an
@@ -138,15 +163,6 @@ namespace Polly
          */
         virtual Model::GetLexiconOutcome GetLexicon(const Model::GetLexiconRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetLexicon that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetLexiconOutcomeCallable GetLexiconCallable(const Model::GetLexiconRequest& request) const;
-
-        /**
-         * An Async wrapper for GetLexicon that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetLexiconAsync(const Model::GetLexiconRequest& request, const GetLexiconResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a specific SpeechSynthesisTask object based on its TaskID. This
@@ -158,15 +174,6 @@ namespace Polly
          */
         virtual Model::GetSpeechSynthesisTaskOutcome GetSpeechSynthesisTask(const Model::GetSpeechSynthesisTaskRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSpeechSynthesisTask that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSpeechSynthesisTaskOutcomeCallable GetSpeechSynthesisTaskCallable(const Model::GetSpeechSynthesisTaskRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSpeechSynthesisTask that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSpeechSynthesisTaskAsync(const Model::GetSpeechSynthesisTaskRequest& request, const GetSpeechSynthesisTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of pronunciation lexicons stored in an Amazon Web Services
@@ -178,15 +185,6 @@ namespace Polly
          */
         virtual Model::ListLexiconsOutcome ListLexicons(const Model::ListLexiconsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListLexicons that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListLexiconsOutcomeCallable ListLexiconsCallable(const Model::ListLexiconsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListLexicons that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListLexiconsAsync(const Model::ListLexiconsRequest& request, const ListLexiconsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of SpeechSynthesisTask objects ordered by their creation date.
@@ -197,15 +195,6 @@ namespace Polly
          */
         virtual Model::ListSpeechSynthesisTasksOutcome ListSpeechSynthesisTasks(const Model::ListSpeechSynthesisTasksRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSpeechSynthesisTasks that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListSpeechSynthesisTasksOutcomeCallable ListSpeechSynthesisTasksCallable(const Model::ListSpeechSynthesisTasksRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSpeechSynthesisTasks that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListSpeechSynthesisTasksAsync(const Model::ListSpeechSynthesisTasksRequest& request, const ListSpeechSynthesisTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stores a pronunciation lexicon in an Amazon Web Services Region. If a lexicon
@@ -220,15 +209,6 @@ namespace Polly
          */
         virtual Model::PutLexiconOutcome PutLexicon(const Model::PutLexiconRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutLexicon that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutLexiconOutcomeCallable PutLexiconCallable(const Model::PutLexiconRequest& request) const;
-
-        /**
-         * An Async wrapper for PutLexicon that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutLexiconAsync(const Model::PutLexiconRequest& request, const PutLexiconResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Allows the creation of an asynchronous synthesis task, by starting a new
@@ -246,15 +226,6 @@ namespace Polly
          */
         virtual Model::StartSpeechSynthesisTaskOutcome StartSpeechSynthesisTask(const Model::StartSpeechSynthesisTaskRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartSpeechSynthesisTask that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartSpeechSynthesisTaskOutcomeCallable StartSpeechSynthesisTaskCallable(const Model::StartSpeechSynthesisTaskRequest& request) const;
-
-        /**
-         * An Async wrapper for StartSpeechSynthesisTask that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartSpeechSynthesisTaskAsync(const Model::StartSpeechSynthesisTaskRequest& request, const StartSpeechSynthesisTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Synthesizes UTF-8 input, plain text or SSML, to a stream of bytes. SSML input
@@ -268,15 +239,6 @@ namespace Polly
          */
         virtual Model::SynthesizeSpeechOutcome SynthesizeSpeech(const Model::SynthesizeSpeechRequest& request) const;
 
-        /**
-         * A Callable wrapper for SynthesizeSpeech that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SynthesizeSpeechOutcomeCallable SynthesizeSpeechCallable(const Model::SynthesizeSpeechRequest& request) const;
-
-        /**
-         * An Async wrapper for SynthesizeSpeech that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SynthesizeSpeechAsync(const Model::SynthesizeSpeechRequest& request, const SynthesizeSpeechResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

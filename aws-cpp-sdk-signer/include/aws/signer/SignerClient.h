@@ -7,8 +7,10 @@
 #include <aws/signer/Signer_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/signer/SignerServiceClientModel.h>
+#include <aws/signer/SignerLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -89,6 +91,47 @@ namespace signer
         virtual ~SignerClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Adds cross-account permissions to a signing profile.</p><p><h3>See Also:</h3>
          * <a
@@ -97,15 +140,6 @@ namespace signer
          */
         virtual Model::AddProfilePermissionOutcome AddProfilePermission(const Model::AddProfilePermissionRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddProfilePermission that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddProfilePermissionOutcomeCallable AddProfilePermissionCallable(const Model::AddProfilePermissionRequest& request) const;
-
-        /**
-         * An Async wrapper for AddProfilePermission that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddProfilePermissionAsync(const Model::AddProfilePermissionRequest& request, const AddProfilePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Changes the state of an <code>ACTIVE</code> signing profile to
@@ -117,15 +151,6 @@ namespace signer
          */
         virtual Model::CancelSigningProfileOutcome CancelSigningProfile(const Model::CancelSigningProfileRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelSigningProfile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelSigningProfileOutcomeCallable CancelSigningProfileCallable(const Model::CancelSigningProfileRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelSigningProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelSigningProfileAsync(const Model::CancelSigningProfileRequest& request, const CancelSigningProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a specific code signing job. You specify the job by
@@ -136,15 +161,6 @@ namespace signer
          */
         virtual Model::DescribeSigningJobOutcome DescribeSigningJob(const Model::DescribeSigningJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeSigningJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeSigningJobOutcomeCallable DescribeSigningJobCallable(const Model::DescribeSigningJobRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeSigningJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeSigningJobAsync(const Model::DescribeSigningJobRequest& request, const DescribeSigningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information on a specific signing platform.</p><p><h3>See Also:</h3> 
@@ -154,15 +170,6 @@ namespace signer
          */
         virtual Model::GetSigningPlatformOutcome GetSigningPlatform(const Model::GetSigningPlatformRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSigningPlatform that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSigningPlatformOutcomeCallable GetSigningPlatformCallable(const Model::GetSigningPlatformRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSigningPlatform that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSigningPlatformAsync(const Model::GetSigningPlatformRequest& request, const GetSigningPlatformResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information on a specific signing profile.</p><p><h3>See Also:</h3>  
@@ -172,15 +179,6 @@ namespace signer
          */
         virtual Model::GetSigningProfileOutcome GetSigningProfile(const Model::GetSigningProfileRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSigningProfile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSigningProfileOutcomeCallable GetSigningProfileCallable(const Model::GetSigningProfileRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSigningProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSigningProfileAsync(const Model::GetSigningProfileRequest& request, const GetSigningProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the cross-account permissions associated with a signing
@@ -190,15 +188,6 @@ namespace signer
          */
         virtual Model::ListProfilePermissionsOutcome ListProfilePermissions(const Model::ListProfilePermissionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListProfilePermissions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListProfilePermissionsOutcomeCallable ListProfilePermissionsCallable(const Model::ListProfilePermissionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListProfilePermissions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListProfilePermissionsAsync(const Model::ListProfilePermissionsRequest& request, const ListProfilePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all your signing jobs. You can use the <code>maxResults</code>
@@ -215,15 +204,6 @@ namespace signer
          */
         virtual Model::ListSigningJobsOutcome ListSigningJobs(const Model::ListSigningJobsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSigningJobs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListSigningJobsOutcomeCallable ListSigningJobsCallable(const Model::ListSigningJobsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSigningJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListSigningJobsAsync(const Model::ListSigningJobsRequest& request, const ListSigningJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all signing platforms available in code signing that match the request
@@ -239,15 +219,6 @@ namespace signer
          */
         virtual Model::ListSigningPlatformsOutcome ListSigningPlatforms(const Model::ListSigningPlatformsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSigningPlatforms that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListSigningPlatformsOutcomeCallable ListSigningPlatformsCallable(const Model::ListSigningPlatformsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSigningPlatforms that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListSigningPlatformsAsync(const Model::ListSigningPlatformsRequest& request, const ListSigningPlatformsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all available signing profiles in your AWS account. Returns only
@@ -265,15 +236,6 @@ namespace signer
          */
         virtual Model::ListSigningProfilesOutcome ListSigningProfiles(const Model::ListSigningProfilesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSigningProfiles that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListSigningProfilesOutcomeCallable ListSigningProfilesCallable(const Model::ListSigningProfilesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSigningProfiles that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListSigningProfilesAsync(const Model::ListSigningProfilesRequest& request, const ListSigningProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of the tags associated with a signing profile
@@ -283,15 +245,6 @@ namespace signer
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a signing profile. A signing profile is a code signing template that
@@ -303,15 +256,6 @@ namespace signer
          */
         virtual Model::PutSigningProfileOutcome PutSigningProfile(const Model::PutSigningProfileRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutSigningProfile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutSigningProfileOutcomeCallable PutSigningProfileCallable(const Model::PutSigningProfileRequest& request) const;
-
-        /**
-         * An Async wrapper for PutSigningProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutSigningProfileAsync(const Model::PutSigningProfileRequest& request, const PutSigningProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes cross-account permissions from a signing profile.</p><p><h3>See
@@ -321,15 +265,6 @@ namespace signer
          */
         virtual Model::RemoveProfilePermissionOutcome RemoveProfilePermission(const Model::RemoveProfilePermissionRequest& request) const;
 
-        /**
-         * A Callable wrapper for RemoveProfilePermission that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RemoveProfilePermissionOutcomeCallable RemoveProfilePermissionCallable(const Model::RemoveProfilePermissionRequest& request) const;
-
-        /**
-         * An Async wrapper for RemoveProfilePermission that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RemoveProfilePermissionAsync(const Model::RemoveProfilePermissionRequest& request, const RemoveProfilePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Changes the state of a signing job to REVOKED. This indicates that the
@@ -339,15 +274,6 @@ namespace signer
          */
         virtual Model::RevokeSignatureOutcome RevokeSignature(const Model::RevokeSignatureRequest& request) const;
 
-        /**
-         * A Callable wrapper for RevokeSignature that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RevokeSignatureOutcomeCallable RevokeSignatureCallable(const Model::RevokeSignatureRequest& request) const;
-
-        /**
-         * An Async wrapper for RevokeSignature that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RevokeSignatureAsync(const Model::RevokeSignatureRequest& request, const RevokeSignatureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Changes the state of a signing profile to REVOKED. This indicates that
@@ -358,15 +284,6 @@ namespace signer
          */
         virtual Model::RevokeSigningProfileOutcome RevokeSigningProfile(const Model::RevokeSigningProfileRequest& request) const;
 
-        /**
-         * A Callable wrapper for RevokeSigningProfile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RevokeSigningProfileOutcomeCallable RevokeSigningProfileCallable(const Model::RevokeSigningProfileRequest& request) const;
-
-        /**
-         * An Async wrapper for RevokeSigningProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RevokeSigningProfileAsync(const Model::RevokeSigningProfileRequest& request, const RevokeSigningProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Initiates a signing job to be performed on the code provided. Signing jobs
@@ -391,15 +308,6 @@ namespace signer
          */
         virtual Model::StartSigningJobOutcome StartSigningJob(const Model::StartSigningJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartSigningJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartSigningJobOutcomeCallable StartSigningJobCallable(const Model::StartSigningJobRequest& request) const;
-
-        /**
-         * An Async wrapper for StartSigningJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartSigningJobAsync(const Model::StartSigningJobRequest& request, const StartSigningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds one or more tags to a signing profile. Tags are labels that you can use
@@ -411,15 +319,6 @@ namespace signer
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes one or more tags from a signing profile. To remove the tags, specify
@@ -429,15 +328,6 @@ namespace signer
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

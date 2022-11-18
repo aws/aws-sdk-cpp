@@ -7,8 +7,10 @@
 #include <aws/redshift-serverless/RedshiftServerless_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/redshift-serverless/RedshiftServerlessServiceClientModel.h>
+#include <aws/redshift-serverless/RedshiftServerlessLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -84,6 +86,47 @@ namespace RedshiftServerless
         virtual ~RedshiftServerlessClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Converts a recovery point to a snapshot. For more information about recovery
          * points and snapshots, see <a
@@ -94,15 +137,6 @@ namespace RedshiftServerless
          */
         virtual Model::ConvertRecoveryPointToSnapshotOutcome ConvertRecoveryPointToSnapshot(const Model::ConvertRecoveryPointToSnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for ConvertRecoveryPointToSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ConvertRecoveryPointToSnapshotOutcomeCallable ConvertRecoveryPointToSnapshotCallable(const Model::ConvertRecoveryPointToSnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for ConvertRecoveryPointToSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ConvertRecoveryPointToSnapshotAsync(const Model::ConvertRecoveryPointToSnapshotRequest& request, const ConvertRecoveryPointToSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an Amazon Redshift Serverless managed VPC endpoint.</p><p><h3>See
@@ -112,15 +146,6 @@ namespace RedshiftServerless
          */
         virtual Model::CreateEndpointAccessOutcome CreateEndpointAccess(const Model::CreateEndpointAccessRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateEndpointAccess that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateEndpointAccessOutcomeCallable CreateEndpointAccessCallable(const Model::CreateEndpointAccessRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateEndpointAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateEndpointAccessAsync(const Model::CreateEndpointAccessRequest& request, const CreateEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a namespace in Amazon Redshift Serverless.</p><p><h3>See Also:</h3>  
@@ -130,15 +155,6 @@ namespace RedshiftServerless
          */
         virtual Model::CreateNamespaceOutcome CreateNamespace(const Model::CreateNamespaceRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateNamespace that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateNamespaceOutcomeCallable CreateNamespaceCallable(const Model::CreateNamespaceRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateNamespace that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateNamespaceAsync(const Model::CreateNamespaceRequest& request, const CreateNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a snapshot of all databases in a namespace. For more information
@@ -150,15 +166,6 @@ namespace RedshiftServerless
          */
         virtual Model::CreateSnapshotOutcome CreateSnapshot(const Model::CreateSnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateSnapshotOutcomeCallable CreateSnapshotCallable(const Model::CreateSnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateSnapshotAsync(const Model::CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a usage limit for a specified Amazon Redshift Serverless usage type.
@@ -169,15 +176,6 @@ namespace RedshiftServerless
          */
         virtual Model::CreateUsageLimitOutcome CreateUsageLimit(const Model::CreateUsageLimitRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateUsageLimit that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateUsageLimitOutcomeCallable CreateUsageLimitCallable(const Model::CreateUsageLimitRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateUsageLimit that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateUsageLimitAsync(const Model::CreateUsageLimitRequest& request, const CreateUsageLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an workgroup in Amazon Redshift Serverless.</p><p><h3>See Also:</h3> 
@@ -187,15 +185,6 @@ namespace RedshiftServerless
          */
         virtual Model::CreateWorkgroupOutcome CreateWorkgroup(const Model::CreateWorkgroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateWorkgroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateWorkgroupOutcomeCallable CreateWorkgroupCallable(const Model::CreateWorkgroupRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateWorkgroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateWorkgroupAsync(const Model::CreateWorkgroupRequest& request, const CreateWorkgroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an Amazon Redshift Serverless managed VPC endpoint.</p><p><h3>See
@@ -205,15 +194,6 @@ namespace RedshiftServerless
          */
         virtual Model::DeleteEndpointAccessOutcome DeleteEndpointAccess(const Model::DeleteEndpointAccessRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteEndpointAccess that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteEndpointAccessOutcomeCallable DeleteEndpointAccessCallable(const Model::DeleteEndpointAccessRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteEndpointAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteEndpointAccessAsync(const Model::DeleteEndpointAccessRequest& request, const DeleteEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a namespace from Amazon Redshift Serverless. Before you delete the
@@ -224,15 +204,6 @@ namespace RedshiftServerless
          */
         virtual Model::DeleteNamespaceOutcome DeleteNamespace(const Model::DeleteNamespaceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteNamespace that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteNamespaceOutcomeCallable DeleteNamespaceCallable(const Model::DeleteNamespaceRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteNamespace that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteNamespaceAsync(const Model::DeleteNamespaceRequest& request, const DeleteNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified resource policy.</p><p><h3>See Also:</h3>   <a
@@ -241,15 +212,6 @@ namespace RedshiftServerless
          */
         virtual Model::DeleteResourcePolicyOutcome DeleteResourcePolicy(const Model::DeleteResourcePolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteResourcePolicyOutcomeCallable DeleteResourcePolicyCallable(const Model::DeleteResourcePolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteResourcePolicyAsync(const Model::DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a snapshot from Amazon Redshift Serverless.</p><p><h3>See Also:</h3> 
@@ -259,15 +221,6 @@ namespace RedshiftServerless
          */
         virtual Model::DeleteSnapshotOutcome DeleteSnapshot(const Model::DeleteSnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteSnapshotOutcomeCallable DeleteSnapshotCallable(const Model::DeleteSnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteSnapshotAsync(const Model::DeleteSnapshotRequest& request, const DeleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a usage limit from Amazon Redshift Serverless.</p><p><h3>See
@@ -277,15 +230,6 @@ namespace RedshiftServerless
          */
         virtual Model::DeleteUsageLimitOutcome DeleteUsageLimit(const Model::DeleteUsageLimitRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteUsageLimit that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteUsageLimitOutcomeCallable DeleteUsageLimitCallable(const Model::DeleteUsageLimitRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteUsageLimit that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteUsageLimitAsync(const Model::DeleteUsageLimitRequest& request, const DeleteUsageLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a workgroup.</p><p><h3>See Also:</h3>   <a
@@ -294,15 +238,6 @@ namespace RedshiftServerless
          */
         virtual Model::DeleteWorkgroupOutcome DeleteWorkgroup(const Model::DeleteWorkgroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteWorkgroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteWorkgroupOutcomeCallable DeleteWorkgroupCallable(const Model::DeleteWorkgroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteWorkgroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteWorkgroupAsync(const Model::DeleteWorkgroupRequest& request, const DeleteWorkgroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a database user name and temporary password with temporary
@@ -320,15 +255,6 @@ namespace RedshiftServerless
          */
         virtual Model::GetCredentialsOutcome GetCredentials(const Model::GetCredentialsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetCredentials that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetCredentialsOutcomeCallable GetCredentialsCallable(const Model::GetCredentialsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetCredentials that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetCredentialsAsync(const Model::GetCredentialsRequest& request, const GetCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information, such as the name, about a VPC endpoint.</p><p><h3>See
@@ -338,15 +264,6 @@ namespace RedshiftServerless
          */
         virtual Model::GetEndpointAccessOutcome GetEndpointAccess(const Model::GetEndpointAccessRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetEndpointAccess that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetEndpointAccessOutcomeCallable GetEndpointAccessCallable(const Model::GetEndpointAccessRequest& request) const;
-
-        /**
-         * An Async wrapper for GetEndpointAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetEndpointAccessAsync(const Model::GetEndpointAccessRequest& request, const GetEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a namespace in Amazon Redshift
@@ -356,15 +273,6 @@ namespace RedshiftServerless
          */
         virtual Model::GetNamespaceOutcome GetNamespace(const Model::GetNamespaceRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetNamespace that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetNamespaceOutcomeCallable GetNamespaceCallable(const Model::GetNamespaceRequest& request) const;
-
-        /**
-         * An Async wrapper for GetNamespace that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetNamespaceAsync(const Model::GetNamespaceRequest& request, const GetNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a recovery point.</p><p><h3>See Also:</h3>   <a
@@ -373,15 +281,6 @@ namespace RedshiftServerless
          */
         virtual Model::GetRecoveryPointOutcome GetRecoveryPoint(const Model::GetRecoveryPointRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRecoveryPoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRecoveryPointOutcomeCallable GetRecoveryPointCallable(const Model::GetRecoveryPointRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRecoveryPoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRecoveryPointAsync(const Model::GetRecoveryPointRequest& request, const GetRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a resource policy.</p><p><h3>See Also:</h3>   <a
@@ -390,15 +289,6 @@ namespace RedshiftServerless
          */
         virtual Model::GetResourcePolicyOutcome GetResourcePolicy(const Model::GetResourcePolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetResourcePolicyOutcomeCallable GetResourcePolicyCallable(const Model::GetResourcePolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetResourcePolicyAsync(const Model::GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a specific snapshot.</p><p><h3>See Also:</h3>   <a
@@ -407,15 +297,6 @@ namespace RedshiftServerless
          */
         virtual Model::GetSnapshotOutcome GetSnapshot(const Model::GetSnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSnapshotOutcomeCallable GetSnapshotCallable(const Model::GetSnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSnapshotAsync(const Model::GetSnapshotRequest& request, const GetSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a usage limit.</p><p><h3>See Also:</h3>   <a
@@ -424,15 +305,6 @@ namespace RedshiftServerless
          */
         virtual Model::GetUsageLimitOutcome GetUsageLimit(const Model::GetUsageLimitRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetUsageLimit that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetUsageLimitOutcomeCallable GetUsageLimitCallable(const Model::GetUsageLimitRequest& request) const;
-
-        /**
-         * An Async wrapper for GetUsageLimit that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetUsageLimitAsync(const Model::GetUsageLimitRequest& request, const GetUsageLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a specific workgroup.</p><p><h3>See Also:</h3>   <a
@@ -441,15 +313,6 @@ namespace RedshiftServerless
          */
         virtual Model::GetWorkgroupOutcome GetWorkgroup(const Model::GetWorkgroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetWorkgroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetWorkgroupOutcomeCallable GetWorkgroupCallable(const Model::GetWorkgroupRequest& request) const;
-
-        /**
-         * An Async wrapper for GetWorkgroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetWorkgroupAsync(const Model::GetWorkgroupRequest& request, const GetWorkgroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns an array of <code>EndpointAccess</code> objects and relevant
@@ -459,15 +322,6 @@ namespace RedshiftServerless
          */
         virtual Model::ListEndpointAccessOutcome ListEndpointAccess(const Model::ListEndpointAccessRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListEndpointAccess that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListEndpointAccessOutcomeCallable ListEndpointAccessCallable(const Model::ListEndpointAccessRequest& request) const;
-
-        /**
-         * An Async wrapper for ListEndpointAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListEndpointAccessAsync(const Model::ListEndpointAccessRequest& request, const ListEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a list of specified namespaces.</p><p><h3>See
@@ -477,15 +331,6 @@ namespace RedshiftServerless
          */
         virtual Model::ListNamespacesOutcome ListNamespaces(const Model::ListNamespacesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListNamespaces that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListNamespacesOutcomeCallable ListNamespacesCallable(const Model::ListNamespacesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListNamespaces that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListNamespacesAsync(const Model::ListNamespacesRequest& request, const ListNamespacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns an array of recovery points.</p><p><h3>See Also:</h3>   <a
@@ -494,15 +339,6 @@ namespace RedshiftServerless
          */
         virtual Model::ListRecoveryPointsOutcome ListRecoveryPoints(const Model::ListRecoveryPointsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListRecoveryPoints that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListRecoveryPointsOutcomeCallable ListRecoveryPointsCallable(const Model::ListRecoveryPointsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListRecoveryPoints that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListRecoveryPointsAsync(const Model::ListRecoveryPointsRequest& request, const ListRecoveryPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of snapshots.</p><p><h3>See Also:</h3>   <a
@@ -511,15 +347,6 @@ namespace RedshiftServerless
          */
         virtual Model::ListSnapshotsOutcome ListSnapshots(const Model::ListSnapshotsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSnapshots that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListSnapshotsOutcomeCallable ListSnapshotsCallable(const Model::ListSnapshotsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSnapshots that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListSnapshotsAsync(const Model::ListSnapshotsRequest& request, const ListSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the tags assigned to a resource.</p><p><h3>See Also:</h3>   <a
@@ -528,15 +355,6 @@ namespace RedshiftServerless
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all usage limits within Amazon Redshift Serverless.</p><p><h3>See
@@ -546,15 +364,6 @@ namespace RedshiftServerless
          */
         virtual Model::ListUsageLimitsOutcome ListUsageLimits(const Model::ListUsageLimitsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListUsageLimits that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListUsageLimitsOutcomeCallable ListUsageLimitsCallable(const Model::ListUsageLimitsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListUsageLimits that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListUsageLimitsAsync(const Model::ListUsageLimitsRequest& request, const ListUsageLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a list of specified workgroups.</p><p><h3>See
@@ -564,15 +373,6 @@ namespace RedshiftServerless
          */
         virtual Model::ListWorkgroupsOutcome ListWorkgroups(const Model::ListWorkgroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListWorkgroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListWorkgroupsOutcomeCallable ListWorkgroupsCallable(const Model::ListWorkgroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListWorkgroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListWorkgroupsAsync(const Model::ListWorkgroupsRequest& request, const ListWorkgroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates or updates a resource policy. Currently, you can use policies to
@@ -583,15 +383,6 @@ namespace RedshiftServerless
          */
         virtual Model::PutResourcePolicyOutcome PutResourcePolicy(const Model::PutResourcePolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutResourcePolicyOutcomeCallable PutResourcePolicyCallable(const Model::PutResourcePolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for PutResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutResourcePolicyAsync(const Model::PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Restore the data from a recovery point.</p><p><h3>See Also:</h3>   <a
@@ -600,15 +391,6 @@ namespace RedshiftServerless
          */
         virtual Model::RestoreFromRecoveryPointOutcome RestoreFromRecoveryPoint(const Model::RestoreFromRecoveryPointRequest& request) const;
 
-        /**
-         * A Callable wrapper for RestoreFromRecoveryPoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RestoreFromRecoveryPointOutcomeCallable RestoreFromRecoveryPointCallable(const Model::RestoreFromRecoveryPointRequest& request) const;
-
-        /**
-         * An Async wrapper for RestoreFromRecoveryPoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RestoreFromRecoveryPointAsync(const Model::RestoreFromRecoveryPointRequest& request, const RestoreFromRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Restores a namespace from a snapshot.</p><p><h3>See Also:</h3>   <a
@@ -617,15 +399,6 @@ namespace RedshiftServerless
          */
         virtual Model::RestoreFromSnapshotOutcome RestoreFromSnapshot(const Model::RestoreFromSnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for RestoreFromSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RestoreFromSnapshotOutcomeCallable RestoreFromSnapshotCallable(const Model::RestoreFromSnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for RestoreFromSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RestoreFromSnapshotAsync(const Model::RestoreFromSnapshotRequest& request, const RestoreFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Assigns one or more tags to a resource.</p><p><h3>See Also:</h3>   <a
@@ -634,15 +407,6 @@ namespace RedshiftServerless
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes a tag or set of tags from a resource.</p><p><h3>See Also:</h3>   <a
@@ -651,15 +415,6 @@ namespace RedshiftServerless
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an Amazon Redshift Serverless managed endpoint.</p><p><h3>See
@@ -669,15 +424,6 @@ namespace RedshiftServerless
          */
         virtual Model::UpdateEndpointAccessOutcome UpdateEndpointAccess(const Model::UpdateEndpointAccessRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateEndpointAccess that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateEndpointAccessOutcomeCallable UpdateEndpointAccessCallable(const Model::UpdateEndpointAccessRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateEndpointAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateEndpointAccessAsync(const Model::UpdateEndpointAccessRequest& request, const UpdateEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a namespace with the specified settings.</p><p><h3>See Also:</h3>  
@@ -687,15 +433,6 @@ namespace RedshiftServerless
          */
         virtual Model::UpdateNamespaceOutcome UpdateNamespace(const Model::UpdateNamespaceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateNamespace that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateNamespaceOutcomeCallable UpdateNamespaceCallable(const Model::UpdateNamespaceRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateNamespace that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateNamespaceAsync(const Model::UpdateNamespaceRequest& request, const UpdateNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a snapshot.</p><p><h3>See Also:</h3>   <a
@@ -704,15 +441,6 @@ namespace RedshiftServerless
          */
         virtual Model::UpdateSnapshotOutcome UpdateSnapshot(const Model::UpdateSnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateSnapshotOutcomeCallable UpdateSnapshotCallable(const Model::UpdateSnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateSnapshotAsync(const Model::UpdateSnapshotRequest& request, const UpdateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Update a usage limit in Amazon Redshift Serverless. You can't update the
@@ -722,15 +450,6 @@ namespace RedshiftServerless
          */
         virtual Model::UpdateUsageLimitOutcome UpdateUsageLimit(const Model::UpdateUsageLimitRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateUsageLimit that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateUsageLimitOutcomeCallable UpdateUsageLimitCallable(const Model::UpdateUsageLimitRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateUsageLimit that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateUsageLimitAsync(const Model::UpdateUsageLimitRequest& request, const UpdateUsageLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a workgroup with the specified configuration settings.</p><p><h3>See
@@ -740,15 +459,6 @@ namespace RedshiftServerless
          */
         virtual Model::UpdateWorkgroupOutcome UpdateWorkgroup(const Model::UpdateWorkgroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateWorkgroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateWorkgroupOutcomeCallable UpdateWorkgroupCallable(const Model::UpdateWorkgroupRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateWorkgroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateWorkgroupAsync(const Model::UpdateWorkgroupRequest& request, const UpdateWorkgroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

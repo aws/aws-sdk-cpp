@@ -7,8 +7,10 @@
 #include <aws/iot-data/IoTDataPlane_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iot-data/IoTDataPlaneServiceClientModel.h>
+#include <aws/iot-data/IoTDataPlaneLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -84,6 +86,47 @@ namespace IoTDataPlane
         virtual ~IoTDataPlaneClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Deletes the shadow for the specified thing.</p> <p>Requires permission to
          * access the <a
@@ -96,15 +139,6 @@ namespace IoTDataPlane
          */
         virtual Model::DeleteThingShadowOutcome DeleteThingShadow(const Model::DeleteThingShadowRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteThingShadow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteThingShadowOutcomeCallable DeleteThingShadowCallable(const Model::DeleteThingShadowRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteThingShadow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteThingShadowAsync(const Model::DeleteThingShadowRequest& request, const DeleteThingShadowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the details of a single retained message for the specified topic.</p>
@@ -122,15 +156,6 @@ namespace IoTDataPlane
          */
         virtual Model::GetRetainedMessageOutcome GetRetainedMessage(const Model::GetRetainedMessageRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRetainedMessage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRetainedMessageOutcomeCallable GetRetainedMessageCallable(const Model::GetRetainedMessageRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRetainedMessage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRetainedMessageAsync(const Model::GetRetainedMessageRequest& request, const GetRetainedMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the shadow for the specified thing.</p> <p>Requires permission to access
@@ -144,15 +169,6 @@ namespace IoTDataPlane
          */
         virtual Model::GetThingShadowOutcome GetThingShadow(const Model::GetThingShadowRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetThingShadow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetThingShadowOutcomeCallable GetThingShadowCallable(const Model::GetThingShadowRequest& request) const;
-
-        /**
-         * An Async wrapper for GetThingShadow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetThingShadowAsync(const Model::GetThingShadowRequest& request, const GetThingShadowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the shadows for the specified thing.</p> <p>Requires permission to
@@ -164,15 +180,6 @@ namespace IoTDataPlane
          */
         virtual Model::ListNamedShadowsForThingOutcome ListNamedShadowsForThing(const Model::ListNamedShadowsForThingRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListNamedShadowsForThing that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListNamedShadowsForThingOutcomeCallable ListNamedShadowsForThingCallable(const Model::ListNamedShadowsForThingRequest& request) const;
-
-        /**
-         * An Async wrapper for ListNamedShadowsForThing that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListNamedShadowsForThingAsync(const Model::ListNamedShadowsForThingRequest& request, const ListNamedShadowsForThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists summary information about the retained messages stored for the
@@ -192,15 +199,6 @@ namespace IoTDataPlane
          */
         virtual Model::ListRetainedMessagesOutcome ListRetainedMessages(const Model::ListRetainedMessagesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListRetainedMessages that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListRetainedMessagesOutcomeCallable ListRetainedMessagesCallable(const Model::ListRetainedMessagesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListRetainedMessages that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListRetainedMessagesAsync(const Model::ListRetainedMessagesRequest& request, const ListRetainedMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Publishes an MQTT message.</p> <p>Requires permission to access the <a
@@ -216,15 +214,6 @@ namespace IoTDataPlane
          */
         virtual Model::PublishOutcome Publish(const Model::PublishRequest& request) const;
 
-        /**
-         * A Callable wrapper for Publish that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PublishOutcomeCallable PublishCallable(const Model::PublishRequest& request) const;
-
-        /**
-         * An Async wrapper for Publish that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PublishAsync(const Model::PublishRequest& request, const PublishResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the shadow for the specified thing.</p> <p>Requires permission to
@@ -238,15 +227,6 @@ namespace IoTDataPlane
          */
         virtual Model::UpdateThingShadowOutcome UpdateThingShadow(const Model::UpdateThingShadowRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateThingShadow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateThingShadowOutcomeCallable UpdateThingShadowCallable(const Model::UpdateThingShadowRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateThingShadow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateThingShadowAsync(const Model::UpdateThingShadowRequest& request, const UpdateThingShadowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

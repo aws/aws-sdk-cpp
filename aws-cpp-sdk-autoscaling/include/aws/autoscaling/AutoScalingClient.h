@@ -8,8 +8,10 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/autoscaling/AutoScalingServiceClientModel.h>
+#include <aws/autoscaling/AutoScalingLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -81,6 +83,47 @@ namespace AutoScaling
         virtual ~AutoScalingClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
        /**
         * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
         */
@@ -105,15 +148,6 @@ namespace AutoScaling
          */
         virtual Model::AttachInstancesOutcome AttachInstances(const Model::AttachInstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for AttachInstances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AttachInstancesOutcomeCallable AttachInstancesCallable(const Model::AttachInstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for AttachInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AttachInstancesAsync(const Model::AttachInstancesRequest& request, const AttachInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Attaches one or more target groups to the specified Auto Scaling group.</p>
@@ -137,15 +171,6 @@ namespace AutoScaling
          */
         virtual Model::AttachLoadBalancerTargetGroupsOutcome AttachLoadBalancerTargetGroups(const Model::AttachLoadBalancerTargetGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for AttachLoadBalancerTargetGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AttachLoadBalancerTargetGroupsOutcomeCallable AttachLoadBalancerTargetGroupsCallable(const Model::AttachLoadBalancerTargetGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for AttachLoadBalancerTargetGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AttachLoadBalancerTargetGroupsAsync(const Model::AttachLoadBalancerTargetGroupsRequest& request, const AttachLoadBalancerTargetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>To attach an Application Load Balancer, Network Load Balancer, or
@@ -167,15 +192,6 @@ namespace AutoScaling
          */
         virtual Model::AttachLoadBalancersOutcome AttachLoadBalancers(const Model::AttachLoadBalancersRequest& request) const;
 
-        /**
-         * A Callable wrapper for AttachLoadBalancers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AttachLoadBalancersOutcomeCallable AttachLoadBalancersCallable(const Model::AttachLoadBalancersRequest& request) const;
-
-        /**
-         * An Async wrapper for AttachLoadBalancers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AttachLoadBalancersAsync(const Model::AttachLoadBalancersRequest& request, const AttachLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes one or more scheduled actions for the specified Auto Scaling
@@ -185,15 +201,6 @@ namespace AutoScaling
          */
         virtual Model::BatchDeleteScheduledActionOutcome BatchDeleteScheduledAction(const Model::BatchDeleteScheduledActionRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchDeleteScheduledAction that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchDeleteScheduledActionOutcomeCallable BatchDeleteScheduledActionCallable(const Model::BatchDeleteScheduledActionRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchDeleteScheduledAction that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchDeleteScheduledActionAsync(const Model::BatchDeleteScheduledActionRequest& request, const BatchDeleteScheduledActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates or updates one or more scheduled scaling actions for an Auto Scaling
@@ -203,15 +210,6 @@ namespace AutoScaling
          */
         virtual Model::BatchPutScheduledUpdateGroupActionOutcome BatchPutScheduledUpdateGroupAction(const Model::BatchPutScheduledUpdateGroupActionRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchPutScheduledUpdateGroupAction that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchPutScheduledUpdateGroupActionOutcomeCallable BatchPutScheduledUpdateGroupActionCallable(const Model::BatchPutScheduledUpdateGroupActionRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchPutScheduledUpdateGroupAction that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchPutScheduledUpdateGroupActionAsync(const Model::BatchPutScheduledUpdateGroupActionRequest& request, const BatchPutScheduledUpdateGroupActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Cancels an instance refresh operation in progress. Cancellation does not roll
@@ -226,15 +224,6 @@ namespace AutoScaling
          */
         virtual Model::CancelInstanceRefreshOutcome CancelInstanceRefresh(const Model::CancelInstanceRefreshRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelInstanceRefresh that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelInstanceRefreshOutcomeCallable CancelInstanceRefreshCallable(const Model::CancelInstanceRefreshRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelInstanceRefresh that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelInstanceRefreshAsync(const Model::CancelInstanceRefreshRequest& request, const CancelInstanceRefreshResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Completes the lifecycle action for the specified token or instance with the
@@ -262,15 +251,6 @@ namespace AutoScaling
          */
         virtual Model::CompleteLifecycleActionOutcome CompleteLifecycleAction(const Model::CompleteLifecycleActionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CompleteLifecycleAction that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CompleteLifecycleActionOutcomeCallable CompleteLifecycleActionCallable(const Model::CompleteLifecycleActionRequest& request) const;
-
-        /**
-         * An Async wrapper for CompleteLifecycleAction that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CompleteLifecycleActionAsync(const Model::CompleteLifecycleActionRequest& request, const CompleteLifecycleActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> <b>We strongly recommend using a launch template when calling this operation
@@ -301,15 +281,6 @@ namespace AutoScaling
          */
         virtual Model::CreateAutoScalingGroupOutcome CreateAutoScalingGroup(const Model::CreateAutoScalingGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateAutoScalingGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateAutoScalingGroupOutcomeCallable CreateAutoScalingGroupCallable(const Model::CreateAutoScalingGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateAutoScalingGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateAutoScalingGroupAsync(const Model::CreateAutoScalingGroupRequest& request, const CreateAutoScalingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a launch configuration.</p> <p>If you exceed your maximum limit of
@@ -334,15 +305,6 @@ namespace AutoScaling
          */
         virtual Model::CreateLaunchConfigurationOutcome CreateLaunchConfiguration(const Model::CreateLaunchConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateLaunchConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateLaunchConfigurationOutcomeCallable CreateLaunchConfigurationCallable(const Model::CreateLaunchConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateLaunchConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateLaunchConfigurationAsync(const Model::CreateLaunchConfigurationRequest& request, const CreateLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates or updates tags for the specified Auto Scaling group.</p> <p>When you
@@ -357,15 +319,6 @@ namespace AutoScaling
          */
         virtual Model::CreateOrUpdateTagsOutcome CreateOrUpdateTags(const Model::CreateOrUpdateTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateOrUpdateTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateOrUpdateTagsOutcomeCallable CreateOrUpdateTagsCallable(const Model::CreateOrUpdateTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateOrUpdateTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateOrUpdateTagsAsync(const Model::CreateOrUpdateTagsRequest& request, const CreateOrUpdateTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified Auto Scaling group.</p> <p>If the group has instances
@@ -390,15 +343,6 @@ namespace AutoScaling
          */
         virtual Model::DeleteAutoScalingGroupOutcome DeleteAutoScalingGroup(const Model::DeleteAutoScalingGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAutoScalingGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAutoScalingGroupOutcomeCallable DeleteAutoScalingGroupCallable(const Model::DeleteAutoScalingGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAutoScalingGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAutoScalingGroupAsync(const Model::DeleteAutoScalingGroupRequest& request, const DeleteAutoScalingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified launch configuration.</p> <p>The launch configuration
@@ -410,15 +354,6 @@ namespace AutoScaling
          */
         virtual Model::DeleteLaunchConfigurationOutcome DeleteLaunchConfiguration(const Model::DeleteLaunchConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteLaunchConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteLaunchConfigurationOutcomeCallable DeleteLaunchConfigurationCallable(const Model::DeleteLaunchConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteLaunchConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteLaunchConfigurationAsync(const Model::DeleteLaunchConfigurationRequest& request, const DeleteLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified lifecycle hook.</p> <p>If there are any outstanding
@@ -430,15 +365,6 @@ namespace AutoScaling
          */
         virtual Model::DeleteLifecycleHookOutcome DeleteLifecycleHook(const Model::DeleteLifecycleHookRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteLifecycleHook that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteLifecycleHookOutcomeCallable DeleteLifecycleHookCallable(const Model::DeleteLifecycleHookRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteLifecycleHook that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteLifecycleHookAsync(const Model::DeleteLifecycleHookRequest& request, const DeleteLifecycleHookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified notification.</p><p><h3>See Also:</h3>   <a
@@ -447,15 +373,6 @@ namespace AutoScaling
          */
         virtual Model::DeleteNotificationConfigurationOutcome DeleteNotificationConfiguration(const Model::DeleteNotificationConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteNotificationConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteNotificationConfigurationOutcomeCallable DeleteNotificationConfigurationCallable(const Model::DeleteNotificationConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteNotificationConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteNotificationConfigurationAsync(const Model::DeleteNotificationConfigurationRequest& request, const DeleteNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified scaling policy.</p> <p>Deleting either a step scaling
@@ -470,15 +387,6 @@ namespace AutoScaling
          */
         virtual Model::DeletePolicyOutcome DeletePolicy(const Model::DeletePolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeletePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeletePolicyOutcomeCallable DeletePolicyCallable(const Model::DeletePolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeletePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeletePolicyAsync(const Model::DeletePolicyRequest& request, const DeletePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified scheduled action.</p><p><h3>See Also:</h3>   <a
@@ -487,15 +395,6 @@ namespace AutoScaling
          */
         virtual Model::DeleteScheduledActionOutcome DeleteScheduledAction(const Model::DeleteScheduledActionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteScheduledAction that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteScheduledActionOutcomeCallable DeleteScheduledActionCallable(const Model::DeleteScheduledActionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteScheduledAction that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteScheduledActionAsync(const Model::DeleteScheduledActionRequest& request, const DeleteScheduledActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified tags.</p><p><h3>See Also:</h3>   <a
@@ -504,15 +403,6 @@ namespace AutoScaling
          */
         virtual Model::DeleteTagsOutcome DeleteTags(const Model::DeleteTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteTagsOutcomeCallable DeleteTagsCallable(const Model::DeleteTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteTagsAsync(const Model::DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the warm pool for the specified Auto Scaling group.</p> <p>For more
@@ -525,15 +415,6 @@ namespace AutoScaling
          */
         virtual Model::DeleteWarmPoolOutcome DeleteWarmPool(const Model::DeleteWarmPoolRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteWarmPool that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteWarmPoolOutcomeCallable DeleteWarmPoolCallable(const Model::DeleteWarmPoolRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteWarmPool that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteWarmPoolAsync(const Model::DeleteWarmPoolRequest& request, const DeleteWarmPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the current Amazon EC2 Auto Scaling resource quotas for your
@@ -549,15 +430,6 @@ namespace AutoScaling
          */
         virtual Model::DescribeAccountLimitsOutcome DescribeAccountLimits(const Model::DescribeAccountLimitsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAccountLimits that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAccountLimitsOutcomeCallable DescribeAccountLimitsCallable(const Model::DescribeAccountLimitsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAccountLimits that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAccountLimitsAsync(const Model::DescribeAccountLimitsRequest& request, const DescribeAccountLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the available adjustment types for step scaling and simple scaling
@@ -570,15 +442,6 @@ namespace AutoScaling
          */
         virtual Model::DescribeAdjustmentTypesOutcome DescribeAdjustmentTypes(const Model::DescribeAdjustmentTypesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAdjustmentTypes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAdjustmentTypesOutcomeCallable DescribeAdjustmentTypesCallable(const Model::DescribeAdjustmentTypesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAdjustmentTypes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAdjustmentTypesAsync(const Model::DescribeAdjustmentTypesRequest& request, const DescribeAdjustmentTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the Auto Scaling groups in the account and Region.</p>
@@ -595,15 +458,6 @@ namespace AutoScaling
          */
         virtual Model::DescribeAutoScalingGroupsOutcome DescribeAutoScalingGroups(const Model::DescribeAutoScalingGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAutoScalingGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAutoScalingGroupsOutcomeCallable DescribeAutoScalingGroupsCallable(const Model::DescribeAutoScalingGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAutoScalingGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAutoScalingGroupsAsync(const Model::DescribeAutoScalingGroupsRequest& request, const DescribeAutoScalingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the Auto Scaling instances in the account and
@@ -613,15 +467,6 @@ namespace AutoScaling
          */
         virtual Model::DescribeAutoScalingInstancesOutcome DescribeAutoScalingInstances(const Model::DescribeAutoScalingInstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAutoScalingInstances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAutoScalingInstancesOutcomeCallable DescribeAutoScalingInstancesCallable(const Model::DescribeAutoScalingInstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAutoScalingInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAutoScalingInstancesAsync(const Model::DescribeAutoScalingInstancesRequest& request, const DescribeAutoScalingInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the notification types that are supported by Amazon EC2 Auto
@@ -631,15 +476,6 @@ namespace AutoScaling
          */
         virtual Model::DescribeAutoScalingNotificationTypesOutcome DescribeAutoScalingNotificationTypes(const Model::DescribeAutoScalingNotificationTypesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAutoScalingNotificationTypes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAutoScalingNotificationTypesOutcomeCallable DescribeAutoScalingNotificationTypesCallable(const Model::DescribeAutoScalingNotificationTypesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAutoScalingNotificationTypes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAutoScalingNotificationTypesAsync(const Model::DescribeAutoScalingNotificationTypesRequest& request, const DescribeAutoScalingNotificationTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the instance refreshes for the specified Auto Scaling
@@ -667,15 +503,6 @@ namespace AutoScaling
          */
         virtual Model::DescribeInstanceRefreshesOutcome DescribeInstanceRefreshes(const Model::DescribeInstanceRefreshesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeInstanceRefreshes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeInstanceRefreshesOutcomeCallable DescribeInstanceRefreshesCallable(const Model::DescribeInstanceRefreshesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeInstanceRefreshes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeInstanceRefreshesAsync(const Model::DescribeInstanceRefreshesRequest& request, const DescribeInstanceRefreshesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the launch configurations in the account and
@@ -685,15 +512,6 @@ namespace AutoScaling
          */
         virtual Model::DescribeLaunchConfigurationsOutcome DescribeLaunchConfigurations(const Model::DescribeLaunchConfigurationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeLaunchConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeLaunchConfigurationsOutcomeCallable DescribeLaunchConfigurationsCallable(const Model::DescribeLaunchConfigurationsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeLaunchConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeLaunchConfigurationsAsync(const Model::DescribeLaunchConfigurationsRequest& request, const DescribeLaunchConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the available types of lifecycle hooks.</p> <p>The following hook
@@ -706,15 +524,6 @@ namespace AutoScaling
          */
         virtual Model::DescribeLifecycleHookTypesOutcome DescribeLifecycleHookTypes(const Model::DescribeLifecycleHookTypesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeLifecycleHookTypes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeLifecycleHookTypesOutcomeCallable DescribeLifecycleHookTypesCallable(const Model::DescribeLifecycleHookTypesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeLifecycleHookTypes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeLifecycleHookTypesAsync(const Model::DescribeLifecycleHookTypesRequest& request, const DescribeLifecycleHookTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the lifecycle hooks for the specified Auto Scaling
@@ -724,15 +533,6 @@ namespace AutoScaling
          */
         virtual Model::DescribeLifecycleHooksOutcome DescribeLifecycleHooks(const Model::DescribeLifecycleHooksRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeLifecycleHooks that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeLifecycleHooksOutcomeCallable DescribeLifecycleHooksCallable(const Model::DescribeLifecycleHooksRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeLifecycleHooks that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeLifecycleHooksAsync(const Model::DescribeLifecycleHooksRequest& request, const DescribeLifecycleHooksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the Elastic Load Balancing target groups for the
@@ -764,15 +564,6 @@ namespace AutoScaling
          */
         virtual Model::DescribeLoadBalancerTargetGroupsOutcome DescribeLoadBalancerTargetGroups(const Model::DescribeLoadBalancerTargetGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeLoadBalancerTargetGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeLoadBalancerTargetGroupsOutcomeCallable DescribeLoadBalancerTargetGroupsCallable(const Model::DescribeLoadBalancerTargetGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeLoadBalancerTargetGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeLoadBalancerTargetGroupsAsync(const Model::DescribeLoadBalancerTargetGroupsRequest& request, const DescribeLoadBalancerTargetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the load balancers for the specified Auto Scaling
@@ -807,15 +598,6 @@ namespace AutoScaling
          */
         virtual Model::DescribeLoadBalancersOutcome DescribeLoadBalancers(const Model::DescribeLoadBalancersRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeLoadBalancers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeLoadBalancersOutcomeCallable DescribeLoadBalancersCallable(const Model::DescribeLoadBalancersRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeLoadBalancers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeLoadBalancersAsync(const Model::DescribeLoadBalancersRequest& request, const DescribeLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the available CloudWatch metrics for Amazon EC2 Auto
@@ -825,15 +607,6 @@ namespace AutoScaling
          */
         virtual Model::DescribeMetricCollectionTypesOutcome DescribeMetricCollectionTypes(const Model::DescribeMetricCollectionTypesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeMetricCollectionTypes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeMetricCollectionTypesOutcomeCallable DescribeMetricCollectionTypesCallable(const Model::DescribeMetricCollectionTypesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeMetricCollectionTypes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeMetricCollectionTypesAsync(const Model::DescribeMetricCollectionTypesRequest& request, const DescribeMetricCollectionTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the Amazon SNS notifications that are configured for
@@ -843,15 +616,6 @@ namespace AutoScaling
          */
         virtual Model::DescribeNotificationConfigurationsOutcome DescribeNotificationConfigurations(const Model::DescribeNotificationConfigurationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeNotificationConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeNotificationConfigurationsOutcomeCallable DescribeNotificationConfigurationsCallable(const Model::DescribeNotificationConfigurationsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeNotificationConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeNotificationConfigurationsAsync(const Model::DescribeNotificationConfigurationsRequest& request, const DescribeNotificationConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the scaling policies in the account and
@@ -861,15 +625,6 @@ namespace AutoScaling
          */
         virtual Model::DescribePoliciesOutcome DescribePolicies(const Model::DescribePoliciesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribePolicies that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribePoliciesOutcomeCallable DescribePoliciesCallable(const Model::DescribePoliciesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribePolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribePoliciesAsync(const Model::DescribePoliciesRequest& request, const DescribePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the scaling activities in the account and Region.</p>
@@ -891,15 +646,6 @@ namespace AutoScaling
          */
         virtual Model::DescribeScalingActivitiesOutcome DescribeScalingActivities(const Model::DescribeScalingActivitiesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeScalingActivities that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeScalingActivitiesOutcomeCallable DescribeScalingActivitiesCallable(const Model::DescribeScalingActivitiesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeScalingActivities that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeScalingActivitiesAsync(const Model::DescribeScalingActivitiesRequest& request, const DescribeScalingActivitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the scaling process types for use with the <a>ResumeProcesses</a>
@@ -909,15 +655,6 @@ namespace AutoScaling
          */
         virtual Model::DescribeScalingProcessTypesOutcome DescribeScalingProcessTypes(const Model::DescribeScalingProcessTypesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeScalingProcessTypes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeScalingProcessTypesOutcomeCallable DescribeScalingProcessTypesCallable(const Model::DescribeScalingProcessTypesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeScalingProcessTypes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeScalingProcessTypesAsync(const Model::DescribeScalingProcessTypesRequest& request, const DescribeScalingProcessTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the scheduled actions that haven't run or that have
@@ -929,15 +666,6 @@ namespace AutoScaling
          */
         virtual Model::DescribeScheduledActionsOutcome DescribeScheduledActions(const Model::DescribeScheduledActionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeScheduledActions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeScheduledActionsOutcomeCallable DescribeScheduledActionsCallable(const Model::DescribeScheduledActionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeScheduledActions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeScheduledActionsAsync(const Model::DescribeScheduledActionsRequest& request, const DescribeScheduledActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified tags.</p> <p>You can use filters to limit the
@@ -955,15 +683,6 @@ namespace AutoScaling
          */
         virtual Model::DescribeTagsOutcome DescribeTags(const Model::DescribeTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTagsOutcomeCallable DescribeTagsCallable(const Model::DescribeTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTagsAsync(const Model::DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the termination policies supported by Amazon EC2 Auto Scaling.</p>
@@ -976,15 +695,6 @@ namespace AutoScaling
          */
         virtual Model::DescribeTerminationPolicyTypesOutcome DescribeTerminationPolicyTypes(const Model::DescribeTerminationPolicyTypesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTerminationPolicyTypes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTerminationPolicyTypesOutcomeCallable DescribeTerminationPolicyTypesCallable(const Model::DescribeTerminationPolicyTypesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTerminationPolicyTypes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTerminationPolicyTypesAsync(const Model::DescribeTerminationPolicyTypesRequest& request, const DescribeTerminationPolicyTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about a warm pool and its instances.</p> <p>For more
@@ -997,15 +707,6 @@ namespace AutoScaling
          */
         virtual Model::DescribeWarmPoolOutcome DescribeWarmPool(const Model::DescribeWarmPoolRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeWarmPool that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeWarmPoolOutcomeCallable DescribeWarmPoolCallable(const Model::DescribeWarmPoolRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeWarmPool that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeWarmPoolAsync(const Model::DescribeWarmPoolRequest& request, const DescribeWarmPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes one or more instances from the specified Auto Scaling group.</p>
@@ -1024,15 +725,6 @@ namespace AutoScaling
          */
         virtual Model::DetachInstancesOutcome DetachInstances(const Model::DetachInstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DetachInstances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DetachInstancesOutcomeCallable DetachInstancesCallable(const Model::DetachInstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for DetachInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DetachInstancesAsync(const Model::DetachInstancesRequest& request, const DetachInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Detaches one or more target groups from the specified Auto Scaling group.</p>
@@ -1046,15 +738,6 @@ namespace AutoScaling
          */
         virtual Model::DetachLoadBalancerTargetGroupsOutcome DetachLoadBalancerTargetGroups(const Model::DetachLoadBalancerTargetGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DetachLoadBalancerTargetGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DetachLoadBalancerTargetGroupsOutcomeCallable DetachLoadBalancerTargetGroupsCallable(const Model::DetachLoadBalancerTargetGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for DetachLoadBalancerTargetGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DetachLoadBalancerTargetGroupsAsync(const Model::DetachLoadBalancerTargetGroupsRequest& request, const DetachLoadBalancerTargetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Detaches one or more Classic Load Balancers from the specified Auto Scaling
@@ -1071,15 +754,6 @@ namespace AutoScaling
          */
         virtual Model::DetachLoadBalancersOutcome DetachLoadBalancers(const Model::DetachLoadBalancersRequest& request) const;
 
-        /**
-         * A Callable wrapper for DetachLoadBalancers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DetachLoadBalancersOutcomeCallable DetachLoadBalancersCallable(const Model::DetachLoadBalancersRequest& request) const;
-
-        /**
-         * An Async wrapper for DetachLoadBalancers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DetachLoadBalancersAsync(const Model::DetachLoadBalancersRequest& request, const DetachLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disables group metrics collection for the specified Auto Scaling
@@ -1089,15 +763,6 @@ namespace AutoScaling
          */
         virtual Model::DisableMetricsCollectionOutcome DisableMetricsCollection(const Model::DisableMetricsCollectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisableMetricsCollection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisableMetricsCollectionOutcomeCallable DisableMetricsCollectionCallable(const Model::DisableMetricsCollectionRequest& request) const;
-
-        /**
-         * An Async wrapper for DisableMetricsCollection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisableMetricsCollectionAsync(const Model::DisableMetricsCollectionRequest& request, const DisableMetricsCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables group metrics collection for the specified Auto Scaling group.</p>
@@ -1112,15 +777,6 @@ namespace AutoScaling
          */
         virtual Model::EnableMetricsCollectionOutcome EnableMetricsCollection(const Model::EnableMetricsCollectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for EnableMetricsCollection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnableMetricsCollectionOutcomeCallable EnableMetricsCollectionCallable(const Model::EnableMetricsCollectionRequest& request) const;
-
-        /**
-         * An Async wrapper for EnableMetricsCollection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnableMetricsCollectionAsync(const Model::EnableMetricsCollectionRequest& request, const EnableMetricsCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Moves the specified instances into the standby state.</p> <p>If you choose to
@@ -1139,15 +795,6 @@ namespace AutoScaling
          */
         virtual Model::EnterStandbyOutcome EnterStandby(const Model::EnterStandbyRequest& request) const;
 
-        /**
-         * A Callable wrapper for EnterStandby that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnterStandbyOutcomeCallable EnterStandbyCallable(const Model::EnterStandbyRequest& request) const;
-
-        /**
-         * An Async wrapper for EnterStandby that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnterStandbyAsync(const Model::EnterStandbyRequest& request, const EnterStandbyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Executes the specified policy. This can be useful for testing the design of
@@ -1157,15 +804,6 @@ namespace AutoScaling
          */
         virtual Model::ExecutePolicyOutcome ExecutePolicy(const Model::ExecutePolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for ExecutePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ExecutePolicyOutcomeCallable ExecutePolicyCallable(const Model::ExecutePolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for ExecutePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ExecutePolicyAsync(const Model::ExecutePolicyRequest& request, const ExecutePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Moves the specified instances out of the standby state.</p> <p>After you put
@@ -1179,15 +817,6 @@ namespace AutoScaling
          */
         virtual Model::ExitStandbyOutcome ExitStandby(const Model::ExitStandbyRequest& request) const;
 
-        /**
-         * A Callable wrapper for ExitStandby that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ExitStandbyOutcomeCallable ExitStandbyCallable(const Model::ExitStandbyRequest& request) const;
-
-        /**
-         * An Async wrapper for ExitStandby that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ExitStandbyAsync(const Model::ExitStandbyRequest& request, const ExitStandbyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the forecast data for a predictive scaling policy.</p> <p>Load
@@ -1206,15 +835,6 @@ namespace AutoScaling
          */
         virtual Model::GetPredictiveScalingForecastOutcome GetPredictiveScalingForecast(const Model::GetPredictiveScalingForecastRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetPredictiveScalingForecast that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetPredictiveScalingForecastOutcomeCallable GetPredictiveScalingForecastCallable(const Model::GetPredictiveScalingForecastRequest& request) const;
-
-        /**
-         * An Async wrapper for GetPredictiveScalingForecast that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetPredictiveScalingForecastAsync(const Model::GetPredictiveScalingForecastRequest& request, const GetPredictiveScalingForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates or updates a lifecycle hook for the specified Auto Scaling group.</p>
@@ -1250,15 +870,6 @@ namespace AutoScaling
          */
         virtual Model::PutLifecycleHookOutcome PutLifecycleHook(const Model::PutLifecycleHookRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutLifecycleHook that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutLifecycleHookOutcomeCallable PutLifecycleHookCallable(const Model::PutLifecycleHookRequest& request) const;
-
-        /**
-         * An Async wrapper for PutLifecycleHook that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutLifecycleHookAsync(const Model::PutLifecycleHookRequest& request, const PutLifecycleHookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Configures an Auto Scaling group to send notifications when specified events
@@ -1275,15 +886,6 @@ namespace AutoScaling
          */
         virtual Model::PutNotificationConfigurationOutcome PutNotificationConfiguration(const Model::PutNotificationConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutNotificationConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutNotificationConfigurationOutcomeCallable PutNotificationConfigurationCallable(const Model::PutNotificationConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for PutNotificationConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutNotificationConfigurationAsync(const Model::PutNotificationConfigurationRequest& request, const PutNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates or updates a scaling policy for an Auto Scaling group. Scaling
@@ -1306,15 +908,6 @@ namespace AutoScaling
          */
         virtual Model::PutScalingPolicyOutcome PutScalingPolicy(const Model::PutScalingPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutScalingPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutScalingPolicyOutcomeCallable PutScalingPolicyCallable(const Model::PutScalingPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for PutScalingPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutScalingPolicyAsync(const Model::PutScalingPolicyRequest& request, const PutScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates or updates a scheduled scaling action for an Auto Scaling group.</p>
@@ -1331,15 +924,6 @@ namespace AutoScaling
          */
         virtual Model::PutScheduledUpdateGroupActionOutcome PutScheduledUpdateGroupAction(const Model::PutScheduledUpdateGroupActionRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutScheduledUpdateGroupAction that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutScheduledUpdateGroupActionOutcomeCallable PutScheduledUpdateGroupActionCallable(const Model::PutScheduledUpdateGroupActionRequest& request) const;
-
-        /**
-         * An Async wrapper for PutScheduledUpdateGroupAction that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutScheduledUpdateGroupActionAsync(const Model::PutScheduledUpdateGroupActionRequest& request, const PutScheduledUpdateGroupActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates or updates a warm pool for the specified Auto Scaling group. A warm
@@ -1361,15 +945,6 @@ namespace AutoScaling
          */
         virtual Model::PutWarmPoolOutcome PutWarmPool(const Model::PutWarmPoolRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutWarmPool that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutWarmPoolOutcomeCallable PutWarmPoolCallable(const Model::PutWarmPoolRequest& request) const;
-
-        /**
-         * An Async wrapper for PutWarmPool that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutWarmPoolAsync(const Model::PutWarmPoolRequest& request, const PutWarmPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Records a heartbeat for the lifecycle action associated with the specified
@@ -1398,15 +973,6 @@ namespace AutoScaling
          */
         virtual Model::RecordLifecycleActionHeartbeatOutcome RecordLifecycleActionHeartbeat(const Model::RecordLifecycleActionHeartbeatRequest& request) const;
 
-        /**
-         * A Callable wrapper for RecordLifecycleActionHeartbeat that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RecordLifecycleActionHeartbeatOutcomeCallable RecordLifecycleActionHeartbeatCallable(const Model::RecordLifecycleActionHeartbeatRequest& request) const;
-
-        /**
-         * An Async wrapper for RecordLifecycleActionHeartbeat that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RecordLifecycleActionHeartbeatAsync(const Model::RecordLifecycleActionHeartbeatRequest& request, const RecordLifecycleActionHeartbeatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Resumes the specified suspended auto scaling processes, or all suspended
@@ -1420,15 +986,6 @@ namespace AutoScaling
          */
         virtual Model::ResumeProcessesOutcome ResumeProcesses(const Model::ResumeProcessesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ResumeProcesses that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ResumeProcessesOutcomeCallable ResumeProcessesCallable(const Model::ResumeProcessesRequest& request) const;
-
-        /**
-         * An Async wrapper for ResumeProcesses that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ResumeProcessesAsync(const Model::ResumeProcessesRequest& request, const ResumeProcessesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets the size of the specified Auto Scaling group.</p> <p>If a scale-in
@@ -1444,15 +1001,6 @@ namespace AutoScaling
          */
         virtual Model::SetDesiredCapacityOutcome SetDesiredCapacity(const Model::SetDesiredCapacityRequest& request) const;
 
-        /**
-         * A Callable wrapper for SetDesiredCapacity that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SetDesiredCapacityOutcomeCallable SetDesiredCapacityCallable(const Model::SetDesiredCapacityRequest& request) const;
-
-        /**
-         * An Async wrapper for SetDesiredCapacity that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SetDesiredCapacityAsync(const Model::SetDesiredCapacityRequest& request, const SetDesiredCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets the health status of the specified instance.</p> <p>For more
@@ -1465,15 +1013,6 @@ namespace AutoScaling
          */
         virtual Model::SetInstanceHealthOutcome SetInstanceHealth(const Model::SetInstanceHealthRequest& request) const;
 
-        /**
-         * A Callable wrapper for SetInstanceHealth that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SetInstanceHealthOutcomeCallable SetInstanceHealthCallable(const Model::SetInstanceHealthRequest& request) const;
-
-        /**
-         * An Async wrapper for SetInstanceHealth that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SetInstanceHealthAsync(const Model::SetInstanceHealthRequest& request, const SetInstanceHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the instance protection settings of the specified instances. This
@@ -1489,15 +1028,6 @@ namespace AutoScaling
          */
         virtual Model::SetInstanceProtectionOutcome SetInstanceProtection(const Model::SetInstanceProtectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for SetInstanceProtection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SetInstanceProtectionOutcomeCallable SetInstanceProtectionCallable(const Model::SetInstanceProtectionRequest& request) const;
-
-        /**
-         * An Async wrapper for SetInstanceProtection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SetInstanceProtectionAsync(const Model::SetInstanceProtectionRequest& request, const SetInstanceProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts a new instance refresh operation. An instance refresh performs a
@@ -1522,15 +1052,6 @@ namespace AutoScaling
          */
         virtual Model::StartInstanceRefreshOutcome StartInstanceRefresh(const Model::StartInstanceRefreshRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartInstanceRefresh that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartInstanceRefreshOutcomeCallable StartInstanceRefreshCallable(const Model::StartInstanceRefreshRequest& request) const;
-
-        /**
-         * An Async wrapper for StartInstanceRefresh that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartInstanceRefreshAsync(const Model::StartInstanceRefreshRequest& request, const StartInstanceRefreshResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Suspends the specified auto scaling processes, or all processes, for the
@@ -1546,15 +1067,6 @@ namespace AutoScaling
          */
         virtual Model::SuspendProcessesOutcome SuspendProcesses(const Model::SuspendProcessesRequest& request) const;
 
-        /**
-         * A Callable wrapper for SuspendProcesses that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SuspendProcessesOutcomeCallable SuspendProcessesCallable(const Model::SuspendProcessesRequest& request) const;
-
-        /**
-         * An Async wrapper for SuspendProcesses that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SuspendProcessesAsync(const Model::SuspendProcessesRequest& request, const SuspendProcessesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Terminates the specified instance and optionally adjusts the desired group
@@ -1577,15 +1089,6 @@ namespace AutoScaling
          */
         virtual Model::TerminateInstanceInAutoScalingGroupOutcome TerminateInstanceInAutoScalingGroup(const Model::TerminateInstanceInAutoScalingGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for TerminateInstanceInAutoScalingGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TerminateInstanceInAutoScalingGroupOutcomeCallable TerminateInstanceInAutoScalingGroupCallable(const Model::TerminateInstanceInAutoScalingGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for TerminateInstanceInAutoScalingGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TerminateInstanceInAutoScalingGroupAsync(const Model::TerminateInstanceInAutoScalingGroupRequest& request, const TerminateInstanceInAutoScalingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> <b>We strongly recommend that all Auto Scaling groups use launch templates
@@ -1629,15 +1132,6 @@ namespace AutoScaling
          */
         virtual Model::UpdateAutoScalingGroupOutcome UpdateAutoScalingGroup(const Model::UpdateAutoScalingGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateAutoScalingGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateAutoScalingGroupOutcomeCallable UpdateAutoScalingGroupCallable(const Model::UpdateAutoScalingGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateAutoScalingGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateAutoScalingGroupAsync(const Model::UpdateAutoScalingGroupRequest& request, const UpdateAutoScalingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
         void OverrideEndpoint(const Aws::String& endpoint);

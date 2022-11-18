@@ -8,8 +8,10 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/sns/SNSServiceClientModel.h>
+#include <aws/sns/SNSLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -91,6 +93,47 @@ namespace SNS
         virtual ~SNSClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
        /**
         * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
         */
@@ -106,15 +149,6 @@ namespace SNS
          */
         virtual Model::AddPermissionOutcome AddPermission(const Model::AddPermissionRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddPermission that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddPermissionOutcomeCallable AddPermissionCallable(const Model::AddPermissionRequest& request) const;
-
-        /**
-         * An Async wrapper for AddPermission that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddPermissionAsync(const Model::AddPermissionRequest& request, const AddPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Accepts a phone number and indicates whether the phone holder has opted out
@@ -127,15 +161,6 @@ namespace SNS
          */
         virtual Model::CheckIfPhoneNumberIsOptedOutOutcome CheckIfPhoneNumberIsOptedOut(const Model::CheckIfPhoneNumberIsOptedOutRequest& request) const;
 
-        /**
-         * A Callable wrapper for CheckIfPhoneNumberIsOptedOut that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CheckIfPhoneNumberIsOptedOutOutcomeCallable CheckIfPhoneNumberIsOptedOutCallable(const Model::CheckIfPhoneNumberIsOptedOutRequest& request) const;
-
-        /**
-         * An Async wrapper for CheckIfPhoneNumberIsOptedOut that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CheckIfPhoneNumberIsOptedOutAsync(const Model::CheckIfPhoneNumberIsOptedOutRequest& request, const CheckIfPhoneNumberIsOptedOutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Verifies an endpoint owner's intent to receive messages by validating the
@@ -149,15 +174,6 @@ namespace SNS
          */
         virtual Model::ConfirmSubscriptionOutcome ConfirmSubscription(const Model::ConfirmSubscriptionRequest& request) const;
 
-        /**
-         * A Callable wrapper for ConfirmSubscription that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ConfirmSubscriptionOutcomeCallable ConfirmSubscriptionCallable(const Model::ConfirmSubscriptionRequest& request) const;
-
-        /**
-         * An Async wrapper for ConfirmSubscription that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ConfirmSubscriptionAsync(const Model::ConfirmSubscriptionRequest& request, const ConfirmSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a platform application object for one of the supported push
@@ -193,15 +209,6 @@ namespace SNS
          */
         virtual Model::CreatePlatformApplicationOutcome CreatePlatformApplication(const Model::CreatePlatformApplicationRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreatePlatformApplication that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreatePlatformApplicationOutcomeCallable CreatePlatformApplicationCallable(const Model::CreatePlatformApplicationRequest& request) const;
-
-        /**
-         * An Async wrapper for CreatePlatformApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreatePlatformApplicationAsync(const Model::CreatePlatformApplicationRequest& request, const CreatePlatformApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an endpoint for a device and mobile app on one of the supported push
@@ -227,15 +234,6 @@ namespace SNS
          */
         virtual Model::CreatePlatformEndpointOutcome CreatePlatformEndpoint(const Model::CreatePlatformEndpointRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreatePlatformEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreatePlatformEndpointOutcomeCallable CreatePlatformEndpointCallable(const Model::CreatePlatformEndpointRequest& request) const;
-
-        /**
-         * An Async wrapper for CreatePlatformEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreatePlatformEndpointAsync(const Model::CreatePlatformEndpointRequest& request, const CreatePlatformEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds a destination phone number to an Amazon Web Services account in the SMS
@@ -255,15 +253,6 @@ namespace SNS
          */
         virtual Model::CreateSMSSandboxPhoneNumberOutcome CreateSMSSandboxPhoneNumber(const Model::CreateSMSSandboxPhoneNumberRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateSMSSandboxPhoneNumber that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateSMSSandboxPhoneNumberOutcomeCallable CreateSMSSandboxPhoneNumberCallable(const Model::CreateSMSSandboxPhoneNumberRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateSMSSandboxPhoneNumber that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateSMSSandboxPhoneNumberAsync(const Model::CreateSMSSandboxPhoneNumberRequest& request, const CreateSMSSandboxPhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a topic to which notifications can be published. Users can create at
@@ -279,15 +268,6 @@ namespace SNS
          */
         virtual Model::CreateTopicOutcome CreateTopic(const Model::CreateTopicRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateTopic that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateTopicOutcomeCallable CreateTopicCallable(const Model::CreateTopicRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateTopic that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateTopicAsync(const Model::CreateTopicRequest& request, const CreateTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the endpoint for a device and mobile app from Amazon SNS. This action
@@ -301,15 +281,6 @@ namespace SNS
          */
         virtual Model::DeleteEndpointOutcome DeleteEndpoint(const Model::DeleteEndpointRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteEndpointOutcomeCallable DeleteEndpointCallable(const Model::DeleteEndpointRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteEndpointAsync(const Model::DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a platform application object for one of the supported push
@@ -322,15 +293,6 @@ namespace SNS
          */
         virtual Model::DeletePlatformApplicationOutcome DeletePlatformApplication(const Model::DeletePlatformApplicationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeletePlatformApplication that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeletePlatformApplicationOutcomeCallable DeletePlatformApplicationCallable(const Model::DeletePlatformApplicationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeletePlatformApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeletePlatformApplicationAsync(const Model::DeletePlatformApplicationRequest& request, const DeletePlatformApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an Amazon Web Services account's verified or pending phone number
@@ -350,15 +312,6 @@ namespace SNS
          */
         virtual Model::DeleteSMSSandboxPhoneNumberOutcome DeleteSMSSandboxPhoneNumber(const Model::DeleteSMSSandboxPhoneNumberRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteSMSSandboxPhoneNumber that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteSMSSandboxPhoneNumberOutcomeCallable DeleteSMSSandboxPhoneNumberCallable(const Model::DeleteSMSSandboxPhoneNumberRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteSMSSandboxPhoneNumber that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteSMSSandboxPhoneNumberAsync(const Model::DeleteSMSSandboxPhoneNumberRequest& request, const DeleteSMSSandboxPhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a topic and all its subscriptions. Deleting a topic might prevent
@@ -370,15 +323,6 @@ namespace SNS
          */
         virtual Model::DeleteTopicOutcome DeleteTopic(const Model::DeleteTopicRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteTopic that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteTopicOutcomeCallable DeleteTopicCallable(const Model::DeleteTopicRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteTopic that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteTopicAsync(const Model::DeleteTopicRequest& request, const DeleteTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the specified inline <code>DataProtectionPolicy</code> document
@@ -388,15 +332,6 @@ namespace SNS
          */
         virtual Model::GetDataProtectionPolicyOutcome GetDataProtectionPolicy(const Model::GetDataProtectionPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDataProtectionPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDataProtectionPolicyOutcomeCallable GetDataProtectionPolicyCallable(const Model::GetDataProtectionPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDataProtectionPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDataProtectionPolicyAsync(const Model::GetDataProtectionPolicyRequest& request, const GetDataProtectionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the endpoint attributes for a device on one of the supported push
@@ -409,15 +344,6 @@ namespace SNS
          */
         virtual Model::GetEndpointAttributesOutcome GetEndpointAttributes(const Model::GetEndpointAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetEndpointAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetEndpointAttributesOutcomeCallable GetEndpointAttributesCallable(const Model::GetEndpointAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetEndpointAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetEndpointAttributesAsync(const Model::GetEndpointAttributesRequest& request, const GetEndpointAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the attributes of the platform application object for the supported
@@ -430,15 +356,6 @@ namespace SNS
          */
         virtual Model::GetPlatformApplicationAttributesOutcome GetPlatformApplicationAttributes(const Model::GetPlatformApplicationAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetPlatformApplicationAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetPlatformApplicationAttributesOutcomeCallable GetPlatformApplicationAttributesCallable(const Model::GetPlatformApplicationAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetPlatformApplicationAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetPlatformApplicationAttributesAsync(const Model::GetPlatformApplicationAttributesRequest& request, const GetPlatformApplicationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the settings for sending SMS messages from your Amazon Web Services
@@ -449,15 +366,6 @@ namespace SNS
          */
         virtual Model::GetSMSAttributesOutcome GetSMSAttributes(const Model::GetSMSAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSMSAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSMSAttributesOutcomeCallable GetSMSAttributesCallable(const Model::GetSMSAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSMSAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSMSAttributesAsync(const Model::GetSMSAttributesRequest& request, const GetSMSAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the SMS sandbox status for the calling Amazon Web Services account
@@ -477,15 +385,6 @@ namespace SNS
          */
         virtual Model::GetSMSSandboxAccountStatusOutcome GetSMSSandboxAccountStatus(const Model::GetSMSSandboxAccountStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSMSSandboxAccountStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSMSSandboxAccountStatusOutcomeCallable GetSMSSandboxAccountStatusCallable(const Model::GetSMSSandboxAccountStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSMSSandboxAccountStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSMSSandboxAccountStatusAsync(const Model::GetSMSSandboxAccountStatusRequest& request, const GetSMSSandboxAccountStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns all of the properties of a subscription.</p><p><h3>See Also:</h3>  
@@ -495,15 +394,6 @@ namespace SNS
          */
         virtual Model::GetSubscriptionAttributesOutcome GetSubscriptionAttributes(const Model::GetSubscriptionAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSubscriptionAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSubscriptionAttributesOutcomeCallable GetSubscriptionAttributesCallable(const Model::GetSubscriptionAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSubscriptionAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSubscriptionAttributesAsync(const Model::GetSubscriptionAttributesRequest& request, const GetSubscriptionAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns all of the properties of a topic. Topic properties returned might
@@ -513,15 +403,6 @@ namespace SNS
          */
         virtual Model::GetTopicAttributesOutcome GetTopicAttributes(const Model::GetTopicAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetTopicAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetTopicAttributesOutcomeCallable GetTopicAttributesCallable(const Model::GetTopicAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetTopicAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetTopicAttributesAsync(const Model::GetTopicAttributesRequest& request, const GetTopicAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the endpoints and endpoint attributes for devices in a supported push
@@ -541,15 +422,6 @@ namespace SNS
          */
         virtual Model::ListEndpointsByPlatformApplicationOutcome ListEndpointsByPlatformApplication(const Model::ListEndpointsByPlatformApplicationRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListEndpointsByPlatformApplication that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListEndpointsByPlatformApplicationOutcomeCallable ListEndpointsByPlatformApplicationCallable(const Model::ListEndpointsByPlatformApplicationRequest& request) const;
-
-        /**
-         * An Async wrapper for ListEndpointsByPlatformApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListEndpointsByPlatformApplicationAsync(const Model::ListEndpointsByPlatformApplicationRequest& request, const ListEndpointsByPlatformApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the calling Amazon Web Services account's dedicated origination numbers
@@ -562,15 +434,6 @@ namespace SNS
          */
         virtual Model::ListOriginationNumbersOutcome ListOriginationNumbers(const Model::ListOriginationNumbersRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListOriginationNumbers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListOriginationNumbersOutcomeCallable ListOriginationNumbersCallable(const Model::ListOriginationNumbersRequest& request) const;
-
-        /**
-         * An Async wrapper for ListOriginationNumbers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListOriginationNumbersAsync(const Model::ListOriginationNumbersRequest& request, const ListOriginationNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of phone numbers that are opted out, meaning you cannot send
@@ -587,15 +450,6 @@ namespace SNS
          */
         virtual Model::ListPhoneNumbersOptedOutOutcome ListPhoneNumbersOptedOut(const Model::ListPhoneNumbersOptedOutRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPhoneNumbersOptedOut that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPhoneNumbersOptedOutOutcomeCallable ListPhoneNumbersOptedOutCallable(const Model::ListPhoneNumbersOptedOutRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPhoneNumbersOptedOut that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPhoneNumbersOptedOutAsync(const Model::ListPhoneNumbersOptedOutRequest& request, const ListPhoneNumbersOptedOutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the platform application objects for the supported push notification
@@ -614,15 +468,6 @@ namespace SNS
          */
         virtual Model::ListPlatformApplicationsOutcome ListPlatformApplications(const Model::ListPlatformApplicationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPlatformApplications that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPlatformApplicationsOutcomeCallable ListPlatformApplicationsCallable(const Model::ListPlatformApplicationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPlatformApplications that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPlatformApplicationsAsync(const Model::ListPlatformApplicationsRequest& request, const ListPlatformApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the calling Amazon Web Services account's current verified and pending
@@ -642,15 +487,6 @@ namespace SNS
          */
         virtual Model::ListSMSSandboxPhoneNumbersOutcome ListSMSSandboxPhoneNumbers(const Model::ListSMSSandboxPhoneNumbersRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSMSSandboxPhoneNumbers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListSMSSandboxPhoneNumbersOutcomeCallable ListSMSSandboxPhoneNumbersCallable(const Model::ListSMSSandboxPhoneNumbersRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSMSSandboxPhoneNumbers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListSMSSandboxPhoneNumbersAsync(const Model::ListSMSSandboxPhoneNumbersRequest& request, const ListSMSSandboxPhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of the requester's subscriptions. Each call returns a limited
@@ -664,15 +500,6 @@ namespace SNS
          */
         virtual Model::ListSubscriptionsOutcome ListSubscriptions(const Model::ListSubscriptionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSubscriptions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListSubscriptionsOutcomeCallable ListSubscriptionsCallable(const Model::ListSubscriptionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSubscriptions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListSubscriptionsAsync(const Model::ListSubscriptionsRequest& request, const ListSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of the subscriptions to a specific topic. Each call returns a
@@ -686,15 +513,6 @@ namespace SNS
          */
         virtual Model::ListSubscriptionsByTopicOutcome ListSubscriptionsByTopic(const Model::ListSubscriptionsByTopicRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSubscriptionsByTopic that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListSubscriptionsByTopicOutcomeCallable ListSubscriptionsByTopicCallable(const Model::ListSubscriptionsByTopicRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSubscriptionsByTopic that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListSubscriptionsByTopicAsync(const Model::ListSubscriptionsByTopicRequest& request, const ListSubscriptionsByTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List all tags added to the specified Amazon SNS topic. For an overview, see
@@ -706,15 +524,6 @@ namespace SNS
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of the requester's topics. Each call returns a limited list of
@@ -727,15 +536,6 @@ namespace SNS
          */
         virtual Model::ListTopicsOutcome ListTopics(const Model::ListTopicsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTopics that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTopicsOutcomeCallable ListTopicsCallable(const Model::ListTopicsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTopics that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTopicsAsync(const Model::ListTopicsRequest& request, const ListTopicsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Use this request to opt in a phone number that is opted out, which enables
@@ -746,15 +546,6 @@ namespace SNS
          */
         virtual Model::OptInPhoneNumberOutcome OptInPhoneNumber(const Model::OptInPhoneNumberRequest& request) const;
 
-        /**
-         * A Callable wrapper for OptInPhoneNumber that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::OptInPhoneNumberOutcomeCallable OptInPhoneNumberCallable(const Model::OptInPhoneNumberRequest& request) const;
-
-        /**
-         * An Async wrapper for OptInPhoneNumber that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void OptInPhoneNumberAsync(const Model::OptInPhoneNumberRequest& request, const OptInPhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sends a message to an Amazon SNS topic, a text message (SMS message) directly
@@ -778,15 +569,6 @@ namespace SNS
          */
         virtual Model::PublishOutcome Publish(const Model::PublishRequest& request) const;
 
-        /**
-         * A Callable wrapper for Publish that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PublishOutcomeCallable PublishCallable(const Model::PublishRequest& request) const;
-
-        /**
-         * An Async wrapper for Publish that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PublishAsync(const Model::PublishRequest& request, const PublishResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Publishes up to ten messages to the specified topic. This is a batch version
@@ -813,15 +595,6 @@ namespace SNS
          */
         virtual Model::PublishBatchOutcome PublishBatch(const Model::PublishBatchRequest& request) const;
 
-        /**
-         * A Callable wrapper for PublishBatch that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PublishBatchOutcomeCallable PublishBatchCallable(const Model::PublishBatchRequest& request) const;
-
-        /**
-         * An Async wrapper for PublishBatch that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PublishBatchAsync(const Model::PublishBatchRequest& request, const PublishBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds or updates an inline policy document that is stored in the specified
@@ -831,15 +604,6 @@ namespace SNS
          */
         virtual Model::PutDataProtectionPolicyOutcome PutDataProtectionPolicy(const Model::PutDataProtectionPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutDataProtectionPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutDataProtectionPolicyOutcomeCallable PutDataProtectionPolicyCallable(const Model::PutDataProtectionPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for PutDataProtectionPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutDataProtectionPolicyAsync(const Model::PutDataProtectionPolicyRequest& request, const PutDataProtectionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes a statement from a topic's access control policy.</p><p><h3>See
@@ -849,15 +613,6 @@ namespace SNS
          */
         virtual Model::RemovePermissionOutcome RemovePermission(const Model::RemovePermissionRequest& request) const;
 
-        /**
-         * A Callable wrapper for RemovePermission that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RemovePermissionOutcomeCallable RemovePermissionCallable(const Model::RemovePermissionRequest& request) const;
-
-        /**
-         * An Async wrapper for RemovePermission that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RemovePermissionAsync(const Model::RemovePermissionRequest& request, const RemovePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets the attributes for an endpoint for a device on one of the supported push
@@ -870,15 +625,6 @@ namespace SNS
          */
         virtual Model::SetEndpointAttributesOutcome SetEndpointAttributes(const Model::SetEndpointAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for SetEndpointAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SetEndpointAttributesOutcomeCallable SetEndpointAttributesCallable(const Model::SetEndpointAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for SetEndpointAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SetEndpointAttributesAsync(const Model::SetEndpointAttributesRequest& request, const SetEndpointAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets the attributes of the platform application object for the supported push
@@ -895,15 +641,6 @@ namespace SNS
          */
         virtual Model::SetPlatformApplicationAttributesOutcome SetPlatformApplicationAttributes(const Model::SetPlatformApplicationAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for SetPlatformApplicationAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SetPlatformApplicationAttributesOutcomeCallable SetPlatformApplicationAttributesCallable(const Model::SetPlatformApplicationAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for SetPlatformApplicationAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SetPlatformApplicationAttributesAsync(const Model::SetPlatformApplicationAttributesRequest& request, const SetPlatformApplicationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Use this request to set the default settings for sending SMS messages and
@@ -921,15 +658,6 @@ namespace SNS
          */
         virtual Model::SetSMSAttributesOutcome SetSMSAttributes(const Model::SetSMSAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for SetSMSAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SetSMSAttributesOutcomeCallable SetSMSAttributesCallable(const Model::SetSMSAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for SetSMSAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SetSMSAttributesAsync(const Model::SetSMSAttributesRequest& request, const SetSMSAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Allows a subscription owner to set an attribute of the subscription to a new
@@ -939,15 +667,6 @@ namespace SNS
          */
         virtual Model::SetSubscriptionAttributesOutcome SetSubscriptionAttributes(const Model::SetSubscriptionAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for SetSubscriptionAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SetSubscriptionAttributesOutcomeCallable SetSubscriptionAttributesCallable(const Model::SetSubscriptionAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for SetSubscriptionAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SetSubscriptionAttributesAsync(const Model::SetSubscriptionAttributesRequest& request, const SetSubscriptionAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Allows a topic owner to set an attribute of the topic to a new
@@ -957,15 +676,6 @@ namespace SNS
          */
         virtual Model::SetTopicAttributesOutcome SetTopicAttributes(const Model::SetTopicAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for SetTopicAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SetTopicAttributesOutcomeCallable SetTopicAttributesCallable(const Model::SetTopicAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for SetTopicAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SetTopicAttributesAsync(const Model::SetTopicAttributesRequest& request, const SetTopicAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Subscribes an endpoint to an Amazon SNS topic. If the endpoint type is HTTP/S
@@ -981,15 +691,6 @@ namespace SNS
          */
         virtual Model::SubscribeOutcome Subscribe(const Model::SubscribeRequest& request) const;
 
-        /**
-         * A Callable wrapper for Subscribe that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SubscribeOutcomeCallable SubscribeCallable(const Model::SubscribeRequest& request) const;
-
-        /**
-         * An Async wrapper for Subscribe that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SubscribeAsync(const Model::SubscribeRequest& request, const SubscribeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Add tags to the specified Amazon SNS topic. For an overview, see <a
@@ -1010,15 +711,6 @@ namespace SNS
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a subscription. If the subscription requires authentication for
@@ -1034,15 +726,6 @@ namespace SNS
          */
         virtual Model::UnsubscribeOutcome Unsubscribe(const Model::UnsubscribeRequest& request) const;
 
-        /**
-         * A Callable wrapper for Unsubscribe that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UnsubscribeOutcomeCallable UnsubscribeCallable(const Model::UnsubscribeRequest& request) const;
-
-        /**
-         * An Async wrapper for Unsubscribe that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UnsubscribeAsync(const Model::UnsubscribeRequest& request, const UnsubscribeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Remove tags from the specified Amazon SNS topic. For an overview, see <a
@@ -1053,15 +736,6 @@ namespace SNS
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Verifies a destination phone number with a one-time password (OTP) for the
@@ -1081,15 +755,6 @@ namespace SNS
          */
         virtual Model::VerifySMSSandboxPhoneNumberOutcome VerifySMSSandboxPhoneNumber(const Model::VerifySMSSandboxPhoneNumberRequest& request) const;
 
-        /**
-         * A Callable wrapper for VerifySMSSandboxPhoneNumber that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::VerifySMSSandboxPhoneNumberOutcomeCallable VerifySMSSandboxPhoneNumberCallable(const Model::VerifySMSSandboxPhoneNumberRequest& request) const;
-
-        /**
-         * An Async wrapper for VerifySMSSandboxPhoneNumber that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void VerifySMSSandboxPhoneNumberAsync(const Model::VerifySMSSandboxPhoneNumberRequest& request, const VerifySMSSandboxPhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
         void OverrideEndpoint(const Aws::String& endpoint);

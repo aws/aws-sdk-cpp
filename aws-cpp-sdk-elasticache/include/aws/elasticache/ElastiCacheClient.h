@@ -8,8 +8,10 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/elasticache/ElastiCacheServiceClientModel.h>
+#include <aws/elasticache/ElastiCacheLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -82,6 +84,47 @@ namespace ElastiCache
         virtual ~ElastiCacheClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
        /**
         * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
         */
@@ -109,15 +152,6 @@ namespace ElastiCache
          */
         virtual Model::AddTagsToResourceOutcome AddTagsToResource(const Model::AddTagsToResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddTagsToResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddTagsToResourceOutcomeCallable AddTagsToResourceCallable(const Model::AddTagsToResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for AddTagsToResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddTagsToResourceAsync(const Model::AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Allows network ingress to a cache security group. Applications using
@@ -130,15 +164,6 @@ namespace ElastiCache
          */
         virtual Model::AuthorizeCacheSecurityGroupIngressOutcome AuthorizeCacheSecurityGroupIngress(const Model::AuthorizeCacheSecurityGroupIngressRequest& request) const;
 
-        /**
-         * A Callable wrapper for AuthorizeCacheSecurityGroupIngress that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AuthorizeCacheSecurityGroupIngressOutcomeCallable AuthorizeCacheSecurityGroupIngressCallable(const Model::AuthorizeCacheSecurityGroupIngressRequest& request) const;
-
-        /**
-         * An Async wrapper for AuthorizeCacheSecurityGroupIngress that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AuthorizeCacheSecurityGroupIngressAsync(const Model::AuthorizeCacheSecurityGroupIngressRequest& request, const AuthorizeCacheSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Apply the service update. For more information on service updates and
@@ -150,15 +175,6 @@ namespace ElastiCache
          */
         virtual Model::BatchApplyUpdateActionOutcome BatchApplyUpdateAction(const Model::BatchApplyUpdateActionRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchApplyUpdateAction that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchApplyUpdateActionOutcomeCallable BatchApplyUpdateActionCallable(const Model::BatchApplyUpdateActionRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchApplyUpdateAction that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchApplyUpdateActionAsync(const Model::BatchApplyUpdateActionRequest& request, const BatchApplyUpdateActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stop the service update. For more information on service updates and stopping
@@ -170,15 +186,6 @@ namespace ElastiCache
          */
         virtual Model::BatchStopUpdateActionOutcome BatchStopUpdateAction(const Model::BatchStopUpdateActionRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchStopUpdateAction that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchStopUpdateActionOutcomeCallable BatchStopUpdateActionCallable(const Model::BatchStopUpdateActionRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchStopUpdateAction that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchStopUpdateActionAsync(const Model::BatchStopUpdateActionRequest& request, const BatchStopUpdateActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Complete the migration of data.</p><p><h3>See Also:</h3>   <a
@@ -187,15 +194,6 @@ namespace ElastiCache
          */
         virtual Model::CompleteMigrationOutcome CompleteMigration(const Model::CompleteMigrationRequest& request) const;
 
-        /**
-         * A Callable wrapper for CompleteMigration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CompleteMigrationOutcomeCallable CompleteMigrationCallable(const Model::CompleteMigrationRequest& request) const;
-
-        /**
-         * An Async wrapper for CompleteMigration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CompleteMigrationAsync(const Model::CompleteMigrationRequest& request, const CompleteMigrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Makes a copy of an existing snapshot.</p>  <p>This operation is valid
@@ -254,15 +252,6 @@ namespace ElastiCache
          */
         virtual Model::CopySnapshotOutcome CopySnapshot(const Model::CopySnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for CopySnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CopySnapshotOutcomeCallable CopySnapshotCallable(const Model::CopySnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for CopySnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CopySnapshotAsync(const Model::CopySnapshotRequest& request, const CopySnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a cluster. All nodes in the cluster run the same protocol-compliant
@@ -274,15 +263,6 @@ namespace ElastiCache
          */
         virtual Model::CreateCacheClusterOutcome CreateCacheCluster(const Model::CreateCacheClusterRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateCacheCluster that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateCacheClusterOutcomeCallable CreateCacheClusterCallable(const Model::CreateCacheClusterRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateCacheCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateCacheClusterAsync(const Model::CreateCacheClusterRequest& request, const CreateCacheClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new Amazon ElastiCache cache parameter group. An ElastiCache cache
@@ -302,15 +282,6 @@ namespace ElastiCache
          */
         virtual Model::CreateCacheParameterGroupOutcome CreateCacheParameterGroup(const Model::CreateCacheParameterGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateCacheParameterGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateCacheParameterGroupOutcomeCallable CreateCacheParameterGroupCallable(const Model::CreateCacheParameterGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateCacheParameterGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateCacheParameterGroupAsync(const Model::CreateCacheParameterGroupRequest& request, const CreateCacheParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new cache security group. Use a cache security group to control
@@ -325,15 +296,6 @@ namespace ElastiCache
          */
         virtual Model::CreateCacheSecurityGroupOutcome CreateCacheSecurityGroup(const Model::CreateCacheSecurityGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateCacheSecurityGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateCacheSecurityGroupOutcomeCallable CreateCacheSecurityGroupCallable(const Model::CreateCacheSecurityGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateCacheSecurityGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateCacheSecurityGroupAsync(const Model::CreateCacheSecurityGroupRequest& request, const CreateCacheSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new cache subnet group.</p> <p>Use this parameter only when you are
@@ -344,15 +306,6 @@ namespace ElastiCache
          */
         virtual Model::CreateCacheSubnetGroupOutcome CreateCacheSubnetGroup(const Model::CreateCacheSubnetGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateCacheSubnetGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateCacheSubnetGroupOutcomeCallable CreateCacheSubnetGroupCallable(const Model::CreateCacheSubnetGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateCacheSubnetGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateCacheSubnetGroupAsync(const Model::CreateCacheSubnetGroupRequest& request, const CreateCacheSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Global Datastore for Redis offers fully managed, fast, reliable and secure
@@ -371,15 +324,6 @@ namespace ElastiCache
          */
         virtual Model::CreateGlobalReplicationGroupOutcome CreateGlobalReplicationGroup(const Model::CreateGlobalReplicationGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateGlobalReplicationGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateGlobalReplicationGroupOutcomeCallable CreateGlobalReplicationGroupCallable(const Model::CreateGlobalReplicationGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateGlobalReplicationGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateGlobalReplicationGroupAsync(const Model::CreateGlobalReplicationGroupRequest& request, const CreateGlobalReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a Redis (cluster mode disabled) or a Redis (cluster mode enabled)
@@ -419,15 +363,6 @@ namespace ElastiCache
          */
         virtual Model::CreateReplicationGroupOutcome CreateReplicationGroup(const Model::CreateReplicationGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateReplicationGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateReplicationGroupOutcomeCallable CreateReplicationGroupCallable(const Model::CreateReplicationGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateReplicationGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateReplicationGroupAsync(const Model::CreateReplicationGroupRequest& request, const CreateReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a copy of an entire cluster or replication group at a specific moment
@@ -438,15 +373,6 @@ namespace ElastiCache
          */
         virtual Model::CreateSnapshotOutcome CreateSnapshot(const Model::CreateSnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateSnapshotOutcomeCallable CreateSnapshotCallable(const Model::CreateSnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateSnapshotAsync(const Model::CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>For Redis engine version 6.0 onwards: Creates a Redis user. For more
@@ -458,15 +384,6 @@ namespace ElastiCache
          */
         virtual Model::CreateUserOutcome CreateUser(const Model::CreateUserRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateUser that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateUserOutcomeCallable CreateUserCallable(const Model::CreateUserRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateUser that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateUserAsync(const Model::CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>For Redis engine version 6.0 onwards: Creates a Redis user group. For more
@@ -478,15 +395,6 @@ namespace ElastiCache
          */
         virtual Model::CreateUserGroupOutcome CreateUserGroup(const Model::CreateUserGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateUserGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateUserGroupOutcomeCallable CreateUserGroupCallable(const Model::CreateUserGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateUserGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateUserGroupAsync(const Model::CreateUserGroupRequest& request, const CreateUserGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Decreases the number of node groups in a Global datastore</p><p><h3>See
@@ -496,15 +404,6 @@ namespace ElastiCache
          */
         virtual Model::DecreaseNodeGroupsInGlobalReplicationGroupOutcome DecreaseNodeGroupsInGlobalReplicationGroup(const Model::DecreaseNodeGroupsInGlobalReplicationGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DecreaseNodeGroupsInGlobalReplicationGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DecreaseNodeGroupsInGlobalReplicationGroupOutcomeCallable DecreaseNodeGroupsInGlobalReplicationGroupCallable(const Model::DecreaseNodeGroupsInGlobalReplicationGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DecreaseNodeGroupsInGlobalReplicationGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DecreaseNodeGroupsInGlobalReplicationGroupAsync(const Model::DecreaseNodeGroupsInGlobalReplicationGroupRequest& request, const DecreaseNodeGroupsInGlobalReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Dynamically decreases the number of replicas in a Redis (cluster mode
@@ -516,15 +415,6 @@ namespace ElastiCache
          */
         virtual Model::DecreaseReplicaCountOutcome DecreaseReplicaCount(const Model::DecreaseReplicaCountRequest& request) const;
 
-        /**
-         * A Callable wrapper for DecreaseReplicaCount that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DecreaseReplicaCountOutcomeCallable DecreaseReplicaCountCallable(const Model::DecreaseReplicaCountRequest& request) const;
-
-        /**
-         * An Async wrapper for DecreaseReplicaCount that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DecreaseReplicaCountAsync(const Model::DecreaseReplicaCountRequest& request, const DecreaseReplicaCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a previously provisioned cluster. <code>DeleteCacheCluster</code>
@@ -544,15 +434,6 @@ namespace ElastiCache
          */
         virtual Model::DeleteCacheClusterOutcome DeleteCacheCluster(const Model::DeleteCacheClusterRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteCacheCluster that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteCacheClusterOutcomeCallable DeleteCacheClusterCallable(const Model::DeleteCacheClusterRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteCacheCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteCacheClusterAsync(const Model::DeleteCacheClusterRequest& request, const DeleteCacheClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified cache parameter group. You cannot delete a cache
@@ -564,15 +445,6 @@ namespace ElastiCache
          */
         virtual Model::DeleteCacheParameterGroupOutcome DeleteCacheParameterGroup(const Model::DeleteCacheParameterGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteCacheParameterGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteCacheParameterGroupOutcomeCallable DeleteCacheParameterGroupCallable(const Model::DeleteCacheParameterGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteCacheParameterGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteCacheParameterGroupAsync(const Model::DeleteCacheParameterGroupRequest& request, const DeleteCacheParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a cache security group.</p>  <p>You cannot delete a cache
@@ -583,15 +455,6 @@ namespace ElastiCache
          */
         virtual Model::DeleteCacheSecurityGroupOutcome DeleteCacheSecurityGroup(const Model::DeleteCacheSecurityGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteCacheSecurityGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteCacheSecurityGroupOutcomeCallable DeleteCacheSecurityGroupCallable(const Model::DeleteCacheSecurityGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteCacheSecurityGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteCacheSecurityGroupAsync(const Model::DeleteCacheSecurityGroupRequest& request, const DeleteCacheSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a cache subnet group.</p>  <p>You cannot delete a default cache
@@ -602,15 +465,6 @@ namespace ElastiCache
          */
         virtual Model::DeleteCacheSubnetGroupOutcome DeleteCacheSubnetGroup(const Model::DeleteCacheSubnetGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteCacheSubnetGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteCacheSubnetGroupOutcomeCallable DeleteCacheSubnetGroupCallable(const Model::DeleteCacheSubnetGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteCacheSubnetGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteCacheSubnetGroupAsync(const Model::DeleteCacheSubnetGroupRequest& request, const DeleteCacheSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deleting a Global datastore is a two-step process: </p> <ul> <li> <p>First,
@@ -633,15 +487,6 @@ namespace ElastiCache
          */
         virtual Model::DeleteGlobalReplicationGroupOutcome DeleteGlobalReplicationGroup(const Model::DeleteGlobalReplicationGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteGlobalReplicationGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteGlobalReplicationGroupOutcomeCallable DeleteGlobalReplicationGroupCallable(const Model::DeleteGlobalReplicationGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteGlobalReplicationGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteGlobalReplicationGroupAsync(const Model::DeleteGlobalReplicationGroupRequest& request, const DeleteGlobalReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an existing replication group. By default, this operation deletes the
@@ -657,15 +502,6 @@ namespace ElastiCache
          */
         virtual Model::DeleteReplicationGroupOutcome DeleteReplicationGroup(const Model::DeleteReplicationGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteReplicationGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteReplicationGroupOutcomeCallable DeleteReplicationGroupCallable(const Model::DeleteReplicationGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteReplicationGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteReplicationGroupAsync(const Model::DeleteReplicationGroupRequest& request, const DeleteReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an existing snapshot. When you receive a successful response from
@@ -677,15 +513,6 @@ namespace ElastiCache
          */
         virtual Model::DeleteSnapshotOutcome DeleteSnapshot(const Model::DeleteSnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteSnapshotOutcomeCallable DeleteSnapshotCallable(const Model::DeleteSnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteSnapshotAsync(const Model::DeleteSnapshotRequest& request, const DeleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>For Redis engine version 6.0 onwards: Deletes a user. The user will be
@@ -698,15 +525,6 @@ namespace ElastiCache
          */
         virtual Model::DeleteUserOutcome DeleteUser(const Model::DeleteUserRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteUser that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteUserOutcomeCallable DeleteUserCallable(const Model::DeleteUserRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteUser that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteUserAsync(const Model::DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>For Redis engine version 6.0 onwards: Deletes a user group. The user group
@@ -719,15 +537,6 @@ namespace ElastiCache
          */
         virtual Model::DeleteUserGroupOutcome DeleteUserGroup(const Model::DeleteUserGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteUserGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteUserGroupOutcomeCallable DeleteUserGroupCallable(const Model::DeleteUserGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteUserGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteUserGroupAsync(const Model::DeleteUserGroupRequest& request, const DeleteUserGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about all provisioned clusters if no cluster identifier
@@ -750,15 +559,6 @@ namespace ElastiCache
          */
         virtual Model::DescribeCacheClustersOutcome DescribeCacheClusters(const Model::DescribeCacheClustersRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeCacheClusters that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeCacheClustersOutcomeCallable DescribeCacheClustersCallable(const Model::DescribeCacheClustersRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeCacheClusters that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeCacheClustersAsync(const Model::DescribeCacheClustersRequest& request, const DescribeCacheClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of the available cache engines and their
@@ -768,15 +568,6 @@ namespace ElastiCache
          */
         virtual Model::DescribeCacheEngineVersionsOutcome DescribeCacheEngineVersions(const Model::DescribeCacheEngineVersionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeCacheEngineVersions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeCacheEngineVersionsOutcomeCallable DescribeCacheEngineVersionsCallable(const Model::DescribeCacheEngineVersionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeCacheEngineVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeCacheEngineVersionsAsync(const Model::DescribeCacheEngineVersionsRequest& request, const DescribeCacheEngineVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of cache parameter group descriptions. If a cache parameter
@@ -787,15 +578,6 @@ namespace ElastiCache
          */
         virtual Model::DescribeCacheParameterGroupsOutcome DescribeCacheParameterGroups(const Model::DescribeCacheParameterGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeCacheParameterGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeCacheParameterGroupsOutcomeCallable DescribeCacheParameterGroupsCallable(const Model::DescribeCacheParameterGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeCacheParameterGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeCacheParameterGroupsAsync(const Model::DescribeCacheParameterGroupsRequest& request, const DescribeCacheParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the detailed parameter list for a particular cache parameter
@@ -805,15 +587,6 @@ namespace ElastiCache
          */
         virtual Model::DescribeCacheParametersOutcome DescribeCacheParameters(const Model::DescribeCacheParametersRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeCacheParameters that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeCacheParametersOutcomeCallable DescribeCacheParametersCallable(const Model::DescribeCacheParametersRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeCacheParameters that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeCacheParametersAsync(const Model::DescribeCacheParametersRequest& request, const DescribeCacheParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of cache security group descriptions. If a cache security
@@ -825,15 +598,6 @@ namespace ElastiCache
          */
         virtual Model::DescribeCacheSecurityGroupsOutcome DescribeCacheSecurityGroups(const Model::DescribeCacheSecurityGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeCacheSecurityGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeCacheSecurityGroupsOutcomeCallable DescribeCacheSecurityGroupsCallable(const Model::DescribeCacheSecurityGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeCacheSecurityGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeCacheSecurityGroupsAsync(const Model::DescribeCacheSecurityGroupsRequest& request, const DescribeCacheSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of cache subnet group descriptions. If a subnet group name is
@@ -845,15 +609,6 @@ namespace ElastiCache
          */
         virtual Model::DescribeCacheSubnetGroupsOutcome DescribeCacheSubnetGroups(const Model::DescribeCacheSubnetGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeCacheSubnetGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeCacheSubnetGroupsOutcomeCallable DescribeCacheSubnetGroupsCallable(const Model::DescribeCacheSubnetGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeCacheSubnetGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeCacheSubnetGroupsAsync(const Model::DescribeCacheSubnetGroupsRequest& request, const DescribeCacheSubnetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the default engine and system parameter information for the specified
@@ -863,15 +618,6 @@ namespace ElastiCache
          */
         virtual Model::DescribeEngineDefaultParametersOutcome DescribeEngineDefaultParameters(const Model::DescribeEngineDefaultParametersRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEngineDefaultParameters that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEngineDefaultParametersOutcomeCallable DescribeEngineDefaultParametersCallable(const Model::DescribeEngineDefaultParametersRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEngineDefaultParameters that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEngineDefaultParametersAsync(const Model::DescribeEngineDefaultParametersRequest& request, const DescribeEngineDefaultParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns events related to clusters, cache security groups, and cache
@@ -885,15 +631,6 @@ namespace ElastiCache
          */
         virtual Model::DescribeEventsOutcome DescribeEvents(const Model::DescribeEventsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEvents that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEventsOutcomeCallable DescribeEventsCallable(const Model::DescribeEventsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEventsAsync(const Model::DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a particular global replication group. If no
@@ -904,15 +641,6 @@ namespace ElastiCache
          */
         virtual Model::DescribeGlobalReplicationGroupsOutcome DescribeGlobalReplicationGroups(const Model::DescribeGlobalReplicationGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeGlobalReplicationGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeGlobalReplicationGroupsOutcomeCallable DescribeGlobalReplicationGroupsCallable(const Model::DescribeGlobalReplicationGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeGlobalReplicationGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeGlobalReplicationGroupsAsync(const Model::DescribeGlobalReplicationGroupsRequest& request, const DescribeGlobalReplicationGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a particular replication group. If no identifier is
@@ -924,15 +652,6 @@ namespace ElastiCache
          */
         virtual Model::DescribeReplicationGroupsOutcome DescribeReplicationGroups(const Model::DescribeReplicationGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeReplicationGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeReplicationGroupsOutcomeCallable DescribeReplicationGroupsCallable(const Model::DescribeReplicationGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeReplicationGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeReplicationGroupsAsync(const Model::DescribeReplicationGroupsRequest& request, const DescribeReplicationGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about reserved cache nodes for this account, or about a
@@ -942,15 +661,6 @@ namespace ElastiCache
          */
         virtual Model::DescribeReservedCacheNodesOutcome DescribeReservedCacheNodes(const Model::DescribeReservedCacheNodesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeReservedCacheNodes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeReservedCacheNodesOutcomeCallable DescribeReservedCacheNodesCallable(const Model::DescribeReservedCacheNodesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeReservedCacheNodes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeReservedCacheNodesAsync(const Model::DescribeReservedCacheNodesRequest& request, const DescribeReservedCacheNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists available reserved cache node offerings.</p><p><h3>See Also:</h3>   <a
@@ -959,15 +669,6 @@ namespace ElastiCache
          */
         virtual Model::DescribeReservedCacheNodesOfferingsOutcome DescribeReservedCacheNodesOfferings(const Model::DescribeReservedCacheNodesOfferingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeReservedCacheNodesOfferings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeReservedCacheNodesOfferingsOutcomeCallable DescribeReservedCacheNodesOfferingsCallable(const Model::DescribeReservedCacheNodesOfferingsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeReservedCacheNodesOfferings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeReservedCacheNodesOfferingsAsync(const Model::DescribeReservedCacheNodesOfferingsRequest& request, const DescribeReservedCacheNodesOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns details of the service updates</p><p><h3>See Also:</h3>   <a
@@ -976,15 +677,6 @@ namespace ElastiCache
          */
         virtual Model::DescribeServiceUpdatesOutcome DescribeServiceUpdates(const Model::DescribeServiceUpdatesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeServiceUpdates that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeServiceUpdatesOutcomeCallable DescribeServiceUpdatesCallable(const Model::DescribeServiceUpdatesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeServiceUpdates that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeServiceUpdatesAsync(const Model::DescribeServiceUpdatesRequest& request, const DescribeServiceUpdatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about cluster or replication group snapshots. By default,
@@ -997,15 +689,6 @@ namespace ElastiCache
          */
         virtual Model::DescribeSnapshotsOutcome DescribeSnapshots(const Model::DescribeSnapshotsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeSnapshots that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeSnapshotsOutcomeCallable DescribeSnapshotsCallable(const Model::DescribeSnapshotsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeSnapshots that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeSnapshotsAsync(const Model::DescribeSnapshotsRequest& request, const DescribeSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns details of the update actions </p><p><h3>See Also:</h3>   <a
@@ -1014,15 +697,6 @@ namespace ElastiCache
          */
         virtual Model::DescribeUpdateActionsOutcome DescribeUpdateActions(const Model::DescribeUpdateActionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeUpdateActions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeUpdateActionsOutcomeCallable DescribeUpdateActionsCallable(const Model::DescribeUpdateActionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeUpdateActions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeUpdateActionsAsync(const Model::DescribeUpdateActionsRequest& request, const DescribeUpdateActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of user groups.</p><p><h3>See Also:</h3>   <a
@@ -1031,15 +705,6 @@ namespace ElastiCache
          */
         virtual Model::DescribeUserGroupsOutcome DescribeUserGroups(const Model::DescribeUserGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeUserGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeUserGroupsOutcomeCallable DescribeUserGroupsCallable(const Model::DescribeUserGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeUserGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeUserGroupsAsync(const Model::DescribeUserGroupsRequest& request, const DescribeUserGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of users.</p><p><h3>See Also:</h3>   <a
@@ -1048,15 +713,6 @@ namespace ElastiCache
          */
         virtual Model::DescribeUsersOutcome DescribeUsers(const Model::DescribeUsersRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeUsers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeUsersOutcomeCallable DescribeUsersCallable(const Model::DescribeUsersRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeUsers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeUsersAsync(const Model::DescribeUsersRequest& request, const DescribeUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Remove a secondary cluster from the Global datastore using the Global
@@ -1068,15 +724,6 @@ namespace ElastiCache
          */
         virtual Model::DisassociateGlobalReplicationGroupOutcome DisassociateGlobalReplicationGroup(const Model::DisassociateGlobalReplicationGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateGlobalReplicationGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateGlobalReplicationGroupOutcomeCallable DisassociateGlobalReplicationGroupCallable(const Model::DisassociateGlobalReplicationGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateGlobalReplicationGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateGlobalReplicationGroupAsync(const Model::DisassociateGlobalReplicationGroupRequest& request, const DisassociateGlobalReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Used to failover the primary region to a secondary region. The secondary
@@ -1087,15 +734,6 @@ namespace ElastiCache
          */
         virtual Model::FailoverGlobalReplicationGroupOutcome FailoverGlobalReplicationGroup(const Model::FailoverGlobalReplicationGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for FailoverGlobalReplicationGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::FailoverGlobalReplicationGroupOutcomeCallable FailoverGlobalReplicationGroupCallable(const Model::FailoverGlobalReplicationGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for FailoverGlobalReplicationGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void FailoverGlobalReplicationGroupAsync(const Model::FailoverGlobalReplicationGroupRequest& request, const FailoverGlobalReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Increase the number of node groups in the Global datastore</p><p><h3>See
@@ -1105,15 +743,6 @@ namespace ElastiCache
          */
         virtual Model::IncreaseNodeGroupsInGlobalReplicationGroupOutcome IncreaseNodeGroupsInGlobalReplicationGroup(const Model::IncreaseNodeGroupsInGlobalReplicationGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for IncreaseNodeGroupsInGlobalReplicationGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::IncreaseNodeGroupsInGlobalReplicationGroupOutcomeCallable IncreaseNodeGroupsInGlobalReplicationGroupCallable(const Model::IncreaseNodeGroupsInGlobalReplicationGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for IncreaseNodeGroupsInGlobalReplicationGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void IncreaseNodeGroupsInGlobalReplicationGroupAsync(const Model::IncreaseNodeGroupsInGlobalReplicationGroupRequest& request, const IncreaseNodeGroupsInGlobalReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Dynamically increases the number of replicas in a Redis (cluster mode
@@ -1125,15 +754,6 @@ namespace ElastiCache
          */
         virtual Model::IncreaseReplicaCountOutcome IncreaseReplicaCount(const Model::IncreaseReplicaCountRequest& request) const;
 
-        /**
-         * A Callable wrapper for IncreaseReplicaCount that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::IncreaseReplicaCountOutcomeCallable IncreaseReplicaCountCallable(const Model::IncreaseReplicaCountRequest& request) const;
-
-        /**
-         * An Async wrapper for IncreaseReplicaCount that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void IncreaseReplicaCountAsync(const Model::IncreaseReplicaCountRequest& request, const IncreaseReplicaCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all available node types that you can scale your Redis cluster's or
@@ -1147,15 +767,6 @@ namespace ElastiCache
          */
         virtual Model::ListAllowedNodeTypeModificationsOutcome ListAllowedNodeTypeModifications(const Model::ListAllowedNodeTypeModificationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAllowedNodeTypeModifications that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAllowedNodeTypeModificationsOutcomeCallable ListAllowedNodeTypeModificationsCallable(const Model::ListAllowedNodeTypeModificationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAllowedNodeTypeModifications that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAllowedNodeTypeModificationsAsync(const Model::ListAllowedNodeTypeModificationsRequest& request, const ListAllowedNodeTypeModificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all tags currently on a named resource.</p> <p> A tag is a key-value
@@ -1172,15 +783,6 @@ namespace ElastiCache
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the settings for a cluster. You can use this operation to change one
@@ -1191,15 +793,6 @@ namespace ElastiCache
          */
         virtual Model::ModifyCacheClusterOutcome ModifyCacheCluster(const Model::ModifyCacheClusterRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyCacheCluster that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyCacheClusterOutcomeCallable ModifyCacheClusterCallable(const Model::ModifyCacheClusterRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyCacheCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyCacheClusterAsync(const Model::ModifyCacheClusterRequest& request, const ModifyCacheClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the parameters of a cache parameter group. You can modify up to 20
@@ -1210,15 +803,6 @@ namespace ElastiCache
          */
         virtual Model::ModifyCacheParameterGroupOutcome ModifyCacheParameterGroup(const Model::ModifyCacheParameterGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyCacheParameterGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyCacheParameterGroupOutcomeCallable ModifyCacheParameterGroupCallable(const Model::ModifyCacheParameterGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyCacheParameterGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyCacheParameterGroupAsync(const Model::ModifyCacheParameterGroupRequest& request, const ModifyCacheParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies an existing cache subnet group.</p><p><h3>See Also:</h3>   <a
@@ -1227,15 +811,6 @@ namespace ElastiCache
          */
         virtual Model::ModifyCacheSubnetGroupOutcome ModifyCacheSubnetGroup(const Model::ModifyCacheSubnetGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyCacheSubnetGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyCacheSubnetGroupOutcomeCallable ModifyCacheSubnetGroupCallable(const Model::ModifyCacheSubnetGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyCacheSubnetGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyCacheSubnetGroupAsync(const Model::ModifyCacheSubnetGroupRequest& request, const ModifyCacheSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the settings for a Global datastore.</p><p><h3>See Also:</h3>   <a
@@ -1244,15 +819,6 @@ namespace ElastiCache
          */
         virtual Model::ModifyGlobalReplicationGroupOutcome ModifyGlobalReplicationGroup(const Model::ModifyGlobalReplicationGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyGlobalReplicationGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyGlobalReplicationGroupOutcomeCallable ModifyGlobalReplicationGroupCallable(const Model::ModifyGlobalReplicationGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyGlobalReplicationGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyGlobalReplicationGroupAsync(const Model::ModifyGlobalReplicationGroupRequest& request, const ModifyGlobalReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the settings for a replication group.</p> <ul> <li> <p> <a
@@ -1267,15 +833,6 @@ namespace ElastiCache
          */
         virtual Model::ModifyReplicationGroupOutcome ModifyReplicationGroup(const Model::ModifyReplicationGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyReplicationGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyReplicationGroupOutcomeCallable ModifyReplicationGroupCallable(const Model::ModifyReplicationGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyReplicationGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyReplicationGroupAsync(const Model::ModifyReplicationGroupRequest& request, const ModifyReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies a replication group's shards (node groups) by allowing you to add
@@ -1286,15 +843,6 @@ namespace ElastiCache
          */
         virtual Model::ModifyReplicationGroupShardConfigurationOutcome ModifyReplicationGroupShardConfiguration(const Model::ModifyReplicationGroupShardConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyReplicationGroupShardConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyReplicationGroupShardConfigurationOutcomeCallable ModifyReplicationGroupShardConfigurationCallable(const Model::ModifyReplicationGroupShardConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyReplicationGroupShardConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyReplicationGroupShardConfigurationAsync(const Model::ModifyReplicationGroupShardConfigurationRequest& request, const ModifyReplicationGroupShardConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Changes user password(s) and/or access string.</p><p><h3>See Also:</h3>   <a
@@ -1303,15 +851,6 @@ namespace ElastiCache
          */
         virtual Model::ModifyUserOutcome ModifyUser(const Model::ModifyUserRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyUser that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyUserOutcomeCallable ModifyUserCallable(const Model::ModifyUserRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyUser that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyUserAsync(const Model::ModifyUserRequest& request, const ModifyUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Changes the list of users that belong to the user group.</p><p><h3>See
@@ -1321,15 +860,6 @@ namespace ElastiCache
          */
         virtual Model::ModifyUserGroupOutcome ModifyUserGroup(const Model::ModifyUserGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyUserGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyUserGroupOutcomeCallable ModifyUserGroupCallable(const Model::ModifyUserGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyUserGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyUserGroupAsync(const Model::ModifyUserGroupRequest& request, const ModifyUserGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Allows you to purchase a reserved cache node offering. Reserved nodes are not
@@ -1343,15 +873,6 @@ namespace ElastiCache
          */
         virtual Model::PurchaseReservedCacheNodesOfferingOutcome PurchaseReservedCacheNodesOffering(const Model::PurchaseReservedCacheNodesOfferingRequest& request) const;
 
-        /**
-         * A Callable wrapper for PurchaseReservedCacheNodesOffering that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PurchaseReservedCacheNodesOfferingOutcomeCallable PurchaseReservedCacheNodesOfferingCallable(const Model::PurchaseReservedCacheNodesOfferingRequest& request) const;
-
-        /**
-         * An Async wrapper for PurchaseReservedCacheNodesOffering that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PurchaseReservedCacheNodesOfferingAsync(const Model::PurchaseReservedCacheNodesOfferingRequest& request, const PurchaseReservedCacheNodesOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Redistribute slots to ensure uniform distribution across existing shards in
@@ -1361,15 +882,6 @@ namespace ElastiCache
          */
         virtual Model::RebalanceSlotsInGlobalReplicationGroupOutcome RebalanceSlotsInGlobalReplicationGroup(const Model::RebalanceSlotsInGlobalReplicationGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for RebalanceSlotsInGlobalReplicationGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RebalanceSlotsInGlobalReplicationGroupOutcomeCallable RebalanceSlotsInGlobalReplicationGroupCallable(const Model::RebalanceSlotsInGlobalReplicationGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for RebalanceSlotsInGlobalReplicationGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RebalanceSlotsInGlobalReplicationGroupAsync(const Model::RebalanceSlotsInGlobalReplicationGroupRequest& request, const RebalanceSlotsInGlobalReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Reboots some, or all, of the cache nodes within a provisioned cluster. This
@@ -1390,15 +902,6 @@ namespace ElastiCache
          */
         virtual Model::RebootCacheClusterOutcome RebootCacheCluster(const Model::RebootCacheClusterRequest& request) const;
 
-        /**
-         * A Callable wrapper for RebootCacheCluster that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RebootCacheClusterOutcomeCallable RebootCacheClusterCallable(const Model::RebootCacheClusterRequest& request) const;
-
-        /**
-         * An Async wrapper for RebootCacheCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RebootCacheClusterAsync(const Model::RebootCacheClusterRequest& request, const RebootCacheClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the tags identified by the <code>TagKeys</code> list from the named
@@ -1414,15 +917,6 @@ namespace ElastiCache
          */
         virtual Model::RemoveTagsFromResourceOutcome RemoveTagsFromResource(const Model::RemoveTagsFromResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for RemoveTagsFromResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RemoveTagsFromResourceOutcomeCallable RemoveTagsFromResourceCallable(const Model::RemoveTagsFromResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for RemoveTagsFromResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RemoveTagsFromResourceAsync(const Model::RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the parameters of a cache parameter group to the engine or system
@@ -1435,15 +929,6 @@ namespace ElastiCache
          */
         virtual Model::ResetCacheParameterGroupOutcome ResetCacheParameterGroup(const Model::ResetCacheParameterGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for ResetCacheParameterGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ResetCacheParameterGroupOutcomeCallable ResetCacheParameterGroupCallable(const Model::ResetCacheParameterGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for ResetCacheParameterGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ResetCacheParameterGroupAsync(const Model::ResetCacheParameterGroupRequest& request, const ResetCacheParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Revokes ingress from a cache security group. Use this operation to disallow
@@ -1454,15 +939,6 @@ namespace ElastiCache
          */
         virtual Model::RevokeCacheSecurityGroupIngressOutcome RevokeCacheSecurityGroupIngress(const Model::RevokeCacheSecurityGroupIngressRequest& request) const;
 
-        /**
-         * A Callable wrapper for RevokeCacheSecurityGroupIngress that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RevokeCacheSecurityGroupIngressOutcomeCallable RevokeCacheSecurityGroupIngressCallable(const Model::RevokeCacheSecurityGroupIngressRequest& request) const;
-
-        /**
-         * An Async wrapper for RevokeCacheSecurityGroupIngress that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RevokeCacheSecurityGroupIngressAsync(const Model::RevokeCacheSecurityGroupIngressRequest& request, const RevokeCacheSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Start the migration of data.</p><p><h3>See Also:</h3>   <a
@@ -1471,15 +947,6 @@ namespace ElastiCache
          */
         virtual Model::StartMigrationOutcome StartMigration(const Model::StartMigrationRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartMigration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartMigrationOutcomeCallable StartMigrationCallable(const Model::StartMigrationRequest& request) const;
-
-        /**
-         * An Async wrapper for StartMigration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartMigrationAsync(const Model::StartMigrationRequest& request, const StartMigrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Represents the input of a <code>TestFailover</code> operation which test
@@ -1523,15 +990,6 @@ namespace ElastiCache
          */
         virtual Model::TestFailoverOutcome TestFailover(const Model::TestFailoverRequest& request) const;
 
-        /**
-         * A Callable wrapper for TestFailover that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TestFailoverOutcomeCallable TestFailoverCallable(const Model::TestFailoverRequest& request) const;
-
-        /**
-         * An Async wrapper for TestFailover that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TestFailoverAsync(const Model::TestFailoverRequest& request, const TestFailoverResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
         void OverrideEndpoint(const Aws::String& endpoint);

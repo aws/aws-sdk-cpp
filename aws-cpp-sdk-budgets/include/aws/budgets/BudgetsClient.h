@@ -7,8 +7,10 @@
 #include <aws/budgets/Budgets_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/budgets/BudgetsServiceClientModel.h>
+#include <aws/budgets/BudgetsLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -98,6 +100,47 @@ namespace Budgets
         virtual ~BudgetsClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Creates a budget and, if included, notifications and subscribers. </p>
          *  <p>Only one of <code>BudgetLimit</code> or
@@ -112,15 +155,6 @@ namespace Budgets
          */
         virtual Model::CreateBudgetOutcome CreateBudget(const Model::CreateBudgetRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateBudget that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateBudgetOutcomeCallable CreateBudgetCallable(const Model::CreateBudgetRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateBudget that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateBudgetAsync(const Model::CreateBudgetRequest& request, const CreateBudgetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Creates a budget action. </p><p><h3>See Also:</h3>   <a
@@ -129,15 +163,6 @@ namespace Budgets
          */
         virtual Model::CreateBudgetActionOutcome CreateBudgetAction(const Model::CreateBudgetActionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateBudgetAction that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateBudgetActionOutcomeCallable CreateBudgetActionCallable(const Model::CreateBudgetActionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateBudgetAction that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateBudgetActionAsync(const Model::CreateBudgetActionRequest& request, const CreateBudgetActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a notification. You must create the budget before you create the
@@ -147,15 +172,6 @@ namespace Budgets
          */
         virtual Model::CreateNotificationOutcome CreateNotification(const Model::CreateNotificationRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateNotification that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateNotificationOutcomeCallable CreateNotificationCallable(const Model::CreateNotificationRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateNotification that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateNotificationAsync(const Model::CreateNotificationRequest& request, const CreateNotificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a subscriber. You must create the associated budget and notification
@@ -165,15 +181,6 @@ namespace Budgets
          */
         virtual Model::CreateSubscriberOutcome CreateSubscriber(const Model::CreateSubscriberRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateSubscriber that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateSubscriberOutcomeCallable CreateSubscriberCallable(const Model::CreateSubscriberRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateSubscriber that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateSubscriberAsync(const Model::CreateSubscriberRequest& request, const CreateSubscriberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a budget. You can delete your budget at any time.</p> 
@@ -184,15 +191,6 @@ namespace Budgets
          */
         virtual Model::DeleteBudgetOutcome DeleteBudget(const Model::DeleteBudgetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteBudget that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteBudgetOutcomeCallable DeleteBudgetCallable(const Model::DeleteBudgetRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteBudget that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteBudgetAsync(const Model::DeleteBudgetRequest& request, const DeleteBudgetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Deletes a budget action. </p><p><h3>See Also:</h3>   <a
@@ -201,15 +199,6 @@ namespace Budgets
          */
         virtual Model::DeleteBudgetActionOutcome DeleteBudgetAction(const Model::DeleteBudgetActionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteBudgetAction that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteBudgetActionOutcomeCallable DeleteBudgetActionCallable(const Model::DeleteBudgetActionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteBudgetAction that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteBudgetActionAsync(const Model::DeleteBudgetActionRequest& request, const DeleteBudgetActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a notification.</p>  <p>Deleting a notification also
@@ -220,15 +209,6 @@ namespace Budgets
          */
         virtual Model::DeleteNotificationOutcome DeleteNotification(const Model::DeleteNotificationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteNotification that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteNotificationOutcomeCallable DeleteNotificationCallable(const Model::DeleteNotificationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteNotification that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteNotificationAsync(const Model::DeleteNotificationRequest& request, const DeleteNotificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a subscriber.</p>  <p>Deleting the last subscriber to a
@@ -239,15 +219,6 @@ namespace Budgets
          */
         virtual Model::DeleteSubscriberOutcome DeleteSubscriber(const Model::DeleteSubscriberRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteSubscriber that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteSubscriberOutcomeCallable DeleteSubscriberCallable(const Model::DeleteSubscriberRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteSubscriber that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteSubscriberAsync(const Model::DeleteSubscriberRequest& request, const DeleteSubscriberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a budget.</p>  <p>The Request Syntax section shows the
@@ -260,15 +231,6 @@ namespace Budgets
          */
         virtual Model::DescribeBudgetOutcome DescribeBudget(const Model::DescribeBudgetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeBudget that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeBudgetOutcomeCallable DescribeBudgetCallable(const Model::DescribeBudgetRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeBudget that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeBudgetAsync(const Model::DescribeBudgetRequest& request, const DescribeBudgetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Describes a budget action detail. </p><p><h3>See Also:</h3>   <a
@@ -277,15 +239,6 @@ namespace Budgets
          */
         virtual Model::DescribeBudgetActionOutcome DescribeBudgetAction(const Model::DescribeBudgetActionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeBudgetAction that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeBudgetActionOutcomeCallable DescribeBudgetActionCallable(const Model::DescribeBudgetActionRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeBudgetAction that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeBudgetActionAsync(const Model::DescribeBudgetActionRequest& request, const DescribeBudgetActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Describes a budget action history detail. </p><p><h3>See Also:</h3>   <a
@@ -294,15 +247,6 @@ namespace Budgets
          */
         virtual Model::DescribeBudgetActionHistoriesOutcome DescribeBudgetActionHistories(const Model::DescribeBudgetActionHistoriesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeBudgetActionHistories that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeBudgetActionHistoriesOutcomeCallable DescribeBudgetActionHistoriesCallable(const Model::DescribeBudgetActionHistoriesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeBudgetActionHistories that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeBudgetActionHistoriesAsync(const Model::DescribeBudgetActionHistoriesRequest& request, const DescribeBudgetActionHistoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Describes all of the budget actions for an account. </p><p><h3>See
@@ -312,15 +256,6 @@ namespace Budgets
          */
         virtual Model::DescribeBudgetActionsForAccountOutcome DescribeBudgetActionsForAccount(const Model::DescribeBudgetActionsForAccountRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeBudgetActionsForAccount that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeBudgetActionsForAccountOutcomeCallable DescribeBudgetActionsForAccountCallable(const Model::DescribeBudgetActionsForAccountRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeBudgetActionsForAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeBudgetActionsForAccountAsync(const Model::DescribeBudgetActionsForAccountRequest& request, const DescribeBudgetActionsForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Describes all of the budget actions for a budget. </p><p><h3>See Also:</h3> 
@@ -330,15 +265,6 @@ namespace Budgets
          */
         virtual Model::DescribeBudgetActionsForBudgetOutcome DescribeBudgetActionsForBudget(const Model::DescribeBudgetActionsForBudgetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeBudgetActionsForBudget that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeBudgetActionsForBudgetOutcomeCallable DescribeBudgetActionsForBudgetCallable(const Model::DescribeBudgetActionsForBudgetRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeBudgetActionsForBudget that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeBudgetActionsForBudgetAsync(const Model::DescribeBudgetActionsForBudgetRequest& request, const DescribeBudgetActionsForBudgetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Lists the budget names and notifications that are associated with an
@@ -348,15 +274,6 @@ namespace Budgets
          */
         virtual Model::DescribeBudgetNotificationsForAccountOutcome DescribeBudgetNotificationsForAccount(const Model::DescribeBudgetNotificationsForAccountRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeBudgetNotificationsForAccount that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeBudgetNotificationsForAccountOutcomeCallable DescribeBudgetNotificationsForAccountCallable(const Model::DescribeBudgetNotificationsForAccountRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeBudgetNotificationsForAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeBudgetNotificationsForAccountAsync(const Model::DescribeBudgetNotificationsForAccountRequest& request, const DescribeBudgetNotificationsForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the history for <code>DAILY</code>, <code>MONTHLY</code>, and
@@ -367,15 +284,6 @@ namespace Budgets
          */
         virtual Model::DescribeBudgetPerformanceHistoryOutcome DescribeBudgetPerformanceHistory(const Model::DescribeBudgetPerformanceHistoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeBudgetPerformanceHistory that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeBudgetPerformanceHistoryOutcomeCallable DescribeBudgetPerformanceHistoryCallable(const Model::DescribeBudgetPerformanceHistoryRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeBudgetPerformanceHistory that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeBudgetPerformanceHistoryAsync(const Model::DescribeBudgetPerformanceHistoryRequest& request, const DescribeBudgetPerformanceHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the budgets that are associated with an account.</p>  <p>The
@@ -388,15 +296,6 @@ namespace Budgets
          */
         virtual Model::DescribeBudgetsOutcome DescribeBudgets(const Model::DescribeBudgetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeBudgets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeBudgetsOutcomeCallable DescribeBudgetsCallable(const Model::DescribeBudgetsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeBudgets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeBudgetsAsync(const Model::DescribeBudgetsRequest& request, const DescribeBudgetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the notifications that are associated with a budget.</p><p><h3>See
@@ -406,15 +305,6 @@ namespace Budgets
          */
         virtual Model::DescribeNotificationsForBudgetOutcome DescribeNotificationsForBudget(const Model::DescribeNotificationsForBudgetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeNotificationsForBudget that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeNotificationsForBudgetOutcomeCallable DescribeNotificationsForBudgetCallable(const Model::DescribeNotificationsForBudgetRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeNotificationsForBudget that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeNotificationsForBudgetAsync(const Model::DescribeNotificationsForBudgetRequest& request, const DescribeNotificationsForBudgetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the subscribers that are associated with a notification.</p><p><h3>See
@@ -424,15 +314,6 @@ namespace Budgets
          */
         virtual Model::DescribeSubscribersForNotificationOutcome DescribeSubscribersForNotification(const Model::DescribeSubscribersForNotificationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeSubscribersForNotification that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeSubscribersForNotificationOutcomeCallable DescribeSubscribersForNotificationCallable(const Model::DescribeSubscribersForNotificationRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeSubscribersForNotification that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeSubscribersForNotificationAsync(const Model::DescribeSubscribersForNotificationRequest& request, const DescribeSubscribersForNotificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Executes a budget action. </p><p><h3>See Also:</h3>   <a
@@ -441,15 +322,6 @@ namespace Budgets
          */
         virtual Model::ExecuteBudgetActionOutcome ExecuteBudgetAction(const Model::ExecuteBudgetActionRequest& request) const;
 
-        /**
-         * A Callable wrapper for ExecuteBudgetAction that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ExecuteBudgetActionOutcomeCallable ExecuteBudgetActionCallable(const Model::ExecuteBudgetActionRequest& request) const;
-
-        /**
-         * An Async wrapper for ExecuteBudgetAction that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ExecuteBudgetActionAsync(const Model::ExecuteBudgetActionRequest& request, const ExecuteBudgetActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a budget. You can change every part of a budget except for the
@@ -467,15 +339,6 @@ namespace Budgets
          */
         virtual Model::UpdateBudgetOutcome UpdateBudget(const Model::UpdateBudgetRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateBudget that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateBudgetOutcomeCallable UpdateBudgetCallable(const Model::UpdateBudgetRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateBudget that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateBudgetAsync(const Model::UpdateBudgetRequest& request, const UpdateBudgetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Updates a budget action. </p><p><h3>See Also:</h3>   <a
@@ -484,15 +347,6 @@ namespace Budgets
          */
         virtual Model::UpdateBudgetActionOutcome UpdateBudgetAction(const Model::UpdateBudgetActionRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateBudgetAction that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateBudgetActionOutcomeCallable UpdateBudgetActionCallable(const Model::UpdateBudgetActionRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateBudgetAction that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateBudgetActionAsync(const Model::UpdateBudgetActionRequest& request, const UpdateBudgetActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a notification.</p><p><h3>See Also:</h3>   <a
@@ -501,15 +355,6 @@ namespace Budgets
          */
         virtual Model::UpdateNotificationOutcome UpdateNotification(const Model::UpdateNotificationRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateNotification that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateNotificationOutcomeCallable UpdateNotificationCallable(const Model::UpdateNotificationRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateNotification that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateNotificationAsync(const Model::UpdateNotificationRequest& request, const UpdateNotificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a subscriber.</p><p><h3>See Also:</h3>   <a
@@ -518,15 +363,6 @@ namespace Budgets
          */
         virtual Model::UpdateSubscriberOutcome UpdateSubscriber(const Model::UpdateSubscriberRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateSubscriber that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateSubscriberOutcomeCallable UpdateSubscriberCallable(const Model::UpdateSubscriberRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateSubscriber that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateSubscriberAsync(const Model::UpdateSubscriberRequest& request, const UpdateSubscriberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

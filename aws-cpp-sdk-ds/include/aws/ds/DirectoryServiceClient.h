@@ -7,8 +7,10 @@
 #include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ds/DirectoryServiceServiceClientModel.h>
+#include <aws/ds/DirectoryServiceLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -88,6 +90,47 @@ namespace DirectoryService
         virtual ~DirectoryServiceClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Accepts a directory sharing request that was sent from the directory owner
          * account.</p><p><h3>See Also:</h3>   <a
@@ -96,15 +139,6 @@ namespace DirectoryService
          */
         virtual Model::AcceptSharedDirectoryOutcome AcceptSharedDirectory(const Model::AcceptSharedDirectoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for AcceptSharedDirectory that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AcceptSharedDirectoryOutcomeCallable AcceptSharedDirectoryCallable(const Model::AcceptSharedDirectoryRequest& request) const;
-
-        /**
-         * An Async wrapper for AcceptSharedDirectory that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AcceptSharedDirectoryAsync(const Model::AcceptSharedDirectoryRequest& request, const AcceptSharedDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>If the DNS server for your self-managed domain uses a publicly addressable IP
@@ -124,15 +158,6 @@ namespace DirectoryService
          */
         virtual Model::AddIpRoutesOutcome AddIpRoutes(const Model::AddIpRoutesRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddIpRoutes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddIpRoutesOutcomeCallable AddIpRoutesCallable(const Model::AddIpRoutesRequest& request) const;
-
-        /**
-         * An Async wrapper for AddIpRoutes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddIpRoutesAsync(const Model::AddIpRoutesRequest& request, const AddIpRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds two domain controllers in the specified Region for the specified
@@ -142,15 +167,6 @@ namespace DirectoryService
          */
         virtual Model::AddRegionOutcome AddRegion(const Model::AddRegionRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddRegion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddRegionOutcomeCallable AddRegionCallable(const Model::AddRegionRequest& request) const;
-
-        /**
-         * An Async wrapper for AddRegion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddRegionAsync(const Model::AddRegionRequest& request, const AddRegionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds or overwrites one or more tags for the specified directory. Each
@@ -161,15 +177,6 @@ namespace DirectoryService
          */
         virtual Model::AddTagsToResourceOutcome AddTagsToResource(const Model::AddTagsToResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddTagsToResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddTagsToResourceOutcomeCallable AddTagsToResourceCallable(const Model::AddTagsToResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for AddTagsToResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddTagsToResourceAsync(const Model::AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Cancels an in-progress schema extension to a Microsoft AD directory. Once a
@@ -182,15 +189,6 @@ namespace DirectoryService
          */
         virtual Model::CancelSchemaExtensionOutcome CancelSchemaExtension(const Model::CancelSchemaExtensionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelSchemaExtension that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelSchemaExtensionOutcomeCallable CancelSchemaExtensionCallable(const Model::CancelSchemaExtensionRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelSchemaExtension that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelSchemaExtensionAsync(const Model::CancelSchemaExtensionRequest& request, const CancelSchemaExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an AD Connector to connect to a self-managed directory.</p> <p>Before
@@ -206,15 +204,6 @@ namespace DirectoryService
          */
         virtual Model::ConnectDirectoryOutcome ConnectDirectory(const Model::ConnectDirectoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for ConnectDirectory that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ConnectDirectoryOutcomeCallable ConnectDirectoryCallable(const Model::ConnectDirectoryRequest& request) const;
-
-        /**
-         * An Async wrapper for ConnectDirectory that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ConnectDirectoryAsync(const Model::ConnectDirectoryRequest& request, const ConnectDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an alias for a directory and assigns the alias to the directory. The
@@ -227,15 +216,6 @@ namespace DirectoryService
          */
         virtual Model::CreateAliasOutcome CreateAlias(const Model::CreateAliasRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateAlias that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateAliasOutcomeCallable CreateAliasCallable(const Model::CreateAliasRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateAlias that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateAliasAsync(const Model::CreateAliasRequest& request, const CreateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an Active Directory computer object in the specified
@@ -245,15 +225,6 @@ namespace DirectoryService
          */
         virtual Model::CreateComputerOutcome CreateComputer(const Model::CreateComputerRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateComputer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateComputerOutcomeCallable CreateComputerCallable(const Model::CreateComputerRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateComputer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateComputerAsync(const Model::CreateComputerRequest& request, const CreateComputerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a conditional forwarder associated with your Amazon Web Services
@@ -265,15 +236,6 @@ namespace DirectoryService
          */
         virtual Model::CreateConditionalForwarderOutcome CreateConditionalForwarder(const Model::CreateConditionalForwarderRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateConditionalForwarder that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateConditionalForwarderOutcomeCallable CreateConditionalForwarderCallable(const Model::CreateConditionalForwarderRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateConditionalForwarder that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateConditionalForwarderAsync(const Model::CreateConditionalForwarderRequest& request, const CreateConditionalForwarderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a Simple AD directory. For more information, see <a
@@ -291,15 +253,6 @@ namespace DirectoryService
          */
         virtual Model::CreateDirectoryOutcome CreateDirectory(const Model::CreateDirectoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDirectory that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDirectoryOutcomeCallable CreateDirectoryCallable(const Model::CreateDirectoryRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDirectory that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDirectoryAsync(const Model::CreateDirectoryRequest& request, const CreateDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a subscription to forward real-time Directory Service domain
@@ -310,15 +263,6 @@ namespace DirectoryService
          */
         virtual Model::CreateLogSubscriptionOutcome CreateLogSubscription(const Model::CreateLogSubscriptionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateLogSubscription that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateLogSubscriptionOutcomeCallable CreateLogSubscriptionCallable(const Model::CreateLogSubscriptionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateLogSubscription that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateLogSubscriptionAsync(const Model::CreateLogSubscriptionRequest& request, const CreateLogSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a Microsoft AD directory in the Amazon Web Services Cloud. For more
@@ -336,15 +280,6 @@ namespace DirectoryService
          */
         virtual Model::CreateMicrosoftADOutcome CreateMicrosoftAD(const Model::CreateMicrosoftADRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateMicrosoftAD that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateMicrosoftADOutcomeCallable CreateMicrosoftADCallable(const Model::CreateMicrosoftADRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateMicrosoftAD that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateMicrosoftADAsync(const Model::CreateMicrosoftADRequest& request, const CreateMicrosoftADResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a snapshot of a Simple AD or Microsoft AD directory in the Amazon Web
@@ -355,15 +290,6 @@ namespace DirectoryService
          */
         virtual Model::CreateSnapshotOutcome CreateSnapshot(const Model::CreateSnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateSnapshotOutcomeCallable CreateSnapshotCallable(const Model::CreateSnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateSnapshotAsync(const Model::CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Directory Service for Microsoft Active Directory allows you to configure
@@ -379,15 +305,6 @@ namespace DirectoryService
          */
         virtual Model::CreateTrustOutcome CreateTrust(const Model::CreateTrustRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateTrust that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateTrustOutcomeCallable CreateTrustCallable(const Model::CreateTrustRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateTrust that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateTrustAsync(const Model::CreateTrustRequest& request, const CreateTrustResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a conditional forwarder that has been set up for your Amazon Web
@@ -397,15 +314,6 @@ namespace DirectoryService
          */
         virtual Model::DeleteConditionalForwarderOutcome DeleteConditionalForwarder(const Model::DeleteConditionalForwarderRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteConditionalForwarder that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteConditionalForwarderOutcomeCallable DeleteConditionalForwarderCallable(const Model::DeleteConditionalForwarderRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteConditionalForwarder that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteConditionalForwarderAsync(const Model::DeleteConditionalForwarderRequest& request, const DeleteConditionalForwarderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an Directory Service directory.</p> <p>Before you call
@@ -420,15 +328,6 @@ namespace DirectoryService
          */
         virtual Model::DeleteDirectoryOutcome DeleteDirectory(const Model::DeleteDirectoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDirectory that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDirectoryOutcomeCallable DeleteDirectoryCallable(const Model::DeleteDirectoryRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDirectory that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDirectoryAsync(const Model::DeleteDirectoryRequest& request, const DeleteDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified log subscription.</p><p><h3>See Also:</h3>   <a
@@ -437,15 +336,6 @@ namespace DirectoryService
          */
         virtual Model::DeleteLogSubscriptionOutcome DeleteLogSubscription(const Model::DeleteLogSubscriptionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteLogSubscription that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteLogSubscriptionOutcomeCallable DeleteLogSubscriptionCallable(const Model::DeleteLogSubscriptionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteLogSubscription that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteLogSubscriptionAsync(const Model::DeleteLogSubscriptionRequest& request, const DeleteLogSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a directory snapshot.</p><p><h3>See Also:</h3>   <a
@@ -454,15 +344,6 @@ namespace DirectoryService
          */
         virtual Model::DeleteSnapshotOutcome DeleteSnapshot(const Model::DeleteSnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteSnapshotOutcomeCallable DeleteSnapshotCallable(const Model::DeleteSnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteSnapshotAsync(const Model::DeleteSnapshotRequest& request, const DeleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an existing trust relationship between your Managed Microsoft AD
@@ -472,15 +353,6 @@ namespace DirectoryService
          */
         virtual Model::DeleteTrustOutcome DeleteTrust(const Model::DeleteTrustRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteTrust that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteTrustOutcomeCallable DeleteTrustCallable(const Model::DeleteTrustRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteTrust that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteTrustAsync(const Model::DeleteTrustRequest& request, const DeleteTrustResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes from the system the certificate that was registered for secure LDAP
@@ -490,15 +362,6 @@ namespace DirectoryService
          */
         virtual Model::DeregisterCertificateOutcome DeregisterCertificate(const Model::DeregisterCertificateRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeregisterCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeregisterCertificateOutcomeCallable DeregisterCertificateCallable(const Model::DeregisterCertificateRequest& request) const;
-
-        /**
-         * An Async wrapper for DeregisterCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeregisterCertificateAsync(const Model::DeregisterCertificateRequest& request, const DeregisterCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified directory as a publisher to the specified Amazon SNS
@@ -508,15 +371,6 @@ namespace DirectoryService
          */
         virtual Model::DeregisterEventTopicOutcome DeregisterEventTopic(const Model::DeregisterEventTopicRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeregisterEventTopic that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeregisterEventTopicOutcomeCallable DeregisterEventTopicCallable(const Model::DeregisterEventTopicRequest& request) const;
-
-        /**
-         * An Async wrapper for DeregisterEventTopic that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeregisterEventTopicAsync(const Model::DeregisterEventTopicRequest& request, const DeregisterEventTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Displays information about the certificate registered for secure LDAP or
@@ -526,15 +380,6 @@ namespace DirectoryService
          */
         virtual Model::DescribeCertificateOutcome DescribeCertificate(const Model::DescribeCertificateRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeCertificateOutcomeCallable DescribeCertificateCallable(const Model::DescribeCertificateRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeCertificateAsync(const Model::DescribeCertificateRequest& request, const DescribeCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about the type of client authentication for the
@@ -547,15 +392,6 @@ namespace DirectoryService
          */
         virtual Model::DescribeClientAuthenticationSettingsOutcome DescribeClientAuthenticationSettings(const Model::DescribeClientAuthenticationSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeClientAuthenticationSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeClientAuthenticationSettingsOutcomeCallable DescribeClientAuthenticationSettingsCallable(const Model::DescribeClientAuthenticationSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeClientAuthenticationSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeClientAuthenticationSettingsAsync(const Model::DescribeClientAuthenticationSettingsRequest& request, const DescribeClientAuthenticationSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Obtains information about the conditional forwarders for this account.</p>
@@ -567,15 +403,6 @@ namespace DirectoryService
          */
         virtual Model::DescribeConditionalForwardersOutcome DescribeConditionalForwarders(const Model::DescribeConditionalForwardersRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeConditionalForwarders that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeConditionalForwardersOutcomeCallable DescribeConditionalForwardersCallable(const Model::DescribeConditionalForwardersRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeConditionalForwarders that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeConditionalForwardersAsync(const Model::DescribeConditionalForwardersRequest& request, const DescribeConditionalForwardersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Obtains information about the directories that belong to this account.</p>
@@ -593,15 +420,6 @@ namespace DirectoryService
          */
         virtual Model::DescribeDirectoriesOutcome DescribeDirectories(const Model::DescribeDirectoriesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDirectories that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDirectoriesOutcomeCallable DescribeDirectoriesCallable(const Model::DescribeDirectoriesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDirectories that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDirectoriesAsync(const Model::DescribeDirectoriesRequest& request, const DescribeDirectoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides information about any domain controllers in your
@@ -611,15 +429,6 @@ namespace DirectoryService
          */
         virtual Model::DescribeDomainControllersOutcome DescribeDomainControllers(const Model::DescribeDomainControllersRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDomainControllers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDomainControllersOutcomeCallable DescribeDomainControllersCallable(const Model::DescribeDomainControllersRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDomainControllers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDomainControllersAsync(const Model::DescribeDomainControllersRequest& request, const DescribeDomainControllersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Obtains information about which Amazon SNS topics receive status messages
@@ -631,15 +440,6 @@ namespace DirectoryService
          */
         virtual Model::DescribeEventTopicsOutcome DescribeEventTopics(const Model::DescribeEventTopicsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEventTopics that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEventTopicsOutcomeCallable DescribeEventTopicsCallable(const Model::DescribeEventTopicsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEventTopics that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEventTopicsAsync(const Model::DescribeEventTopicsRequest& request, const DescribeEventTopicsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the status of LDAP security for the specified
@@ -649,15 +449,6 @@ namespace DirectoryService
          */
         virtual Model::DescribeLDAPSSettingsOutcome DescribeLDAPSSettings(const Model::DescribeLDAPSSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeLDAPSSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeLDAPSSettingsOutcomeCallable DescribeLDAPSSettingsCallable(const Model::DescribeLDAPSSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeLDAPSSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeLDAPSSettingsAsync(const Model::DescribeLDAPSSettingsRequest& request, const DescribeLDAPSSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides information about the Regions that are configured for multi-Region
@@ -667,15 +458,6 @@ namespace DirectoryService
          */
         virtual Model::DescribeRegionsOutcome DescribeRegions(const Model::DescribeRegionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeRegions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeRegionsOutcomeCallable DescribeRegionsCallable(const Model::DescribeRegionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeRegions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeRegionsAsync(const Model::DescribeRegionsRequest& request, const DescribeRegionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about the configurable settings for the specified
@@ -685,15 +467,6 @@ namespace DirectoryService
          */
         virtual Model::DescribeSettingsOutcome DescribeSettings(const Model::DescribeSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeSettingsOutcomeCallable DescribeSettingsCallable(const Model::DescribeSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeSettingsAsync(const Model::DescribeSettingsRequest& request, const DescribeSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the shared directories in your account. </p><p><h3>See Also:</h3>  
@@ -703,15 +476,6 @@ namespace DirectoryService
          */
         virtual Model::DescribeSharedDirectoriesOutcome DescribeSharedDirectories(const Model::DescribeSharedDirectoriesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeSharedDirectories that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeSharedDirectoriesOutcomeCallable DescribeSharedDirectoriesCallable(const Model::DescribeSharedDirectoriesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeSharedDirectories that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeSharedDirectoriesAsync(const Model::DescribeSharedDirectoriesRequest& request, const DescribeSharedDirectoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Obtains information about the directory snapshots that belong to this
@@ -726,15 +490,6 @@ namespace DirectoryService
          */
         virtual Model::DescribeSnapshotsOutcome DescribeSnapshots(const Model::DescribeSnapshotsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeSnapshots that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeSnapshotsOutcomeCallable DescribeSnapshotsCallable(const Model::DescribeSnapshotsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeSnapshots that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeSnapshotsAsync(const Model::DescribeSnapshotsRequest& request, const DescribeSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Obtains information about the trust relationships for this account.</p> <p>If
@@ -746,15 +501,6 @@ namespace DirectoryService
          */
         virtual Model::DescribeTrustsOutcome DescribeTrusts(const Model::DescribeTrustsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTrusts that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTrustsOutcomeCallable DescribeTrustsCallable(const Model::DescribeTrustsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTrusts that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTrustsAsync(const Model::DescribeTrustsRequest& request, const DescribeTrustsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Describes the updates of a directory for a particular update type.
@@ -764,15 +510,6 @@ namespace DirectoryService
          */
         virtual Model::DescribeUpdateDirectoryOutcome DescribeUpdateDirectory(const Model::DescribeUpdateDirectoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeUpdateDirectory that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeUpdateDirectoryOutcomeCallable DescribeUpdateDirectoryCallable(const Model::DescribeUpdateDirectoryRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeUpdateDirectory that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeUpdateDirectoryAsync(const Model::DescribeUpdateDirectoryRequest& request, const DescribeUpdateDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disables alternative client authentication methods for the specified
@@ -782,15 +519,6 @@ namespace DirectoryService
          */
         virtual Model::DisableClientAuthenticationOutcome DisableClientAuthentication(const Model::DisableClientAuthenticationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisableClientAuthentication that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisableClientAuthenticationOutcomeCallable DisableClientAuthenticationCallable(const Model::DisableClientAuthenticationRequest& request) const;
-
-        /**
-         * An Async wrapper for DisableClientAuthentication that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisableClientAuthenticationAsync(const Model::DisableClientAuthenticationRequest& request, const DisableClientAuthenticationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deactivates LDAP secure calls for the specified directory.</p><p><h3>See
@@ -800,15 +528,6 @@ namespace DirectoryService
          */
         virtual Model::DisableLDAPSOutcome DisableLDAPS(const Model::DisableLDAPSRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisableLDAPS that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisableLDAPSOutcomeCallable DisableLDAPSCallable(const Model::DisableLDAPSRequest& request) const;
-
-        /**
-         * An Async wrapper for DisableLDAPS that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisableLDAPSAsync(const Model::DisableLDAPSRequest& request, const DisableLDAPSResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disables multi-factor authentication (MFA) with the Remote Authentication
@@ -819,15 +538,6 @@ namespace DirectoryService
          */
         virtual Model::DisableRadiusOutcome DisableRadius(const Model::DisableRadiusRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisableRadius that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisableRadiusOutcomeCallable DisableRadiusCallable(const Model::DisableRadiusRequest& request) const;
-
-        /**
-         * An Async wrapper for DisableRadius that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisableRadiusAsync(const Model::DisableRadiusRequest& request, const DisableRadiusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disables single-sign on for a directory.</p><p><h3>See Also:</h3>   <a
@@ -836,15 +546,6 @@ namespace DirectoryService
          */
         virtual Model::DisableSsoOutcome DisableSso(const Model::DisableSsoRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisableSso that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisableSsoOutcomeCallable DisableSsoCallable(const Model::DisableSsoRequest& request) const;
-
-        /**
-         * An Async wrapper for DisableSso that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisableSsoAsync(const Model::DisableSsoRequest& request, const DisableSsoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables alternative client authentication methods for the specified
@@ -854,15 +555,6 @@ namespace DirectoryService
          */
         virtual Model::EnableClientAuthenticationOutcome EnableClientAuthentication(const Model::EnableClientAuthenticationRequest& request) const;
 
-        /**
-         * A Callable wrapper for EnableClientAuthentication that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnableClientAuthenticationOutcomeCallable EnableClientAuthenticationCallable(const Model::EnableClientAuthenticationRequest& request) const;
-
-        /**
-         * An Async wrapper for EnableClientAuthentication that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnableClientAuthenticationAsync(const Model::EnableClientAuthenticationRequest& request, const EnableClientAuthenticationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Activates the switch for the specific directory to always use LDAP secure
@@ -872,15 +564,6 @@ namespace DirectoryService
          */
         virtual Model::EnableLDAPSOutcome EnableLDAPS(const Model::EnableLDAPSRequest& request) const;
 
-        /**
-         * A Callable wrapper for EnableLDAPS that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnableLDAPSOutcomeCallable EnableLDAPSCallable(const Model::EnableLDAPSRequest& request) const;
-
-        /**
-         * An Async wrapper for EnableLDAPS that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnableLDAPSAsync(const Model::EnableLDAPSRequest& request, const EnableLDAPSResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables multi-factor authentication (MFA) with the Remote Authentication Dial
@@ -891,15 +574,6 @@ namespace DirectoryService
          */
         virtual Model::EnableRadiusOutcome EnableRadius(const Model::EnableRadiusRequest& request) const;
 
-        /**
-         * A Callable wrapper for EnableRadius that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnableRadiusOutcomeCallable EnableRadiusCallable(const Model::EnableRadiusRequest& request) const;
-
-        /**
-         * An Async wrapper for EnableRadius that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnableRadiusAsync(const Model::EnableRadiusRequest& request, const EnableRadiusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables single sign-on for a directory. Single sign-on allows users in your
@@ -911,15 +585,6 @@ namespace DirectoryService
          */
         virtual Model::EnableSsoOutcome EnableSso(const Model::EnableSsoRequest& request) const;
 
-        /**
-         * A Callable wrapper for EnableSso that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnableSsoOutcomeCallable EnableSsoCallable(const Model::EnableSsoRequest& request) const;
-
-        /**
-         * An Async wrapper for EnableSso that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnableSsoAsync(const Model::EnableSsoRequest& request, const EnableSsoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Obtains directory limit information for the current Region.</p><p><h3>See
@@ -929,15 +594,6 @@ namespace DirectoryService
          */
         virtual Model::GetDirectoryLimitsOutcome GetDirectoryLimits(const Model::GetDirectoryLimitsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDirectoryLimits that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDirectoryLimitsOutcomeCallable GetDirectoryLimitsCallable(const Model::GetDirectoryLimitsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDirectoryLimits that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDirectoryLimitsAsync(const Model::GetDirectoryLimitsRequest& request, const GetDirectoryLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Obtains the manual snapshot limits for a directory.</p><p><h3>See Also:</h3> 
@@ -947,15 +603,6 @@ namespace DirectoryService
          */
         virtual Model::GetSnapshotLimitsOutcome GetSnapshotLimits(const Model::GetSnapshotLimitsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSnapshotLimits that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSnapshotLimitsOutcomeCallable GetSnapshotLimitsCallable(const Model::GetSnapshotLimitsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSnapshotLimits that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSnapshotLimitsAsync(const Model::GetSnapshotLimitsRequest& request, const GetSnapshotLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>For the specified directory, lists all the certificates registered for a
@@ -965,15 +612,6 @@ namespace DirectoryService
          */
         virtual Model::ListCertificatesOutcome ListCertificates(const Model::ListCertificatesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListCertificates that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListCertificatesOutcomeCallable ListCertificatesCallable(const Model::ListCertificatesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListCertificates that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListCertificatesAsync(const Model::ListCertificatesRequest& request, const ListCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the address blocks that you have added to a directory.</p><p><h3>See
@@ -983,15 +621,6 @@ namespace DirectoryService
          */
         virtual Model::ListIpRoutesOutcome ListIpRoutes(const Model::ListIpRoutesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListIpRoutes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListIpRoutesOutcomeCallable ListIpRoutesCallable(const Model::ListIpRoutesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListIpRoutes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListIpRoutesAsync(const Model::ListIpRoutesRequest& request, const ListIpRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the active log subscriptions for the Amazon Web Services
@@ -1001,15 +630,6 @@ namespace DirectoryService
          */
         virtual Model::ListLogSubscriptionsOutcome ListLogSubscriptions(const Model::ListLogSubscriptionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListLogSubscriptions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListLogSubscriptionsOutcomeCallable ListLogSubscriptionsCallable(const Model::ListLogSubscriptionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListLogSubscriptions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListLogSubscriptionsAsync(const Model::ListLogSubscriptionsRequest& request, const ListLogSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all schema extensions applied to a Microsoft AD
@@ -1019,15 +639,6 @@ namespace DirectoryService
          */
         virtual Model::ListSchemaExtensionsOutcome ListSchemaExtensions(const Model::ListSchemaExtensionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSchemaExtensions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListSchemaExtensionsOutcomeCallable ListSchemaExtensionsCallable(const Model::ListSchemaExtensionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSchemaExtensions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListSchemaExtensionsAsync(const Model::ListSchemaExtensionsRequest& request, const ListSchemaExtensionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all tags on a directory.</p><p><h3>See Also:</h3>   <a
@@ -1036,15 +647,6 @@ namespace DirectoryService
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Registers a certificate for a secure LDAP or client certificate
@@ -1054,15 +656,6 @@ namespace DirectoryService
          */
         virtual Model::RegisterCertificateOutcome RegisterCertificate(const Model::RegisterCertificateRequest& request) const;
 
-        /**
-         * A Callable wrapper for RegisterCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RegisterCertificateOutcomeCallable RegisterCertificateCallable(const Model::RegisterCertificateRequest& request) const;
-
-        /**
-         * An Async wrapper for RegisterCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RegisterCertificateAsync(const Model::RegisterCertificateRequest& request, const RegisterCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates a directory with an Amazon SNS topic. This establishes the
@@ -1076,15 +669,6 @@ namespace DirectoryService
          */
         virtual Model::RegisterEventTopicOutcome RegisterEventTopic(const Model::RegisterEventTopicRequest& request) const;
 
-        /**
-         * A Callable wrapper for RegisterEventTopic that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RegisterEventTopicOutcomeCallable RegisterEventTopicCallable(const Model::RegisterEventTopicRequest& request) const;
-
-        /**
-         * An Async wrapper for RegisterEventTopic that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RegisterEventTopicAsync(const Model::RegisterEventTopicRequest& request, const RegisterEventTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Rejects a directory sharing request that was sent from the directory owner
@@ -1094,15 +678,6 @@ namespace DirectoryService
          */
         virtual Model::RejectSharedDirectoryOutcome RejectSharedDirectory(const Model::RejectSharedDirectoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for RejectSharedDirectory that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RejectSharedDirectoryOutcomeCallable RejectSharedDirectoryCallable(const Model::RejectSharedDirectoryRequest& request) const;
-
-        /**
-         * An Async wrapper for RejectSharedDirectory that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RejectSharedDirectoryAsync(const Model::RejectSharedDirectoryRequest& request, const RejectSharedDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes IP address blocks from a directory.</p><p><h3>See Also:</h3>   <a
@@ -1111,15 +686,6 @@ namespace DirectoryService
          */
         virtual Model::RemoveIpRoutesOutcome RemoveIpRoutes(const Model::RemoveIpRoutesRequest& request) const;
 
-        /**
-         * A Callable wrapper for RemoveIpRoutes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RemoveIpRoutesOutcomeCallable RemoveIpRoutesCallable(const Model::RemoveIpRoutesRequest& request) const;
-
-        /**
-         * An Async wrapper for RemoveIpRoutes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RemoveIpRoutesAsync(const Model::RemoveIpRoutesRequest& request, const RemoveIpRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops all replication and removes the domain controllers from the specified
@@ -1130,15 +696,6 @@ namespace DirectoryService
          */
         virtual Model::RemoveRegionOutcome RemoveRegion(const Model::RemoveRegionRequest& request) const;
 
-        /**
-         * A Callable wrapper for RemoveRegion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RemoveRegionOutcomeCallable RemoveRegionCallable(const Model::RemoveRegionRequest& request) const;
-
-        /**
-         * An Async wrapper for RemoveRegion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RemoveRegionAsync(const Model::RemoveRegionRequest& request, const RemoveRegionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes tags from a directory.</p><p><h3>See Also:</h3>   <a
@@ -1147,15 +704,6 @@ namespace DirectoryService
          */
         virtual Model::RemoveTagsFromResourceOutcome RemoveTagsFromResource(const Model::RemoveTagsFromResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for RemoveTagsFromResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RemoveTagsFromResourceOutcomeCallable RemoveTagsFromResourceCallable(const Model::RemoveTagsFromResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for RemoveTagsFromResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RemoveTagsFromResourceAsync(const Model::RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Resets the password for any user in your Managed Microsoft AD or Simple AD
@@ -1176,15 +724,6 @@ namespace DirectoryService
          */
         virtual Model::ResetUserPasswordOutcome ResetUserPassword(const Model::ResetUserPasswordRequest& request) const;
 
-        /**
-         * A Callable wrapper for ResetUserPassword that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ResetUserPasswordOutcomeCallable ResetUserPasswordCallable(const Model::ResetUserPasswordRequest& request) const;
-
-        /**
-         * An Async wrapper for ResetUserPassword that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ResetUserPasswordAsync(const Model::ResetUserPasswordRequest& request, const ResetUserPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Restores a directory using an existing directory snapshot.</p> <p>When you
@@ -1199,15 +738,6 @@ namespace DirectoryService
          */
         virtual Model::RestoreFromSnapshotOutcome RestoreFromSnapshot(const Model::RestoreFromSnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for RestoreFromSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RestoreFromSnapshotOutcomeCallable RestoreFromSnapshotCallable(const Model::RestoreFromSnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for RestoreFromSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RestoreFromSnapshotAsync(const Model::RestoreFromSnapshotRequest& request, const RestoreFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Shares a specified directory (<code>DirectoryId</code>) in your Amazon Web
@@ -1232,15 +762,6 @@ namespace DirectoryService
          */
         virtual Model::ShareDirectoryOutcome ShareDirectory(const Model::ShareDirectoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for ShareDirectory that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ShareDirectoryOutcomeCallable ShareDirectoryCallable(const Model::ShareDirectoryRequest& request) const;
-
-        /**
-         * An Async wrapper for ShareDirectory that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ShareDirectoryAsync(const Model::ShareDirectoryRequest& request, const ShareDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Applies a schema extension to a Microsoft AD directory.</p><p><h3>See
@@ -1250,15 +771,6 @@ namespace DirectoryService
          */
         virtual Model::StartSchemaExtensionOutcome StartSchemaExtension(const Model::StartSchemaExtensionRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartSchemaExtension that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartSchemaExtensionOutcomeCallable StartSchemaExtensionCallable(const Model::StartSchemaExtensionRequest& request) const;
-
-        /**
-         * An Async wrapper for StartSchemaExtension that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartSchemaExtensionAsync(const Model::StartSchemaExtensionRequest& request, const StartSchemaExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops the directory sharing between the directory owner and consumer
@@ -1268,15 +780,6 @@ namespace DirectoryService
          */
         virtual Model::UnshareDirectoryOutcome UnshareDirectory(const Model::UnshareDirectoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for UnshareDirectory that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UnshareDirectoryOutcomeCallable UnshareDirectoryCallable(const Model::UnshareDirectoryRequest& request) const;
-
-        /**
-         * An Async wrapper for UnshareDirectory that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UnshareDirectoryAsync(const Model::UnshareDirectoryRequest& request, const UnshareDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a conditional forwarder that has been set up for your Amazon Web
@@ -1286,15 +789,6 @@ namespace DirectoryService
          */
         virtual Model::UpdateConditionalForwarderOutcome UpdateConditionalForwarder(const Model::UpdateConditionalForwarderRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateConditionalForwarder that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateConditionalForwarderOutcomeCallable UpdateConditionalForwarderCallable(const Model::UpdateConditionalForwarderRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateConditionalForwarder that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateConditionalForwarderAsync(const Model::UpdateConditionalForwarderRequest& request, const UpdateConditionalForwarderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Updates the directory for a particular update type. </p><p><h3>See
@@ -1304,15 +798,6 @@ namespace DirectoryService
          */
         virtual Model::UpdateDirectorySetupOutcome UpdateDirectorySetup(const Model::UpdateDirectorySetupRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateDirectorySetup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateDirectorySetupOutcomeCallable UpdateDirectorySetupCallable(const Model::UpdateDirectorySetupRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateDirectorySetup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateDirectorySetupAsync(const Model::UpdateDirectorySetupRequest& request, const UpdateDirectorySetupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds or removes domain controllers to or from the directory. Based on the
@@ -1326,15 +811,6 @@ namespace DirectoryService
          */
         virtual Model::UpdateNumberOfDomainControllersOutcome UpdateNumberOfDomainControllers(const Model::UpdateNumberOfDomainControllersRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateNumberOfDomainControllers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateNumberOfDomainControllersOutcomeCallable UpdateNumberOfDomainControllersCallable(const Model::UpdateNumberOfDomainControllersRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateNumberOfDomainControllers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateNumberOfDomainControllersAsync(const Model::UpdateNumberOfDomainControllersRequest& request, const UpdateNumberOfDomainControllersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the Remote Authentication Dial In User Service (RADIUS) server
@@ -1345,15 +821,6 @@ namespace DirectoryService
          */
         virtual Model::UpdateRadiusOutcome UpdateRadius(const Model::UpdateRadiusRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateRadius that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateRadiusOutcomeCallable UpdateRadiusCallable(const Model::UpdateRadiusRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateRadius that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateRadiusAsync(const Model::UpdateRadiusRequest& request, const UpdateRadiusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the configurable settings for the specified directory.</p><p><h3>See
@@ -1363,15 +830,6 @@ namespace DirectoryService
          */
         virtual Model::UpdateSettingsOutcome UpdateSettings(const Model::UpdateSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateSettingsOutcomeCallable UpdateSettingsCallable(const Model::UpdateSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateSettingsAsync(const Model::UpdateSettingsRequest& request, const UpdateSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the trust that has been set up between your Managed Microsoft AD
@@ -1381,15 +839,6 @@ namespace DirectoryService
          */
         virtual Model::UpdateTrustOutcome UpdateTrust(const Model::UpdateTrustRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateTrust that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateTrustOutcomeCallable UpdateTrustCallable(const Model::UpdateTrustRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateTrust that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateTrustAsync(const Model::UpdateTrustRequest& request, const UpdateTrustResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Directory Service for Microsoft Active Directory allows you to configure and
@@ -1401,15 +850,6 @@ namespace DirectoryService
          */
         virtual Model::VerifyTrustOutcome VerifyTrust(const Model::VerifyTrustRequest& request) const;
 
-        /**
-         * A Callable wrapper for VerifyTrust that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::VerifyTrustOutcomeCallable VerifyTrustCallable(const Model::VerifyTrustRequest& request) const;
-
-        /**
-         * An Async wrapper for VerifyTrust that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void VerifyTrustAsync(const Model::VerifyTrustRequest& request, const VerifyTrustResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

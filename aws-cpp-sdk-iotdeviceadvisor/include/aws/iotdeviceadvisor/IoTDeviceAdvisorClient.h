@@ -7,8 +7,10 @@
 #include <aws/iotdeviceadvisor/IoTDeviceAdvisor_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iotdeviceadvisor/IoTDeviceAdvisorServiceClientModel.h>
+#include <aws/iotdeviceadvisor/IoTDeviceAdvisorLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -83,6 +85,47 @@ namespace IoTDeviceAdvisor
         virtual ~IoTDeviceAdvisorClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Creates a Device Advisor test suite.</p> <p>Requires permission to access the
          * <a
@@ -93,15 +136,6 @@ namespace IoTDeviceAdvisor
          */
         virtual Model::CreateSuiteDefinitionOutcome CreateSuiteDefinition(const Model::CreateSuiteDefinitionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateSuiteDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateSuiteDefinitionOutcomeCallable CreateSuiteDefinitionCallable(const Model::CreateSuiteDefinitionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateSuiteDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateSuiteDefinitionAsync(const Model::CreateSuiteDefinitionRequest& request, const CreateSuiteDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a Device Advisor test suite.</p> <p>Requires permission to access the
@@ -113,15 +147,6 @@ namespace IoTDeviceAdvisor
          */
         virtual Model::DeleteSuiteDefinitionOutcome DeleteSuiteDefinition(const Model::DeleteSuiteDefinitionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteSuiteDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteSuiteDefinitionOutcomeCallable DeleteSuiteDefinitionCallable(const Model::DeleteSuiteDefinitionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteSuiteDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteSuiteDefinitionAsync(const Model::DeleteSuiteDefinitionRequest& request, const DeleteSuiteDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about an Device Advisor endpoint.</p><p><h3>See Also:</h3>  
@@ -131,15 +156,6 @@ namespace IoTDeviceAdvisor
          */
         virtual Model::GetEndpointOutcome GetEndpoint(const Model::GetEndpointRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetEndpointOutcomeCallable GetEndpointCallable(const Model::GetEndpointRequest& request) const;
-
-        /**
-         * An Async wrapper for GetEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetEndpointAsync(const Model::GetEndpointRequest& request, const GetEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about a Device Advisor test suite.</p> <p>Requires
@@ -151,15 +167,6 @@ namespace IoTDeviceAdvisor
          */
         virtual Model::GetSuiteDefinitionOutcome GetSuiteDefinition(const Model::GetSuiteDefinitionRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSuiteDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSuiteDefinitionOutcomeCallable GetSuiteDefinitionCallable(const Model::GetSuiteDefinitionRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSuiteDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSuiteDefinitionAsync(const Model::GetSuiteDefinitionRequest& request, const GetSuiteDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about a Device Advisor test suite run.</p> <p>Requires
@@ -171,15 +178,6 @@ namespace IoTDeviceAdvisor
          */
         virtual Model::GetSuiteRunOutcome GetSuiteRun(const Model::GetSuiteRunRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSuiteRun that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSuiteRunOutcomeCallable GetSuiteRunCallable(const Model::GetSuiteRunRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSuiteRun that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSuiteRunAsync(const Model::GetSuiteRunRequest& request, const GetSuiteRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a report download link for a successful Device Advisor qualifying test
@@ -191,15 +189,6 @@ namespace IoTDeviceAdvisor
          */
         virtual Model::GetSuiteRunReportOutcome GetSuiteRunReport(const Model::GetSuiteRunReportRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSuiteRunReport that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSuiteRunReportOutcomeCallable GetSuiteRunReportCallable(const Model::GetSuiteRunReportRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSuiteRunReport that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSuiteRunReportAsync(const Model::GetSuiteRunReportRequest& request, const GetSuiteRunReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the Device Advisor test suites you have created.</p> <p>Requires
@@ -211,15 +200,6 @@ namespace IoTDeviceAdvisor
          */
         virtual Model::ListSuiteDefinitionsOutcome ListSuiteDefinitions(const Model::ListSuiteDefinitionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSuiteDefinitions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListSuiteDefinitionsOutcomeCallable ListSuiteDefinitionsCallable(const Model::ListSuiteDefinitionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSuiteDefinitions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListSuiteDefinitionsAsync(const Model::ListSuiteDefinitionsRequest& request, const ListSuiteDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists runs of the specified Device Advisor test suite. You can list all runs
@@ -232,15 +212,6 @@ namespace IoTDeviceAdvisor
          */
         virtual Model::ListSuiteRunsOutcome ListSuiteRuns(const Model::ListSuiteRunsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSuiteRuns that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListSuiteRunsOutcomeCallable ListSuiteRunsCallable(const Model::ListSuiteRunsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSuiteRuns that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListSuiteRunsAsync(const Model::ListSuiteRunsRequest& request, const ListSuiteRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the tags attached to an IoT Device Advisor resource.</p> <p>Requires
@@ -252,15 +223,6 @@ namespace IoTDeviceAdvisor
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts a Device Advisor test suite run.</p> <p>Requires permission to access
@@ -272,15 +234,6 @@ namespace IoTDeviceAdvisor
          */
         virtual Model::StartSuiteRunOutcome StartSuiteRun(const Model::StartSuiteRunRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartSuiteRun that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartSuiteRunOutcomeCallable StartSuiteRunCallable(const Model::StartSuiteRunRequest& request) const;
-
-        /**
-         * An Async wrapper for StartSuiteRun that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartSuiteRunAsync(const Model::StartSuiteRunRequest& request, const StartSuiteRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops a Device Advisor test suite run that is currently running.</p>
@@ -292,15 +245,6 @@ namespace IoTDeviceAdvisor
          */
         virtual Model::StopSuiteRunOutcome StopSuiteRun(const Model::StopSuiteRunRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopSuiteRun that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopSuiteRunOutcomeCallable StopSuiteRunCallable(const Model::StopSuiteRunRequest& request) const;
-
-        /**
-         * An Async wrapper for StopSuiteRun that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopSuiteRunAsync(const Model::StopSuiteRunRequest& request, const StopSuiteRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds to and modifies existing tags of an IoT Device Advisor resource.</p>
@@ -312,15 +256,6 @@ namespace IoTDeviceAdvisor
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes tags from an IoT Device Advisor resource.</p> <p>Requires permission
@@ -332,15 +267,6 @@ namespace IoTDeviceAdvisor
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a Device Advisor test suite.</p> <p>Requires permission to access the
@@ -352,15 +278,6 @@ namespace IoTDeviceAdvisor
          */
         virtual Model::UpdateSuiteDefinitionOutcome UpdateSuiteDefinition(const Model::UpdateSuiteDefinitionRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateSuiteDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateSuiteDefinitionOutcomeCallable UpdateSuiteDefinitionCallable(const Model::UpdateSuiteDefinitionRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateSuiteDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateSuiteDefinitionAsync(const Model::UpdateSuiteDefinitionRequest& request, const UpdateSuiteDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

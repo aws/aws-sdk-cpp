@@ -7,8 +7,10 @@
 #include <aws/macie/Macie_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/macie/MacieServiceClientModel.h>
+#include <aws/macie/MacieLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -82,6 +84,47 @@ namespace Macie
         virtual ~MacieClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>(Discontinued) Associates a specified Amazon Web Services account with Amazon
          * Macie Classic as a member account.</p><p><h3>See Also:</h3>   <a
@@ -90,15 +133,6 @@ namespace Macie
          */
         virtual Model::AssociateMemberAccountOutcome AssociateMemberAccount(const Model::AssociateMemberAccountRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateMemberAccount that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateMemberAccountOutcomeCallable AssociateMemberAccountCallable(const Model::AssociateMemberAccountRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateMemberAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateMemberAccountAsync(const Model::AssociateMemberAccountRequest& request, const AssociateMemberAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>(Discontinued) Associates specified S3 resources with Amazon Macie Classic
@@ -112,15 +146,6 @@ namespace Macie
          */
         virtual Model::AssociateS3ResourcesOutcome AssociateS3Resources(const Model::AssociateS3ResourcesRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateS3Resources that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateS3ResourcesOutcomeCallable AssociateS3ResourcesCallable(const Model::AssociateS3ResourcesRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateS3Resources that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateS3ResourcesAsync(const Model::AssociateS3ResourcesRequest& request, const AssociateS3ResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>(Discontinued) Removes the specified member account from Amazon Macie
@@ -130,15 +155,6 @@ namespace Macie
          */
         virtual Model::DisassociateMemberAccountOutcome DisassociateMemberAccount(const Model::DisassociateMemberAccountRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateMemberAccount that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateMemberAccountOutcomeCallable DisassociateMemberAccountCallable(const Model::DisassociateMemberAccountRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateMemberAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateMemberAccountAsync(const Model::DisassociateMemberAccountRequest& request, const DisassociateMemberAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>(Discontinued) Removes specified S3 resources from being monitored by Amazon
@@ -152,15 +168,6 @@ namespace Macie
          */
         virtual Model::DisassociateS3ResourcesOutcome DisassociateS3Resources(const Model::DisassociateS3ResourcesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateS3Resources that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateS3ResourcesOutcomeCallable DisassociateS3ResourcesCallable(const Model::DisassociateS3ResourcesRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateS3Resources that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateS3ResourcesAsync(const Model::DisassociateS3ResourcesRequest& request, const DisassociateS3ResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>(Discontinued) Lists all Amazon Macie Classic member accounts for the current
@@ -170,15 +177,6 @@ namespace Macie
          */
         virtual Model::ListMemberAccountsOutcome ListMemberAccounts(const Model::ListMemberAccountsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListMemberAccounts that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListMemberAccountsOutcomeCallable ListMemberAccountsCallable(const Model::ListMemberAccountsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListMemberAccounts that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListMemberAccountsAsync(const Model::ListMemberAccountsRequest& request, const ListMemberAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>(Discontinued) Lists all the S3 resources associated with Amazon Macie
@@ -192,15 +190,6 @@ namespace Macie
          */
         virtual Model::ListS3ResourcesOutcome ListS3Resources(const Model::ListS3ResourcesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListS3Resources that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListS3ResourcesOutcomeCallable ListS3ResourcesCallable(const Model::ListS3ResourcesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListS3Resources that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListS3ResourcesAsync(const Model::ListS3ResourcesRequest& request, const ListS3ResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>(Discontinued) Updates the classification types for the specified S3
@@ -215,15 +204,6 @@ namespace Macie
          */
         virtual Model::UpdateS3ResourcesOutcome UpdateS3Resources(const Model::UpdateS3ResourcesRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateS3Resources that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateS3ResourcesOutcomeCallable UpdateS3ResourcesCallable(const Model::UpdateS3ResourcesRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateS3Resources that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateS3ResourcesAsync(const Model::UpdateS3ResourcesRequest& request, const UpdateS3ResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

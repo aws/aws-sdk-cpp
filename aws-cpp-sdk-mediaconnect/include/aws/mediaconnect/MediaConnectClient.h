@@ -7,8 +7,10 @@
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mediaconnect/MediaConnectServiceClientModel.h>
+#include <aws/mediaconnect/MediaConnectLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -73,6 +75,47 @@ namespace MediaConnect
         virtual ~MediaConnectClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * Adds media streams to an existing flow. After you add a media stream to a flow,
          * you can associate it with a source and/or an output that uses the ST 2110 JPEG
@@ -82,15 +125,6 @@ namespace MediaConnect
          */
         virtual Model::AddFlowMediaStreamsOutcome AddFlowMediaStreams(const Model::AddFlowMediaStreamsRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddFlowMediaStreams that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddFlowMediaStreamsOutcomeCallable AddFlowMediaStreamsCallable(const Model::AddFlowMediaStreamsRequest& request) const;
-
-        /**
-         * An Async wrapper for AddFlowMediaStreams that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddFlowMediaStreamsAsync(const Model::AddFlowMediaStreamsRequest& request, const AddFlowMediaStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Adds outputs to an existing flow. You can create up to 50 outputs per
@@ -100,15 +134,6 @@ namespace MediaConnect
          */
         virtual Model::AddFlowOutputsOutcome AddFlowOutputs(const Model::AddFlowOutputsRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddFlowOutputs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddFlowOutputsOutcomeCallable AddFlowOutputsCallable(const Model::AddFlowOutputsRequest& request) const;
-
-        /**
-         * An Async wrapper for AddFlowOutputs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddFlowOutputsAsync(const Model::AddFlowOutputsRequest& request, const AddFlowOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Adds Sources to flow<p><h3>See Also:</h3>   <a
@@ -117,15 +142,6 @@ namespace MediaConnect
          */
         virtual Model::AddFlowSourcesOutcome AddFlowSources(const Model::AddFlowSourcesRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddFlowSources that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddFlowSourcesOutcomeCallable AddFlowSourcesCallable(const Model::AddFlowSourcesRequest& request) const;
-
-        /**
-         * An Async wrapper for AddFlowSources that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddFlowSourcesAsync(const Model::AddFlowSourcesRequest& request, const AddFlowSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Adds VPC interfaces to flow<p><h3>See Also:</h3>   <a
@@ -134,15 +150,6 @@ namespace MediaConnect
          */
         virtual Model::AddFlowVpcInterfacesOutcome AddFlowVpcInterfaces(const Model::AddFlowVpcInterfacesRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddFlowVpcInterfaces that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddFlowVpcInterfacesOutcomeCallable AddFlowVpcInterfacesCallable(const Model::AddFlowVpcInterfacesRequest& request) const;
-
-        /**
-         * An Async wrapper for AddFlowVpcInterfaces that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddFlowVpcInterfacesAsync(const Model::AddFlowVpcInterfacesRequest& request, const AddFlowVpcInterfacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Creates a new flow. The request must include one source. The request optionally
@@ -153,15 +160,6 @@ namespace MediaConnect
          */
         virtual Model::CreateFlowOutcome CreateFlow(const Model::CreateFlowRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateFlow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateFlowOutcomeCallable CreateFlowCallable(const Model::CreateFlowRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateFlow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateFlowAsync(const Model::CreateFlowRequest& request, const CreateFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Deletes a flow. Before you can delete a flow, you must stop the flow.<p><h3>See
@@ -171,15 +169,6 @@ namespace MediaConnect
          */
         virtual Model::DeleteFlowOutcome DeleteFlow(const Model::DeleteFlowRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteFlow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteFlowOutcomeCallable DeleteFlowCallable(const Model::DeleteFlowRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteFlow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteFlowAsync(const Model::DeleteFlowRequest& request, const DeleteFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Displays the details of a flow. The response includes the flow ARN, name, and
@@ -190,15 +179,6 @@ namespace MediaConnect
          */
         virtual Model::DescribeFlowOutcome DescribeFlow(const Model::DescribeFlowRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeFlow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeFlowOutcomeCallable DescribeFlowCallable(const Model::DescribeFlowRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeFlow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeFlowAsync(const Model::DescribeFlowRequest& request, const DescribeFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Displays the details of an offering. The response includes the offering
@@ -209,15 +189,6 @@ namespace MediaConnect
          */
         virtual Model::DescribeOfferingOutcome DescribeOffering(const Model::DescribeOfferingRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeOffering that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeOfferingOutcomeCallable DescribeOfferingCallable(const Model::DescribeOfferingRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeOffering that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeOfferingAsync(const Model::DescribeOfferingRequest& request, const DescribeOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Displays the details of a reservation. The response includes the reservation
@@ -229,15 +200,6 @@ namespace MediaConnect
          */
         virtual Model::DescribeReservationOutcome DescribeReservation(const Model::DescribeReservationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeReservation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeReservationOutcomeCallable DescribeReservationCallable(const Model::DescribeReservationRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeReservation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeReservationAsync(const Model::DescribeReservationRequest& request, const DescribeReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Grants entitlements to an existing flow.<p><h3>See Also:</h3>   <a
@@ -246,15 +208,6 @@ namespace MediaConnect
          */
         virtual Model::GrantFlowEntitlementsOutcome GrantFlowEntitlements(const Model::GrantFlowEntitlementsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GrantFlowEntitlements that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GrantFlowEntitlementsOutcomeCallable GrantFlowEntitlementsCallable(const Model::GrantFlowEntitlementsRequest& request) const;
-
-        /**
-         * An Async wrapper for GrantFlowEntitlements that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GrantFlowEntitlementsAsync(const Model::GrantFlowEntitlementsRequest& request, const GrantFlowEntitlementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Displays a list of all entitlements that have been granted to this account. This
@@ -264,15 +217,6 @@ namespace MediaConnect
          */
         virtual Model::ListEntitlementsOutcome ListEntitlements(const Model::ListEntitlementsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListEntitlements that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListEntitlementsOutcomeCallable ListEntitlementsCallable(const Model::ListEntitlementsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListEntitlements that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListEntitlementsAsync(const Model::ListEntitlementsRequest& request, const ListEntitlementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Displays a list of flows that are associated with this account. This request
@@ -282,15 +226,6 @@ namespace MediaConnect
          */
         virtual Model::ListFlowsOutcome ListFlows(const Model::ListFlowsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListFlows that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListFlowsOutcomeCallable ListFlowsCallable(const Model::ListFlowsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListFlows that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListFlowsAsync(const Model::ListFlowsRequest& request, const ListFlowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Displays a list of all offerings that are available to this account in the
@@ -302,15 +237,6 @@ namespace MediaConnect
          */
         virtual Model::ListOfferingsOutcome ListOfferings(const Model::ListOfferingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListOfferings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListOfferingsOutcomeCallable ListOfferingsCallable(const Model::ListOfferingsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListOfferings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListOfferingsAsync(const Model::ListOfferingsRequest& request, const ListOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Displays a list of all reservations that have been purchased by this account in
@@ -321,15 +247,6 @@ namespace MediaConnect
          */
         virtual Model::ListReservationsOutcome ListReservations(const Model::ListReservationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListReservations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListReservationsOutcomeCallable ListReservationsCallable(const Model::ListReservationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListReservations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListReservationsAsync(const Model::ListReservationsRequest& request, const ListReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * List all tags on an AWS Elemental MediaConnect resource<p><h3>See Also:</h3>  
@@ -339,15 +256,6 @@ namespace MediaConnect
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Submits a request to purchase an offering. If you already have an active
@@ -357,15 +265,6 @@ namespace MediaConnect
          */
         virtual Model::PurchaseOfferingOutcome PurchaseOffering(const Model::PurchaseOfferingRequest& request) const;
 
-        /**
-         * A Callable wrapper for PurchaseOffering that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PurchaseOfferingOutcomeCallable PurchaseOfferingCallable(const Model::PurchaseOfferingRequest& request) const;
-
-        /**
-         * An Async wrapper for PurchaseOffering that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PurchaseOfferingAsync(const Model::PurchaseOfferingRequest& request, const PurchaseOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Removes a media stream from a flow. This action is only available if the media
@@ -375,15 +274,6 @@ namespace MediaConnect
          */
         virtual Model::RemoveFlowMediaStreamOutcome RemoveFlowMediaStream(const Model::RemoveFlowMediaStreamRequest& request) const;
 
-        /**
-         * A Callable wrapper for RemoveFlowMediaStream that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RemoveFlowMediaStreamOutcomeCallable RemoveFlowMediaStreamCallable(const Model::RemoveFlowMediaStreamRequest& request) const;
-
-        /**
-         * An Async wrapper for RemoveFlowMediaStream that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RemoveFlowMediaStreamAsync(const Model::RemoveFlowMediaStreamRequest& request, const RemoveFlowMediaStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Removes an output from an existing flow. This request can be made only on an
@@ -396,15 +286,6 @@ namespace MediaConnect
          */
         virtual Model::RemoveFlowOutputOutcome RemoveFlowOutput(const Model::RemoveFlowOutputRequest& request) const;
 
-        /**
-         * A Callable wrapper for RemoveFlowOutput that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RemoveFlowOutputOutcomeCallable RemoveFlowOutputCallable(const Model::RemoveFlowOutputRequest& request) const;
-
-        /**
-         * An Async wrapper for RemoveFlowOutput that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RemoveFlowOutputAsync(const Model::RemoveFlowOutputRequest& request, const RemoveFlowOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Removes a source from an existing flow. This request can be made only if there
@@ -414,15 +295,6 @@ namespace MediaConnect
          */
         virtual Model::RemoveFlowSourceOutcome RemoveFlowSource(const Model::RemoveFlowSourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for RemoveFlowSource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RemoveFlowSourceOutcomeCallable RemoveFlowSourceCallable(const Model::RemoveFlowSourceRequest& request) const;
-
-        /**
-         * An Async wrapper for RemoveFlowSource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RemoveFlowSourceAsync(const Model::RemoveFlowSourceRequest& request, const RemoveFlowSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Removes a VPC Interface from an existing flow. This request can be made only on
@@ -435,15 +307,6 @@ namespace MediaConnect
          */
         virtual Model::RemoveFlowVpcInterfaceOutcome RemoveFlowVpcInterface(const Model::RemoveFlowVpcInterfaceRequest& request) const;
 
-        /**
-         * A Callable wrapper for RemoveFlowVpcInterface that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RemoveFlowVpcInterfaceOutcomeCallable RemoveFlowVpcInterfaceCallable(const Model::RemoveFlowVpcInterfaceRequest& request) const;
-
-        /**
-         * An Async wrapper for RemoveFlowVpcInterface that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RemoveFlowVpcInterfaceAsync(const Model::RemoveFlowVpcInterfaceRequest& request, const RemoveFlowVpcInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Revokes an entitlement from a flow. Once an entitlement is revoked, the content
@@ -454,15 +317,6 @@ namespace MediaConnect
          */
         virtual Model::RevokeFlowEntitlementOutcome RevokeFlowEntitlement(const Model::RevokeFlowEntitlementRequest& request) const;
 
-        /**
-         * A Callable wrapper for RevokeFlowEntitlement that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RevokeFlowEntitlementOutcomeCallable RevokeFlowEntitlementCallable(const Model::RevokeFlowEntitlementRequest& request) const;
-
-        /**
-         * An Async wrapper for RevokeFlowEntitlement that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RevokeFlowEntitlementAsync(const Model::RevokeFlowEntitlementRequest& request, const RevokeFlowEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Starts a flow.<p><h3>See Also:</h3>   <a
@@ -471,15 +325,6 @@ namespace MediaConnect
          */
         virtual Model::StartFlowOutcome StartFlow(const Model::StartFlowRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartFlow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartFlowOutcomeCallable StartFlowCallable(const Model::StartFlowRequest& request) const;
-
-        /**
-         * An Async wrapper for StartFlow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartFlowAsync(const Model::StartFlowRequest& request, const StartFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Stops a flow.<p><h3>See Also:</h3>   <a
@@ -488,15 +333,6 @@ namespace MediaConnect
          */
         virtual Model::StopFlowOutcome StopFlow(const Model::StopFlowRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopFlow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopFlowOutcomeCallable StopFlowCallable(const Model::StopFlowRequest& request) const;
-
-        /**
-         * An Async wrapper for StopFlow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopFlowAsync(const Model::StopFlowRequest& request, const StopFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Associates the specified tags to a resource with the specified resourceArn. If
@@ -508,15 +344,6 @@ namespace MediaConnect
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Deletes specified tags from a resource.<p><h3>See Also:</h3>   <a
@@ -525,15 +352,6 @@ namespace MediaConnect
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Updates flow<p><h3>See Also:</h3>   <a
@@ -542,15 +360,6 @@ namespace MediaConnect
          */
         virtual Model::UpdateFlowOutcome UpdateFlow(const Model::UpdateFlowRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateFlow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateFlowOutcomeCallable UpdateFlowCallable(const Model::UpdateFlowRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateFlow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateFlowAsync(const Model::UpdateFlowRequest& request, const UpdateFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * You can change an entitlement's description, subscribers, and encryption. If you
@@ -561,15 +370,6 @@ namespace MediaConnect
          */
         virtual Model::UpdateFlowEntitlementOutcome UpdateFlowEntitlement(const Model::UpdateFlowEntitlementRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateFlowEntitlement that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateFlowEntitlementOutcomeCallable UpdateFlowEntitlementCallable(const Model::UpdateFlowEntitlementRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateFlowEntitlement that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateFlowEntitlementAsync(const Model::UpdateFlowEntitlementRequest& request, const UpdateFlowEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Updates an existing media stream.<p><h3>See Also:</h3>   <a
@@ -578,15 +378,6 @@ namespace MediaConnect
          */
         virtual Model::UpdateFlowMediaStreamOutcome UpdateFlowMediaStream(const Model::UpdateFlowMediaStreamRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateFlowMediaStream that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateFlowMediaStreamOutcomeCallable UpdateFlowMediaStreamCallable(const Model::UpdateFlowMediaStreamRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateFlowMediaStream that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateFlowMediaStreamAsync(const Model::UpdateFlowMediaStreamRequest& request, const UpdateFlowMediaStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Updates an existing flow output.<p><h3>See Also:</h3>   <a
@@ -595,15 +386,6 @@ namespace MediaConnect
          */
         virtual Model::UpdateFlowOutputOutcome UpdateFlowOutput(const Model::UpdateFlowOutputRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateFlowOutput that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateFlowOutputOutcomeCallable UpdateFlowOutputCallable(const Model::UpdateFlowOutputRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateFlowOutput that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateFlowOutputAsync(const Model::UpdateFlowOutputRequest& request, const UpdateFlowOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Updates the source of a flow.<p><h3>See Also:</h3>   <a
@@ -612,15 +394,6 @@ namespace MediaConnect
          */
         virtual Model::UpdateFlowSourceOutcome UpdateFlowSource(const Model::UpdateFlowSourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateFlowSource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateFlowSourceOutcomeCallable UpdateFlowSourceCallable(const Model::UpdateFlowSourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateFlowSource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateFlowSourceAsync(const Model::UpdateFlowSourceRequest& request, const UpdateFlowSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

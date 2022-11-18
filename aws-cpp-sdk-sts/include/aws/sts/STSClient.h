@@ -8,8 +8,10 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/sts/STSServiceClientModel.h>
+#include <aws/sts/STSLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -78,6 +80,47 @@ namespace STS
 
         /* End of legacy constructors due deprecation */
         virtual ~STSClient();
+
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
 
 
        /**
@@ -173,15 +216,6 @@ namespace STS
          */
         virtual Model::AssumeRoleOutcome AssumeRole(const Model::AssumeRoleRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssumeRole that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssumeRoleOutcomeCallable AssumeRoleCallable(const Model::AssumeRoleRequest& request) const;
-
-        /**
-         * An Async wrapper for AssumeRole that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssumeRoleAsync(const Model::AssumeRoleRequest& request, const AssumeRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a set of temporary security credentials for users who have been
@@ -304,15 +338,6 @@ namespace STS
          */
         virtual Model::AssumeRoleWithSAMLOutcome AssumeRoleWithSAML(const Model::AssumeRoleWithSAMLRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssumeRoleWithSAML that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssumeRoleWithSAMLOutcomeCallable AssumeRoleWithSAMLCallable(const Model::AssumeRoleWithSAMLRequest& request) const;
-
-        /**
-         * An Async wrapper for AssumeRoleWithSAML that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssumeRoleWithSAMLAsync(const Model::AssumeRoleWithSAMLRequest& request, const AssumeRoleWithSAMLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a set of temporary security credentials for users who have been
@@ -452,15 +477,6 @@ namespace STS
          */
         virtual Model::AssumeRoleWithWebIdentityOutcome AssumeRoleWithWebIdentity(const Model::AssumeRoleWithWebIdentityRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssumeRoleWithWebIdentity that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssumeRoleWithWebIdentityOutcomeCallable AssumeRoleWithWebIdentityCallable(const Model::AssumeRoleWithWebIdentityRequest& request) const;
-
-        /**
-         * An Async wrapper for AssumeRoleWithWebIdentity that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssumeRoleWithWebIdentityAsync(const Model::AssumeRoleWithWebIdentityRequest& request, const AssumeRoleWithWebIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Decodes additional information about the authorization status of a request
@@ -494,15 +510,6 @@ namespace STS
          */
         virtual Model::DecodeAuthorizationMessageOutcome DecodeAuthorizationMessage(const Model::DecodeAuthorizationMessageRequest& request) const;
 
-        /**
-         * A Callable wrapper for DecodeAuthorizationMessage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DecodeAuthorizationMessageOutcomeCallable DecodeAuthorizationMessageCallable(const Model::DecodeAuthorizationMessageRequest& request) const;
-
-        /**
-         * An Async wrapper for DecodeAuthorizationMessage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DecodeAuthorizationMessageAsync(const Model::DecodeAuthorizationMessageRequest& request, const DecodeAuthorizationMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the account identifier for the specified access key ID.</p> <p>Access
@@ -534,15 +541,6 @@ namespace STS
          */
         virtual Model::GetAccessKeyInfoOutcome GetAccessKeyInfo(const Model::GetAccessKeyInfoRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAccessKeyInfo that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAccessKeyInfoOutcomeCallable GetAccessKeyInfoCallable(const Model::GetAccessKeyInfoRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAccessKeyInfo that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAccessKeyInfoAsync(const Model::GetAccessKeyInfoRequest& request, const GetAccessKeyInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns details about the IAM user or role whose credentials are used to call
@@ -560,15 +558,6 @@ namespace STS
          */
         virtual Model::GetCallerIdentityOutcome GetCallerIdentity(const Model::GetCallerIdentityRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetCallerIdentity that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetCallerIdentityOutcomeCallable GetCallerIdentityCallable(const Model::GetCallerIdentityRequest& request) const;
-
-        /**
-         * An Async wrapper for GetCallerIdentity that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetCallerIdentityAsync(const Model::GetCallerIdentityRequest& request, const GetCallerIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a set of temporary security credentials (consisting of an access key
@@ -662,15 +651,6 @@ namespace STS
          */
         virtual Model::GetFederationTokenOutcome GetFederationToken(const Model::GetFederationTokenRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetFederationToken that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetFederationTokenOutcomeCallable GetFederationTokenCallable(const Model::GetFederationTokenRequest& request) const;
-
-        /**
-         * An Async wrapper for GetFederationToken that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetFederationTokenAsync(const Model::GetFederationTokenRequest& request, const GetFederationTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a set of temporary credentials for an Amazon Web Services account or
@@ -731,15 +711,6 @@ namespace STS
          */
         virtual Model::GetSessionTokenOutcome GetSessionToken(const Model::GetSessionTokenRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSessionToken that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSessionTokenOutcomeCallable GetSessionTokenCallable(const Model::GetSessionTokenRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSessionToken that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSessionTokenAsync(const Model::GetSessionTokenRequest& request, const GetSessionTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
         void OverrideEndpoint(const Aws::String& endpoint);

@@ -7,8 +7,10 @@
 #include <aws/application-insights/ApplicationInsights_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/application-insights/ApplicationInsightsServiceClientModel.h>
+#include <aws/application-insights/ApplicationInsightsLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -85,6 +87,47 @@ namespace ApplicationInsights
         virtual ~ApplicationInsightsClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Adds an application that is created from a resource group.</p><p><h3>See
          * Also:</h3>   <a
@@ -93,15 +136,6 @@ namespace ApplicationInsights
          */
         virtual Model::CreateApplicationOutcome CreateApplication(const Model::CreateApplicationRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateApplication that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateApplicationOutcomeCallable CreateApplicationCallable(const Model::CreateApplicationRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateApplicationAsync(const Model::CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a custom component by grouping similar standalone instances to
@@ -111,15 +145,6 @@ namespace ApplicationInsights
          */
         virtual Model::CreateComponentOutcome CreateComponent(const Model::CreateComponentRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateComponent that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateComponentOutcomeCallable CreateComponentCallable(const Model::CreateComponentRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateComponent that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateComponentAsync(const Model::CreateComponentRequest& request, const CreateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds an log pattern to a <code>LogPatternSet</code>.</p><p><h3>See Also:</h3>
@@ -129,15 +154,6 @@ namespace ApplicationInsights
          */
         virtual Model::CreateLogPatternOutcome CreateLogPattern(const Model::CreateLogPatternRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateLogPattern that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateLogPatternOutcomeCallable CreateLogPatternCallable(const Model::CreateLogPatternRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateLogPattern that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateLogPatternAsync(const Model::CreateLogPatternRequest& request, const CreateLogPatternResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified application from monitoring. Does not delete the
@@ -147,15 +163,6 @@ namespace ApplicationInsights
          */
         virtual Model::DeleteApplicationOutcome DeleteApplication(const Model::DeleteApplicationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteApplication that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteApplicationOutcomeCallable DeleteApplicationCallable(const Model::DeleteApplicationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteApplicationAsync(const Model::DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Ungroups a custom component. When you ungroup custom components, all
@@ -166,15 +173,6 @@ namespace ApplicationInsights
          */
         virtual Model::DeleteComponentOutcome DeleteComponent(const Model::DeleteComponentRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteComponent that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteComponentOutcomeCallable DeleteComponentCallable(const Model::DeleteComponentRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteComponent that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteComponentAsync(const Model::DeleteComponentRequest& request, const DeleteComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified log pattern from a
@@ -184,15 +182,6 @@ namespace ApplicationInsights
          */
         virtual Model::DeleteLogPatternOutcome DeleteLogPattern(const Model::DeleteLogPatternRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteLogPattern that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteLogPatternOutcomeCallable DeleteLogPatternCallable(const Model::DeleteLogPatternRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteLogPattern that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteLogPatternAsync(const Model::DeleteLogPatternRequest& request, const DeleteLogPatternResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the application.</p><p><h3>See Also:</h3>   <a
@@ -201,15 +190,6 @@ namespace ApplicationInsights
          */
         virtual Model::DescribeApplicationOutcome DescribeApplication(const Model::DescribeApplicationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeApplication that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeApplicationOutcomeCallable DescribeApplicationCallable(const Model::DescribeApplicationRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeApplicationAsync(const Model::DescribeApplicationRequest& request, const DescribeApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a component and lists the resources that are grouped together in a
@@ -219,15 +199,6 @@ namespace ApplicationInsights
          */
         virtual Model::DescribeComponentOutcome DescribeComponent(const Model::DescribeComponentRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeComponent that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeComponentOutcomeCallable DescribeComponentCallable(const Model::DescribeComponentRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeComponent that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeComponentAsync(const Model::DescribeComponentRequest& request, const DescribeComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the monitoring configuration of the component.</p><p><h3>See
@@ -237,15 +208,6 @@ namespace ApplicationInsights
          */
         virtual Model::DescribeComponentConfigurationOutcome DescribeComponentConfiguration(const Model::DescribeComponentConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeComponentConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeComponentConfigurationOutcomeCallable DescribeComponentConfigurationCallable(const Model::DescribeComponentConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeComponentConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeComponentConfigurationAsync(const Model::DescribeComponentConfigurationRequest& request, const DescribeComponentConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the recommended monitoring configuration of the
@@ -255,15 +217,6 @@ namespace ApplicationInsights
          */
         virtual Model::DescribeComponentConfigurationRecommendationOutcome DescribeComponentConfigurationRecommendation(const Model::DescribeComponentConfigurationRecommendationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeComponentConfigurationRecommendation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeComponentConfigurationRecommendationOutcomeCallable DescribeComponentConfigurationRecommendationCallable(const Model::DescribeComponentConfigurationRecommendationRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeComponentConfigurationRecommendation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeComponentConfigurationRecommendationAsync(const Model::DescribeComponentConfigurationRecommendationRequest& request, const DescribeComponentConfigurationRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describe a specific log pattern from a
@@ -273,15 +226,6 @@ namespace ApplicationInsights
          */
         virtual Model::DescribeLogPatternOutcome DescribeLogPattern(const Model::DescribeLogPatternRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeLogPattern that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeLogPatternOutcomeCallable DescribeLogPatternCallable(const Model::DescribeLogPatternRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeLogPattern that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeLogPatternAsync(const Model::DescribeLogPatternRequest& request, const DescribeLogPatternResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes an anomaly or error with the application.</p><p><h3>See Also:</h3> 
@@ -291,15 +235,6 @@ namespace ApplicationInsights
          */
         virtual Model::DescribeObservationOutcome DescribeObservation(const Model::DescribeObservationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeObservation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeObservationOutcomeCallable DescribeObservationCallable(const Model::DescribeObservationRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeObservation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeObservationAsync(const Model::DescribeObservationRequest& request, const DescribeObservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes an application problem.</p><p><h3>See Also:</h3>   <a
@@ -308,15 +243,6 @@ namespace ApplicationInsights
          */
         virtual Model::DescribeProblemOutcome DescribeProblem(const Model::DescribeProblemRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeProblem that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeProblemOutcomeCallable DescribeProblemCallable(const Model::DescribeProblemRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeProblem that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeProblemAsync(const Model::DescribeProblemRequest& request, const DescribeProblemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the anomalies or errors associated with the problem.</p><p><h3>See
@@ -326,15 +252,6 @@ namespace ApplicationInsights
          */
         virtual Model::DescribeProblemObservationsOutcome DescribeProblemObservations(const Model::DescribeProblemObservationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeProblemObservations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeProblemObservationsOutcomeCallable DescribeProblemObservationsCallable(const Model::DescribeProblemObservationsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeProblemObservations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeProblemObservationsAsync(const Model::DescribeProblemObservationsRequest& request, const DescribeProblemObservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the IDs of the applications that you are monitoring. </p><p><h3>See
@@ -344,15 +261,6 @@ namespace ApplicationInsights
          */
         virtual Model::ListApplicationsOutcome ListApplications(const Model::ListApplicationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListApplications that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListApplicationsOutcomeCallable ListApplicationsCallable(const Model::ListApplicationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListApplications that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListApplicationsAsync(const Model::ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the auto-grouped, standalone, and custom components of the
@@ -362,15 +270,6 @@ namespace ApplicationInsights
          */
         virtual Model::ListComponentsOutcome ListComponents(const Model::ListComponentsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListComponents that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListComponentsOutcomeCallable ListComponentsCallable(const Model::ListComponentsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListComponents that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListComponentsAsync(const Model::ListComponentsRequest& request, const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Lists the INFO, WARN, and ERROR events for periodic configuration updates
@@ -384,15 +283,6 @@ namespace ApplicationInsights
          */
         virtual Model::ListConfigurationHistoryOutcome ListConfigurationHistory(const Model::ListConfigurationHistoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListConfigurationHistory that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListConfigurationHistoryOutcomeCallable ListConfigurationHistoryCallable(const Model::ListConfigurationHistoryRequest& request) const;
-
-        /**
-         * An Async wrapper for ListConfigurationHistory that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListConfigurationHistoryAsync(const Model::ListConfigurationHistoryRequest& request, const ListConfigurationHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the log pattern sets in the specific application.</p><p><h3>See
@@ -402,15 +292,6 @@ namespace ApplicationInsights
          */
         virtual Model::ListLogPatternSetsOutcome ListLogPatternSets(const Model::ListLogPatternSetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListLogPatternSets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListLogPatternSetsOutcomeCallable ListLogPatternSetsCallable(const Model::ListLogPatternSetsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListLogPatternSets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListLogPatternSetsAsync(const Model::ListLogPatternSetsRequest& request, const ListLogPatternSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the log patterns in the specific log
@@ -420,15 +301,6 @@ namespace ApplicationInsights
          */
         virtual Model::ListLogPatternsOutcome ListLogPatterns(const Model::ListLogPatternsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListLogPatterns that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListLogPatternsOutcomeCallable ListLogPatternsCallable(const Model::ListLogPatternsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListLogPatterns that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListLogPatternsAsync(const Model::ListLogPatternsRequest& request, const ListLogPatternsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the problems with your application.</p><p><h3>See Also:</h3>   <a
@@ -437,15 +309,6 @@ namespace ApplicationInsights
          */
         virtual Model::ListProblemsOutcome ListProblems(const Model::ListProblemsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListProblems that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListProblemsOutcomeCallable ListProblemsCallable(const Model::ListProblemsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListProblems that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListProblemsAsync(const Model::ListProblemsRequest& request, const ListProblemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieve a list of the tags (keys and values) that are associated with a
@@ -459,15 +322,6 @@ namespace ApplicationInsights
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Add one or more tags (keys and values) to a specified application. A
@@ -483,15 +337,6 @@ namespace ApplicationInsights
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Remove one or more tags (keys and values) from a specified
@@ -501,15 +346,6 @@ namespace ApplicationInsights
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the application.</p><p><h3>See Also:</h3>   <a
@@ -518,15 +354,6 @@ namespace ApplicationInsights
          */
         virtual Model::UpdateApplicationOutcome UpdateApplication(const Model::UpdateApplicationRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateApplication that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateApplicationOutcomeCallable UpdateApplicationCallable(const Model::UpdateApplicationRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateApplicationAsync(const Model::UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the custom component name and/or the list of resources that make up
@@ -536,15 +363,6 @@ namespace ApplicationInsights
          */
         virtual Model::UpdateComponentOutcome UpdateComponent(const Model::UpdateComponentRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateComponent that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateComponentOutcomeCallable UpdateComponentCallable(const Model::UpdateComponentRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateComponent that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateComponentAsync(const Model::UpdateComponentRequest& request, const UpdateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the monitoring configurations for the component. The configuration
@@ -557,15 +375,6 @@ namespace ApplicationInsights
          */
         virtual Model::UpdateComponentConfigurationOutcome UpdateComponentConfiguration(const Model::UpdateComponentConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateComponentConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateComponentConfigurationOutcomeCallable UpdateComponentConfigurationCallable(const Model::UpdateComponentConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateComponentConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateComponentConfigurationAsync(const Model::UpdateComponentConfigurationRequest& request, const UpdateComponentConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds a log pattern to a <code>LogPatternSet</code>.</p><p><h3>See Also:</h3> 
@@ -575,15 +384,6 @@ namespace ApplicationInsights
          */
         virtual Model::UpdateLogPatternOutcome UpdateLogPattern(const Model::UpdateLogPatternRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateLogPattern that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateLogPatternOutcomeCallable UpdateLogPatternCallable(const Model::UpdateLogPatternRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateLogPattern that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateLogPatternAsync(const Model::UpdateLogPatternRequest& request, const UpdateLogPatternResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

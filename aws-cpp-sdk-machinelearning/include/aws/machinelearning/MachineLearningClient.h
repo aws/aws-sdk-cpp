@@ -7,8 +7,10 @@
 #include <aws/machinelearning/MachineLearning_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/machinelearning/MachineLearningServiceClientModel.h>
+#include <aws/machinelearning/MachineLearningLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -73,6 +75,47 @@ namespace MachineLearning
         virtual ~MachineLearningClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Adds one or more tags to an object, up to a limit of 10. Each tag consists of
          * a key and an optional value. If you add a tag using a key that is already
@@ -83,15 +126,6 @@ namespace MachineLearning
          */
         virtual Model::AddTagsOutcome AddTags(const Model::AddTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddTagsOutcomeCallable AddTagsCallable(const Model::AddTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for AddTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddTagsAsync(const Model::AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Generates predictions for a group of observations. The observations to
@@ -113,15 +147,6 @@ namespace MachineLearning
          */
         virtual Model::CreateBatchPredictionOutcome CreateBatchPrediction(const Model::CreateBatchPredictionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateBatchPrediction that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateBatchPredictionOutcomeCallable CreateBatchPredictionCallable(const Model::CreateBatchPredictionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateBatchPrediction that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateBatchPredictionAsync(const Model::CreateBatchPredictionRequest& request, const CreateBatchPredictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a <code>DataSource</code> object from an <a
@@ -146,15 +171,6 @@ namespace MachineLearning
          */
         virtual Model::CreateDataSourceFromRDSOutcome CreateDataSourceFromRDS(const Model::CreateDataSourceFromRDSRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDataSourceFromRDS that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDataSourceFromRDSOutcomeCallable CreateDataSourceFromRDSCallable(const Model::CreateDataSourceFromRDSRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDataSourceFromRDS that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDataSourceFromRDSAsync(const Model::CreateDataSourceFromRDSRequest& request, const CreateDataSourceFromRDSResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a <code>DataSource</code> from a database hosted on an Amazon
@@ -196,15 +212,6 @@ namespace MachineLearning
          */
         virtual Model::CreateDataSourceFromRedshiftOutcome CreateDataSourceFromRedshift(const Model::CreateDataSourceFromRedshiftRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDataSourceFromRedshift that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDataSourceFromRedshiftOutcomeCallable CreateDataSourceFromRedshiftCallable(const Model::CreateDataSourceFromRedshiftRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDataSourceFromRedshift that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDataSourceFromRedshiftAsync(const Model::CreateDataSourceFromRedshiftRequest& request, const CreateDataSourceFromRedshiftResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a <code>DataSource</code> object. A <code>DataSource</code>
@@ -241,15 +248,6 @@ namespace MachineLearning
          */
         virtual Model::CreateDataSourceFromS3Outcome CreateDataSourceFromS3(const Model::CreateDataSourceFromS3Request& request) const;
 
-        /**
-         * A Callable wrapper for CreateDataSourceFromS3 that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDataSourceFromS3OutcomeCallable CreateDataSourceFromS3Callable(const Model::CreateDataSourceFromS3Request& request) const;
-
-        /**
-         * An Async wrapper for CreateDataSourceFromS3 that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDataSourceFromS3Async(const Model::CreateDataSourceFromS3Request& request, const CreateDataSourceFromS3ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new <code>Evaluation</code> of an <code>MLModel</code>. An
@@ -275,15 +273,6 @@ namespace MachineLearning
          */
         virtual Model::CreateEvaluationOutcome CreateEvaluation(const Model::CreateEvaluationRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateEvaluation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateEvaluationOutcomeCallable CreateEvaluationCallable(const Model::CreateEvaluationRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateEvaluation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateEvaluationAsync(const Model::CreateEvaluationRequest& request, const CreateEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new <code>MLModel</code> using the <code>DataSource</code> and the
@@ -308,15 +297,6 @@ namespace MachineLearning
          */
         virtual Model::CreateMLModelOutcome CreateMLModel(const Model::CreateMLModelRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateMLModel that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateMLModelOutcomeCallable CreateMLModelCallable(const Model::CreateMLModelRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateMLModel that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateMLModelAsync(const Model::CreateMLModelRequest& request, const CreateMLModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a real-time endpoint for the <code>MLModel</code>. The endpoint
@@ -328,15 +308,6 @@ namespace MachineLearning
          */
         virtual Model::CreateRealtimeEndpointOutcome CreateRealtimeEndpoint(const Model::CreateRealtimeEndpointRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateRealtimeEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateRealtimeEndpointOutcomeCallable CreateRealtimeEndpointCallable(const Model::CreateRealtimeEndpointRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateRealtimeEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateRealtimeEndpointAsync(const Model::CreateRealtimeEndpointRequest& request, const CreateRealtimeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Assigns the DELETED status to a <code>BatchPrediction</code>, rendering it
@@ -350,15 +321,6 @@ namespace MachineLearning
          */
         virtual Model::DeleteBatchPredictionOutcome DeleteBatchPrediction(const Model::DeleteBatchPredictionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteBatchPrediction that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteBatchPredictionOutcomeCallable DeleteBatchPredictionCallable(const Model::DeleteBatchPredictionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteBatchPrediction that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteBatchPredictionAsync(const Model::DeleteBatchPredictionRequest& request, const DeleteBatchPredictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Assigns the DELETED status to a <code>DataSource</code>, rendering it
@@ -372,15 +334,6 @@ namespace MachineLearning
          */
         virtual Model::DeleteDataSourceOutcome DeleteDataSource(const Model::DeleteDataSourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDataSource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDataSourceOutcomeCallable DeleteDataSourceCallable(const Model::DeleteDataSourceRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDataSource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDataSourceAsync(const Model::DeleteDataSourceRequest& request, const DeleteDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Assigns the <code>DELETED</code> status to an <code>Evaluation</code>,
@@ -394,15 +347,6 @@ namespace MachineLearning
          */
         virtual Model::DeleteEvaluationOutcome DeleteEvaluation(const Model::DeleteEvaluationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteEvaluation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteEvaluationOutcomeCallable DeleteEvaluationCallable(const Model::DeleteEvaluationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteEvaluation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteEvaluationAsync(const Model::DeleteEvaluationRequest& request, const DeleteEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Assigns the <code>DELETED</code> status to an <code>MLModel</code>, rendering
@@ -416,15 +360,6 @@ namespace MachineLearning
          */
         virtual Model::DeleteMLModelOutcome DeleteMLModel(const Model::DeleteMLModelRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteMLModel that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteMLModelOutcomeCallable DeleteMLModelCallable(const Model::DeleteMLModelRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteMLModel that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteMLModelAsync(const Model::DeleteMLModelRequest& request, const DeleteMLModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a real time endpoint of an <code>MLModel</code>.</p><p><h3>See
@@ -434,15 +369,6 @@ namespace MachineLearning
          */
         virtual Model::DeleteRealtimeEndpointOutcome DeleteRealtimeEndpoint(const Model::DeleteRealtimeEndpointRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteRealtimeEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteRealtimeEndpointOutcomeCallable DeleteRealtimeEndpointCallable(const Model::DeleteRealtimeEndpointRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteRealtimeEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteRealtimeEndpointAsync(const Model::DeleteRealtimeEndpointRequest& request, const DeleteRealtimeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified tags associated with an ML object. After this operation
@@ -453,15 +379,6 @@ namespace MachineLearning
          */
         virtual Model::DeleteTagsOutcome DeleteTags(const Model::DeleteTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteTagsOutcomeCallable DeleteTagsCallable(const Model::DeleteTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteTagsAsync(const Model::DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of <code>BatchPrediction</code> operations that match the
@@ -471,15 +388,6 @@ namespace MachineLearning
          */
         virtual Model::DescribeBatchPredictionsOutcome DescribeBatchPredictions(const Model::DescribeBatchPredictionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeBatchPredictions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeBatchPredictionsOutcomeCallable DescribeBatchPredictionsCallable(const Model::DescribeBatchPredictionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeBatchPredictions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeBatchPredictionsAsync(const Model::DescribeBatchPredictionsRequest& request, const DescribeBatchPredictionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of <code>DataSource</code> that match the search criteria in
@@ -489,15 +397,6 @@ namespace MachineLearning
          */
         virtual Model::DescribeDataSourcesOutcome DescribeDataSources(const Model::DescribeDataSourcesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDataSources that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDataSourcesOutcomeCallable DescribeDataSourcesCallable(const Model::DescribeDataSourcesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDataSources that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDataSourcesAsync(const Model::DescribeDataSourcesRequest& request, const DescribeDataSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of <code>DescribeEvaluations</code> that match the search
@@ -507,15 +406,6 @@ namespace MachineLearning
          */
         virtual Model::DescribeEvaluationsOutcome DescribeEvaluations(const Model::DescribeEvaluationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEvaluations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEvaluationsOutcomeCallable DescribeEvaluationsCallable(const Model::DescribeEvaluationsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEvaluations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEvaluationsAsync(const Model::DescribeEvaluationsRequest& request, const DescribeEvaluationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of <code>MLModel</code> that match the search criteria in the
@@ -525,15 +415,6 @@ namespace MachineLearning
          */
         virtual Model::DescribeMLModelsOutcome DescribeMLModels(const Model::DescribeMLModelsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeMLModels that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeMLModelsOutcomeCallable DescribeMLModelsCallable(const Model::DescribeMLModelsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeMLModels that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeMLModelsAsync(const Model::DescribeMLModelsRequest& request, const DescribeMLModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more of the tags for your Amazon ML object.</p><p><h3>See
@@ -543,15 +424,6 @@ namespace MachineLearning
          */
         virtual Model::DescribeTagsOutcome DescribeTags(const Model::DescribeTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTagsOutcomeCallable DescribeTagsCallable(const Model::DescribeTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTagsAsync(const Model::DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a <code>BatchPrediction</code> that includes detailed metadata,
@@ -562,15 +434,6 @@ namespace MachineLearning
          */
         virtual Model::GetBatchPredictionOutcome GetBatchPrediction(const Model::GetBatchPredictionRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBatchPrediction that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBatchPredictionOutcomeCallable GetBatchPredictionCallable(const Model::GetBatchPredictionRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBatchPrediction that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBatchPredictionAsync(const Model::GetBatchPredictionRequest& request, const GetBatchPredictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a <code>DataSource</code> that includes metadata and data file
@@ -583,15 +446,6 @@ namespace MachineLearning
          */
         virtual Model::GetDataSourceOutcome GetDataSource(const Model::GetDataSourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDataSource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDataSourceOutcomeCallable GetDataSourceCallable(const Model::GetDataSourceRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDataSource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDataSourceAsync(const Model::GetDataSourceRequest& request, const GetDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns an <code>Evaluation</code> that includes metadata as well as the
@@ -601,15 +455,6 @@ namespace MachineLearning
          */
         virtual Model::GetEvaluationOutcome GetEvaluation(const Model::GetEvaluationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetEvaluation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetEvaluationOutcomeCallable GetEvaluationCallable(const Model::GetEvaluationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetEvaluation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetEvaluationAsync(const Model::GetEvaluationRequest& request, const GetEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns an <code>MLModel</code> that includes detailed metadata, data source
@@ -621,15 +466,6 @@ namespace MachineLearning
          */
         virtual Model::GetMLModelOutcome GetMLModel(const Model::GetMLModelRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetMLModel that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetMLModelOutcomeCallable GetMLModelCallable(const Model::GetMLModelRequest& request) const;
-
-        /**
-         * An Async wrapper for GetMLModel that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetMLModelAsync(const Model::GetMLModelRequest& request, const GetMLModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Generates a prediction for the observation using the specified <code>ML
@@ -641,15 +477,6 @@ namespace MachineLearning
          */
         virtual Model::PredictOutcome Predict(const Model::PredictRequest& request) const;
 
-        /**
-         * A Callable wrapper for Predict that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PredictOutcomeCallable PredictCallable(const Model::PredictRequest& request) const;
-
-        /**
-         * An Async wrapper for Predict that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PredictAsync(const Model::PredictRequest& request, const PredictResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the <code>BatchPredictionName</code> of a
@@ -661,15 +488,6 @@ namespace MachineLearning
          */
         virtual Model::UpdateBatchPredictionOutcome UpdateBatchPrediction(const Model::UpdateBatchPredictionRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateBatchPrediction that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateBatchPredictionOutcomeCallable UpdateBatchPredictionCallable(const Model::UpdateBatchPredictionRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateBatchPrediction that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateBatchPredictionAsync(const Model::UpdateBatchPredictionRequest& request, const UpdateBatchPredictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the <code>DataSourceName</code> of a <code>DataSource</code>.</p>
@@ -680,15 +498,6 @@ namespace MachineLearning
          */
         virtual Model::UpdateDataSourceOutcome UpdateDataSource(const Model::UpdateDataSourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateDataSource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateDataSourceOutcomeCallable UpdateDataSourceCallable(const Model::UpdateDataSourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateDataSource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateDataSourceAsync(const Model::UpdateDataSourceRequest& request, const UpdateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the <code>EvaluationName</code> of an <code>Evaluation</code>.</p>
@@ -699,15 +508,6 @@ namespace MachineLearning
          */
         virtual Model::UpdateEvaluationOutcome UpdateEvaluation(const Model::UpdateEvaluationRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateEvaluation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateEvaluationOutcomeCallable UpdateEvaluationCallable(const Model::UpdateEvaluationRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateEvaluation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateEvaluationAsync(const Model::UpdateEvaluationRequest& request, const UpdateEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the <code>MLModelName</code> and the <code>ScoreThreshold</code> of
@@ -719,15 +519,6 @@ namespace MachineLearning
          */
         virtual Model::UpdateMLModelOutcome UpdateMLModel(const Model::UpdateMLModelRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateMLModel that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateMLModelOutcomeCallable UpdateMLModelCallable(const Model::UpdateMLModelRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateMLModel that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateMLModelAsync(const Model::UpdateMLModelRequest& request, const UpdateMLModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -176,23 +177,7 @@ AddPermissionOutcome SQSClient::AddPermission(const AddPermissionRequest& reques
   return AddPermissionOutcome(MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
-AddPermissionOutcomeCallable SQSClient::AddPermissionCallable(const AddPermissionRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< AddPermissionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AddPermission(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void SQSClient::AddPermissionAsync(const AddPermissionRequest& request,
-      const AddPermissionResponseReceivedHandler& handler,
-      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
-{
-  m_executor->Submit( [this, request, handler, handlerContext]()
-    {
-      handler(this, request, AddPermission(request), handlerContext);
-    } );
-}
 
 ChangeMessageVisibilityOutcome SQSClient::ChangeMessageVisibility(const ChangeMessageVisibilityRequest& request) const
 {
@@ -200,23 +185,7 @@ ChangeMessageVisibilityOutcome SQSClient::ChangeMessageVisibility(const ChangeMe
   return ChangeMessageVisibilityOutcome(MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
-ChangeMessageVisibilityOutcomeCallable SQSClient::ChangeMessageVisibilityCallable(const ChangeMessageVisibilityRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< ChangeMessageVisibilityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ChangeMessageVisibility(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void SQSClient::ChangeMessageVisibilityAsync(const ChangeMessageVisibilityRequest& request,
-      const ChangeMessageVisibilityResponseReceivedHandler& handler,
-      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
-{
-  m_executor->Submit( [this, request, handler, handlerContext]()
-    {
-      handler(this, request, ChangeMessageVisibility(request), handlerContext);
-    } );
-}
 
 ChangeMessageVisibilityBatchOutcome SQSClient::ChangeMessageVisibilityBatch(const ChangeMessageVisibilityBatchRequest& request) const
 {
@@ -224,23 +193,7 @@ ChangeMessageVisibilityBatchOutcome SQSClient::ChangeMessageVisibilityBatch(cons
   return ChangeMessageVisibilityBatchOutcome(MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
-ChangeMessageVisibilityBatchOutcomeCallable SQSClient::ChangeMessageVisibilityBatchCallable(const ChangeMessageVisibilityBatchRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< ChangeMessageVisibilityBatchOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ChangeMessageVisibilityBatch(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void SQSClient::ChangeMessageVisibilityBatchAsync(const ChangeMessageVisibilityBatchRequest& request,
-      const ChangeMessageVisibilityBatchResponseReceivedHandler& handler,
-      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
-{
-  m_executor->Submit( [this, request, handler, handlerContext]()
-    {
-      handler(this, request, ChangeMessageVisibilityBatch(request), handlerContext);
-    } );
-}
 
 CreateQueueOutcome SQSClient::CreateQueue(const CreateQueueRequest& request) const
 {
@@ -250,23 +203,7 @@ CreateQueueOutcome SQSClient::CreateQueue(const CreateQueueRequest& request) con
   return CreateQueueOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
 }
 
-CreateQueueOutcomeCallable SQSClient::CreateQueueCallable(const CreateQueueRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< CreateQueueOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateQueue(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void SQSClient::CreateQueueAsync(const CreateQueueRequest& request,
-      const CreateQueueResponseReceivedHandler& handler,
-      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
-{
-  m_executor->Submit( [this, request, handler, handlerContext]()
-    {
-      handler(this, request, CreateQueue(request), handlerContext);
-    } );
-}
 
 DeleteMessageOutcome SQSClient::DeleteMessage(const DeleteMessageRequest& request) const
 {
@@ -274,23 +211,7 @@ DeleteMessageOutcome SQSClient::DeleteMessage(const DeleteMessageRequest& reques
   return DeleteMessageOutcome(MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
-DeleteMessageOutcomeCallable SQSClient::DeleteMessageCallable(const DeleteMessageRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< DeleteMessageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteMessage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void SQSClient::DeleteMessageAsync(const DeleteMessageRequest& request,
-      const DeleteMessageResponseReceivedHandler& handler,
-      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
-{
-  m_executor->Submit( [this, request, handler, handlerContext]()
-    {
-      handler(this, request, DeleteMessage(request), handlerContext);
-    } );
-}
 
 DeleteMessageBatchOutcome SQSClient::DeleteMessageBatch(const DeleteMessageBatchRequest& request) const
 {
@@ -298,23 +219,7 @@ DeleteMessageBatchOutcome SQSClient::DeleteMessageBatch(const DeleteMessageBatch
   return DeleteMessageBatchOutcome(MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
-DeleteMessageBatchOutcomeCallable SQSClient::DeleteMessageBatchCallable(const DeleteMessageBatchRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< DeleteMessageBatchOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteMessageBatch(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void SQSClient::DeleteMessageBatchAsync(const DeleteMessageBatchRequest& request,
-      const DeleteMessageBatchResponseReceivedHandler& handler,
-      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
-{
-  m_executor->Submit( [this, request, handler, handlerContext]()
-    {
-      handler(this, request, DeleteMessageBatch(request), handlerContext);
-    } );
-}
 
 DeleteQueueOutcome SQSClient::DeleteQueue(const DeleteQueueRequest& request) const
 {
@@ -322,23 +227,7 @@ DeleteQueueOutcome SQSClient::DeleteQueue(const DeleteQueueRequest& request) con
   return DeleteQueueOutcome(MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
-DeleteQueueOutcomeCallable SQSClient::DeleteQueueCallable(const DeleteQueueRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< DeleteQueueOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteQueue(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void SQSClient::DeleteQueueAsync(const DeleteQueueRequest& request,
-      const DeleteQueueResponseReceivedHandler& handler,
-      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
-{
-  m_executor->Submit( [this, request, handler, handlerContext]()
-    {
-      handler(this, request, DeleteQueue(request), handlerContext);
-    } );
-}
 
 GetQueueAttributesOutcome SQSClient::GetQueueAttributes(const GetQueueAttributesRequest& request) const
 {
@@ -346,23 +235,7 @@ GetQueueAttributesOutcome SQSClient::GetQueueAttributes(const GetQueueAttributes
   return GetQueueAttributesOutcome(MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
-GetQueueAttributesOutcomeCallable SQSClient::GetQueueAttributesCallable(const GetQueueAttributesRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< GetQueueAttributesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetQueueAttributes(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void SQSClient::GetQueueAttributesAsync(const GetQueueAttributesRequest& request,
-      const GetQueueAttributesResponseReceivedHandler& handler,
-      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
-{
-  m_executor->Submit( [this, request, handler, handlerContext]()
-    {
-      handler(this, request, GetQueueAttributes(request), handlerContext);
-    } );
-}
 
 GetQueueUrlOutcome SQSClient::GetQueueUrl(const GetQueueUrlRequest& request) const
 {
@@ -372,23 +245,7 @@ GetQueueUrlOutcome SQSClient::GetQueueUrl(const GetQueueUrlRequest& request) con
   return GetQueueUrlOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
 }
 
-GetQueueUrlOutcomeCallable SQSClient::GetQueueUrlCallable(const GetQueueUrlRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< GetQueueUrlOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetQueueUrl(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void SQSClient::GetQueueUrlAsync(const GetQueueUrlRequest& request,
-      const GetQueueUrlResponseReceivedHandler& handler,
-      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
-{
-  m_executor->Submit( [this, request, handler, handlerContext]()
-    {
-      handler(this, request, GetQueueUrl(request), handlerContext);
-    } );
-}
 
 ListDeadLetterSourceQueuesOutcome SQSClient::ListDeadLetterSourceQueues(const ListDeadLetterSourceQueuesRequest& request) const
 {
@@ -396,23 +253,7 @@ ListDeadLetterSourceQueuesOutcome SQSClient::ListDeadLetterSourceQueues(const Li
   return ListDeadLetterSourceQueuesOutcome(MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
-ListDeadLetterSourceQueuesOutcomeCallable SQSClient::ListDeadLetterSourceQueuesCallable(const ListDeadLetterSourceQueuesRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< ListDeadLetterSourceQueuesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDeadLetterSourceQueues(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void SQSClient::ListDeadLetterSourceQueuesAsync(const ListDeadLetterSourceQueuesRequest& request,
-      const ListDeadLetterSourceQueuesResponseReceivedHandler& handler,
-      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
-{
-  m_executor->Submit( [this, request, handler, handlerContext]()
-    {
-      handler(this, request, ListDeadLetterSourceQueues(request), handlerContext);
-    } );
-}
 
 ListQueueTagsOutcome SQSClient::ListQueueTags(const ListQueueTagsRequest& request) const
 {
@@ -420,23 +261,7 @@ ListQueueTagsOutcome SQSClient::ListQueueTags(const ListQueueTagsRequest& reques
   return ListQueueTagsOutcome(MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
-ListQueueTagsOutcomeCallable SQSClient::ListQueueTagsCallable(const ListQueueTagsRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< ListQueueTagsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListQueueTags(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void SQSClient::ListQueueTagsAsync(const ListQueueTagsRequest& request,
-      const ListQueueTagsResponseReceivedHandler& handler,
-      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
-{
-  m_executor->Submit( [this, request, handler, handlerContext]()
-    {
-      handler(this, request, ListQueueTags(request), handlerContext);
-    } );
-}
 
 ListQueuesOutcome SQSClient::ListQueues(const ListQueuesRequest& request) const
 {
@@ -446,23 +271,7 @@ ListQueuesOutcome SQSClient::ListQueues(const ListQueuesRequest& request) const
   return ListQueuesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
 }
 
-ListQueuesOutcomeCallable SQSClient::ListQueuesCallable(const ListQueuesRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< ListQueuesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListQueues(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void SQSClient::ListQueuesAsync(const ListQueuesRequest& request,
-      const ListQueuesResponseReceivedHandler& handler,
-      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
-{
-  m_executor->Submit( [this, request, handler, handlerContext]()
-    {
-      handler(this, request, ListQueues(request), handlerContext);
-    } );
-}
 
 PurgeQueueOutcome SQSClient::PurgeQueue(const PurgeQueueRequest& request) const
 {
@@ -470,23 +279,7 @@ PurgeQueueOutcome SQSClient::PurgeQueue(const PurgeQueueRequest& request) const
   return PurgeQueueOutcome(MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
-PurgeQueueOutcomeCallable SQSClient::PurgeQueueCallable(const PurgeQueueRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< PurgeQueueOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PurgeQueue(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void SQSClient::PurgeQueueAsync(const PurgeQueueRequest& request,
-      const PurgeQueueResponseReceivedHandler& handler,
-      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
-{
-  m_executor->Submit( [this, request, handler, handlerContext]()
-    {
-      handler(this, request, PurgeQueue(request), handlerContext);
-    } );
-}
 
 ReceiveMessageOutcome SQSClient::ReceiveMessage(const ReceiveMessageRequest& request) const
 {
@@ -494,23 +287,7 @@ ReceiveMessageOutcome SQSClient::ReceiveMessage(const ReceiveMessageRequest& req
   return ReceiveMessageOutcome(MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
-ReceiveMessageOutcomeCallable SQSClient::ReceiveMessageCallable(const ReceiveMessageRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< ReceiveMessageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ReceiveMessage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void SQSClient::ReceiveMessageAsync(const ReceiveMessageRequest& request,
-      const ReceiveMessageResponseReceivedHandler& handler,
-      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
-{
-  m_executor->Submit( [this, request, handler, handlerContext]()
-    {
-      handler(this, request, ReceiveMessage(request), handlerContext);
-    } );
-}
 
 RemovePermissionOutcome SQSClient::RemovePermission(const RemovePermissionRequest& request) const
 {
@@ -518,23 +295,7 @@ RemovePermissionOutcome SQSClient::RemovePermission(const RemovePermissionReques
   return RemovePermissionOutcome(MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
-RemovePermissionOutcomeCallable SQSClient::RemovePermissionCallable(const RemovePermissionRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< RemovePermissionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RemovePermission(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void SQSClient::RemovePermissionAsync(const RemovePermissionRequest& request,
-      const RemovePermissionResponseReceivedHandler& handler,
-      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
-{
-  m_executor->Submit( [this, request, handler, handlerContext]()
-    {
-      handler(this, request, RemovePermission(request), handlerContext);
-    } );
-}
 
 SendMessageOutcome SQSClient::SendMessage(const SendMessageRequest& request) const
 {
@@ -542,23 +303,7 @@ SendMessageOutcome SQSClient::SendMessage(const SendMessageRequest& request) con
   return SendMessageOutcome(MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
-SendMessageOutcomeCallable SQSClient::SendMessageCallable(const SendMessageRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< SendMessageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SendMessage(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void SQSClient::SendMessageAsync(const SendMessageRequest& request,
-      const SendMessageResponseReceivedHandler& handler,
-      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
-{
-  m_executor->Submit( [this, request, handler, handlerContext]()
-    {
-      handler(this, request, SendMessage(request), handlerContext);
-    } );
-}
 
 SendMessageBatchOutcome SQSClient::SendMessageBatch(const SendMessageBatchRequest& request) const
 {
@@ -566,23 +311,7 @@ SendMessageBatchOutcome SQSClient::SendMessageBatch(const SendMessageBatchReques
   return SendMessageBatchOutcome(MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
-SendMessageBatchOutcomeCallable SQSClient::SendMessageBatchCallable(const SendMessageBatchRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< SendMessageBatchOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SendMessageBatch(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void SQSClient::SendMessageBatchAsync(const SendMessageBatchRequest& request,
-      const SendMessageBatchResponseReceivedHandler& handler,
-      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
-{
-  m_executor->Submit( [this, request, handler, handlerContext]()
-    {
-      handler(this, request, SendMessageBatch(request), handlerContext);
-    } );
-}
 
 SetQueueAttributesOutcome SQSClient::SetQueueAttributes(const SetQueueAttributesRequest& request) const
 {
@@ -590,23 +319,7 @@ SetQueueAttributesOutcome SQSClient::SetQueueAttributes(const SetQueueAttributes
   return SetQueueAttributesOutcome(MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
-SetQueueAttributesOutcomeCallable SQSClient::SetQueueAttributesCallable(const SetQueueAttributesRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< SetQueueAttributesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SetQueueAttributes(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void SQSClient::SetQueueAttributesAsync(const SetQueueAttributesRequest& request,
-      const SetQueueAttributesResponseReceivedHandler& handler,
-      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
-{
-  m_executor->Submit( [this, request, handler, handlerContext]()
-    {
-      handler(this, request, SetQueueAttributes(request), handlerContext);
-    } );
-}
 
 TagQueueOutcome SQSClient::TagQueue(const TagQueueRequest& request) const
 {
@@ -614,23 +327,7 @@ TagQueueOutcome SQSClient::TagQueue(const TagQueueRequest& request) const
   return TagQueueOutcome(MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
-TagQueueOutcomeCallable SQSClient::TagQueueCallable(const TagQueueRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< TagQueueOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagQueue(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void SQSClient::TagQueueAsync(const TagQueueRequest& request,
-      const TagQueueResponseReceivedHandler& handler,
-      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
-{
-  m_executor->Submit( [this, request, handler, handlerContext]()
-    {
-      handler(this, request, TagQueue(request), handlerContext);
-    } );
-}
 
 UntagQueueOutcome SQSClient::UntagQueue(const UntagQueueRequest& request) const
 {
@@ -638,21 +335,5 @@ UntagQueueOutcome SQSClient::UntagQueue(const UntagQueueRequest& request) const
   return UntagQueueOutcome(MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
-UntagQueueOutcomeCallable SQSClient::UntagQueueCallable(const UntagQueueRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< UntagQueueOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagQueue(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void SQSClient::UntagQueueAsync(const UntagQueueRequest& request,
-      const UntagQueueResponseReceivedHandler& handler,
-      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
-{
-  m_executor->Submit( [this, request, handler, handlerContext]()
-    {
-      handler(this, request, UntagQueue(request), handlerContext);
-    } );
-}
 

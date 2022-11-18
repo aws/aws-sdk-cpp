@@ -7,8 +7,10 @@
 #include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/es/ElasticsearchServiceServiceClientModel.h>
+#include <aws/es/ElasticsearchServiceLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -85,6 +87,47 @@ namespace ElasticsearchService
         virtual ~ElasticsearchServiceClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Allows the destination domain owner to accept an inbound cross-cluster search
          * connection request.</p><p><h3>See Also:</h3>   <a
@@ -93,15 +136,6 @@ namespace ElasticsearchService
          */
         virtual Model::AcceptInboundCrossClusterSearchConnectionOutcome AcceptInboundCrossClusterSearchConnection(const Model::AcceptInboundCrossClusterSearchConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for AcceptInboundCrossClusterSearchConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AcceptInboundCrossClusterSearchConnectionOutcomeCallable AcceptInboundCrossClusterSearchConnectionCallable(const Model::AcceptInboundCrossClusterSearchConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for AcceptInboundCrossClusterSearchConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AcceptInboundCrossClusterSearchConnectionAsync(const Model::AcceptInboundCrossClusterSearchConnectionRequest& request, const AcceptInboundCrossClusterSearchConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Attaches tags to an existing Elasticsearch domain. Tags are a set of
@@ -115,15 +149,6 @@ namespace ElasticsearchService
          */
         virtual Model::AddTagsOutcome AddTags(const Model::AddTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddTagsOutcomeCallable AddTagsCallable(const Model::AddTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for AddTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddTagsAsync(const Model::AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates a package with an Amazon ES domain.</p><p><h3>See Also:</h3>   <a
@@ -132,15 +157,6 @@ namespace ElasticsearchService
          */
         virtual Model::AssociatePackageOutcome AssociatePackage(const Model::AssociatePackageRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociatePackage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociatePackageOutcomeCallable AssociatePackageCallable(const Model::AssociatePackageRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociatePackage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociatePackageAsync(const Model::AssociatePackageRequest& request, const AssociatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides access to an Amazon OpenSearch Service domain through the use of an
@@ -150,15 +166,6 @@ namespace ElasticsearchService
          */
         virtual Model::AuthorizeVpcEndpointAccessOutcome AuthorizeVpcEndpointAccess(const Model::AuthorizeVpcEndpointAccessRequest& request) const;
 
-        /**
-         * A Callable wrapper for AuthorizeVpcEndpointAccess that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AuthorizeVpcEndpointAccessOutcomeCallable AuthorizeVpcEndpointAccessCallable(const Model::AuthorizeVpcEndpointAccessRequest& request) const;
-
-        /**
-         * An Async wrapper for AuthorizeVpcEndpointAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AuthorizeVpcEndpointAccessAsync(const Model::AuthorizeVpcEndpointAccessRequest& request, const AuthorizeVpcEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Cancels a scheduled service software update for an Amazon ES domain. You can
@@ -170,15 +177,6 @@ namespace ElasticsearchService
          */
         virtual Model::CancelElasticsearchServiceSoftwareUpdateOutcome CancelElasticsearchServiceSoftwareUpdate(const Model::CancelElasticsearchServiceSoftwareUpdateRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelElasticsearchServiceSoftwareUpdate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelElasticsearchServiceSoftwareUpdateOutcomeCallable CancelElasticsearchServiceSoftwareUpdateCallable(const Model::CancelElasticsearchServiceSoftwareUpdateRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelElasticsearchServiceSoftwareUpdate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelElasticsearchServiceSoftwareUpdateAsync(const Model::CancelElasticsearchServiceSoftwareUpdateRequest& request, const CancelElasticsearchServiceSoftwareUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new Elasticsearch domain. For more information, see <a
@@ -190,15 +188,6 @@ namespace ElasticsearchService
          */
         virtual Model::CreateElasticsearchDomainOutcome CreateElasticsearchDomain(const Model::CreateElasticsearchDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateElasticsearchDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateElasticsearchDomainOutcomeCallable CreateElasticsearchDomainCallable(const Model::CreateElasticsearchDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateElasticsearchDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateElasticsearchDomainAsync(const Model::CreateElasticsearchDomainRequest& request, const CreateElasticsearchDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new cross-cluster search connection from a source domain to a
@@ -208,15 +197,6 @@ namespace ElasticsearchService
          */
         virtual Model::CreateOutboundCrossClusterSearchConnectionOutcome CreateOutboundCrossClusterSearchConnection(const Model::CreateOutboundCrossClusterSearchConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateOutboundCrossClusterSearchConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateOutboundCrossClusterSearchConnectionOutcomeCallable CreateOutboundCrossClusterSearchConnectionCallable(const Model::CreateOutboundCrossClusterSearchConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateOutboundCrossClusterSearchConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateOutboundCrossClusterSearchConnectionAsync(const Model::CreateOutboundCrossClusterSearchConnectionRequest& request, const CreateOutboundCrossClusterSearchConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Create a package for use with Amazon ES domains.</p><p><h3>See Also:</h3>  
@@ -225,15 +205,6 @@ namespace ElasticsearchService
          */
         virtual Model::CreatePackageOutcome CreatePackage(const Model::CreatePackageRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreatePackage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreatePackageOutcomeCallable CreatePackageCallable(const Model::CreatePackageRequest& request) const;
-
-        /**
-         * An Async wrapper for CreatePackage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreatePackageAsync(const Model::CreatePackageRequest& request, const CreatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an Amazon OpenSearch Service-managed VPC endpoint.</p><p><h3>See
@@ -243,15 +214,6 @@ namespace ElasticsearchService
          */
         virtual Model::CreateVpcEndpointOutcome CreateVpcEndpoint(const Model::CreateVpcEndpointRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateVpcEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateVpcEndpointOutcomeCallable CreateVpcEndpointCallable(const Model::CreateVpcEndpointRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateVpcEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateVpcEndpointAsync(const Model::CreateVpcEndpointRequest& request, const CreateVpcEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Permanently deletes the specified Elasticsearch domain and all of its data.
@@ -261,15 +223,6 @@ namespace ElasticsearchService
          */
         virtual Model::DeleteElasticsearchDomainOutcome DeleteElasticsearchDomain(const Model::DeleteElasticsearchDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteElasticsearchDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteElasticsearchDomainOutcomeCallable DeleteElasticsearchDomainCallable(const Model::DeleteElasticsearchDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteElasticsearchDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteElasticsearchDomainAsync(const Model::DeleteElasticsearchDomainRequest& request, const DeleteElasticsearchDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the service-linked role that Elasticsearch Service uses to manage and
@@ -301,15 +254,6 @@ namespace ElasticsearchService
          */
         virtual Model::DeleteInboundCrossClusterSearchConnectionOutcome DeleteInboundCrossClusterSearchConnection(const Model::DeleteInboundCrossClusterSearchConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteInboundCrossClusterSearchConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteInboundCrossClusterSearchConnectionOutcomeCallable DeleteInboundCrossClusterSearchConnectionCallable(const Model::DeleteInboundCrossClusterSearchConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteInboundCrossClusterSearchConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteInboundCrossClusterSearchConnectionAsync(const Model::DeleteInboundCrossClusterSearchConnectionRequest& request, const DeleteInboundCrossClusterSearchConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Allows the source domain owner to delete an existing outbound cross-cluster
@@ -319,15 +263,6 @@ namespace ElasticsearchService
          */
         virtual Model::DeleteOutboundCrossClusterSearchConnectionOutcome DeleteOutboundCrossClusterSearchConnection(const Model::DeleteOutboundCrossClusterSearchConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteOutboundCrossClusterSearchConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteOutboundCrossClusterSearchConnectionOutcomeCallable DeleteOutboundCrossClusterSearchConnectionCallable(const Model::DeleteOutboundCrossClusterSearchConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteOutboundCrossClusterSearchConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteOutboundCrossClusterSearchConnectionAsync(const Model::DeleteOutboundCrossClusterSearchConnectionRequest& request, const DeleteOutboundCrossClusterSearchConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Delete the package.</p><p><h3>See Also:</h3>   <a
@@ -336,15 +271,6 @@ namespace ElasticsearchService
          */
         virtual Model::DeletePackageOutcome DeletePackage(const Model::DeletePackageRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeletePackage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeletePackageOutcomeCallable DeletePackageCallable(const Model::DeletePackageRequest& request) const;
-
-        /**
-         * An Async wrapper for DeletePackage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeletePackageAsync(const Model::DeletePackageRequest& request, const DeletePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an Amazon OpenSearch Service-managed interface VPC
@@ -354,15 +280,6 @@ namespace ElasticsearchService
          */
         virtual Model::DeleteVpcEndpointOutcome DeleteVpcEndpoint(const Model::DeleteVpcEndpointRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteVpcEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteVpcEndpointOutcomeCallable DeleteVpcEndpointCallable(const Model::DeleteVpcEndpointRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteVpcEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteVpcEndpointAsync(const Model::DeleteVpcEndpointRequest& request, const DeleteVpcEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides scheduled Auto-Tune action details for the Elasticsearch domain,
@@ -373,15 +290,6 @@ namespace ElasticsearchService
          */
         virtual Model::DescribeDomainAutoTunesOutcome DescribeDomainAutoTunes(const Model::DescribeDomainAutoTunesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDomainAutoTunes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDomainAutoTunesOutcomeCallable DescribeDomainAutoTunesCallable(const Model::DescribeDomainAutoTunesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDomainAutoTunes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDomainAutoTunesAsync(const Model::DescribeDomainAutoTunesRequest& request, const DescribeDomainAutoTunesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the current blue/green deployment happening on a
@@ -392,15 +300,6 @@ namespace ElasticsearchService
          */
         virtual Model::DescribeDomainChangeProgressOutcome DescribeDomainChangeProgress(const Model::DescribeDomainChangeProgressRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDomainChangeProgress that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDomainChangeProgressOutcomeCallable DescribeDomainChangeProgressCallable(const Model::DescribeDomainChangeProgressRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDomainChangeProgress that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDomainChangeProgressAsync(const Model::DescribeDomainChangeProgressRequest& request, const DescribeDomainChangeProgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns domain configuration information about the specified Elasticsearch
@@ -411,15 +310,6 @@ namespace ElasticsearchService
          */
         virtual Model::DescribeElasticsearchDomainOutcome DescribeElasticsearchDomain(const Model::DescribeElasticsearchDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeElasticsearchDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeElasticsearchDomainOutcomeCallable DescribeElasticsearchDomainCallable(const Model::DescribeElasticsearchDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeElasticsearchDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeElasticsearchDomainAsync(const Model::DescribeElasticsearchDomainRequest& request, const DescribeElasticsearchDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides cluster configuration information about the specified Elasticsearch
@@ -430,15 +320,6 @@ namespace ElasticsearchService
          */
         virtual Model::DescribeElasticsearchDomainConfigOutcome DescribeElasticsearchDomainConfig(const Model::DescribeElasticsearchDomainConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeElasticsearchDomainConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeElasticsearchDomainConfigOutcomeCallable DescribeElasticsearchDomainConfigCallable(const Model::DescribeElasticsearchDomainConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeElasticsearchDomainConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeElasticsearchDomainConfigAsync(const Model::DescribeElasticsearchDomainConfigRequest& request, const DescribeElasticsearchDomainConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns domain configuration information about the specified Elasticsearch
@@ -449,15 +330,6 @@ namespace ElasticsearchService
          */
         virtual Model::DescribeElasticsearchDomainsOutcome DescribeElasticsearchDomains(const Model::DescribeElasticsearchDomainsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeElasticsearchDomains that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeElasticsearchDomainsOutcomeCallable DescribeElasticsearchDomainsCallable(const Model::DescribeElasticsearchDomainsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeElasticsearchDomains that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeElasticsearchDomainsAsync(const Model::DescribeElasticsearchDomainsRequest& request, const DescribeElasticsearchDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Describe Elasticsearch Limits for a given InstanceType and
@@ -469,15 +341,6 @@ namespace ElasticsearchService
          */
         virtual Model::DescribeElasticsearchInstanceTypeLimitsOutcome DescribeElasticsearchInstanceTypeLimits(const Model::DescribeElasticsearchInstanceTypeLimitsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeElasticsearchInstanceTypeLimits that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeElasticsearchInstanceTypeLimitsOutcomeCallable DescribeElasticsearchInstanceTypeLimitsCallable(const Model::DescribeElasticsearchInstanceTypeLimitsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeElasticsearchInstanceTypeLimits that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeElasticsearchInstanceTypeLimitsAsync(const Model::DescribeElasticsearchInstanceTypeLimitsRequest& request, const DescribeElasticsearchInstanceTypeLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all the inbound cross-cluster search connections for a destination
@@ -487,15 +350,6 @@ namespace ElasticsearchService
          */
         virtual Model::DescribeInboundCrossClusterSearchConnectionsOutcome DescribeInboundCrossClusterSearchConnections(const Model::DescribeInboundCrossClusterSearchConnectionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeInboundCrossClusterSearchConnections that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeInboundCrossClusterSearchConnectionsOutcomeCallable DescribeInboundCrossClusterSearchConnectionsCallable(const Model::DescribeInboundCrossClusterSearchConnectionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeInboundCrossClusterSearchConnections that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeInboundCrossClusterSearchConnectionsAsync(const Model::DescribeInboundCrossClusterSearchConnectionsRequest& request, const DescribeInboundCrossClusterSearchConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all the outbound cross-cluster search connections for a source
@@ -505,15 +359,6 @@ namespace ElasticsearchService
          */
         virtual Model::DescribeOutboundCrossClusterSearchConnectionsOutcome DescribeOutboundCrossClusterSearchConnections(const Model::DescribeOutboundCrossClusterSearchConnectionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeOutboundCrossClusterSearchConnections that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeOutboundCrossClusterSearchConnectionsOutcomeCallable DescribeOutboundCrossClusterSearchConnectionsCallable(const Model::DescribeOutboundCrossClusterSearchConnectionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeOutboundCrossClusterSearchConnections that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeOutboundCrossClusterSearchConnectionsAsync(const Model::DescribeOutboundCrossClusterSearchConnectionsRequest& request, const DescribeOutboundCrossClusterSearchConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes all packages available to Amazon ES. Includes options for
@@ -524,15 +369,6 @@ namespace ElasticsearchService
          */
         virtual Model::DescribePackagesOutcome DescribePackages(const Model::DescribePackagesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribePackages that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribePackagesOutcomeCallable DescribePackagesCallable(const Model::DescribePackagesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribePackages that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribePackagesAsync(const Model::DescribePackagesRequest& request, const DescribePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists available reserved Elasticsearch instance offerings.</p><p><h3>See
@@ -542,15 +378,6 @@ namespace ElasticsearchService
          */
         virtual Model::DescribeReservedElasticsearchInstanceOfferingsOutcome DescribeReservedElasticsearchInstanceOfferings(const Model::DescribeReservedElasticsearchInstanceOfferingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeReservedElasticsearchInstanceOfferings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeReservedElasticsearchInstanceOfferingsOutcomeCallable DescribeReservedElasticsearchInstanceOfferingsCallable(const Model::DescribeReservedElasticsearchInstanceOfferingsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeReservedElasticsearchInstanceOfferings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeReservedElasticsearchInstanceOfferingsAsync(const Model::DescribeReservedElasticsearchInstanceOfferingsRequest& request, const DescribeReservedElasticsearchInstanceOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about reserved Elasticsearch instances for this
@@ -560,15 +387,6 @@ namespace ElasticsearchService
          */
         virtual Model::DescribeReservedElasticsearchInstancesOutcome DescribeReservedElasticsearchInstances(const Model::DescribeReservedElasticsearchInstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeReservedElasticsearchInstances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeReservedElasticsearchInstancesOutcomeCallable DescribeReservedElasticsearchInstancesCallable(const Model::DescribeReservedElasticsearchInstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeReservedElasticsearchInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeReservedElasticsearchInstancesAsync(const Model::DescribeReservedElasticsearchInstancesRequest& request, const DescribeReservedElasticsearchInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more Amazon OpenSearch Service-managed VPC
@@ -578,15 +396,6 @@ namespace ElasticsearchService
          */
         virtual Model::DescribeVpcEndpointsOutcome DescribeVpcEndpoints(const Model::DescribeVpcEndpointsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeVpcEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeVpcEndpointsOutcomeCallable DescribeVpcEndpointsCallable(const Model::DescribeVpcEndpointsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeVpcEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeVpcEndpointsAsync(const Model::DescribeVpcEndpointsRequest& request, const DescribeVpcEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Dissociates a package from the Amazon ES domain.</p><p><h3>See Also:</h3>  
@@ -596,15 +405,6 @@ namespace ElasticsearchService
          */
         virtual Model::DissociatePackageOutcome DissociatePackage(const Model::DissociatePackageRequest& request) const;
 
-        /**
-         * A Callable wrapper for DissociatePackage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DissociatePackageOutcomeCallable DissociatePackageCallable(const Model::DissociatePackageRequest& request) const;
-
-        /**
-         * An Async wrapper for DissociatePackage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DissociatePackageAsync(const Model::DissociatePackageRequest& request, const DissociatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a list of upgrade compatible Elastisearch versions. You can
@@ -615,15 +415,6 @@ namespace ElasticsearchService
          */
         virtual Model::GetCompatibleElasticsearchVersionsOutcome GetCompatibleElasticsearchVersions(const Model::GetCompatibleElasticsearchVersionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetCompatibleElasticsearchVersions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetCompatibleElasticsearchVersionsOutcomeCallable GetCompatibleElasticsearchVersionsCallable(const Model::GetCompatibleElasticsearchVersionsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetCompatibleElasticsearchVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetCompatibleElasticsearchVersionsAsync(const Model::GetCompatibleElasticsearchVersionsRequest& request, const GetCompatibleElasticsearchVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of versions of the package, along with their creation time and
@@ -633,15 +424,6 @@ namespace ElasticsearchService
          */
         virtual Model::GetPackageVersionHistoryOutcome GetPackageVersionHistory(const Model::GetPackageVersionHistoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetPackageVersionHistory that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetPackageVersionHistoryOutcomeCallable GetPackageVersionHistoryCallable(const Model::GetPackageVersionHistoryRequest& request) const;
-
-        /**
-         * An Async wrapper for GetPackageVersionHistory that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetPackageVersionHistoryAsync(const Model::GetPackageVersionHistoryRequest& request, const GetPackageVersionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the complete history of the last 10 upgrades that were performed on
@@ -651,15 +433,6 @@ namespace ElasticsearchService
          */
         virtual Model::GetUpgradeHistoryOutcome GetUpgradeHistory(const Model::GetUpgradeHistoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetUpgradeHistory that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetUpgradeHistoryOutcomeCallable GetUpgradeHistoryCallable(const Model::GetUpgradeHistoryRequest& request) const;
-
-        /**
-         * An Async wrapper for GetUpgradeHistory that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetUpgradeHistoryAsync(const Model::GetUpgradeHistoryRequest& request, const GetUpgradeHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the latest status of the last upgrade or upgrade eligibility check
@@ -669,15 +442,6 @@ namespace ElasticsearchService
          */
         virtual Model::GetUpgradeStatusOutcome GetUpgradeStatus(const Model::GetUpgradeStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetUpgradeStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetUpgradeStatusOutcomeCallable GetUpgradeStatusCallable(const Model::GetUpgradeStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for GetUpgradeStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetUpgradeStatusAsync(const Model::GetUpgradeStatusRequest& request, const GetUpgradeStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the name of all Elasticsearch domains owned by the current user's
@@ -687,15 +451,6 @@ namespace ElasticsearchService
          */
         virtual Model::ListDomainNamesOutcome ListDomainNames(const Model::ListDomainNamesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDomainNames that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDomainNamesOutcomeCallable ListDomainNamesCallable(const Model::ListDomainNamesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDomainNames that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDomainNamesAsync(const Model::ListDomainNamesRequest& request, const ListDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all Amazon ES domains associated with the package.</p><p><h3>See
@@ -705,15 +460,6 @@ namespace ElasticsearchService
          */
         virtual Model::ListDomainsForPackageOutcome ListDomainsForPackage(const Model::ListDomainsForPackageRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDomainsForPackage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDomainsForPackageOutcomeCallable ListDomainsForPackageCallable(const Model::ListDomainsForPackageRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDomainsForPackage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDomainsForPackageAsync(const Model::ListDomainsForPackageRequest& request, const ListDomainsForPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List all Elasticsearch instance types that are supported for given
@@ -723,15 +469,6 @@ namespace ElasticsearchService
          */
         virtual Model::ListElasticsearchInstanceTypesOutcome ListElasticsearchInstanceTypes(const Model::ListElasticsearchInstanceTypesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListElasticsearchInstanceTypes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListElasticsearchInstanceTypesOutcomeCallable ListElasticsearchInstanceTypesCallable(const Model::ListElasticsearchInstanceTypesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListElasticsearchInstanceTypes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListElasticsearchInstanceTypesAsync(const Model::ListElasticsearchInstanceTypesRequest& request, const ListElasticsearchInstanceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List all supported Elasticsearch versions</p><p><h3>See Also:</h3>   <a
@@ -740,15 +477,6 @@ namespace ElasticsearchService
          */
         virtual Model::ListElasticsearchVersionsOutcome ListElasticsearchVersions(const Model::ListElasticsearchVersionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListElasticsearchVersions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListElasticsearchVersionsOutcomeCallable ListElasticsearchVersionsCallable(const Model::ListElasticsearchVersionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListElasticsearchVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListElasticsearchVersionsAsync(const Model::ListElasticsearchVersionsRequest& request, const ListElasticsearchVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all packages associated with the Amazon ES domain.</p><p><h3>See
@@ -758,15 +486,6 @@ namespace ElasticsearchService
          */
         virtual Model::ListPackagesForDomainOutcome ListPackagesForDomain(const Model::ListPackagesForDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPackagesForDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPackagesForDomainOutcomeCallable ListPackagesForDomainCallable(const Model::ListPackagesForDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPackagesForDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPackagesForDomainAsync(const Model::ListPackagesForDomainRequest& request, const ListPackagesForDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns all tags for the given Elasticsearch domain.</p><p><h3>See Also:</h3>
@@ -775,15 +494,6 @@ namespace ElasticsearchService
          */
         virtual Model::ListTagsOutcome ListTags(const Model::ListTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsOutcomeCallable ListTagsCallable(const Model::ListTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsAsync(const Model::ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about each principal that is allowed to access a given
@@ -794,15 +504,6 @@ namespace ElasticsearchService
          */
         virtual Model::ListVpcEndpointAccessOutcome ListVpcEndpointAccess(const Model::ListVpcEndpointAccessRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListVpcEndpointAccess that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListVpcEndpointAccessOutcomeCallable ListVpcEndpointAccessCallable(const Model::ListVpcEndpointAccessRequest& request) const;
-
-        /**
-         * An Async wrapper for ListVpcEndpointAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListVpcEndpointAccessAsync(const Model::ListVpcEndpointAccessRequest& request, const ListVpcEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves all Amazon OpenSearch Service-managed VPC endpoints in the current
@@ -812,15 +513,6 @@ namespace ElasticsearchService
          */
         virtual Model::ListVpcEndpointsOutcome ListVpcEndpoints(const Model::ListVpcEndpointsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListVpcEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListVpcEndpointsOutcomeCallable ListVpcEndpointsCallable(const Model::ListVpcEndpointsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListVpcEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListVpcEndpointsAsync(const Model::ListVpcEndpointsRequest& request, const ListVpcEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves all Amazon OpenSearch Service-managed VPC endpoints associated with
@@ -830,15 +522,6 @@ namespace ElasticsearchService
          */
         virtual Model::ListVpcEndpointsForDomainOutcome ListVpcEndpointsForDomain(const Model::ListVpcEndpointsForDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListVpcEndpointsForDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListVpcEndpointsForDomainOutcomeCallable ListVpcEndpointsForDomainCallable(const Model::ListVpcEndpointsForDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for ListVpcEndpointsForDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListVpcEndpointsForDomainAsync(const Model::ListVpcEndpointsForDomainRequest& request, const ListVpcEndpointsForDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Allows you to purchase reserved Elasticsearch instances.</p><p><h3>See
@@ -848,15 +531,6 @@ namespace ElasticsearchService
          */
         virtual Model::PurchaseReservedElasticsearchInstanceOfferingOutcome PurchaseReservedElasticsearchInstanceOffering(const Model::PurchaseReservedElasticsearchInstanceOfferingRequest& request) const;
 
-        /**
-         * A Callable wrapper for PurchaseReservedElasticsearchInstanceOffering that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PurchaseReservedElasticsearchInstanceOfferingOutcomeCallable PurchaseReservedElasticsearchInstanceOfferingCallable(const Model::PurchaseReservedElasticsearchInstanceOfferingRequest& request) const;
-
-        /**
-         * An Async wrapper for PurchaseReservedElasticsearchInstanceOffering that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PurchaseReservedElasticsearchInstanceOfferingAsync(const Model::PurchaseReservedElasticsearchInstanceOfferingRequest& request, const PurchaseReservedElasticsearchInstanceOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Allows the destination domain owner to reject an inbound cross-cluster search
@@ -866,15 +540,6 @@ namespace ElasticsearchService
          */
         virtual Model::RejectInboundCrossClusterSearchConnectionOutcome RejectInboundCrossClusterSearchConnection(const Model::RejectInboundCrossClusterSearchConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for RejectInboundCrossClusterSearchConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RejectInboundCrossClusterSearchConnectionOutcomeCallable RejectInboundCrossClusterSearchConnectionCallable(const Model::RejectInboundCrossClusterSearchConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for RejectInboundCrossClusterSearchConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RejectInboundCrossClusterSearchConnectionAsync(const Model::RejectInboundCrossClusterSearchConnectionRequest& request, const RejectInboundCrossClusterSearchConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified set of tags from the specified Elasticsearch
@@ -884,15 +549,6 @@ namespace ElasticsearchService
          */
         virtual Model::RemoveTagsOutcome RemoveTags(const Model::RemoveTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for RemoveTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RemoveTagsOutcomeCallable RemoveTagsCallable(const Model::RemoveTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for RemoveTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RemoveTagsAsync(const Model::RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Revokes access to an Amazon OpenSearch Service domain that was provided
@@ -902,15 +558,6 @@ namespace ElasticsearchService
          */
         virtual Model::RevokeVpcEndpointAccessOutcome RevokeVpcEndpointAccess(const Model::RevokeVpcEndpointAccessRequest& request) const;
 
-        /**
-         * A Callable wrapper for RevokeVpcEndpointAccess that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RevokeVpcEndpointAccessOutcomeCallable RevokeVpcEndpointAccessCallable(const Model::RevokeVpcEndpointAccessRequest& request) const;
-
-        /**
-         * An Async wrapper for RevokeVpcEndpointAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RevokeVpcEndpointAccessAsync(const Model::RevokeVpcEndpointAccessRequest& request, const RevokeVpcEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Schedules a service software update for an Amazon ES domain.</p><p><h3>See
@@ -920,15 +567,6 @@ namespace ElasticsearchService
          */
         virtual Model::StartElasticsearchServiceSoftwareUpdateOutcome StartElasticsearchServiceSoftwareUpdate(const Model::StartElasticsearchServiceSoftwareUpdateRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartElasticsearchServiceSoftwareUpdate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartElasticsearchServiceSoftwareUpdateOutcomeCallable StartElasticsearchServiceSoftwareUpdateCallable(const Model::StartElasticsearchServiceSoftwareUpdateRequest& request) const;
-
-        /**
-         * An Async wrapper for StartElasticsearchServiceSoftwareUpdate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartElasticsearchServiceSoftwareUpdateAsync(const Model::StartElasticsearchServiceSoftwareUpdateRequest& request, const StartElasticsearchServiceSoftwareUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the cluster configuration of the specified Elasticsearch domain,
@@ -939,15 +577,6 @@ namespace ElasticsearchService
          */
         virtual Model::UpdateElasticsearchDomainConfigOutcome UpdateElasticsearchDomainConfig(const Model::UpdateElasticsearchDomainConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateElasticsearchDomainConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateElasticsearchDomainConfigOutcomeCallable UpdateElasticsearchDomainConfigCallable(const Model::UpdateElasticsearchDomainConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateElasticsearchDomainConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateElasticsearchDomainConfigAsync(const Model::UpdateElasticsearchDomainConfigRequest& request, const UpdateElasticsearchDomainConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a package for use with Amazon ES domains.</p><p><h3>See Also:</h3>  
@@ -956,15 +585,6 @@ namespace ElasticsearchService
          */
         virtual Model::UpdatePackageOutcome UpdatePackage(const Model::UpdatePackageRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdatePackage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdatePackageOutcomeCallable UpdatePackageCallable(const Model::UpdatePackageRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdatePackage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdatePackageAsync(const Model::UpdatePackageRequest& request, const UpdatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies an Amazon OpenSearch Service-managed interface VPC
@@ -974,15 +594,6 @@ namespace ElasticsearchService
          */
         virtual Model::UpdateVpcEndpointOutcome UpdateVpcEndpoint(const Model::UpdateVpcEndpointRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateVpcEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateVpcEndpointOutcomeCallable UpdateVpcEndpointCallable(const Model::UpdateVpcEndpointRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateVpcEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateVpcEndpointAsync(const Model::UpdateVpcEndpointRequest& request, const UpdateVpcEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Allows you to either upgrade your domain or perform an Upgrade eligibility
@@ -992,15 +603,6 @@ namespace ElasticsearchService
          */
         virtual Model::UpgradeElasticsearchDomainOutcome UpgradeElasticsearchDomain(const Model::UpgradeElasticsearchDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpgradeElasticsearchDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpgradeElasticsearchDomainOutcomeCallable UpgradeElasticsearchDomainCallable(const Model::UpgradeElasticsearchDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for UpgradeElasticsearchDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpgradeElasticsearchDomainAsync(const Model::UpgradeElasticsearchDomainRequest& request, const UpgradeElasticsearchDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

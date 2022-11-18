@@ -7,8 +7,10 @@
 #include <aws/fis/FIS_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/fis/FISServiceClientModel.h>
+#include <aws/fis/FISLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -77,6 +79,47 @@ namespace FIS
         virtual ~FISClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Creates an experiment template. </p> <p>An experiment template includes the
          * following components:</p> <ul> <li> <p> <b>Targets</b>: A target can be a
@@ -96,15 +139,6 @@ namespace FIS
          */
         virtual Model::CreateExperimentTemplateOutcome CreateExperimentTemplate(const Model::CreateExperimentTemplateRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateExperimentTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateExperimentTemplateOutcomeCallable CreateExperimentTemplateCallable(const Model::CreateExperimentTemplateRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateExperimentTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateExperimentTemplateAsync(const Model::CreateExperimentTemplateRequest& request, const CreateExperimentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified experiment template.</p><p><h3>See Also:</h3>   <a
@@ -113,15 +147,6 @@ namespace FIS
          */
         virtual Model::DeleteExperimentTemplateOutcome DeleteExperimentTemplate(const Model::DeleteExperimentTemplateRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteExperimentTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteExperimentTemplateOutcomeCallable DeleteExperimentTemplateCallable(const Model::DeleteExperimentTemplateRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteExperimentTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteExperimentTemplateAsync(const Model::DeleteExperimentTemplateRequest& request, const DeleteExperimentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the specified FIS action.</p><p><h3>See Also:</h3>  
@@ -130,15 +155,6 @@ namespace FIS
          */
         virtual Model::GetActionOutcome GetAction(const Model::GetActionRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAction that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetActionOutcomeCallable GetActionCallable(const Model::GetActionRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAction that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetActionAsync(const Model::GetActionRequest& request, const GetActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the specified experiment.</p><p><h3>See Also:</h3>  
@@ -148,15 +164,6 @@ namespace FIS
          */
         virtual Model::GetExperimentOutcome GetExperiment(const Model::GetExperimentRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetExperiment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetExperimentOutcomeCallable GetExperimentCallable(const Model::GetExperimentRequest& request) const;
-
-        /**
-         * An Async wrapper for GetExperiment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetExperimentAsync(const Model::GetExperimentRequest& request, const GetExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the specified experiment template.</p><p><h3>See
@@ -166,15 +173,6 @@ namespace FIS
          */
         virtual Model::GetExperimentTemplateOutcome GetExperimentTemplate(const Model::GetExperimentTemplateRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetExperimentTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetExperimentTemplateOutcomeCallable GetExperimentTemplateCallable(const Model::GetExperimentTemplateRequest& request) const;
-
-        /**
-         * An Async wrapper for GetExperimentTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetExperimentTemplateAsync(const Model::GetExperimentTemplateRequest& request, const GetExperimentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the specified resource type.</p><p><h3>See Also:</h3> 
@@ -184,15 +182,6 @@ namespace FIS
          */
         virtual Model::GetTargetResourceTypeOutcome GetTargetResourceType(const Model::GetTargetResourceTypeRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetTargetResourceType that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetTargetResourceTypeOutcomeCallable GetTargetResourceTypeCallable(const Model::GetTargetResourceTypeRequest& request) const;
-
-        /**
-         * An Async wrapper for GetTargetResourceType that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetTargetResourceTypeAsync(const Model::GetTargetResourceTypeRequest& request, const GetTargetResourceTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the available FIS actions.</p><p><h3>See Also:</h3>   <a
@@ -201,15 +190,6 @@ namespace FIS
          */
         virtual Model::ListActionsOutcome ListActions(const Model::ListActionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListActions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListActionsOutcomeCallable ListActionsCallable(const Model::ListActionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListActions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListActionsAsync(const Model::ListActionsRequest& request, const ListActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists your experiment templates.</p><p><h3>See Also:</h3>   <a
@@ -218,15 +198,6 @@ namespace FIS
          */
         virtual Model::ListExperimentTemplatesOutcome ListExperimentTemplates(const Model::ListExperimentTemplatesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListExperimentTemplates that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListExperimentTemplatesOutcomeCallable ListExperimentTemplatesCallable(const Model::ListExperimentTemplatesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListExperimentTemplates that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListExperimentTemplatesAsync(const Model::ListExperimentTemplatesRequest& request, const ListExperimentTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists your experiments.</p><p><h3>See Also:</h3>   <a
@@ -235,15 +206,6 @@ namespace FIS
          */
         virtual Model::ListExperimentsOutcome ListExperiments(const Model::ListExperimentsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListExperiments that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListExperimentsOutcomeCallable ListExperimentsCallable(const Model::ListExperimentsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListExperiments that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListExperimentsAsync(const Model::ListExperimentsRequest& request, const ListExperimentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the tags for the specified resource.</p><p><h3>See Also:</h3>   <a
@@ -252,15 +214,6 @@ namespace FIS
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the target resource types.</p><p><h3>See Also:</h3>   <a
@@ -269,15 +222,6 @@ namespace FIS
          */
         virtual Model::ListTargetResourceTypesOutcome ListTargetResourceTypes(const Model::ListTargetResourceTypesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTargetResourceTypes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTargetResourceTypesOutcomeCallable ListTargetResourceTypesCallable(const Model::ListTargetResourceTypesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTargetResourceTypes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTargetResourceTypesAsync(const Model::ListTargetResourceTypesRequest& request, const ListTargetResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts running an experiment from the specified experiment
@@ -287,15 +231,6 @@ namespace FIS
          */
         virtual Model::StartExperimentOutcome StartExperiment(const Model::StartExperimentRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartExperiment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartExperimentOutcomeCallable StartExperimentCallable(const Model::StartExperimentRequest& request) const;
-
-        /**
-         * An Async wrapper for StartExperiment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartExperimentAsync(const Model::StartExperimentRequest& request, const StartExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops the specified experiment.</p><p><h3>See Also:</h3>   <a
@@ -304,15 +239,6 @@ namespace FIS
          */
         virtual Model::StopExperimentOutcome StopExperiment(const Model::StopExperimentRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopExperiment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopExperimentOutcomeCallable StopExperimentCallable(const Model::StopExperimentRequest& request) const;
-
-        /**
-         * An Async wrapper for StopExperiment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopExperimentAsync(const Model::StopExperimentRequest& request, const StopExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Applies the specified tags to the specified resource.</p><p><h3>See
@@ -322,15 +248,6 @@ namespace FIS
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified tags from the specified resource.</p><p><h3>See
@@ -340,15 +257,6 @@ namespace FIS
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the specified experiment template.</p><p><h3>See Also:</h3>   <a
@@ -357,15 +265,6 @@ namespace FIS
          */
         virtual Model::UpdateExperimentTemplateOutcome UpdateExperimentTemplate(const Model::UpdateExperimentTemplateRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateExperimentTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateExperimentTemplateOutcomeCallable UpdateExperimentTemplateCallable(const Model::UpdateExperimentTemplateRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateExperimentTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateExperimentTemplateAsync(const Model::UpdateExperimentTemplateRequest& request, const UpdateExperimentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

@@ -7,8 +7,10 @@
 #include <aws/iot1click-devices/IoT1ClickDevicesService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iot1click-devices/IoT1ClickDevicesServiceServiceClientModel.h>
+#include <aws/iot1click-devices/IoT1ClickDevicesServiceLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -77,6 +79,47 @@ namespace IoT1ClickDevicesService
         virtual ~IoT1ClickDevicesServiceClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Adds device(s) to your account (i.e., claim one or more devices) if and only
          * if you
@@ -86,15 +129,6 @@ namespace IoT1ClickDevicesService
          */
         virtual Model::ClaimDevicesByClaimCodeOutcome ClaimDevicesByClaimCode(const Model::ClaimDevicesByClaimCodeRequest& request) const;
 
-        /**
-         * A Callable wrapper for ClaimDevicesByClaimCode that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ClaimDevicesByClaimCodeOutcomeCallable ClaimDevicesByClaimCodeCallable(const Model::ClaimDevicesByClaimCodeRequest& request) const;
-
-        /**
-         * An Async wrapper for ClaimDevicesByClaimCode that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ClaimDevicesByClaimCodeAsync(const Model::ClaimDevicesByClaimCodeRequest& request, const ClaimDevicesByClaimCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Given a device ID, returns a DescribeDeviceResponse object describing the
@@ -105,15 +139,6 @@ namespace IoT1ClickDevicesService
          */
         virtual Model::DescribeDeviceOutcome DescribeDevice(const Model::DescribeDeviceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDevice that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDeviceOutcomeCallable DescribeDeviceCallable(const Model::DescribeDeviceRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDevice that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDeviceAsync(const Model::DescribeDeviceRequest& request, const DescribeDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Given a device ID, finalizes the claim request for the associated
@@ -130,15 +155,6 @@ namespace IoT1ClickDevicesService
          */
         virtual Model::FinalizeDeviceClaimOutcome FinalizeDeviceClaim(const Model::FinalizeDeviceClaimRequest& request) const;
 
-        /**
-         * A Callable wrapper for FinalizeDeviceClaim that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::FinalizeDeviceClaimOutcomeCallable FinalizeDeviceClaimCallable(const Model::FinalizeDeviceClaimRequest& request) const;
-
-        /**
-         * An Async wrapper for FinalizeDeviceClaim that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void FinalizeDeviceClaimAsync(const Model::FinalizeDeviceClaimRequest& request, const FinalizeDeviceClaimResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Given a device ID, returns the invokable methods associated with the
@@ -148,15 +164,6 @@ namespace IoT1ClickDevicesService
          */
         virtual Model::GetDeviceMethodsOutcome GetDeviceMethods(const Model::GetDeviceMethodsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDeviceMethods that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDeviceMethodsOutcomeCallable GetDeviceMethodsCallable(const Model::GetDeviceMethodsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDeviceMethods that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDeviceMethodsAsync(const Model::GetDeviceMethodsRequest& request, const GetDeviceMethodsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Given a device ID, initiates a claim request for the associated
@@ -173,15 +180,6 @@ namespace IoT1ClickDevicesService
          */
         virtual Model::InitiateDeviceClaimOutcome InitiateDeviceClaim(const Model::InitiateDeviceClaimRequest& request) const;
 
-        /**
-         * A Callable wrapper for InitiateDeviceClaim that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::InitiateDeviceClaimOutcomeCallable InitiateDeviceClaimCallable(const Model::InitiateDeviceClaimRequest& request) const;
-
-        /**
-         * An Async wrapper for InitiateDeviceClaim that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void InitiateDeviceClaimAsync(const Model::InitiateDeviceClaimRequest& request, const InitiateDeviceClaimResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Given a device ID, issues a request to invoke a named device method (with
@@ -193,15 +191,6 @@ namespace IoT1ClickDevicesService
          */
         virtual Model::InvokeDeviceMethodOutcome InvokeDeviceMethod(const Model::InvokeDeviceMethodRequest& request) const;
 
-        /**
-         * A Callable wrapper for InvokeDeviceMethod that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::InvokeDeviceMethodOutcomeCallable InvokeDeviceMethodCallable(const Model::InvokeDeviceMethodRequest& request) const;
-
-        /**
-         * An Async wrapper for InvokeDeviceMethod that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void InvokeDeviceMethodAsync(const Model::InvokeDeviceMethodRequest& request, const InvokeDeviceMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Using a device ID, returns a DeviceEventsResponse object containing an
@@ -212,15 +201,6 @@ namespace IoT1ClickDevicesService
          */
         virtual Model::ListDeviceEventsOutcome ListDeviceEvents(const Model::ListDeviceEventsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDeviceEvents that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDeviceEventsOutcomeCallable ListDeviceEventsCallable(const Model::ListDeviceEventsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDeviceEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDeviceEventsAsync(const Model::ListDeviceEventsRequest& request, const ListDeviceEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the 1-Click compatible devices associated with your AWS
@@ -230,15 +210,6 @@ namespace IoT1ClickDevicesService
          */
         virtual Model::ListDevicesOutcome ListDevices(const Model::ListDevicesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDevices that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDevicesOutcomeCallable ListDevicesCallable(const Model::ListDevicesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDevices that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDevicesAsync(const Model::ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the tags associated with the specified resource ARN.</p><p><h3>See
@@ -248,15 +219,6 @@ namespace IoT1ClickDevicesService
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds or updates the tags associated with the resource ARN. See <a
@@ -269,15 +231,6 @@ namespace IoT1ClickDevicesService
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates a device from your AWS account using its device
@@ -287,15 +240,6 @@ namespace IoT1ClickDevicesService
          */
         virtual Model::UnclaimDeviceOutcome UnclaimDevice(const Model::UnclaimDeviceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UnclaimDevice that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UnclaimDeviceOutcomeCallable UnclaimDeviceCallable(const Model::UnclaimDeviceRequest& request) const;
-
-        /**
-         * An Async wrapper for UnclaimDevice that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UnclaimDeviceAsync(const Model::UnclaimDeviceRequest& request, const UnclaimDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Using tag keys, deletes the tags (key/value pairs) associated with the
@@ -306,15 +250,6 @@ namespace IoT1ClickDevicesService
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Using a Boolean value (true or false), this operation
@@ -325,15 +260,6 @@ namespace IoT1ClickDevicesService
          */
         virtual Model::UpdateDeviceStateOutcome UpdateDeviceState(const Model::UpdateDeviceStateRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateDeviceState that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateDeviceStateOutcomeCallable UpdateDeviceStateCallable(const Model::UpdateDeviceStateRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateDeviceState that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateDeviceStateAsync(const Model::UpdateDeviceStateRequest& request, const UpdateDeviceStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

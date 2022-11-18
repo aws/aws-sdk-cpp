@@ -7,8 +7,10 @@
 #include <aws/dynamodbstreams/DynamoDBStreams_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/dynamodbstreams/DynamoDBStreamsServiceClientModel.h>
+#include <aws/dynamodbstreams/DynamoDBStreamsLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -78,6 +80,47 @@ namespace DynamoDBStreams
         virtual ~DynamoDBStreamsClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Returns information about a stream, including the current status of the
          * stream, its Amazon Resource Name (ARN), the composition of its shards, and its
@@ -95,15 +138,6 @@ namespace DynamoDBStreams
          */
         virtual Model::DescribeStreamOutcome DescribeStream(const Model::DescribeStreamRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeStream that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeStreamOutcomeCallable DescribeStreamCallable(const Model::DescribeStreamRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeStream that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeStreamAsync(const Model::DescribeStreamRequest& request, const DescribeStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the stream records from a given shard.</p> <p>Specify a shard
@@ -120,15 +154,6 @@ namespace DynamoDBStreams
          */
         virtual Model::GetRecordsOutcome GetRecords(const Model::GetRecordsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRecords that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRecordsOutcomeCallable GetRecordsCallable(const Model::GetRecordsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRecords that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRecordsAsync(const Model::GetRecordsRequest& request, const GetRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a shard iterator. A shard iterator provides information about how to
@@ -141,15 +166,6 @@ namespace DynamoDBStreams
          */
         virtual Model::GetShardIteratorOutcome GetShardIterator(const Model::GetShardIteratorRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetShardIterator that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetShardIteratorOutcomeCallable GetShardIteratorCallable(const Model::GetShardIteratorRequest& request) const;
-
-        /**
-         * An Async wrapper for GetShardIterator that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetShardIteratorAsync(const Model::GetShardIteratorRequest& request, const GetShardIteratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns an array of stream ARNs associated with the current account and
@@ -162,15 +178,6 @@ namespace DynamoDBStreams
          */
         virtual Model::ListStreamsOutcome ListStreams(const Model::ListStreamsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListStreams that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListStreamsOutcomeCallable ListStreamsCallable(const Model::ListStreamsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListStreams that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListStreamsAsync(const Model::ListStreamsRequest& request, const ListStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

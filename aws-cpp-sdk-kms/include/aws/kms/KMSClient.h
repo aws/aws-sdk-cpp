@@ -7,8 +7,10 @@
 #include <aws/kms/KMS_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kms/KMSServiceClientModel.h>
+#include <aws/kms/KMSLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -134,6 +136,47 @@ namespace KMS
         virtual ~KMSClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Cancels the deletion of a KMS key. When this operation succeeds, the key
          * state of the KMS key is <code>Disabled</code>. To enable the KMS key, use
@@ -156,15 +199,6 @@ namespace KMS
          */
         virtual Model::CancelKeyDeletionOutcome CancelKeyDeletion(const Model::CancelKeyDeletionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelKeyDeletion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelKeyDeletionOutcomeCallable CancelKeyDeletionCallable(const Model::CancelKeyDeletionRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelKeyDeletion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelKeyDeletionAsync(const Model::CancelKeyDeletionRequest& request, const CancelKeyDeletionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Connects or reconnects a <a
@@ -217,15 +251,6 @@ namespace KMS
          */
         virtual Model::ConnectCustomKeyStoreOutcome ConnectCustomKeyStore(const Model::ConnectCustomKeyStoreRequest& request) const;
 
-        /**
-         * A Callable wrapper for ConnectCustomKeyStore that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ConnectCustomKeyStoreOutcomeCallable ConnectCustomKeyStoreCallable(const Model::ConnectCustomKeyStoreRequest& request) const;
-
-        /**
-         * An Async wrapper for ConnectCustomKeyStore that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ConnectCustomKeyStoreAsync(const Model::ConnectCustomKeyStoreRequest& request, const ConnectCustomKeyStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a friendly name for a KMS key. </p>  <p>Adding, deleting, or
@@ -269,15 +294,6 @@ namespace KMS
          */
         virtual Model::CreateAliasOutcome CreateAlias(const Model::CreateAliasRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateAlias that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateAliasOutcomeCallable CreateAliasCallable(const Model::CreateAliasRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateAlias that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateAliasAsync(const Model::CreateAliasRequest& request, const CreateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a <a
@@ -316,15 +332,6 @@ namespace KMS
          */
         virtual Model::CreateCustomKeyStoreOutcome CreateCustomKeyStore(const Model::CreateCustomKeyStoreRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateCustomKeyStore that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateCustomKeyStoreOutcomeCallable CreateCustomKeyStoreCallable(const Model::CreateCustomKeyStoreRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateCustomKeyStore that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateCustomKeyStoreAsync(const Model::CreateCustomKeyStoreRequest& request, const CreateCustomKeyStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds a grant to a KMS key. </p> <p>A <i>grant</i> is a policy instrument that
@@ -371,15 +378,6 @@ namespace KMS
          */
         virtual Model::CreateGrantOutcome CreateGrant(const Model::CreateGrantRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateGrant that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateGrantOutcomeCallable CreateGrantCallable(const Model::CreateGrantRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateGrant that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateGrantAsync(const Model::CreateGrantRequest& request, const CreateGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a unique customer managed <a
@@ -504,15 +502,6 @@ namespace KMS
          */
         virtual Model::CreateKeyOutcome CreateKey(const Model::CreateKeyRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateKey that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateKeyOutcomeCallable CreateKeyCallable(const Model::CreateKeyRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateKey that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateKeyAsync(const Model::CreateKeyRequest& request, const CreateKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Decrypts ciphertext that was encrypted by a KMS key using any of the
@@ -578,15 +567,6 @@ namespace KMS
          */
         virtual Model::DecryptOutcome Decrypt(const Model::DecryptRequest& request) const;
 
-        /**
-         * A Callable wrapper for Decrypt that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DecryptOutcomeCallable DecryptCallable(const Model::DecryptRequest& request) const;
-
-        /**
-         * An Async wrapper for Decrypt that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DecryptAsync(const Model::DecryptRequest& request, const DecryptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified alias. </p>  <p>Adding, deleting, or updating an
@@ -617,15 +597,6 @@ namespace KMS
          */
         virtual Model::DeleteAliasOutcome DeleteAlias(const Model::DeleteAliasRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAlias that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAliasOutcomeCallable DeleteAliasCallable(const Model::DeleteAliasRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAlias that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAliasAsync(const Model::DeleteAliasRequest& request, const DeleteAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a <a
@@ -669,15 +640,6 @@ namespace KMS
          */
         virtual Model::DeleteCustomKeyStoreOutcome DeleteCustomKeyStore(const Model::DeleteCustomKeyStoreRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteCustomKeyStore that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteCustomKeyStoreOutcomeCallable DeleteCustomKeyStoreCallable(const Model::DeleteCustomKeyStoreRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteCustomKeyStore that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteCustomKeyStoreAsync(const Model::DeleteCustomKeyStoreRequest& request, const DeleteCustomKeyStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes key material that you previously imported. This operation makes the
@@ -705,15 +667,6 @@ namespace KMS
          */
         virtual Model::DeleteImportedKeyMaterialOutcome DeleteImportedKeyMaterial(const Model::DeleteImportedKeyMaterialRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteImportedKeyMaterial that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteImportedKeyMaterialOutcomeCallable DeleteImportedKeyMaterialCallable(const Model::DeleteImportedKeyMaterialRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteImportedKeyMaterial that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteImportedKeyMaterialAsync(const Model::DeleteImportedKeyMaterialRequest& request, const DeleteImportedKeyMaterialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about <a
@@ -756,15 +709,6 @@ namespace KMS
          */
         virtual Model::DescribeCustomKeyStoresOutcome DescribeCustomKeyStores(const Model::DescribeCustomKeyStoresRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeCustomKeyStores that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeCustomKeyStoresOutcomeCallable DescribeCustomKeyStoresCallable(const Model::DescribeCustomKeyStoresRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeCustomKeyStores that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeCustomKeyStoresAsync(const Model::DescribeCustomKeyStoresRequest& request, const DescribeCustomKeyStoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides detailed information about a KMS key. You can run
@@ -811,15 +755,6 @@ namespace KMS
          */
         virtual Model::DescribeKeyOutcome DescribeKey(const Model::DescribeKeyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeKey that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeKeyOutcomeCallable DescribeKeyCallable(const Model::DescribeKeyRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeKey that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeKeyAsync(const Model::DescribeKeyRequest& request, const DescribeKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets the state of a KMS key to disabled. This change temporarily prevents use
@@ -844,15 +779,6 @@ namespace KMS
          */
         virtual Model::DisableKeyOutcome DisableKey(const Model::DisableKeyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisableKey that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisableKeyOutcomeCallable DisableKeyCallable(const Model::DisableKeyRequest& request) const;
-
-        /**
-         * An Async wrapper for DisableKey that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisableKeyAsync(const Model::DisableKeyRequest& request, const DisableKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disables <a
@@ -899,15 +825,6 @@ namespace KMS
          */
         virtual Model::DisableKeyRotationOutcome DisableKeyRotation(const Model::DisableKeyRotationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisableKeyRotation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisableKeyRotationOutcomeCallable DisableKeyRotationCallable(const Model::DisableKeyRotationRequest& request) const;
-
-        /**
-         * An Async wrapper for DisableKeyRotation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisableKeyRotationAsync(const Model::DisableKeyRotationRequest& request, const DisableKeyRotationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disconnects the <a
@@ -942,15 +859,6 @@ namespace KMS
          */
         virtual Model::DisconnectCustomKeyStoreOutcome DisconnectCustomKeyStore(const Model::DisconnectCustomKeyStoreRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisconnectCustomKeyStore that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisconnectCustomKeyStoreOutcomeCallable DisconnectCustomKeyStoreCallable(const Model::DisconnectCustomKeyStoreRequest& request) const;
-
-        /**
-         * An Async wrapper for DisconnectCustomKeyStore that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisconnectCustomKeyStoreAsync(const Model::DisconnectCustomKeyStoreRequest& request, const DisconnectCustomKeyStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets the key state of a KMS key to enabled. This allows you to use the KMS
@@ -971,15 +879,6 @@ namespace KMS
          */
         virtual Model::EnableKeyOutcome EnableKey(const Model::EnableKeyRequest& request) const;
 
-        /**
-         * A Callable wrapper for EnableKey that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnableKeyOutcomeCallable EnableKeyCallable(const Model::EnableKeyRequest& request) const;
-
-        /**
-         * An Async wrapper for EnableKey that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnableKeyAsync(const Model::EnableKeyRequest& request, const EnableKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables <a
@@ -1035,15 +934,6 @@ namespace KMS
          */
         virtual Model::EnableKeyRotationOutcome EnableKeyRotation(const Model::EnableKeyRotationRequest& request) const;
 
-        /**
-         * A Callable wrapper for EnableKeyRotation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnableKeyRotationOutcomeCallable EnableKeyRotationCallable(const Model::EnableKeyRotationRequest& request) const;
-
-        /**
-         * An Async wrapper for EnableKeyRotation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnableKeyRotationAsync(const Model::EnableKeyRotationRequest& request, const EnableKeyRotationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Encrypts plaintext of up to 4,096 bytes using a KMS key. You can use a
@@ -1101,15 +991,6 @@ namespace KMS
          */
         virtual Model::EncryptOutcome Encrypt(const Model::EncryptRequest& request) const;
 
-        /**
-         * A Callable wrapper for Encrypt that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EncryptOutcomeCallable EncryptCallable(const Model::EncryptRequest& request) const;
-
-        /**
-         * An Async wrapper for Encrypt that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EncryptAsync(const Model::EncryptRequest& request, const EncryptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a unique symmetric data key for use outside of KMS. This operation
@@ -1183,15 +1064,6 @@ namespace KMS
          */
         virtual Model::GenerateDataKeyOutcome GenerateDataKey(const Model::GenerateDataKeyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GenerateDataKey that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GenerateDataKeyOutcomeCallable GenerateDataKeyCallable(const Model::GenerateDataKeyRequest& request) const;
-
-        /**
-         * An Async wrapper for GenerateDataKey that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GenerateDataKeyAsync(const Model::GenerateDataKeyRequest& request, const GenerateDataKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a unique asymmetric data key pair for use outside of KMS. This
@@ -1255,15 +1127,6 @@ namespace KMS
          */
         virtual Model::GenerateDataKeyPairOutcome GenerateDataKeyPair(const Model::GenerateDataKeyPairRequest& request) const;
 
-        /**
-         * A Callable wrapper for GenerateDataKeyPair that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GenerateDataKeyPairOutcomeCallable GenerateDataKeyPairCallable(const Model::GenerateDataKeyPairRequest& request) const;
-
-        /**
-         * An Async wrapper for GenerateDataKeyPair that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GenerateDataKeyPairAsync(const Model::GenerateDataKeyPairRequest& request, const GenerateDataKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a unique asymmetric data key pair for use outside of KMS. This
@@ -1316,15 +1179,6 @@ namespace KMS
          */
         virtual Model::GenerateDataKeyPairWithoutPlaintextOutcome GenerateDataKeyPairWithoutPlaintext(const Model::GenerateDataKeyPairWithoutPlaintextRequest& request) const;
 
-        /**
-         * A Callable wrapper for GenerateDataKeyPairWithoutPlaintext that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GenerateDataKeyPairWithoutPlaintextOutcomeCallable GenerateDataKeyPairWithoutPlaintextCallable(const Model::GenerateDataKeyPairWithoutPlaintextRequest& request) const;
-
-        /**
-         * An Async wrapper for GenerateDataKeyPairWithoutPlaintext that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GenerateDataKeyPairWithoutPlaintextAsync(const Model::GenerateDataKeyPairWithoutPlaintextRequest& request, const GenerateDataKeyPairWithoutPlaintextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a unique symmetric data key for use outside of KMS. This operation
@@ -1376,15 +1230,6 @@ namespace KMS
          */
         virtual Model::GenerateDataKeyWithoutPlaintextOutcome GenerateDataKeyWithoutPlaintext(const Model::GenerateDataKeyWithoutPlaintextRequest& request) const;
 
-        /**
-         * A Callable wrapper for GenerateDataKeyWithoutPlaintext that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GenerateDataKeyWithoutPlaintextOutcomeCallable GenerateDataKeyWithoutPlaintextCallable(const Model::GenerateDataKeyWithoutPlaintextRequest& request) const;
-
-        /**
-         * An Async wrapper for GenerateDataKeyWithoutPlaintext that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GenerateDataKeyWithoutPlaintextAsync(const Model::GenerateDataKeyWithoutPlaintextRequest& request, const GenerateDataKeyWithoutPlaintextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Generates a hash-based message authentication code (HMAC) for a message using
@@ -1419,15 +1264,6 @@ namespace KMS
          */
         virtual Model::GenerateMacOutcome GenerateMac(const Model::GenerateMacRequest& request) const;
 
-        /**
-         * A Callable wrapper for GenerateMac that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GenerateMacOutcomeCallable GenerateMacCallable(const Model::GenerateMacRequest& request) const;
-
-        /**
-         * An Async wrapper for GenerateMac that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GenerateMacAsync(const Model::GenerateMacRequest& request, const GenerateMacResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a random byte string that is cryptographically secure.</p> <p>You
@@ -1456,15 +1292,6 @@ namespace KMS
          */
         virtual Model::GenerateRandomOutcome GenerateRandom(const Model::GenerateRandomRequest& request) const;
 
-        /**
-         * A Callable wrapper for GenerateRandom that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GenerateRandomOutcomeCallable GenerateRandomCallable(const Model::GenerateRandomRequest& request) const;
-
-        /**
-         * An Async wrapper for GenerateRandom that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GenerateRandomAsync(const Model::GenerateRandomRequest& request, const GenerateRandomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a key policy attached to the specified KMS key.</p> <p> <b>Cross-account
@@ -1478,15 +1305,6 @@ namespace KMS
          */
         virtual Model::GetKeyPolicyOutcome GetKeyPolicy(const Model::GetKeyPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetKeyPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetKeyPolicyOutcomeCallable GetKeyPolicyCallable(const Model::GetKeyPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetKeyPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetKeyPolicyAsync(const Model::GetKeyPolicyRequest& request, const GetKeyPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a Boolean value that indicates whether <a
@@ -1547,15 +1365,6 @@ namespace KMS
          */
         virtual Model::GetKeyRotationStatusOutcome GetKeyRotationStatus(const Model::GetKeyRotationStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetKeyRotationStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetKeyRotationStatusOutcomeCallable GetKeyRotationStatusCallable(const Model::GetKeyRotationStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for GetKeyRotationStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetKeyRotationStatusAsync(const Model::GetKeyRotationStatusRequest& request, const GetKeyRotationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the items you need to import key material into a symmetric encryption
@@ -1591,15 +1400,6 @@ namespace KMS
          */
         virtual Model::GetParametersForImportOutcome GetParametersForImport(const Model::GetParametersForImportRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetParametersForImport that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetParametersForImportOutcomeCallable GetParametersForImportCallable(const Model::GetParametersForImportRequest& request) const;
-
-        /**
-         * An Async wrapper for GetParametersForImport that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetParametersForImportAsync(const Model::GetParametersForImportRequest& request, const GetParametersForImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the public key of an asymmetric KMS key. Unlike the private key of a
@@ -1655,15 +1455,6 @@ namespace KMS
          */
         virtual Model::GetPublicKeyOutcome GetPublicKey(const Model::GetPublicKeyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetPublicKey that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetPublicKeyOutcomeCallable GetPublicKeyCallable(const Model::GetPublicKeyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetPublicKey that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetPublicKeyAsync(const Model::GetPublicKeyRequest& request, const GetPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Imports key material into an existing symmetric encryption KMS key that was
@@ -1720,15 +1511,6 @@ namespace KMS
          */
         virtual Model::ImportKeyMaterialOutcome ImportKeyMaterial(const Model::ImportKeyMaterialRequest& request) const;
 
-        /**
-         * A Callable wrapper for ImportKeyMaterial that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ImportKeyMaterialOutcomeCallable ImportKeyMaterialCallable(const Model::ImportKeyMaterialRequest& request) const;
-
-        /**
-         * An Async wrapper for ImportKeyMaterial that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ImportKeyMaterialAsync(const Model::ImportKeyMaterialRequest& request, const ImportKeyMaterialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of aliases in the caller's Amazon Web Services account and
@@ -1761,15 +1543,6 @@ namespace KMS
          */
         virtual Model::ListAliasesOutcome ListAliases(const Model::ListAliasesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAliases that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAliasesOutcomeCallable ListAliasesCallable(const Model::ListAliasesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAliases that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAliasesAsync(const Model::ListAliasesRequest& request, const ListAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of all grants for the specified KMS key. </p> <p>You must specify
@@ -1800,15 +1573,6 @@ namespace KMS
          */
         virtual Model::ListGrantsOutcome ListGrants(const Model::ListGrantsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListGrants that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListGrantsOutcomeCallable ListGrantsCallable(const Model::ListGrantsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListGrants that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListGrantsAsync(const Model::ListGrantsRequest& request, const ListGrantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the names of the key policies that are attached to a KMS key. This
@@ -1826,15 +1590,6 @@ namespace KMS
          */
         virtual Model::ListKeyPoliciesOutcome ListKeyPolicies(const Model::ListKeyPoliciesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListKeyPolicies that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListKeyPoliciesOutcomeCallable ListKeyPoliciesCallable(const Model::ListKeyPoliciesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListKeyPolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListKeyPoliciesAsync(const Model::ListKeyPoliciesRequest& request, const ListKeyPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of all KMS keys in the caller's Amazon Web Services account and
@@ -1851,15 +1606,6 @@ namespace KMS
          */
         virtual Model::ListKeysOutcome ListKeys(const Model::ListKeysRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListKeys that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListKeysOutcomeCallable ListKeysCallable(const Model::ListKeysRequest& request) const;
-
-        /**
-         * An Async wrapper for ListKeys that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListKeysAsync(const Model::ListKeysRequest& request, const ListKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns all tags on the specified KMS key.</p> <p>For general information
@@ -1881,15 +1627,6 @@ namespace KMS
          */
         virtual Model::ListResourceTagsOutcome ListResourceTags(const Model::ListResourceTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListResourceTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListResourceTagsOutcomeCallable ListResourceTagsCallable(const Model::ListResourceTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListResourceTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListResourceTagsAsync(const Model::ListResourceTagsRequest& request, const ListResourceTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about all grants in the Amazon Web Services account and
@@ -1919,15 +1656,6 @@ namespace KMS
          */
         virtual Model::ListRetirableGrantsOutcome ListRetirableGrants(const Model::ListRetirableGrantsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListRetirableGrants that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListRetirableGrantsOutcomeCallable ListRetirableGrantsCallable(const Model::ListRetirableGrantsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListRetirableGrants that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListRetirableGrantsAsync(const Model::ListRetirableGrantsRequest& request, const ListRetirableGrantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Attaches a key policy to the specified KMS key. </p> <p>For more information
@@ -1951,15 +1679,6 @@ namespace KMS
          */
         virtual Model::PutKeyPolicyOutcome PutKeyPolicy(const Model::PutKeyPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutKeyPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutKeyPolicyOutcomeCallable PutKeyPolicyCallable(const Model::PutKeyPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for PutKeyPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutKeyPolicyAsync(const Model::PutKeyPolicyRequest& request, const PutKeyPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Decrypts ciphertext and then reencrypts it entirely within KMS. You can use
@@ -2039,15 +1758,6 @@ namespace KMS
          */
         virtual Model::ReEncryptOutcome ReEncrypt(const Model::ReEncryptRequest& request) const;
 
-        /**
-         * A Callable wrapper for ReEncrypt that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ReEncryptOutcomeCallable ReEncryptCallable(const Model::ReEncryptRequest& request) const;
-
-        /**
-         * An Async wrapper for ReEncrypt that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ReEncryptAsync(const Model::ReEncryptRequest& request, const ReEncryptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Replicates a multi-Region key into the specified Region. This operation
@@ -2133,15 +1843,6 @@ namespace KMS
          */
         virtual Model::ReplicateKeyOutcome ReplicateKey(const Model::ReplicateKeyRequest& request) const;
 
-        /**
-         * A Callable wrapper for ReplicateKey that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ReplicateKeyOutcomeCallable ReplicateKeyCallable(const Model::ReplicateKeyRequest& request) const;
-
-        /**
-         * An Async wrapper for ReplicateKey that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ReplicateKeyAsync(const Model::ReplicateKeyRequest& request, const ReplicateKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a grant. Typically, you retire a grant when you no longer need its
@@ -2177,15 +1878,6 @@ namespace KMS
          */
         virtual Model::RetireGrantOutcome RetireGrant(const Model::RetireGrantRequest& request) const;
 
-        /**
-         * A Callable wrapper for RetireGrant that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RetireGrantOutcomeCallable RetireGrantCallable(const Model::RetireGrantRequest& request) const;
-
-        /**
-         * An Async wrapper for RetireGrant that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RetireGrantAsync(const Model::RetireGrantRequest& request, const RetireGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified grant. You revoke a grant to terminate the permissions
@@ -2217,15 +1909,6 @@ namespace KMS
          */
         virtual Model::RevokeGrantOutcome RevokeGrant(const Model::RevokeGrantRequest& request) const;
 
-        /**
-         * A Callable wrapper for RevokeGrant that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RevokeGrantOutcomeCallable RevokeGrantCallable(const Model::RevokeGrantRequest& request) const;
-
-        /**
-         * An Async wrapper for RevokeGrant that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RevokeGrantAsync(const Model::RevokeGrantRequest& request, const RevokeGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Schedules the deletion of a KMS key. By default, KMS applies a waiting period
@@ -2277,15 +1960,6 @@ namespace KMS
          */
         virtual Model::ScheduleKeyDeletionOutcome ScheduleKeyDeletion(const Model::ScheduleKeyDeletionRequest& request) const;
 
-        /**
-         * A Callable wrapper for ScheduleKeyDeletion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ScheduleKeyDeletionOutcomeCallable ScheduleKeyDeletionCallable(const Model::ScheduleKeyDeletionRequest& request) const;
-
-        /**
-         * An Async wrapper for ScheduleKeyDeletion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ScheduleKeyDeletionAsync(const Model::ScheduleKeyDeletionRequest& request, const ScheduleKeyDeletionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a <a href="https://en.wikipedia.org/wiki/Digital_signature">digital
@@ -2337,15 +2011,6 @@ namespace KMS
          */
         virtual Model::SignOutcome Sign(const Model::SignRequest& request) const;
 
-        /**
-         * A Callable wrapper for Sign that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SignOutcomeCallable SignCallable(const Model::SignRequest& request) const;
-
-        /**
-         * An Async wrapper for Sign that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SignAsync(const Model::SignRequest& request, const SignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds or edits tags on a <a
@@ -2392,15 +2057,6 @@ namespace KMS
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes tags from a <a
@@ -2437,15 +2093,6 @@ namespace KMS
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates an existing KMS alias with a different KMS key. Each alias is
@@ -2489,15 +2136,6 @@ namespace KMS
          */
         virtual Model::UpdateAliasOutcome UpdateAlias(const Model::UpdateAliasRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateAlias that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateAliasOutcomeCallable UpdateAliasCallable(const Model::UpdateAliasRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateAlias that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateAliasAsync(const Model::UpdateAliasRequest& request, const UpdateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Changes the properties of a custom key store. Use the
@@ -2544,15 +2182,6 @@ namespace KMS
          */
         virtual Model::UpdateCustomKeyStoreOutcome UpdateCustomKeyStore(const Model::UpdateCustomKeyStoreRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateCustomKeyStore that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateCustomKeyStoreOutcomeCallable UpdateCustomKeyStoreCallable(const Model::UpdateCustomKeyStoreRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateCustomKeyStore that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateCustomKeyStoreAsync(const Model::UpdateCustomKeyStoreRequest& request, const UpdateCustomKeyStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the description of a KMS key. To see the description of a KMS key,
@@ -2572,15 +2201,6 @@ namespace KMS
          */
         virtual Model::UpdateKeyDescriptionOutcome UpdateKeyDescription(const Model::UpdateKeyDescriptionRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateKeyDescription that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateKeyDescriptionOutcomeCallable UpdateKeyDescriptionCallable(const Model::UpdateKeyDescriptionRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateKeyDescription that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateKeyDescriptionAsync(const Model::UpdateKeyDescriptionRequest& request, const UpdateKeyDescriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Changes the primary key of a multi-Region key. </p> <p>This operation changes
@@ -2651,15 +2271,6 @@ namespace KMS
          */
         virtual Model::UpdatePrimaryRegionOutcome UpdatePrimaryRegion(const Model::UpdatePrimaryRegionRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdatePrimaryRegion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdatePrimaryRegionOutcomeCallable UpdatePrimaryRegionCallable(const Model::UpdatePrimaryRegionRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdatePrimaryRegion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdatePrimaryRegionAsync(const Model::UpdatePrimaryRegionRequest& request, const UpdatePrimaryRegionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Verifies a digital signature that was generated by the <a>Sign</a> operation.
@@ -2705,15 +2316,6 @@ namespace KMS
          */
         virtual Model::VerifyOutcome Verify(const Model::VerifyRequest& request) const;
 
-        /**
-         * A Callable wrapper for Verify that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::VerifyOutcomeCallable VerifyCallable(const Model::VerifyRequest& request) const;
-
-        /**
-         * An Async wrapper for Verify that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void VerifyAsync(const Model::VerifyRequest& request, const VerifyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Verifies the hash-based message authentication code (HMAC) for a specified
@@ -2743,15 +2345,6 @@ namespace KMS
          */
         virtual Model::VerifyMacOutcome VerifyMac(const Model::VerifyMacRequest& request) const;
 
-        /**
-         * A Callable wrapper for VerifyMac that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::VerifyMacOutcomeCallable VerifyMacCallable(const Model::VerifyMacRequest& request) const;
-
-        /**
-         * An Async wrapper for VerifyMac that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void VerifyMacAsync(const Model::VerifyMacRequest& request, const VerifyMacResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

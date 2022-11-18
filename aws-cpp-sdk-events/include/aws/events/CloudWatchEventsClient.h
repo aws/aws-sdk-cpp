@@ -7,8 +7,10 @@
 #include <aws/events/CloudWatchEvents_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/events/CloudWatchEventsServiceClientModel.h>
+#include <aws/events/CloudWatchEventsLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -86,6 +88,47 @@ namespace CloudWatchEvents
         virtual ~CloudWatchEventsClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Activates a partner event source that has been deactivated. Once activated,
          * your matching event bus will start receiving events from the event
@@ -95,15 +138,6 @@ namespace CloudWatchEvents
          */
         virtual Model::ActivateEventSourceOutcome ActivateEventSource(const Model::ActivateEventSourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ActivateEventSource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ActivateEventSourceOutcomeCallable ActivateEventSourceCallable(const Model::ActivateEventSourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ActivateEventSource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ActivateEventSourceAsync(const Model::ActivateEventSourceRequest& request, const ActivateEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Cancels the specified replay.</p><p><h3>See Also:</h3>   <a
@@ -112,15 +146,6 @@ namespace CloudWatchEvents
          */
         virtual Model::CancelReplayOutcome CancelReplay(const Model::CancelReplayRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelReplay that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelReplayOutcomeCallable CancelReplayCallable(const Model::CancelReplayRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelReplay that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelReplayAsync(const Model::CancelReplayRequest& request, const CancelReplayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an API destination, which is an HTTP invocation endpoint configured
@@ -130,15 +155,6 @@ namespace CloudWatchEvents
          */
         virtual Model::CreateApiDestinationOutcome CreateApiDestination(const Model::CreateApiDestinationRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateApiDestination that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateApiDestinationOutcomeCallable CreateApiDestinationCallable(const Model::CreateApiDestinationRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateApiDestination that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateApiDestinationAsync(const Model::CreateApiDestinationRequest& request, const CreateApiDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an archive of events with the specified settings. When you create an
@@ -152,15 +168,6 @@ namespace CloudWatchEvents
          */
         virtual Model::CreateArchiveOutcome CreateArchive(const Model::CreateArchiveRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateArchive that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateArchiveOutcomeCallable CreateArchiveCallable(const Model::CreateArchiveRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateArchive that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateArchiveAsync(const Model::CreateArchiveRequest& request, const CreateArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a connection. A connection defines the authorization type and
@@ -171,15 +178,6 @@ namespace CloudWatchEvents
          */
         virtual Model::CreateConnectionOutcome CreateConnection(const Model::CreateConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateConnectionOutcomeCallable CreateConnectionCallable(const Model::CreateConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateConnectionAsync(const Model::CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new event bus within your account. This can be a custom event bus
@@ -191,15 +189,6 @@ namespace CloudWatchEvents
          */
         virtual Model::CreateEventBusOutcome CreateEventBus(const Model::CreateEventBusRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateEventBus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateEventBusOutcomeCallable CreateEventBusCallable(const Model::CreateEventBusRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateEventBus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateEventBusAsync(const Model::CreateEventBusRequest& request, const CreateEventBusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Called by an SaaS partner to create a partner event source. This operation is
@@ -227,15 +216,6 @@ namespace CloudWatchEvents
          */
         virtual Model::CreatePartnerEventSourceOutcome CreatePartnerEventSource(const Model::CreatePartnerEventSourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreatePartnerEventSource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreatePartnerEventSourceOutcomeCallable CreatePartnerEventSourceCallable(const Model::CreatePartnerEventSourceRequest& request) const;
-
-        /**
-         * An Async wrapper for CreatePartnerEventSource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreatePartnerEventSourceAsync(const Model::CreatePartnerEventSourceRequest& request, const CreatePartnerEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>You can use this operation to temporarily stop receiving events from the
@@ -250,15 +230,6 @@ namespace CloudWatchEvents
          */
         virtual Model::DeactivateEventSourceOutcome DeactivateEventSource(const Model::DeactivateEventSourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeactivateEventSource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeactivateEventSourceOutcomeCallable DeactivateEventSourceCallable(const Model::DeactivateEventSourceRequest& request) const;
-
-        /**
-         * An Async wrapper for DeactivateEventSource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeactivateEventSourceAsync(const Model::DeactivateEventSourceRequest& request, const DeactivateEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes all authorization parameters from the connection. This lets you
@@ -269,15 +240,6 @@ namespace CloudWatchEvents
          */
         virtual Model::DeauthorizeConnectionOutcome DeauthorizeConnection(const Model::DeauthorizeConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeauthorizeConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeauthorizeConnectionOutcomeCallable DeauthorizeConnectionCallable(const Model::DeauthorizeConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeauthorizeConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeauthorizeConnectionAsync(const Model::DeauthorizeConnectionRequest& request, const DeauthorizeConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified API destination.</p><p><h3>See Also:</h3>   <a
@@ -286,15 +248,6 @@ namespace CloudWatchEvents
          */
         virtual Model::DeleteApiDestinationOutcome DeleteApiDestination(const Model::DeleteApiDestinationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteApiDestination that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteApiDestinationOutcomeCallable DeleteApiDestinationCallable(const Model::DeleteApiDestinationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteApiDestination that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteApiDestinationAsync(const Model::DeleteApiDestinationRequest& request, const DeleteApiDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified archive.</p><p><h3>See Also:</h3>   <a
@@ -303,15 +256,6 @@ namespace CloudWatchEvents
          */
         virtual Model::DeleteArchiveOutcome DeleteArchive(const Model::DeleteArchiveRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteArchive that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteArchiveOutcomeCallable DeleteArchiveCallable(const Model::DeleteArchiveRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteArchive that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteArchiveAsync(const Model::DeleteArchiveRequest& request, const DeleteArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a connection.</p><p><h3>See Also:</h3>   <a
@@ -320,15 +264,6 @@ namespace CloudWatchEvents
          */
         virtual Model::DeleteConnectionOutcome DeleteConnection(const Model::DeleteConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteConnectionOutcomeCallable DeleteConnectionCallable(const Model::DeleteConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteConnectionAsync(const Model::DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified custom event bus or partner event bus. All rules
@@ -339,15 +274,6 @@ namespace CloudWatchEvents
          */
         virtual Model::DeleteEventBusOutcome DeleteEventBus(const Model::DeleteEventBusRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteEventBus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteEventBusOutcomeCallable DeleteEventBusCallable(const Model::DeleteEventBusRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteEventBus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteEventBusAsync(const Model::DeleteEventBusRequest& request, const DeleteEventBusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation is used by SaaS partners to delete a partner event source.
@@ -360,15 +286,6 @@ namespace CloudWatchEvents
          */
         virtual Model::DeletePartnerEventSourceOutcome DeletePartnerEventSource(const Model::DeletePartnerEventSourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeletePartnerEventSource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeletePartnerEventSourceOutcomeCallable DeletePartnerEventSourceCallable(const Model::DeletePartnerEventSourceRequest& request) const;
-
-        /**
-         * An Async wrapper for DeletePartnerEventSource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeletePartnerEventSourceAsync(const Model::DeletePartnerEventSourceRequest& request, const DeletePartnerEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified rule.</p> <p>Before you can delete the rule, you must
@@ -389,15 +306,6 @@ namespace CloudWatchEvents
          */
         virtual Model::DeleteRuleOutcome DeleteRule(const Model::DeleteRuleRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteRule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteRuleOutcomeCallable DeleteRuleCallable(const Model::DeleteRuleRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteRule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteRuleAsync(const Model::DeleteRuleRequest& request, const DeleteRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves details about an API destination.</p><p><h3>See Also:</h3>   <a
@@ -406,15 +314,6 @@ namespace CloudWatchEvents
          */
         virtual Model::DescribeApiDestinationOutcome DescribeApiDestination(const Model::DescribeApiDestinationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeApiDestination that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeApiDestinationOutcomeCallable DescribeApiDestinationCallable(const Model::DescribeApiDestinationRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeApiDestination that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeApiDestinationAsync(const Model::DescribeApiDestinationRequest& request, const DescribeApiDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves details about an archive.</p><p><h3>See Also:</h3>   <a
@@ -423,15 +322,6 @@ namespace CloudWatchEvents
          */
         virtual Model::DescribeArchiveOutcome DescribeArchive(const Model::DescribeArchiveRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeArchive that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeArchiveOutcomeCallable DescribeArchiveCallable(const Model::DescribeArchiveRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeArchive that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeArchiveAsync(const Model::DescribeArchiveRequest& request, const DescribeArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves details about a connection.</p><p><h3>See Also:</h3>   <a
@@ -440,15 +330,6 @@ namespace CloudWatchEvents
          */
         virtual Model::DescribeConnectionOutcome DescribeConnection(const Model::DescribeConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeConnectionOutcomeCallable DescribeConnectionCallable(const Model::DescribeConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeConnectionAsync(const Model::DescribeConnectionRequest& request, const DescribeConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Displays details about an event bus in your account. This can include the
@@ -466,15 +347,6 @@ namespace CloudWatchEvents
          */
         virtual Model::DescribeEventBusOutcome DescribeEventBus(const Model::DescribeEventBusRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEventBus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEventBusOutcomeCallable DescribeEventBusCallable(const Model::DescribeEventBusRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEventBus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEventBusAsync(const Model::DescribeEventBusRequest& request, const DescribeEventBusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation lists details about a partner event source that is shared with
@@ -484,15 +356,6 @@ namespace CloudWatchEvents
          */
         virtual Model::DescribeEventSourceOutcome DescribeEventSource(const Model::DescribeEventSourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEventSource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEventSourceOutcomeCallable DescribeEventSourceCallable(const Model::DescribeEventSourceRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEventSource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEventSourceAsync(const Model::DescribeEventSourceRequest& request, const DescribeEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>An SaaS partner can use this operation to list details about a partner event
@@ -506,15 +369,6 @@ namespace CloudWatchEvents
          */
         virtual Model::DescribePartnerEventSourceOutcome DescribePartnerEventSource(const Model::DescribePartnerEventSourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribePartnerEventSource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribePartnerEventSourceOutcomeCallable DescribePartnerEventSourceCallable(const Model::DescribePartnerEventSourceRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribePartnerEventSource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribePartnerEventSourceAsync(const Model::DescribePartnerEventSourceRequest& request, const DescribePartnerEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves details about a replay. Use <code>DescribeReplay</code> to
@@ -532,15 +386,6 @@ namespace CloudWatchEvents
          */
         virtual Model::DescribeReplayOutcome DescribeReplay(const Model::DescribeReplayRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeReplay that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeReplayOutcomeCallable DescribeReplayCallable(const Model::DescribeReplayRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeReplay that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeReplayAsync(const Model::DescribeReplayRequest& request, const DescribeReplayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified rule.</p> <p>DescribeRule does not list the targets
@@ -552,15 +397,6 @@ namespace CloudWatchEvents
          */
         virtual Model::DescribeRuleOutcome DescribeRule(const Model::DescribeRuleRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeRule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeRuleOutcomeCallable DescribeRuleCallable(const Model::DescribeRuleRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeRule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeRuleAsync(const Model::DescribeRuleRequest& request, const DescribeRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disables the specified rule. A disabled rule won't match any events, and
@@ -572,15 +408,6 @@ namespace CloudWatchEvents
          */
         virtual Model::DisableRuleOutcome DisableRule(const Model::DisableRuleRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisableRule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisableRuleOutcomeCallable DisableRuleCallable(const Model::DisableRuleRequest& request) const;
-
-        /**
-         * An Async wrapper for DisableRule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisableRuleAsync(const Model::DisableRuleRequest& request, const DisableRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables the specified rule. If the rule does not exist, the operation
@@ -592,15 +419,6 @@ namespace CloudWatchEvents
          */
         virtual Model::EnableRuleOutcome EnableRule(const Model::EnableRuleRequest& request) const;
 
-        /**
-         * A Callable wrapper for EnableRule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnableRuleOutcomeCallable EnableRuleCallable(const Model::EnableRuleRequest& request) const;
-
-        /**
-         * An Async wrapper for EnableRule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnableRuleAsync(const Model::EnableRuleRequest& request, const EnableRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list of API destination in the account in the current
@@ -610,15 +428,6 @@ namespace CloudWatchEvents
          */
         virtual Model::ListApiDestinationsOutcome ListApiDestinations(const Model::ListApiDestinationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListApiDestinations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListApiDestinationsOutcomeCallable ListApiDestinationsCallable(const Model::ListApiDestinationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListApiDestinations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListApiDestinationsAsync(const Model::ListApiDestinationsRequest& request, const ListApiDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists your archives. You can either list all the archives or you can provide
@@ -629,15 +438,6 @@ namespace CloudWatchEvents
          */
         virtual Model::ListArchivesOutcome ListArchives(const Model::ListArchivesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListArchives that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListArchivesOutcomeCallable ListArchivesCallable(const Model::ListArchivesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListArchives that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListArchivesAsync(const Model::ListArchivesRequest& request, const ListArchivesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list of connections from the account.</p><p><h3>See Also:</h3>  
@@ -647,15 +447,6 @@ namespace CloudWatchEvents
          */
         virtual Model::ListConnectionsOutcome ListConnections(const Model::ListConnectionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListConnections that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListConnectionsOutcomeCallable ListConnectionsCallable(const Model::ListConnectionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListConnections that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListConnectionsAsync(const Model::ListConnectionsRequest& request, const ListConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all the event buses in your account, including the default event bus,
@@ -665,15 +456,6 @@ namespace CloudWatchEvents
          */
         virtual Model::ListEventBusesOutcome ListEventBuses(const Model::ListEventBusesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListEventBuses that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListEventBusesOutcomeCallable ListEventBusesCallable(const Model::ListEventBusesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListEventBuses that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListEventBusesAsync(const Model::ListEventBusesRequest& request, const ListEventBusesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>You can use this to see all the partner event sources that have been shared
@@ -686,15 +468,6 @@ namespace CloudWatchEvents
          */
         virtual Model::ListEventSourcesOutcome ListEventSources(const Model::ListEventSourcesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListEventSources that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListEventSourcesOutcomeCallable ListEventSourcesCallable(const Model::ListEventSourcesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListEventSources that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListEventSourcesAsync(const Model::ListEventSourcesRequest& request, const ListEventSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>An SaaS partner can use this operation to display the Amazon Web Services
@@ -706,15 +479,6 @@ namespace CloudWatchEvents
          */
         virtual Model::ListPartnerEventSourceAccountsOutcome ListPartnerEventSourceAccounts(const Model::ListPartnerEventSourceAccountsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPartnerEventSourceAccounts that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPartnerEventSourceAccountsOutcomeCallable ListPartnerEventSourceAccountsCallable(const Model::ListPartnerEventSourceAccountsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPartnerEventSourceAccounts that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPartnerEventSourceAccountsAsync(const Model::ListPartnerEventSourceAccountsRequest& request, const ListPartnerEventSourceAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>An SaaS partner can use this operation to list all the partner event source
@@ -725,15 +489,6 @@ namespace CloudWatchEvents
          */
         virtual Model::ListPartnerEventSourcesOutcome ListPartnerEventSources(const Model::ListPartnerEventSourcesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPartnerEventSources that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPartnerEventSourcesOutcomeCallable ListPartnerEventSourcesCallable(const Model::ListPartnerEventSourcesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPartnerEventSources that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPartnerEventSourcesAsync(const Model::ListPartnerEventSourcesRequest& request, const ListPartnerEventSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists your replays. You can either list all the replays or you can provide a
@@ -744,15 +499,6 @@ namespace CloudWatchEvents
          */
         virtual Model::ListReplaysOutcome ListReplays(const Model::ListReplaysRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListReplays that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListReplaysOutcomeCallable ListReplaysCallable(const Model::ListReplaysRequest& request) const;
-
-        /**
-         * An Async wrapper for ListReplays that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListReplaysAsync(const Model::ListReplaysRequest& request, const ListReplaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the rules for the specified target. You can see which of the rules in
@@ -763,15 +509,6 @@ namespace CloudWatchEvents
          */
         virtual Model::ListRuleNamesByTargetOutcome ListRuleNamesByTarget(const Model::ListRuleNamesByTargetRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListRuleNamesByTarget that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListRuleNamesByTargetOutcomeCallable ListRuleNamesByTargetCallable(const Model::ListRuleNamesByTargetRequest& request) const;
-
-        /**
-         * An Async wrapper for ListRuleNamesByTarget that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListRuleNamesByTargetAsync(const Model::ListRuleNamesByTargetRequest& request, const ListRuleNamesByTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists your Amazon EventBridge rules. You can either list all the rules or you
@@ -784,15 +521,6 @@ namespace CloudWatchEvents
          */
         virtual Model::ListRulesOutcome ListRules(const Model::ListRulesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListRules that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListRulesOutcomeCallable ListRulesCallable(const Model::ListRulesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListRules that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListRulesAsync(const Model::ListRulesRequest& request, const ListRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Displays the tags associated with an EventBridge resource. In EventBridge,
@@ -802,15 +530,6 @@ namespace CloudWatchEvents
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the targets assigned to the specified rule.</p><p><h3>See Also:</h3>  
@@ -820,15 +539,6 @@ namespace CloudWatchEvents
          */
         virtual Model::ListTargetsByRuleOutcome ListTargetsByRule(const Model::ListTargetsByRuleRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTargetsByRule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTargetsByRuleOutcomeCallable ListTargetsByRuleCallable(const Model::ListTargetsByRuleRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTargetsByRule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTargetsByRuleAsync(const Model::ListTargetsByRuleRequest& request, const ListTargetsByRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sends custom events to Amazon EventBridge so that they can be matched to
@@ -838,15 +548,6 @@ namespace CloudWatchEvents
          */
         virtual Model::PutEventsOutcome PutEvents(const Model::PutEventsRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutEvents that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutEventsOutcomeCallable PutEventsCallable(const Model::PutEventsRequest& request) const;
-
-        /**
-         * An Async wrapper for PutEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutEventsAsync(const Model::PutEventsRequest& request, const PutEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This is used by SaaS partners to write events to a customer's partner event
@@ -857,15 +558,6 @@ namespace CloudWatchEvents
          */
         virtual Model::PutPartnerEventsOutcome PutPartnerEvents(const Model::PutPartnerEventsRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutPartnerEvents that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutPartnerEventsOutcomeCallable PutPartnerEventsCallable(const Model::PutPartnerEventsRequest& request) const;
-
-        /**
-         * An Async wrapper for PutPartnerEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutPartnerEventsAsync(const Model::PutPartnerEventsRequest& request, const PutPartnerEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Running <code>PutPermission</code> permits the specified Amazon Web Services
@@ -893,15 +585,6 @@ namespace CloudWatchEvents
          */
         virtual Model::PutPermissionOutcome PutPermission(const Model::PutPermissionRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutPermission that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutPermissionOutcomeCallable PutPermissionCallable(const Model::PutPermissionRequest& request) const;
-
-        /**
-         * An Async wrapper for PutPermission that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutPermissionAsync(const Model::PutPermissionRequest& request, const PutPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates or updates the specified rule. Rules are enabled by default, or based
@@ -958,15 +641,6 @@ namespace CloudWatchEvents
          */
         virtual Model::PutRuleOutcome PutRule(const Model::PutRuleRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutRule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutRuleOutcomeCallable PutRuleCallable(const Model::PutRuleRequest& request) const;
-
-        /**
-         * An Async wrapper for PutRule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutRuleAsync(const Model::PutRuleRequest& request, const PutRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds the specified targets to the specified rule, or updates the targets if
@@ -1057,15 +731,6 @@ namespace CloudWatchEvents
          */
         virtual Model::PutTargetsOutcome PutTargets(const Model::PutTargetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutTargets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutTargetsOutcomeCallable PutTargetsCallable(const Model::PutTargetsRequest& request) const;
-
-        /**
-         * An Async wrapper for PutTargets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutTargetsAsync(const Model::PutTargetsRequest& request, const PutTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Revokes the permission of another Amazon Web Services account to be able to
@@ -1080,15 +745,6 @@ namespace CloudWatchEvents
          */
         virtual Model::RemovePermissionOutcome RemovePermission(const Model::RemovePermissionRequest& request) const;
 
-        /**
-         * A Callable wrapper for RemovePermission that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RemovePermissionOutcomeCallable RemovePermissionCallable(const Model::RemovePermissionRequest& request) const;
-
-        /**
-         * An Async wrapper for RemovePermission that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RemovePermissionAsync(const Model::RemovePermissionRequest& request, const RemovePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified targets from the specified rule. When the rule is
@@ -1104,15 +760,6 @@ namespace CloudWatchEvents
          */
         virtual Model::RemoveTargetsOutcome RemoveTargets(const Model::RemoveTargetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for RemoveTargets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RemoveTargetsOutcomeCallable RemoveTargetsCallable(const Model::RemoveTargetsRequest& request) const;
-
-        /**
-         * An Async wrapper for RemoveTargets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RemoveTargetsAsync(const Model::RemoveTargetsRequest& request, const RemoveTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts the specified replay. Events are not necessarily replayed in the exact
@@ -1130,15 +777,6 @@ namespace CloudWatchEvents
          */
         virtual Model::StartReplayOutcome StartReplay(const Model::StartReplayRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartReplay that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartReplayOutcomeCallable StartReplayCallable(const Model::StartReplayRequest& request) const;
-
-        /**
-         * An Async wrapper for StartReplay that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartReplayAsync(const Model::StartReplayRequest& request, const StartReplayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Assigns one or more tags (key-value pairs) to the specified EventBridge
@@ -1158,15 +796,6 @@ namespace CloudWatchEvents
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Tests whether the specified event pattern matches the provided event.</p>
@@ -1180,15 +809,6 @@ namespace CloudWatchEvents
          */
         virtual Model::TestEventPatternOutcome TestEventPattern(const Model::TestEventPatternRequest& request) const;
 
-        /**
-         * A Callable wrapper for TestEventPattern that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TestEventPatternOutcomeCallable TestEventPatternCallable(const Model::TestEventPatternRequest& request) const;
-
-        /**
-         * An Async wrapper for TestEventPattern that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TestEventPatternAsync(const Model::TestEventPatternRequest& request, const TestEventPatternResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes one or more tags from the specified EventBridge resource. In Amazon
@@ -1199,15 +819,6 @@ namespace CloudWatchEvents
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an API destination.</p><p><h3>See Also:</h3>   <a
@@ -1216,15 +827,6 @@ namespace CloudWatchEvents
          */
         virtual Model::UpdateApiDestinationOutcome UpdateApiDestination(const Model::UpdateApiDestinationRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateApiDestination that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateApiDestinationOutcomeCallable UpdateApiDestinationCallable(const Model::UpdateApiDestinationRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateApiDestination that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateApiDestinationAsync(const Model::UpdateApiDestinationRequest& request, const UpdateApiDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the specified archive.</p><p><h3>See Also:</h3>   <a
@@ -1233,15 +835,6 @@ namespace CloudWatchEvents
          */
         virtual Model::UpdateArchiveOutcome UpdateArchive(const Model::UpdateArchiveRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateArchive that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateArchiveOutcomeCallable UpdateArchiveCallable(const Model::UpdateArchiveRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateArchive that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateArchiveAsync(const Model::UpdateArchiveRequest& request, const UpdateArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates settings for a connection.</p><p><h3>See Also:</h3>   <a
@@ -1250,15 +843,6 @@ namespace CloudWatchEvents
          */
         virtual Model::UpdateConnectionOutcome UpdateConnection(const Model::UpdateConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateConnectionOutcomeCallable UpdateConnectionCallable(const Model::UpdateConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateConnectionAsync(const Model::UpdateConnectionRequest& request, const UpdateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

@@ -7,8 +7,10 @@
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/logs/CloudWatchLogsServiceClientModel.h>
+#include <aws/logs/CloudWatchLogsLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -96,6 +98,47 @@ namespace CloudWatchLogs
         virtual ~CloudWatchLogsClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Associates the specified Key Management Service customer master key (CMK)
          * with the specified log group.</p> <p>Associating an KMS CMK with a log group
@@ -117,15 +160,6 @@ namespace CloudWatchLogs
          */
         virtual Model::AssociateKmsKeyOutcome AssociateKmsKey(const Model::AssociateKmsKeyRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateKmsKey that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateKmsKeyOutcomeCallable AssociateKmsKeyCallable(const Model::AssociateKmsKeyRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateKmsKey that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateKmsKeyAsync(const Model::AssociateKmsKeyRequest& request, const AssociateKmsKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Cancels the specified export task.</p> <p>The task must be in the
@@ -136,15 +170,6 @@ namespace CloudWatchLogs
          */
         virtual Model::CancelExportTaskOutcome CancelExportTask(const Model::CancelExportTaskRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelExportTask that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelExportTaskOutcomeCallable CancelExportTaskCallable(const Model::CancelExportTaskRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelExportTask that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelExportTaskAsync(const Model::CancelExportTaskRequest& request, const CancelExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an export task, which allows you to efficiently export data from a
@@ -174,15 +199,6 @@ namespace CloudWatchLogs
          */
         virtual Model::CreateExportTaskOutcome CreateExportTask(const Model::CreateExportTaskRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateExportTask that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateExportTaskOutcomeCallable CreateExportTaskCallable(const Model::CreateExportTaskRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateExportTask that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateExportTaskAsync(const Model::CreateExportTaskRequest& request, const CreateExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a log group with the specified name. You can create up to 20,000 log
@@ -211,15 +227,6 @@ namespace CloudWatchLogs
          */
         virtual Model::CreateLogGroupOutcome CreateLogGroup(const Model::CreateLogGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateLogGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateLogGroupOutcomeCallable CreateLogGroupCallable(const Model::CreateLogGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateLogGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateLogGroupAsync(const Model::CreateLogGroupRequest& request, const CreateLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a log stream for the specified log group. A log stream is a sequence
@@ -237,15 +244,6 @@ namespace CloudWatchLogs
          */
         virtual Model::CreateLogStreamOutcome CreateLogStream(const Model::CreateLogStreamRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateLogStream that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateLogStreamOutcomeCallable CreateLogStreamCallable(const Model::CreateLogStreamRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateLogStream that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateLogStreamAsync(const Model::CreateLogStreamRequest& request, const CreateLogStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified destination, and eventually disables all the
@@ -256,15 +254,6 @@ namespace CloudWatchLogs
          */
         virtual Model::DeleteDestinationOutcome DeleteDestination(const Model::DeleteDestinationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDestination that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDestinationOutcomeCallable DeleteDestinationCallable(const Model::DeleteDestinationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDestination that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDestinationAsync(const Model::DeleteDestinationRequest& request, const DeleteDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified log group and permanently deletes all the archived log
@@ -274,15 +263,6 @@ namespace CloudWatchLogs
          */
         virtual Model::DeleteLogGroupOutcome DeleteLogGroup(const Model::DeleteLogGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteLogGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteLogGroupOutcomeCallable DeleteLogGroupCallable(const Model::DeleteLogGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteLogGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteLogGroupAsync(const Model::DeleteLogGroupRequest& request, const DeleteLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified log stream and permanently deletes all the archived log
@@ -292,15 +272,6 @@ namespace CloudWatchLogs
          */
         virtual Model::DeleteLogStreamOutcome DeleteLogStream(const Model::DeleteLogStreamRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteLogStream that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteLogStreamOutcomeCallable DeleteLogStreamCallable(const Model::DeleteLogStreamRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteLogStream that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteLogStreamAsync(const Model::DeleteLogStreamRequest& request, const DeleteLogStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified metric filter.</p><p><h3>See Also:</h3>   <a
@@ -309,15 +280,6 @@ namespace CloudWatchLogs
          */
         virtual Model::DeleteMetricFilterOutcome DeleteMetricFilter(const Model::DeleteMetricFilterRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteMetricFilter that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteMetricFilterOutcomeCallable DeleteMetricFilterCallable(const Model::DeleteMetricFilterRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteMetricFilter that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteMetricFilterAsync(const Model::DeleteMetricFilterRequest& request, const DeleteMetricFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a saved CloudWatch Logs Insights query definition. A query definition
@@ -330,15 +292,6 @@ namespace CloudWatchLogs
          */
         virtual Model::DeleteQueryDefinitionOutcome DeleteQueryDefinition(const Model::DeleteQueryDefinitionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteQueryDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteQueryDefinitionOutcomeCallable DeleteQueryDefinitionCallable(const Model::DeleteQueryDefinitionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteQueryDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteQueryDefinitionAsync(const Model::DeleteQueryDefinitionRequest& request, const DeleteQueryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a resource policy from this account. This revokes the access of the
@@ -349,15 +302,6 @@ namespace CloudWatchLogs
          */
         virtual Model::DeleteResourcePolicyOutcome DeleteResourcePolicy(const Model::DeleteResourcePolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteResourcePolicyOutcomeCallable DeleteResourcePolicyCallable(const Model::DeleteResourcePolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteResourcePolicyAsync(const Model::DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified retention policy.</p> <p>Log events do not expire if
@@ -368,15 +312,6 @@ namespace CloudWatchLogs
          */
         virtual Model::DeleteRetentionPolicyOutcome DeleteRetentionPolicy(const Model::DeleteRetentionPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteRetentionPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteRetentionPolicyOutcomeCallable DeleteRetentionPolicyCallable(const Model::DeleteRetentionPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteRetentionPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteRetentionPolicyAsync(const Model::DeleteRetentionPolicyRequest& request, const DeleteRetentionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified subscription filter.</p><p><h3>See Also:</h3>   <a
@@ -385,15 +320,6 @@ namespace CloudWatchLogs
          */
         virtual Model::DeleteSubscriptionFilterOutcome DeleteSubscriptionFilter(const Model::DeleteSubscriptionFilterRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteSubscriptionFilter that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteSubscriptionFilterOutcomeCallable DeleteSubscriptionFilterCallable(const Model::DeleteSubscriptionFilterRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteSubscriptionFilter that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteSubscriptionFilterAsync(const Model::DeleteSubscriptionFilterRequest& request, const DeleteSubscriptionFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all your destinations. The results are ASCII-sorted by destination
@@ -403,15 +329,6 @@ namespace CloudWatchLogs
          */
         virtual Model::DescribeDestinationsOutcome DescribeDestinations(const Model::DescribeDestinationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDestinations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDestinationsOutcomeCallable DescribeDestinationsCallable(const Model::DescribeDestinationsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDestinations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDestinationsAsync(const Model::DescribeDestinationsRequest& request, const DescribeDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the specified export tasks. You can list all your export tasks or
@@ -422,15 +339,6 @@ namespace CloudWatchLogs
          */
         virtual Model::DescribeExportTasksOutcome DescribeExportTasks(const Model::DescribeExportTasksRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeExportTasks that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeExportTasksOutcomeCallable DescribeExportTasksCallable(const Model::DescribeExportTasksRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeExportTasks that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeExportTasksAsync(const Model::DescribeExportTasksRequest& request, const DescribeExportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the specified log groups. You can list all your log groups or filter
@@ -449,15 +357,6 @@ namespace CloudWatchLogs
          */
         virtual Model::DescribeLogGroupsOutcome DescribeLogGroups(const Model::DescribeLogGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeLogGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeLogGroupsOutcomeCallable DescribeLogGroupsCallable(const Model::DescribeLogGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeLogGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeLogGroupsAsync(const Model::DescribeLogGroupsRequest& request, const DescribeLogGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the log streams for the specified log group. You can list all the log
@@ -469,15 +368,6 @@ namespace CloudWatchLogs
          */
         virtual Model::DescribeLogStreamsOutcome DescribeLogStreams(const Model::DescribeLogStreamsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeLogStreams that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeLogStreamsOutcomeCallable DescribeLogStreamsCallable(const Model::DescribeLogStreamsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeLogStreams that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeLogStreamsAsync(const Model::DescribeLogStreamsRequest& request, const DescribeLogStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the specified metric filters. You can list all of the metric filters or
@@ -488,15 +378,6 @@ namespace CloudWatchLogs
          */
         virtual Model::DescribeMetricFiltersOutcome DescribeMetricFilters(const Model::DescribeMetricFiltersRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeMetricFilters that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeMetricFiltersOutcomeCallable DescribeMetricFiltersCallable(const Model::DescribeMetricFiltersRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeMetricFilters that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeMetricFiltersAsync(const Model::DescribeMetricFiltersRequest& request, const DescribeMetricFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of CloudWatch Logs Insights queries that are scheduled,
@@ -508,15 +389,6 @@ namespace CloudWatchLogs
          */
         virtual Model::DescribeQueriesOutcome DescribeQueries(const Model::DescribeQueriesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeQueries that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeQueriesOutcomeCallable DescribeQueriesCallable(const Model::DescribeQueriesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeQueries that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeQueriesAsync(const Model::DescribeQueriesRequest& request, const DescribeQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation returns a paginated list of your saved CloudWatch Logs
@@ -529,15 +401,6 @@ namespace CloudWatchLogs
          */
         virtual Model::DescribeQueryDefinitionsOutcome DescribeQueryDefinitions(const Model::DescribeQueryDefinitionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeQueryDefinitions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeQueryDefinitionsOutcomeCallable DescribeQueryDefinitionsCallable(const Model::DescribeQueryDefinitionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeQueryDefinitions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeQueryDefinitionsAsync(const Model::DescribeQueryDefinitionsRequest& request, const DescribeQueryDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the resource policies in this account.</p><p><h3>See Also:</h3>   <a
@@ -546,15 +409,6 @@ namespace CloudWatchLogs
          */
         virtual Model::DescribeResourcePoliciesOutcome DescribeResourcePolicies(const Model::DescribeResourcePoliciesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeResourcePolicies that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeResourcePoliciesOutcomeCallable DescribeResourcePoliciesCallable(const Model::DescribeResourcePoliciesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeResourcePolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeResourcePoliciesAsync(const Model::DescribeResourcePoliciesRequest& request, const DescribeResourcePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the subscription filters for the specified log group. You can list all
@@ -565,15 +419,6 @@ namespace CloudWatchLogs
          */
         virtual Model::DescribeSubscriptionFiltersOutcome DescribeSubscriptionFilters(const Model::DescribeSubscriptionFiltersRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeSubscriptionFilters that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeSubscriptionFiltersOutcomeCallable DescribeSubscriptionFiltersCallable(const Model::DescribeSubscriptionFiltersRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeSubscriptionFilters that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeSubscriptionFiltersAsync(const Model::DescribeSubscriptionFiltersRequest& request, const DescribeSubscriptionFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates the associated Key Management Service customer master key (CMK)
@@ -588,15 +433,6 @@ namespace CloudWatchLogs
          */
         virtual Model::DisassociateKmsKeyOutcome DisassociateKmsKey(const Model::DisassociateKmsKeyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateKmsKey that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateKmsKeyOutcomeCallable DisassociateKmsKeyCallable(const Model::DisassociateKmsKeyRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateKmsKey that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateKmsKeyAsync(const Model::DisassociateKmsKeyRequest& request, const DisassociateKmsKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists log events from the specified log group. You can list all the log
@@ -616,15 +452,6 @@ namespace CloudWatchLogs
          */
         virtual Model::FilterLogEventsOutcome FilterLogEvents(const Model::FilterLogEventsRequest& request) const;
 
-        /**
-         * A Callable wrapper for FilterLogEvents that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::FilterLogEventsOutcomeCallable FilterLogEventsCallable(const Model::FilterLogEventsRequest& request) const;
-
-        /**
-         * An Async wrapper for FilterLogEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void FilterLogEventsAsync(const Model::FilterLogEventsRequest& request, const FilterLogEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists log events from the specified log stream. You can list all of the log
@@ -638,15 +465,6 @@ namespace CloudWatchLogs
          */
         virtual Model::GetLogEventsOutcome GetLogEvents(const Model::GetLogEventsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetLogEvents that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetLogEventsOutcomeCallable GetLogEventsCallable(const Model::GetLogEventsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetLogEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetLogEventsAsync(const Model::GetLogEventsRequest& request, const GetLogEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of the fields that are included in log events in the specified
@@ -664,15 +482,6 @@ namespace CloudWatchLogs
          */
         virtual Model::GetLogGroupFieldsOutcome GetLogGroupFields(const Model::GetLogGroupFieldsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetLogGroupFields that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetLogGroupFieldsOutcomeCallable GetLogGroupFieldsCallable(const Model::GetLogGroupFieldsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetLogGroupFields that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetLogGroupFieldsAsync(const Model::GetLogGroupFieldsRequest& request, const GetLogGroupFieldsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves all of the fields and values of a single log event. All fields are
@@ -685,15 +494,6 @@ namespace CloudWatchLogs
          */
         virtual Model::GetLogRecordOutcome GetLogRecord(const Model::GetLogRecordRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetLogRecord that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetLogRecordOutcomeCallable GetLogRecordCallable(const Model::GetLogRecordRequest& request) const;
-
-        /**
-         * An Async wrapper for GetLogRecord that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetLogRecordAsync(const Model::GetLogRecordRequest& request, const GetLogRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the results from the specified query.</p> <p>Only the fields
@@ -714,15 +514,6 @@ namespace CloudWatchLogs
          */
         virtual Model::GetQueryResultsOutcome GetQueryResults(const Model::GetQueryResultsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetQueryResults that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetQueryResultsOutcomeCallable GetQueryResultsCallable(const Model::GetQueryResultsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetQueryResults that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetQueryResultsAsync(const Model::GetQueryResultsRequest& request, const GetQueryResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Displays the tags associated with a CloudWatch Logs resource. Currently, log
@@ -732,15 +523,6 @@ namespace CloudWatchLogs
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates or updates a destination. This operation is used only to create
@@ -763,15 +545,6 @@ namespace CloudWatchLogs
          */
         virtual Model::PutDestinationOutcome PutDestination(const Model::PutDestinationRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutDestination that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutDestinationOutcomeCallable PutDestinationCallable(const Model::PutDestinationRequest& request) const;
-
-        /**
-         * An Async wrapper for PutDestination that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutDestinationAsync(const Model::PutDestinationRequest& request, const PutDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates or updates an access policy associated with an existing destination.
@@ -788,15 +561,6 @@ namespace CloudWatchLogs
          */
         virtual Model::PutDestinationPolicyOutcome PutDestinationPolicy(const Model::PutDestinationPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutDestinationPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutDestinationPolicyOutcomeCallable PutDestinationPolicyCallable(const Model::PutDestinationPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for PutDestinationPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutDestinationPolicyAsync(const Model::PutDestinationPolicyRequest& request, const PutDestinationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Uploads a batch of log events to the specified log stream.</p> <p>You must
@@ -830,15 +594,6 @@ namespace CloudWatchLogs
          */
         virtual Model::PutLogEventsOutcome PutLogEvents(const Model::PutLogEventsRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutLogEvents that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutLogEventsOutcomeCallable PutLogEventsCallable(const Model::PutLogEventsRequest& request) const;
-
-        /**
-         * An Async wrapper for PutLogEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutLogEventsAsync(const Model::PutLogEventsRequest& request, const PutLogEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates or updates a metric filter and associates it with the specified log
@@ -865,15 +620,6 @@ namespace CloudWatchLogs
          */
         virtual Model::PutMetricFilterOutcome PutMetricFilter(const Model::PutMetricFilterRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutMetricFilter that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutMetricFilterOutcomeCallable PutMetricFilterCallable(const Model::PutMetricFilterRequest& request) const;
-
-        /**
-         * An Async wrapper for PutMetricFilter that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutMetricFilterAsync(const Model::PutMetricFilterRequest& request, const PutMetricFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates or updates a query definition for CloudWatch Logs Insights. For more
@@ -894,15 +640,6 @@ namespace CloudWatchLogs
          */
         virtual Model::PutQueryDefinitionOutcome PutQueryDefinition(const Model::PutQueryDefinitionRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutQueryDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutQueryDefinitionOutcomeCallable PutQueryDefinitionCallable(const Model::PutQueryDefinitionRequest& request) const;
-
-        /**
-         * An Async wrapper for PutQueryDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutQueryDefinitionAsync(const Model::PutQueryDefinitionRequest& request, const PutQueryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates or updates a resource policy allowing other Amazon Web Services
@@ -914,15 +651,6 @@ namespace CloudWatchLogs
          */
         virtual Model::PutResourcePolicyOutcome PutResourcePolicy(const Model::PutResourcePolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutResourcePolicyOutcomeCallable PutResourcePolicyCallable(const Model::PutResourcePolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for PutResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutResourcePolicyAsync(const Model::PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets the retention of the specified log group. A retention policy allows you
@@ -943,15 +671,6 @@ namespace CloudWatchLogs
          */
         virtual Model::PutRetentionPolicyOutcome PutRetentionPolicy(const Model::PutRetentionPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutRetentionPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutRetentionPolicyOutcomeCallable PutRetentionPolicyCallable(const Model::PutRetentionPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for PutRetentionPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutRetentionPolicyAsync(const Model::PutRetentionPolicyRequest& request, const PutRetentionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates or updates a subscription filter and associates it with the specified
@@ -978,15 +697,6 @@ namespace CloudWatchLogs
          */
         virtual Model::PutSubscriptionFilterOutcome PutSubscriptionFilter(const Model::PutSubscriptionFilterRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutSubscriptionFilter that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutSubscriptionFilterOutcomeCallable PutSubscriptionFilterCallable(const Model::PutSubscriptionFilterRequest& request) const;
-
-        /**
-         * An Async wrapper for PutSubscriptionFilter that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutSubscriptionFilterAsync(const Model::PutSubscriptionFilterRequest& request, const PutSubscriptionFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Schedules a query of a log group using CloudWatch Logs Insights. You specify
@@ -1003,15 +713,6 @@ namespace CloudWatchLogs
          */
         virtual Model::StartQueryOutcome StartQuery(const Model::StartQueryRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartQuery that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartQueryOutcomeCallable StartQueryCallable(const Model::StartQueryRequest& request) const;
-
-        /**
-         * An Async wrapper for StartQuery that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartQueryAsync(const Model::StartQueryRequest& request, const StartQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops a CloudWatch Logs Insights query that is in progress. If the query has
@@ -1022,15 +723,6 @@ namespace CloudWatchLogs
          */
         virtual Model::StopQueryOutcome StopQuery(const Model::StopQueryRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopQuery that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopQueryOutcomeCallable StopQueryCallable(const Model::StopQueryRequest& request) const;
-
-        /**
-         * An Async wrapper for StopQuery that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopQueryAsync(const Model::StopQueryRequest& request, const StopQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Assigns one or more tags (key-value pairs) to the specified CloudWatch Logs
@@ -1051,15 +743,6 @@ namespace CloudWatchLogs
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Tests the filter pattern of a metric filter against a sample of log event
@@ -1070,15 +753,6 @@ namespace CloudWatchLogs
          */
         virtual Model::TestMetricFilterOutcome TestMetricFilter(const Model::TestMetricFilterRequest& request) const;
 
-        /**
-         * A Callable wrapper for TestMetricFilter that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TestMetricFilterOutcomeCallable TestMetricFilterCallable(const Model::TestMetricFilterRequest& request) const;
-
-        /**
-         * An Async wrapper for TestMetricFilter that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TestMetricFilterAsync(const Model::TestMetricFilterRequest& request, const TestMetricFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes one or more tags from the specified resource.</p><p><h3>See
@@ -1088,15 +762,6 @@ namespace CloudWatchLogs
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

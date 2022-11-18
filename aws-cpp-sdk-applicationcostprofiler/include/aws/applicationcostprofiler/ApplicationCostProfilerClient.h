@@ -7,8 +7,10 @@
 #include <aws/applicationcostprofiler/ApplicationCostProfiler_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/applicationcostprofiler/ApplicationCostProfilerServiceClientModel.h>
+#include <aws/applicationcostprofiler/ApplicationCostProfilerLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -79,6 +81,47 @@ namespace ApplicationCostProfiler
         virtual ~ApplicationCostProfilerClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Deletes the specified report definition in AWS Application Cost Profiler.
          * This stops the report from being generated.</p><p><h3>See Also:</h3>   <a
@@ -87,15 +130,6 @@ namespace ApplicationCostProfiler
          */
         virtual Model::DeleteReportDefinitionOutcome DeleteReportDefinition(const Model::DeleteReportDefinitionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteReportDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteReportDefinitionOutcomeCallable DeleteReportDefinitionCallable(const Model::DeleteReportDefinitionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteReportDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteReportDefinitionAsync(const Model::DeleteReportDefinitionRequest& request, const DeleteReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the definition of a report already configured in AWS Application
@@ -105,15 +139,6 @@ namespace ApplicationCostProfiler
          */
         virtual Model::GetReportDefinitionOutcome GetReportDefinition(const Model::GetReportDefinitionRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetReportDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetReportDefinitionOutcomeCallable GetReportDefinitionCallable(const Model::GetReportDefinitionRequest& request) const;
-
-        /**
-         * An Async wrapper for GetReportDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetReportDefinitionAsync(const Model::GetReportDefinitionRequest& request, const GetReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Ingests application usage data from Amazon Simple Storage Service (Amazon
@@ -126,15 +151,6 @@ namespace ApplicationCostProfiler
          */
         virtual Model::ImportApplicationUsageOutcome ImportApplicationUsage(const Model::ImportApplicationUsageRequest& request) const;
 
-        /**
-         * A Callable wrapper for ImportApplicationUsage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ImportApplicationUsageOutcomeCallable ImportApplicationUsageCallable(const Model::ImportApplicationUsageRequest& request) const;
-
-        /**
-         * An Async wrapper for ImportApplicationUsage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ImportApplicationUsageAsync(const Model::ImportApplicationUsageRequest& request, const ImportApplicationUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list of all reports and their configurations for your AWS
@@ -145,15 +161,6 @@ namespace ApplicationCostProfiler
          */
         virtual Model::ListReportDefinitionsOutcome ListReportDefinitions(const Model::ListReportDefinitionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListReportDefinitions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListReportDefinitionsOutcomeCallable ListReportDefinitionsCallable(const Model::ListReportDefinitionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListReportDefinitions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListReportDefinitionsAsync(const Model::ListReportDefinitionsRequest& request, const ListReportDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates the report definition for a report in Application Cost
@@ -163,15 +170,6 @@ namespace ApplicationCostProfiler
          */
         virtual Model::PutReportDefinitionOutcome PutReportDefinition(const Model::PutReportDefinitionRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutReportDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutReportDefinitionOutcomeCallable PutReportDefinitionCallable(const Model::PutReportDefinitionRequest& request) const;
-
-        /**
-         * An Async wrapper for PutReportDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutReportDefinitionAsync(const Model::PutReportDefinitionRequest& request, const PutReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates existing report in AWS Application Cost Profiler.</p><p><h3>See
@@ -181,15 +179,6 @@ namespace ApplicationCostProfiler
          */
         virtual Model::UpdateReportDefinitionOutcome UpdateReportDefinition(const Model::UpdateReportDefinitionRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateReportDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateReportDefinitionOutcomeCallable UpdateReportDefinitionCallable(const Model::UpdateReportDefinitionRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateReportDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateReportDefinitionAsync(const Model::UpdateReportDefinitionRequest& request, const UpdateReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

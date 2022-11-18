@@ -7,8 +7,10 @@
 #include <aws/wisdom/ConnectWisdomService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/wisdom/ConnectWisdomServiceServiceClientModel.h>
+#include <aws/wisdom/ConnectWisdomServiceLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -77,6 +79,47 @@ namespace ConnectWisdomService
         virtual ~ConnectWisdomServiceClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Creates an Amazon Connect Wisdom assistant.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/CreateAssistant">AWS
@@ -84,15 +127,6 @@ namespace ConnectWisdomService
          */
         virtual Model::CreateAssistantOutcome CreateAssistant(const Model::CreateAssistantRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateAssistant that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateAssistantOutcomeCallable CreateAssistantCallable(const Model::CreateAssistantRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateAssistant that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateAssistantAsync(const Model::CreateAssistantRequest& request, const CreateAssistantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an association between an Amazon Connect Wisdom assistant and another
@@ -103,15 +137,6 @@ namespace ConnectWisdomService
          */
         virtual Model::CreateAssistantAssociationOutcome CreateAssistantAssociation(const Model::CreateAssistantAssociationRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateAssistantAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateAssistantAssociationOutcomeCallable CreateAssistantAssociationCallable(const Model::CreateAssistantAssociationRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateAssistantAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateAssistantAssociationAsync(const Model::CreateAssistantAssociationRequest& request, const CreateAssistantAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates Wisdom content. Before to calling this API, use <a
@@ -122,15 +147,6 @@ namespace ConnectWisdomService
          */
         virtual Model::CreateContentOutcome CreateContent(const Model::CreateContentRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateContent that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateContentOutcomeCallable CreateContentCallable(const Model::CreateContentRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateContent that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateContentAsync(const Model::CreateContentRequest& request, const CreateContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a knowledge base.</p>  <p>When using this API, you cannot reuse
@@ -155,15 +171,6 @@ namespace ConnectWisdomService
          */
         virtual Model::CreateKnowledgeBaseOutcome CreateKnowledgeBase(const Model::CreateKnowledgeBaseRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateKnowledgeBase that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateKnowledgeBaseOutcomeCallable CreateKnowledgeBaseCallable(const Model::CreateKnowledgeBaseRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateKnowledgeBase that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateKnowledgeBaseAsync(const Model::CreateKnowledgeBaseRequest& request, const CreateKnowledgeBaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a session. A session is a contextual container used for generating
@@ -174,15 +181,6 @@ namespace ConnectWisdomService
          */
         virtual Model::CreateSessionOutcome CreateSession(const Model::CreateSessionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateSession that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateSessionOutcomeCallable CreateSessionCallable(const Model::CreateSessionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateSession that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateSessionAsync(const Model::CreateSessionRequest& request, const CreateSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an assistant.</p><p><h3>See Also:</h3>   <a
@@ -191,15 +189,6 @@ namespace ConnectWisdomService
          */
         virtual Model::DeleteAssistantOutcome DeleteAssistant(const Model::DeleteAssistantRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAssistant that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAssistantOutcomeCallable DeleteAssistantCallable(const Model::DeleteAssistantRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAssistant that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAssistantAsync(const Model::DeleteAssistantRequest& request, const DeleteAssistantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an assistant association.</p><p><h3>See Also:</h3>   <a
@@ -208,15 +197,6 @@ namespace ConnectWisdomService
          */
         virtual Model::DeleteAssistantAssociationOutcome DeleteAssistantAssociation(const Model::DeleteAssistantAssociationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAssistantAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAssistantAssociationOutcomeCallable DeleteAssistantAssociationCallable(const Model::DeleteAssistantAssociationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAssistantAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAssistantAssociationAsync(const Model::DeleteAssistantAssociationRequest& request, const DeleteAssistantAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the content.</p><p><h3>See Also:</h3>   <a
@@ -225,15 +205,6 @@ namespace ConnectWisdomService
          */
         virtual Model::DeleteContentOutcome DeleteContent(const Model::DeleteContentRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteContent that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteContentOutcomeCallable DeleteContentCallable(const Model::DeleteContentRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteContent that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteContentAsync(const Model::DeleteContentRequest& request, const DeleteContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the knowledge base.</p>  <p>When you use this API to delete an
@@ -253,15 +224,6 @@ namespace ConnectWisdomService
          */
         virtual Model::DeleteKnowledgeBaseOutcome DeleteKnowledgeBase(const Model::DeleteKnowledgeBaseRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteKnowledgeBase that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteKnowledgeBaseOutcomeCallable DeleteKnowledgeBaseCallable(const Model::DeleteKnowledgeBaseRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteKnowledgeBase that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteKnowledgeBaseAsync(const Model::DeleteKnowledgeBaseRequest& request, const DeleteKnowledgeBaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about an assistant.</p><p><h3>See Also:</h3>   <a
@@ -270,15 +232,6 @@ namespace ConnectWisdomService
          */
         virtual Model::GetAssistantOutcome GetAssistant(const Model::GetAssistantRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAssistant that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAssistantOutcomeCallable GetAssistantCallable(const Model::GetAssistantRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAssistant that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAssistantAsync(const Model::GetAssistantRequest& request, const GetAssistantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about an assistant association.</p><p><h3>See
@@ -288,15 +241,6 @@ namespace ConnectWisdomService
          */
         virtual Model::GetAssistantAssociationOutcome GetAssistantAssociation(const Model::GetAssistantAssociationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAssistantAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAssistantAssociationOutcomeCallable GetAssistantAssociationCallable(const Model::GetAssistantAssociationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAssistantAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAssistantAssociationAsync(const Model::GetAssistantAssociationRequest& request, const GetAssistantAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves content, including a pre-signed URL to download the
@@ -306,15 +250,6 @@ namespace ConnectWisdomService
          */
         virtual Model::GetContentOutcome GetContent(const Model::GetContentRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetContent that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetContentOutcomeCallable GetContentCallable(const Model::GetContentRequest& request) const;
-
-        /**
-         * An Async wrapper for GetContent that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetContentAsync(const Model::GetContentRequest& request, const GetContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves summary information about the content.</p><p><h3>See Also:</h3>  
@@ -324,15 +259,6 @@ namespace ConnectWisdomService
          */
         virtual Model::GetContentSummaryOutcome GetContentSummary(const Model::GetContentSummaryRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetContentSummary that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetContentSummaryOutcomeCallable GetContentSummaryCallable(const Model::GetContentSummaryRequest& request) const;
-
-        /**
-         * An Async wrapper for GetContentSummary that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetContentSummaryAsync(const Model::GetContentSummaryRequest& request, const GetContentSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about the knowledge base.</p><p><h3>See Also:</h3>   <a
@@ -341,15 +267,6 @@ namespace ConnectWisdomService
          */
         virtual Model::GetKnowledgeBaseOutcome GetKnowledgeBase(const Model::GetKnowledgeBaseRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetKnowledgeBase that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetKnowledgeBaseOutcomeCallable GetKnowledgeBaseCallable(const Model::GetKnowledgeBaseRequest& request) const;
-
-        /**
-         * An Async wrapper for GetKnowledgeBase that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetKnowledgeBaseAsync(const Model::GetKnowledgeBaseRequest& request, const GetKnowledgeBaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves recommendations for the specified session. To avoid retrieving the
@@ -365,15 +282,6 @@ namespace ConnectWisdomService
          */
         virtual Model::GetRecommendationsOutcome GetRecommendations(const Model::GetRecommendationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRecommendations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRecommendationsOutcomeCallable GetRecommendationsCallable(const Model::GetRecommendationsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRecommendations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRecommendationsAsync(const Model::GetRecommendationsRequest& request, const GetRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information for a specified session.</p><p><h3>See Also:</h3>   <a
@@ -382,15 +290,6 @@ namespace ConnectWisdomService
          */
         virtual Model::GetSessionOutcome GetSession(const Model::GetSessionRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSession that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSessionOutcomeCallable GetSessionCallable(const Model::GetSessionRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSession that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSessionAsync(const Model::GetSessionRequest& request, const GetSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists information about assistant associations.</p><p><h3>See Also:</h3>   <a
@@ -399,15 +298,6 @@ namespace ConnectWisdomService
          */
         virtual Model::ListAssistantAssociationsOutcome ListAssistantAssociations(const Model::ListAssistantAssociationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAssistantAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAssistantAssociationsOutcomeCallable ListAssistantAssociationsCallable(const Model::ListAssistantAssociationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAssistantAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAssistantAssociationsAsync(const Model::ListAssistantAssociationsRequest& request, const ListAssistantAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists information about assistants.</p><p><h3>See Also:</h3>   <a
@@ -416,15 +306,6 @@ namespace ConnectWisdomService
          */
         virtual Model::ListAssistantsOutcome ListAssistants(const Model::ListAssistantsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAssistants that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAssistantsOutcomeCallable ListAssistantsCallable(const Model::ListAssistantsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAssistants that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAssistantsAsync(const Model::ListAssistantsRequest& request, const ListAssistantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the content.</p><p><h3>See Also:</h3>   <a
@@ -433,15 +314,6 @@ namespace ConnectWisdomService
          */
         virtual Model::ListContentsOutcome ListContents(const Model::ListContentsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListContents that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListContentsOutcomeCallable ListContentsCallable(const Model::ListContentsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListContents that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListContentsAsync(const Model::ListContentsRequest& request, const ListContentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the knowledge bases.</p><p><h3>See Also:</h3>   <a
@@ -450,15 +322,6 @@ namespace ConnectWisdomService
          */
         virtual Model::ListKnowledgeBasesOutcome ListKnowledgeBases(const Model::ListKnowledgeBasesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListKnowledgeBases that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListKnowledgeBasesOutcomeCallable ListKnowledgeBasesCallable(const Model::ListKnowledgeBasesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListKnowledgeBases that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListKnowledgeBasesAsync(const Model::ListKnowledgeBasesRequest& request, const ListKnowledgeBasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the tags for the specified resource.</p><p><h3>See Also:</h3>   <a
@@ -467,15 +330,6 @@ namespace ConnectWisdomService
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified recommendations from the specified assistant's queue of
@@ -488,15 +342,6 @@ namespace ConnectWisdomService
          */
         virtual Model::NotifyRecommendationsReceivedOutcome NotifyRecommendationsReceived(const Model::NotifyRecommendationsReceivedRequest& request) const;
 
-        /**
-         * A Callable wrapper for NotifyRecommendationsReceived that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::NotifyRecommendationsReceivedOutcomeCallable NotifyRecommendationsReceivedCallable(const Model::NotifyRecommendationsReceivedRequest& request) const;
-
-        /**
-         * An Async wrapper for NotifyRecommendationsReceived that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void NotifyRecommendationsReceivedAsync(const Model::NotifyRecommendationsReceivedRequest& request, const NotifyRecommendationsReceivedResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Performs a manual search against the specified assistant. To retrieve
@@ -508,15 +353,6 @@ namespace ConnectWisdomService
          */
         virtual Model::QueryAssistantOutcome QueryAssistant(const Model::QueryAssistantRequest& request) const;
 
-        /**
-         * A Callable wrapper for QueryAssistant that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::QueryAssistantOutcomeCallable QueryAssistantCallable(const Model::QueryAssistantRequest& request) const;
-
-        /**
-         * An Async wrapper for QueryAssistant that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void QueryAssistantAsync(const Model::QueryAssistantRequest& request, const QueryAssistantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes a URI template from a knowledge base.</p><p><h3>See Also:</h3>   <a
@@ -525,15 +361,6 @@ namespace ConnectWisdomService
          */
         virtual Model::RemoveKnowledgeBaseTemplateUriOutcome RemoveKnowledgeBaseTemplateUri(const Model::RemoveKnowledgeBaseTemplateUriRequest& request) const;
 
-        /**
-         * A Callable wrapper for RemoveKnowledgeBaseTemplateUri that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RemoveKnowledgeBaseTemplateUriOutcomeCallable RemoveKnowledgeBaseTemplateUriCallable(const Model::RemoveKnowledgeBaseTemplateUriRequest& request) const;
-
-        /**
-         * An Async wrapper for RemoveKnowledgeBaseTemplateUri that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RemoveKnowledgeBaseTemplateUriAsync(const Model::RemoveKnowledgeBaseTemplateUriRequest& request, const RemoveKnowledgeBaseTemplateUriResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Searches for content in a specified knowledge base. Can be used to get a
@@ -543,15 +370,6 @@ namespace ConnectWisdomService
          */
         virtual Model::SearchContentOutcome SearchContent(const Model::SearchContentRequest& request) const;
 
-        /**
-         * A Callable wrapper for SearchContent that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SearchContentOutcomeCallable SearchContentCallable(const Model::SearchContentRequest& request) const;
-
-        /**
-         * An Async wrapper for SearchContent that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SearchContentAsync(const Model::SearchContentRequest& request, const SearchContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Searches for sessions.</p><p><h3>See Also:</h3>   <a
@@ -560,15 +378,6 @@ namespace ConnectWisdomService
          */
         virtual Model::SearchSessionsOutcome SearchSessions(const Model::SearchSessionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for SearchSessions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SearchSessionsOutcomeCallable SearchSessionsCallable(const Model::SearchSessionsRequest& request) const;
-
-        /**
-         * An Async wrapper for SearchSessions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SearchSessionsAsync(const Model::SearchSessionsRequest& request, const SearchSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get a URL to upload content to a knowledge base. To upload content, first
@@ -584,15 +393,6 @@ namespace ConnectWisdomService
          */
         virtual Model::StartContentUploadOutcome StartContentUpload(const Model::StartContentUploadRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartContentUpload that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartContentUploadOutcomeCallable StartContentUploadCallable(const Model::StartContentUploadRequest& request) const;
-
-        /**
-         * An Async wrapper for StartContentUpload that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartContentUploadAsync(const Model::StartContentUploadRequest& request, const StartContentUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds the specified tags to the specified resource.</p><p><h3>See Also:</h3>  
@@ -602,15 +402,6 @@ namespace ConnectWisdomService
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified tags from the specified resource.</p><p><h3>See
@@ -620,15 +411,6 @@ namespace ConnectWisdomService
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates information about the content.</p><p><h3>See Also:</h3>   <a
@@ -637,15 +419,6 @@ namespace ConnectWisdomService
          */
         virtual Model::UpdateContentOutcome UpdateContent(const Model::UpdateContentRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateContent that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateContentOutcomeCallable UpdateContentCallable(const Model::UpdateContentRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateContent that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateContentAsync(const Model::UpdateContentRequest& request, const UpdateContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the template URI of a knowledge base. This is only supported for
@@ -660,15 +433,6 @@ namespace ConnectWisdomService
          */
         virtual Model::UpdateKnowledgeBaseTemplateUriOutcome UpdateKnowledgeBaseTemplateUri(const Model::UpdateKnowledgeBaseTemplateUriRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateKnowledgeBaseTemplateUri that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateKnowledgeBaseTemplateUriOutcomeCallable UpdateKnowledgeBaseTemplateUriCallable(const Model::UpdateKnowledgeBaseTemplateUriRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateKnowledgeBaseTemplateUri that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateKnowledgeBaseTemplateUriAsync(const Model::UpdateKnowledgeBaseTemplateUriRequest& request, const UpdateKnowledgeBaseTemplateUriResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

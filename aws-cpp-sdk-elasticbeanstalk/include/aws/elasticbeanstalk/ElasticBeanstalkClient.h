@@ -8,8 +8,10 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/elasticbeanstalk/ElasticBeanstalkServiceClientModel.h>
+#include <aws/elasticbeanstalk/ElasticBeanstalkLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -87,6 +89,47 @@ namespace ElasticBeanstalk
         virtual ~ElasticBeanstalkClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
        /**
         * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
         */
@@ -101,15 +144,6 @@ namespace ElasticBeanstalk
          */
         virtual Model::AbortEnvironmentUpdateOutcome AbortEnvironmentUpdate(const Model::AbortEnvironmentUpdateRequest& request) const;
 
-        /**
-         * A Callable wrapper for AbortEnvironmentUpdate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AbortEnvironmentUpdateOutcomeCallable AbortEnvironmentUpdateCallable(const Model::AbortEnvironmentUpdateRequest& request) const;
-
-        /**
-         * An Async wrapper for AbortEnvironmentUpdate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AbortEnvironmentUpdateAsync(const Model::AbortEnvironmentUpdateRequest& request, const AbortEnvironmentUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Applies a scheduled managed action immediately. A managed action can be
@@ -121,15 +155,6 @@ namespace ElasticBeanstalk
          */
         virtual Model::ApplyEnvironmentManagedActionOutcome ApplyEnvironmentManagedAction(const Model::ApplyEnvironmentManagedActionRequest& request) const;
 
-        /**
-         * A Callable wrapper for ApplyEnvironmentManagedAction that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ApplyEnvironmentManagedActionOutcomeCallable ApplyEnvironmentManagedActionCallable(const Model::ApplyEnvironmentManagedActionRequest& request) const;
-
-        /**
-         * An Async wrapper for ApplyEnvironmentManagedAction that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ApplyEnvironmentManagedActionAsync(const Model::ApplyEnvironmentManagedActionRequest& request, const ApplyEnvironmentManagedActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Add or change the operations role used by an environment. After this call is
@@ -144,15 +169,6 @@ namespace ElasticBeanstalk
          */
         virtual Model::AssociateEnvironmentOperationsRoleOutcome AssociateEnvironmentOperationsRole(const Model::AssociateEnvironmentOperationsRoleRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateEnvironmentOperationsRole that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateEnvironmentOperationsRoleOutcomeCallable AssociateEnvironmentOperationsRoleCallable(const Model::AssociateEnvironmentOperationsRoleRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateEnvironmentOperationsRole that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateEnvironmentOperationsRoleAsync(const Model::AssociateEnvironmentOperationsRoleRequest& request, const AssociateEnvironmentOperationsRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Checks if the specified CNAME is available.</p><p><h3>See Also:</h3>   <a
@@ -161,15 +177,6 @@ namespace ElasticBeanstalk
          */
         virtual Model::CheckDNSAvailabilityOutcome CheckDNSAvailability(const Model::CheckDNSAvailabilityRequest& request) const;
 
-        /**
-         * A Callable wrapper for CheckDNSAvailability that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CheckDNSAvailabilityOutcomeCallable CheckDNSAvailabilityCallable(const Model::CheckDNSAvailabilityRequest& request) const;
-
-        /**
-         * An Async wrapper for CheckDNSAvailability that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CheckDNSAvailabilityAsync(const Model::CheckDNSAvailabilityRequest& request, const CheckDNSAvailabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Create or update a group of environments that each run a separate component
@@ -184,15 +191,6 @@ namespace ElasticBeanstalk
          */
         virtual Model::ComposeEnvironmentsOutcome ComposeEnvironments(const Model::ComposeEnvironmentsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ComposeEnvironments that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ComposeEnvironmentsOutcomeCallable ComposeEnvironmentsCallable(const Model::ComposeEnvironmentsRequest& request) const;
-
-        /**
-         * An Async wrapper for ComposeEnvironments that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ComposeEnvironmentsAsync(const Model::ComposeEnvironmentsRequest& request, const ComposeEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an application that has one configuration template named
@@ -202,15 +200,6 @@ namespace ElasticBeanstalk
          */
         virtual Model::CreateApplicationOutcome CreateApplication(const Model::CreateApplicationRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateApplication that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateApplicationOutcomeCallable CreateApplicationCallable(const Model::CreateApplicationRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateApplicationAsync(const Model::CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an application version for the specified application. You can create
@@ -231,15 +220,6 @@ namespace ElasticBeanstalk
          */
         virtual Model::CreateApplicationVersionOutcome CreateApplicationVersion(const Model::CreateApplicationVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateApplicationVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateApplicationVersionOutcomeCallable CreateApplicationVersionCallable(const Model::CreateApplicationVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateApplicationVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateApplicationVersionAsync(const Model::CreateApplicationVersionRequest& request, const CreateApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an AWS Elastic Beanstalk configuration template, associated with a
@@ -257,15 +237,6 @@ namespace ElasticBeanstalk
          */
         virtual Model::CreateConfigurationTemplateOutcome CreateConfigurationTemplate(const Model::CreateConfigurationTemplateRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateConfigurationTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateConfigurationTemplateOutcomeCallable CreateConfigurationTemplateCallable(const Model::CreateConfigurationTemplateRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateConfigurationTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateConfigurationTemplateAsync(const Model::CreateConfigurationTemplateRequest& request, const CreateConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Launches an AWS Elastic Beanstalk environment for the specified application
@@ -275,15 +246,6 @@ namespace ElasticBeanstalk
          */
         virtual Model::CreateEnvironmentOutcome CreateEnvironment(const Model::CreateEnvironmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateEnvironment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateEnvironmentOutcomeCallable CreateEnvironmentCallable(const Model::CreateEnvironmentRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateEnvironment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateEnvironmentAsync(const Model::CreateEnvironmentRequest& request, const CreateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Create a new version of your custom platform.</p><p><h3>See Also:</h3>   <a
@@ -292,15 +254,6 @@ namespace ElasticBeanstalk
          */
         virtual Model::CreatePlatformVersionOutcome CreatePlatformVersion(const Model::CreatePlatformVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreatePlatformVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreatePlatformVersionOutcomeCallable CreatePlatformVersionCallable(const Model::CreatePlatformVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreatePlatformVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreatePlatformVersionAsync(const Model::CreatePlatformVersionRequest& request, const CreatePlatformVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a bucket in Amazon S3 to store application versions, logs, and other
@@ -314,15 +267,6 @@ namespace ElasticBeanstalk
          */
         virtual Model::CreateStorageLocationOutcome CreateStorageLocation(const Model::CreateStorageLocationRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateStorageLocation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateStorageLocationOutcomeCallable CreateStorageLocationCallable(const Model::CreateStorageLocationRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateStorageLocation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateStorageLocationAsync(const Model::CreateStorageLocationRequest& request, const CreateStorageLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified application along with all associated versions and
@@ -334,15 +278,6 @@ namespace ElasticBeanstalk
          */
         virtual Model::DeleteApplicationOutcome DeleteApplication(const Model::DeleteApplicationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteApplication that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteApplicationOutcomeCallable DeleteApplicationCallable(const Model::DeleteApplicationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteApplicationAsync(const Model::DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified version from the specified application.</p> 
@@ -353,15 +288,6 @@ namespace ElasticBeanstalk
          */
         virtual Model::DeleteApplicationVersionOutcome DeleteApplicationVersion(const Model::DeleteApplicationVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteApplicationVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteApplicationVersionOutcomeCallable DeleteApplicationVersionCallable(const Model::DeleteApplicationVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteApplicationVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteApplicationVersionAsync(const Model::DeleteApplicationVersionRequest& request, const DeleteApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified configuration template.</p>  <p>When you launch
@@ -373,15 +299,6 @@ namespace ElasticBeanstalk
          */
         virtual Model::DeleteConfigurationTemplateOutcome DeleteConfigurationTemplate(const Model::DeleteConfigurationTemplateRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteConfigurationTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteConfigurationTemplateOutcomeCallable DeleteConfigurationTemplateCallable(const Model::DeleteConfigurationTemplateRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteConfigurationTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteConfigurationTemplateAsync(const Model::DeleteConfigurationTemplateRequest& request, const DeleteConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the draft configuration associated with the running environment.</p>
@@ -397,15 +314,6 @@ namespace ElasticBeanstalk
          */
         virtual Model::DeleteEnvironmentConfigurationOutcome DeleteEnvironmentConfiguration(const Model::DeleteEnvironmentConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteEnvironmentConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteEnvironmentConfigurationOutcomeCallable DeleteEnvironmentConfigurationCallable(const Model::DeleteEnvironmentConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteEnvironmentConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteEnvironmentConfigurationAsync(const Model::DeleteEnvironmentConfigurationRequest& request, const DeleteEnvironmentConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified version of a custom platform.</p><p><h3>See Also:</h3> 
@@ -415,15 +323,6 @@ namespace ElasticBeanstalk
          */
         virtual Model::DeletePlatformVersionOutcome DeletePlatformVersion(const Model::DeletePlatformVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeletePlatformVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeletePlatformVersionOutcomeCallable DeletePlatformVersionCallable(const Model::DeletePlatformVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeletePlatformVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeletePlatformVersionAsync(const Model::DeletePlatformVersionRequest& request, const DeletePlatformVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns attributes related to AWS Elastic Beanstalk that are associated with
@@ -434,15 +333,6 @@ namespace ElasticBeanstalk
          */
         virtual Model::DescribeAccountAttributesOutcome DescribeAccountAttributes(const Model::DescribeAccountAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAccountAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAccountAttributesOutcomeCallable DescribeAccountAttributesCallable(const Model::DescribeAccountAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAccountAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAccountAttributesAsync(const Model::DescribeAccountAttributesRequest& request, const DescribeAccountAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieve a list of application versions.</p><p><h3>See Also:</h3>   <a
@@ -451,15 +341,6 @@ namespace ElasticBeanstalk
          */
         virtual Model::DescribeApplicationVersionsOutcome DescribeApplicationVersions(const Model::DescribeApplicationVersionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeApplicationVersions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeApplicationVersionsOutcomeCallable DescribeApplicationVersionsCallable(const Model::DescribeApplicationVersionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeApplicationVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeApplicationVersionsAsync(const Model::DescribeApplicationVersionsRequest& request, const DescribeApplicationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the descriptions of existing applications.</p><p><h3>See Also:</h3>  
@@ -469,15 +350,6 @@ namespace ElasticBeanstalk
          */
         virtual Model::DescribeApplicationsOutcome DescribeApplications(const Model::DescribeApplicationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeApplications that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeApplicationsOutcomeCallable DescribeApplicationsCallable(const Model::DescribeApplicationsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeApplications that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeApplicationsAsync(const Model::DescribeApplicationsRequest& request, const DescribeApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the configuration options that are used in a particular
@@ -490,15 +362,6 @@ namespace ElasticBeanstalk
          */
         virtual Model::DescribeConfigurationOptionsOutcome DescribeConfigurationOptions(const Model::DescribeConfigurationOptionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeConfigurationOptions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeConfigurationOptionsOutcomeCallable DescribeConfigurationOptionsCallable(const Model::DescribeConfigurationOptionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeConfigurationOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeConfigurationOptionsAsync(const Model::DescribeConfigurationOptionsRequest& request, const DescribeConfigurationOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a description of the settings for the specified configuration set,
@@ -515,15 +378,6 @@ namespace ElasticBeanstalk
          */
         virtual Model::DescribeConfigurationSettingsOutcome DescribeConfigurationSettings(const Model::DescribeConfigurationSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeConfigurationSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeConfigurationSettingsOutcomeCallable DescribeConfigurationSettingsCallable(const Model::DescribeConfigurationSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeConfigurationSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeConfigurationSettingsAsync(const Model::DescribeConfigurationSettingsRequest& request, const DescribeConfigurationSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the overall health of the specified environment.
@@ -534,15 +388,6 @@ namespace ElasticBeanstalk
          */
         virtual Model::DescribeEnvironmentHealthOutcome DescribeEnvironmentHealth(const Model::DescribeEnvironmentHealthRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEnvironmentHealth that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEnvironmentHealthOutcomeCallable DescribeEnvironmentHealthCallable(const Model::DescribeEnvironmentHealthRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEnvironmentHealth that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEnvironmentHealthAsync(const Model::DescribeEnvironmentHealthRequest& request, const DescribeEnvironmentHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists an environment's completed and failed managed actions.</p><p><h3>See
@@ -552,15 +397,6 @@ namespace ElasticBeanstalk
          */
         virtual Model::DescribeEnvironmentManagedActionHistoryOutcome DescribeEnvironmentManagedActionHistory(const Model::DescribeEnvironmentManagedActionHistoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEnvironmentManagedActionHistory that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEnvironmentManagedActionHistoryOutcomeCallable DescribeEnvironmentManagedActionHistoryCallable(const Model::DescribeEnvironmentManagedActionHistoryRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEnvironmentManagedActionHistory that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEnvironmentManagedActionHistoryAsync(const Model::DescribeEnvironmentManagedActionHistoryRequest& request, const DescribeEnvironmentManagedActionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists an environment's upcoming and in-progress managed
@@ -570,15 +406,6 @@ namespace ElasticBeanstalk
          */
         virtual Model::DescribeEnvironmentManagedActionsOutcome DescribeEnvironmentManagedActions(const Model::DescribeEnvironmentManagedActionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEnvironmentManagedActions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEnvironmentManagedActionsOutcomeCallable DescribeEnvironmentManagedActionsCallable(const Model::DescribeEnvironmentManagedActionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEnvironmentManagedActions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEnvironmentManagedActionsAsync(const Model::DescribeEnvironmentManagedActionsRequest& request, const DescribeEnvironmentManagedActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns AWS resources for this environment.</p><p><h3>See Also:</h3>   <a
@@ -587,15 +414,6 @@ namespace ElasticBeanstalk
          */
         virtual Model::DescribeEnvironmentResourcesOutcome DescribeEnvironmentResources(const Model::DescribeEnvironmentResourcesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEnvironmentResources that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEnvironmentResourcesOutcomeCallable DescribeEnvironmentResourcesCallable(const Model::DescribeEnvironmentResourcesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEnvironmentResources that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEnvironmentResourcesAsync(const Model::DescribeEnvironmentResourcesRequest& request, const DescribeEnvironmentResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns descriptions for existing environments.</p><p><h3>See Also:</h3>   <a
@@ -604,15 +422,6 @@ namespace ElasticBeanstalk
          */
         virtual Model::DescribeEnvironmentsOutcome DescribeEnvironments(const Model::DescribeEnvironmentsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEnvironments that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEnvironmentsOutcomeCallable DescribeEnvironmentsCallable(const Model::DescribeEnvironmentsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEnvironments that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEnvironmentsAsync(const Model::DescribeEnvironmentsRequest& request, const DescribeEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns list of event descriptions matching criteria up to the last 6
@@ -623,15 +432,6 @@ namespace ElasticBeanstalk
          */
         virtual Model::DescribeEventsOutcome DescribeEvents(const Model::DescribeEventsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEvents that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEventsOutcomeCallable DescribeEventsCallable(const Model::DescribeEventsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEventsAsync(const Model::DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves detailed information about the health of instances in your AWS
@@ -643,15 +443,6 @@ namespace ElasticBeanstalk
          */
         virtual Model::DescribeInstancesHealthOutcome DescribeInstancesHealth(const Model::DescribeInstancesHealthRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeInstancesHealth that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeInstancesHealthOutcomeCallable DescribeInstancesHealthCallable(const Model::DescribeInstancesHealthRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeInstancesHealth that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeInstancesHealthAsync(const Model::DescribeInstancesHealthRequest& request, const DescribeInstancesHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a platform version. Provides full details. Compare to
@@ -665,15 +456,6 @@ namespace ElasticBeanstalk
          */
         virtual Model::DescribePlatformVersionOutcome DescribePlatformVersion(const Model::DescribePlatformVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribePlatformVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribePlatformVersionOutcomeCallable DescribePlatformVersionCallable(const Model::DescribePlatformVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribePlatformVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribePlatformVersionAsync(const Model::DescribePlatformVersionRequest& request, const DescribePlatformVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociate the operations role from an environment. After this call is
@@ -688,15 +470,6 @@ namespace ElasticBeanstalk
          */
         virtual Model::DisassociateEnvironmentOperationsRoleOutcome DisassociateEnvironmentOperationsRole(const Model::DisassociateEnvironmentOperationsRoleRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateEnvironmentOperationsRole that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateEnvironmentOperationsRoleOutcomeCallable DisassociateEnvironmentOperationsRoleCallable(const Model::DisassociateEnvironmentOperationsRoleRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateEnvironmentOperationsRole that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateEnvironmentOperationsRoleAsync(const Model::DisassociateEnvironmentOperationsRoleRequest& request, const DisassociateEnvironmentOperationsRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of the available solution stack names, with the public version
@@ -706,15 +479,6 @@ namespace ElasticBeanstalk
          */
         virtual Model::ListAvailableSolutionStacksOutcome ListAvailableSolutionStacks(const Model::ListAvailableSolutionStacksRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAvailableSolutionStacks that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAvailableSolutionStacksOutcomeCallable ListAvailableSolutionStacksCallable(const Model::ListAvailableSolutionStacksRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAvailableSolutionStacks that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAvailableSolutionStacksAsync(const Model::ListAvailableSolutionStacksRequest& request, const ListAvailableSolutionStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the platform branches available for your account in an AWS Region.
@@ -727,15 +491,6 @@ namespace ElasticBeanstalk
          */
         virtual Model::ListPlatformBranchesOutcome ListPlatformBranches(const Model::ListPlatformBranchesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPlatformBranches that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPlatformBranchesOutcomeCallable ListPlatformBranchesCallable(const Model::ListPlatformBranchesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPlatformBranches that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPlatformBranchesAsync(const Model::ListPlatformBranchesRequest& request, const ListPlatformBranchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the platform versions available for your account in an AWS Region.
@@ -750,15 +505,6 @@ namespace ElasticBeanstalk
          */
         virtual Model::ListPlatformVersionsOutcome ListPlatformVersions(const Model::ListPlatformVersionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPlatformVersions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPlatformVersionsOutcomeCallable ListPlatformVersionsCallable(const Model::ListPlatformVersionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPlatformVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPlatformVersionsAsync(const Model::ListPlatformVersionsRequest& request, const ListPlatformVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Return the tags applied to an AWS Elastic Beanstalk resource. The response
@@ -771,15 +517,6 @@ namespace ElasticBeanstalk
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes and recreates all of the AWS resources (for example: the Auto Scaling
@@ -790,15 +527,6 @@ namespace ElasticBeanstalk
          */
         virtual Model::RebuildEnvironmentOutcome RebuildEnvironment(const Model::RebuildEnvironmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for RebuildEnvironment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RebuildEnvironmentOutcomeCallable RebuildEnvironmentCallable(const Model::RebuildEnvironmentRequest& request) const;
-
-        /**
-         * An Async wrapper for RebuildEnvironment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RebuildEnvironmentAsync(const Model::RebuildEnvironmentRequest& request, const RebuildEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Initiates a request to compile the specified type of information of the
@@ -816,15 +544,6 @@ namespace ElasticBeanstalk
          */
         virtual Model::RequestEnvironmentInfoOutcome RequestEnvironmentInfo(const Model::RequestEnvironmentInfoRequest& request) const;
 
-        /**
-         * A Callable wrapper for RequestEnvironmentInfo that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RequestEnvironmentInfoOutcomeCallable RequestEnvironmentInfoCallable(const Model::RequestEnvironmentInfoRequest& request) const;
-
-        /**
-         * An Async wrapper for RequestEnvironmentInfo that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RequestEnvironmentInfoAsync(const Model::RequestEnvironmentInfoRequest& request, const RequestEnvironmentInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Causes the environment to restart the application container server running on
@@ -834,15 +553,6 @@ namespace ElasticBeanstalk
          */
         virtual Model::RestartAppServerOutcome RestartAppServer(const Model::RestartAppServerRequest& request) const;
 
-        /**
-         * A Callable wrapper for RestartAppServer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RestartAppServerOutcomeCallable RestartAppServerCallable(const Model::RestartAppServerRequest& request) const;
-
-        /**
-         * An Async wrapper for RestartAppServer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RestartAppServerAsync(const Model::RestartAppServerRequest& request, const RestartAppServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the compiled information from a <a>RequestEnvironmentInfo</a>
@@ -853,15 +563,6 @@ namespace ElasticBeanstalk
          */
         virtual Model::RetrieveEnvironmentInfoOutcome RetrieveEnvironmentInfo(const Model::RetrieveEnvironmentInfoRequest& request) const;
 
-        /**
-         * A Callable wrapper for RetrieveEnvironmentInfo that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RetrieveEnvironmentInfoOutcomeCallable RetrieveEnvironmentInfoCallable(const Model::RetrieveEnvironmentInfoRequest& request) const;
-
-        /**
-         * An Async wrapper for RetrieveEnvironmentInfo that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RetrieveEnvironmentInfoAsync(const Model::RetrieveEnvironmentInfoRequest& request, const RetrieveEnvironmentInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Swaps the CNAMEs of two environments.</p><p><h3>See Also:</h3>   <a
@@ -870,15 +571,6 @@ namespace ElasticBeanstalk
          */
         virtual Model::SwapEnvironmentCNAMEsOutcome SwapEnvironmentCNAMEs(const Model::SwapEnvironmentCNAMEsRequest& request) const;
 
-        /**
-         * A Callable wrapper for SwapEnvironmentCNAMEs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SwapEnvironmentCNAMEsOutcomeCallable SwapEnvironmentCNAMEsCallable(const Model::SwapEnvironmentCNAMEsRequest& request) const;
-
-        /**
-         * An Async wrapper for SwapEnvironmentCNAMEs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SwapEnvironmentCNAMEsAsync(const Model::SwapEnvironmentCNAMEsRequest& request, const SwapEnvironmentCNAMEsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Terminates the specified environment.</p><p><h3>See Also:</h3>   <a
@@ -887,15 +579,6 @@ namespace ElasticBeanstalk
          */
         virtual Model::TerminateEnvironmentOutcome TerminateEnvironment(const Model::TerminateEnvironmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for TerminateEnvironment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TerminateEnvironmentOutcomeCallable TerminateEnvironmentCallable(const Model::TerminateEnvironmentRequest& request) const;
-
-        /**
-         * An Async wrapper for TerminateEnvironment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TerminateEnvironmentAsync(const Model::TerminateEnvironmentRequest& request, const TerminateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the specified application to have the specified properties.</p>
@@ -907,15 +590,6 @@ namespace ElasticBeanstalk
          */
         virtual Model::UpdateApplicationOutcome UpdateApplication(const Model::UpdateApplicationRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateApplication that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateApplicationOutcomeCallable UpdateApplicationCallable(const Model::UpdateApplicationRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateApplicationAsync(const Model::UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies lifecycle settings for an application.</p><p><h3>See Also:</h3>   <a
@@ -924,15 +598,6 @@ namespace ElasticBeanstalk
          */
         virtual Model::UpdateApplicationResourceLifecycleOutcome UpdateApplicationResourceLifecycle(const Model::UpdateApplicationResourceLifecycleRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateApplicationResourceLifecycle that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateApplicationResourceLifecycleOutcomeCallable UpdateApplicationResourceLifecycleCallable(const Model::UpdateApplicationResourceLifecycleRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateApplicationResourceLifecycle that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateApplicationResourceLifecycleAsync(const Model::UpdateApplicationResourceLifecycleRequest& request, const UpdateApplicationResourceLifecycleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the specified application version to have the specified
@@ -944,15 +609,6 @@ namespace ElasticBeanstalk
          */
         virtual Model::UpdateApplicationVersionOutcome UpdateApplicationVersion(const Model::UpdateApplicationVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateApplicationVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateApplicationVersionOutcomeCallable UpdateApplicationVersionCallable(const Model::UpdateApplicationVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateApplicationVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateApplicationVersionAsync(const Model::UpdateApplicationVersionRequest& request, const UpdateApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the specified configuration template to have the specified properties
@@ -966,15 +622,6 @@ namespace ElasticBeanstalk
          */
         virtual Model::UpdateConfigurationTemplateOutcome UpdateConfigurationTemplate(const Model::UpdateConfigurationTemplateRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateConfigurationTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateConfigurationTemplateOutcomeCallable UpdateConfigurationTemplateCallable(const Model::UpdateConfigurationTemplateRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateConfigurationTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateConfigurationTemplateAsync(const Model::UpdateConfigurationTemplateRequest& request, const UpdateConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the environment description, deploys a new application version,
@@ -992,15 +639,6 @@ namespace ElasticBeanstalk
          */
         virtual Model::UpdateEnvironmentOutcome UpdateEnvironment(const Model::UpdateEnvironmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateEnvironment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateEnvironmentOutcomeCallable UpdateEnvironmentCallable(const Model::UpdateEnvironmentRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateEnvironment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateEnvironmentAsync(const Model::UpdateEnvironmentRequest& request, const UpdateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Update the list of tags applied to an AWS Elastic Beanstalk resource. Two
@@ -1024,15 +662,6 @@ namespace ElasticBeanstalk
          */
         virtual Model::UpdateTagsForResourceOutcome UpdateTagsForResource(const Model::UpdateTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateTagsForResourceOutcomeCallable UpdateTagsForResourceCallable(const Model::UpdateTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateTagsForResourceAsync(const Model::UpdateTagsForResourceRequest& request, const UpdateTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Takes a set of configuration settings and either a configuration template or
@@ -1044,15 +673,6 @@ namespace ElasticBeanstalk
          */
         virtual Model::ValidateConfigurationSettingsOutcome ValidateConfigurationSettings(const Model::ValidateConfigurationSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ValidateConfigurationSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ValidateConfigurationSettingsOutcomeCallable ValidateConfigurationSettingsCallable(const Model::ValidateConfigurationSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for ValidateConfigurationSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ValidateConfigurationSettingsAsync(const Model::ValidateConfigurationSettingsRequest& request, const ValidateConfigurationSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
         void OverrideEndpoint(const Aws::String& endpoint);

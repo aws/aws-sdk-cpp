@@ -7,8 +7,10 @@
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/dynamodb/DynamoDBServiceClientModel.h>
+#include <aws/dynamodb/DynamoDBLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -88,6 +90,47 @@ namespace DynamoDB
         virtual ~DynamoDBClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>This operation allows you to perform batch reads or writes on data stored in
          * DynamoDB, using PartiQL. Each read statement in a
@@ -106,15 +149,6 @@ namespace DynamoDB
          */
         virtual Model::BatchExecuteStatementOutcome BatchExecuteStatement(const Model::BatchExecuteStatementRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchExecuteStatement that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchExecuteStatementOutcomeCallable BatchExecuteStatementCallable(const Model::BatchExecuteStatementRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchExecuteStatement that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchExecuteStatementAsync(const Model::BatchExecuteStatementRequest& request, const BatchExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The <code>BatchGetItem</code> operation returns the attributes of one or more
@@ -167,15 +201,6 @@ namespace DynamoDB
          */
         virtual Model::BatchGetItemOutcome BatchGetItem(const Model::BatchGetItemRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchGetItem that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchGetItemOutcomeCallable BatchGetItemCallable(const Model::BatchGetItemRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchGetItem that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchGetItemAsync(const Model::BatchGetItemRequest& request, const BatchGetItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The <code>BatchWriteItem</code> operation puts or deletes multiple items in
@@ -245,15 +270,6 @@ namespace DynamoDB
          */
         virtual Model::BatchWriteItemOutcome BatchWriteItem(const Model::BatchWriteItemRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchWriteItem that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchWriteItemOutcomeCallable BatchWriteItemCallable(const Model::BatchWriteItemRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchWriteItem that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchWriteItemAsync(const Model::BatchWriteItemRequest& request, const BatchWriteItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a backup for an existing table.</p> <p> Each time you create an
@@ -279,15 +295,6 @@ namespace DynamoDB
          */
         virtual Model::CreateBackupOutcome CreateBackup(const Model::CreateBackupRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateBackup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateBackupOutcomeCallable CreateBackupCallable(const Model::CreateBackupRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateBackup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateBackupAsync(const Model::CreateBackupRequest& request, const CreateBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a global table from an existing table. A global table creates a
@@ -321,15 +328,6 @@ namespace DynamoDB
          */
         virtual Model::CreateGlobalTableOutcome CreateGlobalTable(const Model::CreateGlobalTableRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateGlobalTable that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateGlobalTableOutcomeCallable CreateGlobalTableCallable(const Model::CreateGlobalTableRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateGlobalTable that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateGlobalTableAsync(const Model::CreateGlobalTableRequest& request, const CreateGlobalTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The <code>CreateTable</code> operation adds a new table to your account. In
@@ -352,15 +350,6 @@ namespace DynamoDB
          */
         virtual Model::CreateTableOutcome CreateTable(const Model::CreateTableRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateTable that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateTableOutcomeCallable CreateTableCallable(const Model::CreateTableRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateTable that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateTableAsync(const Model::CreateTableRequest& request, const CreateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an existing backup of a table.</p> <p>You can call
@@ -371,15 +360,6 @@ namespace DynamoDB
          */
         virtual Model::DeleteBackupOutcome DeleteBackup(const Model::DeleteBackupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteBackup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteBackupOutcomeCallable DeleteBackupCallable(const Model::DeleteBackupRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteBackup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteBackupAsync(const Model::DeleteBackupRequest& request, const DeleteBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a single item in a table by primary key. You can perform a
@@ -397,15 +377,6 @@ namespace DynamoDB
          */
         virtual Model::DeleteItemOutcome DeleteItem(const Model::DeleteItemRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteItem that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteItemOutcomeCallable DeleteItemCallable(const Model::DeleteItemRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteItem that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteItemAsync(const Model::DeleteItemRequest& request, const DeleteItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The <code>DeleteTable</code> operation deletes a table and all of its items.
@@ -430,15 +401,6 @@ namespace DynamoDB
          */
         virtual Model::DeleteTableOutcome DeleteTable(const Model::DeleteTableRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteTable that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteTableOutcomeCallable DeleteTableCallable(const Model::DeleteTableRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteTable that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteTableAsync(const Model::DeleteTableRequest& request, const DeleteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes an existing backup of a table.</p> <p>You can call
@@ -449,15 +411,6 @@ namespace DynamoDB
          */
         virtual Model::DescribeBackupOutcome DescribeBackup(const Model::DescribeBackupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeBackup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeBackupOutcomeCallable DescribeBackupCallable(const Model::DescribeBackupRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeBackup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeBackupAsync(const Model::DescribeBackupRequest& request, const DescribeBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Checks the status of continuous backups and point in time recovery on the
@@ -476,15 +429,6 @@ namespace DynamoDB
          */
         virtual Model::DescribeContinuousBackupsOutcome DescribeContinuousBackups(const Model::DescribeContinuousBackupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeContinuousBackups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeContinuousBackupsOutcomeCallable DescribeContinuousBackupsCallable(const Model::DescribeContinuousBackupsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeContinuousBackups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeContinuousBackupsAsync(const Model::DescribeContinuousBackupsRequest& request, const DescribeContinuousBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about contributor insights, for a given table or global
@@ -494,15 +438,6 @@ namespace DynamoDB
          */
         virtual Model::DescribeContributorInsightsOutcome DescribeContributorInsights(const Model::DescribeContributorInsightsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeContributorInsights that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeContributorInsightsOutcomeCallable DescribeContributorInsightsCallable(const Model::DescribeContributorInsightsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeContributorInsights that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeContributorInsightsAsync(const Model::DescribeContributorInsightsRequest& request, const DescribeContributorInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the regional endpoint information.</p><p><h3>See Also:</h3>   <a
@@ -511,15 +446,6 @@ namespace DynamoDB
          */
         virtual Model::DescribeEndpointsOutcome DescribeEndpoints(const Model::DescribeEndpointsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEndpointsOutcomeCallable DescribeEndpointsCallable(const Model::DescribeEndpointsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEndpointsAsync(const Model::DescribeEndpointsRequest& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes an existing table export.</p><p><h3>See Also:</h3>   <a
@@ -528,15 +454,6 @@ namespace DynamoDB
          */
         virtual Model::DescribeExportOutcome DescribeExport(const Model::DescribeExportRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeExport that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeExportOutcomeCallable DescribeExportCallable(const Model::DescribeExportRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeExport that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeExportAsync(const Model::DescribeExportRequest& request, const DescribeExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the specified global table.</p>  <p>This
@@ -552,15 +469,6 @@ namespace DynamoDB
          */
         virtual Model::DescribeGlobalTableOutcome DescribeGlobalTable(const Model::DescribeGlobalTableRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeGlobalTable that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeGlobalTableOutcomeCallable DescribeGlobalTableCallable(const Model::DescribeGlobalTableRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeGlobalTable that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeGlobalTableAsync(const Model::DescribeGlobalTableRequest& request, const DescribeGlobalTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes Region-specific settings for a global table.</p>  <p>This
@@ -572,15 +480,6 @@ namespace DynamoDB
          */
         virtual Model::DescribeGlobalTableSettingsOutcome DescribeGlobalTableSettings(const Model::DescribeGlobalTableSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeGlobalTableSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeGlobalTableSettingsOutcomeCallable DescribeGlobalTableSettingsCallable(const Model::DescribeGlobalTableSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeGlobalTableSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeGlobalTableSettingsAsync(const Model::DescribeGlobalTableSettingsRequest& request, const DescribeGlobalTableSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Represents the properties of the import. </p><p><h3>See Also:</h3>   <a
@@ -589,15 +488,6 @@ namespace DynamoDB
          */
         virtual Model::DescribeImportOutcome DescribeImport(const Model::DescribeImportRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeImport that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeImportOutcomeCallable DescribeImportCallable(const Model::DescribeImportRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeImport that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeImportAsync(const Model::DescribeImportRequest& request, const DescribeImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the status of Kinesis streaming.</p><p><h3>See
@@ -607,15 +497,6 @@ namespace DynamoDB
          */
         virtual Model::DescribeKinesisStreamingDestinationOutcome DescribeKinesisStreamingDestination(const Model::DescribeKinesisStreamingDestinationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeKinesisStreamingDestination that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeKinesisStreamingDestinationOutcomeCallable DescribeKinesisStreamingDestinationCallable(const Model::DescribeKinesisStreamingDestinationRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeKinesisStreamingDestination that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeKinesisStreamingDestinationAsync(const Model::DescribeKinesisStreamingDestinationRequest& request, const DescribeKinesisStreamingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the current provisioned-capacity quotas for your Amazon Web Services
@@ -665,15 +546,6 @@ namespace DynamoDB
          */
         virtual Model::DescribeLimitsOutcome DescribeLimits(const Model::DescribeLimitsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeLimits that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeLimitsOutcomeCallable DescribeLimitsCallable(const Model::DescribeLimitsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeLimits that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeLimitsAsync(const Model::DescribeLimitsRequest& request, const DescribeLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the table, including the current status of the
@@ -690,15 +562,6 @@ namespace DynamoDB
          */
         virtual Model::DescribeTableOutcome DescribeTable(const Model::DescribeTableRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTable that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTableOutcomeCallable DescribeTableCallable(const Model::DescribeTableRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTable that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTableAsync(const Model::DescribeTableRequest& request, const DescribeTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes auto scaling settings across replicas of the global table at
@@ -710,15 +573,6 @@ namespace DynamoDB
          */
         virtual Model::DescribeTableReplicaAutoScalingOutcome DescribeTableReplicaAutoScaling(const Model::DescribeTableReplicaAutoScalingRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTableReplicaAutoScaling that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTableReplicaAutoScalingOutcomeCallable DescribeTableReplicaAutoScalingCallable(const Model::DescribeTableReplicaAutoScalingRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTableReplicaAutoScaling that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTableReplicaAutoScalingAsync(const Model::DescribeTableReplicaAutoScalingRequest& request, const DescribeTableReplicaAutoScalingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gives a description of the Time to Live (TTL) status on the specified table.
@@ -728,15 +582,6 @@ namespace DynamoDB
          */
         virtual Model::DescribeTimeToLiveOutcome DescribeTimeToLive(const Model::DescribeTimeToLiveRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTimeToLive that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTimeToLiveOutcomeCallable DescribeTimeToLiveCallable(const Model::DescribeTimeToLiveRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTimeToLive that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTimeToLiveAsync(const Model::DescribeTimeToLiveRequest& request, const DescribeTimeToLiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops replication from the DynamoDB table to the Kinesis data stream. This is
@@ -746,15 +591,6 @@ namespace DynamoDB
          */
         virtual Model::DisableKinesisStreamingDestinationOutcome DisableKinesisStreamingDestination(const Model::DisableKinesisStreamingDestinationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisableKinesisStreamingDestination that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisableKinesisStreamingDestinationOutcomeCallable DisableKinesisStreamingDestinationCallable(const Model::DisableKinesisStreamingDestinationRequest& request) const;
-
-        /**
-         * An Async wrapper for DisableKinesisStreamingDestination that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisableKinesisStreamingDestinationAsync(const Model::DisableKinesisStreamingDestinationRequest& request, const DisableKinesisStreamingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts table data replication to the specified Kinesis data stream at a
@@ -766,15 +602,6 @@ namespace DynamoDB
          */
         virtual Model::EnableKinesisStreamingDestinationOutcome EnableKinesisStreamingDestination(const Model::EnableKinesisStreamingDestinationRequest& request) const;
 
-        /**
-         * A Callable wrapper for EnableKinesisStreamingDestination that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnableKinesisStreamingDestinationOutcomeCallable EnableKinesisStreamingDestinationCallable(const Model::EnableKinesisStreamingDestinationRequest& request) const;
-
-        /**
-         * An Async wrapper for EnableKinesisStreamingDestination that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnableKinesisStreamingDestinationAsync(const Model::EnableKinesisStreamingDestinationRequest& request, const EnableKinesisStreamingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation allows you to perform reads and singleton writes on data
@@ -794,15 +621,6 @@ namespace DynamoDB
          */
         virtual Model::ExecuteStatementOutcome ExecuteStatement(const Model::ExecuteStatementRequest& request) const;
 
-        /**
-         * A Callable wrapper for ExecuteStatement that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ExecuteStatementOutcomeCallable ExecuteStatementCallable(const Model::ExecuteStatementRequest& request) const;
-
-        /**
-         * An Async wrapper for ExecuteStatement that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ExecuteStatementAsync(const Model::ExecuteStatementRequest& request, const ExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation allows you to perform transactional reads or writes on data
@@ -818,15 +636,6 @@ namespace DynamoDB
          */
         virtual Model::ExecuteTransactionOutcome ExecuteTransaction(const Model::ExecuteTransactionRequest& request) const;
 
-        /**
-         * A Callable wrapper for ExecuteTransaction that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ExecuteTransactionOutcomeCallable ExecuteTransactionCallable(const Model::ExecuteTransactionRequest& request) const;
-
-        /**
-         * An Async wrapper for ExecuteTransaction that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ExecuteTransactionAsync(const Model::ExecuteTransactionRequest& request, const ExecuteTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Exports table data to an S3 bucket. The table must have point in time
@@ -837,15 +646,6 @@ namespace DynamoDB
          */
         virtual Model::ExportTableToPointInTimeOutcome ExportTableToPointInTime(const Model::ExportTableToPointInTimeRequest& request) const;
 
-        /**
-         * A Callable wrapper for ExportTableToPointInTime that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ExportTableToPointInTimeOutcomeCallable ExportTableToPointInTimeCallable(const Model::ExportTableToPointInTimeRequest& request) const;
-
-        /**
-         * An Async wrapper for ExportTableToPointInTime that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ExportTableToPointInTimeAsync(const Model::ExportTableToPointInTimeRequest& request, const ExportTableToPointInTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The <code>GetItem</code> operation returns a set of attributes for the item
@@ -861,15 +661,6 @@ namespace DynamoDB
          */
         virtual Model::GetItemOutcome GetItem(const Model::GetItemRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetItem that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetItemOutcomeCallable GetItemCallable(const Model::GetItemRequest& request) const;
-
-        /**
-         * An Async wrapper for GetItem that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetItemAsync(const Model::GetItemRequest& request, const GetItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Imports table data from an S3 bucket. </p><p><h3>See Also:</h3>   <a
@@ -878,15 +669,6 @@ namespace DynamoDB
          */
         virtual Model::ImportTableOutcome ImportTable(const Model::ImportTableRequest& request) const;
 
-        /**
-         * A Callable wrapper for ImportTable that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ImportTableOutcomeCallable ImportTableCallable(const Model::ImportTableRequest& request) const;
-
-        /**
-         * An Async wrapper for ImportTable that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ImportTableAsync(const Model::ImportTableRequest& request, const ImportTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List backups associated with an Amazon Web Services account. To list backups
@@ -902,15 +684,6 @@ namespace DynamoDB
          */
         virtual Model::ListBackupsOutcome ListBackups(const Model::ListBackupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListBackups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListBackupsOutcomeCallable ListBackupsCallable(const Model::ListBackupsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListBackups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListBackupsAsync(const Model::ListBackupsRequest& request, const ListBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of ContributorInsightsSummary for a table and all its global
@@ -920,15 +693,6 @@ namespace DynamoDB
          */
         virtual Model::ListContributorInsightsOutcome ListContributorInsights(const Model::ListContributorInsightsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListContributorInsights that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListContributorInsightsOutcomeCallable ListContributorInsightsCallable(const Model::ListContributorInsightsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListContributorInsights that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListContributorInsightsAsync(const Model::ListContributorInsightsRequest& request, const ListContributorInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists completed exports within the past 90 days.</p><p><h3>See Also:</h3>  
@@ -938,15 +702,6 @@ namespace DynamoDB
          */
         virtual Model::ListExportsOutcome ListExports(const Model::ListExportsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListExports that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListExportsOutcomeCallable ListExportsCallable(const Model::ListExportsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListExports that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListExportsAsync(const Model::ListExportsRequest& request, const ListExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all global tables that have a replica in the specified Region.</p>
@@ -958,15 +713,6 @@ namespace DynamoDB
          */
         virtual Model::ListGlobalTablesOutcome ListGlobalTables(const Model::ListGlobalTablesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListGlobalTables that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListGlobalTablesOutcomeCallable ListGlobalTablesCallable(const Model::ListGlobalTablesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListGlobalTables that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListGlobalTablesAsync(const Model::ListGlobalTablesRequest& request, const ListGlobalTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Lists completed imports within the past 90 days. </p><p><h3>See Also:</h3>  
@@ -976,15 +722,6 @@ namespace DynamoDB
          */
         virtual Model::ListImportsOutcome ListImports(const Model::ListImportsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListImports that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListImportsOutcomeCallable ListImportsCallable(const Model::ListImportsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListImports that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListImportsAsync(const Model::ListImportsRequest& request, const ListImportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns an array of table names associated with the current account and
@@ -995,15 +732,6 @@ namespace DynamoDB
          */
         virtual Model::ListTablesOutcome ListTables(const Model::ListTablesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTables that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTablesOutcomeCallable ListTablesCallable(const Model::ListTablesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTables that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTablesAsync(const Model::ListTablesRequest& request, const ListTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List all tags on an Amazon DynamoDB resource. You can call ListTagsOfResource
@@ -1017,15 +745,6 @@ namespace DynamoDB
          */
         virtual Model::ListTagsOfResourceOutcome ListTagsOfResource(const Model::ListTagsOfResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsOfResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsOfResourceOutcomeCallable ListTagsOfResourceCallable(const Model::ListTagsOfResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsOfResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsOfResourceAsync(const Model::ListTagsOfResourceRequest& request, const ListTagsOfResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new item, or replaces an old item with a new item. If an item that
@@ -1055,15 +774,6 @@ namespace DynamoDB
          */
         virtual Model::PutItemOutcome PutItem(const Model::PutItemRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutItem that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutItemOutcomeCallable PutItemCallable(const Model::PutItemRequest& request) const;
-
-        /**
-         * An Async wrapper for PutItem that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutItemAsync(const Model::PutItemRequest& request, const PutItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>You must provide the name of the partition key attribute and a single value
@@ -1116,15 +826,6 @@ namespace DynamoDB
          */
         virtual Model::QueryOutcome Query(const Model::QueryRequest& request) const;
 
-        /**
-         * A Callable wrapper for Query that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::QueryOutcomeCallable QueryCallable(const Model::QueryRequest& request) const;
-
-        /**
-         * An Async wrapper for Query that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void QueryAsync(const Model::QueryRequest& request, const QueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new table from an existing backup. Any number of users can execute
@@ -1140,15 +841,6 @@ namespace DynamoDB
          */
         virtual Model::RestoreTableFromBackupOutcome RestoreTableFromBackup(const Model::RestoreTableFromBackupRequest& request) const;
 
-        /**
-         * A Callable wrapper for RestoreTableFromBackup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RestoreTableFromBackupOutcomeCallable RestoreTableFromBackupCallable(const Model::RestoreTableFromBackupRequest& request) const;
-
-        /**
-         * An Async wrapper for RestoreTableFromBackup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RestoreTableFromBackupAsync(const Model::RestoreTableFromBackupRequest& request, const RestoreTableFromBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Restores the specified table to the specified point in time within
@@ -1174,15 +866,6 @@ namespace DynamoDB
          */
         virtual Model::RestoreTableToPointInTimeOutcome RestoreTableToPointInTime(const Model::RestoreTableToPointInTimeRequest& request) const;
 
-        /**
-         * A Callable wrapper for RestoreTableToPointInTime that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RestoreTableToPointInTimeOutcomeCallable RestoreTableToPointInTimeCallable(const Model::RestoreTableToPointInTimeRequest& request) const;
-
-        /**
-         * An Async wrapper for RestoreTableToPointInTime that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RestoreTableToPointInTimeAsync(const Model::RestoreTableToPointInTimeRequest& request, const RestoreTableToPointInTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The <code>Scan</code> operation returns one or more items and item attributes
@@ -1217,15 +900,6 @@ namespace DynamoDB
          */
         virtual Model::ScanOutcome Scan(const Model::ScanRequest& request) const;
 
-        /**
-         * A Callable wrapper for Scan that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ScanOutcomeCallable ScanCallable(const Model::ScanRequest& request) const;
-
-        /**
-         * An Async wrapper for Scan that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ScanAsync(const Model::ScanRequest& request, const ScanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associate a set of tags with an Amazon DynamoDB resource. You can then
@@ -1241,15 +915,6 @@ namespace DynamoDB
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> <code>TransactGetItems</code> is a synchronous operation that atomically
@@ -1272,15 +937,6 @@ namespace DynamoDB
          */
         virtual Model::TransactGetItemsOutcome TransactGetItems(const Model::TransactGetItemsRequest& request) const;
 
-        /**
-         * A Callable wrapper for TransactGetItems that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TransactGetItemsOutcomeCallable TransactGetItemsCallable(const Model::TransactGetItemsRequest& request) const;
-
-        /**
-         * An Async wrapper for TransactGetItems that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TransactGetItemsAsync(const Model::TransactGetItemsRequest& request, const TransactGetItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> <code>TransactWriteItems</code> is a synchronous write operation that groups
@@ -1328,15 +984,6 @@ namespace DynamoDB
          */
         virtual Model::TransactWriteItemsOutcome TransactWriteItems(const Model::TransactWriteItemsRequest& request) const;
 
-        /**
-         * A Callable wrapper for TransactWriteItems that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TransactWriteItemsOutcomeCallable TransactWriteItemsCallable(const Model::TransactWriteItemsRequest& request) const;
-
-        /**
-         * An Async wrapper for TransactWriteItems that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TransactWriteItemsAsync(const Model::TransactWriteItemsRequest& request, const TransactWriteItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the association of tags from an Amazon DynamoDB resource. You can
@@ -1350,15 +997,6 @@ namespace DynamoDB
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> <code>UpdateContinuousBackups</code> enables or disables point in time
@@ -1378,15 +1016,6 @@ namespace DynamoDB
          */
         virtual Model::UpdateContinuousBackupsOutcome UpdateContinuousBackups(const Model::UpdateContinuousBackupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateContinuousBackups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateContinuousBackupsOutcomeCallable UpdateContinuousBackupsCallable(const Model::UpdateContinuousBackupsRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateContinuousBackups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateContinuousBackupsAsync(const Model::UpdateContinuousBackupsRequest& request, const UpdateContinuousBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the status for contributor insights for a specific table or index.
@@ -1402,15 +1031,6 @@ namespace DynamoDB
          */
         virtual Model::UpdateContributorInsightsOutcome UpdateContributorInsights(const Model::UpdateContributorInsightsRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateContributorInsights that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateContributorInsightsOutcomeCallable UpdateContributorInsightsCallable(const Model::UpdateContributorInsightsRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateContributorInsights that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateContributorInsightsAsync(const Model::UpdateContributorInsightsRequest& request, const UpdateContributorInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds or removes replicas in the specified global table. The global table must
@@ -1431,15 +1051,6 @@ namespace DynamoDB
          */
         virtual Model::UpdateGlobalTableOutcome UpdateGlobalTable(const Model::UpdateGlobalTableRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateGlobalTable that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateGlobalTableOutcomeCallable UpdateGlobalTableCallable(const Model::UpdateGlobalTableRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateGlobalTable that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateGlobalTableAsync(const Model::UpdateGlobalTableRequest& request, const UpdateGlobalTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates settings for a global table.</p><p><h3>See Also:</h3>   <a
@@ -1448,15 +1059,6 @@ namespace DynamoDB
          */
         virtual Model::UpdateGlobalTableSettingsOutcome UpdateGlobalTableSettings(const Model::UpdateGlobalTableSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateGlobalTableSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateGlobalTableSettingsOutcomeCallable UpdateGlobalTableSettingsCallable(const Model::UpdateGlobalTableSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateGlobalTableSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateGlobalTableSettingsAsync(const Model::UpdateGlobalTableSettingsRequest& request, const UpdateGlobalTableSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Edits an existing item's attributes, or adds a new item to the table if it
@@ -1471,15 +1073,6 @@ namespace DynamoDB
          */
         virtual Model::UpdateItemOutcome UpdateItem(const Model::UpdateItemRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateItem that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateItemOutcomeCallable UpdateItemCallable(const Model::UpdateItemRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateItem that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateItemAsync(const Model::UpdateItemRequest& request, const UpdateItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the provisioned throughput settings, global secondary indexes, or
@@ -1500,15 +1093,6 @@ namespace DynamoDB
          */
         virtual Model::UpdateTableOutcome UpdateTable(const Model::UpdateTableRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateTable that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateTableOutcomeCallable UpdateTableCallable(const Model::UpdateTableRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateTable that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateTableAsync(const Model::UpdateTableRequest& request, const UpdateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates auto scaling settings on your global tables at once.</p> 
@@ -1520,15 +1104,6 @@ namespace DynamoDB
          */
         virtual Model::UpdateTableReplicaAutoScalingOutcome UpdateTableReplicaAutoScaling(const Model::UpdateTableReplicaAutoScalingRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateTableReplicaAutoScaling that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateTableReplicaAutoScalingOutcomeCallable UpdateTableReplicaAutoScalingCallable(const Model::UpdateTableReplicaAutoScalingRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateTableReplicaAutoScaling that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateTableReplicaAutoScalingAsync(const Model::UpdateTableReplicaAutoScalingRequest& request, const UpdateTableReplicaAutoScalingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The <code>UpdateTimeToLive</code> method enables or disables Time to Live
@@ -1558,15 +1133,6 @@ namespace DynamoDB
          */
         virtual Model::UpdateTimeToLiveOutcome UpdateTimeToLive(const Model::UpdateTimeToLiveRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateTimeToLive that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateTimeToLiveOutcomeCallable UpdateTimeToLiveCallable(const Model::UpdateTimeToLiveRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateTimeToLive that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateTimeToLiveAsync(const Model::UpdateTimeToLiveRequest& request, const UpdateTimeToLiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

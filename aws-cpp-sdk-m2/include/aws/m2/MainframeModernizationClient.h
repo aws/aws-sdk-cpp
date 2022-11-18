@@ -7,8 +7,10 @@
 #include <aws/m2/MainframeModernization_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/m2/MainframeModernizationServiceClientModel.h>
+#include <aws/m2/MainframeModernizationLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -78,6 +80,47 @@ namespace MainframeModernization
         virtual ~MainframeModernizationClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Cancels the running of a specific batch job execution.</p><p><h3>See
          * Also:</h3>   <a
@@ -86,15 +129,6 @@ namespace MainframeModernization
          */
         virtual Model::CancelBatchJobExecutionOutcome CancelBatchJobExecution(const Model::CancelBatchJobExecutionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelBatchJobExecution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelBatchJobExecutionOutcomeCallable CancelBatchJobExecutionCallable(const Model::CancelBatchJobExecutionRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelBatchJobExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelBatchJobExecutionAsync(const Model::CancelBatchJobExecutionRequest& request, const CancelBatchJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new application with given parameters. Requires an existing
@@ -104,15 +138,6 @@ namespace MainframeModernization
          */
         virtual Model::CreateApplicationOutcome CreateApplication(const Model::CreateApplicationRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateApplication that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateApplicationOutcomeCallable CreateApplicationCallable(const Model::CreateApplicationRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateApplicationAsync(const Model::CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts a data set import task for a specific application.</p><p><h3>See
@@ -122,15 +147,6 @@ namespace MainframeModernization
          */
         virtual Model::CreateDataSetImportTaskOutcome CreateDataSetImportTask(const Model::CreateDataSetImportTaskRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDataSetImportTask that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDataSetImportTaskOutcomeCallable CreateDataSetImportTaskCallable(const Model::CreateDataSetImportTaskRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDataSetImportTask that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDataSetImportTaskAsync(const Model::CreateDataSetImportTaskRequest& request, const CreateDataSetImportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates and starts a deployment to deploy an application into an
@@ -140,15 +156,6 @@ namespace MainframeModernization
          */
         virtual Model::CreateDeploymentOutcome CreateDeployment(const Model::CreateDeploymentRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDeployment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDeploymentOutcomeCallable CreateDeploymentCallable(const Model::CreateDeploymentRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDeployment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDeploymentAsync(const Model::CreateDeploymentRequest& request, const CreateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a runtime environment for a given runtime engine.</p><p><h3>See
@@ -158,15 +165,6 @@ namespace MainframeModernization
          */
         virtual Model::CreateEnvironmentOutcome CreateEnvironment(const Model::CreateEnvironmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateEnvironment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateEnvironmentOutcomeCallable CreateEnvironmentCallable(const Model::CreateEnvironmentRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateEnvironment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateEnvironmentAsync(const Model::CreateEnvironmentRequest& request, const CreateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a specific application. You cannot delete a running
@@ -176,15 +174,6 @@ namespace MainframeModernization
          */
         virtual Model::DeleteApplicationOutcome DeleteApplication(const Model::DeleteApplicationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteApplication that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteApplicationOutcomeCallable DeleteApplicationCallable(const Model::DeleteApplicationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteApplicationAsync(const Model::DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a specific application from a specified environment where it has been
@@ -197,15 +186,6 @@ namespace MainframeModernization
          */
         virtual Model::DeleteApplicationFromEnvironmentOutcome DeleteApplicationFromEnvironment(const Model::DeleteApplicationFromEnvironmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteApplicationFromEnvironment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteApplicationFromEnvironmentOutcomeCallable DeleteApplicationFromEnvironmentCallable(const Model::DeleteApplicationFromEnvironmentRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteApplicationFromEnvironment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteApplicationFromEnvironmentAsync(const Model::DeleteApplicationFromEnvironmentRequest& request, const DeleteApplicationFromEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a specific environment. The environment cannot contain deployed
@@ -216,15 +196,6 @@ namespace MainframeModernization
          */
         virtual Model::DeleteEnvironmentOutcome DeleteEnvironment(const Model::DeleteEnvironmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteEnvironment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteEnvironmentOutcomeCallable DeleteEnvironmentCallable(const Model::DeleteEnvironmentRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteEnvironment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteEnvironmentAsync(const Model::DeleteEnvironmentRequest& request, const DeleteEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the details of a specific application.</p><p><h3>See Also:</h3>  
@@ -234,15 +205,6 @@ namespace MainframeModernization
          */
         virtual Model::GetApplicationOutcome GetApplication(const Model::GetApplicationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetApplication that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetApplicationOutcomeCallable GetApplicationCallable(const Model::GetApplicationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetApplicationAsync(const Model::GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns details about a specific version of a specific
@@ -252,15 +214,6 @@ namespace MainframeModernization
          */
         virtual Model::GetApplicationVersionOutcome GetApplicationVersion(const Model::GetApplicationVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetApplicationVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetApplicationVersionOutcomeCallable GetApplicationVersionCallable(const Model::GetApplicationVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for GetApplicationVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetApplicationVersionAsync(const Model::GetApplicationVersionRequest& request, const GetApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the details of a specific batch job execution for a specific
@@ -270,15 +223,6 @@ namespace MainframeModernization
          */
         virtual Model::GetBatchJobExecutionOutcome GetBatchJobExecution(const Model::GetBatchJobExecutionRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBatchJobExecution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBatchJobExecutionOutcomeCallable GetBatchJobExecutionCallable(const Model::GetBatchJobExecutionRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBatchJobExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBatchJobExecutionAsync(const Model::GetBatchJobExecutionRequest& request, const GetBatchJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the details of a specific data set.</p><p><h3>See Also:</h3>   <a
@@ -287,15 +231,6 @@ namespace MainframeModernization
          */
         virtual Model::GetDataSetDetailsOutcome GetDataSetDetails(const Model::GetDataSetDetailsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDataSetDetails that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDataSetDetailsOutcomeCallable GetDataSetDetailsCallable(const Model::GetDataSetDetailsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDataSetDetails that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDataSetDetailsAsync(const Model::GetDataSetDetailsRequest& request, const GetDataSetDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the status of a data set import task initiated with the
@@ -305,15 +240,6 @@ namespace MainframeModernization
          */
         virtual Model::GetDataSetImportTaskOutcome GetDataSetImportTask(const Model::GetDataSetImportTaskRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDataSetImportTask that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDataSetImportTaskOutcomeCallable GetDataSetImportTaskCallable(const Model::GetDataSetImportTaskRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDataSetImportTask that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDataSetImportTaskAsync(const Model::GetDataSetImportTaskRequest& request, const GetDataSetImportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets details of a specific deployment with a given deployment
@@ -323,15 +249,6 @@ namespace MainframeModernization
          */
         virtual Model::GetDeploymentOutcome GetDeployment(const Model::GetDeploymentRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDeployment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDeploymentOutcomeCallable GetDeploymentCallable(const Model::GetDeploymentRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDeployment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDeploymentAsync(const Model::GetDeploymentRequest& request, const GetDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a specific runtime environment.</p><p><h3>See Also:</h3>   <a
@@ -340,15 +257,6 @@ namespace MainframeModernization
          */
         virtual Model::GetEnvironmentOutcome GetEnvironment(const Model::GetEnvironmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetEnvironment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetEnvironmentOutcomeCallable GetEnvironmentCallable(const Model::GetEnvironmentRequest& request) const;
-
-        /**
-         * An Async wrapper for GetEnvironment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetEnvironmentAsync(const Model::GetEnvironmentRequest& request, const GetEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of the application versions for a specific
@@ -358,15 +266,6 @@ namespace MainframeModernization
          */
         virtual Model::ListApplicationVersionsOutcome ListApplicationVersions(const Model::ListApplicationVersionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListApplicationVersions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListApplicationVersionsOutcomeCallable ListApplicationVersionsCallable(const Model::ListApplicationVersionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListApplicationVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListApplicationVersionsAsync(const Model::ListApplicationVersionsRequest& request, const ListApplicationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the applications associated with a specific Amazon Web Services
@@ -378,15 +277,6 @@ namespace MainframeModernization
          */
         virtual Model::ListApplicationsOutcome ListApplications(const Model::ListApplicationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListApplications that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListApplicationsOutcomeCallable ListApplicationsCallable(const Model::ListApplicationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListApplications that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListApplicationsAsync(const Model::ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all the available batch job definitions based on the batch job
@@ -397,15 +287,6 @@ namespace MainframeModernization
          */
         virtual Model::ListBatchJobDefinitionsOutcome ListBatchJobDefinitions(const Model::ListBatchJobDefinitionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListBatchJobDefinitions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListBatchJobDefinitionsOutcomeCallable ListBatchJobDefinitionsCallable(const Model::ListBatchJobDefinitionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListBatchJobDefinitions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListBatchJobDefinitionsAsync(const Model::ListBatchJobDefinitionsRequest& request, const ListBatchJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists historical, current, and scheduled batch job executions for a specific
@@ -415,15 +296,6 @@ namespace MainframeModernization
          */
         virtual Model::ListBatchJobExecutionsOutcome ListBatchJobExecutions(const Model::ListBatchJobExecutionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListBatchJobExecutions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListBatchJobExecutionsOutcomeCallable ListBatchJobExecutionsCallable(const Model::ListBatchJobExecutionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListBatchJobExecutions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListBatchJobExecutionsAsync(const Model::ListBatchJobExecutionsRequest& request, const ListBatchJobExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the data set imports for the specified application.</p><p><h3>See
@@ -433,15 +305,6 @@ namespace MainframeModernization
          */
         virtual Model::ListDataSetImportHistoryOutcome ListDataSetImportHistory(const Model::ListDataSetImportHistoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDataSetImportHistory that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDataSetImportHistoryOutcomeCallable ListDataSetImportHistoryCallable(const Model::ListDataSetImportHistoryRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDataSetImportHistory that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDataSetImportHistoryAsync(const Model::ListDataSetImportHistoryRequest& request, const ListDataSetImportHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the data sets imported for a specific application. In Amazon Web
@@ -456,15 +319,6 @@ namespace MainframeModernization
          */
         virtual Model::ListDataSetsOutcome ListDataSets(const Model::ListDataSetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDataSets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDataSetsOutcomeCallable ListDataSetsCallable(const Model::ListDataSetsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDataSets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDataSetsAsync(const Model::ListDataSetsRequest& request, const ListDataSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of all deployments of a specific application. A deployment is
@@ -476,15 +330,6 @@ namespace MainframeModernization
          */
         virtual Model::ListDeploymentsOutcome ListDeployments(const Model::ListDeploymentsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDeployments that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDeploymentsOutcomeCallable ListDeploymentsCallable(const Model::ListDeploymentsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDeployments that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDeploymentsAsync(const Model::ListDeploymentsRequest& request, const ListDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the available engine versions.</p><p><h3>See Also:</h3>   <a
@@ -493,15 +338,6 @@ namespace MainframeModernization
          */
         virtual Model::ListEngineVersionsOutcome ListEngineVersions(const Model::ListEngineVersionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListEngineVersions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListEngineVersionsOutcomeCallable ListEngineVersionsCallable(const Model::ListEngineVersionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListEngineVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListEngineVersionsAsync(const Model::ListEngineVersionsRequest& request, const ListEngineVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the runtime environments.</p><p><h3>See Also:</h3>   <a
@@ -510,15 +346,6 @@ namespace MainframeModernization
          */
         virtual Model::ListEnvironmentsOutcome ListEnvironments(const Model::ListEnvironmentsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListEnvironments that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListEnvironmentsOutcomeCallable ListEnvironmentsCallable(const Model::ListEnvironmentsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListEnvironments that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListEnvironmentsAsync(const Model::ListEnvironmentsRequest& request, const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the tags for the specified resource.</p><p><h3>See Also:</h3>   <a
@@ -527,15 +354,6 @@ namespace MainframeModernization
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts an application that is currently stopped.</p><p><h3>See Also:</h3>  
@@ -545,15 +363,6 @@ namespace MainframeModernization
          */
         virtual Model::StartApplicationOutcome StartApplication(const Model::StartApplicationRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartApplication that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartApplicationOutcomeCallable StartApplicationCallable(const Model::StartApplicationRequest& request) const;
-
-        /**
-         * An Async wrapper for StartApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartApplicationAsync(const Model::StartApplicationRequest& request, const StartApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts a batch job and returns the unique identifier of this execution of the
@@ -564,15 +373,6 @@ namespace MainframeModernization
          */
         virtual Model::StartBatchJobOutcome StartBatchJob(const Model::StartBatchJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartBatchJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartBatchJobOutcomeCallable StartBatchJobCallable(const Model::StartBatchJobRequest& request) const;
-
-        /**
-         * An Async wrapper for StartBatchJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartBatchJobAsync(const Model::StartBatchJobRequest& request, const StartBatchJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops a running application.</p><p><h3>See Also:</h3>   <a
@@ -581,15 +381,6 @@ namespace MainframeModernization
          */
         virtual Model::StopApplicationOutcome StopApplication(const Model::StopApplicationRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopApplication that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopApplicationOutcomeCallable StopApplicationCallable(const Model::StopApplicationRequest& request) const;
-
-        /**
-         * An Async wrapper for StopApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopApplicationAsync(const Model::StopApplicationRequest& request, const StopApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds one or more tags to the specified resource.</p><p><h3>See Also:</h3>  
@@ -598,15 +389,6 @@ namespace MainframeModernization
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes one or more tags from the specified resource.</p><p><h3>See
@@ -616,15 +398,6 @@ namespace MainframeModernization
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an application and creates a new version.</p><p><h3>See Also:</h3>  
@@ -634,15 +407,6 @@ namespace MainframeModernization
          */
         virtual Model::UpdateApplicationOutcome UpdateApplication(const Model::UpdateApplicationRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateApplication that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateApplicationOutcomeCallable UpdateApplicationCallable(const Model::UpdateApplicationRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateApplicationAsync(const Model::UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the configuration details for a specific environment.</p><p><h3>See
@@ -652,15 +416,6 @@ namespace MainframeModernization
          */
         virtual Model::UpdateEnvironmentOutcome UpdateEnvironment(const Model::UpdateEnvironmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateEnvironment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateEnvironmentOutcomeCallable UpdateEnvironmentCallable(const Model::UpdateEnvironmentRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateEnvironment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateEnvironmentAsync(const Model::UpdateEnvironmentRequest& request, const UpdateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

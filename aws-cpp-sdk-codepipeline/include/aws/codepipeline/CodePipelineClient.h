@@ -7,8 +7,10 @@
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/codepipeline/CodePipelineServiceClientModel.h>
+#include <aws/codepipeline/CodePipelineLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -152,6 +154,47 @@ namespace CodePipeline
         virtual ~CodePipelineClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Returns information about a specified job and whether that job has been
          * received by the job worker. Used for custom actions only.</p><p><h3>See
@@ -161,15 +204,6 @@ namespace CodePipeline
          */
         virtual Model::AcknowledgeJobOutcome AcknowledgeJob(const Model::AcknowledgeJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for AcknowledgeJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AcknowledgeJobOutcomeCallable AcknowledgeJobCallable(const Model::AcknowledgeJobRequest& request) const;
-
-        /**
-         * An Async wrapper for AcknowledgeJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AcknowledgeJobAsync(const Model::AcknowledgeJobRequest& request, const AcknowledgeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Confirms a job worker has received the specified job. Used for partner
@@ -179,15 +213,6 @@ namespace CodePipeline
          */
         virtual Model::AcknowledgeThirdPartyJobOutcome AcknowledgeThirdPartyJob(const Model::AcknowledgeThirdPartyJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for AcknowledgeThirdPartyJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AcknowledgeThirdPartyJobOutcomeCallable AcknowledgeThirdPartyJobCallable(const Model::AcknowledgeThirdPartyJobRequest& request) const;
-
-        /**
-         * An Async wrapper for AcknowledgeThirdPartyJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AcknowledgeThirdPartyJobAsync(const Model::AcknowledgeThirdPartyJobRequest& request, const AcknowledgeThirdPartyJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new custom action that can be used in all pipelines associated with
@@ -197,15 +222,6 @@ namespace CodePipeline
          */
         virtual Model::CreateCustomActionTypeOutcome CreateCustomActionType(const Model::CreateCustomActionTypeRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateCustomActionType that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateCustomActionTypeOutcomeCallable CreateCustomActionTypeCallable(const Model::CreateCustomActionTypeRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateCustomActionType that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateCustomActionTypeAsync(const Model::CreateCustomActionTypeRequest& request, const CreateCustomActionTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a pipeline.</p>  <p>In the pipeline structure, you must include
@@ -218,15 +234,6 @@ namespace CodePipeline
          */
         virtual Model::CreatePipelineOutcome CreatePipeline(const Model::CreatePipelineRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreatePipeline that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreatePipelineOutcomeCallable CreatePipelineCallable(const Model::CreatePipelineRequest& request) const;
-
-        /**
-         * An Async wrapper for CreatePipeline that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreatePipelineAsync(const Model::CreatePipelineRequest& request, const CreatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Marks a custom action as deleted. <code>PollForJobs</code> for the custom
@@ -242,15 +249,6 @@ namespace CodePipeline
          */
         virtual Model::DeleteCustomActionTypeOutcome DeleteCustomActionType(const Model::DeleteCustomActionTypeRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteCustomActionType that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteCustomActionTypeOutcomeCallable DeleteCustomActionTypeCallable(const Model::DeleteCustomActionTypeRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteCustomActionType that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteCustomActionTypeAsync(const Model::DeleteCustomActionTypeRequest& request, const DeleteCustomActionTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified pipeline.</p><p><h3>See Also:</h3>   <a
@@ -259,15 +257,6 @@ namespace CodePipeline
          */
         virtual Model::DeletePipelineOutcome DeletePipeline(const Model::DeletePipelineRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeletePipeline that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeletePipelineOutcomeCallable DeletePipelineCallable(const Model::DeletePipelineRequest& request) const;
-
-        /**
-         * An Async wrapper for DeletePipeline that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeletePipelineAsync(const Model::DeletePipelineRequest& request, const DeletePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a previously created webhook by name. Deleting the webhook stops AWS
@@ -280,15 +269,6 @@ namespace CodePipeline
          */
         virtual Model::DeleteWebhookOutcome DeleteWebhook(const Model::DeleteWebhookRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteWebhook that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteWebhookOutcomeCallable DeleteWebhookCallable(const Model::DeleteWebhookRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteWebhook that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteWebhookAsync(const Model::DeleteWebhookRequest& request, const DeleteWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the connection between the webhook that was created by CodePipeline
@@ -299,15 +279,6 @@ namespace CodePipeline
          */
         virtual Model::DeregisterWebhookWithThirdPartyOutcome DeregisterWebhookWithThirdParty(const Model::DeregisterWebhookWithThirdPartyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeregisterWebhookWithThirdParty that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeregisterWebhookWithThirdPartyOutcomeCallable DeregisterWebhookWithThirdPartyCallable(const Model::DeregisterWebhookWithThirdPartyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeregisterWebhookWithThirdParty that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeregisterWebhookWithThirdPartyAsync(const Model::DeregisterWebhookWithThirdPartyRequest& request, const DeregisterWebhookWithThirdPartyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Prevents artifacts in a pipeline from transitioning to the next stage in the
@@ -317,15 +288,6 @@ namespace CodePipeline
          */
         virtual Model::DisableStageTransitionOutcome DisableStageTransition(const Model::DisableStageTransitionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisableStageTransition that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisableStageTransitionOutcomeCallable DisableStageTransitionCallable(const Model::DisableStageTransitionRequest& request) const;
-
-        /**
-         * An Async wrapper for DisableStageTransition that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisableStageTransitionAsync(const Model::DisableStageTransitionRequest& request, const DisableStageTransitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables artifacts in a pipeline to transition to a stage in a
@@ -335,15 +297,6 @@ namespace CodePipeline
          */
         virtual Model::EnableStageTransitionOutcome EnableStageTransition(const Model::EnableStageTransitionRequest& request) const;
 
-        /**
-         * A Callable wrapper for EnableStageTransition that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnableStageTransitionOutcomeCallable EnableStageTransitionCallable(const Model::EnableStageTransitionRequest& request) const;
-
-        /**
-         * An Async wrapper for EnableStageTransition that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnableStageTransitionAsync(const Model::EnableStageTransitionRequest& request, const EnableStageTransitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about an action type created for an external provider,
@@ -355,15 +308,6 @@ namespace CodePipeline
          */
         virtual Model::GetActionTypeOutcome GetActionType(const Model::GetActionTypeRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetActionType that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetActionTypeOutcomeCallable GetActionTypeCallable(const Model::GetActionTypeRequest& request) const;
-
-        /**
-         * An Async wrapper for GetActionType that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetActionTypeAsync(const Model::GetActionTypeRequest& request, const GetActionTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a job. Used for custom actions only.</p>
@@ -377,15 +321,6 @@ namespace CodePipeline
          */
         virtual Model::GetJobDetailsOutcome GetJobDetails(const Model::GetJobDetailsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetJobDetails that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetJobDetailsOutcomeCallable GetJobDetailsCallable(const Model::GetJobDetailsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetJobDetails that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetJobDetailsAsync(const Model::GetJobDetailsRequest& request, const GetJobDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the metadata, structure, stages, and actions of a pipeline. Can be
@@ -397,15 +332,6 @@ namespace CodePipeline
          */
         virtual Model::GetPipelineOutcome GetPipeline(const Model::GetPipelineRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetPipeline that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetPipelineOutcomeCallable GetPipelineCallable(const Model::GetPipelineRequest& request) const;
-
-        /**
-         * An Async wrapper for GetPipeline that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetPipelineAsync(const Model::GetPipelineRequest& request, const GetPipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about an execution of a pipeline, including details about
@@ -416,15 +342,6 @@ namespace CodePipeline
          */
         virtual Model::GetPipelineExecutionOutcome GetPipelineExecution(const Model::GetPipelineExecutionRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetPipelineExecution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetPipelineExecutionOutcomeCallable GetPipelineExecutionCallable(const Model::GetPipelineExecutionRequest& request) const;
-
-        /**
-         * An Async wrapper for GetPipelineExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetPipelineExecutionAsync(const Model::GetPipelineExecutionRequest& request, const GetPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the state of a pipeline, including the stages and
@@ -436,15 +353,6 @@ namespace CodePipeline
          */
         virtual Model::GetPipelineStateOutcome GetPipelineState(const Model::GetPipelineStateRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetPipelineState that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetPipelineStateOutcomeCallable GetPipelineStateCallable(const Model::GetPipelineStateRequest& request) const;
-
-        /**
-         * An Async wrapper for GetPipelineState that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetPipelineStateAsync(const Model::GetPipelineStateRequest& request, const GetPipelineStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Requests the details of a job for a third party action. Used for partner
@@ -458,15 +366,6 @@ namespace CodePipeline
          */
         virtual Model::GetThirdPartyJobDetailsOutcome GetThirdPartyJobDetails(const Model::GetThirdPartyJobDetailsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetThirdPartyJobDetails that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetThirdPartyJobDetailsOutcomeCallable GetThirdPartyJobDetailsCallable(const Model::GetThirdPartyJobDetailsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetThirdPartyJobDetails that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetThirdPartyJobDetailsAsync(const Model::GetThirdPartyJobDetailsRequest& request, const GetThirdPartyJobDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the action executions that have occurred in a pipeline.</p><p><h3>See
@@ -476,15 +375,6 @@ namespace CodePipeline
          */
         virtual Model::ListActionExecutionsOutcome ListActionExecutions(const Model::ListActionExecutionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListActionExecutions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListActionExecutionsOutcomeCallable ListActionExecutionsCallable(const Model::ListActionExecutionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListActionExecutions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListActionExecutionsAsync(const Model::ListActionExecutionsRequest& request, const ListActionExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a summary of all AWS CodePipeline action types associated with your
@@ -494,15 +384,6 @@ namespace CodePipeline
          */
         virtual Model::ListActionTypesOutcome ListActionTypes(const Model::ListActionTypesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListActionTypes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListActionTypesOutcomeCallable ListActionTypesCallable(const Model::ListActionTypesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListActionTypes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListActionTypesAsync(const Model::ListActionTypesRequest& request, const ListActionTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a summary of the most recent executions for a pipeline.</p><p><h3>See
@@ -512,15 +393,6 @@ namespace CodePipeline
          */
         virtual Model::ListPipelineExecutionsOutcome ListPipelineExecutions(const Model::ListPipelineExecutionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPipelineExecutions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPipelineExecutionsOutcomeCallable ListPipelineExecutionsCallable(const Model::ListPipelineExecutionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPipelineExecutions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPipelineExecutionsAsync(const Model::ListPipelineExecutionsRequest& request, const ListPipelineExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a summary of all of the pipelines associated with your
@@ -530,15 +402,6 @@ namespace CodePipeline
          */
         virtual Model::ListPipelinesOutcome ListPipelines(const Model::ListPipelinesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPipelines that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPipelinesOutcomeCallable ListPipelinesCallable(const Model::ListPipelinesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPipelines that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPipelinesAsync(const Model::ListPipelinesRequest& request, const ListPipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the set of key-value pairs (metadata) that are used to manage the
@@ -548,15 +411,6 @@ namespace CodePipeline
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a listing of all the webhooks in this AWS Region for this account. The
@@ -567,15 +421,6 @@ namespace CodePipeline
          */
         virtual Model::ListWebhooksOutcome ListWebhooks(const Model::ListWebhooksRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListWebhooks that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListWebhooksOutcomeCallable ListWebhooksCallable(const Model::ListWebhooksRequest& request) const;
-
-        /**
-         * An Async wrapper for ListWebhooks that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListWebhooksAsync(const Model::ListWebhooksRequest& request, const ListWebhooksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about any jobs for AWS CodePipeline to act on.
@@ -592,15 +437,6 @@ namespace CodePipeline
          */
         virtual Model::PollForJobsOutcome PollForJobs(const Model::PollForJobsRequest& request) const;
 
-        /**
-         * A Callable wrapper for PollForJobs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PollForJobsOutcomeCallable PollForJobsCallable(const Model::PollForJobsRequest& request) const;
-
-        /**
-         * An Async wrapper for PollForJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PollForJobsAsync(const Model::PollForJobsRequest& request, const PollForJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Determines whether there are any third party jobs for a job worker to act on.
@@ -613,15 +449,6 @@ namespace CodePipeline
          */
         virtual Model::PollForThirdPartyJobsOutcome PollForThirdPartyJobs(const Model::PollForThirdPartyJobsRequest& request) const;
 
-        /**
-         * A Callable wrapper for PollForThirdPartyJobs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PollForThirdPartyJobsOutcomeCallable PollForThirdPartyJobsCallable(const Model::PollForThirdPartyJobsRequest& request) const;
-
-        /**
-         * An Async wrapper for PollForThirdPartyJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PollForThirdPartyJobsAsync(const Model::PollForThirdPartyJobsRequest& request, const PollForThirdPartyJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides information to AWS CodePipeline about new revisions to a
@@ -631,15 +458,6 @@ namespace CodePipeline
          */
         virtual Model::PutActionRevisionOutcome PutActionRevision(const Model::PutActionRevisionRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutActionRevision that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutActionRevisionOutcomeCallable PutActionRevisionCallable(const Model::PutActionRevisionRequest& request) const;
-
-        /**
-         * An Async wrapper for PutActionRevision that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutActionRevisionAsync(const Model::PutActionRevisionRequest& request, const PutActionRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides the response to a manual approval request to AWS CodePipeline. Valid
@@ -649,15 +467,6 @@ namespace CodePipeline
          */
         virtual Model::PutApprovalResultOutcome PutApprovalResult(const Model::PutApprovalResultRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutApprovalResult that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutApprovalResultOutcomeCallable PutApprovalResultCallable(const Model::PutApprovalResultRequest& request) const;
-
-        /**
-         * An Async wrapper for PutApprovalResult that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutApprovalResultAsync(const Model::PutApprovalResultRequest& request, const PutApprovalResultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Represents the failure of a job as returned to the pipeline by a job worker.
@@ -667,15 +476,6 @@ namespace CodePipeline
          */
         virtual Model::PutJobFailureResultOutcome PutJobFailureResult(const Model::PutJobFailureResultRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutJobFailureResult that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutJobFailureResultOutcomeCallable PutJobFailureResultCallable(const Model::PutJobFailureResultRequest& request) const;
-
-        /**
-         * An Async wrapper for PutJobFailureResult that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutJobFailureResultAsync(const Model::PutJobFailureResultRequest& request, const PutJobFailureResultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Represents the success of a job as returned to the pipeline by a job worker.
@@ -685,15 +485,6 @@ namespace CodePipeline
          */
         virtual Model::PutJobSuccessResultOutcome PutJobSuccessResult(const Model::PutJobSuccessResultRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutJobSuccessResult that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutJobSuccessResultOutcomeCallable PutJobSuccessResultCallable(const Model::PutJobSuccessResultRequest& request) const;
-
-        /**
-         * An Async wrapper for PutJobSuccessResult that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutJobSuccessResultAsync(const Model::PutJobSuccessResultRequest& request, const PutJobSuccessResultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Represents the failure of a third party job as returned to the pipeline by a
@@ -703,15 +494,6 @@ namespace CodePipeline
          */
         virtual Model::PutThirdPartyJobFailureResultOutcome PutThirdPartyJobFailureResult(const Model::PutThirdPartyJobFailureResultRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutThirdPartyJobFailureResult that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutThirdPartyJobFailureResultOutcomeCallable PutThirdPartyJobFailureResultCallable(const Model::PutThirdPartyJobFailureResultRequest& request) const;
-
-        /**
-         * An Async wrapper for PutThirdPartyJobFailureResult that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutThirdPartyJobFailureResultAsync(const Model::PutThirdPartyJobFailureResultRequest& request, const PutThirdPartyJobFailureResultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Represents the success of a third party job as returned to the pipeline by a
@@ -721,15 +503,6 @@ namespace CodePipeline
          */
         virtual Model::PutThirdPartyJobSuccessResultOutcome PutThirdPartyJobSuccessResult(const Model::PutThirdPartyJobSuccessResultRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutThirdPartyJobSuccessResult that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutThirdPartyJobSuccessResultOutcomeCallable PutThirdPartyJobSuccessResultCallable(const Model::PutThirdPartyJobSuccessResultRequest& request) const;
-
-        /**
-         * An Async wrapper for PutThirdPartyJobSuccessResult that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutThirdPartyJobSuccessResultAsync(const Model::PutThirdPartyJobSuccessResultRequest& request, const PutThirdPartyJobSuccessResultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Defines a webhook and returns a unique webhook URL generated by CodePipeline.
@@ -745,15 +518,6 @@ namespace CodePipeline
          */
         virtual Model::PutWebhookOutcome PutWebhook(const Model::PutWebhookRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutWebhook that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutWebhookOutcomeCallable PutWebhookCallable(const Model::PutWebhookRequest& request) const;
-
-        /**
-         * An Async wrapper for PutWebhook that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutWebhookAsync(const Model::PutWebhookRequest& request, const PutWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Configures a connection between the webhook that was created and the external
@@ -763,15 +527,6 @@ namespace CodePipeline
          */
         virtual Model::RegisterWebhookWithThirdPartyOutcome RegisterWebhookWithThirdParty(const Model::RegisterWebhookWithThirdPartyRequest& request) const;
 
-        /**
-         * A Callable wrapper for RegisterWebhookWithThirdParty that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RegisterWebhookWithThirdPartyOutcomeCallable RegisterWebhookWithThirdPartyCallable(const Model::RegisterWebhookWithThirdPartyRequest& request) const;
-
-        /**
-         * An Async wrapper for RegisterWebhookWithThirdParty that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RegisterWebhookWithThirdPartyAsync(const Model::RegisterWebhookWithThirdPartyRequest& request, const RegisterWebhookWithThirdPartyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Resumes the pipeline execution by retrying the last failed actions in a
@@ -783,15 +538,6 @@ namespace CodePipeline
          */
         virtual Model::RetryStageExecutionOutcome RetryStageExecution(const Model::RetryStageExecutionRequest& request) const;
 
-        /**
-         * A Callable wrapper for RetryStageExecution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RetryStageExecutionOutcomeCallable RetryStageExecutionCallable(const Model::RetryStageExecutionRequest& request) const;
-
-        /**
-         * An Async wrapper for RetryStageExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RetryStageExecutionAsync(const Model::RetryStageExecutionRequest& request, const RetryStageExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts the specified pipeline. Specifically, it begins processing the latest
@@ -802,15 +548,6 @@ namespace CodePipeline
          */
         virtual Model::StartPipelineExecutionOutcome StartPipelineExecution(const Model::StartPipelineExecutionRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartPipelineExecution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartPipelineExecutionOutcomeCallable StartPipelineExecutionCallable(const Model::StartPipelineExecutionRequest& request) const;
-
-        /**
-         * An Async wrapper for StartPipelineExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartPipelineExecutionAsync(const Model::StartPipelineExecutionRequest& request, const StartPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops the specified pipeline execution. You choose to either stop the
@@ -824,15 +561,6 @@ namespace CodePipeline
          */
         virtual Model::StopPipelineExecutionOutcome StopPipelineExecution(const Model::StopPipelineExecutionRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopPipelineExecution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopPipelineExecutionOutcomeCallable StopPipelineExecutionCallable(const Model::StopPipelineExecutionRequest& request) const;
-
-        /**
-         * An Async wrapper for StopPipelineExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopPipelineExecutionAsync(const Model::StopPipelineExecutionRequest& request, const StopPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds to or modifies the tags of the given resource. Tags are metadata that
@@ -842,15 +570,6 @@ namespace CodePipeline
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes tags from an AWS resource.</p><p><h3>See Also:</h3>   <a
@@ -859,15 +578,6 @@ namespace CodePipeline
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an action type that was created with any supported integration model,
@@ -879,15 +589,6 @@ namespace CodePipeline
          */
         virtual Model::UpdateActionTypeOutcome UpdateActionType(const Model::UpdateActionTypeRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateActionType that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateActionTypeOutcomeCallable UpdateActionTypeCallable(const Model::UpdateActionTypeRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateActionType that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateActionTypeAsync(const Model::UpdateActionTypeRequest& request, const UpdateActionTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a specified pipeline with edits or changes to its structure. Use a
@@ -899,15 +600,6 @@ namespace CodePipeline
          */
         virtual Model::UpdatePipelineOutcome UpdatePipeline(const Model::UpdatePipelineRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdatePipeline that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdatePipelineOutcomeCallable UpdatePipelineCallable(const Model::UpdatePipelineRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdatePipeline that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdatePipelineAsync(const Model::UpdatePipelineRequest& request, const UpdatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

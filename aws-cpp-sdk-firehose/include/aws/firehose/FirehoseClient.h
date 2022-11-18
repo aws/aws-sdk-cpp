@@ -7,8 +7,10 @@
 #include <aws/firehose/Firehose_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/firehose/FirehoseServiceClientModel.h>
+#include <aws/firehose/FirehoseLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -74,6 +76,47 @@ namespace Firehose
 
         /* End of legacy constructors due deprecation */
         virtual ~FirehoseClient();
+
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
 
 
         /**
@@ -143,15 +186,6 @@ namespace Firehose
          */
         virtual Model::CreateDeliveryStreamOutcome CreateDeliveryStream(const Model::CreateDeliveryStreamRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDeliveryStream that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDeliveryStreamOutcomeCallable CreateDeliveryStreamCallable(const Model::CreateDeliveryStreamRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDeliveryStream that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDeliveryStreamAsync(const Model::CreateDeliveryStreamRequest& request, const CreateDeliveryStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a delivery stream and its data.</p> <p>To check the state of a
@@ -171,15 +205,6 @@ namespace Firehose
          */
         virtual Model::DeleteDeliveryStreamOutcome DeleteDeliveryStream(const Model::DeleteDeliveryStreamRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDeliveryStream that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDeliveryStreamOutcomeCallable DeleteDeliveryStreamCallable(const Model::DeleteDeliveryStreamRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDeliveryStream that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDeliveryStreamAsync(const Model::DeleteDeliveryStreamRequest& request, const DeleteDeliveryStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified delivery stream and its status. For example, after
@@ -198,15 +223,6 @@ namespace Firehose
          */
         virtual Model::DescribeDeliveryStreamOutcome DescribeDeliveryStream(const Model::DescribeDeliveryStreamRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDeliveryStream that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDeliveryStreamOutcomeCallable DescribeDeliveryStreamCallable(const Model::DescribeDeliveryStreamRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDeliveryStream that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDeliveryStreamAsync(const Model::DescribeDeliveryStreamRequest& request, const DescribeDeliveryStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists your delivery streams in alphabetical order of their names.</p> <p>The
@@ -224,15 +240,6 @@ namespace Firehose
          */
         virtual Model::ListDeliveryStreamsOutcome ListDeliveryStreams(const Model::ListDeliveryStreamsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDeliveryStreams that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDeliveryStreamsOutcomeCallable ListDeliveryStreamsCallable(const Model::ListDeliveryStreamsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDeliveryStreams that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDeliveryStreamsAsync(const Model::ListDeliveryStreamsRequest& request, const ListDeliveryStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the tags for the specified delivery stream. This operation has a limit
@@ -242,15 +249,6 @@ namespace Firehose
          */
         virtual Model::ListTagsForDeliveryStreamOutcome ListTagsForDeliveryStream(const Model::ListTagsForDeliveryStreamRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForDeliveryStream that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForDeliveryStreamOutcomeCallable ListTagsForDeliveryStreamCallable(const Model::ListTagsForDeliveryStreamRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForDeliveryStream that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForDeliveryStreamAsync(const Model::ListTagsForDeliveryStreamRequest& request, const ListTagsForDeliveryStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Writes a single data record into an Amazon Kinesis Data Firehose delivery
@@ -289,15 +287,6 @@ namespace Firehose
          */
         virtual Model::PutRecordOutcome PutRecord(const Model::PutRecordRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutRecord that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutRecordOutcomeCallable PutRecordCallable(const Model::PutRecordRequest& request) const;
-
-        /**
-         * An Async wrapper for PutRecord that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutRecordAsync(const Model::PutRecordRequest& request, const PutRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Writes multiple data records into a delivery stream in a single call, which
@@ -357,15 +346,6 @@ namespace Firehose
          */
         virtual Model::PutRecordBatchOutcome PutRecordBatch(const Model::PutRecordBatchRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutRecordBatch that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutRecordBatchOutcomeCallable PutRecordBatchCallable(const Model::PutRecordBatchRequest& request) const;
-
-        /**
-         * An Async wrapper for PutRecordBatch that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutRecordBatchAsync(const Model::PutRecordBatchRequest& request, const PutRecordBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables server-side encryption (SSE) for the delivery stream. </p> <p>This
@@ -410,15 +390,6 @@ namespace Firehose
          */
         virtual Model::StartDeliveryStreamEncryptionOutcome StartDeliveryStreamEncryption(const Model::StartDeliveryStreamEncryptionRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartDeliveryStreamEncryption that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartDeliveryStreamEncryptionOutcomeCallable StartDeliveryStreamEncryptionCallable(const Model::StartDeliveryStreamEncryptionRequest& request) const;
-
-        /**
-         * An Async wrapper for StartDeliveryStreamEncryption that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartDeliveryStreamEncryptionAsync(const Model::StartDeliveryStreamEncryptionRequest& request, const StartDeliveryStreamEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disables server-side encryption (SSE) for the delivery stream. </p> <p>This
@@ -447,15 +418,6 @@ namespace Firehose
          */
         virtual Model::StopDeliveryStreamEncryptionOutcome StopDeliveryStreamEncryption(const Model::StopDeliveryStreamEncryptionRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopDeliveryStreamEncryption that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopDeliveryStreamEncryptionOutcomeCallable StopDeliveryStreamEncryptionCallable(const Model::StopDeliveryStreamEncryptionRequest& request) const;
-
-        /**
-         * An Async wrapper for StopDeliveryStreamEncryption that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopDeliveryStreamEncryptionAsync(const Model::StopDeliveryStreamEncryptionRequest& request, const StopDeliveryStreamEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds or updates tags for the specified delivery stream. A tag is a key-value
@@ -474,15 +436,6 @@ namespace Firehose
          */
         virtual Model::TagDeliveryStreamOutcome TagDeliveryStream(const Model::TagDeliveryStreamRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagDeliveryStream that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagDeliveryStreamOutcomeCallable TagDeliveryStreamCallable(const Model::TagDeliveryStreamRequest& request) const;
-
-        /**
-         * An Async wrapper for TagDeliveryStream that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagDeliveryStreamAsync(const Model::TagDeliveryStreamRequest& request, const TagDeliveryStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes tags from the specified delivery stream. Removed tags are deleted,
@@ -495,15 +448,6 @@ namespace Firehose
          */
         virtual Model::UntagDeliveryStreamOutcome UntagDeliveryStream(const Model::UntagDeliveryStreamRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagDeliveryStream that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagDeliveryStreamOutcomeCallable UntagDeliveryStreamCallable(const Model::UntagDeliveryStreamRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagDeliveryStream that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagDeliveryStreamAsync(const Model::UntagDeliveryStreamRequest& request, const UntagDeliveryStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the specified destination of the specified delivery stream.</p>
@@ -537,15 +481,6 @@ namespace Firehose
          */
         virtual Model::UpdateDestinationOutcome UpdateDestination(const Model::UpdateDestinationRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateDestination that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateDestinationOutcomeCallable UpdateDestinationCallable(const Model::UpdateDestinationRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateDestination that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateDestinationAsync(const Model::UpdateDestinationRequest& request, const UpdateDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

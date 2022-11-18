@@ -7,8 +7,10 @@
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/network-firewall/NetworkFirewallServiceClientModel.h>
+#include <aws/network-firewall/NetworkFirewallLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -123,6 +125,47 @@ namespace NetworkFirewall
         virtual ~NetworkFirewallClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Associates a <a>FirewallPolicy</a> to a <a>Firewall</a>. </p> <p>A firewall
          * policy defines how to monitor and manage your VPC network traffic, using a
@@ -134,15 +177,6 @@ namespace NetworkFirewall
          */
         virtual Model::AssociateFirewallPolicyOutcome AssociateFirewallPolicy(const Model::AssociateFirewallPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateFirewallPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateFirewallPolicyOutcomeCallable AssociateFirewallPolicyCallable(const Model::AssociateFirewallPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateFirewallPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateFirewallPolicyAsync(const Model::AssociateFirewallPolicyRequest& request, const AssociateFirewallPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates the specified subnets in the Amazon VPC to the firewall. You can
@@ -157,15 +191,6 @@ namespace NetworkFirewall
          */
         virtual Model::AssociateSubnetsOutcome AssociateSubnets(const Model::AssociateSubnetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateSubnets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateSubnetsOutcomeCallable AssociateSubnetsCallable(const Model::AssociateSubnetsRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateSubnets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateSubnetsAsync(const Model::AssociateSubnetsRequest& request, const AssociateSubnetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an Network Firewall <a>Firewall</a> and accompanying
@@ -187,15 +212,6 @@ namespace NetworkFirewall
          */
         virtual Model::CreateFirewallOutcome CreateFirewall(const Model::CreateFirewallRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateFirewall that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateFirewallOutcomeCallable CreateFirewallCallable(const Model::CreateFirewallRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateFirewall that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateFirewallAsync(const Model::CreateFirewallRequest& request, const CreateFirewallResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates the firewall policy for the firewall according to the specifications.
@@ -208,15 +224,6 @@ namespace NetworkFirewall
          */
         virtual Model::CreateFirewallPolicyOutcome CreateFirewallPolicy(const Model::CreateFirewallPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateFirewallPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateFirewallPolicyOutcomeCallable CreateFirewallPolicyCallable(const Model::CreateFirewallPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateFirewallPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateFirewallPolicyAsync(const Model::CreateFirewallPolicyRequest& request, const CreateFirewallPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates the specified stateless or stateful rule group, which includes the
@@ -228,15 +235,6 @@ namespace NetworkFirewall
          */
         virtual Model::CreateRuleGroupOutcome CreateRuleGroup(const Model::CreateRuleGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateRuleGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateRuleGroupOutcomeCallable CreateRuleGroupCallable(const Model::CreateRuleGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateRuleGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateRuleGroupAsync(const Model::CreateRuleGroupRequest& request, const CreateRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified <a>Firewall</a> and its <a>FirewallStatus</a>. This
@@ -256,15 +254,6 @@ namespace NetworkFirewall
          */
         virtual Model::DeleteFirewallOutcome DeleteFirewall(const Model::DeleteFirewallRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteFirewall that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteFirewallOutcomeCallable DeleteFirewallCallable(const Model::DeleteFirewallRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteFirewall that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteFirewallAsync(const Model::DeleteFirewallRequest& request, const DeleteFirewallResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified <a>FirewallPolicy</a>. </p><p><h3>See Also:</h3>   <a
@@ -273,15 +262,6 @@ namespace NetworkFirewall
          */
         virtual Model::DeleteFirewallPolicyOutcome DeleteFirewallPolicy(const Model::DeleteFirewallPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteFirewallPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteFirewallPolicyOutcomeCallable DeleteFirewallPolicyCallable(const Model::DeleteFirewallPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteFirewallPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteFirewallPolicyAsync(const Model::DeleteFirewallPolicyRequest& request, const DeleteFirewallPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a resource policy that you created in a <a>PutResourcePolicy</a>
@@ -291,15 +271,6 @@ namespace NetworkFirewall
          */
         virtual Model::DeleteResourcePolicyOutcome DeleteResourcePolicy(const Model::DeleteResourcePolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteResourcePolicyOutcomeCallable DeleteResourcePolicyCallable(const Model::DeleteResourcePolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteResourcePolicyAsync(const Model::DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified <a>RuleGroup</a>. </p><p><h3>See Also:</h3>   <a
@@ -308,15 +279,6 @@ namespace NetworkFirewall
          */
         virtual Model::DeleteRuleGroupOutcome DeleteRuleGroup(const Model::DeleteRuleGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteRuleGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteRuleGroupOutcomeCallable DeleteRuleGroupCallable(const Model::DeleteRuleGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteRuleGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteRuleGroupAsync(const Model::DeleteRuleGroupRequest& request, const DeleteRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the data objects for the specified firewall. </p><p><h3>See
@@ -326,15 +288,6 @@ namespace NetworkFirewall
          */
         virtual Model::DescribeFirewallOutcome DescribeFirewall(const Model::DescribeFirewallRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeFirewall that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeFirewallOutcomeCallable DescribeFirewallCallable(const Model::DescribeFirewallRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeFirewall that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeFirewallAsync(const Model::DescribeFirewallRequest& request, const DescribeFirewallResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the data objects for the specified firewall policy. </p><p><h3>See
@@ -344,15 +297,6 @@ namespace NetworkFirewall
          */
         virtual Model::DescribeFirewallPolicyOutcome DescribeFirewallPolicy(const Model::DescribeFirewallPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeFirewallPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeFirewallPolicyOutcomeCallable DescribeFirewallPolicyCallable(const Model::DescribeFirewallPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeFirewallPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeFirewallPolicyAsync(const Model::DescribeFirewallPolicyRequest& request, const DescribeFirewallPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the logging configuration for the specified firewall. </p><p><h3>See
@@ -362,15 +306,6 @@ namespace NetworkFirewall
          */
         virtual Model::DescribeLoggingConfigurationOutcome DescribeLoggingConfiguration(const Model::DescribeLoggingConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeLoggingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeLoggingConfigurationOutcomeCallable DescribeLoggingConfigurationCallable(const Model::DescribeLoggingConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeLoggingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeLoggingConfigurationAsync(const Model::DescribeLoggingConfigurationRequest& request, const DescribeLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a resource policy that you created in a <a>PutResourcePolicy</a>
@@ -380,15 +315,6 @@ namespace NetworkFirewall
          */
         virtual Model::DescribeResourcePolicyOutcome DescribeResourcePolicy(const Model::DescribeResourcePolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeResourcePolicyOutcomeCallable DescribeResourcePolicyCallable(const Model::DescribeResourcePolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeResourcePolicyAsync(const Model::DescribeResourcePolicyRequest& request, const DescribeResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the data objects for the specified rule group. </p><p><h3>See
@@ -398,15 +324,6 @@ namespace NetworkFirewall
          */
         virtual Model::DescribeRuleGroupOutcome DescribeRuleGroup(const Model::DescribeRuleGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeRuleGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeRuleGroupOutcomeCallable DescribeRuleGroupCallable(const Model::DescribeRuleGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeRuleGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeRuleGroupAsync(const Model::DescribeRuleGroupRequest& request, const DescribeRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>High-level information about a rule group, returned by operations like create
@@ -418,15 +335,6 @@ namespace NetworkFirewall
          */
         virtual Model::DescribeRuleGroupMetadataOutcome DescribeRuleGroupMetadata(const Model::DescribeRuleGroupMetadataRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeRuleGroupMetadata that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeRuleGroupMetadataOutcomeCallable DescribeRuleGroupMetadataCallable(const Model::DescribeRuleGroupMetadataRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeRuleGroupMetadata that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeRuleGroupMetadataAsync(const Model::DescribeRuleGroupMetadataRequest& request, const DescribeRuleGroupMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified subnet associations from the firewall. This removes the
@@ -437,15 +345,6 @@ namespace NetworkFirewall
          */
         virtual Model::DisassociateSubnetsOutcome DisassociateSubnets(const Model::DisassociateSubnetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateSubnets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateSubnetsOutcomeCallable DisassociateSubnetsCallable(const Model::DisassociateSubnetsRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateSubnets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateSubnetsAsync(const Model::DisassociateSubnetsRequest& request, const DisassociateSubnetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the metadata for the firewall policies that you have defined.
@@ -456,15 +355,6 @@ namespace NetworkFirewall
          */
         virtual Model::ListFirewallPoliciesOutcome ListFirewallPolicies(const Model::ListFirewallPoliciesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListFirewallPolicies that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListFirewallPoliciesOutcomeCallable ListFirewallPoliciesCallable(const Model::ListFirewallPoliciesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListFirewallPolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListFirewallPoliciesAsync(const Model::ListFirewallPoliciesRequest& request, const ListFirewallPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the metadata for the firewalls that you have defined. If you
@@ -477,15 +367,6 @@ namespace NetworkFirewall
          */
         virtual Model::ListFirewallsOutcome ListFirewalls(const Model::ListFirewallsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListFirewalls that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListFirewallsOutcomeCallable ListFirewallsCallable(const Model::ListFirewallsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListFirewalls that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListFirewallsAsync(const Model::ListFirewallsRequest& request, const ListFirewallsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the metadata for the rule groups that you have defined. Depending
@@ -496,15 +377,6 @@ namespace NetworkFirewall
          */
         virtual Model::ListRuleGroupsOutcome ListRuleGroups(const Model::ListRuleGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListRuleGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListRuleGroupsOutcomeCallable ListRuleGroupsCallable(const Model::ListRuleGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListRuleGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListRuleGroupsAsync(const Model::ListRuleGroupsRequest& request, const ListRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the tags associated with the specified resource. Tags are key:value
@@ -519,15 +391,6 @@ namespace NetworkFirewall
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates or updates an IAM policy for your rule group or firewall policy. Use
@@ -553,15 +416,6 @@ namespace NetworkFirewall
          */
         virtual Model::PutResourcePolicyOutcome PutResourcePolicy(const Model::PutResourcePolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutResourcePolicyOutcomeCallable PutResourcePolicyCallable(const Model::PutResourcePolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for PutResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutResourcePolicyAsync(const Model::PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds the specified tags to the specified resource. Tags are key:value pairs
@@ -576,15 +430,6 @@ namespace NetworkFirewall
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the tags with the specified keys from the specified resource. Tags
@@ -600,15 +445,6 @@ namespace NetworkFirewall
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the flag, <code>DeleteProtection</code>, which indicates whether it
@@ -620,15 +456,6 @@ namespace NetworkFirewall
          */
         virtual Model::UpdateFirewallDeleteProtectionOutcome UpdateFirewallDeleteProtection(const Model::UpdateFirewallDeleteProtectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateFirewallDeleteProtection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateFirewallDeleteProtectionOutcomeCallable UpdateFirewallDeleteProtectionCallable(const Model::UpdateFirewallDeleteProtectionRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateFirewallDeleteProtection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateFirewallDeleteProtectionAsync(const Model::UpdateFirewallDeleteProtectionRequest& request, const UpdateFirewallDeleteProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the description for the specified firewall. Use the description to
@@ -639,15 +466,6 @@ namespace NetworkFirewall
          */
         virtual Model::UpdateFirewallDescriptionOutcome UpdateFirewallDescription(const Model::UpdateFirewallDescriptionRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateFirewallDescription that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateFirewallDescriptionOutcomeCallable UpdateFirewallDescriptionCallable(const Model::UpdateFirewallDescriptionRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateFirewallDescription that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateFirewallDescriptionAsync(const Model::UpdateFirewallDescriptionRequest& request, const UpdateFirewallDescriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>A complex type that contains settings for encryption of your firewall
@@ -657,15 +475,6 @@ namespace NetworkFirewall
          */
         virtual Model::UpdateFirewallEncryptionConfigurationOutcome UpdateFirewallEncryptionConfiguration(const Model::UpdateFirewallEncryptionConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateFirewallEncryptionConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateFirewallEncryptionConfigurationOutcomeCallable UpdateFirewallEncryptionConfigurationCallable(const Model::UpdateFirewallEncryptionConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateFirewallEncryptionConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateFirewallEncryptionConfigurationAsync(const Model::UpdateFirewallEncryptionConfigurationRequest& request, const UpdateFirewallEncryptionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the properties of the specified firewall policy.</p><p><h3>See
@@ -675,15 +484,6 @@ namespace NetworkFirewall
          */
         virtual Model::UpdateFirewallPolicyOutcome UpdateFirewallPolicy(const Model::UpdateFirewallPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateFirewallPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateFirewallPolicyOutcomeCallable UpdateFirewallPolicyCallable(const Model::UpdateFirewallPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateFirewallPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateFirewallPolicyAsync(const Model::UpdateFirewallPolicyRequest& request, const UpdateFirewallPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the flag, <code>ChangeProtection</code>, which indicates whether it
@@ -695,15 +495,6 @@ namespace NetworkFirewall
          */
         virtual Model::UpdateFirewallPolicyChangeProtectionOutcome UpdateFirewallPolicyChangeProtection(const Model::UpdateFirewallPolicyChangeProtectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateFirewallPolicyChangeProtection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateFirewallPolicyChangeProtectionOutcomeCallable UpdateFirewallPolicyChangeProtectionCallable(const Model::UpdateFirewallPolicyChangeProtectionRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateFirewallPolicyChangeProtection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateFirewallPolicyChangeProtectionAsync(const Model::UpdateFirewallPolicyChangeProtectionRequest& request, const UpdateFirewallPolicyChangeProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets the logging configuration for the specified firewall. </p> <p>To change
@@ -729,15 +520,6 @@ namespace NetworkFirewall
          */
         virtual Model::UpdateLoggingConfigurationOutcome UpdateLoggingConfiguration(const Model::UpdateLoggingConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateLoggingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateLoggingConfigurationOutcomeCallable UpdateLoggingConfigurationCallable(const Model::UpdateLoggingConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateLoggingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateLoggingConfigurationAsync(const Model::UpdateLoggingConfigurationRequest& request, const UpdateLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the rule settings for the specified rule group. You use a rule group
@@ -751,15 +533,6 @@ namespace NetworkFirewall
          */
         virtual Model::UpdateRuleGroupOutcome UpdateRuleGroup(const Model::UpdateRuleGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateRuleGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateRuleGroupOutcomeCallable UpdateRuleGroupCallable(const Model::UpdateRuleGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateRuleGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateRuleGroupAsync(const Model::UpdateRuleGroupRequest& request, const UpdateRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p/><p><h3>See Also:</h3>   <a
@@ -768,15 +541,6 @@ namespace NetworkFirewall
          */
         virtual Model::UpdateSubnetChangeProtectionOutcome UpdateSubnetChangeProtection(const Model::UpdateSubnetChangeProtectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateSubnetChangeProtection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateSubnetChangeProtectionOutcomeCallable UpdateSubnetChangeProtectionCallable(const Model::UpdateSubnetChangeProtectionRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateSubnetChangeProtection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateSubnetChangeProtectionAsync(const Model::UpdateSubnetChangeProtectionRequest& request, const UpdateSubnetChangeProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

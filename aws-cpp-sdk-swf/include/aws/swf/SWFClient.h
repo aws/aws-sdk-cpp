@@ -7,8 +7,10 @@
 #include <aws/swf/SWF_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/swf/SWFServiceClientModel.h>
+#include <aws/swf/SWFLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -85,6 +87,47 @@ namespace SWF
         virtual ~SWFClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Returns the number of closed workflow executions within the given domain that
          * meet the specified filtering criteria.</p>  <p>This operation is
@@ -114,15 +157,6 @@ namespace SWF
          */
         virtual Model::CountClosedWorkflowExecutionsOutcome CountClosedWorkflowExecutions(const Model::CountClosedWorkflowExecutionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for CountClosedWorkflowExecutions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CountClosedWorkflowExecutionsOutcomeCallable CountClosedWorkflowExecutionsCallable(const Model::CountClosedWorkflowExecutionsRequest& request) const;
-
-        /**
-         * An Async wrapper for CountClosedWorkflowExecutions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CountClosedWorkflowExecutionsAsync(const Model::CountClosedWorkflowExecutionsRequest& request, const CountClosedWorkflowExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the number of open workflow executions within the given domain that
@@ -153,15 +187,6 @@ namespace SWF
          */
         virtual Model::CountOpenWorkflowExecutionsOutcome CountOpenWorkflowExecutions(const Model::CountOpenWorkflowExecutionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for CountOpenWorkflowExecutions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CountOpenWorkflowExecutionsOutcomeCallable CountOpenWorkflowExecutionsCallable(const Model::CountOpenWorkflowExecutionsRequest& request) const;
-
-        /**
-         * An Async wrapper for CountOpenWorkflowExecutions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CountOpenWorkflowExecutionsAsync(const Model::CountOpenWorkflowExecutionsRequest& request, const CountOpenWorkflowExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the estimated number of activity tasks in the specified task list.
@@ -188,15 +213,6 @@ namespace SWF
          */
         virtual Model::CountPendingActivityTasksOutcome CountPendingActivityTasks(const Model::CountPendingActivityTasksRequest& request) const;
 
-        /**
-         * A Callable wrapper for CountPendingActivityTasks that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CountPendingActivityTasksOutcomeCallable CountPendingActivityTasksCallable(const Model::CountPendingActivityTasksRequest& request) const;
-
-        /**
-         * An Async wrapper for CountPendingActivityTasks that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CountPendingActivityTasksAsync(const Model::CountPendingActivityTasksRequest& request, const CountPendingActivityTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the estimated number of decision tasks in the specified task list.
@@ -223,15 +239,6 @@ namespace SWF
          */
         virtual Model::CountPendingDecisionTasksOutcome CountPendingDecisionTasks(const Model::CountPendingDecisionTasksRequest& request) const;
 
-        /**
-         * A Callable wrapper for CountPendingDecisionTasks that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CountPendingDecisionTasksOutcomeCallable CountPendingDecisionTasksCallable(const Model::CountPendingDecisionTasksRequest& request) const;
-
-        /**
-         * An Async wrapper for CountPendingDecisionTasks that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CountPendingDecisionTasksAsync(const Model::CountPendingDecisionTasksRequest& request, const CountPendingDecisionTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deprecates the specified <i>activity type</i>. After an activity type has
@@ -262,15 +269,6 @@ namespace SWF
          */
         virtual Model::DeprecateActivityTypeOutcome DeprecateActivityType(const Model::DeprecateActivityTypeRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeprecateActivityType that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeprecateActivityTypeOutcomeCallable DeprecateActivityTypeCallable(const Model::DeprecateActivityTypeRequest& request) const;
-
-        /**
-         * An Async wrapper for DeprecateActivityType that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeprecateActivityTypeAsync(const Model::DeprecateActivityTypeRequest& request, const DeprecateActivityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deprecates the specified domain. After a domain has been deprecated it cannot
@@ -299,15 +297,6 @@ namespace SWF
          */
         virtual Model::DeprecateDomainOutcome DeprecateDomain(const Model::DeprecateDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeprecateDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeprecateDomainOutcomeCallable DeprecateDomainCallable(const Model::DeprecateDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for DeprecateDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeprecateDomainAsync(const Model::DeprecateDomainRequest& request, const DeprecateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deprecates the specified <i>workflow type</i>. After a workflow type has been
@@ -339,15 +328,6 @@ namespace SWF
          */
         virtual Model::DeprecateWorkflowTypeOutcome DeprecateWorkflowType(const Model::DeprecateWorkflowTypeRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeprecateWorkflowType that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeprecateWorkflowTypeOutcomeCallable DeprecateWorkflowTypeCallable(const Model::DeprecateWorkflowTypeRequest& request) const;
-
-        /**
-         * An Async wrapper for DeprecateWorkflowType that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeprecateWorkflowTypeAsync(const Model::DeprecateWorkflowTypeRequest& request, const DeprecateWorkflowTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the specified activity type. This includes
@@ -376,15 +356,6 @@ namespace SWF
          */
         virtual Model::DescribeActivityTypeOutcome DescribeActivityType(const Model::DescribeActivityTypeRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeActivityType that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeActivityTypeOutcomeCallable DescribeActivityTypeCallable(const Model::DescribeActivityTypeRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeActivityType that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeActivityTypeAsync(const Model::DescribeActivityTypeRequest& request, const DescribeActivityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the specified domain, including description and
@@ -407,15 +378,6 @@ namespace SWF
          */
         virtual Model::DescribeDomainOutcome DescribeDomain(const Model::DescribeDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDomainOutcomeCallable DescribeDomainCallable(const Model::DescribeDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDomainAsync(const Model::DescribeDomainRequest& request, const DescribeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the specified workflow execution including its type
@@ -440,15 +402,6 @@ namespace SWF
          */
         virtual Model::DescribeWorkflowExecutionOutcome DescribeWorkflowExecution(const Model::DescribeWorkflowExecutionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeWorkflowExecution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeWorkflowExecutionOutcomeCallable DescribeWorkflowExecutionCallable(const Model::DescribeWorkflowExecutionRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeWorkflowExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeWorkflowExecutionAsync(const Model::DescribeWorkflowExecutionRequest& request, const DescribeWorkflowExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the specified <i>workflow type</i>. This includes
@@ -477,15 +430,6 @@ namespace SWF
          */
         virtual Model::DescribeWorkflowTypeOutcome DescribeWorkflowType(const Model::DescribeWorkflowTypeRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeWorkflowType that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeWorkflowTypeOutcomeCallable DescribeWorkflowTypeCallable(const Model::DescribeWorkflowTypeRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeWorkflowType that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeWorkflowTypeAsync(const Model::DescribeWorkflowTypeRequest& request, const DescribeWorkflowTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the history of the specified workflow execution. The results may be
@@ -512,15 +456,6 @@ namespace SWF
          */
         virtual Model::GetWorkflowExecutionHistoryOutcome GetWorkflowExecutionHistory(const Model::GetWorkflowExecutionHistoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetWorkflowExecutionHistory that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetWorkflowExecutionHistoryOutcomeCallable GetWorkflowExecutionHistoryCallable(const Model::GetWorkflowExecutionHistoryRequest& request) const;
-
-        /**
-         * An Async wrapper for GetWorkflowExecutionHistory that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetWorkflowExecutionHistoryAsync(const Model::GetWorkflowExecutionHistoryRequest& request, const GetWorkflowExecutionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about all activities registered in the specified domain
@@ -547,15 +482,6 @@ namespace SWF
          */
         virtual Model::ListActivityTypesOutcome ListActivityTypes(const Model::ListActivityTypesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListActivityTypes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListActivityTypesOutcomeCallable ListActivityTypesCallable(const Model::ListActivityTypesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListActivityTypes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListActivityTypesAsync(const Model::ListActivityTypesRequest& request, const ListActivityTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of closed workflow executions in the specified domain that
@@ -588,15 +514,6 @@ namespace SWF
          */
         virtual Model::ListClosedWorkflowExecutionsOutcome ListClosedWorkflowExecutions(const Model::ListClosedWorkflowExecutionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListClosedWorkflowExecutions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListClosedWorkflowExecutionsOutcomeCallable ListClosedWorkflowExecutionsCallable(const Model::ListClosedWorkflowExecutionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListClosedWorkflowExecutions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListClosedWorkflowExecutionsAsync(const Model::ListClosedWorkflowExecutionsRequest& request, const ListClosedWorkflowExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the list of domains registered in the account. The results may be
@@ -624,15 +541,6 @@ namespace SWF
          */
         virtual Model::ListDomainsOutcome ListDomains(const Model::ListDomainsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDomains that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDomainsOutcomeCallable ListDomainsCallable(const Model::ListDomainsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDomains that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDomainsAsync(const Model::ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of open workflow executions in the specified domain that meet
@@ -665,15 +573,6 @@ namespace SWF
          */
         virtual Model::ListOpenWorkflowExecutionsOutcome ListOpenWorkflowExecutions(const Model::ListOpenWorkflowExecutionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListOpenWorkflowExecutions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListOpenWorkflowExecutionsOutcomeCallable ListOpenWorkflowExecutionsCallable(const Model::ListOpenWorkflowExecutionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListOpenWorkflowExecutions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListOpenWorkflowExecutionsAsync(const Model::ListOpenWorkflowExecutionsRequest& request, const ListOpenWorkflowExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List tags for a given domain.</p><p><h3>See Also:</h3>   <a
@@ -682,15 +581,6 @@ namespace SWF
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about workflow types in the specified domain. The results
@@ -714,15 +604,6 @@ namespace SWF
          */
         virtual Model::ListWorkflowTypesOutcome ListWorkflowTypes(const Model::ListWorkflowTypesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListWorkflowTypes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListWorkflowTypesOutcomeCallable ListWorkflowTypesCallable(const Model::ListWorkflowTypesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListWorkflowTypes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListWorkflowTypesAsync(const Model::ListWorkflowTypesRequest& request, const ListWorkflowTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Used by workers to get an <a>ActivityTask</a> from the specified activity
@@ -756,15 +637,6 @@ namespace SWF
          */
         virtual Model::PollForActivityTaskOutcome PollForActivityTask(const Model::PollForActivityTaskRequest& request) const;
 
-        /**
-         * A Callable wrapper for PollForActivityTask that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PollForActivityTaskOutcomeCallable PollForActivityTaskCallable(const Model::PollForActivityTaskRequest& request) const;
-
-        /**
-         * An Async wrapper for PollForActivityTask that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PollForActivityTaskAsync(const Model::PollForActivityTaskRequest& request, const PollForActivityTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Used by deciders to get a <a>DecisionTask</a> from the specified decision
@@ -806,15 +678,6 @@ namespace SWF
          */
         virtual Model::PollForDecisionTaskOutcome PollForDecisionTask(const Model::PollForDecisionTaskRequest& request) const;
 
-        /**
-         * A Callable wrapper for PollForDecisionTask that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PollForDecisionTaskOutcomeCallable PollForDecisionTaskCallable(const Model::PollForDecisionTaskRequest& request) const;
-
-        /**
-         * An Async wrapper for PollForDecisionTask that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PollForDecisionTaskAsync(const Model::PollForDecisionTaskRequest& request, const PollForDecisionTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Used by activity workers to report to the service that the
@@ -860,15 +723,6 @@ namespace SWF
          */
         virtual Model::RecordActivityTaskHeartbeatOutcome RecordActivityTaskHeartbeat(const Model::RecordActivityTaskHeartbeatRequest& request) const;
 
-        /**
-         * A Callable wrapper for RecordActivityTaskHeartbeat that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RecordActivityTaskHeartbeatOutcomeCallable RecordActivityTaskHeartbeatCallable(const Model::RecordActivityTaskHeartbeatRequest& request) const;
-
-        /**
-         * An Async wrapper for RecordActivityTaskHeartbeat that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RecordActivityTaskHeartbeatAsync(const Model::RecordActivityTaskHeartbeatRequest& request, const RecordActivityTaskHeartbeatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Registers a new <i>activity type</i> along with its configuration settings in
@@ -900,15 +754,6 @@ namespace SWF
          */
         virtual Model::RegisterActivityTypeOutcome RegisterActivityType(const Model::RegisterActivityTypeRequest& request) const;
 
-        /**
-         * A Callable wrapper for RegisterActivityType that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RegisterActivityTypeOutcomeCallable RegisterActivityTypeCallable(const Model::RegisterActivityTypeRequest& request) const;
-
-        /**
-         * An Async wrapper for RegisterActivityType that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RegisterActivityTypeAsync(const Model::RegisterActivityTypeRequest& request, const RegisterActivityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Registers a new domain.</p> <p> <b>Access Control</b> </p> <p>You can use IAM
@@ -931,15 +776,6 @@ namespace SWF
          */
         virtual Model::RegisterDomainOutcome RegisterDomain(const Model::RegisterDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for RegisterDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RegisterDomainOutcomeCallable RegisterDomainCallable(const Model::RegisterDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for RegisterDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RegisterDomainAsync(const Model::RegisterDomainRequest& request, const RegisterDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Registers a new <i>workflow type</i> and its configuration settings in the
@@ -972,15 +808,6 @@ namespace SWF
          */
         virtual Model::RegisterWorkflowTypeOutcome RegisterWorkflowType(const Model::RegisterWorkflowTypeRequest& request) const;
 
-        /**
-         * A Callable wrapper for RegisterWorkflowType that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RegisterWorkflowTypeOutcomeCallable RegisterWorkflowTypeCallable(const Model::RegisterWorkflowTypeRequest& request) const;
-
-        /**
-         * An Async wrapper for RegisterWorkflowType that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RegisterWorkflowTypeAsync(const Model::RegisterWorkflowTypeRequest& request, const RegisterWorkflowTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Records a <code>WorkflowExecutionCancelRequested</code> event in the
@@ -1012,15 +839,6 @@ namespace SWF
          */
         virtual Model::RequestCancelWorkflowExecutionOutcome RequestCancelWorkflowExecution(const Model::RequestCancelWorkflowExecutionRequest& request) const;
 
-        /**
-         * A Callable wrapper for RequestCancelWorkflowExecution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RequestCancelWorkflowExecutionOutcomeCallable RequestCancelWorkflowExecutionCallable(const Model::RequestCancelWorkflowExecutionRequest& request) const;
-
-        /**
-         * An Async wrapper for RequestCancelWorkflowExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RequestCancelWorkflowExecutionAsync(const Model::RequestCancelWorkflowExecutionRequest& request, const RequestCancelWorkflowExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Used by workers to tell the service that the <a>ActivityTask</a> identified
@@ -1056,15 +874,6 @@ namespace SWF
          */
         virtual Model::RespondActivityTaskCanceledOutcome RespondActivityTaskCanceled(const Model::RespondActivityTaskCanceledRequest& request) const;
 
-        /**
-         * A Callable wrapper for RespondActivityTaskCanceled that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RespondActivityTaskCanceledOutcomeCallable RespondActivityTaskCanceledCallable(const Model::RespondActivityTaskCanceledRequest& request) const;
-
-        /**
-         * An Async wrapper for RespondActivityTaskCanceled that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RespondActivityTaskCanceledAsync(const Model::RespondActivityTaskCanceledRequest& request, const RespondActivityTaskCanceledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Used by workers to tell the service that the <a>ActivityTask</a> identified
@@ -1101,15 +910,6 @@ namespace SWF
          */
         virtual Model::RespondActivityTaskCompletedOutcome RespondActivityTaskCompleted(const Model::RespondActivityTaskCompletedRequest& request) const;
 
-        /**
-         * A Callable wrapper for RespondActivityTaskCompleted that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RespondActivityTaskCompletedOutcomeCallable RespondActivityTaskCompletedCallable(const Model::RespondActivityTaskCompletedRequest& request) const;
-
-        /**
-         * An Async wrapper for RespondActivityTaskCompleted that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RespondActivityTaskCompletedAsync(const Model::RespondActivityTaskCompletedRequest& request, const RespondActivityTaskCompletedResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Used by workers to tell the service that the <a>ActivityTask</a> identified
@@ -1141,15 +941,6 @@ namespace SWF
          */
         virtual Model::RespondActivityTaskFailedOutcome RespondActivityTaskFailed(const Model::RespondActivityTaskFailedRequest& request) const;
 
-        /**
-         * A Callable wrapper for RespondActivityTaskFailed that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RespondActivityTaskFailedOutcomeCallable RespondActivityTaskFailedCallable(const Model::RespondActivityTaskFailedRequest& request) const;
-
-        /**
-         * An Async wrapper for RespondActivityTaskFailed that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RespondActivityTaskFailedAsync(const Model::RespondActivityTaskFailedRequest& request, const RespondActivityTaskFailedResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Used by deciders to tell the service that the <a>DecisionTask</a> identified
@@ -1173,15 +964,6 @@ namespace SWF
          */
         virtual Model::RespondDecisionTaskCompletedOutcome RespondDecisionTaskCompleted(const Model::RespondDecisionTaskCompletedRequest& request) const;
 
-        /**
-         * A Callable wrapper for RespondDecisionTaskCompleted that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RespondDecisionTaskCompletedOutcomeCallable RespondDecisionTaskCompletedCallable(const Model::RespondDecisionTaskCompletedRequest& request) const;
-
-        /**
-         * An Async wrapper for RespondDecisionTaskCompleted that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RespondDecisionTaskCompletedAsync(const Model::RespondDecisionTaskCompletedRequest& request, const RespondDecisionTaskCompletedResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Records a <code>WorkflowExecutionSignaled</code> event in the workflow
@@ -1211,15 +993,6 @@ namespace SWF
          */
         virtual Model::SignalWorkflowExecutionOutcome SignalWorkflowExecution(const Model::SignalWorkflowExecutionRequest& request) const;
 
-        /**
-         * A Callable wrapper for SignalWorkflowExecution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SignalWorkflowExecutionOutcomeCallable SignalWorkflowExecutionCallable(const Model::SignalWorkflowExecutionRequest& request) const;
-
-        /**
-         * An Async wrapper for SignalWorkflowExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SignalWorkflowExecutionAsync(const Model::SignalWorkflowExecutionRequest& request, const SignalWorkflowExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts an execution of the workflow type in the specified domain using the
@@ -1257,15 +1030,6 @@ namespace SWF
          */
         virtual Model::StartWorkflowExecutionOutcome StartWorkflowExecution(const Model::StartWorkflowExecutionRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartWorkflowExecution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartWorkflowExecutionOutcomeCallable StartWorkflowExecutionCallable(const Model::StartWorkflowExecutionRequest& request) const;
-
-        /**
-         * An Async wrapper for StartWorkflowExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartWorkflowExecutionAsync(const Model::StartWorkflowExecutionRequest& request, const StartWorkflowExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Add a tag to a Amazon SWF domain.</p>  <p>Amazon SWF supports a maximum
@@ -1275,15 +1039,6 @@ namespace SWF
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Records a <code>WorkflowExecutionTerminated</code> event and forces closure
@@ -1316,15 +1071,6 @@ namespace SWF
          */
         virtual Model::TerminateWorkflowExecutionOutcome TerminateWorkflowExecution(const Model::TerminateWorkflowExecutionRequest& request) const;
 
-        /**
-         * A Callable wrapper for TerminateWorkflowExecution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TerminateWorkflowExecutionOutcomeCallable TerminateWorkflowExecutionCallable(const Model::TerminateWorkflowExecutionRequest& request) const;
-
-        /**
-         * An Async wrapper for TerminateWorkflowExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TerminateWorkflowExecutionAsync(const Model::TerminateWorkflowExecutionRequest& request, const TerminateWorkflowExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Undeprecates a previously deprecated <i>activity type</i>. After an activity
@@ -1354,15 +1100,6 @@ namespace SWF
          */
         virtual Model::UndeprecateActivityTypeOutcome UndeprecateActivityType(const Model::UndeprecateActivityTypeRequest& request) const;
 
-        /**
-         * A Callable wrapper for UndeprecateActivityType that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UndeprecateActivityTypeOutcomeCallable UndeprecateActivityTypeCallable(const Model::UndeprecateActivityTypeRequest& request) const;
-
-        /**
-         * An Async wrapper for UndeprecateActivityType that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UndeprecateActivityTypeAsync(const Model::UndeprecateActivityTypeRequest& request, const UndeprecateActivityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Undeprecates a previously deprecated domain. After a domain has been
@@ -1388,15 +1125,6 @@ namespace SWF
          */
         virtual Model::UndeprecateDomainOutcome UndeprecateDomain(const Model::UndeprecateDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for UndeprecateDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UndeprecateDomainOutcomeCallable UndeprecateDomainCallable(const Model::UndeprecateDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for UndeprecateDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UndeprecateDomainAsync(const Model::UndeprecateDomainRequest& request, const UndeprecateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Undeprecates a previously deprecated <i>workflow type</i>. After a workflow
@@ -1426,15 +1154,6 @@ namespace SWF
          */
         virtual Model::UndeprecateWorkflowTypeOutcome UndeprecateWorkflowType(const Model::UndeprecateWorkflowTypeRequest& request) const;
 
-        /**
-         * A Callable wrapper for UndeprecateWorkflowType that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UndeprecateWorkflowTypeOutcomeCallable UndeprecateWorkflowTypeCallable(const Model::UndeprecateWorkflowTypeRequest& request) const;
-
-        /**
-         * An Async wrapper for UndeprecateWorkflowType that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UndeprecateWorkflowTypeAsync(const Model::UndeprecateWorkflowTypeRequest& request, const UndeprecateWorkflowTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Remove a tag from a Amazon SWF domain.</p><p><h3>See Also:</h3>   <a
@@ -1443,15 +1162,6 @@ namespace SWF
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

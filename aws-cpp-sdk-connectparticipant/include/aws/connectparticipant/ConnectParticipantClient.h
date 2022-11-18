@@ -7,8 +7,10 @@
 #include <aws/connectparticipant/ConnectParticipant_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/connectparticipant/ConnectParticipantServiceClientModel.h>
+#include <aws/connectparticipant/ConnectParticipantLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -77,6 +79,47 @@ namespace ConnectParticipant
         virtual ~ConnectParticipantClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Allows you to confirm that the attachment has been uploaded using the
          * pre-signed URL provided in StartAttachmentUpload API. </p> <p>The Amazon Connect
@@ -88,15 +131,6 @@ namespace ConnectParticipant
          */
         virtual Model::CompleteAttachmentUploadOutcome CompleteAttachmentUpload(const Model::CompleteAttachmentUploadRequest& request) const;
 
-        /**
-         * A Callable wrapper for CompleteAttachmentUpload that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CompleteAttachmentUploadOutcomeCallable CompleteAttachmentUploadCallable(const Model::CompleteAttachmentUploadRequest& request) const;
-
-        /**
-         * An Async wrapper for CompleteAttachmentUpload that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CompleteAttachmentUploadAsync(const Model::CompleteAttachmentUploadRequest& request, const CompleteAttachmentUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates the participant's connection. Note that ParticipantToken is used for
@@ -129,15 +163,6 @@ namespace ConnectParticipant
          */
         virtual Model::CreateParticipantConnectionOutcome CreateParticipantConnection(const Model::CreateParticipantConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateParticipantConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateParticipantConnectionOutcomeCallable CreateParticipantConnectionCallable(const Model::CreateParticipantConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateParticipantConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateParticipantConnectionAsync(const Model::CreateParticipantConnectionRequest& request, const CreateParticipantConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disconnects a participant. Note that ConnectionToken is used for invoking
@@ -150,15 +175,6 @@ namespace ConnectParticipant
          */
         virtual Model::DisconnectParticipantOutcome DisconnectParticipant(const Model::DisconnectParticipantRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisconnectParticipant that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisconnectParticipantOutcomeCallable DisconnectParticipantCallable(const Model::DisconnectParticipantRequest& request) const;
-
-        /**
-         * An Async wrapper for DisconnectParticipant that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisconnectParticipantAsync(const Model::DisconnectParticipantRequest& request, const DisconnectParticipantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides a pre-signed URL for download of a completed attachment. This is an
@@ -171,15 +187,6 @@ namespace ConnectParticipant
          */
         virtual Model::GetAttachmentOutcome GetAttachment(const Model::GetAttachmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAttachment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAttachmentOutcomeCallable GetAttachmentCallable(const Model::GetAttachmentRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAttachment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAttachmentAsync(const Model::GetAttachmentRequest& request, const GetAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a transcript of the session, including details about any
@@ -193,15 +200,6 @@ namespace ConnectParticipant
          */
         virtual Model::GetTranscriptOutcome GetTranscript(const Model::GetTranscriptRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetTranscript that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetTranscriptOutcomeCallable GetTranscriptCallable(const Model::GetTranscriptRequest& request) const;
-
-        /**
-         * An Async wrapper for GetTranscript that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetTranscriptAsync(const Model::GetTranscriptRequest& request, const GetTranscriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sends an event. Note that ConnectionToken is used for invoking this API
@@ -214,15 +212,6 @@ namespace ConnectParticipant
          */
         virtual Model::SendEventOutcome SendEvent(const Model::SendEventRequest& request) const;
 
-        /**
-         * A Callable wrapper for SendEvent that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SendEventOutcomeCallable SendEventCallable(const Model::SendEventRequest& request) const;
-
-        /**
-         * An Async wrapper for SendEvent that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SendEventAsync(const Model::SendEventRequest& request, const SendEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sends a message. Note that ConnectionToken is used for invoking this API
@@ -235,15 +224,6 @@ namespace ConnectParticipant
          */
         virtual Model::SendMessageOutcome SendMessage(const Model::SendMessageRequest& request) const;
 
-        /**
-         * A Callable wrapper for SendMessage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SendMessageOutcomeCallable SendMessageCallable(const Model::SendMessageRequest& request) const;
-
-        /**
-         * An Async wrapper for SendMessage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SendMessageAsync(const Model::SendMessageRequest& request, const SendMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides a pre-signed Amazon S3 URL in response for uploading the file
@@ -255,15 +235,6 @@ namespace ConnectParticipant
          */
         virtual Model::StartAttachmentUploadOutcome StartAttachmentUpload(const Model::StartAttachmentUploadRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartAttachmentUpload that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartAttachmentUploadOutcomeCallable StartAttachmentUploadCallable(const Model::StartAttachmentUploadRequest& request) const;
-
-        /**
-         * An Async wrapper for StartAttachmentUpload that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartAttachmentUploadAsync(const Model::StartAttachmentUploadRequest& request, const StartAttachmentUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

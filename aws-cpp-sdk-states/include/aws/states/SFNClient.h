@@ -7,8 +7,10 @@
 #include <aws/states/SFN_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/states/SFNServiceClientModel.h>
+#include <aws/states/SFNLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -89,6 +91,47 @@ namespace SFN
         virtual ~SFNClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Creates an activity. An activity is a task that you write in any programming
          * language and host on any machine that has access to AWS Step Functions.
@@ -110,15 +153,6 @@ namespace SFN
          */
         virtual Model::CreateActivityOutcome CreateActivity(const Model::CreateActivityRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateActivity that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateActivityOutcomeCallable CreateActivityCallable(const Model::CreateActivityRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateActivity that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateActivityAsync(const Model::CreateActivityRequest& request, const CreateActivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a state machine. A state machine consists of a collection of states
@@ -145,15 +179,6 @@ namespace SFN
          */
         virtual Model::CreateStateMachineOutcome CreateStateMachine(const Model::CreateStateMachineRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateStateMachine that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateStateMachineOutcomeCallable CreateStateMachineCallable(const Model::CreateStateMachineRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateStateMachine that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateStateMachineAsync(const Model::CreateStateMachineRequest& request, const CreateStateMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an activity.</p><p><h3>See Also:</h3>   <a
@@ -162,15 +187,6 @@ namespace SFN
          */
         virtual Model::DeleteActivityOutcome DeleteActivity(const Model::DeleteActivityRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteActivity that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteActivityOutcomeCallable DeleteActivityCallable(const Model::DeleteActivityRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteActivity that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteActivityAsync(const Model::DeleteActivityRequest& request, const DeleteActivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a state machine. This is an asynchronous operation: It sets the state
@@ -184,15 +200,6 @@ namespace SFN
          */
         virtual Model::DeleteStateMachineOutcome DeleteStateMachine(const Model::DeleteStateMachineRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteStateMachine that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteStateMachineOutcomeCallable DeleteStateMachineCallable(const Model::DeleteStateMachineRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteStateMachine that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteStateMachineAsync(const Model::DeleteStateMachineRequest& request, const DeleteStateMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes an activity.</p>  <p>This operation is eventually consistent.
@@ -203,15 +210,6 @@ namespace SFN
          */
         virtual Model::DescribeActivityOutcome DescribeActivity(const Model::DescribeActivityRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeActivity that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeActivityOutcomeCallable DescribeActivityCallable(const Model::DescribeActivityRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeActivity that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeActivityAsync(const Model::DescribeActivityRequest& request, const DescribeActivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes an execution.</p>  <p>This operation is eventually
@@ -223,15 +221,6 @@ namespace SFN
          */
         virtual Model::DescribeExecutionOutcome DescribeExecution(const Model::DescribeExecutionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeExecution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeExecutionOutcomeCallable DescribeExecutionCallable(const Model::DescribeExecutionRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeExecutionAsync(const Model::DescribeExecutionRequest& request, const DescribeExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a state machine.</p>  <p>This operation is eventually
@@ -242,15 +231,6 @@ namespace SFN
          */
         virtual Model::DescribeStateMachineOutcome DescribeStateMachine(const Model::DescribeStateMachineRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeStateMachine that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeStateMachineOutcomeCallable DescribeStateMachineCallable(const Model::DescribeStateMachineRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeStateMachine that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeStateMachineAsync(const Model::DescribeStateMachineRequest& request, const DescribeStateMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the state machine associated with a specific execution.</p> 
@@ -263,15 +243,6 @@ namespace SFN
          */
         virtual Model::DescribeStateMachineForExecutionOutcome DescribeStateMachineForExecution(const Model::DescribeStateMachineForExecutionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeStateMachineForExecution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeStateMachineForExecutionOutcomeCallable DescribeStateMachineForExecutionCallable(const Model::DescribeStateMachineForExecutionRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeStateMachineForExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeStateMachineForExecutionAsync(const Model::DescribeStateMachineForExecutionRequest& request, const DescribeStateMachineForExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Used by workers to retrieve a task (with the specified activity ARN) which
@@ -292,15 +263,6 @@ namespace SFN
          */
         virtual Model::GetActivityTaskOutcome GetActivityTask(const Model::GetActivityTaskRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetActivityTask that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetActivityTaskOutcomeCallable GetActivityTaskCallable(const Model::GetActivityTaskRequest& request) const;
-
-        /**
-         * An Async wrapper for GetActivityTask that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetActivityTaskAsync(const Model::GetActivityTaskRequest& request, const GetActivityTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the history of the specified execution as a list of events. By
@@ -318,15 +280,6 @@ namespace SFN
          */
         virtual Model::GetExecutionHistoryOutcome GetExecutionHistory(const Model::GetExecutionHistoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetExecutionHistory that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetExecutionHistoryOutcomeCallable GetExecutionHistoryCallable(const Model::GetExecutionHistoryRequest& request) const;
-
-        /**
-         * An Async wrapper for GetExecutionHistory that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetExecutionHistoryAsync(const Model::GetExecutionHistoryRequest& request, const GetExecutionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the existing activities.</p> <p>If <code>nextToken</code> is returned,
@@ -342,15 +295,6 @@ namespace SFN
          */
         virtual Model::ListActivitiesOutcome ListActivities(const Model::ListActivitiesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListActivities that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListActivitiesOutcomeCallable ListActivitiesCallable(const Model::ListActivitiesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListActivities that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListActivitiesAsync(const Model::ListActivitiesRequest& request, const ListActivitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the executions of a state machine that meet the filtering criteria.
@@ -369,15 +313,6 @@ namespace SFN
          */
         virtual Model::ListExecutionsOutcome ListExecutions(const Model::ListExecutionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListExecutions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListExecutionsOutcomeCallable ListExecutionsCallable(const Model::ListExecutionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListExecutions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListExecutionsAsync(const Model::ListExecutionsRequest& request, const ListExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the existing state machines.</p> <p>If <code>nextToken</code> is
@@ -393,15 +328,6 @@ namespace SFN
          */
         virtual Model::ListStateMachinesOutcome ListStateMachines(const Model::ListStateMachinesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListStateMachines that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListStateMachinesOutcomeCallable ListStateMachinesCallable(const Model::ListStateMachinesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListStateMachines that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListStateMachinesAsync(const Model::ListStateMachinesRequest& request, const ListStateMachinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List tags for a given resource.</p> <p>Tags may only contain Unicode letters,
@@ -412,15 +338,6 @@ namespace SFN
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Used by activity workers and task states using the <a
@@ -432,15 +349,6 @@ namespace SFN
          */
         virtual Model::SendTaskFailureOutcome SendTaskFailure(const Model::SendTaskFailureRequest& request) const;
 
-        /**
-         * A Callable wrapper for SendTaskFailure that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SendTaskFailureOutcomeCallable SendTaskFailureCallable(const Model::SendTaskFailureRequest& request) const;
-
-        /**
-         * An Async wrapper for SendTaskFailure that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SendTaskFailureAsync(const Model::SendTaskFailureRequest& request, const SendTaskFailureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Used by activity workers and task states using the <a
@@ -466,15 +374,6 @@ namespace SFN
          */
         virtual Model::SendTaskHeartbeatOutcome SendTaskHeartbeat(const Model::SendTaskHeartbeatRequest& request) const;
 
-        /**
-         * A Callable wrapper for SendTaskHeartbeat that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SendTaskHeartbeatOutcomeCallable SendTaskHeartbeatCallable(const Model::SendTaskHeartbeatRequest& request) const;
-
-        /**
-         * An Async wrapper for SendTaskHeartbeat that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SendTaskHeartbeatAsync(const Model::SendTaskHeartbeatRequest& request, const SendTaskHeartbeatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Used by activity workers and task states using the <a
@@ -486,15 +385,6 @@ namespace SFN
          */
         virtual Model::SendTaskSuccessOutcome SendTaskSuccess(const Model::SendTaskSuccessRequest& request) const;
 
-        /**
-         * A Callable wrapper for SendTaskSuccess that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SendTaskSuccessOutcomeCallable SendTaskSuccessCallable(const Model::SendTaskSuccessRequest& request) const;
-
-        /**
-         * An Async wrapper for SendTaskSuccess that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SendTaskSuccessAsync(const Model::SendTaskSuccessRequest& request, const SendTaskSuccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts a state machine execution.</p>  <p> <code>StartExecution</code>
@@ -508,15 +398,6 @@ namespace SFN
          */
         virtual Model::StartExecutionOutcome StartExecution(const Model::StartExecutionRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartExecution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartExecutionOutcomeCallable StartExecutionCallable(const Model::StartExecutionRequest& request) const;
-
-        /**
-         * An Async wrapper for StartExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartExecutionAsync(const Model::StartExecutionRequest& request, const StartExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts a Synchronous Express state machine execution.</p><p><h3>See
@@ -526,15 +407,6 @@ namespace SFN
          */
         virtual Model::StartSyncExecutionOutcome StartSyncExecution(const Model::StartSyncExecutionRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartSyncExecution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartSyncExecutionOutcomeCallable StartSyncExecutionCallable(const Model::StartSyncExecutionRequest& request) const;
-
-        /**
-         * An Async wrapper for StartSyncExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartSyncExecutionAsync(const Model::StartSyncExecutionRequest& request, const StartSyncExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops an execution.</p> <p>This API action is not supported by
@@ -544,15 +416,6 @@ namespace SFN
          */
         virtual Model::StopExecutionOutcome StopExecution(const Model::StopExecutionRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopExecution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopExecutionOutcomeCallable StopExecutionCallable(const Model::StopExecutionRequest& request) const;
-
-        /**
-         * An Async wrapper for StopExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopExecutionAsync(const Model::StopExecutionRequest& request, const StopExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Add a tag to a Step Functions resource.</p> <p>An array of key-value pairs.
@@ -569,15 +432,6 @@ namespace SFN
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Remove a tag from a Step Functions resource</p><p><h3>See Also:</h3>   <a
@@ -586,15 +440,6 @@ namespace SFN
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an existing state machine by modifying its <code>definition</code>,
@@ -613,15 +458,6 @@ namespace SFN
          */
         virtual Model::UpdateStateMachineOutcome UpdateStateMachine(const Model::UpdateStateMachineRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateStateMachine that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateStateMachineOutcomeCallable UpdateStateMachineCallable(const Model::UpdateStateMachineRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateStateMachine that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateStateMachineAsync(const Model::UpdateStateMachineRequest& request, const UpdateStateMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

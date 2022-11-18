@@ -7,8 +7,10 @@
 #include <aws/cloudhsm/CloudHSM_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/cloudhsm/CloudHSMServiceClientModel.h>
+#include <aws/cloudhsm/CloudHSMLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -86,6 +88,47 @@ namespace CloudHSM
         virtual ~CloudHSMClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information,
          * see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic
@@ -107,15 +150,6 @@ namespace CloudHSM
          */
         virtual Model::AddTagsToResourceOutcome AddTagsToResource(const Model::AddTagsToResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddTagsToResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddTagsToResourceOutcomeCallable AddTagsToResourceCallable(const Model::AddTagsToResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for AddTagsToResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddTagsToResourceAsync(const Model::AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information,
@@ -138,15 +172,6 @@ namespace CloudHSM
          */
         virtual Model::CreateHapgOutcome CreateHapg(const Model::CreateHapgRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateHapg that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateHapgOutcomeCallable CreateHapgCallable(const Model::CreateHapgRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateHapg that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateHapgAsync(const Model::CreateHapgRequest& request, const CreateHapgResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information,
@@ -176,15 +201,6 @@ namespace CloudHSM
          */
         virtual Model::CreateHsmOutcome CreateHsm(const Model::CreateHsmRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateHsm that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateHsmOutcomeCallable CreateHsmCallable(const Model::CreateHsmRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateHsm that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateHsmAsync(const Model::CreateHsmRequest& request, const CreateHsmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information,
@@ -205,15 +221,6 @@ namespace CloudHSM
          */
         virtual Model::CreateLunaClientOutcome CreateLunaClient(const Model::CreateLunaClientRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateLunaClient that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateLunaClientOutcomeCallable CreateLunaClientCallable(const Model::CreateLunaClientRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateLunaClient that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateLunaClientAsync(const Model::CreateLunaClientRequest& request, const CreateLunaClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information,
@@ -235,15 +242,6 @@ namespace CloudHSM
          */
         virtual Model::DeleteHapgOutcome DeleteHapg(const Model::DeleteHapgRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteHapg that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteHapgOutcomeCallable DeleteHapgCallable(const Model::DeleteHapgRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteHapg that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteHapgAsync(const Model::DeleteHapgRequest& request, const DeleteHapgResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information,
@@ -266,15 +264,6 @@ namespace CloudHSM
          */
         virtual Model::DeleteHsmOutcome DeleteHsm(const Model::DeleteHsmRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteHsm that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteHsmOutcomeCallable DeleteHsmCallable(const Model::DeleteHsmRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteHsm that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteHsmAsync(const Model::DeleteHsmRequest& request, const DeleteHsmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information,
@@ -295,15 +284,6 @@ namespace CloudHSM
          */
         virtual Model::DeleteLunaClientOutcome DeleteLunaClient(const Model::DeleteLunaClientRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteLunaClient that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteLunaClientOutcomeCallable DeleteLunaClientCallable(const Model::DeleteLunaClientRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteLunaClient that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteLunaClientAsync(const Model::DeleteLunaClientRequest& request, const DeleteLunaClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information,
@@ -325,15 +305,6 @@ namespace CloudHSM
          */
         virtual Model::DescribeHapgOutcome DescribeHapg(const Model::DescribeHapgRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeHapg that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeHapgOutcomeCallable DescribeHapgCallable(const Model::DescribeHapgRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeHapg that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeHapgAsync(const Model::DescribeHapgRequest& request, const DescribeHapgResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information,
@@ -355,15 +326,6 @@ namespace CloudHSM
          */
         virtual Model::DescribeHsmOutcome DescribeHsm(const Model::DescribeHsmRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeHsm that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeHsmOutcomeCallable DescribeHsmCallable(const Model::DescribeHsmRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeHsm that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeHsmAsync(const Model::DescribeHsmRequest& request, const DescribeHsmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information,
@@ -385,15 +347,6 @@ namespace CloudHSM
          */
         virtual Model::DescribeLunaClientOutcome DescribeLunaClient(const Model::DescribeLunaClientRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeLunaClient that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeLunaClientOutcomeCallable DescribeLunaClientCallable(const Model::DescribeLunaClientRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeLunaClient that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeLunaClientAsync(const Model::DescribeLunaClientRequest& request, const DescribeLunaClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information,
@@ -416,15 +369,6 @@ namespace CloudHSM
          */
         virtual Model::GetConfigOutcome GetConfig(const Model::GetConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetConfigOutcomeCallable GetConfigCallable(const Model::GetConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for GetConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetConfigAsync(const Model::GetConfigRequest& request, const GetConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information,
@@ -446,15 +390,6 @@ namespace CloudHSM
          */
         virtual Model::ListAvailableZonesOutcome ListAvailableZones(const Model::ListAvailableZonesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAvailableZones that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAvailableZonesOutcomeCallable ListAvailableZonesCallable(const Model::ListAvailableZonesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAvailableZones that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAvailableZonesAsync(const Model::ListAvailableZonesRequest& request, const ListAvailableZonesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information,
@@ -480,15 +415,6 @@ namespace CloudHSM
          */
         virtual Model::ListHapgsOutcome ListHapgs(const Model::ListHapgsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListHapgs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListHapgsOutcomeCallable ListHapgsCallable(const Model::ListHapgsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListHapgs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListHapgsAsync(const Model::ListHapgsRequest& request, const ListHapgsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information,
@@ -514,15 +440,6 @@ namespace CloudHSM
          */
         virtual Model::ListHsmsOutcome ListHsms(const Model::ListHsmsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListHsms that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListHsmsOutcomeCallable ListHsmsCallable(const Model::ListHsmsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListHsms that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListHsmsAsync(const Model::ListHsmsRequest& request, const ListHsmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information,
@@ -547,15 +464,6 @@ namespace CloudHSM
          */
         virtual Model::ListLunaClientsOutcome ListLunaClients(const Model::ListLunaClientsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListLunaClients that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListLunaClientsOutcomeCallable ListLunaClientsCallable(const Model::ListLunaClientsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListLunaClients that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListLunaClientsAsync(const Model::ListLunaClientsRequest& request, const ListLunaClientsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information,
@@ -577,15 +485,6 @@ namespace CloudHSM
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information,
@@ -607,15 +506,6 @@ namespace CloudHSM
          */
         virtual Model::ModifyHapgOutcome ModifyHapg(const Model::ModifyHapgRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyHapg that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyHapgOutcomeCallable ModifyHapgCallable(const Model::ModifyHapgRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyHapg that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyHapgAsync(const Model::ModifyHapgRequest& request, const ModifyHapgResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information,
@@ -641,15 +531,6 @@ namespace CloudHSM
          */
         virtual Model::ModifyHsmOutcome ModifyHsm(const Model::ModifyHsmRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyHsm that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyHsmOutcomeCallable ModifyHsmCallable(const Model::ModifyHsmRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyHsm that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyHsmAsync(const Model::ModifyHsmRequest& request, const ModifyHsmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information,
@@ -672,15 +553,6 @@ namespace CloudHSM
          */
         virtual Model::ModifyLunaClientOutcome ModifyLunaClient(const Model::ModifyLunaClientRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyLunaClient that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyLunaClientOutcomeCallable ModifyLunaClientCallable(const Model::ModifyLunaClientRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyLunaClient that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyLunaClientAsync(const Model::ModifyLunaClientRequest& request, const ModifyLunaClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information,
@@ -704,15 +576,6 @@ namespace CloudHSM
          */
         virtual Model::RemoveTagsFromResourceOutcome RemoveTagsFromResource(const Model::RemoveTagsFromResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for RemoveTagsFromResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RemoveTagsFromResourceOutcomeCallable RemoveTagsFromResourceCallable(const Model::RemoveTagsFromResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for RemoveTagsFromResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RemoveTagsFromResourceAsync(const Model::RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

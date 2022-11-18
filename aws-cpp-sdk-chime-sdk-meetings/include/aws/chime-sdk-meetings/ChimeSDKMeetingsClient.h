@@ -7,8 +7,10 @@
 #include <aws/chime-sdk-meetings/ChimeSDKMeetings_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/chime-sdk-meetings/ChimeSDKMeetingsServiceClientModel.h>
+#include <aws/chime-sdk-meetings/ChimeSDKMeetingsLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -78,6 +80,47 @@ namespace ChimeSDKMeetings
         virtual ~ChimeSDKMeetingsClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Creates up to 100 attendees for an active Amazon Chime SDK meeting. For more
          * information about the Amazon Chime SDK, see <a
@@ -89,15 +132,6 @@ namespace ChimeSDKMeetings
          */
         virtual Model::BatchCreateAttendeeOutcome BatchCreateAttendee(const Model::BatchCreateAttendeeRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchCreateAttendee that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchCreateAttendeeOutcomeCallable BatchCreateAttendeeCallable(const Model::BatchCreateAttendeeRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchCreateAttendee that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchCreateAttendeeAsync(const Model::BatchCreateAttendeeRequest& request, const BatchCreateAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates <code>AttendeeCapabilities</code> except the capabilities listed in
@@ -126,15 +160,6 @@ namespace ChimeSDKMeetings
          */
         virtual Model::BatchUpdateAttendeeCapabilitiesExceptOutcome BatchUpdateAttendeeCapabilitiesExcept(const Model::BatchUpdateAttendeeCapabilitiesExceptRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchUpdateAttendeeCapabilitiesExcept that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchUpdateAttendeeCapabilitiesExceptOutcomeCallable BatchUpdateAttendeeCapabilitiesExceptCallable(const Model::BatchUpdateAttendeeCapabilitiesExceptRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchUpdateAttendeeCapabilitiesExcept that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchUpdateAttendeeCapabilitiesExceptAsync(const Model::BatchUpdateAttendeeCapabilitiesExceptRequest& request, const BatchUpdateAttendeeCapabilitiesExceptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Creates a new attendee for an active Amazon Chime SDK meeting. For more
@@ -147,15 +172,6 @@ namespace ChimeSDKMeetings
          */
         virtual Model::CreateAttendeeOutcome CreateAttendee(const Model::CreateAttendeeRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateAttendee that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateAttendeeOutcomeCallable CreateAttendeeCallable(const Model::CreateAttendeeRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateAttendee that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateAttendeeAsync(const Model::CreateAttendeeRequest& request, const CreateAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new Amazon Chime SDK meeting in the specified media Region with no
@@ -171,15 +187,6 @@ namespace ChimeSDKMeetings
          */
         virtual Model::CreateMeetingOutcome CreateMeeting(const Model::CreateMeetingRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateMeeting that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateMeetingOutcomeCallable CreateMeetingCallable(const Model::CreateMeetingRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateMeeting that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateMeetingAsync(const Model::CreateMeetingRequest& request, const CreateMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Creates a new Amazon Chime SDK meeting in the specified media Region, with
@@ -195,15 +202,6 @@ namespace ChimeSDKMeetings
          */
         virtual Model::CreateMeetingWithAttendeesOutcome CreateMeetingWithAttendees(const Model::CreateMeetingWithAttendeesRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateMeetingWithAttendees that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateMeetingWithAttendeesOutcomeCallable CreateMeetingWithAttendeesCallable(const Model::CreateMeetingWithAttendeesRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateMeetingWithAttendees that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateMeetingWithAttendeesAsync(const Model::CreateMeetingWithAttendeesRequest& request, const CreateMeetingWithAttendeesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an attendee from the specified Amazon Chime SDK meeting and deletes
@@ -218,15 +216,6 @@ namespace ChimeSDKMeetings
          */
         virtual Model::DeleteAttendeeOutcome DeleteAttendee(const Model::DeleteAttendeeRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAttendee that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAttendeeOutcomeCallable DeleteAttendeeCallable(const Model::DeleteAttendeeRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAttendee that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAttendeeAsync(const Model::DeleteAttendeeRequest& request, const DeleteAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified Amazon Chime SDK meeting. The operation deletes all
@@ -240,15 +229,6 @@ namespace ChimeSDKMeetings
          */
         virtual Model::DeleteMeetingOutcome DeleteMeeting(const Model::DeleteMeetingRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteMeeting that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteMeetingOutcomeCallable DeleteMeetingCallable(const Model::DeleteMeetingRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteMeeting that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteMeetingAsync(const Model::DeleteMeetingRequest& request, const DeleteMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Gets the Amazon Chime SDK attendee details for a specified meeting ID and
@@ -261,15 +241,6 @@ namespace ChimeSDKMeetings
          */
         virtual Model::GetAttendeeOutcome GetAttendee(const Model::GetAttendeeRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAttendee that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAttendeeOutcomeCallable GetAttendeeCallable(const Model::GetAttendeeRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAttendee that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAttendeeAsync(const Model::GetAttendeeRequest& request, const GetAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the Amazon Chime SDK meeting details for the specified meeting ID. For
@@ -282,15 +253,6 @@ namespace ChimeSDKMeetings
          */
         virtual Model::GetMeetingOutcome GetMeeting(const Model::GetMeetingRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetMeeting that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetMeetingOutcomeCallable GetMeetingCallable(const Model::GetMeetingRequest& request) const;
-
-        /**
-         * An Async wrapper for GetMeeting that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetMeetingAsync(const Model::GetMeetingRequest& request, const GetMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Lists the attendees for the specified Amazon Chime SDK meeting. For more
@@ -303,15 +265,6 @@ namespace ChimeSDKMeetings
          */
         virtual Model::ListAttendeesOutcome ListAttendees(const Model::ListAttendeesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAttendees that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAttendeesOutcomeCallable ListAttendeesCallable(const Model::ListAttendeesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAttendees that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAttendeesAsync(const Model::ListAttendeesRequest& request, const ListAttendeesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of the tags available for the specified
@@ -321,15 +274,6 @@ namespace ChimeSDKMeetings
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts transcription for the specified <code>meetingId</code>.</p><p><h3>See
@@ -339,15 +283,6 @@ namespace ChimeSDKMeetings
          */
         virtual Model::StartMeetingTranscriptionOutcome StartMeetingTranscription(const Model::StartMeetingTranscriptionRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartMeetingTranscription that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartMeetingTranscriptionOutcomeCallable StartMeetingTranscriptionCallable(const Model::StartMeetingTranscriptionRequest& request) const;
-
-        /**
-         * An Async wrapper for StartMeetingTranscription that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartMeetingTranscriptionAsync(const Model::StartMeetingTranscriptionRequest& request, const StartMeetingTranscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops transcription for the specified <code>meetingId</code>.</p><p><h3>See
@@ -357,15 +292,6 @@ namespace ChimeSDKMeetings
          */
         virtual Model::StopMeetingTranscriptionOutcome StopMeetingTranscription(const Model::StopMeetingTranscriptionRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopMeetingTranscription that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopMeetingTranscriptionOutcomeCallable StopMeetingTranscriptionCallable(const Model::StopMeetingTranscriptionRequest& request) const;
-
-        /**
-         * An Async wrapper for StopMeetingTranscription that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopMeetingTranscriptionAsync(const Model::StopMeetingTranscriptionRequest& request, const StopMeetingTranscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The resource that supports tags.</p><p><h3>See Also:</h3>   <a
@@ -374,15 +300,6 @@ namespace ChimeSDKMeetings
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified tags from the specified resources. When you specify a
@@ -405,15 +322,6 @@ namespace ChimeSDKMeetings
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The capabilties that you want to update.</p>  <p>You use the
@@ -441,15 +349,6 @@ namespace ChimeSDKMeetings
          */
         virtual Model::UpdateAttendeeCapabilitiesOutcome UpdateAttendeeCapabilities(const Model::UpdateAttendeeCapabilitiesRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateAttendeeCapabilities that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateAttendeeCapabilitiesOutcomeCallable UpdateAttendeeCapabilitiesCallable(const Model::UpdateAttendeeCapabilitiesRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateAttendeeCapabilities that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateAttendeeCapabilitiesAsync(const Model::UpdateAttendeeCapabilitiesRequest& request, const UpdateAttendeeCapabilitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

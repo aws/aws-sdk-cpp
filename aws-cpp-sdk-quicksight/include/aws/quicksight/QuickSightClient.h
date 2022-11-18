@@ -7,8 +7,10 @@
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/quicksight/QuickSightServiceClientModel.h>
+#include <aws/quicksight/QuickSightLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -77,6 +79,47 @@ namespace QuickSight
         virtual ~QuickSightClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Cancels an ongoing ingestion of data into SPICE.</p><p><h3>See Also:</h3>  
          * <a
@@ -85,15 +128,6 @@ namespace QuickSight
          */
         virtual Model::CancelIngestionOutcome CancelIngestion(const Model::CancelIngestionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelIngestion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelIngestionOutcomeCallable CancelIngestionCallable(const Model::CancelIngestionRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelIngestion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelIngestionAsync(const Model::CancelIngestionRequest& request, const CancelIngestionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates Amazon QuickSight customizations for the current Amazon Web Services
@@ -124,15 +158,6 @@ namespace QuickSight
          */
         virtual Model::CreateAccountCustomizationOutcome CreateAccountCustomization(const Model::CreateAccountCustomizationRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateAccountCustomization that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateAccountCustomizationOutcomeCallable CreateAccountCustomizationCallable(const Model::CreateAccountCustomizationRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateAccountCustomization that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateAccountCustomizationAsync(const Model::CreateAccountCustomizationRequest& request, const CreateAccountCustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an Amazon QuickSight account, or subscribes to Amazon QuickSight
@@ -168,15 +193,6 @@ namespace QuickSight
          */
         virtual Model::CreateAccountSubscriptionOutcome CreateAccountSubscription(const Model::CreateAccountSubscriptionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateAccountSubscription that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateAccountSubscriptionOutcomeCallable CreateAccountSubscriptionCallable(const Model::CreateAccountSubscriptionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateAccountSubscription that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateAccountSubscriptionAsync(const Model::CreateAccountSubscriptionRequest& request, const CreateAccountSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an analysis in Amazon QuickSight.</p><p><h3>See Also:</h3>   <a
@@ -185,15 +201,6 @@ namespace QuickSight
          */
         virtual Model::CreateAnalysisOutcome CreateAnalysis(const Model::CreateAnalysisRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateAnalysis that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateAnalysisOutcomeCallable CreateAnalysisCallable(const Model::CreateAnalysisRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateAnalysis that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateAnalysisAsync(const Model::CreateAnalysisRequest& request, const CreateAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a dashboard from a template. To first create a template, see the
@@ -210,15 +217,6 @@ namespace QuickSight
          */
         virtual Model::CreateDashboardOutcome CreateDashboard(const Model::CreateDashboardRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDashboard that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDashboardOutcomeCallable CreateDashboardCallable(const Model::CreateDashboardRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDashboard that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDashboardAsync(const Model::CreateDashboardRequest& request, const CreateDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a dataset. This operation doesn't support datasets that include
@@ -228,15 +226,6 @@ namespace QuickSight
          */
         virtual Model::CreateDataSetOutcome CreateDataSet(const Model::CreateDataSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDataSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDataSetOutcomeCallable CreateDataSetCallable(const Model::CreateDataSetRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDataSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDataSetAsync(const Model::CreateDataSetRequest& request, const CreateDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a data source.</p><p><h3>See Also:</h3>   <a
@@ -245,15 +234,6 @@ namespace QuickSight
          */
         virtual Model::CreateDataSourceOutcome CreateDataSource(const Model::CreateDataSourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDataSource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDataSourceOutcomeCallable CreateDataSourceCallable(const Model::CreateDataSourceRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDataSource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDataSourceAsync(const Model::CreateDataSourceRequest& request, const CreateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an empty shared folder.</p><p><h3>See Also:</h3>   <a
@@ -262,15 +242,6 @@ namespace QuickSight
          */
         virtual Model::CreateFolderOutcome CreateFolder(const Model::CreateFolderRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateFolder that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateFolderOutcomeCallable CreateFolderCallable(const Model::CreateFolderRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateFolder that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateFolderAsync(const Model::CreateFolderRequest& request, const CreateFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds an asset, such as a dashboard, analysis, or dataset into a
@@ -280,15 +251,6 @@ namespace QuickSight
          */
         virtual Model::CreateFolderMembershipOutcome CreateFolderMembership(const Model::CreateFolderMembershipRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateFolderMembership that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateFolderMembershipOutcomeCallable CreateFolderMembershipCallable(const Model::CreateFolderMembershipRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateFolderMembership that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateFolderMembershipAsync(const Model::CreateFolderMembershipRequest& request, const CreateFolderMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Use the <code>CreateGroup</code> operation to create a group in Amazon
@@ -302,15 +264,6 @@ namespace QuickSight
          */
         virtual Model::CreateGroupOutcome CreateGroup(const Model::CreateGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateGroupOutcomeCallable CreateGroupCallable(const Model::CreateGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateGroupAsync(const Model::CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds an Amazon QuickSight user to an Amazon QuickSight group. </p><p><h3>See
@@ -320,15 +273,6 @@ namespace QuickSight
          */
         virtual Model::CreateGroupMembershipOutcome CreateGroupMembership(const Model::CreateGroupMembershipRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateGroupMembership that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateGroupMembershipOutcomeCallable CreateGroupMembershipCallable(const Model::CreateGroupMembershipRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateGroupMembership that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateGroupMembershipAsync(const Model::CreateGroupMembershipRequest& request, const CreateGroupMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an assignment with one specified IAM policy, identified by its Amazon
@@ -341,15 +285,6 @@ namespace QuickSight
          */
         virtual Model::CreateIAMPolicyAssignmentOutcome CreateIAMPolicyAssignment(const Model::CreateIAMPolicyAssignmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateIAMPolicyAssignment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateIAMPolicyAssignmentOutcomeCallable CreateIAMPolicyAssignmentCallable(const Model::CreateIAMPolicyAssignmentRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateIAMPolicyAssignment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateIAMPolicyAssignmentAsync(const Model::CreateIAMPolicyAssignmentRequest& request, const CreateIAMPolicyAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates and starts a new SPICE ingestion for a dataset. You can manually
@@ -368,15 +303,6 @@ namespace QuickSight
          */
         virtual Model::CreateIngestionOutcome CreateIngestion(const Model::CreateIngestionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateIngestion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateIngestionOutcomeCallable CreateIngestionCallable(const Model::CreateIngestionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateIngestion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateIngestionAsync(const Model::CreateIngestionRequest& request, const CreateIngestionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>(Enterprise edition only) Creates a new namespace for you to use with Amazon
@@ -394,15 +320,6 @@ namespace QuickSight
          */
         virtual Model::CreateNamespaceOutcome CreateNamespace(const Model::CreateNamespaceRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateNamespace that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateNamespaceOutcomeCallable CreateNamespaceCallable(const Model::CreateNamespaceRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateNamespace that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateNamespaceAsync(const Model::CreateNamespaceRequest& request, const CreateNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a template from an existing Amazon QuickSight analysis or template.
@@ -419,15 +336,6 @@ namespace QuickSight
          */
         virtual Model::CreateTemplateOutcome CreateTemplate(const Model::CreateTemplateRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateTemplateOutcomeCallable CreateTemplateCallable(const Model::CreateTemplateRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateTemplateAsync(const Model::CreateTemplateRequest& request, const CreateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a template alias for a template.</p><p><h3>See Also:</h3>   <a
@@ -436,15 +344,6 @@ namespace QuickSight
          */
         virtual Model::CreateTemplateAliasOutcome CreateTemplateAlias(const Model::CreateTemplateAliasRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateTemplateAlias that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateTemplateAliasOutcomeCallable CreateTemplateAliasCallable(const Model::CreateTemplateAliasRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateTemplateAlias that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateTemplateAliasAsync(const Model::CreateTemplateAliasRequest& request, const CreateTemplateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a theme.</p> <p>A <i>theme</i> is set of configuration options for
@@ -458,15 +357,6 @@ namespace QuickSight
          */
         virtual Model::CreateThemeOutcome CreateTheme(const Model::CreateThemeRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateTheme that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateThemeOutcomeCallable CreateThemeCallable(const Model::CreateThemeRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateTheme that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateThemeAsync(const Model::CreateThemeRequest& request, const CreateThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a theme alias for a theme.</p><p><h3>See Also:</h3>   <a
@@ -475,15 +365,6 @@ namespace QuickSight
          */
         virtual Model::CreateThemeAliasOutcome CreateThemeAlias(const Model::CreateThemeAliasRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateThemeAlias that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateThemeAliasOutcomeCallable CreateThemeAliasCallable(const Model::CreateThemeAliasRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateThemeAlias that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateThemeAliasAsync(const Model::CreateThemeAliasRequest& request, const CreateThemeAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes all Amazon QuickSight customizations in this Amazon Web Services
@@ -494,15 +375,6 @@ namespace QuickSight
          */
         virtual Model::DeleteAccountCustomizationOutcome DeleteAccountCustomization(const Model::DeleteAccountCustomizationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAccountCustomization that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAccountCustomizationOutcomeCallable DeleteAccountCustomizationCallable(const Model::DeleteAccountCustomizationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAccountCustomization that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAccountCustomizationAsync(const Model::DeleteAccountCustomizationRequest& request, const DeleteAccountCustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an analysis from Amazon QuickSight. You can optionally include a
@@ -523,15 +395,6 @@ namespace QuickSight
          */
         virtual Model::DeleteAnalysisOutcome DeleteAnalysis(const Model::DeleteAnalysisRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAnalysis that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAnalysisOutcomeCallable DeleteAnalysisCallable(const Model::DeleteAnalysisRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAnalysis that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAnalysisAsync(const Model::DeleteAnalysisRequest& request, const DeleteAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a dashboard.</p><p><h3>See Also:</h3>   <a
@@ -540,15 +403,6 @@ namespace QuickSight
          */
         virtual Model::DeleteDashboardOutcome DeleteDashboard(const Model::DeleteDashboardRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDashboard that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDashboardOutcomeCallable DeleteDashboardCallable(const Model::DeleteDashboardRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDashboard that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDashboardAsync(const Model::DeleteDashboardRequest& request, const DeleteDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a dataset.</p><p><h3>See Also:</h3>   <a
@@ -557,15 +411,6 @@ namespace QuickSight
          */
         virtual Model::DeleteDataSetOutcome DeleteDataSet(const Model::DeleteDataSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDataSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDataSetOutcomeCallable DeleteDataSetCallable(const Model::DeleteDataSetRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDataSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDataSetAsync(const Model::DeleteDataSetRequest& request, const DeleteDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the data source permanently. This operation breaks all the datasets
@@ -575,15 +420,6 @@ namespace QuickSight
          */
         virtual Model::DeleteDataSourceOutcome DeleteDataSource(const Model::DeleteDataSourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDataSource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDataSourceOutcomeCallable DeleteDataSourceCallable(const Model::DeleteDataSourceRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDataSource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDataSourceAsync(const Model::DeleteDataSourceRequest& request, const DeleteDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an empty folder.</p><p><h3>See Also:</h3>   <a
@@ -592,15 +428,6 @@ namespace QuickSight
          */
         virtual Model::DeleteFolderOutcome DeleteFolder(const Model::DeleteFolderRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteFolder that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteFolderOutcomeCallable DeleteFolderCallable(const Model::DeleteFolderRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteFolder that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteFolderAsync(const Model::DeleteFolderRequest& request, const DeleteFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes an asset, such as a dashboard, analysis, or dataset, from a
@@ -610,15 +437,6 @@ namespace QuickSight
          */
         virtual Model::DeleteFolderMembershipOutcome DeleteFolderMembership(const Model::DeleteFolderMembershipRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteFolderMembership that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteFolderMembershipOutcomeCallable DeleteFolderMembershipCallable(const Model::DeleteFolderMembershipRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteFolderMembership that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteFolderMembershipAsync(const Model::DeleteFolderMembershipRequest& request, const DeleteFolderMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes a user group from Amazon QuickSight. </p><p><h3>See Also:</h3>   <a
@@ -627,15 +445,6 @@ namespace QuickSight
          */
         virtual Model::DeleteGroupOutcome DeleteGroup(const Model::DeleteGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteGroupOutcomeCallable DeleteGroupCallable(const Model::DeleteGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteGroupAsync(const Model::DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes a user from a group so that the user is no longer a member of the
@@ -645,15 +454,6 @@ namespace QuickSight
          */
         virtual Model::DeleteGroupMembershipOutcome DeleteGroupMembership(const Model::DeleteGroupMembershipRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteGroupMembership that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteGroupMembershipOutcomeCallable DeleteGroupMembershipCallable(const Model::DeleteGroupMembershipRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteGroupMembership that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteGroupMembershipAsync(const Model::DeleteGroupMembershipRequest& request, const DeleteGroupMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an existing IAM policy assignment.</p><p><h3>See Also:</h3>   <a
@@ -662,15 +462,6 @@ namespace QuickSight
          */
         virtual Model::DeleteIAMPolicyAssignmentOutcome DeleteIAMPolicyAssignment(const Model::DeleteIAMPolicyAssignmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteIAMPolicyAssignment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteIAMPolicyAssignmentOutcomeCallable DeleteIAMPolicyAssignmentCallable(const Model::DeleteIAMPolicyAssignmentRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteIAMPolicyAssignment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteIAMPolicyAssignmentAsync(const Model::DeleteIAMPolicyAssignmentRequest& request, const DeleteIAMPolicyAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a namespace and the users and groups that are associated with the
@@ -682,15 +473,6 @@ namespace QuickSight
          */
         virtual Model::DeleteNamespaceOutcome DeleteNamespace(const Model::DeleteNamespaceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteNamespace that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteNamespaceOutcomeCallable DeleteNamespaceCallable(const Model::DeleteNamespaceRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteNamespace that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteNamespaceAsync(const Model::DeleteNamespaceRequest& request, const DeleteNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a template.</p><p><h3>See Also:</h3>   <a
@@ -699,15 +481,6 @@ namespace QuickSight
          */
         virtual Model::DeleteTemplateOutcome DeleteTemplate(const Model::DeleteTemplateRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteTemplateOutcomeCallable DeleteTemplateCallable(const Model::DeleteTemplateRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteTemplateAsync(const Model::DeleteTemplateRequest& request, const DeleteTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the item that the specified template alias points to. If you provide
@@ -718,15 +491,6 @@ namespace QuickSight
          */
         virtual Model::DeleteTemplateAliasOutcome DeleteTemplateAlias(const Model::DeleteTemplateAliasRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteTemplateAlias that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteTemplateAliasOutcomeCallable DeleteTemplateAliasCallable(const Model::DeleteTemplateAliasRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteTemplateAlias that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteTemplateAliasAsync(const Model::DeleteTemplateAliasRequest& request, const DeleteTemplateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a theme.</p><p><h3>See Also:</h3>   <a
@@ -735,15 +499,6 @@ namespace QuickSight
          */
         virtual Model::DeleteThemeOutcome DeleteTheme(const Model::DeleteThemeRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteTheme that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteThemeOutcomeCallable DeleteThemeCallable(const Model::DeleteThemeRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteTheme that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteThemeAsync(const Model::DeleteThemeRequest& request, const DeleteThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the version of the theme that the specified theme alias points to. If
@@ -754,15 +509,6 @@ namespace QuickSight
          */
         virtual Model::DeleteThemeAliasOutcome DeleteThemeAlias(const Model::DeleteThemeAliasRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteThemeAlias that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteThemeAliasOutcomeCallable DeleteThemeAliasCallable(const Model::DeleteThemeAliasRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteThemeAlias that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteThemeAliasAsync(const Model::DeleteThemeAliasRequest& request, const DeleteThemeAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the Amazon QuickSight user that is associated with the identity of
@@ -774,15 +520,6 @@ namespace QuickSight
          */
         virtual Model::DeleteUserOutcome DeleteUser(const Model::DeleteUserRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteUser that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteUserOutcomeCallable DeleteUserCallable(const Model::DeleteUserRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteUser that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteUserAsync(const Model::DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a user identified by its principal ID. </p><p><h3>See Also:</h3>   <a
@@ -791,15 +528,6 @@ namespace QuickSight
          */
         virtual Model::DeleteUserByPrincipalIdOutcome DeleteUserByPrincipalId(const Model::DeleteUserByPrincipalIdRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteUserByPrincipalId that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteUserByPrincipalIdOutcomeCallable DeleteUserByPrincipalIdCallable(const Model::DeleteUserByPrincipalIdRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteUserByPrincipalId that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteUserByPrincipalIdAsync(const Model::DeleteUserByPrincipalIdRequest& request, const DeleteUserByPrincipalIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the customizations associated with the provided Amazon Web Services
@@ -849,15 +577,6 @@ namespace QuickSight
          */
         virtual Model::DescribeAccountCustomizationOutcome DescribeAccountCustomization(const Model::DescribeAccountCustomizationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAccountCustomization that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAccountCustomizationOutcomeCallable DescribeAccountCustomizationCallable(const Model::DescribeAccountCustomizationRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAccountCustomization that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAccountCustomizationAsync(const Model::DescribeAccountCustomizationRequest& request, const DescribeAccountCustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the settings that were used when your Amazon QuickSight
@@ -868,15 +587,6 @@ namespace QuickSight
          */
         virtual Model::DescribeAccountSettingsOutcome DescribeAccountSettings(const Model::DescribeAccountSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAccountSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAccountSettingsOutcomeCallable DescribeAccountSettingsCallable(const Model::DescribeAccountSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAccountSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAccountSettingsAsync(const Model::DescribeAccountSettingsRequest& request, const DescribeAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Use the DescribeAccountSubscription operation to receive a description of a
@@ -889,15 +599,6 @@ namespace QuickSight
          */
         virtual Model::DescribeAccountSubscriptionOutcome DescribeAccountSubscription(const Model::DescribeAccountSubscriptionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAccountSubscription that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAccountSubscriptionOutcomeCallable DescribeAccountSubscriptionCallable(const Model::DescribeAccountSubscriptionRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAccountSubscription that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAccountSubscriptionAsync(const Model::DescribeAccountSubscriptionRequest& request, const DescribeAccountSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides a summary of the metadata for an analysis.</p><p><h3>See Also:</h3> 
@@ -907,15 +608,6 @@ namespace QuickSight
          */
         virtual Model::DescribeAnalysisOutcome DescribeAnalysis(const Model::DescribeAnalysisRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAnalysis that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAnalysisOutcomeCallable DescribeAnalysisCallable(const Model::DescribeAnalysisRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAnalysis that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAnalysisAsync(const Model::DescribeAnalysisRequest& request, const DescribeAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides the read and write permissions for an analysis.</p><p><h3>See
@@ -925,15 +617,6 @@ namespace QuickSight
          */
         virtual Model::DescribeAnalysisPermissionsOutcome DescribeAnalysisPermissions(const Model::DescribeAnalysisPermissionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAnalysisPermissions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAnalysisPermissionsOutcomeCallable DescribeAnalysisPermissionsCallable(const Model::DescribeAnalysisPermissionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAnalysisPermissions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAnalysisPermissionsAsync(const Model::DescribeAnalysisPermissionsRequest& request, const DescribeAnalysisPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides a summary for a dashboard.</p><p><h3>See Also:</h3>   <a
@@ -942,15 +625,6 @@ namespace QuickSight
          */
         virtual Model::DescribeDashboardOutcome DescribeDashboard(const Model::DescribeDashboardRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDashboard that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDashboardOutcomeCallable DescribeDashboardCallable(const Model::DescribeDashboardRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDashboard that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDashboardAsync(const Model::DescribeDashboardRequest& request, const DescribeDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes read and write permissions for a dashboard.</p><p><h3>See
@@ -960,15 +634,6 @@ namespace QuickSight
          */
         virtual Model::DescribeDashboardPermissionsOutcome DescribeDashboardPermissions(const Model::DescribeDashboardPermissionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDashboardPermissions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDashboardPermissionsOutcomeCallable DescribeDashboardPermissionsCallable(const Model::DescribeDashboardPermissionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDashboardPermissions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDashboardPermissionsAsync(const Model::DescribeDashboardPermissionsRequest& request, const DescribeDashboardPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a dataset. This operation doesn't support datasets that include
@@ -978,15 +643,6 @@ namespace QuickSight
          */
         virtual Model::DescribeDataSetOutcome DescribeDataSet(const Model::DescribeDataSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDataSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDataSetOutcomeCallable DescribeDataSetCallable(const Model::DescribeDataSetRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDataSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDataSetAsync(const Model::DescribeDataSetRequest& request, const DescribeDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the permissions on a dataset.</p> <p>The permissions resource is
@@ -997,15 +653,6 @@ namespace QuickSight
          */
         virtual Model::DescribeDataSetPermissionsOutcome DescribeDataSetPermissions(const Model::DescribeDataSetPermissionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDataSetPermissions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDataSetPermissionsOutcomeCallable DescribeDataSetPermissionsCallable(const Model::DescribeDataSetPermissionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDataSetPermissions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDataSetPermissionsAsync(const Model::DescribeDataSetPermissionsRequest& request, const DescribeDataSetPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a data source.</p><p><h3>See Also:</h3>   <a
@@ -1014,15 +661,6 @@ namespace QuickSight
          */
         virtual Model::DescribeDataSourceOutcome DescribeDataSource(const Model::DescribeDataSourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDataSource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDataSourceOutcomeCallable DescribeDataSourceCallable(const Model::DescribeDataSourceRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDataSource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDataSourceAsync(const Model::DescribeDataSourceRequest& request, const DescribeDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the resource permissions for a data source.</p><p><h3>See
@@ -1032,15 +670,6 @@ namespace QuickSight
          */
         virtual Model::DescribeDataSourcePermissionsOutcome DescribeDataSourcePermissions(const Model::DescribeDataSourcePermissionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDataSourcePermissions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDataSourcePermissionsOutcomeCallable DescribeDataSourcePermissionsCallable(const Model::DescribeDataSourcePermissionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDataSourcePermissions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDataSourcePermissionsAsync(const Model::DescribeDataSourcePermissionsRequest& request, const DescribeDataSourcePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a folder.</p><p><h3>See Also:</h3>   <a
@@ -1049,15 +678,6 @@ namespace QuickSight
          */
         virtual Model::DescribeFolderOutcome DescribeFolder(const Model::DescribeFolderRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeFolder that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeFolderOutcomeCallable DescribeFolderCallable(const Model::DescribeFolderRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeFolder that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeFolderAsync(const Model::DescribeFolderRequest& request, const DescribeFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes permissions for a folder.</p><p><h3>See Also:</h3>   <a
@@ -1066,15 +686,6 @@ namespace QuickSight
          */
         virtual Model::DescribeFolderPermissionsOutcome DescribeFolderPermissions(const Model::DescribeFolderPermissionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeFolderPermissions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeFolderPermissionsOutcomeCallable DescribeFolderPermissionsCallable(const Model::DescribeFolderPermissionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeFolderPermissions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeFolderPermissionsAsync(const Model::DescribeFolderPermissionsRequest& request, const DescribeFolderPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the folder resolved permissions. Permissions consists of both
@@ -1085,15 +696,6 @@ namespace QuickSight
          */
         virtual Model::DescribeFolderResolvedPermissionsOutcome DescribeFolderResolvedPermissions(const Model::DescribeFolderResolvedPermissionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeFolderResolvedPermissions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeFolderResolvedPermissionsOutcomeCallable DescribeFolderResolvedPermissionsCallable(const Model::DescribeFolderResolvedPermissionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeFolderResolvedPermissions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeFolderResolvedPermissionsAsync(const Model::DescribeFolderResolvedPermissionsRequest& request, const DescribeFolderResolvedPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns an Amazon QuickSight group's description and Amazon Resource Name
@@ -1103,15 +705,6 @@ namespace QuickSight
          */
         virtual Model::DescribeGroupOutcome DescribeGroup(const Model::DescribeGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeGroupOutcomeCallable DescribeGroupCallable(const Model::DescribeGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeGroupAsync(const Model::DescribeGroupRequest& request, const DescribeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Use the <code>DescribeGroupMembership</code> operation to determine if a user
@@ -1123,15 +716,6 @@ namespace QuickSight
          */
         virtual Model::DescribeGroupMembershipOutcome DescribeGroupMembership(const Model::DescribeGroupMembershipRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeGroupMembership that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeGroupMembershipOutcomeCallable DescribeGroupMembershipCallable(const Model::DescribeGroupMembershipRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeGroupMembership that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeGroupMembershipAsync(const Model::DescribeGroupMembershipRequest& request, const DescribeGroupMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes an existing IAM policy assignment, as specified by the assignment
@@ -1141,15 +725,6 @@ namespace QuickSight
          */
         virtual Model::DescribeIAMPolicyAssignmentOutcome DescribeIAMPolicyAssignment(const Model::DescribeIAMPolicyAssignmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeIAMPolicyAssignment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeIAMPolicyAssignmentOutcomeCallable DescribeIAMPolicyAssignmentCallable(const Model::DescribeIAMPolicyAssignmentRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeIAMPolicyAssignment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeIAMPolicyAssignmentAsync(const Model::DescribeIAMPolicyAssignmentRequest& request, const DescribeIAMPolicyAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a SPICE ingestion.</p><p><h3>See Also:</h3>   <a
@@ -1158,15 +733,6 @@ namespace QuickSight
          */
         virtual Model::DescribeIngestionOutcome DescribeIngestion(const Model::DescribeIngestionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeIngestion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeIngestionOutcomeCallable DescribeIngestionCallable(const Model::DescribeIngestionRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeIngestion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeIngestionAsync(const Model::DescribeIngestionRequest& request, const DescribeIngestionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides a summary and status of IP rules.</p><p><h3>See Also:</h3>   <a
@@ -1175,15 +741,6 @@ namespace QuickSight
          */
         virtual Model::DescribeIpRestrictionOutcome DescribeIpRestriction(const Model::DescribeIpRestrictionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeIpRestriction that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeIpRestrictionOutcomeCallable DescribeIpRestrictionCallable(const Model::DescribeIpRestrictionRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeIpRestriction that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeIpRestrictionAsync(const Model::DescribeIpRestrictionRequest& request, const DescribeIpRestrictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the current namespace.</p><p><h3>See Also:</h3>   <a
@@ -1192,15 +749,6 @@ namespace QuickSight
          */
         virtual Model::DescribeNamespaceOutcome DescribeNamespace(const Model::DescribeNamespaceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeNamespace that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeNamespaceOutcomeCallable DescribeNamespaceCallable(const Model::DescribeNamespaceRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeNamespace that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeNamespaceAsync(const Model::DescribeNamespaceRequest& request, const DescribeNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a template's metadata.</p><p><h3>See Also:</h3>   <a
@@ -1209,15 +757,6 @@ namespace QuickSight
          */
         virtual Model::DescribeTemplateOutcome DescribeTemplate(const Model::DescribeTemplateRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTemplateOutcomeCallable DescribeTemplateCallable(const Model::DescribeTemplateRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTemplateAsync(const Model::DescribeTemplateRequest& request, const DescribeTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the template alias for a template.</p><p><h3>See Also:</h3>   <a
@@ -1226,15 +765,6 @@ namespace QuickSight
          */
         virtual Model::DescribeTemplateAliasOutcome DescribeTemplateAlias(const Model::DescribeTemplateAliasRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTemplateAlias that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTemplateAliasOutcomeCallable DescribeTemplateAliasCallable(const Model::DescribeTemplateAliasRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTemplateAlias that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTemplateAliasAsync(const Model::DescribeTemplateAliasRequest& request, const DescribeTemplateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes read and write permissions on a template.</p><p><h3>See Also:</h3> 
@@ -1244,15 +774,6 @@ namespace QuickSight
          */
         virtual Model::DescribeTemplatePermissionsOutcome DescribeTemplatePermissions(const Model::DescribeTemplatePermissionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTemplatePermissions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTemplatePermissionsOutcomeCallable DescribeTemplatePermissionsCallable(const Model::DescribeTemplatePermissionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTemplatePermissions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTemplatePermissionsAsync(const Model::DescribeTemplatePermissionsRequest& request, const DescribeTemplatePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a theme.</p><p><h3>See Also:</h3>   <a
@@ -1261,15 +782,6 @@ namespace QuickSight
          */
         virtual Model::DescribeThemeOutcome DescribeTheme(const Model::DescribeThemeRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTheme that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeThemeOutcomeCallable DescribeThemeCallable(const Model::DescribeThemeRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTheme that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeThemeAsync(const Model::DescribeThemeRequest& request, const DescribeThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the alias for a theme.</p><p><h3>See Also:</h3>   <a
@@ -1278,15 +790,6 @@ namespace QuickSight
          */
         virtual Model::DescribeThemeAliasOutcome DescribeThemeAlias(const Model::DescribeThemeAliasRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeThemeAlias that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeThemeAliasOutcomeCallable DescribeThemeAliasCallable(const Model::DescribeThemeAliasRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeThemeAlias that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeThemeAliasAsync(const Model::DescribeThemeAliasRequest& request, const DescribeThemeAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the read and write permissions for a theme.</p><p><h3>See
@@ -1296,15 +799,6 @@ namespace QuickSight
          */
         virtual Model::DescribeThemePermissionsOutcome DescribeThemePermissions(const Model::DescribeThemePermissionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeThemePermissions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeThemePermissionsOutcomeCallable DescribeThemePermissionsCallable(const Model::DescribeThemePermissionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeThemePermissions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeThemePermissionsAsync(const Model::DescribeThemePermissionsRequest& request, const DescribeThemePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a user, given the user name. </p><p><h3>See
@@ -1314,15 +808,6 @@ namespace QuickSight
          */
         virtual Model::DescribeUserOutcome DescribeUser(const Model::DescribeUserRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeUser that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeUserOutcomeCallable DescribeUserCallable(const Model::DescribeUserRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeUser that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeUserAsync(const Model::DescribeUserRequest& request, const DescribeUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Generates an embed URL that you can use to embed an Amazon QuickSight
@@ -1349,15 +834,6 @@ namespace QuickSight
          */
         virtual Model::GenerateEmbedUrlForAnonymousUserOutcome GenerateEmbedUrlForAnonymousUser(const Model::GenerateEmbedUrlForAnonymousUserRequest& request) const;
 
-        /**
-         * A Callable wrapper for GenerateEmbedUrlForAnonymousUser that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GenerateEmbedUrlForAnonymousUserOutcomeCallable GenerateEmbedUrlForAnonymousUserCallable(const Model::GenerateEmbedUrlForAnonymousUserRequest& request) const;
-
-        /**
-         * An Async wrapper for GenerateEmbedUrlForAnonymousUser that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GenerateEmbedUrlForAnonymousUserAsync(const Model::GenerateEmbedUrlForAnonymousUserRequest& request, const GenerateEmbedUrlForAnonymousUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Generates an embed URL that you can use to embed an Amazon QuickSight
@@ -1385,15 +861,6 @@ namespace QuickSight
          */
         virtual Model::GenerateEmbedUrlForRegisteredUserOutcome GenerateEmbedUrlForRegisteredUser(const Model::GenerateEmbedUrlForRegisteredUserRequest& request) const;
 
-        /**
-         * A Callable wrapper for GenerateEmbedUrlForRegisteredUser that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GenerateEmbedUrlForRegisteredUserOutcomeCallable GenerateEmbedUrlForRegisteredUserCallable(const Model::GenerateEmbedUrlForRegisteredUserRequest& request) const;
-
-        /**
-         * An Async wrapper for GenerateEmbedUrlForRegisteredUser that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GenerateEmbedUrlForRegisteredUserAsync(const Model::GenerateEmbedUrlForRegisteredUserRequest& request, const GenerateEmbedUrlForRegisteredUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Generates a temporary session URL and authorization code(bearer token) that
@@ -1421,15 +888,6 @@ namespace QuickSight
          */
         virtual Model::GetDashboardEmbedUrlOutcome GetDashboardEmbedUrl(const Model::GetDashboardEmbedUrlRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDashboardEmbedUrl that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDashboardEmbedUrlOutcomeCallable GetDashboardEmbedUrlCallable(const Model::GetDashboardEmbedUrlRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDashboardEmbedUrl that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDashboardEmbedUrlAsync(const Model::GetDashboardEmbedUrlRequest& request, const GetDashboardEmbedUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Generates a session URL and authorization code that you can use to embed the
@@ -1455,15 +913,6 @@ namespace QuickSight
          */
         virtual Model::GetSessionEmbedUrlOutcome GetSessionEmbedUrl(const Model::GetSessionEmbedUrlRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSessionEmbedUrl that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSessionEmbedUrlOutcomeCallable GetSessionEmbedUrlCallable(const Model::GetSessionEmbedUrlRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSessionEmbedUrl that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSessionEmbedUrlAsync(const Model::GetSessionEmbedUrlRequest& request, const GetSessionEmbedUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists Amazon QuickSight analyses that exist in the specified Amazon Web
@@ -1473,15 +922,6 @@ namespace QuickSight
          */
         virtual Model::ListAnalysesOutcome ListAnalyses(const Model::ListAnalysesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAnalyses that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAnalysesOutcomeCallable ListAnalysesCallable(const Model::ListAnalysesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAnalyses that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAnalysesAsync(const Model::ListAnalysesRequest& request, const ListAnalysesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all the versions of the dashboards in the Amazon QuickSight
@@ -1491,15 +931,6 @@ namespace QuickSight
          */
         virtual Model::ListDashboardVersionsOutcome ListDashboardVersions(const Model::ListDashboardVersionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDashboardVersions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDashboardVersionsOutcomeCallable ListDashboardVersionsCallable(const Model::ListDashboardVersionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDashboardVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDashboardVersionsAsync(const Model::ListDashboardVersionsRequest& request, const ListDashboardVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists dashboards in an Amazon Web Services account.</p><p><h3>See Also:</h3> 
@@ -1509,15 +940,6 @@ namespace QuickSight
          */
         virtual Model::ListDashboardsOutcome ListDashboards(const Model::ListDashboardsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDashboards that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDashboardsOutcomeCallable ListDashboardsCallable(const Model::ListDashboardsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDashboards that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDashboardsAsync(const Model::ListDashboardsRequest& request, const ListDashboardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all of the datasets belonging to the current Amazon Web Services
@@ -1529,15 +951,6 @@ namespace QuickSight
          */
         virtual Model::ListDataSetsOutcome ListDataSets(const Model::ListDataSetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDataSets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDataSetsOutcomeCallable ListDataSetsCallable(const Model::ListDataSetsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDataSets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDataSetsAsync(const Model::ListDataSetsRequest& request, const ListDataSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists data sources in current Amazon Web Services Region that belong to this
@@ -1547,15 +960,6 @@ namespace QuickSight
          */
         virtual Model::ListDataSourcesOutcome ListDataSources(const Model::ListDataSourcesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDataSources that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDataSourcesOutcomeCallable ListDataSourcesCallable(const Model::ListDataSourcesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDataSources that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDataSourcesAsync(const Model::ListDataSourcesRequest& request, const ListDataSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List all assets (<code>DASHBOARD</code>, <code>ANALYSIS</code>, and
@@ -1565,15 +969,6 @@ namespace QuickSight
          */
         virtual Model::ListFolderMembersOutcome ListFolderMembers(const Model::ListFolderMembersRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListFolderMembers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListFolderMembersOutcomeCallable ListFolderMembersCallable(const Model::ListFolderMembersRequest& request) const;
-
-        /**
-         * An Async wrapper for ListFolderMembers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListFolderMembersAsync(const Model::ListFolderMembersRequest& request, const ListFolderMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all folders in an account.</p><p><h3>See Also:</h3>   <a
@@ -1582,15 +977,6 @@ namespace QuickSight
          */
         virtual Model::ListFoldersOutcome ListFolders(const Model::ListFoldersRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListFolders that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListFoldersOutcomeCallable ListFoldersCallable(const Model::ListFoldersRequest& request) const;
-
-        /**
-         * An Async wrapper for ListFolders that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListFoldersAsync(const Model::ListFoldersRequest& request, const ListFoldersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists member users in a group.</p><p><h3>See Also:</h3>   <a
@@ -1599,15 +985,6 @@ namespace QuickSight
          */
         virtual Model::ListGroupMembershipsOutcome ListGroupMemberships(const Model::ListGroupMembershipsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListGroupMemberships that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListGroupMembershipsOutcomeCallable ListGroupMembershipsCallable(const Model::ListGroupMembershipsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListGroupMemberships that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListGroupMembershipsAsync(const Model::ListGroupMembershipsRequest& request, const ListGroupMembershipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all user groups in Amazon QuickSight. </p><p><h3>See Also:</h3>   <a
@@ -1616,15 +993,6 @@ namespace QuickSight
          */
         virtual Model::ListGroupsOutcome ListGroups(const Model::ListGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListGroupsOutcomeCallable ListGroupsCallable(const Model::ListGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListGroupsAsync(const Model::ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists IAM policy assignments in the current Amazon QuickSight
@@ -1634,15 +1002,6 @@ namespace QuickSight
          */
         virtual Model::ListIAMPolicyAssignmentsOutcome ListIAMPolicyAssignments(const Model::ListIAMPolicyAssignmentsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListIAMPolicyAssignments that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListIAMPolicyAssignmentsOutcomeCallable ListIAMPolicyAssignmentsCallable(const Model::ListIAMPolicyAssignmentsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListIAMPolicyAssignments that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListIAMPolicyAssignmentsAsync(const Model::ListIAMPolicyAssignmentsRequest& request, const ListIAMPolicyAssignmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all the IAM policy assignments, including the Amazon Resource Names
@@ -1653,15 +1012,6 @@ namespace QuickSight
          */
         virtual Model::ListIAMPolicyAssignmentsForUserOutcome ListIAMPolicyAssignmentsForUser(const Model::ListIAMPolicyAssignmentsForUserRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListIAMPolicyAssignmentsForUser that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListIAMPolicyAssignmentsForUserOutcomeCallable ListIAMPolicyAssignmentsForUserCallable(const Model::ListIAMPolicyAssignmentsForUserRequest& request) const;
-
-        /**
-         * An Async wrapper for ListIAMPolicyAssignmentsForUser that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListIAMPolicyAssignmentsForUserAsync(const Model::ListIAMPolicyAssignmentsForUserRequest& request, const ListIAMPolicyAssignmentsForUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the history of SPICE ingestions for a dataset.</p><p><h3>See Also:</h3>
@@ -1671,15 +1021,6 @@ namespace QuickSight
          */
         virtual Model::ListIngestionsOutcome ListIngestions(const Model::ListIngestionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListIngestions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListIngestionsOutcomeCallable ListIngestionsCallable(const Model::ListIngestionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListIngestions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListIngestionsAsync(const Model::ListIngestionsRequest& request, const ListIngestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the namespaces for the specified Amazon Web Services account. This
@@ -1689,15 +1030,6 @@ namespace QuickSight
          */
         virtual Model::ListNamespacesOutcome ListNamespaces(const Model::ListNamespacesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListNamespaces that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListNamespacesOutcomeCallable ListNamespacesCallable(const Model::ListNamespacesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListNamespaces that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListNamespacesAsync(const Model::ListNamespacesRequest& request, const ListNamespacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the tags assigned to a resource.</p><p><h3>See Also:</h3>   <a
@@ -1706,15 +1038,6 @@ namespace QuickSight
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all the aliases of a template.</p><p><h3>See Also:</h3>   <a
@@ -1723,15 +1046,6 @@ namespace QuickSight
          */
         virtual Model::ListTemplateAliasesOutcome ListTemplateAliases(const Model::ListTemplateAliasesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTemplateAliases that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTemplateAliasesOutcomeCallable ListTemplateAliasesCallable(const Model::ListTemplateAliasesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTemplateAliases that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTemplateAliasesAsync(const Model::ListTemplateAliasesRequest& request, const ListTemplateAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all the versions of the templates in the current Amazon QuickSight
@@ -1741,15 +1055,6 @@ namespace QuickSight
          */
         virtual Model::ListTemplateVersionsOutcome ListTemplateVersions(const Model::ListTemplateVersionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTemplateVersions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTemplateVersionsOutcomeCallable ListTemplateVersionsCallable(const Model::ListTemplateVersionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTemplateVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTemplateVersionsAsync(const Model::ListTemplateVersionsRequest& request, const ListTemplateVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all the templates in the current Amazon QuickSight
@@ -1759,15 +1064,6 @@ namespace QuickSight
          */
         virtual Model::ListTemplatesOutcome ListTemplates(const Model::ListTemplatesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTemplates that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTemplatesOutcomeCallable ListTemplatesCallable(const Model::ListTemplatesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTemplates that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTemplatesAsync(const Model::ListTemplatesRequest& request, const ListTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all the aliases of a theme.</p><p><h3>See Also:</h3>   <a
@@ -1776,15 +1072,6 @@ namespace QuickSight
          */
         virtual Model::ListThemeAliasesOutcome ListThemeAliases(const Model::ListThemeAliasesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListThemeAliases that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListThemeAliasesOutcomeCallable ListThemeAliasesCallable(const Model::ListThemeAliasesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListThemeAliases that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListThemeAliasesAsync(const Model::ListThemeAliasesRequest& request, const ListThemeAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all the versions of the themes in the current Amazon Web Services
@@ -1794,15 +1081,6 @@ namespace QuickSight
          */
         virtual Model::ListThemeVersionsOutcome ListThemeVersions(const Model::ListThemeVersionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListThemeVersions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListThemeVersionsOutcomeCallable ListThemeVersionsCallable(const Model::ListThemeVersionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListThemeVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListThemeVersionsAsync(const Model::ListThemeVersionsRequest& request, const ListThemeVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all the themes in the current Amazon Web Services
@@ -1812,15 +1090,6 @@ namespace QuickSight
          */
         virtual Model::ListThemesOutcome ListThemes(const Model::ListThemesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListThemes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListThemesOutcomeCallable ListThemesCallable(const Model::ListThemesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListThemes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListThemesAsync(const Model::ListThemesRequest& request, const ListThemesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the Amazon QuickSight groups that an Amazon QuickSight user is a member
@@ -1830,15 +1099,6 @@ namespace QuickSight
          */
         virtual Model::ListUserGroupsOutcome ListUserGroups(const Model::ListUserGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListUserGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListUserGroupsOutcomeCallable ListUserGroupsCallable(const Model::ListUserGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListUserGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListUserGroupsAsync(const Model::ListUserGroupsRequest& request, const ListUserGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of all of the Amazon QuickSight users belonging to this
@@ -1848,15 +1108,6 @@ namespace QuickSight
          */
         virtual Model::ListUsersOutcome ListUsers(const Model::ListUsersRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListUsers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListUsersOutcomeCallable ListUsersCallable(const Model::ListUsersRequest& request) const;
-
-        /**
-         * An Async wrapper for ListUsers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListUsersAsync(const Model::ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an Amazon QuickSight user, whose identity is associated with the
@@ -1867,15 +1118,6 @@ namespace QuickSight
          */
         virtual Model::RegisterUserOutcome RegisterUser(const Model::RegisterUserRequest& request) const;
 
-        /**
-         * A Callable wrapper for RegisterUser that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RegisterUserOutcomeCallable RegisterUserCallable(const Model::RegisterUserRequest& request) const;
-
-        /**
-         * An Async wrapper for RegisterUser that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RegisterUserAsync(const Model::RegisterUserRequest& request, const RegisterUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Restores an analysis.</p><p><h3>See Also:</h3>   <a
@@ -1884,15 +1126,6 @@ namespace QuickSight
          */
         virtual Model::RestoreAnalysisOutcome RestoreAnalysis(const Model::RestoreAnalysisRequest& request) const;
 
-        /**
-         * A Callable wrapper for RestoreAnalysis that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RestoreAnalysisOutcomeCallable RestoreAnalysisCallable(const Model::RestoreAnalysisRequest& request) const;
-
-        /**
-         * An Async wrapper for RestoreAnalysis that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RestoreAnalysisAsync(const Model::RestoreAnalysisRequest& request, const RestoreAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Searches for analyses that belong to the user specified in the filter.</p>
@@ -1904,15 +1137,6 @@ namespace QuickSight
          */
         virtual Model::SearchAnalysesOutcome SearchAnalyses(const Model::SearchAnalysesRequest& request) const;
 
-        /**
-         * A Callable wrapper for SearchAnalyses that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SearchAnalysesOutcomeCallable SearchAnalysesCallable(const Model::SearchAnalysesRequest& request) const;
-
-        /**
-         * An Async wrapper for SearchAnalyses that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SearchAnalysesAsync(const Model::SearchAnalysesRequest& request, const SearchAnalysesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Searches for dashboards that belong to a user. </p>  <p>This operation
@@ -1923,15 +1147,6 @@ namespace QuickSight
          */
         virtual Model::SearchDashboardsOutcome SearchDashboards(const Model::SearchDashboardsRequest& request) const;
 
-        /**
-         * A Callable wrapper for SearchDashboards that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SearchDashboardsOutcomeCallable SearchDashboardsCallable(const Model::SearchDashboardsRequest& request) const;
-
-        /**
-         * An Async wrapper for SearchDashboards that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SearchDashboardsAsync(const Model::SearchDashboardsRequest& request, const SearchDashboardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Searches the subfolders in a folder.</p><p><h3>See Also:</h3>   <a
@@ -1940,15 +1155,6 @@ namespace QuickSight
          */
         virtual Model::SearchFoldersOutcome SearchFolders(const Model::SearchFoldersRequest& request) const;
 
-        /**
-         * A Callable wrapper for SearchFolders that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SearchFoldersOutcomeCallable SearchFoldersCallable(const Model::SearchFoldersRequest& request) const;
-
-        /**
-         * An Async wrapper for SearchFolders that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SearchFoldersAsync(const Model::SearchFoldersRequest& request, const SearchFoldersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Use the <code>SearchGroups</code> operation to search groups in a specified
@@ -1959,15 +1165,6 @@ namespace QuickSight
          */
         virtual Model::SearchGroupsOutcome SearchGroups(const Model::SearchGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for SearchGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SearchGroupsOutcomeCallable SearchGroupsCallable(const Model::SearchGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for SearchGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SearchGroupsAsync(const Model::SearchGroupsRequest& request, const SearchGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Assigns one or more tags (key-value pairs) to the specified Amazon QuickSight
@@ -1993,15 +1190,6 @@ namespace QuickSight
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes a tag or tags from a resource.</p><p><h3>See Also:</h3>   <a
@@ -2010,15 +1198,6 @@ namespace QuickSight
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates Amazon QuickSight customizations for the current Amazon Web Services
@@ -2034,15 +1213,6 @@ namespace QuickSight
          */
         virtual Model::UpdateAccountCustomizationOutcome UpdateAccountCustomization(const Model::UpdateAccountCustomizationRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateAccountCustomization that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateAccountCustomizationOutcomeCallable UpdateAccountCustomizationCallable(const Model::UpdateAccountCustomizationRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateAccountCustomization that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateAccountCustomizationAsync(const Model::UpdateAccountCustomizationRequest& request, const UpdateAccountCustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the Amazon QuickSight settings in your Amazon Web Services
@@ -2052,15 +1222,6 @@ namespace QuickSight
          */
         virtual Model::UpdateAccountSettingsOutcome UpdateAccountSettings(const Model::UpdateAccountSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateAccountSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateAccountSettingsOutcomeCallable UpdateAccountSettingsCallable(const Model::UpdateAccountSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateAccountSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateAccountSettingsAsync(const Model::UpdateAccountSettingsRequest& request, const UpdateAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an analysis in Amazon QuickSight</p><p><h3>See Also:</h3>   <a
@@ -2069,15 +1230,6 @@ namespace QuickSight
          */
         virtual Model::UpdateAnalysisOutcome UpdateAnalysis(const Model::UpdateAnalysisRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateAnalysis that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateAnalysisOutcomeCallable UpdateAnalysisCallable(const Model::UpdateAnalysisRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateAnalysis that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateAnalysisAsync(const Model::UpdateAnalysisRequest& request, const UpdateAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the read and write permissions for an analysis.</p><p><h3>See
@@ -2087,15 +1239,6 @@ namespace QuickSight
          */
         virtual Model::UpdateAnalysisPermissionsOutcome UpdateAnalysisPermissions(const Model::UpdateAnalysisPermissionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateAnalysisPermissions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateAnalysisPermissionsOutcomeCallable UpdateAnalysisPermissionsCallable(const Model::UpdateAnalysisPermissionsRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateAnalysisPermissions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateAnalysisPermissionsAsync(const Model::UpdateAnalysisPermissionsRequest& request, const UpdateAnalysisPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a dashboard in an Amazon Web Services account.</p>  <p>Updating
@@ -2109,15 +1252,6 @@ namespace QuickSight
          */
         virtual Model::UpdateDashboardOutcome UpdateDashboard(const Model::UpdateDashboardRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateDashboard that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateDashboardOutcomeCallable UpdateDashboardCallable(const Model::UpdateDashboardRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateDashboard that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateDashboardAsync(const Model::UpdateDashboardRequest& request, const UpdateDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates read and write permissions on a dashboard.</p><p><h3>See Also:</h3>  
@@ -2127,15 +1261,6 @@ namespace QuickSight
          */
         virtual Model::UpdateDashboardPermissionsOutcome UpdateDashboardPermissions(const Model::UpdateDashboardPermissionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateDashboardPermissions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateDashboardPermissionsOutcomeCallable UpdateDashboardPermissionsCallable(const Model::UpdateDashboardPermissionsRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateDashboardPermissions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateDashboardPermissionsAsync(const Model::UpdateDashboardPermissionsRequest& request, const UpdateDashboardPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the published version of a dashboard.</p><p><h3>See Also:</h3>   <a
@@ -2144,15 +1269,6 @@ namespace QuickSight
          */
         virtual Model::UpdateDashboardPublishedVersionOutcome UpdateDashboardPublishedVersion(const Model::UpdateDashboardPublishedVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateDashboardPublishedVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateDashboardPublishedVersionOutcomeCallable UpdateDashboardPublishedVersionCallable(const Model::UpdateDashboardPublishedVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateDashboardPublishedVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateDashboardPublishedVersionAsync(const Model::UpdateDashboardPublishedVersionRequest& request, const UpdateDashboardPublishedVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a dataset. This operation doesn't support datasets that include
@@ -2163,15 +1279,6 @@ namespace QuickSight
          */
         virtual Model::UpdateDataSetOutcome UpdateDataSet(const Model::UpdateDataSetRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateDataSet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateDataSetOutcomeCallable UpdateDataSetCallable(const Model::UpdateDataSetRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateDataSet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateDataSetAsync(const Model::UpdateDataSetRequest& request, const UpdateDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the permissions on a dataset.</p> <p>The permissions resource is
@@ -2182,15 +1289,6 @@ namespace QuickSight
          */
         virtual Model::UpdateDataSetPermissionsOutcome UpdateDataSetPermissions(const Model::UpdateDataSetPermissionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateDataSetPermissions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateDataSetPermissionsOutcomeCallable UpdateDataSetPermissionsCallable(const Model::UpdateDataSetPermissionsRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateDataSetPermissions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateDataSetPermissionsAsync(const Model::UpdateDataSetPermissionsRequest& request, const UpdateDataSetPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a data source.</p><p><h3>See Also:</h3>   <a
@@ -2199,15 +1297,6 @@ namespace QuickSight
          */
         virtual Model::UpdateDataSourceOutcome UpdateDataSource(const Model::UpdateDataSourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateDataSource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateDataSourceOutcomeCallable UpdateDataSourceCallable(const Model::UpdateDataSourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateDataSource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateDataSourceAsync(const Model::UpdateDataSourceRequest& request, const UpdateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the permissions to a data source.</p><p><h3>See Also:</h3>   <a
@@ -2216,15 +1305,6 @@ namespace QuickSight
          */
         virtual Model::UpdateDataSourcePermissionsOutcome UpdateDataSourcePermissions(const Model::UpdateDataSourcePermissionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateDataSourcePermissions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateDataSourcePermissionsOutcomeCallable UpdateDataSourcePermissionsCallable(const Model::UpdateDataSourcePermissionsRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateDataSourcePermissions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateDataSourcePermissionsAsync(const Model::UpdateDataSourcePermissionsRequest& request, const UpdateDataSourcePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the name of a folder.</p><p><h3>See Also:</h3>   <a
@@ -2233,15 +1313,6 @@ namespace QuickSight
          */
         virtual Model::UpdateFolderOutcome UpdateFolder(const Model::UpdateFolderRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateFolder that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateFolderOutcomeCallable UpdateFolderCallable(const Model::UpdateFolderRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateFolder that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateFolderAsync(const Model::UpdateFolderRequest& request, const UpdateFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates permissions of a folder.</p><p><h3>See Also:</h3>   <a
@@ -2250,15 +1321,6 @@ namespace QuickSight
          */
         virtual Model::UpdateFolderPermissionsOutcome UpdateFolderPermissions(const Model::UpdateFolderPermissionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateFolderPermissions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateFolderPermissionsOutcomeCallable UpdateFolderPermissionsCallable(const Model::UpdateFolderPermissionsRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateFolderPermissions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateFolderPermissionsAsync(const Model::UpdateFolderPermissionsRequest& request, const UpdateFolderPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Changes a group description. </p><p><h3>See Also:</h3>   <a
@@ -2267,15 +1329,6 @@ namespace QuickSight
          */
         virtual Model::UpdateGroupOutcome UpdateGroup(const Model::UpdateGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateGroupOutcomeCallable UpdateGroupCallable(const Model::UpdateGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateGroupAsync(const Model::UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an existing IAM policy assignment. This operation updates only the
@@ -2287,15 +1340,6 @@ namespace QuickSight
          */
         virtual Model::UpdateIAMPolicyAssignmentOutcome UpdateIAMPolicyAssignment(const Model::UpdateIAMPolicyAssignmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateIAMPolicyAssignment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateIAMPolicyAssignmentOutcomeCallable UpdateIAMPolicyAssignmentCallable(const Model::UpdateIAMPolicyAssignmentRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateIAMPolicyAssignment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateIAMPolicyAssignmentAsync(const Model::UpdateIAMPolicyAssignmentRequest& request, const UpdateIAMPolicyAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the content and status of IP rules. To use this operation, you need
@@ -2307,15 +1351,6 @@ namespace QuickSight
          */
         virtual Model::UpdateIpRestrictionOutcome UpdateIpRestriction(const Model::UpdateIpRestrictionRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateIpRestriction that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateIpRestrictionOutcomeCallable UpdateIpRestrictionCallable(const Model::UpdateIpRestrictionRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateIpRestriction that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateIpRestrictionAsync(const Model::UpdateIpRestrictionRequest& request, const UpdateIpRestrictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Use the <code>UpdatePublicSharingSettings</code> operation to turn on or turn
@@ -2333,15 +1368,6 @@ namespace QuickSight
          */
         virtual Model::UpdatePublicSharingSettingsOutcome UpdatePublicSharingSettings(const Model::UpdatePublicSharingSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdatePublicSharingSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdatePublicSharingSettingsOutcomeCallable UpdatePublicSharingSettingsCallable(const Model::UpdatePublicSharingSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdatePublicSharingSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdatePublicSharingSettingsAsync(const Model::UpdatePublicSharingSettingsRequest& request, const UpdatePublicSharingSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a template from an existing Amazon QuickSight analysis or another
@@ -2351,15 +1377,6 @@ namespace QuickSight
          */
         virtual Model::UpdateTemplateOutcome UpdateTemplate(const Model::UpdateTemplateRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateTemplateOutcomeCallable UpdateTemplateCallable(const Model::UpdateTemplateRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateTemplateAsync(const Model::UpdateTemplateRequest& request, const UpdateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the template alias of a template.</p><p><h3>See Also:</h3>   <a
@@ -2368,15 +1385,6 @@ namespace QuickSight
          */
         virtual Model::UpdateTemplateAliasOutcome UpdateTemplateAlias(const Model::UpdateTemplateAliasRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateTemplateAlias that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateTemplateAliasOutcomeCallable UpdateTemplateAliasCallable(const Model::UpdateTemplateAliasRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateTemplateAlias that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateTemplateAliasAsync(const Model::UpdateTemplateAliasRequest& request, const UpdateTemplateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the resource permissions for a template.</p><p><h3>See Also:</h3>  
@@ -2386,15 +1394,6 @@ namespace QuickSight
          */
         virtual Model::UpdateTemplatePermissionsOutcome UpdateTemplatePermissions(const Model::UpdateTemplatePermissionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateTemplatePermissions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateTemplatePermissionsOutcomeCallable UpdateTemplatePermissionsCallable(const Model::UpdateTemplatePermissionsRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateTemplatePermissions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateTemplatePermissionsAsync(const Model::UpdateTemplatePermissionsRequest& request, const UpdateTemplatePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a theme.</p><p><h3>See Also:</h3>   <a
@@ -2403,15 +1402,6 @@ namespace QuickSight
          */
         virtual Model::UpdateThemeOutcome UpdateTheme(const Model::UpdateThemeRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateTheme that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateThemeOutcomeCallable UpdateThemeCallable(const Model::UpdateThemeRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateTheme that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateThemeAsync(const Model::UpdateThemeRequest& request, const UpdateThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an alias of a theme.</p><p><h3>See Also:</h3>   <a
@@ -2420,15 +1410,6 @@ namespace QuickSight
          */
         virtual Model::UpdateThemeAliasOutcome UpdateThemeAlias(const Model::UpdateThemeAliasRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateThemeAlias that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateThemeAliasOutcomeCallable UpdateThemeAliasCallable(const Model::UpdateThemeAliasRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateThemeAlias that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateThemeAliasAsync(const Model::UpdateThemeAliasRequest& request, const UpdateThemeAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the resource permissions for a theme. Permissions apply to the action
@@ -2458,15 +1439,6 @@ namespace QuickSight
          */
         virtual Model::UpdateThemePermissionsOutcome UpdateThemePermissions(const Model::UpdateThemePermissionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateThemePermissions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateThemePermissionsOutcomeCallable UpdateThemePermissionsCallable(const Model::UpdateThemePermissionsRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateThemePermissions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateThemePermissionsAsync(const Model::UpdateThemePermissionsRequest& request, const UpdateThemePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an Amazon QuickSight user.</p><p><h3>See Also:</h3>   <a
@@ -2475,15 +1447,6 @@ namespace QuickSight
          */
         virtual Model::UpdateUserOutcome UpdateUser(const Model::UpdateUserRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateUser that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateUserOutcomeCallable UpdateUserCallable(const Model::UpdateUserRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateUser that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateUserAsync(const Model::UpdateUserRequest& request, const UpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

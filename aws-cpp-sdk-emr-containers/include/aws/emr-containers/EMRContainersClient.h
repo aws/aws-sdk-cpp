@@ -7,8 +7,10 @@
 #include <aws/emr-containers/EMRContainers_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/emr-containers/EMRContainersServiceClientModel.h>
+#include <aws/emr-containers/EMRContainersLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -93,6 +95,47 @@ namespace EMRContainers
         virtual ~EMRContainersClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Cancels a job run. A job run is a unit of work, such as a Spark jar, PySpark
          * script, or SparkSQL query, that you submit to Amazon EMR on EKS.</p><p><h3>See
@@ -102,15 +145,6 @@ namespace EMRContainers
          */
         virtual Model::CancelJobRunOutcome CancelJobRun(const Model::CancelJobRunRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelJobRun that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelJobRunOutcomeCallable CancelJobRunCallable(const Model::CancelJobRunRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelJobRun that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelJobRunAsync(const Model::CancelJobRunRequest& request, const CancelJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a job template. Job template stores values of StartJobRun API request
@@ -122,15 +156,6 @@ namespace EMRContainers
          */
         virtual Model::CreateJobTemplateOutcome CreateJobTemplate(const Model::CreateJobTemplateRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateJobTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateJobTemplateOutcomeCallable CreateJobTemplateCallable(const Model::CreateJobTemplateRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateJobTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateJobTemplateAsync(const Model::CreateJobTemplateRequest& request, const CreateJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a managed endpoint. A managed endpoint is a gateway that connects EMR
@@ -141,15 +166,6 @@ namespace EMRContainers
          */
         virtual Model::CreateManagedEndpointOutcome CreateManagedEndpoint(const Model::CreateManagedEndpointRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateManagedEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateManagedEndpointOutcomeCallable CreateManagedEndpointCallable(const Model::CreateManagedEndpointRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateManagedEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateManagedEndpointAsync(const Model::CreateManagedEndpointRequest& request, const CreateManagedEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a virtual cluster. Virtual cluster is a managed entity on Amazon EMR
@@ -163,15 +179,6 @@ namespace EMRContainers
          */
         virtual Model::CreateVirtualClusterOutcome CreateVirtualCluster(const Model::CreateVirtualClusterRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateVirtualCluster that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateVirtualClusterOutcomeCallable CreateVirtualClusterCallable(const Model::CreateVirtualClusterRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateVirtualCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateVirtualClusterAsync(const Model::CreateVirtualClusterRequest& request, const CreateVirtualClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a job template. Job template stores values of StartJobRun API request
@@ -183,15 +190,6 @@ namespace EMRContainers
          */
         virtual Model::DeleteJobTemplateOutcome DeleteJobTemplate(const Model::DeleteJobTemplateRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteJobTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteJobTemplateOutcomeCallable DeleteJobTemplateCallable(const Model::DeleteJobTemplateRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteJobTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteJobTemplateAsync(const Model::DeleteJobTemplateRequest& request, const DeleteJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a managed endpoint. A managed endpoint is a gateway that connects EMR
@@ -202,15 +200,6 @@ namespace EMRContainers
          */
         virtual Model::DeleteManagedEndpointOutcome DeleteManagedEndpoint(const Model::DeleteManagedEndpointRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteManagedEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteManagedEndpointOutcomeCallable DeleteManagedEndpointCallable(const Model::DeleteManagedEndpointRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteManagedEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteManagedEndpointAsync(const Model::DeleteManagedEndpointRequest& request, const DeleteManagedEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a virtual cluster. Virtual cluster is a managed entity on Amazon EMR
@@ -224,15 +213,6 @@ namespace EMRContainers
          */
         virtual Model::DeleteVirtualClusterOutcome DeleteVirtualCluster(const Model::DeleteVirtualClusterRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteVirtualCluster that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteVirtualClusterOutcomeCallable DeleteVirtualClusterCallable(const Model::DeleteVirtualClusterRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteVirtualCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteVirtualClusterAsync(const Model::DeleteVirtualClusterRequest& request, const DeleteVirtualClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Displays detailed information about a job run. A job run is a unit of work,
@@ -243,15 +223,6 @@ namespace EMRContainers
          */
         virtual Model::DescribeJobRunOutcome DescribeJobRun(const Model::DescribeJobRunRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeJobRun that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeJobRunOutcomeCallable DescribeJobRunCallable(const Model::DescribeJobRunRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeJobRun that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeJobRunAsync(const Model::DescribeJobRunRequest& request, const DescribeJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Displays detailed information about a specified job template. Job template
@@ -264,15 +235,6 @@ namespace EMRContainers
          */
         virtual Model::DescribeJobTemplateOutcome DescribeJobTemplate(const Model::DescribeJobTemplateRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeJobTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeJobTemplateOutcomeCallable DescribeJobTemplateCallable(const Model::DescribeJobTemplateRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeJobTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeJobTemplateAsync(const Model::DescribeJobTemplateRequest& request, const DescribeJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Displays detailed information about a managed endpoint. A managed endpoint is
@@ -283,15 +245,6 @@ namespace EMRContainers
          */
         virtual Model::DescribeManagedEndpointOutcome DescribeManagedEndpoint(const Model::DescribeManagedEndpointRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeManagedEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeManagedEndpointOutcomeCallable DescribeManagedEndpointCallable(const Model::DescribeManagedEndpointRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeManagedEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeManagedEndpointAsync(const Model::DescribeManagedEndpointRequest& request, const DescribeManagedEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Displays detailed information about a specified virtual cluster. Virtual
@@ -305,15 +258,6 @@ namespace EMRContainers
          */
         virtual Model::DescribeVirtualClusterOutcome DescribeVirtualCluster(const Model::DescribeVirtualClusterRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeVirtualCluster that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeVirtualClusterOutcomeCallable DescribeVirtualClusterCallable(const Model::DescribeVirtualClusterRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeVirtualCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeVirtualClusterAsync(const Model::DescribeVirtualClusterRequest& request, const DescribeVirtualClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists job runs based on a set of parameters. A job run is a unit of work,
@@ -324,15 +268,6 @@ namespace EMRContainers
          */
         virtual Model::ListJobRunsOutcome ListJobRuns(const Model::ListJobRunsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListJobRuns that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListJobRunsOutcomeCallable ListJobRunsCallable(const Model::ListJobRunsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListJobRuns that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListJobRunsAsync(const Model::ListJobRunsRequest& request, const ListJobRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists job templates based on a set of parameters. Job template stores values
@@ -345,15 +280,6 @@ namespace EMRContainers
          */
         virtual Model::ListJobTemplatesOutcome ListJobTemplates(const Model::ListJobTemplatesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListJobTemplates that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListJobTemplatesOutcomeCallable ListJobTemplatesCallable(const Model::ListJobTemplatesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListJobTemplates that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListJobTemplatesAsync(const Model::ListJobTemplatesRequest& request, const ListJobTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists managed endpoints based on a set of parameters. A managed endpoint is a
@@ -364,15 +290,6 @@ namespace EMRContainers
          */
         virtual Model::ListManagedEndpointsOutcome ListManagedEndpoints(const Model::ListManagedEndpointsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListManagedEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListManagedEndpointsOutcomeCallable ListManagedEndpointsCallable(const Model::ListManagedEndpointsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListManagedEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListManagedEndpointsAsync(const Model::ListManagedEndpointsRequest& request, const ListManagedEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the tags assigned to the resources.</p><p><h3>See Also:</h3>   <a
@@ -381,15 +298,6 @@ namespace EMRContainers
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists information about the specified virtual cluster. Virtual cluster is a
@@ -403,15 +311,6 @@ namespace EMRContainers
          */
         virtual Model::ListVirtualClustersOutcome ListVirtualClusters(const Model::ListVirtualClustersRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListVirtualClusters that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListVirtualClustersOutcomeCallable ListVirtualClustersCallable(const Model::ListVirtualClustersRequest& request) const;
-
-        /**
-         * An Async wrapper for ListVirtualClusters that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListVirtualClustersAsync(const Model::ListVirtualClustersRequest& request, const ListVirtualClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts a job run. A job run is a unit of work, such as a Spark jar, PySpark
@@ -422,15 +321,6 @@ namespace EMRContainers
          */
         virtual Model::StartJobRunOutcome StartJobRun(const Model::StartJobRunRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartJobRun that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartJobRunOutcomeCallable StartJobRunCallable(const Model::StartJobRunRequest& request) const;
-
-        /**
-         * An Async wrapper for StartJobRun that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartJobRunAsync(const Model::StartJobRunRequest& request, const StartJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Assigns tags to resources. A tag is a label that you assign to an AWS
@@ -448,15 +338,6 @@ namespace EMRContainers
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes tags from resources.</p><p><h3>See Also:</h3>   <a
@@ -465,15 +346,6 @@ namespace EMRContainers
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

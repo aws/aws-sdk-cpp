@@ -7,8 +7,10 @@
 #include <aws/forecast/ForecastService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/forecast/ForecastServiceServiceClientModel.h>
+#include <aws/forecast/ForecastServiceLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -73,6 +75,47 @@ namespace ForecastService
         virtual ~ForecastServiceClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Creates an Amazon Forecast predictor.</p> <p>Amazon Forecast creates
          * predictors with AutoPredictor, which involves applying the optimal combination
@@ -100,15 +143,6 @@ namespace ForecastService
          */
         virtual Model::CreateAutoPredictorOutcome CreateAutoPredictor(const Model::CreateAutoPredictorRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateAutoPredictor that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateAutoPredictorOutcomeCallable CreateAutoPredictorCallable(const Model::CreateAutoPredictorRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateAutoPredictor that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateAutoPredictorAsync(const Model::CreateAutoPredictorRequest& request, const CreateAutoPredictorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an Amazon Forecast dataset. The information about the dataset that
@@ -139,15 +173,6 @@ namespace ForecastService
          */
         virtual Model::CreateDatasetOutcome CreateDataset(const Model::CreateDatasetRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDataset that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDatasetOutcomeCallable CreateDatasetCallable(const Model::CreateDatasetRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDataset that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDatasetAsync(const Model::CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a dataset group, which holds a collection of related datasets. You
@@ -169,15 +194,6 @@ namespace ForecastService
          */
         virtual Model::CreateDatasetGroupOutcome CreateDatasetGroup(const Model::CreateDatasetGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDatasetGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDatasetGroupOutcomeCallable CreateDatasetGroupCallable(const Model::CreateDatasetGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDatasetGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDatasetGroupAsync(const Model::CreateDatasetGroupRequest& request, const CreateDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Imports your training data to an Amazon Forecast dataset. You provide the
@@ -207,15 +223,6 @@ namespace ForecastService
          */
         virtual Model::CreateDatasetImportJobOutcome CreateDatasetImportJob(const Model::CreateDatasetImportJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDatasetImportJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDatasetImportJobOutcomeCallable CreateDatasetImportJobCallable(const Model::CreateDatasetImportJobRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDatasetImportJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDatasetImportJobAsync(const Model::CreateDatasetImportJobRequest& request, const CreateDatasetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>Explainability is only available for Forecasts and Predictors
@@ -267,15 +274,6 @@ namespace ForecastService
          */
         virtual Model::CreateExplainabilityOutcome CreateExplainability(const Model::CreateExplainabilityRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateExplainability that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateExplainabilityOutcomeCallable CreateExplainabilityCallable(const Model::CreateExplainabilityRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateExplainability that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateExplainabilityAsync(const Model::CreateExplainabilityRequest& request, const CreateExplainabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Exports an Explainability resource created by the <a>CreateExplainability</a>
@@ -293,15 +291,6 @@ namespace ForecastService
          */
         virtual Model::CreateExplainabilityExportOutcome CreateExplainabilityExport(const Model::CreateExplainabilityExportRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateExplainabilityExport that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateExplainabilityExportOutcomeCallable CreateExplainabilityExportCallable(const Model::CreateExplainabilityExportRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateExplainabilityExport that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateExplainabilityExportAsync(const Model::CreateExplainabilityExportRequest& request, const CreateExplainabilityExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a forecast for each item in the <code>TARGET_TIME_SERIES</code>
@@ -330,15 +319,6 @@ namespace ForecastService
          */
         virtual Model::CreateForecastOutcome CreateForecast(const Model::CreateForecastRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateForecast that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateForecastOutcomeCallable CreateForecastCallable(const Model::CreateForecastRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateForecast that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateForecastAsync(const Model::CreateForecastRequest& request, const CreateForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Exports a forecast created by the <a>CreateForecast</a> operation to your
@@ -361,15 +341,6 @@ namespace ForecastService
          */
         virtual Model::CreateForecastExportJobOutcome CreateForecastExportJob(const Model::CreateForecastExportJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateForecastExportJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateForecastExportJobOutcomeCallable CreateForecastExportJobCallable(const Model::CreateForecastExportJobRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateForecastExportJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateForecastExportJobAsync(const Model::CreateForecastExportJobRequest& request, const CreateForecastExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a predictor monitor resource for an existing auto predictor.
@@ -382,15 +353,6 @@ namespace ForecastService
          */
         virtual Model::CreateMonitorOutcome CreateMonitor(const Model::CreateMonitorRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateMonitor that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateMonitorOutcomeCallable CreateMonitorCallable(const Model::CreateMonitorRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateMonitor that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateMonitorAsync(const Model::CreateMonitorRequest& request, const CreateMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p> This operation creates a legacy predictor that does not include all
@@ -435,15 +397,6 @@ namespace ForecastService
          */
         virtual Model::CreatePredictorOutcome CreatePredictor(const Model::CreatePredictorRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreatePredictor that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreatePredictorOutcomeCallable CreatePredictorCallable(const Model::CreatePredictorRequest& request) const;
-
-        /**
-         * An Async wrapper for CreatePredictor that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreatePredictorAsync(const Model::CreatePredictorRequest& request, const CreatePredictorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Exports backtest forecasts and accuracy metrics generated by the
@@ -465,15 +418,6 @@ namespace ForecastService
          */
         virtual Model::CreatePredictorBacktestExportJobOutcome CreatePredictorBacktestExportJob(const Model::CreatePredictorBacktestExportJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreatePredictorBacktestExportJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreatePredictorBacktestExportJobOutcomeCallable CreatePredictorBacktestExportJobCallable(const Model::CreatePredictorBacktestExportJobRequest& request) const;
-
-        /**
-         * An Async wrapper for CreatePredictorBacktestExportJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreatePredictorBacktestExportJobAsync(const Model::CreatePredictorBacktestExportJobRequest& request, const CreatePredictorBacktestExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>What-if analysis is a scenario modeling technique where you make a
@@ -500,15 +444,6 @@ namespace ForecastService
          */
         virtual Model::CreateWhatIfAnalysisOutcome CreateWhatIfAnalysis(const Model::CreateWhatIfAnalysisRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateWhatIfAnalysis that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateWhatIfAnalysisOutcomeCallable CreateWhatIfAnalysisCallable(const Model::CreateWhatIfAnalysisRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateWhatIfAnalysis that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateWhatIfAnalysisAsync(const Model::CreateWhatIfAnalysisRequest& request, const CreateWhatIfAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>A what-if forecast is a forecast that is created from a modified version of
@@ -520,15 +455,6 @@ namespace ForecastService
          */
         virtual Model::CreateWhatIfForecastOutcome CreateWhatIfForecast(const Model::CreateWhatIfForecastRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateWhatIfForecast that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateWhatIfForecastOutcomeCallable CreateWhatIfForecastCallable(const Model::CreateWhatIfForecastRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateWhatIfForecast that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateWhatIfForecastAsync(const Model::CreateWhatIfForecastRequest& request, const CreateWhatIfForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Exports a forecast created by the <a>CreateWhatIfForecast</a> operation to
@@ -551,15 +477,6 @@ namespace ForecastService
          */
         virtual Model::CreateWhatIfForecastExportOutcome CreateWhatIfForecastExport(const Model::CreateWhatIfForecastExportRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateWhatIfForecastExport that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateWhatIfForecastExportOutcomeCallable CreateWhatIfForecastExportCallable(const Model::CreateWhatIfForecastExportRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateWhatIfForecastExport that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateWhatIfForecastExportAsync(const Model::CreateWhatIfForecastExportRequest& request, const CreateWhatIfForecastExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an Amazon Forecast dataset that was created using the <a
@@ -578,15 +495,6 @@ namespace ForecastService
          */
         virtual Model::DeleteDatasetOutcome DeleteDataset(const Model::DeleteDatasetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDataset that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDatasetOutcomeCallable DeleteDatasetCallable(const Model::DeleteDatasetRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDataset that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDatasetAsync(const Model::DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a dataset group created using the <a
@@ -602,15 +510,6 @@ namespace ForecastService
          */
         virtual Model::DeleteDatasetGroupOutcome DeleteDatasetGroup(const Model::DeleteDatasetGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDatasetGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDatasetGroupOutcomeCallable DeleteDatasetGroupCallable(const Model::DeleteDatasetGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDatasetGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDatasetGroupAsync(const Model::DeleteDatasetGroupRequest& request, const DeleteDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a dataset import job created using the <a
@@ -624,15 +523,6 @@ namespace ForecastService
          */
         virtual Model::DeleteDatasetImportJobOutcome DeleteDatasetImportJob(const Model::DeleteDatasetImportJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDatasetImportJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDatasetImportJobOutcomeCallable DeleteDatasetImportJobCallable(const Model::DeleteDatasetImportJobRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDatasetImportJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDatasetImportJobAsync(const Model::DeleteDatasetImportJobRequest& request, const DeleteDatasetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an Explainability resource.</p> <p>You can delete only predictor that
@@ -644,15 +534,6 @@ namespace ForecastService
          */
         virtual Model::DeleteExplainabilityOutcome DeleteExplainability(const Model::DeleteExplainabilityRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteExplainability that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteExplainabilityOutcomeCallable DeleteExplainabilityCallable(const Model::DeleteExplainabilityRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteExplainability that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteExplainabilityAsync(const Model::DeleteExplainabilityRequest& request, const DeleteExplainabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an Explainability export.</p><p><h3>See Also:</h3>   <a
@@ -661,15 +542,6 @@ namespace ForecastService
          */
         virtual Model::DeleteExplainabilityExportOutcome DeleteExplainabilityExport(const Model::DeleteExplainabilityExportRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteExplainabilityExport that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteExplainabilityExportOutcomeCallable DeleteExplainabilityExportCallable(const Model::DeleteExplainabilityExportRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteExplainabilityExport that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteExplainabilityExportAsync(const Model::DeleteExplainabilityExportRequest& request, const DeleteExplainabilityExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a forecast created using the <a>CreateForecast</a> operation. You can
@@ -683,15 +555,6 @@ namespace ForecastService
          */
         virtual Model::DeleteForecastOutcome DeleteForecast(const Model::DeleteForecastRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteForecast that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteForecastOutcomeCallable DeleteForecastCallable(const Model::DeleteForecastRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteForecast that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteForecastAsync(const Model::DeleteForecastRequest& request, const DeleteForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a forecast export job created using the
@@ -704,15 +567,6 @@ namespace ForecastService
          */
         virtual Model::DeleteForecastExportJobOutcome DeleteForecastExportJob(const Model::DeleteForecastExportJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteForecastExportJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteForecastExportJobOutcomeCallable DeleteForecastExportJobCallable(const Model::DeleteForecastExportJobRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteForecastExportJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteForecastExportJobAsync(const Model::DeleteForecastExportJobRequest& request, const DeleteForecastExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a monitor resource. You can only delete a monitor resource with a
@@ -724,15 +578,6 @@ namespace ForecastService
          */
         virtual Model::DeleteMonitorOutcome DeleteMonitor(const Model::DeleteMonitorRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteMonitor that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteMonitorOutcomeCallable DeleteMonitorCallable(const Model::DeleteMonitorRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteMonitor that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteMonitorAsync(const Model::DeleteMonitorRequest& request, const DeleteMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a predictor created using the <a>DescribePredictor</a> or
@@ -744,15 +589,6 @@ namespace ForecastService
          */
         virtual Model::DeletePredictorOutcome DeletePredictor(const Model::DeletePredictorRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeletePredictor that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeletePredictorOutcomeCallable DeletePredictorCallable(const Model::DeletePredictorRequest& request) const;
-
-        /**
-         * An Async wrapper for DeletePredictor that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeletePredictorAsync(const Model::DeletePredictorRequest& request, const DeletePredictorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a predictor backtest export job.</p><p><h3>See Also:</h3>   <a
@@ -761,15 +597,6 @@ namespace ForecastService
          */
         virtual Model::DeletePredictorBacktestExportJobOutcome DeletePredictorBacktestExportJob(const Model::DeletePredictorBacktestExportJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeletePredictorBacktestExportJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeletePredictorBacktestExportJobOutcomeCallable DeletePredictorBacktestExportJobCallable(const Model::DeletePredictorBacktestExportJobRequest& request) const;
-
-        /**
-         * An Async wrapper for DeletePredictorBacktestExportJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeletePredictorBacktestExportJobAsync(const Model::DeletePredictorBacktestExportJobRequest& request, const DeletePredictorBacktestExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an entire resource tree. This operation will delete the parent
@@ -790,15 +617,6 @@ namespace ForecastService
          */
         virtual Model::DeleteResourceTreeOutcome DeleteResourceTree(const Model::DeleteResourceTreeRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteResourceTree that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteResourceTreeOutcomeCallable DeleteResourceTreeCallable(const Model::DeleteResourceTreeRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteResourceTree that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteResourceTreeAsync(const Model::DeleteResourceTreeRequest& request, const DeleteResourceTreeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a what-if analysis created using the <a>CreateWhatIfAnalysis</a>
@@ -812,15 +630,6 @@ namespace ForecastService
          */
         virtual Model::DeleteWhatIfAnalysisOutcome DeleteWhatIfAnalysis(const Model::DeleteWhatIfAnalysisRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteWhatIfAnalysis that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteWhatIfAnalysisOutcomeCallable DeleteWhatIfAnalysisCallable(const Model::DeleteWhatIfAnalysisRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteWhatIfAnalysis that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteWhatIfAnalysisAsync(const Model::DeleteWhatIfAnalysisRequest& request, const DeleteWhatIfAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a what-if forecast created using the <a>CreateWhatIfForecast</a>
@@ -834,15 +643,6 @@ namespace ForecastService
          */
         virtual Model::DeleteWhatIfForecastOutcome DeleteWhatIfForecast(const Model::DeleteWhatIfForecastRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteWhatIfForecast that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteWhatIfForecastOutcomeCallable DeleteWhatIfForecastCallable(const Model::DeleteWhatIfForecastRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteWhatIfForecast that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteWhatIfForecastAsync(const Model::DeleteWhatIfForecastRequest& request, const DeleteWhatIfForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a what-if forecast export created using the
@@ -855,15 +655,6 @@ namespace ForecastService
          */
         virtual Model::DeleteWhatIfForecastExportOutcome DeleteWhatIfForecastExport(const Model::DeleteWhatIfForecastExportRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteWhatIfForecastExport that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteWhatIfForecastExportOutcomeCallable DeleteWhatIfForecastExportCallable(const Model::DeleteWhatIfForecastExportRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteWhatIfForecastExport that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteWhatIfForecastExportAsync(const Model::DeleteWhatIfForecastExportRequest& request, const DeleteWhatIfForecastExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a predictor created using the CreateAutoPredictor
@@ -873,15 +664,6 @@ namespace ForecastService
          */
         virtual Model::DescribeAutoPredictorOutcome DescribeAutoPredictor(const Model::DescribeAutoPredictorRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAutoPredictor that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAutoPredictorOutcomeCallable DescribeAutoPredictorCallable(const Model::DescribeAutoPredictorRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAutoPredictor that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAutoPredictorAsync(const Model::DescribeAutoPredictorRequest& request, const DescribeAutoPredictorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes an Amazon Forecast dataset created using the <a
@@ -896,15 +678,6 @@ namespace ForecastService
          */
         virtual Model::DescribeDatasetOutcome DescribeDataset(const Model::DescribeDatasetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDataset that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDatasetOutcomeCallable DescribeDatasetCallable(const Model::DescribeDatasetRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDataset that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDatasetAsync(const Model::DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a dataset group created using the <a
@@ -920,15 +693,6 @@ namespace ForecastService
          */
         virtual Model::DescribeDatasetGroupOutcome DescribeDatasetGroup(const Model::DescribeDatasetGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDatasetGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDatasetGroupOutcomeCallable DescribeDatasetGroupCallable(const Model::DescribeDatasetGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDatasetGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDatasetGroupAsync(const Model::DescribeDatasetGroupRequest& request, const DescribeDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a dataset import job created using the <a
@@ -946,15 +710,6 @@ namespace ForecastService
          */
         virtual Model::DescribeDatasetImportJobOutcome DescribeDatasetImportJob(const Model::DescribeDatasetImportJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDatasetImportJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDatasetImportJobOutcomeCallable DescribeDatasetImportJobCallable(const Model::DescribeDatasetImportJobRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDatasetImportJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDatasetImportJobAsync(const Model::DescribeDatasetImportJobRequest& request, const DescribeDatasetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes an Explainability resource created using the
@@ -964,15 +719,6 @@ namespace ForecastService
          */
         virtual Model::DescribeExplainabilityOutcome DescribeExplainability(const Model::DescribeExplainabilityRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeExplainability that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeExplainabilityOutcomeCallable DescribeExplainabilityCallable(const Model::DescribeExplainabilityRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeExplainability that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeExplainabilityAsync(const Model::DescribeExplainabilityRequest& request, const DescribeExplainabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes an Explainability export created using the
@@ -982,15 +728,6 @@ namespace ForecastService
          */
         virtual Model::DescribeExplainabilityExportOutcome DescribeExplainabilityExport(const Model::DescribeExplainabilityExportRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeExplainabilityExport that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeExplainabilityExportOutcomeCallable DescribeExplainabilityExportCallable(const Model::DescribeExplainabilityExportRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeExplainabilityExport that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeExplainabilityExportAsync(const Model::DescribeExplainabilityExportRequest& request, const DescribeExplainabilityExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a forecast created using the <a>CreateForecast</a> operation.</p>
@@ -1006,15 +743,6 @@ namespace ForecastService
          */
         virtual Model::DescribeForecastOutcome DescribeForecast(const Model::DescribeForecastRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeForecast that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeForecastOutcomeCallable DescribeForecastCallable(const Model::DescribeForecastRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeForecast that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeForecastAsync(const Model::DescribeForecastRequest& request, const DescribeForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a forecast export job created using the
@@ -1030,15 +758,6 @@ namespace ForecastService
          */
         virtual Model::DescribeForecastExportJobOutcome DescribeForecastExportJob(const Model::DescribeForecastExportJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeForecastExportJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeForecastExportJobOutcomeCallable DescribeForecastExportJobCallable(const Model::DescribeForecastExportJobRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeForecastExportJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeForecastExportJobAsync(const Model::DescribeForecastExportJobRequest& request, const DescribeForecastExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a monitor resource. In addition to listing the properties provided
@@ -1053,15 +772,6 @@ namespace ForecastService
          */
         virtual Model::DescribeMonitorOutcome DescribeMonitor(const Model::DescribeMonitorRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeMonitor that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeMonitorOutcomeCallable DescribeMonitorCallable(const Model::DescribeMonitorRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeMonitor that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeMonitorAsync(const Model::DescribeMonitorRequest& request, const DescribeMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p> This operation is only valid for legacy predictors created with
@@ -1082,15 +792,6 @@ namespace ForecastService
          */
         virtual Model::DescribePredictorOutcome DescribePredictor(const Model::DescribePredictorRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribePredictor that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribePredictorOutcomeCallable DescribePredictorCallable(const Model::DescribePredictorRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribePredictor that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribePredictorAsync(const Model::DescribePredictorRequest& request, const DescribePredictorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a predictor backtest export job created using the
@@ -1106,15 +807,6 @@ namespace ForecastService
          */
         virtual Model::DescribePredictorBacktestExportJobOutcome DescribePredictorBacktestExportJob(const Model::DescribePredictorBacktestExportJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribePredictorBacktestExportJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribePredictorBacktestExportJobOutcomeCallable DescribePredictorBacktestExportJobCallable(const Model::DescribePredictorBacktestExportJobRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribePredictorBacktestExportJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribePredictorBacktestExportJobAsync(const Model::DescribePredictorBacktestExportJobRequest& request, const DescribePredictorBacktestExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the what-if analysis created using the <a>CreateWhatIfAnalysis</a>
@@ -1129,15 +821,6 @@ namespace ForecastService
          */
         virtual Model::DescribeWhatIfAnalysisOutcome DescribeWhatIfAnalysis(const Model::DescribeWhatIfAnalysisRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeWhatIfAnalysis that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeWhatIfAnalysisOutcomeCallable DescribeWhatIfAnalysisCallable(const Model::DescribeWhatIfAnalysisRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeWhatIfAnalysis that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeWhatIfAnalysisAsync(const Model::DescribeWhatIfAnalysisRequest& request, const DescribeWhatIfAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the what-if forecast created using the <a>CreateWhatIfForecast</a>
@@ -1152,15 +835,6 @@ namespace ForecastService
          */
         virtual Model::DescribeWhatIfForecastOutcome DescribeWhatIfForecast(const Model::DescribeWhatIfForecastRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeWhatIfForecast that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeWhatIfForecastOutcomeCallable DescribeWhatIfForecastCallable(const Model::DescribeWhatIfForecastRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeWhatIfForecast that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeWhatIfForecastAsync(const Model::DescribeWhatIfForecastRequest& request, const DescribeWhatIfForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the what-if forecast export created using the
@@ -1176,15 +850,6 @@ namespace ForecastService
          */
         virtual Model::DescribeWhatIfForecastExportOutcome DescribeWhatIfForecastExport(const Model::DescribeWhatIfForecastExportRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeWhatIfForecastExport that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeWhatIfForecastExportOutcomeCallable DescribeWhatIfForecastExportCallable(const Model::DescribeWhatIfForecastExportRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeWhatIfForecastExport that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeWhatIfForecastExportAsync(const Model::DescribeWhatIfForecastExportRequest& request, const DescribeWhatIfForecastExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides metrics on the accuracy of the models that were trained by the
@@ -1211,15 +876,6 @@ namespace ForecastService
          */
         virtual Model::GetAccuracyMetricsOutcome GetAccuracyMetrics(const Model::GetAccuracyMetricsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAccuracyMetrics that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAccuracyMetricsOutcomeCallable GetAccuracyMetricsCallable(const Model::GetAccuracyMetricsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAccuracyMetrics that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAccuracyMetricsAsync(const Model::GetAccuracyMetricsRequest& request, const GetAccuracyMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of dataset groups created using the <a
@@ -1234,15 +890,6 @@ namespace ForecastService
          */
         virtual Model::ListDatasetGroupsOutcome ListDatasetGroups(const Model::ListDatasetGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDatasetGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDatasetGroupsOutcomeCallable ListDatasetGroupsCallable(const Model::ListDatasetGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDatasetGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDatasetGroupsAsync(const Model::ListDatasetGroupsRequest& request, const ListDatasetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of dataset import jobs created using the <a
@@ -1259,15 +906,6 @@ namespace ForecastService
          */
         virtual Model::ListDatasetImportJobsOutcome ListDatasetImportJobs(const Model::ListDatasetImportJobsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDatasetImportJobs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDatasetImportJobsOutcomeCallable ListDatasetImportJobsCallable(const Model::ListDatasetImportJobsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDatasetImportJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDatasetImportJobsAsync(const Model::ListDatasetImportJobsRequest& request, const ListDatasetImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of datasets created using the <a
@@ -1282,15 +920,6 @@ namespace ForecastService
          */
         virtual Model::ListDatasetsOutcome ListDatasets(const Model::ListDatasetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDatasets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDatasetsOutcomeCallable ListDatasetsCallable(const Model::ListDatasetsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDatasets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDatasetsAsync(const Model::ListDatasetsRequest& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of Explainability resources created using the
@@ -1304,15 +933,6 @@ namespace ForecastService
          */
         virtual Model::ListExplainabilitiesOutcome ListExplainabilities(const Model::ListExplainabilitiesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListExplainabilities that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListExplainabilitiesOutcomeCallable ListExplainabilitiesCallable(const Model::ListExplainabilitiesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListExplainabilities that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListExplainabilitiesAsync(const Model::ListExplainabilitiesRequest& request, const ListExplainabilitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of Explainability exports created using the
@@ -1326,15 +946,6 @@ namespace ForecastService
          */
         virtual Model::ListExplainabilityExportsOutcome ListExplainabilityExports(const Model::ListExplainabilityExportsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListExplainabilityExports that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListExplainabilityExportsOutcomeCallable ListExplainabilityExportsCallable(const Model::ListExplainabilityExportsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListExplainabilityExports that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListExplainabilityExportsAsync(const Model::ListExplainabilityExportsRequest& request, const ListExplainabilityExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of forecast export jobs created using the
@@ -1348,15 +959,6 @@ namespace ForecastService
          */
         virtual Model::ListForecastExportJobsOutcome ListForecastExportJobs(const Model::ListForecastExportJobsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListForecastExportJobs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListForecastExportJobsOutcomeCallable ListForecastExportJobsCallable(const Model::ListForecastExportJobsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListForecastExportJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListForecastExportJobsAsync(const Model::ListForecastExportJobsRequest& request, const ListForecastExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of forecasts created using the <a>CreateForecast</a>
@@ -1370,15 +972,6 @@ namespace ForecastService
          */
         virtual Model::ListForecastsOutcome ListForecasts(const Model::ListForecastsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListForecasts that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListForecastsOutcomeCallable ListForecastsCallable(const Model::ListForecastsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListForecasts that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListForecastsAsync(const Model::ListForecastsRequest& request, const ListForecastsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of the monitoring evaluation results and predictor events
@@ -1392,15 +985,6 @@ namespace ForecastService
          */
         virtual Model::ListMonitorEvaluationsOutcome ListMonitorEvaluations(const Model::ListMonitorEvaluationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListMonitorEvaluations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListMonitorEvaluationsOutcomeCallable ListMonitorEvaluationsCallable(const Model::ListMonitorEvaluationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListMonitorEvaluations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListMonitorEvaluationsAsync(const Model::ListMonitorEvaluationsRequest& request, const ListMonitorEvaluationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of monitors created with the <a>CreateMonitor</a> operation
@@ -1414,15 +998,6 @@ namespace ForecastService
          */
         virtual Model::ListMonitorsOutcome ListMonitors(const Model::ListMonitorsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListMonitors that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListMonitorsOutcomeCallable ListMonitorsCallable(const Model::ListMonitorsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListMonitors that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListMonitorsAsync(const Model::ListMonitorsRequest& request, const ListMonitorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of predictor backtest export jobs created using the
@@ -1437,15 +1012,6 @@ namespace ForecastService
          */
         virtual Model::ListPredictorBacktestExportJobsOutcome ListPredictorBacktestExportJobs(const Model::ListPredictorBacktestExportJobsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPredictorBacktestExportJobs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPredictorBacktestExportJobsOutcomeCallable ListPredictorBacktestExportJobsCallable(const Model::ListPredictorBacktestExportJobsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPredictorBacktestExportJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPredictorBacktestExportJobsAsync(const Model::ListPredictorBacktestExportJobsRequest& request, const ListPredictorBacktestExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of predictors created using the <a>CreateAutoPredictor</a> or
@@ -1460,15 +1026,6 @@ namespace ForecastService
          */
         virtual Model::ListPredictorsOutcome ListPredictors(const Model::ListPredictorsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPredictors that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPredictorsOutcomeCallable ListPredictorsCallable(const Model::ListPredictorsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPredictors that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPredictorsAsync(const Model::ListPredictorsRequest& request, const ListPredictorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the tags for an Amazon Forecast resource.</p><p><h3>See Also:</h3>   <a
@@ -1477,15 +1034,6 @@ namespace ForecastService
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of what-if analyses created using the
@@ -1499,15 +1047,6 @@ namespace ForecastService
          */
         virtual Model::ListWhatIfAnalysesOutcome ListWhatIfAnalyses(const Model::ListWhatIfAnalysesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListWhatIfAnalyses that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListWhatIfAnalysesOutcomeCallable ListWhatIfAnalysesCallable(const Model::ListWhatIfAnalysesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListWhatIfAnalyses that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListWhatIfAnalysesAsync(const Model::ListWhatIfAnalysesRequest& request, const ListWhatIfAnalysesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of what-if forecast exports created using the
@@ -1521,15 +1060,6 @@ namespace ForecastService
          */
         virtual Model::ListWhatIfForecastExportsOutcome ListWhatIfForecastExports(const Model::ListWhatIfForecastExportsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListWhatIfForecastExports that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListWhatIfForecastExportsOutcomeCallable ListWhatIfForecastExportsCallable(const Model::ListWhatIfForecastExportsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListWhatIfForecastExports that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListWhatIfForecastExportsAsync(const Model::ListWhatIfForecastExportsRequest& request, const ListWhatIfForecastExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of what-if forecasts created using the
@@ -1543,15 +1073,6 @@ namespace ForecastService
          */
         virtual Model::ListWhatIfForecastsOutcome ListWhatIfForecasts(const Model::ListWhatIfForecastsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListWhatIfForecasts that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListWhatIfForecastsOutcomeCallable ListWhatIfForecastsCallable(const Model::ListWhatIfForecastsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListWhatIfForecasts that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListWhatIfForecastsAsync(const Model::ListWhatIfForecastsRequest& request, const ListWhatIfForecastsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Resumes a stopped monitor resource.</p><p><h3>See Also:</h3>   <a
@@ -1560,15 +1081,6 @@ namespace ForecastService
          */
         virtual Model::ResumeResourceOutcome ResumeResource(const Model::ResumeResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ResumeResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ResumeResourceOutcomeCallable ResumeResourceCallable(const Model::ResumeResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ResumeResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ResumeResourceAsync(const Model::ResumeResourceRequest& request, const ResumeResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops a resource.</p> <p>The resource undergoes the following states:
@@ -1584,15 +1096,6 @@ namespace ForecastService
          */
         virtual Model::StopResourceOutcome StopResource(const Model::StopResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopResourceOutcomeCallable StopResourceCallable(const Model::StopResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for StopResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopResourceAsync(const Model::StopResourceRequest& request, const StopResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates the specified tags to a resource with the specified
@@ -1605,15 +1108,6 @@ namespace ForecastService
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified tags from a resource.</p><p><h3>See Also:</h3>   <a
@@ -1622,15 +1116,6 @@ namespace ForecastService
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Replaces the datasets in a dataset group with the specified datasets.</p>
@@ -1644,15 +1129,6 @@ namespace ForecastService
          */
         virtual Model::UpdateDatasetGroupOutcome UpdateDatasetGroup(const Model::UpdateDatasetGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateDatasetGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateDatasetGroupOutcomeCallable UpdateDatasetGroupCallable(const Model::UpdateDatasetGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateDatasetGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateDatasetGroupAsync(const Model::UpdateDatasetGroupRequest& request, const UpdateDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

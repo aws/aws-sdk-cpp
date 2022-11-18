@@ -7,8 +7,10 @@
 #include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptions_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptionsServiceClientModel.h>
+#include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptionsLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -74,6 +76,47 @@ namespace LicenseManagerUserSubscriptions
         virtual ~LicenseManagerUserSubscriptionsClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Associates the user to an EC2 instance to utilize user-based
          * subscriptions.</p><p><h3>See Also:</h3>   <a
@@ -82,15 +125,6 @@ namespace LicenseManagerUserSubscriptions
          */
         virtual Model::AssociateUserOutcome AssociateUser(const Model::AssociateUserRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateUser that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateUserOutcomeCallable AssociateUserCallable(const Model::AssociateUserRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateUser that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateUserAsync(const Model::AssociateUserRequest& request, const AssociateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deregisters the identity provider from providing user-based
@@ -100,15 +134,6 @@ namespace LicenseManagerUserSubscriptions
          */
         virtual Model::DeregisterIdentityProviderOutcome DeregisterIdentityProvider(const Model::DeregisterIdentityProviderRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeregisterIdentityProvider that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeregisterIdentityProviderOutcomeCallable DeregisterIdentityProviderCallable(const Model::DeregisterIdentityProviderRequest& request) const;
-
-        /**
-         * An Async wrapper for DeregisterIdentityProvider that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeregisterIdentityProviderAsync(const Model::DeregisterIdentityProviderRequest& request, const DeregisterIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates the user from an EC2 instance providing user-based
@@ -118,15 +143,6 @@ namespace LicenseManagerUserSubscriptions
          */
         virtual Model::DisassociateUserOutcome DisassociateUser(const Model::DisassociateUserRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateUser that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateUserOutcomeCallable DisassociateUserCallable(const Model::DisassociateUserRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateUser that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateUserAsync(const Model::DisassociateUserRequest& request, const DisassociateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the identity providers for user-based subscriptions.</p><p><h3>See
@@ -136,15 +152,6 @@ namespace LicenseManagerUserSubscriptions
          */
         virtual Model::ListIdentityProvidersOutcome ListIdentityProviders(const Model::ListIdentityProvidersRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListIdentityProviders that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListIdentityProvidersOutcomeCallable ListIdentityProvidersCallable(const Model::ListIdentityProvidersRequest& request) const;
-
-        /**
-         * An Async wrapper for ListIdentityProviders that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListIdentityProvidersAsync(const Model::ListIdentityProvidersRequest& request, const ListIdentityProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the EC2 instances providing user-based subscriptions.</p><p><h3>See
@@ -154,15 +161,6 @@ namespace LicenseManagerUserSubscriptions
          */
         virtual Model::ListInstancesOutcome ListInstances(const Model::ListInstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListInstances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListInstancesOutcomeCallable ListInstancesCallable(const Model::ListInstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListInstancesAsync(const Model::ListInstancesRequest& request, const ListInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the user-based subscription products available from an identity
@@ -172,15 +170,6 @@ namespace LicenseManagerUserSubscriptions
          */
         virtual Model::ListProductSubscriptionsOutcome ListProductSubscriptions(const Model::ListProductSubscriptionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListProductSubscriptions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListProductSubscriptionsOutcomeCallable ListProductSubscriptionsCallable(const Model::ListProductSubscriptionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListProductSubscriptions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListProductSubscriptionsAsync(const Model::ListProductSubscriptionsRequest& request, const ListProductSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists user associations for an identity provider.</p><p><h3>See Also:</h3>  
@@ -190,15 +179,6 @@ namespace LicenseManagerUserSubscriptions
          */
         virtual Model::ListUserAssociationsOutcome ListUserAssociations(const Model::ListUserAssociationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListUserAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListUserAssociationsOutcomeCallable ListUserAssociationsCallable(const Model::ListUserAssociationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListUserAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListUserAssociationsAsync(const Model::ListUserAssociationsRequest& request, const ListUserAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Registers an identity provider for user-based subscriptions.</p><p><h3>See
@@ -208,15 +188,6 @@ namespace LicenseManagerUserSubscriptions
          */
         virtual Model::RegisterIdentityProviderOutcome RegisterIdentityProvider(const Model::RegisterIdentityProviderRequest& request) const;
 
-        /**
-         * A Callable wrapper for RegisterIdentityProvider that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RegisterIdentityProviderOutcomeCallable RegisterIdentityProviderCallable(const Model::RegisterIdentityProviderRequest& request) const;
-
-        /**
-         * An Async wrapper for RegisterIdentityProvider that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RegisterIdentityProviderAsync(const Model::RegisterIdentityProviderRequest& request, const RegisterIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts a product subscription for a user with the specified identity
@@ -226,15 +197,6 @@ namespace LicenseManagerUserSubscriptions
          */
         virtual Model::StartProductSubscriptionOutcome StartProductSubscription(const Model::StartProductSubscriptionRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartProductSubscription that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartProductSubscriptionOutcomeCallable StartProductSubscriptionCallable(const Model::StartProductSubscriptionRequest& request) const;
-
-        /**
-         * An Async wrapper for StartProductSubscription that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartProductSubscriptionAsync(const Model::StartProductSubscriptionRequest& request, const StartProductSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops a product subscription for a user with the specified identity
@@ -244,15 +206,6 @@ namespace LicenseManagerUserSubscriptions
          */
         virtual Model::StopProductSubscriptionOutcome StopProductSubscription(const Model::StopProductSubscriptionRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopProductSubscription that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopProductSubscriptionOutcomeCallable StopProductSubscriptionCallable(const Model::StopProductSubscriptionRequest& request) const;
-
-        /**
-         * An Async wrapper for StopProductSubscription that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopProductSubscriptionAsync(const Model::StopProductSubscriptionRequest& request, const StopProductSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

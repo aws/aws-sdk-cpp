@@ -7,8 +7,10 @@
 #include <aws/mobile/Mobile_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mobile/MobileServiceClientModel.h>
+#include <aws/mobile/MobileLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -76,6 +78,47 @@ namespace Mobile
         virtual ~MobileClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p> Creates an AWS Mobile Hub project. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/CreateProject">AWS
@@ -83,15 +126,6 @@ namespace Mobile
          */
         virtual Model::CreateProjectOutcome CreateProject(const Model::CreateProjectRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateProject that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateProjectOutcomeCallable CreateProjectCallable(const Model::CreateProjectRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateProject that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateProjectAsync(const Model::CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Delets a project in AWS Mobile Hub. </p><p><h3>See Also:</h3>   <a
@@ -100,15 +134,6 @@ namespace Mobile
          */
         virtual Model::DeleteProjectOutcome DeleteProject(const Model::DeleteProjectRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteProject that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteProjectOutcomeCallable DeleteProjectCallable(const Model::DeleteProjectRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteProject that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteProjectAsync(const Model::DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Get the bundle details for the requested bundle id. </p><p><h3>See
@@ -118,15 +143,6 @@ namespace Mobile
          */
         virtual Model::DescribeBundleOutcome DescribeBundle(const Model::DescribeBundleRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeBundle that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeBundleOutcomeCallable DescribeBundleCallable(const Model::DescribeBundleRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeBundle that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeBundleAsync(const Model::DescribeBundleRequest& request, const DescribeBundleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Gets details about a project in AWS Mobile Hub. </p><p><h3>See Also:</h3>  
@@ -136,15 +152,6 @@ namespace Mobile
          */
         virtual Model::DescribeProjectOutcome DescribeProject(const Model::DescribeProjectRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeProject that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeProjectOutcomeCallable DescribeProjectCallable(const Model::DescribeProjectRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeProject that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeProjectAsync(const Model::DescribeProjectRequest& request, const DescribeProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Generates customized software development kit (SDK) and or tool packages
@@ -155,15 +162,6 @@ namespace Mobile
          */
         virtual Model::ExportBundleOutcome ExportBundle(const Model::ExportBundleRequest& request) const;
 
-        /**
-         * A Callable wrapper for ExportBundle that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ExportBundleOutcomeCallable ExportBundleCallable(const Model::ExportBundleRequest& request) const;
-
-        /**
-         * An Async wrapper for ExportBundle that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ExportBundleAsync(const Model::ExportBundleRequest& request, const ExportBundleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Exports project configuration to a snapshot which can be downloaded and
@@ -175,15 +173,6 @@ namespace Mobile
          */
         virtual Model::ExportProjectOutcome ExportProject(const Model::ExportProjectRequest& request) const;
 
-        /**
-         * A Callable wrapper for ExportProject that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ExportProjectOutcomeCallable ExportProjectCallable(const Model::ExportProjectRequest& request) const;
-
-        /**
-         * An Async wrapper for ExportProject that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ExportProjectAsync(const Model::ExportProjectRequest& request, const ExportProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> List all available bundles. </p><p><h3>See Also:</h3>   <a
@@ -192,15 +181,6 @@ namespace Mobile
          */
         virtual Model::ListBundlesOutcome ListBundles(const Model::ListBundlesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListBundles that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListBundlesOutcomeCallable ListBundlesCallable(const Model::ListBundlesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListBundles that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListBundlesAsync(const Model::ListBundlesRequest& request, const ListBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Lists projects in AWS Mobile Hub. </p><p><h3>See Also:</h3>   <a
@@ -209,15 +189,6 @@ namespace Mobile
          */
         virtual Model::ListProjectsOutcome ListProjects(const Model::ListProjectsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListProjects that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListProjectsOutcomeCallable ListProjectsCallable(const Model::ListProjectsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListProjects that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListProjectsAsync(const Model::ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Update an existing project. </p><p><h3>See Also:</h3>   <a
@@ -226,15 +197,6 @@ namespace Mobile
          */
         virtual Model::UpdateProjectOutcome UpdateProject(const Model::UpdateProjectRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateProject that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateProjectOutcomeCallable UpdateProjectCallable(const Model::UpdateProjectRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateProject that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateProjectAsync(const Model::UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

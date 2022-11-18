@@ -7,8 +7,10 @@
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/config/ConfigServiceServiceClientModel.h>
+#include <aws/config/ConfigServiceLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -95,6 +97,47 @@ namespace ConfigService
         virtual ~ConfigServiceClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Returns the current configuration items for resources that are present in
          * your Config aggregator. The operation also returns a list of resources that are
@@ -108,15 +151,6 @@ namespace ConfigService
          */
         virtual Model::BatchGetAggregateResourceConfigOutcome BatchGetAggregateResourceConfig(const Model::BatchGetAggregateResourceConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchGetAggregateResourceConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchGetAggregateResourceConfigOutcomeCallable BatchGetAggregateResourceConfigCallable(const Model::BatchGetAggregateResourceConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchGetAggregateResourceConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchGetAggregateResourceConfigAsync(const Model::BatchGetAggregateResourceConfigRequest& request, const BatchGetAggregateResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the <code>BaseConfigurationItem</code> for one or more requested
@@ -132,15 +166,6 @@ namespace ConfigService
          */
         virtual Model::BatchGetResourceConfigOutcome BatchGetResourceConfig(const Model::BatchGetResourceConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchGetResourceConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchGetResourceConfigOutcomeCallable BatchGetResourceConfigCallable(const Model::BatchGetResourceConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchGetResourceConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchGetResourceConfigAsync(const Model::BatchGetResourceConfigRequest& request, const BatchGetResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the authorization granted to the specified configuration aggregator
@@ -150,15 +175,6 @@ namespace ConfigService
          */
         virtual Model::DeleteAggregationAuthorizationOutcome DeleteAggregationAuthorization(const Model::DeleteAggregationAuthorizationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAggregationAuthorization that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAggregationAuthorizationOutcomeCallable DeleteAggregationAuthorizationCallable(const Model::DeleteAggregationAuthorizationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAggregationAuthorization that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAggregationAuthorizationAsync(const Model::DeleteAggregationAuthorizationRequest& request, const DeleteAggregationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified Config rule and all of its evaluation results.</p>
@@ -173,15 +189,6 @@ namespace ConfigService
          */
         virtual Model::DeleteConfigRuleOutcome DeleteConfigRule(const Model::DeleteConfigRuleRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteConfigRule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteConfigRuleOutcomeCallable DeleteConfigRuleCallable(const Model::DeleteConfigRuleRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteConfigRule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteConfigRuleAsync(const Model::DeleteConfigRuleRequest& request, const DeleteConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified configuration aggregator and the aggregated data
@@ -191,15 +198,6 @@ namespace ConfigService
          */
         virtual Model::DeleteConfigurationAggregatorOutcome DeleteConfigurationAggregator(const Model::DeleteConfigurationAggregatorRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteConfigurationAggregator that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteConfigurationAggregatorOutcomeCallable DeleteConfigurationAggregatorCallable(const Model::DeleteConfigurationAggregatorRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteConfigurationAggregator that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteConfigurationAggregatorAsync(const Model::DeleteConfigurationAggregatorRequest& request, const DeleteConfigurationAggregatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the configuration recorder.</p> <p>After the configuration recorder
@@ -215,15 +213,6 @@ namespace ConfigService
          */
         virtual Model::DeleteConfigurationRecorderOutcome DeleteConfigurationRecorder(const Model::DeleteConfigurationRecorderRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteConfigurationRecorder that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteConfigurationRecorderOutcomeCallable DeleteConfigurationRecorderCallable(const Model::DeleteConfigurationRecorderRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteConfigurationRecorder that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteConfigurationRecorderAsync(const Model::DeleteConfigurationRecorderRequest& request, const DeleteConfigurationRecorderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified conformance pack and all the Config rules, remediation
@@ -236,15 +225,6 @@ namespace ConfigService
          */
         virtual Model::DeleteConformancePackOutcome DeleteConformancePack(const Model::DeleteConformancePackRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteConformancePack that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteConformancePackOutcomeCallable DeleteConformancePackCallable(const Model::DeleteConformancePackRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteConformancePack that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteConformancePackAsync(const Model::DeleteConformancePackRequest& request, const DeleteConformancePackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the delivery channel.</p> <p>Before you can delete the delivery
@@ -255,15 +235,6 @@ namespace ConfigService
          */
         virtual Model::DeleteDeliveryChannelOutcome DeleteDeliveryChannel(const Model::DeleteDeliveryChannelRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDeliveryChannel that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDeliveryChannelOutcomeCallable DeleteDeliveryChannelCallable(const Model::DeleteDeliveryChannelRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDeliveryChannel that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDeliveryChannelAsync(const Model::DeleteDeliveryChannelRequest& request, const DeleteDeliveryChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the evaluation results for the specified Config rule. You can specify
@@ -275,15 +246,6 @@ namespace ConfigService
          */
         virtual Model::DeleteEvaluationResultsOutcome DeleteEvaluationResults(const Model::DeleteEvaluationResultsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteEvaluationResults that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteEvaluationResultsOutcomeCallable DeleteEvaluationResultsCallable(const Model::DeleteEvaluationResultsRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteEvaluationResults that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteEvaluationResultsAsync(const Model::DeleteEvaluationResultsRequest& request, const DeleteEvaluationResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified organization Config rule and all of its evaluation
@@ -299,15 +261,6 @@ namespace ConfigService
          */
         virtual Model::DeleteOrganizationConfigRuleOutcome DeleteOrganizationConfigRule(const Model::DeleteOrganizationConfigRuleRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteOrganizationConfigRule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteOrganizationConfigRuleOutcomeCallable DeleteOrganizationConfigRuleCallable(const Model::DeleteOrganizationConfigRuleRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteOrganizationConfigRule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteOrganizationConfigRuleAsync(const Model::DeleteOrganizationConfigRuleRequest& request, const DeleteOrganizationConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified organization conformance pack and all of the Config
@@ -324,15 +277,6 @@ namespace ConfigService
          */
         virtual Model::DeleteOrganizationConformancePackOutcome DeleteOrganizationConformancePack(const Model::DeleteOrganizationConformancePackRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteOrganizationConformancePack that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteOrganizationConformancePackOutcomeCallable DeleteOrganizationConformancePackCallable(const Model::DeleteOrganizationConformancePackRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteOrganizationConformancePack that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteOrganizationConformancePackAsync(const Model::DeleteOrganizationConformancePackRequest& request, const DeleteOrganizationConformancePackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes pending authorization requests for a specified aggregator account in
@@ -342,15 +286,6 @@ namespace ConfigService
          */
         virtual Model::DeletePendingAggregationRequestOutcome DeletePendingAggregationRequest(const Model::DeletePendingAggregationRequestRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeletePendingAggregationRequest that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeletePendingAggregationRequestOutcomeCallable DeletePendingAggregationRequestCallable(const Model::DeletePendingAggregationRequestRequest& request) const;
-
-        /**
-         * An Async wrapper for DeletePendingAggregationRequest that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeletePendingAggregationRequestAsync(const Model::DeletePendingAggregationRequestRequest& request, const DeletePendingAggregationRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the remediation configuration.</p><p><h3>See Also:</h3>   <a
@@ -359,15 +294,6 @@ namespace ConfigService
          */
         virtual Model::DeleteRemediationConfigurationOutcome DeleteRemediationConfiguration(const Model::DeleteRemediationConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteRemediationConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteRemediationConfigurationOutcomeCallable DeleteRemediationConfigurationCallable(const Model::DeleteRemediationConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteRemediationConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteRemediationConfigurationAsync(const Model::DeleteRemediationConfigurationRequest& request, const DeleteRemediationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes one or more remediation exceptions mentioned in the resource
@@ -380,15 +306,6 @@ namespace ConfigService
          */
         virtual Model::DeleteRemediationExceptionsOutcome DeleteRemediationExceptions(const Model::DeleteRemediationExceptionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteRemediationExceptions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteRemediationExceptionsOutcomeCallable DeleteRemediationExceptionsCallable(const Model::DeleteRemediationExceptionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteRemediationExceptions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteRemediationExceptionsAsync(const Model::DeleteRemediationExceptionsRequest& request, const DeleteRemediationExceptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Records the configuration state for a custom resource that has been deleted.
@@ -400,15 +317,6 @@ namespace ConfigService
          */
         virtual Model::DeleteResourceConfigOutcome DeleteResourceConfig(const Model::DeleteResourceConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteResourceConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteResourceConfigOutcomeCallable DeleteResourceConfigCallable(const Model::DeleteResourceConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteResourceConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteResourceConfigAsync(const Model::DeleteResourceConfigRequest& request, const DeleteResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the retention configuration.</p><p><h3>See Also:</h3>   <a
@@ -417,15 +325,6 @@ namespace ConfigService
          */
         virtual Model::DeleteRetentionConfigurationOutcome DeleteRetentionConfiguration(const Model::DeleteRetentionConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteRetentionConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteRetentionConfigurationOutcomeCallable DeleteRetentionConfigurationCallable(const Model::DeleteRetentionConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteRetentionConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteRetentionConfigurationAsync(const Model::DeleteRetentionConfigurationRequest& request, const DeleteRetentionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the stored query for a single Amazon Web Services account and a
@@ -435,15 +334,6 @@ namespace ConfigService
          */
         virtual Model::DeleteStoredQueryOutcome DeleteStoredQuery(const Model::DeleteStoredQueryRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteStoredQuery that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteStoredQueryOutcomeCallable DeleteStoredQueryCallable(const Model::DeleteStoredQueryRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteStoredQuery that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteStoredQueryAsync(const Model::DeleteStoredQueryRequest& request, const DeleteStoredQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Schedules delivery of a configuration snapshot to the Amazon S3 bucket in the
@@ -458,15 +348,6 @@ namespace ConfigService
          */
         virtual Model::DeliverConfigSnapshotOutcome DeliverConfigSnapshot(const Model::DeliverConfigSnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeliverConfigSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeliverConfigSnapshotOutcomeCallable DeliverConfigSnapshotCallable(const Model::DeliverConfigSnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for DeliverConfigSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeliverConfigSnapshotAsync(const Model::DeliverConfigSnapshotRequest& request, const DeliverConfigSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of compliant and noncompliant rules with the number of
@@ -479,15 +360,6 @@ namespace ConfigService
          */
         virtual Model::DescribeAggregateComplianceByConfigRulesOutcome DescribeAggregateComplianceByConfigRules(const Model::DescribeAggregateComplianceByConfigRulesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAggregateComplianceByConfigRules that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAggregateComplianceByConfigRulesOutcomeCallable DescribeAggregateComplianceByConfigRulesCallable(const Model::DescribeAggregateComplianceByConfigRulesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAggregateComplianceByConfigRules that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAggregateComplianceByConfigRulesAsync(const Model::DescribeAggregateComplianceByConfigRulesRequest& request, const DescribeAggregateComplianceByConfigRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of the conformance packs and their associated compliance
@@ -502,15 +374,6 @@ namespace ConfigService
          */
         virtual Model::DescribeAggregateComplianceByConformancePacksOutcome DescribeAggregateComplianceByConformancePacks(const Model::DescribeAggregateComplianceByConformancePacksRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAggregateComplianceByConformancePacks that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAggregateComplianceByConformancePacksOutcomeCallable DescribeAggregateComplianceByConformancePacksCallable(const Model::DescribeAggregateComplianceByConformancePacksRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAggregateComplianceByConformancePacks that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAggregateComplianceByConformancePacksAsync(const Model::DescribeAggregateComplianceByConformancePacksRequest& request, const DescribeAggregateComplianceByConformancePacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of authorizations granted to various aggregator accounts and
@@ -520,15 +383,6 @@ namespace ConfigService
          */
         virtual Model::DescribeAggregationAuthorizationsOutcome DescribeAggregationAuthorizations(const Model::DescribeAggregationAuthorizationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAggregationAuthorizations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAggregationAuthorizationsOutcomeCallable DescribeAggregationAuthorizationsCallable(const Model::DescribeAggregationAuthorizationsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAggregationAuthorizations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAggregationAuthorizationsAsync(const Model::DescribeAggregationAuthorizationsRequest& request, const DescribeAggregationAuthorizationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Indicates whether the specified Config rules are compliant. If a rule is
@@ -555,15 +409,6 @@ namespace ConfigService
          */
         virtual Model::DescribeComplianceByConfigRuleOutcome DescribeComplianceByConfigRule(const Model::DescribeComplianceByConfigRuleRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeComplianceByConfigRule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeComplianceByConfigRuleOutcomeCallable DescribeComplianceByConfigRuleCallable(const Model::DescribeComplianceByConfigRuleRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeComplianceByConfigRule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeComplianceByConfigRuleAsync(const Model::DescribeComplianceByConfigRuleRequest& request, const DescribeComplianceByConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Indicates whether the specified Amazon Web Services resources are compliant.
@@ -591,15 +436,6 @@ namespace ConfigService
          */
         virtual Model::DescribeComplianceByResourceOutcome DescribeComplianceByResource(const Model::DescribeComplianceByResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeComplianceByResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeComplianceByResourceOutcomeCallable DescribeComplianceByResourceCallable(const Model::DescribeComplianceByResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeComplianceByResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeComplianceByResourceAsync(const Model::DescribeComplianceByResourceRequest& request, const DescribeComplianceByResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns status information for each of your Config managed rules. The status
@@ -611,15 +447,6 @@ namespace ConfigService
          */
         virtual Model::DescribeConfigRuleEvaluationStatusOutcome DescribeConfigRuleEvaluationStatus(const Model::DescribeConfigRuleEvaluationStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeConfigRuleEvaluationStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeConfigRuleEvaluationStatusOutcomeCallable DescribeConfigRuleEvaluationStatusCallable(const Model::DescribeConfigRuleEvaluationStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeConfigRuleEvaluationStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeConfigRuleEvaluationStatusAsync(const Model::DescribeConfigRuleEvaluationStatusRequest& request, const DescribeConfigRuleEvaluationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns details about your Config rules.</p><p><h3>See Also:</h3>   <a
@@ -628,15 +455,6 @@ namespace ConfigService
          */
         virtual Model::DescribeConfigRulesOutcome DescribeConfigRules(const Model::DescribeConfigRulesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeConfigRules that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeConfigRulesOutcomeCallable DescribeConfigRulesCallable(const Model::DescribeConfigRulesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeConfigRules that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeConfigRulesAsync(const Model::DescribeConfigRulesRequest& request, const DescribeConfigRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns status information for sources within an aggregator. The status
@@ -648,15 +466,6 @@ namespace ConfigService
          */
         virtual Model::DescribeConfigurationAggregatorSourcesStatusOutcome DescribeConfigurationAggregatorSourcesStatus(const Model::DescribeConfigurationAggregatorSourcesStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeConfigurationAggregatorSourcesStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeConfigurationAggregatorSourcesStatusOutcomeCallable DescribeConfigurationAggregatorSourcesStatusCallable(const Model::DescribeConfigurationAggregatorSourcesStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeConfigurationAggregatorSourcesStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeConfigurationAggregatorSourcesStatusAsync(const Model::DescribeConfigurationAggregatorSourcesStatusRequest& request, const DescribeConfigurationAggregatorSourcesStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the details of one or more configuration aggregators. If the
@@ -668,15 +477,6 @@ namespace ConfigService
          */
         virtual Model::DescribeConfigurationAggregatorsOutcome DescribeConfigurationAggregators(const Model::DescribeConfigurationAggregatorsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeConfigurationAggregators that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeConfigurationAggregatorsOutcomeCallable DescribeConfigurationAggregatorsCallable(const Model::DescribeConfigurationAggregatorsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeConfigurationAggregators that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeConfigurationAggregatorsAsync(const Model::DescribeConfigurationAggregatorsRequest& request, const DescribeConfigurationAggregatorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the current status of the specified configuration recorder. If a
@@ -689,15 +489,6 @@ namespace ConfigService
          */
         virtual Model::DescribeConfigurationRecorderStatusOutcome DescribeConfigurationRecorderStatus(const Model::DescribeConfigurationRecorderStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeConfigurationRecorderStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeConfigurationRecorderStatusOutcomeCallable DescribeConfigurationRecorderStatusCallable(const Model::DescribeConfigurationRecorderStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeConfigurationRecorderStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeConfigurationRecorderStatusAsync(const Model::DescribeConfigurationRecorderStatusRequest& request, const DescribeConfigurationRecorderStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the details for the specified configuration recorders. If the
@@ -710,15 +501,6 @@ namespace ConfigService
          */
         virtual Model::DescribeConfigurationRecordersOutcome DescribeConfigurationRecorders(const Model::DescribeConfigurationRecordersRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeConfigurationRecorders that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeConfigurationRecordersOutcomeCallable DescribeConfigurationRecordersCallable(const Model::DescribeConfigurationRecordersRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeConfigurationRecorders that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeConfigurationRecordersAsync(const Model::DescribeConfigurationRecordersRequest& request, const DescribeConfigurationRecordersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns compliance details for each rule in that conformance pack.</p> 
@@ -728,15 +510,6 @@ namespace ConfigService
          */
         virtual Model::DescribeConformancePackComplianceOutcome DescribeConformancePackCompliance(const Model::DescribeConformancePackComplianceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeConformancePackCompliance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeConformancePackComplianceOutcomeCallable DescribeConformancePackComplianceCallable(const Model::DescribeConformancePackComplianceRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeConformancePackCompliance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeConformancePackComplianceAsync(const Model::DescribeConformancePackComplianceRequest& request, const DescribeConformancePackComplianceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides one or more conformance packs deployment status.</p>  <p>If
@@ -747,15 +520,6 @@ namespace ConfigService
          */
         virtual Model::DescribeConformancePackStatusOutcome DescribeConformancePackStatus(const Model::DescribeConformancePackStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeConformancePackStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeConformancePackStatusOutcomeCallable DescribeConformancePackStatusCallable(const Model::DescribeConformancePackStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeConformancePackStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeConformancePackStatusAsync(const Model::DescribeConformancePackStatusRequest& request, const DescribeConformancePackStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of one or more conformance packs.</p><p><h3>See Also:</h3>  
@@ -765,15 +529,6 @@ namespace ConfigService
          */
         virtual Model::DescribeConformancePacksOutcome DescribeConformancePacks(const Model::DescribeConformancePacksRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeConformancePacks that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeConformancePacksOutcomeCallable DescribeConformancePacksCallable(const Model::DescribeConformancePacksRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeConformancePacks that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeConformancePacksAsync(const Model::DescribeConformancePacksRequest& request, const DescribeConformancePacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the current status of the specified delivery channel. If a delivery
@@ -786,15 +541,6 @@ namespace ConfigService
          */
         virtual Model::DescribeDeliveryChannelStatusOutcome DescribeDeliveryChannelStatus(const Model::DescribeDeliveryChannelStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDeliveryChannelStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDeliveryChannelStatusOutcomeCallable DescribeDeliveryChannelStatusCallable(const Model::DescribeDeliveryChannelStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDeliveryChannelStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDeliveryChannelStatusAsync(const Model::DescribeDeliveryChannelStatusRequest& request, const DescribeDeliveryChannelStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns details about the specified delivery channel. If a delivery channel
@@ -807,15 +553,6 @@ namespace ConfigService
          */
         virtual Model::DescribeDeliveryChannelsOutcome DescribeDeliveryChannels(const Model::DescribeDeliveryChannelsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDeliveryChannels that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDeliveryChannelsOutcomeCallable DescribeDeliveryChannelsCallable(const Model::DescribeDeliveryChannelsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDeliveryChannels that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDeliveryChannelsAsync(const Model::DescribeDeliveryChannelsRequest& request, const DescribeDeliveryChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides organization Config rule deployment status for an organization.</p>
@@ -830,15 +567,6 @@ namespace ConfigService
          */
         virtual Model::DescribeOrganizationConfigRuleStatusesOutcome DescribeOrganizationConfigRuleStatuses(const Model::DescribeOrganizationConfigRuleStatusesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeOrganizationConfigRuleStatuses that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeOrganizationConfigRuleStatusesOutcomeCallable DescribeOrganizationConfigRuleStatusesCallable(const Model::DescribeOrganizationConfigRuleStatusesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeOrganizationConfigRuleStatuses that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeOrganizationConfigRuleStatusesAsync(const Model::DescribeOrganizationConfigRuleStatusesRequest& request, const DescribeOrganizationConfigRuleStatusesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of organization Config rules. </p>  <p>When you specify
@@ -862,15 +590,6 @@ namespace ConfigService
          */
         virtual Model::DescribeOrganizationConfigRulesOutcome DescribeOrganizationConfigRules(const Model::DescribeOrganizationConfigRulesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeOrganizationConfigRules that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeOrganizationConfigRulesOutcomeCallable DescribeOrganizationConfigRulesCallable(const Model::DescribeOrganizationConfigRulesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeOrganizationConfigRules that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeOrganizationConfigRulesAsync(const Model::DescribeOrganizationConfigRulesRequest& request, const DescribeOrganizationConfigRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides organization conformance pack deployment status for an organization.
@@ -886,15 +605,6 @@ namespace ConfigService
          */
         virtual Model::DescribeOrganizationConformancePackStatusesOutcome DescribeOrganizationConformancePackStatuses(const Model::DescribeOrganizationConformancePackStatusesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeOrganizationConformancePackStatuses that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeOrganizationConformancePackStatusesOutcomeCallable DescribeOrganizationConformancePackStatusesCallable(const Model::DescribeOrganizationConformancePackStatusesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeOrganizationConformancePackStatuses that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeOrganizationConformancePackStatusesAsync(const Model::DescribeOrganizationConformancePackStatusesRequest& request, const DescribeOrganizationConformancePackStatusesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of organization conformance packs. </p>  <p>When you
@@ -918,15 +628,6 @@ namespace ConfigService
          */
         virtual Model::DescribeOrganizationConformancePacksOutcome DescribeOrganizationConformancePacks(const Model::DescribeOrganizationConformancePacksRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeOrganizationConformancePacks that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeOrganizationConformancePacksOutcomeCallable DescribeOrganizationConformancePacksCallable(const Model::DescribeOrganizationConformancePacksRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeOrganizationConformancePacks that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeOrganizationConformancePacksAsync(const Model::DescribeOrganizationConformancePacksRequest& request, const DescribeOrganizationConformancePacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of all pending aggregation requests.</p><p><h3>See Also:</h3> 
@@ -936,15 +637,6 @@ namespace ConfigService
          */
         virtual Model::DescribePendingAggregationRequestsOutcome DescribePendingAggregationRequests(const Model::DescribePendingAggregationRequestsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribePendingAggregationRequests that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribePendingAggregationRequestsOutcomeCallable DescribePendingAggregationRequestsCallable(const Model::DescribePendingAggregationRequestsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribePendingAggregationRequests that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribePendingAggregationRequestsAsync(const Model::DescribePendingAggregationRequestsRequest& request, const DescribePendingAggregationRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the details of one or more remediation configurations.</p><p><h3>See
@@ -954,15 +646,6 @@ namespace ConfigService
          */
         virtual Model::DescribeRemediationConfigurationsOutcome DescribeRemediationConfigurations(const Model::DescribeRemediationConfigurationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeRemediationConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeRemediationConfigurationsOutcomeCallable DescribeRemediationConfigurationsCallable(const Model::DescribeRemediationConfigurationsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeRemediationConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeRemediationConfigurationsAsync(const Model::DescribeRemediationConfigurationsRequest& request, const DescribeRemediationConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the details of one or more remediation exceptions. A detailed view of
@@ -981,15 +664,6 @@ namespace ConfigService
          */
         virtual Model::DescribeRemediationExceptionsOutcome DescribeRemediationExceptions(const Model::DescribeRemediationExceptionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeRemediationExceptions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeRemediationExceptionsOutcomeCallable DescribeRemediationExceptionsCallable(const Model::DescribeRemediationExceptionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeRemediationExceptions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeRemediationExceptionsAsync(const Model::DescribeRemediationExceptionsRequest& request, const DescribeRemediationExceptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides a detailed view of a Remediation Execution for a set of resources
@@ -1002,15 +676,6 @@ namespace ConfigService
          */
         virtual Model::DescribeRemediationExecutionStatusOutcome DescribeRemediationExecutionStatus(const Model::DescribeRemediationExecutionStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeRemediationExecutionStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeRemediationExecutionStatusOutcomeCallable DescribeRemediationExecutionStatusCallable(const Model::DescribeRemediationExecutionStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeRemediationExecutionStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeRemediationExecutionStatusAsync(const Model::DescribeRemediationExecutionStatusRequest& request, const DescribeRemediationExecutionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the details of one or more retention configurations. If the retention
@@ -1023,15 +688,6 @@ namespace ConfigService
          */
         virtual Model::DescribeRetentionConfigurationsOutcome DescribeRetentionConfigurations(const Model::DescribeRetentionConfigurationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeRetentionConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeRetentionConfigurationsOutcomeCallable DescribeRetentionConfigurationsCallable(const Model::DescribeRetentionConfigurationsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeRetentionConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeRetentionConfigurationsAsync(const Model::DescribeRetentionConfigurationsRequest& request, const DescribeRetentionConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the evaluation results for the specified Config rule for a specific
@@ -1045,15 +701,6 @@ namespace ConfigService
          */
         virtual Model::GetAggregateComplianceDetailsByConfigRuleOutcome GetAggregateComplianceDetailsByConfigRule(const Model::GetAggregateComplianceDetailsByConfigRuleRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAggregateComplianceDetailsByConfigRule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAggregateComplianceDetailsByConfigRuleOutcomeCallable GetAggregateComplianceDetailsByConfigRuleCallable(const Model::GetAggregateComplianceDetailsByConfigRuleRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAggregateComplianceDetailsByConfigRule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAggregateComplianceDetailsByConfigRuleAsync(const Model::GetAggregateComplianceDetailsByConfigRuleRequest& request, const GetAggregateComplianceDetailsByConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the number of compliant and noncompliant rules for one or more
@@ -1065,15 +712,6 @@ namespace ConfigService
          */
         virtual Model::GetAggregateConfigRuleComplianceSummaryOutcome GetAggregateConfigRuleComplianceSummary(const Model::GetAggregateConfigRuleComplianceSummaryRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAggregateConfigRuleComplianceSummary that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAggregateConfigRuleComplianceSummaryOutcomeCallable GetAggregateConfigRuleComplianceSummaryCallable(const Model::GetAggregateConfigRuleComplianceSummaryRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAggregateConfigRuleComplianceSummary that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAggregateConfigRuleComplianceSummaryAsync(const Model::GetAggregateConfigRuleComplianceSummaryRequest& request, const GetAggregateConfigRuleComplianceSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the count of compliant and noncompliant conformance packs across all
@@ -1087,15 +725,6 @@ namespace ConfigService
          */
         virtual Model::GetAggregateConformancePackComplianceSummaryOutcome GetAggregateConformancePackComplianceSummary(const Model::GetAggregateConformancePackComplianceSummaryRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAggregateConformancePackComplianceSummary that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAggregateConformancePackComplianceSummaryOutcomeCallable GetAggregateConformancePackComplianceSummaryCallable(const Model::GetAggregateConformancePackComplianceSummaryRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAggregateConformancePackComplianceSummary that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAggregateConformancePackComplianceSummaryAsync(const Model::GetAggregateConformancePackComplianceSummaryRequest& request, const GetAggregateConformancePackComplianceSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the resource counts across accounts and regions that are present in
@@ -1110,15 +739,6 @@ namespace ConfigService
          */
         virtual Model::GetAggregateDiscoveredResourceCountsOutcome GetAggregateDiscoveredResourceCounts(const Model::GetAggregateDiscoveredResourceCountsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAggregateDiscoveredResourceCounts that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAggregateDiscoveredResourceCountsOutcomeCallable GetAggregateDiscoveredResourceCountsCallable(const Model::GetAggregateDiscoveredResourceCountsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAggregateDiscoveredResourceCounts that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAggregateDiscoveredResourceCountsAsync(const Model::GetAggregateDiscoveredResourceCountsRequest& request, const GetAggregateDiscoveredResourceCountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns configuration item that is aggregated for your specific resource in a
@@ -1128,15 +748,6 @@ namespace ConfigService
          */
         virtual Model::GetAggregateResourceConfigOutcome GetAggregateResourceConfig(const Model::GetAggregateResourceConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAggregateResourceConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAggregateResourceConfigOutcomeCallable GetAggregateResourceConfigCallable(const Model::GetAggregateResourceConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAggregateResourceConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAggregateResourceConfigAsync(const Model::GetAggregateResourceConfigRequest& request, const GetAggregateResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the evaluation results for the specified Config rule. The results
@@ -1148,15 +759,6 @@ namespace ConfigService
          */
         virtual Model::GetComplianceDetailsByConfigRuleOutcome GetComplianceDetailsByConfigRule(const Model::GetComplianceDetailsByConfigRuleRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetComplianceDetailsByConfigRule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetComplianceDetailsByConfigRuleOutcomeCallable GetComplianceDetailsByConfigRuleCallable(const Model::GetComplianceDetailsByConfigRuleRequest& request) const;
-
-        /**
-         * An Async wrapper for GetComplianceDetailsByConfigRule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetComplianceDetailsByConfigRuleAsync(const Model::GetComplianceDetailsByConfigRuleRequest& request, const GetComplianceDetailsByConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the evaluation results for the specified Amazon Web Services
@@ -1168,15 +770,6 @@ namespace ConfigService
          */
         virtual Model::GetComplianceDetailsByResourceOutcome GetComplianceDetailsByResource(const Model::GetComplianceDetailsByResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetComplianceDetailsByResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetComplianceDetailsByResourceOutcomeCallable GetComplianceDetailsByResourceCallable(const Model::GetComplianceDetailsByResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for GetComplianceDetailsByResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetComplianceDetailsByResourceAsync(const Model::GetComplianceDetailsByResourceRequest& request, const GetComplianceDetailsByResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the number of Config rules that are compliant and noncompliant, up to
@@ -1205,15 +798,6 @@ namespace ConfigService
          */
         virtual Model::GetComplianceSummaryByResourceTypeOutcome GetComplianceSummaryByResourceType(const Model::GetComplianceSummaryByResourceTypeRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetComplianceSummaryByResourceType that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetComplianceSummaryByResourceTypeOutcomeCallable GetComplianceSummaryByResourceTypeCallable(const Model::GetComplianceSummaryByResourceTypeRequest& request) const;
-
-        /**
-         * An Async wrapper for GetComplianceSummaryByResourceType that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetComplianceSummaryByResourceTypeAsync(const Model::GetComplianceSummaryByResourceTypeRequest& request, const GetComplianceSummaryByResourceTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns compliance details of a conformance pack for all Amazon Web Services
@@ -1223,15 +807,6 @@ namespace ConfigService
          */
         virtual Model::GetConformancePackComplianceDetailsOutcome GetConformancePackComplianceDetails(const Model::GetConformancePackComplianceDetailsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetConformancePackComplianceDetails that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetConformancePackComplianceDetailsOutcomeCallable GetConformancePackComplianceDetailsCallable(const Model::GetConformancePackComplianceDetailsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetConformancePackComplianceDetails that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetConformancePackComplianceDetailsAsync(const Model::GetConformancePackComplianceDetailsRequest& request, const GetConformancePackComplianceDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns compliance details for the conformance pack based on the cumulative
@@ -1242,15 +817,6 @@ namespace ConfigService
          */
         virtual Model::GetConformancePackComplianceSummaryOutcome GetConformancePackComplianceSummary(const Model::GetConformancePackComplianceSummaryRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetConformancePackComplianceSummary that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetConformancePackComplianceSummaryOutcomeCallable GetConformancePackComplianceSummaryCallable(const Model::GetConformancePackComplianceSummaryRequest& request) const;
-
-        /**
-         * An Async wrapper for GetConformancePackComplianceSummary that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetConformancePackComplianceSummaryAsync(const Model::GetConformancePackComplianceSummaryRequest& request, const GetConformancePackComplianceSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the policy definition containing the logic for your Config Custom
@@ -1260,15 +826,6 @@ namespace ConfigService
          */
         virtual Model::GetCustomRulePolicyOutcome GetCustomRulePolicy(const Model::GetCustomRulePolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetCustomRulePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetCustomRulePolicyOutcomeCallable GetCustomRulePolicyCallable(const Model::GetCustomRulePolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetCustomRulePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetCustomRulePolicyAsync(const Model::GetCustomRulePolicyRequest& request, const GetCustomRulePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the resource types, the number of each resource type, and the total
@@ -1298,15 +855,6 @@ namespace ConfigService
          */
         virtual Model::GetDiscoveredResourceCountsOutcome GetDiscoveredResourceCounts(const Model::GetDiscoveredResourceCountsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDiscoveredResourceCounts that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDiscoveredResourceCountsOutcomeCallable GetDiscoveredResourceCountsCallable(const Model::GetDiscoveredResourceCountsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDiscoveredResourceCounts that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDiscoveredResourceCountsAsync(const Model::GetDiscoveredResourceCountsRequest& request, const GetDiscoveredResourceCountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns detailed status for each member account within an organization for a
@@ -1316,15 +864,6 @@ namespace ConfigService
          */
         virtual Model::GetOrganizationConfigRuleDetailedStatusOutcome GetOrganizationConfigRuleDetailedStatus(const Model::GetOrganizationConfigRuleDetailedStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetOrganizationConfigRuleDetailedStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetOrganizationConfigRuleDetailedStatusOutcomeCallable GetOrganizationConfigRuleDetailedStatusCallable(const Model::GetOrganizationConfigRuleDetailedStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for GetOrganizationConfigRuleDetailedStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetOrganizationConfigRuleDetailedStatusAsync(const Model::GetOrganizationConfigRuleDetailedStatusRequest& request, const GetOrganizationConfigRuleDetailedStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns detailed status for each member account within an organization for a
@@ -1334,15 +873,6 @@ namespace ConfigService
          */
         virtual Model::GetOrganizationConformancePackDetailedStatusOutcome GetOrganizationConformancePackDetailedStatus(const Model::GetOrganizationConformancePackDetailedStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetOrganizationConformancePackDetailedStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetOrganizationConformancePackDetailedStatusOutcomeCallable GetOrganizationConformancePackDetailedStatusCallable(const Model::GetOrganizationConformancePackDetailedStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for GetOrganizationConformancePackDetailedStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetOrganizationConformancePackDetailedStatusAsync(const Model::GetOrganizationConformancePackDetailedStatusRequest& request, const GetOrganizationConformancePackDetailedStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the policy definition containing the logic for your organization
@@ -1352,15 +882,6 @@ namespace ConfigService
          */
         virtual Model::GetOrganizationCustomRulePolicyOutcome GetOrganizationCustomRulePolicy(const Model::GetOrganizationCustomRulePolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetOrganizationCustomRulePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetOrganizationCustomRulePolicyOutcomeCallable GetOrganizationCustomRulePolicyCallable(const Model::GetOrganizationCustomRulePolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetOrganizationCustomRulePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetOrganizationCustomRulePolicyAsync(const Model::GetOrganizationCustomRulePolicyRequest& request, const GetOrganizationCustomRulePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of <code>ConfigurationItems</code> for the specified resource.
@@ -1382,15 +903,6 @@ namespace ConfigService
          */
         virtual Model::GetResourceConfigHistoryOutcome GetResourceConfigHistory(const Model::GetResourceConfigHistoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetResourceConfigHistory that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetResourceConfigHistoryOutcomeCallable GetResourceConfigHistoryCallable(const Model::GetResourceConfigHistoryRequest& request) const;
-
-        /**
-         * An Async wrapper for GetResourceConfigHistory that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetResourceConfigHistoryAsync(const Model::GetResourceConfigHistoryRequest& request, const GetResourceConfigHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the details of a specific stored query.</p><p><h3>See Also:</h3>   <a
@@ -1399,15 +911,6 @@ namespace ConfigService
          */
         virtual Model::GetStoredQueryOutcome GetStoredQuery(const Model::GetStoredQueryRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetStoredQuery that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetStoredQueryOutcomeCallable GetStoredQueryCallable(const Model::GetStoredQueryRequest& request) const;
-
-        /**
-         * An Async wrapper for GetStoredQuery that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetStoredQueryAsync(const Model::GetStoredQueryRequest& request, const GetStoredQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Accepts a resource type and returns a list of resource identifiers that are
@@ -1425,15 +928,6 @@ namespace ConfigService
          */
         virtual Model::ListAggregateDiscoveredResourcesOutcome ListAggregateDiscoveredResources(const Model::ListAggregateDiscoveredResourcesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAggregateDiscoveredResources that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAggregateDiscoveredResourcesOutcomeCallable ListAggregateDiscoveredResourcesCallable(const Model::ListAggregateDiscoveredResourcesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAggregateDiscoveredResources that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAggregateDiscoveredResourcesAsync(const Model::ListAggregateDiscoveredResourcesRequest& request, const ListAggregateDiscoveredResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of conformance pack compliance scores. A compliance score is
@@ -1450,15 +944,6 @@ namespace ConfigService
          */
         virtual Model::ListConformancePackComplianceScoresOutcome ListConformancePackComplianceScores(const Model::ListConformancePackComplianceScoresRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListConformancePackComplianceScores that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListConformancePackComplianceScoresOutcomeCallable ListConformancePackComplianceScoresCallable(const Model::ListConformancePackComplianceScoresRequest& request) const;
-
-        /**
-         * An Async wrapper for ListConformancePackComplianceScores that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListConformancePackComplianceScoresAsync(const Model::ListConformancePackComplianceScoresRequest& request, const ListConformancePackComplianceScoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Accepts a resource type and returns a list of resource identifiers for the
@@ -1478,15 +963,6 @@ namespace ConfigService
          */
         virtual Model::ListDiscoveredResourcesOutcome ListDiscoveredResources(const Model::ListDiscoveredResourcesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDiscoveredResources that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDiscoveredResourcesOutcomeCallable ListDiscoveredResourcesCallable(const Model::ListDiscoveredResourcesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDiscoveredResources that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDiscoveredResourcesAsync(const Model::ListDiscoveredResourcesRequest& request, const ListDiscoveredResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the stored queries for a single Amazon Web Services account and a
@@ -1497,15 +973,6 @@ namespace ConfigService
          */
         virtual Model::ListStoredQueriesOutcome ListStoredQueries(const Model::ListStoredQueriesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListStoredQueries that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListStoredQueriesOutcomeCallable ListStoredQueriesCallable(const Model::ListStoredQueriesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListStoredQueries that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListStoredQueriesAsync(const Model::ListStoredQueriesRequest& request, const ListStoredQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List the tags for Config resource.</p><p><h3>See Also:</h3>   <a
@@ -1514,15 +981,6 @@ namespace ConfigService
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Authorizes the aggregator account and region to collect data from the source
@@ -1532,15 +990,6 @@ namespace ConfigService
          */
         virtual Model::PutAggregationAuthorizationOutcome PutAggregationAuthorization(const Model::PutAggregationAuthorizationRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutAggregationAuthorization that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutAggregationAuthorizationOutcomeCallable PutAggregationAuthorizationCallable(const Model::PutAggregationAuthorizationRequest& request) const;
-
-        /**
-         * An Async wrapper for PutAggregationAuthorization that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutAggregationAuthorizationAsync(const Model::PutAggregationAuthorizationRequest& request, const PutAggregationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds or updates an Config rule to evaluate if your Amazon Web Services
@@ -1583,15 +1032,6 @@ namespace ConfigService
          */
         virtual Model::PutConfigRuleOutcome PutConfigRule(const Model::PutConfigRuleRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutConfigRule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutConfigRuleOutcomeCallable PutConfigRuleCallable(const Model::PutConfigRuleRequest& request) const;
-
-        /**
-         * An Async wrapper for PutConfigRule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutConfigRuleAsync(const Model::PutConfigRuleRequest& request, const PutConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates and updates the configuration aggregator with the selected source
@@ -1617,15 +1057,6 @@ namespace ConfigService
          */
         virtual Model::PutConfigurationAggregatorOutcome PutConfigurationAggregator(const Model::PutConfigurationAggregatorRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutConfigurationAggregator that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutConfigurationAggregatorOutcomeCallable PutConfigurationAggregatorCallable(const Model::PutConfigurationAggregatorRequest& request) const;
-
-        /**
-         * An Async wrapper for PutConfigurationAggregator that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutConfigurationAggregatorAsync(const Model::PutConfigurationAggregatorRequest& request, const PutConfigurationAggregatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new configuration recorder to record the selected resource
@@ -1642,15 +1073,6 @@ namespace ConfigService
          */
         virtual Model::PutConfigurationRecorderOutcome PutConfigurationRecorder(const Model::PutConfigurationRecorderRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutConfigurationRecorder that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutConfigurationRecorderOutcomeCallable PutConfigurationRecorderCallable(const Model::PutConfigurationRecorderRequest& request) const;
-
-        /**
-         * An Async wrapper for PutConfigurationRecorder that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutConfigurationRecorderAsync(const Model::PutConfigurationRecorderRequest& request, const PutConfigurationRecorderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates or updates a conformance pack. A conformance pack is a collection of
@@ -1669,15 +1091,6 @@ namespace ConfigService
          */
         virtual Model::PutConformancePackOutcome PutConformancePack(const Model::PutConformancePackRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutConformancePack that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutConformancePackOutcomeCallable PutConformancePackCallable(const Model::PutConformancePackRequest& request) const;
-
-        /**
-         * An Async wrapper for PutConformancePack that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutConformancePackAsync(const Model::PutConformancePackRequest& request, const PutConformancePackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a delivery channel object to deliver configuration information to an
@@ -1695,15 +1108,6 @@ namespace ConfigService
          */
         virtual Model::PutDeliveryChannelOutcome PutDeliveryChannel(const Model::PutDeliveryChannelRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutDeliveryChannel that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutDeliveryChannelOutcomeCallable PutDeliveryChannelCallable(const Model::PutDeliveryChannelRequest& request) const;
-
-        /**
-         * An Async wrapper for PutDeliveryChannel that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutDeliveryChannelAsync(const Model::PutDeliveryChannelRequest& request, const PutDeliveryChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Used by an Lambda function to deliver evaluation results to Config. This
@@ -1714,15 +1118,6 @@ namespace ConfigService
          */
         virtual Model::PutEvaluationsOutcome PutEvaluations(const Model::PutEvaluationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutEvaluations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutEvaluationsOutcomeCallable PutEvaluationsCallable(const Model::PutEvaluationsRequest& request) const;
-
-        /**
-         * An Async wrapper for PutEvaluations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutEvaluationsAsync(const Model::PutEvaluationsRequest& request, const PutEvaluationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Add or updates the evaluations for process checks. This API checks if the
@@ -1733,15 +1128,6 @@ namespace ConfigService
          */
         virtual Model::PutExternalEvaluationOutcome PutExternalEvaluation(const Model::PutExternalEvaluationRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutExternalEvaluation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutExternalEvaluationOutcomeCallable PutExternalEvaluationCallable(const Model::PutExternalEvaluationRequest& request) const;
-
-        /**
-         * An Async wrapper for PutExternalEvaluation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutExternalEvaluationAsync(const Model::PutExternalEvaluationRequest& request, const PutExternalEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds or updates an Config rule for your entire organization to evaluate if
@@ -1792,15 +1178,6 @@ namespace ConfigService
          */
         virtual Model::PutOrganizationConfigRuleOutcome PutOrganizationConfigRule(const Model::PutOrganizationConfigRuleRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutOrganizationConfigRule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutOrganizationConfigRuleOutcomeCallable PutOrganizationConfigRuleCallable(const Model::PutOrganizationConfigRuleRequest& request) const;
-
-        /**
-         * An Async wrapper for PutOrganizationConfigRule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutOrganizationConfigRuleAsync(const Model::PutOrganizationConfigRuleRequest& request, const PutOrganizationConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deploys conformance packs across member accounts in an Amazon Web Services
@@ -1833,15 +1210,6 @@ namespace ConfigService
          */
         virtual Model::PutOrganizationConformancePackOutcome PutOrganizationConformancePack(const Model::PutOrganizationConformancePackRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutOrganizationConformancePack that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutOrganizationConformancePackOutcomeCallable PutOrganizationConformancePackCallable(const Model::PutOrganizationConformancePackRequest& request) const;
-
-        /**
-         * An Async wrapper for PutOrganizationConformancePack that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutOrganizationConformancePackAsync(const Model::PutOrganizationConformancePackRequest& request, const PutOrganizationConformancePackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds or updates the remediation configuration with a specific Config rule
@@ -1867,15 +1235,6 @@ namespace ConfigService
          */
         virtual Model::PutRemediationConfigurationsOutcome PutRemediationConfigurations(const Model::PutRemediationConfigurationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutRemediationConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutRemediationConfigurationsOutcomeCallable PutRemediationConfigurationsCallable(const Model::PutRemediationConfigurationsRequest& request) const;
-
-        /**
-         * An Async wrapper for PutRemediationConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutRemediationConfigurationsAsync(const Model::PutRemediationConfigurationsRequest& request, const PutRemediationConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>A remediation exception is when a specific resource is no longer considered
@@ -1890,15 +1249,6 @@ namespace ConfigService
          */
         virtual Model::PutRemediationExceptionsOutcome PutRemediationExceptions(const Model::PutRemediationExceptionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutRemediationExceptions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutRemediationExceptionsOutcomeCallable PutRemediationExceptionsCallable(const Model::PutRemediationExceptionsRequest& request) const;
-
-        /**
-         * An Async wrapper for PutRemediationExceptions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutRemediationExceptionsAsync(const Model::PutRemediationExceptionsRequest& request, const PutRemediationExceptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Records the configuration state for the resource provided in the request. The
@@ -1917,15 +1267,6 @@ namespace ConfigService
          */
         virtual Model::PutResourceConfigOutcome PutResourceConfig(const Model::PutResourceConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutResourceConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutResourceConfigOutcomeCallable PutResourceConfigCallable(const Model::PutResourceConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for PutResourceConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutResourceConfigAsync(const Model::PutResourceConfigRequest& request, const PutResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates and updates the retention configuration with details about retention
@@ -1940,15 +1281,6 @@ namespace ConfigService
          */
         virtual Model::PutRetentionConfigurationOutcome PutRetentionConfiguration(const Model::PutRetentionConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutRetentionConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutRetentionConfigurationOutcomeCallable PutRetentionConfigurationCallable(const Model::PutRetentionConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for PutRetentionConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutRetentionConfigurationAsync(const Model::PutRetentionConfigurationRequest& request, const PutRetentionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Saves a new query or updates an existing saved query. The
@@ -1961,15 +1293,6 @@ namespace ConfigService
          */
         virtual Model::PutStoredQueryOutcome PutStoredQuery(const Model::PutStoredQueryRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutStoredQuery that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutStoredQueryOutcomeCallable PutStoredQueryCallable(const Model::PutStoredQueryRequest& request) const;
-
-        /**
-         * An Async wrapper for PutStoredQuery that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutStoredQueryAsync(const Model::PutStoredQueryRequest& request, const PutStoredQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Accepts a structured query language (SQL) SELECT command and an aggregator to
@@ -1994,15 +1317,6 @@ namespace ConfigService
          */
         virtual Model::SelectAggregateResourceConfigOutcome SelectAggregateResourceConfig(const Model::SelectAggregateResourceConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for SelectAggregateResourceConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SelectAggregateResourceConfigOutcomeCallable SelectAggregateResourceConfigCallable(const Model::SelectAggregateResourceConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for SelectAggregateResourceConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SelectAggregateResourceConfigAsync(const Model::SelectAggregateResourceConfigRequest& request, const SelectAggregateResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Accepts a structured query language (SQL) <code>SELECT</code> command,
@@ -2016,15 +1330,6 @@ namespace ConfigService
          */
         virtual Model::SelectResourceConfigOutcome SelectResourceConfig(const Model::SelectResourceConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for SelectResourceConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SelectResourceConfigOutcomeCallable SelectResourceConfigCallable(const Model::SelectResourceConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for SelectResourceConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SelectResourceConfigAsync(const Model::SelectResourceConfigRequest& request, const SelectResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Runs an on-demand evaluation for the specified Config rules against the last
@@ -2056,15 +1361,6 @@ namespace ConfigService
          */
         virtual Model::StartConfigRulesEvaluationOutcome StartConfigRulesEvaluation(const Model::StartConfigRulesEvaluationRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartConfigRulesEvaluation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartConfigRulesEvaluationOutcomeCallable StartConfigRulesEvaluationCallable(const Model::StartConfigRulesEvaluationRequest& request) const;
-
-        /**
-         * An Async wrapper for StartConfigRulesEvaluation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartConfigRulesEvaluationAsync(const Model::StartConfigRulesEvaluationRequest& request, const StartConfigRulesEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts recording configurations of the Amazon Web Services resources you have
@@ -2076,15 +1372,6 @@ namespace ConfigService
          */
         virtual Model::StartConfigurationRecorderOutcome StartConfigurationRecorder(const Model::StartConfigurationRecorderRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartConfigurationRecorder that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartConfigurationRecorderOutcomeCallable StartConfigurationRecorderCallable(const Model::StartConfigurationRecorderRequest& request) const;
-
-        /**
-         * An Async wrapper for StartConfigurationRecorder that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartConfigurationRecorderAsync(const Model::StartConfigurationRecorderRequest& request, const StartConfigurationRecorderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Runs an on-demand remediation for the specified Config rules against the last
@@ -2098,15 +1385,6 @@ namespace ConfigService
          */
         virtual Model::StartRemediationExecutionOutcome StartRemediationExecution(const Model::StartRemediationExecutionRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartRemediationExecution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartRemediationExecutionOutcomeCallable StartRemediationExecutionCallable(const Model::StartRemediationExecutionRequest& request) const;
-
-        /**
-         * An Async wrapper for StartRemediationExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartRemediationExecutionAsync(const Model::StartRemediationExecutionRequest& request, const StartRemediationExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops recording configurations of the Amazon Web Services resources you have
@@ -2117,15 +1395,6 @@ namespace ConfigService
          */
         virtual Model::StopConfigurationRecorderOutcome StopConfigurationRecorder(const Model::StopConfigurationRecorderRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopConfigurationRecorder that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopConfigurationRecorderOutcomeCallable StopConfigurationRecorderCallable(const Model::StopConfigurationRecorderRequest& request) const;
-
-        /**
-         * An Async wrapper for StopConfigurationRecorder that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopConfigurationRecorderAsync(const Model::StopConfigurationRecorderRequest& request, const StopConfigurationRecorderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates the specified tags to a resource with the specified resourceArn.
@@ -2137,15 +1406,6 @@ namespace ConfigService
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes specified tags from a resource.</p><p><h3>See Also:</h3>   <a
@@ -2154,15 +1414,6 @@ namespace ConfigService
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

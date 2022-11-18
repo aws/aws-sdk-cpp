@@ -7,8 +7,10 @@
 #include <aws/honeycode/Honeycode_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/honeycode/HoneycodeServiceClientModel.h>
+#include <aws/honeycode/HoneycodeLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -76,6 +78,47 @@ namespace Honeycode
         virtual ~HoneycodeClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p> The BatchCreateTableRows API allows you to create one or more rows at the
          * end of a table in a workbook. The API allows you to specify the values to set in
@@ -91,15 +134,6 @@ namespace Honeycode
          */
         virtual Model::BatchCreateTableRowsOutcome BatchCreateTableRows(const Model::BatchCreateTableRowsRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchCreateTableRows that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchCreateTableRowsOutcomeCallable BatchCreateTableRowsCallable(const Model::BatchCreateTableRowsRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchCreateTableRows that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchCreateTableRowsAsync(const Model::BatchCreateTableRowsRequest& request, const BatchCreateTableRowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The BatchDeleteTableRows API allows you to delete one or more rows from a
@@ -110,15 +144,6 @@ namespace Honeycode
          */
         virtual Model::BatchDeleteTableRowsOutcome BatchDeleteTableRows(const Model::BatchDeleteTableRowsRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchDeleteTableRows that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchDeleteTableRowsOutcomeCallable BatchDeleteTableRowsCallable(const Model::BatchDeleteTableRowsRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchDeleteTableRows that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchDeleteTableRowsAsync(const Model::BatchDeleteTableRowsRequest& request, const BatchDeleteTableRowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The BatchUpdateTableRows API allows you to update one or more rows in a
@@ -132,15 +157,6 @@ namespace Honeycode
          */
         virtual Model::BatchUpdateTableRowsOutcome BatchUpdateTableRows(const Model::BatchUpdateTableRowsRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchUpdateTableRows that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchUpdateTableRowsOutcomeCallable BatchUpdateTableRowsCallable(const Model::BatchUpdateTableRowsRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchUpdateTableRows that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchUpdateTableRowsAsync(const Model::BatchUpdateTableRowsRequest& request, const BatchUpdateTableRowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The BatchUpsertTableRows API allows you to upsert one or more rows in a
@@ -159,15 +175,6 @@ namespace Honeycode
          */
         virtual Model::BatchUpsertTableRowsOutcome BatchUpsertTableRows(const Model::BatchUpsertTableRowsRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchUpsertTableRows that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchUpsertTableRowsOutcomeCallable BatchUpsertTableRowsCallable(const Model::BatchUpsertTableRowsRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchUpsertTableRows that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchUpsertTableRowsAsync(const Model::BatchUpsertTableRowsRequest& request, const BatchUpsertTableRowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The DescribeTableDataImportJob API allows you to retrieve the status and
@@ -177,15 +184,6 @@ namespace Honeycode
          */
         virtual Model::DescribeTableDataImportJobOutcome DescribeTableDataImportJob(const Model::DescribeTableDataImportJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTableDataImportJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTableDataImportJobOutcomeCallable DescribeTableDataImportJobCallable(const Model::DescribeTableDataImportJobRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTableDataImportJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTableDataImportJobAsync(const Model::DescribeTableDataImportJobRequest& request, const DescribeTableDataImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The GetScreenData API allows retrieval of data from a screen in a Honeycode
@@ -197,15 +195,6 @@ namespace Honeycode
          */
         virtual Model::GetScreenDataOutcome GetScreenData(const Model::GetScreenDataRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetScreenData that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetScreenDataOutcomeCallable GetScreenDataCallable(const Model::GetScreenDataRequest& request) const;
-
-        /**
-         * An Async wrapper for GetScreenData that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetScreenDataAsync(const Model::GetScreenDataRequest& request, const GetScreenDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The InvokeScreenAutomation API allows invoking an action defined in a screen
@@ -218,15 +207,6 @@ namespace Honeycode
          */
         virtual Model::InvokeScreenAutomationOutcome InvokeScreenAutomation(const Model::InvokeScreenAutomationRequest& request) const;
 
-        /**
-         * A Callable wrapper for InvokeScreenAutomation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::InvokeScreenAutomationOutcomeCallable InvokeScreenAutomationCallable(const Model::InvokeScreenAutomationRequest& request) const;
-
-        /**
-         * An Async wrapper for InvokeScreenAutomation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void InvokeScreenAutomationAsync(const Model::InvokeScreenAutomationRequest& request, const InvokeScreenAutomationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The ListTableColumns API allows you to retrieve a list of all the columns in
@@ -236,15 +216,6 @@ namespace Honeycode
          */
         virtual Model::ListTableColumnsOutcome ListTableColumns(const Model::ListTableColumnsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTableColumns that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTableColumnsOutcomeCallable ListTableColumnsCallable(const Model::ListTableColumnsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTableColumns that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTableColumnsAsync(const Model::ListTableColumnsRequest& request, const ListTableColumnsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The ListTableRows API allows you to retrieve a list of all the rows in a
@@ -254,15 +225,6 @@ namespace Honeycode
          */
         virtual Model::ListTableRowsOutcome ListTableRows(const Model::ListTableRowsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTableRows that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTableRowsOutcomeCallable ListTableRowsCallable(const Model::ListTableRowsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTableRows that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTableRowsAsync(const Model::ListTableRowsRequest& request, const ListTableRowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The ListTables API allows you to retrieve a list of all the tables in a
@@ -272,15 +234,6 @@ namespace Honeycode
          */
         virtual Model::ListTablesOutcome ListTables(const Model::ListTablesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTables that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTablesOutcomeCallable ListTablesCallable(const Model::ListTablesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTables that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTablesAsync(const Model::ListTablesRequest& request, const ListTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The ListTagsForResource API allows you to return a resource's tags.
@@ -290,15 +243,6 @@ namespace Honeycode
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The QueryTableRows API allows you to use a filter formula to query for
@@ -308,15 +252,6 @@ namespace Honeycode
          */
         virtual Model::QueryTableRowsOutcome QueryTableRows(const Model::QueryTableRowsRequest& request) const;
 
-        /**
-         * A Callable wrapper for QueryTableRows that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::QueryTableRowsOutcomeCallable QueryTableRowsCallable(const Model::QueryTableRowsRequest& request) const;
-
-        /**
-         * An Async wrapper for QueryTableRows that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void QueryTableRowsAsync(const Model::QueryTableRowsRequest& request, const QueryTableRowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The StartTableDataImportJob API allows you to start an import job on a
@@ -328,15 +263,6 @@ namespace Honeycode
          */
         virtual Model::StartTableDataImportJobOutcome StartTableDataImportJob(const Model::StartTableDataImportJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartTableDataImportJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartTableDataImportJobOutcomeCallable StartTableDataImportJobCallable(const Model::StartTableDataImportJobRequest& request) const;
-
-        /**
-         * An Async wrapper for StartTableDataImportJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartTableDataImportJobAsync(const Model::StartTableDataImportJobRequest& request, const StartTableDataImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The TagResource API allows you to add tags to an ARN-able resource. Resource
@@ -347,15 +273,6 @@ namespace Honeycode
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> The UntagResource API allows you to removes tags from an ARN-able resource.
@@ -366,15 +283,6 @@ namespace Honeycode
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

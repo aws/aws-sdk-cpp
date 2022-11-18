@@ -7,8 +7,10 @@
 #include <aws/servicediscovery/ServiceDiscovery_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/servicediscovery/ServiceDiscoveryServiceClientModel.h>
+#include <aws/servicediscovery/ServiceDiscoveryLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -79,6 +81,47 @@ namespace ServiceDiscovery
         virtual ~ServiceDiscoveryClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Creates an HTTP namespace. Service instances registered using an HTTP
          * namespace can be discovered using a <code>DiscoverInstances</code> request but
@@ -93,15 +136,6 @@ namespace ServiceDiscovery
          */
         virtual Model::CreateHttpNamespaceOutcome CreateHttpNamespace(const Model::CreateHttpNamespaceRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateHttpNamespace that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateHttpNamespaceOutcomeCallable CreateHttpNamespaceCallable(const Model::CreateHttpNamespaceRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateHttpNamespace that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateHttpNamespaceAsync(const Model::CreateHttpNamespaceRequest& request, const CreateHttpNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a private namespace based on DNS, which is visible only inside a
@@ -121,15 +155,6 @@ namespace ServiceDiscovery
          */
         virtual Model::CreatePrivateDnsNamespaceOutcome CreatePrivateDnsNamespace(const Model::CreatePrivateDnsNamespaceRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreatePrivateDnsNamespace that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreatePrivateDnsNamespaceOutcomeCallable CreatePrivateDnsNamespaceCallable(const Model::CreatePrivateDnsNamespaceRequest& request) const;
-
-        /**
-         * An Async wrapper for CreatePrivateDnsNamespace that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreatePrivateDnsNamespaceAsync(const Model::CreatePrivateDnsNamespaceRequest& request, const CreatePrivateDnsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a public namespace based on DNS, which is visible on the internet.
@@ -150,15 +175,6 @@ namespace ServiceDiscovery
          */
         virtual Model::CreatePublicDnsNamespaceOutcome CreatePublicDnsNamespace(const Model::CreatePublicDnsNamespaceRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreatePublicDnsNamespace that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreatePublicDnsNamespaceOutcomeCallable CreatePublicDnsNamespaceCallable(const Model::CreatePublicDnsNamespaceRequest& request) const;
-
-        /**
-         * An Async wrapper for CreatePublicDnsNamespace that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreatePublicDnsNamespaceAsync(const Model::CreatePublicDnsNamespaceRequest& request, const CreatePublicDnsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a service. This action defines the configuration for the following
@@ -181,15 +197,6 @@ namespace ServiceDiscovery
          */
         virtual Model::CreateServiceOutcome CreateService(const Model::CreateServiceRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateService that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateServiceOutcomeCallable CreateServiceCallable(const Model::CreateServiceRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateService that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateServiceAsync(const Model::CreateServiceRequest& request, const CreateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a namespace from the current account. If the namespace still contains
@@ -199,15 +206,6 @@ namespace ServiceDiscovery
          */
         virtual Model::DeleteNamespaceOutcome DeleteNamespace(const Model::DeleteNamespaceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteNamespace that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteNamespaceOutcomeCallable DeleteNamespaceCallable(const Model::DeleteNamespaceRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteNamespace that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteNamespaceAsync(const Model::DeleteNamespaceRequest& request, const DeleteNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a specified service. If the service still contains one or more
@@ -217,15 +215,6 @@ namespace ServiceDiscovery
          */
         virtual Model::DeleteServiceOutcome DeleteService(const Model::DeleteServiceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteService that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteServiceOutcomeCallable DeleteServiceCallable(const Model::DeleteServiceRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteService that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteServiceAsync(const Model::DeleteServiceRequest& request, const DeleteServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the Amazon Route 53 DNS records and health check, if any, that Cloud
@@ -235,15 +224,6 @@ namespace ServiceDiscovery
          */
         virtual Model::DeregisterInstanceOutcome DeregisterInstance(const Model::DeregisterInstanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeregisterInstance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeregisterInstanceOutcomeCallable DeregisterInstanceCallable(const Model::DeregisterInstanceRequest& request) const;
-
-        /**
-         * An Async wrapper for DeregisterInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeregisterInstanceAsync(const Model::DeregisterInstanceRequest& request, const DeregisterInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Discovers registered instances for a specified namespace and service. You can
@@ -255,15 +235,6 @@ namespace ServiceDiscovery
          */
         virtual Model::DiscoverInstancesOutcome DiscoverInstances(const Model::DiscoverInstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DiscoverInstances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DiscoverInstancesOutcomeCallable DiscoverInstancesCallable(const Model::DiscoverInstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for DiscoverInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DiscoverInstancesAsync(const Model::DiscoverInstancesRequest& request, const DiscoverInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about a specified instance.</p><p><h3>See Also:</h3>   <a
@@ -272,15 +243,6 @@ namespace ServiceDiscovery
          */
         virtual Model::GetInstanceOutcome GetInstance(const Model::GetInstanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetInstance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetInstanceOutcomeCallable GetInstanceCallable(const Model::GetInstanceRequest& request) const;
-
-        /**
-         * An Async wrapper for GetInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetInstanceAsync(const Model::GetInstanceRequest& request, const GetInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the current health status (<code>Healthy</code>, <code>Unhealthy</code>,
@@ -293,15 +255,6 @@ namespace ServiceDiscovery
          */
         virtual Model::GetInstancesHealthStatusOutcome GetInstancesHealthStatus(const Model::GetInstancesHealthStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetInstancesHealthStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetInstancesHealthStatusOutcomeCallable GetInstancesHealthStatusCallable(const Model::GetInstancesHealthStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for GetInstancesHealthStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetInstancesHealthStatusAsync(const Model::GetInstancesHealthStatusRequest& request, const GetInstancesHealthStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about a namespace.</p><p><h3>See Also:</h3>   <a
@@ -310,15 +263,6 @@ namespace ServiceDiscovery
          */
         virtual Model::GetNamespaceOutcome GetNamespace(const Model::GetNamespaceRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetNamespace that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetNamespaceOutcomeCallable GetNamespaceCallable(const Model::GetNamespaceRequest& request) const;
-
-        /**
-         * An Async wrapper for GetNamespace that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetNamespaceAsync(const Model::GetNamespaceRequest& request, const GetNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about any operation that returns an operation ID in the
@@ -331,15 +275,6 @@ namespace ServiceDiscovery
          */
         virtual Model::GetOperationOutcome GetOperation(const Model::GetOperationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetOperation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetOperationOutcomeCallable GetOperationCallable(const Model::GetOperationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetOperation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetOperationAsync(const Model::GetOperationRequest& request, const GetOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the settings for a specified service.</p><p><h3>See Also:</h3>   <a
@@ -348,15 +283,6 @@ namespace ServiceDiscovery
          */
         virtual Model::GetServiceOutcome GetService(const Model::GetServiceRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetService that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetServiceOutcomeCallable GetServiceCallable(const Model::GetServiceRequest& request) const;
-
-        /**
-         * An Async wrapper for GetService that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetServiceAsync(const Model::GetServiceRequest& request, const GetServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists summary information about the instances that you registered by using a
@@ -366,15 +292,6 @@ namespace ServiceDiscovery
          */
         virtual Model::ListInstancesOutcome ListInstances(const Model::ListInstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListInstances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListInstancesOutcomeCallable ListInstancesCallable(const Model::ListInstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListInstancesAsync(const Model::ListInstancesRequest& request, const ListInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists summary information about the namespaces that were created by the
@@ -384,15 +301,6 @@ namespace ServiceDiscovery
          */
         virtual Model::ListNamespacesOutcome ListNamespaces(const Model::ListNamespacesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListNamespaces that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListNamespacesOutcomeCallable ListNamespacesCallable(const Model::ListNamespacesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListNamespaces that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListNamespacesAsync(const Model::ListNamespacesRequest& request, const ListNamespacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists operations that match the criteria that you specify.</p><p><h3>See
@@ -402,15 +310,6 @@ namespace ServiceDiscovery
          */
         virtual Model::ListOperationsOutcome ListOperations(const Model::ListOperationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListOperations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListOperationsOutcomeCallable ListOperationsCallable(const Model::ListOperationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListOperations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListOperationsAsync(const Model::ListOperationsRequest& request, const ListOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists summary information for all the services that are associated with one
@@ -420,15 +319,6 @@ namespace ServiceDiscovery
          */
         virtual Model::ListServicesOutcome ListServices(const Model::ListServicesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListServices that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListServicesOutcomeCallable ListServicesCallable(const Model::ListServicesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListServices that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListServicesAsync(const Model::ListServicesRequest& request, const ListServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists tags for the specified resource.</p><p><h3>See Also:</h3>   <a
@@ -437,15 +327,6 @@ namespace ServiceDiscovery
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates or updates one or more records and, optionally, creates a health
@@ -477,15 +358,6 @@ namespace ServiceDiscovery
          */
         virtual Model::RegisterInstanceOutcome RegisterInstance(const Model::RegisterInstanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for RegisterInstance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RegisterInstanceOutcomeCallable RegisterInstanceCallable(const Model::RegisterInstanceRequest& request) const;
-
-        /**
-         * An Async wrapper for RegisterInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RegisterInstanceAsync(const Model::RegisterInstanceRequest& request, const RegisterInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds one or more tags to the specified resource.</p><p><h3>See Also:</h3>  
@@ -495,15 +367,6 @@ namespace ServiceDiscovery
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes one or more tags from the specified resource.</p><p><h3>See
@@ -513,15 +376,6 @@ namespace ServiceDiscovery
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an HTTP namespace.</p><p><h3>See Also:</h3>   <a
@@ -530,15 +384,6 @@ namespace ServiceDiscovery
          */
         virtual Model::UpdateHttpNamespaceOutcome UpdateHttpNamespace(const Model::UpdateHttpNamespaceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateHttpNamespace that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateHttpNamespaceOutcomeCallable UpdateHttpNamespaceCallable(const Model::UpdateHttpNamespaceRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateHttpNamespace that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateHttpNamespaceAsync(const Model::UpdateHttpNamespaceRequest& request, const UpdateHttpNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Submits a request to change the health status of a custom health check to
@@ -555,15 +400,6 @@ namespace ServiceDiscovery
          */
         virtual Model::UpdateInstanceCustomHealthStatusOutcome UpdateInstanceCustomHealthStatus(const Model::UpdateInstanceCustomHealthStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateInstanceCustomHealthStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateInstanceCustomHealthStatusOutcomeCallable UpdateInstanceCustomHealthStatusCallable(const Model::UpdateInstanceCustomHealthStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateInstanceCustomHealthStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateInstanceCustomHealthStatusAsync(const Model::UpdateInstanceCustomHealthStatusRequest& request, const UpdateInstanceCustomHealthStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a private DNS namespace.</p><p><h3>See Also:</h3>   <a
@@ -572,15 +408,6 @@ namespace ServiceDiscovery
          */
         virtual Model::UpdatePrivateDnsNamespaceOutcome UpdatePrivateDnsNamespace(const Model::UpdatePrivateDnsNamespaceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdatePrivateDnsNamespace that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdatePrivateDnsNamespaceOutcomeCallable UpdatePrivateDnsNamespaceCallable(const Model::UpdatePrivateDnsNamespaceRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdatePrivateDnsNamespace that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdatePrivateDnsNamespaceAsync(const Model::UpdatePrivateDnsNamespaceRequest& request, const UpdatePrivateDnsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a public DNS namespace.</p><p><h3>See Also:</h3>   <a
@@ -589,15 +416,6 @@ namespace ServiceDiscovery
          */
         virtual Model::UpdatePublicDnsNamespaceOutcome UpdatePublicDnsNamespace(const Model::UpdatePublicDnsNamespaceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdatePublicDnsNamespace that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdatePublicDnsNamespaceOutcomeCallable UpdatePublicDnsNamespaceCallable(const Model::UpdatePublicDnsNamespaceRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdatePublicDnsNamespace that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdatePublicDnsNamespaceAsync(const Model::UpdatePublicDnsNamespaceRequest& request, const UpdatePublicDnsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Submits a request to perform the following operations:</p> <ul> <li>
@@ -619,15 +437,6 @@ namespace ServiceDiscovery
          */
         virtual Model::UpdateServiceOutcome UpdateService(const Model::UpdateServiceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateService that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateServiceOutcomeCallable UpdateServiceCallable(const Model::UpdateServiceRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateService that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateServiceAsync(const Model::UpdateServiceRequest& request, const UpdateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

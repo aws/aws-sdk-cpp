@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -161,21 +162,8 @@ GetRoutingControlStateOutcome Route53RecoveryClusterClient::GetRoutingControlSta
   return GetRoutingControlStateOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
-GetRoutingControlStateOutcomeCallable Route53RecoveryClusterClient::GetRoutingControlStateCallable(const GetRoutingControlStateRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< GetRoutingControlStateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRoutingControlState(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void Route53RecoveryClusterClient::GetRoutingControlStateAsync(const GetRoutingControlStateRequest& request, const GetRoutingControlStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetRoutingControlState(request), context);
-    } );
-}
+
 
 ListRoutingControlsOutcome Route53RecoveryClusterClient::ListRoutingControls(const ListRoutingControlsRequest& request) const
 {
@@ -185,21 +173,8 @@ ListRoutingControlsOutcome Route53RecoveryClusterClient::ListRoutingControls(con
   return ListRoutingControlsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
-ListRoutingControlsOutcomeCallable Route53RecoveryClusterClient::ListRoutingControlsCallable(const ListRoutingControlsRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< ListRoutingControlsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRoutingControls(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void Route53RecoveryClusterClient::ListRoutingControlsAsync(const ListRoutingControlsRequest& request, const ListRoutingControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListRoutingControls(request), context);
-    } );
-}
+
 
 UpdateRoutingControlStateOutcome Route53RecoveryClusterClient::UpdateRoutingControlState(const UpdateRoutingControlStateRequest& request) const
 {
@@ -209,21 +184,8 @@ UpdateRoutingControlStateOutcome Route53RecoveryClusterClient::UpdateRoutingCont
   return UpdateRoutingControlStateOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
-UpdateRoutingControlStateOutcomeCallable Route53RecoveryClusterClient::UpdateRoutingControlStateCallable(const UpdateRoutingControlStateRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< UpdateRoutingControlStateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateRoutingControlState(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void Route53RecoveryClusterClient::UpdateRoutingControlStateAsync(const UpdateRoutingControlStateRequest& request, const UpdateRoutingControlStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateRoutingControlState(request), context);
-    } );
-}
+
 
 UpdateRoutingControlStatesOutcome Route53RecoveryClusterClient::UpdateRoutingControlStates(const UpdateRoutingControlStatesRequest& request) const
 {
@@ -233,19 +195,6 @@ UpdateRoutingControlStatesOutcome Route53RecoveryClusterClient::UpdateRoutingCon
   return UpdateRoutingControlStatesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
-UpdateRoutingControlStatesOutcomeCallable Route53RecoveryClusterClient::UpdateRoutingControlStatesCallable(const UpdateRoutingControlStatesRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< UpdateRoutingControlStatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateRoutingControlStates(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
 
-void Route53RecoveryClusterClient::UpdateRoutingControlStatesAsync(const UpdateRoutingControlStatesRequest& request, const UpdateRoutingControlStatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateRoutingControlStates(request), context);
-    } );
-}
+
 

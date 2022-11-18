@@ -7,8 +7,10 @@
 #include <aws/textract/Textract_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/textract/TextractServiceClientModel.h>
+#include <aws/textract/TextractLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -75,6 +77,47 @@ namespace Textract
         virtual ~TextractClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Analyzes an input document for relationships between detected items. </p>
          * <p>The types of information returned are as follows: </p> <ul> <li> <p>Form data
@@ -112,15 +155,6 @@ namespace Textract
          */
         virtual Model::AnalyzeDocumentOutcome AnalyzeDocument(const Model::AnalyzeDocumentRequest& request) const;
 
-        /**
-         * A Callable wrapper for AnalyzeDocument that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AnalyzeDocumentOutcomeCallable AnalyzeDocumentCallable(const Model::AnalyzeDocumentRequest& request) const;
-
-        /**
-         * An Async wrapper for AnalyzeDocument that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AnalyzeDocumentAsync(const Model::AnalyzeDocumentRequest& request, const AnalyzeDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> <code>AnalyzeExpense</code> synchronously analyzes an input document for
@@ -136,15 +170,6 @@ namespace Textract
          */
         virtual Model::AnalyzeExpenseOutcome AnalyzeExpense(const Model::AnalyzeExpenseRequest& request) const;
 
-        /**
-         * A Callable wrapper for AnalyzeExpense that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AnalyzeExpenseOutcomeCallable AnalyzeExpenseCallable(const Model::AnalyzeExpenseRequest& request) const;
-
-        /**
-         * An Async wrapper for AnalyzeExpense that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AnalyzeExpenseAsync(const Model::AnalyzeExpenseRequest& request, const AnalyzeExpenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Analyzes identity documents for relevant information. This information is
@@ -157,15 +182,6 @@ namespace Textract
          */
         virtual Model::AnalyzeIDOutcome AnalyzeID(const Model::AnalyzeIDRequest& request) const;
 
-        /**
-         * A Callable wrapper for AnalyzeID that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AnalyzeIDOutcomeCallable AnalyzeIDCallable(const Model::AnalyzeIDRequest& request) const;
-
-        /**
-         * An Async wrapper for AnalyzeID that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AnalyzeIDAsync(const Model::AnalyzeIDRequest& request, const AnalyzeIDResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Detects text in the input document. Amazon Textract can detect lines of text
@@ -187,15 +203,6 @@ namespace Textract
          */
         virtual Model::DetectDocumentTextOutcome DetectDocumentText(const Model::DetectDocumentTextRequest& request) const;
 
-        /**
-         * A Callable wrapper for DetectDocumentText that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DetectDocumentTextOutcomeCallable DetectDocumentTextCallable(const Model::DetectDocumentTextRequest& request) const;
-
-        /**
-         * An Async wrapper for DetectDocumentText that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DetectDocumentTextAsync(const Model::DetectDocumentTextRequest& request, const DetectDocumentTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the results for an Amazon Textract asynchronous operation that analyzes
@@ -248,15 +255,6 @@ namespace Textract
          */
         virtual Model::GetDocumentAnalysisOutcome GetDocumentAnalysis(const Model::GetDocumentAnalysisRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDocumentAnalysis that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDocumentAnalysisOutcomeCallable GetDocumentAnalysisCallable(const Model::GetDocumentAnalysisRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDocumentAnalysis that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDocumentAnalysisAsync(const Model::GetDocumentAnalysisRequest& request, const GetDocumentAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the results for an Amazon Textract asynchronous operation that detects
@@ -292,15 +290,6 @@ namespace Textract
          */
         virtual Model::GetDocumentTextDetectionOutcome GetDocumentTextDetection(const Model::GetDocumentTextDetectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDocumentTextDetection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDocumentTextDetectionOutcomeCallable GetDocumentTextDetectionCallable(const Model::GetDocumentTextDetectionRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDocumentTextDetection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDocumentTextDetectionAsync(const Model::GetDocumentTextDetectionRequest& request, const GetDocumentTextDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the results for an Amazon Textract asynchronous operation that analyzes
@@ -330,15 +319,6 @@ namespace Textract
          */
         virtual Model::GetExpenseAnalysisOutcome GetExpenseAnalysis(const Model::GetExpenseAnalysisRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetExpenseAnalysis that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetExpenseAnalysisOutcomeCallable GetExpenseAnalysisCallable(const Model::GetExpenseAnalysisRequest& request) const;
-
-        /**
-         * An Async wrapper for GetExpenseAnalysis that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetExpenseAnalysisAsync(const Model::GetExpenseAnalysisRequest& request, const GetExpenseAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts the asynchronous analysis of an input document for relationships
@@ -363,15 +343,6 @@ namespace Textract
          */
         virtual Model::StartDocumentAnalysisOutcome StartDocumentAnalysis(const Model::StartDocumentAnalysisRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartDocumentAnalysis that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartDocumentAnalysisOutcomeCallable StartDocumentAnalysisCallable(const Model::StartDocumentAnalysisRequest& request) const;
-
-        /**
-         * An Async wrapper for StartDocumentAnalysis that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartDocumentAnalysisAsync(const Model::StartDocumentAnalysisRequest& request, const StartDocumentAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts the asynchronous detection of text in a document. Amazon Textract can
@@ -395,15 +366,6 @@ namespace Textract
          */
         virtual Model::StartDocumentTextDetectionOutcome StartDocumentTextDetection(const Model::StartDocumentTextDetectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartDocumentTextDetection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartDocumentTextDetectionOutcomeCallable StartDocumentTextDetectionCallable(const Model::StartDocumentTextDetectionRequest& request) const;
-
-        /**
-         * An Async wrapper for StartDocumentTextDetection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartDocumentTextDetectionAsync(const Model::StartDocumentTextDetectionRequest& request, const StartDocumentTextDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts the asynchronous analysis of invoices or receipts for data like
@@ -429,15 +391,6 @@ namespace Textract
          */
         virtual Model::StartExpenseAnalysisOutcome StartExpenseAnalysis(const Model::StartExpenseAnalysisRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartExpenseAnalysis that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartExpenseAnalysisOutcomeCallable StartExpenseAnalysisCallable(const Model::StartExpenseAnalysisRequest& request) const;
-
-        /**
-         * An Async wrapper for StartExpenseAnalysis that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartExpenseAnalysisAsync(const Model::StartExpenseAnalysisRequest& request, const StartExpenseAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

@@ -7,8 +7,10 @@
 #include <aws/elastictranscoder/ElasticTranscoder_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/elastictranscoder/ElasticTranscoderServiceClientModel.h>
+#include <aws/elastictranscoder/ElasticTranscoderLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -74,6 +76,47 @@ namespace ElasticTranscoder
         virtual ~ElasticTranscoderClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>The CancelJob operation cancels an unfinished job.</p>  <p>You can only
          * cancel a job that has a status of <code>Submitted</code>. To prevent a pipeline
@@ -85,15 +128,6 @@ namespace ElasticTranscoder
          */
         virtual Model::CancelJobOutcome CancelJob(const Model::CancelJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelJobOutcomeCallable CancelJobCallable(const Model::CancelJobRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelJobAsync(const Model::CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>When you create a job, Elastic Transcoder returns JSON data that includes the
@@ -107,15 +141,6 @@ namespace ElasticTranscoder
          */
         virtual Model::CreateJobOutcome CreateJob(const Model::CreateJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateJobOutcomeCallable CreateJobCallable(const Model::CreateJobRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateJobAsync(const Model::CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The CreatePipeline operation creates a pipeline with settings that you
@@ -125,15 +150,6 @@ namespace ElasticTranscoder
          */
         virtual Model::CreatePipelineOutcome CreatePipeline(const Model::CreatePipelineRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreatePipeline that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreatePipelineOutcomeCallable CreatePipelineCallable(const Model::CreatePipelineRequest& request) const;
-
-        /**
-         * An Async wrapper for CreatePipeline that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreatePipelineAsync(const Model::CreatePipelineRequest& request, const CreatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The CreatePreset operation creates a preset with settings that you
@@ -156,15 +172,6 @@ namespace ElasticTranscoder
          */
         virtual Model::CreatePresetOutcome CreatePreset(const Model::CreatePresetRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreatePreset that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreatePresetOutcomeCallable CreatePresetCallable(const Model::CreatePresetRequest& request) const;
-
-        /**
-         * An Async wrapper for CreatePreset that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreatePresetAsync(const Model::CreatePresetRequest& request, const CreatePresetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The DeletePipeline operation removes a pipeline.</p> <p> You can only delete
@@ -176,15 +183,6 @@ namespace ElasticTranscoder
          */
         virtual Model::DeletePipelineOutcome DeletePipeline(const Model::DeletePipelineRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeletePipeline that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeletePipelineOutcomeCallable DeletePipelineCallable(const Model::DeletePipelineRequest& request) const;
-
-        /**
-         * An Async wrapper for DeletePipeline that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeletePipelineAsync(const Model::DeletePipelineRequest& request, const DeletePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The DeletePreset operation removes a preset that you've added in an AWS
@@ -195,15 +193,6 @@ namespace ElasticTranscoder
          */
         virtual Model::DeletePresetOutcome DeletePreset(const Model::DeletePresetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeletePreset that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeletePresetOutcomeCallable DeletePresetCallable(const Model::DeletePresetRequest& request) const;
-
-        /**
-         * An Async wrapper for DeletePreset that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeletePresetAsync(const Model::DeletePresetRequest& request, const DeletePresetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The ListJobsByPipeline operation gets a list of the jobs currently in a
@@ -215,15 +204,6 @@ namespace ElasticTranscoder
          */
         virtual Model::ListJobsByPipelineOutcome ListJobsByPipeline(const Model::ListJobsByPipelineRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListJobsByPipeline that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListJobsByPipelineOutcomeCallable ListJobsByPipelineCallable(const Model::ListJobsByPipelineRequest& request) const;
-
-        /**
-         * An Async wrapper for ListJobsByPipeline that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListJobsByPipelineAsync(const Model::ListJobsByPipelineRequest& request, const ListJobsByPipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The ListJobsByStatus operation gets a list of jobs that have a specified
@@ -234,15 +214,6 @@ namespace ElasticTranscoder
          */
         virtual Model::ListJobsByStatusOutcome ListJobsByStatus(const Model::ListJobsByStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListJobsByStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListJobsByStatusOutcomeCallable ListJobsByStatusCallable(const Model::ListJobsByStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for ListJobsByStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListJobsByStatusAsync(const Model::ListJobsByStatusRequest& request, const ListJobsByStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The ListPipelines operation gets a list of the pipelines associated with the
@@ -252,15 +223,6 @@ namespace ElasticTranscoder
          */
         virtual Model::ListPipelinesOutcome ListPipelines(const Model::ListPipelinesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPipelines that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPipelinesOutcomeCallable ListPipelinesCallable(const Model::ListPipelinesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPipelines that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPipelinesAsync(const Model::ListPipelinesRequest& request, const ListPipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The ListPresets operation gets a list of the default presets included with
@@ -271,15 +233,6 @@ namespace ElasticTranscoder
          */
         virtual Model::ListPresetsOutcome ListPresets(const Model::ListPresetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPresets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPresetsOutcomeCallable ListPresetsCallable(const Model::ListPresetsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPresets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPresetsAsync(const Model::ListPresetsRequest& request, const ListPresetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The ReadJob operation returns detailed information about a job.</p><p><h3>See
@@ -289,15 +242,6 @@ namespace ElasticTranscoder
          */
         virtual Model::ReadJobOutcome ReadJob(const Model::ReadJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for ReadJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ReadJobOutcomeCallable ReadJobCallable(const Model::ReadJobRequest& request) const;
-
-        /**
-         * An Async wrapper for ReadJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ReadJobAsync(const Model::ReadJobRequest& request, const ReadJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The ReadPipeline operation gets detailed information about a
@@ -307,15 +251,6 @@ namespace ElasticTranscoder
          */
         virtual Model::ReadPipelineOutcome ReadPipeline(const Model::ReadPipelineRequest& request) const;
 
-        /**
-         * A Callable wrapper for ReadPipeline that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ReadPipelineOutcomeCallable ReadPipelineCallable(const Model::ReadPipelineRequest& request) const;
-
-        /**
-         * An Async wrapper for ReadPipeline that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ReadPipelineAsync(const Model::ReadPipelineRequest& request, const ReadPipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The ReadPreset operation gets detailed information about a
@@ -325,15 +260,6 @@ namespace ElasticTranscoder
          */
         virtual Model::ReadPresetOutcome ReadPreset(const Model::ReadPresetRequest& request) const;
 
-        /**
-         * A Callable wrapper for ReadPreset that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ReadPresetOutcomeCallable ReadPresetCallable(const Model::ReadPresetRequest& request) const;
-
-        /**
-         * An Async wrapper for ReadPreset that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ReadPresetAsync(const Model::ReadPresetRequest& request, const ReadPresetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Use the <code>UpdatePipeline</code> operation to update settings for a
@@ -346,15 +272,6 @@ namespace ElasticTranscoder
          */
         virtual Model::UpdatePipelineOutcome UpdatePipeline(const Model::UpdatePipelineRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdatePipeline that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdatePipelineOutcomeCallable UpdatePipelineCallable(const Model::UpdatePipelineRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdatePipeline that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdatePipelineAsync(const Model::UpdatePipelineRequest& request, const UpdatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>With the UpdatePipelineNotifications operation, you can update Amazon Simple
@@ -366,15 +283,6 @@ namespace ElasticTranscoder
          */
         virtual Model::UpdatePipelineNotificationsOutcome UpdatePipelineNotifications(const Model::UpdatePipelineNotificationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdatePipelineNotifications that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdatePipelineNotificationsOutcomeCallable UpdatePipelineNotificationsCallable(const Model::UpdatePipelineNotificationsRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdatePipelineNotifications that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdatePipelineNotificationsAsync(const Model::UpdatePipelineNotificationsRequest& request, const UpdatePipelineNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The UpdatePipelineStatus operation pauses or reactivates a pipeline, so that
@@ -389,15 +297,6 @@ namespace ElasticTranscoder
          */
         virtual Model::UpdatePipelineStatusOutcome UpdatePipelineStatus(const Model::UpdatePipelineStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdatePipelineStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdatePipelineStatusOutcomeCallable UpdatePipelineStatusCallable(const Model::UpdatePipelineStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdatePipelineStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdatePipelineStatusAsync(const Model::UpdatePipelineStatusRequest& request, const UpdatePipelineStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

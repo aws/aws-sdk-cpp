@@ -7,8 +7,10 @@
 #include <aws/snow-device-management/SnowDeviceManagement_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/snow-device-management/SnowDeviceManagementServiceClientModel.h>
+#include <aws/snow-device-management/SnowDeviceManagementLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -73,6 +75,47 @@ namespace SnowDeviceManagement
         virtual ~SnowDeviceManagementClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Sends a cancel request for a specified task. You can cancel a task only if
          * it's still in a <code>QUEUED</code> state. Tasks that are already running can't
@@ -84,15 +127,6 @@ namespace SnowDeviceManagement
          */
         virtual Model::CancelTaskOutcome CancelTask(const Model::CancelTaskRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelTask that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelTaskOutcomeCallable CancelTaskCallable(const Model::CancelTaskRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelTask that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelTaskAsync(const Model::CancelTaskRequest& request, const CancelTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Instructs one or more devices to start a task, such as unlocking or
@@ -102,15 +136,6 @@ namespace SnowDeviceManagement
          */
         virtual Model::CreateTaskOutcome CreateTask(const Model::CreateTaskRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateTask that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateTaskOutcomeCallable CreateTaskCallable(const Model::CreateTaskRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateTask that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateTaskAsync(const Model::CreateTaskRequest& request, const CreateTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Checks device-specific information, such as the device type, software
@@ -120,15 +145,6 @@ namespace SnowDeviceManagement
          */
         virtual Model::DescribeDeviceOutcome DescribeDevice(const Model::DescribeDeviceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDevice that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDeviceOutcomeCallable DescribeDeviceCallable(const Model::DescribeDeviceRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDevice that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDeviceAsync(const Model::DescribeDeviceRequest& request, const DescribeDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Checks the current state of the Amazon EC2 instances. The output is similar
@@ -140,15 +156,6 @@ namespace SnowDeviceManagement
          */
         virtual Model::DescribeDeviceEc2InstancesOutcome DescribeDeviceEc2Instances(const Model::DescribeDeviceEc2InstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDeviceEc2Instances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDeviceEc2InstancesOutcomeCallable DescribeDeviceEc2InstancesCallable(const Model::DescribeDeviceEc2InstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDeviceEc2Instances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDeviceEc2InstancesAsync(const Model::DescribeDeviceEc2InstancesRequest& request, const DescribeDeviceEc2InstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Checks the status of a remote task running on one or more target
@@ -158,15 +165,6 @@ namespace SnowDeviceManagement
          */
         virtual Model::DescribeExecutionOutcome DescribeExecution(const Model::DescribeExecutionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeExecution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeExecutionOutcomeCallable DescribeExecutionCallable(const Model::DescribeExecutionRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeExecutionAsync(const Model::DescribeExecutionRequest& request, const DescribeExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Checks the metadata for a given task on a device. </p><p><h3>See Also:</h3>  
@@ -176,15 +174,6 @@ namespace SnowDeviceManagement
          */
         virtual Model::DescribeTaskOutcome DescribeTask(const Model::DescribeTaskRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTask that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTaskOutcomeCallable DescribeTaskCallable(const Model::DescribeTaskRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTask that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTaskAsync(const Model::DescribeTaskRequest& request, const DescribeTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of the Amazon Web Services resources available for a device.
@@ -195,15 +184,6 @@ namespace SnowDeviceManagement
          */
         virtual Model::ListDeviceResourcesOutcome ListDeviceResources(const Model::ListDeviceResourcesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDeviceResources that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDeviceResourcesOutcomeCallable ListDeviceResourcesCallable(const Model::ListDeviceResourcesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDeviceResources that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDeviceResourcesAsync(const Model::ListDeviceResourcesRequest& request, const ListDeviceResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of all devices on your Amazon Web Services account that have
@@ -214,15 +194,6 @@ namespace SnowDeviceManagement
          */
         virtual Model::ListDevicesOutcome ListDevices(const Model::ListDevicesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDevices that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDevicesOutcomeCallable ListDevicesCallable(const Model::ListDevicesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDevices that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDevicesAsync(const Model::ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the status of tasks for one or more target devices.</p><p><h3>See
@@ -232,15 +203,6 @@ namespace SnowDeviceManagement
          */
         virtual Model::ListExecutionsOutcome ListExecutions(const Model::ListExecutionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListExecutions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListExecutionsOutcomeCallable ListExecutionsCallable(const Model::ListExecutionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListExecutions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListExecutionsAsync(const Model::ListExecutionsRequest& request, const ListExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of tags for a managed device or task.</p><p><h3>See Also:</h3>
@@ -250,15 +212,6 @@ namespace SnowDeviceManagement
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of tasks that can be filtered by state.</p><p><h3>See
@@ -268,15 +221,6 @@ namespace SnowDeviceManagement
          */
         virtual Model::ListTasksOutcome ListTasks(const Model::ListTasksRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTasks that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTasksOutcomeCallable ListTasksCallable(const Model::ListTasksRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTasks that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTasksAsync(const Model::ListTasksRequest& request, const ListTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds or replaces tags on a device or task.</p><p><h3>See Also:</h3>   <a
@@ -285,15 +229,6 @@ namespace SnowDeviceManagement
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes a tag from a device or task.</p><p><h3>See Also:</h3>   <a
@@ -302,15 +237,6 @@ namespace SnowDeviceManagement
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

@@ -7,8 +7,10 @@
 #include <aws/secretsmanager/SecretsManager_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/secretsmanager/SecretsManagerServiceClientModel.h>
+#include <aws/secretsmanager/SecretsManagerLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -102,6 +104,47 @@ namespace SecretsManager
         virtual ~SecretsManagerClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Turns off automatic rotation, and if a rotation is currently in progress,
          * cancels the rotation.</p> <p>If you cancel a rotation in progress, it can leave
@@ -131,15 +174,6 @@ namespace SecretsManager
          */
         virtual Model::CancelRotateSecretOutcome CancelRotateSecret(const Model::CancelRotateSecretRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelRotateSecret that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelRotateSecretOutcomeCallable CancelRotateSecretCallable(const Model::CancelRotateSecretRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelRotateSecret that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelRotateSecretAsync(const Model::CancelRotateSecretRequest& request, const CancelRotateSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new secret. A <i>secret</i> can be a password, a set of credentials
@@ -190,15 +224,6 @@ namespace SecretsManager
          */
         virtual Model::CreateSecretOutcome CreateSecret(const Model::CreateSecretRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateSecret that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateSecretOutcomeCallable CreateSecretCallable(const Model::CreateSecretRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateSecret that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateSecretAsync(const Model::CreateSecretRequest& request, const CreateSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the resource-based permission policy attached to the secret. To
@@ -219,15 +244,6 @@ namespace SecretsManager
          */
         virtual Model::DeleteResourcePolicyOutcome DeleteResourcePolicy(const Model::DeleteResourcePolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteResourcePolicyOutcomeCallable DeleteResourcePolicyCallable(const Model::DeleteResourcePolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteResourcePolicyAsync(const Model::DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a secret and all of its versions. You can specify a recovery window
@@ -269,15 +285,6 @@ namespace SecretsManager
          */
         virtual Model::DeleteSecretOutcome DeleteSecret(const Model::DeleteSecretRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteSecret that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteSecretOutcomeCallable DeleteSecretCallable(const Model::DeleteSecretRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteSecret that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteSecretAsync(const Model::DeleteSecretRequest& request, const DeleteSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the details of a secret. It does not include the encrypted secret
@@ -297,15 +304,6 @@ namespace SecretsManager
          */
         virtual Model::DescribeSecretOutcome DescribeSecret(const Model::DescribeSecretRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeSecret that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeSecretOutcomeCallable DescribeSecretCallable(const Model::DescribeSecretRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeSecret that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeSecretAsync(const Model::DescribeSecretRequest& request, const DescribeSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Generates a random password. We recommend that you specify the maximum length
@@ -325,15 +323,6 @@ namespace SecretsManager
          */
         virtual Model::GetRandomPasswordOutcome GetRandomPassword(const Model::GetRandomPasswordRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRandomPassword that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRandomPasswordOutcomeCallable GetRandomPasswordCallable(const Model::GetRandomPasswordRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRandomPassword that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRandomPasswordAsync(const Model::GetRandomPasswordRequest& request, const GetRandomPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the JSON text of the resource-based policy document attached to the
@@ -355,15 +344,6 @@ namespace SecretsManager
          */
         virtual Model::GetResourcePolicyOutcome GetResourcePolicy(const Model::GetResourcePolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetResourcePolicyOutcomeCallable GetResourcePolicyCallable(const Model::GetResourcePolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetResourcePolicyAsync(const Model::GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the contents of the encrypted fields <code>SecretString</code> or
@@ -394,15 +374,6 @@ namespace SecretsManager
          */
         virtual Model::GetSecretValueOutcome GetSecretValue(const Model::GetSecretValueRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSecretValue that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSecretValueOutcomeCallable GetSecretValueCallable(const Model::GetSecretValueRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSecretValue that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSecretValueAsync(const Model::GetSecretValueRequest& request, const GetSecretValueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the versions of a secret. Secrets Manager uses staging labels to
@@ -425,15 +396,6 @@ namespace SecretsManager
          */
         virtual Model::ListSecretVersionIdsOutcome ListSecretVersionIds(const Model::ListSecretVersionIdsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSecretVersionIds that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListSecretVersionIdsOutcomeCallable ListSecretVersionIdsCallable(const Model::ListSecretVersionIdsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSecretVersionIds that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListSecretVersionIdsAsync(const Model::ListSecretVersionIdsRequest& request, const ListSecretVersionIdsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the secrets that are stored by Secrets Manager in the Amazon Web
@@ -462,15 +424,6 @@ namespace SecretsManager
          */
         virtual Model::ListSecretsOutcome ListSecrets(const Model::ListSecretsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSecrets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListSecretsOutcomeCallable ListSecretsCallable(const Model::ListSecretsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSecrets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListSecretsAsync(const Model::ListSecretsRequest& request, const ListSecretsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Attaches a resource-based permission policy to a secret. A resource-based
@@ -495,15 +448,6 @@ namespace SecretsManager
          */
         virtual Model::PutResourcePolicyOutcome PutResourcePolicy(const Model::PutResourcePolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutResourcePolicyOutcomeCallable PutResourcePolicyCallable(const Model::PutResourcePolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for PutResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutResourcePolicyAsync(const Model::PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new version with a new encrypted secret value and attaches it to
@@ -545,15 +489,6 @@ namespace SecretsManager
          */
         virtual Model::PutSecretValueOutcome PutSecretValue(const Model::PutSecretValueRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutSecretValue that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutSecretValueOutcomeCallable PutSecretValueCallable(const Model::PutSecretValueRequest& request) const;
-
-        /**
-         * An Async wrapper for PutSecretValue that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutSecretValueAsync(const Model::PutSecretValueRequest& request, const PutSecretValueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>For a secret that is replicated to other Regions, deletes the secret replicas
@@ -573,15 +508,6 @@ namespace SecretsManager
          */
         virtual Model::RemoveRegionsFromReplicationOutcome RemoveRegionsFromReplication(const Model::RemoveRegionsFromReplicationRequest& request) const;
 
-        /**
-         * A Callable wrapper for RemoveRegionsFromReplication that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RemoveRegionsFromReplicationOutcomeCallable RemoveRegionsFromReplicationCallable(const Model::RemoveRegionsFromReplicationRequest& request) const;
-
-        /**
-         * An Async wrapper for RemoveRegionsFromReplication that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RemoveRegionsFromReplicationAsync(const Model::RemoveRegionsFromReplicationRequest& request, const RemoveRegionsFromReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Replicates the secret to a new Regions. See <a
@@ -602,15 +528,6 @@ namespace SecretsManager
          */
         virtual Model::ReplicateSecretToRegionsOutcome ReplicateSecretToRegions(const Model::ReplicateSecretToRegionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ReplicateSecretToRegions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ReplicateSecretToRegionsOutcomeCallable ReplicateSecretToRegionsCallable(const Model::ReplicateSecretToRegionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ReplicateSecretToRegions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ReplicateSecretToRegionsAsync(const Model::ReplicateSecretToRegionsRequest& request, const ReplicateSecretToRegionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Cancels the scheduled deletion of a secret by removing the
@@ -630,15 +547,6 @@ namespace SecretsManager
          */
         virtual Model::RestoreSecretOutcome RestoreSecret(const Model::RestoreSecretRequest& request) const;
 
-        /**
-         * A Callable wrapper for RestoreSecret that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RestoreSecretOutcomeCallable RestoreSecretCallable(const Model::RestoreSecretRequest& request) const;
-
-        /**
-         * An Async wrapper for RestoreSecret that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RestoreSecretAsync(const Model::RestoreSecretRequest& request, const RestoreSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Configures and starts the asynchronous process of rotating the secret. For
@@ -699,15 +607,6 @@ namespace SecretsManager
          */
         virtual Model::RotateSecretOutcome RotateSecret(const Model::RotateSecretRequest& request) const;
 
-        /**
-         * A Callable wrapper for RotateSecret that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RotateSecretOutcomeCallable RotateSecretCallable(const Model::RotateSecretRequest& request) const;
-
-        /**
-         * An Async wrapper for RotateSecret that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RotateSecretAsync(const Model::RotateSecretRequest& request, const RotateSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the link between the replica secret and the primary secret and
@@ -729,15 +628,6 @@ namespace SecretsManager
          */
         virtual Model::StopReplicationToReplicaOutcome StopReplicationToReplica(const Model::StopReplicationToReplicaRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopReplicationToReplica that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopReplicationToReplicaOutcomeCallable StopReplicationToReplicaCallable(const Model::StopReplicationToReplicaRequest& request) const;
-
-        /**
-         * An Async wrapper for StopReplicationToReplica that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopReplicationToReplicaAsync(const Model::StopReplicationToReplicaRequest& request, const StopReplicationToReplicaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Attaches tags to a secret. Tags consist of a key name and a value. Tags are
@@ -774,15 +664,6 @@ namespace SecretsManager
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes specific tags from a secret.</p> <p>This operation is idempotent. If
@@ -806,15 +687,6 @@ namespace SecretsManager
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the details of a secret, including metadata and the secret value. To
@@ -856,15 +728,6 @@ namespace SecretsManager
          */
         virtual Model::UpdateSecretOutcome UpdateSecret(const Model::UpdateSecretRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateSecret that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateSecretOutcomeCallable UpdateSecretCallable(const Model::UpdateSecretRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateSecret that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateSecretAsync(const Model::UpdateSecretRequest& request, const UpdateSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the staging labels attached to a version of a secret. Secrets
@@ -899,15 +762,6 @@ namespace SecretsManager
          */
         virtual Model::UpdateSecretVersionStageOutcome UpdateSecretVersionStage(const Model::UpdateSecretVersionStageRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateSecretVersionStage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateSecretVersionStageOutcomeCallable UpdateSecretVersionStageCallable(const Model::UpdateSecretVersionStageRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateSecretVersionStage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateSecretVersionStageAsync(const Model::UpdateSecretVersionStageRequest& request, const UpdateSecretVersionStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Validates that a resource policy does not grant a wide range of principals
@@ -935,15 +789,6 @@ namespace SecretsManager
          */
         virtual Model::ValidateResourcePolicyOutcome ValidateResourcePolicy(const Model::ValidateResourcePolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for ValidateResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ValidateResourcePolicyOutcomeCallable ValidateResourcePolicyCallable(const Model::ValidateResourcePolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for ValidateResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ValidateResourcePolicyAsync(const Model::ValidateResourcePolicyRequest& request, const ValidateResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

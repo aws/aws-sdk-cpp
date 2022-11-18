@@ -7,8 +7,10 @@
 #include <aws/kinesis-video-archived-media/KinesisVideoArchivedMedia_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kinesis-video-archived-media/KinesisVideoArchivedMediaServiceClientModel.h>
+#include <aws/kinesis-video-archived-media/KinesisVideoArchivedMediaLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -73,6 +75,47 @@ namespace KinesisVideoArchivedMedia
         virtual ~KinesisVideoArchivedMediaClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Downloads an MP4 file (clip) containing the archived, on-demand media from
          * the specified video stream over the specified time range. </p> <p>Both the
@@ -112,15 +155,6 @@ namespace KinesisVideoArchivedMedia
          */
         virtual Model::GetClipOutcome GetClip(const Model::GetClipRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetClip that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetClipOutcomeCallable GetClipCallable(const Model::GetClipRequest& request) const;
-
-        /**
-         * An Async wrapper for GetClip that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetClipAsync(const Model::GetClipRequest& request, const GetClipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves an MPEG Dynamic Adaptive Streaming over HTTP (DASH) URL for the
@@ -226,15 +260,6 @@ namespace KinesisVideoArchivedMedia
          */
         virtual Model::GetDASHStreamingSessionURLOutcome GetDASHStreamingSessionURL(const Model::GetDASHStreamingSessionURLRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDASHStreamingSessionURL that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDASHStreamingSessionURLOutcomeCallable GetDASHStreamingSessionURLCallable(const Model::GetDASHStreamingSessionURLRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDASHStreamingSessionURL that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDASHStreamingSessionURLAsync(const Model::GetDASHStreamingSessionURLRequest& request, const GetDASHStreamingSessionURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves an HTTP Live Streaming (HLS) URL for the stream. You can then open
@@ -363,15 +388,6 @@ namespace KinesisVideoArchivedMedia
          */
         virtual Model::GetHLSStreamingSessionURLOutcome GetHLSStreamingSessionURL(const Model::GetHLSStreamingSessionURLRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetHLSStreamingSessionURL that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetHLSStreamingSessionURLOutcomeCallable GetHLSStreamingSessionURLCallable(const Model::GetHLSStreamingSessionURLRequest& request) const;
-
-        /**
-         * An Async wrapper for GetHLSStreamingSessionURL that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetHLSStreamingSessionURLAsync(const Model::GetHLSStreamingSessionURLRequest& request, const GetHLSStreamingSessionURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list of Images corresponding to each timestamp for a given time
@@ -382,15 +398,6 @@ namespace KinesisVideoArchivedMedia
          */
         virtual Model::GetImagesOutcome GetImages(const Model::GetImagesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetImages that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetImagesOutcomeCallable GetImagesCallable(const Model::GetImagesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetImages that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetImagesAsync(const Model::GetImagesRequest& request, const GetImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets media for a list of fragments (specified by fragment number) from the
@@ -420,15 +427,6 @@ namespace KinesisVideoArchivedMedia
          */
         virtual Model::GetMediaForFragmentListOutcome GetMediaForFragmentList(const Model::GetMediaForFragmentListRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetMediaForFragmentList that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetMediaForFragmentListOutcomeCallable GetMediaForFragmentListCallable(const Model::GetMediaForFragmentListRequest& request) const;
-
-        /**
-         * An Async wrapper for GetMediaForFragmentList that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetMediaForFragmentListAsync(const Model::GetMediaForFragmentListRequest& request, const GetMediaForFragmentListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of <a>Fragment</a> objects from the specified stream and
@@ -460,15 +458,6 @@ namespace KinesisVideoArchivedMedia
          */
         virtual Model::ListFragmentsOutcome ListFragments(const Model::ListFragmentsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListFragments that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListFragmentsOutcomeCallable ListFragmentsCallable(const Model::ListFragmentsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListFragments that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListFragmentsAsync(const Model::ListFragmentsRequest& request, const ListFragmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

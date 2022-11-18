@@ -7,8 +7,10 @@
 #include <aws/cloudhsmv2/CloudHSMV2_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/cloudhsmv2/CloudHSMV2ServiceClientModel.h>
+#include <aws/cloudhsmv2/CloudHSMV2LegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -76,6 +78,47 @@ namespace CloudHSMV2
         virtual ~CloudHSMV2Client();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Copy an AWS CloudHSM cluster backup to a different region.</p><p><h3>See
          * Also:</h3>   <a
@@ -84,15 +127,6 @@ namespace CloudHSMV2
          */
         virtual Model::CopyBackupToRegionOutcome CopyBackupToRegion(const Model::CopyBackupToRegionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CopyBackupToRegion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CopyBackupToRegionOutcomeCallable CopyBackupToRegionCallable(const Model::CopyBackupToRegionRequest& request) const;
-
-        /**
-         * An Async wrapper for CopyBackupToRegion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CopyBackupToRegionAsync(const Model::CopyBackupToRegionRequest& request, const CopyBackupToRegionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new AWS CloudHSM cluster.</p><p><h3>See Also:</h3>   <a
@@ -101,15 +135,6 @@ namespace CloudHSMV2
          */
         virtual Model::CreateClusterOutcome CreateCluster(const Model::CreateClusterRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateCluster that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateClusterOutcomeCallable CreateClusterCallable(const Model::CreateClusterRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateClusterAsync(const Model::CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new hardware security module (HSM) in the specified AWS CloudHSM
@@ -119,15 +144,6 @@ namespace CloudHSMV2
          */
         virtual Model::CreateHsmOutcome CreateHsm(const Model::CreateHsmRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateHsm that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateHsmOutcomeCallable CreateHsmCallable(const Model::CreateHsmRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateHsm that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateHsmAsync(const Model::CreateHsmRequest& request, const CreateHsmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a specified AWS CloudHSM backup. A backup can be restored up to 7
@@ -138,15 +154,6 @@ namespace CloudHSMV2
          */
         virtual Model::DeleteBackupOutcome DeleteBackup(const Model::DeleteBackupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteBackup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteBackupOutcomeCallable DeleteBackupCallable(const Model::DeleteBackupRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteBackup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteBackupAsync(const Model::DeleteBackupRequest& request, const DeleteBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified AWS CloudHSM cluster. Before you can delete a cluster,
@@ -158,15 +165,6 @@ namespace CloudHSMV2
          */
         virtual Model::DeleteClusterOutcome DeleteCluster(const Model::DeleteClusterRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteCluster that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteClusterOutcomeCallable DeleteClusterCallable(const Model::DeleteClusterRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteClusterAsync(const Model::DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified HSM. To specify an HSM, you can use its identifier
@@ -178,15 +176,6 @@ namespace CloudHSMV2
          */
         virtual Model::DeleteHsmOutcome DeleteHsm(const Model::DeleteHsmRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteHsm that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteHsmOutcomeCallable DeleteHsmCallable(const Model::DeleteHsmRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteHsm that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteHsmAsync(const Model::DeleteHsmRequest& request, const DeleteHsmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about backups of AWS CloudHSM clusters.</p> <p>This is a
@@ -201,15 +190,6 @@ namespace CloudHSMV2
          */
         virtual Model::DescribeBackupsOutcome DescribeBackups(const Model::DescribeBackupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeBackups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeBackupsOutcomeCallable DescribeBackupsCallable(const Model::DescribeBackupsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeBackups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeBackupsAsync(const Model::DescribeBackupsRequest& request, const DescribeBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about AWS CloudHSM clusters.</p> <p>This is a paginated
@@ -224,15 +204,6 @@ namespace CloudHSMV2
          */
         virtual Model::DescribeClustersOutcome DescribeClusters(const Model::DescribeClustersRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeClusters that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeClustersOutcomeCallable DescribeClustersCallable(const Model::DescribeClustersRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeClusters that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeClustersAsync(const Model::DescribeClustersRequest& request, const DescribeClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Claims an AWS CloudHSM cluster by submitting the cluster certificate issued
@@ -245,15 +216,6 @@ namespace CloudHSMV2
          */
         virtual Model::InitializeClusterOutcome InitializeCluster(const Model::InitializeClusterRequest& request) const;
 
-        /**
-         * A Callable wrapper for InitializeCluster that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::InitializeClusterOutcomeCallable InitializeClusterCallable(const Model::InitializeClusterRequest& request) const;
-
-        /**
-         * An Async wrapper for InitializeCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void InitializeClusterAsync(const Model::InitializeClusterRequest& request, const InitializeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of tags for the specified AWS CloudHSM cluster.</p> <p>This is a
@@ -268,15 +230,6 @@ namespace CloudHSMV2
          */
         virtual Model::ListTagsOutcome ListTags(const Model::ListTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsOutcomeCallable ListTagsCallable(const Model::ListTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsAsync(const Model::ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies attributes for AWS CloudHSM backup.</p><p><h3>See Also:</h3>   <a
@@ -285,15 +238,6 @@ namespace CloudHSMV2
          */
         virtual Model::ModifyBackupAttributesOutcome ModifyBackupAttributes(const Model::ModifyBackupAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyBackupAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyBackupAttributesOutcomeCallable ModifyBackupAttributesCallable(const Model::ModifyBackupAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyBackupAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyBackupAttributesAsync(const Model::ModifyBackupAttributesRequest& request, const ModifyBackupAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies AWS CloudHSM cluster.</p><p><h3>See Also:</h3>   <a
@@ -302,15 +246,6 @@ namespace CloudHSMV2
          */
         virtual Model::ModifyClusterOutcome ModifyCluster(const Model::ModifyClusterRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyCluster that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyClusterOutcomeCallable ModifyClusterCallable(const Model::ModifyClusterRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyClusterAsync(const Model::ModifyClusterRequest& request, const ModifyClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Restores a specified AWS CloudHSM backup that is in the
@@ -321,15 +256,6 @@ namespace CloudHSMV2
          */
         virtual Model::RestoreBackupOutcome RestoreBackup(const Model::RestoreBackupRequest& request) const;
 
-        /**
-         * A Callable wrapper for RestoreBackup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RestoreBackupOutcomeCallable RestoreBackupCallable(const Model::RestoreBackupRequest& request) const;
-
-        /**
-         * An Async wrapper for RestoreBackup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RestoreBackupAsync(const Model::RestoreBackupRequest& request, const RestoreBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds or overwrites one or more tags for the specified AWS CloudHSM
@@ -339,15 +265,6 @@ namespace CloudHSMV2
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified tag or tags from the specified AWS CloudHSM
@@ -357,15 +274,6 @@ namespace CloudHSMV2
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

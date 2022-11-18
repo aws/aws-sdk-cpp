@@ -7,8 +7,10 @@
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/opsworks/OpsWorksServiceClientModel.h>
+#include <aws/opsworks/OpsWorksLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -124,6 +126,47 @@ namespace OpsWorks
         virtual ~OpsWorksClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Assign a registered instance to a layer.</p> <ul> <li> <p>You can assign
          * registered on-premises instances to any layer type.</p> </li> <li> <p>You can
@@ -140,15 +183,6 @@ namespace OpsWorks
          */
         virtual Model::AssignInstanceOutcome AssignInstance(const Model::AssignInstanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssignInstance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssignInstanceOutcomeCallable AssignInstanceCallable(const Model::AssignInstanceRequest& request) const;
-
-        /**
-         * An Async wrapper for AssignInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssignInstanceAsync(const Model::AssignInstanceRequest& request, const AssignInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Assigns one of the stack's registered Amazon EBS volumes to a specified
@@ -168,15 +202,6 @@ namespace OpsWorks
          */
         virtual Model::AssignVolumeOutcome AssignVolume(const Model::AssignVolumeRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssignVolume that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssignVolumeOutcomeCallable AssignVolumeCallable(const Model::AssignVolumeRequest& request) const;
-
-        /**
-         * An Async wrapper for AssignVolume that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssignVolumeAsync(const Model::AssignVolumeRequest& request, const AssignVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates one of the stack's registered Elastic IP addresses with a
@@ -194,15 +219,6 @@ namespace OpsWorks
          */
         virtual Model::AssociateElasticIpOutcome AssociateElasticIp(const Model::AssociateElasticIpRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateElasticIp that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateElasticIpOutcomeCallable AssociateElasticIpCallable(const Model::AssociateElasticIpRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateElasticIp that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateElasticIpAsync(const Model::AssociateElasticIpRequest& request, const AssociateElasticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Attaches an Elastic Load Balancing load balancer to a specified layer. AWS
@@ -224,15 +240,6 @@ namespace OpsWorks
          */
         virtual Model::AttachElasticLoadBalancerOutcome AttachElasticLoadBalancer(const Model::AttachElasticLoadBalancerRequest& request) const;
 
-        /**
-         * A Callable wrapper for AttachElasticLoadBalancer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AttachElasticLoadBalancerOutcomeCallable AttachElasticLoadBalancerCallable(const Model::AttachElasticLoadBalancerRequest& request) const;
-
-        /**
-         * An Async wrapper for AttachElasticLoadBalancer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AttachElasticLoadBalancerAsync(const Model::AttachElasticLoadBalancerRequest& request, const AttachElasticLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a clone of a specified stack. For more information, see <a
@@ -248,15 +255,6 @@ namespace OpsWorks
          */
         virtual Model::CloneStackOutcome CloneStack(const Model::CloneStackRequest& request) const;
 
-        /**
-         * A Callable wrapper for CloneStack that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CloneStackOutcomeCallable CloneStackCallable(const Model::CloneStackRequest& request) const;
-
-        /**
-         * An Async wrapper for CloneStack that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CloneStackAsync(const Model::CloneStackRequest& request, const CloneStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an app for a specified stack. For more information, see <a
@@ -271,15 +269,6 @@ namespace OpsWorks
          */
         virtual Model::CreateAppOutcome CreateApp(const Model::CreateAppRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateApp that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateAppOutcomeCallable CreateAppCallable(const Model::CreateAppRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateApp that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateAppAsync(const Model::CreateAppRequest& request, const CreateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Runs deployment or stack commands. For more information, see <a
@@ -297,15 +286,6 @@ namespace OpsWorks
          */
         virtual Model::CreateDeploymentOutcome CreateDeployment(const Model::CreateDeploymentRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDeployment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDeploymentOutcomeCallable CreateDeploymentCallable(const Model::CreateDeploymentRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDeployment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDeploymentAsync(const Model::CreateDeploymentRequest& request, const CreateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an instance in a specified stack. For more information, see <a
@@ -321,15 +301,6 @@ namespace OpsWorks
          */
         virtual Model::CreateInstanceOutcome CreateInstance(const Model::CreateInstanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateInstance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateInstanceOutcomeCallable CreateInstanceCallable(const Model::CreateInstanceRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateInstanceAsync(const Model::CreateInstanceRequest& request, const CreateInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a layer. For more information, see <a
@@ -350,15 +321,6 @@ namespace OpsWorks
          */
         virtual Model::CreateLayerOutcome CreateLayer(const Model::CreateLayerRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateLayer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateLayerOutcomeCallable CreateLayerCallable(const Model::CreateLayerRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateLayer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateLayerAsync(const Model::CreateLayerRequest& request, const CreateLayerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new stack. For more information, see <a
@@ -373,15 +335,6 @@ namespace OpsWorks
          */
         virtual Model::CreateStackOutcome CreateStack(const Model::CreateStackRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateStack that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateStackOutcomeCallable CreateStackCallable(const Model::CreateStackRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateStack that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateStackAsync(const Model::CreateStackRequest& request, const CreateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new user profile.</p> <p> <b>Required Permissions</b>: To use this
@@ -394,15 +347,6 @@ namespace OpsWorks
          */
         virtual Model::CreateUserProfileOutcome CreateUserProfile(const Model::CreateUserProfileRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateUserProfile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateUserProfileOutcomeCallable CreateUserProfileCallable(const Model::CreateUserProfileRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateUserProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateUserProfileAsync(const Model::CreateUserProfileRequest& request, const CreateUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a specified app.</p> <p> <b>Required Permissions</b>: To use this
@@ -416,15 +360,6 @@ namespace OpsWorks
          */
         virtual Model::DeleteAppOutcome DeleteApp(const Model::DeleteAppRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteApp that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAppOutcomeCallable DeleteAppCallable(const Model::DeleteAppRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteApp that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAppAsync(const Model::DeleteAppRequest& request, const DeleteAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a specified instance, which terminates the associated Amazon EC2
@@ -442,15 +377,6 @@ namespace OpsWorks
          */
         virtual Model::DeleteInstanceOutcome DeleteInstance(const Model::DeleteInstanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteInstance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteInstanceOutcomeCallable DeleteInstanceCallable(const Model::DeleteInstanceRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteInstanceAsync(const Model::DeleteInstanceRequest& request, const DeleteInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a specified layer. You must first stop and then delete all associated
@@ -467,15 +393,6 @@ namespace OpsWorks
          */
         virtual Model::DeleteLayerOutcome DeleteLayer(const Model::DeleteLayerRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteLayer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteLayerOutcomeCallable DeleteLayerCallable(const Model::DeleteLayerRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteLayer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteLayerAsync(const Model::DeleteLayerRequest& request, const DeleteLayerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a specified stack. You must first delete all instances, layers, and
@@ -492,15 +409,6 @@ namespace OpsWorks
          */
         virtual Model::DeleteStackOutcome DeleteStack(const Model::DeleteStackRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteStack that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteStackOutcomeCallable DeleteStackCallable(const Model::DeleteStackRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteStack that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteStackAsync(const Model::DeleteStackRequest& request, const DeleteStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a user profile.</p> <p> <b>Required Permissions</b>: To use this
@@ -513,15 +421,6 @@ namespace OpsWorks
          */
         virtual Model::DeleteUserProfileOutcome DeleteUserProfile(const Model::DeleteUserProfileRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteUserProfile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteUserProfileOutcomeCallable DeleteUserProfileCallable(const Model::DeleteUserProfileRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteUserProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteUserProfileAsync(const Model::DeleteUserProfileRequest& request, const DeleteUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deregisters a specified Amazon ECS cluster from a stack. For more
@@ -538,15 +437,6 @@ namespace OpsWorks
          */
         virtual Model::DeregisterEcsClusterOutcome DeregisterEcsCluster(const Model::DeregisterEcsClusterRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeregisterEcsCluster that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeregisterEcsClusterOutcomeCallable DeregisterEcsClusterCallable(const Model::DeregisterEcsClusterRequest& request) const;
-
-        /**
-         * An Async wrapper for DeregisterEcsCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeregisterEcsClusterAsync(const Model::DeregisterEcsClusterRequest& request, const DeregisterEcsClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deregisters a specified Elastic IP address. The address can then be
@@ -563,15 +453,6 @@ namespace OpsWorks
          */
         virtual Model::DeregisterElasticIpOutcome DeregisterElasticIp(const Model::DeregisterElasticIpRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeregisterElasticIp that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeregisterElasticIpOutcomeCallable DeregisterElasticIpCallable(const Model::DeregisterElasticIpRequest& request) const;
-
-        /**
-         * An Async wrapper for DeregisterElasticIp that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeregisterElasticIpAsync(const Model::DeregisterElasticIpRequest& request, const DeregisterElasticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deregister a registered Amazon EC2 or on-premises instance. This action
@@ -587,15 +468,6 @@ namespace OpsWorks
          */
         virtual Model::DeregisterInstanceOutcome DeregisterInstance(const Model::DeregisterInstanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeregisterInstance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeregisterInstanceOutcomeCallable DeregisterInstanceCallable(const Model::DeregisterInstanceRequest& request) const;
-
-        /**
-         * An Async wrapper for DeregisterInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeregisterInstanceAsync(const Model::DeregisterInstanceRequest& request, const DeregisterInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deregisters an Amazon RDS instance.</p> <p> <b>Required Permissions</b>: To
@@ -609,15 +481,6 @@ namespace OpsWorks
          */
         virtual Model::DeregisterRdsDbInstanceOutcome DeregisterRdsDbInstance(const Model::DeregisterRdsDbInstanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeregisterRdsDbInstance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeregisterRdsDbInstanceOutcomeCallable DeregisterRdsDbInstanceCallable(const Model::DeregisterRdsDbInstanceRequest& request) const;
-
-        /**
-         * An Async wrapper for DeregisterRdsDbInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeregisterRdsDbInstanceAsync(const Model::DeregisterRdsDbInstanceRequest& request, const DeregisterRdsDbInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deregisters an Amazon EBS volume. The volume can then be registered by
@@ -634,15 +497,6 @@ namespace OpsWorks
          */
         virtual Model::DeregisterVolumeOutcome DeregisterVolume(const Model::DeregisterVolumeRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeregisterVolume that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeregisterVolumeOutcomeCallable DeregisterVolumeCallable(const Model::DeregisterVolumeRequest& request) const;
-
-        /**
-         * An Async wrapper for DeregisterVolume that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeregisterVolumeAsync(const Model::DeregisterVolumeRequest& request, const DeregisterVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the available AWS OpsWorks Stacks agent versions. You must specify
@@ -654,15 +508,6 @@ namespace OpsWorks
          */
         virtual Model::DescribeAgentVersionsOutcome DescribeAgentVersions(const Model::DescribeAgentVersionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAgentVersions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAgentVersionsOutcomeCallable DescribeAgentVersionsCallable(const Model::DescribeAgentVersionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAgentVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAgentVersionsAsync(const Model::DescribeAgentVersionsRequest& request, const DescribeAgentVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Requests a description of a specified set of apps.</p>  <p>This call
@@ -677,15 +522,6 @@ namespace OpsWorks
          */
         virtual Model::DescribeAppsOutcome DescribeApps(const Model::DescribeAppsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeApps that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAppsOutcomeCallable DescribeAppsCallable(const Model::DescribeAppsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeApps that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAppsAsync(const Model::DescribeAppsRequest& request, const DescribeAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the results of specified commands.</p>  <p>This call accepts
@@ -700,15 +536,6 @@ namespace OpsWorks
          */
         virtual Model::DescribeCommandsOutcome DescribeCommands(const Model::DescribeCommandsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeCommands that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeCommandsOutcomeCallable DescribeCommandsCallable(const Model::DescribeCommandsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeCommands that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeCommandsAsync(const Model::DescribeCommandsRequest& request, const DescribeCommandsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Requests a description of a specified set of deployments.</p>  <p>This
@@ -724,15 +551,6 @@ namespace OpsWorks
          */
         virtual Model::DescribeDeploymentsOutcome DescribeDeployments(const Model::DescribeDeploymentsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDeployments that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDeploymentsOutcomeCallable DescribeDeploymentsCallable(const Model::DescribeDeploymentsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDeployments that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDeploymentsAsync(const Model::DescribeDeploymentsRequest& request, const DescribeDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes Amazon ECS clusters that are registered with a stack. If you
@@ -751,15 +569,6 @@ namespace OpsWorks
          */
         virtual Model::DescribeEcsClustersOutcome DescribeEcsClusters(const Model::DescribeEcsClustersRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEcsClusters that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEcsClustersOutcomeCallable DescribeEcsClustersCallable(const Model::DescribeEcsClustersRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEcsClusters that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEcsClustersAsync(const Model::DescribeEcsClustersRequest& request, const DescribeEcsClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes <a
@@ -776,15 +585,6 @@ namespace OpsWorks
          */
         virtual Model::DescribeElasticIpsOutcome DescribeElasticIps(const Model::DescribeElasticIpsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeElasticIps that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeElasticIpsOutcomeCallable DescribeElasticIpsCallable(const Model::DescribeElasticIpsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeElasticIps that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeElasticIpsAsync(const Model::DescribeElasticIpsRequest& request, const DescribeElasticIpsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a stack's Elastic Load Balancing instances.</p>  <p>This call
@@ -799,15 +599,6 @@ namespace OpsWorks
          */
         virtual Model::DescribeElasticLoadBalancersOutcome DescribeElasticLoadBalancers(const Model::DescribeElasticLoadBalancersRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeElasticLoadBalancers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeElasticLoadBalancersOutcomeCallable DescribeElasticLoadBalancersCallable(const Model::DescribeElasticLoadBalancersRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeElasticLoadBalancers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeElasticLoadBalancersAsync(const Model::DescribeElasticLoadBalancersRequest& request, const DescribeElasticLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Requests a description of a set of instances.</p>  <p>This call accepts
@@ -822,15 +613,6 @@ namespace OpsWorks
          */
         virtual Model::DescribeInstancesOutcome DescribeInstances(const Model::DescribeInstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeInstances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeInstancesOutcomeCallable DescribeInstancesCallable(const Model::DescribeInstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeInstancesAsync(const Model::DescribeInstancesRequest& request, const DescribeInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Requests a description of one or more layers in a specified stack.</p> 
@@ -846,15 +628,6 @@ namespace OpsWorks
          */
         virtual Model::DescribeLayersOutcome DescribeLayers(const Model::DescribeLayersRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeLayers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeLayersOutcomeCallable DescribeLayersCallable(const Model::DescribeLayersRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeLayers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeLayersAsync(const Model::DescribeLayersRequest& request, const DescribeLayersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes load-based auto scaling configurations for specified layers.</p>
@@ -870,15 +643,6 @@ namespace OpsWorks
          */
         virtual Model::DescribeLoadBasedAutoScalingOutcome DescribeLoadBasedAutoScaling(const Model::DescribeLoadBasedAutoScalingRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeLoadBasedAutoScaling that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeLoadBasedAutoScalingOutcomeCallable DescribeLoadBasedAutoScalingCallable(const Model::DescribeLoadBasedAutoScalingRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeLoadBasedAutoScaling that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeLoadBasedAutoScalingAsync(const Model::DescribeLoadBasedAutoScalingRequest& request, const DescribeLoadBasedAutoScalingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a user's SSH information.</p> <p> <b>Required Permissions</b>: To
@@ -930,15 +694,6 @@ namespace OpsWorks
          */
         virtual Model::DescribePermissionsOutcome DescribePermissions(const Model::DescribePermissionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribePermissions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribePermissionsOutcomeCallable DescribePermissionsCallable(const Model::DescribePermissionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribePermissions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribePermissionsAsync(const Model::DescribePermissionsRequest& request, const DescribePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describe an instance's RAID arrays.</p>  <p>This call accepts only one
@@ -953,15 +708,6 @@ namespace OpsWorks
          */
         virtual Model::DescribeRaidArraysOutcome DescribeRaidArrays(const Model::DescribeRaidArraysRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeRaidArrays that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeRaidArraysOutcomeCallable DescribeRaidArraysCallable(const Model::DescribeRaidArraysRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeRaidArrays that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeRaidArraysAsync(const Model::DescribeRaidArraysRequest& request, const DescribeRaidArraysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes Amazon RDS instances.</p> <p> <b>Required Permissions</b>: To use
@@ -976,15 +722,6 @@ namespace OpsWorks
          */
         virtual Model::DescribeRdsDbInstancesOutcome DescribeRdsDbInstances(const Model::DescribeRdsDbInstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeRdsDbInstances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeRdsDbInstancesOutcomeCallable DescribeRdsDbInstancesCallable(const Model::DescribeRdsDbInstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeRdsDbInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeRdsDbInstancesAsync(const Model::DescribeRdsDbInstancesRequest& request, const DescribeRdsDbInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes AWS OpsWorks Stacks service errors.</p> <p> <b>Required
@@ -999,15 +736,6 @@ namespace OpsWorks
          */
         virtual Model::DescribeServiceErrorsOutcome DescribeServiceErrors(const Model::DescribeServiceErrorsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeServiceErrors that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeServiceErrorsOutcomeCallable DescribeServiceErrorsCallable(const Model::DescribeServiceErrorsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeServiceErrors that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeServiceErrorsAsync(const Model::DescribeServiceErrorsRequest& request, const DescribeServiceErrorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Requests a description of a stack's provisioning parameters.</p> <p>
@@ -1022,15 +750,6 @@ namespace OpsWorks
          */
         virtual Model::DescribeStackProvisioningParametersOutcome DescribeStackProvisioningParameters(const Model::DescribeStackProvisioningParametersRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeStackProvisioningParameters that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeStackProvisioningParametersOutcomeCallable DescribeStackProvisioningParametersCallable(const Model::DescribeStackProvisioningParametersRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeStackProvisioningParameters that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeStackProvisioningParametersAsync(const Model::DescribeStackProvisioningParametersRequest& request, const DescribeStackProvisioningParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the number of layers and apps in a specified stack, and the number
@@ -1046,15 +765,6 @@ namespace OpsWorks
          */
         virtual Model::DescribeStackSummaryOutcome DescribeStackSummary(const Model::DescribeStackSummaryRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeStackSummary that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeStackSummaryOutcomeCallable DescribeStackSummaryCallable(const Model::DescribeStackSummaryRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeStackSummary that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeStackSummaryAsync(const Model::DescribeStackSummaryRequest& request, const DescribeStackSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Requests a description of one or more stacks.</p> <p> <b>Required
@@ -1068,15 +778,6 @@ namespace OpsWorks
          */
         virtual Model::DescribeStacksOutcome DescribeStacks(const Model::DescribeStacksRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeStacks that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeStacksOutcomeCallable DescribeStacksCallable(const Model::DescribeStacksRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeStacks that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeStacksAsync(const Model::DescribeStacksRequest& request, const DescribeStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes time-based auto scaling configurations for specified instances.</p>
@@ -1092,15 +793,6 @@ namespace OpsWorks
          */
         virtual Model::DescribeTimeBasedAutoScalingOutcome DescribeTimeBasedAutoScaling(const Model::DescribeTimeBasedAutoScalingRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTimeBasedAutoScaling that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTimeBasedAutoScalingOutcomeCallable DescribeTimeBasedAutoScalingCallable(const Model::DescribeTimeBasedAutoScalingRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTimeBasedAutoScaling that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTimeBasedAutoScalingAsync(const Model::DescribeTimeBasedAutoScalingRequest& request, const DescribeTimeBasedAutoScalingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describe specified users.</p> <p> <b>Required Permissions</b>: To use this
@@ -1113,15 +805,6 @@ namespace OpsWorks
          */
         virtual Model::DescribeUserProfilesOutcome DescribeUserProfiles(const Model::DescribeUserProfilesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeUserProfiles that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeUserProfilesOutcomeCallable DescribeUserProfilesCallable(const Model::DescribeUserProfilesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeUserProfiles that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeUserProfilesAsync(const Model::DescribeUserProfilesRequest& request, const DescribeUserProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes an instance's Amazon EBS volumes.</p>  <p>This call accepts
@@ -1136,15 +819,6 @@ namespace OpsWorks
          */
         virtual Model::DescribeVolumesOutcome DescribeVolumes(const Model::DescribeVolumesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeVolumes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeVolumesOutcomeCallable DescribeVolumesCallable(const Model::DescribeVolumesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeVolumes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeVolumesAsync(const Model::DescribeVolumesRequest& request, const DescribeVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Detaches a specified Elastic Load Balancing instance from its layer.</p> <p>
@@ -1158,15 +832,6 @@ namespace OpsWorks
          */
         virtual Model::DetachElasticLoadBalancerOutcome DetachElasticLoadBalancer(const Model::DetachElasticLoadBalancerRequest& request) const;
 
-        /**
-         * A Callable wrapper for DetachElasticLoadBalancer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DetachElasticLoadBalancerOutcomeCallable DetachElasticLoadBalancerCallable(const Model::DetachElasticLoadBalancerRequest& request) const;
-
-        /**
-         * An Async wrapper for DetachElasticLoadBalancer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DetachElasticLoadBalancerAsync(const Model::DetachElasticLoadBalancerRequest& request, const DetachElasticLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates an Elastic IP address from its instance. The address remains
@@ -1183,15 +848,6 @@ namespace OpsWorks
          */
         virtual Model::DisassociateElasticIpOutcome DisassociateElasticIp(const Model::DisassociateElasticIpRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateElasticIp that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateElasticIpOutcomeCallable DisassociateElasticIpCallable(const Model::DisassociateElasticIpRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateElasticIp that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateElasticIpAsync(const Model::DisassociateElasticIpRequest& request, const DisassociateElasticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a generated host name for the specified layer, based on the current host
@@ -1205,15 +861,6 @@ namespace OpsWorks
          */
         virtual Model::GetHostnameSuggestionOutcome GetHostnameSuggestion(const Model::GetHostnameSuggestionRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetHostnameSuggestion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetHostnameSuggestionOutcomeCallable GetHostnameSuggestionCallable(const Model::GetHostnameSuggestionRequest& request) const;
-
-        /**
-         * An Async wrapper for GetHostnameSuggestion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetHostnameSuggestionAsync(const Model::GetHostnameSuggestionRequest& request, const GetHostnameSuggestionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This action can be used only with Windows stacks.</p> 
@@ -1224,15 +871,6 @@ namespace OpsWorks
          */
         virtual Model::GrantAccessOutcome GrantAccess(const Model::GrantAccessRequest& request) const;
 
-        /**
-         * A Callable wrapper for GrantAccess that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GrantAccessOutcomeCallable GrantAccessCallable(const Model::GrantAccessRequest& request) const;
-
-        /**
-         * An Async wrapper for GrantAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GrantAccessAsync(const Model::GrantAccessRequest& request, const GrantAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of tags that are applied to the specified stack or
@@ -1242,15 +880,6 @@ namespace OpsWorks
          */
         virtual Model::ListTagsOutcome ListTags(const Model::ListTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsOutcomeCallable ListTagsCallable(const Model::ListTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsAsync(const Model::ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Reboots a specified instance. For more information, see <a
@@ -1266,15 +895,6 @@ namespace OpsWorks
          */
         virtual Model::RebootInstanceOutcome RebootInstance(const Model::RebootInstanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for RebootInstance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RebootInstanceOutcomeCallable RebootInstanceCallable(const Model::RebootInstanceRequest& request) const;
-
-        /**
-         * An Async wrapper for RebootInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RebootInstanceAsync(const Model::RebootInstanceRequest& request, const RebootInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Registers a specified Amazon ECS cluster with a stack. You can register only
@@ -1292,15 +912,6 @@ namespace OpsWorks
          */
         virtual Model::RegisterEcsClusterOutcome RegisterEcsCluster(const Model::RegisterEcsClusterRequest& request) const;
 
-        /**
-         * A Callable wrapper for RegisterEcsCluster that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RegisterEcsClusterOutcomeCallable RegisterEcsClusterCallable(const Model::RegisterEcsClusterRequest& request) const;
-
-        /**
-         * An Async wrapper for RegisterEcsCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RegisterEcsClusterAsync(const Model::RegisterEcsClusterRequest& request, const RegisterEcsClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Registers an Elastic IP address with a specified stack. An address can be
@@ -1319,15 +930,6 @@ namespace OpsWorks
          */
         virtual Model::RegisterElasticIpOutcome RegisterElasticIp(const Model::RegisterElasticIpRequest& request) const;
 
-        /**
-         * A Callable wrapper for RegisterElasticIp that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RegisterElasticIpOutcomeCallable RegisterElasticIpCallable(const Model::RegisterElasticIpRequest& request) const;
-
-        /**
-         * An Async wrapper for RegisterElasticIp that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RegisterElasticIpAsync(const Model::RegisterElasticIpRequest& request, const RegisterElasticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Registers instances that were created outside of AWS OpsWorks Stacks with a
@@ -1356,15 +958,6 @@ namespace OpsWorks
          */
         virtual Model::RegisterInstanceOutcome RegisterInstance(const Model::RegisterInstanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for RegisterInstance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RegisterInstanceOutcomeCallable RegisterInstanceCallable(const Model::RegisterInstanceRequest& request) const;
-
-        /**
-         * An Async wrapper for RegisterInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RegisterInstanceAsync(const Model::RegisterInstanceRequest& request, const RegisterInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Registers an Amazon RDS instance with a stack.</p> <p> <b>Required
@@ -1378,15 +971,6 @@ namespace OpsWorks
          */
         virtual Model::RegisterRdsDbInstanceOutcome RegisterRdsDbInstance(const Model::RegisterRdsDbInstanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for RegisterRdsDbInstance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RegisterRdsDbInstanceOutcomeCallable RegisterRdsDbInstanceCallable(const Model::RegisterRdsDbInstanceRequest& request) const;
-
-        /**
-         * An Async wrapper for RegisterRdsDbInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RegisterRdsDbInstanceAsync(const Model::RegisterRdsDbInstanceRequest& request, const RegisterRdsDbInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Registers an Amazon EBS volume with a specified stack. A volume can be
@@ -1405,15 +989,6 @@ namespace OpsWorks
          */
         virtual Model::RegisterVolumeOutcome RegisterVolume(const Model::RegisterVolumeRequest& request) const;
 
-        /**
-         * A Callable wrapper for RegisterVolume that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RegisterVolumeOutcomeCallable RegisterVolumeCallable(const Model::RegisterVolumeRequest& request) const;
-
-        /**
-         * An Async wrapper for RegisterVolume that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RegisterVolumeAsync(const Model::RegisterVolumeRequest& request, const RegisterVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Specify the load-based auto scaling configuration for a specified layer. For
@@ -1434,15 +1009,6 @@ namespace OpsWorks
          */
         virtual Model::SetLoadBasedAutoScalingOutcome SetLoadBasedAutoScaling(const Model::SetLoadBasedAutoScalingRequest& request) const;
 
-        /**
-         * A Callable wrapper for SetLoadBasedAutoScaling that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SetLoadBasedAutoScalingOutcomeCallable SetLoadBasedAutoScalingCallable(const Model::SetLoadBasedAutoScalingRequest& request) const;
-
-        /**
-         * An Async wrapper for SetLoadBasedAutoScaling that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SetLoadBasedAutoScalingAsync(const Model::SetLoadBasedAutoScalingRequest& request, const SetLoadBasedAutoScalingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Specifies a user's permissions. For more information, see <a
@@ -1458,15 +1024,6 @@ namespace OpsWorks
          */
         virtual Model::SetPermissionOutcome SetPermission(const Model::SetPermissionRequest& request) const;
 
-        /**
-         * A Callable wrapper for SetPermission that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SetPermissionOutcomeCallable SetPermissionCallable(const Model::SetPermissionRequest& request) const;
-
-        /**
-         * An Async wrapper for SetPermission that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SetPermissionAsync(const Model::SetPermissionRequest& request, const SetPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Specify the time-based auto scaling configuration for a specified instance.
@@ -1483,15 +1040,6 @@ namespace OpsWorks
          */
         virtual Model::SetTimeBasedAutoScalingOutcome SetTimeBasedAutoScaling(const Model::SetTimeBasedAutoScalingRequest& request) const;
 
-        /**
-         * A Callable wrapper for SetTimeBasedAutoScaling that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SetTimeBasedAutoScalingOutcomeCallable SetTimeBasedAutoScalingCallable(const Model::SetTimeBasedAutoScalingRequest& request) const;
-
-        /**
-         * An Async wrapper for SetTimeBasedAutoScaling that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SetTimeBasedAutoScalingAsync(const Model::SetTimeBasedAutoScalingRequest& request, const SetTimeBasedAutoScalingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts a specified instance. For more information, see <a
@@ -1507,15 +1055,6 @@ namespace OpsWorks
          */
         virtual Model::StartInstanceOutcome StartInstance(const Model::StartInstanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartInstance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartInstanceOutcomeCallable StartInstanceCallable(const Model::StartInstanceRequest& request) const;
-
-        /**
-         * An Async wrapper for StartInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartInstanceAsync(const Model::StartInstanceRequest& request, const StartInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts a stack's instances.</p> <p> <b>Required Permissions</b>: To use this
@@ -1529,15 +1068,6 @@ namespace OpsWorks
          */
         virtual Model::StartStackOutcome StartStack(const Model::StartStackRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartStack that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartStackOutcomeCallable StartStackCallable(const Model::StartStackRequest& request) const;
-
-        /**
-         * An Async wrapper for StartStack that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartStackAsync(const Model::StartStackRequest& request, const StartStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops a specified instance. When you stop a standard instance, the data
@@ -1555,15 +1085,6 @@ namespace OpsWorks
          */
         virtual Model::StopInstanceOutcome StopInstance(const Model::StopInstanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopInstance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopInstanceOutcomeCallable StopInstanceCallable(const Model::StopInstanceRequest& request) const;
-
-        /**
-         * An Async wrapper for StopInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopInstanceAsync(const Model::StopInstanceRequest& request, const StopInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops a specified stack.</p> <p> <b>Required Permissions</b>: To use this
@@ -1577,15 +1098,6 @@ namespace OpsWorks
          */
         virtual Model::StopStackOutcome StopStack(const Model::StopStackRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopStack that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopStackOutcomeCallable StopStackCallable(const Model::StopStackRequest& request) const;
-
-        /**
-         * An Async wrapper for StopStack that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopStackAsync(const Model::StopStackRequest& request, const StopStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Apply cost-allocation tags to a specified stack or layer in AWS OpsWorks
@@ -1597,15 +1109,6 @@ namespace OpsWorks
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Unassigns a registered instance from all layers that are using the instance.
@@ -1622,15 +1125,6 @@ namespace OpsWorks
          */
         virtual Model::UnassignInstanceOutcome UnassignInstance(const Model::UnassignInstanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UnassignInstance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UnassignInstanceOutcomeCallable UnassignInstanceCallable(const Model::UnassignInstanceRequest& request) const;
-
-        /**
-         * An Async wrapper for UnassignInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UnassignInstanceAsync(const Model::UnassignInstanceRequest& request, const UnassignInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Unassigns an assigned Amazon EBS volume. The volume remains registered with
@@ -1647,15 +1141,6 @@ namespace OpsWorks
          */
         virtual Model::UnassignVolumeOutcome UnassignVolume(const Model::UnassignVolumeRequest& request) const;
 
-        /**
-         * A Callable wrapper for UnassignVolume that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UnassignVolumeOutcomeCallable UnassignVolumeCallable(const Model::UnassignVolumeRequest& request) const;
-
-        /**
-         * An Async wrapper for UnassignVolume that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UnassignVolumeAsync(const Model::UnassignVolumeRequest& request, const UnassignVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes tags from a specified stack or layer.</p><p><h3>See Also:</h3>   <a
@@ -1664,15 +1149,6 @@ namespace OpsWorks
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a specified app.</p> <p> <b>Required Permissions</b>: To use this
@@ -1686,15 +1162,6 @@ namespace OpsWorks
          */
         virtual Model::UpdateAppOutcome UpdateApp(const Model::UpdateAppRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateApp that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateAppOutcomeCallable UpdateAppCallable(const Model::UpdateAppRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateApp that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateAppAsync(const Model::UpdateAppRequest& request, const UpdateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a registered Elastic IP address's name. For more information, see <a
@@ -1710,15 +1177,6 @@ namespace OpsWorks
          */
         virtual Model::UpdateElasticIpOutcome UpdateElasticIp(const Model::UpdateElasticIpRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateElasticIp that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateElasticIpOutcomeCallable UpdateElasticIpCallable(const Model::UpdateElasticIpRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateElasticIp that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateElasticIpAsync(const Model::UpdateElasticIpRequest& request, const UpdateElasticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a specified instance.</p> <p> <b>Required Permissions</b>: To use
@@ -1732,15 +1190,6 @@ namespace OpsWorks
          */
         virtual Model::UpdateInstanceOutcome UpdateInstance(const Model::UpdateInstanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateInstance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateInstanceOutcomeCallable UpdateInstanceCallable(const Model::UpdateInstanceRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateInstanceAsync(const Model::UpdateInstanceRequest& request, const UpdateInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a specified layer.</p> <p> <b>Required Permissions</b>: To use this
@@ -1754,15 +1203,6 @@ namespace OpsWorks
          */
         virtual Model::UpdateLayerOutcome UpdateLayer(const Model::UpdateLayerRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateLayer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateLayerOutcomeCallable UpdateLayerCallable(const Model::UpdateLayerRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateLayer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateLayerAsync(const Model::UpdateLayerRequest& request, const UpdateLayerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a user's SSH public key.</p> <p> <b>Required Permissions</b>: To use
@@ -1776,15 +1216,6 @@ namespace OpsWorks
          */
         virtual Model::UpdateMyUserProfileOutcome UpdateMyUserProfile(const Model::UpdateMyUserProfileRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateMyUserProfile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateMyUserProfileOutcomeCallable UpdateMyUserProfileCallable(const Model::UpdateMyUserProfileRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateMyUserProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateMyUserProfileAsync(const Model::UpdateMyUserProfileRequest& request, const UpdateMyUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an Amazon RDS instance.</p> <p> <b>Required Permissions</b>: To use
@@ -1798,15 +1229,6 @@ namespace OpsWorks
          */
         virtual Model::UpdateRdsDbInstanceOutcome UpdateRdsDbInstance(const Model::UpdateRdsDbInstanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateRdsDbInstance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateRdsDbInstanceOutcomeCallable UpdateRdsDbInstanceCallable(const Model::UpdateRdsDbInstanceRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateRdsDbInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateRdsDbInstanceAsync(const Model::UpdateRdsDbInstanceRequest& request, const UpdateRdsDbInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a specified stack.</p> <p> <b>Required Permissions</b>: To use this
@@ -1820,15 +1242,6 @@ namespace OpsWorks
          */
         virtual Model::UpdateStackOutcome UpdateStack(const Model::UpdateStackRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateStack that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateStackOutcomeCallable UpdateStackCallable(const Model::UpdateStackRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateStack that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateStackAsync(const Model::UpdateStackRequest& request, const UpdateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a specified user profile.</p> <p> <b>Required Permissions</b>: To use
@@ -1841,15 +1254,6 @@ namespace OpsWorks
          */
         virtual Model::UpdateUserProfileOutcome UpdateUserProfile(const Model::UpdateUserProfileRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateUserProfile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateUserProfileOutcomeCallable UpdateUserProfileCallable(const Model::UpdateUserProfileRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateUserProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateUserProfileAsync(const Model::UpdateUserProfileRequest& request, const UpdateUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an Amazon EBS volume's name or mount point. For more information, see
@@ -1866,15 +1270,6 @@ namespace OpsWorks
          */
         virtual Model::UpdateVolumeOutcome UpdateVolume(const Model::UpdateVolumeRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateVolume that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateVolumeOutcomeCallable UpdateVolumeCallable(const Model::UpdateVolumeRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateVolume that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateVolumeAsync(const Model::UpdateVolumeRequest& request, const UpdateVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

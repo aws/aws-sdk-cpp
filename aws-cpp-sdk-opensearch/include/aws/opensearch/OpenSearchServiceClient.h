@@ -7,8 +7,10 @@
 #include <aws/opensearch/OpenSearchService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/opensearch/OpenSearchServiceServiceClientModel.h>
+#include <aws/opensearch/OpenSearchServiceLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -85,6 +87,47 @@ namespace OpenSearchService
         virtual ~OpenSearchServiceClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Allows the destination Amazon OpenSearch Service domain owner to accept an
          * inbound cross-cluster search connection request. For more information, see <a
@@ -95,15 +138,6 @@ namespace OpenSearchService
          */
         virtual Model::AcceptInboundConnectionOutcome AcceptInboundConnection(const Model::AcceptInboundConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for AcceptInboundConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AcceptInboundConnectionOutcomeCallable AcceptInboundConnectionCallable(const Model::AcceptInboundConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for AcceptInboundConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AcceptInboundConnectionAsync(const Model::AcceptInboundConnectionRequest& request, const AcceptInboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Attaches tags to an existing Amazon OpenSearch Service domain. Tags are a set
@@ -116,15 +150,6 @@ namespace OpenSearchService
          */
         virtual Model::AddTagsOutcome AddTags(const Model::AddTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddTagsOutcomeCallable AddTagsCallable(const Model::AddTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for AddTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddTagsAsync(const Model::AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates a package with an Amazon OpenSearch Service domain. For more
@@ -136,15 +161,6 @@ namespace OpenSearchService
          */
         virtual Model::AssociatePackageOutcome AssociatePackage(const Model::AssociatePackageRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociatePackage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociatePackageOutcomeCallable AssociatePackageCallable(const Model::AssociatePackageRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociatePackage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociatePackageAsync(const Model::AssociatePackageRequest& request, const AssociatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides access to an Amazon OpenSearch Service domain through the use of an
@@ -154,15 +170,6 @@ namespace OpenSearchService
          */
         virtual Model::AuthorizeVpcEndpointAccessOutcome AuthorizeVpcEndpointAccess(const Model::AuthorizeVpcEndpointAccessRequest& request) const;
 
-        /**
-         * A Callable wrapper for AuthorizeVpcEndpointAccess that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AuthorizeVpcEndpointAccessOutcomeCallable AuthorizeVpcEndpointAccessCallable(const Model::AuthorizeVpcEndpointAccessRequest& request) const;
-
-        /**
-         * An Async wrapper for AuthorizeVpcEndpointAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AuthorizeVpcEndpointAccessAsync(const Model::AuthorizeVpcEndpointAccessRequest& request, const AuthorizeVpcEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Cancels a scheduled service software update for an Amazon OpenSearch Service
@@ -176,15 +183,6 @@ namespace OpenSearchService
          */
         virtual Model::CancelServiceSoftwareUpdateOutcome CancelServiceSoftwareUpdate(const Model::CancelServiceSoftwareUpdateRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelServiceSoftwareUpdate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelServiceSoftwareUpdateOutcomeCallable CancelServiceSoftwareUpdateCallable(const Model::CancelServiceSoftwareUpdateRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelServiceSoftwareUpdate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelServiceSoftwareUpdateAsync(const Model::CancelServiceSoftwareUpdateRequest& request, const CancelServiceSoftwareUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an Amazon OpenSearch Service domain. For more information, see <a
@@ -196,15 +194,6 @@ namespace OpenSearchService
          */
         virtual Model::CreateDomainOutcome CreateDomain(const Model::CreateDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDomainOutcomeCallable CreateDomainCallable(const Model::CreateDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDomainAsync(const Model::CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new cross-cluster search connection from a source Amazon OpenSearch
@@ -216,15 +205,6 @@ namespace OpenSearchService
          */
         virtual Model::CreateOutboundConnectionOutcome CreateOutboundConnection(const Model::CreateOutboundConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateOutboundConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateOutboundConnectionOutcomeCallable CreateOutboundConnectionCallable(const Model::CreateOutboundConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateOutboundConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateOutboundConnectionAsync(const Model::CreateOutboundConnectionRequest& request, const CreateOutboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a package for use with Amazon OpenSearch Service domains. For more
@@ -236,15 +216,6 @@ namespace OpenSearchService
          */
         virtual Model::CreatePackageOutcome CreatePackage(const Model::CreatePackageRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreatePackage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreatePackageOutcomeCallable CreatePackageCallable(const Model::CreatePackageRequest& request) const;
-
-        /**
-         * An Async wrapper for CreatePackage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreatePackageAsync(const Model::CreatePackageRequest& request, const CreatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an Amazon OpenSearch Service-managed VPC endpoint.</p><p><h3>See
@@ -254,15 +225,6 @@ namespace OpenSearchService
          */
         virtual Model::CreateVpcEndpointOutcome CreateVpcEndpoint(const Model::CreateVpcEndpointRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateVpcEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateVpcEndpointOutcomeCallable CreateVpcEndpointCallable(const Model::CreateVpcEndpointRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateVpcEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateVpcEndpointAsync(const Model::CreateVpcEndpointRequest& request, const CreateVpcEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an Amazon OpenSearch Service domain and all of its data. You can't
@@ -272,15 +234,6 @@ namespace OpenSearchService
          */
         virtual Model::DeleteDomainOutcome DeleteDomain(const Model::DeleteDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDomainOutcomeCallable DeleteDomainCallable(const Model::DeleteDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDomainAsync(const Model::DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Allows the destination Amazon OpenSearch Service domain owner to delete an
@@ -292,15 +245,6 @@ namespace OpenSearchService
          */
         virtual Model::DeleteInboundConnectionOutcome DeleteInboundConnection(const Model::DeleteInboundConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteInboundConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteInboundConnectionOutcomeCallable DeleteInboundConnectionCallable(const Model::DeleteInboundConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteInboundConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteInboundConnectionAsync(const Model::DeleteInboundConnectionRequest& request, const DeleteInboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Allows the source Amazon OpenSearch Service domain owner to delete an
@@ -312,15 +256,6 @@ namespace OpenSearchService
          */
         virtual Model::DeleteOutboundConnectionOutcome DeleteOutboundConnection(const Model::DeleteOutboundConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteOutboundConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteOutboundConnectionOutcomeCallable DeleteOutboundConnectionCallable(const Model::DeleteOutboundConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteOutboundConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteOutboundConnectionAsync(const Model::DeleteOutboundConnectionRequest& request, const DeleteOutboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an Amazon OpenSearch Service package. For more information, see <a
@@ -331,15 +266,6 @@ namespace OpenSearchService
          */
         virtual Model::DeletePackageOutcome DeletePackage(const Model::DeletePackageRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeletePackage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeletePackageOutcomeCallable DeletePackageCallable(const Model::DeletePackageRequest& request) const;
-
-        /**
-         * An Async wrapper for DeletePackage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeletePackageAsync(const Model::DeletePackageRequest& request, const DeletePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an Amazon OpenSearch Service-managed interface VPC
@@ -349,15 +275,6 @@ namespace OpenSearchService
          */
         virtual Model::DeleteVpcEndpointOutcome DeleteVpcEndpoint(const Model::DeleteVpcEndpointRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteVpcEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteVpcEndpointOutcomeCallable DeleteVpcEndpointCallable(const Model::DeleteVpcEndpointRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteVpcEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteVpcEndpointAsync(const Model::DeleteVpcEndpointRequest& request, const DeleteVpcEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the domain configuration for the specified Amazon OpenSearch
@@ -368,15 +285,6 @@ namespace OpenSearchService
          */
         virtual Model::DescribeDomainOutcome DescribeDomain(const Model::DescribeDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDomainOutcomeCallable DescribeDomainCallable(const Model::DescribeDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDomainAsync(const Model::DescribeDomainRequest& request, const DescribeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the list of optimizations that Auto-Tune has made to an Amazon
@@ -388,15 +296,6 @@ namespace OpenSearchService
          */
         virtual Model::DescribeDomainAutoTunesOutcome DescribeDomainAutoTunes(const Model::DescribeDomainAutoTunesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDomainAutoTunes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDomainAutoTunesOutcomeCallable DescribeDomainAutoTunesCallable(const Model::DescribeDomainAutoTunesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDomainAutoTunes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDomainAutoTunesAsync(const Model::DescribeDomainAutoTunesRequest& request, const DescribeDomainAutoTunesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the current blue/green deployment happening on an
@@ -409,15 +308,6 @@ namespace OpenSearchService
          */
         virtual Model::DescribeDomainChangeProgressOutcome DescribeDomainChangeProgress(const Model::DescribeDomainChangeProgressRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDomainChangeProgress that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDomainChangeProgressOutcomeCallable DescribeDomainChangeProgressCallable(const Model::DescribeDomainChangeProgressRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDomainChangeProgress that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDomainChangeProgressAsync(const Model::DescribeDomainChangeProgressRequest& request, const DescribeDomainChangeProgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the configuration of an Amazon OpenSearch Service
@@ -427,15 +317,6 @@ namespace OpenSearchService
          */
         virtual Model::DescribeDomainConfigOutcome DescribeDomainConfig(const Model::DescribeDomainConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDomainConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDomainConfigOutcomeCallable DescribeDomainConfigCallable(const Model::DescribeDomainConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDomainConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDomainConfigAsync(const Model::DescribeDomainConfigRequest& request, const DescribeDomainConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns domain configuration information about the specified Amazon
@@ -445,15 +326,6 @@ namespace OpenSearchService
          */
         virtual Model::DescribeDomainsOutcome DescribeDomains(const Model::DescribeDomainsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDomains that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDomainsOutcomeCallable DescribeDomainsCallable(const Model::DescribeDomainsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDomains that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDomainsAsync(const Model::DescribeDomainsRequest& request, const DescribeDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all the inbound cross-cluster search connections for a destination
@@ -465,15 +337,6 @@ namespace OpenSearchService
          */
         virtual Model::DescribeInboundConnectionsOutcome DescribeInboundConnections(const Model::DescribeInboundConnectionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeInboundConnections that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeInboundConnectionsOutcomeCallable DescribeInboundConnectionsCallable(const Model::DescribeInboundConnectionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeInboundConnections that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeInboundConnectionsAsync(const Model::DescribeInboundConnectionsRequest& request, const DescribeInboundConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the instance count, storage, and master node limits for a given
@@ -484,15 +347,6 @@ namespace OpenSearchService
          */
         virtual Model::DescribeInstanceTypeLimitsOutcome DescribeInstanceTypeLimits(const Model::DescribeInstanceTypeLimitsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeInstanceTypeLimits that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeInstanceTypeLimitsOutcomeCallable DescribeInstanceTypeLimitsCallable(const Model::DescribeInstanceTypeLimitsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeInstanceTypeLimits that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeInstanceTypeLimitsAsync(const Model::DescribeInstanceTypeLimitsRequest& request, const DescribeInstanceTypeLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all the outbound cross-cluster connections for a local (source) Amazon
@@ -504,15 +358,6 @@ namespace OpenSearchService
          */
         virtual Model::DescribeOutboundConnectionsOutcome DescribeOutboundConnections(const Model::DescribeOutboundConnectionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeOutboundConnections that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeOutboundConnectionsOutcomeCallable DescribeOutboundConnectionsCallable(const Model::DescribeOutboundConnectionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeOutboundConnections that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeOutboundConnectionsAsync(const Model::DescribeOutboundConnectionsRequest& request, const DescribeOutboundConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes all packages available to OpenSearch Service. For more information,
@@ -524,15 +369,6 @@ namespace OpenSearchService
          */
         virtual Model::DescribePackagesOutcome DescribePackages(const Model::DescribePackagesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribePackages that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribePackagesOutcomeCallable DescribePackagesCallable(const Model::DescribePackagesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribePackages that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribePackagesAsync(const Model::DescribePackagesRequest& request, const DescribePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the available Amazon OpenSearch Service Reserved Instance offerings
@@ -544,15 +380,6 @@ namespace OpenSearchService
          */
         virtual Model::DescribeReservedInstanceOfferingsOutcome DescribeReservedInstanceOfferings(const Model::DescribeReservedInstanceOfferingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeReservedInstanceOfferings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeReservedInstanceOfferingsOutcomeCallable DescribeReservedInstanceOfferingsCallable(const Model::DescribeReservedInstanceOfferingsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeReservedInstanceOfferings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeReservedInstanceOfferingsAsync(const Model::DescribeReservedInstanceOfferingsRequest& request, const DescribeReservedInstanceOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the Amazon OpenSearch Service instances that you have reserved in a
@@ -564,15 +391,6 @@ namespace OpenSearchService
          */
         virtual Model::DescribeReservedInstancesOutcome DescribeReservedInstances(const Model::DescribeReservedInstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeReservedInstances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeReservedInstancesOutcomeCallable DescribeReservedInstancesCallable(const Model::DescribeReservedInstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeReservedInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeReservedInstancesAsync(const Model::DescribeReservedInstancesRequest& request, const DescribeReservedInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more Amazon OpenSearch Service-managed VPC
@@ -582,15 +400,6 @@ namespace OpenSearchService
          */
         virtual Model::DescribeVpcEndpointsOutcome DescribeVpcEndpoints(const Model::DescribeVpcEndpointsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeVpcEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeVpcEndpointsOutcomeCallable DescribeVpcEndpointsCallable(const Model::DescribeVpcEndpointsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeVpcEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeVpcEndpointsAsync(const Model::DescribeVpcEndpointsRequest& request, const DescribeVpcEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes a package from the specified Amazon OpenSearch Service domain. The
@@ -604,15 +413,6 @@ namespace OpenSearchService
          */
         virtual Model::DissociatePackageOutcome DissociatePackage(const Model::DissociatePackageRequest& request) const;
 
-        /**
-         * A Callable wrapper for DissociatePackage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DissociatePackageOutcomeCallable DissociatePackageCallable(const Model::DissociatePackageRequest& request) const;
-
-        /**
-         * An Async wrapper for DissociatePackage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DissociatePackageAsync(const Model::DissociatePackageRequest& request, const DissociatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a map of OpenSearch or Elasticsearch versions and the versions you
@@ -622,15 +422,6 @@ namespace OpenSearchService
          */
         virtual Model::GetCompatibleVersionsOutcome GetCompatibleVersions(const Model::GetCompatibleVersionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetCompatibleVersions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetCompatibleVersionsOutcomeCallable GetCompatibleVersionsCallable(const Model::GetCompatibleVersionsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetCompatibleVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetCompatibleVersionsAsync(const Model::GetCompatibleVersionsRequest& request, const GetCompatibleVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of Amazon OpenSearch Service package versions, along with
@@ -642,15 +433,6 @@ namespace OpenSearchService
          */
         virtual Model::GetPackageVersionHistoryOutcome GetPackageVersionHistory(const Model::GetPackageVersionHistoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetPackageVersionHistory that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetPackageVersionHistoryOutcomeCallable GetPackageVersionHistoryCallable(const Model::GetPackageVersionHistoryRequest& request) const;
-
-        /**
-         * An Async wrapper for GetPackageVersionHistory that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetPackageVersionHistoryAsync(const Model::GetPackageVersionHistoryRequest& request, const GetPackageVersionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the complete history of the last 10 upgrades performed on an Amazon
@@ -660,15 +442,6 @@ namespace OpenSearchService
          */
         virtual Model::GetUpgradeHistoryOutcome GetUpgradeHistory(const Model::GetUpgradeHistoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetUpgradeHistory that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetUpgradeHistoryOutcomeCallable GetUpgradeHistoryCallable(const Model::GetUpgradeHistoryRequest& request) const;
-
-        /**
-         * An Async wrapper for GetUpgradeHistory that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetUpgradeHistoryAsync(const Model::GetUpgradeHistoryRequest& request, const GetUpgradeHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the most recent status of the last upgrade or upgrade eligibility
@@ -679,15 +452,6 @@ namespace OpenSearchService
          */
         virtual Model::GetUpgradeStatusOutcome GetUpgradeStatus(const Model::GetUpgradeStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetUpgradeStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetUpgradeStatusOutcomeCallable GetUpgradeStatusCallable(const Model::GetUpgradeStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for GetUpgradeStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetUpgradeStatusAsync(const Model::GetUpgradeStatusRequest& request, const GetUpgradeStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the names of all Amazon OpenSearch Service domains owned by the
@@ -697,15 +461,6 @@ namespace OpenSearchService
          */
         virtual Model::ListDomainNamesOutcome ListDomainNames(const Model::ListDomainNamesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDomainNames that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDomainNamesOutcomeCallable ListDomainNamesCallable(const Model::ListDomainNamesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDomainNames that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDomainNamesAsync(const Model::ListDomainNamesRequest& request, const ListDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all Amazon OpenSearch Service domains associated with a given package.
@@ -717,15 +472,6 @@ namespace OpenSearchService
          */
         virtual Model::ListDomainsForPackageOutcome ListDomainsForPackage(const Model::ListDomainsForPackageRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDomainsForPackage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDomainsForPackageOutcomeCallable ListDomainsForPackageCallable(const Model::ListDomainsForPackageRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDomainsForPackage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDomainsForPackageAsync(const Model::ListDomainsForPackageRequest& request, const ListDomainsForPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all instance types and available features for a given OpenSearch or
@@ -735,15 +481,6 @@ namespace OpenSearchService
          */
         virtual Model::ListInstanceTypeDetailsOutcome ListInstanceTypeDetails(const Model::ListInstanceTypeDetailsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListInstanceTypeDetails that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListInstanceTypeDetailsOutcomeCallable ListInstanceTypeDetailsCallable(const Model::ListInstanceTypeDetailsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListInstanceTypeDetails that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListInstanceTypeDetailsAsync(const Model::ListInstanceTypeDetailsRequest& request, const ListInstanceTypeDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all packages associated with an Amazon OpenSearch Service domain. For
@@ -755,15 +492,6 @@ namespace OpenSearchService
          */
         virtual Model::ListPackagesForDomainOutcome ListPackagesForDomain(const Model::ListPackagesForDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPackagesForDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPackagesForDomainOutcomeCallable ListPackagesForDomainCallable(const Model::ListPackagesForDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPackagesForDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPackagesForDomainAsync(const Model::ListPackagesForDomainRequest& request, const ListPackagesForDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns all resource tags for an Amazon OpenSearch Service domain. For more
@@ -775,15 +503,6 @@ namespace OpenSearchService
          */
         virtual Model::ListTagsOutcome ListTags(const Model::ListTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsOutcomeCallable ListTagsCallable(const Model::ListTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsAsync(const Model::ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all versions of OpenSearch and Elasticsearch that Amazon OpenSearch
@@ -793,15 +512,6 @@ namespace OpenSearchService
          */
         virtual Model::ListVersionsOutcome ListVersions(const Model::ListVersionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListVersions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListVersionsOutcomeCallable ListVersionsCallable(const Model::ListVersionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListVersionsAsync(const Model::ListVersionsRequest& request, const ListVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about each Amazon Web Services principal that is
@@ -812,15 +522,6 @@ namespace OpenSearchService
          */
         virtual Model::ListVpcEndpointAccessOutcome ListVpcEndpointAccess(const Model::ListVpcEndpointAccessRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListVpcEndpointAccess that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListVpcEndpointAccessOutcomeCallable ListVpcEndpointAccessCallable(const Model::ListVpcEndpointAccessRequest& request) const;
-
-        /**
-         * An Async wrapper for ListVpcEndpointAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListVpcEndpointAccessAsync(const Model::ListVpcEndpointAccessRequest& request, const ListVpcEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves all Amazon OpenSearch Service-managed VPC endpoints in the current
@@ -830,15 +531,6 @@ namespace OpenSearchService
          */
         virtual Model::ListVpcEndpointsOutcome ListVpcEndpoints(const Model::ListVpcEndpointsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListVpcEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListVpcEndpointsOutcomeCallable ListVpcEndpointsCallable(const Model::ListVpcEndpointsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListVpcEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListVpcEndpointsAsync(const Model::ListVpcEndpointsRequest& request, const ListVpcEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves all Amazon OpenSearch Service-managed VPC endpoints associated with
@@ -848,15 +540,6 @@ namespace OpenSearchService
          */
         virtual Model::ListVpcEndpointsForDomainOutcome ListVpcEndpointsForDomain(const Model::ListVpcEndpointsForDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListVpcEndpointsForDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListVpcEndpointsForDomainOutcomeCallable ListVpcEndpointsForDomainCallable(const Model::ListVpcEndpointsForDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for ListVpcEndpointsForDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListVpcEndpointsForDomainAsync(const Model::ListVpcEndpointsForDomainRequest& request, const ListVpcEndpointsForDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Allows you to purchase Amazon OpenSearch Service Reserved
@@ -866,15 +549,6 @@ namespace OpenSearchService
          */
         virtual Model::PurchaseReservedInstanceOfferingOutcome PurchaseReservedInstanceOffering(const Model::PurchaseReservedInstanceOfferingRequest& request) const;
 
-        /**
-         * A Callable wrapper for PurchaseReservedInstanceOffering that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PurchaseReservedInstanceOfferingOutcomeCallable PurchaseReservedInstanceOfferingCallable(const Model::PurchaseReservedInstanceOfferingRequest& request) const;
-
-        /**
-         * An Async wrapper for PurchaseReservedInstanceOffering that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PurchaseReservedInstanceOfferingAsync(const Model::PurchaseReservedInstanceOfferingRequest& request, const PurchaseReservedInstanceOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Allows the remote Amazon OpenSearch Service domain owner to reject an inbound
@@ -884,15 +558,6 @@ namespace OpenSearchService
          */
         virtual Model::RejectInboundConnectionOutcome RejectInboundConnection(const Model::RejectInboundConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for RejectInboundConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RejectInboundConnectionOutcomeCallable RejectInboundConnectionCallable(const Model::RejectInboundConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for RejectInboundConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RejectInboundConnectionAsync(const Model::RejectInboundConnectionRequest& request, const RejectInboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified set of tags from an Amazon OpenSearch Service domain.
@@ -904,15 +569,6 @@ namespace OpenSearchService
          */
         virtual Model::RemoveTagsOutcome RemoveTags(const Model::RemoveTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for RemoveTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RemoveTagsOutcomeCallable RemoveTagsCallable(const Model::RemoveTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for RemoveTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RemoveTagsAsync(const Model::RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Revokes access to an Amazon OpenSearch Service domain that was provided
@@ -922,15 +578,6 @@ namespace OpenSearchService
          */
         virtual Model::RevokeVpcEndpointAccessOutcome RevokeVpcEndpointAccess(const Model::RevokeVpcEndpointAccessRequest& request) const;
 
-        /**
-         * A Callable wrapper for RevokeVpcEndpointAccess that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RevokeVpcEndpointAccessOutcomeCallable RevokeVpcEndpointAccessCallable(const Model::RevokeVpcEndpointAccessRequest& request) const;
-
-        /**
-         * An Async wrapper for RevokeVpcEndpointAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RevokeVpcEndpointAccessAsync(const Model::RevokeVpcEndpointAccessRequest& request, const RevokeVpcEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Schedules a service software update for an Amazon OpenSearch Service domain.
@@ -942,15 +589,6 @@ namespace OpenSearchService
          */
         virtual Model::StartServiceSoftwareUpdateOutcome StartServiceSoftwareUpdate(const Model::StartServiceSoftwareUpdateRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartServiceSoftwareUpdate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartServiceSoftwareUpdateOutcomeCallable StartServiceSoftwareUpdateCallable(const Model::StartServiceSoftwareUpdateRequest& request) const;
-
-        /**
-         * An Async wrapper for StartServiceSoftwareUpdate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartServiceSoftwareUpdateAsync(const Model::StartServiceSoftwareUpdateRequest& request, const StartServiceSoftwareUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the cluster configuration of the specified Amazon OpenSearch Service
@@ -960,15 +598,6 @@ namespace OpenSearchService
          */
         virtual Model::UpdateDomainConfigOutcome UpdateDomainConfig(const Model::UpdateDomainConfigRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateDomainConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateDomainConfigOutcomeCallable UpdateDomainConfigCallable(const Model::UpdateDomainConfigRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateDomainConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateDomainConfigAsync(const Model::UpdateDomainConfigRequest& request, const UpdateDomainConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a package for use with Amazon OpenSearch Service domains. For more
@@ -980,15 +609,6 @@ namespace OpenSearchService
          */
         virtual Model::UpdatePackageOutcome UpdatePackage(const Model::UpdatePackageRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdatePackage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdatePackageOutcomeCallable UpdatePackageCallable(const Model::UpdatePackageRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdatePackage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdatePackageAsync(const Model::UpdatePackageRequest& request, const UpdatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies an Amazon OpenSearch Service-managed interface VPC
@@ -998,15 +618,6 @@ namespace OpenSearchService
          */
         virtual Model::UpdateVpcEndpointOutcome UpdateVpcEndpoint(const Model::UpdateVpcEndpointRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateVpcEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateVpcEndpointOutcomeCallable UpdateVpcEndpointCallable(const Model::UpdateVpcEndpointRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateVpcEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateVpcEndpointAsync(const Model::UpdateVpcEndpointRequest& request, const UpdateVpcEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Allows you to either upgrade your Amazon OpenSearch Service domain or perform
@@ -1017,15 +628,6 @@ namespace OpenSearchService
          */
         virtual Model::UpgradeDomainOutcome UpgradeDomain(const Model::UpgradeDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpgradeDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpgradeDomainOutcomeCallable UpgradeDomainCallable(const Model::UpgradeDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for UpgradeDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpgradeDomainAsync(const Model::UpgradeDomainRequest& request, const UpgradeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

@@ -7,8 +7,10 @@
 #include <aws/mediastore-data/MediaStoreData_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mediastore-data/MediaStoreDataServiceClientModel.h>
+#include <aws/mediastore-data/MediaStoreDataLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -75,6 +77,47 @@ namespace MediaStoreData
         virtual ~MediaStoreDataClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Deletes an object at the specified path.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-data-2017-09-01/DeleteObject">AWS
@@ -82,15 +125,6 @@ namespace MediaStoreData
          */
         virtual Model::DeleteObjectOutcome DeleteObject(const Model::DeleteObjectRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteObject that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteObjectOutcomeCallable DeleteObjectCallable(const Model::DeleteObjectRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteObject that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteObjectAsync(const Model::DeleteObjectRequest& request, const DeleteObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the headers for an object at the specified path.</p><p><h3>See
@@ -100,15 +134,6 @@ namespace MediaStoreData
          */
         virtual Model::DescribeObjectOutcome DescribeObject(const Model::DescribeObjectRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeObject that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeObjectOutcomeCallable DescribeObjectCallable(const Model::DescribeObjectRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeObject that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeObjectAsync(const Model::DescribeObjectRequest& request, const DescribeObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Downloads the object at the specified path. If the object’s upload
@@ -120,15 +145,6 @@ namespace MediaStoreData
          */
         virtual Model::GetObjectOutcome GetObject(const Model::GetObjectRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetObject that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetObjectOutcomeCallable GetObjectCallable(const Model::GetObjectRequest& request) const;
-
-        /**
-         * An Async wrapper for GetObject that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetObjectAsync(const Model::GetObjectRequest& request, const GetObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides a list of metadata entries about folders and objects in the
@@ -138,15 +154,6 @@ namespace MediaStoreData
          */
         virtual Model::ListItemsOutcome ListItems(const Model::ListItemsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListItems that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListItemsOutcomeCallable ListItemsCallable(const Model::ListItemsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListItems that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListItemsAsync(const Model::ListItemsRequest& request, const ListItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Uploads an object to the specified path. Object sizes are limited to 25 MB
@@ -157,15 +164,6 @@ namespace MediaStoreData
          */
         virtual Model::PutObjectOutcome PutObject(const Model::PutObjectRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutObject that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutObjectOutcomeCallable PutObjectCallable(const Model::PutObjectRequest& request) const;
-
-        /**
-         * An Async wrapper for PutObject that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutObjectAsync(const Model::PutObjectRequest& request, const PutObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

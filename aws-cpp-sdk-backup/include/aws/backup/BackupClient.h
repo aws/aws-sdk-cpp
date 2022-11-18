@@ -7,8 +7,10 @@
 #include <aws/backup/Backup_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/backup/BackupServiceClientModel.h>
+#include <aws/backup/BackupLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -76,6 +78,47 @@ namespace Backup
         virtual ~BackupClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Creates a backup plan using a backup plan name and backup rules. A backup
          * plan is a document that contains information that Backup uses to schedule tasks
@@ -87,15 +130,6 @@ namespace Backup
          */
         virtual Model::CreateBackupPlanOutcome CreateBackupPlan(const Model::CreateBackupPlanRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateBackupPlan that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateBackupPlanOutcomeCallable CreateBackupPlanCallable(const Model::CreateBackupPlanRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateBackupPlan that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateBackupPlanAsync(const Model::CreateBackupPlanRequest& request, const CreateBackupPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a JSON document that specifies a set of resources to assign to a
@@ -107,15 +141,6 @@ namespace Backup
          */
         virtual Model::CreateBackupSelectionOutcome CreateBackupSelection(const Model::CreateBackupSelectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateBackupSelection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateBackupSelectionOutcomeCallable CreateBackupSelectionCallable(const Model::CreateBackupSelectionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateBackupSelection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateBackupSelectionAsync(const Model::CreateBackupSelectionRequest& request, const CreateBackupSelectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a logical container where backups are stored. A
@@ -128,15 +153,6 @@ namespace Backup
          */
         virtual Model::CreateBackupVaultOutcome CreateBackupVault(const Model::CreateBackupVaultRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateBackupVault that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateBackupVaultOutcomeCallable CreateBackupVaultCallable(const Model::CreateBackupVaultRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateBackupVault that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateBackupVaultAsync(const Model::CreateBackupVaultRequest& request, const CreateBackupVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a framework with one or more controls. A framework is a collection of
@@ -149,15 +165,6 @@ namespace Backup
          */
         virtual Model::CreateFrameworkOutcome CreateFramework(const Model::CreateFrameworkRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateFramework that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateFrameworkOutcomeCallable CreateFrameworkCallable(const Model::CreateFrameworkRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateFramework that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateFrameworkAsync(const Model::CreateFrameworkRequest& request, const CreateFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a report plan. A report plan is a document that contains information
@@ -169,15 +176,6 @@ namespace Backup
          */
         virtual Model::CreateReportPlanOutcome CreateReportPlan(const Model::CreateReportPlanRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateReportPlan that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateReportPlanOutcomeCallable CreateReportPlanCallable(const Model::CreateReportPlanRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateReportPlan that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateReportPlanAsync(const Model::CreateReportPlanRequest& request, const CreateReportPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a backup plan. A backup plan can only be deleted after all associated
@@ -189,15 +187,6 @@ namespace Backup
          */
         virtual Model::DeleteBackupPlanOutcome DeleteBackupPlan(const Model::DeleteBackupPlanRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteBackupPlan that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteBackupPlanOutcomeCallable DeleteBackupPlanCallable(const Model::DeleteBackupPlanRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteBackupPlan that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteBackupPlanAsync(const Model::DeleteBackupPlanRequest& request, const DeleteBackupPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the resource selection associated with a backup plan that is
@@ -207,15 +196,6 @@ namespace Backup
          */
         virtual Model::DeleteBackupSelectionOutcome DeleteBackupSelection(const Model::DeleteBackupSelectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteBackupSelection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteBackupSelectionOutcomeCallable DeleteBackupSelectionCallable(const Model::DeleteBackupSelectionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteBackupSelection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteBackupSelectionAsync(const Model::DeleteBackupSelectionRequest& request, const DeleteBackupSelectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the backup vault identified by its name. A vault can be deleted only
@@ -225,15 +205,6 @@ namespace Backup
          */
         virtual Model::DeleteBackupVaultOutcome DeleteBackupVault(const Model::DeleteBackupVaultRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteBackupVault that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteBackupVaultOutcomeCallable DeleteBackupVaultCallable(const Model::DeleteBackupVaultRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteBackupVault that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteBackupVaultAsync(const Model::DeleteBackupVaultRequest& request, const DeleteBackupVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the policy document that manages permissions on a backup
@@ -243,15 +214,6 @@ namespace Backup
          */
         virtual Model::DeleteBackupVaultAccessPolicyOutcome DeleteBackupVaultAccessPolicy(const Model::DeleteBackupVaultAccessPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteBackupVaultAccessPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteBackupVaultAccessPolicyOutcomeCallable DeleteBackupVaultAccessPolicyCallable(const Model::DeleteBackupVaultAccessPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteBackupVaultAccessPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteBackupVaultAccessPolicyAsync(const Model::DeleteBackupVaultAccessPolicyRequest& request, const DeleteBackupVaultAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes Backup Vault Lock from a backup vault specified by a backup vault
@@ -266,15 +228,6 @@ namespace Backup
          */
         virtual Model::DeleteBackupVaultLockConfigurationOutcome DeleteBackupVaultLockConfiguration(const Model::DeleteBackupVaultLockConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteBackupVaultLockConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteBackupVaultLockConfigurationOutcomeCallable DeleteBackupVaultLockConfigurationCallable(const Model::DeleteBackupVaultLockConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteBackupVaultLockConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteBackupVaultLockConfigurationAsync(const Model::DeleteBackupVaultLockConfigurationRequest& request, const DeleteBackupVaultLockConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes event notifications for the specified backup vault.</p><p><h3>See
@@ -284,15 +237,6 @@ namespace Backup
          */
         virtual Model::DeleteBackupVaultNotificationsOutcome DeleteBackupVaultNotifications(const Model::DeleteBackupVaultNotificationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteBackupVaultNotifications that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteBackupVaultNotificationsOutcomeCallable DeleteBackupVaultNotificationsCallable(const Model::DeleteBackupVaultNotificationsRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteBackupVaultNotifications that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteBackupVaultNotificationsAsync(const Model::DeleteBackupVaultNotificationsRequest& request, const DeleteBackupVaultNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the framework specified by a framework name.</p><p><h3>See Also:</h3>
@@ -302,15 +246,6 @@ namespace Backup
          */
         virtual Model::DeleteFrameworkOutcome DeleteFramework(const Model::DeleteFrameworkRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteFramework that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteFrameworkOutcomeCallable DeleteFrameworkCallable(const Model::DeleteFrameworkRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteFramework that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteFrameworkAsync(const Model::DeleteFrameworkRequest& request, const DeleteFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the recovery point specified by a recovery point ID.</p> <p>If the
@@ -322,15 +257,6 @@ namespace Backup
          */
         virtual Model::DeleteRecoveryPointOutcome DeleteRecoveryPoint(const Model::DeleteRecoveryPointRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteRecoveryPoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteRecoveryPointOutcomeCallable DeleteRecoveryPointCallable(const Model::DeleteRecoveryPointRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteRecoveryPoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteRecoveryPointAsync(const Model::DeleteRecoveryPointRequest& request, const DeleteRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the report plan specified by a report plan name.</p><p><h3>See
@@ -340,15 +266,6 @@ namespace Backup
          */
         virtual Model::DeleteReportPlanOutcome DeleteReportPlan(const Model::DeleteReportPlanRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteReportPlan that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteReportPlanOutcomeCallable DeleteReportPlanCallable(const Model::DeleteReportPlanRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteReportPlan that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteReportPlanAsync(const Model::DeleteReportPlanRequest& request, const DeleteReportPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns backup job details for the specified
@@ -358,15 +275,6 @@ namespace Backup
          */
         virtual Model::DescribeBackupJobOutcome DescribeBackupJob(const Model::DescribeBackupJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeBackupJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeBackupJobOutcomeCallable DescribeBackupJobCallable(const Model::DescribeBackupJobRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeBackupJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeBackupJobAsync(const Model::DescribeBackupJobRequest& request, const DescribeBackupJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns metadata about a backup vault specified by its name.</p><p><h3>See
@@ -376,15 +284,6 @@ namespace Backup
          */
         virtual Model::DescribeBackupVaultOutcome DescribeBackupVault(const Model::DescribeBackupVaultRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeBackupVault that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeBackupVaultOutcomeCallable DescribeBackupVaultCallable(const Model::DescribeBackupVaultRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeBackupVault that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeBackupVaultAsync(const Model::DescribeBackupVaultRequest& request, const DescribeBackupVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns metadata associated with creating a copy of a resource.</p><p><h3>See
@@ -394,15 +293,6 @@ namespace Backup
          */
         virtual Model::DescribeCopyJobOutcome DescribeCopyJob(const Model::DescribeCopyJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeCopyJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeCopyJobOutcomeCallable DescribeCopyJobCallable(const Model::DescribeCopyJobRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeCopyJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeCopyJobAsync(const Model::DescribeCopyJobRequest& request, const DescribeCopyJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the framework details for the specified
@@ -412,15 +302,6 @@ namespace Backup
          */
         virtual Model::DescribeFrameworkOutcome DescribeFramework(const Model::DescribeFrameworkRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeFramework that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeFrameworkOutcomeCallable DescribeFrameworkCallable(const Model::DescribeFrameworkRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeFramework that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeFrameworkAsync(const Model::DescribeFrameworkRequest& request, const DescribeFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes whether the Amazon Web Services account is opted in to
@@ -432,15 +313,6 @@ namespace Backup
          */
         virtual Model::DescribeGlobalSettingsOutcome DescribeGlobalSettings(const Model::DescribeGlobalSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeGlobalSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeGlobalSettingsOutcomeCallable DescribeGlobalSettingsCallable(const Model::DescribeGlobalSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeGlobalSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeGlobalSettingsAsync(const Model::DescribeGlobalSettingsRequest& request, const DescribeGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a saved resource, including the last time it was
@@ -451,15 +323,6 @@ namespace Backup
          */
         virtual Model::DescribeProtectedResourceOutcome DescribeProtectedResource(const Model::DescribeProtectedResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeProtectedResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeProtectedResourceOutcomeCallable DescribeProtectedResourceCallable(const Model::DescribeProtectedResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeProtectedResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeProtectedResourceAsync(const Model::DescribeProtectedResourceRequest& request, const DescribeProtectedResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns metadata associated with a recovery point, including ID, status,
@@ -469,15 +332,6 @@ namespace Backup
          */
         virtual Model::DescribeRecoveryPointOutcome DescribeRecoveryPoint(const Model::DescribeRecoveryPointRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeRecoveryPoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeRecoveryPointOutcomeCallable DescribeRecoveryPointCallable(const Model::DescribeRecoveryPointRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeRecoveryPoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeRecoveryPointAsync(const Model::DescribeRecoveryPointRequest& request, const DescribeRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the current service opt-in settings for the Region. If service opt-in
@@ -490,15 +344,6 @@ namespace Backup
          */
         virtual Model::DescribeRegionSettingsOutcome DescribeRegionSettings(const Model::DescribeRegionSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeRegionSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeRegionSettingsOutcomeCallable DescribeRegionSettingsCallable(const Model::DescribeRegionSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeRegionSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeRegionSettingsAsync(const Model::DescribeRegionSettingsRequest& request, const DescribeRegionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the details associated with creating a report as specified by its
@@ -508,15 +353,6 @@ namespace Backup
          */
         virtual Model::DescribeReportJobOutcome DescribeReportJob(const Model::DescribeReportJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeReportJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeReportJobOutcomeCallable DescribeReportJobCallable(const Model::DescribeReportJobRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeReportJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeReportJobAsync(const Model::DescribeReportJobRequest& request, const DescribeReportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of all report plans for an Amazon Web Services account and
@@ -526,15 +362,6 @@ namespace Backup
          */
         virtual Model::DescribeReportPlanOutcome DescribeReportPlan(const Model::DescribeReportPlanRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeReportPlan that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeReportPlanOutcomeCallable DescribeReportPlanCallable(const Model::DescribeReportPlanRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeReportPlan that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeReportPlanAsync(const Model::DescribeReportPlanRequest& request, const DescribeReportPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns metadata associated with a restore job that is specified by a job
@@ -544,15 +371,6 @@ namespace Backup
          */
         virtual Model::DescribeRestoreJobOutcome DescribeRestoreJob(const Model::DescribeRestoreJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeRestoreJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeRestoreJobOutcomeCallable DescribeRestoreJobCallable(const Model::DescribeRestoreJobRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeRestoreJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeRestoreJobAsync(const Model::DescribeRestoreJobRequest& request, const DescribeRestoreJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified continuous backup recovery point from Backup and
@@ -565,15 +383,6 @@ namespace Backup
          */
         virtual Model::DisassociateRecoveryPointOutcome DisassociateRecoveryPoint(const Model::DisassociateRecoveryPointRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateRecoveryPoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateRecoveryPointOutcomeCallable DisassociateRecoveryPointCallable(const Model::DisassociateRecoveryPointRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateRecoveryPoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateRecoveryPointAsync(const Model::DisassociateRecoveryPointRequest& request, const DisassociateRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the backup plan that is specified by the plan ID as a backup
@@ -583,15 +392,6 @@ namespace Backup
          */
         virtual Model::ExportBackupPlanTemplateOutcome ExportBackupPlanTemplate(const Model::ExportBackupPlanTemplateRequest& request) const;
 
-        /**
-         * A Callable wrapper for ExportBackupPlanTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ExportBackupPlanTemplateOutcomeCallable ExportBackupPlanTemplateCallable(const Model::ExportBackupPlanTemplateRequest& request) const;
-
-        /**
-         * An Async wrapper for ExportBackupPlanTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ExportBackupPlanTemplateAsync(const Model::ExportBackupPlanTemplateRequest& request, const ExportBackupPlanTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns <code>BackupPlan</code> details for the specified
@@ -602,15 +402,6 @@ namespace Backup
          */
         virtual Model::GetBackupPlanOutcome GetBackupPlan(const Model::GetBackupPlanRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBackupPlan that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBackupPlanOutcomeCallable GetBackupPlanCallable(const Model::GetBackupPlanRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBackupPlan that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBackupPlanAsync(const Model::GetBackupPlanRequest& request, const GetBackupPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a valid JSON document specifying a backup plan or an
@@ -620,15 +411,6 @@ namespace Backup
          */
         virtual Model::GetBackupPlanFromJSONOutcome GetBackupPlanFromJSON(const Model::GetBackupPlanFromJSONRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBackupPlanFromJSON that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBackupPlanFromJSONOutcomeCallable GetBackupPlanFromJSONCallable(const Model::GetBackupPlanFromJSONRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBackupPlanFromJSON that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBackupPlanFromJSONAsync(const Model::GetBackupPlanFromJSONRequest& request, const GetBackupPlanFromJSONResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the template specified by its <code>templateId</code> as a backup
@@ -638,15 +420,6 @@ namespace Backup
          */
         virtual Model::GetBackupPlanFromTemplateOutcome GetBackupPlanFromTemplate(const Model::GetBackupPlanFromTemplateRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBackupPlanFromTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBackupPlanFromTemplateOutcomeCallable GetBackupPlanFromTemplateCallable(const Model::GetBackupPlanFromTemplateRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBackupPlanFromTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBackupPlanFromTemplateAsync(const Model::GetBackupPlanFromTemplateRequest& request, const GetBackupPlanFromTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns selection metadata and a document in JSON format that specifies a
@@ -657,15 +430,6 @@ namespace Backup
          */
         virtual Model::GetBackupSelectionOutcome GetBackupSelection(const Model::GetBackupSelectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBackupSelection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBackupSelectionOutcomeCallable GetBackupSelectionCallable(const Model::GetBackupSelectionRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBackupSelection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBackupSelectionAsync(const Model::GetBackupSelectionRequest& request, const GetBackupSelectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the access policy document that is associated with the named backup
@@ -675,15 +439,6 @@ namespace Backup
          */
         virtual Model::GetBackupVaultAccessPolicyOutcome GetBackupVaultAccessPolicy(const Model::GetBackupVaultAccessPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBackupVaultAccessPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBackupVaultAccessPolicyOutcomeCallable GetBackupVaultAccessPolicyCallable(const Model::GetBackupVaultAccessPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBackupVaultAccessPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBackupVaultAccessPolicyAsync(const Model::GetBackupVaultAccessPolicyRequest& request, const GetBackupVaultAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns event notifications for the specified backup vault.</p><p><h3>See
@@ -693,15 +448,6 @@ namespace Backup
          */
         virtual Model::GetBackupVaultNotificationsOutcome GetBackupVaultNotifications(const Model::GetBackupVaultNotificationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBackupVaultNotifications that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBackupVaultNotificationsOutcomeCallable GetBackupVaultNotificationsCallable(const Model::GetBackupVaultNotificationsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBackupVaultNotifications that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBackupVaultNotificationsAsync(const Model::GetBackupVaultNotificationsRequest& request, const GetBackupVaultNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a set of metadata key-value pairs that were used to create the
@@ -711,15 +457,6 @@ namespace Backup
          */
         virtual Model::GetRecoveryPointRestoreMetadataOutcome GetRecoveryPointRestoreMetadata(const Model::GetRecoveryPointRestoreMetadataRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRecoveryPointRestoreMetadata that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRecoveryPointRestoreMetadataOutcomeCallable GetRecoveryPointRestoreMetadataCallable(const Model::GetRecoveryPointRestoreMetadataRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRecoveryPointRestoreMetadata that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRecoveryPointRestoreMetadataAsync(const Model::GetRecoveryPointRestoreMetadataRequest& request, const GetRecoveryPointRestoreMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the Amazon Web Services resource types supported by
@@ -748,15 +485,6 @@ namespace Backup
          */
         virtual Model::ListBackupJobsOutcome ListBackupJobs(const Model::ListBackupJobsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListBackupJobs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListBackupJobsOutcomeCallable ListBackupJobsCallable(const Model::ListBackupJobsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListBackupJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListBackupJobsAsync(const Model::ListBackupJobsRequest& request, const ListBackupJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns metadata of your saved backup plan templates, including the template
@@ -766,15 +494,6 @@ namespace Backup
          */
         virtual Model::ListBackupPlanTemplatesOutcome ListBackupPlanTemplates(const Model::ListBackupPlanTemplatesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListBackupPlanTemplates that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListBackupPlanTemplatesOutcomeCallable ListBackupPlanTemplatesCallable(const Model::ListBackupPlanTemplatesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListBackupPlanTemplates that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListBackupPlanTemplatesAsync(const Model::ListBackupPlanTemplatesRequest& request, const ListBackupPlanTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns version metadata of your backup plans, including Amazon Resource
@@ -785,15 +504,6 @@ namespace Backup
          */
         virtual Model::ListBackupPlanVersionsOutcome ListBackupPlanVersions(const Model::ListBackupPlanVersionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListBackupPlanVersions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListBackupPlanVersionsOutcomeCallable ListBackupPlanVersionsCallable(const Model::ListBackupPlanVersionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListBackupPlanVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListBackupPlanVersionsAsync(const Model::ListBackupPlanVersionsRequest& request, const ListBackupPlanVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of all active backup plans for an authenticated account. The
@@ -805,15 +515,6 @@ namespace Backup
          */
         virtual Model::ListBackupPlansOutcome ListBackupPlans(const Model::ListBackupPlansRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListBackupPlans that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListBackupPlansOutcomeCallable ListBackupPlansCallable(const Model::ListBackupPlansRequest& request) const;
-
-        /**
-         * An Async wrapper for ListBackupPlans that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListBackupPlansAsync(const Model::ListBackupPlansRequest& request, const ListBackupPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns an array containing metadata of the resources associated with the
@@ -823,15 +524,6 @@ namespace Backup
          */
         virtual Model::ListBackupSelectionsOutcome ListBackupSelections(const Model::ListBackupSelectionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListBackupSelections that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListBackupSelectionsOutcomeCallable ListBackupSelectionsCallable(const Model::ListBackupSelectionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListBackupSelections that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListBackupSelectionsAsync(const Model::ListBackupSelectionsRequest& request, const ListBackupSelectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of recovery point storage containers along with information
@@ -841,15 +533,6 @@ namespace Backup
          */
         virtual Model::ListBackupVaultsOutcome ListBackupVaults(const Model::ListBackupVaultsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListBackupVaults that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListBackupVaultsOutcomeCallable ListBackupVaultsCallable(const Model::ListBackupVaultsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListBackupVaults that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListBackupVaultsAsync(const Model::ListBackupVaultsRequest& request, const ListBackupVaultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns metadata about your copy jobs.</p><p><h3>See Also:</h3>   <a
@@ -858,15 +541,6 @@ namespace Backup
          */
         virtual Model::ListCopyJobsOutcome ListCopyJobs(const Model::ListCopyJobsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListCopyJobs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListCopyJobsOutcomeCallable ListCopyJobsCallable(const Model::ListCopyJobsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListCopyJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListCopyJobsAsync(const Model::ListCopyJobsRequest& request, const ListCopyJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of all frameworks for an Amazon Web Services account and
@@ -876,15 +550,6 @@ namespace Backup
          */
         virtual Model::ListFrameworksOutcome ListFrameworks(const Model::ListFrameworksRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListFrameworks that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListFrameworksOutcomeCallable ListFrameworksCallable(const Model::ListFrameworksRequest& request) const;
-
-        /**
-         * An Async wrapper for ListFrameworks that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListFrameworksAsync(const Model::ListFrameworksRequest& request, const ListFrameworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns an array of resources successfully backed up by Backup, including the
@@ -895,15 +560,6 @@ namespace Backup
          */
         virtual Model::ListProtectedResourcesOutcome ListProtectedResources(const Model::ListProtectedResourcesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListProtectedResources that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListProtectedResourcesOutcomeCallable ListProtectedResourcesCallable(const Model::ListProtectedResourcesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListProtectedResources that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListProtectedResourcesAsync(const Model::ListProtectedResourcesRequest& request, const ListProtectedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns detailed information about the recovery points stored in a backup
@@ -913,15 +569,6 @@ namespace Backup
          */
         virtual Model::ListRecoveryPointsByBackupVaultOutcome ListRecoveryPointsByBackupVault(const Model::ListRecoveryPointsByBackupVaultRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListRecoveryPointsByBackupVault that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListRecoveryPointsByBackupVaultOutcomeCallable ListRecoveryPointsByBackupVaultCallable(const Model::ListRecoveryPointsByBackupVaultRequest& request) const;
-
-        /**
-         * An Async wrapper for ListRecoveryPointsByBackupVault that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListRecoveryPointsByBackupVaultAsync(const Model::ListRecoveryPointsByBackupVaultRequest& request, const ListRecoveryPointsByBackupVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns detailed information about all the recovery points of the type
@@ -933,15 +580,6 @@ namespace Backup
          */
         virtual Model::ListRecoveryPointsByResourceOutcome ListRecoveryPointsByResource(const Model::ListRecoveryPointsByResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListRecoveryPointsByResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListRecoveryPointsByResourceOutcomeCallable ListRecoveryPointsByResourceCallable(const Model::ListRecoveryPointsByResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListRecoveryPointsByResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListRecoveryPointsByResourceAsync(const Model::ListRecoveryPointsByResourceRequest& request, const ListRecoveryPointsByResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns details about your report jobs.</p><p><h3>See Also:</h3>   <a
@@ -950,15 +588,6 @@ namespace Backup
          */
         virtual Model::ListReportJobsOutcome ListReportJobs(const Model::ListReportJobsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListReportJobs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListReportJobsOutcomeCallable ListReportJobsCallable(const Model::ListReportJobsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListReportJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListReportJobsAsync(const Model::ListReportJobsRequest& request, const ListReportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of your report plans. For detailed information about a single
@@ -968,15 +597,6 @@ namespace Backup
          */
         virtual Model::ListReportPlansOutcome ListReportPlans(const Model::ListReportPlansRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListReportPlans that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListReportPlansOutcomeCallable ListReportPlansCallable(const Model::ListReportPlansRequest& request) const;
-
-        /**
-         * An Async wrapper for ListReportPlans that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListReportPlansAsync(const Model::ListReportPlansRequest& request, const ListReportPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of jobs that Backup initiated to restore a saved resource,
@@ -986,15 +606,6 @@ namespace Backup
          */
         virtual Model::ListRestoreJobsOutcome ListRestoreJobs(const Model::ListRestoreJobsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListRestoreJobs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListRestoreJobsOutcomeCallable ListRestoreJobsCallable(const Model::ListRestoreJobsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListRestoreJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListRestoreJobsAsync(const Model::ListRestoreJobsRequest& request, const ListRestoreJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of key-value pairs assigned to a target recovery point, backup
@@ -1008,15 +619,6 @@ namespace Backup
          */
         virtual Model::ListTagsOutcome ListTags(const Model::ListTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsOutcomeCallable ListTagsCallable(const Model::ListTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsAsync(const Model::ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets a resource-based policy that is used to manage access permissions on the
@@ -1027,15 +629,6 @@ namespace Backup
          */
         virtual Model::PutBackupVaultAccessPolicyOutcome PutBackupVaultAccessPolicy(const Model::PutBackupVaultAccessPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutBackupVaultAccessPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutBackupVaultAccessPolicyOutcomeCallable PutBackupVaultAccessPolicyCallable(const Model::PutBackupVaultAccessPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for PutBackupVaultAccessPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutBackupVaultAccessPolicyAsync(const Model::PutBackupVaultAccessPolicyRequest& request, const PutBackupVaultAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Applies Backup Vault Lock to a backup vault, preventing attempts to delete
@@ -1051,15 +644,6 @@ namespace Backup
          */
         virtual Model::PutBackupVaultLockConfigurationOutcome PutBackupVaultLockConfiguration(const Model::PutBackupVaultLockConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutBackupVaultLockConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutBackupVaultLockConfigurationOutcomeCallable PutBackupVaultLockConfigurationCallable(const Model::PutBackupVaultLockConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for PutBackupVaultLockConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutBackupVaultLockConfigurationAsync(const Model::PutBackupVaultLockConfigurationRequest& request, const PutBackupVaultLockConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Turns on notifications on a backup vault for the specified topic and
@@ -1069,15 +653,6 @@ namespace Backup
          */
         virtual Model::PutBackupVaultNotificationsOutcome PutBackupVaultNotifications(const Model::PutBackupVaultNotificationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutBackupVaultNotifications that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutBackupVaultNotificationsOutcomeCallable PutBackupVaultNotificationsCallable(const Model::PutBackupVaultNotificationsRequest& request) const;
-
-        /**
-         * An Async wrapper for PutBackupVaultNotifications that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutBackupVaultNotificationsAsync(const Model::PutBackupVaultNotificationsRequest& request, const PutBackupVaultNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts an on-demand backup job for the specified resource.</p><p><h3>See
@@ -1087,15 +662,6 @@ namespace Backup
          */
         virtual Model::StartBackupJobOutcome StartBackupJob(const Model::StartBackupJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartBackupJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartBackupJobOutcomeCallable StartBackupJobCallable(const Model::StartBackupJobRequest& request) const;
-
-        /**
-         * An Async wrapper for StartBackupJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartBackupJobAsync(const Model::StartBackupJobRequest& request, const StartBackupJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts a job to create a one-time copy of the specified resource.</p> <p>Does
@@ -1105,15 +671,6 @@ namespace Backup
          */
         virtual Model::StartCopyJobOutcome StartCopyJob(const Model::StartCopyJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartCopyJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartCopyJobOutcomeCallable StartCopyJobCallable(const Model::StartCopyJobRequest& request) const;
-
-        /**
-         * An Async wrapper for StartCopyJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartCopyJobAsync(const Model::StartCopyJobRequest& request, const StartCopyJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts an on-demand report job for the specified report plan.</p><p><h3>See
@@ -1123,15 +680,6 @@ namespace Backup
          */
         virtual Model::StartReportJobOutcome StartReportJob(const Model::StartReportJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartReportJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartReportJobOutcomeCallable StartReportJobCallable(const Model::StartReportJobRequest& request) const;
-
-        /**
-         * An Async wrapper for StartReportJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartReportJobAsync(const Model::StartReportJobRequest& request, const StartReportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Recovers the saved resource identified by an Amazon Resource Name
@@ -1141,15 +689,6 @@ namespace Backup
          */
         virtual Model::StartRestoreJobOutcome StartRestoreJob(const Model::StartRestoreJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartRestoreJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartRestoreJobOutcomeCallable StartRestoreJobCallable(const Model::StartRestoreJobRequest& request) const;
-
-        /**
-         * An Async wrapper for StartRestoreJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartRestoreJobAsync(const Model::StartRestoreJobRequest& request, const StartRestoreJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Attempts to cancel a job to create a one-time backup of a
@@ -1159,15 +698,6 @@ namespace Backup
          */
         virtual Model::StopBackupJobOutcome StopBackupJob(const Model::StopBackupJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopBackupJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopBackupJobOutcomeCallable StopBackupJobCallable(const Model::StopBackupJobRequest& request) const;
-
-        /**
-         * An Async wrapper for StopBackupJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopBackupJobAsync(const Model::StopBackupJobRequest& request, const StopBackupJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Assigns a set of key-value pairs to a recovery point, backup plan, or backup
@@ -1177,15 +707,6 @@ namespace Backup
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes a set of key-value pairs from a recovery point, backup plan, or
@@ -1196,15 +717,6 @@ namespace Backup
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an existing backup plan identified by its <code>backupPlanId</code>
@@ -1215,15 +727,6 @@ namespace Backup
          */
         virtual Model::UpdateBackupPlanOutcome UpdateBackupPlan(const Model::UpdateBackupPlanRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateBackupPlan that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateBackupPlanOutcomeCallable UpdateBackupPlanCallable(const Model::UpdateBackupPlanRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateBackupPlan that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateBackupPlanAsync(const Model::UpdateBackupPlanRequest& request, const UpdateBackupPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an existing framework identified by its <code>FrameworkName</code>
@@ -1233,15 +736,6 @@ namespace Backup
          */
         virtual Model::UpdateFrameworkOutcome UpdateFramework(const Model::UpdateFrameworkRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateFramework that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateFrameworkOutcomeCallable UpdateFrameworkCallable(const Model::UpdateFrameworkRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateFramework that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateFrameworkAsync(const Model::UpdateFrameworkRequest& request, const UpdateFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates whether the Amazon Web Services account is opted in to cross-account
@@ -1253,15 +747,6 @@ namespace Backup
          */
         virtual Model::UpdateGlobalSettingsOutcome UpdateGlobalSettings(const Model::UpdateGlobalSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateGlobalSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateGlobalSettingsOutcomeCallable UpdateGlobalSettingsCallable(const Model::UpdateGlobalSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateGlobalSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateGlobalSettingsAsync(const Model::UpdateGlobalSettingsRequest& request, const UpdateGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets the transition lifecycle of a recovery point.</p> <p>The lifecycle
@@ -1283,15 +768,6 @@ namespace Backup
          */
         virtual Model::UpdateRecoveryPointLifecycleOutcome UpdateRecoveryPointLifecycle(const Model::UpdateRecoveryPointLifecycleRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateRecoveryPointLifecycle that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateRecoveryPointLifecycleOutcomeCallable UpdateRecoveryPointLifecycleCallable(const Model::UpdateRecoveryPointLifecycleRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateRecoveryPointLifecycle that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateRecoveryPointLifecycleAsync(const Model::UpdateRecoveryPointLifecycleRequest& request, const UpdateRecoveryPointLifecycleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the current service opt-in settings for the Region. If service-opt-in
@@ -1305,15 +781,6 @@ namespace Backup
          */
         virtual Model::UpdateRegionSettingsOutcome UpdateRegionSettings(const Model::UpdateRegionSettingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateRegionSettings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateRegionSettingsOutcomeCallable UpdateRegionSettingsCallable(const Model::UpdateRegionSettingsRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateRegionSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateRegionSettingsAsync(const Model::UpdateRegionSettingsRequest& request, const UpdateRegionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an existing report plan identified by its <code>ReportPlanName</code>
@@ -1323,15 +790,6 @@ namespace Backup
          */
         virtual Model::UpdateReportPlanOutcome UpdateReportPlan(const Model::UpdateReportPlanRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateReportPlan that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateReportPlanOutcomeCallable UpdateReportPlanCallable(const Model::UpdateReportPlanRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateReportPlan that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateReportPlanAsync(const Model::UpdateReportPlanRequest& request, const UpdateReportPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

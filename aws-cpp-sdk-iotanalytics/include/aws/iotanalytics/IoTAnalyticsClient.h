@@ -7,8 +7,10 @@
 #include <aws/iotanalytics/IoTAnalytics_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iotanalytics/IoTAnalyticsServiceClientModel.h>
+#include <aws/iotanalytics/IoTAnalyticsLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -93,6 +95,47 @@ namespace IoTAnalytics
         virtual ~IoTAnalyticsClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Sends messages to a channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/BatchPutMessage">AWS
@@ -100,15 +143,6 @@ namespace IoTAnalytics
          */
         virtual Model::BatchPutMessageOutcome BatchPutMessage(const Model::BatchPutMessageRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchPutMessage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchPutMessageOutcomeCallable BatchPutMessageCallable(const Model::BatchPutMessageRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchPutMessage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchPutMessageAsync(const Model::BatchPutMessageRequest& request, const BatchPutMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Cancels the reprocessing of data through the pipeline.</p><p><h3>See
@@ -118,15 +152,6 @@ namespace IoTAnalytics
          */
         virtual Model::CancelPipelineReprocessingOutcome CancelPipelineReprocessing(const Model::CancelPipelineReprocessingRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelPipelineReprocessing that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelPipelineReprocessingOutcomeCallable CancelPipelineReprocessingCallable(const Model::CancelPipelineReprocessingRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelPipelineReprocessing that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelPipelineReprocessingAsync(const Model::CancelPipelineReprocessingRequest& request, const CancelPipelineReprocessingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Used to create a channel. A channel collects data from an MQTT topic and
@@ -137,15 +162,6 @@ namespace IoTAnalytics
          */
         virtual Model::CreateChannelOutcome CreateChannel(const Model::CreateChannelRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateChannel that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateChannelOutcomeCallable CreateChannelCallable(const Model::CreateChannelRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateChannel that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateChannelAsync(const Model::CreateChannelRequest& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Used to create a dataset. A dataset stores data retrieved from a data store
@@ -159,15 +175,6 @@ namespace IoTAnalytics
          */
         virtual Model::CreateDatasetOutcome CreateDataset(const Model::CreateDatasetRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDataset that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDatasetOutcomeCallable CreateDatasetCallable(const Model::CreateDatasetRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDataset that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDatasetAsync(const Model::CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates the content of a dataset by applying a <code>queryAction</code> (a
@@ -178,15 +185,6 @@ namespace IoTAnalytics
          */
         virtual Model::CreateDatasetContentOutcome CreateDatasetContent(const Model::CreateDatasetContentRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDatasetContent that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDatasetContentOutcomeCallable CreateDatasetContentCallable(const Model::CreateDatasetContentRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDatasetContent that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDatasetContentAsync(const Model::CreateDatasetContentRequest& request, const CreateDatasetContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a data store, which is a repository for messages.</p><p><h3>See
@@ -196,15 +194,6 @@ namespace IoTAnalytics
          */
         virtual Model::CreateDatastoreOutcome CreateDatastore(const Model::CreateDatastoreRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDatastore that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDatastoreOutcomeCallable CreateDatastoreCallable(const Model::CreateDatastoreRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDatastore that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDatastoreAsync(const Model::CreateDatastoreRequest& request, const CreateDatastoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a pipeline. A pipeline consumes messages from a channel and allows
@@ -217,15 +206,6 @@ namespace IoTAnalytics
          */
         virtual Model::CreatePipelineOutcome CreatePipeline(const Model::CreatePipelineRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreatePipeline that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreatePipelineOutcomeCallable CreatePipelineCallable(const Model::CreatePipelineRequest& request) const;
-
-        /**
-         * An Async wrapper for CreatePipeline that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreatePipelineAsync(const Model::CreatePipelineRequest& request, const CreatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified channel.</p><p><h3>See Also:</h3>   <a
@@ -234,15 +214,6 @@ namespace IoTAnalytics
          */
         virtual Model::DeleteChannelOutcome DeleteChannel(const Model::DeleteChannelRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteChannel that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteChannelOutcomeCallable DeleteChannelCallable(const Model::DeleteChannelRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteChannel that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteChannelAsync(const Model::DeleteChannelRequest& request, const DeleteChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified dataset.</p> <p>You do not have to delete the content
@@ -252,15 +223,6 @@ namespace IoTAnalytics
          */
         virtual Model::DeleteDatasetOutcome DeleteDataset(const Model::DeleteDatasetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDataset that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDatasetOutcomeCallable DeleteDatasetCallable(const Model::DeleteDatasetRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDataset that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDatasetAsync(const Model::DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the content of the specified dataset.</p><p><h3>See Also:</h3>   <a
@@ -269,15 +231,6 @@ namespace IoTAnalytics
          */
         virtual Model::DeleteDatasetContentOutcome DeleteDatasetContent(const Model::DeleteDatasetContentRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDatasetContent that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDatasetContentOutcomeCallable DeleteDatasetContentCallable(const Model::DeleteDatasetContentRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDatasetContent that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDatasetContentAsync(const Model::DeleteDatasetContentRequest& request, const DeleteDatasetContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified data store.</p><p><h3>See Also:</h3>   <a
@@ -286,15 +239,6 @@ namespace IoTAnalytics
          */
         virtual Model::DeleteDatastoreOutcome DeleteDatastore(const Model::DeleteDatastoreRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDatastore that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDatastoreOutcomeCallable DeleteDatastoreCallable(const Model::DeleteDatastoreRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDatastore that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDatastoreAsync(const Model::DeleteDatastoreRequest& request, const DeleteDatastoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified pipeline.</p><p><h3>See Also:</h3>   <a
@@ -303,15 +247,6 @@ namespace IoTAnalytics
          */
         virtual Model::DeletePipelineOutcome DeletePipeline(const Model::DeletePipelineRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeletePipeline that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeletePipelineOutcomeCallable DeletePipelineCallable(const Model::DeletePipelineRequest& request) const;
-
-        /**
-         * An Async wrapper for DeletePipeline that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeletePipelineAsync(const Model::DeletePipelineRequest& request, const DeletePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about a channel.</p><p><h3>See Also:</h3>   <a
@@ -320,15 +255,6 @@ namespace IoTAnalytics
          */
         virtual Model::DescribeChannelOutcome DescribeChannel(const Model::DescribeChannelRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeChannel that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeChannelOutcomeCallable DescribeChannelCallable(const Model::DescribeChannelRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeChannel that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeChannelAsync(const Model::DescribeChannelRequest& request, const DescribeChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about a dataset.</p><p><h3>See Also:</h3>   <a
@@ -337,15 +263,6 @@ namespace IoTAnalytics
          */
         virtual Model::DescribeDatasetOutcome DescribeDataset(const Model::DescribeDatasetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDataset that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDatasetOutcomeCallable DescribeDatasetCallable(const Model::DescribeDatasetRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDataset that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDatasetAsync(const Model::DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about a data store.</p><p><h3>See Also:</h3>   <a
@@ -354,15 +271,6 @@ namespace IoTAnalytics
          */
         virtual Model::DescribeDatastoreOutcome DescribeDatastore(const Model::DescribeDatastoreRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDatastore that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDatastoreOutcomeCallable DescribeDatastoreCallable(const Model::DescribeDatastoreRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDatastore that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDatastoreAsync(const Model::DescribeDatastoreRequest& request, const DescribeDatastoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the current settings of the IoT Analytics logging
@@ -372,15 +280,6 @@ namespace IoTAnalytics
          */
         virtual Model::DescribeLoggingOptionsOutcome DescribeLoggingOptions(const Model::DescribeLoggingOptionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeLoggingOptions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeLoggingOptionsOutcomeCallable DescribeLoggingOptionsCallable(const Model::DescribeLoggingOptionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeLoggingOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeLoggingOptionsAsync(const Model::DescribeLoggingOptionsRequest& request, const DescribeLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about a pipeline.</p><p><h3>See Also:</h3>   <a
@@ -389,15 +288,6 @@ namespace IoTAnalytics
          */
         virtual Model::DescribePipelineOutcome DescribePipeline(const Model::DescribePipelineRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribePipeline that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribePipelineOutcomeCallable DescribePipelineCallable(const Model::DescribePipelineRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribePipeline that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribePipelineAsync(const Model::DescribePipelineRequest& request, const DescribePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the contents of a dataset as presigned URIs.</p><p><h3>See
@@ -407,15 +297,6 @@ namespace IoTAnalytics
          */
         virtual Model::GetDatasetContentOutcome GetDatasetContent(const Model::GetDatasetContentRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDatasetContent that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDatasetContentOutcomeCallable GetDatasetContentCallable(const Model::GetDatasetContentRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDatasetContent that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDatasetContentAsync(const Model::GetDatasetContentRequest& request, const GetDatasetContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list of channels.</p><p><h3>See Also:</h3>   <a
@@ -424,15 +305,6 @@ namespace IoTAnalytics
          */
         virtual Model::ListChannelsOutcome ListChannels(const Model::ListChannelsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListChannels that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListChannelsOutcomeCallable ListChannelsCallable(const Model::ListChannelsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListChannels that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListChannelsAsync(const Model::ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists information about dataset contents that have been
@@ -442,15 +314,6 @@ namespace IoTAnalytics
          */
         virtual Model::ListDatasetContentsOutcome ListDatasetContents(const Model::ListDatasetContentsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDatasetContents that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDatasetContentsOutcomeCallable ListDatasetContentsCallable(const Model::ListDatasetContentsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDatasetContents that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDatasetContentsAsync(const Model::ListDatasetContentsRequest& request, const ListDatasetContentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about datasets.</p><p><h3>See Also:</h3>   <a
@@ -459,15 +322,6 @@ namespace IoTAnalytics
          */
         virtual Model::ListDatasetsOutcome ListDatasets(const Model::ListDatasetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDatasets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDatasetsOutcomeCallable ListDatasetsCallable(const Model::ListDatasetsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDatasets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDatasetsAsync(const Model::ListDatasetsRequest& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list of data stores.</p><p><h3>See Also:</h3>   <a
@@ -476,15 +330,6 @@ namespace IoTAnalytics
          */
         virtual Model::ListDatastoresOutcome ListDatastores(const Model::ListDatastoresRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDatastores that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDatastoresOutcomeCallable ListDatastoresCallable(const Model::ListDatastoresRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDatastores that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDatastoresAsync(const Model::ListDatastoresRequest& request, const ListDatastoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list of pipelines.</p><p><h3>See Also:</h3>   <a
@@ -493,15 +338,6 @@ namespace IoTAnalytics
          */
         virtual Model::ListPipelinesOutcome ListPipelines(const Model::ListPipelinesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPipelines that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPipelinesOutcomeCallable ListPipelinesCallable(const Model::ListPipelinesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPipelines that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPipelinesAsync(const Model::ListPipelinesRequest& request, const ListPipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the tags (metadata) that you have assigned to the
@@ -511,15 +347,6 @@ namespace IoTAnalytics
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets or updates the IoT Analytics logging options.</p> <p>If you update the
@@ -533,15 +360,6 @@ namespace IoTAnalytics
          */
         virtual Model::PutLoggingOptionsOutcome PutLoggingOptions(const Model::PutLoggingOptionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutLoggingOptions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutLoggingOptionsOutcomeCallable PutLoggingOptionsCallable(const Model::PutLoggingOptionsRequest& request) const;
-
-        /**
-         * An Async wrapper for PutLoggingOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutLoggingOptionsAsync(const Model::PutLoggingOptionsRequest& request, const PutLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Simulates the results of running a pipeline activity on a message
@@ -551,15 +369,6 @@ namespace IoTAnalytics
          */
         virtual Model::RunPipelineActivityOutcome RunPipelineActivity(const Model::RunPipelineActivityRequest& request) const;
 
-        /**
-         * A Callable wrapper for RunPipelineActivity that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RunPipelineActivityOutcomeCallable RunPipelineActivityCallable(const Model::RunPipelineActivityRequest& request) const;
-
-        /**
-         * An Async wrapper for RunPipelineActivity that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RunPipelineActivityAsync(const Model::RunPipelineActivityRequest& request, const RunPipelineActivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a sample of messages from the specified channel ingested during the
@@ -570,15 +379,6 @@ namespace IoTAnalytics
          */
         virtual Model::SampleChannelDataOutcome SampleChannelData(const Model::SampleChannelDataRequest& request) const;
 
-        /**
-         * A Callable wrapper for SampleChannelData that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SampleChannelDataOutcomeCallable SampleChannelDataCallable(const Model::SampleChannelDataRequest& request) const;
-
-        /**
-         * An Async wrapper for SampleChannelData that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SampleChannelDataAsync(const Model::SampleChannelDataRequest& request, const SampleChannelDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts the reprocessing of raw message data through the
@@ -588,15 +388,6 @@ namespace IoTAnalytics
          */
         virtual Model::StartPipelineReprocessingOutcome StartPipelineReprocessing(const Model::StartPipelineReprocessingRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartPipelineReprocessing that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartPipelineReprocessingOutcomeCallable StartPipelineReprocessingCallable(const Model::StartPipelineReprocessingRequest& request) const;
-
-        /**
-         * An Async wrapper for StartPipelineReprocessing that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartPipelineReprocessingAsync(const Model::StartPipelineReprocessingRequest& request, const StartPipelineReprocessingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds to or modifies the tags of the given resource. Tags are metadata that
@@ -606,15 +397,6 @@ namespace IoTAnalytics
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the given tags (metadata) from the resource.</p><p><h3>See Also:</h3>
@@ -624,15 +406,6 @@ namespace IoTAnalytics
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Used to update the settings of a channel.</p><p><h3>See Also:</h3>   <a
@@ -641,15 +414,6 @@ namespace IoTAnalytics
          */
         virtual Model::UpdateChannelOutcome UpdateChannel(const Model::UpdateChannelRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateChannel that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateChannelOutcomeCallable UpdateChannelCallable(const Model::UpdateChannelRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateChannel that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateChannelAsync(const Model::UpdateChannelRequest& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the settings of a dataset.</p><p><h3>See Also:</h3>   <a
@@ -658,15 +422,6 @@ namespace IoTAnalytics
          */
         virtual Model::UpdateDatasetOutcome UpdateDataset(const Model::UpdateDatasetRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateDataset that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateDatasetOutcomeCallable UpdateDatasetCallable(const Model::UpdateDatasetRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateDataset that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateDatasetAsync(const Model::UpdateDatasetRequest& request, const UpdateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Used to update the settings of a data store.</p><p><h3>See Also:</h3>   <a
@@ -675,15 +430,6 @@ namespace IoTAnalytics
          */
         virtual Model::UpdateDatastoreOutcome UpdateDatastore(const Model::UpdateDatastoreRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateDatastore that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateDatastoreOutcomeCallable UpdateDatastoreCallable(const Model::UpdateDatastoreRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateDatastore that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateDatastoreAsync(const Model::UpdateDatastoreRequest& request, const UpdateDatastoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the settings of a pipeline. You must specify both a
@@ -695,15 +441,6 @@ namespace IoTAnalytics
          */
         virtual Model::UpdatePipelineOutcome UpdatePipeline(const Model::UpdatePipelineRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdatePipeline that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdatePipelineOutcomeCallable UpdatePipelineCallable(const Model::UpdatePipelineRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdatePipeline that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdatePipelineAsync(const Model::UpdatePipelineRequest& request, const UpdatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

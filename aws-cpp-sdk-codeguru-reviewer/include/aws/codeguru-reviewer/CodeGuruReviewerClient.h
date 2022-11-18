@@ -7,8 +7,10 @@
 #include <aws/codeguru-reviewer/CodeGuruReviewer_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/codeguru-reviewer/CodeGuruReviewerServiceClientModel.h>
+#include <aws/codeguru-reviewer/CodeGuruReviewerLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -88,6 +90,47 @@ namespace CodeGuruReviewer
         virtual ~CodeGuruReviewerClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Use to associate an Amazon Web Services CodeCommit repository or a repository
          * managed by Amazon Web Services CodeStar Connections with Amazon CodeGuru
@@ -115,15 +158,6 @@ namespace CodeGuruReviewer
          */
         virtual Model::AssociateRepositoryOutcome AssociateRepository(const Model::AssociateRepositoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateRepository that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateRepositoryOutcomeCallable AssociateRepositoryCallable(const Model::AssociateRepositoryRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateRepository that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateRepositoryAsync(const Model::AssociateRepositoryRequest& request, const AssociateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Use to create a code review with a <a
@@ -137,15 +171,6 @@ namespace CodeGuruReviewer
          */
         virtual Model::CreateCodeReviewOutcome CreateCodeReview(const Model::CreateCodeReviewRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateCodeReview that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateCodeReviewOutcomeCallable CreateCodeReviewCallable(const Model::CreateCodeReviewRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateCodeReview that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateCodeReviewAsync(const Model::CreateCodeReviewRequest& request, const CreateCodeReviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the metadata associated with the code review along with its
@@ -155,15 +180,6 @@ namespace CodeGuruReviewer
          */
         virtual Model::DescribeCodeReviewOutcome DescribeCodeReview(const Model::DescribeCodeReviewRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeCodeReview that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeCodeReviewOutcomeCallable DescribeCodeReviewCallable(const Model::DescribeCodeReviewRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeCodeReview that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeCodeReviewAsync(const Model::DescribeCodeReviewRequest& request, const DescribeCodeReviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the customer feedback for a CodeGuru Reviewer
@@ -173,15 +189,6 @@ namespace CodeGuruReviewer
          */
         virtual Model::DescribeRecommendationFeedbackOutcome DescribeRecommendationFeedback(const Model::DescribeRecommendationFeedbackRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeRecommendationFeedback that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeRecommendationFeedbackOutcomeCallable DescribeRecommendationFeedbackCallable(const Model::DescribeRecommendationFeedbackRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeRecommendationFeedback that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeRecommendationFeedbackAsync(const Model::DescribeRecommendationFeedbackRequest& request, const DescribeRecommendationFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a <a
@@ -193,15 +200,6 @@ namespace CodeGuruReviewer
          */
         virtual Model::DescribeRepositoryAssociationOutcome DescribeRepositoryAssociation(const Model::DescribeRepositoryAssociationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeRepositoryAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeRepositoryAssociationOutcomeCallable DescribeRepositoryAssociationCallable(const Model::DescribeRepositoryAssociationRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeRepositoryAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeRepositoryAssociationAsync(const Model::DescribeRepositoryAssociationRequest& request, const DescribeRepositoryAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the association between Amazon CodeGuru Reviewer and a
@@ -211,15 +209,6 @@ namespace CodeGuruReviewer
          */
         virtual Model::DisassociateRepositoryOutcome DisassociateRepository(const Model::DisassociateRepositoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateRepository that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateRepositoryOutcomeCallable DisassociateRepositoryCallable(const Model::DisassociateRepositoryRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateRepository that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateRepositoryAsync(const Model::DisassociateRepositoryRequest& request, const DisassociateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all the code reviews that the customer has created in the past 90
@@ -229,15 +218,6 @@ namespace CodeGuruReviewer
          */
         virtual Model::ListCodeReviewsOutcome ListCodeReviews(const Model::ListCodeReviewsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListCodeReviews that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListCodeReviewsOutcomeCallable ListCodeReviewsCallable(const Model::ListCodeReviewsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListCodeReviews that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListCodeReviewsAsync(const Model::ListCodeReviewsRequest& request, const ListCodeReviewsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of <a
@@ -249,15 +229,6 @@ namespace CodeGuruReviewer
          */
         virtual Model::ListRecommendationFeedbackOutcome ListRecommendationFeedback(const Model::ListRecommendationFeedbackRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListRecommendationFeedback that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListRecommendationFeedbackOutcomeCallable ListRecommendationFeedbackCallable(const Model::ListRecommendationFeedbackRequest& request) const;
-
-        /**
-         * An Async wrapper for ListRecommendationFeedback that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListRecommendationFeedbackAsync(const Model::ListRecommendationFeedbackRequest& request, const ListRecommendationFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the list of all recommendations for a completed code
@@ -267,15 +238,6 @@ namespace CodeGuruReviewer
          */
         virtual Model::ListRecommendationsOutcome ListRecommendations(const Model::ListRecommendationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListRecommendations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListRecommendationsOutcomeCallable ListRecommendationsCallable(const Model::ListRecommendationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListRecommendations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListRecommendationsAsync(const Model::ListRecommendationsRequest& request, const ListRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of <a
@@ -295,15 +257,6 @@ namespace CodeGuruReviewer
          */
         virtual Model::ListRepositoryAssociationsOutcome ListRepositoryAssociations(const Model::ListRepositoryAssociationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListRepositoryAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListRepositoryAssociationsOutcomeCallable ListRepositoryAssociationsCallable(const Model::ListRepositoryAssociationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListRepositoryAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListRepositoryAssociationsAsync(const Model::ListRepositoryAssociationsRequest& request, const ListRepositoryAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the list of tags associated with an associated repository
@@ -313,15 +266,6 @@ namespace CodeGuruReviewer
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stores customer feedback for a CodeGuru Reviewer recommendation. When this
@@ -332,15 +276,6 @@ namespace CodeGuruReviewer
          */
         virtual Model::PutRecommendationFeedbackOutcome PutRecommendationFeedback(const Model::PutRecommendationFeedbackRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutRecommendationFeedback that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutRecommendationFeedbackOutcomeCallable PutRecommendationFeedbackCallable(const Model::PutRecommendationFeedbackRequest& request) const;
-
-        /**
-         * An Async wrapper for PutRecommendationFeedback that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutRecommendationFeedbackAsync(const Model::PutRecommendationFeedbackRequest& request, const PutRecommendationFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds one or more tags to an associated repository.</p><p><h3>See Also:</h3>  
@@ -350,15 +285,6 @@ namespace CodeGuruReviewer
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes a tag from an associated repository.</p><p><h3>See Also:</h3>   <a
@@ -367,15 +293,6 @@ namespace CodeGuruReviewer
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

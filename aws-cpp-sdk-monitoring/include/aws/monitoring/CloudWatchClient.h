@@ -8,8 +8,10 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/monitoring/CloudWatchServiceClientModel.h>
+#include <aws/monitoring/CloudWatchLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -86,6 +88,47 @@ namespace CloudWatch
         virtual ~CloudWatchClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
        /**
         * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
         */
@@ -114,15 +157,6 @@ namespace CloudWatch
          */
         virtual Model::DeleteAlarmsOutcome DeleteAlarms(const Model::DeleteAlarmsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAlarms that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAlarmsOutcomeCallable DeleteAlarmsCallable(const Model::DeleteAlarmsRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAlarms that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAlarmsAsync(const Model::DeleteAlarmsRequest& request, const DeleteAlarmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Deletes the specified anomaly detection model from your account. For more
@@ -135,15 +169,6 @@ namespace CloudWatch
          */
         virtual Model::DeleteAnomalyDetectorOutcome DeleteAnomalyDetector(const Model::DeleteAnomalyDetectorRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAnomalyDetector that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAnomalyDetectorOutcomeCallable DeleteAnomalyDetectorCallable(const Model::DeleteAnomalyDetectorRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAnomalyDetector that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAnomalyDetectorAsync(const Model::DeleteAnomalyDetectorRequest& request, const DeleteAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes all dashboards that you specify. You can specify up to 100 dashboards
@@ -154,15 +179,6 @@ namespace CloudWatch
          */
         virtual Model::DeleteDashboardsOutcome DeleteDashboards(const Model::DeleteDashboardsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDashboards that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDashboardsOutcomeCallable DeleteDashboardsCallable(const Model::DeleteDashboardsRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDashboards that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDashboardsAsync(const Model::DeleteDashboardsRequest& request, const DeleteDashboardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Permanently deletes the specified Contributor Insights rules.</p> <p>If you
@@ -174,15 +190,6 @@ namespace CloudWatch
          */
         virtual Model::DeleteInsightRulesOutcome DeleteInsightRules(const Model::DeleteInsightRulesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteInsightRules that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteInsightRulesOutcomeCallable DeleteInsightRulesCallable(const Model::DeleteInsightRulesRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteInsightRules that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteInsightRulesAsync(const Model::DeleteInsightRulesRequest& request, const DeleteInsightRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Permanently deletes the metric stream that you specify.</p><p><h3>See
@@ -192,15 +199,6 @@ namespace CloudWatch
          */
         virtual Model::DeleteMetricStreamOutcome DeleteMetricStream(const Model::DeleteMetricStreamRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteMetricStream that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteMetricStreamOutcomeCallable DeleteMetricStreamCallable(const Model::DeleteMetricStreamRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteMetricStream that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteMetricStreamAsync(const Model::DeleteMetricStreamRequest& request, const DeleteMetricStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the history for the specified alarm. You can filter the results by
@@ -217,15 +215,6 @@ namespace CloudWatch
          */
         virtual Model::DescribeAlarmHistoryOutcome DescribeAlarmHistory(const Model::DescribeAlarmHistoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAlarmHistory that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAlarmHistoryOutcomeCallable DescribeAlarmHistoryCallable(const Model::DescribeAlarmHistoryRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAlarmHistory that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAlarmHistoryAsync(const Model::DescribeAlarmHistoryRequest& request, const DescribeAlarmHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the specified alarms. You can filter the results by specifying a
@@ -240,15 +229,6 @@ namespace CloudWatch
          */
         virtual Model::DescribeAlarmsOutcome DescribeAlarms(const Model::DescribeAlarmsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAlarms that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAlarmsOutcomeCallable DescribeAlarmsCallable(const Model::DescribeAlarmsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAlarms that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAlarmsAsync(const Model::DescribeAlarmsRequest& request, const DescribeAlarmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the alarms for the specified metric. To filter the results, specify
@@ -261,15 +241,6 @@ namespace CloudWatch
          */
         virtual Model::DescribeAlarmsForMetricOutcome DescribeAlarmsForMetric(const Model::DescribeAlarmsForMetricRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAlarmsForMetric that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAlarmsForMetricOutcomeCallable DescribeAlarmsForMetricCallable(const Model::DescribeAlarmsForMetricRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAlarmsForMetric that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAlarmsForMetricAsync(const Model::DescribeAlarmsForMetricRequest& request, const DescribeAlarmsForMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the anomaly detection models that you have created in your account. For
@@ -284,15 +255,6 @@ namespace CloudWatch
          */
         virtual Model::DescribeAnomalyDetectorsOutcome DescribeAnomalyDetectors(const Model::DescribeAnomalyDetectorsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAnomalyDetectors that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAnomalyDetectorsOutcomeCallable DescribeAnomalyDetectorsCallable(const Model::DescribeAnomalyDetectorsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAnomalyDetectors that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAnomalyDetectorsAsync(const Model::DescribeAnomalyDetectorsRequest& request, const DescribeAnomalyDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of all the Contributor Insights rules in your account.</p>
@@ -305,15 +267,6 @@ namespace CloudWatch
          */
         virtual Model::DescribeInsightRulesOutcome DescribeInsightRules(const Model::DescribeInsightRulesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeInsightRules that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeInsightRulesOutcomeCallable DescribeInsightRulesCallable(const Model::DescribeInsightRulesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeInsightRules that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeInsightRulesAsync(const Model::DescribeInsightRulesRequest& request, const DescribeInsightRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disables the actions for the specified alarms. When an alarm's actions are
@@ -324,15 +277,6 @@ namespace CloudWatch
          */
         virtual Model::DisableAlarmActionsOutcome DisableAlarmActions(const Model::DisableAlarmActionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisableAlarmActions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisableAlarmActionsOutcomeCallable DisableAlarmActionsCallable(const Model::DisableAlarmActionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DisableAlarmActions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisableAlarmActionsAsync(const Model::DisableAlarmActionsRequest& request, const DisableAlarmActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disables the specified Contributor Insights rules. When rules are disabled,
@@ -343,15 +287,6 @@ namespace CloudWatch
          */
         virtual Model::DisableInsightRulesOutcome DisableInsightRules(const Model::DisableInsightRulesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisableInsightRules that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisableInsightRulesOutcomeCallable DisableInsightRulesCallable(const Model::DisableInsightRulesRequest& request) const;
-
-        /**
-         * An Async wrapper for DisableInsightRules that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisableInsightRulesAsync(const Model::DisableInsightRulesRequest& request, const DisableInsightRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables the actions for the specified alarms.</p><p><h3>See Also:</h3>   <a
@@ -360,15 +295,6 @@ namespace CloudWatch
          */
         virtual Model::EnableAlarmActionsOutcome EnableAlarmActions(const Model::EnableAlarmActionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for EnableAlarmActions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnableAlarmActionsOutcomeCallable EnableAlarmActionsCallable(const Model::EnableAlarmActionsRequest& request) const;
-
-        /**
-         * An Async wrapper for EnableAlarmActions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnableAlarmActionsAsync(const Model::EnableAlarmActionsRequest& request, const EnableAlarmActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables the specified Contributor Insights rules. When rules are enabled,
@@ -378,15 +304,6 @@ namespace CloudWatch
          */
         virtual Model::EnableInsightRulesOutcome EnableInsightRules(const Model::EnableInsightRulesRequest& request) const;
 
-        /**
-         * A Callable wrapper for EnableInsightRules that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnableInsightRulesOutcomeCallable EnableInsightRulesCallable(const Model::EnableInsightRulesRequest& request) const;
-
-        /**
-         * An Async wrapper for EnableInsightRules that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnableInsightRulesAsync(const Model::EnableInsightRulesRequest& request, const EnableInsightRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Displays the details of the dashboard that you specify.</p> <p>To copy an
@@ -399,15 +316,6 @@ namespace CloudWatch
          */
         virtual Model::GetDashboardOutcome GetDashboard(const Model::GetDashboardRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDashboard that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDashboardOutcomeCallable GetDashboardCallable(const Model::GetDashboardRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDashboard that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDashboardAsync(const Model::GetDashboardRequest& request, const GetDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation returns the time series data collected by a Contributor
@@ -437,15 +345,6 @@ namespace CloudWatch
          */
         virtual Model::GetInsightRuleReportOutcome GetInsightRuleReport(const Model::GetInsightRuleReportRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetInsightRuleReport that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetInsightRuleReportOutcomeCallable GetInsightRuleReportCallable(const Model::GetInsightRuleReportRequest& request) const;
-
-        /**
-         * An Async wrapper for GetInsightRuleReport that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetInsightRuleReportAsync(const Model::GetInsightRuleReportRequest& request, const GetInsightRuleReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>You can use the <code>GetMetricData</code> API to retrieve CloudWatch metric
@@ -504,15 +403,6 @@ namespace CloudWatch
          */
         virtual Model::GetMetricDataOutcome GetMetricData(const Model::GetMetricDataRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetMetricData that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetMetricDataOutcomeCallable GetMetricDataCallable(const Model::GetMetricDataRequest& request) const;
-
-        /**
-         * An Async wrapper for GetMetricData that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetMetricDataAsync(const Model::GetMetricDataRequest& request, const GetMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets statistics for the specified metric.</p> <p>The maximum number of data
@@ -556,15 +446,6 @@ namespace CloudWatch
          */
         virtual Model::GetMetricStatisticsOutcome GetMetricStatistics(const Model::GetMetricStatisticsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetMetricStatistics that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetMetricStatisticsOutcomeCallable GetMetricStatisticsCallable(const Model::GetMetricStatisticsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetMetricStatistics that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetMetricStatisticsAsync(const Model::GetMetricStatisticsRequest& request, const GetMetricStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the metric stream that you specify.</p><p><h3>See
@@ -574,15 +455,6 @@ namespace CloudWatch
          */
         virtual Model::GetMetricStreamOutcome GetMetricStream(const Model::GetMetricStreamRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetMetricStream that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetMetricStreamOutcomeCallable GetMetricStreamCallable(const Model::GetMetricStreamRequest& request) const;
-
-        /**
-         * An Async wrapper for GetMetricStream that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetMetricStreamAsync(const Model::GetMetricStreamRequest& request, const GetMetricStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>You can use the <code>GetMetricWidgetImage</code> API to retrieve a snapshot
@@ -601,15 +473,6 @@ namespace CloudWatch
          */
         virtual Model::GetMetricWidgetImageOutcome GetMetricWidgetImage(const Model::GetMetricWidgetImageRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetMetricWidgetImage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetMetricWidgetImageOutcomeCallable GetMetricWidgetImageCallable(const Model::GetMetricWidgetImageRequest& request) const;
-
-        /**
-         * An Async wrapper for GetMetricWidgetImage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetMetricWidgetImageAsync(const Model::GetMetricWidgetImageRequest& request, const GetMetricWidgetImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of the dashboards for your account. If you include
@@ -624,15 +487,6 @@ namespace CloudWatch
          */
         virtual Model::ListDashboardsOutcome ListDashboards(const Model::ListDashboardsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDashboards that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDashboardsOutcomeCallable ListDashboardsCallable(const Model::ListDashboardsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDashboards that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDashboardsAsync(const Model::ListDashboardsRequest& request, const ListDashboardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a list that contains the number of managed Contributor Insights
@@ -642,15 +496,6 @@ namespace CloudWatch
          */
         virtual Model::ListManagedInsightRulesOutcome ListManagedInsightRules(const Model::ListManagedInsightRulesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListManagedInsightRules that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListManagedInsightRulesOutcomeCallable ListManagedInsightRulesCallable(const Model::ListManagedInsightRulesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListManagedInsightRules that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListManagedInsightRulesAsync(const Model::ListManagedInsightRulesRequest& request, const ListManagedInsightRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of metric streams in this account.</p><p><h3>See Also:</h3>  
@@ -660,15 +505,6 @@ namespace CloudWatch
          */
         virtual Model::ListMetricStreamsOutcome ListMetricStreams(const Model::ListMetricStreamsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListMetricStreams that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListMetricStreamsOutcomeCallable ListMetricStreamsCallable(const Model::ListMetricStreamsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListMetricStreams that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListMetricStreamsAsync(const Model::ListMetricStreamsRequest& request, const ListMetricStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List the specified metrics. You can use the returned metrics with <a
@@ -694,15 +530,6 @@ namespace CloudWatch
          */
         virtual Model::ListMetricsOutcome ListMetrics(const Model::ListMetricsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListMetrics that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListMetricsOutcomeCallable ListMetricsCallable(const Model::ListMetricsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListMetrics that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListMetricsAsync(const Model::ListMetricsRequest& request, const ListMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Displays the tags associated with a CloudWatch resource. Currently, alarms
@@ -712,15 +539,6 @@ namespace CloudWatch
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an anomaly detection model for a CloudWatch metric. You can use the
@@ -733,15 +551,6 @@ namespace CloudWatch
          */
         virtual Model::PutAnomalyDetectorOutcome PutAnomalyDetector(const Model::PutAnomalyDetectorRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutAnomalyDetector that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutAnomalyDetectorOutcomeCallable PutAnomalyDetectorCallable(const Model::PutAnomalyDetectorRequest& request) const;
-
-        /**
-         * An Async wrapper for PutAnomalyDetector that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutAnomalyDetectorAsync(const Model::PutAnomalyDetectorRequest& request, const PutAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates or updates a <i>composite alarm</i>. When you create a composite
@@ -786,15 +595,6 @@ namespace CloudWatch
          */
         virtual Model::PutCompositeAlarmOutcome PutCompositeAlarm(const Model::PutCompositeAlarmRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutCompositeAlarm that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutCompositeAlarmOutcomeCallable PutCompositeAlarmCallable(const Model::PutCompositeAlarmRequest& request) const;
-
-        /**
-         * An Async wrapper for PutCompositeAlarm that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutCompositeAlarmAsync(const Model::PutCompositeAlarmRequest& request, const PutCompositeAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a dashboard if it does not already exist, or updates an existing
@@ -818,15 +618,6 @@ namespace CloudWatch
          */
         virtual Model::PutDashboardOutcome PutDashboard(const Model::PutDashboardRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutDashboard that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutDashboardOutcomeCallable PutDashboardCallable(const Model::PutDashboardRequest& request) const;
-
-        /**
-         * An Async wrapper for PutDashboard that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutDashboardAsync(const Model::PutDashboardRequest& request, const PutDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a Contributor Insights rule. Rules evaluate log events in a
@@ -842,15 +633,6 @@ namespace CloudWatch
          */
         virtual Model::PutInsightRuleOutcome PutInsightRule(const Model::PutInsightRuleRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutInsightRule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutInsightRuleOutcomeCallable PutInsightRuleCallable(const Model::PutInsightRuleRequest& request) const;
-
-        /**
-         * An Async wrapper for PutInsightRule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutInsightRuleAsync(const Model::PutInsightRuleRequest& request, const PutInsightRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Creates a managed Contributor Insights rule for a specified Amazon Web
@@ -867,15 +649,6 @@ namespace CloudWatch
          */
         virtual Model::PutManagedInsightRulesOutcome PutManagedInsightRules(const Model::PutManagedInsightRulesRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutManagedInsightRules that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutManagedInsightRulesOutcomeCallable PutManagedInsightRulesCallable(const Model::PutManagedInsightRulesRequest& request) const;
-
-        /**
-         * An Async wrapper for PutManagedInsightRules that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutManagedInsightRulesAsync(const Model::PutManagedInsightRulesRequest& request, const PutManagedInsightRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates or updates an alarm and associates it with the specified metric,
@@ -921,15 +694,6 @@ namespace CloudWatch
          */
         virtual Model::PutMetricAlarmOutcome PutMetricAlarm(const Model::PutMetricAlarmRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutMetricAlarm that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutMetricAlarmOutcomeCallable PutMetricAlarmCallable(const Model::PutMetricAlarmRequest& request) const;
-
-        /**
-         * An Async wrapper for PutMetricAlarm that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutMetricAlarmAsync(const Model::PutMetricAlarmRequest& request, const PutMetricAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Publishes metric data points to Amazon CloudWatch. CloudWatch associates the
@@ -980,15 +744,6 @@ namespace CloudWatch
          */
         virtual Model::PutMetricDataOutcome PutMetricData(const Model::PutMetricDataRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutMetricData that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutMetricDataOutcomeCallable PutMetricDataCallable(const Model::PutMetricDataRequest& request) const;
-
-        /**
-         * An Async wrapper for PutMetricData that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutMetricDataAsync(const Model::PutMetricDataRequest& request, const PutMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates or updates a metric stream. Metric streams can automatically stream
@@ -1020,15 +775,6 @@ namespace CloudWatch
          */
         virtual Model::PutMetricStreamOutcome PutMetricStream(const Model::PutMetricStreamRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutMetricStream that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutMetricStreamOutcomeCallable PutMetricStreamCallable(const Model::PutMetricStreamRequest& request) const;
-
-        /**
-         * An Async wrapper for PutMetricStream that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutMetricStreamAsync(const Model::PutMetricStreamRequest& request, const PutMetricStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Temporarily sets the state of an alarm for testing purposes. When the updated
@@ -1052,15 +798,6 @@ namespace CloudWatch
          */
         virtual Model::SetAlarmStateOutcome SetAlarmState(const Model::SetAlarmStateRequest& request) const;
 
-        /**
-         * A Callable wrapper for SetAlarmState that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SetAlarmStateOutcomeCallable SetAlarmStateCallable(const Model::SetAlarmStateRequest& request) const;
-
-        /**
-         * An Async wrapper for SetAlarmState that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SetAlarmStateAsync(const Model::SetAlarmStateRequest& request, const SetAlarmStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts the streaming of metrics for one or more of your metric
@@ -1070,15 +807,6 @@ namespace CloudWatch
          */
         virtual Model::StartMetricStreamsOutcome StartMetricStreams(const Model::StartMetricStreamsRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartMetricStreams that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartMetricStreamsOutcomeCallable StartMetricStreamsCallable(const Model::StartMetricStreamsRequest& request) const;
-
-        /**
-         * An Async wrapper for StartMetricStreams that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartMetricStreamsAsync(const Model::StartMetricStreamsRequest& request, const StartMetricStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops the streaming of metrics for one or more of your metric
@@ -1088,15 +816,6 @@ namespace CloudWatch
          */
         virtual Model::StopMetricStreamsOutcome StopMetricStreams(const Model::StopMetricStreamsRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopMetricStreams that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopMetricStreamsOutcomeCallable StopMetricStreamsCallable(const Model::StopMetricStreamsRequest& request) const;
-
-        /**
-         * An Async wrapper for StopMetricStreams that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopMetricStreamsAsync(const Model::StopMetricStreamsRequest& request, const StopMetricStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Assigns one or more tags (key-value pairs) to the specified CloudWatch
@@ -1117,15 +836,6 @@ namespace CloudWatch
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes one or more tags from the specified resource.</p><p><h3>See
@@ -1135,15 +845,6 @@ namespace CloudWatch
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
         void OverrideEndpoint(const Aws::String& endpoint);

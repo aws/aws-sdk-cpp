@@ -7,8 +7,10 @@
 #include <aws/pi/PI_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/pi/PIServiceClientModel.h>
+#include <aws/pi/PILegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -95,6 +97,47 @@ namespace PI
         virtual ~PIClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>For a specific time period, retrieve the top <code>N</code> dimension keys
          * for a metric. </p>  <p>Each response element returns a maximum of 500
@@ -105,15 +148,6 @@ namespace PI
          */
         virtual Model::DescribeDimensionKeysOutcome DescribeDimensionKeys(const Model::DescribeDimensionKeysRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDimensionKeys that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDimensionKeysOutcomeCallable DescribeDimensionKeysCallable(const Model::DescribeDimensionKeysRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDimensionKeys that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDimensionKeysAsync(const Model::DescribeDimensionKeysRequest& request, const DescribeDimensionKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get the attributes of the specified dimension group for a DB instance or data
@@ -128,15 +162,6 @@ namespace PI
          */
         virtual Model::GetDimensionKeyDetailsOutcome GetDimensionKeyDetails(const Model::GetDimensionKeyDetailsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDimensionKeyDetails that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDimensionKeyDetailsOutcomeCallable GetDimensionKeyDetailsCallable(const Model::GetDimensionKeyDetailsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDimensionKeyDetails that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDimensionKeyDetailsAsync(const Model::GetDimensionKeyDetailsRequest& request, const GetDimensionKeyDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieve the metadata for different features. For example, the metadata might
@@ -147,15 +172,6 @@ namespace PI
          */
         virtual Model::GetResourceMetadataOutcome GetResourceMetadata(const Model::GetResourceMetadataRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetResourceMetadata that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetResourceMetadataOutcomeCallable GetResourceMetadataCallable(const Model::GetResourceMetadataRequest& request) const;
-
-        /**
-         * An Async wrapper for GetResourceMetadata that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetResourceMetadataAsync(const Model::GetResourceMetadataRequest& request, const GetResourceMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieve Performance Insights metrics for a set of data sources over a time
@@ -169,15 +185,6 @@ namespace PI
          */
         virtual Model::GetResourceMetricsOutcome GetResourceMetrics(const Model::GetResourceMetricsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetResourceMetrics that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetResourceMetricsOutcomeCallable GetResourceMetricsCallable(const Model::GetResourceMetricsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetResourceMetrics that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetResourceMetricsAsync(const Model::GetResourceMetricsRequest& request, const GetResourceMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieve the dimensions that can be queried for each specified metric type on
@@ -187,15 +194,6 @@ namespace PI
          */
         virtual Model::ListAvailableResourceDimensionsOutcome ListAvailableResourceDimensions(const Model::ListAvailableResourceDimensionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAvailableResourceDimensions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAvailableResourceDimensionsOutcomeCallable ListAvailableResourceDimensionsCallable(const Model::ListAvailableResourceDimensionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAvailableResourceDimensions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAvailableResourceDimensionsAsync(const Model::ListAvailableResourceDimensionsRequest& request, const ListAvailableResourceDimensionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieve metrics of the specified types that can be queried for a specified
@@ -205,15 +203,6 @@ namespace PI
          */
         virtual Model::ListAvailableResourceMetricsOutcome ListAvailableResourceMetrics(const Model::ListAvailableResourceMetricsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAvailableResourceMetrics that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAvailableResourceMetricsOutcomeCallable ListAvailableResourceMetricsCallable(const Model::ListAvailableResourceMetricsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAvailableResourceMetrics that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAvailableResourceMetricsAsync(const Model::ListAvailableResourceMetricsRequest& request, const ListAvailableResourceMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

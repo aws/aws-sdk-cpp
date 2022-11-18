@@ -7,8 +7,10 @@
 #include <aws/organizations/Organizations_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/organizations/OrganizationsServiceClientModel.h>
+#include <aws/organizations/OrganizationsLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -118,6 +120,47 @@ namespace Organizations
         virtual ~OrganizationsClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Sends a response to the originator of a handshake agreeing to the action
          * proposed by the handshake request.</p> <p>This operation can be called only by
@@ -149,15 +192,6 @@ namespace Organizations
          */
         virtual Model::AcceptHandshakeOutcome AcceptHandshake(const Model::AcceptHandshakeRequest& request) const;
 
-        /**
-         * A Callable wrapper for AcceptHandshake that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AcceptHandshakeOutcomeCallable AcceptHandshakeCallable(const Model::AcceptHandshakeRequest& request) const;
-
-        /**
-         * An Async wrapper for AcceptHandshake that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AcceptHandshakeAsync(const Model::AcceptHandshakeRequest& request, const AcceptHandshakeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Attaches a policy to a root, an organizational unit (OU), or an individual
@@ -178,15 +212,6 @@ namespace Organizations
          */
         virtual Model::AttachPolicyOutcome AttachPolicy(const Model::AttachPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for AttachPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AttachPolicyOutcomeCallable AttachPolicyCallable(const Model::AttachPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for AttachPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AttachPolicyAsync(const Model::AttachPolicyRequest& request, const AttachPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Cancels a handshake. Canceling a handshake sets the handshake state to
@@ -201,15 +226,6 @@ namespace Organizations
          */
         virtual Model::CancelHandshakeOutcome CancelHandshake(const Model::CancelHandshakeRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelHandshake that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelHandshakeOutcomeCallable CancelHandshakeCallable(const Model::CancelHandshakeRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelHandshake that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelHandshakeAsync(const Model::CancelHandshakeRequest& request, const CancelHandshakeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Closes an Amazon Web Services member account within an organization. You
@@ -250,15 +266,6 @@ namespace Organizations
          */
         virtual Model::CloseAccountOutcome CloseAccount(const Model::CloseAccountRequest& request) const;
 
-        /**
-         * A Callable wrapper for CloseAccount that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CloseAccountOutcomeCallable CloseAccountCallable(const Model::CloseAccountRequest& request) const;
-
-        /**
-         * An Async wrapper for CloseAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CloseAccountAsync(const Model::CloseAccountRequest& request, const CloseAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an Amazon Web Services account that is automatically a member of the
@@ -331,15 +338,6 @@ namespace Organizations
          */
         virtual Model::CreateAccountOutcome CreateAccount(const Model::CreateAccountRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateAccount that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateAccountOutcomeCallable CreateAccountCallable(const Model::CreateAccountRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateAccountAsync(const Model::CreateAccountRequest& request, const CreateAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This action is available if all of the following are true:</p> <ul> <li>
@@ -446,15 +444,6 @@ namespace Organizations
          */
         virtual Model::CreateGovCloudAccountOutcome CreateGovCloudAccount(const Model::CreateGovCloudAccountRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateGovCloudAccount that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateGovCloudAccountOutcomeCallable CreateGovCloudAccountCallable(const Model::CreateGovCloudAccountRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateGovCloudAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateGovCloudAccountAsync(const Model::CreateGovCloudAccountRequest& request, const CreateGovCloudAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an Amazon Web Services organization. The account whose user is
@@ -476,15 +465,6 @@ namespace Organizations
          */
         virtual Model::CreateOrganizationOutcome CreateOrganization(const Model::CreateOrganizationRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateOrganizationOutcomeCallable CreateOrganizationCallable(const Model::CreateOrganizationRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateOrganizationAsync(const Model::CreateOrganizationRequest& request, const CreateOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an organizational unit (OU) within a root or parent OU. An OU is a
@@ -504,15 +484,6 @@ namespace Organizations
          */
         virtual Model::CreateOrganizationalUnitOutcome CreateOrganizationalUnit(const Model::CreateOrganizationalUnitRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateOrganizationalUnit that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateOrganizationalUnitOutcomeCallable CreateOrganizationalUnitCallable(const Model::CreateOrganizationalUnitRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateOrganizationalUnit that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateOrganizationalUnitAsync(const Model::CreateOrganizationalUnitRequest& request, const CreateOrganizationalUnitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a policy of a specified type that you can attach to a root, an
@@ -528,15 +499,6 @@ namespace Organizations
          */
         virtual Model::CreatePolicyOutcome CreatePolicy(const Model::CreatePolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreatePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreatePolicyOutcomeCallable CreatePolicyCallable(const Model::CreatePolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for CreatePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreatePolicyAsync(const Model::CreatePolicyRequest& request, const CreatePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Declines a handshake request. This sets the handshake state to
@@ -552,15 +514,6 @@ namespace Organizations
          */
         virtual Model::DeclineHandshakeOutcome DeclineHandshake(const Model::DeclineHandshakeRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeclineHandshake that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeclineHandshakeOutcomeCallable DeclineHandshakeCallable(const Model::DeclineHandshakeRequest& request) const;
-
-        /**
-         * An Async wrapper for DeclineHandshake that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeclineHandshakeAsync(const Model::DeclineHandshakeRequest& request, const DeclineHandshakeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the organization. You can delete an organization only by using
@@ -590,15 +543,6 @@ namespace Organizations
          */
         virtual Model::DeleteOrganizationalUnitOutcome DeleteOrganizationalUnit(const Model::DeleteOrganizationalUnitRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteOrganizationalUnit that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteOrganizationalUnitOutcomeCallable DeleteOrganizationalUnitCallable(const Model::DeleteOrganizationalUnitRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteOrganizationalUnit that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteOrganizationalUnitAsync(const Model::DeleteOrganizationalUnitRequest& request, const DeleteOrganizationalUnitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified policy from your organization. Before you perform this
@@ -610,15 +554,6 @@ namespace Organizations
          */
         virtual Model::DeletePolicyOutcome DeletePolicy(const Model::DeletePolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeletePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeletePolicyOutcomeCallable DeletePolicyCallable(const Model::DeletePolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeletePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeletePolicyAsync(const Model::DeletePolicyRequest& request, const DeletePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified member Amazon Web Services account as a delegated
@@ -639,15 +574,6 @@ namespace Organizations
          */
         virtual Model::DeregisterDelegatedAdministratorOutcome DeregisterDelegatedAdministrator(const Model::DeregisterDelegatedAdministratorRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeregisterDelegatedAdministrator that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeregisterDelegatedAdministratorOutcomeCallable DeregisterDelegatedAdministratorCallable(const Model::DeregisterDelegatedAdministratorRequest& request) const;
-
-        /**
-         * An Async wrapper for DeregisterDelegatedAdministrator that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeregisterDelegatedAdministratorAsync(const Model::DeregisterDelegatedAdministratorRequest& request, const DeregisterDelegatedAdministratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves Organizations-related information about the specified account.</p>
@@ -659,15 +585,6 @@ namespace Organizations
          */
         virtual Model::DescribeAccountOutcome DescribeAccount(const Model::DescribeAccountRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAccount that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAccountOutcomeCallable DescribeAccountCallable(const Model::DescribeAccountRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAccountAsync(const Model::DescribeAccountRequest& request, const DescribeAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the current status of an asynchronous request to create an
@@ -679,15 +596,6 @@ namespace Organizations
          */
         virtual Model::DescribeCreateAccountStatusOutcome DescribeCreateAccountStatus(const Model::DescribeCreateAccountStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeCreateAccountStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeCreateAccountStatusOutcomeCallable DescribeCreateAccountStatusCallable(const Model::DescribeCreateAccountStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeCreateAccountStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeCreateAccountStatusAsync(const Model::DescribeCreateAccountStatusRequest& request, const DescribeCreateAccountStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the contents of the effective policy for specified policy type and
@@ -706,15 +614,6 @@ namespace Organizations
          */
         virtual Model::DescribeEffectivePolicyOutcome DescribeEffectivePolicy(const Model::DescribeEffectivePolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEffectivePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEffectivePolicyOutcomeCallable DescribeEffectivePolicyCallable(const Model::DescribeEffectivePolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEffectivePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEffectivePolicyAsync(const Model::DescribeEffectivePolicyRequest& request, const DescribeEffectivePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about a previously requested handshake. The handshake
@@ -729,15 +628,6 @@ namespace Organizations
          */
         virtual Model::DescribeHandshakeOutcome DescribeHandshake(const Model::DescribeHandshakeRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeHandshake that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeHandshakeOutcomeCallable DescribeHandshakeCallable(const Model::DescribeHandshakeRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeHandshake that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeHandshakeAsync(const Model::DescribeHandshakeRequest& request, const DescribeHandshakeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about the organization that the user's account belongs
@@ -770,15 +660,6 @@ namespace Organizations
          */
         virtual Model::DescribeOrganizationalUnitOutcome DescribeOrganizationalUnit(const Model::DescribeOrganizationalUnitRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeOrganizationalUnit that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeOrganizationalUnitOutcomeCallable DescribeOrganizationalUnitCallable(const Model::DescribeOrganizationalUnitRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeOrganizationalUnit that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeOrganizationalUnitAsync(const Model::DescribeOrganizationalUnitRequest& request, const DescribeOrganizationalUnitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about a policy.</p> <p>This operation can be called
@@ -790,15 +671,6 @@ namespace Organizations
          */
         virtual Model::DescribePolicyOutcome DescribePolicy(const Model::DescribePolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribePolicyOutcomeCallable DescribePolicyCallable(const Model::DescribePolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribePolicyAsync(const Model::DescribePolicyRequest& request, const DescribePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Detaches a policy from a target root, organizational unit (OU), or
@@ -824,15 +696,6 @@ namespace Organizations
          */
         virtual Model::DetachPolicyOutcome DetachPolicy(const Model::DetachPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DetachPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DetachPolicyOutcomeCallable DetachPolicyCallable(const Model::DetachPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DetachPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DetachPolicyAsync(const Model::DetachPolicyRequest& request, const DetachPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disables the integration of an Amazon Web Services service (the service that
@@ -886,15 +749,6 @@ namespace Organizations
          */
         virtual Model::DisableAWSServiceAccessOutcome DisableAWSServiceAccess(const Model::DisableAWSServiceAccessRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisableAWSServiceAccess that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisableAWSServiceAccessOutcomeCallable DisableAWSServiceAccessCallable(const Model::DisableAWSServiceAccessRequest& request) const;
-
-        /**
-         * An Async wrapper for DisableAWSServiceAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisableAWSServiceAccessAsync(const Model::DisableAWSServiceAccessRequest& request, const DisableAWSServiceAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disables an organizational policy type in a root. A policy of a certain type
@@ -917,15 +771,6 @@ namespace Organizations
          */
         virtual Model::DisablePolicyTypeOutcome DisablePolicyType(const Model::DisablePolicyTypeRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisablePolicyType that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisablePolicyTypeOutcomeCallable DisablePolicyTypeCallable(const Model::DisablePolicyTypeRequest& request) const;
-
-        /**
-         * An Async wrapper for DisablePolicyType that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisablePolicyTypeAsync(const Model::DisablePolicyTypeRequest& request, const DisablePolicyTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables the integration of an Amazon Web Services service (the service that
@@ -953,15 +798,6 @@ namespace Organizations
          */
         virtual Model::EnableAWSServiceAccessOutcome EnableAWSServiceAccess(const Model::EnableAWSServiceAccessRequest& request) const;
 
-        /**
-         * A Callable wrapper for EnableAWSServiceAccess that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnableAWSServiceAccessOutcomeCallable EnableAWSServiceAccessCallable(const Model::EnableAWSServiceAccessRequest& request) const;
-
-        /**
-         * An Async wrapper for EnableAWSServiceAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnableAWSServiceAccessAsync(const Model::EnableAWSServiceAccessRequest& request, const EnableAWSServiceAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables all features in an organization. This enables the use of organization
@@ -994,15 +830,6 @@ namespace Organizations
          */
         virtual Model::EnableAllFeaturesOutcome EnableAllFeatures(const Model::EnableAllFeaturesRequest& request) const;
 
-        /**
-         * A Callable wrapper for EnableAllFeatures that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnableAllFeaturesOutcomeCallable EnableAllFeaturesCallable(const Model::EnableAllFeaturesRequest& request) const;
-
-        /**
-         * An Async wrapper for EnableAllFeatures that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnableAllFeaturesAsync(const Model::EnableAllFeaturesRequest& request, const EnableAllFeaturesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables a policy type in a root. After you enable a policy type in a root,
@@ -1021,15 +848,6 @@ namespace Organizations
          */
         virtual Model::EnablePolicyTypeOutcome EnablePolicyType(const Model::EnablePolicyTypeRequest& request) const;
 
-        /**
-         * A Callable wrapper for EnablePolicyType that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnablePolicyTypeOutcomeCallable EnablePolicyTypeCallable(const Model::EnablePolicyTypeRequest& request) const;
-
-        /**
-         * An Async wrapper for EnablePolicyType that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnablePolicyTypeAsync(const Model::EnablePolicyTypeRequest& request, const EnablePolicyTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sends an invitation to another account to join your organization as a member
@@ -1057,15 +875,6 @@ namespace Organizations
          */
         virtual Model::InviteAccountToOrganizationOutcome InviteAccountToOrganization(const Model::InviteAccountToOrganizationRequest& request) const;
 
-        /**
-         * A Callable wrapper for InviteAccountToOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::InviteAccountToOrganizationOutcomeCallable InviteAccountToOrganizationCallable(const Model::InviteAccountToOrganizationRequest& request) const;
-
-        /**
-         * An Async wrapper for InviteAccountToOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void InviteAccountToOrganizationAsync(const Model::InviteAccountToOrganizationRequest& request, const InviteAccountToOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes a member account from its parent organization. This version of the
@@ -1138,15 +947,6 @@ namespace Organizations
          */
         virtual Model::ListAWSServiceAccessForOrganizationOutcome ListAWSServiceAccessForOrganization(const Model::ListAWSServiceAccessForOrganizationRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAWSServiceAccessForOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAWSServiceAccessForOrganizationOutcomeCallable ListAWSServiceAccessForOrganizationCallable(const Model::ListAWSServiceAccessForOrganizationRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAWSServiceAccessForOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAWSServiceAccessForOrganizationAsync(const Model::ListAWSServiceAccessForOrganizationRequest& request, const ListAWSServiceAccessForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all the accounts in the organization. To request only the accounts in a
@@ -1165,15 +965,6 @@ namespace Organizations
          */
         virtual Model::ListAccountsOutcome ListAccounts(const Model::ListAccountsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAccounts that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAccountsOutcomeCallable ListAccountsCallable(const Model::ListAccountsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAccounts that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAccountsAsync(const Model::ListAccountsRequest& request, const ListAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the accounts in an organization that are contained by the specified
@@ -1194,15 +985,6 @@ namespace Organizations
          */
         virtual Model::ListAccountsForParentOutcome ListAccountsForParent(const Model::ListAccountsForParentRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAccountsForParent that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAccountsForParentOutcomeCallable ListAccountsForParentCallable(const Model::ListAccountsForParentRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAccountsForParent that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAccountsForParentAsync(const Model::ListAccountsForParentRequest& request, const ListAccountsForParentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all of the organizational units (OUs) or accounts that are contained in
@@ -1221,15 +1003,6 @@ namespace Organizations
          */
         virtual Model::ListChildrenOutcome ListChildren(const Model::ListChildrenRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListChildren that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListChildrenOutcomeCallable ListChildrenCallable(const Model::ListChildrenRequest& request) const;
-
-        /**
-         * An Async wrapper for ListChildren that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListChildrenAsync(const Model::ListChildrenRequest& request, const ListChildrenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the account creation requests that match the specified status that is
@@ -1247,15 +1020,6 @@ namespace Organizations
          */
         virtual Model::ListCreateAccountStatusOutcome ListCreateAccountStatus(const Model::ListCreateAccountStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListCreateAccountStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListCreateAccountStatusOutcomeCallable ListCreateAccountStatusCallable(const Model::ListCreateAccountStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for ListCreateAccountStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListCreateAccountStatusAsync(const Model::ListCreateAccountStatusRequest& request, const ListCreateAccountStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the Amazon Web Services accounts that are designated as delegated
@@ -1268,15 +1032,6 @@ namespace Organizations
          */
         virtual Model::ListDelegatedAdministratorsOutcome ListDelegatedAdministrators(const Model::ListDelegatedAdministratorsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDelegatedAdministrators that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDelegatedAdministratorsOutcomeCallable ListDelegatedAdministratorsCallable(const Model::ListDelegatedAdministratorsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDelegatedAdministrators that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDelegatedAdministratorsAsync(const Model::ListDelegatedAdministratorsRequest& request, const ListDelegatedAdministratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List the Amazon Web Services services for which the specified account is a
@@ -1288,15 +1043,6 @@ namespace Organizations
          */
         virtual Model::ListDelegatedServicesForAccountOutcome ListDelegatedServicesForAccount(const Model::ListDelegatedServicesForAccountRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListDelegatedServicesForAccount that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListDelegatedServicesForAccountOutcomeCallable ListDelegatedServicesForAccountCallable(const Model::ListDelegatedServicesForAccountRequest& request) const;
-
-        /**
-         * An Async wrapper for ListDelegatedServicesForAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListDelegatedServicesForAccountAsync(const Model::ListDelegatedServicesForAccountRequest& request, const ListDelegatedServicesForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the current handshakes that are associated with the account of the
@@ -1315,15 +1061,6 @@ namespace Organizations
          */
         virtual Model::ListHandshakesForAccountOutcome ListHandshakesForAccount(const Model::ListHandshakesForAccountRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListHandshakesForAccount that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListHandshakesForAccountOutcomeCallable ListHandshakesForAccountCallable(const Model::ListHandshakesForAccountRequest& request) const;
-
-        /**
-         * An Async wrapper for ListHandshakesForAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListHandshakesForAccountAsync(const Model::ListHandshakesForAccountRequest& request, const ListHandshakesForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the handshakes that are associated with the organization that the
@@ -1346,15 +1083,6 @@ namespace Organizations
          */
         virtual Model::ListHandshakesForOrganizationOutcome ListHandshakesForOrganization(const Model::ListHandshakesForOrganizationRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListHandshakesForOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListHandshakesForOrganizationOutcomeCallable ListHandshakesForOrganizationCallable(const Model::ListHandshakesForOrganizationRequest& request) const;
-
-        /**
-         * An Async wrapper for ListHandshakesForOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListHandshakesForOrganizationAsync(const Model::ListHandshakesForOrganizationRequest& request, const ListHandshakesForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the organizational units (OUs) in a parent organizational unit or
@@ -1371,15 +1099,6 @@ namespace Organizations
          */
         virtual Model::ListOrganizationalUnitsForParentOutcome ListOrganizationalUnitsForParent(const Model::ListOrganizationalUnitsForParentRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListOrganizationalUnitsForParent that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListOrganizationalUnitsForParentOutcomeCallable ListOrganizationalUnitsForParentCallable(const Model::ListOrganizationalUnitsForParentRequest& request) const;
-
-        /**
-         * An Async wrapper for ListOrganizationalUnitsForParent that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListOrganizationalUnitsForParentAsync(const Model::ListOrganizationalUnitsForParentRequest& request, const ListOrganizationalUnitsForParentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the root or organizational units (OUs) that serve as the immediate
@@ -1400,15 +1119,6 @@ namespace Organizations
          */
         virtual Model::ListParentsOutcome ListParents(const Model::ListParentsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListParents that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListParentsOutcomeCallable ListParentsCallable(const Model::ListParentsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListParents that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListParentsAsync(const Model::ListParentsRequest& request, const ListParentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the list of all policies in an organization of a specified
@@ -1425,15 +1135,6 @@ namespace Organizations
          */
         virtual Model::ListPoliciesOutcome ListPolicies(const Model::ListPoliciesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPolicies that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPoliciesOutcomeCallable ListPoliciesCallable(const Model::ListPoliciesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPoliciesAsync(const Model::ListPoliciesRequest& request, const ListPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the policies that are directly attached to the specified target root,
@@ -1452,15 +1153,6 @@ namespace Organizations
          */
         virtual Model::ListPoliciesForTargetOutcome ListPoliciesForTarget(const Model::ListPoliciesForTargetRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPoliciesForTarget that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPoliciesForTargetOutcomeCallable ListPoliciesForTargetCallable(const Model::ListPoliciesForTargetRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPoliciesForTarget that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPoliciesForTargetAsync(const Model::ListPoliciesForTargetRequest& request, const ListPoliciesForTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the roots that are defined in the current organization.</p> 
@@ -1482,15 +1174,6 @@ namespace Organizations
          */
         virtual Model::ListRootsOutcome ListRoots(const Model::ListRootsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListRoots that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListRootsOutcomeCallable ListRootsCallable(const Model::ListRootsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListRoots that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListRootsAsync(const Model::ListRootsRequest& request, const ListRootsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists tags that are attached to the specified resource.</p> <p>You can attach
@@ -1505,15 +1188,6 @@ namespace Organizations
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all the roots, organizational units (OUs), and accounts that the
@@ -1531,15 +1205,6 @@ namespace Organizations
          */
         virtual Model::ListTargetsForPolicyOutcome ListTargetsForPolicy(const Model::ListTargetsForPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTargetsForPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTargetsForPolicyOutcomeCallable ListTargetsForPolicyCallable(const Model::ListTargetsForPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTargetsForPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTargetsForPolicyAsync(const Model::ListTargetsForPolicyRequest& request, const ListTargetsForPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Moves an account from its current source parent root or organizational unit
@@ -1551,15 +1216,6 @@ namespace Organizations
          */
         virtual Model::MoveAccountOutcome MoveAccount(const Model::MoveAccountRequest& request) const;
 
-        /**
-         * A Callable wrapper for MoveAccount that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::MoveAccountOutcomeCallable MoveAccountCallable(const Model::MoveAccountRequest& request) const;
-
-        /**
-         * An Async wrapper for MoveAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void MoveAccountAsync(const Model::MoveAccountRequest& request, const MoveAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables the specified member account to administer the Organizations features
@@ -1578,15 +1234,6 @@ namespace Organizations
          */
         virtual Model::RegisterDelegatedAdministratorOutcome RegisterDelegatedAdministrator(const Model::RegisterDelegatedAdministratorRequest& request) const;
 
-        /**
-         * A Callable wrapper for RegisterDelegatedAdministrator that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RegisterDelegatedAdministratorOutcomeCallable RegisterDelegatedAdministratorCallable(const Model::RegisterDelegatedAdministratorRequest& request) const;
-
-        /**
-         * An Async wrapper for RegisterDelegatedAdministrator that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RegisterDelegatedAdministratorAsync(const Model::RegisterDelegatedAdministratorRequest& request, const RegisterDelegatedAdministratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified account from the organization.</p> <p>The removed
@@ -1624,15 +1271,6 @@ namespace Organizations
          */
         virtual Model::RemoveAccountFromOrganizationOutcome RemoveAccountFromOrganization(const Model::RemoveAccountFromOrganizationRequest& request) const;
 
-        /**
-         * A Callable wrapper for RemoveAccountFromOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RemoveAccountFromOrganizationOutcomeCallable RemoveAccountFromOrganizationCallable(const Model::RemoveAccountFromOrganizationRequest& request) const;
-
-        /**
-         * An Async wrapper for RemoveAccountFromOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RemoveAccountFromOrganizationAsync(const Model::RemoveAccountFromOrganizationRequest& request, const RemoveAccountFromOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds one or more tags to the specified resource.</p> <p>Currently, you can
@@ -1646,15 +1284,6 @@ namespace Organizations
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes any tags with the specified keys from the specified resource.</p>
@@ -1668,15 +1297,6 @@ namespace Organizations
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Renames the specified organizational unit (OU). The ID and ARN don't change.
@@ -1688,15 +1308,6 @@ namespace Organizations
          */
         virtual Model::UpdateOrganizationalUnitOutcome UpdateOrganizationalUnit(const Model::UpdateOrganizationalUnitRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateOrganizationalUnit that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateOrganizationalUnitOutcomeCallable UpdateOrganizationalUnitCallable(const Model::UpdateOrganizationalUnitRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateOrganizationalUnit that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateOrganizationalUnitAsync(const Model::UpdateOrganizationalUnitRequest& request, const UpdateOrganizationalUnitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an existing policy with a new name, description, or content. If you
@@ -1708,15 +1319,6 @@ namespace Organizations
          */
         virtual Model::UpdatePolicyOutcome UpdatePolicy(const Model::UpdatePolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdatePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdatePolicyOutcomeCallable UpdatePolicyCallable(const Model::UpdatePolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdatePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdatePolicyAsync(const Model::UpdatePolicyRequest& request, const UpdatePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

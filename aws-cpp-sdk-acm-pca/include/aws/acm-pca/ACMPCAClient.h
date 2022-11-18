@@ -7,8 +7,10 @@
 #include <aws/acm-pca/ACMPCA_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/acm-pca/ACMPCAServiceClientModel.h>
+#include <aws/acm-pca/ACMPCALegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -92,6 +94,47 @@ namespace ACMPCA
         virtual ~ACMPCAClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Creates a root or subordinate private certificate authority (CA). You must
          * specify the CA configuration, an optional configuration for Online Certificate
@@ -118,15 +161,6 @@ namespace ACMPCA
          */
         virtual Model::CreateCertificateAuthorityOutcome CreateCertificateAuthority(const Model::CreateCertificateAuthorityRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateCertificateAuthority that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateCertificateAuthorityOutcomeCallable CreateCertificateAuthorityCallable(const Model::CreateCertificateAuthorityRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateCertificateAuthority that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateCertificateAuthorityAsync(const Model::CreateCertificateAuthorityRequest& request, const CreateCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an audit report that lists every time that your CA private key is
@@ -151,15 +185,6 @@ namespace ACMPCA
          */
         virtual Model::CreateCertificateAuthorityAuditReportOutcome CreateCertificateAuthorityAuditReport(const Model::CreateCertificateAuthorityAuditReportRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateCertificateAuthorityAuditReport that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateCertificateAuthorityAuditReportOutcomeCallable CreateCertificateAuthorityAuditReportCallable(const Model::CreateCertificateAuthorityAuditReportRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateCertificateAuthorityAuditReport that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateCertificateAuthorityAuditReportAsync(const Model::CreateCertificateAuthorityAuditReportRequest& request, const CreateCertificateAuthorityAuditReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Grants one or more permissions on a private CA to the Certificate Manager
@@ -187,15 +212,6 @@ namespace ACMPCA
          */
         virtual Model::CreatePermissionOutcome CreatePermission(const Model::CreatePermissionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreatePermission that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreatePermissionOutcomeCallable CreatePermissionCallable(const Model::CreatePermissionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreatePermission that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreatePermissionAsync(const Model::CreatePermissionRequest& request, const CreatePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a private certificate authority (CA). You must provide the Amazon
@@ -229,15 +245,6 @@ namespace ACMPCA
          */
         virtual Model::DeleteCertificateAuthorityOutcome DeleteCertificateAuthority(const Model::DeleteCertificateAuthorityRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteCertificateAuthority that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteCertificateAuthorityOutcomeCallable DeleteCertificateAuthorityCallable(const Model::DeleteCertificateAuthorityRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteCertificateAuthority that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteCertificateAuthorityAsync(const Model::DeleteCertificateAuthorityRequest& request, const DeleteCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Revokes permissions on a private CA granted to the Certificate Manager (ACM)
@@ -267,15 +274,6 @@ namespace ACMPCA
          */
         virtual Model::DeletePermissionOutcome DeletePermission(const Model::DeletePermissionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeletePermission that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeletePermissionOutcomeCallable DeletePermissionCallable(const Model::DeletePermissionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeletePermission that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeletePermissionAsync(const Model::DeletePermissionRequest& request, const DeletePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the resource-based policy attached to a private CA. Deletion will
@@ -312,15 +310,6 @@ namespace ACMPCA
          */
         virtual Model::DeletePolicyOutcome DeletePolicy(const Model::DeletePolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeletePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeletePolicyOutcomeCallable DeletePolicyCallable(const Model::DeletePolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for DeletePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeletePolicyAsync(const Model::DeletePolicyRequest& request, const DeletePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists information about your private certificate authority (CA) or one that
@@ -346,15 +335,6 @@ namespace ACMPCA
          */
         virtual Model::DescribeCertificateAuthorityOutcome DescribeCertificateAuthority(const Model::DescribeCertificateAuthorityRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeCertificateAuthority that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeCertificateAuthorityOutcomeCallable DescribeCertificateAuthorityCallable(const Model::DescribeCertificateAuthorityRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeCertificateAuthority that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeCertificateAuthorityAsync(const Model::DescribeCertificateAuthorityRequest& request, const DescribeCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists information about a specific audit report created by calling the <a
@@ -370,15 +350,6 @@ namespace ACMPCA
          */
         virtual Model::DescribeCertificateAuthorityAuditReportOutcome DescribeCertificateAuthorityAuditReport(const Model::DescribeCertificateAuthorityAuditReportRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeCertificateAuthorityAuditReport that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeCertificateAuthorityAuditReportOutcomeCallable DescribeCertificateAuthorityAuditReportCallable(const Model::DescribeCertificateAuthorityAuditReportRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeCertificateAuthorityAuditReport that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeCertificateAuthorityAuditReportAsync(const Model::DescribeCertificateAuthorityAuditReportRequest& request, const DescribeCertificateAuthorityAuditReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a certificate from your private CA or one that has been shared with
@@ -397,15 +368,6 @@ namespace ACMPCA
          */
         virtual Model::GetCertificateOutcome GetCertificate(const Model::GetCertificateRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetCertificateOutcomeCallable GetCertificateCallable(const Model::GetCertificateRequest& request) const;
-
-        /**
-         * An Async wrapper for GetCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetCertificateAsync(const Model::GetCertificateRequest& request, const GetCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the certificate and certificate chain for your private certificate
@@ -418,15 +380,6 @@ namespace ACMPCA
          */
         virtual Model::GetCertificateAuthorityCertificateOutcome GetCertificateAuthorityCertificate(const Model::GetCertificateAuthorityCertificateRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetCertificateAuthorityCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetCertificateAuthorityCertificateOutcomeCallable GetCertificateAuthorityCertificateCallable(const Model::GetCertificateAuthorityCertificateRequest& request) const;
-
-        /**
-         * An Async wrapper for GetCertificateAuthorityCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetCertificateAuthorityCertificateAsync(const Model::GetCertificateAuthorityCertificateRequest& request, const GetCertificateAuthorityCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the certificate signing request (CSR) for your private certificate
@@ -443,15 +396,6 @@ namespace ACMPCA
          */
         virtual Model::GetCertificateAuthorityCsrOutcome GetCertificateAuthorityCsr(const Model::GetCertificateAuthorityCsrRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetCertificateAuthorityCsr that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetCertificateAuthorityCsrOutcomeCallable GetCertificateAuthorityCsrCallable(const Model::GetCertificateAuthorityCsrRequest& request) const;
-
-        /**
-         * An Async wrapper for GetCertificateAuthorityCsr that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetCertificateAuthorityCsrAsync(const Model::GetCertificateAuthorityCsrRequest& request, const GetCertificateAuthorityCsrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the resource-based policy attached to a private CA. If either the
@@ -484,15 +428,6 @@ namespace ACMPCA
          */
         virtual Model::GetPolicyOutcome GetPolicy(const Model::GetPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetPolicyOutcomeCallable GetPolicyCallable(const Model::GetPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetPolicyAsync(const Model::GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Imports a signed private CA certificate into ACM Private CA. This action is
@@ -542,15 +477,6 @@ namespace ACMPCA
          */
         virtual Model::ImportCertificateAuthorityCertificateOutcome ImportCertificateAuthorityCertificate(const Model::ImportCertificateAuthorityCertificateRequest& request) const;
 
-        /**
-         * A Callable wrapper for ImportCertificateAuthorityCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ImportCertificateAuthorityCertificateOutcomeCallable ImportCertificateAuthorityCertificateCallable(const Model::ImportCertificateAuthorityCertificateRequest& request) const;
-
-        /**
-         * An Async wrapper for ImportCertificateAuthorityCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ImportCertificateAuthorityCertificateAsync(const Model::ImportCertificateAuthorityCertificateRequest& request, const ImportCertificateAuthorityCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Uses your private certificate authority (CA), or one that has been shared
@@ -567,15 +493,6 @@ namespace ACMPCA
          */
         virtual Model::IssueCertificateOutcome IssueCertificate(const Model::IssueCertificateRequest& request) const;
 
-        /**
-         * A Callable wrapper for IssueCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::IssueCertificateOutcomeCallable IssueCertificateCallable(const Model::IssueCertificateRequest& request) const;
-
-        /**
-         * An Async wrapper for IssueCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void IssueCertificateAsync(const Model::IssueCertificateRequest& request, const IssueCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the private certificate authorities that you created by using the <a
@@ -586,15 +503,6 @@ namespace ACMPCA
          */
         virtual Model::ListCertificateAuthoritiesOutcome ListCertificateAuthorities(const Model::ListCertificateAuthoritiesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListCertificateAuthorities that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListCertificateAuthoritiesOutcomeCallable ListCertificateAuthoritiesCallable(const Model::ListCertificateAuthoritiesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListCertificateAuthorities that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListCertificateAuthoritiesAsync(const Model::ListCertificateAuthoritiesRequest& request, const ListCertificateAuthoritiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List all permissions on a private CA, if any, granted to the Certificate
@@ -622,15 +530,6 @@ namespace ACMPCA
          */
         virtual Model::ListPermissionsOutcome ListPermissions(const Model::ListPermissionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListPermissions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPermissionsOutcomeCallable ListPermissionsCallable(const Model::ListPermissionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPermissions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPermissionsAsync(const Model::ListPermissionsRequest& request, const ListPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the tags, if any, that are associated with your private CA or one that
@@ -645,15 +544,6 @@ namespace ACMPCA
          */
         virtual Model::ListTagsOutcome ListTags(const Model::ListTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsOutcomeCallable ListTagsCallable(const Model::ListTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsAsync(const Model::ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Attaches a resource-based policy to a private CA. </p> <p>A policy can also
@@ -688,15 +578,6 @@ namespace ACMPCA
          */
         virtual Model::PutPolicyOutcome PutPolicy(const Model::PutPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutPolicyOutcomeCallable PutPolicyCallable(const Model::PutPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for PutPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutPolicyAsync(const Model::PutPolicyRequest& request, const PutPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Restores a certificate authority (CA) that is in the <code>DELETED</code>
@@ -725,15 +606,6 @@ namespace ACMPCA
          */
         virtual Model::RestoreCertificateAuthorityOutcome RestoreCertificateAuthority(const Model::RestoreCertificateAuthorityRequest& request) const;
 
-        /**
-         * A Callable wrapper for RestoreCertificateAuthority that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RestoreCertificateAuthorityOutcomeCallable RestoreCertificateAuthorityCallable(const Model::RestoreCertificateAuthorityRequest& request) const;
-
-        /**
-         * An Async wrapper for RestoreCertificateAuthority that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RestoreCertificateAuthorityAsync(const Model::RestoreCertificateAuthorityRequest& request, const RestoreCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Revokes a certificate that was issued inside ACM Private CA. If you enable a
@@ -761,15 +633,6 @@ namespace ACMPCA
          */
         virtual Model::RevokeCertificateOutcome RevokeCertificate(const Model::RevokeCertificateRequest& request) const;
 
-        /**
-         * A Callable wrapper for RevokeCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RevokeCertificateOutcomeCallable RevokeCertificateCallable(const Model::RevokeCertificateRequest& request) const;
-
-        /**
-         * An Async wrapper for RevokeCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RevokeCertificateAsync(const Model::RevokeCertificateRequest& request, const RevokeCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds one or more tags to your private CA. Tags are labels that you can use to
@@ -790,15 +653,6 @@ namespace ACMPCA
          */
         virtual Model::TagCertificateAuthorityOutcome TagCertificateAuthority(const Model::TagCertificateAuthorityRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagCertificateAuthority that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagCertificateAuthorityOutcomeCallable TagCertificateAuthorityCallable(const Model::TagCertificateAuthorityRequest& request) const;
-
-        /**
-         * An Async wrapper for TagCertificateAuthority that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagCertificateAuthorityAsync(const Model::TagCertificateAuthorityRequest& request, const TagCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Remove one or more tags from your private CA. A tag consists of a key-value
@@ -816,15 +670,6 @@ namespace ACMPCA
          */
         virtual Model::UntagCertificateAuthorityOutcome UntagCertificateAuthority(const Model::UntagCertificateAuthorityRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagCertificateAuthority that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagCertificateAuthorityOutcomeCallable UntagCertificateAuthorityCallable(const Model::UntagCertificateAuthorityRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagCertificateAuthority that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagCertificateAuthorityAsync(const Model::UntagCertificateAuthorityRequest& request, const UntagCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the status or configuration of a private certificate authority (CA).
@@ -842,15 +687,6 @@ namespace ACMPCA
          */
         virtual Model::UpdateCertificateAuthorityOutcome UpdateCertificateAuthority(const Model::UpdateCertificateAuthorityRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateCertificateAuthority that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateCertificateAuthorityOutcomeCallable UpdateCertificateAuthorityCallable(const Model::UpdateCertificateAuthorityRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateCertificateAuthority that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateCertificateAuthorityAsync(const Model::UpdateCertificateAuthorityRequest& request, const UpdateCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

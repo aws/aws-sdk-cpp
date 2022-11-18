@@ -7,8 +7,10 @@
 #include <aws/account/Account_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/account/AccountServiceClientModel.h>
+#include <aws/account/AccountLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -73,6 +75,47 @@ namespace Account
         virtual ~AccountClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Deletes the specified alternate contact from an Amazon Web Services
          * account.</p> <p>For complete details about how to use the alternate contact
@@ -90,15 +133,6 @@ namespace Account
          */
         virtual Model::DeleteAlternateContactOutcome DeleteAlternateContact(const Model::DeleteAlternateContactRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAlternateContact that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAlternateContactOutcomeCallable DeleteAlternateContactCallable(const Model::DeleteAlternateContactRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAlternateContact that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAlternateContactAsync(const Model::DeleteAlternateContactRequest& request, const DeleteAlternateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the specified alternate contact attached to an Amazon Web Services
@@ -117,15 +151,6 @@ namespace Account
          */
         virtual Model::GetAlternateContactOutcome GetAlternateContact(const Model::GetAlternateContactRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAlternateContact that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAlternateContactOutcomeCallable GetAlternateContactCallable(const Model::GetAlternateContactRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAlternateContact that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAlternateContactAsync(const Model::GetAlternateContactRequest& request, const GetAlternateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the primary contact information of an Amazon Web Services
@@ -138,15 +163,6 @@ namespace Account
          */
         virtual Model::GetContactInformationOutcome GetContactInformation(const Model::GetContactInformationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetContactInformation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetContactInformationOutcomeCallable GetContactInformationCallable(const Model::GetContactInformationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetContactInformation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetContactInformationAsync(const Model::GetContactInformationRequest& request, const GetContactInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the specified alternate contact attached to an Amazon Web Services
@@ -165,15 +181,6 @@ namespace Account
          */
         virtual Model::PutAlternateContactOutcome PutAlternateContact(const Model::PutAlternateContactRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutAlternateContact that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutAlternateContactOutcomeCallable PutAlternateContactCallable(const Model::PutAlternateContactRequest& request) const;
-
-        /**
-         * An Async wrapper for PutAlternateContact that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutAlternateContactAsync(const Model::PutAlternateContactRequest& request, const PutAlternateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the primary contact information of an Amazon Web Services
@@ -186,15 +193,6 @@ namespace Account
          */
         virtual Model::PutContactInformationOutcome PutContactInformation(const Model::PutContactInformationRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutContactInformation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutContactInformationOutcomeCallable PutContactInformationCallable(const Model::PutContactInformationRequest& request) const;
-
-        /**
-         * An Async wrapper for PutContactInformation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutContactInformationAsync(const Model::PutContactInformationRequest& request, const PutContactInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

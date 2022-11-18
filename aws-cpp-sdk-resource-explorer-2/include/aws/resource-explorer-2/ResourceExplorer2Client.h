@@ -7,8 +7,10 @@
 #include <aws/resource-explorer-2/ResourceExplorer2_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/resource-explorer-2/ResourceExplorer2ServiceClientModel.h>
+#include <aws/resource-explorer-2/ResourceExplorer2LegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -101,6 +103,47 @@ namespace ResourceExplorer2
         virtual ~ResourceExplorer2Client();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Sets the specified view as the default for the Amazon Web Services Region in
          * which you call this operation. When a user performs a <a>Search</a> that doesn't
@@ -115,15 +158,6 @@ namespace ResourceExplorer2
          */
         virtual Model::AssociateDefaultViewOutcome AssociateDefaultView(const Model::AssociateDefaultViewRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateDefaultView that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateDefaultViewOutcomeCallable AssociateDefaultViewCallable(const Model::AssociateDefaultViewRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateDefaultView that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateDefaultViewAsync(const Model::AssociateDefaultViewRequest& request, const AssociateDefaultViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves details about a list of views.</p><p><h3>See Also:</h3>   <a
@@ -132,15 +166,6 @@ namespace ResourceExplorer2
          */
         virtual Model::BatchGetViewOutcome BatchGetView(const Model::BatchGetViewRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchGetView that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchGetViewOutcomeCallable BatchGetViewCallable(const Model::BatchGetViewRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchGetView that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchGetViewAsync(const Model::BatchGetViewRequest& request, const BatchGetViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Turns on Amazon Web Services Resource Explorer in the Amazon Web Services
@@ -189,15 +214,6 @@ namespace ResourceExplorer2
          */
         virtual Model::CreateIndexOutcome CreateIndex(const Model::CreateIndexRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateIndex that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateIndexOutcomeCallable CreateIndexCallable(const Model::CreateIndexRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateIndex that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateIndexAsync(const Model::CreateIndexRequest& request, const CreateIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a view that users can query by using the <a>Search</a> operation.
@@ -217,15 +233,6 @@ namespace ResourceExplorer2
          */
         virtual Model::CreateViewOutcome CreateView(const Model::CreateViewRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateView that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateViewOutcomeCallable CreateViewCallable(const Model::CreateViewRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateView that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateViewAsync(const Model::CreateViewRequest& request, const CreateViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified index and turns off Amazon Web Services Resource
@@ -240,15 +247,6 @@ namespace ResourceExplorer2
          */
         virtual Model::DeleteIndexOutcome DeleteIndex(const Model::DeleteIndexRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteIndex that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteIndexOutcomeCallable DeleteIndexCallable(const Model::DeleteIndexRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteIndex that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteIndexAsync(const Model::DeleteIndexRequest& request, const DeleteIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified view.</p> <p>If the specified view is the default view
@@ -261,15 +259,6 @@ namespace ResourceExplorer2
          */
         virtual Model::DeleteViewOutcome DeleteView(const Model::DeleteViewRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteView that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteViewOutcomeCallable DeleteViewCallable(const Model::DeleteViewRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteView that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteViewAsync(const Model::DeleteViewRequest& request, const DeleteViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>After you call this operation, the affected Amazon Web Services Region no
@@ -337,15 +326,6 @@ namespace ResourceExplorer2
          */
         virtual Model::GetViewOutcome GetView(const Model::GetViewRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetView that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetViewOutcomeCallable GetViewCallable(const Model::GetViewRequest& request) const;
-
-        /**
-         * An Async wrapper for GetView that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetViewAsync(const Model::GetViewRequest& request, const GetViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list of all of the indexes in Amazon Web Services Regions that
@@ -356,15 +336,6 @@ namespace ResourceExplorer2
          */
         virtual Model::ListIndexesOutcome ListIndexes(const Model::ListIndexesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListIndexes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListIndexesOutcomeCallable ListIndexesCallable(const Model::ListIndexesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListIndexes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListIndexesAsync(const Model::ListIndexesRequest& request, const ListIndexesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list of all resource types currently supported by Amazon Web
@@ -374,15 +345,6 @@ namespace ResourceExplorer2
          */
         virtual Model::ListSupportedResourceTypesOutcome ListSupportedResourceTypes(const Model::ListSupportedResourceTypesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSupportedResourceTypes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListSupportedResourceTypesOutcomeCallable ListSupportedResourceTypesCallable(const Model::ListSupportedResourceTypesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSupportedResourceTypes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListSupportedResourceTypesAsync(const Model::ListSupportedResourceTypesRequest& request, const ListSupportedResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the tags that are attached to the specified resource.</p><p><h3>See
@@ -392,15 +354,6 @@ namespace ResourceExplorer2
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the <a
@@ -417,15 +370,6 @@ namespace ResourceExplorer2
          */
         virtual Model::ListViewsOutcome ListViews(const Model::ListViewsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListViews that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListViewsOutcomeCallable ListViewsCallable(const Model::ListViewsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListViews that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListViewsAsync(const Model::ListViewsRequest& request, const ListViewsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Searches for resources and displays details about all resources that match
@@ -447,15 +391,6 @@ namespace ResourceExplorer2
          */
         virtual Model::SearchOutcome Search(const Model::SearchRequest& request) const;
 
-        /**
-         * A Callable wrapper for Search that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SearchOutcomeCallable SearchCallable(const Model::SearchRequest& request) const;
-
-        /**
-         * An Async wrapper for Search that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SearchAsync(const Model::SearchRequest& request, const SearchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds one or more tag key and value pairs to an Amazon Web Services Resource
@@ -465,15 +400,6 @@ namespace ResourceExplorer2
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes one or more tag key and value pairs from an Amazon Web Services
@@ -483,15 +409,6 @@ namespace ResourceExplorer2
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Changes the type of the index from one of the following types to the other.
@@ -543,15 +460,6 @@ namespace ResourceExplorer2
          */
         virtual Model::UpdateIndexTypeOutcome UpdateIndexType(const Model::UpdateIndexTypeRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateIndexType that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateIndexTypeOutcomeCallable UpdateIndexTypeCallable(const Model::UpdateIndexTypeRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateIndexType that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateIndexTypeAsync(const Model::UpdateIndexTypeRequest& request, const UpdateIndexTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies some of the details of a view. You can change the filter string and
@@ -562,15 +470,6 @@ namespace ResourceExplorer2
          */
         virtual Model::UpdateViewOutcome UpdateView(const Model::UpdateViewRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateView that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateViewOutcomeCallable UpdateViewCallable(const Model::UpdateViewRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateView that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateViewAsync(const Model::UpdateViewRequest& request, const UpdateViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

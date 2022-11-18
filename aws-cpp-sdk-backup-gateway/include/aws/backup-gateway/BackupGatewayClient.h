@@ -7,8 +7,10 @@
 #include <aws/backup-gateway/BackupGateway_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/backup-gateway/BackupGatewayServiceClientModel.h>
+#include <aws/backup-gateway/BackupGatewayLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -83,6 +85,47 @@ namespace BackupGateway
         virtual ~BackupGatewayClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Associates a backup gateway with your server. After you complete the
          * association process, you can back up and restore your VMs through the
@@ -92,15 +135,6 @@ namespace BackupGateway
          */
         virtual Model::AssociateGatewayToServerOutcome AssociateGatewayToServer(const Model::AssociateGatewayToServerRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateGatewayToServer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateGatewayToServerOutcomeCallable AssociateGatewayToServerCallable(const Model::AssociateGatewayToServerRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateGatewayToServer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateGatewayToServerAsync(const Model::AssociateGatewayToServerRequest& request, const AssociateGatewayToServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a backup gateway. After you create a gateway, you can associate it
@@ -111,15 +145,6 @@ namespace BackupGateway
          */
         virtual Model::CreateGatewayOutcome CreateGateway(const Model::CreateGatewayRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateGateway that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateGatewayOutcomeCallable CreateGatewayCallable(const Model::CreateGatewayRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateGateway that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateGatewayAsync(const Model::CreateGatewayRequest& request, const CreateGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a backup gateway.</p><p><h3>See Also:</h3>   <a
@@ -128,15 +153,6 @@ namespace BackupGateway
          */
         virtual Model::DeleteGatewayOutcome DeleteGateway(const Model::DeleteGatewayRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteGateway that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteGatewayOutcomeCallable DeleteGatewayCallable(const Model::DeleteGatewayRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteGateway that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteGatewayAsync(const Model::DeleteGatewayRequest& request, const DeleteGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a hypervisor.</p><p><h3>See Also:</h3>   <a
@@ -145,15 +161,6 @@ namespace BackupGateway
          */
         virtual Model::DeleteHypervisorOutcome DeleteHypervisor(const Model::DeleteHypervisorRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteHypervisor that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteHypervisorOutcomeCallable DeleteHypervisorCallable(const Model::DeleteHypervisorRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteHypervisor that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteHypervisorAsync(const Model::DeleteHypervisorRequest& request, const DeleteHypervisorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates a backup gateway from the specified server. After the
@@ -164,15 +171,6 @@ namespace BackupGateway
          */
         virtual Model::DisassociateGatewayFromServerOutcome DisassociateGatewayFromServer(const Model::DisassociateGatewayFromServerRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateGatewayFromServer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateGatewayFromServerOutcomeCallable DisassociateGatewayFromServerCallable(const Model::DisassociateGatewayFromServerRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateGatewayFromServer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateGatewayFromServerAsync(const Model::DisassociateGatewayFromServerRequest& request, const DisassociateGatewayFromServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>By providing the ARN (Amazon Resource Name), this API returns the
@@ -182,15 +180,6 @@ namespace BackupGateway
          */
         virtual Model::GetGatewayOutcome GetGateway(const Model::GetGatewayRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetGateway that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetGatewayOutcomeCallable GetGatewayCallable(const Model::GetGatewayRequest& request) const;
-
-        /**
-         * An Async wrapper for GetGateway that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetGatewayAsync(const Model::GetGatewayRequest& request, const GetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>By providing the ARN (Amazon Resource Name), this API returns the virtual
@@ -200,15 +189,6 @@ namespace BackupGateway
          */
         virtual Model::GetVirtualMachineOutcome GetVirtualMachine(const Model::GetVirtualMachineRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetVirtualMachine that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetVirtualMachineOutcomeCallable GetVirtualMachineCallable(const Model::GetVirtualMachineRequest& request) const;
-
-        /**
-         * An Async wrapper for GetVirtualMachine that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetVirtualMachineAsync(const Model::GetVirtualMachineRequest& request, const GetVirtualMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Connect to a hypervisor by importing its configuration.</p><p><h3>See
@@ -218,15 +198,6 @@ namespace BackupGateway
          */
         virtual Model::ImportHypervisorConfigurationOutcome ImportHypervisorConfiguration(const Model::ImportHypervisorConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for ImportHypervisorConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ImportHypervisorConfigurationOutcomeCallable ImportHypervisorConfigurationCallable(const Model::ImportHypervisorConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for ImportHypervisorConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ImportHypervisorConfigurationAsync(const Model::ImportHypervisorConfigurationRequest& request, const ImportHypervisorConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists backup gateways owned by an Amazon Web Services account in an Amazon
@@ -237,15 +208,6 @@ namespace BackupGateway
          */
         virtual Model::ListGatewaysOutcome ListGateways(const Model::ListGatewaysRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListGateways that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListGatewaysOutcomeCallable ListGatewaysCallable(const Model::ListGatewaysRequest& request) const;
-
-        /**
-         * An Async wrapper for ListGateways that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListGatewaysAsync(const Model::ListGatewaysRequest& request, const ListGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists your hypervisors.</p><p><h3>See Also:</h3>   <a
@@ -254,15 +216,6 @@ namespace BackupGateway
          */
         virtual Model::ListHypervisorsOutcome ListHypervisors(const Model::ListHypervisorsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListHypervisors that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListHypervisorsOutcomeCallable ListHypervisorsCallable(const Model::ListHypervisorsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListHypervisors that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListHypervisorsAsync(const Model::ListHypervisorsRequest& request, const ListHypervisorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the tags applied to the resource identified by its Amazon Resource Name
@@ -272,15 +225,6 @@ namespace BackupGateway
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists your virtual machines.</p><p><h3>See Also:</h3>   <a
@@ -289,15 +233,6 @@ namespace BackupGateway
          */
         virtual Model::ListVirtualMachinesOutcome ListVirtualMachines(const Model::ListVirtualMachinesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListVirtualMachines that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListVirtualMachinesOutcomeCallable ListVirtualMachinesCallable(const Model::ListVirtualMachinesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListVirtualMachines that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListVirtualMachinesAsync(const Model::ListVirtualMachinesRequest& request, const ListVirtualMachinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Set the maintenance start time for a gateway.</p><p><h3>See Also:</h3>   <a
@@ -306,15 +241,6 @@ namespace BackupGateway
          */
         virtual Model::PutMaintenanceStartTimeOutcome PutMaintenanceStartTime(const Model::PutMaintenanceStartTimeRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutMaintenanceStartTime that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutMaintenanceStartTimeOutcomeCallable PutMaintenanceStartTimeCallable(const Model::PutMaintenanceStartTimeRequest& request) const;
-
-        /**
-         * An Async wrapper for PutMaintenanceStartTime that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutMaintenanceStartTimeAsync(const Model::PutMaintenanceStartTimeRequest& request, const PutMaintenanceStartTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Tag the resource.</p><p><h3>See Also:</h3>   <a
@@ -323,15 +249,6 @@ namespace BackupGateway
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Tests your hypervisor configuration to validate that backup gateway can
@@ -341,15 +258,6 @@ namespace BackupGateway
          */
         virtual Model::TestHypervisorConfigurationOutcome TestHypervisorConfiguration(const Model::TestHypervisorConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for TestHypervisorConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TestHypervisorConfigurationOutcomeCallable TestHypervisorConfigurationCallable(const Model::TestHypervisorConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for TestHypervisorConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TestHypervisorConfigurationAsync(const Model::TestHypervisorConfigurationRequest& request, const TestHypervisorConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes tags from the resource.</p><p><h3>See Also:</h3>   <a
@@ -358,15 +266,6 @@ namespace BackupGateway
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a gateway's name. Specify which gateway to update using the Amazon
@@ -377,15 +276,6 @@ namespace BackupGateway
          */
         virtual Model::UpdateGatewayInformationOutcome UpdateGatewayInformation(const Model::UpdateGatewayInformationRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateGatewayInformation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateGatewayInformationOutcomeCallable UpdateGatewayInformationCallable(const Model::UpdateGatewayInformationRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateGatewayInformation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateGatewayInformationAsync(const Model::UpdateGatewayInformationRequest& request, const UpdateGatewayInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the gateway virtual machine (VM) software. The request immediately
@@ -397,15 +287,6 @@ namespace BackupGateway
          */
         virtual Model::UpdateGatewaySoftwareNowOutcome UpdateGatewaySoftwareNow(const Model::UpdateGatewaySoftwareNowRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateGatewaySoftwareNow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateGatewaySoftwareNowOutcomeCallable UpdateGatewaySoftwareNowCallable(const Model::UpdateGatewaySoftwareNowRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateGatewaySoftwareNow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateGatewaySoftwareNowAsync(const Model::UpdateGatewaySoftwareNowRequest& request, const UpdateGatewaySoftwareNowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a hypervisor metadata, including its host, username, and password.
@@ -416,15 +297,6 @@ namespace BackupGateway
          */
         virtual Model::UpdateHypervisorOutcome UpdateHypervisor(const Model::UpdateHypervisorRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateHypervisor that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateHypervisorOutcomeCallable UpdateHypervisorCallable(const Model::UpdateHypervisorRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateHypervisor that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateHypervisorAsync(const Model::UpdateHypervisorRequest& request, const UpdateHypervisorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

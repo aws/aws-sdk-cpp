@@ -7,8 +7,10 @@
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/elasticmapreduce/EMRServiceClientModel.h>
+#include <aws/elasticmapreduce/EMRLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -77,6 +79,47 @@ namespace EMR
         virtual ~EMRClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Adds an instance fleet to a running cluster.</p>  <p>The instance fleet
          * configuration is available only in Amazon EMR versions 4.8.0 and later,
@@ -86,15 +129,6 @@ namespace EMR
          */
         virtual Model::AddInstanceFleetOutcome AddInstanceFleet(const Model::AddInstanceFleetRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddInstanceFleet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddInstanceFleetOutcomeCallable AddInstanceFleetCallable(const Model::AddInstanceFleetRequest& request) const;
-
-        /**
-         * An Async wrapper for AddInstanceFleet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddInstanceFleetAsync(const Model::AddInstanceFleetRequest& request, const AddInstanceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds one or more instance groups to a running cluster.</p><p><h3>See
@@ -104,15 +138,6 @@ namespace EMR
          */
         virtual Model::AddInstanceGroupsOutcome AddInstanceGroups(const Model::AddInstanceGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddInstanceGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddInstanceGroupsOutcomeCallable AddInstanceGroupsCallable(const Model::AddInstanceGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for AddInstanceGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddInstanceGroupsAsync(const Model::AddInstanceGroupsRequest& request, const AddInstanceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>AddJobFlowSteps adds new steps to a running cluster. A maximum of 256 steps
@@ -140,15 +165,6 @@ namespace EMR
          */
         virtual Model::AddJobFlowStepsOutcome AddJobFlowSteps(const Model::AddJobFlowStepsRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddJobFlowSteps that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddJobFlowStepsOutcomeCallable AddJobFlowStepsCallable(const Model::AddJobFlowStepsRequest& request) const;
-
-        /**
-         * An Async wrapper for AddJobFlowSteps that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddJobFlowStepsAsync(const Model::AddJobFlowStepsRequest& request, const AddJobFlowStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds tags to an Amazon EMR resource, such as a cluster or an Amazon EMR
@@ -162,15 +178,6 @@ namespace EMR
          */
         virtual Model::AddTagsOutcome AddTags(const Model::AddTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for AddTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AddTagsOutcomeCallable AddTagsCallable(const Model::AddTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for AddTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AddTagsAsync(const Model::AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Cancels a pending step or steps in a running cluster. Available only in
@@ -187,15 +194,6 @@ namespace EMR
          */
         virtual Model::CancelStepsOutcome CancelSteps(const Model::CancelStepsRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelSteps that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelStepsOutcomeCallable CancelStepsCallable(const Model::CancelStepsRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelSteps that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelStepsAsync(const Model::CancelStepsRequest& request, const CancelStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a security configuration, which is stored in the service and can be
@@ -205,15 +203,6 @@ namespace EMR
          */
         virtual Model::CreateSecurityConfigurationOutcome CreateSecurityConfiguration(const Model::CreateSecurityConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateSecurityConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateSecurityConfigurationOutcomeCallable CreateSecurityConfigurationCallable(const Model::CreateSecurityConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateSecurityConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateSecurityConfigurationAsync(const Model::CreateSecurityConfigurationRequest& request, const CreateSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new Amazon EMR Studio.</p><p><h3>See Also:</h3>   <a
@@ -222,15 +211,6 @@ namespace EMR
          */
         virtual Model::CreateStudioOutcome CreateStudio(const Model::CreateStudioRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateStudio that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateStudioOutcomeCallable CreateStudioCallable(const Model::CreateStudioRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateStudio that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateStudioAsync(const Model::CreateStudioRequest& request, const CreateStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Maps a user or group to the Amazon EMR Studio specified by
@@ -246,15 +226,6 @@ namespace EMR
          */
         virtual Model::CreateStudioSessionMappingOutcome CreateStudioSessionMapping(const Model::CreateStudioSessionMappingRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateStudioSessionMapping that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateStudioSessionMappingOutcomeCallable CreateStudioSessionMappingCallable(const Model::CreateStudioSessionMappingRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateStudioSessionMapping that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateStudioSessionMappingAsync(const Model::CreateStudioSessionMappingRequest& request, const CreateStudioSessionMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a security configuration.</p><p><h3>See Also:</h3>   <a
@@ -263,15 +234,6 @@ namespace EMR
          */
         virtual Model::DeleteSecurityConfigurationOutcome DeleteSecurityConfiguration(const Model::DeleteSecurityConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteSecurityConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteSecurityConfigurationOutcomeCallable DeleteSecurityConfigurationCallable(const Model::DeleteSecurityConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteSecurityConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteSecurityConfigurationAsync(const Model::DeleteSecurityConfigurationRequest& request, const DeleteSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes an Amazon EMR Studio from the Studio metadata store.</p><p><h3>See
@@ -281,15 +243,6 @@ namespace EMR
          */
         virtual Model::DeleteStudioOutcome DeleteStudio(const Model::DeleteStudioRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteStudio that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteStudioOutcomeCallable DeleteStudioCallable(const Model::DeleteStudioRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteStudio that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteStudioAsync(const Model::DeleteStudioRequest& request, const DeleteStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes a user or group from an Amazon EMR Studio.</p><p><h3>See Also:</h3>  
@@ -299,15 +252,6 @@ namespace EMR
          */
         virtual Model::DeleteStudioSessionMappingOutcome DeleteStudioSessionMapping(const Model::DeleteStudioSessionMappingRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteStudioSessionMapping that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteStudioSessionMappingOutcomeCallable DeleteStudioSessionMappingCallable(const Model::DeleteStudioSessionMappingRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteStudioSessionMapping that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteStudioSessionMappingAsync(const Model::DeleteStudioSessionMappingRequest& request, const DeleteStudioSessionMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides cluster-level details including status, hardware and software
@@ -317,15 +261,6 @@ namespace EMR
          */
         virtual Model::DescribeClusterOutcome DescribeCluster(const Model::DescribeClusterRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeCluster that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeClusterOutcomeCallable DescribeClusterCallable(const Model::DescribeClusterRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeClusterAsync(const Model::DescribeClusterRequest& request, const DescribeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides details of a notebook execution.</p><p><h3>See Also:</h3>   <a
@@ -334,15 +269,6 @@ namespace EMR
          */
         virtual Model::DescribeNotebookExecutionOutcome DescribeNotebookExecution(const Model::DescribeNotebookExecutionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeNotebookExecution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeNotebookExecutionOutcomeCallable DescribeNotebookExecutionCallable(const Model::DescribeNotebookExecutionRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeNotebookExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeNotebookExecutionAsync(const Model::DescribeNotebookExecutionRequest& request, const DescribeNotebookExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides EMR release label details, such as releases available the region
@@ -354,15 +280,6 @@ namespace EMR
          */
         virtual Model::DescribeReleaseLabelOutcome DescribeReleaseLabel(const Model::DescribeReleaseLabelRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeReleaseLabel that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeReleaseLabelOutcomeCallable DescribeReleaseLabelCallable(const Model::DescribeReleaseLabelRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeReleaseLabel that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeReleaseLabelAsync(const Model::DescribeReleaseLabelRequest& request, const DescribeReleaseLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides the details of a security configuration by returning the
@@ -372,15 +289,6 @@ namespace EMR
          */
         virtual Model::DescribeSecurityConfigurationOutcome DescribeSecurityConfiguration(const Model::DescribeSecurityConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeSecurityConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeSecurityConfigurationOutcomeCallable DescribeSecurityConfigurationCallable(const Model::DescribeSecurityConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeSecurityConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeSecurityConfigurationAsync(const Model::DescribeSecurityConfigurationRequest& request, const DescribeSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides more detail about the cluster step.</p><p><h3>See Also:</h3>   <a
@@ -389,15 +297,6 @@ namespace EMR
          */
         virtual Model::DescribeStepOutcome DescribeStep(const Model::DescribeStepRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeStep that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeStepOutcomeCallable DescribeStepCallable(const Model::DescribeStepRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeStep that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeStepAsync(const Model::DescribeStepRequest& request, const DescribeStepResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns details for the specified Amazon EMR Studio including ID, Name, VPC,
@@ -407,15 +306,6 @@ namespace EMR
          */
         virtual Model::DescribeStudioOutcome DescribeStudio(const Model::DescribeStudioRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeStudio that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeStudioOutcomeCallable DescribeStudioCallable(const Model::DescribeStudioRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeStudio that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeStudioAsync(const Model::DescribeStudioRequest& request, const DescribeStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the auto-termination policy for an Amazon EMR cluster.</p><p><h3>See
@@ -425,15 +315,6 @@ namespace EMR
          */
         virtual Model::GetAutoTerminationPolicyOutcome GetAutoTerminationPolicy(const Model::GetAutoTerminationPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAutoTerminationPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAutoTerminationPolicyOutcomeCallable GetAutoTerminationPolicyCallable(const Model::GetAutoTerminationPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAutoTerminationPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAutoTerminationPolicyAsync(const Model::GetAutoTerminationPolicyRequest& request, const GetAutoTerminationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the Amazon EMR block public access configuration for your Amazon Web
@@ -446,15 +327,6 @@ namespace EMR
          */
         virtual Model::GetBlockPublicAccessConfigurationOutcome GetBlockPublicAccessConfiguration(const Model::GetBlockPublicAccessConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBlockPublicAccessConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBlockPublicAccessConfigurationOutcomeCallable GetBlockPublicAccessConfigurationCallable(const Model::GetBlockPublicAccessConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBlockPublicAccessConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBlockPublicAccessConfigurationAsync(const Model::GetBlockPublicAccessConfigurationRequest& request, const GetBlockPublicAccessConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Fetches the attached managed scaling policy for an Amazon EMR cluster.
@@ -464,15 +336,6 @@ namespace EMR
          */
         virtual Model::GetManagedScalingPolicyOutcome GetManagedScalingPolicy(const Model::GetManagedScalingPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetManagedScalingPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetManagedScalingPolicyOutcomeCallable GetManagedScalingPolicyCallable(const Model::GetManagedScalingPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for GetManagedScalingPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetManagedScalingPolicyAsync(const Model::GetManagedScalingPolicyRequest& request, const GetManagedScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Fetches mapping details for the specified Amazon EMR Studio and identity
@@ -482,15 +345,6 @@ namespace EMR
          */
         virtual Model::GetStudioSessionMappingOutcome GetStudioSessionMapping(const Model::GetStudioSessionMappingRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetStudioSessionMapping that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetStudioSessionMappingOutcomeCallable GetStudioSessionMappingCallable(const Model::GetStudioSessionMappingRequest& request) const;
-
-        /**
-         * An Async wrapper for GetStudioSessionMapping that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetStudioSessionMappingAsync(const Model::GetStudioSessionMappingRequest& request, const GetStudioSessionMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides information about the bootstrap actions associated with a
@@ -500,15 +354,6 @@ namespace EMR
          */
         virtual Model::ListBootstrapActionsOutcome ListBootstrapActions(const Model::ListBootstrapActionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListBootstrapActions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListBootstrapActionsOutcomeCallable ListBootstrapActionsCallable(const Model::ListBootstrapActionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListBootstrapActions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListBootstrapActionsAsync(const Model::ListBootstrapActionsRequest& request, const ListBootstrapActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides the status of all clusters visible to this Amazon Web Services
@@ -522,15 +367,6 @@ namespace EMR
          */
         virtual Model::ListClustersOutcome ListClusters(const Model::ListClustersRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListClusters that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListClustersOutcomeCallable ListClustersCallable(const Model::ListClustersRequest& request) const;
-
-        /**
-         * An Async wrapper for ListClusters that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListClustersAsync(const Model::ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all available details about the instance fleets in a cluster.</p>
@@ -542,15 +378,6 @@ namespace EMR
          */
         virtual Model::ListInstanceFleetsOutcome ListInstanceFleets(const Model::ListInstanceFleetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListInstanceFleets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListInstanceFleetsOutcomeCallable ListInstanceFleetsCallable(const Model::ListInstanceFleetsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListInstanceFleets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListInstanceFleetsAsync(const Model::ListInstanceFleetsRequest& request, const ListInstanceFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides all available details about the instance groups in a
@@ -560,15 +387,6 @@ namespace EMR
          */
         virtual Model::ListInstanceGroupsOutcome ListInstanceGroups(const Model::ListInstanceGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListInstanceGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListInstanceGroupsOutcomeCallable ListInstanceGroupsCallable(const Model::ListInstanceGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListInstanceGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListInstanceGroupsAsync(const Model::ListInstanceGroupsRequest& request, const ListInstanceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides information for all active EC2 instances and EC2 instances
@@ -580,15 +398,6 @@ namespace EMR
          */
         virtual Model::ListInstancesOutcome ListInstances(const Model::ListInstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListInstances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListInstancesOutcomeCallable ListInstancesCallable(const Model::ListInstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for ListInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListInstancesAsync(const Model::ListInstancesRequest& request, const ListInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides summaries of all notebook executions. You can filter the list based
@@ -601,15 +410,6 @@ namespace EMR
          */
         virtual Model::ListNotebookExecutionsOutcome ListNotebookExecutions(const Model::ListNotebookExecutionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListNotebookExecutions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListNotebookExecutionsOutcomeCallable ListNotebookExecutionsCallable(const Model::ListNotebookExecutionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListNotebookExecutions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListNotebookExecutionsAsync(const Model::ListNotebookExecutionsRequest& request, const ListNotebookExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves release labels of EMR services in the region where the API is
@@ -619,15 +419,6 @@ namespace EMR
          */
         virtual Model::ListReleaseLabelsOutcome ListReleaseLabels(const Model::ListReleaseLabelsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListReleaseLabels that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListReleaseLabelsOutcomeCallable ListReleaseLabelsCallable(const Model::ListReleaseLabelsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListReleaseLabels that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListReleaseLabelsAsync(const Model::ListReleaseLabelsRequest& request, const ListReleaseLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all the security configurations visible to this account, providing
@@ -640,15 +431,6 @@ namespace EMR
          */
         virtual Model::ListSecurityConfigurationsOutcome ListSecurityConfigurations(const Model::ListSecurityConfigurationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSecurityConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListSecurityConfigurationsOutcomeCallable ListSecurityConfigurationsCallable(const Model::ListSecurityConfigurationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSecurityConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListSecurityConfigurationsAsync(const Model::ListSecurityConfigurationsRequest& request, const ListSecurityConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides a list of steps for the cluster in reverse order unless you specify
@@ -662,15 +444,6 @@ namespace EMR
          */
         virtual Model::ListStepsOutcome ListSteps(const Model::ListStepsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSteps that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListStepsOutcomeCallable ListStepsCallable(const Model::ListStepsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSteps that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListStepsAsync(const Model::ListStepsRequest& request, const ListStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of all user or group session mappings for the Amazon EMR
@@ -680,15 +453,6 @@ namespace EMR
          */
         virtual Model::ListStudioSessionMappingsOutcome ListStudioSessionMappings(const Model::ListStudioSessionMappingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListStudioSessionMappings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListStudioSessionMappingsOutcomeCallable ListStudioSessionMappingsCallable(const Model::ListStudioSessionMappingsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListStudioSessionMappings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListStudioSessionMappingsAsync(const Model::ListStudioSessionMappingsRequest& request, const ListStudioSessionMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of all Amazon EMR Studios associated with the Amazon Web
@@ -699,15 +463,6 @@ namespace EMR
          */
         virtual Model::ListStudiosOutcome ListStudios(const Model::ListStudiosRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListStudios that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListStudiosOutcomeCallable ListStudiosCallable(const Model::ListStudiosRequest& request) const;
-
-        /**
-         * An Async wrapper for ListStudios that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListStudiosAsync(const Model::ListStudiosRequest& request, const ListStudiosResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the number of steps that can be executed concurrently for the
@@ -717,15 +472,6 @@ namespace EMR
          */
         virtual Model::ModifyClusterOutcome ModifyCluster(const Model::ModifyClusterRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyCluster that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyClusterOutcomeCallable ModifyClusterCallable(const Model::ModifyClusterRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyClusterAsync(const Model::ModifyClusterRequest& request, const ModifyClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the target On-Demand and target Spot capacities for the instance
@@ -738,15 +484,6 @@ namespace EMR
          */
         virtual Model::ModifyInstanceFleetOutcome ModifyInstanceFleet(const Model::ModifyInstanceFleetRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyInstanceFleet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyInstanceFleetOutcomeCallable ModifyInstanceFleetCallable(const Model::ModifyInstanceFleetRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyInstanceFleet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyInstanceFleetAsync(const Model::ModifyInstanceFleetRequest& request, const ModifyInstanceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>ModifyInstanceGroups modifies the number of nodes and configuration settings
@@ -758,15 +495,6 @@ namespace EMR
          */
         virtual Model::ModifyInstanceGroupsOutcome ModifyInstanceGroups(const Model::ModifyInstanceGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyInstanceGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyInstanceGroupsOutcomeCallable ModifyInstanceGroupsCallable(const Model::ModifyInstanceGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyInstanceGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyInstanceGroupsAsync(const Model::ModifyInstanceGroupsRequest& request, const ModifyInstanceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates or updates an automatic scaling policy for a core instance group or
@@ -778,15 +506,6 @@ namespace EMR
          */
         virtual Model::PutAutoScalingPolicyOutcome PutAutoScalingPolicy(const Model::PutAutoScalingPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutAutoScalingPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutAutoScalingPolicyOutcomeCallable PutAutoScalingPolicyCallable(const Model::PutAutoScalingPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for PutAutoScalingPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutAutoScalingPolicyAsync(const Model::PutAutoScalingPolicyRequest& request, const PutAutoScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>Auto-termination is supported in Amazon EMR versions 5.30.0 and 6.1.0
@@ -803,15 +522,6 @@ namespace EMR
          */
         virtual Model::PutAutoTerminationPolicyOutcome PutAutoTerminationPolicy(const Model::PutAutoTerminationPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutAutoTerminationPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutAutoTerminationPolicyOutcomeCallable PutAutoTerminationPolicyCallable(const Model::PutAutoTerminationPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for PutAutoTerminationPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutAutoTerminationPolicyAsync(const Model::PutAutoTerminationPolicyRequest& request, const PutAutoTerminationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates or updates an Amazon EMR block public access configuration for your
@@ -824,15 +534,6 @@ namespace EMR
          */
         virtual Model::PutBlockPublicAccessConfigurationOutcome PutBlockPublicAccessConfiguration(const Model::PutBlockPublicAccessConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutBlockPublicAccessConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutBlockPublicAccessConfigurationOutcomeCallable PutBlockPublicAccessConfigurationCallable(const Model::PutBlockPublicAccessConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for PutBlockPublicAccessConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutBlockPublicAccessConfigurationAsync(const Model::PutBlockPublicAccessConfigurationRequest& request, const PutBlockPublicAccessConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates or updates a managed scaling policy for an Amazon EMR cluster. The
@@ -845,15 +546,6 @@ namespace EMR
          */
         virtual Model::PutManagedScalingPolicyOutcome PutManagedScalingPolicy(const Model::PutManagedScalingPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutManagedScalingPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutManagedScalingPolicyOutcomeCallable PutManagedScalingPolicyCallable(const Model::PutManagedScalingPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for PutManagedScalingPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutManagedScalingPolicyAsync(const Model::PutManagedScalingPolicyRequest& request, const PutManagedScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes an automatic scaling policy from a specified instance group within an
@@ -863,15 +555,6 @@ namespace EMR
          */
         virtual Model::RemoveAutoScalingPolicyOutcome RemoveAutoScalingPolicy(const Model::RemoveAutoScalingPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for RemoveAutoScalingPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RemoveAutoScalingPolicyOutcomeCallable RemoveAutoScalingPolicyCallable(const Model::RemoveAutoScalingPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for RemoveAutoScalingPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RemoveAutoScalingPolicyAsync(const Model::RemoveAutoScalingPolicyRequest& request, const RemoveAutoScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes an auto-termination policy from an Amazon EMR cluster.</p><p><h3>See
@@ -881,15 +564,6 @@ namespace EMR
          */
         virtual Model::RemoveAutoTerminationPolicyOutcome RemoveAutoTerminationPolicy(const Model::RemoveAutoTerminationPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for RemoveAutoTerminationPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RemoveAutoTerminationPolicyOutcomeCallable RemoveAutoTerminationPolicyCallable(const Model::RemoveAutoTerminationPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for RemoveAutoTerminationPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RemoveAutoTerminationPolicyAsync(const Model::RemoveAutoTerminationPolicyRequest& request, const RemoveAutoTerminationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Removes a managed scaling policy from a specified EMR cluster.
@@ -899,15 +573,6 @@ namespace EMR
          */
         virtual Model::RemoveManagedScalingPolicyOutcome RemoveManagedScalingPolicy(const Model::RemoveManagedScalingPolicyRequest& request) const;
 
-        /**
-         * A Callable wrapper for RemoveManagedScalingPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RemoveManagedScalingPolicyOutcomeCallable RemoveManagedScalingPolicyCallable(const Model::RemoveManagedScalingPolicyRequest& request) const;
-
-        /**
-         * An Async wrapper for RemoveManagedScalingPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RemoveManagedScalingPolicyAsync(const Model::RemoveManagedScalingPolicyRequest& request, const RemoveManagedScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes tags from an Amazon EMR resource, such as a cluster or Amazon EMR
@@ -922,15 +587,6 @@ namespace EMR
          */
         virtual Model::RemoveTagsOutcome RemoveTags(const Model::RemoveTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for RemoveTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RemoveTagsOutcomeCallable RemoveTagsCallable(const Model::RemoveTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for RemoveTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RemoveTagsAsync(const Model::RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>RunJobFlow creates and starts running a new cluster (job flow). The cluster
@@ -961,15 +617,6 @@ namespace EMR
          */
         virtual Model::RunJobFlowOutcome RunJobFlow(const Model::RunJobFlowRequest& request) const;
 
-        /**
-         * A Callable wrapper for RunJobFlow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RunJobFlowOutcomeCallable RunJobFlowCallable(const Model::RunJobFlowRequest& request) const;
-
-        /**
-         * An Async wrapper for RunJobFlow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RunJobFlowAsync(const Model::RunJobFlowRequest& request, const RunJobFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>SetTerminationProtection locks a cluster (job flow) so the EC2 instances in
@@ -994,15 +641,6 @@ namespace EMR
          */
         virtual Model::SetTerminationProtectionOutcome SetTerminationProtection(const Model::SetTerminationProtectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for SetTerminationProtection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SetTerminationProtectionOutcomeCallable SetTerminationProtectionCallable(const Model::SetTerminationProtectionRequest& request) const;
-
-        /**
-         * An Async wrapper for SetTerminationProtection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SetTerminationProtectionAsync(const Model::SetTerminationProtectionRequest& request, const SetTerminationProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>The SetVisibleToAllUsers parameter is no longer supported. Your
@@ -1027,15 +665,6 @@ namespace EMR
          */
         virtual Model::SetVisibleToAllUsersOutcome SetVisibleToAllUsers(const Model::SetVisibleToAllUsersRequest& request) const;
 
-        /**
-         * A Callable wrapper for SetVisibleToAllUsers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SetVisibleToAllUsersOutcomeCallable SetVisibleToAllUsersCallable(const Model::SetVisibleToAllUsersRequest& request) const;
-
-        /**
-         * An Async wrapper for SetVisibleToAllUsers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SetVisibleToAllUsersAsync(const Model::SetVisibleToAllUsersRequest& request, const SetVisibleToAllUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts a notebook execution.</p><p><h3>See Also:</h3>   <a
@@ -1044,15 +673,6 @@ namespace EMR
          */
         virtual Model::StartNotebookExecutionOutcome StartNotebookExecution(const Model::StartNotebookExecutionRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartNotebookExecution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartNotebookExecutionOutcomeCallable StartNotebookExecutionCallable(const Model::StartNotebookExecutionRequest& request) const;
-
-        /**
-         * An Async wrapper for StartNotebookExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartNotebookExecutionAsync(const Model::StartNotebookExecutionRequest& request, const StartNotebookExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops a notebook execution.</p><p><h3>See Also:</h3>   <a
@@ -1061,15 +681,6 @@ namespace EMR
          */
         virtual Model::StopNotebookExecutionOutcome StopNotebookExecution(const Model::StopNotebookExecutionRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopNotebookExecution that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopNotebookExecutionOutcomeCallable StopNotebookExecutionCallable(const Model::StopNotebookExecutionRequest& request) const;
-
-        /**
-         * An Async wrapper for StopNotebookExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopNotebookExecutionAsync(const Model::StopNotebookExecutionRequest& request, const StopNotebookExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>TerminateJobFlows shuts a list of clusters (job flows) down. When a job flow
@@ -1086,15 +697,6 @@ namespace EMR
          */
         virtual Model::TerminateJobFlowsOutcome TerminateJobFlows(const Model::TerminateJobFlowsRequest& request) const;
 
-        /**
-         * A Callable wrapper for TerminateJobFlows that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TerminateJobFlowsOutcomeCallable TerminateJobFlowsCallable(const Model::TerminateJobFlowsRequest& request) const;
-
-        /**
-         * An Async wrapper for TerminateJobFlows that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TerminateJobFlowsAsync(const Model::TerminateJobFlowsRequest& request, const TerminateJobFlowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an Amazon EMR Studio configuration, including attributes such as
@@ -1104,15 +706,6 @@ namespace EMR
          */
         virtual Model::UpdateStudioOutcome UpdateStudio(const Model::UpdateStudioRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateStudio that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateStudioOutcomeCallable UpdateStudioCallable(const Model::UpdateStudioRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateStudio that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateStudioAsync(const Model::UpdateStudioRequest& request, const UpdateStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the session policy attached to the user or group for the specified
@@ -1122,15 +715,6 @@ namespace EMR
          */
         virtual Model::UpdateStudioSessionMappingOutcome UpdateStudioSessionMapping(const Model::UpdateStudioSessionMappingRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateStudioSessionMapping that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateStudioSessionMappingOutcomeCallable UpdateStudioSessionMappingCallable(const Model::UpdateStudioSessionMappingRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateStudioSessionMapping that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateStudioSessionMappingAsync(const Model::UpdateStudioSessionMappingRequest& request, const UpdateStudioSessionMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

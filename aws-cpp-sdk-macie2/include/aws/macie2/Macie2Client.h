@@ -7,8 +7,10 @@
 #include <aws/macie2/Macie2_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/macie2/Macie2ServiceClientModel.h>
+#include <aws/macie2/Macie2LegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -80,6 +82,47 @@ namespace Macie2
         virtual ~Macie2Client();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Accepts an Amazon Macie membership invitation that was received from a
          * specific account.</p><p><h3>See Also:</h3>   <a
@@ -88,15 +131,6 @@ namespace Macie2
          */
         virtual Model::AcceptInvitationOutcome AcceptInvitation(const Model::AcceptInvitationRequest& request) const;
 
-        /**
-         * A Callable wrapper for AcceptInvitation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AcceptInvitationOutcomeCallable AcceptInvitationCallable(const Model::AcceptInvitationRequest& request) const;
-
-        /**
-         * An Async wrapper for AcceptInvitation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AcceptInvitationAsync(const Model::AcceptInvitationRequest& request, const AcceptInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about one or more custom data
@@ -106,15 +140,6 @@ namespace Macie2
          */
         virtual Model::BatchGetCustomDataIdentifiersOutcome BatchGetCustomDataIdentifiers(const Model::BatchGetCustomDataIdentifiersRequest& request) const;
 
-        /**
-         * A Callable wrapper for BatchGetCustomDataIdentifiers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BatchGetCustomDataIdentifiersOutcomeCallable BatchGetCustomDataIdentifiersCallable(const Model::BatchGetCustomDataIdentifiersRequest& request) const;
-
-        /**
-         * An Async wrapper for BatchGetCustomDataIdentifiers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BatchGetCustomDataIdentifiersAsync(const Model::BatchGetCustomDataIdentifiersRequest& request, const BatchGetCustomDataIdentifiersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates and defines the settings for an allow list.</p><p><h3>See Also:</h3> 
@@ -124,15 +149,6 @@ namespace Macie2
          */
         virtual Model::CreateAllowListOutcome CreateAllowList(const Model::CreateAllowListRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateAllowList that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateAllowListOutcomeCallable CreateAllowListCallable(const Model::CreateAllowListRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateAllowList that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateAllowListAsync(const Model::CreateAllowListRequest& request, const CreateAllowListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates and defines the settings for a classification job.</p><p><h3>See
@@ -142,15 +158,6 @@ namespace Macie2
          */
         virtual Model::CreateClassificationJobOutcome CreateClassificationJob(const Model::CreateClassificationJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateClassificationJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateClassificationJobOutcomeCallable CreateClassificationJobCallable(const Model::CreateClassificationJobRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateClassificationJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateClassificationJobAsync(const Model::CreateClassificationJobRequest& request, const CreateClassificationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates and defines the criteria and other settings for a custom data
@@ -160,15 +167,6 @@ namespace Macie2
          */
         virtual Model::CreateCustomDataIdentifierOutcome CreateCustomDataIdentifier(const Model::CreateCustomDataIdentifierRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateCustomDataIdentifier that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateCustomDataIdentifierOutcomeCallable CreateCustomDataIdentifierCallable(const Model::CreateCustomDataIdentifierRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateCustomDataIdentifier that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateCustomDataIdentifierAsync(const Model::CreateCustomDataIdentifierRequest& request, const CreateCustomDataIdentifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates and defines the criteria and other settings for a findings
@@ -178,15 +176,6 @@ namespace Macie2
          */
         virtual Model::CreateFindingsFilterOutcome CreateFindingsFilter(const Model::CreateFindingsFilterRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateFindingsFilter that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateFindingsFilterOutcomeCallable CreateFindingsFilterCallable(const Model::CreateFindingsFilterRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateFindingsFilter that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateFindingsFilterAsync(const Model::CreateFindingsFilterRequest& request, const CreateFindingsFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sends an Amazon Macie membership invitation to one or more
@@ -196,15 +185,6 @@ namespace Macie2
          */
         virtual Model::CreateInvitationsOutcome CreateInvitations(const Model::CreateInvitationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateInvitations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateInvitationsOutcomeCallable CreateInvitationsCallable(const Model::CreateInvitationsRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateInvitations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateInvitationsAsync(const Model::CreateInvitationsRequest& request, const CreateInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates an account with an Amazon Macie administrator
@@ -214,15 +194,6 @@ namespace Macie2
          */
         virtual Model::CreateMemberOutcome CreateMember(const Model::CreateMemberRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateMember that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateMemberOutcomeCallable CreateMemberCallable(const Model::CreateMemberRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateMember that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateMemberAsync(const Model::CreateMemberRequest& request, const CreateMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates sample findings.</p><p><h3>See Also:</h3>   <a
@@ -231,15 +202,6 @@ namespace Macie2
          */
         virtual Model::CreateSampleFindingsOutcome CreateSampleFindings(const Model::CreateSampleFindingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateSampleFindings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateSampleFindingsOutcomeCallable CreateSampleFindingsCallable(const Model::CreateSampleFindingsRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateSampleFindings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateSampleFindingsAsync(const Model::CreateSampleFindingsRequest& request, const CreateSampleFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Declines Amazon Macie membership invitations that were received from specific
@@ -249,15 +211,6 @@ namespace Macie2
          */
         virtual Model::DeclineInvitationsOutcome DeclineInvitations(const Model::DeclineInvitationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeclineInvitations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeclineInvitationsOutcomeCallable DeclineInvitationsCallable(const Model::DeclineInvitationsRequest& request) const;
-
-        /**
-         * An Async wrapper for DeclineInvitations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeclineInvitationsAsync(const Model::DeclineInvitationsRequest& request, const DeclineInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an allow list.</p><p><h3>See Also:</h3>   <a
@@ -266,15 +219,6 @@ namespace Macie2
          */
         virtual Model::DeleteAllowListOutcome DeleteAllowList(const Model::DeleteAllowListRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteAllowList that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteAllowListOutcomeCallable DeleteAllowListCallable(const Model::DeleteAllowListRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteAllowList that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteAllowListAsync(const Model::DeleteAllowListRequest& request, const DeleteAllowListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Soft deletes a custom data identifier.</p><p><h3>See Also:</h3>   <a
@@ -283,15 +227,6 @@ namespace Macie2
          */
         virtual Model::DeleteCustomDataIdentifierOutcome DeleteCustomDataIdentifier(const Model::DeleteCustomDataIdentifierRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteCustomDataIdentifier that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteCustomDataIdentifierOutcomeCallable DeleteCustomDataIdentifierCallable(const Model::DeleteCustomDataIdentifierRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteCustomDataIdentifier that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteCustomDataIdentifierAsync(const Model::DeleteCustomDataIdentifierRequest& request, const DeleteCustomDataIdentifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a findings filter.</p><p><h3>See Also:</h3>   <a
@@ -300,15 +235,6 @@ namespace Macie2
          */
         virtual Model::DeleteFindingsFilterOutcome DeleteFindingsFilter(const Model::DeleteFindingsFilterRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteFindingsFilter that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteFindingsFilterOutcomeCallable DeleteFindingsFilterCallable(const Model::DeleteFindingsFilterRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteFindingsFilter that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteFindingsFilterAsync(const Model::DeleteFindingsFilterRequest& request, const DeleteFindingsFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes Amazon Macie membership invitations that were received from specific
@@ -318,15 +244,6 @@ namespace Macie2
          */
         virtual Model::DeleteInvitationsOutcome DeleteInvitations(const Model::DeleteInvitationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteInvitations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteInvitationsOutcomeCallable DeleteInvitationsCallable(const Model::DeleteInvitationsRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteInvitations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteInvitationsAsync(const Model::DeleteInvitationsRequest& request, const DeleteInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the association between an Amazon Macie administrator account and an
@@ -336,15 +253,6 @@ namespace Macie2
          */
         virtual Model::DeleteMemberOutcome DeleteMember(const Model::DeleteMemberRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteMember that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteMemberOutcomeCallable DeleteMemberCallable(const Model::DeleteMemberRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteMember that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteMemberAsync(const Model::DeleteMemberRequest& request, const DeleteMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves (queries) statistical data and other information about one or more
@@ -355,15 +263,6 @@ namespace Macie2
          */
         virtual Model::DescribeBucketsOutcome DescribeBuckets(const Model::DescribeBucketsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeBuckets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeBucketsOutcomeCallable DescribeBucketsCallable(const Model::DescribeBucketsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeBuckets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeBucketsAsync(const Model::DescribeBucketsRequest& request, const DescribeBucketsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the status and settings for a classification job.</p><p><h3>See
@@ -373,15 +272,6 @@ namespace Macie2
          */
         virtual Model::DescribeClassificationJobOutcome DescribeClassificationJob(const Model::DescribeClassificationJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeClassificationJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeClassificationJobOutcomeCallable DescribeClassificationJobCallable(const Model::DescribeClassificationJobRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeClassificationJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeClassificationJobAsync(const Model::DescribeClassificationJobRequest& request, const DescribeClassificationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the Amazon Macie configuration settings for an organization in
@@ -391,15 +281,6 @@ namespace Macie2
          */
         virtual Model::DescribeOrganizationConfigurationOutcome DescribeOrganizationConfiguration(const Model::DescribeOrganizationConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeOrganizationConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeOrganizationConfigurationOutcomeCallable DescribeOrganizationConfigurationCallable(const Model::DescribeOrganizationConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeOrganizationConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeOrganizationConfigurationAsync(const Model::DescribeOrganizationConfigurationRequest& request, const DescribeOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disables Amazon Macie and deletes all settings and resources for a Macie
@@ -409,15 +290,6 @@ namespace Macie2
          */
         virtual Model::DisableMacieOutcome DisableMacie(const Model::DisableMacieRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisableMacie that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisableMacieOutcomeCallable DisableMacieCallable(const Model::DisableMacieRequest& request) const;
-
-        /**
-         * An Async wrapper for DisableMacie that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisableMacieAsync(const Model::DisableMacieRequest& request, const DisableMacieResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disables an account as the delegated Amazon Macie administrator account for
@@ -427,15 +299,6 @@ namespace Macie2
          */
         virtual Model::DisableOrganizationAdminAccountOutcome DisableOrganizationAdminAccount(const Model::DisableOrganizationAdminAccountRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisableOrganizationAdminAccount that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisableOrganizationAdminAccountOutcomeCallable DisableOrganizationAdminAccountCallable(const Model::DisableOrganizationAdminAccountRequest& request) const;
-
-        /**
-         * An Async wrapper for DisableOrganizationAdminAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisableOrganizationAdminAccountAsync(const Model::DisableOrganizationAdminAccountRequest& request, const DisableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates a member account from its Amazon Macie administrator
@@ -445,15 +308,6 @@ namespace Macie2
          */
         virtual Model::DisassociateFromAdministratorAccountOutcome DisassociateFromAdministratorAccount(const Model::DisassociateFromAdministratorAccountRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateFromAdministratorAccount that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateFromAdministratorAccountOutcomeCallable DisassociateFromAdministratorAccountCallable(const Model::DisassociateFromAdministratorAccountRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateFromAdministratorAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateFromAdministratorAccountAsync(const Model::DisassociateFromAdministratorAccountRequest& request, const DisassociateFromAdministratorAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>(Deprecated) Disassociates a member account from its Amazon Macie
@@ -465,15 +319,6 @@ namespace Macie2
          */
         virtual Model::DisassociateFromMasterAccountOutcome DisassociateFromMasterAccount(const Model::DisassociateFromMasterAccountRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateFromMasterAccount that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateFromMasterAccountOutcomeCallable DisassociateFromMasterAccountCallable(const Model::DisassociateFromMasterAccountRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateFromMasterAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateFromMasterAccountAsync(const Model::DisassociateFromMasterAccountRequest& request, const DisassociateFromMasterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates an Amazon Macie administrator account from a member
@@ -483,15 +328,6 @@ namespace Macie2
          */
         virtual Model::DisassociateMemberOutcome DisassociateMember(const Model::DisassociateMemberRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateMember that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateMemberOutcomeCallable DisassociateMemberCallable(const Model::DisassociateMemberRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateMember that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateMemberAsync(const Model::DisassociateMemberRequest& request, const DisassociateMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables Amazon Macie and specifies the configuration settings for a Macie
@@ -501,15 +337,6 @@ namespace Macie2
          */
         virtual Model::EnableMacieOutcome EnableMacie(const Model::EnableMacieRequest& request) const;
 
-        /**
-         * A Callable wrapper for EnableMacie that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnableMacieOutcomeCallable EnableMacieCallable(const Model::EnableMacieRequest& request) const;
-
-        /**
-         * An Async wrapper for EnableMacie that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnableMacieAsync(const Model::EnableMacieRequest& request, const EnableMacieResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Designates an account as the delegated Amazon Macie administrator account for
@@ -519,15 +346,6 @@ namespace Macie2
          */
         virtual Model::EnableOrganizationAdminAccountOutcome EnableOrganizationAdminAccount(const Model::EnableOrganizationAdminAccountRequest& request) const;
 
-        /**
-         * A Callable wrapper for EnableOrganizationAdminAccount that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnableOrganizationAdminAccountOutcomeCallable EnableOrganizationAdminAccountCallable(const Model::EnableOrganizationAdminAccountRequest& request) const;
-
-        /**
-         * An Async wrapper for EnableOrganizationAdminAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnableOrganizationAdminAccountAsync(const Model::EnableOrganizationAdminAccountRequest& request, const EnableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about the Amazon Macie administrator account for an
@@ -537,15 +355,6 @@ namespace Macie2
          */
         virtual Model::GetAdministratorAccountOutcome GetAdministratorAccount(const Model::GetAdministratorAccountRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAdministratorAccount that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAdministratorAccountOutcomeCallable GetAdministratorAccountCallable(const Model::GetAdministratorAccountRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAdministratorAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAdministratorAccountAsync(const Model::GetAdministratorAccountRequest& request, const GetAdministratorAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the settings and status of an allow list.</p><p><h3>See Also:</h3> 
@@ -555,15 +364,6 @@ namespace Macie2
          */
         virtual Model::GetAllowListOutcome GetAllowList(const Model::GetAllowListRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAllowList that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAllowListOutcomeCallable GetAllowListCallable(const Model::GetAllowListRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAllowList that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAllowListAsync(const Model::GetAllowListRequest& request, const GetAllowListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves (queries) aggregated statistical data about S3 buckets that Amazon
@@ -573,15 +373,6 @@ namespace Macie2
          */
         virtual Model::GetBucketStatisticsOutcome GetBucketStatistics(const Model::GetBucketStatisticsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetBucketStatistics that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetBucketStatisticsOutcomeCallable GetBucketStatisticsCallable(const Model::GetBucketStatisticsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetBucketStatistics that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetBucketStatisticsAsync(const Model::GetBucketStatisticsRequest& request, const GetBucketStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the configuration settings for storing data classification
@@ -591,15 +382,6 @@ namespace Macie2
          */
         virtual Model::GetClassificationExportConfigurationOutcome GetClassificationExportConfiguration(const Model::GetClassificationExportConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetClassificationExportConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetClassificationExportConfigurationOutcomeCallable GetClassificationExportConfigurationCallable(const Model::GetClassificationExportConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetClassificationExportConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetClassificationExportConfigurationAsync(const Model::GetClassificationExportConfigurationRequest& request, const GetClassificationExportConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the criteria and other settings for a custom data
@@ -609,15 +391,6 @@ namespace Macie2
          */
         virtual Model::GetCustomDataIdentifierOutcome GetCustomDataIdentifier(const Model::GetCustomDataIdentifierRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetCustomDataIdentifier that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetCustomDataIdentifierOutcomeCallable GetCustomDataIdentifierCallable(const Model::GetCustomDataIdentifierRequest& request) const;
-
-        /**
-         * An Async wrapper for GetCustomDataIdentifier that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetCustomDataIdentifierAsync(const Model::GetCustomDataIdentifierRequest& request, const GetCustomDataIdentifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves (queries) aggregated statistical data about findings.</p><p><h3>See
@@ -627,15 +400,6 @@ namespace Macie2
          */
         virtual Model::GetFindingStatisticsOutcome GetFindingStatistics(const Model::GetFindingStatisticsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetFindingStatistics that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetFindingStatisticsOutcomeCallable GetFindingStatisticsCallable(const Model::GetFindingStatisticsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetFindingStatistics that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetFindingStatisticsAsync(const Model::GetFindingStatisticsRequest& request, const GetFindingStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the details of one or more findings.</p><p><h3>See Also:</h3>   <a
@@ -644,15 +408,6 @@ namespace Macie2
          */
         virtual Model::GetFindingsOutcome GetFindings(const Model::GetFindingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetFindings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetFindingsOutcomeCallable GetFindingsCallable(const Model::GetFindingsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetFindings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetFindingsAsync(const Model::GetFindingsRequest& request, const GetFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the criteria and other settings for a findings
@@ -662,15 +417,6 @@ namespace Macie2
          */
         virtual Model::GetFindingsFilterOutcome GetFindingsFilter(const Model::GetFindingsFilterRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetFindingsFilter that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetFindingsFilterOutcomeCallable GetFindingsFilterCallable(const Model::GetFindingsFilterRequest& request) const;
-
-        /**
-         * An Async wrapper for GetFindingsFilter that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetFindingsFilterAsync(const Model::GetFindingsFilterRequest& request, const GetFindingsFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the configuration settings for publishing findings to Security
@@ -680,15 +426,6 @@ namespace Macie2
          */
         virtual Model::GetFindingsPublicationConfigurationOutcome GetFindingsPublicationConfiguration(const Model::GetFindingsPublicationConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetFindingsPublicationConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetFindingsPublicationConfigurationOutcomeCallable GetFindingsPublicationConfigurationCallable(const Model::GetFindingsPublicationConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetFindingsPublicationConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetFindingsPublicationConfigurationAsync(const Model::GetFindingsPublicationConfigurationRequest& request, const GetFindingsPublicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the count of Amazon Macie membership invitations that were received
@@ -698,15 +435,6 @@ namespace Macie2
          */
         virtual Model::GetInvitationsCountOutcome GetInvitationsCount(const Model::GetInvitationsCountRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetInvitationsCount that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetInvitationsCountOutcomeCallable GetInvitationsCountCallable(const Model::GetInvitationsCountRequest& request) const;
-
-        /**
-         * An Async wrapper for GetInvitationsCount that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetInvitationsCountAsync(const Model::GetInvitationsCountRequest& request, const GetInvitationsCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the current status and configuration settings for an Amazon Macie
@@ -716,15 +444,6 @@ namespace Macie2
          */
         virtual Model::GetMacieSessionOutcome GetMacieSession(const Model::GetMacieSessionRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetMacieSession that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetMacieSessionOutcomeCallable GetMacieSessionCallable(const Model::GetMacieSessionRequest& request) const;
-
-        /**
-         * An Async wrapper for GetMacieSession that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetMacieSessionAsync(const Model::GetMacieSessionRequest& request, const GetMacieSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>(Deprecated) Retrieves information about the Amazon Macie administrator
@@ -736,15 +455,6 @@ namespace Macie2
          */
         virtual Model::GetMasterAccountOutcome GetMasterAccount(const Model::GetMasterAccountRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetMasterAccount that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetMasterAccountOutcomeCallable GetMasterAccountCallable(const Model::GetMasterAccountRequest& request) const;
-
-        /**
-         * An Async wrapper for GetMasterAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetMasterAccountAsync(const Model::GetMasterAccountRequest& request, const GetMasterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about an account that's associated with an Amazon Macie
@@ -754,15 +464,6 @@ namespace Macie2
          */
         virtual Model::GetMemberOutcome GetMember(const Model::GetMemberRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetMember that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetMemberOutcomeCallable GetMemberCallable(const Model::GetMemberRequest& request) const;
-
-        /**
-         * An Async wrapper for GetMember that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetMemberAsync(const Model::GetMemberRequest& request, const GetMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the status and configuration settings for retrieving occurrences of
@@ -772,15 +473,6 @@ namespace Macie2
          */
         virtual Model::GetRevealConfigurationOutcome GetRevealConfiguration(const Model::GetRevealConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetRevealConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetRevealConfigurationOutcomeCallable GetRevealConfigurationCallable(const Model::GetRevealConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetRevealConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetRevealConfigurationAsync(const Model::GetRevealConfigurationRequest& request, const GetRevealConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves occurrences of sensitive data reported by a finding.</p><p><h3>See
@@ -790,15 +482,6 @@ namespace Macie2
          */
         virtual Model::GetSensitiveDataOccurrencesOutcome GetSensitiveDataOccurrences(const Model::GetSensitiveDataOccurrencesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSensitiveDataOccurrences that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSensitiveDataOccurrencesOutcomeCallable GetSensitiveDataOccurrencesCallable(const Model::GetSensitiveDataOccurrencesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSensitiveDataOccurrences that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSensitiveDataOccurrencesAsync(const Model::GetSensitiveDataOccurrencesRequest& request, const GetSensitiveDataOccurrencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Checks whether occurrences of sensitive data can be retrieved for a
@@ -808,15 +491,6 @@ namespace Macie2
          */
         virtual Model::GetSensitiveDataOccurrencesAvailabilityOutcome GetSensitiveDataOccurrencesAvailability(const Model::GetSensitiveDataOccurrencesAvailabilityRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSensitiveDataOccurrencesAvailability that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSensitiveDataOccurrencesAvailabilityOutcomeCallable GetSensitiveDataOccurrencesAvailabilityCallable(const Model::GetSensitiveDataOccurrencesAvailabilityRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSensitiveDataOccurrencesAvailability that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSensitiveDataOccurrencesAvailabilityAsync(const Model::GetSensitiveDataOccurrencesAvailabilityRequest& request, const GetSensitiveDataOccurrencesAvailabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves (queries) quotas and aggregated usage data for one or more
@@ -826,15 +500,6 @@ namespace Macie2
          */
         virtual Model::GetUsageStatisticsOutcome GetUsageStatistics(const Model::GetUsageStatisticsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetUsageStatistics that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetUsageStatisticsOutcomeCallable GetUsageStatisticsCallable(const Model::GetUsageStatisticsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetUsageStatistics that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetUsageStatisticsAsync(const Model::GetUsageStatisticsRequest& request, const GetUsageStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves (queries) aggregated usage data for an account.</p><p><h3>See
@@ -844,15 +509,6 @@ namespace Macie2
          */
         virtual Model::GetUsageTotalsOutcome GetUsageTotals(const Model::GetUsageTotalsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetUsageTotals that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetUsageTotalsOutcomeCallable GetUsageTotalsCallable(const Model::GetUsageTotalsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetUsageTotals that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetUsageTotalsAsync(const Model::GetUsageTotalsRequest& request, const GetUsageTotalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a subset of information about all the allow lists for an
@@ -862,15 +518,6 @@ namespace Macie2
          */
         virtual Model::ListAllowListsOutcome ListAllowLists(const Model::ListAllowListsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListAllowLists that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListAllowListsOutcomeCallable ListAllowListsCallable(const Model::ListAllowListsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListAllowLists that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListAllowListsAsync(const Model::ListAllowListsRequest& request, const ListAllowListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a subset of information about one or more classification
@@ -880,15 +527,6 @@ namespace Macie2
          */
         virtual Model::ListClassificationJobsOutcome ListClassificationJobs(const Model::ListClassificationJobsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListClassificationJobs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListClassificationJobsOutcomeCallable ListClassificationJobsCallable(const Model::ListClassificationJobsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListClassificationJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListClassificationJobsAsync(const Model::ListClassificationJobsRequest& request, const ListClassificationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a subset of information about all the custom data identifiers for
@@ -898,15 +536,6 @@ namespace Macie2
          */
         virtual Model::ListCustomDataIdentifiersOutcome ListCustomDataIdentifiers(const Model::ListCustomDataIdentifiersRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListCustomDataIdentifiers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListCustomDataIdentifiersOutcomeCallable ListCustomDataIdentifiersCallable(const Model::ListCustomDataIdentifiersRequest& request) const;
-
-        /**
-         * An Async wrapper for ListCustomDataIdentifiers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListCustomDataIdentifiersAsync(const Model::ListCustomDataIdentifiersRequest& request, const ListCustomDataIdentifiersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a subset of information about one or more findings.</p><p><h3>See
@@ -916,15 +545,6 @@ namespace Macie2
          */
         virtual Model::ListFindingsOutcome ListFindings(const Model::ListFindingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListFindings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListFindingsOutcomeCallable ListFindingsCallable(const Model::ListFindingsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListFindings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListFindingsAsync(const Model::ListFindingsRequest& request, const ListFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a subset of information about all the findings filters for an
@@ -934,15 +554,6 @@ namespace Macie2
          */
         virtual Model::ListFindingsFiltersOutcome ListFindingsFilters(const Model::ListFindingsFiltersRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListFindingsFilters that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListFindingsFiltersOutcomeCallable ListFindingsFiltersCallable(const Model::ListFindingsFiltersRequest& request) const;
-
-        /**
-         * An Async wrapper for ListFindingsFilters that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListFindingsFiltersAsync(const Model::ListFindingsFiltersRequest& request, const ListFindingsFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about the Amazon Macie membership invitations that were
@@ -952,15 +563,6 @@ namespace Macie2
          */
         virtual Model::ListInvitationsOutcome ListInvitations(const Model::ListInvitationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListInvitations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListInvitationsOutcomeCallable ListInvitationsCallable(const Model::ListInvitationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListInvitations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListInvitationsAsync(const Model::ListInvitationsRequest& request, const ListInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about all the managed data identifiers that Amazon
@@ -970,15 +572,6 @@ namespace Macie2
          */
         virtual Model::ListManagedDataIdentifiersOutcome ListManagedDataIdentifiers(const Model::ListManagedDataIdentifiersRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListManagedDataIdentifiers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListManagedDataIdentifiersOutcomeCallable ListManagedDataIdentifiersCallable(const Model::ListManagedDataIdentifiersRequest& request) const;
-
-        /**
-         * An Async wrapper for ListManagedDataIdentifiers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListManagedDataIdentifiersAsync(const Model::ListManagedDataIdentifiersRequest& request, const ListManagedDataIdentifiersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about the accounts that are associated with an Amazon
@@ -988,15 +581,6 @@ namespace Macie2
          */
         virtual Model::ListMembersOutcome ListMembers(const Model::ListMembersRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListMembers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListMembersOutcomeCallable ListMembersCallable(const Model::ListMembersRequest& request) const;
-
-        /**
-         * An Async wrapper for ListMembers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListMembersAsync(const Model::ListMembersRequest& request, const ListMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about the delegated Amazon Macie administrator account
@@ -1006,15 +590,6 @@ namespace Macie2
          */
         virtual Model::ListOrganizationAdminAccountsOutcome ListOrganizationAdminAccounts(const Model::ListOrganizationAdminAccountsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListOrganizationAdminAccounts that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListOrganizationAdminAccountsOutcomeCallable ListOrganizationAdminAccountsCallable(const Model::ListOrganizationAdminAccountsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListOrganizationAdminAccounts that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListOrganizationAdminAccountsAsync(const Model::ListOrganizationAdminAccountsRequest& request, const ListOrganizationAdminAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the tags (keys and values) that are associated with an Amazon Macie
@@ -1024,15 +599,6 @@ namespace Macie2
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates or updates the configuration settings for storing data classification
@@ -1042,15 +608,6 @@ namespace Macie2
          */
         virtual Model::PutClassificationExportConfigurationOutcome PutClassificationExportConfiguration(const Model::PutClassificationExportConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutClassificationExportConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutClassificationExportConfigurationOutcomeCallable PutClassificationExportConfigurationCallable(const Model::PutClassificationExportConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for PutClassificationExportConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutClassificationExportConfigurationAsync(const Model::PutClassificationExportConfigurationRequest& request, const PutClassificationExportConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the configuration settings for publishing findings to Security
@@ -1060,15 +617,6 @@ namespace Macie2
          */
         virtual Model::PutFindingsPublicationConfigurationOutcome PutFindingsPublicationConfiguration(const Model::PutFindingsPublicationConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for PutFindingsPublicationConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutFindingsPublicationConfigurationOutcomeCallable PutFindingsPublicationConfigurationCallable(const Model::PutFindingsPublicationConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for PutFindingsPublicationConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutFindingsPublicationConfigurationAsync(const Model::PutFindingsPublicationConfigurationRequest& request, const PutFindingsPublicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves (queries) statistical data and other information about Amazon Web
@@ -1079,15 +627,6 @@ namespace Macie2
          */
         virtual Model::SearchResourcesOutcome SearchResources(const Model::SearchResourcesRequest& request) const;
 
-        /**
-         * A Callable wrapper for SearchResources that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SearchResourcesOutcomeCallable SearchResourcesCallable(const Model::SearchResourcesRequest& request) const;
-
-        /**
-         * An Async wrapper for SearchResources that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SearchResourcesAsync(const Model::SearchResourcesRequest& request, const SearchResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds or updates one or more tags (keys and values) that are associated with
@@ -1097,15 +636,6 @@ namespace Macie2
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Tests a custom data identifier.</p><p><h3>See Also:</h3>   <a
@@ -1114,15 +644,6 @@ namespace Macie2
          */
         virtual Model::TestCustomDataIdentifierOutcome TestCustomDataIdentifier(const Model::TestCustomDataIdentifierRequest& request) const;
 
-        /**
-         * A Callable wrapper for TestCustomDataIdentifier that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TestCustomDataIdentifierOutcomeCallable TestCustomDataIdentifierCallable(const Model::TestCustomDataIdentifierRequest& request) const;
-
-        /**
-         * An Async wrapper for TestCustomDataIdentifier that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TestCustomDataIdentifierAsync(const Model::TestCustomDataIdentifierRequest& request, const TestCustomDataIdentifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes one or more tags (keys and values) from an Amazon Macie
@@ -1132,15 +653,6 @@ namespace Macie2
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
-        /**
-         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
-
-        /**
-         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the settings for an allow list.</p><p><h3>See Also:</h3>   <a
@@ -1149,15 +661,6 @@ namespace Macie2
          */
         virtual Model::UpdateAllowListOutcome UpdateAllowList(const Model::UpdateAllowListRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateAllowList that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateAllowListOutcomeCallable UpdateAllowListCallable(const Model::UpdateAllowListRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateAllowList that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateAllowListAsync(const Model::UpdateAllowListRequest& request, const UpdateAllowListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Changes the status of a classification job.</p><p><h3>See Also:</h3>   <a
@@ -1166,15 +669,6 @@ namespace Macie2
          */
         virtual Model::UpdateClassificationJobOutcome UpdateClassificationJob(const Model::UpdateClassificationJobRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateClassificationJob that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateClassificationJobOutcomeCallable UpdateClassificationJobCallable(const Model::UpdateClassificationJobRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateClassificationJob that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateClassificationJobAsync(const Model::UpdateClassificationJobRequest& request, const UpdateClassificationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the criteria and other settings for a findings filter.</p><p><h3>See
@@ -1184,15 +678,6 @@ namespace Macie2
          */
         virtual Model::UpdateFindingsFilterOutcome UpdateFindingsFilter(const Model::UpdateFindingsFilterRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateFindingsFilter that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateFindingsFilterOutcomeCallable UpdateFindingsFilterCallable(const Model::UpdateFindingsFilterRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateFindingsFilter that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateFindingsFilterAsync(const Model::UpdateFindingsFilterRequest& request, const UpdateFindingsFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Suspends or re-enables Amazon Macie, or updates the configuration settings
@@ -1202,15 +687,6 @@ namespace Macie2
          */
         virtual Model::UpdateMacieSessionOutcome UpdateMacieSession(const Model::UpdateMacieSessionRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateMacieSession that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateMacieSessionOutcomeCallable UpdateMacieSessionCallable(const Model::UpdateMacieSessionRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateMacieSession that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateMacieSessionAsync(const Model::UpdateMacieSessionRequest& request, const UpdateMacieSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables an Amazon Macie administrator to suspend or re-enable Macie for a
@@ -1220,15 +696,6 @@ namespace Macie2
          */
         virtual Model::UpdateMemberSessionOutcome UpdateMemberSession(const Model::UpdateMemberSessionRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateMemberSession that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateMemberSessionOutcomeCallable UpdateMemberSessionCallable(const Model::UpdateMemberSessionRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateMemberSession that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateMemberSessionAsync(const Model::UpdateMemberSessionRequest& request, const UpdateMemberSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the Amazon Macie configuration settings for an organization in
@@ -1238,15 +705,6 @@ namespace Macie2
          */
         virtual Model::UpdateOrganizationConfigurationOutcome UpdateOrganizationConfiguration(const Model::UpdateOrganizationConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateOrganizationConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateOrganizationConfigurationOutcomeCallable UpdateOrganizationConfigurationCallable(const Model::UpdateOrganizationConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateOrganizationConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateOrganizationConfigurationAsync(const Model::UpdateOrganizationConfigurationRequest& request, const UpdateOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the status and configuration settings for retrieving occurrences of
@@ -1256,15 +714,6 @@ namespace Macie2
          */
         virtual Model::UpdateRevealConfigurationOutcome UpdateRevealConfiguration(const Model::UpdateRevealConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateRevealConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateRevealConfigurationOutcomeCallable UpdateRevealConfigurationCallable(const Model::UpdateRevealConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateRevealConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateRevealConfigurationAsync(const Model::UpdateRevealConfigurationRequest& request, const UpdateRevealConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
