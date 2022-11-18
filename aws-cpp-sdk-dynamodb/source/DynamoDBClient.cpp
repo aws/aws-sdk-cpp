@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -213,18 +214,12 @@ BatchExecuteStatementOutcome DynamoDBClient::BatchExecuteStatement(const BatchEx
 
 BatchExecuteStatementOutcomeCallable DynamoDBClient::BatchExecuteStatementCallable(const BatchExecuteStatementRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchExecuteStatementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchExecuteStatement(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchExecuteStatement, request, m_executor.get());
 }
 
 void DynamoDBClient::BatchExecuteStatementAsync(const BatchExecuteStatementRequest& request, const BatchExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchExecuteStatement(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchExecuteStatement, request, handler, context, m_executor.get());
 }
 
 BatchGetItemOutcome DynamoDBClient::BatchGetItem(const BatchGetItemRequest& request) const
@@ -269,18 +264,12 @@ BatchGetItemOutcome DynamoDBClient::BatchGetItem(const BatchGetItemRequest& requ
 
 BatchGetItemOutcomeCallable DynamoDBClient::BatchGetItemCallable(const BatchGetItemRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchGetItemOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchGetItem(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchGetItem, request, m_executor.get());
 }
 
 void DynamoDBClient::BatchGetItemAsync(const BatchGetItemRequest& request, const BatchGetItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchGetItem(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchGetItem, request, handler, context, m_executor.get());
 }
 
 BatchWriteItemOutcome DynamoDBClient::BatchWriteItem(const BatchWriteItemRequest& request) const
@@ -325,18 +314,12 @@ BatchWriteItemOutcome DynamoDBClient::BatchWriteItem(const BatchWriteItemRequest
 
 BatchWriteItemOutcomeCallable DynamoDBClient::BatchWriteItemCallable(const BatchWriteItemRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchWriteItemOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchWriteItem(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(BatchWriteItem, request, m_executor.get());
 }
 
 void DynamoDBClient::BatchWriteItemAsync(const BatchWriteItemRequest& request, const BatchWriteItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, BatchWriteItem(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(BatchWriteItem, request, handler, context, m_executor.get());
 }
 
 CreateBackupOutcome DynamoDBClient::CreateBackup(const CreateBackupRequest& request) const
@@ -381,18 +364,12 @@ CreateBackupOutcome DynamoDBClient::CreateBackup(const CreateBackupRequest& requ
 
 CreateBackupOutcomeCallable DynamoDBClient::CreateBackupCallable(const CreateBackupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateBackupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateBackup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateBackup, request, m_executor.get());
 }
 
 void DynamoDBClient::CreateBackupAsync(const CreateBackupRequest& request, const CreateBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateBackup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateBackup, request, handler, context, m_executor.get());
 }
 
 CreateGlobalTableOutcome DynamoDBClient::CreateGlobalTable(const CreateGlobalTableRequest& request) const
@@ -437,18 +414,12 @@ CreateGlobalTableOutcome DynamoDBClient::CreateGlobalTable(const CreateGlobalTab
 
 CreateGlobalTableOutcomeCallable DynamoDBClient::CreateGlobalTableCallable(const CreateGlobalTableRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateGlobalTableOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateGlobalTable(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateGlobalTable, request, m_executor.get());
 }
 
 void DynamoDBClient::CreateGlobalTableAsync(const CreateGlobalTableRequest& request, const CreateGlobalTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateGlobalTable(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateGlobalTable, request, handler, context, m_executor.get());
 }
 
 CreateTableOutcome DynamoDBClient::CreateTable(const CreateTableRequest& request) const
@@ -493,18 +464,12 @@ CreateTableOutcome DynamoDBClient::CreateTable(const CreateTableRequest& request
 
 CreateTableOutcomeCallable DynamoDBClient::CreateTableCallable(const CreateTableRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateTableOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateTable(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateTable, request, m_executor.get());
 }
 
 void DynamoDBClient::CreateTableAsync(const CreateTableRequest& request, const CreateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateTable(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateTable, request, handler, context, m_executor.get());
 }
 
 DeleteBackupOutcome DynamoDBClient::DeleteBackup(const DeleteBackupRequest& request) const
@@ -549,18 +514,12 @@ DeleteBackupOutcome DynamoDBClient::DeleteBackup(const DeleteBackupRequest& requ
 
 DeleteBackupOutcomeCallable DynamoDBClient::DeleteBackupCallable(const DeleteBackupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteBackupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBackup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteBackup, request, m_executor.get());
 }
 
 void DynamoDBClient::DeleteBackupAsync(const DeleteBackupRequest& request, const DeleteBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteBackup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteBackup, request, handler, context, m_executor.get());
 }
 
 DeleteItemOutcome DynamoDBClient::DeleteItem(const DeleteItemRequest& request) const
@@ -605,18 +564,12 @@ DeleteItemOutcome DynamoDBClient::DeleteItem(const DeleteItemRequest& request) c
 
 DeleteItemOutcomeCallable DynamoDBClient::DeleteItemCallable(const DeleteItemRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteItemOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteItem(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteItem, request, m_executor.get());
 }
 
 void DynamoDBClient::DeleteItemAsync(const DeleteItemRequest& request, const DeleteItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteItem(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteItem, request, handler, context, m_executor.get());
 }
 
 DeleteTableOutcome DynamoDBClient::DeleteTable(const DeleteTableRequest& request) const
@@ -661,18 +614,12 @@ DeleteTableOutcome DynamoDBClient::DeleteTable(const DeleteTableRequest& request
 
 DeleteTableOutcomeCallable DynamoDBClient::DeleteTableCallable(const DeleteTableRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteTableOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteTable(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteTable, request, m_executor.get());
 }
 
 void DynamoDBClient::DeleteTableAsync(const DeleteTableRequest& request, const DeleteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteTable(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteTable, request, handler, context, m_executor.get());
 }
 
 DescribeBackupOutcome DynamoDBClient::DescribeBackup(const DescribeBackupRequest& request) const
@@ -717,18 +664,12 @@ DescribeBackupOutcome DynamoDBClient::DescribeBackup(const DescribeBackupRequest
 
 DescribeBackupOutcomeCallable DynamoDBClient::DescribeBackupCallable(const DescribeBackupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeBackupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeBackup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeBackup, request, m_executor.get());
 }
 
 void DynamoDBClient::DescribeBackupAsync(const DescribeBackupRequest& request, const DescribeBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeBackup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeBackup, request, handler, context, m_executor.get());
 }
 
 DescribeContinuousBackupsOutcome DynamoDBClient::DescribeContinuousBackups(const DescribeContinuousBackupsRequest& request) const
@@ -773,18 +714,12 @@ DescribeContinuousBackupsOutcome DynamoDBClient::DescribeContinuousBackups(const
 
 DescribeContinuousBackupsOutcomeCallable DynamoDBClient::DescribeContinuousBackupsCallable(const DescribeContinuousBackupsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeContinuousBackupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeContinuousBackups(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeContinuousBackups, request, m_executor.get());
 }
 
 void DynamoDBClient::DescribeContinuousBackupsAsync(const DescribeContinuousBackupsRequest& request, const DescribeContinuousBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeContinuousBackups(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeContinuousBackups, request, handler, context, m_executor.get());
 }
 
 DescribeContributorInsightsOutcome DynamoDBClient::DescribeContributorInsights(const DescribeContributorInsightsRequest& request) const
@@ -797,18 +732,12 @@ DescribeContributorInsightsOutcome DynamoDBClient::DescribeContributorInsights(c
 
 DescribeContributorInsightsOutcomeCallable DynamoDBClient::DescribeContributorInsightsCallable(const DescribeContributorInsightsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeContributorInsightsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeContributorInsights(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeContributorInsights, request, m_executor.get());
 }
 
 void DynamoDBClient::DescribeContributorInsightsAsync(const DescribeContributorInsightsRequest& request, const DescribeContributorInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeContributorInsights(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeContributorInsights, request, handler, context, m_executor.get());
 }
 
 DescribeEndpointsOutcome DynamoDBClient::DescribeEndpoints(const DescribeEndpointsRequest& request) const
@@ -821,18 +750,12 @@ DescribeEndpointsOutcome DynamoDBClient::DescribeEndpoints(const DescribeEndpoin
 
 DescribeEndpointsOutcomeCallable DynamoDBClient::DescribeEndpointsCallable(const DescribeEndpointsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeEndpointsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeEndpoints(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeEndpoints, request, m_executor.get());
 }
 
 void DynamoDBClient::DescribeEndpointsAsync(const DescribeEndpointsRequest& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeEndpoints(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeEndpoints, request, handler, context, m_executor.get());
 }
 
 DescribeExportOutcome DynamoDBClient::DescribeExport(const DescribeExportRequest& request) const
@@ -845,18 +768,12 @@ DescribeExportOutcome DynamoDBClient::DescribeExport(const DescribeExportRequest
 
 DescribeExportOutcomeCallable DynamoDBClient::DescribeExportCallable(const DescribeExportRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeExportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeExport(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeExport, request, m_executor.get());
 }
 
 void DynamoDBClient::DescribeExportAsync(const DescribeExportRequest& request, const DescribeExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeExport(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeExport, request, handler, context, m_executor.get());
 }
 
 DescribeGlobalTableOutcome DynamoDBClient::DescribeGlobalTable(const DescribeGlobalTableRequest& request) const
@@ -901,18 +818,12 @@ DescribeGlobalTableOutcome DynamoDBClient::DescribeGlobalTable(const DescribeGlo
 
 DescribeGlobalTableOutcomeCallable DynamoDBClient::DescribeGlobalTableCallable(const DescribeGlobalTableRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeGlobalTableOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeGlobalTable(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeGlobalTable, request, m_executor.get());
 }
 
 void DynamoDBClient::DescribeGlobalTableAsync(const DescribeGlobalTableRequest& request, const DescribeGlobalTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeGlobalTable(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeGlobalTable, request, handler, context, m_executor.get());
 }
 
 DescribeGlobalTableSettingsOutcome DynamoDBClient::DescribeGlobalTableSettings(const DescribeGlobalTableSettingsRequest& request) const
@@ -957,18 +868,12 @@ DescribeGlobalTableSettingsOutcome DynamoDBClient::DescribeGlobalTableSettings(c
 
 DescribeGlobalTableSettingsOutcomeCallable DynamoDBClient::DescribeGlobalTableSettingsCallable(const DescribeGlobalTableSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeGlobalTableSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeGlobalTableSettings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeGlobalTableSettings, request, m_executor.get());
 }
 
 void DynamoDBClient::DescribeGlobalTableSettingsAsync(const DescribeGlobalTableSettingsRequest& request, const DescribeGlobalTableSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeGlobalTableSettings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeGlobalTableSettings, request, handler, context, m_executor.get());
 }
 
 DescribeImportOutcome DynamoDBClient::DescribeImport(const DescribeImportRequest& request) const
@@ -981,18 +886,12 @@ DescribeImportOutcome DynamoDBClient::DescribeImport(const DescribeImportRequest
 
 DescribeImportOutcomeCallable DynamoDBClient::DescribeImportCallable(const DescribeImportRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeImportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeImport(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeImport, request, m_executor.get());
 }
 
 void DynamoDBClient::DescribeImportAsync(const DescribeImportRequest& request, const DescribeImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeImport(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeImport, request, handler, context, m_executor.get());
 }
 
 DescribeKinesisStreamingDestinationOutcome DynamoDBClient::DescribeKinesisStreamingDestination(const DescribeKinesisStreamingDestinationRequest& request) const
@@ -1037,18 +936,12 @@ DescribeKinesisStreamingDestinationOutcome DynamoDBClient::DescribeKinesisStream
 
 DescribeKinesisStreamingDestinationOutcomeCallable DynamoDBClient::DescribeKinesisStreamingDestinationCallable(const DescribeKinesisStreamingDestinationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeKinesisStreamingDestinationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeKinesisStreamingDestination(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeKinesisStreamingDestination, request, m_executor.get());
 }
 
 void DynamoDBClient::DescribeKinesisStreamingDestinationAsync(const DescribeKinesisStreamingDestinationRequest& request, const DescribeKinesisStreamingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeKinesisStreamingDestination(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeKinesisStreamingDestination, request, handler, context, m_executor.get());
 }
 
 DescribeLimitsOutcome DynamoDBClient::DescribeLimits(const DescribeLimitsRequest& request) const
@@ -1093,18 +986,12 @@ DescribeLimitsOutcome DynamoDBClient::DescribeLimits(const DescribeLimitsRequest
 
 DescribeLimitsOutcomeCallable DynamoDBClient::DescribeLimitsCallable(const DescribeLimitsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeLimitsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLimits(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeLimits, request, m_executor.get());
 }
 
 void DynamoDBClient::DescribeLimitsAsync(const DescribeLimitsRequest& request, const DescribeLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeLimits(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeLimits, request, handler, context, m_executor.get());
 }
 
 DescribeTableOutcome DynamoDBClient::DescribeTable(const DescribeTableRequest& request) const
@@ -1149,18 +1036,12 @@ DescribeTableOutcome DynamoDBClient::DescribeTable(const DescribeTableRequest& r
 
 DescribeTableOutcomeCallable DynamoDBClient::DescribeTableCallable(const DescribeTableRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeTableOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeTable(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeTable, request, m_executor.get());
 }
 
 void DynamoDBClient::DescribeTableAsync(const DescribeTableRequest& request, const DescribeTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeTable(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeTable, request, handler, context, m_executor.get());
 }
 
 DescribeTableReplicaAutoScalingOutcome DynamoDBClient::DescribeTableReplicaAutoScaling(const DescribeTableReplicaAutoScalingRequest& request) const
@@ -1173,18 +1054,12 @@ DescribeTableReplicaAutoScalingOutcome DynamoDBClient::DescribeTableReplicaAutoS
 
 DescribeTableReplicaAutoScalingOutcomeCallable DynamoDBClient::DescribeTableReplicaAutoScalingCallable(const DescribeTableReplicaAutoScalingRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeTableReplicaAutoScalingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeTableReplicaAutoScaling(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeTableReplicaAutoScaling, request, m_executor.get());
 }
 
 void DynamoDBClient::DescribeTableReplicaAutoScalingAsync(const DescribeTableReplicaAutoScalingRequest& request, const DescribeTableReplicaAutoScalingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeTableReplicaAutoScaling(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeTableReplicaAutoScaling, request, handler, context, m_executor.get());
 }
 
 DescribeTimeToLiveOutcome DynamoDBClient::DescribeTimeToLive(const DescribeTimeToLiveRequest& request) const
@@ -1229,18 +1104,12 @@ DescribeTimeToLiveOutcome DynamoDBClient::DescribeTimeToLive(const DescribeTimeT
 
 DescribeTimeToLiveOutcomeCallable DynamoDBClient::DescribeTimeToLiveCallable(const DescribeTimeToLiveRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeTimeToLiveOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeTimeToLive(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeTimeToLive, request, m_executor.get());
 }
 
 void DynamoDBClient::DescribeTimeToLiveAsync(const DescribeTimeToLiveRequest& request, const DescribeTimeToLiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeTimeToLive(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeTimeToLive, request, handler, context, m_executor.get());
 }
 
 DisableKinesisStreamingDestinationOutcome DynamoDBClient::DisableKinesisStreamingDestination(const DisableKinesisStreamingDestinationRequest& request) const
@@ -1285,18 +1154,12 @@ DisableKinesisStreamingDestinationOutcome DynamoDBClient::DisableKinesisStreamin
 
 DisableKinesisStreamingDestinationOutcomeCallable DynamoDBClient::DisableKinesisStreamingDestinationCallable(const DisableKinesisStreamingDestinationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisableKinesisStreamingDestinationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisableKinesisStreamingDestination(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DisableKinesisStreamingDestination, request, m_executor.get());
 }
 
 void DynamoDBClient::DisableKinesisStreamingDestinationAsync(const DisableKinesisStreamingDestinationRequest& request, const DisableKinesisStreamingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DisableKinesisStreamingDestination(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DisableKinesisStreamingDestination, request, handler, context, m_executor.get());
 }
 
 EnableKinesisStreamingDestinationOutcome DynamoDBClient::EnableKinesisStreamingDestination(const EnableKinesisStreamingDestinationRequest& request) const
@@ -1341,18 +1204,12 @@ EnableKinesisStreamingDestinationOutcome DynamoDBClient::EnableKinesisStreamingD
 
 EnableKinesisStreamingDestinationOutcomeCallable DynamoDBClient::EnableKinesisStreamingDestinationCallable(const EnableKinesisStreamingDestinationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< EnableKinesisStreamingDestinationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->EnableKinesisStreamingDestination(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(EnableKinesisStreamingDestination, request, m_executor.get());
 }
 
 void DynamoDBClient::EnableKinesisStreamingDestinationAsync(const EnableKinesisStreamingDestinationRequest& request, const EnableKinesisStreamingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, EnableKinesisStreamingDestination(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(EnableKinesisStreamingDestination, request, handler, context, m_executor.get());
 }
 
 ExecuteStatementOutcome DynamoDBClient::ExecuteStatement(const ExecuteStatementRequest& request) const
@@ -1365,18 +1222,12 @@ ExecuteStatementOutcome DynamoDBClient::ExecuteStatement(const ExecuteStatementR
 
 ExecuteStatementOutcomeCallable DynamoDBClient::ExecuteStatementCallable(const ExecuteStatementRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ExecuteStatementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ExecuteStatement(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ExecuteStatement, request, m_executor.get());
 }
 
 void DynamoDBClient::ExecuteStatementAsync(const ExecuteStatementRequest& request, const ExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ExecuteStatement(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ExecuteStatement, request, handler, context, m_executor.get());
 }
 
 ExecuteTransactionOutcome DynamoDBClient::ExecuteTransaction(const ExecuteTransactionRequest& request) const
@@ -1389,18 +1240,12 @@ ExecuteTransactionOutcome DynamoDBClient::ExecuteTransaction(const ExecuteTransa
 
 ExecuteTransactionOutcomeCallable DynamoDBClient::ExecuteTransactionCallable(const ExecuteTransactionRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ExecuteTransactionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ExecuteTransaction(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ExecuteTransaction, request, m_executor.get());
 }
 
 void DynamoDBClient::ExecuteTransactionAsync(const ExecuteTransactionRequest& request, const ExecuteTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ExecuteTransaction(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ExecuteTransaction, request, handler, context, m_executor.get());
 }
 
 ExportTableToPointInTimeOutcome DynamoDBClient::ExportTableToPointInTime(const ExportTableToPointInTimeRequest& request) const
@@ -1413,18 +1258,12 @@ ExportTableToPointInTimeOutcome DynamoDBClient::ExportTableToPointInTime(const E
 
 ExportTableToPointInTimeOutcomeCallable DynamoDBClient::ExportTableToPointInTimeCallable(const ExportTableToPointInTimeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ExportTableToPointInTimeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ExportTableToPointInTime(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ExportTableToPointInTime, request, m_executor.get());
 }
 
 void DynamoDBClient::ExportTableToPointInTimeAsync(const ExportTableToPointInTimeRequest& request, const ExportTableToPointInTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ExportTableToPointInTime(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ExportTableToPointInTime, request, handler, context, m_executor.get());
 }
 
 GetItemOutcome DynamoDBClient::GetItem(const GetItemRequest& request) const
@@ -1469,18 +1308,12 @@ GetItemOutcome DynamoDBClient::GetItem(const GetItemRequest& request) const
 
 GetItemOutcomeCallable DynamoDBClient::GetItemCallable(const GetItemRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetItemOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetItem(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetItem, request, m_executor.get());
 }
 
 void DynamoDBClient::GetItemAsync(const GetItemRequest& request, const GetItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetItem(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetItem, request, handler, context, m_executor.get());
 }
 
 ImportTableOutcome DynamoDBClient::ImportTable(const ImportTableRequest& request) const
@@ -1493,18 +1326,12 @@ ImportTableOutcome DynamoDBClient::ImportTable(const ImportTableRequest& request
 
 ImportTableOutcomeCallable DynamoDBClient::ImportTableCallable(const ImportTableRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ImportTableOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ImportTable(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ImportTable, request, m_executor.get());
 }
 
 void DynamoDBClient::ImportTableAsync(const ImportTableRequest& request, const ImportTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ImportTable(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ImportTable, request, handler, context, m_executor.get());
 }
 
 ListBackupsOutcome DynamoDBClient::ListBackups(const ListBackupsRequest& request) const
@@ -1549,18 +1376,12 @@ ListBackupsOutcome DynamoDBClient::ListBackups(const ListBackupsRequest& request
 
 ListBackupsOutcomeCallable DynamoDBClient::ListBackupsCallable(const ListBackupsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListBackupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListBackups(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListBackups, request, m_executor.get());
 }
 
 void DynamoDBClient::ListBackupsAsync(const ListBackupsRequest& request, const ListBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListBackups(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListBackups, request, handler, context, m_executor.get());
 }
 
 ListContributorInsightsOutcome DynamoDBClient::ListContributorInsights(const ListContributorInsightsRequest& request) const
@@ -1573,18 +1394,12 @@ ListContributorInsightsOutcome DynamoDBClient::ListContributorInsights(const Lis
 
 ListContributorInsightsOutcomeCallable DynamoDBClient::ListContributorInsightsCallable(const ListContributorInsightsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListContributorInsightsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListContributorInsights(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListContributorInsights, request, m_executor.get());
 }
 
 void DynamoDBClient::ListContributorInsightsAsync(const ListContributorInsightsRequest& request, const ListContributorInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListContributorInsights(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListContributorInsights, request, handler, context, m_executor.get());
 }
 
 ListExportsOutcome DynamoDBClient::ListExports(const ListExportsRequest& request) const
@@ -1597,18 +1412,12 @@ ListExportsOutcome DynamoDBClient::ListExports(const ListExportsRequest& request
 
 ListExportsOutcomeCallable DynamoDBClient::ListExportsCallable(const ListExportsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListExportsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListExports(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListExports, request, m_executor.get());
 }
 
 void DynamoDBClient::ListExportsAsync(const ListExportsRequest& request, const ListExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListExports(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListExports, request, handler, context, m_executor.get());
 }
 
 ListGlobalTablesOutcome DynamoDBClient::ListGlobalTables(const ListGlobalTablesRequest& request) const
@@ -1653,18 +1462,12 @@ ListGlobalTablesOutcome DynamoDBClient::ListGlobalTables(const ListGlobalTablesR
 
 ListGlobalTablesOutcomeCallable DynamoDBClient::ListGlobalTablesCallable(const ListGlobalTablesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListGlobalTablesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListGlobalTables(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListGlobalTables, request, m_executor.get());
 }
 
 void DynamoDBClient::ListGlobalTablesAsync(const ListGlobalTablesRequest& request, const ListGlobalTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListGlobalTables(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListGlobalTables, request, handler, context, m_executor.get());
 }
 
 ListImportsOutcome DynamoDBClient::ListImports(const ListImportsRequest& request) const
@@ -1677,18 +1480,12 @@ ListImportsOutcome DynamoDBClient::ListImports(const ListImportsRequest& request
 
 ListImportsOutcomeCallable DynamoDBClient::ListImportsCallable(const ListImportsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListImportsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListImports(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListImports, request, m_executor.get());
 }
 
 void DynamoDBClient::ListImportsAsync(const ListImportsRequest& request, const ListImportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListImports(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListImports, request, handler, context, m_executor.get());
 }
 
 ListTablesOutcome DynamoDBClient::ListTables(const ListTablesRequest& request) const
@@ -1733,18 +1530,12 @@ ListTablesOutcome DynamoDBClient::ListTables(const ListTablesRequest& request) c
 
 ListTablesOutcomeCallable DynamoDBClient::ListTablesCallable(const ListTablesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTablesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTables(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTables, request, m_executor.get());
 }
 
 void DynamoDBClient::ListTablesAsync(const ListTablesRequest& request, const ListTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTables(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTables, request, handler, context, m_executor.get());
 }
 
 ListTagsOfResourceOutcome DynamoDBClient::ListTagsOfResource(const ListTagsOfResourceRequest& request) const
@@ -1789,18 +1580,12 @@ ListTagsOfResourceOutcome DynamoDBClient::ListTagsOfResource(const ListTagsOfRes
 
 ListTagsOfResourceOutcomeCallable DynamoDBClient::ListTagsOfResourceCallable(const ListTagsOfResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsOfResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsOfResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsOfResource, request, m_executor.get());
 }
 
 void DynamoDBClient::ListTagsOfResourceAsync(const ListTagsOfResourceRequest& request, const ListTagsOfResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsOfResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsOfResource, request, handler, context, m_executor.get());
 }
 
 PutItemOutcome DynamoDBClient::PutItem(const PutItemRequest& request) const
@@ -1845,18 +1630,12 @@ PutItemOutcome DynamoDBClient::PutItem(const PutItemRequest& request) const
 
 PutItemOutcomeCallable DynamoDBClient::PutItemCallable(const PutItemRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutItemOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutItem(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutItem, request, m_executor.get());
 }
 
 void DynamoDBClient::PutItemAsync(const PutItemRequest& request, const PutItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutItem(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutItem, request, handler, context, m_executor.get());
 }
 
 QueryOutcome DynamoDBClient::Query(const QueryRequest& request) const
@@ -1901,18 +1680,12 @@ QueryOutcome DynamoDBClient::Query(const QueryRequest& request) const
 
 QueryOutcomeCallable DynamoDBClient::QueryCallable(const QueryRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< QueryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->Query(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(Query, request, m_executor.get());
 }
 
 void DynamoDBClient::QueryAsync(const QueryRequest& request, const QueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, Query(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(Query, request, handler, context, m_executor.get());
 }
 
 RestoreTableFromBackupOutcome DynamoDBClient::RestoreTableFromBackup(const RestoreTableFromBackupRequest& request) const
@@ -1957,18 +1730,12 @@ RestoreTableFromBackupOutcome DynamoDBClient::RestoreTableFromBackup(const Resto
 
 RestoreTableFromBackupOutcomeCallable DynamoDBClient::RestoreTableFromBackupCallable(const RestoreTableFromBackupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RestoreTableFromBackupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RestoreTableFromBackup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RestoreTableFromBackup, request, m_executor.get());
 }
 
 void DynamoDBClient::RestoreTableFromBackupAsync(const RestoreTableFromBackupRequest& request, const RestoreTableFromBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RestoreTableFromBackup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RestoreTableFromBackup, request, handler, context, m_executor.get());
 }
 
 RestoreTableToPointInTimeOutcome DynamoDBClient::RestoreTableToPointInTime(const RestoreTableToPointInTimeRequest& request) const
@@ -2013,18 +1780,12 @@ RestoreTableToPointInTimeOutcome DynamoDBClient::RestoreTableToPointInTime(const
 
 RestoreTableToPointInTimeOutcomeCallable DynamoDBClient::RestoreTableToPointInTimeCallable(const RestoreTableToPointInTimeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RestoreTableToPointInTimeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RestoreTableToPointInTime(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RestoreTableToPointInTime, request, m_executor.get());
 }
 
 void DynamoDBClient::RestoreTableToPointInTimeAsync(const RestoreTableToPointInTimeRequest& request, const RestoreTableToPointInTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RestoreTableToPointInTime(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RestoreTableToPointInTime, request, handler, context, m_executor.get());
 }
 
 ScanOutcome DynamoDBClient::Scan(const ScanRequest& request) const
@@ -2069,18 +1830,12 @@ ScanOutcome DynamoDBClient::Scan(const ScanRequest& request) const
 
 ScanOutcomeCallable DynamoDBClient::ScanCallable(const ScanRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ScanOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->Scan(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(Scan, request, m_executor.get());
 }
 
 void DynamoDBClient::ScanAsync(const ScanRequest& request, const ScanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, Scan(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(Scan, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome DynamoDBClient::TagResource(const TagResourceRequest& request) const
@@ -2125,18 +1880,12 @@ TagResourceOutcome DynamoDBClient::TagResource(const TagResourceRequest& request
 
 TagResourceOutcomeCallable DynamoDBClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void DynamoDBClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 TransactGetItemsOutcome DynamoDBClient::TransactGetItems(const TransactGetItemsRequest& request) const
@@ -2181,18 +1930,12 @@ TransactGetItemsOutcome DynamoDBClient::TransactGetItems(const TransactGetItemsR
 
 TransactGetItemsOutcomeCallable DynamoDBClient::TransactGetItemsCallable(const TransactGetItemsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TransactGetItemsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TransactGetItems(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TransactGetItems, request, m_executor.get());
 }
 
 void DynamoDBClient::TransactGetItemsAsync(const TransactGetItemsRequest& request, const TransactGetItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TransactGetItems(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TransactGetItems, request, handler, context, m_executor.get());
 }
 
 TransactWriteItemsOutcome DynamoDBClient::TransactWriteItems(const TransactWriteItemsRequest& request) const
@@ -2237,18 +1980,12 @@ TransactWriteItemsOutcome DynamoDBClient::TransactWriteItems(const TransactWrite
 
 TransactWriteItemsOutcomeCallable DynamoDBClient::TransactWriteItemsCallable(const TransactWriteItemsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TransactWriteItemsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TransactWriteItems(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TransactWriteItems, request, m_executor.get());
 }
 
 void DynamoDBClient::TransactWriteItemsAsync(const TransactWriteItemsRequest& request, const TransactWriteItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TransactWriteItems(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TransactWriteItems, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome DynamoDBClient::UntagResource(const UntagResourceRequest& request) const
@@ -2293,18 +2030,12 @@ UntagResourceOutcome DynamoDBClient::UntagResource(const UntagResourceRequest& r
 
 UntagResourceOutcomeCallable DynamoDBClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void DynamoDBClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateContinuousBackupsOutcome DynamoDBClient::UpdateContinuousBackups(const UpdateContinuousBackupsRequest& request) const
@@ -2349,18 +2080,12 @@ UpdateContinuousBackupsOutcome DynamoDBClient::UpdateContinuousBackups(const Upd
 
 UpdateContinuousBackupsOutcomeCallable DynamoDBClient::UpdateContinuousBackupsCallable(const UpdateContinuousBackupsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateContinuousBackupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateContinuousBackups(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateContinuousBackups, request, m_executor.get());
 }
 
 void DynamoDBClient::UpdateContinuousBackupsAsync(const UpdateContinuousBackupsRequest& request, const UpdateContinuousBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateContinuousBackups(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateContinuousBackups, request, handler, context, m_executor.get());
 }
 
 UpdateContributorInsightsOutcome DynamoDBClient::UpdateContributorInsights(const UpdateContributorInsightsRequest& request) const
@@ -2373,18 +2098,12 @@ UpdateContributorInsightsOutcome DynamoDBClient::UpdateContributorInsights(const
 
 UpdateContributorInsightsOutcomeCallable DynamoDBClient::UpdateContributorInsightsCallable(const UpdateContributorInsightsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateContributorInsightsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateContributorInsights(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateContributorInsights, request, m_executor.get());
 }
 
 void DynamoDBClient::UpdateContributorInsightsAsync(const UpdateContributorInsightsRequest& request, const UpdateContributorInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateContributorInsights(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateContributorInsights, request, handler, context, m_executor.get());
 }
 
 UpdateGlobalTableOutcome DynamoDBClient::UpdateGlobalTable(const UpdateGlobalTableRequest& request) const
@@ -2429,18 +2148,12 @@ UpdateGlobalTableOutcome DynamoDBClient::UpdateGlobalTable(const UpdateGlobalTab
 
 UpdateGlobalTableOutcomeCallable DynamoDBClient::UpdateGlobalTableCallable(const UpdateGlobalTableRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateGlobalTableOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateGlobalTable(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateGlobalTable, request, m_executor.get());
 }
 
 void DynamoDBClient::UpdateGlobalTableAsync(const UpdateGlobalTableRequest& request, const UpdateGlobalTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateGlobalTable(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateGlobalTable, request, handler, context, m_executor.get());
 }
 
 UpdateGlobalTableSettingsOutcome DynamoDBClient::UpdateGlobalTableSettings(const UpdateGlobalTableSettingsRequest& request) const
@@ -2485,18 +2198,12 @@ UpdateGlobalTableSettingsOutcome DynamoDBClient::UpdateGlobalTableSettings(const
 
 UpdateGlobalTableSettingsOutcomeCallable DynamoDBClient::UpdateGlobalTableSettingsCallable(const UpdateGlobalTableSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateGlobalTableSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateGlobalTableSettings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateGlobalTableSettings, request, m_executor.get());
 }
 
 void DynamoDBClient::UpdateGlobalTableSettingsAsync(const UpdateGlobalTableSettingsRequest& request, const UpdateGlobalTableSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateGlobalTableSettings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateGlobalTableSettings, request, handler, context, m_executor.get());
 }
 
 UpdateItemOutcome DynamoDBClient::UpdateItem(const UpdateItemRequest& request) const
@@ -2541,18 +2248,12 @@ UpdateItemOutcome DynamoDBClient::UpdateItem(const UpdateItemRequest& request) c
 
 UpdateItemOutcomeCallable DynamoDBClient::UpdateItemCallable(const UpdateItemRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateItemOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateItem(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateItem, request, m_executor.get());
 }
 
 void DynamoDBClient::UpdateItemAsync(const UpdateItemRequest& request, const UpdateItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateItem(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateItem, request, handler, context, m_executor.get());
 }
 
 UpdateTableOutcome DynamoDBClient::UpdateTable(const UpdateTableRequest& request) const
@@ -2597,18 +2298,12 @@ UpdateTableOutcome DynamoDBClient::UpdateTable(const UpdateTableRequest& request
 
 UpdateTableOutcomeCallable DynamoDBClient::UpdateTableCallable(const UpdateTableRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateTableOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateTable(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateTable, request, m_executor.get());
 }
 
 void DynamoDBClient::UpdateTableAsync(const UpdateTableRequest& request, const UpdateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateTable(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateTable, request, handler, context, m_executor.get());
 }
 
 UpdateTableReplicaAutoScalingOutcome DynamoDBClient::UpdateTableReplicaAutoScaling(const UpdateTableReplicaAutoScalingRequest& request) const
@@ -2621,18 +2316,12 @@ UpdateTableReplicaAutoScalingOutcome DynamoDBClient::UpdateTableReplicaAutoScali
 
 UpdateTableReplicaAutoScalingOutcomeCallable DynamoDBClient::UpdateTableReplicaAutoScalingCallable(const UpdateTableReplicaAutoScalingRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateTableReplicaAutoScalingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateTableReplicaAutoScaling(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateTableReplicaAutoScaling, request, m_executor.get());
 }
 
 void DynamoDBClient::UpdateTableReplicaAutoScalingAsync(const UpdateTableReplicaAutoScalingRequest& request, const UpdateTableReplicaAutoScalingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateTableReplicaAutoScaling(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateTableReplicaAutoScaling, request, handler, context, m_executor.get());
 }
 
 UpdateTimeToLiveOutcome DynamoDBClient::UpdateTimeToLive(const UpdateTimeToLiveRequest& request) const
@@ -2677,17 +2366,11 @@ UpdateTimeToLiveOutcome DynamoDBClient::UpdateTimeToLive(const UpdateTimeToLiveR
 
 UpdateTimeToLiveOutcomeCallable DynamoDBClient::UpdateTimeToLiveCallable(const UpdateTimeToLiveRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateTimeToLiveOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateTimeToLive(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateTimeToLive, request, m_executor.get());
 }
 
 void DynamoDBClient::UpdateTimeToLiveAsync(const UpdateTimeToLiveRequest& request, const UpdateTimeToLiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateTimeToLive(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateTimeToLive, request, handler, context, m_executor.get());
 }
 

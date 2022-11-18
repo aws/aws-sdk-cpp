@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -164,18 +165,12 @@ CreateEndpointOutcome S3OutpostsClient::CreateEndpoint(const CreateEndpointReque
 
 CreateEndpointOutcomeCallable S3OutpostsClient::CreateEndpointCallable(const CreateEndpointRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateEndpoint(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateEndpoint, request, m_executor.get());
 }
 
 void S3OutpostsClient::CreateEndpointAsync(const CreateEndpointRequest& request, const CreateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateEndpoint(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateEndpoint, request, handler, context, m_executor.get());
 }
 
 DeleteEndpointOutcome S3OutpostsClient::DeleteEndpoint(const DeleteEndpointRequest& request) const
@@ -199,18 +194,12 @@ DeleteEndpointOutcome S3OutpostsClient::DeleteEndpoint(const DeleteEndpointReque
 
 DeleteEndpointOutcomeCallable S3OutpostsClient::DeleteEndpointCallable(const DeleteEndpointRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteEndpoint(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteEndpoint, request, m_executor.get());
 }
 
 void S3OutpostsClient::DeleteEndpointAsync(const DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteEndpoint(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteEndpoint, request, handler, context, m_executor.get());
 }
 
 ListEndpointsOutcome S3OutpostsClient::ListEndpoints(const ListEndpointsRequest& request) const
@@ -224,18 +213,12 @@ ListEndpointsOutcome S3OutpostsClient::ListEndpoints(const ListEndpointsRequest&
 
 ListEndpointsOutcomeCallable S3OutpostsClient::ListEndpointsCallable(const ListEndpointsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListEndpointsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEndpoints(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListEndpoints, request, m_executor.get());
 }
 
 void S3OutpostsClient::ListEndpointsAsync(const ListEndpointsRequest& request, const ListEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListEndpoints(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListEndpoints, request, handler, context, m_executor.get());
 }
 
 ListSharedEndpointsOutcome S3OutpostsClient::ListSharedEndpoints(const ListSharedEndpointsRequest& request) const
@@ -254,17 +237,11 @@ ListSharedEndpointsOutcome S3OutpostsClient::ListSharedEndpoints(const ListShare
 
 ListSharedEndpointsOutcomeCallable S3OutpostsClient::ListSharedEndpointsCallable(const ListSharedEndpointsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListSharedEndpointsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSharedEndpoints(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListSharedEndpoints, request, m_executor.get());
 }
 
 void S3OutpostsClient::ListSharedEndpointsAsync(const ListSharedEndpointsRequest& request, const ListSharedEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListSharedEndpoints(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListSharedEndpoints, request, handler, context, m_executor.get());
 }
 

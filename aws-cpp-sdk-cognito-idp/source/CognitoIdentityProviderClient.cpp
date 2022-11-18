@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -260,18 +261,12 @@ AddCustomAttributesOutcome CognitoIdentityProviderClient::AddCustomAttributes(co
 
 AddCustomAttributesOutcomeCallable CognitoIdentityProviderClient::AddCustomAttributesCallable(const AddCustomAttributesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AddCustomAttributesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AddCustomAttributes(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AddCustomAttributes, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::AddCustomAttributesAsync(const AddCustomAttributesRequest& request, const AddCustomAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AddCustomAttributes(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AddCustomAttributes, request, handler, context, m_executor.get());
 }
 
 AdminAddUserToGroupOutcome CognitoIdentityProviderClient::AdminAddUserToGroup(const AdminAddUserToGroupRequest& request) const
@@ -284,18 +279,12 @@ AdminAddUserToGroupOutcome CognitoIdentityProviderClient::AdminAddUserToGroup(co
 
 AdminAddUserToGroupOutcomeCallable CognitoIdentityProviderClient::AdminAddUserToGroupCallable(const AdminAddUserToGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminAddUserToGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminAddUserToGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AdminAddUserToGroup, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::AdminAddUserToGroupAsync(const AdminAddUserToGroupRequest& request, const AdminAddUserToGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AdminAddUserToGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AdminAddUserToGroup, request, handler, context, m_executor.get());
 }
 
 AdminConfirmSignUpOutcome CognitoIdentityProviderClient::AdminConfirmSignUp(const AdminConfirmSignUpRequest& request) const
@@ -308,18 +297,12 @@ AdminConfirmSignUpOutcome CognitoIdentityProviderClient::AdminConfirmSignUp(cons
 
 AdminConfirmSignUpOutcomeCallable CognitoIdentityProviderClient::AdminConfirmSignUpCallable(const AdminConfirmSignUpRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminConfirmSignUpOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminConfirmSignUp(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AdminConfirmSignUp, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::AdminConfirmSignUpAsync(const AdminConfirmSignUpRequest& request, const AdminConfirmSignUpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AdminConfirmSignUp(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AdminConfirmSignUp, request, handler, context, m_executor.get());
 }
 
 AdminCreateUserOutcome CognitoIdentityProviderClient::AdminCreateUser(const AdminCreateUserRequest& request) const
@@ -332,18 +315,12 @@ AdminCreateUserOutcome CognitoIdentityProviderClient::AdminCreateUser(const Admi
 
 AdminCreateUserOutcomeCallable CognitoIdentityProviderClient::AdminCreateUserCallable(const AdminCreateUserRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminCreateUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminCreateUser(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AdminCreateUser, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::AdminCreateUserAsync(const AdminCreateUserRequest& request, const AdminCreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AdminCreateUser(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AdminCreateUser, request, handler, context, m_executor.get());
 }
 
 AdminDeleteUserOutcome CognitoIdentityProviderClient::AdminDeleteUser(const AdminDeleteUserRequest& request) const
@@ -356,18 +333,12 @@ AdminDeleteUserOutcome CognitoIdentityProviderClient::AdminDeleteUser(const Admi
 
 AdminDeleteUserOutcomeCallable CognitoIdentityProviderClient::AdminDeleteUserCallable(const AdminDeleteUserRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminDeleteUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminDeleteUser(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AdminDeleteUser, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::AdminDeleteUserAsync(const AdminDeleteUserRequest& request, const AdminDeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AdminDeleteUser(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AdminDeleteUser, request, handler, context, m_executor.get());
 }
 
 AdminDeleteUserAttributesOutcome CognitoIdentityProviderClient::AdminDeleteUserAttributes(const AdminDeleteUserAttributesRequest& request) const
@@ -380,18 +351,12 @@ AdminDeleteUserAttributesOutcome CognitoIdentityProviderClient::AdminDeleteUserA
 
 AdminDeleteUserAttributesOutcomeCallable CognitoIdentityProviderClient::AdminDeleteUserAttributesCallable(const AdminDeleteUserAttributesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminDeleteUserAttributesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminDeleteUserAttributes(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AdminDeleteUserAttributes, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::AdminDeleteUserAttributesAsync(const AdminDeleteUserAttributesRequest& request, const AdminDeleteUserAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AdminDeleteUserAttributes(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AdminDeleteUserAttributes, request, handler, context, m_executor.get());
 }
 
 AdminDisableProviderForUserOutcome CognitoIdentityProviderClient::AdminDisableProviderForUser(const AdminDisableProviderForUserRequest& request) const
@@ -404,18 +369,12 @@ AdminDisableProviderForUserOutcome CognitoIdentityProviderClient::AdminDisablePr
 
 AdminDisableProviderForUserOutcomeCallable CognitoIdentityProviderClient::AdminDisableProviderForUserCallable(const AdminDisableProviderForUserRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminDisableProviderForUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminDisableProviderForUser(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AdminDisableProviderForUser, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::AdminDisableProviderForUserAsync(const AdminDisableProviderForUserRequest& request, const AdminDisableProviderForUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AdminDisableProviderForUser(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AdminDisableProviderForUser, request, handler, context, m_executor.get());
 }
 
 AdminDisableUserOutcome CognitoIdentityProviderClient::AdminDisableUser(const AdminDisableUserRequest& request) const
@@ -428,18 +387,12 @@ AdminDisableUserOutcome CognitoIdentityProviderClient::AdminDisableUser(const Ad
 
 AdminDisableUserOutcomeCallable CognitoIdentityProviderClient::AdminDisableUserCallable(const AdminDisableUserRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminDisableUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminDisableUser(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AdminDisableUser, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::AdminDisableUserAsync(const AdminDisableUserRequest& request, const AdminDisableUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AdminDisableUser(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AdminDisableUser, request, handler, context, m_executor.get());
 }
 
 AdminEnableUserOutcome CognitoIdentityProviderClient::AdminEnableUser(const AdminEnableUserRequest& request) const
@@ -452,18 +405,12 @@ AdminEnableUserOutcome CognitoIdentityProviderClient::AdminEnableUser(const Admi
 
 AdminEnableUserOutcomeCallable CognitoIdentityProviderClient::AdminEnableUserCallable(const AdminEnableUserRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminEnableUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminEnableUser(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AdminEnableUser, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::AdminEnableUserAsync(const AdminEnableUserRequest& request, const AdminEnableUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AdminEnableUser(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AdminEnableUser, request, handler, context, m_executor.get());
 }
 
 AdminForgetDeviceOutcome CognitoIdentityProviderClient::AdminForgetDevice(const AdminForgetDeviceRequest& request) const
@@ -476,18 +423,12 @@ AdminForgetDeviceOutcome CognitoIdentityProviderClient::AdminForgetDevice(const 
 
 AdminForgetDeviceOutcomeCallable CognitoIdentityProviderClient::AdminForgetDeviceCallable(const AdminForgetDeviceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminForgetDeviceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminForgetDevice(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AdminForgetDevice, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::AdminForgetDeviceAsync(const AdminForgetDeviceRequest& request, const AdminForgetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AdminForgetDevice(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AdminForgetDevice, request, handler, context, m_executor.get());
 }
 
 AdminGetDeviceOutcome CognitoIdentityProviderClient::AdminGetDevice(const AdminGetDeviceRequest& request) const
@@ -500,18 +441,12 @@ AdminGetDeviceOutcome CognitoIdentityProviderClient::AdminGetDevice(const AdminG
 
 AdminGetDeviceOutcomeCallable CognitoIdentityProviderClient::AdminGetDeviceCallable(const AdminGetDeviceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminGetDeviceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminGetDevice(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AdminGetDevice, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::AdminGetDeviceAsync(const AdminGetDeviceRequest& request, const AdminGetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AdminGetDevice(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AdminGetDevice, request, handler, context, m_executor.get());
 }
 
 AdminGetUserOutcome CognitoIdentityProviderClient::AdminGetUser(const AdminGetUserRequest& request) const
@@ -524,18 +459,12 @@ AdminGetUserOutcome CognitoIdentityProviderClient::AdminGetUser(const AdminGetUs
 
 AdminGetUserOutcomeCallable CognitoIdentityProviderClient::AdminGetUserCallable(const AdminGetUserRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminGetUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminGetUser(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AdminGetUser, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::AdminGetUserAsync(const AdminGetUserRequest& request, const AdminGetUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AdminGetUser(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AdminGetUser, request, handler, context, m_executor.get());
 }
 
 AdminInitiateAuthOutcome CognitoIdentityProviderClient::AdminInitiateAuth(const AdminInitiateAuthRequest& request) const
@@ -548,18 +477,12 @@ AdminInitiateAuthOutcome CognitoIdentityProviderClient::AdminInitiateAuth(const 
 
 AdminInitiateAuthOutcomeCallable CognitoIdentityProviderClient::AdminInitiateAuthCallable(const AdminInitiateAuthRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminInitiateAuthOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminInitiateAuth(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AdminInitiateAuth, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::AdminInitiateAuthAsync(const AdminInitiateAuthRequest& request, const AdminInitiateAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AdminInitiateAuth(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AdminInitiateAuth, request, handler, context, m_executor.get());
 }
 
 AdminLinkProviderForUserOutcome CognitoIdentityProviderClient::AdminLinkProviderForUser(const AdminLinkProviderForUserRequest& request) const
@@ -572,18 +495,12 @@ AdminLinkProviderForUserOutcome CognitoIdentityProviderClient::AdminLinkProvider
 
 AdminLinkProviderForUserOutcomeCallable CognitoIdentityProviderClient::AdminLinkProviderForUserCallable(const AdminLinkProviderForUserRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminLinkProviderForUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminLinkProviderForUser(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AdminLinkProviderForUser, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::AdminLinkProviderForUserAsync(const AdminLinkProviderForUserRequest& request, const AdminLinkProviderForUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AdminLinkProviderForUser(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AdminLinkProviderForUser, request, handler, context, m_executor.get());
 }
 
 AdminListDevicesOutcome CognitoIdentityProviderClient::AdminListDevices(const AdminListDevicesRequest& request) const
@@ -596,18 +513,12 @@ AdminListDevicesOutcome CognitoIdentityProviderClient::AdminListDevices(const Ad
 
 AdminListDevicesOutcomeCallable CognitoIdentityProviderClient::AdminListDevicesCallable(const AdminListDevicesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminListDevicesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminListDevices(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AdminListDevices, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::AdminListDevicesAsync(const AdminListDevicesRequest& request, const AdminListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AdminListDevices(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AdminListDevices, request, handler, context, m_executor.get());
 }
 
 AdminListGroupsForUserOutcome CognitoIdentityProviderClient::AdminListGroupsForUser(const AdminListGroupsForUserRequest& request) const
@@ -620,18 +531,12 @@ AdminListGroupsForUserOutcome CognitoIdentityProviderClient::AdminListGroupsForU
 
 AdminListGroupsForUserOutcomeCallable CognitoIdentityProviderClient::AdminListGroupsForUserCallable(const AdminListGroupsForUserRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminListGroupsForUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminListGroupsForUser(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AdminListGroupsForUser, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::AdminListGroupsForUserAsync(const AdminListGroupsForUserRequest& request, const AdminListGroupsForUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AdminListGroupsForUser(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AdminListGroupsForUser, request, handler, context, m_executor.get());
 }
 
 AdminListUserAuthEventsOutcome CognitoIdentityProviderClient::AdminListUserAuthEvents(const AdminListUserAuthEventsRequest& request) const
@@ -644,18 +549,12 @@ AdminListUserAuthEventsOutcome CognitoIdentityProviderClient::AdminListUserAuthE
 
 AdminListUserAuthEventsOutcomeCallable CognitoIdentityProviderClient::AdminListUserAuthEventsCallable(const AdminListUserAuthEventsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminListUserAuthEventsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminListUserAuthEvents(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AdminListUserAuthEvents, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::AdminListUserAuthEventsAsync(const AdminListUserAuthEventsRequest& request, const AdminListUserAuthEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AdminListUserAuthEvents(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AdminListUserAuthEvents, request, handler, context, m_executor.get());
 }
 
 AdminRemoveUserFromGroupOutcome CognitoIdentityProviderClient::AdminRemoveUserFromGroup(const AdminRemoveUserFromGroupRequest& request) const
@@ -668,18 +567,12 @@ AdminRemoveUserFromGroupOutcome CognitoIdentityProviderClient::AdminRemoveUserFr
 
 AdminRemoveUserFromGroupOutcomeCallable CognitoIdentityProviderClient::AdminRemoveUserFromGroupCallable(const AdminRemoveUserFromGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminRemoveUserFromGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminRemoveUserFromGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AdminRemoveUserFromGroup, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::AdminRemoveUserFromGroupAsync(const AdminRemoveUserFromGroupRequest& request, const AdminRemoveUserFromGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AdminRemoveUserFromGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AdminRemoveUserFromGroup, request, handler, context, m_executor.get());
 }
 
 AdminResetUserPasswordOutcome CognitoIdentityProviderClient::AdminResetUserPassword(const AdminResetUserPasswordRequest& request) const
@@ -692,18 +585,12 @@ AdminResetUserPasswordOutcome CognitoIdentityProviderClient::AdminResetUserPassw
 
 AdminResetUserPasswordOutcomeCallable CognitoIdentityProviderClient::AdminResetUserPasswordCallable(const AdminResetUserPasswordRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminResetUserPasswordOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminResetUserPassword(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AdminResetUserPassword, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::AdminResetUserPasswordAsync(const AdminResetUserPasswordRequest& request, const AdminResetUserPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AdminResetUserPassword(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AdminResetUserPassword, request, handler, context, m_executor.get());
 }
 
 AdminRespondToAuthChallengeOutcome CognitoIdentityProviderClient::AdminRespondToAuthChallenge(const AdminRespondToAuthChallengeRequest& request) const
@@ -716,18 +603,12 @@ AdminRespondToAuthChallengeOutcome CognitoIdentityProviderClient::AdminRespondTo
 
 AdminRespondToAuthChallengeOutcomeCallable CognitoIdentityProviderClient::AdminRespondToAuthChallengeCallable(const AdminRespondToAuthChallengeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminRespondToAuthChallengeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminRespondToAuthChallenge(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AdminRespondToAuthChallenge, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::AdminRespondToAuthChallengeAsync(const AdminRespondToAuthChallengeRequest& request, const AdminRespondToAuthChallengeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AdminRespondToAuthChallenge(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AdminRespondToAuthChallenge, request, handler, context, m_executor.get());
 }
 
 AdminSetUserMFAPreferenceOutcome CognitoIdentityProviderClient::AdminSetUserMFAPreference(const AdminSetUserMFAPreferenceRequest& request) const
@@ -740,18 +621,12 @@ AdminSetUserMFAPreferenceOutcome CognitoIdentityProviderClient::AdminSetUserMFAP
 
 AdminSetUserMFAPreferenceOutcomeCallable CognitoIdentityProviderClient::AdminSetUserMFAPreferenceCallable(const AdminSetUserMFAPreferenceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminSetUserMFAPreferenceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminSetUserMFAPreference(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AdminSetUserMFAPreference, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::AdminSetUserMFAPreferenceAsync(const AdminSetUserMFAPreferenceRequest& request, const AdminSetUserMFAPreferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AdminSetUserMFAPreference(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AdminSetUserMFAPreference, request, handler, context, m_executor.get());
 }
 
 AdminSetUserPasswordOutcome CognitoIdentityProviderClient::AdminSetUserPassword(const AdminSetUserPasswordRequest& request) const
@@ -764,18 +639,12 @@ AdminSetUserPasswordOutcome CognitoIdentityProviderClient::AdminSetUserPassword(
 
 AdminSetUserPasswordOutcomeCallable CognitoIdentityProviderClient::AdminSetUserPasswordCallable(const AdminSetUserPasswordRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminSetUserPasswordOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminSetUserPassword(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AdminSetUserPassword, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::AdminSetUserPasswordAsync(const AdminSetUserPasswordRequest& request, const AdminSetUserPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AdminSetUserPassword(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AdminSetUserPassword, request, handler, context, m_executor.get());
 }
 
 AdminSetUserSettingsOutcome CognitoIdentityProviderClient::AdminSetUserSettings(const AdminSetUserSettingsRequest& request) const
@@ -788,18 +657,12 @@ AdminSetUserSettingsOutcome CognitoIdentityProviderClient::AdminSetUserSettings(
 
 AdminSetUserSettingsOutcomeCallable CognitoIdentityProviderClient::AdminSetUserSettingsCallable(const AdminSetUserSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminSetUserSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminSetUserSettings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AdminSetUserSettings, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::AdminSetUserSettingsAsync(const AdminSetUserSettingsRequest& request, const AdminSetUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AdminSetUserSettings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AdminSetUserSettings, request, handler, context, m_executor.get());
 }
 
 AdminUpdateAuthEventFeedbackOutcome CognitoIdentityProviderClient::AdminUpdateAuthEventFeedback(const AdminUpdateAuthEventFeedbackRequest& request) const
@@ -812,18 +675,12 @@ AdminUpdateAuthEventFeedbackOutcome CognitoIdentityProviderClient::AdminUpdateAu
 
 AdminUpdateAuthEventFeedbackOutcomeCallable CognitoIdentityProviderClient::AdminUpdateAuthEventFeedbackCallable(const AdminUpdateAuthEventFeedbackRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminUpdateAuthEventFeedbackOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminUpdateAuthEventFeedback(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AdminUpdateAuthEventFeedback, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::AdminUpdateAuthEventFeedbackAsync(const AdminUpdateAuthEventFeedbackRequest& request, const AdminUpdateAuthEventFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AdminUpdateAuthEventFeedback(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AdminUpdateAuthEventFeedback, request, handler, context, m_executor.get());
 }
 
 AdminUpdateDeviceStatusOutcome CognitoIdentityProviderClient::AdminUpdateDeviceStatus(const AdminUpdateDeviceStatusRequest& request) const
@@ -836,18 +693,12 @@ AdminUpdateDeviceStatusOutcome CognitoIdentityProviderClient::AdminUpdateDeviceS
 
 AdminUpdateDeviceStatusOutcomeCallable CognitoIdentityProviderClient::AdminUpdateDeviceStatusCallable(const AdminUpdateDeviceStatusRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminUpdateDeviceStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminUpdateDeviceStatus(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AdminUpdateDeviceStatus, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::AdminUpdateDeviceStatusAsync(const AdminUpdateDeviceStatusRequest& request, const AdminUpdateDeviceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AdminUpdateDeviceStatus(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AdminUpdateDeviceStatus, request, handler, context, m_executor.get());
 }
 
 AdminUpdateUserAttributesOutcome CognitoIdentityProviderClient::AdminUpdateUserAttributes(const AdminUpdateUserAttributesRequest& request) const
@@ -860,18 +711,12 @@ AdminUpdateUserAttributesOutcome CognitoIdentityProviderClient::AdminUpdateUserA
 
 AdminUpdateUserAttributesOutcomeCallable CognitoIdentityProviderClient::AdminUpdateUserAttributesCallable(const AdminUpdateUserAttributesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminUpdateUserAttributesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminUpdateUserAttributes(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AdminUpdateUserAttributes, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::AdminUpdateUserAttributesAsync(const AdminUpdateUserAttributesRequest& request, const AdminUpdateUserAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AdminUpdateUserAttributes(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AdminUpdateUserAttributes, request, handler, context, m_executor.get());
 }
 
 AdminUserGlobalSignOutOutcome CognitoIdentityProviderClient::AdminUserGlobalSignOut(const AdminUserGlobalSignOutRequest& request) const
@@ -884,18 +729,12 @@ AdminUserGlobalSignOutOutcome CognitoIdentityProviderClient::AdminUserGlobalSign
 
 AdminUserGlobalSignOutOutcomeCallable CognitoIdentityProviderClient::AdminUserGlobalSignOutCallable(const AdminUserGlobalSignOutRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AdminUserGlobalSignOutOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminUserGlobalSignOut(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AdminUserGlobalSignOut, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::AdminUserGlobalSignOutAsync(const AdminUserGlobalSignOutRequest& request, const AdminUserGlobalSignOutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AdminUserGlobalSignOut(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AdminUserGlobalSignOut, request, handler, context, m_executor.get());
 }
 
 AssociateSoftwareTokenOutcome CognitoIdentityProviderClient::AssociateSoftwareToken(const AssociateSoftwareTokenRequest& request) const
@@ -908,18 +747,12 @@ AssociateSoftwareTokenOutcome CognitoIdentityProviderClient::AssociateSoftwareTo
 
 AssociateSoftwareTokenOutcomeCallable CognitoIdentityProviderClient::AssociateSoftwareTokenCallable(const AssociateSoftwareTokenRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AssociateSoftwareTokenOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateSoftwareToken(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(AssociateSoftwareToken, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::AssociateSoftwareTokenAsync(const AssociateSoftwareTokenRequest& request, const AssociateSoftwareTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, AssociateSoftwareToken(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(AssociateSoftwareToken, request, handler, context, m_executor.get());
 }
 
 ChangePasswordOutcome CognitoIdentityProviderClient::ChangePassword(const ChangePasswordRequest& request) const
@@ -932,18 +765,12 @@ ChangePasswordOutcome CognitoIdentityProviderClient::ChangePassword(const Change
 
 ChangePasswordOutcomeCallable CognitoIdentityProviderClient::ChangePasswordCallable(const ChangePasswordRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ChangePasswordOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ChangePassword(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ChangePassword, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::ChangePasswordAsync(const ChangePasswordRequest& request, const ChangePasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ChangePassword(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ChangePassword, request, handler, context, m_executor.get());
 }
 
 ConfirmDeviceOutcome CognitoIdentityProviderClient::ConfirmDevice(const ConfirmDeviceRequest& request) const
@@ -956,18 +783,12 @@ ConfirmDeviceOutcome CognitoIdentityProviderClient::ConfirmDevice(const ConfirmD
 
 ConfirmDeviceOutcomeCallable CognitoIdentityProviderClient::ConfirmDeviceCallable(const ConfirmDeviceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ConfirmDeviceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ConfirmDevice(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ConfirmDevice, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::ConfirmDeviceAsync(const ConfirmDeviceRequest& request, const ConfirmDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ConfirmDevice(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ConfirmDevice, request, handler, context, m_executor.get());
 }
 
 ConfirmForgotPasswordOutcome CognitoIdentityProviderClient::ConfirmForgotPassword(const ConfirmForgotPasswordRequest& request) const
@@ -980,18 +801,12 @@ ConfirmForgotPasswordOutcome CognitoIdentityProviderClient::ConfirmForgotPasswor
 
 ConfirmForgotPasswordOutcomeCallable CognitoIdentityProviderClient::ConfirmForgotPasswordCallable(const ConfirmForgotPasswordRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ConfirmForgotPasswordOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ConfirmForgotPassword(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ConfirmForgotPassword, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::ConfirmForgotPasswordAsync(const ConfirmForgotPasswordRequest& request, const ConfirmForgotPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ConfirmForgotPassword(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ConfirmForgotPassword, request, handler, context, m_executor.get());
 }
 
 ConfirmSignUpOutcome CognitoIdentityProviderClient::ConfirmSignUp(const ConfirmSignUpRequest& request) const
@@ -1004,18 +819,12 @@ ConfirmSignUpOutcome CognitoIdentityProviderClient::ConfirmSignUp(const ConfirmS
 
 ConfirmSignUpOutcomeCallable CognitoIdentityProviderClient::ConfirmSignUpCallable(const ConfirmSignUpRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ConfirmSignUpOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ConfirmSignUp(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ConfirmSignUp, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::ConfirmSignUpAsync(const ConfirmSignUpRequest& request, const ConfirmSignUpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ConfirmSignUp(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ConfirmSignUp, request, handler, context, m_executor.get());
 }
 
 CreateGroupOutcome CognitoIdentityProviderClient::CreateGroup(const CreateGroupRequest& request) const
@@ -1028,18 +837,12 @@ CreateGroupOutcome CognitoIdentityProviderClient::CreateGroup(const CreateGroupR
 
 CreateGroupOutcomeCallable CognitoIdentityProviderClient::CreateGroupCallable(const CreateGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateGroup, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::CreateGroupAsync(const CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateGroup, request, handler, context, m_executor.get());
 }
 
 CreateIdentityProviderOutcome CognitoIdentityProviderClient::CreateIdentityProvider(const CreateIdentityProviderRequest& request) const
@@ -1052,18 +855,12 @@ CreateIdentityProviderOutcome CognitoIdentityProviderClient::CreateIdentityProvi
 
 CreateIdentityProviderOutcomeCallable CognitoIdentityProviderClient::CreateIdentityProviderCallable(const CreateIdentityProviderRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateIdentityProviderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateIdentityProvider(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateIdentityProvider, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::CreateIdentityProviderAsync(const CreateIdentityProviderRequest& request, const CreateIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateIdentityProvider(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateIdentityProvider, request, handler, context, m_executor.get());
 }
 
 CreateResourceServerOutcome CognitoIdentityProviderClient::CreateResourceServer(const CreateResourceServerRequest& request) const
@@ -1076,18 +873,12 @@ CreateResourceServerOutcome CognitoIdentityProviderClient::CreateResourceServer(
 
 CreateResourceServerOutcomeCallable CognitoIdentityProviderClient::CreateResourceServerCallable(const CreateResourceServerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateResourceServerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateResourceServer(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateResourceServer, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::CreateResourceServerAsync(const CreateResourceServerRequest& request, const CreateResourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateResourceServer(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateResourceServer, request, handler, context, m_executor.get());
 }
 
 CreateUserImportJobOutcome CognitoIdentityProviderClient::CreateUserImportJob(const CreateUserImportJobRequest& request) const
@@ -1100,18 +891,12 @@ CreateUserImportJobOutcome CognitoIdentityProviderClient::CreateUserImportJob(co
 
 CreateUserImportJobOutcomeCallable CognitoIdentityProviderClient::CreateUserImportJobCallable(const CreateUserImportJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateUserImportJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateUserImportJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateUserImportJob, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::CreateUserImportJobAsync(const CreateUserImportJobRequest& request, const CreateUserImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateUserImportJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateUserImportJob, request, handler, context, m_executor.get());
 }
 
 CreateUserPoolOutcome CognitoIdentityProviderClient::CreateUserPool(const CreateUserPoolRequest& request) const
@@ -1124,18 +909,12 @@ CreateUserPoolOutcome CognitoIdentityProviderClient::CreateUserPool(const Create
 
 CreateUserPoolOutcomeCallable CognitoIdentityProviderClient::CreateUserPoolCallable(const CreateUserPoolRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateUserPoolOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateUserPool(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateUserPool, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::CreateUserPoolAsync(const CreateUserPoolRequest& request, const CreateUserPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateUserPool(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateUserPool, request, handler, context, m_executor.get());
 }
 
 CreateUserPoolClientOutcome CognitoIdentityProviderClient::CreateUserPoolClient(const CreateUserPoolClientRequest& request) const
@@ -1148,18 +927,12 @@ CreateUserPoolClientOutcome CognitoIdentityProviderClient::CreateUserPoolClient(
 
 CreateUserPoolClientOutcomeCallable CognitoIdentityProviderClient::CreateUserPoolClientCallable(const CreateUserPoolClientRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateUserPoolClientOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateUserPoolClient(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateUserPoolClient, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::CreateUserPoolClientAsync(const CreateUserPoolClientRequest& request, const CreateUserPoolClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateUserPoolClient(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateUserPoolClient, request, handler, context, m_executor.get());
 }
 
 CreateUserPoolDomainOutcome CognitoIdentityProviderClient::CreateUserPoolDomain(const CreateUserPoolDomainRequest& request) const
@@ -1172,18 +945,12 @@ CreateUserPoolDomainOutcome CognitoIdentityProviderClient::CreateUserPoolDomain(
 
 CreateUserPoolDomainOutcomeCallable CognitoIdentityProviderClient::CreateUserPoolDomainCallable(const CreateUserPoolDomainRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateUserPoolDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateUserPoolDomain(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateUserPoolDomain, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::CreateUserPoolDomainAsync(const CreateUserPoolDomainRequest& request, const CreateUserPoolDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateUserPoolDomain(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateUserPoolDomain, request, handler, context, m_executor.get());
 }
 
 DeleteGroupOutcome CognitoIdentityProviderClient::DeleteGroup(const DeleteGroupRequest& request) const
@@ -1196,18 +963,12 @@ DeleteGroupOutcome CognitoIdentityProviderClient::DeleteGroup(const DeleteGroupR
 
 DeleteGroupOutcomeCallable CognitoIdentityProviderClient::DeleteGroupCallable(const DeleteGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteGroup, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::DeleteGroupAsync(const DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteGroup, request, handler, context, m_executor.get());
 }
 
 DeleteIdentityProviderOutcome CognitoIdentityProviderClient::DeleteIdentityProvider(const DeleteIdentityProviderRequest& request) const
@@ -1220,18 +981,12 @@ DeleteIdentityProviderOutcome CognitoIdentityProviderClient::DeleteIdentityProvi
 
 DeleteIdentityProviderOutcomeCallable CognitoIdentityProviderClient::DeleteIdentityProviderCallable(const DeleteIdentityProviderRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteIdentityProviderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteIdentityProvider(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteIdentityProvider, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::DeleteIdentityProviderAsync(const DeleteIdentityProviderRequest& request, const DeleteIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteIdentityProvider(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteIdentityProvider, request, handler, context, m_executor.get());
 }
 
 DeleteResourceServerOutcome CognitoIdentityProviderClient::DeleteResourceServer(const DeleteResourceServerRequest& request) const
@@ -1244,18 +999,12 @@ DeleteResourceServerOutcome CognitoIdentityProviderClient::DeleteResourceServer(
 
 DeleteResourceServerOutcomeCallable CognitoIdentityProviderClient::DeleteResourceServerCallable(const DeleteResourceServerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteResourceServerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteResourceServer(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteResourceServer, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::DeleteResourceServerAsync(const DeleteResourceServerRequest& request, const DeleteResourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteResourceServer(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteResourceServer, request, handler, context, m_executor.get());
 }
 
 DeleteUserOutcome CognitoIdentityProviderClient::DeleteUser(const DeleteUserRequest& request) const
@@ -1268,18 +1017,12 @@ DeleteUserOutcome CognitoIdentityProviderClient::DeleteUser(const DeleteUserRequ
 
 DeleteUserOutcomeCallable CognitoIdentityProviderClient::DeleteUserCallable(const DeleteUserRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteUser(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteUser, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::DeleteUserAsync(const DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteUser(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteUser, request, handler, context, m_executor.get());
 }
 
 DeleteUserAttributesOutcome CognitoIdentityProviderClient::DeleteUserAttributes(const DeleteUserAttributesRequest& request) const
@@ -1292,18 +1035,12 @@ DeleteUserAttributesOutcome CognitoIdentityProviderClient::DeleteUserAttributes(
 
 DeleteUserAttributesOutcomeCallable CognitoIdentityProviderClient::DeleteUserAttributesCallable(const DeleteUserAttributesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteUserAttributesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteUserAttributes(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteUserAttributes, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::DeleteUserAttributesAsync(const DeleteUserAttributesRequest& request, const DeleteUserAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteUserAttributes(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteUserAttributes, request, handler, context, m_executor.get());
 }
 
 DeleteUserPoolOutcome CognitoIdentityProviderClient::DeleteUserPool(const DeleteUserPoolRequest& request) const
@@ -1316,18 +1053,12 @@ DeleteUserPoolOutcome CognitoIdentityProviderClient::DeleteUserPool(const Delete
 
 DeleteUserPoolOutcomeCallable CognitoIdentityProviderClient::DeleteUserPoolCallable(const DeleteUserPoolRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteUserPoolOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteUserPool(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteUserPool, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::DeleteUserPoolAsync(const DeleteUserPoolRequest& request, const DeleteUserPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteUserPool(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteUserPool, request, handler, context, m_executor.get());
 }
 
 DeleteUserPoolClientOutcome CognitoIdentityProviderClient::DeleteUserPoolClient(const DeleteUserPoolClientRequest& request) const
@@ -1340,18 +1071,12 @@ DeleteUserPoolClientOutcome CognitoIdentityProviderClient::DeleteUserPoolClient(
 
 DeleteUserPoolClientOutcomeCallable CognitoIdentityProviderClient::DeleteUserPoolClientCallable(const DeleteUserPoolClientRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteUserPoolClientOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteUserPoolClient(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteUserPoolClient, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::DeleteUserPoolClientAsync(const DeleteUserPoolClientRequest& request, const DeleteUserPoolClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteUserPoolClient(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteUserPoolClient, request, handler, context, m_executor.get());
 }
 
 DeleteUserPoolDomainOutcome CognitoIdentityProviderClient::DeleteUserPoolDomain(const DeleteUserPoolDomainRequest& request) const
@@ -1364,18 +1089,12 @@ DeleteUserPoolDomainOutcome CognitoIdentityProviderClient::DeleteUserPoolDomain(
 
 DeleteUserPoolDomainOutcomeCallable CognitoIdentityProviderClient::DeleteUserPoolDomainCallable(const DeleteUserPoolDomainRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteUserPoolDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteUserPoolDomain(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteUserPoolDomain, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::DeleteUserPoolDomainAsync(const DeleteUserPoolDomainRequest& request, const DeleteUserPoolDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteUserPoolDomain(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteUserPoolDomain, request, handler, context, m_executor.get());
 }
 
 DescribeIdentityProviderOutcome CognitoIdentityProviderClient::DescribeIdentityProvider(const DescribeIdentityProviderRequest& request) const
@@ -1388,18 +1107,12 @@ DescribeIdentityProviderOutcome CognitoIdentityProviderClient::DescribeIdentityP
 
 DescribeIdentityProviderOutcomeCallable CognitoIdentityProviderClient::DescribeIdentityProviderCallable(const DescribeIdentityProviderRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeIdentityProviderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeIdentityProvider(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeIdentityProvider, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::DescribeIdentityProviderAsync(const DescribeIdentityProviderRequest& request, const DescribeIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeIdentityProvider(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeIdentityProvider, request, handler, context, m_executor.get());
 }
 
 DescribeResourceServerOutcome CognitoIdentityProviderClient::DescribeResourceServer(const DescribeResourceServerRequest& request) const
@@ -1412,18 +1125,12 @@ DescribeResourceServerOutcome CognitoIdentityProviderClient::DescribeResourceSer
 
 DescribeResourceServerOutcomeCallable CognitoIdentityProviderClient::DescribeResourceServerCallable(const DescribeResourceServerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeResourceServerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeResourceServer(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeResourceServer, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::DescribeResourceServerAsync(const DescribeResourceServerRequest& request, const DescribeResourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeResourceServer(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeResourceServer, request, handler, context, m_executor.get());
 }
 
 DescribeRiskConfigurationOutcome CognitoIdentityProviderClient::DescribeRiskConfiguration(const DescribeRiskConfigurationRequest& request) const
@@ -1436,18 +1143,12 @@ DescribeRiskConfigurationOutcome CognitoIdentityProviderClient::DescribeRiskConf
 
 DescribeRiskConfigurationOutcomeCallable CognitoIdentityProviderClient::DescribeRiskConfigurationCallable(const DescribeRiskConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeRiskConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeRiskConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeRiskConfiguration, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::DescribeRiskConfigurationAsync(const DescribeRiskConfigurationRequest& request, const DescribeRiskConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeRiskConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeRiskConfiguration, request, handler, context, m_executor.get());
 }
 
 DescribeUserImportJobOutcome CognitoIdentityProviderClient::DescribeUserImportJob(const DescribeUserImportJobRequest& request) const
@@ -1460,18 +1161,12 @@ DescribeUserImportJobOutcome CognitoIdentityProviderClient::DescribeUserImportJo
 
 DescribeUserImportJobOutcomeCallable CognitoIdentityProviderClient::DescribeUserImportJobCallable(const DescribeUserImportJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeUserImportJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeUserImportJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeUserImportJob, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::DescribeUserImportJobAsync(const DescribeUserImportJobRequest& request, const DescribeUserImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeUserImportJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeUserImportJob, request, handler, context, m_executor.get());
 }
 
 DescribeUserPoolOutcome CognitoIdentityProviderClient::DescribeUserPool(const DescribeUserPoolRequest& request) const
@@ -1484,18 +1179,12 @@ DescribeUserPoolOutcome CognitoIdentityProviderClient::DescribeUserPool(const De
 
 DescribeUserPoolOutcomeCallable CognitoIdentityProviderClient::DescribeUserPoolCallable(const DescribeUserPoolRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeUserPoolOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeUserPool(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeUserPool, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::DescribeUserPoolAsync(const DescribeUserPoolRequest& request, const DescribeUserPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeUserPool(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeUserPool, request, handler, context, m_executor.get());
 }
 
 DescribeUserPoolClientOutcome CognitoIdentityProviderClient::DescribeUserPoolClient(const DescribeUserPoolClientRequest& request) const
@@ -1508,18 +1197,12 @@ DescribeUserPoolClientOutcome CognitoIdentityProviderClient::DescribeUserPoolCli
 
 DescribeUserPoolClientOutcomeCallable CognitoIdentityProviderClient::DescribeUserPoolClientCallable(const DescribeUserPoolClientRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeUserPoolClientOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeUserPoolClient(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeUserPoolClient, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::DescribeUserPoolClientAsync(const DescribeUserPoolClientRequest& request, const DescribeUserPoolClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeUserPoolClient(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeUserPoolClient, request, handler, context, m_executor.get());
 }
 
 DescribeUserPoolDomainOutcome CognitoIdentityProviderClient::DescribeUserPoolDomain(const DescribeUserPoolDomainRequest& request) const
@@ -1532,18 +1215,12 @@ DescribeUserPoolDomainOutcome CognitoIdentityProviderClient::DescribeUserPoolDom
 
 DescribeUserPoolDomainOutcomeCallable CognitoIdentityProviderClient::DescribeUserPoolDomainCallable(const DescribeUserPoolDomainRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeUserPoolDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeUserPoolDomain(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeUserPoolDomain, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::DescribeUserPoolDomainAsync(const DescribeUserPoolDomainRequest& request, const DescribeUserPoolDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeUserPoolDomain(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeUserPoolDomain, request, handler, context, m_executor.get());
 }
 
 ForgetDeviceOutcome CognitoIdentityProviderClient::ForgetDevice(const ForgetDeviceRequest& request) const
@@ -1556,18 +1233,12 @@ ForgetDeviceOutcome CognitoIdentityProviderClient::ForgetDevice(const ForgetDevi
 
 ForgetDeviceOutcomeCallable CognitoIdentityProviderClient::ForgetDeviceCallable(const ForgetDeviceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ForgetDeviceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ForgetDevice(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ForgetDevice, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::ForgetDeviceAsync(const ForgetDeviceRequest& request, const ForgetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ForgetDevice(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ForgetDevice, request, handler, context, m_executor.get());
 }
 
 ForgotPasswordOutcome CognitoIdentityProviderClient::ForgotPassword(const ForgotPasswordRequest& request) const
@@ -1580,18 +1251,12 @@ ForgotPasswordOutcome CognitoIdentityProviderClient::ForgotPassword(const Forgot
 
 ForgotPasswordOutcomeCallable CognitoIdentityProviderClient::ForgotPasswordCallable(const ForgotPasswordRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ForgotPasswordOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ForgotPassword(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ForgotPassword, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::ForgotPasswordAsync(const ForgotPasswordRequest& request, const ForgotPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ForgotPassword(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ForgotPassword, request, handler, context, m_executor.get());
 }
 
 GetCSVHeaderOutcome CognitoIdentityProviderClient::GetCSVHeader(const GetCSVHeaderRequest& request) const
@@ -1604,18 +1269,12 @@ GetCSVHeaderOutcome CognitoIdentityProviderClient::GetCSVHeader(const GetCSVHead
 
 GetCSVHeaderOutcomeCallable CognitoIdentityProviderClient::GetCSVHeaderCallable(const GetCSVHeaderRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetCSVHeaderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCSVHeader(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetCSVHeader, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::GetCSVHeaderAsync(const GetCSVHeaderRequest& request, const GetCSVHeaderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetCSVHeader(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetCSVHeader, request, handler, context, m_executor.get());
 }
 
 GetDeviceOutcome CognitoIdentityProviderClient::GetDevice(const GetDeviceRequest& request) const
@@ -1628,18 +1287,12 @@ GetDeviceOutcome CognitoIdentityProviderClient::GetDevice(const GetDeviceRequest
 
 GetDeviceOutcomeCallable CognitoIdentityProviderClient::GetDeviceCallable(const GetDeviceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDeviceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDevice(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetDevice, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::GetDeviceAsync(const GetDeviceRequest& request, const GetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetDevice(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetDevice, request, handler, context, m_executor.get());
 }
 
 GetGroupOutcome CognitoIdentityProviderClient::GetGroup(const GetGroupRequest& request) const
@@ -1652,18 +1305,12 @@ GetGroupOutcome CognitoIdentityProviderClient::GetGroup(const GetGroupRequest& r
 
 GetGroupOutcomeCallable CognitoIdentityProviderClient::GetGroupCallable(const GetGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetGroup, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::GetGroupAsync(const GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetGroup, request, handler, context, m_executor.get());
 }
 
 GetIdentityProviderByIdentifierOutcome CognitoIdentityProviderClient::GetIdentityProviderByIdentifier(const GetIdentityProviderByIdentifierRequest& request) const
@@ -1676,18 +1323,12 @@ GetIdentityProviderByIdentifierOutcome CognitoIdentityProviderClient::GetIdentit
 
 GetIdentityProviderByIdentifierOutcomeCallable CognitoIdentityProviderClient::GetIdentityProviderByIdentifierCallable(const GetIdentityProviderByIdentifierRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetIdentityProviderByIdentifierOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetIdentityProviderByIdentifier(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetIdentityProviderByIdentifier, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::GetIdentityProviderByIdentifierAsync(const GetIdentityProviderByIdentifierRequest& request, const GetIdentityProviderByIdentifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetIdentityProviderByIdentifier(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetIdentityProviderByIdentifier, request, handler, context, m_executor.get());
 }
 
 GetSigningCertificateOutcome CognitoIdentityProviderClient::GetSigningCertificate(const GetSigningCertificateRequest& request) const
@@ -1700,18 +1341,12 @@ GetSigningCertificateOutcome CognitoIdentityProviderClient::GetSigningCertificat
 
 GetSigningCertificateOutcomeCallable CognitoIdentityProviderClient::GetSigningCertificateCallable(const GetSigningCertificateRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetSigningCertificateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSigningCertificate(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetSigningCertificate, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::GetSigningCertificateAsync(const GetSigningCertificateRequest& request, const GetSigningCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetSigningCertificate(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetSigningCertificate, request, handler, context, m_executor.get());
 }
 
 GetUICustomizationOutcome CognitoIdentityProviderClient::GetUICustomization(const GetUICustomizationRequest& request) const
@@ -1724,18 +1359,12 @@ GetUICustomizationOutcome CognitoIdentityProviderClient::GetUICustomization(cons
 
 GetUICustomizationOutcomeCallable CognitoIdentityProviderClient::GetUICustomizationCallable(const GetUICustomizationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetUICustomizationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetUICustomization(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetUICustomization, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::GetUICustomizationAsync(const GetUICustomizationRequest& request, const GetUICustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetUICustomization(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetUICustomization, request, handler, context, m_executor.get());
 }
 
 GetUserOutcome CognitoIdentityProviderClient::GetUser(const GetUserRequest& request) const
@@ -1748,18 +1377,12 @@ GetUserOutcome CognitoIdentityProviderClient::GetUser(const GetUserRequest& requ
 
 GetUserOutcomeCallable CognitoIdentityProviderClient::GetUserCallable(const GetUserRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetUser(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetUser, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::GetUserAsync(const GetUserRequest& request, const GetUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetUser(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetUser, request, handler, context, m_executor.get());
 }
 
 GetUserAttributeVerificationCodeOutcome CognitoIdentityProviderClient::GetUserAttributeVerificationCode(const GetUserAttributeVerificationCodeRequest& request) const
@@ -1772,18 +1395,12 @@ GetUserAttributeVerificationCodeOutcome CognitoIdentityProviderClient::GetUserAt
 
 GetUserAttributeVerificationCodeOutcomeCallable CognitoIdentityProviderClient::GetUserAttributeVerificationCodeCallable(const GetUserAttributeVerificationCodeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetUserAttributeVerificationCodeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetUserAttributeVerificationCode(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetUserAttributeVerificationCode, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::GetUserAttributeVerificationCodeAsync(const GetUserAttributeVerificationCodeRequest& request, const GetUserAttributeVerificationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetUserAttributeVerificationCode(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetUserAttributeVerificationCode, request, handler, context, m_executor.get());
 }
 
 GetUserPoolMfaConfigOutcome CognitoIdentityProviderClient::GetUserPoolMfaConfig(const GetUserPoolMfaConfigRequest& request) const
@@ -1796,18 +1413,12 @@ GetUserPoolMfaConfigOutcome CognitoIdentityProviderClient::GetUserPoolMfaConfig(
 
 GetUserPoolMfaConfigOutcomeCallable CognitoIdentityProviderClient::GetUserPoolMfaConfigCallable(const GetUserPoolMfaConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetUserPoolMfaConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetUserPoolMfaConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetUserPoolMfaConfig, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::GetUserPoolMfaConfigAsync(const GetUserPoolMfaConfigRequest& request, const GetUserPoolMfaConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetUserPoolMfaConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetUserPoolMfaConfig, request, handler, context, m_executor.get());
 }
 
 GlobalSignOutOutcome CognitoIdentityProviderClient::GlobalSignOut(const GlobalSignOutRequest& request) const
@@ -1820,18 +1431,12 @@ GlobalSignOutOutcome CognitoIdentityProviderClient::GlobalSignOut(const GlobalSi
 
 GlobalSignOutOutcomeCallable CognitoIdentityProviderClient::GlobalSignOutCallable(const GlobalSignOutRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GlobalSignOutOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GlobalSignOut(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GlobalSignOut, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::GlobalSignOutAsync(const GlobalSignOutRequest& request, const GlobalSignOutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GlobalSignOut(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GlobalSignOut, request, handler, context, m_executor.get());
 }
 
 InitiateAuthOutcome CognitoIdentityProviderClient::InitiateAuth(const InitiateAuthRequest& request) const
@@ -1844,18 +1449,12 @@ InitiateAuthOutcome CognitoIdentityProviderClient::InitiateAuth(const InitiateAu
 
 InitiateAuthOutcomeCallable CognitoIdentityProviderClient::InitiateAuthCallable(const InitiateAuthRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< InitiateAuthOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->InitiateAuth(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(InitiateAuth, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::InitiateAuthAsync(const InitiateAuthRequest& request, const InitiateAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, InitiateAuth(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(InitiateAuth, request, handler, context, m_executor.get());
 }
 
 ListDevicesOutcome CognitoIdentityProviderClient::ListDevices(const ListDevicesRequest& request) const
@@ -1868,18 +1467,12 @@ ListDevicesOutcome CognitoIdentityProviderClient::ListDevices(const ListDevicesR
 
 ListDevicesOutcomeCallable CognitoIdentityProviderClient::ListDevicesCallable(const ListDevicesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDevicesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDevices(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListDevices, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::ListDevicesAsync(const ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListDevices(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListDevices, request, handler, context, m_executor.get());
 }
 
 ListGroupsOutcome CognitoIdentityProviderClient::ListGroups(const ListGroupsRequest& request) const
@@ -1892,18 +1485,12 @@ ListGroupsOutcome CognitoIdentityProviderClient::ListGroups(const ListGroupsRequ
 
 ListGroupsOutcomeCallable CognitoIdentityProviderClient::ListGroupsCallable(const ListGroupsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListGroups(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListGroups, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::ListGroupsAsync(const ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListGroups(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListGroups, request, handler, context, m_executor.get());
 }
 
 ListIdentityProvidersOutcome CognitoIdentityProviderClient::ListIdentityProviders(const ListIdentityProvidersRequest& request) const
@@ -1916,18 +1503,12 @@ ListIdentityProvidersOutcome CognitoIdentityProviderClient::ListIdentityProvider
 
 ListIdentityProvidersOutcomeCallable CognitoIdentityProviderClient::ListIdentityProvidersCallable(const ListIdentityProvidersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListIdentityProvidersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListIdentityProviders(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListIdentityProviders, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::ListIdentityProvidersAsync(const ListIdentityProvidersRequest& request, const ListIdentityProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListIdentityProviders(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListIdentityProviders, request, handler, context, m_executor.get());
 }
 
 ListResourceServersOutcome CognitoIdentityProviderClient::ListResourceServers(const ListResourceServersRequest& request) const
@@ -1940,18 +1521,12 @@ ListResourceServersOutcome CognitoIdentityProviderClient::ListResourceServers(co
 
 ListResourceServersOutcomeCallable CognitoIdentityProviderClient::ListResourceServersCallable(const ListResourceServersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListResourceServersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListResourceServers(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListResourceServers, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::ListResourceServersAsync(const ListResourceServersRequest& request, const ListResourceServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListResourceServers(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListResourceServers, request, handler, context, m_executor.get());
 }
 
 ListTagsForResourceOutcome CognitoIdentityProviderClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1964,18 +1539,12 @@ ListTagsForResourceOutcome CognitoIdentityProviderClient::ListTagsForResource(co
 
 ListTagsForResourceOutcomeCallable CognitoIdentityProviderClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListTagsForResource, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListTagsForResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListTagsForResource, request, handler, context, m_executor.get());
 }
 
 ListUserImportJobsOutcome CognitoIdentityProviderClient::ListUserImportJobs(const ListUserImportJobsRequest& request) const
@@ -1988,18 +1557,12 @@ ListUserImportJobsOutcome CognitoIdentityProviderClient::ListUserImportJobs(cons
 
 ListUserImportJobsOutcomeCallable CognitoIdentityProviderClient::ListUserImportJobsCallable(const ListUserImportJobsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListUserImportJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListUserImportJobs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListUserImportJobs, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::ListUserImportJobsAsync(const ListUserImportJobsRequest& request, const ListUserImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListUserImportJobs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListUserImportJobs, request, handler, context, m_executor.get());
 }
 
 ListUserPoolClientsOutcome CognitoIdentityProviderClient::ListUserPoolClients(const ListUserPoolClientsRequest& request) const
@@ -2012,18 +1575,12 @@ ListUserPoolClientsOutcome CognitoIdentityProviderClient::ListUserPoolClients(co
 
 ListUserPoolClientsOutcomeCallable CognitoIdentityProviderClient::ListUserPoolClientsCallable(const ListUserPoolClientsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListUserPoolClientsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListUserPoolClients(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListUserPoolClients, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::ListUserPoolClientsAsync(const ListUserPoolClientsRequest& request, const ListUserPoolClientsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListUserPoolClients(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListUserPoolClients, request, handler, context, m_executor.get());
 }
 
 ListUserPoolsOutcome CognitoIdentityProviderClient::ListUserPools(const ListUserPoolsRequest& request) const
@@ -2036,18 +1593,12 @@ ListUserPoolsOutcome CognitoIdentityProviderClient::ListUserPools(const ListUser
 
 ListUserPoolsOutcomeCallable CognitoIdentityProviderClient::ListUserPoolsCallable(const ListUserPoolsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListUserPoolsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListUserPools(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListUserPools, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::ListUserPoolsAsync(const ListUserPoolsRequest& request, const ListUserPoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListUserPools(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListUserPools, request, handler, context, m_executor.get());
 }
 
 ListUsersOutcome CognitoIdentityProviderClient::ListUsers(const ListUsersRequest& request) const
@@ -2060,18 +1611,12 @@ ListUsersOutcome CognitoIdentityProviderClient::ListUsers(const ListUsersRequest
 
 ListUsersOutcomeCallable CognitoIdentityProviderClient::ListUsersCallable(const ListUsersRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListUsersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListUsers(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListUsers, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::ListUsersAsync(const ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListUsers(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListUsers, request, handler, context, m_executor.get());
 }
 
 ListUsersInGroupOutcome CognitoIdentityProviderClient::ListUsersInGroup(const ListUsersInGroupRequest& request) const
@@ -2084,18 +1629,12 @@ ListUsersInGroupOutcome CognitoIdentityProviderClient::ListUsersInGroup(const Li
 
 ListUsersInGroupOutcomeCallable CognitoIdentityProviderClient::ListUsersInGroupCallable(const ListUsersInGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListUsersInGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListUsersInGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListUsersInGroup, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::ListUsersInGroupAsync(const ListUsersInGroupRequest& request, const ListUsersInGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListUsersInGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListUsersInGroup, request, handler, context, m_executor.get());
 }
 
 ResendConfirmationCodeOutcome CognitoIdentityProviderClient::ResendConfirmationCode(const ResendConfirmationCodeRequest& request) const
@@ -2108,18 +1647,12 @@ ResendConfirmationCodeOutcome CognitoIdentityProviderClient::ResendConfirmationC
 
 ResendConfirmationCodeOutcomeCallable CognitoIdentityProviderClient::ResendConfirmationCodeCallable(const ResendConfirmationCodeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ResendConfirmationCodeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ResendConfirmationCode(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ResendConfirmationCode, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::ResendConfirmationCodeAsync(const ResendConfirmationCodeRequest& request, const ResendConfirmationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ResendConfirmationCode(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ResendConfirmationCode, request, handler, context, m_executor.get());
 }
 
 RespondToAuthChallengeOutcome CognitoIdentityProviderClient::RespondToAuthChallenge(const RespondToAuthChallengeRequest& request) const
@@ -2132,18 +1665,12 @@ RespondToAuthChallengeOutcome CognitoIdentityProviderClient::RespondToAuthChalle
 
 RespondToAuthChallengeOutcomeCallable CognitoIdentityProviderClient::RespondToAuthChallengeCallable(const RespondToAuthChallengeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RespondToAuthChallengeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RespondToAuthChallenge(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RespondToAuthChallenge, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::RespondToAuthChallengeAsync(const RespondToAuthChallengeRequest& request, const RespondToAuthChallengeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RespondToAuthChallenge(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RespondToAuthChallenge, request, handler, context, m_executor.get());
 }
 
 RevokeTokenOutcome CognitoIdentityProviderClient::RevokeToken(const RevokeTokenRequest& request) const
@@ -2156,18 +1683,12 @@ RevokeTokenOutcome CognitoIdentityProviderClient::RevokeToken(const RevokeTokenR
 
 RevokeTokenOutcomeCallable CognitoIdentityProviderClient::RevokeTokenCallable(const RevokeTokenRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< RevokeTokenOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RevokeToken(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(RevokeToken, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::RevokeTokenAsync(const RevokeTokenRequest& request, const RevokeTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, RevokeToken(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(RevokeToken, request, handler, context, m_executor.get());
 }
 
 SetRiskConfigurationOutcome CognitoIdentityProviderClient::SetRiskConfiguration(const SetRiskConfigurationRequest& request) const
@@ -2180,18 +1701,12 @@ SetRiskConfigurationOutcome CognitoIdentityProviderClient::SetRiskConfiguration(
 
 SetRiskConfigurationOutcomeCallable CognitoIdentityProviderClient::SetRiskConfigurationCallable(const SetRiskConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SetRiskConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SetRiskConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(SetRiskConfiguration, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::SetRiskConfigurationAsync(const SetRiskConfigurationRequest& request, const SetRiskConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, SetRiskConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(SetRiskConfiguration, request, handler, context, m_executor.get());
 }
 
 SetUICustomizationOutcome CognitoIdentityProviderClient::SetUICustomization(const SetUICustomizationRequest& request) const
@@ -2204,18 +1719,12 @@ SetUICustomizationOutcome CognitoIdentityProviderClient::SetUICustomization(cons
 
 SetUICustomizationOutcomeCallable CognitoIdentityProviderClient::SetUICustomizationCallable(const SetUICustomizationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SetUICustomizationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SetUICustomization(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(SetUICustomization, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::SetUICustomizationAsync(const SetUICustomizationRequest& request, const SetUICustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, SetUICustomization(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(SetUICustomization, request, handler, context, m_executor.get());
 }
 
 SetUserMFAPreferenceOutcome CognitoIdentityProviderClient::SetUserMFAPreference(const SetUserMFAPreferenceRequest& request) const
@@ -2228,18 +1737,12 @@ SetUserMFAPreferenceOutcome CognitoIdentityProviderClient::SetUserMFAPreference(
 
 SetUserMFAPreferenceOutcomeCallable CognitoIdentityProviderClient::SetUserMFAPreferenceCallable(const SetUserMFAPreferenceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SetUserMFAPreferenceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SetUserMFAPreference(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(SetUserMFAPreference, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::SetUserMFAPreferenceAsync(const SetUserMFAPreferenceRequest& request, const SetUserMFAPreferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, SetUserMFAPreference(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(SetUserMFAPreference, request, handler, context, m_executor.get());
 }
 
 SetUserPoolMfaConfigOutcome CognitoIdentityProviderClient::SetUserPoolMfaConfig(const SetUserPoolMfaConfigRequest& request) const
@@ -2252,18 +1755,12 @@ SetUserPoolMfaConfigOutcome CognitoIdentityProviderClient::SetUserPoolMfaConfig(
 
 SetUserPoolMfaConfigOutcomeCallable CognitoIdentityProviderClient::SetUserPoolMfaConfigCallable(const SetUserPoolMfaConfigRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SetUserPoolMfaConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SetUserPoolMfaConfig(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(SetUserPoolMfaConfig, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::SetUserPoolMfaConfigAsync(const SetUserPoolMfaConfigRequest& request, const SetUserPoolMfaConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, SetUserPoolMfaConfig(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(SetUserPoolMfaConfig, request, handler, context, m_executor.get());
 }
 
 SetUserSettingsOutcome CognitoIdentityProviderClient::SetUserSettings(const SetUserSettingsRequest& request) const
@@ -2276,18 +1773,12 @@ SetUserSettingsOutcome CognitoIdentityProviderClient::SetUserSettings(const SetU
 
 SetUserSettingsOutcomeCallable CognitoIdentityProviderClient::SetUserSettingsCallable(const SetUserSettingsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SetUserSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SetUserSettings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(SetUserSettings, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::SetUserSettingsAsync(const SetUserSettingsRequest& request, const SetUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, SetUserSettings(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(SetUserSettings, request, handler, context, m_executor.get());
 }
 
 SignUpOutcome CognitoIdentityProviderClient::SignUp(const SignUpRequest& request) const
@@ -2300,18 +1791,12 @@ SignUpOutcome CognitoIdentityProviderClient::SignUp(const SignUpRequest& request
 
 SignUpOutcomeCallable CognitoIdentityProviderClient::SignUpCallable(const SignUpRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< SignUpOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SignUp(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(SignUp, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::SignUpAsync(const SignUpRequest& request, const SignUpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, SignUp(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(SignUp, request, handler, context, m_executor.get());
 }
 
 StartUserImportJobOutcome CognitoIdentityProviderClient::StartUserImportJob(const StartUserImportJobRequest& request) const
@@ -2324,18 +1809,12 @@ StartUserImportJobOutcome CognitoIdentityProviderClient::StartUserImportJob(cons
 
 StartUserImportJobOutcomeCallable CognitoIdentityProviderClient::StartUserImportJobCallable(const StartUserImportJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StartUserImportJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartUserImportJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StartUserImportJob, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::StartUserImportJobAsync(const StartUserImportJobRequest& request, const StartUserImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StartUserImportJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StartUserImportJob, request, handler, context, m_executor.get());
 }
 
 StopUserImportJobOutcome CognitoIdentityProviderClient::StopUserImportJob(const StopUserImportJobRequest& request) const
@@ -2348,18 +1827,12 @@ StopUserImportJobOutcome CognitoIdentityProviderClient::StopUserImportJob(const 
 
 StopUserImportJobOutcomeCallable CognitoIdentityProviderClient::StopUserImportJobCallable(const StopUserImportJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< StopUserImportJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopUserImportJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(StopUserImportJob, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::StopUserImportJobAsync(const StopUserImportJobRequest& request, const StopUserImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, StopUserImportJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(StopUserImportJob, request, handler, context, m_executor.get());
 }
 
 TagResourceOutcome CognitoIdentityProviderClient::TagResource(const TagResourceRequest& request) const
@@ -2372,18 +1845,12 @@ TagResourceOutcome CognitoIdentityProviderClient::TagResource(const TagResourceR
 
 TagResourceOutcomeCallable CognitoIdentityProviderClient::TagResourceCallable(const TagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(TagResource, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, TagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(TagResource, request, handler, context, m_executor.get());
 }
 
 UntagResourceOutcome CognitoIdentityProviderClient::UntagResource(const UntagResourceRequest& request) const
@@ -2396,18 +1863,12 @@ UntagResourceOutcome CognitoIdentityProviderClient::UntagResource(const UntagRes
 
 UntagResourceOutcomeCallable CognitoIdentityProviderClient::UntagResourceCallable(const UntagResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UntagResource, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UntagResource(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UntagResource, request, handler, context, m_executor.get());
 }
 
 UpdateAuthEventFeedbackOutcome CognitoIdentityProviderClient::UpdateAuthEventFeedback(const UpdateAuthEventFeedbackRequest& request) const
@@ -2420,18 +1881,12 @@ UpdateAuthEventFeedbackOutcome CognitoIdentityProviderClient::UpdateAuthEventFee
 
 UpdateAuthEventFeedbackOutcomeCallable CognitoIdentityProviderClient::UpdateAuthEventFeedbackCallable(const UpdateAuthEventFeedbackRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateAuthEventFeedbackOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAuthEventFeedback(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateAuthEventFeedback, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::UpdateAuthEventFeedbackAsync(const UpdateAuthEventFeedbackRequest& request, const UpdateAuthEventFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateAuthEventFeedback(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateAuthEventFeedback, request, handler, context, m_executor.get());
 }
 
 UpdateDeviceStatusOutcome CognitoIdentityProviderClient::UpdateDeviceStatus(const UpdateDeviceStatusRequest& request) const
@@ -2444,18 +1899,12 @@ UpdateDeviceStatusOutcome CognitoIdentityProviderClient::UpdateDeviceStatus(cons
 
 UpdateDeviceStatusOutcomeCallable CognitoIdentityProviderClient::UpdateDeviceStatusCallable(const UpdateDeviceStatusRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateDeviceStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDeviceStatus(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateDeviceStatus, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::UpdateDeviceStatusAsync(const UpdateDeviceStatusRequest& request, const UpdateDeviceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateDeviceStatus(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateDeviceStatus, request, handler, context, m_executor.get());
 }
 
 UpdateGroupOutcome CognitoIdentityProviderClient::UpdateGroup(const UpdateGroupRequest& request) const
@@ -2468,18 +1917,12 @@ UpdateGroupOutcome CognitoIdentityProviderClient::UpdateGroup(const UpdateGroupR
 
 UpdateGroupOutcomeCallable CognitoIdentityProviderClient::UpdateGroupCallable(const UpdateGroupRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateGroup(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateGroup, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::UpdateGroupAsync(const UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateGroup(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateGroup, request, handler, context, m_executor.get());
 }
 
 UpdateIdentityProviderOutcome CognitoIdentityProviderClient::UpdateIdentityProvider(const UpdateIdentityProviderRequest& request) const
@@ -2492,18 +1935,12 @@ UpdateIdentityProviderOutcome CognitoIdentityProviderClient::UpdateIdentityProvi
 
 UpdateIdentityProviderOutcomeCallable CognitoIdentityProviderClient::UpdateIdentityProviderCallable(const UpdateIdentityProviderRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateIdentityProviderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateIdentityProvider(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateIdentityProvider, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::UpdateIdentityProviderAsync(const UpdateIdentityProviderRequest& request, const UpdateIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateIdentityProvider(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateIdentityProvider, request, handler, context, m_executor.get());
 }
 
 UpdateResourceServerOutcome CognitoIdentityProviderClient::UpdateResourceServer(const UpdateResourceServerRequest& request) const
@@ -2516,18 +1953,12 @@ UpdateResourceServerOutcome CognitoIdentityProviderClient::UpdateResourceServer(
 
 UpdateResourceServerOutcomeCallable CognitoIdentityProviderClient::UpdateResourceServerCallable(const UpdateResourceServerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateResourceServerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateResourceServer(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateResourceServer, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::UpdateResourceServerAsync(const UpdateResourceServerRequest& request, const UpdateResourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateResourceServer(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateResourceServer, request, handler, context, m_executor.get());
 }
 
 UpdateUserAttributesOutcome CognitoIdentityProviderClient::UpdateUserAttributes(const UpdateUserAttributesRequest& request) const
@@ -2540,18 +1971,12 @@ UpdateUserAttributesOutcome CognitoIdentityProviderClient::UpdateUserAttributes(
 
 UpdateUserAttributesOutcomeCallable CognitoIdentityProviderClient::UpdateUserAttributesCallable(const UpdateUserAttributesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateUserAttributesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateUserAttributes(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateUserAttributes, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::UpdateUserAttributesAsync(const UpdateUserAttributesRequest& request, const UpdateUserAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateUserAttributes(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateUserAttributes, request, handler, context, m_executor.get());
 }
 
 UpdateUserPoolOutcome CognitoIdentityProviderClient::UpdateUserPool(const UpdateUserPoolRequest& request) const
@@ -2564,18 +1989,12 @@ UpdateUserPoolOutcome CognitoIdentityProviderClient::UpdateUserPool(const Update
 
 UpdateUserPoolOutcomeCallable CognitoIdentityProviderClient::UpdateUserPoolCallable(const UpdateUserPoolRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateUserPoolOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateUserPool(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateUserPool, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::UpdateUserPoolAsync(const UpdateUserPoolRequest& request, const UpdateUserPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateUserPool(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateUserPool, request, handler, context, m_executor.get());
 }
 
 UpdateUserPoolClientOutcome CognitoIdentityProviderClient::UpdateUserPoolClient(const UpdateUserPoolClientRequest& request) const
@@ -2588,18 +2007,12 @@ UpdateUserPoolClientOutcome CognitoIdentityProviderClient::UpdateUserPoolClient(
 
 UpdateUserPoolClientOutcomeCallable CognitoIdentityProviderClient::UpdateUserPoolClientCallable(const UpdateUserPoolClientRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateUserPoolClientOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateUserPoolClient(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateUserPoolClient, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::UpdateUserPoolClientAsync(const UpdateUserPoolClientRequest& request, const UpdateUserPoolClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateUserPoolClient(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateUserPoolClient, request, handler, context, m_executor.get());
 }
 
 UpdateUserPoolDomainOutcome CognitoIdentityProviderClient::UpdateUserPoolDomain(const UpdateUserPoolDomainRequest& request) const
@@ -2612,18 +2025,12 @@ UpdateUserPoolDomainOutcome CognitoIdentityProviderClient::UpdateUserPoolDomain(
 
 UpdateUserPoolDomainOutcomeCallable CognitoIdentityProviderClient::UpdateUserPoolDomainCallable(const UpdateUserPoolDomainRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateUserPoolDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateUserPoolDomain(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateUserPoolDomain, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::UpdateUserPoolDomainAsync(const UpdateUserPoolDomainRequest& request, const UpdateUserPoolDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateUserPoolDomain(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateUserPoolDomain, request, handler, context, m_executor.get());
 }
 
 VerifySoftwareTokenOutcome CognitoIdentityProviderClient::VerifySoftwareToken(const VerifySoftwareTokenRequest& request) const
@@ -2636,18 +2043,12 @@ VerifySoftwareTokenOutcome CognitoIdentityProviderClient::VerifySoftwareToken(co
 
 VerifySoftwareTokenOutcomeCallable CognitoIdentityProviderClient::VerifySoftwareTokenCallable(const VerifySoftwareTokenRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< VerifySoftwareTokenOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->VerifySoftwareToken(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(VerifySoftwareToken, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::VerifySoftwareTokenAsync(const VerifySoftwareTokenRequest& request, const VerifySoftwareTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, VerifySoftwareToken(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(VerifySoftwareToken, request, handler, context, m_executor.get());
 }
 
 VerifyUserAttributeOutcome CognitoIdentityProviderClient::VerifyUserAttribute(const VerifyUserAttributeRequest& request) const
@@ -2660,17 +2061,11 @@ VerifyUserAttributeOutcome CognitoIdentityProviderClient::VerifyUserAttribute(co
 
 VerifyUserAttributeOutcomeCallable CognitoIdentityProviderClient::VerifyUserAttributeCallable(const VerifyUserAttributeRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< VerifyUserAttributeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->VerifyUserAttribute(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(VerifyUserAttribute, request, m_executor.get());
 }
 
 void CognitoIdentityProviderClient::VerifyUserAttributeAsync(const VerifyUserAttributeRequest& request, const VerifyUserAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, VerifyUserAttribute(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(VerifyUserAttribute, request, handler, context, m_executor.get());
 }
 

@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -246,20 +247,13 @@ CreateAccessPointOutcome S3ControlClient::CreateAccessPoint(const CreateAccessPo
 
 CreateAccessPointOutcomeCallable S3ControlClient::CreateAccessPointCallable(const CreateAccessPointRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateAccessPointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAccessPoint(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateAccessPoint, request, m_executor.get());
 }
 
 void S3ControlClient::CreateAccessPointAsync(const CreateAccessPointRequest& request, const CreateAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateAccessPoint(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateAccessPoint, request, handler, context, m_executor.get());
 }
-
 CreateAccessPointForObjectLambdaOutcome S3ControlClient::CreateAccessPointForObjectLambda(const CreateAccessPointForObjectLambdaRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAccessPointForObjectLambda, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -284,20 +278,13 @@ CreateAccessPointForObjectLambdaOutcome S3ControlClient::CreateAccessPointForObj
 
 CreateAccessPointForObjectLambdaOutcomeCallable S3ControlClient::CreateAccessPointForObjectLambdaCallable(const CreateAccessPointForObjectLambdaRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateAccessPointForObjectLambdaOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAccessPointForObjectLambda(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateAccessPointForObjectLambda, request, m_executor.get());
 }
 
 void S3ControlClient::CreateAccessPointForObjectLambdaAsync(const CreateAccessPointForObjectLambdaRequest& request, const CreateAccessPointForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateAccessPointForObjectLambda(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateAccessPointForObjectLambda, request, handler, context, m_executor.get());
 }
-
 CreateBucketOutcome S3ControlClient::CreateBucket(const CreateBucketRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateBucket, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -315,20 +302,13 @@ CreateBucketOutcome S3ControlClient::CreateBucket(const CreateBucketRequest& req
 
 CreateBucketOutcomeCallable S3ControlClient::CreateBucketCallable(const CreateBucketRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateBucketOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateBucket(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateBucket, request, m_executor.get());
 }
 
 void S3ControlClient::CreateBucketAsync(const CreateBucketRequest& request, const CreateBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateBucket(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateBucket, request, handler, context, m_executor.get());
 }
-
 CreateJobOutcome S3ControlClient::CreateJob(const CreateJobRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -352,20 +332,13 @@ CreateJobOutcome S3ControlClient::CreateJob(const CreateJobRequest& request) con
 
 CreateJobOutcomeCallable S3ControlClient::CreateJobCallable(const CreateJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateJob, request, m_executor.get());
 }
 
 void S3ControlClient::CreateJobAsync(const CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateJob, request, handler, context, m_executor.get());
 }
-
 CreateMultiRegionAccessPointOutcome S3ControlClient::CreateMultiRegionAccessPoint(const CreateMultiRegionAccessPointRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMultiRegionAccessPoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -389,20 +362,13 @@ CreateMultiRegionAccessPointOutcome S3ControlClient::CreateMultiRegionAccessPoin
 
 CreateMultiRegionAccessPointOutcomeCallable S3ControlClient::CreateMultiRegionAccessPointCallable(const CreateMultiRegionAccessPointRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< CreateMultiRegionAccessPointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateMultiRegionAccessPoint(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(CreateMultiRegionAccessPoint, request, m_executor.get());
 }
 
 void S3ControlClient::CreateMultiRegionAccessPointAsync(const CreateMultiRegionAccessPointRequest& request, const CreateMultiRegionAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, CreateMultiRegionAccessPoint(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(CreateMultiRegionAccessPoint, request, handler, context, m_executor.get());
 }
-
 DeleteAccessPointOutcome S3ControlClient::DeleteAccessPoint(const DeleteAccessPointRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAccessPoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -427,20 +393,13 @@ DeleteAccessPointOutcome S3ControlClient::DeleteAccessPoint(const DeleteAccessPo
 
 DeleteAccessPointOutcomeCallable S3ControlClient::DeleteAccessPointCallable(const DeleteAccessPointRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteAccessPointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAccessPoint(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteAccessPoint, request, m_executor.get());
 }
 
 void S3ControlClient::DeleteAccessPointAsync(const DeleteAccessPointRequest& request, const DeleteAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteAccessPoint(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteAccessPoint, request, handler, context, m_executor.get());
 }
-
 DeleteAccessPointForObjectLambdaOutcome S3ControlClient::DeleteAccessPointForObjectLambda(const DeleteAccessPointForObjectLambdaRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAccessPointForObjectLambda, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -465,20 +424,13 @@ DeleteAccessPointForObjectLambdaOutcome S3ControlClient::DeleteAccessPointForObj
 
 DeleteAccessPointForObjectLambdaOutcomeCallable S3ControlClient::DeleteAccessPointForObjectLambdaCallable(const DeleteAccessPointForObjectLambdaRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteAccessPointForObjectLambdaOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAccessPointForObjectLambda(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteAccessPointForObjectLambda, request, m_executor.get());
 }
 
 void S3ControlClient::DeleteAccessPointForObjectLambdaAsync(const DeleteAccessPointForObjectLambdaRequest& request, const DeleteAccessPointForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteAccessPointForObjectLambda(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteAccessPointForObjectLambda, request, handler, context, m_executor.get());
 }
-
 DeleteAccessPointPolicyOutcome S3ControlClient::DeleteAccessPointPolicy(const DeleteAccessPointPolicyRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAccessPointPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -504,20 +456,13 @@ DeleteAccessPointPolicyOutcome S3ControlClient::DeleteAccessPointPolicy(const De
 
 DeleteAccessPointPolicyOutcomeCallable S3ControlClient::DeleteAccessPointPolicyCallable(const DeleteAccessPointPolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteAccessPointPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAccessPointPolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteAccessPointPolicy, request, m_executor.get());
 }
 
 void S3ControlClient::DeleteAccessPointPolicyAsync(const DeleteAccessPointPolicyRequest& request, const DeleteAccessPointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteAccessPointPolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteAccessPointPolicy, request, handler, context, m_executor.get());
 }
-
 DeleteAccessPointPolicyForObjectLambdaOutcome S3ControlClient::DeleteAccessPointPolicyForObjectLambda(const DeleteAccessPointPolicyForObjectLambdaRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAccessPointPolicyForObjectLambda, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -543,20 +488,13 @@ DeleteAccessPointPolicyForObjectLambdaOutcome S3ControlClient::DeleteAccessPoint
 
 DeleteAccessPointPolicyForObjectLambdaOutcomeCallable S3ControlClient::DeleteAccessPointPolicyForObjectLambdaCallable(const DeleteAccessPointPolicyForObjectLambdaRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteAccessPointPolicyForObjectLambdaOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAccessPointPolicyForObjectLambda(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteAccessPointPolicyForObjectLambda, request, m_executor.get());
 }
 
 void S3ControlClient::DeleteAccessPointPolicyForObjectLambdaAsync(const DeleteAccessPointPolicyForObjectLambdaRequest& request, const DeleteAccessPointPolicyForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteAccessPointPolicyForObjectLambda(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteAccessPointPolicyForObjectLambda, request, handler, context, m_executor.get());
 }
-
 DeleteBucketOutcome S3ControlClient::DeleteBucket(const DeleteBucketRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBucket, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -581,20 +519,13 @@ DeleteBucketOutcome S3ControlClient::DeleteBucket(const DeleteBucketRequest& req
 
 DeleteBucketOutcomeCallable S3ControlClient::DeleteBucketCallable(const DeleteBucketRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteBucketOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBucket(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteBucket, request, m_executor.get());
 }
 
 void S3ControlClient::DeleteBucketAsync(const DeleteBucketRequest& request, const DeleteBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteBucket(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteBucket, request, handler, context, m_executor.get());
 }
-
 DeleteBucketLifecycleConfigurationOutcome S3ControlClient::DeleteBucketLifecycleConfiguration(const DeleteBucketLifecycleConfigurationRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBucketLifecycleConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -620,20 +551,13 @@ DeleteBucketLifecycleConfigurationOutcome S3ControlClient::DeleteBucketLifecycle
 
 DeleteBucketLifecycleConfigurationOutcomeCallable S3ControlClient::DeleteBucketLifecycleConfigurationCallable(const DeleteBucketLifecycleConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteBucketLifecycleConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBucketLifecycleConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteBucketLifecycleConfiguration, request, m_executor.get());
 }
 
 void S3ControlClient::DeleteBucketLifecycleConfigurationAsync(const DeleteBucketLifecycleConfigurationRequest& request, const DeleteBucketLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteBucketLifecycleConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteBucketLifecycleConfiguration, request, handler, context, m_executor.get());
 }
-
 DeleteBucketPolicyOutcome S3ControlClient::DeleteBucketPolicy(const DeleteBucketPolicyRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBucketPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -659,20 +583,13 @@ DeleteBucketPolicyOutcome S3ControlClient::DeleteBucketPolicy(const DeleteBucket
 
 DeleteBucketPolicyOutcomeCallable S3ControlClient::DeleteBucketPolicyCallable(const DeleteBucketPolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteBucketPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBucketPolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteBucketPolicy, request, m_executor.get());
 }
 
 void S3ControlClient::DeleteBucketPolicyAsync(const DeleteBucketPolicyRequest& request, const DeleteBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteBucketPolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteBucketPolicy, request, handler, context, m_executor.get());
 }
-
 DeleteBucketTaggingOutcome S3ControlClient::DeleteBucketTagging(const DeleteBucketTaggingRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBucketTagging, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -698,20 +615,13 @@ DeleteBucketTaggingOutcome S3ControlClient::DeleteBucketTagging(const DeleteBuck
 
 DeleteBucketTaggingOutcomeCallable S3ControlClient::DeleteBucketTaggingCallable(const DeleteBucketTaggingRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteBucketTaggingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBucketTagging(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteBucketTagging, request, m_executor.get());
 }
 
 void S3ControlClient::DeleteBucketTaggingAsync(const DeleteBucketTaggingRequest& request, const DeleteBucketTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteBucketTagging(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteBucketTagging, request, handler, context, m_executor.get());
 }
-
 DeleteJobTaggingOutcome S3ControlClient::DeleteJobTagging(const DeleteJobTaggingRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteJobTagging, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -742,20 +652,13 @@ DeleteJobTaggingOutcome S3ControlClient::DeleteJobTagging(const DeleteJobTagging
 
 DeleteJobTaggingOutcomeCallable S3ControlClient::DeleteJobTaggingCallable(const DeleteJobTaggingRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteJobTaggingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteJobTagging(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteJobTagging, request, m_executor.get());
 }
 
 void S3ControlClient::DeleteJobTaggingAsync(const DeleteJobTaggingRequest& request, const DeleteJobTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteJobTagging(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteJobTagging, request, handler, context, m_executor.get());
 }
-
 DeleteMultiRegionAccessPointOutcome S3ControlClient::DeleteMultiRegionAccessPoint(const DeleteMultiRegionAccessPointRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteMultiRegionAccessPoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -779,20 +682,13 @@ DeleteMultiRegionAccessPointOutcome S3ControlClient::DeleteMultiRegionAccessPoin
 
 DeleteMultiRegionAccessPointOutcomeCallable S3ControlClient::DeleteMultiRegionAccessPointCallable(const DeleteMultiRegionAccessPointRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteMultiRegionAccessPointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteMultiRegionAccessPoint(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteMultiRegionAccessPoint, request, m_executor.get());
 }
 
 void S3ControlClient::DeleteMultiRegionAccessPointAsync(const DeleteMultiRegionAccessPointRequest& request, const DeleteMultiRegionAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteMultiRegionAccessPoint(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteMultiRegionAccessPoint, request, handler, context, m_executor.get());
 }
-
 DeletePublicAccessBlockOutcome S3ControlClient::DeletePublicAccessBlock(const DeletePublicAccessBlockRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePublicAccessBlock, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -816,20 +712,13 @@ DeletePublicAccessBlockOutcome S3ControlClient::DeletePublicAccessBlock(const De
 
 DeletePublicAccessBlockOutcomeCallable S3ControlClient::DeletePublicAccessBlockCallable(const DeletePublicAccessBlockRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeletePublicAccessBlockOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeletePublicAccessBlock(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeletePublicAccessBlock, request, m_executor.get());
 }
 
 void S3ControlClient::DeletePublicAccessBlockAsync(const DeletePublicAccessBlockRequest& request, const DeletePublicAccessBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeletePublicAccessBlock(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeletePublicAccessBlock, request, handler, context, m_executor.get());
 }
-
 DeleteStorageLensConfigurationOutcome S3ControlClient::DeleteStorageLensConfiguration(const DeleteStorageLensConfigurationRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteStorageLensConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -859,20 +748,13 @@ DeleteStorageLensConfigurationOutcome S3ControlClient::DeleteStorageLensConfigur
 
 DeleteStorageLensConfigurationOutcomeCallable S3ControlClient::DeleteStorageLensConfigurationCallable(const DeleteStorageLensConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteStorageLensConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteStorageLensConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteStorageLensConfiguration, request, m_executor.get());
 }
 
 void S3ControlClient::DeleteStorageLensConfigurationAsync(const DeleteStorageLensConfigurationRequest& request, const DeleteStorageLensConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteStorageLensConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteStorageLensConfiguration, request, handler, context, m_executor.get());
 }
-
 DeleteStorageLensConfigurationTaggingOutcome S3ControlClient::DeleteStorageLensConfigurationTagging(const DeleteStorageLensConfigurationTaggingRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteStorageLensConfigurationTagging, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -903,20 +785,13 @@ DeleteStorageLensConfigurationTaggingOutcome S3ControlClient::DeleteStorageLensC
 
 DeleteStorageLensConfigurationTaggingOutcomeCallable S3ControlClient::DeleteStorageLensConfigurationTaggingCallable(const DeleteStorageLensConfigurationTaggingRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DeleteStorageLensConfigurationTaggingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteStorageLensConfigurationTagging(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DeleteStorageLensConfigurationTagging, request, m_executor.get());
 }
 
 void S3ControlClient::DeleteStorageLensConfigurationTaggingAsync(const DeleteStorageLensConfigurationTaggingRequest& request, const DeleteStorageLensConfigurationTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DeleteStorageLensConfigurationTagging(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DeleteStorageLensConfigurationTagging, request, handler, context, m_executor.get());
 }
-
 DescribeJobOutcome S3ControlClient::DescribeJob(const DescribeJobRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -946,20 +821,13 @@ DescribeJobOutcome S3ControlClient::DescribeJob(const DescribeJobRequest& reques
 
 DescribeJobOutcomeCallable S3ControlClient::DescribeJobCallable(const DescribeJobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeJob(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeJob, request, m_executor.get());
 }
 
 void S3ControlClient::DescribeJobAsync(const DescribeJobRequest& request, const DescribeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeJob(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeJob, request, handler, context, m_executor.get());
 }
-
 DescribeMultiRegionAccessPointOperationOutcome S3ControlClient::DescribeMultiRegionAccessPointOperation(const DescribeMultiRegionAccessPointOperationRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeMultiRegionAccessPointOperation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -989,20 +857,13 @@ DescribeMultiRegionAccessPointOperationOutcome S3ControlClient::DescribeMultiReg
 
 DescribeMultiRegionAccessPointOperationOutcomeCallable S3ControlClient::DescribeMultiRegionAccessPointOperationCallable(const DescribeMultiRegionAccessPointOperationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeMultiRegionAccessPointOperationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeMultiRegionAccessPointOperation(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeMultiRegionAccessPointOperation, request, m_executor.get());
 }
 
 void S3ControlClient::DescribeMultiRegionAccessPointOperationAsync(const DescribeMultiRegionAccessPointOperationRequest& request, const DescribeMultiRegionAccessPointOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeMultiRegionAccessPointOperation(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeMultiRegionAccessPointOperation, request, handler, context, m_executor.get());
 }
-
 GetAccessPointOutcome S3ControlClient::GetAccessPoint(const GetAccessPointRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAccessPoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1027,20 +888,13 @@ GetAccessPointOutcome S3ControlClient::GetAccessPoint(const GetAccessPointReques
 
 GetAccessPointOutcomeCallable S3ControlClient::GetAccessPointCallable(const GetAccessPointRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAccessPointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAccessPoint(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetAccessPoint, request, m_executor.get());
 }
 
 void S3ControlClient::GetAccessPointAsync(const GetAccessPointRequest& request, const GetAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetAccessPoint(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetAccessPoint, request, handler, context, m_executor.get());
 }
-
 GetAccessPointConfigurationForObjectLambdaOutcome S3ControlClient::GetAccessPointConfigurationForObjectLambda(const GetAccessPointConfigurationForObjectLambdaRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAccessPointConfigurationForObjectLambda, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1066,20 +920,13 @@ GetAccessPointConfigurationForObjectLambdaOutcome S3ControlClient::GetAccessPoin
 
 GetAccessPointConfigurationForObjectLambdaOutcomeCallable S3ControlClient::GetAccessPointConfigurationForObjectLambdaCallable(const GetAccessPointConfigurationForObjectLambdaRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAccessPointConfigurationForObjectLambdaOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAccessPointConfigurationForObjectLambda(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetAccessPointConfigurationForObjectLambda, request, m_executor.get());
 }
 
 void S3ControlClient::GetAccessPointConfigurationForObjectLambdaAsync(const GetAccessPointConfigurationForObjectLambdaRequest& request, const GetAccessPointConfigurationForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetAccessPointConfigurationForObjectLambda(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetAccessPointConfigurationForObjectLambda, request, handler, context, m_executor.get());
 }
-
 GetAccessPointForObjectLambdaOutcome S3ControlClient::GetAccessPointForObjectLambda(const GetAccessPointForObjectLambdaRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAccessPointForObjectLambda, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1104,20 +951,13 @@ GetAccessPointForObjectLambdaOutcome S3ControlClient::GetAccessPointForObjectLam
 
 GetAccessPointForObjectLambdaOutcomeCallable S3ControlClient::GetAccessPointForObjectLambdaCallable(const GetAccessPointForObjectLambdaRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAccessPointForObjectLambdaOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAccessPointForObjectLambda(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetAccessPointForObjectLambda, request, m_executor.get());
 }
 
 void S3ControlClient::GetAccessPointForObjectLambdaAsync(const GetAccessPointForObjectLambdaRequest& request, const GetAccessPointForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetAccessPointForObjectLambda(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetAccessPointForObjectLambda, request, handler, context, m_executor.get());
 }
-
 GetAccessPointPolicyOutcome S3ControlClient::GetAccessPointPolicy(const GetAccessPointPolicyRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAccessPointPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1143,20 +983,13 @@ GetAccessPointPolicyOutcome S3ControlClient::GetAccessPointPolicy(const GetAcces
 
 GetAccessPointPolicyOutcomeCallable S3ControlClient::GetAccessPointPolicyCallable(const GetAccessPointPolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAccessPointPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAccessPointPolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetAccessPointPolicy, request, m_executor.get());
 }
 
 void S3ControlClient::GetAccessPointPolicyAsync(const GetAccessPointPolicyRequest& request, const GetAccessPointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetAccessPointPolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetAccessPointPolicy, request, handler, context, m_executor.get());
 }
-
 GetAccessPointPolicyForObjectLambdaOutcome S3ControlClient::GetAccessPointPolicyForObjectLambda(const GetAccessPointPolicyForObjectLambdaRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAccessPointPolicyForObjectLambda, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1182,20 +1015,13 @@ GetAccessPointPolicyForObjectLambdaOutcome S3ControlClient::GetAccessPointPolicy
 
 GetAccessPointPolicyForObjectLambdaOutcomeCallable S3ControlClient::GetAccessPointPolicyForObjectLambdaCallable(const GetAccessPointPolicyForObjectLambdaRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAccessPointPolicyForObjectLambdaOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAccessPointPolicyForObjectLambda(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetAccessPointPolicyForObjectLambda, request, m_executor.get());
 }
 
 void S3ControlClient::GetAccessPointPolicyForObjectLambdaAsync(const GetAccessPointPolicyForObjectLambdaRequest& request, const GetAccessPointPolicyForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetAccessPointPolicyForObjectLambda(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetAccessPointPolicyForObjectLambda, request, handler, context, m_executor.get());
 }
-
 GetAccessPointPolicyStatusOutcome S3ControlClient::GetAccessPointPolicyStatus(const GetAccessPointPolicyStatusRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAccessPointPolicyStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1221,20 +1047,13 @@ GetAccessPointPolicyStatusOutcome S3ControlClient::GetAccessPointPolicyStatus(co
 
 GetAccessPointPolicyStatusOutcomeCallable S3ControlClient::GetAccessPointPolicyStatusCallable(const GetAccessPointPolicyStatusRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAccessPointPolicyStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAccessPointPolicyStatus(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetAccessPointPolicyStatus, request, m_executor.get());
 }
 
 void S3ControlClient::GetAccessPointPolicyStatusAsync(const GetAccessPointPolicyStatusRequest& request, const GetAccessPointPolicyStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetAccessPointPolicyStatus(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetAccessPointPolicyStatus, request, handler, context, m_executor.get());
 }
-
 GetAccessPointPolicyStatusForObjectLambdaOutcome S3ControlClient::GetAccessPointPolicyStatusForObjectLambda(const GetAccessPointPolicyStatusForObjectLambdaRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAccessPointPolicyStatusForObjectLambda, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1260,20 +1079,13 @@ GetAccessPointPolicyStatusForObjectLambdaOutcome S3ControlClient::GetAccessPoint
 
 GetAccessPointPolicyStatusForObjectLambdaOutcomeCallable S3ControlClient::GetAccessPointPolicyStatusForObjectLambdaCallable(const GetAccessPointPolicyStatusForObjectLambdaRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetAccessPointPolicyStatusForObjectLambdaOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAccessPointPolicyStatusForObjectLambda(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetAccessPointPolicyStatusForObjectLambda, request, m_executor.get());
 }
 
 void S3ControlClient::GetAccessPointPolicyStatusForObjectLambdaAsync(const GetAccessPointPolicyStatusForObjectLambdaRequest& request, const GetAccessPointPolicyStatusForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetAccessPointPolicyStatusForObjectLambda(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetAccessPointPolicyStatusForObjectLambda, request, handler, context, m_executor.get());
 }
-
 GetBucketOutcome S3ControlClient::GetBucket(const GetBucketRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBucket, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1298,20 +1110,13 @@ GetBucketOutcome S3ControlClient::GetBucket(const GetBucketRequest& request) con
 
 GetBucketOutcomeCallable S3ControlClient::GetBucketCallable(const GetBucketRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetBucketOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBucket(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetBucket, request, m_executor.get());
 }
 
 void S3ControlClient::GetBucketAsync(const GetBucketRequest& request, const GetBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetBucket(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetBucket, request, handler, context, m_executor.get());
 }
-
 GetBucketLifecycleConfigurationOutcome S3ControlClient::GetBucketLifecycleConfiguration(const GetBucketLifecycleConfigurationRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBucketLifecycleConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1337,20 +1142,13 @@ GetBucketLifecycleConfigurationOutcome S3ControlClient::GetBucketLifecycleConfig
 
 GetBucketLifecycleConfigurationOutcomeCallable S3ControlClient::GetBucketLifecycleConfigurationCallable(const GetBucketLifecycleConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetBucketLifecycleConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBucketLifecycleConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetBucketLifecycleConfiguration, request, m_executor.get());
 }
 
 void S3ControlClient::GetBucketLifecycleConfigurationAsync(const GetBucketLifecycleConfigurationRequest& request, const GetBucketLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetBucketLifecycleConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetBucketLifecycleConfiguration, request, handler, context, m_executor.get());
 }
-
 GetBucketPolicyOutcome S3ControlClient::GetBucketPolicy(const GetBucketPolicyRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBucketPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1376,20 +1174,13 @@ GetBucketPolicyOutcome S3ControlClient::GetBucketPolicy(const GetBucketPolicyReq
 
 GetBucketPolicyOutcomeCallable S3ControlClient::GetBucketPolicyCallable(const GetBucketPolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetBucketPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBucketPolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetBucketPolicy, request, m_executor.get());
 }
 
 void S3ControlClient::GetBucketPolicyAsync(const GetBucketPolicyRequest& request, const GetBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetBucketPolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetBucketPolicy, request, handler, context, m_executor.get());
 }
-
 GetBucketTaggingOutcome S3ControlClient::GetBucketTagging(const GetBucketTaggingRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBucketTagging, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1415,20 +1206,13 @@ GetBucketTaggingOutcome S3ControlClient::GetBucketTagging(const GetBucketTagging
 
 GetBucketTaggingOutcomeCallable S3ControlClient::GetBucketTaggingCallable(const GetBucketTaggingRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetBucketTaggingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBucketTagging(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetBucketTagging, request, m_executor.get());
 }
 
 void S3ControlClient::GetBucketTaggingAsync(const GetBucketTaggingRequest& request, const GetBucketTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetBucketTagging(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetBucketTagging, request, handler, context, m_executor.get());
 }
-
 GetBucketVersioningOutcome S3ControlClient::GetBucketVersioning(const GetBucketVersioningRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBucketVersioning, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1454,20 +1238,13 @@ GetBucketVersioningOutcome S3ControlClient::GetBucketVersioning(const GetBucketV
 
 GetBucketVersioningOutcomeCallable S3ControlClient::GetBucketVersioningCallable(const GetBucketVersioningRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetBucketVersioningOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBucketVersioning(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetBucketVersioning, request, m_executor.get());
 }
 
 void S3ControlClient::GetBucketVersioningAsync(const GetBucketVersioningRequest& request, const GetBucketVersioningResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetBucketVersioning(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetBucketVersioning, request, handler, context, m_executor.get());
 }
-
 GetJobTaggingOutcome S3ControlClient::GetJobTagging(const GetJobTaggingRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetJobTagging, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1498,20 +1275,13 @@ GetJobTaggingOutcome S3ControlClient::GetJobTagging(const GetJobTaggingRequest& 
 
 GetJobTaggingOutcomeCallable S3ControlClient::GetJobTaggingCallable(const GetJobTaggingRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetJobTaggingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetJobTagging(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetJobTagging, request, m_executor.get());
 }
 
 void S3ControlClient::GetJobTaggingAsync(const GetJobTaggingRequest& request, const GetJobTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetJobTagging(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetJobTagging, request, handler, context, m_executor.get());
 }
-
 GetMultiRegionAccessPointOutcome S3ControlClient::GetMultiRegionAccessPoint(const GetMultiRegionAccessPointRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMultiRegionAccessPoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1536,20 +1306,13 @@ GetMultiRegionAccessPointOutcome S3ControlClient::GetMultiRegionAccessPoint(cons
 
 GetMultiRegionAccessPointOutcomeCallable S3ControlClient::GetMultiRegionAccessPointCallable(const GetMultiRegionAccessPointRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetMultiRegionAccessPointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMultiRegionAccessPoint(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetMultiRegionAccessPoint, request, m_executor.get());
 }
 
 void S3ControlClient::GetMultiRegionAccessPointAsync(const GetMultiRegionAccessPointRequest& request, const GetMultiRegionAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetMultiRegionAccessPoint(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetMultiRegionAccessPoint, request, handler, context, m_executor.get());
 }
-
 GetMultiRegionAccessPointPolicyOutcome S3ControlClient::GetMultiRegionAccessPointPolicy(const GetMultiRegionAccessPointPolicyRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMultiRegionAccessPointPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1575,20 +1338,13 @@ GetMultiRegionAccessPointPolicyOutcome S3ControlClient::GetMultiRegionAccessPoin
 
 GetMultiRegionAccessPointPolicyOutcomeCallable S3ControlClient::GetMultiRegionAccessPointPolicyCallable(const GetMultiRegionAccessPointPolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetMultiRegionAccessPointPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMultiRegionAccessPointPolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetMultiRegionAccessPointPolicy, request, m_executor.get());
 }
 
 void S3ControlClient::GetMultiRegionAccessPointPolicyAsync(const GetMultiRegionAccessPointPolicyRequest& request, const GetMultiRegionAccessPointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetMultiRegionAccessPointPolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetMultiRegionAccessPointPolicy, request, handler, context, m_executor.get());
 }
-
 GetMultiRegionAccessPointPolicyStatusOutcome S3ControlClient::GetMultiRegionAccessPointPolicyStatus(const GetMultiRegionAccessPointPolicyStatusRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMultiRegionAccessPointPolicyStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1614,20 +1370,13 @@ GetMultiRegionAccessPointPolicyStatusOutcome S3ControlClient::GetMultiRegionAcce
 
 GetMultiRegionAccessPointPolicyStatusOutcomeCallable S3ControlClient::GetMultiRegionAccessPointPolicyStatusCallable(const GetMultiRegionAccessPointPolicyStatusRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetMultiRegionAccessPointPolicyStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMultiRegionAccessPointPolicyStatus(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetMultiRegionAccessPointPolicyStatus, request, m_executor.get());
 }
 
 void S3ControlClient::GetMultiRegionAccessPointPolicyStatusAsync(const GetMultiRegionAccessPointPolicyStatusRequest& request, const GetMultiRegionAccessPointPolicyStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetMultiRegionAccessPointPolicyStatus(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetMultiRegionAccessPointPolicyStatus, request, handler, context, m_executor.get());
 }
-
 GetPublicAccessBlockOutcome S3ControlClient::GetPublicAccessBlock(const GetPublicAccessBlockRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPublicAccessBlock, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1651,20 +1400,13 @@ GetPublicAccessBlockOutcome S3ControlClient::GetPublicAccessBlock(const GetPubli
 
 GetPublicAccessBlockOutcomeCallable S3ControlClient::GetPublicAccessBlockCallable(const GetPublicAccessBlockRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetPublicAccessBlockOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPublicAccessBlock(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetPublicAccessBlock, request, m_executor.get());
 }
 
 void S3ControlClient::GetPublicAccessBlockAsync(const GetPublicAccessBlockRequest& request, const GetPublicAccessBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetPublicAccessBlock(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetPublicAccessBlock, request, handler, context, m_executor.get());
 }
-
 GetStorageLensConfigurationOutcome S3ControlClient::GetStorageLensConfiguration(const GetStorageLensConfigurationRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetStorageLensConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1694,20 +1436,13 @@ GetStorageLensConfigurationOutcome S3ControlClient::GetStorageLensConfiguration(
 
 GetStorageLensConfigurationOutcomeCallable S3ControlClient::GetStorageLensConfigurationCallable(const GetStorageLensConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetStorageLensConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetStorageLensConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetStorageLensConfiguration, request, m_executor.get());
 }
 
 void S3ControlClient::GetStorageLensConfigurationAsync(const GetStorageLensConfigurationRequest& request, const GetStorageLensConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetStorageLensConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetStorageLensConfiguration, request, handler, context, m_executor.get());
 }
-
 GetStorageLensConfigurationTaggingOutcome S3ControlClient::GetStorageLensConfigurationTagging(const GetStorageLensConfigurationTaggingRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetStorageLensConfigurationTagging, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1738,20 +1473,13 @@ GetStorageLensConfigurationTaggingOutcome S3ControlClient::GetStorageLensConfigu
 
 GetStorageLensConfigurationTaggingOutcomeCallable S3ControlClient::GetStorageLensConfigurationTaggingCallable(const GetStorageLensConfigurationTaggingRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetStorageLensConfigurationTaggingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetStorageLensConfigurationTagging(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetStorageLensConfigurationTagging, request, m_executor.get());
 }
 
 void S3ControlClient::GetStorageLensConfigurationTaggingAsync(const GetStorageLensConfigurationTaggingRequest& request, const GetStorageLensConfigurationTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetStorageLensConfigurationTagging(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetStorageLensConfigurationTagging, request, handler, context, m_executor.get());
 }
-
 ListAccessPointsOutcome S3ControlClient::ListAccessPoints(const ListAccessPointsRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAccessPoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1770,20 +1498,13 @@ ListAccessPointsOutcome S3ControlClient::ListAccessPoints(const ListAccessPoints
 
 ListAccessPointsOutcomeCallable S3ControlClient::ListAccessPointsCallable(const ListAccessPointsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAccessPointsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAccessPoints(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListAccessPoints, request, m_executor.get());
 }
 
 void S3ControlClient::ListAccessPointsAsync(const ListAccessPointsRequest& request, const ListAccessPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListAccessPoints(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListAccessPoints, request, handler, context, m_executor.get());
 }
-
 ListAccessPointsForObjectLambdaOutcome S3ControlClient::ListAccessPointsForObjectLambda(const ListAccessPointsForObjectLambdaRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAccessPointsForObjectLambda, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1807,20 +1528,13 @@ ListAccessPointsForObjectLambdaOutcome S3ControlClient::ListAccessPointsForObjec
 
 ListAccessPointsForObjectLambdaOutcomeCallable S3ControlClient::ListAccessPointsForObjectLambdaCallable(const ListAccessPointsForObjectLambdaRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListAccessPointsForObjectLambdaOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAccessPointsForObjectLambda(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListAccessPointsForObjectLambda, request, m_executor.get());
 }
 
 void S3ControlClient::ListAccessPointsForObjectLambdaAsync(const ListAccessPointsForObjectLambdaRequest& request, const ListAccessPointsForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListAccessPointsForObjectLambda(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListAccessPointsForObjectLambda, request, handler, context, m_executor.get());
 }
-
 ListJobsOutcome S3ControlClient::ListJobs(const ListJobsRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1844,20 +1558,13 @@ ListJobsOutcome S3ControlClient::ListJobs(const ListJobsRequest& request) const
 
 ListJobsOutcomeCallable S3ControlClient::ListJobsCallable(const ListJobsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListJobs(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListJobs, request, m_executor.get());
 }
 
 void S3ControlClient::ListJobsAsync(const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListJobs(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListJobs, request, handler, context, m_executor.get());
 }
-
 ListMultiRegionAccessPointsOutcome S3ControlClient::ListMultiRegionAccessPoints(const ListMultiRegionAccessPointsRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMultiRegionAccessPoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1881,20 +1588,13 @@ ListMultiRegionAccessPointsOutcome S3ControlClient::ListMultiRegionAccessPoints(
 
 ListMultiRegionAccessPointsOutcomeCallable S3ControlClient::ListMultiRegionAccessPointsCallable(const ListMultiRegionAccessPointsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListMultiRegionAccessPointsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMultiRegionAccessPoints(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListMultiRegionAccessPoints, request, m_executor.get());
 }
 
 void S3ControlClient::ListMultiRegionAccessPointsAsync(const ListMultiRegionAccessPointsRequest& request, const ListMultiRegionAccessPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListMultiRegionAccessPoints(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListMultiRegionAccessPoints, request, handler, context, m_executor.get());
 }
-
 ListRegionalBucketsOutcome S3ControlClient::ListRegionalBuckets(const ListRegionalBucketsRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRegionalBuckets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1918,20 +1618,13 @@ ListRegionalBucketsOutcome S3ControlClient::ListRegionalBuckets(const ListRegion
 
 ListRegionalBucketsOutcomeCallable S3ControlClient::ListRegionalBucketsCallable(const ListRegionalBucketsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListRegionalBucketsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRegionalBuckets(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListRegionalBuckets, request, m_executor.get());
 }
 
 void S3ControlClient::ListRegionalBucketsAsync(const ListRegionalBucketsRequest& request, const ListRegionalBucketsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListRegionalBuckets(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListRegionalBuckets, request, handler, context, m_executor.get());
 }
-
 ListStorageLensConfigurationsOutcome S3ControlClient::ListStorageLensConfigurations(const ListStorageLensConfigurationsRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListStorageLensConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1955,20 +1648,13 @@ ListStorageLensConfigurationsOutcome S3ControlClient::ListStorageLensConfigurati
 
 ListStorageLensConfigurationsOutcomeCallable S3ControlClient::ListStorageLensConfigurationsCallable(const ListStorageLensConfigurationsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListStorageLensConfigurationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListStorageLensConfigurations(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListStorageLensConfigurations, request, m_executor.get());
 }
 
 void S3ControlClient::ListStorageLensConfigurationsAsync(const ListStorageLensConfigurationsRequest& request, const ListStorageLensConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListStorageLensConfigurations(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListStorageLensConfigurations, request, handler, context, m_executor.get());
 }
-
 PutAccessPointConfigurationForObjectLambdaOutcome S3ControlClient::PutAccessPointConfigurationForObjectLambda(const PutAccessPointConfigurationForObjectLambdaRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutAccessPointConfigurationForObjectLambda, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1994,20 +1680,13 @@ PutAccessPointConfigurationForObjectLambdaOutcome S3ControlClient::PutAccessPoin
 
 PutAccessPointConfigurationForObjectLambdaOutcomeCallable S3ControlClient::PutAccessPointConfigurationForObjectLambdaCallable(const PutAccessPointConfigurationForObjectLambdaRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutAccessPointConfigurationForObjectLambdaOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutAccessPointConfigurationForObjectLambda(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutAccessPointConfigurationForObjectLambda, request, m_executor.get());
 }
 
 void S3ControlClient::PutAccessPointConfigurationForObjectLambdaAsync(const PutAccessPointConfigurationForObjectLambdaRequest& request, const PutAccessPointConfigurationForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutAccessPointConfigurationForObjectLambda(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutAccessPointConfigurationForObjectLambda, request, handler, context, m_executor.get());
 }
-
 PutAccessPointPolicyOutcome S3ControlClient::PutAccessPointPolicy(const PutAccessPointPolicyRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutAccessPointPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2033,20 +1712,13 @@ PutAccessPointPolicyOutcome S3ControlClient::PutAccessPointPolicy(const PutAcces
 
 PutAccessPointPolicyOutcomeCallable S3ControlClient::PutAccessPointPolicyCallable(const PutAccessPointPolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutAccessPointPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutAccessPointPolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutAccessPointPolicy, request, m_executor.get());
 }
 
 void S3ControlClient::PutAccessPointPolicyAsync(const PutAccessPointPolicyRequest& request, const PutAccessPointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutAccessPointPolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutAccessPointPolicy, request, handler, context, m_executor.get());
 }
-
 PutAccessPointPolicyForObjectLambdaOutcome S3ControlClient::PutAccessPointPolicyForObjectLambda(const PutAccessPointPolicyForObjectLambdaRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutAccessPointPolicyForObjectLambda, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2072,20 +1744,13 @@ PutAccessPointPolicyForObjectLambdaOutcome S3ControlClient::PutAccessPointPolicy
 
 PutAccessPointPolicyForObjectLambdaOutcomeCallable S3ControlClient::PutAccessPointPolicyForObjectLambdaCallable(const PutAccessPointPolicyForObjectLambdaRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutAccessPointPolicyForObjectLambdaOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutAccessPointPolicyForObjectLambda(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutAccessPointPolicyForObjectLambda, request, m_executor.get());
 }
 
 void S3ControlClient::PutAccessPointPolicyForObjectLambdaAsync(const PutAccessPointPolicyForObjectLambdaRequest& request, const PutAccessPointPolicyForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutAccessPointPolicyForObjectLambda(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutAccessPointPolicyForObjectLambda, request, handler, context, m_executor.get());
 }
-
 PutBucketLifecycleConfigurationOutcome S3ControlClient::PutBucketLifecycleConfiguration(const PutBucketLifecycleConfigurationRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutBucketLifecycleConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2111,20 +1776,13 @@ PutBucketLifecycleConfigurationOutcome S3ControlClient::PutBucketLifecycleConfig
 
 PutBucketLifecycleConfigurationOutcomeCallable S3ControlClient::PutBucketLifecycleConfigurationCallable(const PutBucketLifecycleConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutBucketLifecycleConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutBucketLifecycleConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutBucketLifecycleConfiguration, request, m_executor.get());
 }
 
 void S3ControlClient::PutBucketLifecycleConfigurationAsync(const PutBucketLifecycleConfigurationRequest& request, const PutBucketLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutBucketLifecycleConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutBucketLifecycleConfiguration, request, handler, context, m_executor.get());
 }
-
 PutBucketPolicyOutcome S3ControlClient::PutBucketPolicy(const PutBucketPolicyRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutBucketPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2150,20 +1808,13 @@ PutBucketPolicyOutcome S3ControlClient::PutBucketPolicy(const PutBucketPolicyReq
 
 PutBucketPolicyOutcomeCallable S3ControlClient::PutBucketPolicyCallable(const PutBucketPolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutBucketPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutBucketPolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutBucketPolicy, request, m_executor.get());
 }
 
 void S3ControlClient::PutBucketPolicyAsync(const PutBucketPolicyRequest& request, const PutBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutBucketPolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutBucketPolicy, request, handler, context, m_executor.get());
 }
-
 PutBucketTaggingOutcome S3ControlClient::PutBucketTagging(const PutBucketTaggingRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutBucketTagging, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2189,20 +1840,13 @@ PutBucketTaggingOutcome S3ControlClient::PutBucketTagging(const PutBucketTagging
 
 PutBucketTaggingOutcomeCallable S3ControlClient::PutBucketTaggingCallable(const PutBucketTaggingRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutBucketTaggingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutBucketTagging(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutBucketTagging, request, m_executor.get());
 }
 
 void S3ControlClient::PutBucketTaggingAsync(const PutBucketTaggingRequest& request, const PutBucketTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutBucketTagging(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutBucketTagging, request, handler, context, m_executor.get());
 }
-
 PutBucketVersioningOutcome S3ControlClient::PutBucketVersioning(const PutBucketVersioningRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutBucketVersioning, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2228,20 +1872,13 @@ PutBucketVersioningOutcome S3ControlClient::PutBucketVersioning(const PutBucketV
 
 PutBucketVersioningOutcomeCallable S3ControlClient::PutBucketVersioningCallable(const PutBucketVersioningRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutBucketVersioningOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutBucketVersioning(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutBucketVersioning, request, m_executor.get());
 }
 
 void S3ControlClient::PutBucketVersioningAsync(const PutBucketVersioningRequest& request, const PutBucketVersioningResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutBucketVersioning(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutBucketVersioning, request, handler, context, m_executor.get());
 }
-
 PutJobTaggingOutcome S3ControlClient::PutJobTagging(const PutJobTaggingRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutJobTagging, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2272,20 +1909,13 @@ PutJobTaggingOutcome S3ControlClient::PutJobTagging(const PutJobTaggingRequest& 
 
 PutJobTaggingOutcomeCallable S3ControlClient::PutJobTaggingCallable(const PutJobTaggingRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutJobTaggingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutJobTagging(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutJobTagging, request, m_executor.get());
 }
 
 void S3ControlClient::PutJobTaggingAsync(const PutJobTaggingRequest& request, const PutJobTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutJobTagging(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutJobTagging, request, handler, context, m_executor.get());
 }
-
 PutMultiRegionAccessPointPolicyOutcome S3ControlClient::PutMultiRegionAccessPointPolicy(const PutMultiRegionAccessPointPolicyRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutMultiRegionAccessPointPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2309,20 +1939,13 @@ PutMultiRegionAccessPointPolicyOutcome S3ControlClient::PutMultiRegionAccessPoin
 
 PutMultiRegionAccessPointPolicyOutcomeCallable S3ControlClient::PutMultiRegionAccessPointPolicyCallable(const PutMultiRegionAccessPointPolicyRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutMultiRegionAccessPointPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutMultiRegionAccessPointPolicy(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutMultiRegionAccessPointPolicy, request, m_executor.get());
 }
 
 void S3ControlClient::PutMultiRegionAccessPointPolicyAsync(const PutMultiRegionAccessPointPolicyRequest& request, const PutMultiRegionAccessPointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutMultiRegionAccessPointPolicy(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutMultiRegionAccessPointPolicy, request, handler, context, m_executor.get());
 }
-
 PutPublicAccessBlockOutcome S3ControlClient::PutPublicAccessBlock(const PutPublicAccessBlockRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutPublicAccessBlock, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2346,20 +1969,13 @@ PutPublicAccessBlockOutcome S3ControlClient::PutPublicAccessBlock(const PutPubli
 
 PutPublicAccessBlockOutcomeCallable S3ControlClient::PutPublicAccessBlockCallable(const PutPublicAccessBlockRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutPublicAccessBlockOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutPublicAccessBlock(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutPublicAccessBlock, request, m_executor.get());
 }
 
 void S3ControlClient::PutPublicAccessBlockAsync(const PutPublicAccessBlockRequest& request, const PutPublicAccessBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutPublicAccessBlock(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutPublicAccessBlock, request, handler, context, m_executor.get());
 }
-
 PutStorageLensConfigurationOutcome S3ControlClient::PutStorageLensConfiguration(const PutStorageLensConfigurationRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutStorageLensConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2389,20 +2005,13 @@ PutStorageLensConfigurationOutcome S3ControlClient::PutStorageLensConfiguration(
 
 PutStorageLensConfigurationOutcomeCallable S3ControlClient::PutStorageLensConfigurationCallable(const PutStorageLensConfigurationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutStorageLensConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutStorageLensConfiguration(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutStorageLensConfiguration, request, m_executor.get());
 }
 
 void S3ControlClient::PutStorageLensConfigurationAsync(const PutStorageLensConfigurationRequest& request, const PutStorageLensConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutStorageLensConfiguration(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutStorageLensConfiguration, request, handler, context, m_executor.get());
 }
-
 PutStorageLensConfigurationTaggingOutcome S3ControlClient::PutStorageLensConfigurationTagging(const PutStorageLensConfigurationTaggingRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutStorageLensConfigurationTagging, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2433,20 +2042,13 @@ PutStorageLensConfigurationTaggingOutcome S3ControlClient::PutStorageLensConfigu
 
 PutStorageLensConfigurationTaggingOutcomeCallable S3ControlClient::PutStorageLensConfigurationTaggingCallable(const PutStorageLensConfigurationTaggingRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< PutStorageLensConfigurationTaggingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutStorageLensConfigurationTagging(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(PutStorageLensConfigurationTagging, request, m_executor.get());
 }
 
 void S3ControlClient::PutStorageLensConfigurationTaggingAsync(const PutStorageLensConfigurationTaggingRequest& request, const PutStorageLensConfigurationTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, PutStorageLensConfigurationTagging(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(PutStorageLensConfigurationTagging, request, handler, context, m_executor.get());
 }
-
 UpdateJobPriorityOutcome S3ControlClient::UpdateJobPriority(const UpdateJobPriorityRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateJobPriority, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2482,20 +2084,13 @@ UpdateJobPriorityOutcome S3ControlClient::UpdateJobPriority(const UpdateJobPrior
 
 UpdateJobPriorityOutcomeCallable S3ControlClient::UpdateJobPriorityCallable(const UpdateJobPriorityRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateJobPriorityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateJobPriority(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateJobPriority, request, m_executor.get());
 }
 
 void S3ControlClient::UpdateJobPriorityAsync(const UpdateJobPriorityRequest& request, const UpdateJobPriorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateJobPriority(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateJobPriority, request, handler, context, m_executor.get());
 }
-
 UpdateJobStatusOutcome S3ControlClient::UpdateJobStatus(const UpdateJobStatusRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateJobStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2531,18 +2126,11 @@ UpdateJobStatusOutcome S3ControlClient::UpdateJobStatus(const UpdateJobStatusReq
 
 UpdateJobStatusOutcomeCallable S3ControlClient::UpdateJobStatusCallable(const UpdateJobStatusRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< UpdateJobStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateJobStatus(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(UpdateJobStatus, request, m_executor.get());
 }
 
 void S3ControlClient::UpdateJobStatusAsync(const UpdateJobStatusRequest& request, const UpdateJobStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, UpdateJobStatus(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(UpdateJobStatus, request, handler, context, m_executor.get());
 }
-
 

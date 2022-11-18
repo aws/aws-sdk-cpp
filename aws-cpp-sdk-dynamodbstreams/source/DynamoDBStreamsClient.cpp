@@ -7,6 +7,7 @@
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -163,18 +164,12 @@ DescribeStreamOutcome DynamoDBStreamsClient::DescribeStream(const DescribeStream
 
 DescribeStreamOutcomeCallable DynamoDBStreamsClient::DescribeStreamCallable(const DescribeStreamRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DescribeStreamOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeStream(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(DescribeStream, request, m_executor.get());
 }
 
 void DynamoDBStreamsClient::DescribeStreamAsync(const DescribeStreamRequest& request, const DescribeStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, DescribeStream(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(DescribeStream, request, handler, context, m_executor.get());
 }
 
 GetRecordsOutcome DynamoDBStreamsClient::GetRecords(const GetRecordsRequest& request) const
@@ -187,18 +182,12 @@ GetRecordsOutcome DynamoDBStreamsClient::GetRecords(const GetRecordsRequest& req
 
 GetRecordsOutcomeCallable DynamoDBStreamsClient::GetRecordsCallable(const GetRecordsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetRecordsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRecords(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetRecords, request, m_executor.get());
 }
 
 void DynamoDBStreamsClient::GetRecordsAsync(const GetRecordsRequest& request, const GetRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetRecords(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetRecords, request, handler, context, m_executor.get());
 }
 
 GetShardIteratorOutcome DynamoDBStreamsClient::GetShardIterator(const GetShardIteratorRequest& request) const
@@ -211,18 +200,12 @@ GetShardIteratorOutcome DynamoDBStreamsClient::GetShardIterator(const GetShardIt
 
 GetShardIteratorOutcomeCallable DynamoDBStreamsClient::GetShardIteratorCallable(const GetShardIteratorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetShardIteratorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetShardIterator(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(GetShardIterator, request, m_executor.get());
 }
 
 void DynamoDBStreamsClient::GetShardIteratorAsync(const GetShardIteratorRequest& request, const GetShardIteratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, GetShardIterator(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(GetShardIterator, request, handler, context, m_executor.get());
 }
 
 ListStreamsOutcome DynamoDBStreamsClient::ListStreams(const ListStreamsRequest& request) const
@@ -235,17 +218,11 @@ ListStreamsOutcome DynamoDBStreamsClient::ListStreams(const ListStreamsRequest& 
 
 ListStreamsOutcomeCallable DynamoDBStreamsClient::ListStreamsCallable(const ListStreamsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListStreamsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListStreams(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
+  AWS_MAKE_CALLABLE_OPERATION(ListStreams, request, m_executor.get());
 }
 
 void DynamoDBStreamsClient::ListStreamsAsync(const ListStreamsRequest& request, const ListStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context]()
-    {
-      handler(this, request, ListStreams(request), context);
-    } );
+  AWS_MAKE_ASYNC_OPERATION(ListStreams, request, handler, context, m_executor.get());
 }
 
