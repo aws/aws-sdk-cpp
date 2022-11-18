@@ -1,0 +1,13 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+#set($metadata = $serviceModel.metadata)
+
+#pragma once
+
+#set( $define = '#define' )
+#foreach($operation in $serviceModel.operations)
+#if($operation.request)
+$define ${operation.name}Async(...)  SubmitAsync(&${metadata.classNamePrefix}Client::${operation.name}, __VA_ARGS__)
+$define ${operation.name}Callable(REQUEST)  SubmitCallable(&${metadata.classNamePrefix}Client::${operation.name}, REQUEST)
+#end
+
+#end

@@ -33,16 +33,11 @@
         $virtual Model::${operation.name}Outcome ${operation.name}(${constText}Model::${operation.request.shape.name}& request) const;
 
 #if(!$operation.s3CrtSpecific)
-        /**
-         * A Callable wrapper for ${operation.name} that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        $virtual Model::${operation.name}OutcomeCallable ${operation.name}Callable(${constText}Model::${operation.request.shape.name}& request) const;
+##        /**
+##         * A Callable wrapper for ${operation.name} that returns a future to the operation so that it can be executed in parallel to other requests.
+##         */
+##        $virtual Model::${operation.name}OutcomeCallable ${operation.name}Callable(${constText}Model::${operation.request.shape.name}& request) const;
 #end##--#if(!$operation.s3CrtSpecific)
-
-        /**
-         * An Async wrapper for ${operation.name} that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        $virtual void ${operation.name}Async(${constText}Model::${operation.request.shape.name}& request, const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 #end##--#if($operation.request.shape.hasEventStreamMembers())--#else
 #else##--#if($operation.request)

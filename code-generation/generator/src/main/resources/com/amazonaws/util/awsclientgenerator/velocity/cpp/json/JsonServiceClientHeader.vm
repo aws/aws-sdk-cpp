@@ -8,8 +8,10 @@
 \#include <aws/$metadata.projectName/${metadata.classNamePrefix}_EXPORTS.h>
 \#include <aws/core/client/ClientConfiguration.h>
 \#include <aws/core/client/AWSClient.h>
+\#include <aws/core/client/AWSAsyncOperationTemplate.h>
 \#include <aws/core/utils/json/JsonSerializer.h>
 \#include <aws/$metadata.projectName/${metadata.classNamePrefix}ServiceClientModel.h>
+\#include <aws/$metadata.projectName/${metadata.classNamePrefix}LegacyAsyncMacros.h>
 
 namespace ${rootNamespace}
 {

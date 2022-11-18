@@ -63,6 +63,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
         fileList.addAll(generateModelSourceFiles(serviceModel));
         fileList.add(generateClientHeaderFile(serviceModel));
         fileList.add(generateServiceClientModelInclude(serviceModel));
+        fileList.add(generateAsyncMacrosHeader(serviceModel));
         fileList.add(generateClientSourceFile(serviceModel));
         if (serviceModel.getEndpointRules() == null) {
             fileList.add(generateARNHeaderFile(serviceModel));
@@ -416,6 +417,14 @@ public abstract class CppClientGenerator implements ClientGenerator {
         String fileName = String.format("source/%sEndpoint.cpp", serviceModel.getMetadata().getClassNamePrefix());
         return makeFile(template, context, fileName, true);
     }
+
+    protected SdkFileEntry generateAsyncMacrosHeader(ServiceModel serviceModel) throws Exception {
+        String templateName = "/com/amazonaws/util/awsclientgenerator/velocity/cpp/common/LegacyAsyncMacro.vm";
+        String fileName = String.format("include/aws/%s/%sLegacyAsyncMacros.h", serviceModel.getMetadata().getProjectName(),
+                serviceModel.getMetadata().getClassNamePrefix());
+        return generateSingleSourceFile(serviceModel, templateName, fileName);
+    }
+
 
     protected SdkFileEntry generateEndpointRulesHeaderFile(ServiceModel serviceModel) throws Exception {
         String templateName = "/com/amazonaws/util/awsclientgenerator/velocity/cpp/endpoint/EndpointRulesHeader.vm";

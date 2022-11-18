@@ -9,8 +9,10 @@
 \#include <aws/core/client/ClientConfiguration.h>
 \#include <aws/core/AmazonSerializableWebServiceRequest.h>
 \#include <aws/core/client/AWSClient.h>
+\#include <aws/core/client/AWSAsyncOperationTemplate.h>
 \#include <aws/core/utils/xml/XmlSerializer.h>
 \#include <aws/$metadata.projectName/${metadata.classNamePrefix}ServiceClientModel.h>
+\#include <aws/$metadata.projectName/${metadata.classNamePrefix}LegacyAsyncMacros.h>
 
 namespace ${rootNamespace}
 {
