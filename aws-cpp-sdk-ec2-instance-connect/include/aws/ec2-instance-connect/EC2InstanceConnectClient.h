@@ -7,8 +7,10 @@
 #include <aws/ec2-instance-connect/EC2InstanceConnect_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ec2-instance-connect/EC2InstanceConnectServiceClientModel.h>
+#include <aws/ec2-instance-connect/EC2InstanceConnectLegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -75,6 +77,47 @@ namespace EC2InstanceConnect
         virtual ~EC2InstanceConnectClient();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Pushes an SSH public key to the specified EC2 instance for use by the
          * specified user. The key remains for 60 seconds. For more information, see <a
@@ -86,15 +129,6 @@ namespace EC2InstanceConnect
          */
         virtual Model::SendSSHPublicKeyOutcome SendSSHPublicKey(const Model::SendSSHPublicKeyRequest& request) const;
 
-        /**
-         * A Callable wrapper for SendSSHPublicKey that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SendSSHPublicKeyOutcomeCallable SendSSHPublicKeyCallable(const Model::SendSSHPublicKeyRequest& request) const;
-
-        /**
-         * An Async wrapper for SendSSHPublicKey that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SendSSHPublicKeyAsync(const Model::SendSSHPublicKeyRequest& request, const SendSSHPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Pushes an SSH public key to the specified EC2 instance. The key remains for
@@ -108,15 +142,6 @@ namespace EC2InstanceConnect
          */
         virtual Model::SendSerialConsoleSSHPublicKeyOutcome SendSerialConsoleSSHPublicKey(const Model::SendSerialConsoleSSHPublicKeyRequest& request) const;
 
-        /**
-         * A Callable wrapper for SendSerialConsoleSSHPublicKey that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SendSerialConsoleSSHPublicKeyOutcomeCallable SendSerialConsoleSSHPublicKeyCallable(const Model::SendSerialConsoleSSHPublicKeyRequest& request) const;
-
-        /**
-         * An Async wrapper for SendSerialConsoleSSHPublicKey that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SendSerialConsoleSSHPublicKeyAsync(const Model::SendSerialConsoleSSHPublicKeyRequest& request, const SendSerialConsoleSSHPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

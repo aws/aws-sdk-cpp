@@ -8,8 +8,10 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/ec2/EC2ServiceClientModel.h>
+#include <aws/ec2/EC2LegacyAsyncMacros.h>
 
 namespace Aws
 {
@@ -95,6 +97,47 @@ namespace EC2
         virtual ~EC2Client();
 
 
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         const RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename HandlerT,
+                 typename HandlerContextT,
+                 typename OperationFuncT>
+        void SubmitAsync(OperationFuncT&& operationFunc,
+                         RequestT& request,
+                         const HandlerT& handler,
+                         const HandlerContextT& context)
+        {
+            Aws::Client::MakeAsyncStreamingOperation(std::forward<OperationFuncT>(operationFunc), this, request, handler, context, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            const RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+        template<typename RequestT,
+                 typename OperationFuncT>
+        auto SubmitCallable(OperationFuncT&& operationFunc,
+                            RequestT& request) -> std::future<decltype((this->*operationFunc)(request))>
+        {
+            return Aws::Client::MakeCallableStreamingOperation(ALLOCATION_TAG, operationFunc, this, request, m_executor.get());
+        }
+
+
         /**
          * <p>Accepts an Elastic IP address transfer. For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#using-instance-addressing-eips-transfer-accept">Accept
@@ -105,15 +148,6 @@ namespace EC2
          */
         virtual Model::AcceptAddressTransferOutcome AcceptAddressTransfer(const Model::AcceptAddressTransferRequest& request) const;
 
-        /**
-         * A Callable wrapper for AcceptAddressTransfer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AcceptAddressTransferOutcomeCallable AcceptAddressTransferCallable(const Model::AcceptAddressTransferRequest& request) const;
-
-        /**
-         * An Async wrapper for AcceptAddressTransfer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AcceptAddressTransferAsync(const Model::AcceptAddressTransferRequest& request, const AcceptAddressTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Accepts the Convertible Reserved Instance exchange quote described in the
@@ -123,15 +157,6 @@ namespace EC2
          */
         virtual Model::AcceptReservedInstancesExchangeQuoteOutcome AcceptReservedInstancesExchangeQuote(const Model::AcceptReservedInstancesExchangeQuoteRequest& request) const;
 
-        /**
-         * A Callable wrapper for AcceptReservedInstancesExchangeQuote that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AcceptReservedInstancesExchangeQuoteOutcomeCallable AcceptReservedInstancesExchangeQuoteCallable(const Model::AcceptReservedInstancesExchangeQuoteRequest& request) const;
-
-        /**
-         * An Async wrapper for AcceptReservedInstancesExchangeQuote that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AcceptReservedInstancesExchangeQuoteAsync(const Model::AcceptReservedInstancesExchangeQuoteRequest& request, const AcceptReservedInstancesExchangeQuoteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Accepts a request to associate subnets with a transit gateway multicast
@@ -141,15 +166,6 @@ namespace EC2
          */
         virtual Model::AcceptTransitGatewayMulticastDomainAssociationsOutcome AcceptTransitGatewayMulticastDomainAssociations(const Model::AcceptTransitGatewayMulticastDomainAssociationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for AcceptTransitGatewayMulticastDomainAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AcceptTransitGatewayMulticastDomainAssociationsOutcomeCallable AcceptTransitGatewayMulticastDomainAssociationsCallable(const Model::AcceptTransitGatewayMulticastDomainAssociationsRequest& request) const;
-
-        /**
-         * An Async wrapper for AcceptTransitGatewayMulticastDomainAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AcceptTransitGatewayMulticastDomainAssociationsAsync(const Model::AcceptTransitGatewayMulticastDomainAssociationsRequest& request, const AcceptTransitGatewayMulticastDomainAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Accepts a transit gateway peering attachment request. The peering attachment
@@ -160,15 +176,6 @@ namespace EC2
          */
         virtual Model::AcceptTransitGatewayPeeringAttachmentOutcome AcceptTransitGatewayPeeringAttachment(const Model::AcceptTransitGatewayPeeringAttachmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for AcceptTransitGatewayPeeringAttachment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AcceptTransitGatewayPeeringAttachmentOutcomeCallable AcceptTransitGatewayPeeringAttachmentCallable(const Model::AcceptTransitGatewayPeeringAttachmentRequest& request) const;
-
-        /**
-         * An Async wrapper for AcceptTransitGatewayPeeringAttachment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AcceptTransitGatewayPeeringAttachmentAsync(const Model::AcceptTransitGatewayPeeringAttachmentRequest& request, const AcceptTransitGatewayPeeringAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Accepts a request to attach a VPC to a transit gateway.</p> <p>The VPC
@@ -181,15 +188,6 @@ namespace EC2
          */
         virtual Model::AcceptTransitGatewayVpcAttachmentOutcome AcceptTransitGatewayVpcAttachment(const Model::AcceptTransitGatewayVpcAttachmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for AcceptTransitGatewayVpcAttachment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AcceptTransitGatewayVpcAttachmentOutcomeCallable AcceptTransitGatewayVpcAttachmentCallable(const Model::AcceptTransitGatewayVpcAttachmentRequest& request) const;
-
-        /**
-         * An Async wrapper for AcceptTransitGatewayVpcAttachment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AcceptTransitGatewayVpcAttachmentAsync(const Model::AcceptTransitGatewayVpcAttachmentRequest& request, const AcceptTransitGatewayVpcAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Accepts one or more interface VPC endpoint connection requests to your VPC
@@ -199,15 +197,6 @@ namespace EC2
          */
         virtual Model::AcceptVpcEndpointConnectionsOutcome AcceptVpcEndpointConnections(const Model::AcceptVpcEndpointConnectionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for AcceptVpcEndpointConnections that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AcceptVpcEndpointConnectionsOutcomeCallable AcceptVpcEndpointConnectionsCallable(const Model::AcceptVpcEndpointConnectionsRequest& request) const;
-
-        /**
-         * An Async wrapper for AcceptVpcEndpointConnections that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AcceptVpcEndpointConnectionsAsync(const Model::AcceptVpcEndpointConnectionsRequest& request, const AcceptVpcEndpointConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Accept a VPC peering connection request. To accept a request, the VPC peering
@@ -221,15 +210,6 @@ namespace EC2
          */
         virtual Model::AcceptVpcPeeringConnectionOutcome AcceptVpcPeeringConnection(const Model::AcceptVpcPeeringConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for AcceptVpcPeeringConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AcceptVpcPeeringConnectionOutcomeCallable AcceptVpcPeeringConnectionCallable(const Model::AcceptVpcPeeringConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for AcceptVpcPeeringConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AcceptVpcPeeringConnectionAsync(const Model::AcceptVpcPeeringConnectionRequest& request, const AcceptVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Advertises an IPv4 or IPv6 address range that is provisioned for use with
@@ -250,15 +230,6 @@ namespace EC2
          */
         virtual Model::AdvertiseByoipCidrOutcome AdvertiseByoipCidr(const Model::AdvertiseByoipCidrRequest& request) const;
 
-        /**
-         * A Callable wrapper for AdvertiseByoipCidr that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AdvertiseByoipCidrOutcomeCallable AdvertiseByoipCidrCallable(const Model::AdvertiseByoipCidrRequest& request) const;
-
-        /**
-         * An Async wrapper for AdvertiseByoipCidr that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AdvertiseByoipCidrAsync(const Model::AdvertiseByoipCidrRequest& request, const AdvertiseByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Allocates an Elastic IP address to your Amazon Web Services account. After
@@ -295,15 +266,6 @@ namespace EC2
          */
         virtual Model::AllocateAddressOutcome AllocateAddress(const Model::AllocateAddressRequest& request) const;
 
-        /**
-         * A Callable wrapper for AllocateAddress that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AllocateAddressOutcomeCallable AllocateAddressCallable(const Model::AllocateAddressRequest& request) const;
-
-        /**
-         * An Async wrapper for AllocateAddress that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AllocateAddressAsync(const Model::AllocateAddressRequest& request, const AllocateAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Allocates a Dedicated Host to your account. At a minimum, specify the
@@ -315,15 +277,6 @@ namespace EC2
          */
         virtual Model::AllocateHostsOutcome AllocateHosts(const Model::AllocateHostsRequest& request) const;
 
-        /**
-         * A Callable wrapper for AllocateHosts that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AllocateHostsOutcomeCallable AllocateHostsCallable(const Model::AllocateHostsRequest& request) const;
-
-        /**
-         * An Async wrapper for AllocateHosts that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AllocateHostsAsync(const Model::AllocateHostsRequest& request, const AllocateHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Allocate a CIDR from an IPAM pool. In IPAM, an allocation is a CIDR
@@ -337,15 +290,6 @@ namespace EC2
          */
         virtual Model::AllocateIpamPoolCidrOutcome AllocateIpamPoolCidr(const Model::AllocateIpamPoolCidrRequest& request) const;
 
-        /**
-         * A Callable wrapper for AllocateIpamPoolCidr that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AllocateIpamPoolCidrOutcomeCallable AllocateIpamPoolCidrCallable(const Model::AllocateIpamPoolCidrRequest& request) const;
-
-        /**
-         * An Async wrapper for AllocateIpamPoolCidr that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AllocateIpamPoolCidrAsync(const Model::AllocateIpamPoolCidrRequest& request, const AllocateIpamPoolCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Applies a security group to the association between the target network and
@@ -356,15 +300,6 @@ namespace EC2
          */
         virtual Model::ApplySecurityGroupsToClientVpnTargetNetworkOutcome ApplySecurityGroupsToClientVpnTargetNetwork(const Model::ApplySecurityGroupsToClientVpnTargetNetworkRequest& request) const;
 
-        /**
-         * A Callable wrapper for ApplySecurityGroupsToClientVpnTargetNetwork that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ApplySecurityGroupsToClientVpnTargetNetworkOutcomeCallable ApplySecurityGroupsToClientVpnTargetNetworkCallable(const Model::ApplySecurityGroupsToClientVpnTargetNetworkRequest& request) const;
-
-        /**
-         * An Async wrapper for ApplySecurityGroupsToClientVpnTargetNetwork that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ApplySecurityGroupsToClientVpnTargetNetworkAsync(const Model::ApplySecurityGroupsToClientVpnTargetNetworkRequest& request, const ApplySecurityGroupsToClientVpnTargetNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Assigns one or more IPv6 addresses to the specified network interface. You
@@ -388,15 +323,6 @@ namespace EC2
          */
         virtual Model::AssignIpv6AddressesOutcome AssignIpv6Addresses(const Model::AssignIpv6AddressesRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssignIpv6Addresses that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssignIpv6AddressesOutcomeCallable AssignIpv6AddressesCallable(const Model::AssignIpv6AddressesRequest& request) const;
-
-        /**
-         * An Async wrapper for AssignIpv6Addresses that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssignIpv6AddressesAsync(const Model::AssignIpv6AddressesRequest& request, const AssignIpv6AddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Assigns one or more secondary private IP addresses to the specified network
@@ -428,15 +354,6 @@ namespace EC2
          */
         virtual Model::AssignPrivateIpAddressesOutcome AssignPrivateIpAddresses(const Model::AssignPrivateIpAddressesRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssignPrivateIpAddresses that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssignPrivateIpAddressesOutcomeCallable AssignPrivateIpAddressesCallable(const Model::AssignPrivateIpAddressesRequest& request) const;
-
-        /**
-         * An Async wrapper for AssignPrivateIpAddresses that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssignPrivateIpAddressesAsync(const Model::AssignPrivateIpAddressesRequest& request, const AssignPrivateIpAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates an Elastic IP address, or carrier IP address (for instances that
@@ -475,15 +392,6 @@ namespace EC2
          */
         virtual Model::AssociateAddressOutcome AssociateAddress(const Model::AssociateAddressRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateAddress that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateAddressOutcomeCallable AssociateAddressCallable(const Model::AssociateAddressRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateAddress that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateAddressAsync(const Model::AssociateAddressRequest& request, const AssociateAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates a target network with a Client VPN endpoint. A target network is a
@@ -500,15 +408,6 @@ namespace EC2
          */
         virtual Model::AssociateClientVpnTargetNetworkOutcome AssociateClientVpnTargetNetwork(const Model::AssociateClientVpnTargetNetworkRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateClientVpnTargetNetwork that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateClientVpnTargetNetworkOutcomeCallable AssociateClientVpnTargetNetworkCallable(const Model::AssociateClientVpnTargetNetworkRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateClientVpnTargetNetwork that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateClientVpnTargetNetworkAsync(const Model::AssociateClientVpnTargetNetworkRequest& request, const AssociateClientVpnTargetNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates a set of DHCP options (that you've previously created) with the
@@ -527,15 +426,6 @@ namespace EC2
          */
         virtual Model::AssociateDhcpOptionsOutcome AssociateDhcpOptions(const Model::AssociateDhcpOptionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateDhcpOptions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateDhcpOptionsOutcomeCallable AssociateDhcpOptionsCallable(const Model::AssociateDhcpOptionsRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateDhcpOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateDhcpOptionsAsync(const Model::AssociateDhcpOptionsRequest& request, const AssociateDhcpOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates an Identity and Access Management (IAM) role with an Certificate
@@ -562,15 +452,6 @@ namespace EC2
          */
         virtual Model::AssociateEnclaveCertificateIamRoleOutcome AssociateEnclaveCertificateIamRole(const Model::AssociateEnclaveCertificateIamRoleRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateEnclaveCertificateIamRole that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateEnclaveCertificateIamRoleOutcomeCallable AssociateEnclaveCertificateIamRoleCallable(const Model::AssociateEnclaveCertificateIamRoleRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateEnclaveCertificateIamRole that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateEnclaveCertificateIamRoleAsync(const Model::AssociateEnclaveCertificateIamRoleRequest& request, const AssociateEnclaveCertificateIamRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates an IAM instance profile with a running or stopped instance. You
@@ -581,15 +462,6 @@ namespace EC2
          */
         virtual Model::AssociateIamInstanceProfileOutcome AssociateIamInstanceProfile(const Model::AssociateIamInstanceProfileRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateIamInstanceProfile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateIamInstanceProfileOutcomeCallable AssociateIamInstanceProfileCallable(const Model::AssociateIamInstanceProfileRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateIamInstanceProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateIamInstanceProfileAsync(const Model::AssociateIamInstanceProfileRequest& request, const AssociateIamInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates one or more targets with an event window. Only one type of target
@@ -603,15 +475,6 @@ namespace EC2
          */
         virtual Model::AssociateInstanceEventWindowOutcome AssociateInstanceEventWindow(const Model::AssociateInstanceEventWindowRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateInstanceEventWindow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateInstanceEventWindowOutcomeCallable AssociateInstanceEventWindowCallable(const Model::AssociateInstanceEventWindowRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateInstanceEventWindow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateInstanceEventWindowAsync(const Model::AssociateInstanceEventWindowRequest& request, const AssociateInstanceEventWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates a subnet in your VPC or an internet gateway or virtual private
@@ -628,15 +491,6 @@ namespace EC2
          */
         virtual Model::AssociateRouteTableOutcome AssociateRouteTable(const Model::AssociateRouteTableRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateRouteTable that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateRouteTableOutcomeCallable AssociateRouteTableCallable(const Model::AssociateRouteTableRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateRouteTable that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateRouteTableAsync(const Model::AssociateRouteTableRequest& request, const AssociateRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates a CIDR block with your subnet. You can only associate a single
@@ -647,15 +501,6 @@ namespace EC2
          */
         virtual Model::AssociateSubnetCidrBlockOutcome AssociateSubnetCidrBlock(const Model::AssociateSubnetCidrBlockRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateSubnetCidrBlock that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateSubnetCidrBlockOutcomeCallable AssociateSubnetCidrBlockCallable(const Model::AssociateSubnetCidrBlockRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateSubnetCidrBlock that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateSubnetCidrBlockAsync(const Model::AssociateSubnetCidrBlockRequest& request, const AssociateSubnetCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates the specified subnets and transit gateway attachments with the
@@ -668,15 +513,6 @@ namespace EC2
          */
         virtual Model::AssociateTransitGatewayMulticastDomainOutcome AssociateTransitGatewayMulticastDomain(const Model::AssociateTransitGatewayMulticastDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateTransitGatewayMulticastDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateTransitGatewayMulticastDomainOutcomeCallable AssociateTransitGatewayMulticastDomainCallable(const Model::AssociateTransitGatewayMulticastDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateTransitGatewayMulticastDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateTransitGatewayMulticastDomainAsync(const Model::AssociateTransitGatewayMulticastDomainRequest& request, const AssociateTransitGatewayMulticastDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates the specified transit gateway attachment with a transit gateway
@@ -686,15 +522,6 @@ namespace EC2
          */
         virtual Model::AssociateTransitGatewayPolicyTableOutcome AssociateTransitGatewayPolicyTable(const Model::AssociateTransitGatewayPolicyTableRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateTransitGatewayPolicyTable that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateTransitGatewayPolicyTableOutcomeCallable AssociateTransitGatewayPolicyTableCallable(const Model::AssociateTransitGatewayPolicyTableRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateTransitGatewayPolicyTable that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateTransitGatewayPolicyTableAsync(const Model::AssociateTransitGatewayPolicyTableRequest& request, const AssociateTransitGatewayPolicyTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates the specified attachment with the specified transit gateway route
@@ -705,15 +532,6 @@ namespace EC2
          */
         virtual Model::AssociateTransitGatewayRouteTableOutcome AssociateTransitGatewayRouteTable(const Model::AssociateTransitGatewayRouteTableRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateTransitGatewayRouteTable that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateTransitGatewayRouteTableOutcomeCallable AssociateTransitGatewayRouteTableCallable(const Model::AssociateTransitGatewayRouteTableRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateTransitGatewayRouteTable that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateTransitGatewayRouteTableAsync(const Model::AssociateTransitGatewayRouteTableRequest& request, const AssociateTransitGatewayRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This API action is currently in <b>limited preview only</b>. If you
@@ -729,15 +547,6 @@ namespace EC2
          */
         virtual Model::AssociateTrunkInterfaceOutcome AssociateTrunkInterface(const Model::AssociateTrunkInterfaceRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateTrunkInterface that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateTrunkInterfaceOutcomeCallable AssociateTrunkInterfaceCallable(const Model::AssociateTrunkInterfaceRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateTrunkInterface that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateTrunkInterfaceAsync(const Model::AssociateTrunkInterfaceRequest& request, const AssociateTrunkInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates a CIDR block with your VPC. You can associate a secondary IPv4
@@ -756,15 +565,6 @@ namespace EC2
          */
         virtual Model::AssociateVpcCidrBlockOutcome AssociateVpcCidrBlock(const Model::AssociateVpcCidrBlockRequest& request) const;
 
-        /**
-         * A Callable wrapper for AssociateVpcCidrBlock that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AssociateVpcCidrBlockOutcomeCallable AssociateVpcCidrBlockCallable(const Model::AssociateVpcCidrBlockRequest& request) const;
-
-        /**
-         * An Async wrapper for AssociateVpcCidrBlock that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AssociateVpcCidrBlockAsync(const Model::AssociateVpcCidrBlockRequest& request, const AssociateVpcCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>We are retiring EC2-Classic. We recommend that you migrate from
@@ -786,15 +586,6 @@ namespace EC2
          */
         virtual Model::AttachClassicLinkVpcOutcome AttachClassicLinkVpc(const Model::AttachClassicLinkVpcRequest& request) const;
 
-        /**
-         * A Callable wrapper for AttachClassicLinkVpc that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AttachClassicLinkVpcOutcomeCallable AttachClassicLinkVpcCallable(const Model::AttachClassicLinkVpcRequest& request) const;
-
-        /**
-         * An Async wrapper for AttachClassicLinkVpc that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AttachClassicLinkVpcAsync(const Model::AttachClassicLinkVpcRequest& request, const AttachClassicLinkVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Attaches an internet gateway or a virtual private gateway to a VPC, enabling
@@ -807,15 +598,6 @@ namespace EC2
          */
         virtual Model::AttachInternetGatewayOutcome AttachInternetGateway(const Model::AttachInternetGatewayRequest& request) const;
 
-        /**
-         * A Callable wrapper for AttachInternetGateway that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AttachInternetGatewayOutcomeCallable AttachInternetGatewayCallable(const Model::AttachInternetGatewayRequest& request) const;
-
-        /**
-         * An Async wrapper for AttachInternetGateway that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AttachInternetGatewayAsync(const Model::AttachInternetGatewayRequest& request, const AttachInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Attaches a network interface to an instance.</p><p><h3>See Also:</h3>   <a
@@ -824,15 +606,6 @@ namespace EC2
          */
         virtual Model::AttachNetworkInterfaceOutcome AttachNetworkInterface(const Model::AttachNetworkInterfaceRequest& request) const;
 
-        /**
-         * A Callable wrapper for AttachNetworkInterface that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AttachNetworkInterfaceOutcomeCallable AttachNetworkInterfaceCallable(const Model::AttachNetworkInterfaceRequest& request) const;
-
-        /**
-         * An Async wrapper for AttachNetworkInterface that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AttachNetworkInterfaceAsync(const Model::AttachNetworkInterfaceRequest& request, const AttachNetworkInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Attaches an EBS volume to a running or stopped instance and exposes it to the
@@ -860,15 +633,6 @@ namespace EC2
          */
         virtual Model::AttachVolumeOutcome AttachVolume(const Model::AttachVolumeRequest& request) const;
 
-        /**
-         * A Callable wrapper for AttachVolume that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AttachVolumeOutcomeCallable AttachVolumeCallable(const Model::AttachVolumeRequest& request) const;
-
-        /**
-         * An Async wrapper for AttachVolume that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AttachVolumeAsync(const Model::AttachVolumeRequest& request, const AttachVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Attaches a virtual private gateway to a VPC. You can attach one virtual
@@ -881,15 +645,6 @@ namespace EC2
          */
         virtual Model::AttachVpnGatewayOutcome AttachVpnGateway(const Model::AttachVpnGatewayRequest& request) const;
 
-        /**
-         * A Callable wrapper for AttachVpnGateway that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AttachVpnGatewayOutcomeCallable AttachVpnGatewayCallable(const Model::AttachVpnGatewayRequest& request) const;
-
-        /**
-         * An Async wrapper for AttachVpnGateway that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AttachVpnGatewayAsync(const Model::AttachVpnGatewayRequest& request, const AttachVpnGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds an ingress authorization rule to a Client VPN endpoint. Ingress
@@ -901,15 +656,6 @@ namespace EC2
          */
         virtual Model::AuthorizeClientVpnIngressOutcome AuthorizeClientVpnIngress(const Model::AuthorizeClientVpnIngressRequest& request) const;
 
-        /**
-         * A Callable wrapper for AuthorizeClientVpnIngress that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AuthorizeClientVpnIngressOutcomeCallable AuthorizeClientVpnIngressCallable(const Model::AuthorizeClientVpnIngressRequest& request) const;
-
-        /**
-         * An Async wrapper for AuthorizeClientVpnIngress that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AuthorizeClientVpnIngressAsync(const Model::AuthorizeClientVpnIngressRequest& request, const AuthorizeClientVpnIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>[VPC only] Adds the specified outbound (egress) rules to a security group for
@@ -931,15 +677,6 @@ namespace EC2
          */
         virtual Model::AuthorizeSecurityGroupEgressOutcome AuthorizeSecurityGroupEgress(const Model::AuthorizeSecurityGroupEgressRequest& request) const;
 
-        /**
-         * A Callable wrapper for AuthorizeSecurityGroupEgress that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AuthorizeSecurityGroupEgressOutcomeCallable AuthorizeSecurityGroupEgressCallable(const Model::AuthorizeSecurityGroupEgressRequest& request) const;
-
-        /**
-         * An Async wrapper for AuthorizeSecurityGroupEgress that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AuthorizeSecurityGroupEgressAsync(const Model::AuthorizeSecurityGroupEgressRequest& request, const AuthorizeSecurityGroupEgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds the specified inbound (ingress) rules to a security group.</p> <p>An
@@ -964,15 +701,6 @@ namespace EC2
          */
         virtual Model::AuthorizeSecurityGroupIngressOutcome AuthorizeSecurityGroupIngress(const Model::AuthorizeSecurityGroupIngressRequest& request) const;
 
-        /**
-         * A Callable wrapper for AuthorizeSecurityGroupIngress that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::AuthorizeSecurityGroupIngressOutcomeCallable AuthorizeSecurityGroupIngressCallable(const Model::AuthorizeSecurityGroupIngressRequest& request) const;
-
-        /**
-         * An Async wrapper for AuthorizeSecurityGroupIngress that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void AuthorizeSecurityGroupIngressAsync(const Model::AuthorizeSecurityGroupIngressRequest& request, const AuthorizeSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Bundles an Amazon instance store-backed Windows instance.</p> <p>During
@@ -985,15 +713,6 @@ namespace EC2
          */
         virtual Model::BundleInstanceOutcome BundleInstance(const Model::BundleInstanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for BundleInstance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::BundleInstanceOutcomeCallable BundleInstanceCallable(const Model::BundleInstanceRequest& request) const;
-
-        /**
-         * An Async wrapper for BundleInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void BundleInstanceAsync(const Model::BundleInstanceRequest& request, const BundleInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Cancels a bundling operation for an instance store-backed Windows
@@ -1003,15 +722,6 @@ namespace EC2
          */
         virtual Model::CancelBundleTaskOutcome CancelBundleTask(const Model::CancelBundleTaskRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelBundleTask that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelBundleTaskOutcomeCallable CancelBundleTaskCallable(const Model::CancelBundleTaskRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelBundleTask that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelBundleTaskAsync(const Model::CancelBundleTaskRequest& request, const CancelBundleTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Cancels the specified Capacity Reservation, releases the reserved capacity,
@@ -1027,15 +737,6 @@ namespace EC2
          */
         virtual Model::CancelCapacityReservationOutcome CancelCapacityReservation(const Model::CancelCapacityReservationRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelCapacityReservation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelCapacityReservationOutcomeCallable CancelCapacityReservationCallable(const Model::CancelCapacityReservationRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelCapacityReservation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelCapacityReservationAsync(const Model::CancelCapacityReservationRequest& request, const CancelCapacityReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Cancels one or more Capacity Reservation Fleets. When you cancel a Capacity
@@ -1050,15 +751,6 @@ namespace EC2
          */
         virtual Model::CancelCapacityReservationFleetsOutcome CancelCapacityReservationFleets(const Model::CancelCapacityReservationFleetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelCapacityReservationFleets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelCapacityReservationFleetsOutcomeCallable CancelCapacityReservationFleetsCallable(const Model::CancelCapacityReservationFleetsRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelCapacityReservationFleets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelCapacityReservationFleetsAsync(const Model::CancelCapacityReservationFleetsRequest& request, const CancelCapacityReservationFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Cancels an active conversion task. The task can be the import of an instance
@@ -1073,15 +765,6 @@ namespace EC2
          */
         virtual Model::CancelConversionTaskOutcome CancelConversionTask(const Model::CancelConversionTaskRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelConversionTask that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelConversionTaskOutcomeCallable CancelConversionTaskCallable(const Model::CancelConversionTaskRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelConversionTask that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelConversionTaskAsync(const Model::CancelConversionTaskRequest& request, const CancelConversionTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Cancels an active export task. The request removes all artifacts of the
@@ -1093,15 +776,6 @@ namespace EC2
          */
         virtual Model::CancelExportTaskOutcome CancelExportTask(const Model::CancelExportTaskRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelExportTask that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelExportTaskOutcomeCallable CancelExportTaskCallable(const Model::CancelExportTaskRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelExportTask that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelExportTaskAsync(const Model::CancelExportTaskRequest& request, const CancelExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes your Amazon Web Services account from the launch permissions for the
@@ -1114,15 +788,6 @@ namespace EC2
          */
         virtual Model::CancelImageLaunchPermissionOutcome CancelImageLaunchPermission(const Model::CancelImageLaunchPermissionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelImageLaunchPermission that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelImageLaunchPermissionOutcomeCallable CancelImageLaunchPermissionCallable(const Model::CancelImageLaunchPermissionRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelImageLaunchPermission that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelImageLaunchPermissionAsync(const Model::CancelImageLaunchPermissionRequest& request, const CancelImageLaunchPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Cancels an in-process import virtual machine or import snapshot
@@ -1132,15 +797,6 @@ namespace EC2
          */
         virtual Model::CancelImportTaskOutcome CancelImportTask(const Model::CancelImportTaskRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelImportTask that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelImportTaskOutcomeCallable CancelImportTaskCallable(const Model::CancelImportTaskRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelImportTask that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelImportTaskAsync(const Model::CancelImportTaskRequest& request, const CancelImportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Cancels the specified Reserved Instance listing in the Reserved Instance
@@ -1153,15 +809,6 @@ namespace EC2
          */
         virtual Model::CancelReservedInstancesListingOutcome CancelReservedInstancesListing(const Model::CancelReservedInstancesListingRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelReservedInstancesListing that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelReservedInstancesListingOutcomeCallable CancelReservedInstancesListingCallable(const Model::CancelReservedInstancesListingRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelReservedInstancesListing that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelReservedInstancesListingAsync(const Model::CancelReservedInstancesListingRequest& request, const CancelReservedInstancesListingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Cancels the specified Spot Fleet requests.</p> <p>After you cancel a Spot
@@ -1177,15 +824,6 @@ namespace EC2
          */
         virtual Model::CancelSpotFleetRequestsOutcome CancelSpotFleetRequests(const Model::CancelSpotFleetRequestsRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelSpotFleetRequests that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelSpotFleetRequestsOutcomeCallable CancelSpotFleetRequestsCallable(const Model::CancelSpotFleetRequestsRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelSpotFleetRequests that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelSpotFleetRequestsAsync(const Model::CancelSpotFleetRequestsRequest& request, const CancelSpotFleetRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Cancels one or more Spot Instance requests.</p>  <p>Canceling a
@@ -1196,15 +834,6 @@ namespace EC2
          */
         virtual Model::CancelSpotInstanceRequestsOutcome CancelSpotInstanceRequests(const Model::CancelSpotInstanceRequestsRequest& request) const;
 
-        /**
-         * A Callable wrapper for CancelSpotInstanceRequests that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CancelSpotInstanceRequestsOutcomeCallable CancelSpotInstanceRequestsCallable(const Model::CancelSpotInstanceRequestsRequest& request) const;
-
-        /**
-         * An Async wrapper for CancelSpotInstanceRequests that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CancelSpotInstanceRequestsAsync(const Model::CancelSpotInstanceRequestsRequest& request, const CancelSpotInstanceRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Determines whether a product code is associated with an instance. This action
@@ -1216,15 +845,6 @@ namespace EC2
          */
         virtual Model::ConfirmProductInstanceOutcome ConfirmProductInstance(const Model::ConfirmProductInstanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ConfirmProductInstance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ConfirmProductInstanceOutcomeCallable ConfirmProductInstanceCallable(const Model::ConfirmProductInstanceRequest& request) const;
-
-        /**
-         * An Async wrapper for ConfirmProductInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ConfirmProductInstanceAsync(const Model::ConfirmProductInstanceRequest& request, const ConfirmProductInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Copies the specified Amazon FPGA Image (AFI) to the current
@@ -1234,15 +854,6 @@ namespace EC2
          */
         virtual Model::CopyFpgaImageOutcome CopyFpgaImage(const Model::CopyFpgaImageRequest& request) const;
 
-        /**
-         * A Callable wrapper for CopyFpgaImage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CopyFpgaImageOutcomeCallable CopyFpgaImageCallable(const Model::CopyFpgaImageRequest& request) const;
-
-        /**
-         * An Async wrapper for CopyFpgaImage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CopyFpgaImageAsync(const Model::CopyFpgaImageRequest& request, const CopyFpgaImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Initiates the copy of an AMI. You can copy an AMI from one Region to another,
@@ -1274,15 +885,6 @@ namespace EC2
          */
         virtual Model::CopyImageOutcome CopyImage(const Model::CopyImageRequest& request) const;
 
-        /**
-         * A Callable wrapper for CopyImage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CopyImageOutcomeCallable CopyImageCallable(const Model::CopyImageRequest& request) const;
-
-        /**
-         * An Async wrapper for CopyImage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CopyImageAsync(const Model::CopyImageRequest& request, const CopyImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Copies a point-in-time snapshot of an EBS volume and stores it in Amazon S3.
@@ -1313,15 +915,6 @@ namespace EC2
          */
         virtual Model::CopySnapshotOutcome CopySnapshot(const Model::CopySnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for CopySnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CopySnapshotOutcomeCallable CopySnapshotCallable(const Model::CopySnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for CopySnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CopySnapshotAsync(const Model::CopySnapshotRequest& request, const CopySnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new Capacity Reservation with the specified attributes.</p>
@@ -1351,15 +944,6 @@ namespace EC2
          */
         virtual Model::CreateCapacityReservationOutcome CreateCapacityReservation(const Model::CreateCapacityReservationRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateCapacityReservation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateCapacityReservationOutcomeCallable CreateCapacityReservationCallable(const Model::CreateCapacityReservationRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateCapacityReservation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateCapacityReservationAsync(const Model::CreateCapacityReservationRequest& request, const CreateCapacityReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a Capacity Reservation Fleet. For more information, see <a
@@ -1371,15 +955,6 @@ namespace EC2
          */
         virtual Model::CreateCapacityReservationFleetOutcome CreateCapacityReservationFleet(const Model::CreateCapacityReservationFleetRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateCapacityReservationFleet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateCapacityReservationFleetOutcomeCallable CreateCapacityReservationFleetCallable(const Model::CreateCapacityReservationFleetRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateCapacityReservationFleet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateCapacityReservationFleetAsync(const Model::CreateCapacityReservationFleetRequest& request, const CreateCapacityReservationFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a carrier gateway. For more information about carrier gateways, see
@@ -1392,15 +967,6 @@ namespace EC2
          */
         virtual Model::CreateCarrierGatewayOutcome CreateCarrierGateway(const Model::CreateCarrierGatewayRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateCarrierGateway that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateCarrierGatewayOutcomeCallable CreateCarrierGatewayCallable(const Model::CreateCarrierGatewayRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateCarrierGateway that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateCarrierGatewayAsync(const Model::CreateCarrierGatewayRequest& request, const CreateCarrierGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a Client VPN endpoint. A Client VPN endpoint is the resource you
@@ -1412,15 +978,6 @@ namespace EC2
          */
         virtual Model::CreateClientVpnEndpointOutcome CreateClientVpnEndpoint(const Model::CreateClientVpnEndpointRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateClientVpnEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateClientVpnEndpointOutcomeCallable CreateClientVpnEndpointCallable(const Model::CreateClientVpnEndpointRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateClientVpnEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateClientVpnEndpointAsync(const Model::CreateClientVpnEndpointRequest& request, const CreateClientVpnEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds a route to a network to a Client VPN endpoint. Each Client VPN endpoint
@@ -1432,15 +989,6 @@ namespace EC2
          */
         virtual Model::CreateClientVpnRouteOutcome CreateClientVpnRoute(const Model::CreateClientVpnRouteRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateClientVpnRoute that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateClientVpnRouteOutcomeCallable CreateClientVpnRouteCallable(const Model::CreateClientVpnRouteRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateClientVpnRoute that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateClientVpnRouteAsync(const Model::CreateClientVpnRouteRequest& request, const CreateClientVpnRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Creates a range of customer-owned IP addresses. </p><p><h3>See Also:</h3>  
@@ -1450,15 +998,6 @@ namespace EC2
          */
         virtual Model::CreateCoipCidrOutcome CreateCoipCidr(const Model::CreateCoipCidrRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateCoipCidr that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateCoipCidrOutcomeCallable CreateCoipCidrCallable(const Model::CreateCoipCidrRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateCoipCidr that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateCoipCidrAsync(const Model::CreateCoipCidrRequest& request, const CreateCoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Creates a pool of customer-owned IP (CoIP) addresses. </p><p><h3>See
@@ -1468,15 +1007,6 @@ namespace EC2
          */
         virtual Model::CreateCoipPoolOutcome CreateCoipPool(const Model::CreateCoipPoolRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateCoipPool that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateCoipPoolOutcomeCallable CreateCoipPoolCallable(const Model::CreateCoipPoolRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateCoipPool that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateCoipPoolAsync(const Model::CreateCoipPoolRequest& request, const CreateCoipPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides information to Amazon Web Services about your customer gateway
@@ -1499,15 +1029,6 @@ namespace EC2
          */
         virtual Model::CreateCustomerGatewayOutcome CreateCustomerGateway(const Model::CreateCustomerGatewayRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateCustomerGateway that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateCustomerGatewayOutcomeCallable CreateCustomerGatewayCallable(const Model::CreateCustomerGatewayRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateCustomerGateway that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateCustomerGatewayAsync(const Model::CreateCustomerGatewayRequest& request, const CreateCustomerGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a default subnet with a size <code>/20</code> IPv4 CIDR block in the
@@ -1521,15 +1042,6 @@ namespace EC2
          */
         virtual Model::CreateDefaultSubnetOutcome CreateDefaultSubnet(const Model::CreateDefaultSubnetRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDefaultSubnet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDefaultSubnetOutcomeCallable CreateDefaultSubnetCallable(const Model::CreateDefaultSubnetRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDefaultSubnet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDefaultSubnetAsync(const Model::CreateDefaultSubnetRequest& request, const CreateDefaultSubnetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a default VPC with a size <code>/16</code> IPv4 CIDR block and a
@@ -1555,15 +1067,6 @@ namespace EC2
          */
         virtual Model::CreateDefaultVpcOutcome CreateDefaultVpc(const Model::CreateDefaultVpcRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDefaultVpc that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDefaultVpcOutcomeCallable CreateDefaultVpcCallable(const Model::CreateDefaultVpcRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDefaultVpc that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDefaultVpcAsync(const Model::CreateDefaultVpcRequest& request, const CreateDefaultVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a set of DHCP options for your VPC. After creating the set, you must
@@ -1608,15 +1111,6 @@ namespace EC2
          */
         virtual Model::CreateDhcpOptionsOutcome CreateDhcpOptions(const Model::CreateDhcpOptionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateDhcpOptions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateDhcpOptionsOutcomeCallable CreateDhcpOptionsCallable(const Model::CreateDhcpOptionsRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateDhcpOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateDhcpOptionsAsync(const Model::CreateDhcpOptionsRequest& request, const CreateDhcpOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>[IPv6 only] Creates an egress-only internet gateway for your VPC. An
@@ -1629,15 +1123,6 @@ namespace EC2
          */
         virtual Model::CreateEgressOnlyInternetGatewayOutcome CreateEgressOnlyInternetGateway(const Model::CreateEgressOnlyInternetGatewayRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateEgressOnlyInternetGateway that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateEgressOnlyInternetGatewayOutcomeCallable CreateEgressOnlyInternetGatewayCallable(const Model::CreateEgressOnlyInternetGatewayRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateEgressOnlyInternetGateway that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateEgressOnlyInternetGatewayAsync(const Model::CreateEgressOnlyInternetGatewayRequest& request, const CreateEgressOnlyInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Launches an EC2 Fleet.</p> <p>You can create a single EC2 Fleet that includes
@@ -1650,15 +1135,6 @@ namespace EC2
          */
         virtual Model::CreateFleetOutcome CreateFleet(const Model::CreateFleetRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateFleet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateFleetOutcomeCallable CreateFleetCallable(const Model::CreateFleetRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateFleet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateFleetAsync(const Model::CreateFleetRequest& request, const CreateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates one or more flow logs to capture information about IP traffic for a
@@ -1681,15 +1157,6 @@ namespace EC2
          */
         virtual Model::CreateFlowLogsOutcome CreateFlowLogs(const Model::CreateFlowLogsRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateFlowLogs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateFlowLogsOutcomeCallable CreateFlowLogsCallable(const Model::CreateFlowLogsRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateFlowLogs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateFlowLogsAsync(const Model::CreateFlowLogsRequest& request, const CreateFlowLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an Amazon FPGA Image (AFI) from the specified design checkpoint
@@ -1704,15 +1171,6 @@ namespace EC2
          */
         virtual Model::CreateFpgaImageOutcome CreateFpgaImage(const Model::CreateFpgaImageRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateFpgaImage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateFpgaImageOutcomeCallable CreateFpgaImageCallable(const Model::CreateFpgaImageRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateFpgaImage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateFpgaImageAsync(const Model::CreateFpgaImageRequest& request, const CreateFpgaImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an Amazon EBS-backed AMI from an Amazon EBS-backed instance that is
@@ -1739,15 +1197,6 @@ namespace EC2
          */
         virtual Model::CreateImageOutcome CreateImage(const Model::CreateImageRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateImage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateImageOutcomeCallable CreateImageCallable(const Model::CreateImageRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateImage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateImageAsync(const Model::CreateImageRequest& request, const CreateImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an event window in which scheduled events for the associated Amazon
@@ -1771,15 +1220,6 @@ namespace EC2
          */
         virtual Model::CreateInstanceEventWindowOutcome CreateInstanceEventWindow(const Model::CreateInstanceEventWindowRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateInstanceEventWindow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateInstanceEventWindowOutcomeCallable CreateInstanceEventWindowCallable(const Model::CreateInstanceEventWindowRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateInstanceEventWindow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateInstanceEventWindowAsync(const Model::CreateInstanceEventWindowRequest& request, const CreateInstanceEventWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Exports a running or stopped instance to an Amazon S3 bucket.</p> <p>For
@@ -1793,15 +1233,6 @@ namespace EC2
          */
         virtual Model::CreateInstanceExportTaskOutcome CreateInstanceExportTask(const Model::CreateInstanceExportTaskRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateInstanceExportTask that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateInstanceExportTaskOutcomeCallable CreateInstanceExportTaskCallable(const Model::CreateInstanceExportTaskRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateInstanceExportTask that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateInstanceExportTaskAsync(const Model::CreateInstanceExportTaskRequest& request, const CreateInstanceExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an internet gateway for use with a VPC. After creating the internet
@@ -1814,15 +1245,6 @@ namespace EC2
          */
         virtual Model::CreateInternetGatewayOutcome CreateInternetGateway(const Model::CreateInternetGatewayRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateInternetGateway that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateInternetGatewayOutcomeCallable CreateInternetGatewayCallable(const Model::CreateInternetGatewayRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateInternetGateway that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateInternetGatewayAsync(const Model::CreateInternetGatewayRequest& request, const CreateInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Create an IPAM. Amazon VPC IP Address Manager (IPAM) is a VPC feature that
@@ -1837,15 +1259,6 @@ namespace EC2
          */
         virtual Model::CreateIpamOutcome CreateIpam(const Model::CreateIpamRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateIpam that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateIpamOutcomeCallable CreateIpamCallable(const Model::CreateIpamRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateIpam that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateIpamAsync(const Model::CreateIpamRequest& request, const CreateIpamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Create an IP address pool for Amazon VPC IP Address Manager (IPAM). In IPAM,
@@ -1862,15 +1275,6 @@ namespace EC2
          */
         virtual Model::CreateIpamPoolOutcome CreateIpamPool(const Model::CreateIpamPoolRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateIpamPool that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateIpamPoolOutcomeCallable CreateIpamPoolCallable(const Model::CreateIpamPoolRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateIpamPool that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateIpamPoolAsync(const Model::CreateIpamPoolRequest& request, const CreateIpamPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Create an IPAM scope. In IPAM, a scope is the highest-level container within
@@ -1887,15 +1291,6 @@ namespace EC2
          */
         virtual Model::CreateIpamScopeOutcome CreateIpamScope(const Model::CreateIpamScopeRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateIpamScope that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateIpamScopeOutcomeCallable CreateIpamScopeCallable(const Model::CreateIpamScopeRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateIpamScope that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateIpamScopeAsync(const Model::CreateIpamScopeRequest& request, const CreateIpamScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an ED25519 or 2048-bit RSA key pair with the specified name and in
@@ -1916,15 +1311,6 @@ namespace EC2
          */
         virtual Model::CreateKeyPairOutcome CreateKeyPair(const Model::CreateKeyPairRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateKeyPair that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateKeyPairOutcomeCallable CreateKeyPairCallable(const Model::CreateKeyPairRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateKeyPair that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateKeyPairAsync(const Model::CreateKeyPairRequest& request, const CreateKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a launch template.</p> <p>A launch template contains the parameters
@@ -1945,15 +1331,6 @@ namespace EC2
          */
         virtual Model::CreateLaunchTemplateOutcome CreateLaunchTemplate(const Model::CreateLaunchTemplateRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateLaunchTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateLaunchTemplateOutcomeCallable CreateLaunchTemplateCallable(const Model::CreateLaunchTemplateRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateLaunchTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateLaunchTemplateAsync(const Model::CreateLaunchTemplateRequest& request, const CreateLaunchTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new version of a launch template. You can specify an existing
@@ -1972,15 +1349,6 @@ namespace EC2
          */
         virtual Model::CreateLaunchTemplateVersionOutcome CreateLaunchTemplateVersion(const Model::CreateLaunchTemplateVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateLaunchTemplateVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateLaunchTemplateVersionOutcomeCallable CreateLaunchTemplateVersionCallable(const Model::CreateLaunchTemplateVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateLaunchTemplateVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateLaunchTemplateVersionAsync(const Model::CreateLaunchTemplateVersionRequest& request, const CreateLaunchTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a static route for the specified local gateway route table. You must
@@ -1992,15 +1360,6 @@ namespace EC2
          */
         virtual Model::CreateLocalGatewayRouteOutcome CreateLocalGatewayRoute(const Model::CreateLocalGatewayRouteRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateLocalGatewayRoute that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateLocalGatewayRouteOutcomeCallable CreateLocalGatewayRouteCallable(const Model::CreateLocalGatewayRouteRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateLocalGatewayRoute that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateLocalGatewayRouteAsync(const Model::CreateLocalGatewayRouteRequest& request, const CreateLocalGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Creates a local gateway route table. </p><p><h3>See Also:</h3>   <a
@@ -2009,15 +1368,6 @@ namespace EC2
          */
         virtual Model::CreateLocalGatewayRouteTableOutcome CreateLocalGatewayRouteTable(const Model::CreateLocalGatewayRouteTableRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateLocalGatewayRouteTable that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateLocalGatewayRouteTableOutcomeCallable CreateLocalGatewayRouteTableCallable(const Model::CreateLocalGatewayRouteTableRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateLocalGatewayRouteTable that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateLocalGatewayRouteTableAsync(const Model::CreateLocalGatewayRouteTableRequest& request, const CreateLocalGatewayRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Creates a local gateway route table virtual interface group association.
@@ -2027,15 +1377,6 @@ namespace EC2
          */
         virtual Model::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcome CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation(const Model::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcomeCallable CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationCallable(const Model::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationAsync(const Model::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest& request, const CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates the specified VPC with the specified local gateway route
@@ -2045,15 +1386,6 @@ namespace EC2
          */
         virtual Model::CreateLocalGatewayRouteTableVpcAssociationOutcome CreateLocalGatewayRouteTableVpcAssociation(const Model::CreateLocalGatewayRouteTableVpcAssociationRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateLocalGatewayRouteTableVpcAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateLocalGatewayRouteTableVpcAssociationOutcomeCallable CreateLocalGatewayRouteTableVpcAssociationCallable(const Model::CreateLocalGatewayRouteTableVpcAssociationRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateLocalGatewayRouteTableVpcAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateLocalGatewayRouteTableVpcAssociationAsync(const Model::CreateLocalGatewayRouteTableVpcAssociationRequest& request, const CreateLocalGatewayRouteTableVpcAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a managed prefix list. You can specify one or more entries for the
@@ -2064,15 +1396,6 @@ namespace EC2
          */
         virtual Model::CreateManagedPrefixListOutcome CreateManagedPrefixList(const Model::CreateManagedPrefixListRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateManagedPrefixList that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateManagedPrefixListOutcomeCallable CreateManagedPrefixListCallable(const Model::CreateManagedPrefixListRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateManagedPrefixList that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateManagedPrefixListAsync(const Model::CreateManagedPrefixListRequest& request, const CreateManagedPrefixListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a NAT gateway in the specified subnet. This action creates a network
@@ -2094,15 +1417,6 @@ namespace EC2
          */
         virtual Model::CreateNatGatewayOutcome CreateNatGateway(const Model::CreateNatGatewayRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateNatGateway that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateNatGatewayOutcomeCallable CreateNatGatewayCallable(const Model::CreateNatGatewayRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateNatGateway that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateNatGatewayAsync(const Model::CreateNatGatewayRequest& request, const CreateNatGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a network ACL in a VPC. Network ACLs provide an optional layer of
@@ -2116,15 +1430,6 @@ namespace EC2
          */
         virtual Model::CreateNetworkAclOutcome CreateNetworkAcl(const Model::CreateNetworkAclRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateNetworkAcl that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateNetworkAclOutcomeCallable CreateNetworkAclCallable(const Model::CreateNetworkAclRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateNetworkAcl that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateNetworkAclAsync(const Model::CreateNetworkAclRequest& request, const CreateNetworkAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an entry (a rule) in a network ACL with the specified rule number.
@@ -2147,15 +1452,6 @@ namespace EC2
          */
         virtual Model::CreateNetworkAclEntryOutcome CreateNetworkAclEntry(const Model::CreateNetworkAclEntryRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateNetworkAclEntry that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateNetworkAclEntryOutcomeCallable CreateNetworkAclEntryCallable(const Model::CreateNetworkAclEntryRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateNetworkAclEntry that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateNetworkAclEntryAsync(const Model::CreateNetworkAclEntryRequest& request, const CreateNetworkAclEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a Network Access Scope.</p> <p>Amazon Web Services Network Access
@@ -2169,15 +1465,6 @@ namespace EC2
          */
         virtual Model::CreateNetworkInsightsAccessScopeOutcome CreateNetworkInsightsAccessScope(const Model::CreateNetworkInsightsAccessScopeRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateNetworkInsightsAccessScope that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateNetworkInsightsAccessScopeOutcomeCallable CreateNetworkInsightsAccessScopeCallable(const Model::CreateNetworkInsightsAccessScopeRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateNetworkInsightsAccessScope that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateNetworkInsightsAccessScopeAsync(const Model::CreateNetworkInsightsAccessScopeRequest& request, const CreateNetworkInsightsAccessScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a path to analyze for reachability.</p> <p>Reachability Analyzer
@@ -2190,15 +1477,6 @@ namespace EC2
          */
         virtual Model::CreateNetworkInsightsPathOutcome CreateNetworkInsightsPath(const Model::CreateNetworkInsightsPathRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateNetworkInsightsPath that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateNetworkInsightsPathOutcomeCallable CreateNetworkInsightsPathCallable(const Model::CreateNetworkInsightsPathRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateNetworkInsightsPath that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateNetworkInsightsPathAsync(const Model::CreateNetworkInsightsPathRequest& request, const CreateNetworkInsightsPathResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a network interface in the specified subnet.</p> <p>The number of IP
@@ -2215,15 +1493,6 @@ namespace EC2
          */
         virtual Model::CreateNetworkInterfaceOutcome CreateNetworkInterface(const Model::CreateNetworkInterfaceRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateNetworkInterface that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateNetworkInterfaceOutcomeCallable CreateNetworkInterfaceCallable(const Model::CreateNetworkInterfaceRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateNetworkInterface that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateNetworkInterfaceAsync(const Model::CreateNetworkInterfaceRequest& request, const CreateNetworkInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Grants an Amazon Web Services-authorized account permission to attach the
@@ -2235,15 +1504,6 @@ namespace EC2
          */
         virtual Model::CreateNetworkInterfacePermissionOutcome CreateNetworkInterfacePermission(const Model::CreateNetworkInterfacePermissionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateNetworkInterfacePermission that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateNetworkInterfacePermissionOutcomeCallable CreateNetworkInterfacePermissionCallable(const Model::CreateNetworkInterfacePermissionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateNetworkInterfacePermission that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateNetworkInterfacePermissionAsync(const Model::CreateNetworkInterfacePermissionRequest& request, const CreateNetworkInterfacePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a placement group in which to launch instances. The strategy of the
@@ -2262,15 +1522,6 @@ namespace EC2
          */
         virtual Model::CreatePlacementGroupOutcome CreatePlacementGroup(const Model::CreatePlacementGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreatePlacementGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreatePlacementGroupOutcomeCallable CreatePlacementGroupCallable(const Model::CreatePlacementGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for CreatePlacementGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreatePlacementGroupAsync(const Model::CreatePlacementGroupRequest& request, const CreatePlacementGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a public IPv4 address pool. A public IPv4 pool is an EC2 IP address
@@ -2284,15 +1535,6 @@ namespace EC2
          */
         virtual Model::CreatePublicIpv4PoolOutcome CreatePublicIpv4Pool(const Model::CreatePublicIpv4PoolRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreatePublicIpv4Pool that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreatePublicIpv4PoolOutcomeCallable CreatePublicIpv4PoolCallable(const Model::CreatePublicIpv4PoolRequest& request) const;
-
-        /**
-         * An Async wrapper for CreatePublicIpv4Pool that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreatePublicIpv4PoolAsync(const Model::CreatePublicIpv4PoolRequest& request, const CreatePublicIpv4PoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Replaces the EBS-backed root volume for a <code>running</code> instance with
@@ -2308,15 +1550,6 @@ namespace EC2
          */
         virtual Model::CreateReplaceRootVolumeTaskOutcome CreateReplaceRootVolumeTask(const Model::CreateReplaceRootVolumeTaskRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateReplaceRootVolumeTask that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateReplaceRootVolumeTaskOutcomeCallable CreateReplaceRootVolumeTaskCallable(const Model::CreateReplaceRootVolumeTaskRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateReplaceRootVolumeTask that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateReplaceRootVolumeTaskAsync(const Model::CreateReplaceRootVolumeTaskRequest& request, const CreateReplaceRootVolumeTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a listing for Amazon EC2 Standard Reserved Instances to be sold in
@@ -2345,15 +1578,6 @@ namespace EC2
          */
         virtual Model::CreateReservedInstancesListingOutcome CreateReservedInstancesListing(const Model::CreateReservedInstancesListingRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateReservedInstancesListing that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateReservedInstancesListingOutcomeCallable CreateReservedInstancesListingCallable(const Model::CreateReservedInstancesListingRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateReservedInstancesListing that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateReservedInstancesListingAsync(const Model::CreateReservedInstancesListingRequest& request, const CreateReservedInstancesListingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts a task that restores an AMI from an Amazon S3 object that was
@@ -2372,15 +1596,6 @@ namespace EC2
          */
         virtual Model::CreateRestoreImageTaskOutcome CreateRestoreImageTask(const Model::CreateRestoreImageTaskRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateRestoreImageTask that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateRestoreImageTaskOutcomeCallable CreateRestoreImageTaskCallable(const Model::CreateRestoreImageTaskRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateRestoreImageTask that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateRestoreImageTaskAsync(const Model::CreateRestoreImageTaskRequest& request, const CreateRestoreImageTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a route in a route table within a VPC.</p> <p>You must specify either
@@ -2403,15 +1618,6 @@ namespace EC2
          */
         virtual Model::CreateRouteOutcome CreateRoute(const Model::CreateRouteRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateRoute that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateRouteOutcomeCallable CreateRouteCallable(const Model::CreateRouteRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateRoute that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateRouteAsync(const Model::CreateRouteRequest& request, const CreateRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a route table for the specified VPC. After you create a route table,
@@ -2425,15 +1631,6 @@ namespace EC2
          */
         virtual Model::CreateRouteTableOutcome CreateRouteTable(const Model::CreateRouteTableRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateRouteTable that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateRouteTableOutcomeCallable CreateRouteTableCallable(const Model::CreateRouteTableRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateRouteTable that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateRouteTableAsync(const Model::CreateRouteTableRequest& request, const CreateRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a security group.</p> <p>A security group acts as a virtual firewall
@@ -2468,15 +1665,6 @@ namespace EC2
          */
         virtual Model::CreateSecurityGroupOutcome CreateSecurityGroup(const Model::CreateSecurityGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateSecurityGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateSecurityGroupOutcomeCallable CreateSecurityGroupCallable(const Model::CreateSecurityGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateSecurityGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateSecurityGroupAsync(const Model::CreateSecurityGroupRequest& request, const CreateSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a snapshot of an EBS volume and stores it in Amazon S3. You can use
@@ -2516,15 +1704,6 @@ namespace EC2
          */
         virtual Model::CreateSnapshotOutcome CreateSnapshot(const Model::CreateSnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateSnapshotOutcomeCallable CreateSnapshotCallable(const Model::CreateSnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateSnapshotAsync(const Model::CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates crash-consistent snapshots of multiple EBS volumes and stores the
@@ -2543,15 +1722,6 @@ namespace EC2
          */
         virtual Model::CreateSnapshotsOutcome CreateSnapshots(const Model::CreateSnapshotsRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateSnapshots that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateSnapshotsOutcomeCallable CreateSnapshotsCallable(const Model::CreateSnapshotsRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateSnapshots that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateSnapshotsAsync(const Model::CreateSnapshotsRequest& request, const CreateSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a data feed for Spot Instances, enabling you to view Spot Instance
@@ -2565,15 +1735,6 @@ namespace EC2
          */
         virtual Model::CreateSpotDatafeedSubscriptionOutcome CreateSpotDatafeedSubscription(const Model::CreateSpotDatafeedSubscriptionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateSpotDatafeedSubscription that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateSpotDatafeedSubscriptionOutcomeCallable CreateSpotDatafeedSubscriptionCallable(const Model::CreateSpotDatafeedSubscriptionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateSpotDatafeedSubscription that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateSpotDatafeedSubscriptionAsync(const Model::CreateSpotDatafeedSubscriptionRequest& request, const CreateSpotDatafeedSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stores an AMI as a single object in an Amazon S3 bucket.</p> <p>To use this
@@ -2589,15 +1750,6 @@ namespace EC2
          */
         virtual Model::CreateStoreImageTaskOutcome CreateStoreImageTask(const Model::CreateStoreImageTaskRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateStoreImageTask that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateStoreImageTaskOutcomeCallable CreateStoreImageTaskCallable(const Model::CreateStoreImageTaskRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateStoreImageTask that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateStoreImageTaskAsync(const Model::CreateStoreImageTaskRequest& request, const CreateStoreImageTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a subnet in a specified VPC.</p> <p>You must specify an IPv4 CIDR
@@ -2622,15 +1774,6 @@ namespace EC2
          */
         virtual Model::CreateSubnetOutcome CreateSubnet(const Model::CreateSubnetRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateSubnet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateSubnetOutcomeCallable CreateSubnetCallable(const Model::CreateSubnetRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateSubnet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateSubnetAsync(const Model::CreateSubnetRequest& request, const CreateSubnetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a subnet CIDR reservation. For information about subnet CIDR
@@ -2643,15 +1786,6 @@ namespace EC2
          */
         virtual Model::CreateSubnetCidrReservationOutcome CreateSubnetCidrReservation(const Model::CreateSubnetCidrReservationRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateSubnetCidrReservation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateSubnetCidrReservationOutcomeCallable CreateSubnetCidrReservationCallable(const Model::CreateSubnetCidrReservationRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateSubnetCidrReservation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateSubnetCidrReservationAsync(const Model::CreateSubnetCidrReservationRequest& request, const CreateSubnetCidrReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds or overwrites only the specified tags for the specified Amazon EC2
@@ -2671,15 +1805,6 @@ namespace EC2
          */
         virtual Model::CreateTagsOutcome CreateTags(const Model::CreateTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateTagsOutcomeCallable CreateTagsCallable(const Model::CreateTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateTagsAsync(const Model::CreateTagsRequest& request, const CreateTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a Traffic Mirror filter.</p> <p>A Traffic Mirror filter is a set of
@@ -2695,15 +1820,6 @@ namespace EC2
          */
         virtual Model::CreateTrafficMirrorFilterOutcome CreateTrafficMirrorFilter(const Model::CreateTrafficMirrorFilterRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateTrafficMirrorFilter that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateTrafficMirrorFilterOutcomeCallable CreateTrafficMirrorFilterCallable(const Model::CreateTrafficMirrorFilterRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateTrafficMirrorFilter that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateTrafficMirrorFilterAsync(const Model::CreateTrafficMirrorFilterRequest& request, const CreateTrafficMirrorFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a Traffic Mirror filter rule.</p> <p>A Traffic Mirror rule defines
@@ -2714,15 +1830,6 @@ namespace EC2
          */
         virtual Model::CreateTrafficMirrorFilterRuleOutcome CreateTrafficMirrorFilterRule(const Model::CreateTrafficMirrorFilterRuleRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateTrafficMirrorFilterRule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateTrafficMirrorFilterRuleOutcomeCallable CreateTrafficMirrorFilterRuleCallable(const Model::CreateTrafficMirrorFilterRuleRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateTrafficMirrorFilterRule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateTrafficMirrorFilterRuleAsync(const Model::CreateTrafficMirrorFilterRuleRequest& request, const CreateTrafficMirrorFilterRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a Traffic Mirror session.</p> <p>A Traffic Mirror session actively
@@ -2740,15 +1847,6 @@ namespace EC2
          */
         virtual Model::CreateTrafficMirrorSessionOutcome CreateTrafficMirrorSession(const Model::CreateTrafficMirrorSessionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateTrafficMirrorSession that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateTrafficMirrorSessionOutcomeCallable CreateTrafficMirrorSessionCallable(const Model::CreateTrafficMirrorSessionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateTrafficMirrorSession that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateTrafficMirrorSessionAsync(const Model::CreateTrafficMirrorSessionRequest& request, const CreateTrafficMirrorSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a target for your Traffic Mirror session.</p> <p>A Traffic Mirror
@@ -2765,15 +1863,6 @@ namespace EC2
          */
         virtual Model::CreateTrafficMirrorTargetOutcome CreateTrafficMirrorTarget(const Model::CreateTrafficMirrorTargetRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateTrafficMirrorTarget that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateTrafficMirrorTargetOutcomeCallable CreateTrafficMirrorTargetCallable(const Model::CreateTrafficMirrorTargetRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateTrafficMirrorTarget that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateTrafficMirrorTargetAsync(const Model::CreateTrafficMirrorTargetRequest& request, const CreateTrafficMirrorTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a transit gateway.</p> <p>You can use a transit gateway to
@@ -2799,15 +1888,6 @@ namespace EC2
          */
         virtual Model::CreateTransitGatewayOutcome CreateTransitGateway(const Model::CreateTransitGatewayRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateTransitGateway that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateTransitGatewayOutcomeCallable CreateTransitGatewayCallable(const Model::CreateTransitGatewayRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateTransitGateway that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateTransitGatewayAsync(const Model::CreateTransitGatewayRequest& request, const CreateTransitGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a Connect attachment from a specified transit gateway attachment. A
@@ -2820,15 +1900,6 @@ namespace EC2
          */
         virtual Model::CreateTransitGatewayConnectOutcome CreateTransitGatewayConnect(const Model::CreateTransitGatewayConnectRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateTransitGatewayConnect that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateTransitGatewayConnectOutcomeCallable CreateTransitGatewayConnectCallable(const Model::CreateTransitGatewayConnectRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateTransitGatewayConnect that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateTransitGatewayConnectAsync(const Model::CreateTransitGatewayConnectRequest& request, const CreateTransitGatewayConnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a Connect peer for a specified transit gateway Connect attachment
@@ -2842,15 +1913,6 @@ namespace EC2
          */
         virtual Model::CreateTransitGatewayConnectPeerOutcome CreateTransitGatewayConnectPeer(const Model::CreateTransitGatewayConnectPeerRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateTransitGatewayConnectPeer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateTransitGatewayConnectPeerOutcomeCallable CreateTransitGatewayConnectPeerCallable(const Model::CreateTransitGatewayConnectPeerRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateTransitGatewayConnectPeer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateTransitGatewayConnectPeerAsync(const Model::CreateTransitGatewayConnectPeerRequest& request, const CreateTransitGatewayConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a multicast domain using the specified transit gateway.</p> <p>The
@@ -2863,15 +1925,6 @@ namespace EC2
          */
         virtual Model::CreateTransitGatewayMulticastDomainOutcome CreateTransitGatewayMulticastDomain(const Model::CreateTransitGatewayMulticastDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateTransitGatewayMulticastDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateTransitGatewayMulticastDomainOutcomeCallable CreateTransitGatewayMulticastDomainCallable(const Model::CreateTransitGatewayMulticastDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateTransitGatewayMulticastDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateTransitGatewayMulticastDomainAsync(const Model::CreateTransitGatewayMulticastDomainRequest& request, const CreateTransitGatewayMulticastDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Requests a transit gateway peering attachment between the specified transit
@@ -2884,15 +1937,6 @@ namespace EC2
          */
         virtual Model::CreateTransitGatewayPeeringAttachmentOutcome CreateTransitGatewayPeeringAttachment(const Model::CreateTransitGatewayPeeringAttachmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateTransitGatewayPeeringAttachment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateTransitGatewayPeeringAttachmentOutcomeCallable CreateTransitGatewayPeeringAttachmentCallable(const Model::CreateTransitGatewayPeeringAttachmentRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateTransitGatewayPeeringAttachment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateTransitGatewayPeeringAttachmentAsync(const Model::CreateTransitGatewayPeeringAttachmentRequest& request, const CreateTransitGatewayPeeringAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a transit gateway policy table.</p><p><h3>See Also:</h3>   <a
@@ -2901,15 +1945,6 @@ namespace EC2
          */
         virtual Model::CreateTransitGatewayPolicyTableOutcome CreateTransitGatewayPolicyTable(const Model::CreateTransitGatewayPolicyTableRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateTransitGatewayPolicyTable that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateTransitGatewayPolicyTableOutcomeCallable CreateTransitGatewayPolicyTableCallable(const Model::CreateTransitGatewayPolicyTableRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateTransitGatewayPolicyTable that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateTransitGatewayPolicyTableAsync(const Model::CreateTransitGatewayPolicyTableRequest& request, const CreateTransitGatewayPolicyTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a reference (route) to a prefix list in a specified transit gateway
@@ -2919,15 +1954,6 @@ namespace EC2
          */
         virtual Model::CreateTransitGatewayPrefixListReferenceOutcome CreateTransitGatewayPrefixListReference(const Model::CreateTransitGatewayPrefixListReferenceRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateTransitGatewayPrefixListReference that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateTransitGatewayPrefixListReferenceOutcomeCallable CreateTransitGatewayPrefixListReferenceCallable(const Model::CreateTransitGatewayPrefixListReferenceRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateTransitGatewayPrefixListReference that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateTransitGatewayPrefixListReferenceAsync(const Model::CreateTransitGatewayPrefixListReferenceRequest& request, const CreateTransitGatewayPrefixListReferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a static route for the specified transit gateway route
@@ -2937,15 +1963,6 @@ namespace EC2
          */
         virtual Model::CreateTransitGatewayRouteOutcome CreateTransitGatewayRoute(const Model::CreateTransitGatewayRouteRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateTransitGatewayRoute that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateTransitGatewayRouteOutcomeCallable CreateTransitGatewayRouteCallable(const Model::CreateTransitGatewayRouteRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateTransitGatewayRoute that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateTransitGatewayRouteAsync(const Model::CreateTransitGatewayRouteRequest& request, const CreateTransitGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a route table for the specified transit gateway.</p><p><h3>See
@@ -2955,15 +1972,6 @@ namespace EC2
          */
         virtual Model::CreateTransitGatewayRouteTableOutcome CreateTransitGatewayRouteTable(const Model::CreateTransitGatewayRouteTableRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateTransitGatewayRouteTable that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateTransitGatewayRouteTableOutcomeCallable CreateTransitGatewayRouteTableCallable(const Model::CreateTransitGatewayRouteTableRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateTransitGatewayRouteTable that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateTransitGatewayRouteTableAsync(const Model::CreateTransitGatewayRouteTableRequest& request, const CreateTransitGatewayRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Advertises a new transit gateway route table.</p><p><h3>See Also:</h3>   <a
@@ -2972,15 +1980,6 @@ namespace EC2
          */
         virtual Model::CreateTransitGatewayRouteTableAnnouncementOutcome CreateTransitGatewayRouteTableAnnouncement(const Model::CreateTransitGatewayRouteTableAnnouncementRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateTransitGatewayRouteTableAnnouncement that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateTransitGatewayRouteTableAnnouncementOutcomeCallable CreateTransitGatewayRouteTableAnnouncementCallable(const Model::CreateTransitGatewayRouteTableAnnouncementRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateTransitGatewayRouteTableAnnouncement that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateTransitGatewayRouteTableAnnouncementAsync(const Model::CreateTransitGatewayRouteTableAnnouncementRequest& request, const CreateTransitGatewayRouteTableAnnouncementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Attaches the specified VPC to the specified transit gateway.</p> <p>If you
@@ -2994,15 +1993,6 @@ namespace EC2
          */
         virtual Model::CreateTransitGatewayVpcAttachmentOutcome CreateTransitGatewayVpcAttachment(const Model::CreateTransitGatewayVpcAttachmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateTransitGatewayVpcAttachment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateTransitGatewayVpcAttachmentOutcomeCallable CreateTransitGatewayVpcAttachmentCallable(const Model::CreateTransitGatewayVpcAttachmentRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateTransitGatewayVpcAttachment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateTransitGatewayVpcAttachmentAsync(const Model::CreateTransitGatewayVpcAttachmentRequest& request, const CreateTransitGatewayVpcAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an EBS volume that can be attached to an instance in the same
@@ -3026,15 +2016,6 @@ namespace EC2
          */
         virtual Model::CreateVolumeOutcome CreateVolume(const Model::CreateVolumeRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateVolume that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateVolumeOutcomeCallable CreateVolumeCallable(const Model::CreateVolumeRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateVolume that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateVolumeAsync(const Model::CreateVolumeRequest& request, const CreateVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a VPC with the specified IPv4 CIDR block. The smallest VPC you can
@@ -3064,15 +2045,6 @@ namespace EC2
          */
         virtual Model::CreateVpcOutcome CreateVpc(const Model::CreateVpcRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateVpc that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateVpcOutcomeCallable CreateVpcCallable(const Model::CreateVpcRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateVpc that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateVpcAsync(const Model::CreateVpcRequest& request, const CreateVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a VPC endpoint for a specified service. An endpoint enables you to
@@ -3086,15 +2058,6 @@ namespace EC2
          */
         virtual Model::CreateVpcEndpointOutcome CreateVpcEndpoint(const Model::CreateVpcEndpointRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateVpcEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateVpcEndpointOutcomeCallable CreateVpcEndpointCallable(const Model::CreateVpcEndpointRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateVpcEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateVpcEndpointAsync(const Model::CreateVpcEndpointRequest& request, const CreateVpcEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a connection notification for a specified VPC endpoint or VPC
@@ -3110,15 +2073,6 @@ namespace EC2
          */
         virtual Model::CreateVpcEndpointConnectionNotificationOutcome CreateVpcEndpointConnectionNotification(const Model::CreateVpcEndpointConnectionNotificationRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateVpcEndpointConnectionNotification that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateVpcEndpointConnectionNotificationOutcomeCallable CreateVpcEndpointConnectionNotificationCallable(const Model::CreateVpcEndpointConnectionNotificationRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateVpcEndpointConnectionNotification that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateVpcEndpointConnectionNotificationAsync(const Model::CreateVpcEndpointConnectionNotificationRequest& request, const CreateVpcEndpointConnectionNotificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a VPC endpoint service to which service consumers (Amazon Web
@@ -3140,15 +2094,6 @@ namespace EC2
          */
         virtual Model::CreateVpcEndpointServiceConfigurationOutcome CreateVpcEndpointServiceConfiguration(const Model::CreateVpcEndpointServiceConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateVpcEndpointServiceConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateVpcEndpointServiceConfigurationOutcomeCallable CreateVpcEndpointServiceConfigurationCallable(const Model::CreateVpcEndpointServiceConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateVpcEndpointServiceConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateVpcEndpointServiceConfigurationAsync(const Model::CreateVpcEndpointServiceConfigurationRequest& request, const CreateVpcEndpointServiceConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Requests a VPC peering connection between two VPCs: a requester VPC that you
@@ -3169,15 +2114,6 @@ namespace EC2
          */
         virtual Model::CreateVpcPeeringConnectionOutcome CreateVpcPeeringConnection(const Model::CreateVpcPeeringConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateVpcPeeringConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateVpcPeeringConnectionOutcomeCallable CreateVpcPeeringConnectionCallable(const Model::CreateVpcPeeringConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateVpcPeeringConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateVpcPeeringConnectionAsync(const Model::CreateVpcPeeringConnectionRequest& request, const CreateVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a VPN connection between an existing virtual private gateway or
@@ -3200,15 +2136,6 @@ namespace EC2
          */
         virtual Model::CreateVpnConnectionOutcome CreateVpnConnection(const Model::CreateVpnConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateVpnConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateVpnConnectionOutcomeCallable CreateVpnConnectionCallable(const Model::CreateVpnConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateVpnConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateVpnConnectionAsync(const Model::CreateVpnConnectionRequest& request, const CreateVpnConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a static route associated with a VPN connection between an existing
@@ -3223,15 +2150,6 @@ namespace EC2
          */
         virtual Model::CreateVpnConnectionRouteOutcome CreateVpnConnectionRoute(const Model::CreateVpnConnectionRouteRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateVpnConnectionRoute that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateVpnConnectionRouteOutcomeCallable CreateVpnConnectionRouteCallable(const Model::CreateVpnConnectionRouteRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateVpnConnectionRoute that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateVpnConnectionRouteAsync(const Model::CreateVpnConnectionRouteRequest& request, const CreateVpnConnectionRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a virtual private gateway. A virtual private gateway is the endpoint
@@ -3245,15 +2163,6 @@ namespace EC2
          */
         virtual Model::CreateVpnGatewayOutcome CreateVpnGateway(const Model::CreateVpnGatewayRequest& request) const;
 
-        /**
-         * A Callable wrapper for CreateVpnGateway that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::CreateVpnGatewayOutcomeCallable CreateVpnGatewayCallable(const Model::CreateVpnGatewayRequest& request) const;
-
-        /**
-         * An Async wrapper for CreateVpnGateway that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void CreateVpnGatewayAsync(const Model::CreateVpnGatewayRequest& request, const CreateVpnGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a carrier gateway.</p>  <p>If you do not delete the route
@@ -3266,15 +2175,6 @@ namespace EC2
          */
         virtual Model::DeleteCarrierGatewayOutcome DeleteCarrierGateway(const Model::DeleteCarrierGatewayRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteCarrierGateway that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteCarrierGatewayOutcomeCallable DeleteCarrierGatewayCallable(const Model::DeleteCarrierGatewayRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteCarrierGateway that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteCarrierGatewayAsync(const Model::DeleteCarrierGatewayRequest& request, const DeleteCarrierGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified Client VPN endpoint. You must disassociate all target
@@ -3285,15 +2185,6 @@ namespace EC2
          */
         virtual Model::DeleteClientVpnEndpointOutcome DeleteClientVpnEndpoint(const Model::DeleteClientVpnEndpointRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteClientVpnEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteClientVpnEndpointOutcomeCallable DeleteClientVpnEndpointCallable(const Model::DeleteClientVpnEndpointRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteClientVpnEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteClientVpnEndpointAsync(const Model::DeleteClientVpnEndpointRequest& request, const DeleteClientVpnEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a route from a Client VPN endpoint. You can only delete routes that
@@ -3306,15 +2197,6 @@ namespace EC2
          */
         virtual Model::DeleteClientVpnRouteOutcome DeleteClientVpnRoute(const Model::DeleteClientVpnRouteRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteClientVpnRoute that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteClientVpnRouteOutcomeCallable DeleteClientVpnRouteCallable(const Model::DeleteClientVpnRouteRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteClientVpnRoute that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteClientVpnRouteAsync(const Model::DeleteClientVpnRouteRequest& request, const DeleteClientVpnRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Deletes a range of customer-owned IP addresses. </p><p><h3>See Also:</h3>  
@@ -3324,15 +2206,6 @@ namespace EC2
          */
         virtual Model::DeleteCoipCidrOutcome DeleteCoipCidr(const Model::DeleteCoipCidrRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteCoipCidr that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteCoipCidrOutcomeCallable DeleteCoipCidrCallable(const Model::DeleteCoipCidrRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteCoipCidr that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteCoipCidrAsync(const Model::DeleteCoipCidrRequest& request, const DeleteCoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a pool of customer-owned IP (CoIP) addresses. </p><p><h3>See
@@ -3342,15 +2215,6 @@ namespace EC2
          */
         virtual Model::DeleteCoipPoolOutcome DeleteCoipPool(const Model::DeleteCoipPoolRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteCoipPool that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteCoipPoolOutcomeCallable DeleteCoipPoolCallable(const Model::DeleteCoipPoolRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteCoipPool that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteCoipPoolAsync(const Model::DeleteCoipPoolRequest& request, const DeleteCoipPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified customer gateway. You must delete the VPN connection
@@ -3360,15 +2224,6 @@ namespace EC2
          */
         virtual Model::DeleteCustomerGatewayOutcome DeleteCustomerGateway(const Model::DeleteCustomerGatewayRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteCustomerGateway that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteCustomerGatewayOutcomeCallable DeleteCustomerGatewayCallable(const Model::DeleteCustomerGatewayRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteCustomerGateway that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteCustomerGatewayAsync(const Model::DeleteCustomerGatewayRequest& request, const DeleteCustomerGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified set of DHCP options. You must disassociate the set of
@@ -3380,15 +2235,6 @@ namespace EC2
          */
         virtual Model::DeleteDhcpOptionsOutcome DeleteDhcpOptions(const Model::DeleteDhcpOptionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteDhcpOptions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteDhcpOptionsOutcomeCallable DeleteDhcpOptionsCallable(const Model::DeleteDhcpOptionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteDhcpOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteDhcpOptionsAsync(const Model::DeleteDhcpOptionsRequest& request, const DeleteDhcpOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an egress-only internet gateway.</p><p><h3>See Also:</h3>   <a
@@ -3397,15 +2243,6 @@ namespace EC2
          */
         virtual Model::DeleteEgressOnlyInternetGatewayOutcome DeleteEgressOnlyInternetGateway(const Model::DeleteEgressOnlyInternetGatewayRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteEgressOnlyInternetGateway that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteEgressOnlyInternetGatewayOutcomeCallable DeleteEgressOnlyInternetGatewayCallable(const Model::DeleteEgressOnlyInternetGatewayRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteEgressOnlyInternetGateway that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteEgressOnlyInternetGatewayAsync(const Model::DeleteEgressOnlyInternetGatewayRequest& request, const DeleteEgressOnlyInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified EC2 Fleet.</p> <p>After you delete an EC2 Fleet, it
@@ -3431,15 +2268,6 @@ namespace EC2
          */
         virtual Model::DeleteFleetsOutcome DeleteFleets(const Model::DeleteFleetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteFleets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteFleetsOutcomeCallable DeleteFleetsCallable(const Model::DeleteFleetsRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteFleets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteFleetsAsync(const Model::DeleteFleetsRequest& request, const DeleteFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes one or more flow logs.</p><p><h3>See Also:</h3>   <a
@@ -3448,15 +2276,6 @@ namespace EC2
          */
         virtual Model::DeleteFlowLogsOutcome DeleteFlowLogs(const Model::DeleteFlowLogsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteFlowLogs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteFlowLogsOutcomeCallable DeleteFlowLogsCallable(const Model::DeleteFlowLogsRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteFlowLogs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteFlowLogsAsync(const Model::DeleteFlowLogsRequest& request, const DeleteFlowLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified Amazon FPGA Image (AFI).</p><p><h3>See Also:</h3>   <a
@@ -3465,15 +2284,6 @@ namespace EC2
          */
         virtual Model::DeleteFpgaImageOutcome DeleteFpgaImage(const Model::DeleteFpgaImageRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteFpgaImage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteFpgaImageOutcomeCallable DeleteFpgaImageCallable(const Model::DeleteFpgaImageRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteFpgaImage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteFpgaImageAsync(const Model::DeleteFpgaImageRequest& request, const DeleteFpgaImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified event window.</p> <p>For more information, see <a
@@ -3485,15 +2295,6 @@ namespace EC2
          */
         virtual Model::DeleteInstanceEventWindowOutcome DeleteInstanceEventWindow(const Model::DeleteInstanceEventWindowRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteInstanceEventWindow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteInstanceEventWindowOutcomeCallable DeleteInstanceEventWindowCallable(const Model::DeleteInstanceEventWindowRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteInstanceEventWindow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteInstanceEventWindowAsync(const Model::DeleteInstanceEventWindowRequest& request, const DeleteInstanceEventWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified internet gateway. You must detach the internet gateway
@@ -3503,15 +2304,6 @@ namespace EC2
          */
         virtual Model::DeleteInternetGatewayOutcome DeleteInternetGateway(const Model::DeleteInternetGatewayRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteInternetGateway that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteInternetGatewayOutcomeCallable DeleteInternetGatewayCallable(const Model::DeleteInternetGatewayRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteInternetGateway that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteInternetGatewayAsync(const Model::DeleteInternetGatewayRequest& request, const DeleteInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Delete an IPAM. Deleting an IPAM removes all monitored data associated with
@@ -3524,15 +2316,6 @@ namespace EC2
          */
         virtual Model::DeleteIpamOutcome DeleteIpam(const Model::DeleteIpamRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteIpam that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteIpamOutcomeCallable DeleteIpamCallable(const Model::DeleteIpamRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteIpam that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteIpamAsync(const Model::DeleteIpamRequest& request, const DeleteIpamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Delete an IPAM pool.</p>  <p>You cannot delete an IPAM pool if there
@@ -3549,15 +2332,6 @@ namespace EC2
          */
         virtual Model::DeleteIpamPoolOutcome DeleteIpamPool(const Model::DeleteIpamPoolRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteIpamPool that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteIpamPoolOutcomeCallable DeleteIpamPoolCallable(const Model::DeleteIpamPoolRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteIpamPool that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteIpamPoolAsync(const Model::DeleteIpamPoolRequest& request, const DeleteIpamPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Delete the scope for an IPAM. You cannot delete the default scopes.</p>
@@ -3570,15 +2344,6 @@ namespace EC2
          */
         virtual Model::DeleteIpamScopeOutcome DeleteIpamScope(const Model::DeleteIpamScopeRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteIpamScope that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteIpamScopeOutcomeCallable DeleteIpamScopeCallable(const Model::DeleteIpamScopeRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteIpamScope that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteIpamScopeAsync(const Model::DeleteIpamScopeRequest& request, const DeleteIpamScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified key pair, by removing the public key from Amazon
@@ -3588,15 +2353,6 @@ namespace EC2
          */
         virtual Model::DeleteKeyPairOutcome DeleteKeyPair(const Model::DeleteKeyPairRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteKeyPair that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteKeyPairOutcomeCallable DeleteKeyPairCallable(const Model::DeleteKeyPairRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteKeyPair that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteKeyPairAsync(const Model::DeleteKeyPairRequest& request, const DeleteKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a launch template. Deleting a launch template deletes all of its
@@ -3606,15 +2362,6 @@ namespace EC2
          */
         virtual Model::DeleteLaunchTemplateOutcome DeleteLaunchTemplate(const Model::DeleteLaunchTemplateRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteLaunchTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteLaunchTemplateOutcomeCallable DeleteLaunchTemplateCallable(const Model::DeleteLaunchTemplateRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteLaunchTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteLaunchTemplateAsync(const Model::DeleteLaunchTemplateRequest& request, const DeleteLaunchTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes one or more versions of a launch template. You cannot delete the
@@ -3627,15 +2374,6 @@ namespace EC2
          */
         virtual Model::DeleteLaunchTemplateVersionsOutcome DeleteLaunchTemplateVersions(const Model::DeleteLaunchTemplateVersionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteLaunchTemplateVersions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteLaunchTemplateVersionsOutcomeCallable DeleteLaunchTemplateVersionsCallable(const Model::DeleteLaunchTemplateVersionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteLaunchTemplateVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteLaunchTemplateVersionsAsync(const Model::DeleteLaunchTemplateVersionsRequest& request, const DeleteLaunchTemplateVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified route from the specified local gateway route
@@ -3645,15 +2383,6 @@ namespace EC2
          */
         virtual Model::DeleteLocalGatewayRouteOutcome DeleteLocalGatewayRoute(const Model::DeleteLocalGatewayRouteRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteLocalGatewayRoute that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteLocalGatewayRouteOutcomeCallable DeleteLocalGatewayRouteCallable(const Model::DeleteLocalGatewayRouteRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteLocalGatewayRoute that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteLocalGatewayRouteAsync(const Model::DeleteLocalGatewayRouteRequest& request, const DeleteLocalGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Deletes a local gateway route table. </p><p><h3>See Also:</h3>   <a
@@ -3662,15 +2391,6 @@ namespace EC2
          */
         virtual Model::DeleteLocalGatewayRouteTableOutcome DeleteLocalGatewayRouteTable(const Model::DeleteLocalGatewayRouteTableRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteLocalGatewayRouteTable that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteLocalGatewayRouteTableOutcomeCallable DeleteLocalGatewayRouteTableCallable(const Model::DeleteLocalGatewayRouteTableRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteLocalGatewayRouteTable that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteLocalGatewayRouteTableAsync(const Model::DeleteLocalGatewayRouteTableRequest& request, const DeleteLocalGatewayRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Deletes a local gateway route table virtual interface group association.
@@ -3680,15 +2400,6 @@ namespace EC2
          */
         virtual Model::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcome DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation(const Model::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutcomeCallable DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationCallable(const Model::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationAsync(const Model::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest& request, const DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified association between a VPC and local gateway route
@@ -3698,15 +2409,6 @@ namespace EC2
          */
         virtual Model::DeleteLocalGatewayRouteTableVpcAssociationOutcome DeleteLocalGatewayRouteTableVpcAssociation(const Model::DeleteLocalGatewayRouteTableVpcAssociationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteLocalGatewayRouteTableVpcAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteLocalGatewayRouteTableVpcAssociationOutcomeCallable DeleteLocalGatewayRouteTableVpcAssociationCallable(const Model::DeleteLocalGatewayRouteTableVpcAssociationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteLocalGatewayRouteTableVpcAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteLocalGatewayRouteTableVpcAssociationAsync(const Model::DeleteLocalGatewayRouteTableVpcAssociationRequest& request, const DeleteLocalGatewayRouteTableVpcAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified managed prefix list. You must first remove all
@@ -3716,15 +2418,6 @@ namespace EC2
          */
         virtual Model::DeleteManagedPrefixListOutcome DeleteManagedPrefixList(const Model::DeleteManagedPrefixListRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteManagedPrefixList that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteManagedPrefixListOutcomeCallable DeleteManagedPrefixListCallable(const Model::DeleteManagedPrefixListRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteManagedPrefixList that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteManagedPrefixListAsync(const Model::DeleteManagedPrefixListRequest& request, const DeleteManagedPrefixListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified NAT gateway. Deleting a public NAT gateway
@@ -3736,15 +2429,6 @@ namespace EC2
          */
         virtual Model::DeleteNatGatewayOutcome DeleteNatGateway(const Model::DeleteNatGatewayRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteNatGateway that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteNatGatewayOutcomeCallable DeleteNatGatewayCallable(const Model::DeleteNatGatewayRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteNatGateway that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteNatGatewayAsync(const Model::DeleteNatGatewayRequest& request, const DeleteNatGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified network ACL. You can't delete the ACL if it's
@@ -3755,15 +2439,6 @@ namespace EC2
          */
         virtual Model::DeleteNetworkAclOutcome DeleteNetworkAcl(const Model::DeleteNetworkAclRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteNetworkAcl that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteNetworkAclOutcomeCallable DeleteNetworkAclCallable(const Model::DeleteNetworkAclRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteNetworkAcl that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteNetworkAclAsync(const Model::DeleteNetworkAclRequest& request, const DeleteNetworkAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified ingress or egress entry (rule) from the specified
@@ -3773,15 +2448,6 @@ namespace EC2
          */
         virtual Model::DeleteNetworkAclEntryOutcome DeleteNetworkAclEntry(const Model::DeleteNetworkAclEntryRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteNetworkAclEntry that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteNetworkAclEntryOutcomeCallable DeleteNetworkAclEntryCallable(const Model::DeleteNetworkAclEntryRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteNetworkAclEntry that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteNetworkAclEntryAsync(const Model::DeleteNetworkAclEntryRequest& request, const DeleteNetworkAclEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified Network Access Scope.</p><p><h3>See Also:</h3>   <a
@@ -3790,15 +2456,6 @@ namespace EC2
          */
         virtual Model::DeleteNetworkInsightsAccessScopeOutcome DeleteNetworkInsightsAccessScope(const Model::DeleteNetworkInsightsAccessScopeRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteNetworkInsightsAccessScope that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteNetworkInsightsAccessScopeOutcomeCallable DeleteNetworkInsightsAccessScopeCallable(const Model::DeleteNetworkInsightsAccessScopeRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteNetworkInsightsAccessScope that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteNetworkInsightsAccessScopeAsync(const Model::DeleteNetworkInsightsAccessScopeRequest& request, const DeleteNetworkInsightsAccessScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified Network Access Scope analysis.</p><p><h3>See Also:</h3>
@@ -3808,15 +2465,6 @@ namespace EC2
          */
         virtual Model::DeleteNetworkInsightsAccessScopeAnalysisOutcome DeleteNetworkInsightsAccessScopeAnalysis(const Model::DeleteNetworkInsightsAccessScopeAnalysisRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteNetworkInsightsAccessScopeAnalysis that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteNetworkInsightsAccessScopeAnalysisOutcomeCallable DeleteNetworkInsightsAccessScopeAnalysisCallable(const Model::DeleteNetworkInsightsAccessScopeAnalysisRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteNetworkInsightsAccessScopeAnalysis that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteNetworkInsightsAccessScopeAnalysisAsync(const Model::DeleteNetworkInsightsAccessScopeAnalysisRequest& request, const DeleteNetworkInsightsAccessScopeAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified network insights analysis.</p><p><h3>See Also:</h3>  
@@ -3826,15 +2474,6 @@ namespace EC2
          */
         virtual Model::DeleteNetworkInsightsAnalysisOutcome DeleteNetworkInsightsAnalysis(const Model::DeleteNetworkInsightsAnalysisRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteNetworkInsightsAnalysis that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteNetworkInsightsAnalysisOutcomeCallable DeleteNetworkInsightsAnalysisCallable(const Model::DeleteNetworkInsightsAnalysisRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteNetworkInsightsAnalysis that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteNetworkInsightsAnalysisAsync(const Model::DeleteNetworkInsightsAnalysisRequest& request, const DeleteNetworkInsightsAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified path.</p><p><h3>See Also:</h3>   <a
@@ -3843,15 +2482,6 @@ namespace EC2
          */
         virtual Model::DeleteNetworkInsightsPathOutcome DeleteNetworkInsightsPath(const Model::DeleteNetworkInsightsPathRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteNetworkInsightsPath that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteNetworkInsightsPathOutcomeCallable DeleteNetworkInsightsPathCallable(const Model::DeleteNetworkInsightsPathRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteNetworkInsightsPath that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteNetworkInsightsPathAsync(const Model::DeleteNetworkInsightsPathRequest& request, const DeleteNetworkInsightsPathResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified network interface. You must detach the network
@@ -3861,15 +2491,6 @@ namespace EC2
          */
         virtual Model::DeleteNetworkInterfaceOutcome DeleteNetworkInterface(const Model::DeleteNetworkInterfaceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteNetworkInterface that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteNetworkInterfaceOutcomeCallable DeleteNetworkInterfaceCallable(const Model::DeleteNetworkInterfaceRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteNetworkInterface that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteNetworkInterfaceAsync(const Model::DeleteNetworkInterfaceRequest& request, const DeleteNetworkInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a permission for a network interface. By default, you cannot delete
@@ -3881,15 +2502,6 @@ namespace EC2
          */
         virtual Model::DeleteNetworkInterfacePermissionOutcome DeleteNetworkInterfacePermission(const Model::DeleteNetworkInterfacePermissionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteNetworkInterfacePermission that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteNetworkInterfacePermissionOutcomeCallable DeleteNetworkInterfacePermissionCallable(const Model::DeleteNetworkInterfacePermissionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteNetworkInterfacePermission that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteNetworkInterfacePermissionAsync(const Model::DeleteNetworkInterfacePermissionRequest& request, const DeleteNetworkInterfacePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified placement group. You must terminate all instances in
@@ -3902,15 +2514,6 @@ namespace EC2
          */
         virtual Model::DeletePlacementGroupOutcome DeletePlacementGroup(const Model::DeletePlacementGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeletePlacementGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeletePlacementGroupOutcomeCallable DeletePlacementGroupCallable(const Model::DeletePlacementGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DeletePlacementGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeletePlacementGroupAsync(const Model::DeletePlacementGroupRequest& request, const DeletePlacementGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Delete a public IPv4 pool. A public IPv4 pool is an EC2 IP address pool
@@ -3922,15 +2525,6 @@ namespace EC2
          */
         virtual Model::DeletePublicIpv4PoolOutcome DeletePublicIpv4Pool(const Model::DeletePublicIpv4PoolRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeletePublicIpv4Pool that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeletePublicIpv4PoolOutcomeCallable DeletePublicIpv4PoolCallable(const Model::DeletePublicIpv4PoolRequest& request) const;
-
-        /**
-         * An Async wrapper for DeletePublicIpv4Pool that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeletePublicIpv4PoolAsync(const Model::DeletePublicIpv4PoolRequest& request, const DeletePublicIpv4PoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the queued purchases for the specified Reserved
@@ -3940,15 +2534,6 @@ namespace EC2
          */
         virtual Model::DeleteQueuedReservedInstancesOutcome DeleteQueuedReservedInstances(const Model::DeleteQueuedReservedInstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteQueuedReservedInstances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteQueuedReservedInstancesOutcomeCallable DeleteQueuedReservedInstancesCallable(const Model::DeleteQueuedReservedInstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteQueuedReservedInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteQueuedReservedInstancesAsync(const Model::DeleteQueuedReservedInstancesRequest& request, const DeleteQueuedReservedInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified route from the specified route table.</p><p><h3>See
@@ -3958,15 +2543,6 @@ namespace EC2
          */
         virtual Model::DeleteRouteOutcome DeleteRoute(const Model::DeleteRouteRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteRoute that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteRouteOutcomeCallable DeleteRouteCallable(const Model::DeleteRouteRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteRoute that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteRouteAsync(const Model::DeleteRouteRequest& request, const DeleteRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified route table. You must disassociate the route table from
@@ -3977,15 +2553,6 @@ namespace EC2
          */
         virtual Model::DeleteRouteTableOutcome DeleteRouteTable(const Model::DeleteRouteTableRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteRouteTable that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteRouteTableOutcomeCallable DeleteRouteTableCallable(const Model::DeleteRouteTableRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteRouteTable that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteRouteTableAsync(const Model::DeleteRouteTableRequest& request, const DeleteRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a security group.</p> <p>If you attempt to delete a security group
@@ -4002,15 +2569,6 @@ namespace EC2
          */
         virtual Model::DeleteSecurityGroupOutcome DeleteSecurityGroup(const Model::DeleteSecurityGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteSecurityGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteSecurityGroupOutcomeCallable DeleteSecurityGroupCallable(const Model::DeleteSecurityGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteSecurityGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteSecurityGroupAsync(const Model::DeleteSecurityGroupRequest& request, const DeleteSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified snapshot.</p> <p>When you make periodic snapshots of a
@@ -4030,15 +2588,6 @@ namespace EC2
          */
         virtual Model::DeleteSnapshotOutcome DeleteSnapshot(const Model::DeleteSnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteSnapshotOutcomeCallable DeleteSnapshotCallable(const Model::DeleteSnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteSnapshotAsync(const Model::DeleteSnapshotRequest& request, const DeleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the data feed for Spot Instances.</p><p><h3>See Also:</h3>   <a
@@ -4047,15 +2596,6 @@ namespace EC2
          */
         virtual Model::DeleteSpotDatafeedSubscriptionOutcome DeleteSpotDatafeedSubscription(const Model::DeleteSpotDatafeedSubscriptionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteSpotDatafeedSubscription that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteSpotDatafeedSubscriptionOutcomeCallable DeleteSpotDatafeedSubscriptionCallable(const Model::DeleteSpotDatafeedSubscriptionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteSpotDatafeedSubscription that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteSpotDatafeedSubscriptionAsync(const Model::DeleteSpotDatafeedSubscriptionRequest& request, const DeleteSpotDatafeedSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified subnet. You must terminate all running instances in the
@@ -4065,15 +2605,6 @@ namespace EC2
          */
         virtual Model::DeleteSubnetOutcome DeleteSubnet(const Model::DeleteSubnetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteSubnet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteSubnetOutcomeCallable DeleteSubnetCallable(const Model::DeleteSubnetRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteSubnet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteSubnetAsync(const Model::DeleteSubnetRequest& request, const DeleteSubnetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a subnet CIDR reservation.</p><p><h3>See Also:</h3>   <a
@@ -4082,15 +2613,6 @@ namespace EC2
          */
         virtual Model::DeleteSubnetCidrReservationOutcome DeleteSubnetCidrReservation(const Model::DeleteSubnetCidrReservationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteSubnetCidrReservation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteSubnetCidrReservationOutcomeCallable DeleteSubnetCidrReservationCallable(const Model::DeleteSubnetCidrReservationRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteSubnetCidrReservation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteSubnetCidrReservationAsync(const Model::DeleteSubnetCidrReservationRequest& request, const DeleteSubnetCidrReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified set of tags from the specified set of resources.</p>
@@ -4104,15 +2626,6 @@ namespace EC2
          */
         virtual Model::DeleteTagsOutcome DeleteTags(const Model::DeleteTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteTagsOutcomeCallable DeleteTagsCallable(const Model::DeleteTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteTagsAsync(const Model::DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified Traffic Mirror filter.</p> <p>You cannot delete a
@@ -4123,15 +2636,6 @@ namespace EC2
          */
         virtual Model::DeleteTrafficMirrorFilterOutcome DeleteTrafficMirrorFilter(const Model::DeleteTrafficMirrorFilterRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteTrafficMirrorFilter that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteTrafficMirrorFilterOutcomeCallable DeleteTrafficMirrorFilterCallable(const Model::DeleteTrafficMirrorFilterRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteTrafficMirrorFilter that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteTrafficMirrorFilterAsync(const Model::DeleteTrafficMirrorFilterRequest& request, const DeleteTrafficMirrorFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified Traffic Mirror rule.</p><p><h3>See Also:</h3>   <a
@@ -4140,15 +2644,6 @@ namespace EC2
          */
         virtual Model::DeleteTrafficMirrorFilterRuleOutcome DeleteTrafficMirrorFilterRule(const Model::DeleteTrafficMirrorFilterRuleRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteTrafficMirrorFilterRule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteTrafficMirrorFilterRuleOutcomeCallable DeleteTrafficMirrorFilterRuleCallable(const Model::DeleteTrafficMirrorFilterRuleRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteTrafficMirrorFilterRule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteTrafficMirrorFilterRuleAsync(const Model::DeleteTrafficMirrorFilterRuleRequest& request, const DeleteTrafficMirrorFilterRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified Traffic Mirror session.</p><p><h3>See Also:</h3>   <a
@@ -4157,15 +2652,6 @@ namespace EC2
          */
         virtual Model::DeleteTrafficMirrorSessionOutcome DeleteTrafficMirrorSession(const Model::DeleteTrafficMirrorSessionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteTrafficMirrorSession that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteTrafficMirrorSessionOutcomeCallable DeleteTrafficMirrorSessionCallable(const Model::DeleteTrafficMirrorSessionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteTrafficMirrorSession that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteTrafficMirrorSessionAsync(const Model::DeleteTrafficMirrorSessionRequest& request, const DeleteTrafficMirrorSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified Traffic Mirror target.</p> <p>You cannot delete a
@@ -4176,15 +2662,6 @@ namespace EC2
          */
         virtual Model::DeleteTrafficMirrorTargetOutcome DeleteTrafficMirrorTarget(const Model::DeleteTrafficMirrorTargetRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteTrafficMirrorTarget that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteTrafficMirrorTargetOutcomeCallable DeleteTrafficMirrorTargetCallable(const Model::DeleteTrafficMirrorTargetRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteTrafficMirrorTarget that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteTrafficMirrorTargetAsync(const Model::DeleteTrafficMirrorTargetRequest& request, const DeleteTrafficMirrorTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified transit gateway.</p><p><h3>See Also:</h3>   <a
@@ -4193,15 +2670,6 @@ namespace EC2
          */
         virtual Model::DeleteTransitGatewayOutcome DeleteTransitGateway(const Model::DeleteTransitGatewayRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteTransitGateway that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteTransitGatewayOutcomeCallable DeleteTransitGatewayCallable(const Model::DeleteTransitGatewayRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteTransitGateway that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteTransitGatewayAsync(const Model::DeleteTransitGatewayRequest& request, const DeleteTransitGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified Connect attachment. You must first delete any Connect
@@ -4211,15 +2679,6 @@ namespace EC2
          */
         virtual Model::DeleteTransitGatewayConnectOutcome DeleteTransitGatewayConnect(const Model::DeleteTransitGatewayConnectRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteTransitGatewayConnect that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteTransitGatewayConnectOutcomeCallable DeleteTransitGatewayConnectCallable(const Model::DeleteTransitGatewayConnectRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteTransitGatewayConnect that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteTransitGatewayConnectAsync(const Model::DeleteTransitGatewayConnectRequest& request, const DeleteTransitGatewayConnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified Connect peer.</p><p><h3>See Also:</h3>   <a
@@ -4228,15 +2687,6 @@ namespace EC2
          */
         virtual Model::DeleteTransitGatewayConnectPeerOutcome DeleteTransitGatewayConnectPeer(const Model::DeleteTransitGatewayConnectPeerRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteTransitGatewayConnectPeer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteTransitGatewayConnectPeerOutcomeCallable DeleteTransitGatewayConnectPeerCallable(const Model::DeleteTransitGatewayConnectPeerRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteTransitGatewayConnectPeer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteTransitGatewayConnectPeerAsync(const Model::DeleteTransitGatewayConnectPeerRequest& request, const DeleteTransitGatewayConnectPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified transit gateway multicast domain.</p><p><h3>See
@@ -4246,15 +2696,6 @@ namespace EC2
          */
         virtual Model::DeleteTransitGatewayMulticastDomainOutcome DeleteTransitGatewayMulticastDomain(const Model::DeleteTransitGatewayMulticastDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteTransitGatewayMulticastDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteTransitGatewayMulticastDomainOutcomeCallable DeleteTransitGatewayMulticastDomainCallable(const Model::DeleteTransitGatewayMulticastDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteTransitGatewayMulticastDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteTransitGatewayMulticastDomainAsync(const Model::DeleteTransitGatewayMulticastDomainRequest& request, const DeleteTransitGatewayMulticastDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a transit gateway peering attachment.</p><p><h3>See Also:</h3>   <a
@@ -4263,15 +2704,6 @@ namespace EC2
          */
         virtual Model::DeleteTransitGatewayPeeringAttachmentOutcome DeleteTransitGatewayPeeringAttachment(const Model::DeleteTransitGatewayPeeringAttachmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteTransitGatewayPeeringAttachment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteTransitGatewayPeeringAttachmentOutcomeCallable DeleteTransitGatewayPeeringAttachmentCallable(const Model::DeleteTransitGatewayPeeringAttachmentRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteTransitGatewayPeeringAttachment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteTransitGatewayPeeringAttachmentAsync(const Model::DeleteTransitGatewayPeeringAttachmentRequest& request, const DeleteTransitGatewayPeeringAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified transit gateway policy table.</p><p><h3>See Also:</h3> 
@@ -4281,15 +2713,6 @@ namespace EC2
          */
         virtual Model::DeleteTransitGatewayPolicyTableOutcome DeleteTransitGatewayPolicyTable(const Model::DeleteTransitGatewayPolicyTableRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteTransitGatewayPolicyTable that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteTransitGatewayPolicyTableOutcomeCallable DeleteTransitGatewayPolicyTableCallable(const Model::DeleteTransitGatewayPolicyTableRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteTransitGatewayPolicyTable that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteTransitGatewayPolicyTableAsync(const Model::DeleteTransitGatewayPolicyTableRequest& request, const DeleteTransitGatewayPolicyTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a reference (route) to a prefix list in a specified transit gateway
@@ -4299,15 +2722,6 @@ namespace EC2
          */
         virtual Model::DeleteTransitGatewayPrefixListReferenceOutcome DeleteTransitGatewayPrefixListReference(const Model::DeleteTransitGatewayPrefixListReferenceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteTransitGatewayPrefixListReference that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteTransitGatewayPrefixListReferenceOutcomeCallable DeleteTransitGatewayPrefixListReferenceCallable(const Model::DeleteTransitGatewayPrefixListReferenceRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteTransitGatewayPrefixListReference that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteTransitGatewayPrefixListReferenceAsync(const Model::DeleteTransitGatewayPrefixListReferenceRequest& request, const DeleteTransitGatewayPrefixListReferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified route from the specified transit gateway route
@@ -4317,15 +2731,6 @@ namespace EC2
          */
         virtual Model::DeleteTransitGatewayRouteOutcome DeleteTransitGatewayRoute(const Model::DeleteTransitGatewayRouteRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteTransitGatewayRoute that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteTransitGatewayRouteOutcomeCallable DeleteTransitGatewayRouteCallable(const Model::DeleteTransitGatewayRouteRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteTransitGatewayRoute that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteTransitGatewayRouteAsync(const Model::DeleteTransitGatewayRouteRequest& request, const DeleteTransitGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified transit gateway route table. You must disassociate the
@@ -4336,15 +2741,6 @@ namespace EC2
          */
         virtual Model::DeleteTransitGatewayRouteTableOutcome DeleteTransitGatewayRouteTable(const Model::DeleteTransitGatewayRouteTableRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteTransitGatewayRouteTable that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteTransitGatewayRouteTableOutcomeCallable DeleteTransitGatewayRouteTableCallable(const Model::DeleteTransitGatewayRouteTableRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteTransitGatewayRouteTable that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteTransitGatewayRouteTableAsync(const Model::DeleteTransitGatewayRouteTableRequest& request, const DeleteTransitGatewayRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Advertises to the transit gateway that a transit gateway route table is
@@ -4354,15 +2750,6 @@ namespace EC2
          */
         virtual Model::DeleteTransitGatewayRouteTableAnnouncementOutcome DeleteTransitGatewayRouteTableAnnouncement(const Model::DeleteTransitGatewayRouteTableAnnouncementRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteTransitGatewayRouteTableAnnouncement that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteTransitGatewayRouteTableAnnouncementOutcomeCallable DeleteTransitGatewayRouteTableAnnouncementCallable(const Model::DeleteTransitGatewayRouteTableAnnouncementRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteTransitGatewayRouteTableAnnouncement that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteTransitGatewayRouteTableAnnouncementAsync(const Model::DeleteTransitGatewayRouteTableAnnouncementRequest& request, const DeleteTransitGatewayRouteTableAnnouncementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified VPC attachment.</p><p><h3>See Also:</h3>   <a
@@ -4371,15 +2758,6 @@ namespace EC2
          */
         virtual Model::DeleteTransitGatewayVpcAttachmentOutcome DeleteTransitGatewayVpcAttachment(const Model::DeleteTransitGatewayVpcAttachmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteTransitGatewayVpcAttachment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteTransitGatewayVpcAttachmentOutcomeCallable DeleteTransitGatewayVpcAttachmentCallable(const Model::DeleteTransitGatewayVpcAttachmentRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteTransitGatewayVpcAttachment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteTransitGatewayVpcAttachmentAsync(const Model::DeleteTransitGatewayVpcAttachmentRequest& request, const DeleteTransitGatewayVpcAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified EBS volume. The volume must be in the
@@ -4394,15 +2772,6 @@ namespace EC2
          */
         virtual Model::DeleteVolumeOutcome DeleteVolume(const Model::DeleteVolumeRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteVolume that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteVolumeOutcomeCallable DeleteVolumeCallable(const Model::DeleteVolumeRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteVolume that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteVolumeAsync(const Model::DeleteVolumeRequest& request, const DeleteVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified VPC. You must detach or delete all gateways and
@@ -4416,15 +2785,6 @@ namespace EC2
          */
         virtual Model::DeleteVpcOutcome DeleteVpc(const Model::DeleteVpcRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteVpc that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteVpcOutcomeCallable DeleteVpcCallable(const Model::DeleteVpcRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteVpc that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteVpcAsync(const Model::DeleteVpcRequest& request, const DeleteVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes one or more VPC endpoint connection notifications.</p><p><h3>See
@@ -4434,15 +2794,6 @@ namespace EC2
          */
         virtual Model::DeleteVpcEndpointConnectionNotificationsOutcome DeleteVpcEndpointConnectionNotifications(const Model::DeleteVpcEndpointConnectionNotificationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteVpcEndpointConnectionNotifications that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteVpcEndpointConnectionNotificationsOutcomeCallable DeleteVpcEndpointConnectionNotificationsCallable(const Model::DeleteVpcEndpointConnectionNotificationsRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteVpcEndpointConnectionNotifications that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteVpcEndpointConnectionNotificationsAsync(const Model::DeleteVpcEndpointConnectionNotificationsRequest& request, const DeleteVpcEndpointConnectionNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes one or more VPC endpoint service configurations in your account.
@@ -4454,15 +2805,6 @@ namespace EC2
          */
         virtual Model::DeleteVpcEndpointServiceConfigurationsOutcome DeleteVpcEndpointServiceConfigurations(const Model::DeleteVpcEndpointServiceConfigurationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteVpcEndpointServiceConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteVpcEndpointServiceConfigurationsOutcomeCallable DeleteVpcEndpointServiceConfigurationsCallable(const Model::DeleteVpcEndpointServiceConfigurationsRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteVpcEndpointServiceConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteVpcEndpointServiceConfigurationsAsync(const Model::DeleteVpcEndpointServiceConfigurationsRequest& request, const DeleteVpcEndpointServiceConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes one or more specified VPC endpoints. You can delete any of the
@@ -4481,15 +2823,6 @@ namespace EC2
          */
         virtual Model::DeleteVpcEndpointsOutcome DeleteVpcEndpoints(const Model::DeleteVpcEndpointsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteVpcEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteVpcEndpointsOutcomeCallable DeleteVpcEndpointsCallable(const Model::DeleteVpcEndpointsRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteVpcEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteVpcEndpointsAsync(const Model::DeleteVpcEndpointsRequest& request, const DeleteVpcEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a VPC peering connection. Either the owner of the requester VPC or
@@ -4503,15 +2836,6 @@ namespace EC2
          */
         virtual Model::DeleteVpcPeeringConnectionOutcome DeleteVpcPeeringConnection(const Model::DeleteVpcPeeringConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteVpcPeeringConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteVpcPeeringConnectionOutcomeCallable DeleteVpcPeeringConnectionCallable(const Model::DeleteVpcPeeringConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteVpcPeeringConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteVpcPeeringConnectionAsync(const Model::DeleteVpcPeeringConnectionRequest& request, const DeleteVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified VPN connection.</p> <p>If you're deleting the VPC and
@@ -4531,15 +2855,6 @@ namespace EC2
          */
         virtual Model::DeleteVpnConnectionOutcome DeleteVpnConnection(const Model::DeleteVpnConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteVpnConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteVpnConnectionOutcomeCallable DeleteVpnConnectionCallable(const Model::DeleteVpnConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteVpnConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteVpnConnectionAsync(const Model::DeleteVpnConnectionRequest& request, const DeleteVpnConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified static route associated with a VPN connection between
@@ -4551,15 +2866,6 @@ namespace EC2
          */
         virtual Model::DeleteVpnConnectionRouteOutcome DeleteVpnConnectionRoute(const Model::DeleteVpnConnectionRouteRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteVpnConnectionRoute that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteVpnConnectionRouteOutcomeCallable DeleteVpnConnectionRouteCallable(const Model::DeleteVpnConnectionRouteRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteVpnConnectionRoute that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteVpnConnectionRouteAsync(const Model::DeleteVpnConnectionRouteRequest& request, const DeleteVpnConnectionRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified virtual private gateway. You must first detach the
@@ -4571,15 +2877,6 @@ namespace EC2
          */
         virtual Model::DeleteVpnGatewayOutcome DeleteVpnGateway(const Model::DeleteVpnGatewayRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeleteVpnGateway that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeleteVpnGatewayOutcomeCallable DeleteVpnGatewayCallable(const Model::DeleteVpnGatewayRequest& request) const;
-
-        /**
-         * An Async wrapper for DeleteVpnGateway that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeleteVpnGatewayAsync(const Model::DeleteVpnGatewayRequest& request, const DeleteVpnGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Releases the specified address range that you provisioned for use with your
@@ -4593,15 +2890,6 @@ namespace EC2
          */
         virtual Model::DeprovisionByoipCidrOutcome DeprovisionByoipCidr(const Model::DeprovisionByoipCidrRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeprovisionByoipCidr that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeprovisionByoipCidrOutcomeCallable DeprovisionByoipCidrCallable(const Model::DeprovisionByoipCidrRequest& request) const;
-
-        /**
-         * An Async wrapper for DeprovisionByoipCidr that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeprovisionByoipCidrAsync(const Model::DeprovisionByoipCidrRequest& request, const DeprovisionByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deprovision a CIDR provisioned from an IPAM pool. If you deprovision a CIDR
@@ -4615,15 +2903,6 @@ namespace EC2
          */
         virtual Model::DeprovisionIpamPoolCidrOutcome DeprovisionIpamPoolCidr(const Model::DeprovisionIpamPoolCidrRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeprovisionIpamPoolCidr that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeprovisionIpamPoolCidrOutcomeCallable DeprovisionIpamPoolCidrCallable(const Model::DeprovisionIpamPoolCidrRequest& request) const;
-
-        /**
-         * An Async wrapper for DeprovisionIpamPoolCidr that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeprovisionIpamPoolCidrAsync(const Model::DeprovisionIpamPoolCidrRequest& request, const DeprovisionIpamPoolCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deprovision a CIDR from a public IPv4 pool.</p><p><h3>See Also:</h3>   <a
@@ -4632,15 +2911,6 @@ namespace EC2
          */
         virtual Model::DeprovisionPublicIpv4PoolCidrOutcome DeprovisionPublicIpv4PoolCidr(const Model::DeprovisionPublicIpv4PoolCidrRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeprovisionPublicIpv4PoolCidr that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeprovisionPublicIpv4PoolCidrOutcomeCallable DeprovisionPublicIpv4PoolCidrCallable(const Model::DeprovisionPublicIpv4PoolCidrRequest& request) const;
-
-        /**
-         * An Async wrapper for DeprovisionPublicIpv4PoolCidr that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeprovisionPublicIpv4PoolCidrAsync(const Model::DeprovisionPublicIpv4PoolCidrRequest& request, const DeprovisionPublicIpv4PoolCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deregisters the specified AMI. After you deregister an AMI, it can't be used
@@ -4661,15 +2931,6 @@ namespace EC2
          */
         virtual Model::DeregisterImageOutcome DeregisterImage(const Model::DeregisterImageRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeregisterImage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeregisterImageOutcomeCallable DeregisterImageCallable(const Model::DeregisterImageRequest& request) const;
-
-        /**
-         * An Async wrapper for DeregisterImage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeregisterImageAsync(const Model::DeregisterImageRequest& request, const DeregisterImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deregisters tag keys to prevent tags that have the specified tag keys from
@@ -4680,15 +2941,6 @@ namespace EC2
          */
         virtual Model::DeregisterInstanceEventNotificationAttributesOutcome DeregisterInstanceEventNotificationAttributes(const Model::DeregisterInstanceEventNotificationAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeregisterInstanceEventNotificationAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeregisterInstanceEventNotificationAttributesOutcomeCallable DeregisterInstanceEventNotificationAttributesCallable(const Model::DeregisterInstanceEventNotificationAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for DeregisterInstanceEventNotificationAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeregisterInstanceEventNotificationAttributesAsync(const Model::DeregisterInstanceEventNotificationAttributesRequest& request, const DeregisterInstanceEventNotificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deregisters the specified members (network interfaces) from the transit
@@ -4698,15 +2950,6 @@ namespace EC2
          */
         virtual Model::DeregisterTransitGatewayMulticastGroupMembersOutcome DeregisterTransitGatewayMulticastGroupMembers(const Model::DeregisterTransitGatewayMulticastGroupMembersRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeregisterTransitGatewayMulticastGroupMembers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeregisterTransitGatewayMulticastGroupMembersOutcomeCallable DeregisterTransitGatewayMulticastGroupMembersCallable(const Model::DeregisterTransitGatewayMulticastGroupMembersRequest& request) const;
-
-        /**
-         * An Async wrapper for DeregisterTransitGatewayMulticastGroupMembers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeregisterTransitGatewayMulticastGroupMembersAsync(const Model::DeregisterTransitGatewayMulticastGroupMembersRequest& request, const DeregisterTransitGatewayMulticastGroupMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deregisters the specified sources (network interfaces) from the transit
@@ -4716,15 +2959,6 @@ namespace EC2
          */
         virtual Model::DeregisterTransitGatewayMulticastGroupSourcesOutcome DeregisterTransitGatewayMulticastGroupSources(const Model::DeregisterTransitGatewayMulticastGroupSourcesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DeregisterTransitGatewayMulticastGroupSources that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DeregisterTransitGatewayMulticastGroupSourcesOutcomeCallable DeregisterTransitGatewayMulticastGroupSourcesCallable(const Model::DeregisterTransitGatewayMulticastGroupSourcesRequest& request) const;
-
-        /**
-         * An Async wrapper for DeregisterTransitGatewayMulticastGroupSources that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DeregisterTransitGatewayMulticastGroupSourcesAsync(const Model::DeregisterTransitGatewayMulticastGroupSourcesRequest& request, const DeregisterTransitGatewayMulticastGroupSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes attributes of your Amazon Web Services account. The following are
@@ -4753,15 +2987,6 @@ namespace EC2
          */
         virtual Model::DescribeAccountAttributesOutcome DescribeAccountAttributes(const Model::DescribeAccountAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAccountAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAccountAttributesOutcomeCallable DescribeAccountAttributesCallable(const Model::DescribeAccountAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAccountAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAccountAttributesAsync(const Model::DescribeAccountAttributesRequest& request, const DescribeAccountAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes an Elastic IP address transfer. For more information, see <a
@@ -4773,15 +2998,6 @@ namespace EC2
          */
         virtual Model::DescribeAddressTransfersOutcome DescribeAddressTransfers(const Model::DescribeAddressTransfersRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAddressTransfers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAddressTransfersOutcomeCallable DescribeAddressTransfersCallable(const Model::DescribeAddressTransfersRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAddressTransfers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAddressTransfersAsync(const Model::DescribeAddressTransfersRequest& request, const DescribeAddressTransfersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified Elastic IP addresses or all of your Elastic IP
@@ -4799,15 +3015,6 @@ namespace EC2
          */
         virtual Model::DescribeAddressesOutcome DescribeAddresses(const Model::DescribeAddressesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAddresses that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAddressesOutcomeCallable DescribeAddressesCallable(const Model::DescribeAddressesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAddresses that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAddressesAsync(const Model::DescribeAddressesRequest& request, const DescribeAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the attributes of the specified Elastic IP addresses. For
@@ -4819,15 +3026,6 @@ namespace EC2
          */
         virtual Model::DescribeAddressesAttributeOutcome DescribeAddressesAttribute(const Model::DescribeAddressesAttributeRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAddressesAttribute that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAddressesAttributeOutcomeCallable DescribeAddressesAttributeCallable(const Model::DescribeAddressesAttributeRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAddressesAttribute that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAddressesAttributeAsync(const Model::DescribeAddressesAttributeRequest& request, const DescribeAddressesAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the longer ID format settings for all resource types in a specific
@@ -4855,15 +3053,6 @@ namespace EC2
          */
         virtual Model::DescribeAggregateIdFormatOutcome DescribeAggregateIdFormat(const Model::DescribeAggregateIdFormatRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAggregateIdFormat that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAggregateIdFormatOutcomeCallable DescribeAggregateIdFormatCallable(const Model::DescribeAggregateIdFormatRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAggregateIdFormat that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAggregateIdFormatAsync(const Model::DescribeAggregateIdFormatRequest& request, const DescribeAggregateIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the Availability Zones, Local Zones, and Wavelength Zones that are
@@ -4879,15 +3068,6 @@ namespace EC2
          */
         virtual Model::DescribeAvailabilityZonesOutcome DescribeAvailabilityZones(const Model::DescribeAvailabilityZonesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeAvailabilityZones that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeAvailabilityZonesOutcomeCallable DescribeAvailabilityZonesCallable(const Model::DescribeAvailabilityZonesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeAvailabilityZones that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeAvailabilityZonesAsync(const Model::DescribeAvailabilityZonesRequest& request, const DescribeAvailabilityZonesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified bundle tasks or all of your bundle tasks.</p> 
@@ -4900,15 +3080,6 @@ namespace EC2
          */
         virtual Model::DescribeBundleTasksOutcome DescribeBundleTasks(const Model::DescribeBundleTasksRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeBundleTasks that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeBundleTasksOutcomeCallable DescribeBundleTasksCallable(const Model::DescribeBundleTasksRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeBundleTasks that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeBundleTasksAsync(const Model::DescribeBundleTasksRequest& request, const DescribeBundleTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the IP address ranges that were specified in calls to
@@ -4921,15 +3092,6 @@ namespace EC2
          */
         virtual Model::DescribeByoipCidrsOutcome DescribeByoipCidrs(const Model::DescribeByoipCidrsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeByoipCidrs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeByoipCidrsOutcomeCallable DescribeByoipCidrsCallable(const Model::DescribeByoipCidrsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeByoipCidrs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeByoipCidrsAsync(const Model::DescribeByoipCidrsRequest& request, const DescribeByoipCidrsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more Capacity Reservation Fleets.</p><p><h3>See Also:</h3>  
@@ -4939,15 +3101,6 @@ namespace EC2
          */
         virtual Model::DescribeCapacityReservationFleetsOutcome DescribeCapacityReservationFleets(const Model::DescribeCapacityReservationFleetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeCapacityReservationFleets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeCapacityReservationFleetsOutcomeCallable DescribeCapacityReservationFleetsCallable(const Model::DescribeCapacityReservationFleetsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeCapacityReservationFleets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeCapacityReservationFleetsAsync(const Model::DescribeCapacityReservationFleetsRequest& request, const DescribeCapacityReservationFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more of your Capacity Reservations. The results describe
@@ -4958,15 +3111,6 @@ namespace EC2
          */
         virtual Model::DescribeCapacityReservationsOutcome DescribeCapacityReservations(const Model::DescribeCapacityReservationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeCapacityReservations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeCapacityReservationsOutcomeCallable DescribeCapacityReservationsCallable(const Model::DescribeCapacityReservationsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeCapacityReservations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeCapacityReservationsAsync(const Model::DescribeCapacityReservationsRequest& request, const DescribeCapacityReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more of your carrier gateways.</p><p><h3>See Also:</h3>   <a
@@ -4975,15 +3119,6 @@ namespace EC2
          */
         virtual Model::DescribeCarrierGatewaysOutcome DescribeCarrierGateways(const Model::DescribeCarrierGatewaysRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeCarrierGateways that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeCarrierGatewaysOutcomeCallable DescribeCarrierGatewaysCallable(const Model::DescribeCarrierGatewaysRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeCarrierGateways that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeCarrierGatewaysAsync(const Model::DescribeCarrierGatewaysRequest& request, const DescribeCarrierGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more of your linked EC2-Classic instances. This request only
@@ -4999,15 +3134,6 @@ namespace EC2
          */
         virtual Model::DescribeClassicLinkInstancesOutcome DescribeClassicLinkInstances(const Model::DescribeClassicLinkInstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeClassicLinkInstances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeClassicLinkInstancesOutcomeCallable DescribeClassicLinkInstancesCallable(const Model::DescribeClassicLinkInstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeClassicLinkInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeClassicLinkInstancesAsync(const Model::DescribeClassicLinkInstancesRequest& request, const DescribeClassicLinkInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the authorization rules for a specified Client VPN
@@ -5017,15 +3143,6 @@ namespace EC2
          */
         virtual Model::DescribeClientVpnAuthorizationRulesOutcome DescribeClientVpnAuthorizationRules(const Model::DescribeClientVpnAuthorizationRulesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeClientVpnAuthorizationRules that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeClientVpnAuthorizationRulesOutcomeCallable DescribeClientVpnAuthorizationRulesCallable(const Model::DescribeClientVpnAuthorizationRulesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeClientVpnAuthorizationRules that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeClientVpnAuthorizationRulesAsync(const Model::DescribeClientVpnAuthorizationRulesRequest& request, const DescribeClientVpnAuthorizationRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes active client connections and connections that have been terminated
@@ -5036,15 +3153,6 @@ namespace EC2
          */
         virtual Model::DescribeClientVpnConnectionsOutcome DescribeClientVpnConnections(const Model::DescribeClientVpnConnectionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeClientVpnConnections that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeClientVpnConnectionsOutcomeCallable DescribeClientVpnConnectionsCallable(const Model::DescribeClientVpnConnectionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeClientVpnConnections that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeClientVpnConnectionsAsync(const Model::DescribeClientVpnConnectionsRequest& request, const DescribeClientVpnConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more Client VPN endpoints in the account.</p><p><h3>See
@@ -5054,15 +3162,6 @@ namespace EC2
          */
         virtual Model::DescribeClientVpnEndpointsOutcome DescribeClientVpnEndpoints(const Model::DescribeClientVpnEndpointsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeClientVpnEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeClientVpnEndpointsOutcomeCallable DescribeClientVpnEndpointsCallable(const Model::DescribeClientVpnEndpointsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeClientVpnEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeClientVpnEndpointsAsync(const Model::DescribeClientVpnEndpointsRequest& request, const DescribeClientVpnEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the routes for the specified Client VPN endpoint.</p><p><h3>See
@@ -5072,15 +3171,6 @@ namespace EC2
          */
         virtual Model::DescribeClientVpnRoutesOutcome DescribeClientVpnRoutes(const Model::DescribeClientVpnRoutesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeClientVpnRoutes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeClientVpnRoutesOutcomeCallable DescribeClientVpnRoutesCallable(const Model::DescribeClientVpnRoutesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeClientVpnRoutes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeClientVpnRoutesAsync(const Model::DescribeClientVpnRoutesRequest& request, const DescribeClientVpnRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the target networks associated with the specified Client VPN
@@ -5090,15 +3180,6 @@ namespace EC2
          */
         virtual Model::DescribeClientVpnTargetNetworksOutcome DescribeClientVpnTargetNetworks(const Model::DescribeClientVpnTargetNetworksRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeClientVpnTargetNetworks that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeClientVpnTargetNetworksOutcomeCallable DescribeClientVpnTargetNetworksCallable(const Model::DescribeClientVpnTargetNetworksRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeClientVpnTargetNetworks that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeClientVpnTargetNetworksAsync(const Model::DescribeClientVpnTargetNetworksRequest& request, const DescribeClientVpnTargetNetworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified customer-owned address pools or all of your
@@ -5108,15 +3189,6 @@ namespace EC2
          */
         virtual Model::DescribeCoipPoolsOutcome DescribeCoipPools(const Model::DescribeCoipPoolsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeCoipPools that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeCoipPoolsOutcomeCallable DescribeCoipPoolsCallable(const Model::DescribeCoipPoolsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeCoipPools that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeCoipPoolsAsync(const Model::DescribeCoipPoolsRequest& request, const DescribeCoipPoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified conversion tasks or all your conversion tasks. For
@@ -5131,15 +3203,6 @@ namespace EC2
          */
         virtual Model::DescribeConversionTasksOutcome DescribeConversionTasks(const Model::DescribeConversionTasksRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeConversionTasks that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeConversionTasksOutcomeCallable DescribeConversionTasksCallable(const Model::DescribeConversionTasksRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeConversionTasks that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeConversionTasksAsync(const Model::DescribeConversionTasksRequest& request, const DescribeConversionTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more of your VPN customer gateways.</p> <p>For more
@@ -5152,15 +3215,6 @@ namespace EC2
          */
         virtual Model::DescribeCustomerGatewaysOutcome DescribeCustomerGateways(const Model::DescribeCustomerGatewaysRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeCustomerGateways that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeCustomerGatewaysOutcomeCallable DescribeCustomerGatewaysCallable(const Model::DescribeCustomerGatewaysRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeCustomerGateways that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeCustomerGatewaysAsync(const Model::DescribeCustomerGatewaysRequest& request, const DescribeCustomerGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more of your DHCP options sets.</p> <p>For more information,
@@ -5173,15 +3227,6 @@ namespace EC2
          */
         virtual Model::DescribeDhcpOptionsOutcome DescribeDhcpOptions(const Model::DescribeDhcpOptionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeDhcpOptions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeDhcpOptionsOutcomeCallable DescribeDhcpOptionsCallable(const Model::DescribeDhcpOptionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeDhcpOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeDhcpOptionsAsync(const Model::DescribeDhcpOptionsRequest& request, const DescribeDhcpOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more of your egress-only internet gateways.</p><p><h3>See
@@ -5191,15 +3236,6 @@ namespace EC2
          */
         virtual Model::DescribeEgressOnlyInternetGatewaysOutcome DescribeEgressOnlyInternetGateways(const Model::DescribeEgressOnlyInternetGatewaysRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeEgressOnlyInternetGateways that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeEgressOnlyInternetGatewaysOutcomeCallable DescribeEgressOnlyInternetGatewaysCallable(const Model::DescribeEgressOnlyInternetGatewaysRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeEgressOnlyInternetGateways that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeEgressOnlyInternetGatewaysAsync(const Model::DescribeEgressOnlyInternetGatewaysRequest& request, const DescribeEgressOnlyInternetGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the Elastic Graphics accelerator associated with your instances.
@@ -5211,15 +3247,6 @@ namespace EC2
          */
         virtual Model::DescribeElasticGpusOutcome DescribeElasticGpus(const Model::DescribeElasticGpusRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeElasticGpus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeElasticGpusOutcomeCallable DescribeElasticGpusCallable(const Model::DescribeElasticGpusRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeElasticGpus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeElasticGpusAsync(const Model::DescribeElasticGpusRequest& request, const DescribeElasticGpusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified export image tasks or all of your export image
@@ -5229,15 +3256,6 @@ namespace EC2
          */
         virtual Model::DescribeExportImageTasksOutcome DescribeExportImageTasks(const Model::DescribeExportImageTasksRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeExportImageTasks that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeExportImageTasksOutcomeCallable DescribeExportImageTasksCallable(const Model::DescribeExportImageTasksRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeExportImageTasks that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeExportImageTasksAsync(const Model::DescribeExportImageTasksRequest& request, const DescribeExportImageTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified export instance tasks or all of your export instance
@@ -5247,15 +3265,6 @@ namespace EC2
          */
         virtual Model::DescribeExportTasksOutcome DescribeExportTasks(const Model::DescribeExportTasksRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeExportTasks that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeExportTasksOutcomeCallable DescribeExportTasksCallable(const Model::DescribeExportTasksRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeExportTasks that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeExportTasksAsync(const Model::DescribeExportTasksRequest& request, const DescribeExportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describe details for Windows AMIs that are configured for faster
@@ -5265,15 +3274,6 @@ namespace EC2
          */
         virtual Model::DescribeFastLaunchImagesOutcome DescribeFastLaunchImages(const Model::DescribeFastLaunchImagesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeFastLaunchImages that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeFastLaunchImagesOutcomeCallable DescribeFastLaunchImagesCallable(const Model::DescribeFastLaunchImagesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeFastLaunchImages that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeFastLaunchImagesAsync(const Model::DescribeFastLaunchImagesRequest& request, const DescribeFastLaunchImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the state of fast snapshot restores for your
@@ -5283,15 +3283,6 @@ namespace EC2
          */
         virtual Model::DescribeFastSnapshotRestoresOutcome DescribeFastSnapshotRestores(const Model::DescribeFastSnapshotRestoresRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeFastSnapshotRestores that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeFastSnapshotRestoresOutcomeCallable DescribeFastSnapshotRestoresCallable(const Model::DescribeFastSnapshotRestoresRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeFastSnapshotRestores that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeFastSnapshotRestoresAsync(const Model::DescribeFastSnapshotRestoresRequest& request, const DescribeFastSnapshotRestoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the events for the specified EC2 Fleet during the specified
@@ -5307,15 +3298,6 @@ namespace EC2
          */
         virtual Model::DescribeFleetHistoryOutcome DescribeFleetHistory(const Model::DescribeFleetHistoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeFleetHistory that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeFleetHistoryOutcomeCallable DescribeFleetHistoryCallable(const Model::DescribeFleetHistoryRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeFleetHistory that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeFleetHistoryAsync(const Model::DescribeFleetHistoryRequest& request, const DescribeFleetHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the running instances for the specified EC2 Fleet.</p> <p>For more
@@ -5328,15 +3310,6 @@ namespace EC2
          */
         virtual Model::DescribeFleetInstancesOutcome DescribeFleetInstances(const Model::DescribeFleetInstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeFleetInstances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeFleetInstancesOutcomeCallable DescribeFleetInstancesCallable(const Model::DescribeFleetInstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeFleetInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeFleetInstancesAsync(const Model::DescribeFleetInstancesRequest& request, const DescribeFleetInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified EC2 Fleets or all of your EC2 Fleets.</p> <p>For more
@@ -5349,15 +3322,6 @@ namespace EC2
          */
         virtual Model::DescribeFleetsOutcome DescribeFleets(const Model::DescribeFleetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeFleets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeFleetsOutcomeCallable DescribeFleetsCallable(const Model::DescribeFleetsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeFleets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeFleetsAsync(const Model::DescribeFleetsRequest& request, const DescribeFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more flow logs.</p> <p>To view the published flow log
@@ -5369,15 +3333,6 @@ namespace EC2
          */
         virtual Model::DescribeFlowLogsOutcome DescribeFlowLogs(const Model::DescribeFlowLogsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeFlowLogs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeFlowLogsOutcomeCallable DescribeFlowLogsCallable(const Model::DescribeFlowLogsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeFlowLogs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeFlowLogsAsync(const Model::DescribeFlowLogsRequest& request, const DescribeFlowLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified attribute of the specified Amazon FPGA Image
@@ -5387,15 +3342,6 @@ namespace EC2
          */
         virtual Model::DescribeFpgaImageAttributeOutcome DescribeFpgaImageAttribute(const Model::DescribeFpgaImageAttributeRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeFpgaImageAttribute that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeFpgaImageAttributeOutcomeCallable DescribeFpgaImageAttributeCallable(const Model::DescribeFpgaImageAttributeRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeFpgaImageAttribute that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeFpgaImageAttributeAsync(const Model::DescribeFpgaImageAttributeRequest& request, const DescribeFpgaImageAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the Amazon FPGA Images (AFIs) available to you. These include
@@ -5407,15 +3353,6 @@ namespace EC2
          */
         virtual Model::DescribeFpgaImagesOutcome DescribeFpgaImages(const Model::DescribeFpgaImagesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeFpgaImages that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeFpgaImagesOutcomeCallable DescribeFpgaImagesCallable(const Model::DescribeFpgaImagesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeFpgaImages that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeFpgaImagesAsync(const Model::DescribeFpgaImagesRequest& request, const DescribeFpgaImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the Dedicated Host reservations that are available to purchase.</p>
@@ -5431,15 +3368,6 @@ namespace EC2
          */
         virtual Model::DescribeHostReservationOfferingsOutcome DescribeHostReservationOfferings(const Model::DescribeHostReservationOfferingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeHostReservationOfferings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeHostReservationOfferingsOutcomeCallable DescribeHostReservationOfferingsCallable(const Model::DescribeHostReservationOfferingsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeHostReservationOfferings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeHostReservationOfferingsAsync(const Model::DescribeHostReservationOfferingsRequest& request, const DescribeHostReservationOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes reservations that are associated with Dedicated Hosts in your
@@ -5449,15 +3377,6 @@ namespace EC2
          */
         virtual Model::DescribeHostReservationsOutcome DescribeHostReservations(const Model::DescribeHostReservationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeHostReservations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeHostReservationsOutcomeCallable DescribeHostReservationsCallable(const Model::DescribeHostReservationsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeHostReservations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeHostReservationsAsync(const Model::DescribeHostReservationsRequest& request, const DescribeHostReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified Dedicated Hosts or all your Dedicated Hosts.</p>
@@ -5470,15 +3389,6 @@ namespace EC2
          */
         virtual Model::DescribeHostsOutcome DescribeHosts(const Model::DescribeHostsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeHosts that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeHostsOutcomeCallable DescribeHostsCallable(const Model::DescribeHostsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeHosts that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeHostsAsync(const Model::DescribeHostsRequest& request, const DescribeHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes your IAM instance profile associations.</p><p><h3>See Also:</h3>  
@@ -5488,15 +3398,6 @@ namespace EC2
          */
         virtual Model::DescribeIamInstanceProfileAssociationsOutcome DescribeIamInstanceProfileAssociations(const Model::DescribeIamInstanceProfileAssociationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeIamInstanceProfileAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeIamInstanceProfileAssociationsOutcomeCallable DescribeIamInstanceProfileAssociationsCallable(const Model::DescribeIamInstanceProfileAssociationsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeIamInstanceProfileAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeIamInstanceProfileAssociationsAsync(const Model::DescribeIamInstanceProfileAssociationsRequest& request, const DescribeIamInstanceProfileAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the ID format settings for your resources on a per-Region basis,
@@ -5530,15 +3431,6 @@ namespace EC2
          */
         virtual Model::DescribeIdFormatOutcome DescribeIdFormat(const Model::DescribeIdFormatRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeIdFormat that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeIdFormatOutcomeCallable DescribeIdFormatCallable(const Model::DescribeIdFormatRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeIdFormat that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeIdFormatAsync(const Model::DescribeIdFormatRequest& request, const DescribeIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the ID format settings for resources for the specified IAM user,
@@ -5570,15 +3462,6 @@ namespace EC2
          */
         virtual Model::DescribeIdentityIdFormatOutcome DescribeIdentityIdFormat(const Model::DescribeIdentityIdFormatRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeIdentityIdFormat that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeIdentityIdFormatOutcomeCallable DescribeIdentityIdFormatCallable(const Model::DescribeIdentityIdFormatRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeIdentityIdFormat that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeIdentityIdFormatAsync(const Model::DescribeIdentityIdFormatRequest& request, const DescribeIdentityIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified attribute of the specified AMI. You can specify only
@@ -5588,15 +3471,6 @@ namespace EC2
          */
         virtual Model::DescribeImageAttributeOutcome DescribeImageAttribute(const Model::DescribeImageAttributeRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeImageAttribute that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeImageAttributeOutcomeCallable DescribeImageAttributeCallable(const Model::DescribeImageAttributeRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeImageAttribute that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeImageAttributeAsync(const Model::DescribeImageAttributeRequest& request, const DescribeImageAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified images (AMIs, AKIs, and ARIs) available to you or all
@@ -5613,15 +3487,6 @@ namespace EC2
          */
         virtual Model::DescribeImagesOutcome DescribeImages(const Model::DescribeImagesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeImages that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeImagesOutcomeCallable DescribeImagesCallable(const Model::DescribeImagesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeImages that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeImagesAsync(const Model::DescribeImagesRequest& request, const DescribeImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Displays details about an import virtual machine or import snapshot tasks
@@ -5631,15 +3496,6 @@ namespace EC2
          */
         virtual Model::DescribeImportImageTasksOutcome DescribeImportImageTasks(const Model::DescribeImportImageTasksRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeImportImageTasks that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeImportImageTasksOutcomeCallable DescribeImportImageTasksCallable(const Model::DescribeImportImageTasksRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeImportImageTasks that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeImportImageTasksAsync(const Model::DescribeImportImageTasksRequest& request, const DescribeImportImageTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes your import snapshot tasks.</p><p><h3>See Also:</h3>   <a
@@ -5648,15 +3504,6 @@ namespace EC2
          */
         virtual Model::DescribeImportSnapshotTasksOutcome DescribeImportSnapshotTasks(const Model::DescribeImportSnapshotTasksRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeImportSnapshotTasks that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeImportSnapshotTasksOutcomeCallable DescribeImportSnapshotTasksCallable(const Model::DescribeImportSnapshotTasksRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeImportSnapshotTasks that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeImportSnapshotTasksAsync(const Model::DescribeImportSnapshotTasksRequest& request, const DescribeImportSnapshotTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified attribute of the specified instance. You can specify
@@ -5672,15 +3519,6 @@ namespace EC2
          */
         virtual Model::DescribeInstanceAttributeOutcome DescribeInstanceAttribute(const Model::DescribeInstanceAttributeRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeInstanceAttribute that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeInstanceAttributeOutcomeCallable DescribeInstanceAttributeCallable(const Model::DescribeInstanceAttributeRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeInstanceAttribute that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeInstanceAttributeAsync(const Model::DescribeInstanceAttributeRequest& request, const DescribeInstanceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the credit option for CPU usage of the specified burstable
@@ -5708,15 +3546,6 @@ namespace EC2
          */
         virtual Model::DescribeInstanceCreditSpecificationsOutcome DescribeInstanceCreditSpecifications(const Model::DescribeInstanceCreditSpecificationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeInstanceCreditSpecifications that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeInstanceCreditSpecificationsOutcomeCallable DescribeInstanceCreditSpecificationsCallable(const Model::DescribeInstanceCreditSpecificationsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeInstanceCreditSpecifications that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeInstanceCreditSpecificationsAsync(const Model::DescribeInstanceCreditSpecificationsRequest& request, const DescribeInstanceCreditSpecificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the tag keys that are registered to appear in scheduled event
@@ -5726,15 +3555,6 @@ namespace EC2
          */
         virtual Model::DescribeInstanceEventNotificationAttributesOutcome DescribeInstanceEventNotificationAttributes(const Model::DescribeInstanceEventNotificationAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeInstanceEventNotificationAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeInstanceEventNotificationAttributesOutcomeCallable DescribeInstanceEventNotificationAttributesCallable(const Model::DescribeInstanceEventNotificationAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeInstanceEventNotificationAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeInstanceEventNotificationAttributesAsync(const Model::DescribeInstanceEventNotificationAttributesRequest& request, const DescribeInstanceEventNotificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified event windows or all event windows.</p> <p>If you
@@ -5753,15 +3573,6 @@ namespace EC2
          */
         virtual Model::DescribeInstanceEventWindowsOutcome DescribeInstanceEventWindows(const Model::DescribeInstanceEventWindowsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeInstanceEventWindows that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeInstanceEventWindowsOutcomeCallable DescribeInstanceEventWindowsCallable(const Model::DescribeInstanceEventWindowsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeInstanceEventWindows that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeInstanceEventWindowsAsync(const Model::DescribeInstanceEventWindowsRequest& request, const DescribeInstanceEventWindowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the status of the specified instances or all of your instances. By
@@ -5789,15 +3600,6 @@ namespace EC2
          */
         virtual Model::DescribeInstanceStatusOutcome DescribeInstanceStatus(const Model::DescribeInstanceStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeInstanceStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeInstanceStatusOutcomeCallable DescribeInstanceStatusCallable(const Model::DescribeInstanceStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeInstanceStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeInstanceStatusAsync(const Model::DescribeInstanceStatusRequest& request, const DescribeInstanceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of all instance types offered. The results can be filtered by
@@ -5809,15 +3611,6 @@ namespace EC2
          */
         virtual Model::DescribeInstanceTypeOfferingsOutcome DescribeInstanceTypeOfferings(const Model::DescribeInstanceTypeOfferingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeInstanceTypeOfferings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeInstanceTypeOfferingsOutcomeCallable DescribeInstanceTypeOfferingsCallable(const Model::DescribeInstanceTypeOfferingsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeInstanceTypeOfferings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeInstanceTypeOfferingsAsync(const Model::DescribeInstanceTypeOfferingsRequest& request, const DescribeInstanceTypeOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the details of the instance types that are offered in a location.
@@ -5828,15 +3621,6 @@ namespace EC2
          */
         virtual Model::DescribeInstanceTypesOutcome DescribeInstanceTypes(const Model::DescribeInstanceTypesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeInstanceTypes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeInstanceTypesOutcomeCallable DescribeInstanceTypesCallable(const Model::DescribeInstanceTypesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeInstanceTypes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeInstanceTypesAsync(const Model::DescribeInstanceTypesRequest& request, const DescribeInstanceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified instances or all instances.</p> <p>If you specify
@@ -5859,15 +3643,6 @@ namespace EC2
          */
         virtual Model::DescribeInstancesOutcome DescribeInstances(const Model::DescribeInstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeInstances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeInstancesOutcomeCallable DescribeInstancesCallable(const Model::DescribeInstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeInstancesAsync(const Model::DescribeInstancesRequest& request, const DescribeInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more of your internet gateways.</p><p><h3>See Also:</h3>  
@@ -5877,15 +3652,6 @@ namespace EC2
          */
         virtual Model::DescribeInternetGatewaysOutcome DescribeInternetGateways(const Model::DescribeInternetGatewaysRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeInternetGateways that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeInternetGatewaysOutcomeCallable DescribeInternetGatewaysCallable(const Model::DescribeInternetGatewaysRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeInternetGateways that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeInternetGatewaysAsync(const Model::DescribeInternetGatewaysRequest& request, const DescribeInternetGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get information about your IPAM pools.</p><p><h3>See Also:</h3>   <a
@@ -5894,15 +3660,6 @@ namespace EC2
          */
         virtual Model::DescribeIpamPoolsOutcome DescribeIpamPools(const Model::DescribeIpamPoolsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeIpamPools that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeIpamPoolsOutcomeCallable DescribeIpamPoolsCallable(const Model::DescribeIpamPoolsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeIpamPools that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeIpamPoolsAsync(const Model::DescribeIpamPoolsRequest& request, const DescribeIpamPoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get information about your IPAM scopes.</p><p><h3>See Also:</h3>   <a
@@ -5911,15 +3668,6 @@ namespace EC2
          */
         virtual Model::DescribeIpamScopesOutcome DescribeIpamScopes(const Model::DescribeIpamScopesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeIpamScopes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeIpamScopesOutcomeCallable DescribeIpamScopesCallable(const Model::DescribeIpamScopesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeIpamScopes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeIpamScopesAsync(const Model::DescribeIpamScopesRequest& request, const DescribeIpamScopesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get information about your IPAM pools.</p> <p>For more information, see <a
@@ -5931,15 +3679,6 @@ namespace EC2
          */
         virtual Model::DescribeIpamsOutcome DescribeIpams(const Model::DescribeIpamsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeIpams that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeIpamsOutcomeCallable DescribeIpamsCallable(const Model::DescribeIpamsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeIpams that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeIpamsAsync(const Model::DescribeIpamsRequest& request, const DescribeIpamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes your IPv6 address pools.</p><p><h3>See Also:</h3>   <a
@@ -5948,15 +3687,6 @@ namespace EC2
          */
         virtual Model::DescribeIpv6PoolsOutcome DescribeIpv6Pools(const Model::DescribeIpv6PoolsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeIpv6Pools that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeIpv6PoolsOutcomeCallable DescribeIpv6PoolsCallable(const Model::DescribeIpv6PoolsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeIpv6Pools that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeIpv6PoolsAsync(const Model::DescribeIpv6PoolsRequest& request, const DescribeIpv6PoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified key pairs or all of your key pairs.</p> <p>For more
@@ -5969,15 +3699,6 @@ namespace EC2
          */
         virtual Model::DescribeKeyPairsOutcome DescribeKeyPairs(const Model::DescribeKeyPairsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeKeyPairs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeKeyPairsOutcomeCallable DescribeKeyPairsCallable(const Model::DescribeKeyPairsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeKeyPairs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeKeyPairsAsync(const Model::DescribeKeyPairsRequest& request, const DescribeKeyPairsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more versions of a specified launch template. You can
@@ -5989,15 +3710,6 @@ namespace EC2
          */
         virtual Model::DescribeLaunchTemplateVersionsOutcome DescribeLaunchTemplateVersions(const Model::DescribeLaunchTemplateVersionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeLaunchTemplateVersions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeLaunchTemplateVersionsOutcomeCallable DescribeLaunchTemplateVersionsCallable(const Model::DescribeLaunchTemplateVersionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeLaunchTemplateVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeLaunchTemplateVersionsAsync(const Model::DescribeLaunchTemplateVersionsRequest& request, const DescribeLaunchTemplateVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more launch templates.</p><p><h3>See Also:</h3>   <a
@@ -6006,15 +3718,6 @@ namespace EC2
          */
         virtual Model::DescribeLaunchTemplatesOutcome DescribeLaunchTemplates(const Model::DescribeLaunchTemplatesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeLaunchTemplates that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeLaunchTemplatesOutcomeCallable DescribeLaunchTemplatesCallable(const Model::DescribeLaunchTemplatesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeLaunchTemplates that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeLaunchTemplatesAsync(const Model::DescribeLaunchTemplatesRequest& request, const DescribeLaunchTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the associations between virtual interface groups and local gateway
@@ -6024,15 +3727,6 @@ namespace EC2
          */
         virtual Model::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutcome DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations(const Model::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutcomeCallable DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsCallable(const Model::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsAsync(const Model::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest& request, const DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified associations between VPCs and local gateway route
@@ -6042,15 +3736,6 @@ namespace EC2
          */
         virtual Model::DescribeLocalGatewayRouteTableVpcAssociationsOutcome DescribeLocalGatewayRouteTableVpcAssociations(const Model::DescribeLocalGatewayRouteTableVpcAssociationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeLocalGatewayRouteTableVpcAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeLocalGatewayRouteTableVpcAssociationsOutcomeCallable DescribeLocalGatewayRouteTableVpcAssociationsCallable(const Model::DescribeLocalGatewayRouteTableVpcAssociationsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeLocalGatewayRouteTableVpcAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeLocalGatewayRouteTableVpcAssociationsAsync(const Model::DescribeLocalGatewayRouteTableVpcAssociationsRequest& request, const DescribeLocalGatewayRouteTableVpcAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more local gateway route tables. By default, all local
@@ -6061,15 +3746,6 @@ namespace EC2
          */
         virtual Model::DescribeLocalGatewayRouteTablesOutcome DescribeLocalGatewayRouteTables(const Model::DescribeLocalGatewayRouteTablesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeLocalGatewayRouteTables that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeLocalGatewayRouteTablesOutcomeCallable DescribeLocalGatewayRouteTablesCallable(const Model::DescribeLocalGatewayRouteTablesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeLocalGatewayRouteTables that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeLocalGatewayRouteTablesAsync(const Model::DescribeLocalGatewayRouteTablesRequest& request, const DescribeLocalGatewayRouteTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified local gateway virtual interface groups.</p><p><h3>See
@@ -6079,15 +3755,6 @@ namespace EC2
          */
         virtual Model::DescribeLocalGatewayVirtualInterfaceGroupsOutcome DescribeLocalGatewayVirtualInterfaceGroups(const Model::DescribeLocalGatewayVirtualInterfaceGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeLocalGatewayVirtualInterfaceGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeLocalGatewayVirtualInterfaceGroupsOutcomeCallable DescribeLocalGatewayVirtualInterfaceGroupsCallable(const Model::DescribeLocalGatewayVirtualInterfaceGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeLocalGatewayVirtualInterfaceGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeLocalGatewayVirtualInterfaceGroupsAsync(const Model::DescribeLocalGatewayVirtualInterfaceGroupsRequest& request, const DescribeLocalGatewayVirtualInterfaceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified local gateway virtual interfaces.</p><p><h3>See
@@ -6097,15 +3764,6 @@ namespace EC2
          */
         virtual Model::DescribeLocalGatewayVirtualInterfacesOutcome DescribeLocalGatewayVirtualInterfaces(const Model::DescribeLocalGatewayVirtualInterfacesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeLocalGatewayVirtualInterfaces that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeLocalGatewayVirtualInterfacesOutcomeCallable DescribeLocalGatewayVirtualInterfacesCallable(const Model::DescribeLocalGatewayVirtualInterfacesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeLocalGatewayVirtualInterfaces that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeLocalGatewayVirtualInterfacesAsync(const Model::DescribeLocalGatewayVirtualInterfacesRequest& request, const DescribeLocalGatewayVirtualInterfacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more local gateways. By default, all local gateways are
@@ -6116,15 +3774,6 @@ namespace EC2
          */
         virtual Model::DescribeLocalGatewaysOutcome DescribeLocalGateways(const Model::DescribeLocalGatewaysRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeLocalGateways that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeLocalGatewaysOutcomeCallable DescribeLocalGatewaysCallable(const Model::DescribeLocalGatewaysRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeLocalGateways that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeLocalGatewaysAsync(const Model::DescribeLocalGatewaysRequest& request, const DescribeLocalGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes your managed prefix lists and any Amazon Web Services-managed
@@ -6135,15 +3784,6 @@ namespace EC2
          */
         virtual Model::DescribeManagedPrefixListsOutcome DescribeManagedPrefixLists(const Model::DescribeManagedPrefixListsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeManagedPrefixLists that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeManagedPrefixListsOutcomeCallable DescribeManagedPrefixListsCallable(const Model::DescribeManagedPrefixListsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeManagedPrefixLists that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeManagedPrefixListsAsync(const Model::DescribeManagedPrefixListsRequest& request, const DescribeManagedPrefixListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes your Elastic IP addresses that are being moved to the EC2-VPC
@@ -6155,15 +3795,6 @@ namespace EC2
          */
         virtual Model::DescribeMovingAddressesOutcome DescribeMovingAddresses(const Model::DescribeMovingAddressesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeMovingAddresses that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeMovingAddressesOutcomeCallable DescribeMovingAddressesCallable(const Model::DescribeMovingAddressesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeMovingAddresses that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeMovingAddressesAsync(const Model::DescribeMovingAddressesRequest& request, const DescribeMovingAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more of your NAT gateways.</p><p><h3>See Also:</h3>   <a
@@ -6172,15 +3803,6 @@ namespace EC2
          */
         virtual Model::DescribeNatGatewaysOutcome DescribeNatGateways(const Model::DescribeNatGatewaysRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeNatGateways that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeNatGatewaysOutcomeCallable DescribeNatGatewaysCallable(const Model::DescribeNatGatewaysRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeNatGateways that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeNatGatewaysAsync(const Model::DescribeNatGatewaysRequest& request, const DescribeNatGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more of your network ACLs.</p> <p>For more information, see
@@ -6192,15 +3814,6 @@ namespace EC2
          */
         virtual Model::DescribeNetworkAclsOutcome DescribeNetworkAcls(const Model::DescribeNetworkAclsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeNetworkAcls that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeNetworkAclsOutcomeCallable DescribeNetworkAclsCallable(const Model::DescribeNetworkAclsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeNetworkAcls that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeNetworkAclsAsync(const Model::DescribeNetworkAclsRequest& request, const DescribeNetworkAclsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified Network Access Scope analyses.</p><p><h3>See
@@ -6210,15 +3823,6 @@ namespace EC2
          */
         virtual Model::DescribeNetworkInsightsAccessScopeAnalysesOutcome DescribeNetworkInsightsAccessScopeAnalyses(const Model::DescribeNetworkInsightsAccessScopeAnalysesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeNetworkInsightsAccessScopeAnalyses that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeNetworkInsightsAccessScopeAnalysesOutcomeCallable DescribeNetworkInsightsAccessScopeAnalysesCallable(const Model::DescribeNetworkInsightsAccessScopeAnalysesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeNetworkInsightsAccessScopeAnalyses that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeNetworkInsightsAccessScopeAnalysesAsync(const Model::DescribeNetworkInsightsAccessScopeAnalysesRequest& request, const DescribeNetworkInsightsAccessScopeAnalysesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified Network Access Scopes.</p><p><h3>See Also:</h3>   <a
@@ -6227,15 +3831,6 @@ namespace EC2
          */
         virtual Model::DescribeNetworkInsightsAccessScopesOutcome DescribeNetworkInsightsAccessScopes(const Model::DescribeNetworkInsightsAccessScopesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeNetworkInsightsAccessScopes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeNetworkInsightsAccessScopesOutcomeCallable DescribeNetworkInsightsAccessScopesCallable(const Model::DescribeNetworkInsightsAccessScopesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeNetworkInsightsAccessScopes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeNetworkInsightsAccessScopesAsync(const Model::DescribeNetworkInsightsAccessScopesRequest& request, const DescribeNetworkInsightsAccessScopesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more of your network insights analyses.</p><p><h3>See
@@ -6245,15 +3840,6 @@ namespace EC2
          */
         virtual Model::DescribeNetworkInsightsAnalysesOutcome DescribeNetworkInsightsAnalyses(const Model::DescribeNetworkInsightsAnalysesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeNetworkInsightsAnalyses that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeNetworkInsightsAnalysesOutcomeCallable DescribeNetworkInsightsAnalysesCallable(const Model::DescribeNetworkInsightsAnalysesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeNetworkInsightsAnalyses that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeNetworkInsightsAnalysesAsync(const Model::DescribeNetworkInsightsAnalysesRequest& request, const DescribeNetworkInsightsAnalysesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more of your paths.</p><p><h3>See Also:</h3>   <a
@@ -6262,15 +3848,6 @@ namespace EC2
          */
         virtual Model::DescribeNetworkInsightsPathsOutcome DescribeNetworkInsightsPaths(const Model::DescribeNetworkInsightsPathsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeNetworkInsightsPaths that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeNetworkInsightsPathsOutcomeCallable DescribeNetworkInsightsPathsCallable(const Model::DescribeNetworkInsightsPathsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeNetworkInsightsPaths that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeNetworkInsightsPathsAsync(const Model::DescribeNetworkInsightsPathsRequest& request, const DescribeNetworkInsightsPathsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a network interface attribute. You can specify only one attribute
@@ -6280,15 +3857,6 @@ namespace EC2
          */
         virtual Model::DescribeNetworkInterfaceAttributeOutcome DescribeNetworkInterfaceAttribute(const Model::DescribeNetworkInterfaceAttributeRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeNetworkInterfaceAttribute that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeNetworkInterfaceAttributeOutcomeCallable DescribeNetworkInterfaceAttributeCallable(const Model::DescribeNetworkInterfaceAttributeRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeNetworkInterfaceAttribute that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeNetworkInterfaceAttributeAsync(const Model::DescribeNetworkInterfaceAttributeRequest& request, const DescribeNetworkInterfaceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the permissions for your network interfaces. </p><p><h3>See
@@ -6298,15 +3866,6 @@ namespace EC2
          */
         virtual Model::DescribeNetworkInterfacePermissionsOutcome DescribeNetworkInterfacePermissions(const Model::DescribeNetworkInterfacePermissionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeNetworkInterfacePermissions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeNetworkInterfacePermissionsOutcomeCallable DescribeNetworkInterfacePermissionsCallable(const Model::DescribeNetworkInterfacePermissionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeNetworkInterfacePermissions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeNetworkInterfacePermissionsAsync(const Model::DescribeNetworkInterfacePermissionsRequest& request, const DescribeNetworkInterfacePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more of your network interfaces.</p><p><h3>See Also:</h3>  
@@ -6316,15 +3875,6 @@ namespace EC2
          */
         virtual Model::DescribeNetworkInterfacesOutcome DescribeNetworkInterfaces(const Model::DescribeNetworkInterfacesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeNetworkInterfaces that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeNetworkInterfacesOutcomeCallable DescribeNetworkInterfacesCallable(const Model::DescribeNetworkInterfacesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeNetworkInterfaces that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeNetworkInterfacesAsync(const Model::DescribeNetworkInterfacesRequest& request, const DescribeNetworkInterfacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified placement groups or all of your placement groups. For
@@ -6336,15 +3886,6 @@ namespace EC2
          */
         virtual Model::DescribePlacementGroupsOutcome DescribePlacementGroups(const Model::DescribePlacementGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribePlacementGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribePlacementGroupsOutcomeCallable DescribePlacementGroupsCallable(const Model::DescribePlacementGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribePlacementGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribePlacementGroupsAsync(const Model::DescribePlacementGroupsRequest& request, const DescribePlacementGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes available Amazon Web Services services in a prefix list format,
@@ -6356,15 +3897,6 @@ namespace EC2
          */
         virtual Model::DescribePrefixListsOutcome DescribePrefixLists(const Model::DescribePrefixListsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribePrefixLists that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribePrefixListsOutcomeCallable DescribePrefixListsCallable(const Model::DescribePrefixListsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribePrefixLists that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribePrefixListsAsync(const Model::DescribePrefixListsRequest& request, const DescribePrefixListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the ID format settings for the root user and all IAM roles and IAM
@@ -6393,15 +3925,6 @@ namespace EC2
          */
         virtual Model::DescribePrincipalIdFormatOutcome DescribePrincipalIdFormat(const Model::DescribePrincipalIdFormatRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribePrincipalIdFormat that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribePrincipalIdFormatOutcomeCallable DescribePrincipalIdFormatCallable(const Model::DescribePrincipalIdFormatRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribePrincipalIdFormat that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribePrincipalIdFormatAsync(const Model::DescribePrincipalIdFormatRequest& request, const DescribePrincipalIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified IPv4 address pools.</p><p><h3>See Also:</h3>   <a
@@ -6410,15 +3933,6 @@ namespace EC2
          */
         virtual Model::DescribePublicIpv4PoolsOutcome DescribePublicIpv4Pools(const Model::DescribePublicIpv4PoolsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribePublicIpv4Pools that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribePublicIpv4PoolsOutcomeCallable DescribePublicIpv4PoolsCallable(const Model::DescribePublicIpv4PoolsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribePublicIpv4Pools that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribePublicIpv4PoolsAsync(const Model::DescribePublicIpv4PoolsRequest& request, const DescribePublicIpv4PoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the Regions that are enabled for your account, or all Regions.</p>
@@ -6434,15 +3948,6 @@ namespace EC2
          */
         virtual Model::DescribeRegionsOutcome DescribeRegions(const Model::DescribeRegionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeRegions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeRegionsOutcomeCallable DescribeRegionsCallable(const Model::DescribeRegionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeRegions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeRegionsAsync(const Model::DescribeRegionsRequest& request, const DescribeRegionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a root volume replacement task. For more information, see <a
@@ -6454,15 +3959,6 @@ namespace EC2
          */
         virtual Model::DescribeReplaceRootVolumeTasksOutcome DescribeReplaceRootVolumeTasks(const Model::DescribeReplaceRootVolumeTasksRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeReplaceRootVolumeTasks that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeReplaceRootVolumeTasksOutcomeCallable DescribeReplaceRootVolumeTasksCallable(const Model::DescribeReplaceRootVolumeTasksRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeReplaceRootVolumeTasks that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeReplaceRootVolumeTasksAsync(const Model::DescribeReplaceRootVolumeTasksRequest& request, const DescribeReplaceRootVolumeTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more of the Reserved Instances that you purchased.</p>
@@ -6474,15 +3970,6 @@ namespace EC2
          */
         virtual Model::DescribeReservedInstancesOutcome DescribeReservedInstances(const Model::DescribeReservedInstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeReservedInstances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeReservedInstancesOutcomeCallable DescribeReservedInstancesCallable(const Model::DescribeReservedInstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeReservedInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeReservedInstancesAsync(const Model::DescribeReservedInstancesRequest& request, const DescribeReservedInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes your account's Reserved Instance listings in the Reserved Instance
@@ -6507,15 +3994,6 @@ namespace EC2
          */
         virtual Model::DescribeReservedInstancesListingsOutcome DescribeReservedInstancesListings(const Model::DescribeReservedInstancesListingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeReservedInstancesListings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeReservedInstancesListingsOutcomeCallable DescribeReservedInstancesListingsCallable(const Model::DescribeReservedInstancesListingsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeReservedInstancesListings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeReservedInstancesListingsAsync(const Model::DescribeReservedInstancesListingsRequest& request, const DescribeReservedInstancesListingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the modifications made to your Reserved Instances. If no parameter
@@ -6530,15 +4008,6 @@ namespace EC2
          */
         virtual Model::DescribeReservedInstancesModificationsOutcome DescribeReservedInstancesModifications(const Model::DescribeReservedInstancesModificationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeReservedInstancesModifications that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeReservedInstancesModificationsOutcomeCallable DescribeReservedInstancesModificationsCallable(const Model::DescribeReservedInstancesModificationsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeReservedInstancesModifications that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeReservedInstancesModificationsAsync(const Model::DescribeReservedInstancesModificationsRequest& request, const DescribeReservedInstancesModificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes Reserved Instance offerings that are available for purchase. With
@@ -6557,15 +4026,6 @@ namespace EC2
          */
         virtual Model::DescribeReservedInstancesOfferingsOutcome DescribeReservedInstancesOfferings(const Model::DescribeReservedInstancesOfferingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeReservedInstancesOfferings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeReservedInstancesOfferingsOutcomeCallable DescribeReservedInstancesOfferingsCallable(const Model::DescribeReservedInstancesOfferingsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeReservedInstancesOfferings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeReservedInstancesOfferingsAsync(const Model::DescribeReservedInstancesOfferingsRequest& request, const DescribeReservedInstancesOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more of your route tables.</p> <p>Each subnet in your VPC
@@ -6581,15 +4041,6 @@ namespace EC2
          */
         virtual Model::DescribeRouteTablesOutcome DescribeRouteTables(const Model::DescribeRouteTablesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeRouteTables that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeRouteTablesOutcomeCallable DescribeRouteTablesCallable(const Model::DescribeRouteTablesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeRouteTables that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeRouteTablesAsync(const Model::DescribeRouteTablesRequest& request, const DescribeRouteTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Finds available schedules that meet the specified criteria.</p> <p>You can
@@ -6604,15 +4055,6 @@ namespace EC2
          */
         virtual Model::DescribeScheduledInstanceAvailabilityOutcome DescribeScheduledInstanceAvailability(const Model::DescribeScheduledInstanceAvailabilityRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeScheduledInstanceAvailability that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeScheduledInstanceAvailabilityOutcomeCallable DescribeScheduledInstanceAvailabilityCallable(const Model::DescribeScheduledInstanceAvailabilityRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeScheduledInstanceAvailability that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeScheduledInstanceAvailabilityAsync(const Model::DescribeScheduledInstanceAvailabilityRequest& request, const DescribeScheduledInstanceAvailabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified Scheduled Instances or all your Scheduled
@@ -6622,15 +4064,6 @@ namespace EC2
          */
         virtual Model::DescribeScheduledInstancesOutcome DescribeScheduledInstances(const Model::DescribeScheduledInstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeScheduledInstances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeScheduledInstancesOutcomeCallable DescribeScheduledInstancesCallable(const Model::DescribeScheduledInstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeScheduledInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeScheduledInstancesAsync(const Model::DescribeScheduledInstancesRequest& request, const DescribeScheduledInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>[VPC only] Describes the VPCs on the other side of a VPC peering connection
@@ -6641,15 +4074,6 @@ namespace EC2
          */
         virtual Model::DescribeSecurityGroupReferencesOutcome DescribeSecurityGroupReferences(const Model::DescribeSecurityGroupReferencesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeSecurityGroupReferences that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeSecurityGroupReferencesOutcomeCallable DescribeSecurityGroupReferencesCallable(const Model::DescribeSecurityGroupReferencesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeSecurityGroupReferences that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeSecurityGroupReferencesAsync(const Model::DescribeSecurityGroupReferencesRequest& request, const DescribeSecurityGroupReferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more of your security group rules.</p><p><h3>See Also:</h3> 
@@ -6659,15 +4083,6 @@ namespace EC2
          */
         virtual Model::DescribeSecurityGroupRulesOutcome DescribeSecurityGroupRules(const Model::DescribeSecurityGroupRulesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeSecurityGroupRules that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeSecurityGroupRulesOutcomeCallable DescribeSecurityGroupRulesCallable(const Model::DescribeSecurityGroupRulesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeSecurityGroupRules that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeSecurityGroupRulesAsync(const Model::DescribeSecurityGroupRulesRequest& request, const DescribeSecurityGroupRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified security groups or all of your security groups.</p>
@@ -6688,15 +4103,6 @@ namespace EC2
          */
         virtual Model::DescribeSecurityGroupsOutcome DescribeSecurityGroups(const Model::DescribeSecurityGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeSecurityGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeSecurityGroupsOutcomeCallable DescribeSecurityGroupsCallable(const Model::DescribeSecurityGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeSecurityGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeSecurityGroupsAsync(const Model::DescribeSecurityGroupsRequest& request, const DescribeSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified attribute of the specified snapshot. You can specify
@@ -6710,15 +4116,6 @@ namespace EC2
          */
         virtual Model::DescribeSnapshotAttributeOutcome DescribeSnapshotAttribute(const Model::DescribeSnapshotAttributeRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeSnapshotAttribute that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeSnapshotAttributeOutcomeCallable DescribeSnapshotAttributeCallable(const Model::DescribeSnapshotAttributeRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeSnapshotAttribute that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeSnapshotAttributeAsync(const Model::DescribeSnapshotAttributeRequest& request, const DescribeSnapshotAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the storage tier status of one or more Amazon EBS
@@ -6728,15 +4125,6 @@ namespace EC2
          */
         virtual Model::DescribeSnapshotTierStatusOutcome DescribeSnapshotTierStatus(const Model::DescribeSnapshotTierStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeSnapshotTierStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeSnapshotTierStatusOutcomeCallable DescribeSnapshotTierStatusCallable(const Model::DescribeSnapshotTierStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeSnapshotTierStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeSnapshotTierStatusAsync(const Model::DescribeSnapshotTierStatusRequest& request, const DescribeSnapshotTierStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified EBS snapshots available to you or all of the EBS
@@ -6784,15 +4172,6 @@ namespace EC2
          */
         virtual Model::DescribeSnapshotsOutcome DescribeSnapshots(const Model::DescribeSnapshotsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeSnapshots that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeSnapshotsOutcomeCallable DescribeSnapshotsCallable(const Model::DescribeSnapshotsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeSnapshots that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeSnapshotsAsync(const Model::DescribeSnapshotsRequest& request, const DescribeSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the data feed for Spot Instances. For more information, see <a
@@ -6804,15 +4183,6 @@ namespace EC2
          */
         virtual Model::DescribeSpotDatafeedSubscriptionOutcome DescribeSpotDatafeedSubscription(const Model::DescribeSpotDatafeedSubscriptionRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeSpotDatafeedSubscription that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeSpotDatafeedSubscriptionOutcomeCallable DescribeSpotDatafeedSubscriptionCallable(const Model::DescribeSpotDatafeedSubscriptionRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeSpotDatafeedSubscription that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeSpotDatafeedSubscriptionAsync(const Model::DescribeSpotDatafeedSubscriptionRequest& request, const DescribeSpotDatafeedSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the running instances for the specified Spot Fleet.</p><p><h3>See
@@ -6822,15 +4192,6 @@ namespace EC2
          */
         virtual Model::DescribeSpotFleetInstancesOutcome DescribeSpotFleetInstances(const Model::DescribeSpotFleetInstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeSpotFleetInstances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeSpotFleetInstancesOutcomeCallable DescribeSpotFleetInstancesCallable(const Model::DescribeSpotFleetInstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeSpotFleetInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeSpotFleetInstancesAsync(const Model::DescribeSpotFleetInstancesRequest& request, const DescribeSpotFleetInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the events for the specified Spot Fleet request during the
@@ -6846,15 +4207,6 @@ namespace EC2
          */
         virtual Model::DescribeSpotFleetRequestHistoryOutcome DescribeSpotFleetRequestHistory(const Model::DescribeSpotFleetRequestHistoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeSpotFleetRequestHistory that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeSpotFleetRequestHistoryOutcomeCallable DescribeSpotFleetRequestHistoryCallable(const Model::DescribeSpotFleetRequestHistoryRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeSpotFleetRequestHistory that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeSpotFleetRequestHistoryAsync(const Model::DescribeSpotFleetRequestHistoryRequest& request, const DescribeSpotFleetRequestHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes your Spot Fleet requests.</p> <p>Spot Fleet requests are deleted 48
@@ -6865,15 +4217,6 @@ namespace EC2
          */
         virtual Model::DescribeSpotFleetRequestsOutcome DescribeSpotFleetRequests(const Model::DescribeSpotFleetRequestsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeSpotFleetRequests that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeSpotFleetRequestsOutcomeCallable DescribeSpotFleetRequestsCallable(const Model::DescribeSpotFleetRequestsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeSpotFleetRequests that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeSpotFleetRequestsAsync(const Model::DescribeSpotFleetRequestsRequest& request, const DescribeSpotFleetRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified Spot Instance requests.</p> <p>You can use
@@ -6897,15 +4240,6 @@ namespace EC2
          */
         virtual Model::DescribeSpotInstanceRequestsOutcome DescribeSpotInstanceRequests(const Model::DescribeSpotInstanceRequestsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeSpotInstanceRequests that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeSpotInstanceRequestsOutcomeCallable DescribeSpotInstanceRequestsCallable(const Model::DescribeSpotInstanceRequestsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeSpotInstanceRequests that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeSpotInstanceRequestsAsync(const Model::DescribeSpotInstanceRequestsRequest& request, const DescribeSpotInstanceRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the Spot price history. For more information, see <a
@@ -6920,15 +4254,6 @@ namespace EC2
          */
         virtual Model::DescribeSpotPriceHistoryOutcome DescribeSpotPriceHistory(const Model::DescribeSpotPriceHistoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeSpotPriceHistory that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeSpotPriceHistoryOutcomeCallable DescribeSpotPriceHistoryCallable(const Model::DescribeSpotPriceHistoryRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeSpotPriceHistory that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeSpotPriceHistoryAsync(const Model::DescribeSpotPriceHistoryRequest& request, const DescribeSpotPriceHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>[VPC only] Describes the stale security group rules for security groups in a
@@ -6941,15 +4266,6 @@ namespace EC2
          */
         virtual Model::DescribeStaleSecurityGroupsOutcome DescribeStaleSecurityGroups(const Model::DescribeStaleSecurityGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeStaleSecurityGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeStaleSecurityGroupsOutcomeCallable DescribeStaleSecurityGroupsCallable(const Model::DescribeStaleSecurityGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeStaleSecurityGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeStaleSecurityGroupsAsync(const Model::DescribeStaleSecurityGroupsRequest& request, const DescribeStaleSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the progress of the AMI store tasks. You can describe the store
@@ -6972,15 +4288,6 @@ namespace EC2
          */
         virtual Model::DescribeStoreImageTasksOutcome DescribeStoreImageTasks(const Model::DescribeStoreImageTasksRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeStoreImageTasks that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeStoreImageTasksOutcomeCallable DescribeStoreImageTasksCallable(const Model::DescribeStoreImageTasksRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeStoreImageTasks that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeStoreImageTasksAsync(const Model::DescribeStoreImageTasksRequest& request, const DescribeStoreImageTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more of your subnets.</p> <p>For more information, see <a
@@ -6992,15 +4299,6 @@ namespace EC2
          */
         virtual Model::DescribeSubnetsOutcome DescribeSubnets(const Model::DescribeSubnetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeSubnets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeSubnetsOutcomeCallable DescribeSubnetsCallable(const Model::DescribeSubnetsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeSubnets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeSubnetsAsync(const Model::DescribeSubnetsRequest& request, const DescribeSubnetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified tags for your EC2 resources.</p> <p>For more
@@ -7013,15 +4311,6 @@ namespace EC2
          */
         virtual Model::DescribeTagsOutcome DescribeTags(const Model::DescribeTagsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTags that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTagsOutcomeCallable DescribeTagsCallable(const Model::DescribeTagsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTags that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTagsAsync(const Model::DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more Traffic Mirror filters.</p><p><h3>See Also:</h3>   <a
@@ -7030,15 +4319,6 @@ namespace EC2
          */
         virtual Model::DescribeTrafficMirrorFiltersOutcome DescribeTrafficMirrorFilters(const Model::DescribeTrafficMirrorFiltersRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTrafficMirrorFilters that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTrafficMirrorFiltersOutcomeCallable DescribeTrafficMirrorFiltersCallable(const Model::DescribeTrafficMirrorFiltersRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTrafficMirrorFilters that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTrafficMirrorFiltersAsync(const Model::DescribeTrafficMirrorFiltersRequest& request, const DescribeTrafficMirrorFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more Traffic Mirror sessions. By default, all Traffic Mirror
@@ -7049,15 +4329,6 @@ namespace EC2
          */
         virtual Model::DescribeTrafficMirrorSessionsOutcome DescribeTrafficMirrorSessions(const Model::DescribeTrafficMirrorSessionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTrafficMirrorSessions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTrafficMirrorSessionsOutcomeCallable DescribeTrafficMirrorSessionsCallable(const Model::DescribeTrafficMirrorSessionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTrafficMirrorSessions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTrafficMirrorSessionsAsync(const Model::DescribeTrafficMirrorSessionsRequest& request, const DescribeTrafficMirrorSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Information about one or more Traffic Mirror targets.</p><p><h3>See
@@ -7067,15 +4338,6 @@ namespace EC2
          */
         virtual Model::DescribeTrafficMirrorTargetsOutcome DescribeTrafficMirrorTargets(const Model::DescribeTrafficMirrorTargetsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTrafficMirrorTargets that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTrafficMirrorTargetsOutcomeCallable DescribeTrafficMirrorTargetsCallable(const Model::DescribeTrafficMirrorTargetsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTrafficMirrorTargets that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTrafficMirrorTargetsAsync(const Model::DescribeTrafficMirrorTargetsRequest& request, const DescribeTrafficMirrorTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more attachments between resources and transit gateways. By
@@ -7087,15 +4349,6 @@ namespace EC2
          */
         virtual Model::DescribeTransitGatewayAttachmentsOutcome DescribeTransitGatewayAttachments(const Model::DescribeTransitGatewayAttachmentsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTransitGatewayAttachments that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTransitGatewayAttachmentsOutcomeCallable DescribeTransitGatewayAttachmentsCallable(const Model::DescribeTransitGatewayAttachmentsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTransitGatewayAttachments that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTransitGatewayAttachmentsAsync(const Model::DescribeTransitGatewayAttachmentsRequest& request, const DescribeTransitGatewayAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more Connect peers.</p><p><h3>See Also:</h3>   <a
@@ -7104,15 +4357,6 @@ namespace EC2
          */
         virtual Model::DescribeTransitGatewayConnectPeersOutcome DescribeTransitGatewayConnectPeers(const Model::DescribeTransitGatewayConnectPeersRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTransitGatewayConnectPeers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTransitGatewayConnectPeersOutcomeCallable DescribeTransitGatewayConnectPeersCallable(const Model::DescribeTransitGatewayConnectPeersRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTransitGatewayConnectPeers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTransitGatewayConnectPeersAsync(const Model::DescribeTransitGatewayConnectPeersRequest& request, const DescribeTransitGatewayConnectPeersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more Connect attachments.</p><p><h3>See Also:</h3>   <a
@@ -7121,15 +4365,6 @@ namespace EC2
          */
         virtual Model::DescribeTransitGatewayConnectsOutcome DescribeTransitGatewayConnects(const Model::DescribeTransitGatewayConnectsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTransitGatewayConnects that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTransitGatewayConnectsOutcomeCallable DescribeTransitGatewayConnectsCallable(const Model::DescribeTransitGatewayConnectsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTransitGatewayConnects that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTransitGatewayConnectsAsync(const Model::DescribeTransitGatewayConnectsRequest& request, const DescribeTransitGatewayConnectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more transit gateway multicast domains.</p><p><h3>See
@@ -7139,15 +4374,6 @@ namespace EC2
          */
         virtual Model::DescribeTransitGatewayMulticastDomainsOutcome DescribeTransitGatewayMulticastDomains(const Model::DescribeTransitGatewayMulticastDomainsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTransitGatewayMulticastDomains that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTransitGatewayMulticastDomainsOutcomeCallable DescribeTransitGatewayMulticastDomainsCallable(const Model::DescribeTransitGatewayMulticastDomainsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTransitGatewayMulticastDomains that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTransitGatewayMulticastDomainsAsync(const Model::DescribeTransitGatewayMulticastDomainsRequest& request, const DescribeTransitGatewayMulticastDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes your transit gateway peering attachments.</p><p><h3>See Also:</h3> 
@@ -7157,15 +4383,6 @@ namespace EC2
          */
         virtual Model::DescribeTransitGatewayPeeringAttachmentsOutcome DescribeTransitGatewayPeeringAttachments(const Model::DescribeTransitGatewayPeeringAttachmentsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTransitGatewayPeeringAttachments that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTransitGatewayPeeringAttachmentsOutcomeCallable DescribeTransitGatewayPeeringAttachmentsCallable(const Model::DescribeTransitGatewayPeeringAttachmentsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTransitGatewayPeeringAttachments that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTransitGatewayPeeringAttachmentsAsync(const Model::DescribeTransitGatewayPeeringAttachmentsRequest& request, const DescribeTransitGatewayPeeringAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more transit gateway route policy tables. </p><p><h3>See
@@ -7175,15 +4392,6 @@ namespace EC2
          */
         virtual Model::DescribeTransitGatewayPolicyTablesOutcome DescribeTransitGatewayPolicyTables(const Model::DescribeTransitGatewayPolicyTablesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTransitGatewayPolicyTables that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTransitGatewayPolicyTablesOutcomeCallable DescribeTransitGatewayPolicyTablesCallable(const Model::DescribeTransitGatewayPolicyTablesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTransitGatewayPolicyTables that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTransitGatewayPolicyTablesAsync(const Model::DescribeTransitGatewayPolicyTablesRequest& request, const DescribeTransitGatewayPolicyTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more transit gateway route table
@@ -7193,15 +4401,6 @@ namespace EC2
          */
         virtual Model::DescribeTransitGatewayRouteTableAnnouncementsOutcome DescribeTransitGatewayRouteTableAnnouncements(const Model::DescribeTransitGatewayRouteTableAnnouncementsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTransitGatewayRouteTableAnnouncements that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTransitGatewayRouteTableAnnouncementsOutcomeCallable DescribeTransitGatewayRouteTableAnnouncementsCallable(const Model::DescribeTransitGatewayRouteTableAnnouncementsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTransitGatewayRouteTableAnnouncements that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTransitGatewayRouteTableAnnouncementsAsync(const Model::DescribeTransitGatewayRouteTableAnnouncementsRequest& request, const DescribeTransitGatewayRouteTableAnnouncementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more transit gateway route tables. By default, all transit
@@ -7212,15 +4411,6 @@ namespace EC2
          */
         virtual Model::DescribeTransitGatewayRouteTablesOutcome DescribeTransitGatewayRouteTables(const Model::DescribeTransitGatewayRouteTablesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTransitGatewayRouteTables that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTransitGatewayRouteTablesOutcomeCallable DescribeTransitGatewayRouteTablesCallable(const Model::DescribeTransitGatewayRouteTablesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTransitGatewayRouteTables that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTransitGatewayRouteTablesAsync(const Model::DescribeTransitGatewayRouteTablesRequest& request, const DescribeTransitGatewayRouteTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more VPC attachments. By default, all VPC attachments are
@@ -7231,15 +4421,6 @@ namespace EC2
          */
         virtual Model::DescribeTransitGatewayVpcAttachmentsOutcome DescribeTransitGatewayVpcAttachments(const Model::DescribeTransitGatewayVpcAttachmentsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTransitGatewayVpcAttachments that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTransitGatewayVpcAttachmentsOutcomeCallable DescribeTransitGatewayVpcAttachmentsCallable(const Model::DescribeTransitGatewayVpcAttachmentsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTransitGatewayVpcAttachments that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTransitGatewayVpcAttachmentsAsync(const Model::DescribeTransitGatewayVpcAttachmentsRequest& request, const DescribeTransitGatewayVpcAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more transit gateways. By default, all transit gateways are
@@ -7250,15 +4431,6 @@ namespace EC2
          */
         virtual Model::DescribeTransitGatewaysOutcome DescribeTransitGateways(const Model::DescribeTransitGatewaysRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTransitGateways that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTransitGatewaysOutcomeCallable DescribeTransitGatewaysCallable(const Model::DescribeTransitGatewaysRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTransitGateways that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTransitGatewaysAsync(const Model::DescribeTransitGatewaysRequest& request, const DescribeTransitGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This API action is currently in <b>limited preview only</b>. If you
@@ -7270,15 +4442,6 @@ namespace EC2
          */
         virtual Model::DescribeTrunkInterfaceAssociationsOutcome DescribeTrunkInterfaceAssociations(const Model::DescribeTrunkInterfaceAssociationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeTrunkInterfaceAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTrunkInterfaceAssociationsOutcomeCallable DescribeTrunkInterfaceAssociationsCallable(const Model::DescribeTrunkInterfaceAssociationsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeTrunkInterfaceAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTrunkInterfaceAssociationsAsync(const Model::DescribeTrunkInterfaceAssociationsRequest& request, const DescribeTrunkInterfaceAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified attribute of the specified volume. You can specify
@@ -7292,15 +4455,6 @@ namespace EC2
          */
         virtual Model::DescribeVolumeAttributeOutcome DescribeVolumeAttribute(const Model::DescribeVolumeAttributeRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeVolumeAttribute that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeVolumeAttributeOutcomeCallable DescribeVolumeAttributeCallable(const Model::DescribeVolumeAttributeRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeVolumeAttribute that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeVolumeAttributeAsync(const Model::DescribeVolumeAttributeRequest& request, const DescribeVolumeAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the status of the specified volumes. Volume status provides the
@@ -7341,15 +4495,6 @@ namespace EC2
          */
         virtual Model::DescribeVolumeStatusOutcome DescribeVolumeStatus(const Model::DescribeVolumeStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeVolumeStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeVolumeStatusOutcomeCallable DescribeVolumeStatusCallable(const Model::DescribeVolumeStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeVolumeStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeVolumeStatusAsync(const Model::DescribeVolumeStatusRequest& request, const DescribeVolumeStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified EBS volumes or all of your EBS volumes.</p> <p>If you
@@ -7368,15 +4513,6 @@ namespace EC2
          */
         virtual Model::DescribeVolumesOutcome DescribeVolumes(const Model::DescribeVolumesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeVolumes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeVolumesOutcomeCallable DescribeVolumesCallable(const Model::DescribeVolumesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeVolumes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeVolumesAsync(const Model::DescribeVolumesRequest& request, const DescribeVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the most recent volume modification request for the specified EBS
@@ -7395,15 +4531,6 @@ namespace EC2
          */
         virtual Model::DescribeVolumesModificationsOutcome DescribeVolumesModifications(const Model::DescribeVolumesModificationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeVolumesModifications that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeVolumesModificationsOutcomeCallable DescribeVolumesModificationsCallable(const Model::DescribeVolumesModificationsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeVolumesModifications that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeVolumesModificationsAsync(const Model::DescribeVolumesModificationsRequest& request, const DescribeVolumesModificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified attribute of the specified VPC. You can specify only
@@ -7413,15 +4540,6 @@ namespace EC2
          */
         virtual Model::DescribeVpcAttributeOutcome DescribeVpcAttribute(const Model::DescribeVpcAttributeRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeVpcAttribute that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeVpcAttributeOutcomeCallable DescribeVpcAttributeCallable(const Model::DescribeVpcAttributeRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeVpcAttribute that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeVpcAttributeAsync(const Model::DescribeVpcAttributeRequest& request, const DescribeVpcAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the ClassicLink status of one or more VPCs.</p>  <p>We are
@@ -7435,15 +4553,6 @@ namespace EC2
          */
         virtual Model::DescribeVpcClassicLinkOutcome DescribeVpcClassicLink(const Model::DescribeVpcClassicLinkRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeVpcClassicLink that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeVpcClassicLinkOutcomeCallable DescribeVpcClassicLinkCallable(const Model::DescribeVpcClassicLinkRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeVpcClassicLink that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeVpcClassicLinkAsync(const Model::DescribeVpcClassicLinkRequest& request, const DescribeVpcClassicLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>We are retiring EC2-Classic. We recommend that you migrate from
@@ -7464,15 +4573,6 @@ namespace EC2
          */
         virtual Model::DescribeVpcClassicLinkDnsSupportOutcome DescribeVpcClassicLinkDnsSupport(const Model::DescribeVpcClassicLinkDnsSupportRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeVpcClassicLinkDnsSupport that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeVpcClassicLinkDnsSupportOutcomeCallable DescribeVpcClassicLinkDnsSupportCallable(const Model::DescribeVpcClassicLinkDnsSupportRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeVpcClassicLinkDnsSupport that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeVpcClassicLinkDnsSupportAsync(const Model::DescribeVpcClassicLinkDnsSupportRequest& request, const DescribeVpcClassicLinkDnsSupportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the connection notifications for VPC endpoints and VPC endpoint
@@ -7482,15 +4582,6 @@ namespace EC2
          */
         virtual Model::DescribeVpcEndpointConnectionNotificationsOutcome DescribeVpcEndpointConnectionNotifications(const Model::DescribeVpcEndpointConnectionNotificationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeVpcEndpointConnectionNotifications that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeVpcEndpointConnectionNotificationsOutcomeCallable DescribeVpcEndpointConnectionNotificationsCallable(const Model::DescribeVpcEndpointConnectionNotificationsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeVpcEndpointConnectionNotifications that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeVpcEndpointConnectionNotificationsAsync(const Model::DescribeVpcEndpointConnectionNotificationsRequest& request, const DescribeVpcEndpointConnectionNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the VPC endpoint connections to your VPC endpoint services,
@@ -7501,15 +4592,6 @@ namespace EC2
          */
         virtual Model::DescribeVpcEndpointConnectionsOutcome DescribeVpcEndpointConnections(const Model::DescribeVpcEndpointConnectionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeVpcEndpointConnections that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeVpcEndpointConnectionsOutcomeCallable DescribeVpcEndpointConnectionsCallable(const Model::DescribeVpcEndpointConnectionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeVpcEndpointConnections that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeVpcEndpointConnectionsAsync(const Model::DescribeVpcEndpointConnectionsRequest& request, const DescribeVpcEndpointConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the VPC endpoint service configurations in your account (your
@@ -7519,15 +4601,6 @@ namespace EC2
          */
         virtual Model::DescribeVpcEndpointServiceConfigurationsOutcome DescribeVpcEndpointServiceConfigurations(const Model::DescribeVpcEndpointServiceConfigurationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeVpcEndpointServiceConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeVpcEndpointServiceConfigurationsOutcomeCallable DescribeVpcEndpointServiceConfigurationsCallable(const Model::DescribeVpcEndpointServiceConfigurationsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeVpcEndpointServiceConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeVpcEndpointServiceConfigurationsAsync(const Model::DescribeVpcEndpointServiceConfigurationsRequest& request, const DescribeVpcEndpointServiceConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the principals (service consumers) that are permitted to discover
@@ -7537,15 +4610,6 @@ namespace EC2
          */
         virtual Model::DescribeVpcEndpointServicePermissionsOutcome DescribeVpcEndpointServicePermissions(const Model::DescribeVpcEndpointServicePermissionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeVpcEndpointServicePermissions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeVpcEndpointServicePermissionsOutcomeCallable DescribeVpcEndpointServicePermissionsCallable(const Model::DescribeVpcEndpointServicePermissionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeVpcEndpointServicePermissions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeVpcEndpointServicePermissionsAsync(const Model::DescribeVpcEndpointServicePermissionsRequest& request, const DescribeVpcEndpointServicePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes available services to which you can create a VPC endpoint.</p>
@@ -7561,15 +4625,6 @@ namespace EC2
          */
         virtual Model::DescribeVpcEndpointServicesOutcome DescribeVpcEndpointServices(const Model::DescribeVpcEndpointServicesRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeVpcEndpointServices that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeVpcEndpointServicesOutcomeCallable DescribeVpcEndpointServicesCallable(const Model::DescribeVpcEndpointServicesRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeVpcEndpointServices that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeVpcEndpointServicesAsync(const Model::DescribeVpcEndpointServicesRequest& request, const DescribeVpcEndpointServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more of your VPC endpoints.</p><p><h3>See Also:</h3>   <a
@@ -7578,15 +4633,6 @@ namespace EC2
          */
         virtual Model::DescribeVpcEndpointsOutcome DescribeVpcEndpoints(const Model::DescribeVpcEndpointsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeVpcEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeVpcEndpointsOutcomeCallable DescribeVpcEndpointsCallable(const Model::DescribeVpcEndpointsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeVpcEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeVpcEndpointsAsync(const Model::DescribeVpcEndpointsRequest& request, const DescribeVpcEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more of your VPC peering connections.</p><p><h3>See
@@ -7596,15 +4642,6 @@ namespace EC2
          */
         virtual Model::DescribeVpcPeeringConnectionsOutcome DescribeVpcPeeringConnections(const Model::DescribeVpcPeeringConnectionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeVpcPeeringConnections that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeVpcPeeringConnectionsOutcomeCallable DescribeVpcPeeringConnectionsCallable(const Model::DescribeVpcPeeringConnectionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeVpcPeeringConnections that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeVpcPeeringConnectionsAsync(const Model::DescribeVpcPeeringConnectionsRequest& request, const DescribeVpcPeeringConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more of your VPCs.</p><p><h3>See Also:</h3>   <a
@@ -7613,15 +4650,6 @@ namespace EC2
          */
         virtual Model::DescribeVpcsOutcome DescribeVpcs(const Model::DescribeVpcsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeVpcs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeVpcsOutcomeCallable DescribeVpcsCallable(const Model::DescribeVpcsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeVpcs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeVpcsAsync(const Model::DescribeVpcsRequest& request, const DescribeVpcsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more of your VPN connections.</p> <p>For more information,
@@ -7633,15 +4661,6 @@ namespace EC2
          */
         virtual Model::DescribeVpnConnectionsOutcome DescribeVpnConnections(const Model::DescribeVpnConnectionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeVpnConnections that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeVpnConnectionsOutcomeCallable DescribeVpnConnectionsCallable(const Model::DescribeVpnConnectionsRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeVpnConnections that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeVpnConnectionsAsync(const Model::DescribeVpnConnectionsRequest& request, const DescribeVpnConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more of your virtual private gateways.</p> <p>For more
@@ -7654,15 +4673,6 @@ namespace EC2
          */
         virtual Model::DescribeVpnGatewaysOutcome DescribeVpnGateways(const Model::DescribeVpnGatewaysRequest& request) const;
 
-        /**
-         * A Callable wrapper for DescribeVpnGateways that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeVpnGatewaysOutcomeCallable DescribeVpnGatewaysCallable(const Model::DescribeVpnGatewaysRequest& request) const;
-
-        /**
-         * An Async wrapper for DescribeVpnGateways that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeVpnGatewaysAsync(const Model::DescribeVpnGatewaysRequest& request, const DescribeVpnGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>We are retiring EC2-Classic. We recommend that you migrate from
@@ -7678,15 +4688,6 @@ namespace EC2
          */
         virtual Model::DetachClassicLinkVpcOutcome DetachClassicLinkVpc(const Model::DetachClassicLinkVpcRequest& request) const;
 
-        /**
-         * A Callable wrapper for DetachClassicLinkVpc that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DetachClassicLinkVpcOutcomeCallable DetachClassicLinkVpcCallable(const Model::DetachClassicLinkVpcRequest& request) const;
-
-        /**
-         * An Async wrapper for DetachClassicLinkVpc that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DetachClassicLinkVpcAsync(const Model::DetachClassicLinkVpcRequest& request, const DetachClassicLinkVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Detaches an internet gateway from a VPC, disabling connectivity between the
@@ -7697,15 +4698,6 @@ namespace EC2
          */
         virtual Model::DetachInternetGatewayOutcome DetachInternetGateway(const Model::DetachInternetGatewayRequest& request) const;
 
-        /**
-         * A Callable wrapper for DetachInternetGateway that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DetachInternetGatewayOutcomeCallable DetachInternetGatewayCallable(const Model::DetachInternetGatewayRequest& request) const;
-
-        /**
-         * An Async wrapper for DetachInternetGateway that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DetachInternetGatewayAsync(const Model::DetachInternetGatewayRequest& request, const DetachInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Detaches a network interface from an instance.</p><p><h3>See Also:</h3>   <a
@@ -7714,15 +4706,6 @@ namespace EC2
          */
         virtual Model::DetachNetworkInterfaceOutcome DetachNetworkInterface(const Model::DetachNetworkInterfaceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DetachNetworkInterface that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DetachNetworkInterfaceOutcomeCallable DetachNetworkInterfaceCallable(const Model::DetachNetworkInterfaceRequest& request) const;
-
-        /**
-         * An Async wrapper for DetachNetworkInterface that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DetachNetworkInterfaceAsync(const Model::DetachNetworkInterfaceRequest& request, const DetachNetworkInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Detaches an EBS volume from an instance. Make sure to unmount any file
@@ -7743,15 +4726,6 @@ namespace EC2
          */
         virtual Model::DetachVolumeOutcome DetachVolume(const Model::DetachVolumeRequest& request) const;
 
-        /**
-         * A Callable wrapper for DetachVolume that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DetachVolumeOutcomeCallable DetachVolumeCallable(const Model::DetachVolumeRequest& request) const;
-
-        /**
-         * An Async wrapper for DetachVolume that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DetachVolumeAsync(const Model::DetachVolumeRequest& request, const DetachVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Detaches a virtual private gateway from a VPC. You do this if you're planning
@@ -7766,15 +4740,6 @@ namespace EC2
          */
         virtual Model::DetachVpnGatewayOutcome DetachVpnGateway(const Model::DetachVpnGatewayRequest& request) const;
 
-        /**
-         * A Callable wrapper for DetachVpnGateway that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DetachVpnGatewayOutcomeCallable DetachVpnGatewayCallable(const Model::DetachVpnGatewayRequest& request) const;
-
-        /**
-         * An Async wrapper for DetachVpnGateway that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DetachVpnGatewayAsync(const Model::DetachVpnGatewayRequest& request, const DetachVpnGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disables Elastic IP address transfer. For more information, see <a
@@ -7786,15 +4751,6 @@ namespace EC2
          */
         virtual Model::DisableAddressTransferOutcome DisableAddressTransfer(const Model::DisableAddressTransferRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisableAddressTransfer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisableAddressTransferOutcomeCallable DisableAddressTransferCallable(const Model::DisableAddressTransferRequest& request) const;
-
-        /**
-         * An Async wrapper for DisableAddressTransfer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisableAddressTransferAsync(const Model::DisableAddressTransferRequest& request, const DisableAddressTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disables EBS encryption by default for your account in the current
@@ -7810,15 +4766,6 @@ namespace EC2
          */
         virtual Model::DisableEbsEncryptionByDefaultOutcome DisableEbsEncryptionByDefault(const Model::DisableEbsEncryptionByDefaultRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisableEbsEncryptionByDefault that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisableEbsEncryptionByDefaultOutcomeCallable DisableEbsEncryptionByDefaultCallable(const Model::DisableEbsEncryptionByDefaultRequest& request) const;
-
-        /**
-         * An Async wrapper for DisableEbsEncryptionByDefault that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisableEbsEncryptionByDefaultAsync(const Model::DisableEbsEncryptionByDefaultRequest& request, const DisableEbsEncryptionByDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Discontinue faster launching for a Windows AMI, and clean up existing
@@ -7831,15 +4778,6 @@ namespace EC2
          */
         virtual Model::DisableFastLaunchOutcome DisableFastLaunch(const Model::DisableFastLaunchRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisableFastLaunch that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisableFastLaunchOutcomeCallable DisableFastLaunchCallable(const Model::DisableFastLaunchRequest& request) const;
-
-        /**
-         * An Async wrapper for DisableFastLaunch that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisableFastLaunchAsync(const Model::DisableFastLaunchRequest& request, const DisableFastLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disables fast snapshot restores for the specified snapshots in the specified
@@ -7849,15 +4787,6 @@ namespace EC2
          */
         virtual Model::DisableFastSnapshotRestoresOutcome DisableFastSnapshotRestores(const Model::DisableFastSnapshotRestoresRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisableFastSnapshotRestores that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisableFastSnapshotRestoresOutcomeCallable DisableFastSnapshotRestoresCallable(const Model::DisableFastSnapshotRestoresRequest& request) const;
-
-        /**
-         * An Async wrapper for DisableFastSnapshotRestores that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisableFastSnapshotRestoresAsync(const Model::DisableFastSnapshotRestoresRequest& request, const DisableFastSnapshotRestoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Cancels the deprecation of the specified AMI.</p> <p>For more information,
@@ -7870,15 +4799,6 @@ namespace EC2
          */
         virtual Model::DisableImageDeprecationOutcome DisableImageDeprecation(const Model::DisableImageDeprecationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisableImageDeprecation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisableImageDeprecationOutcomeCallable DisableImageDeprecationCallable(const Model::DisableImageDeprecationRequest& request) const;
-
-        /**
-         * An Async wrapper for DisableImageDeprecation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisableImageDeprecationAsync(const Model::DisableImageDeprecationRequest& request, const DisableImageDeprecationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disable the IPAM account. For more information, see <a
@@ -7890,15 +4810,6 @@ namespace EC2
          */
         virtual Model::DisableIpamOrganizationAdminAccountOutcome DisableIpamOrganizationAdminAccount(const Model::DisableIpamOrganizationAdminAccountRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisableIpamOrganizationAdminAccount that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisableIpamOrganizationAdminAccountOutcomeCallable DisableIpamOrganizationAdminAccountCallable(const Model::DisableIpamOrganizationAdminAccountRequest& request) const;
-
-        /**
-         * An Async wrapper for DisableIpamOrganizationAdminAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisableIpamOrganizationAdminAccountAsync(const Model::DisableIpamOrganizationAdminAccountRequest& request, const DisableIpamOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disables access to the EC2 serial console of all instances for your account.
@@ -7912,15 +4823,6 @@ namespace EC2
          */
         virtual Model::DisableSerialConsoleAccessOutcome DisableSerialConsoleAccess(const Model::DisableSerialConsoleAccessRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisableSerialConsoleAccess that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisableSerialConsoleAccessOutcomeCallable DisableSerialConsoleAccessCallable(const Model::DisableSerialConsoleAccessRequest& request) const;
-
-        /**
-         * An Async wrapper for DisableSerialConsoleAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisableSerialConsoleAccessAsync(const Model::DisableSerialConsoleAccessRequest& request, const DisableSerialConsoleAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disables the specified resource attachment from propagating routes to the
@@ -7930,15 +4832,6 @@ namespace EC2
          */
         virtual Model::DisableTransitGatewayRouteTablePropagationOutcome DisableTransitGatewayRouteTablePropagation(const Model::DisableTransitGatewayRouteTablePropagationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisableTransitGatewayRouteTablePropagation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisableTransitGatewayRouteTablePropagationOutcomeCallable DisableTransitGatewayRouteTablePropagationCallable(const Model::DisableTransitGatewayRouteTablePropagationRequest& request) const;
-
-        /**
-         * An Async wrapper for DisableTransitGatewayRouteTablePropagation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisableTransitGatewayRouteTablePropagationAsync(const Model::DisableTransitGatewayRouteTablePropagationRequest& request, const DisableTransitGatewayRouteTablePropagationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disables a virtual private gateway (VGW) from propagating routes to a
@@ -7948,15 +4841,6 @@ namespace EC2
          */
         virtual Model::DisableVgwRoutePropagationOutcome DisableVgwRoutePropagation(const Model::DisableVgwRoutePropagationRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisableVgwRoutePropagation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisableVgwRoutePropagationOutcomeCallable DisableVgwRoutePropagationCallable(const Model::DisableVgwRoutePropagationRequest& request) const;
-
-        /**
-         * An Async wrapper for DisableVgwRoutePropagation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisableVgwRoutePropagationAsync(const Model::DisableVgwRoutePropagationRequest& request, const DisableVgwRoutePropagationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disables ClassicLink for a VPC. You cannot disable ClassicLink for a VPC that
@@ -7971,15 +4855,6 @@ namespace EC2
          */
         virtual Model::DisableVpcClassicLinkOutcome DisableVpcClassicLink(const Model::DisableVpcClassicLinkRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisableVpcClassicLink that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisableVpcClassicLinkOutcomeCallable DisableVpcClassicLinkCallable(const Model::DisableVpcClassicLinkRequest& request) const;
-
-        /**
-         * An Async wrapper for DisableVpcClassicLink that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisableVpcClassicLinkAsync(const Model::DisableVpcClassicLinkRequest& request, const DisableVpcClassicLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disables ClassicLink DNS support for a VPC. If disabled, DNS hostnames
@@ -7998,15 +4873,6 @@ namespace EC2
          */
         virtual Model::DisableVpcClassicLinkDnsSupportOutcome DisableVpcClassicLinkDnsSupport(const Model::DisableVpcClassicLinkDnsSupportRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisableVpcClassicLinkDnsSupport that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisableVpcClassicLinkDnsSupportOutcomeCallable DisableVpcClassicLinkDnsSupportCallable(const Model::DisableVpcClassicLinkDnsSupportRequest& request) const;
-
-        /**
-         * An Async wrapper for DisableVpcClassicLinkDnsSupport that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisableVpcClassicLinkDnsSupportAsync(const Model::DisableVpcClassicLinkDnsSupportRequest& request, const DisableVpcClassicLinkDnsSupportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates an Elastic IP address from the instance or network interface
@@ -8026,15 +4892,6 @@ namespace EC2
          */
         virtual Model::DisassociateAddressOutcome DisassociateAddress(const Model::DisassociateAddressRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateAddress that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateAddressOutcomeCallable DisassociateAddressCallable(const Model::DisassociateAddressRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateAddress that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateAddressAsync(const Model::DisassociateAddressRequest& request, const DisassociateAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates a target network from the specified Client VPN endpoint. When
@@ -8049,15 +4906,6 @@ namespace EC2
          */
         virtual Model::DisassociateClientVpnTargetNetworkOutcome DisassociateClientVpnTargetNetwork(const Model::DisassociateClientVpnTargetNetworkRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateClientVpnTargetNetwork that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateClientVpnTargetNetworkOutcomeCallable DisassociateClientVpnTargetNetworkCallable(const Model::DisassociateClientVpnTargetNetworkRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateClientVpnTargetNetwork that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateClientVpnTargetNetworkAsync(const Model::DisassociateClientVpnTargetNetworkRequest& request, const DisassociateClientVpnTargetNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates an IAM role from an Certificate Manager (ACM) certificate.
@@ -8071,15 +4919,6 @@ namespace EC2
          */
         virtual Model::DisassociateEnclaveCertificateIamRoleOutcome DisassociateEnclaveCertificateIamRole(const Model::DisassociateEnclaveCertificateIamRoleRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateEnclaveCertificateIamRole that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateEnclaveCertificateIamRoleOutcomeCallable DisassociateEnclaveCertificateIamRoleCallable(const Model::DisassociateEnclaveCertificateIamRoleRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateEnclaveCertificateIamRole that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateEnclaveCertificateIamRoleAsync(const Model::DisassociateEnclaveCertificateIamRoleRequest& request, const DisassociateEnclaveCertificateIamRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates an IAM instance profile from a running or stopped instance.</p>
@@ -8090,15 +4929,6 @@ namespace EC2
          */
         virtual Model::DisassociateIamInstanceProfileOutcome DisassociateIamInstanceProfile(const Model::DisassociateIamInstanceProfileRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateIamInstanceProfile that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateIamInstanceProfileOutcomeCallable DisassociateIamInstanceProfileCallable(const Model::DisassociateIamInstanceProfileRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateIamInstanceProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateIamInstanceProfileAsync(const Model::DisassociateIamInstanceProfileRequest& request, const DisassociateIamInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates one or more targets from an event window.</p> <p>For more
@@ -8111,15 +4941,6 @@ namespace EC2
          */
         virtual Model::DisassociateInstanceEventWindowOutcome DisassociateInstanceEventWindow(const Model::DisassociateInstanceEventWindowRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateInstanceEventWindow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateInstanceEventWindowOutcomeCallable DisassociateInstanceEventWindowCallable(const Model::DisassociateInstanceEventWindowRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateInstanceEventWindow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateInstanceEventWindowAsync(const Model::DisassociateInstanceEventWindowRequest& request, const DisassociateInstanceEventWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates a subnet or gateway from a route table.</p> <p>After you
@@ -8134,15 +4955,6 @@ namespace EC2
          */
         virtual Model::DisassociateRouteTableOutcome DisassociateRouteTable(const Model::DisassociateRouteTableRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateRouteTable that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateRouteTableOutcomeCallable DisassociateRouteTableCallable(const Model::DisassociateRouteTableRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateRouteTable that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateRouteTableAsync(const Model::DisassociateRouteTableRequest& request, const DisassociateRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates a CIDR block from a subnet. Currently, you can disassociate an
@@ -8154,15 +4966,6 @@ namespace EC2
          */
         virtual Model::DisassociateSubnetCidrBlockOutcome DisassociateSubnetCidrBlock(const Model::DisassociateSubnetCidrBlockRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateSubnetCidrBlock that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateSubnetCidrBlockOutcomeCallable DisassociateSubnetCidrBlockCallable(const Model::DisassociateSubnetCidrBlockRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateSubnetCidrBlock that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateSubnetCidrBlockAsync(const Model::DisassociateSubnetCidrBlockRequest& request, const DisassociateSubnetCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates the specified subnets from the transit gateway multicast
@@ -8172,15 +4975,6 @@ namespace EC2
          */
         virtual Model::DisassociateTransitGatewayMulticastDomainOutcome DisassociateTransitGatewayMulticastDomain(const Model::DisassociateTransitGatewayMulticastDomainRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateTransitGatewayMulticastDomain that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateTransitGatewayMulticastDomainOutcomeCallable DisassociateTransitGatewayMulticastDomainCallable(const Model::DisassociateTransitGatewayMulticastDomainRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateTransitGatewayMulticastDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateTransitGatewayMulticastDomainAsync(const Model::DisassociateTransitGatewayMulticastDomainRequest& request, const DisassociateTransitGatewayMulticastDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the association between an an attachment and a policy
@@ -8190,15 +4984,6 @@ namespace EC2
          */
         virtual Model::DisassociateTransitGatewayPolicyTableOutcome DisassociateTransitGatewayPolicyTable(const Model::DisassociateTransitGatewayPolicyTableRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateTransitGatewayPolicyTable that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateTransitGatewayPolicyTableOutcomeCallable DisassociateTransitGatewayPolicyTableCallable(const Model::DisassociateTransitGatewayPolicyTableRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateTransitGatewayPolicyTable that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateTransitGatewayPolicyTableAsync(const Model::DisassociateTransitGatewayPolicyTableRequest& request, const DisassociateTransitGatewayPolicyTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates a resource attachment from a transit gateway route
@@ -8208,15 +4993,6 @@ namespace EC2
          */
         virtual Model::DisassociateTransitGatewayRouteTableOutcome DisassociateTransitGatewayRouteTable(const Model::DisassociateTransitGatewayRouteTableRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateTransitGatewayRouteTable that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateTransitGatewayRouteTableOutcomeCallable DisassociateTransitGatewayRouteTableCallable(const Model::DisassociateTransitGatewayRouteTableRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateTransitGatewayRouteTable that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateTransitGatewayRouteTableAsync(const Model::DisassociateTransitGatewayRouteTableRequest& request, const DisassociateTransitGatewayRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>This API action is currently in <b>limited preview only</b>. If you
@@ -8228,15 +5004,6 @@ namespace EC2
          */
         virtual Model::DisassociateTrunkInterfaceOutcome DisassociateTrunkInterface(const Model::DisassociateTrunkInterfaceRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateTrunkInterface that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateTrunkInterfaceOutcomeCallable DisassociateTrunkInterfaceCallable(const Model::DisassociateTrunkInterfaceRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateTrunkInterface that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateTrunkInterfaceAsync(const Model::DisassociateTrunkInterfaceRequest& request, const DisassociateTrunkInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates a CIDR block from a VPC. To disassociate the CIDR block, you
@@ -8250,15 +5017,6 @@ namespace EC2
          */
         virtual Model::DisassociateVpcCidrBlockOutcome DisassociateVpcCidrBlock(const Model::DisassociateVpcCidrBlockRequest& request) const;
 
-        /**
-         * A Callable wrapper for DisassociateVpcCidrBlock that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DisassociateVpcCidrBlockOutcomeCallable DisassociateVpcCidrBlockCallable(const Model::DisassociateVpcCidrBlockRequest& request) const;
-
-        /**
-         * An Async wrapper for DisassociateVpcCidrBlock that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DisassociateVpcCidrBlockAsync(const Model::DisassociateVpcCidrBlockRequest& request, const DisassociateVpcCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables Elastic IP address transfer. For more information, see <a
@@ -8270,15 +5028,6 @@ namespace EC2
          */
         virtual Model::EnableAddressTransferOutcome EnableAddressTransfer(const Model::EnableAddressTransferRequest& request) const;
 
-        /**
-         * A Callable wrapper for EnableAddressTransfer that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnableAddressTransferOutcomeCallable EnableAddressTransferCallable(const Model::EnableAddressTransferRequest& request) const;
-
-        /**
-         * An Async wrapper for EnableAddressTransfer that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnableAddressTransferAsync(const Model::EnableAddressTransferRequest& request, const EnableAddressTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables EBS encryption by default for your account in the current Region.</p>
@@ -8300,15 +5049,6 @@ namespace EC2
          */
         virtual Model::EnableEbsEncryptionByDefaultOutcome EnableEbsEncryptionByDefault(const Model::EnableEbsEncryptionByDefaultRequest& request) const;
 
-        /**
-         * A Callable wrapper for EnableEbsEncryptionByDefault that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnableEbsEncryptionByDefaultOutcomeCallable EnableEbsEncryptionByDefaultCallable(const Model::EnableEbsEncryptionByDefaultRequest& request) const;
-
-        /**
-         * An Async wrapper for EnableEbsEncryptionByDefault that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnableEbsEncryptionByDefaultAsync(const Model::EnableEbsEncryptionByDefaultRequest& request, const EnableEbsEncryptionByDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>When you enable faster launching for a Windows AMI, images are
@@ -8324,15 +5064,6 @@ namespace EC2
          */
         virtual Model::EnableFastLaunchOutcome EnableFastLaunch(const Model::EnableFastLaunchRequest& request) const;
 
-        /**
-         * A Callable wrapper for EnableFastLaunch that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnableFastLaunchOutcomeCallable EnableFastLaunchCallable(const Model::EnableFastLaunchRequest& request) const;
-
-        /**
-         * An Async wrapper for EnableFastLaunch that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnableFastLaunchAsync(const Model::EnableFastLaunchRequest& request, const EnableFastLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables fast snapshot restores for the specified snapshots in the specified
@@ -8349,15 +5080,6 @@ namespace EC2
          */
         virtual Model::EnableFastSnapshotRestoresOutcome EnableFastSnapshotRestores(const Model::EnableFastSnapshotRestoresRequest& request) const;
 
-        /**
-         * A Callable wrapper for EnableFastSnapshotRestores that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnableFastSnapshotRestoresOutcomeCallable EnableFastSnapshotRestoresCallable(const Model::EnableFastSnapshotRestoresRequest& request) const;
-
-        /**
-         * An Async wrapper for EnableFastSnapshotRestores that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnableFastSnapshotRestoresAsync(const Model::EnableFastSnapshotRestoresRequest& request, const EnableFastSnapshotRestoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables deprecation of the specified AMI at the specified date and time.</p>
@@ -8370,15 +5092,6 @@ namespace EC2
          */
         virtual Model::EnableImageDeprecationOutcome EnableImageDeprecation(const Model::EnableImageDeprecationRequest& request) const;
 
-        /**
-         * A Callable wrapper for EnableImageDeprecation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnableImageDeprecationOutcomeCallable EnableImageDeprecationCallable(const Model::EnableImageDeprecationRequest& request) const;
-
-        /**
-         * An Async wrapper for EnableImageDeprecation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnableImageDeprecationAsync(const Model::EnableImageDeprecationRequest& request, const EnableImageDeprecationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enable an Organizations member account as the IPAM admin account. You cannot
@@ -8392,15 +5105,6 @@ namespace EC2
          */
         virtual Model::EnableIpamOrganizationAdminAccountOutcome EnableIpamOrganizationAdminAccount(const Model::EnableIpamOrganizationAdminAccountRequest& request) const;
 
-        /**
-         * A Callable wrapper for EnableIpamOrganizationAdminAccount that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnableIpamOrganizationAdminAccountOutcomeCallable EnableIpamOrganizationAdminAccountCallable(const Model::EnableIpamOrganizationAdminAccountRequest& request) const;
-
-        /**
-         * An Async wrapper for EnableIpamOrganizationAdminAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnableIpamOrganizationAdminAccountAsync(const Model::EnableIpamOrganizationAdminAccountRequest& request, const EnableIpamOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables access to the EC2 serial console of all instances for your account.
@@ -8414,15 +5118,6 @@ namespace EC2
          */
         virtual Model::EnableSerialConsoleAccessOutcome EnableSerialConsoleAccess(const Model::EnableSerialConsoleAccessRequest& request) const;
 
-        /**
-         * A Callable wrapper for EnableSerialConsoleAccess that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnableSerialConsoleAccessOutcomeCallable EnableSerialConsoleAccessCallable(const Model::EnableSerialConsoleAccessRequest& request) const;
-
-        /**
-         * An Async wrapper for EnableSerialConsoleAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnableSerialConsoleAccessAsync(const Model::EnableSerialConsoleAccessRequest& request, const EnableSerialConsoleAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables the specified attachment to propagate routes to the specified
@@ -8432,15 +5127,6 @@ namespace EC2
          */
         virtual Model::EnableTransitGatewayRouteTablePropagationOutcome EnableTransitGatewayRouteTablePropagation(const Model::EnableTransitGatewayRouteTablePropagationRequest& request) const;
 
-        /**
-         * A Callable wrapper for EnableTransitGatewayRouteTablePropagation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnableTransitGatewayRouteTablePropagationOutcomeCallable EnableTransitGatewayRouteTablePropagationCallable(const Model::EnableTransitGatewayRouteTablePropagationRequest& request) const;
-
-        /**
-         * An Async wrapper for EnableTransitGatewayRouteTablePropagation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnableTransitGatewayRouteTablePropagationAsync(const Model::EnableTransitGatewayRouteTablePropagationRequest& request, const EnableTransitGatewayRouteTablePropagationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables a virtual private gateway (VGW) to propagate routes to the specified
@@ -8450,15 +5136,6 @@ namespace EC2
          */
         virtual Model::EnableVgwRoutePropagationOutcome EnableVgwRoutePropagation(const Model::EnableVgwRoutePropagationRequest& request) const;
 
-        /**
-         * A Callable wrapper for EnableVgwRoutePropagation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnableVgwRoutePropagationOutcomeCallable EnableVgwRoutePropagationCallable(const Model::EnableVgwRoutePropagationRequest& request) const;
-
-        /**
-         * An Async wrapper for EnableVgwRoutePropagation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnableVgwRoutePropagationAsync(const Model::EnableVgwRoutePropagationRequest& request, const EnableVgwRoutePropagationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables I/O operations for a volume that had I/O operations disabled because
@@ -8469,15 +5146,6 @@ namespace EC2
          */
         virtual Model::EnableVolumeIOOutcome EnableVolumeIO(const Model::EnableVolumeIORequest& request) const;
 
-        /**
-         * A Callable wrapper for EnableVolumeIO that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnableVolumeIOOutcomeCallable EnableVolumeIOCallable(const Model::EnableVolumeIORequest& request) const;
-
-        /**
-         * An Async wrapper for EnableVolumeIO that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnableVolumeIOAsync(const Model::EnableVolumeIORequest& request, const EnableVolumeIOResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>We are retiring EC2-Classic. We recommend that you migrate from
@@ -8499,15 +5167,6 @@ namespace EC2
          */
         virtual Model::EnableVpcClassicLinkOutcome EnableVpcClassicLink(const Model::EnableVpcClassicLinkRequest& request) const;
 
-        /**
-         * A Callable wrapper for EnableVpcClassicLink that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnableVpcClassicLinkOutcomeCallable EnableVpcClassicLinkCallable(const Model::EnableVpcClassicLinkRequest& request) const;
-
-        /**
-         * An Async wrapper for EnableVpcClassicLink that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnableVpcClassicLinkAsync(const Model::EnableVpcClassicLinkRequest& request, const EnableVpcClassicLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>We are retiring EC2-Classic. We recommend that you migrate from
@@ -8528,15 +5187,6 @@ namespace EC2
          */
         virtual Model::EnableVpcClassicLinkDnsSupportOutcome EnableVpcClassicLinkDnsSupport(const Model::EnableVpcClassicLinkDnsSupportRequest& request) const;
 
-        /**
-         * A Callable wrapper for EnableVpcClassicLinkDnsSupport that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::EnableVpcClassicLinkDnsSupportOutcomeCallable EnableVpcClassicLinkDnsSupportCallable(const Model::EnableVpcClassicLinkDnsSupportRequest& request) const;
-
-        /**
-         * An Async wrapper for EnableVpcClassicLinkDnsSupport that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void EnableVpcClassicLinkDnsSupportAsync(const Model::EnableVpcClassicLinkDnsSupportRequest& request, const EnableVpcClassicLinkDnsSupportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Downloads the client certificate revocation list for the specified Client VPN
@@ -8546,15 +5196,6 @@ namespace EC2
          */
         virtual Model::ExportClientVpnClientCertificateRevocationListOutcome ExportClientVpnClientCertificateRevocationList(const Model::ExportClientVpnClientCertificateRevocationListRequest& request) const;
 
-        /**
-         * A Callable wrapper for ExportClientVpnClientCertificateRevocationList that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ExportClientVpnClientCertificateRevocationListOutcomeCallable ExportClientVpnClientCertificateRevocationListCallable(const Model::ExportClientVpnClientCertificateRevocationListRequest& request) const;
-
-        /**
-         * An Async wrapper for ExportClientVpnClientCertificateRevocationList that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ExportClientVpnClientCertificateRevocationListAsync(const Model::ExportClientVpnClientCertificateRevocationListRequest& request, const ExportClientVpnClientCertificateRevocationListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Downloads the contents of the Client VPN endpoint configuration file for the
@@ -8567,15 +5208,6 @@ namespace EC2
          */
         virtual Model::ExportClientVpnClientConfigurationOutcome ExportClientVpnClientConfiguration(const Model::ExportClientVpnClientConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for ExportClientVpnClientConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ExportClientVpnClientConfigurationOutcomeCallable ExportClientVpnClientConfigurationCallable(const Model::ExportClientVpnClientConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for ExportClientVpnClientConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ExportClientVpnClientConfigurationAsync(const Model::ExportClientVpnClientConfigurationRequest& request, const ExportClientVpnClientConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Exports an Amazon Machine Image (AMI) to a VM file. For more information, see
@@ -8588,15 +5220,6 @@ namespace EC2
          */
         virtual Model::ExportImageOutcome ExportImage(const Model::ExportImageRequest& request) const;
 
-        /**
-         * A Callable wrapper for ExportImage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ExportImageOutcomeCallable ExportImageCallable(const Model::ExportImageRequest& request) const;
-
-        /**
-         * An Async wrapper for ExportImage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ExportImageAsync(const Model::ExportImageRequest& request, const ExportImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Exports routes from the specified transit gateway route table to the
@@ -8611,15 +5234,6 @@ namespace EC2
          */
         virtual Model::ExportTransitGatewayRoutesOutcome ExportTransitGatewayRoutes(const Model::ExportTransitGatewayRoutesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ExportTransitGatewayRoutes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ExportTransitGatewayRoutesOutcomeCallable ExportTransitGatewayRoutesCallable(const Model::ExportTransitGatewayRoutesRequest& request) const;
-
-        /**
-         * An Async wrapper for ExportTransitGatewayRoutes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ExportTransitGatewayRoutesAsync(const Model::ExportTransitGatewayRoutesRequest& request, const ExportTransitGatewayRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the IAM roles that are associated with the specified ACM (ACM)
@@ -8632,15 +5246,6 @@ namespace EC2
          */
         virtual Model::GetAssociatedEnclaveCertificateIamRolesOutcome GetAssociatedEnclaveCertificateIamRoles(const Model::GetAssociatedEnclaveCertificateIamRolesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAssociatedEnclaveCertificateIamRoles that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAssociatedEnclaveCertificateIamRolesOutcomeCallable GetAssociatedEnclaveCertificateIamRolesCallable(const Model::GetAssociatedEnclaveCertificateIamRolesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAssociatedEnclaveCertificateIamRoles that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAssociatedEnclaveCertificateIamRolesAsync(const Model::GetAssociatedEnclaveCertificateIamRolesRequest& request, const GetAssociatedEnclaveCertificateIamRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the IPv6 CIDR block associations for a specified IPv6
@@ -8650,15 +5255,6 @@ namespace EC2
          */
         virtual Model::GetAssociatedIpv6PoolCidrsOutcome GetAssociatedIpv6PoolCidrs(const Model::GetAssociatedIpv6PoolCidrsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetAssociatedIpv6PoolCidrs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetAssociatedIpv6PoolCidrsOutcomeCallable GetAssociatedIpv6PoolCidrsCallable(const Model::GetAssociatedIpv6PoolCidrsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetAssociatedIpv6PoolCidrs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetAssociatedIpv6PoolCidrsAsync(const Model::GetAssociatedIpv6PoolCidrsRequest& request, const GetAssociatedIpv6PoolCidrsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets usage information about a Capacity Reservation. If the Capacity
@@ -8671,15 +5267,6 @@ namespace EC2
          */
         virtual Model::GetCapacityReservationUsageOutcome GetCapacityReservationUsage(const Model::GetCapacityReservationUsageRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetCapacityReservationUsage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetCapacityReservationUsageOutcomeCallable GetCapacityReservationUsageCallable(const Model::GetCapacityReservationUsageRequest& request) const;
-
-        /**
-         * An Async wrapper for GetCapacityReservationUsage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetCapacityReservationUsageAsync(const Model::GetCapacityReservationUsageRequest& request, const GetCapacityReservationUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the allocations from the specified customer-owned address
@@ -8689,15 +5276,6 @@ namespace EC2
          */
         virtual Model::GetCoipPoolUsageOutcome GetCoipPoolUsage(const Model::GetCoipPoolUsageRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetCoipPoolUsage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetCoipPoolUsageOutcomeCallable GetCoipPoolUsageCallable(const Model::GetCoipPoolUsageRequest& request) const;
-
-        /**
-         * An Async wrapper for GetCoipPoolUsage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetCoipPoolUsageAsync(const Model::GetCoipPoolUsageRequest& request, const GetCoipPoolUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the console output for the specified instance. For Linux instances, the
@@ -8719,15 +5297,6 @@ namespace EC2
          */
         virtual Model::GetConsoleOutputOutcome GetConsoleOutput(const Model::GetConsoleOutputRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetConsoleOutput that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetConsoleOutputOutcomeCallable GetConsoleOutputCallable(const Model::GetConsoleOutputRequest& request) const;
-
-        /**
-         * An Async wrapper for GetConsoleOutput that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetConsoleOutputAsync(const Model::GetConsoleOutputRequest& request, const GetConsoleOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieve a JPG-format screenshot of a running instance to help with
@@ -8738,15 +5307,6 @@ namespace EC2
          */
         virtual Model::GetConsoleScreenshotOutcome GetConsoleScreenshot(const Model::GetConsoleScreenshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetConsoleScreenshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetConsoleScreenshotOutcomeCallable GetConsoleScreenshotCallable(const Model::GetConsoleScreenshotRequest& request) const;
-
-        /**
-         * An Async wrapper for GetConsoleScreenshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetConsoleScreenshotAsync(const Model::GetConsoleScreenshotRequest& request, const GetConsoleScreenshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the default credit option for CPU usage of a burstable performance
@@ -8759,15 +5319,6 @@ namespace EC2
          */
         virtual Model::GetDefaultCreditSpecificationOutcome GetDefaultCreditSpecification(const Model::GetDefaultCreditSpecificationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetDefaultCreditSpecification that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetDefaultCreditSpecificationOutcomeCallable GetDefaultCreditSpecificationCallable(const Model::GetDefaultCreditSpecificationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetDefaultCreditSpecification that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetDefaultCreditSpecificationAsync(const Model::GetDefaultCreditSpecificationRequest& request, const GetDefaultCreditSpecificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the default KMS key for EBS encryption by default for your account
@@ -8782,15 +5333,6 @@ namespace EC2
          */
         virtual Model::GetEbsDefaultKmsKeyIdOutcome GetEbsDefaultKmsKeyId(const Model::GetEbsDefaultKmsKeyIdRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetEbsDefaultKmsKeyId that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetEbsDefaultKmsKeyIdOutcomeCallable GetEbsDefaultKmsKeyIdCallable(const Model::GetEbsDefaultKmsKeyIdRequest& request) const;
-
-        /**
-         * An Async wrapper for GetEbsDefaultKmsKeyId that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetEbsDefaultKmsKeyIdAsync(const Model::GetEbsDefaultKmsKeyIdRequest& request, const GetEbsDefaultKmsKeyIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes whether EBS encryption by default is enabled for your account in
@@ -8803,15 +5345,6 @@ namespace EC2
          */
         virtual Model::GetEbsEncryptionByDefaultOutcome GetEbsEncryptionByDefault(const Model::GetEbsEncryptionByDefaultRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetEbsEncryptionByDefault that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetEbsEncryptionByDefaultOutcomeCallable GetEbsEncryptionByDefaultCallable(const Model::GetEbsEncryptionByDefaultRequest& request) const;
-
-        /**
-         * An Async wrapper for GetEbsEncryptionByDefault that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetEbsEncryptionByDefaultAsync(const Model::GetEbsEncryptionByDefaultRequest& request, const GetEbsEncryptionByDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Generates a CloudFormation template that streamlines and automates the
@@ -8829,15 +5362,6 @@ namespace EC2
          */
         virtual Model::GetFlowLogsIntegrationTemplateOutcome GetFlowLogsIntegrationTemplate(const Model::GetFlowLogsIntegrationTemplateRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetFlowLogsIntegrationTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetFlowLogsIntegrationTemplateOutcomeCallable GetFlowLogsIntegrationTemplateCallable(const Model::GetFlowLogsIntegrationTemplateRequest& request) const;
-
-        /**
-         * An Async wrapper for GetFlowLogsIntegrationTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetFlowLogsIntegrationTemplateAsync(const Model::GetFlowLogsIntegrationTemplateRequest& request, const GetFlowLogsIntegrationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the resource groups to which a Capacity Reservation has been
@@ -8847,15 +5371,6 @@ namespace EC2
          */
         virtual Model::GetGroupsForCapacityReservationOutcome GetGroupsForCapacityReservation(const Model::GetGroupsForCapacityReservationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetGroupsForCapacityReservation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetGroupsForCapacityReservationOutcomeCallable GetGroupsForCapacityReservationCallable(const Model::GetGroupsForCapacityReservationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetGroupsForCapacityReservation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetGroupsForCapacityReservationAsync(const Model::GetGroupsForCapacityReservationRequest& request, const GetGroupsForCapacityReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Preview a reservation purchase with configurations that match those of your
@@ -8868,15 +5383,6 @@ namespace EC2
          */
         virtual Model::GetHostReservationPurchasePreviewOutcome GetHostReservationPurchasePreview(const Model::GetHostReservationPurchasePreviewRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetHostReservationPurchasePreview that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetHostReservationPurchasePreviewOutcomeCallable GetHostReservationPurchasePreviewCallable(const Model::GetHostReservationPurchasePreviewRequest& request) const;
-
-        /**
-         * An Async wrapper for GetHostReservationPurchasePreview that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetHostReservationPurchasePreviewAsync(const Model::GetHostReservationPurchasePreviewRequest& request, const GetHostReservationPurchasePreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of instance types with the specified instance attributes. You
@@ -8902,15 +5408,6 @@ namespace EC2
          */
         virtual Model::GetInstanceTypesFromInstanceRequirementsOutcome GetInstanceTypesFromInstanceRequirements(const Model::GetInstanceTypesFromInstanceRequirementsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetInstanceTypesFromInstanceRequirements that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetInstanceTypesFromInstanceRequirementsOutcomeCallable GetInstanceTypesFromInstanceRequirementsCallable(const Model::GetInstanceTypesFromInstanceRequirementsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetInstanceTypesFromInstanceRequirements that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetInstanceTypesFromInstanceRequirementsAsync(const Model::GetInstanceTypesFromInstanceRequirementsRequest& request, const GetInstanceTypesFromInstanceRequirementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>A binary representation of the UEFI variable store. Only non-volatile
@@ -8932,15 +5429,6 @@ namespace EC2
          */
         virtual Model::GetInstanceUefiDataOutcome GetInstanceUefiData(const Model::GetInstanceUefiDataRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetInstanceUefiData that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetInstanceUefiDataOutcomeCallable GetInstanceUefiDataCallable(const Model::GetInstanceUefiDataRequest& request) const;
-
-        /**
-         * An Async wrapper for GetInstanceUefiData that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetInstanceUefiDataAsync(const Model::GetInstanceUefiDataRequest& request, const GetInstanceUefiDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieve historical information about a CIDR within an IPAM scope. For more
@@ -8953,15 +5441,6 @@ namespace EC2
          */
         virtual Model::GetIpamAddressHistoryOutcome GetIpamAddressHistory(const Model::GetIpamAddressHistoryRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetIpamAddressHistory that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetIpamAddressHistoryOutcomeCallable GetIpamAddressHistoryCallable(const Model::GetIpamAddressHistoryRequest& request) const;
-
-        /**
-         * An Async wrapper for GetIpamAddressHistory that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetIpamAddressHistoryAsync(const Model::GetIpamAddressHistoryRequest& request, const GetIpamAddressHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get a list of all the CIDR allocations in an IPAM pool.</p><p><h3>See
@@ -8971,15 +5450,6 @@ namespace EC2
          */
         virtual Model::GetIpamPoolAllocationsOutcome GetIpamPoolAllocations(const Model::GetIpamPoolAllocationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetIpamPoolAllocations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetIpamPoolAllocationsOutcomeCallable GetIpamPoolAllocationsCallable(const Model::GetIpamPoolAllocationsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetIpamPoolAllocations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetIpamPoolAllocationsAsync(const Model::GetIpamPoolAllocationsRequest& request, const GetIpamPoolAllocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get the CIDRs provisioned to an IPAM pool.</p><p><h3>See Also:</h3>   <a
@@ -8988,15 +5458,6 @@ namespace EC2
          */
         virtual Model::GetIpamPoolCidrsOutcome GetIpamPoolCidrs(const Model::GetIpamPoolCidrsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetIpamPoolCidrs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetIpamPoolCidrsOutcomeCallable GetIpamPoolCidrsCallable(const Model::GetIpamPoolCidrsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetIpamPoolCidrs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetIpamPoolCidrsAsync(const Model::GetIpamPoolCidrsRequest& request, const GetIpamPoolCidrsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get information about the resources in a scope.</p><p><h3>See Also:</h3>   <a
@@ -9005,15 +5466,6 @@ namespace EC2
          */
         virtual Model::GetIpamResourceCidrsOutcome GetIpamResourceCidrs(const Model::GetIpamResourceCidrsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetIpamResourceCidrs that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetIpamResourceCidrsOutcomeCallable GetIpamResourceCidrsCallable(const Model::GetIpamResourceCidrsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetIpamResourceCidrs that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetIpamResourceCidrsAsync(const Model::GetIpamResourceCidrsRequest& request, const GetIpamResourceCidrsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the configuration data of the specified instance. You can use this
@@ -9030,15 +5482,6 @@ namespace EC2
          */
         virtual Model::GetLaunchTemplateDataOutcome GetLaunchTemplateData(const Model::GetLaunchTemplateDataRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetLaunchTemplateData that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetLaunchTemplateDataOutcomeCallable GetLaunchTemplateDataCallable(const Model::GetLaunchTemplateDataRequest& request) const;
-
-        /**
-         * An Async wrapper for GetLaunchTemplateData that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetLaunchTemplateDataAsync(const Model::GetLaunchTemplateDataRequest& request, const GetLaunchTemplateDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the resources that are associated with the specified
@@ -9048,15 +5491,6 @@ namespace EC2
          */
         virtual Model::GetManagedPrefixListAssociationsOutcome GetManagedPrefixListAssociations(const Model::GetManagedPrefixListAssociationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetManagedPrefixListAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetManagedPrefixListAssociationsOutcomeCallable GetManagedPrefixListAssociationsCallable(const Model::GetManagedPrefixListAssociationsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetManagedPrefixListAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetManagedPrefixListAssociationsAsync(const Model::GetManagedPrefixListAssociationsRequest& request, const GetManagedPrefixListAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the entries for a specified managed prefix
@@ -9066,15 +5500,6 @@ namespace EC2
          */
         virtual Model::GetManagedPrefixListEntriesOutcome GetManagedPrefixListEntries(const Model::GetManagedPrefixListEntriesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetManagedPrefixListEntries that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetManagedPrefixListEntriesOutcomeCallable GetManagedPrefixListEntriesCallable(const Model::GetManagedPrefixListEntriesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetManagedPrefixListEntries that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetManagedPrefixListEntriesAsync(const Model::GetManagedPrefixListEntriesRequest& request, const GetManagedPrefixListEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the findings for the specified Network Access Scope
@@ -9084,15 +5509,6 @@ namespace EC2
          */
         virtual Model::GetNetworkInsightsAccessScopeAnalysisFindingsOutcome GetNetworkInsightsAccessScopeAnalysisFindings(const Model::GetNetworkInsightsAccessScopeAnalysisFindingsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetNetworkInsightsAccessScopeAnalysisFindings that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetNetworkInsightsAccessScopeAnalysisFindingsOutcomeCallable GetNetworkInsightsAccessScopeAnalysisFindingsCallable(const Model::GetNetworkInsightsAccessScopeAnalysisFindingsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetNetworkInsightsAccessScopeAnalysisFindings that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetNetworkInsightsAccessScopeAnalysisFindingsAsync(const Model::GetNetworkInsightsAccessScopeAnalysisFindingsRequest& request, const GetNetworkInsightsAccessScopeAnalysisFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the content for the specified Network Access Scope.</p><p><h3>See
@@ -9102,15 +5518,6 @@ namespace EC2
          */
         virtual Model::GetNetworkInsightsAccessScopeContentOutcome GetNetworkInsightsAccessScopeContent(const Model::GetNetworkInsightsAccessScopeContentRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetNetworkInsightsAccessScopeContent that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetNetworkInsightsAccessScopeContentOutcomeCallable GetNetworkInsightsAccessScopeContentCallable(const Model::GetNetworkInsightsAccessScopeContentRequest& request) const;
-
-        /**
-         * An Async wrapper for GetNetworkInsightsAccessScopeContent that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetNetworkInsightsAccessScopeContentAsync(const Model::GetNetworkInsightsAccessScopeContentRequest& request, const GetNetworkInsightsAccessScopeContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the encrypted administrator password for a running Windows
@@ -9135,15 +5542,6 @@ namespace EC2
          */
         virtual Model::GetPasswordDataOutcome GetPasswordData(const Model::GetPasswordDataRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetPasswordData that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetPasswordDataOutcomeCallable GetPasswordDataCallable(const Model::GetPasswordDataRequest& request) const;
-
-        /**
-         * An Async wrapper for GetPasswordData that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetPasswordDataAsync(const Model::GetPasswordDataRequest& request, const GetPasswordDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a quote and exchange information for exchanging one or more specified
@@ -9156,15 +5554,6 @@ namespace EC2
          */
         virtual Model::GetReservedInstancesExchangeQuoteOutcome GetReservedInstancesExchangeQuote(const Model::GetReservedInstancesExchangeQuoteRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetReservedInstancesExchangeQuote that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetReservedInstancesExchangeQuoteOutcomeCallable GetReservedInstancesExchangeQuoteCallable(const Model::GetReservedInstancesExchangeQuoteRequest& request) const;
-
-        /**
-         * An Async wrapper for GetReservedInstancesExchangeQuote that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetReservedInstancesExchangeQuoteAsync(const Model::GetReservedInstancesExchangeQuoteRequest& request, const GetReservedInstancesExchangeQuoteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the access status of your account to the EC2 serial console of all
@@ -9178,15 +5567,6 @@ namespace EC2
          */
         virtual Model::GetSerialConsoleAccessStatusOutcome GetSerialConsoleAccessStatus(const Model::GetSerialConsoleAccessStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSerialConsoleAccessStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSerialConsoleAccessStatusOutcomeCallable GetSerialConsoleAccessStatusCallable(const Model::GetSerialConsoleAccessStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSerialConsoleAccessStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSerialConsoleAccessStatusAsync(const Model::GetSerialConsoleAccessStatusRequest& request, const GetSerialConsoleAccessStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Calculates the Spot placement score for a Region or Availability Zone based
@@ -9203,15 +5583,6 @@ namespace EC2
          */
         virtual Model::GetSpotPlacementScoresOutcome GetSpotPlacementScores(const Model::GetSpotPlacementScoresRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSpotPlacementScores that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSpotPlacementScoresOutcomeCallable GetSpotPlacementScoresCallable(const Model::GetSpotPlacementScoresRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSpotPlacementScores that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSpotPlacementScoresAsync(const Model::GetSpotPlacementScoresRequest& request, const GetSpotPlacementScoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the subnet CIDR reservations.</p><p><h3>See Also:</h3>
@@ -9221,15 +5592,6 @@ namespace EC2
          */
         virtual Model::GetSubnetCidrReservationsOutcome GetSubnetCidrReservations(const Model::GetSubnetCidrReservationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetSubnetCidrReservations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetSubnetCidrReservationsOutcomeCallable GetSubnetCidrReservationsCallable(const Model::GetSubnetCidrReservationsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetSubnetCidrReservations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetSubnetCidrReservationsAsync(const Model::GetSubnetCidrReservationsRequest& request, const GetSubnetCidrReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the route tables to which the specified resource attachment propagates
@@ -9239,15 +5601,6 @@ namespace EC2
          */
         virtual Model::GetTransitGatewayAttachmentPropagationsOutcome GetTransitGatewayAttachmentPropagations(const Model::GetTransitGatewayAttachmentPropagationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetTransitGatewayAttachmentPropagations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetTransitGatewayAttachmentPropagationsOutcomeCallable GetTransitGatewayAttachmentPropagationsCallable(const Model::GetTransitGatewayAttachmentPropagationsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetTransitGatewayAttachmentPropagations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetTransitGatewayAttachmentPropagationsAsync(const Model::GetTransitGatewayAttachmentPropagationsRequest& request, const GetTransitGatewayAttachmentPropagationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the associations for the transit gateway multicast
@@ -9257,15 +5610,6 @@ namespace EC2
          */
         virtual Model::GetTransitGatewayMulticastDomainAssociationsOutcome GetTransitGatewayMulticastDomainAssociations(const Model::GetTransitGatewayMulticastDomainAssociationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetTransitGatewayMulticastDomainAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetTransitGatewayMulticastDomainAssociationsOutcomeCallable GetTransitGatewayMulticastDomainAssociationsCallable(const Model::GetTransitGatewayMulticastDomainAssociationsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetTransitGatewayMulticastDomainAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetTransitGatewayMulticastDomainAssociationsAsync(const Model::GetTransitGatewayMulticastDomainAssociationsRequest& request, const GetTransitGatewayMulticastDomainAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of the transit gateway policy table associations.</p><p><h3>See
@@ -9275,15 +5619,6 @@ namespace EC2
          */
         virtual Model::GetTransitGatewayPolicyTableAssociationsOutcome GetTransitGatewayPolicyTableAssociations(const Model::GetTransitGatewayPolicyTableAssociationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetTransitGatewayPolicyTableAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetTransitGatewayPolicyTableAssociationsOutcomeCallable GetTransitGatewayPolicyTableAssociationsCallable(const Model::GetTransitGatewayPolicyTableAssociationsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetTransitGatewayPolicyTableAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetTransitGatewayPolicyTableAssociationsAsync(const Model::GetTransitGatewayPolicyTableAssociationsRequest& request, const GetTransitGatewayPolicyTableAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of transit gateway policy table entries.</p><p><h3>See
@@ -9293,15 +5628,6 @@ namespace EC2
          */
         virtual Model::GetTransitGatewayPolicyTableEntriesOutcome GetTransitGatewayPolicyTableEntries(const Model::GetTransitGatewayPolicyTableEntriesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetTransitGatewayPolicyTableEntries that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetTransitGatewayPolicyTableEntriesOutcomeCallable GetTransitGatewayPolicyTableEntriesCallable(const Model::GetTransitGatewayPolicyTableEntriesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetTransitGatewayPolicyTableEntries that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetTransitGatewayPolicyTableEntriesAsync(const Model::GetTransitGatewayPolicyTableEntriesRequest& request, const GetTransitGatewayPolicyTableEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the prefix list references in a specified transit
@@ -9311,15 +5637,6 @@ namespace EC2
          */
         virtual Model::GetTransitGatewayPrefixListReferencesOutcome GetTransitGatewayPrefixListReferences(const Model::GetTransitGatewayPrefixListReferencesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetTransitGatewayPrefixListReferences that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetTransitGatewayPrefixListReferencesOutcomeCallable GetTransitGatewayPrefixListReferencesCallable(const Model::GetTransitGatewayPrefixListReferencesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetTransitGatewayPrefixListReferences that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetTransitGatewayPrefixListReferencesAsync(const Model::GetTransitGatewayPrefixListReferencesRequest& request, const GetTransitGatewayPrefixListReferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the associations for the specified transit gateway
@@ -9329,15 +5646,6 @@ namespace EC2
          */
         virtual Model::GetTransitGatewayRouteTableAssociationsOutcome GetTransitGatewayRouteTableAssociations(const Model::GetTransitGatewayRouteTableAssociationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetTransitGatewayRouteTableAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetTransitGatewayRouteTableAssociationsOutcomeCallable GetTransitGatewayRouteTableAssociationsCallable(const Model::GetTransitGatewayRouteTableAssociationsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetTransitGatewayRouteTableAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetTransitGatewayRouteTableAssociationsAsync(const Model::GetTransitGatewayRouteTableAssociationsRequest& request, const GetTransitGatewayRouteTableAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the route table propagations for the specified transit
@@ -9347,15 +5655,6 @@ namespace EC2
          */
         virtual Model::GetTransitGatewayRouteTablePropagationsOutcome GetTransitGatewayRouteTablePropagations(const Model::GetTransitGatewayRouteTablePropagationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetTransitGatewayRouteTablePropagations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetTransitGatewayRouteTablePropagationsOutcomeCallable GetTransitGatewayRouteTablePropagationsCallable(const Model::GetTransitGatewayRouteTablePropagationsRequest& request) const;
-
-        /**
-         * An Async wrapper for GetTransitGatewayRouteTablePropagations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetTransitGatewayRouteTablePropagationsAsync(const Model::GetTransitGatewayRouteTablePropagationsRequest& request, const GetTransitGatewayRouteTablePropagationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Download an Amazon Web Services-provided sample configuration file to be used
@@ -9366,15 +5665,6 @@ namespace EC2
          */
         virtual Model::GetVpnConnectionDeviceSampleConfigurationOutcome GetVpnConnectionDeviceSampleConfiguration(const Model::GetVpnConnectionDeviceSampleConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetVpnConnectionDeviceSampleConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetVpnConnectionDeviceSampleConfigurationOutcomeCallable GetVpnConnectionDeviceSampleConfigurationCallable(const Model::GetVpnConnectionDeviceSampleConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetVpnConnectionDeviceSampleConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetVpnConnectionDeviceSampleConfigurationAsync(const Model::GetVpnConnectionDeviceSampleConfigurationRequest& request, const GetVpnConnectionDeviceSampleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Obtain a list of customer gateway devices for which sample configuration
@@ -9388,15 +5678,6 @@ namespace EC2
          */
         virtual Model::GetVpnConnectionDeviceTypesOutcome GetVpnConnectionDeviceTypes(const Model::GetVpnConnectionDeviceTypesRequest& request) const;
 
-        /**
-         * A Callable wrapper for GetVpnConnectionDeviceTypes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetVpnConnectionDeviceTypesOutcomeCallable GetVpnConnectionDeviceTypesCallable(const Model::GetVpnConnectionDeviceTypesRequest& request) const;
-
-        /**
-         * An Async wrapper for GetVpnConnectionDeviceTypes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetVpnConnectionDeviceTypesAsync(const Model::GetVpnConnectionDeviceTypesRequest& request, const GetVpnConnectionDeviceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Uploads a client certificate revocation list to the specified Client VPN
@@ -9409,15 +5690,6 @@ namespace EC2
          */
         virtual Model::ImportClientVpnClientCertificateRevocationListOutcome ImportClientVpnClientCertificateRevocationList(const Model::ImportClientVpnClientCertificateRevocationListRequest& request) const;
 
-        /**
-         * A Callable wrapper for ImportClientVpnClientCertificateRevocationList that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ImportClientVpnClientCertificateRevocationListOutcomeCallable ImportClientVpnClientCertificateRevocationListCallable(const Model::ImportClientVpnClientCertificateRevocationListRequest& request) const;
-
-        /**
-         * An Async wrapper for ImportClientVpnClientCertificateRevocationList that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ImportClientVpnClientCertificateRevocationListAsync(const Model::ImportClientVpnClientCertificateRevocationListRequest& request, const ImportClientVpnClientCertificateRevocationListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Import single or multi-volume disk images or EBS snapshots into an Amazon
@@ -9435,15 +5707,6 @@ namespace EC2
          */
         virtual Model::ImportImageOutcome ImportImage(const Model::ImportImageRequest& request) const;
 
-        /**
-         * A Callable wrapper for ImportImage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ImportImageOutcomeCallable ImportImageCallable(const Model::ImportImageRequest& request) const;
-
-        /**
-         * An Async wrapper for ImportImage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ImportImageAsync(const Model::ImportImageRequest& request, const ImportImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an import instance task using metadata from the specified disk
@@ -9462,15 +5725,6 @@ namespace EC2
          */
         virtual Model::ImportInstanceOutcome ImportInstance(const Model::ImportInstanceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ImportInstance that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ImportInstanceOutcomeCallable ImportInstanceCallable(const Model::ImportInstanceRequest& request) const;
-
-        /**
-         * An Async wrapper for ImportInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ImportInstanceAsync(const Model::ImportInstanceRequest& request, const ImportInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Imports the public key from an RSA or ED25519 key pair that you created with
@@ -9488,15 +5742,6 @@ namespace EC2
          */
         virtual Model::ImportKeyPairOutcome ImportKeyPair(const Model::ImportKeyPairRequest& request) const;
 
-        /**
-         * A Callable wrapper for ImportKeyPair that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ImportKeyPairOutcomeCallable ImportKeyPairCallable(const Model::ImportKeyPairRequest& request) const;
-
-        /**
-         * An Async wrapper for ImportKeyPair that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ImportKeyPairAsync(const Model::ImportKeyPairRequest& request, const ImportKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Imports a disk into an EBS snapshot.</p> <p>For more information, see <a
@@ -9508,15 +5753,6 @@ namespace EC2
          */
         virtual Model::ImportSnapshotOutcome ImportSnapshot(const Model::ImportSnapshotRequest& request) const;
 
-        /**
-         * A Callable wrapper for ImportSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ImportSnapshotOutcomeCallable ImportSnapshotCallable(const Model::ImportSnapshotRequest& request) const;
-
-        /**
-         * An Async wrapper for ImportSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ImportSnapshotAsync(const Model::ImportSnapshotRequest& request, const ImportSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an import volume task using metadata from the specified disk
@@ -9536,15 +5772,6 @@ namespace EC2
          */
         virtual Model::ImportVolumeOutcome ImportVolume(const Model::ImportVolumeRequest& request) const;
 
-        /**
-         * A Callable wrapper for ImportVolume that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ImportVolumeOutcomeCallable ImportVolumeCallable(const Model::ImportVolumeRequest& request) const;
-
-        /**
-         * An Async wrapper for ImportVolume that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ImportVolumeAsync(const Model::ImportVolumeRequest& request, const ImportVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists one or more AMIs that are currently in the Recycle Bin. For more
@@ -9557,15 +5784,6 @@ namespace EC2
          */
         virtual Model::ListImagesInRecycleBinOutcome ListImagesInRecycleBin(const Model::ListImagesInRecycleBinRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListImagesInRecycleBin that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListImagesInRecycleBinOutcomeCallable ListImagesInRecycleBinCallable(const Model::ListImagesInRecycleBinRequest& request) const;
-
-        /**
-         * An Async wrapper for ListImagesInRecycleBin that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListImagesInRecycleBinAsync(const Model::ListImagesInRecycleBinRequest& request, const ListImagesInRecycleBinResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists one or more snapshots that are currently in the Recycle
@@ -9575,15 +5793,6 @@ namespace EC2
          */
         virtual Model::ListSnapshotsInRecycleBinOutcome ListSnapshotsInRecycleBin(const Model::ListSnapshotsInRecycleBinRequest& request) const;
 
-        /**
-         * A Callable wrapper for ListSnapshotsInRecycleBin that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListSnapshotsInRecycleBinOutcomeCallable ListSnapshotsInRecycleBinCallable(const Model::ListSnapshotsInRecycleBinRequest& request) const;
-
-        /**
-         * An Async wrapper for ListSnapshotsInRecycleBin that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListSnapshotsInRecycleBinAsync(const Model::ListSnapshotsInRecycleBinRequest& request, const ListSnapshotsInRecycleBinResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies an attribute of the specified Elastic IP address. For requirements,
@@ -9595,15 +5804,6 @@ namespace EC2
          */
         virtual Model::ModifyAddressAttributeOutcome ModifyAddressAttribute(const Model::ModifyAddressAttributeRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyAddressAttribute that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyAddressAttributeOutcomeCallable ModifyAddressAttributeCallable(const Model::ModifyAddressAttributeRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyAddressAttribute that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyAddressAttributeAsync(const Model::ModifyAddressAttributeRequest& request, const ModifyAddressAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Changes the opt-in status of the Local Zone and Wavelength Zone group for
@@ -9616,15 +5816,6 @@ namespace EC2
          */
         virtual Model::ModifyAvailabilityZoneGroupOutcome ModifyAvailabilityZoneGroup(const Model::ModifyAvailabilityZoneGroupRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyAvailabilityZoneGroup that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyAvailabilityZoneGroupOutcomeCallable ModifyAvailabilityZoneGroupCallable(const Model::ModifyAvailabilityZoneGroupRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyAvailabilityZoneGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyAvailabilityZoneGroupAsync(const Model::ModifyAvailabilityZoneGroupRequest& request, const ModifyAvailabilityZoneGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies a Capacity Reservation's capacity and the conditions under which it
@@ -9638,15 +5829,6 @@ namespace EC2
          */
         virtual Model::ModifyCapacityReservationOutcome ModifyCapacityReservation(const Model::ModifyCapacityReservationRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyCapacityReservation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyCapacityReservationOutcomeCallable ModifyCapacityReservationCallable(const Model::ModifyCapacityReservationRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyCapacityReservation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyCapacityReservationAsync(const Model::ModifyCapacityReservationRequest& request, const ModifyCapacityReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies a Capacity Reservation Fleet.</p> <p>When you modify the total
@@ -9660,15 +5842,6 @@ namespace EC2
          */
         virtual Model::ModifyCapacityReservationFleetOutcome ModifyCapacityReservationFleet(const Model::ModifyCapacityReservationFleetRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyCapacityReservationFleet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyCapacityReservationFleetOutcomeCallable ModifyCapacityReservationFleetCallable(const Model::ModifyCapacityReservationFleetRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyCapacityReservationFleet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyCapacityReservationFleetAsync(const Model::ModifyCapacityReservationFleetRequest& request, const ModifyCapacityReservationFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the specified Client VPN endpoint. Modifying the DNS server resets
@@ -9678,15 +5851,6 @@ namespace EC2
          */
         virtual Model::ModifyClientVpnEndpointOutcome ModifyClientVpnEndpoint(const Model::ModifyClientVpnEndpointRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyClientVpnEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyClientVpnEndpointOutcomeCallable ModifyClientVpnEndpointCallable(const Model::ModifyClientVpnEndpointRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyClientVpnEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyClientVpnEndpointAsync(const Model::ModifyClientVpnEndpointRequest& request, const ModifyClientVpnEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the default credit option for CPU usage of burstable performance
@@ -9709,15 +5873,6 @@ namespace EC2
          */
         virtual Model::ModifyDefaultCreditSpecificationOutcome ModifyDefaultCreditSpecification(const Model::ModifyDefaultCreditSpecificationRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyDefaultCreditSpecification that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyDefaultCreditSpecificationOutcomeCallable ModifyDefaultCreditSpecificationCallable(const Model::ModifyDefaultCreditSpecificationRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyDefaultCreditSpecification that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyDefaultCreditSpecificationAsync(const Model::ModifyDefaultCreditSpecificationRequest& request, const ModifyDefaultCreditSpecificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Changes the default KMS key for EBS encryption by default for your account in
@@ -9737,15 +5892,6 @@ namespace EC2
          */
         virtual Model::ModifyEbsDefaultKmsKeyIdOutcome ModifyEbsDefaultKmsKeyId(const Model::ModifyEbsDefaultKmsKeyIdRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyEbsDefaultKmsKeyId that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyEbsDefaultKmsKeyIdOutcomeCallable ModifyEbsDefaultKmsKeyIdCallable(const Model::ModifyEbsDefaultKmsKeyIdRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyEbsDefaultKmsKeyId that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyEbsDefaultKmsKeyIdAsync(const Model::ModifyEbsDefaultKmsKeyIdRequest& request, const ModifyEbsDefaultKmsKeyIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the specified EC2 Fleet.</p> <p>You can only modify an EC2 Fleet
@@ -9778,15 +5924,6 @@ namespace EC2
          */
         virtual Model::ModifyFleetOutcome ModifyFleet(const Model::ModifyFleetRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyFleet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyFleetOutcomeCallable ModifyFleetCallable(const Model::ModifyFleetRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyFleet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyFleetAsync(const Model::ModifyFleetRequest& request, const ModifyFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the specified attribute of the specified Amazon FPGA Image
@@ -9796,15 +5933,6 @@ namespace EC2
          */
         virtual Model::ModifyFpgaImageAttributeOutcome ModifyFpgaImageAttribute(const Model::ModifyFpgaImageAttributeRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyFpgaImageAttribute that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyFpgaImageAttributeOutcomeCallable ModifyFpgaImageAttributeCallable(const Model::ModifyFpgaImageAttributeRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyFpgaImageAttribute that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyFpgaImageAttributeAsync(const Model::ModifyFpgaImageAttributeRequest& request, const ModifyFpgaImageAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modify the auto-placement setting of a Dedicated Host. When auto-placement is
@@ -9821,15 +5949,6 @@ namespace EC2
          */
         virtual Model::ModifyHostsOutcome ModifyHosts(const Model::ModifyHostsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyHosts that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyHostsOutcomeCallable ModifyHostsCallable(const Model::ModifyHostsRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyHosts that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyHostsAsync(const Model::ModifyHostsRequest& request, const ModifyHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the ID format for the specified resource on a per-Region basis. You
@@ -9866,15 +5985,6 @@ namespace EC2
          */
         virtual Model::ModifyIdFormatOutcome ModifyIdFormat(const Model::ModifyIdFormatRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyIdFormat that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyIdFormatOutcomeCallable ModifyIdFormatCallable(const Model::ModifyIdFormatRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyIdFormat that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyIdFormatAsync(const Model::ModifyIdFormatRequest& request, const ModifyIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the ID format of a resource for a specified IAM user, IAM role, or
@@ -9908,15 +6018,6 @@ namespace EC2
          */
         virtual Model::ModifyIdentityIdFormatOutcome ModifyIdentityIdFormat(const Model::ModifyIdentityIdFormatRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyIdentityIdFormat that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyIdentityIdFormatOutcomeCallable ModifyIdentityIdFormatCallable(const Model::ModifyIdentityIdFormatRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyIdentityIdFormat that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyIdentityIdFormatAsync(const Model::ModifyIdentityIdFormatRequest& request, const ModifyIdentityIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the specified attribute of the specified AMI. You can specify only
@@ -9932,15 +6033,6 @@ namespace EC2
          */
         virtual Model::ModifyImageAttributeOutcome ModifyImageAttribute(const Model::ModifyImageAttributeRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyImageAttribute that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyImageAttributeOutcomeCallable ModifyImageAttributeCallable(const Model::ModifyImageAttributeRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyImageAttribute that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyImageAttributeAsync(const Model::ModifyImageAttributeRequest& request, const ModifyImageAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the specified attribute of the specified instance. You can specify
@@ -9959,15 +6051,6 @@ namespace EC2
          */
         virtual Model::ModifyInstanceAttributeOutcome ModifyInstanceAttribute(const Model::ModifyInstanceAttributeRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyInstanceAttribute that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyInstanceAttributeOutcomeCallable ModifyInstanceAttributeCallable(const Model::ModifyInstanceAttributeRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyInstanceAttribute that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyInstanceAttributeAsync(const Model::ModifyInstanceAttributeRequest& request, const ModifyInstanceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the Capacity Reservation settings for a stopped instance. Use this
@@ -9979,15 +6062,6 @@ namespace EC2
          */
         virtual Model::ModifyInstanceCapacityReservationAttributesOutcome ModifyInstanceCapacityReservationAttributes(const Model::ModifyInstanceCapacityReservationAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyInstanceCapacityReservationAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyInstanceCapacityReservationAttributesOutcomeCallable ModifyInstanceCapacityReservationAttributesCallable(const Model::ModifyInstanceCapacityReservationAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyInstanceCapacityReservationAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyInstanceCapacityReservationAttributesAsync(const Model::ModifyInstanceCapacityReservationAttributesRequest& request, const ModifyInstanceCapacityReservationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the credit option for CPU usage on a running or stopped burstable
@@ -10001,15 +6075,6 @@ namespace EC2
          */
         virtual Model::ModifyInstanceCreditSpecificationOutcome ModifyInstanceCreditSpecification(const Model::ModifyInstanceCreditSpecificationRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyInstanceCreditSpecification that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyInstanceCreditSpecificationOutcomeCallable ModifyInstanceCreditSpecificationCallable(const Model::ModifyInstanceCreditSpecificationRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyInstanceCreditSpecification that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyInstanceCreditSpecificationAsync(const Model::ModifyInstanceCreditSpecificationRequest& request, const ModifyInstanceCreditSpecificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the start time for a scheduled Amazon EC2 instance
@@ -10019,15 +6084,6 @@ namespace EC2
          */
         virtual Model::ModifyInstanceEventStartTimeOutcome ModifyInstanceEventStartTime(const Model::ModifyInstanceEventStartTimeRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyInstanceEventStartTime that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyInstanceEventStartTimeOutcomeCallable ModifyInstanceEventStartTimeCallable(const Model::ModifyInstanceEventStartTimeRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyInstanceEventStartTime that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyInstanceEventStartTimeAsync(const Model::ModifyInstanceEventStartTimeRequest& request, const ModifyInstanceEventStartTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the specified event window.</p> <p>You can define either a set of
@@ -10045,15 +6101,6 @@ namespace EC2
          */
         virtual Model::ModifyInstanceEventWindowOutcome ModifyInstanceEventWindow(const Model::ModifyInstanceEventWindowRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyInstanceEventWindow that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyInstanceEventWindowOutcomeCallable ModifyInstanceEventWindowCallable(const Model::ModifyInstanceEventWindowRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyInstanceEventWindow that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyInstanceEventWindowAsync(const Model::ModifyInstanceEventWindowRequest& request, const ModifyInstanceEventWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the recovery behavior of your instance to disable simplified
@@ -10067,15 +6114,6 @@ namespace EC2
          */
         virtual Model::ModifyInstanceMaintenanceOptionsOutcome ModifyInstanceMaintenanceOptions(const Model::ModifyInstanceMaintenanceOptionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyInstanceMaintenanceOptions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyInstanceMaintenanceOptionsOutcomeCallable ModifyInstanceMaintenanceOptionsCallable(const Model::ModifyInstanceMaintenanceOptionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyInstanceMaintenanceOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyInstanceMaintenanceOptionsAsync(const Model::ModifyInstanceMaintenanceOptionsRequest& request, const ModifyInstanceMaintenanceOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modify the instance metadata parameters on a running or stopped instance.
@@ -10093,15 +6131,6 @@ namespace EC2
          */
         virtual Model::ModifyInstanceMetadataOptionsOutcome ModifyInstanceMetadataOptions(const Model::ModifyInstanceMetadataOptionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyInstanceMetadataOptions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyInstanceMetadataOptionsOutcomeCallable ModifyInstanceMetadataOptionsCallable(const Model::ModifyInstanceMetadataOptionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyInstanceMetadataOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyInstanceMetadataOptionsAsync(const Model::ModifyInstanceMetadataOptionsRequest& request, const ModifyInstanceMetadataOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the placement attributes for a specified instance. You can do the
@@ -10125,15 +6154,6 @@ namespace EC2
          */
         virtual Model::ModifyInstancePlacementOutcome ModifyInstancePlacement(const Model::ModifyInstancePlacementRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyInstancePlacement that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyInstancePlacementOutcomeCallable ModifyInstancePlacementCallable(const Model::ModifyInstancePlacementRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyInstancePlacement that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyInstancePlacementAsync(const Model::ModifyInstancePlacementRequest& request, const ModifyInstancePlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modify the configurations of an IPAM. </p><p><h3>See Also:</h3>   <a
@@ -10142,15 +6162,6 @@ namespace EC2
          */
         virtual Model::ModifyIpamOutcome ModifyIpam(const Model::ModifyIpamRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyIpam that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyIpamOutcomeCallable ModifyIpamCallable(const Model::ModifyIpamRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyIpam that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyIpamAsync(const Model::ModifyIpamRequest& request, const ModifyIpamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modify the configurations of an IPAM pool.</p> <p>For more information, see
@@ -10162,15 +6173,6 @@ namespace EC2
          */
         virtual Model::ModifyIpamPoolOutcome ModifyIpamPool(const Model::ModifyIpamPoolRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyIpamPool that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyIpamPoolOutcomeCallable ModifyIpamPoolCallable(const Model::ModifyIpamPoolRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyIpamPool that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyIpamPoolAsync(const Model::ModifyIpamPoolRequest& request, const ModifyIpamPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modify a resource CIDR. You can use this action to transfer resource CIDRs
@@ -10188,15 +6190,6 @@ namespace EC2
          */
         virtual Model::ModifyIpamResourceCidrOutcome ModifyIpamResourceCidr(const Model::ModifyIpamResourceCidrRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyIpamResourceCidr that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyIpamResourceCidrOutcomeCallable ModifyIpamResourceCidrCallable(const Model::ModifyIpamResourceCidrRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyIpamResourceCidr that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyIpamResourceCidrAsync(const Model::ModifyIpamResourceCidrRequest& request, const ModifyIpamResourceCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modify an IPAM scope.</p><p><h3>See Also:</h3>   <a
@@ -10205,15 +6198,6 @@ namespace EC2
          */
         virtual Model::ModifyIpamScopeOutcome ModifyIpamScope(const Model::ModifyIpamScopeRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyIpamScope that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyIpamScopeOutcomeCallable ModifyIpamScopeCallable(const Model::ModifyIpamScopeRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyIpamScope that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyIpamScopeAsync(const Model::ModifyIpamScopeRequest& request, const ModifyIpamScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies a launch template. You can specify which version of the launch
@@ -10225,15 +6209,6 @@ namespace EC2
          */
         virtual Model::ModifyLaunchTemplateOutcome ModifyLaunchTemplate(const Model::ModifyLaunchTemplateRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyLaunchTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyLaunchTemplateOutcomeCallable ModifyLaunchTemplateCallable(const Model::ModifyLaunchTemplateRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyLaunchTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyLaunchTemplateAsync(const Model::ModifyLaunchTemplateRequest& request, const ModifyLaunchTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the specified local gateway route.</p><p><h3>See Also:</h3>   <a
@@ -10242,15 +6217,6 @@ namespace EC2
          */
         virtual Model::ModifyLocalGatewayRouteOutcome ModifyLocalGatewayRoute(const Model::ModifyLocalGatewayRouteRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyLocalGatewayRoute that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyLocalGatewayRouteOutcomeCallable ModifyLocalGatewayRouteCallable(const Model::ModifyLocalGatewayRouteRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyLocalGatewayRoute that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyLocalGatewayRouteAsync(const Model::ModifyLocalGatewayRouteRequest& request, const ModifyLocalGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the specified managed prefix list.</p> <p>Adding or removing entries
@@ -10263,15 +6229,6 @@ namespace EC2
          */
         virtual Model::ModifyManagedPrefixListOutcome ModifyManagedPrefixList(const Model::ModifyManagedPrefixListRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyManagedPrefixList that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyManagedPrefixListOutcomeCallable ModifyManagedPrefixListCallable(const Model::ModifyManagedPrefixListRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyManagedPrefixList that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyManagedPrefixListAsync(const Model::ModifyManagedPrefixListRequest& request, const ModifyManagedPrefixListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the specified network interface attribute. You can specify only one
@@ -10282,15 +6239,6 @@ namespace EC2
          */
         virtual Model::ModifyNetworkInterfaceAttributeOutcome ModifyNetworkInterfaceAttribute(const Model::ModifyNetworkInterfaceAttributeRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyNetworkInterfaceAttribute that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyNetworkInterfaceAttributeOutcomeCallable ModifyNetworkInterfaceAttributeCallable(const Model::ModifyNetworkInterfaceAttributeRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyNetworkInterfaceAttribute that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyNetworkInterfaceAttributeAsync(const Model::ModifyNetworkInterfaceAttributeRequest& request, const ModifyNetworkInterfaceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the options for instance hostnames for the specified
@@ -10300,15 +6248,6 @@ namespace EC2
          */
         virtual Model::ModifyPrivateDnsNameOptionsOutcome ModifyPrivateDnsNameOptions(const Model::ModifyPrivateDnsNameOptionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyPrivateDnsNameOptions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyPrivateDnsNameOptionsOutcomeCallable ModifyPrivateDnsNameOptionsCallable(const Model::ModifyPrivateDnsNameOptionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyPrivateDnsNameOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyPrivateDnsNameOptionsAsync(const Model::ModifyPrivateDnsNameOptionsRequest& request, const ModifyPrivateDnsNameOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the configuration of your Reserved Instances, such as the
@@ -10327,15 +6266,6 @@ namespace EC2
          */
         virtual Model::ModifyReservedInstancesOutcome ModifyReservedInstances(const Model::ModifyReservedInstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyReservedInstances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyReservedInstancesOutcomeCallable ModifyReservedInstancesCallable(const Model::ModifyReservedInstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyReservedInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyReservedInstancesAsync(const Model::ModifyReservedInstancesRequest& request, const ModifyReservedInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the rules of a security group.</p><p><h3>See Also:</h3>   <a
@@ -10344,15 +6274,6 @@ namespace EC2
          */
         virtual Model::ModifySecurityGroupRulesOutcome ModifySecurityGroupRules(const Model::ModifySecurityGroupRulesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifySecurityGroupRules that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifySecurityGroupRulesOutcomeCallable ModifySecurityGroupRulesCallable(const Model::ModifySecurityGroupRulesRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifySecurityGroupRules that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifySecurityGroupRulesAsync(const Model::ModifySecurityGroupRulesRequest& request, const ModifySecurityGroupRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds or removes permission settings for the specified snapshot. You may add
@@ -10372,15 +6293,6 @@ namespace EC2
          */
         virtual Model::ModifySnapshotAttributeOutcome ModifySnapshotAttribute(const Model::ModifySnapshotAttributeRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifySnapshotAttribute that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifySnapshotAttributeOutcomeCallable ModifySnapshotAttributeCallable(const Model::ModifySnapshotAttributeRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifySnapshotAttribute that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifySnapshotAttributeAsync(const Model::ModifySnapshotAttributeRequest& request, const ModifySnapshotAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Archives an Amazon EBS snapshot. When you archive a snapshot, it is converted
@@ -10395,15 +6307,6 @@ namespace EC2
          */
         virtual Model::ModifySnapshotTierOutcome ModifySnapshotTier(const Model::ModifySnapshotTierRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifySnapshotTier that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifySnapshotTierOutcomeCallable ModifySnapshotTierCallable(const Model::ModifySnapshotTierRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifySnapshotTier that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifySnapshotTierAsync(const Model::ModifySnapshotTierRequest& request, const ModifySnapshotTierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the specified Spot Fleet request.</p> <p>You can only modify a Spot
@@ -10436,15 +6339,6 @@ namespace EC2
          */
         virtual Model::ModifySpotFleetRequestOutcome ModifySpotFleetRequest(const Model::ModifySpotFleetRequestRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifySpotFleetRequest that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifySpotFleetRequestOutcomeCallable ModifySpotFleetRequestCallable(const Model::ModifySpotFleetRequestRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifySpotFleetRequest that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifySpotFleetRequestAsync(const Model::ModifySpotFleetRequestRequest& request, const ModifySpotFleetRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies a subnet attribute. You can only modify one attribute at a time.</p>
@@ -10464,15 +6358,6 @@ namespace EC2
          */
         virtual Model::ModifySubnetAttributeOutcome ModifySubnetAttribute(const Model::ModifySubnetAttributeRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifySubnetAttribute that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifySubnetAttributeOutcomeCallable ModifySubnetAttributeCallable(const Model::ModifySubnetAttributeRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifySubnetAttribute that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifySubnetAttributeAsync(const Model::ModifySubnetAttributeRequest& request, const ModifySubnetAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Allows or restricts mirroring network services.</p> <p> By default, Amazon
@@ -10488,15 +6373,6 @@ namespace EC2
          */
         virtual Model::ModifyTrafficMirrorFilterNetworkServicesOutcome ModifyTrafficMirrorFilterNetworkServices(const Model::ModifyTrafficMirrorFilterNetworkServicesRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyTrafficMirrorFilterNetworkServices that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyTrafficMirrorFilterNetworkServicesOutcomeCallable ModifyTrafficMirrorFilterNetworkServicesCallable(const Model::ModifyTrafficMirrorFilterNetworkServicesRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyTrafficMirrorFilterNetworkServices that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyTrafficMirrorFilterNetworkServicesAsync(const Model::ModifyTrafficMirrorFilterNetworkServicesRequest& request, const ModifyTrafficMirrorFilterNetworkServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the specified Traffic Mirror rule.</p> <p>
@@ -10507,15 +6383,6 @@ namespace EC2
          */
         virtual Model::ModifyTrafficMirrorFilterRuleOutcome ModifyTrafficMirrorFilterRule(const Model::ModifyTrafficMirrorFilterRuleRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyTrafficMirrorFilterRule that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyTrafficMirrorFilterRuleOutcomeCallable ModifyTrafficMirrorFilterRuleCallable(const Model::ModifyTrafficMirrorFilterRuleRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyTrafficMirrorFilterRule that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyTrafficMirrorFilterRuleAsync(const Model::ModifyTrafficMirrorFilterRuleRequest& request, const ModifyTrafficMirrorFilterRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies a Traffic Mirror session.</p><p><h3>See Also:</h3>   <a
@@ -10524,15 +6391,6 @@ namespace EC2
          */
         virtual Model::ModifyTrafficMirrorSessionOutcome ModifyTrafficMirrorSession(const Model::ModifyTrafficMirrorSessionRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyTrafficMirrorSession that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyTrafficMirrorSessionOutcomeCallable ModifyTrafficMirrorSessionCallable(const Model::ModifyTrafficMirrorSessionRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyTrafficMirrorSession that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyTrafficMirrorSessionAsync(const Model::ModifyTrafficMirrorSessionRequest& request, const ModifyTrafficMirrorSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the specified transit gateway. When you modify a transit gateway,
@@ -10544,15 +6402,6 @@ namespace EC2
          */
         virtual Model::ModifyTransitGatewayOutcome ModifyTransitGateway(const Model::ModifyTransitGatewayRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyTransitGateway that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyTransitGatewayOutcomeCallable ModifyTransitGatewayCallable(const Model::ModifyTransitGatewayRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyTransitGateway that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyTransitGatewayAsync(const Model::ModifyTransitGatewayRequest& request, const ModifyTransitGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies a reference (route) to a prefix list in a specified transit gateway
@@ -10562,15 +6411,6 @@ namespace EC2
          */
         virtual Model::ModifyTransitGatewayPrefixListReferenceOutcome ModifyTransitGatewayPrefixListReference(const Model::ModifyTransitGatewayPrefixListReferenceRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyTransitGatewayPrefixListReference that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyTransitGatewayPrefixListReferenceOutcomeCallable ModifyTransitGatewayPrefixListReferenceCallable(const Model::ModifyTransitGatewayPrefixListReferenceRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyTransitGatewayPrefixListReference that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyTransitGatewayPrefixListReferenceAsync(const Model::ModifyTransitGatewayPrefixListReferenceRequest& request, const ModifyTransitGatewayPrefixListReferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the specified VPC attachment.</p><p><h3>See Also:</h3>   <a
@@ -10579,15 +6419,6 @@ namespace EC2
          */
         virtual Model::ModifyTransitGatewayVpcAttachmentOutcome ModifyTransitGatewayVpcAttachment(const Model::ModifyTransitGatewayVpcAttachmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyTransitGatewayVpcAttachment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyTransitGatewayVpcAttachmentOutcomeCallable ModifyTransitGatewayVpcAttachmentCallable(const Model::ModifyTransitGatewayVpcAttachmentRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyTransitGatewayVpcAttachment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyTransitGatewayVpcAttachmentAsync(const Model::ModifyTransitGatewayVpcAttachmentRequest& request, const ModifyTransitGatewayVpcAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>You can modify several parameters of an existing EBS volume, including volume
@@ -10624,15 +6455,6 @@ namespace EC2
          */
         virtual Model::ModifyVolumeOutcome ModifyVolume(const Model::ModifyVolumeRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyVolume that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyVolumeOutcomeCallable ModifyVolumeCallable(const Model::ModifyVolumeRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyVolume that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyVolumeAsync(const Model::ModifyVolumeRequest& request, const ModifyVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies a volume attribute.</p> <p>By default, all I/O operations for the
@@ -10647,15 +6469,6 @@ namespace EC2
          */
         virtual Model::ModifyVolumeAttributeOutcome ModifyVolumeAttribute(const Model::ModifyVolumeAttributeRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyVolumeAttribute that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyVolumeAttributeOutcomeCallable ModifyVolumeAttributeCallable(const Model::ModifyVolumeAttributeRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyVolumeAttribute that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyVolumeAttributeAsync(const Model::ModifyVolumeAttributeRequest& request, const ModifyVolumeAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the specified attribute of the specified VPC.</p><p><h3>See
@@ -10665,15 +6478,6 @@ namespace EC2
          */
         virtual Model::ModifyVpcAttributeOutcome ModifyVpcAttribute(const Model::ModifyVpcAttributeRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyVpcAttribute that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyVpcAttributeOutcomeCallable ModifyVpcAttributeCallable(const Model::ModifyVpcAttributeRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyVpcAttribute that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyVpcAttributeAsync(const Model::ModifyVpcAttributeRequest& request, const ModifyVpcAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies attributes of a specified VPC endpoint. The attributes that you can
@@ -10686,15 +6490,6 @@ namespace EC2
          */
         virtual Model::ModifyVpcEndpointOutcome ModifyVpcEndpoint(const Model::ModifyVpcEndpointRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyVpcEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyVpcEndpointOutcomeCallable ModifyVpcEndpointCallable(const Model::ModifyVpcEndpointRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyVpcEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyVpcEndpointAsync(const Model::ModifyVpcEndpointRequest& request, const ModifyVpcEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies a connection notification for VPC endpoint or VPC endpoint service.
@@ -10705,15 +6500,6 @@ namespace EC2
          */
         virtual Model::ModifyVpcEndpointConnectionNotificationOutcome ModifyVpcEndpointConnectionNotification(const Model::ModifyVpcEndpointConnectionNotificationRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyVpcEndpointConnectionNotification that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyVpcEndpointConnectionNotificationOutcomeCallable ModifyVpcEndpointConnectionNotificationCallable(const Model::ModifyVpcEndpointConnectionNotificationRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyVpcEndpointConnectionNotification that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyVpcEndpointConnectionNotificationAsync(const Model::ModifyVpcEndpointConnectionNotificationRequest& request, const ModifyVpcEndpointConnectionNotificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the attributes of your VPC endpoint service configuration. You can
@@ -10727,15 +6513,6 @@ namespace EC2
          */
         virtual Model::ModifyVpcEndpointServiceConfigurationOutcome ModifyVpcEndpointServiceConfiguration(const Model::ModifyVpcEndpointServiceConfigurationRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyVpcEndpointServiceConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyVpcEndpointServiceConfigurationOutcomeCallable ModifyVpcEndpointServiceConfigurationCallable(const Model::ModifyVpcEndpointServiceConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyVpcEndpointServiceConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyVpcEndpointServiceConfigurationAsync(const Model::ModifyVpcEndpointServiceConfigurationRequest& request, const ModifyVpcEndpointServiceConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the payer responsibility for your VPC endpoint
@@ -10745,15 +6522,6 @@ namespace EC2
          */
         virtual Model::ModifyVpcEndpointServicePayerResponsibilityOutcome ModifyVpcEndpointServicePayerResponsibility(const Model::ModifyVpcEndpointServicePayerResponsibilityRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyVpcEndpointServicePayerResponsibility that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyVpcEndpointServicePayerResponsibilityOutcomeCallable ModifyVpcEndpointServicePayerResponsibilityCallable(const Model::ModifyVpcEndpointServicePayerResponsibilityRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyVpcEndpointServicePayerResponsibility that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyVpcEndpointServicePayerResponsibilityAsync(const Model::ModifyVpcEndpointServicePayerResponsibilityRequest& request, const ModifyVpcEndpointServicePayerResponsibilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the permissions for your VPC endpoint service. You can add or remove
@@ -10768,15 +6536,6 @@ namespace EC2
          */
         virtual Model::ModifyVpcEndpointServicePermissionsOutcome ModifyVpcEndpointServicePermissions(const Model::ModifyVpcEndpointServicePermissionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyVpcEndpointServicePermissions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyVpcEndpointServicePermissionsOutcomeCallable ModifyVpcEndpointServicePermissionsCallable(const Model::ModifyVpcEndpointServicePermissionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyVpcEndpointServicePermissions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyVpcEndpointServicePermissionsAsync(const Model::ModifyVpcEndpointServicePermissionsRequest& request, const ModifyVpcEndpointServicePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>We are retiring EC2-Classic. We recommend that you migrate from
@@ -10808,15 +6567,6 @@ namespace EC2
          */
         virtual Model::ModifyVpcPeeringConnectionOptionsOutcome ModifyVpcPeeringConnectionOptions(const Model::ModifyVpcPeeringConnectionOptionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyVpcPeeringConnectionOptions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyVpcPeeringConnectionOptionsOutcomeCallable ModifyVpcPeeringConnectionOptionsCallable(const Model::ModifyVpcPeeringConnectionOptionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyVpcPeeringConnectionOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyVpcPeeringConnectionOptionsAsync(const Model::ModifyVpcPeeringConnectionOptionsRequest& request, const ModifyVpcPeeringConnectionOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the instance tenancy attribute of the specified VPC. You can change
@@ -10834,15 +6584,6 @@ namespace EC2
          */
         virtual Model::ModifyVpcTenancyOutcome ModifyVpcTenancy(const Model::ModifyVpcTenancyRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyVpcTenancy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyVpcTenancyOutcomeCallable ModifyVpcTenancyCallable(const Model::ModifyVpcTenancyRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyVpcTenancy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyVpcTenancyAsync(const Model::ModifyVpcTenancyRequest& request, const ModifyVpcTenancyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the customer gateway or the target gateway of an Amazon Web Services
@@ -10878,15 +6619,6 @@ namespace EC2
          */
         virtual Model::ModifyVpnConnectionOutcome ModifyVpnConnection(const Model::ModifyVpnConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyVpnConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyVpnConnectionOutcomeCallable ModifyVpnConnectionCallable(const Model::ModifyVpnConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyVpnConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyVpnConnectionAsync(const Model::ModifyVpnConnectionRequest& request, const ModifyVpnConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the connection options for your Site-to-Site VPN connection.</p>
@@ -10899,15 +6631,6 @@ namespace EC2
          */
         virtual Model::ModifyVpnConnectionOptionsOutcome ModifyVpnConnectionOptions(const Model::ModifyVpnConnectionOptionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyVpnConnectionOptions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyVpnConnectionOptionsOutcomeCallable ModifyVpnConnectionOptionsCallable(const Model::ModifyVpnConnectionOptionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyVpnConnectionOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyVpnConnectionOptionsAsync(const Model::ModifyVpnConnectionOptionsRequest& request, const ModifyVpnConnectionOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the VPN tunnel endpoint certificate.</p><p><h3>See Also:</h3>   <a
@@ -10916,15 +6639,6 @@ namespace EC2
          */
         virtual Model::ModifyVpnTunnelCertificateOutcome ModifyVpnTunnelCertificate(const Model::ModifyVpnTunnelCertificateRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyVpnTunnelCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyVpnTunnelCertificateOutcomeCallable ModifyVpnTunnelCertificateCallable(const Model::ModifyVpnTunnelCertificateRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyVpnTunnelCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyVpnTunnelCertificateAsync(const Model::ModifyVpnTunnelCertificateRequest& request, const ModifyVpnTunnelCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the options for a VPN tunnel in an Amazon Web Services Site-to-Site
@@ -10939,15 +6653,6 @@ namespace EC2
          */
         virtual Model::ModifyVpnTunnelOptionsOutcome ModifyVpnTunnelOptions(const Model::ModifyVpnTunnelOptionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ModifyVpnTunnelOptions that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyVpnTunnelOptionsOutcomeCallable ModifyVpnTunnelOptionsCallable(const Model::ModifyVpnTunnelOptionsRequest& request) const;
-
-        /**
-         * An Async wrapper for ModifyVpnTunnelOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyVpnTunnelOptionsAsync(const Model::ModifyVpnTunnelOptionsRequest& request, const ModifyVpnTunnelOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables detailed monitoring for a running instance. Otherwise, basic
@@ -10962,15 +6667,6 @@ namespace EC2
          */
         virtual Model::MonitorInstancesOutcome MonitorInstances(const Model::MonitorInstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for MonitorInstances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::MonitorInstancesOutcomeCallable MonitorInstancesCallable(const Model::MonitorInstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for MonitorInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void MonitorInstancesAsync(const Model::MonitorInstancesRequest& request, const MonitorInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Moves an Elastic IP address from the EC2-Classic platform to the EC2-VPC
@@ -10990,15 +6686,6 @@ namespace EC2
          */
         virtual Model::MoveAddressToVpcOutcome MoveAddressToVpc(const Model::MoveAddressToVpcRequest& request) const;
 
-        /**
-         * A Callable wrapper for MoveAddressToVpc that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::MoveAddressToVpcOutcomeCallable MoveAddressToVpcCallable(const Model::MoveAddressToVpcRequest& request) const;
-
-        /**
-         * An Async wrapper for MoveAddressToVpc that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void MoveAddressToVpcAsync(const Model::MoveAddressToVpcRequest& request, const MoveAddressToVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Move an BYOIP IPv4 CIDR to IPAM from a public IPv4 pool.</p> <p>If you
@@ -11013,15 +6700,6 @@ namespace EC2
          */
         virtual Model::MoveByoipCidrToIpamOutcome MoveByoipCidrToIpam(const Model::MoveByoipCidrToIpamRequest& request) const;
 
-        /**
-         * A Callable wrapper for MoveByoipCidrToIpam that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::MoveByoipCidrToIpamOutcomeCallable MoveByoipCidrToIpamCallable(const Model::MoveByoipCidrToIpamRequest& request) const;
-
-        /**
-         * An Async wrapper for MoveByoipCidrToIpam that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void MoveByoipCidrToIpamAsync(const Model::MoveByoipCidrToIpamRequest& request, const MoveByoipCidrToIpamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provisions an IPv4 or IPv6 address range for use with your Amazon Web
@@ -11046,15 +6724,6 @@ namespace EC2
          */
         virtual Model::ProvisionByoipCidrOutcome ProvisionByoipCidr(const Model::ProvisionByoipCidrRequest& request) const;
 
-        /**
-         * A Callable wrapper for ProvisionByoipCidr that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ProvisionByoipCidrOutcomeCallable ProvisionByoipCidrCallable(const Model::ProvisionByoipCidrRequest& request) const;
-
-        /**
-         * An Async wrapper for ProvisionByoipCidr that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ProvisionByoipCidrAsync(const Model::ProvisionByoipCidrRequest& request, const ProvisionByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provision a CIDR to an IPAM pool. You can use this action to provision new
@@ -11068,15 +6737,6 @@ namespace EC2
          */
         virtual Model::ProvisionIpamPoolCidrOutcome ProvisionIpamPoolCidr(const Model::ProvisionIpamPoolCidrRequest& request) const;
 
-        /**
-         * A Callable wrapper for ProvisionIpamPoolCidr that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ProvisionIpamPoolCidrOutcomeCallable ProvisionIpamPoolCidrCallable(const Model::ProvisionIpamPoolCidrRequest& request) const;
-
-        /**
-         * An Async wrapper for ProvisionIpamPoolCidr that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ProvisionIpamPoolCidrAsync(const Model::ProvisionIpamPoolCidrRequest& request, const ProvisionIpamPoolCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provision a CIDR to a public IPv4 pool.</p> <p>For more information about
@@ -11089,15 +6749,6 @@ namespace EC2
          */
         virtual Model::ProvisionPublicIpv4PoolCidrOutcome ProvisionPublicIpv4PoolCidr(const Model::ProvisionPublicIpv4PoolCidrRequest& request) const;
 
-        /**
-         * A Callable wrapper for ProvisionPublicIpv4PoolCidr that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ProvisionPublicIpv4PoolCidrOutcomeCallable ProvisionPublicIpv4PoolCidrCallable(const Model::ProvisionPublicIpv4PoolCidrRequest& request) const;
-
-        /**
-         * An Async wrapper for ProvisionPublicIpv4PoolCidr that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ProvisionPublicIpv4PoolCidrAsync(const Model::ProvisionPublicIpv4PoolCidrRequest& request, const ProvisionPublicIpv4PoolCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Purchase a reservation with configurations that match those of your Dedicated
@@ -11109,15 +6760,6 @@ namespace EC2
          */
         virtual Model::PurchaseHostReservationOutcome PurchaseHostReservation(const Model::PurchaseHostReservationRequest& request) const;
 
-        /**
-         * A Callable wrapper for PurchaseHostReservation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PurchaseHostReservationOutcomeCallable PurchaseHostReservationCallable(const Model::PurchaseHostReservationRequest& request) const;
-
-        /**
-         * An Async wrapper for PurchaseHostReservation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PurchaseHostReservationAsync(const Model::PurchaseHostReservationRequest& request, const PurchaseHostReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Purchases a Reserved Instance for use with your account. With Reserved
@@ -11142,15 +6784,6 @@ namespace EC2
          */
         virtual Model::PurchaseReservedInstancesOfferingOutcome PurchaseReservedInstancesOffering(const Model::PurchaseReservedInstancesOfferingRequest& request) const;
 
-        /**
-         * A Callable wrapper for PurchaseReservedInstancesOffering that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PurchaseReservedInstancesOfferingOutcomeCallable PurchaseReservedInstancesOfferingCallable(const Model::PurchaseReservedInstancesOfferingRequest& request) const;
-
-        /**
-         * An Async wrapper for PurchaseReservedInstancesOffering that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PurchaseReservedInstancesOfferingAsync(const Model::PurchaseReservedInstancesOfferingRequest& request, const PurchaseReservedInstancesOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          *  <p>You can no longer purchase Scheduled Instances.</p> 
@@ -11167,15 +6800,6 @@ namespace EC2
          */
         virtual Model::PurchaseScheduledInstancesOutcome PurchaseScheduledInstances(const Model::PurchaseScheduledInstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for PurchaseScheduledInstances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PurchaseScheduledInstancesOutcomeCallable PurchaseScheduledInstancesCallable(const Model::PurchaseScheduledInstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for PurchaseScheduledInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PurchaseScheduledInstancesAsync(const Model::PurchaseScheduledInstancesRequest& request, const PurchaseScheduledInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Requests a reboot of the specified instances. This operation is asynchronous;
@@ -11192,15 +6816,6 @@ namespace EC2
          */
         virtual Model::RebootInstancesOutcome RebootInstances(const Model::RebootInstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for RebootInstances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RebootInstancesOutcomeCallable RebootInstancesCallable(const Model::RebootInstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for RebootInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RebootInstancesAsync(const Model::RebootInstancesRequest& request, const RebootInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Registers an AMI. When you're creating an AMI, this is the final step you
@@ -11251,15 +6866,6 @@ namespace EC2
          */
         virtual Model::RegisterImageOutcome RegisterImage(const Model::RegisterImageRequest& request) const;
 
-        /**
-         * A Callable wrapper for RegisterImage that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RegisterImageOutcomeCallable RegisterImageCallable(const Model::RegisterImageRequest& request) const;
-
-        /**
-         * An Async wrapper for RegisterImage that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RegisterImageAsync(const Model::RegisterImageRequest& request, const RegisterImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Registers a set of tag keys to include in scheduled event notifications for
@@ -11271,15 +6877,6 @@ namespace EC2
          */
         virtual Model::RegisterInstanceEventNotificationAttributesOutcome RegisterInstanceEventNotificationAttributes(const Model::RegisterInstanceEventNotificationAttributesRequest& request) const;
 
-        /**
-         * A Callable wrapper for RegisterInstanceEventNotificationAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RegisterInstanceEventNotificationAttributesOutcomeCallable RegisterInstanceEventNotificationAttributesCallable(const Model::RegisterInstanceEventNotificationAttributesRequest& request) const;
-
-        /**
-         * An Async wrapper for RegisterInstanceEventNotificationAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RegisterInstanceEventNotificationAttributesAsync(const Model::RegisterInstanceEventNotificationAttributesRequest& request, const RegisterInstanceEventNotificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Registers members (network interfaces) with the transit gateway multicast
@@ -11297,15 +6894,6 @@ namespace EC2
          */
         virtual Model::RegisterTransitGatewayMulticastGroupMembersOutcome RegisterTransitGatewayMulticastGroupMembers(const Model::RegisterTransitGatewayMulticastGroupMembersRequest& request) const;
 
-        /**
-         * A Callable wrapper for RegisterTransitGatewayMulticastGroupMembers that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RegisterTransitGatewayMulticastGroupMembersOutcomeCallable RegisterTransitGatewayMulticastGroupMembersCallable(const Model::RegisterTransitGatewayMulticastGroupMembersRequest& request) const;
-
-        /**
-         * An Async wrapper for RegisterTransitGatewayMulticastGroupMembers that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RegisterTransitGatewayMulticastGroupMembersAsync(const Model::RegisterTransitGatewayMulticastGroupMembersRequest& request, const RegisterTransitGatewayMulticastGroupMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Registers sources (network interfaces) with the specified transit gateway
@@ -11323,15 +6911,6 @@ namespace EC2
          */
         virtual Model::RegisterTransitGatewayMulticastGroupSourcesOutcome RegisterTransitGatewayMulticastGroupSources(const Model::RegisterTransitGatewayMulticastGroupSourcesRequest& request) const;
 
-        /**
-         * A Callable wrapper for RegisterTransitGatewayMulticastGroupSources that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RegisterTransitGatewayMulticastGroupSourcesOutcomeCallable RegisterTransitGatewayMulticastGroupSourcesCallable(const Model::RegisterTransitGatewayMulticastGroupSourcesRequest& request) const;
-
-        /**
-         * An Async wrapper for RegisterTransitGatewayMulticastGroupSources that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RegisterTransitGatewayMulticastGroupSourcesAsync(const Model::RegisterTransitGatewayMulticastGroupSourcesRequest& request, const RegisterTransitGatewayMulticastGroupSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Rejects a request to associate cross-account subnets with a transit gateway
@@ -11341,15 +6920,6 @@ namespace EC2
          */
         virtual Model::RejectTransitGatewayMulticastDomainAssociationsOutcome RejectTransitGatewayMulticastDomainAssociations(const Model::RejectTransitGatewayMulticastDomainAssociationsRequest& request) const;
 
-        /**
-         * A Callable wrapper for RejectTransitGatewayMulticastDomainAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RejectTransitGatewayMulticastDomainAssociationsOutcomeCallable RejectTransitGatewayMulticastDomainAssociationsCallable(const Model::RejectTransitGatewayMulticastDomainAssociationsRequest& request) const;
-
-        /**
-         * An Async wrapper for RejectTransitGatewayMulticastDomainAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RejectTransitGatewayMulticastDomainAssociationsAsync(const Model::RejectTransitGatewayMulticastDomainAssociationsRequest& request, const RejectTransitGatewayMulticastDomainAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Rejects a transit gateway peering attachment request.</p><p><h3>See
@@ -11359,15 +6929,6 @@ namespace EC2
          */
         virtual Model::RejectTransitGatewayPeeringAttachmentOutcome RejectTransitGatewayPeeringAttachment(const Model::RejectTransitGatewayPeeringAttachmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for RejectTransitGatewayPeeringAttachment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RejectTransitGatewayPeeringAttachmentOutcomeCallable RejectTransitGatewayPeeringAttachmentCallable(const Model::RejectTransitGatewayPeeringAttachmentRequest& request) const;
-
-        /**
-         * An Async wrapper for RejectTransitGatewayPeeringAttachment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RejectTransitGatewayPeeringAttachmentAsync(const Model::RejectTransitGatewayPeeringAttachmentRequest& request, const RejectTransitGatewayPeeringAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Rejects a request to attach a VPC to a transit gateway.</p> <p>The VPC
@@ -11380,15 +6941,6 @@ namespace EC2
          */
         virtual Model::RejectTransitGatewayVpcAttachmentOutcome RejectTransitGatewayVpcAttachment(const Model::RejectTransitGatewayVpcAttachmentRequest& request) const;
 
-        /**
-         * A Callable wrapper for RejectTransitGatewayVpcAttachment that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RejectTransitGatewayVpcAttachmentOutcomeCallable RejectTransitGatewayVpcAttachmentCallable(const Model::RejectTransitGatewayVpcAttachmentRequest& request) const;
-
-        /**
-         * An Async wrapper for RejectTransitGatewayVpcAttachment that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RejectTransitGatewayVpcAttachmentAsync(const Model::RejectTransitGatewayVpcAttachmentRequest& request, const RejectTransitGatewayVpcAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Rejects one or more VPC endpoint connection requests to your VPC endpoint
@@ -11398,15 +6950,6 @@ namespace EC2
          */
         virtual Model::RejectVpcEndpointConnectionsOutcome RejectVpcEndpointConnections(const Model::RejectVpcEndpointConnectionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for RejectVpcEndpointConnections that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RejectVpcEndpointConnectionsOutcomeCallable RejectVpcEndpointConnectionsCallable(const Model::RejectVpcEndpointConnectionsRequest& request) const;
-
-        /**
-         * An Async wrapper for RejectVpcEndpointConnections that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RejectVpcEndpointConnectionsAsync(const Model::RejectVpcEndpointConnectionsRequest& request, const RejectVpcEndpointConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Rejects a VPC peering connection request. The VPC peering connection must be
@@ -11420,15 +6963,6 @@ namespace EC2
          */
         virtual Model::RejectVpcPeeringConnectionOutcome RejectVpcPeeringConnection(const Model::RejectVpcPeeringConnectionRequest& request) const;
 
-        /**
-         * A Callable wrapper for RejectVpcPeeringConnection that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RejectVpcPeeringConnectionOutcomeCallable RejectVpcPeeringConnectionCallable(const Model::RejectVpcPeeringConnectionRequest& request) const;
-
-        /**
-         * An Async wrapper for RejectVpcPeeringConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RejectVpcPeeringConnectionAsync(const Model::RejectVpcPeeringConnectionRequest& request, const RejectVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Releases the specified Elastic IP address.</p> <p>[EC2-Classic, default VPC]
@@ -11458,15 +6992,6 @@ namespace EC2
          */
         virtual Model::ReleaseAddressOutcome ReleaseAddress(const Model::ReleaseAddressRequest& request) const;
 
-        /**
-         * A Callable wrapper for ReleaseAddress that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ReleaseAddressOutcomeCallable ReleaseAddressCallable(const Model::ReleaseAddressRequest& request) const;
-
-        /**
-         * An Async wrapper for ReleaseAddress that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ReleaseAddressAsync(const Model::ReleaseAddressRequest& request, const ReleaseAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>When you no longer want to use an On-Demand Dedicated Host it can be
@@ -11484,15 +7009,6 @@ namespace EC2
          */
         virtual Model::ReleaseHostsOutcome ReleaseHosts(const Model::ReleaseHostsRequest& request) const;
 
-        /**
-         * A Callable wrapper for ReleaseHosts that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ReleaseHostsOutcomeCallable ReleaseHostsCallable(const Model::ReleaseHostsRequest& request) const;
-
-        /**
-         * An Async wrapper for ReleaseHosts that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ReleaseHostsAsync(const Model::ReleaseHostsRequest& request, const ReleaseHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Release an allocation within an IPAM pool. You can only use this action to
@@ -11508,15 +7024,6 @@ namespace EC2
          */
         virtual Model::ReleaseIpamPoolAllocationOutcome ReleaseIpamPoolAllocation(const Model::ReleaseIpamPoolAllocationRequest& request) const;
 
-        /**
-         * A Callable wrapper for ReleaseIpamPoolAllocation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ReleaseIpamPoolAllocationOutcomeCallable ReleaseIpamPoolAllocationCallable(const Model::ReleaseIpamPoolAllocationRequest& request) const;
-
-        /**
-         * An Async wrapper for ReleaseIpamPoolAllocation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ReleaseIpamPoolAllocationAsync(const Model::ReleaseIpamPoolAllocationRequest& request, const ReleaseIpamPoolAllocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Replaces an IAM instance profile for the specified running instance. You can
@@ -11529,15 +7036,6 @@ namespace EC2
          */
         virtual Model::ReplaceIamInstanceProfileAssociationOutcome ReplaceIamInstanceProfileAssociation(const Model::ReplaceIamInstanceProfileAssociationRequest& request) const;
 
-        /**
-         * A Callable wrapper for ReplaceIamInstanceProfileAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ReplaceIamInstanceProfileAssociationOutcomeCallable ReplaceIamInstanceProfileAssociationCallable(const Model::ReplaceIamInstanceProfileAssociationRequest& request) const;
-
-        /**
-         * An Async wrapper for ReplaceIamInstanceProfileAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ReplaceIamInstanceProfileAssociationAsync(const Model::ReplaceIamInstanceProfileAssociationRequest& request, const ReplaceIamInstanceProfileAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Changes which network ACL a subnet is associated with. By default when you
@@ -11551,15 +7049,6 @@ namespace EC2
          */
         virtual Model::ReplaceNetworkAclAssociationOutcome ReplaceNetworkAclAssociation(const Model::ReplaceNetworkAclAssociationRequest& request) const;
 
-        /**
-         * A Callable wrapper for ReplaceNetworkAclAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ReplaceNetworkAclAssociationOutcomeCallable ReplaceNetworkAclAssociationCallable(const Model::ReplaceNetworkAclAssociationRequest& request) const;
-
-        /**
-         * An Async wrapper for ReplaceNetworkAclAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ReplaceNetworkAclAssociationAsync(const Model::ReplaceNetworkAclAssociationRequest& request, const ReplaceNetworkAclAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Replaces an entry (rule) in a network ACL. For more information, see <a
@@ -11571,15 +7060,6 @@ namespace EC2
          */
         virtual Model::ReplaceNetworkAclEntryOutcome ReplaceNetworkAclEntry(const Model::ReplaceNetworkAclEntryRequest& request) const;
 
-        /**
-         * A Callable wrapper for ReplaceNetworkAclEntry that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ReplaceNetworkAclEntryOutcomeCallable ReplaceNetworkAclEntryCallable(const Model::ReplaceNetworkAclEntryRequest& request) const;
-
-        /**
-         * An Async wrapper for ReplaceNetworkAclEntry that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ReplaceNetworkAclEntryAsync(const Model::ReplaceNetworkAclEntryRequest& request, const ReplaceNetworkAclEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Replaces an existing route within a route table in a VPC.</p> <p>You must
@@ -11594,15 +7074,6 @@ namespace EC2
          */
         virtual Model::ReplaceRouteOutcome ReplaceRoute(const Model::ReplaceRouteRequest& request) const;
 
-        /**
-         * A Callable wrapper for ReplaceRoute that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ReplaceRouteOutcomeCallable ReplaceRouteCallable(const Model::ReplaceRouteRequest& request) const;
-
-        /**
-         * An Async wrapper for ReplaceRoute that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ReplaceRouteAsync(const Model::ReplaceRouteRequest& request, const ReplaceRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Changes the route table associated with a given subnet, internet gateway, or
@@ -11619,15 +7090,6 @@ namespace EC2
          */
         virtual Model::ReplaceRouteTableAssociationOutcome ReplaceRouteTableAssociation(const Model::ReplaceRouteTableAssociationRequest& request) const;
 
-        /**
-         * A Callable wrapper for ReplaceRouteTableAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ReplaceRouteTableAssociationOutcomeCallable ReplaceRouteTableAssociationCallable(const Model::ReplaceRouteTableAssociationRequest& request) const;
-
-        /**
-         * An Async wrapper for ReplaceRouteTableAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ReplaceRouteTableAssociationAsync(const Model::ReplaceRouteTableAssociationRequest& request, const ReplaceRouteTableAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Replaces the specified route in the specified transit gateway route
@@ -11637,15 +7099,6 @@ namespace EC2
          */
         virtual Model::ReplaceTransitGatewayRouteOutcome ReplaceTransitGatewayRoute(const Model::ReplaceTransitGatewayRouteRequest& request) const;
 
-        /**
-         * A Callable wrapper for ReplaceTransitGatewayRoute that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ReplaceTransitGatewayRouteOutcomeCallable ReplaceTransitGatewayRouteCallable(const Model::ReplaceTransitGatewayRouteRequest& request) const;
-
-        /**
-         * An Async wrapper for ReplaceTransitGatewayRoute that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ReplaceTransitGatewayRouteAsync(const Model::ReplaceTransitGatewayRouteRequest& request, const ReplaceTransitGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Submits feedback about the status of an instance. The instance must be in the
@@ -11660,15 +7113,6 @@ namespace EC2
          */
         virtual Model::ReportInstanceStatusOutcome ReportInstanceStatus(const Model::ReportInstanceStatusRequest& request) const;
 
-        /**
-         * A Callable wrapper for ReportInstanceStatus that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ReportInstanceStatusOutcomeCallable ReportInstanceStatusCallable(const Model::ReportInstanceStatusRequest& request) const;
-
-        /**
-         * An Async wrapper for ReportInstanceStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ReportInstanceStatusAsync(const Model::ReportInstanceStatusRequest& request, const ReportInstanceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a Spot Fleet request.</p> <p>The Spot Fleet request specifies the
@@ -11700,15 +7144,6 @@ namespace EC2
          */
         virtual Model::RequestSpotFleetOutcome RequestSpotFleet(const Model::RequestSpotFleetRequest& request) const;
 
-        /**
-         * A Callable wrapper for RequestSpotFleet that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RequestSpotFleetOutcomeCallable RequestSpotFleetCallable(const Model::RequestSpotFleetRequest& request) const;
-
-        /**
-         * An Async wrapper for RequestSpotFleet that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RequestSpotFleetAsync(const Model::RequestSpotFleetRequest& request, const RequestSpotFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a Spot Instance request.</p> <p>For more information, see <a
@@ -11730,15 +7165,6 @@ namespace EC2
          */
         virtual Model::RequestSpotInstancesOutcome RequestSpotInstances(const Model::RequestSpotInstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for RequestSpotInstances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RequestSpotInstancesOutcomeCallable RequestSpotInstancesCallable(const Model::RequestSpotInstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for RequestSpotInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RequestSpotInstancesAsync(const Model::RequestSpotInstancesRequest& request, const RequestSpotInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Resets the attribute of the specified IP address. For requirements, see <a
@@ -11749,15 +7175,6 @@ namespace EC2
          */
         virtual Model::ResetAddressAttributeOutcome ResetAddressAttribute(const Model::ResetAddressAttributeRequest& request) const;
 
-        /**
-         * A Callable wrapper for ResetAddressAttribute that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ResetAddressAttributeOutcomeCallable ResetAddressAttributeCallable(const Model::ResetAddressAttributeRequest& request) const;
-
-        /**
-         * An Async wrapper for ResetAddressAttribute that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ResetAddressAttributeAsync(const Model::ResetAddressAttributeRequest& request, const ResetAddressAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Resets the default KMS key for EBS encryption for your account in this Region
@@ -11773,15 +7190,6 @@ namespace EC2
          */
         virtual Model::ResetEbsDefaultKmsKeyIdOutcome ResetEbsDefaultKmsKeyId(const Model::ResetEbsDefaultKmsKeyIdRequest& request) const;
 
-        /**
-         * A Callable wrapper for ResetEbsDefaultKmsKeyId that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ResetEbsDefaultKmsKeyIdOutcomeCallable ResetEbsDefaultKmsKeyIdCallable(const Model::ResetEbsDefaultKmsKeyIdRequest& request) const;
-
-        /**
-         * An Async wrapper for ResetEbsDefaultKmsKeyId that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ResetEbsDefaultKmsKeyIdAsync(const Model::ResetEbsDefaultKmsKeyIdRequest& request, const ResetEbsDefaultKmsKeyIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Resets the specified attribute of the specified Amazon FPGA Image (AFI) to
@@ -11792,15 +7200,6 @@ namespace EC2
          */
         virtual Model::ResetFpgaImageAttributeOutcome ResetFpgaImageAttribute(const Model::ResetFpgaImageAttributeRequest& request) const;
 
-        /**
-         * A Callable wrapper for ResetFpgaImageAttribute that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ResetFpgaImageAttributeOutcomeCallable ResetFpgaImageAttributeCallable(const Model::ResetFpgaImageAttributeRequest& request) const;
-
-        /**
-         * An Async wrapper for ResetFpgaImageAttribute that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ResetFpgaImageAttributeAsync(const Model::ResetFpgaImageAttributeRequest& request, const ResetFpgaImageAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Resets an attribute of an AMI to its default value.</p><p><h3>See Also:</h3> 
@@ -11810,15 +7209,6 @@ namespace EC2
          */
         virtual Model::ResetImageAttributeOutcome ResetImageAttribute(const Model::ResetImageAttributeRequest& request) const;
 
-        /**
-         * A Callable wrapper for ResetImageAttribute that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ResetImageAttributeOutcomeCallable ResetImageAttributeCallable(const Model::ResetImageAttributeRequest& request) const;
-
-        /**
-         * An Async wrapper for ResetImageAttribute that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ResetImageAttributeAsync(const Model::ResetImageAttributeRequest& request, const ResetImageAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Resets an attribute of an instance to its default value. To reset the
@@ -11836,15 +7226,6 @@ namespace EC2
          */
         virtual Model::ResetInstanceAttributeOutcome ResetInstanceAttribute(const Model::ResetInstanceAttributeRequest& request) const;
 
-        /**
-         * A Callable wrapper for ResetInstanceAttribute that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ResetInstanceAttributeOutcomeCallable ResetInstanceAttributeCallable(const Model::ResetInstanceAttributeRequest& request) const;
-
-        /**
-         * An Async wrapper for ResetInstanceAttribute that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ResetInstanceAttributeAsync(const Model::ResetInstanceAttributeRequest& request, const ResetInstanceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Resets a network interface attribute. You can specify only one attribute at a
@@ -11854,15 +7235,6 @@ namespace EC2
          */
         virtual Model::ResetNetworkInterfaceAttributeOutcome ResetNetworkInterfaceAttribute(const Model::ResetNetworkInterfaceAttributeRequest& request) const;
 
-        /**
-         * A Callable wrapper for ResetNetworkInterfaceAttribute that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ResetNetworkInterfaceAttributeOutcomeCallable ResetNetworkInterfaceAttributeCallable(const Model::ResetNetworkInterfaceAttributeRequest& request) const;
-
-        /**
-         * An Async wrapper for ResetNetworkInterfaceAttribute that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ResetNetworkInterfaceAttributeAsync(const Model::ResetNetworkInterfaceAttributeRequest& request, const ResetNetworkInterfaceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Resets permission settings for the specified snapshot.</p> <p>For more
@@ -11875,15 +7247,6 @@ namespace EC2
          */
         virtual Model::ResetSnapshotAttributeOutcome ResetSnapshotAttribute(const Model::ResetSnapshotAttributeRequest& request) const;
 
-        /**
-         * A Callable wrapper for ResetSnapshotAttribute that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ResetSnapshotAttributeOutcomeCallable ResetSnapshotAttributeCallable(const Model::ResetSnapshotAttributeRequest& request) const;
-
-        /**
-         * An Async wrapper for ResetSnapshotAttribute that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ResetSnapshotAttributeAsync(const Model::ResetSnapshotAttributeRequest& request, const ResetSnapshotAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Restores an Elastic IP address that was previously moved to the EC2-VPC
@@ -11900,15 +7263,6 @@ namespace EC2
          */
         virtual Model::RestoreAddressToClassicOutcome RestoreAddressToClassic(const Model::RestoreAddressToClassicRequest& request) const;
 
-        /**
-         * A Callable wrapper for RestoreAddressToClassic that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RestoreAddressToClassicOutcomeCallable RestoreAddressToClassicCallable(const Model::RestoreAddressToClassicRequest& request) const;
-
-        /**
-         * An Async wrapper for RestoreAddressToClassic that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RestoreAddressToClassicAsync(const Model::RestoreAddressToClassicRequest& request, const RestoreAddressToClassicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Restores an AMI from the Recycle Bin. For more information, see <a
@@ -11920,15 +7274,6 @@ namespace EC2
          */
         virtual Model::RestoreImageFromRecycleBinOutcome RestoreImageFromRecycleBin(const Model::RestoreImageFromRecycleBinRequest& request) const;
 
-        /**
-         * A Callable wrapper for RestoreImageFromRecycleBin that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RestoreImageFromRecycleBinOutcomeCallable RestoreImageFromRecycleBinCallable(const Model::RestoreImageFromRecycleBinRequest& request) const;
-
-        /**
-         * An Async wrapper for RestoreImageFromRecycleBin that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RestoreImageFromRecycleBinAsync(const Model::RestoreImageFromRecycleBinRequest& request, const RestoreImageFromRecycleBinResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Restores the entries from a previous version of a managed prefix list to a
@@ -11938,15 +7283,6 @@ namespace EC2
          */
         virtual Model::RestoreManagedPrefixListVersionOutcome RestoreManagedPrefixListVersion(const Model::RestoreManagedPrefixListVersionRequest& request) const;
 
-        /**
-         * A Callable wrapper for RestoreManagedPrefixListVersion that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RestoreManagedPrefixListVersionOutcomeCallable RestoreManagedPrefixListVersionCallable(const Model::RestoreManagedPrefixListVersionRequest& request) const;
-
-        /**
-         * An Async wrapper for RestoreManagedPrefixListVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RestoreManagedPrefixListVersionAsync(const Model::RestoreManagedPrefixListVersionRequest& request, const RestoreManagedPrefixListVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Restores a snapshot from the Recycle Bin. For more information, see <a
@@ -11958,15 +7294,6 @@ namespace EC2
          */
         virtual Model::RestoreSnapshotFromRecycleBinOutcome RestoreSnapshotFromRecycleBin(const Model::RestoreSnapshotFromRecycleBinRequest& request) const;
 
-        /**
-         * A Callable wrapper for RestoreSnapshotFromRecycleBin that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RestoreSnapshotFromRecycleBinOutcomeCallable RestoreSnapshotFromRecycleBinCallable(const Model::RestoreSnapshotFromRecycleBinRequest& request) const;
-
-        /**
-         * An Async wrapper for RestoreSnapshotFromRecycleBin that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RestoreSnapshotFromRecycleBinAsync(const Model::RestoreSnapshotFromRecycleBinRequest& request, const RestoreSnapshotFromRecycleBinResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Restores an archived Amazon EBS snapshot for use temporarily or permanently,
@@ -11983,15 +7310,6 @@ namespace EC2
          */
         virtual Model::RestoreSnapshotTierOutcome RestoreSnapshotTier(const Model::RestoreSnapshotTierRequest& request) const;
 
-        /**
-         * A Callable wrapper for RestoreSnapshotTier that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RestoreSnapshotTierOutcomeCallable RestoreSnapshotTierCallable(const Model::RestoreSnapshotTierRequest& request) const;
-
-        /**
-         * An Async wrapper for RestoreSnapshotTier that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RestoreSnapshotTierAsync(const Model::RestoreSnapshotTierRequest& request, const RestoreSnapshotTierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes an ingress authorization rule from a Client VPN endpoint.
@@ -12001,15 +7319,6 @@ namespace EC2
          */
         virtual Model::RevokeClientVpnIngressOutcome RevokeClientVpnIngress(const Model::RevokeClientVpnIngressRequest& request) const;
 
-        /**
-         * A Callable wrapper for RevokeClientVpnIngress that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RevokeClientVpnIngressOutcomeCallable RevokeClientVpnIngressCallable(const Model::RevokeClientVpnIngressRequest& request) const;
-
-        /**
-         * An Async wrapper for RevokeClientVpnIngress that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RevokeClientVpnIngressAsync(const Model::RevokeClientVpnIngressRequest& request, const RevokeClientVpnIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>[VPC only] Removes the specified outbound (egress) rules from a security
@@ -12033,15 +7342,6 @@ namespace EC2
          */
         virtual Model::RevokeSecurityGroupEgressOutcome RevokeSecurityGroupEgress(const Model::RevokeSecurityGroupEgressRequest& request) const;
 
-        /**
-         * A Callable wrapper for RevokeSecurityGroupEgress that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RevokeSecurityGroupEgressOutcomeCallable RevokeSecurityGroupEgressCallable(const Model::RevokeSecurityGroupEgressRequest& request) const;
-
-        /**
-         * An Async wrapper for RevokeSecurityGroupEgress that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RevokeSecurityGroupEgressAsync(const Model::RevokeSecurityGroupEgressRequest& request, const RevokeSecurityGroupEgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified inbound (ingress) rules from a security group.</p>
@@ -12068,15 +7368,6 @@ namespace EC2
          */
         virtual Model::RevokeSecurityGroupIngressOutcome RevokeSecurityGroupIngress(const Model::RevokeSecurityGroupIngressRequest& request) const;
 
-        /**
-         * A Callable wrapper for RevokeSecurityGroupIngress that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RevokeSecurityGroupIngressOutcomeCallable RevokeSecurityGroupIngressCallable(const Model::RevokeSecurityGroupIngressRequest& request) const;
-
-        /**
-         * An Async wrapper for RevokeSecurityGroupIngress that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RevokeSecurityGroupIngressAsync(const Model::RevokeSecurityGroupIngressRequest& request, const RevokeSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Launches the specified number of instances using an AMI for which you have
@@ -12133,15 +7424,6 @@ namespace EC2
          */
         virtual Model::RunInstancesOutcome RunInstances(const Model::RunInstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for RunInstances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RunInstancesOutcomeCallable RunInstancesCallable(const Model::RunInstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for RunInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RunInstancesAsync(const Model::RunInstancesRequest& request, const RunInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Launches the specified Scheduled Instances.</p> <p>Before you can launch a
@@ -12158,15 +7440,6 @@ namespace EC2
          */
         virtual Model::RunScheduledInstancesOutcome RunScheduledInstances(const Model::RunScheduledInstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for RunScheduledInstances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RunScheduledInstancesOutcomeCallable RunScheduledInstancesCallable(const Model::RunScheduledInstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for RunScheduledInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RunScheduledInstancesAsync(const Model::RunScheduledInstancesRequest& request, const RunScheduledInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Searches for routes in the specified local gateway route table.</p><p><h3>See
@@ -12176,15 +7449,6 @@ namespace EC2
          */
         virtual Model::SearchLocalGatewayRoutesOutcome SearchLocalGatewayRoutes(const Model::SearchLocalGatewayRoutesRequest& request) const;
 
-        /**
-         * A Callable wrapper for SearchLocalGatewayRoutes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SearchLocalGatewayRoutesOutcomeCallable SearchLocalGatewayRoutesCallable(const Model::SearchLocalGatewayRoutesRequest& request) const;
-
-        /**
-         * An Async wrapper for SearchLocalGatewayRoutes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SearchLocalGatewayRoutesAsync(const Model::SearchLocalGatewayRoutesRequest& request, const SearchLocalGatewayRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Searches one or more transit gateway multicast groups and returns the group
@@ -12194,15 +7458,6 @@ namespace EC2
          */
         virtual Model::SearchTransitGatewayMulticastGroupsOutcome SearchTransitGatewayMulticastGroups(const Model::SearchTransitGatewayMulticastGroupsRequest& request) const;
 
-        /**
-         * A Callable wrapper for SearchTransitGatewayMulticastGroups that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SearchTransitGatewayMulticastGroupsOutcomeCallable SearchTransitGatewayMulticastGroupsCallable(const Model::SearchTransitGatewayMulticastGroupsRequest& request) const;
-
-        /**
-         * An Async wrapper for SearchTransitGatewayMulticastGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SearchTransitGatewayMulticastGroupsAsync(const Model::SearchTransitGatewayMulticastGroupsRequest& request, const SearchTransitGatewayMulticastGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Searches for routes in the specified transit gateway route
@@ -12212,15 +7467,6 @@ namespace EC2
          */
         virtual Model::SearchTransitGatewayRoutesOutcome SearchTransitGatewayRoutes(const Model::SearchTransitGatewayRoutesRequest& request) const;
 
-        /**
-         * A Callable wrapper for SearchTransitGatewayRoutes that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SearchTransitGatewayRoutesOutcomeCallable SearchTransitGatewayRoutesCallable(const Model::SearchTransitGatewayRoutesRequest& request) const;
-
-        /**
-         * An Async wrapper for SearchTransitGatewayRoutes that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SearchTransitGatewayRoutesAsync(const Model::SearchTransitGatewayRoutesRequest& request, const SearchTransitGatewayRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sends a diagnostic interrupt to the specified Amazon EC2 instance to trigger
@@ -12245,15 +7491,6 @@ namespace EC2
          */
         virtual Model::SendDiagnosticInterruptOutcome SendDiagnosticInterrupt(const Model::SendDiagnosticInterruptRequest& request) const;
 
-        /**
-         * A Callable wrapper for SendDiagnosticInterrupt that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::SendDiagnosticInterruptOutcomeCallable SendDiagnosticInterruptCallable(const Model::SendDiagnosticInterruptRequest& request) const;
-
-        /**
-         * An Async wrapper for SendDiagnosticInterrupt that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void SendDiagnosticInterruptAsync(const Model::SendDiagnosticInterruptRequest& request, const SendDiagnosticInterruptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts an Amazon EBS-backed instance that you've previously stopped.</p>
@@ -12281,15 +7518,6 @@ namespace EC2
          */
         virtual Model::StartInstancesOutcome StartInstances(const Model::StartInstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartInstances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartInstancesOutcomeCallable StartInstancesCallable(const Model::StartInstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for StartInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartInstancesAsync(const Model::StartInstancesRequest& request, const StartInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts analyzing the specified Network Access Scope.</p><p><h3>See Also:</h3>
@@ -12299,15 +7527,6 @@ namespace EC2
          */
         virtual Model::StartNetworkInsightsAccessScopeAnalysisOutcome StartNetworkInsightsAccessScopeAnalysis(const Model::StartNetworkInsightsAccessScopeAnalysisRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartNetworkInsightsAccessScopeAnalysis that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartNetworkInsightsAccessScopeAnalysisOutcomeCallable StartNetworkInsightsAccessScopeAnalysisCallable(const Model::StartNetworkInsightsAccessScopeAnalysisRequest& request) const;
-
-        /**
-         * An Async wrapper for StartNetworkInsightsAccessScopeAnalysis that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartNetworkInsightsAccessScopeAnalysisAsync(const Model::StartNetworkInsightsAccessScopeAnalysisRequest& request, const StartNetworkInsightsAccessScopeAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts analyzing the specified path. If the path is reachable, the operation
@@ -12317,15 +7536,6 @@ namespace EC2
          */
         virtual Model::StartNetworkInsightsAnalysisOutcome StartNetworkInsightsAnalysis(const Model::StartNetworkInsightsAnalysisRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartNetworkInsightsAnalysis that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartNetworkInsightsAnalysisOutcomeCallable StartNetworkInsightsAnalysisCallable(const Model::StartNetworkInsightsAnalysisRequest& request) const;
-
-        /**
-         * An Async wrapper for StartNetworkInsightsAnalysis that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartNetworkInsightsAnalysisAsync(const Model::StartNetworkInsightsAnalysisRequest& request, const StartNetworkInsightsAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Initiates the verification process to prove that the service provider owns
@@ -12338,15 +7548,6 @@ namespace EC2
          */
         virtual Model::StartVpcEndpointServicePrivateDnsVerificationOutcome StartVpcEndpointServicePrivateDnsVerification(const Model::StartVpcEndpointServicePrivateDnsVerificationRequest& request) const;
 
-        /**
-         * A Callable wrapper for StartVpcEndpointServicePrivateDnsVerification that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StartVpcEndpointServicePrivateDnsVerificationOutcomeCallable StartVpcEndpointServicePrivateDnsVerificationCallable(const Model::StartVpcEndpointServicePrivateDnsVerificationRequest& request) const;
-
-        /**
-         * An Async wrapper for StartVpcEndpointServicePrivateDnsVerification that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StartVpcEndpointServicePrivateDnsVerificationAsync(const Model::StartVpcEndpointServicePrivateDnsVerificationRequest& request, const StartVpcEndpointServicePrivateDnsVerificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops an Amazon EBS-backed instance. For more information, see <a
@@ -12394,15 +7595,6 @@ namespace EC2
          */
         virtual Model::StopInstancesOutcome StopInstances(const Model::StopInstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for StopInstances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::StopInstancesOutcomeCallable StopInstancesCallable(const Model::StopInstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for StopInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void StopInstancesAsync(const Model::StopInstancesRequest& request, const StopInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Terminates active Client VPN endpoint connections. This action can be used to
@@ -12413,15 +7605,6 @@ namespace EC2
          */
         virtual Model::TerminateClientVpnConnectionsOutcome TerminateClientVpnConnections(const Model::TerminateClientVpnConnectionsRequest& request) const;
 
-        /**
-         * A Callable wrapper for TerminateClientVpnConnections that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TerminateClientVpnConnectionsOutcomeCallable TerminateClientVpnConnectionsCallable(const Model::TerminateClientVpnConnectionsRequest& request) const;
-
-        /**
-         * An Async wrapper for TerminateClientVpnConnections that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TerminateClientVpnConnectionsAsync(const Model::TerminateClientVpnConnectionsRequest& request, const TerminateClientVpnConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Shuts down the specified instances. This operation is idempotent; if you
@@ -12468,15 +7651,6 @@ namespace EC2
          */
         virtual Model::TerminateInstancesOutcome TerminateInstances(const Model::TerminateInstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for TerminateInstances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::TerminateInstancesOutcomeCallable TerminateInstancesCallable(const Model::TerminateInstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for TerminateInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void TerminateInstancesAsync(const Model::TerminateInstancesRequest& request, const TerminateInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Unassigns one or more IPv6 addresses IPv4 Prefix Delegation prefixes from a
@@ -12486,15 +7660,6 @@ namespace EC2
          */
         virtual Model::UnassignIpv6AddressesOutcome UnassignIpv6Addresses(const Model::UnassignIpv6AddressesRequest& request) const;
 
-        /**
-         * A Callable wrapper for UnassignIpv6Addresses that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UnassignIpv6AddressesOutcomeCallable UnassignIpv6AddressesCallable(const Model::UnassignIpv6AddressesRequest& request) const;
-
-        /**
-         * An Async wrapper for UnassignIpv6Addresses that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UnassignIpv6AddressesAsync(const Model::UnassignIpv6AddressesRequest& request, const UnassignIpv6AddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Unassigns one or more secondary private IP addresses, or IPv4 Prefix
@@ -12504,15 +7669,6 @@ namespace EC2
          */
         virtual Model::UnassignPrivateIpAddressesOutcome UnassignPrivateIpAddresses(const Model::UnassignPrivateIpAddressesRequest& request) const;
 
-        /**
-         * A Callable wrapper for UnassignPrivateIpAddresses that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UnassignPrivateIpAddressesOutcomeCallable UnassignPrivateIpAddressesCallable(const Model::UnassignPrivateIpAddressesRequest& request) const;
-
-        /**
-         * An Async wrapper for UnassignPrivateIpAddresses that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UnassignPrivateIpAddressesAsync(const Model::UnassignPrivateIpAddressesRequest& request, const UnassignPrivateIpAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disables detailed monitoring for a running instance. For more information,
@@ -12525,15 +7681,6 @@ namespace EC2
          */
         virtual Model::UnmonitorInstancesOutcome UnmonitorInstances(const Model::UnmonitorInstancesRequest& request) const;
 
-        /**
-         * A Callable wrapper for UnmonitorInstances that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UnmonitorInstancesOutcomeCallable UnmonitorInstancesCallable(const Model::UnmonitorInstancesRequest& request) const;
-
-        /**
-         * An Async wrapper for UnmonitorInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UnmonitorInstancesAsync(const Model::UnmonitorInstancesRequest& request, const UnmonitorInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>[VPC only] Updates the description of an egress (outbound) security group
@@ -12546,15 +7693,6 @@ namespace EC2
          */
         virtual Model::UpdateSecurityGroupRuleDescriptionsEgressOutcome UpdateSecurityGroupRuleDescriptionsEgress(const Model::UpdateSecurityGroupRuleDescriptionsEgressRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateSecurityGroupRuleDescriptionsEgress that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateSecurityGroupRuleDescriptionsEgressOutcomeCallable UpdateSecurityGroupRuleDescriptionsEgressCallable(const Model::UpdateSecurityGroupRuleDescriptionsEgressRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateSecurityGroupRuleDescriptionsEgress that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateSecurityGroupRuleDescriptionsEgressAsync(const Model::UpdateSecurityGroupRuleDescriptionsEgressRequest& request, const UpdateSecurityGroupRuleDescriptionsEgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the description of an ingress (inbound) security group rule. You can
@@ -12566,15 +7704,6 @@ namespace EC2
          */
         virtual Model::UpdateSecurityGroupRuleDescriptionsIngressOutcome UpdateSecurityGroupRuleDescriptionsIngress(const Model::UpdateSecurityGroupRuleDescriptionsIngressRequest& request) const;
 
-        /**
-         * A Callable wrapper for UpdateSecurityGroupRuleDescriptionsIngress that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdateSecurityGroupRuleDescriptionsIngressOutcomeCallable UpdateSecurityGroupRuleDescriptionsIngressCallable(const Model::UpdateSecurityGroupRuleDescriptionsIngressRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdateSecurityGroupRuleDescriptionsIngress that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdateSecurityGroupRuleDescriptionsIngressAsync(const Model::UpdateSecurityGroupRuleDescriptionsIngressRequest& request, const UpdateSecurityGroupRuleDescriptionsIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops advertising an address range that is provisioned as an address
@@ -12587,15 +7716,6 @@ namespace EC2
          */
         virtual Model::WithdrawByoipCidrOutcome WithdrawByoipCidr(const Model::WithdrawByoipCidrRequest& request) const;
 
-        /**
-         * A Callable wrapper for WithdrawByoipCidr that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::WithdrawByoipCidrOutcomeCallable WithdrawByoipCidrCallable(const Model::WithdrawByoipCidrRequest& request) const;
-
-        /**
-         * An Async wrapper for WithdrawByoipCidr that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void WithdrawByoipCidrAsync(const Model::WithdrawByoipCidrRequest& request, const WithdrawByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
         void OverrideEndpoint(const Aws::String& endpoint);
