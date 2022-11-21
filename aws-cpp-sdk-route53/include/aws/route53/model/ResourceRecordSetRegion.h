@@ -40,6 +40,7 @@ namespace Model
     me_south_1,
     me_central_1,
     ap_south_1,
+    ap_south_2,
     af_south_1,
     eu_south_1,
     eu_south_2
