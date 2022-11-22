@@ -41,17 +41,10 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
-    EndpointParameters GetEndpointContextParams() const override
-    {
-        EndpointParameters parameters;
-        if (BucketHasBeenSet()) {
-            parameters.emplace_back(Aws::String("Bucket"), this->GetBucket(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
-        }
-
-        return parameters;
-    }
-
+    /**
+     * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
+     */
+    EndpointParameters GetEndpointContextParams() const override;
 
     /**
      * <p>The bucket name to which the upload was taking place. </p> <p>When using this
