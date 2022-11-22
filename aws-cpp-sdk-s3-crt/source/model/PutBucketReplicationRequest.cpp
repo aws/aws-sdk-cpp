@@ -99,6 +99,16 @@ Aws::Http::HeaderValueCollection PutBucketReplicationRequest::GetRequestSpecific
   return headers;
 }
 
+PutBucketReplicationRequest::EndpointParameters PutBucketReplicationRequest::GetEndpointContextParams() const
+{
+    EndpointParameters parameters;
+    // Operation context parameters
+    if (BucketHasBeenSet()) {
+        parameters.emplace_back(Aws::String("Bucket"), this->GetBucket(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+    }
+    return parameters;
+}
+
 Aws::String PutBucketReplicationRequest::GetChecksumAlgorithmName() const
 {
   if (m_checksumAlgorithm == ChecksumAlgorithm::NOT_SET)

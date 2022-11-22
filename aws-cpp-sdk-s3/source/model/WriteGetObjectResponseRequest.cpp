@@ -354,3 +354,11 @@ Aws::Http::HeaderValueCollection WriteGetObjectResponseRequest::GetRequestSpecif
   return headers;
 
 }
+
+WriteGetObjectResponseRequest::EndpointParameters WriteGetObjectResponseRequest::GetEndpointContextParams() const
+{
+    EndpointParameters parameters;
+    // Static context parameters
+    parameters.emplace_back(Aws::String("UseObjectLambdaEndpoint"), true, Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
+    return parameters;
+}

@@ -91,6 +91,16 @@ Aws::Http::HeaderValueCollection PutBucketEncryptionRequest::GetRequestSpecificH
   return headers;
 }
 
+PutBucketEncryptionRequest::EndpointParameters PutBucketEncryptionRequest::GetEndpointContextParams() const
+{
+    EndpointParameters parameters;
+    // Operation context parameters
+    if (BucketHasBeenSet()) {
+        parameters.emplace_back(Aws::String("Bucket"), this->GetBucket(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+    }
+    return parameters;
+}
+
 Aws::String PutBucketEncryptionRequest::GetChecksumAlgorithmName() const
 {
   if (m_checksumAlgorithm == ChecksumAlgorithm::NOT_SET)

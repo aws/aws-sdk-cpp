@@ -37,20 +37,10 @@ namespace Model
 
     inline bool ShouldComputeContentMd5() const override { return true; }
 
-
-    EndpointParameters GetEndpointContextParams() const override
-    {
-        EndpointParameters parameters;
-        if (BucketHasBeenSet()) {
-            parameters.emplace_back(Aws::String("Bucket"), this->GetBucket(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
-        }
-        if (OutpostIdHasBeenSet()) {
-            parameters.emplace_back(Aws::String("OutpostId"), this->GetOutpostId(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
-        }
-
-        return parameters;
-    }
-
+    /**
+     * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
+     */
+    EndpointParameters GetEndpointContextParams() const override;
 
     /**
      * <p>The canned ACL to apply to the bucket.</p>  <p>This is not supported by

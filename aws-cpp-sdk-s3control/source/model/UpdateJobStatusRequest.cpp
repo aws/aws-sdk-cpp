@@ -62,3 +62,15 @@ Aws::Http::HeaderValueCollection UpdateJobStatusRequest::GetRequestSpecificHeade
 
   return headers;
 }
+
+UpdateJobStatusRequest::EndpointParameters UpdateJobStatusRequest::GetEndpointContextParams() const
+{
+    EndpointParameters parameters;
+    // Static context parameters
+    parameters.emplace_back(Aws::String("RequiresAccountId"), true, Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
+    // Operation context parameters
+    if (AccountIdHasBeenSet()) {
+        parameters.emplace_back(Aws::String("AccountId"), this->GetAccountId(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+    }
+    return parameters;
+}
