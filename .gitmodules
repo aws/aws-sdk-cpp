@@ -1,3 +1,0 @@
-[submodule "aws-common-runtime/aws-crt-cpp"]
-	path = crt/aws-crt-cpp
-	url = https://github.com/awslabs/aws-crt-cpp.git
