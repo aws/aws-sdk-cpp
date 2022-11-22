@@ -203,6 +203,16 @@ Aws::Http::HeaderValueCollection GetObjectRequest::GetRequestSpecificHeaders() c
 
   return headers;
 }
+
+GetObjectRequest::EndpointParameters GetObjectRequest::GetEndpointContextParams() const
+{
+    EndpointParameters parameters;
+    // Operation context parameters
+    if (BucketHasBeenSet()) {
+        parameters.emplace_back(Aws::String("Bucket"), this->GetBucket(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+    }
+    return parameters;
+}
 bool GetObjectRequest::ShouldValidateResponseChecksum() const
 {
   return m_checksumMode == ChecksumMode::ENABLED;

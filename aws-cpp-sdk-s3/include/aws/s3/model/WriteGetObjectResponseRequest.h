@@ -50,6 +50,10 @@ namespace Model
 
     bool IsChunked() const override { return true; }
 
+    /**
+     * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
+     */
+    EndpointParameters GetEndpointContextParams() const override;
 
     /**
      * <p>Route prefix to the HTTP URL generated.</p>
