@@ -22,7 +22,8 @@ namespace Model
     ZEPPELIN_FLINK_1_0,
     FLINK_1_11,
     FLINK_1_13,
-    ZEPPELIN_FLINK_2_0
+    ZEPPELIN_FLINK_2_0,
+    FLINK_1_15
   };
 
 namespace RuntimeEnvironmentMapper
