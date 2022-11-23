@@ -26,7 +26,9 @@
 #include <aws/rbin/model/GetRuleRequest.h>
 #include <aws/rbin/model/ListRulesRequest.h>
 #include <aws/rbin/model/ListTagsForResourceRequest.h>
+#include <aws/rbin/model/LockRuleRequest.h>
 #include <aws/rbin/model/TagResourceRequest.h>
+#include <aws/rbin/model/UnlockRuleRequest.h>
 #include <aws/rbin/model/UntagResourceRequest.h>
 #include <aws/rbin/model/UpdateRuleRequest.h>
 
@@ -300,6 +302,38 @@ void RecycleBinClient::ListTagsForResourceAsync(const ListTagsForResourceRequest
     } );
 }
 
+LockRuleOutcome RecycleBinClient::LockRule(const LockRuleRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, LockRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.IdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("LockRule", "Required field: Identifier, is not set");
+    return LockRuleOutcome(Aws::Client::AWSError<RecycleBinErrors>(RecycleBinErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Identifier]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, LockRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/rules/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/lock");
+  return LockRuleOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+LockRuleOutcomeCallable RecycleBinClient::LockRuleCallable(const LockRuleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< LockRuleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->LockRule(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RecycleBinClient::LockRuleAsync(const LockRuleRequest& request, const LockRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, LockRule(request), context);
+    } );
+}
+
 TagResourceOutcome RecycleBinClient::TagResource(const TagResourceRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -328,6 +362,38 @@ void RecycleBinClient::TagResourceAsync(const TagResourceRequest& request, const
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, TagResource(request), context);
+    } );
+}
+
+UnlockRuleOutcome RecycleBinClient::UnlockRule(const UnlockRuleRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UnlockRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.IdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UnlockRule", "Required field: Identifier, is not set");
+    return UnlockRuleOutcome(Aws::Client::AWSError<RecycleBinErrors>(RecycleBinErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Identifier]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UnlockRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/rules/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/unlock");
+  return UnlockRuleOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+UnlockRuleOutcomeCallable RecycleBinClient::UnlockRuleCallable(const UnlockRuleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UnlockRuleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UnlockRule(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RecycleBinClient::UnlockRuleAsync(const UnlockRuleRequest& request, const UnlockRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UnlockRule(request), context);
     } );
 }
 

@@ -9,6 +9,7 @@
 #include <aws/grafana/model/AccountAccessType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/grafana/model/PermissionType.h>
+#include <aws/grafana/model/VpcConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/grafana/model/DataSourceType.h>
 #include <aws/grafana/model/NotificationDestinationType.h>
@@ -245,6 +246,35 @@ namespace Model
 
 
     /**
+     * <p>Whether to remove the VPC configuration from the workspace.</p> <p>Setting
+     * this to <code>true</code> and providing a <code>vpcConfiguration</code> to set
+     * will return an error.</p>
+     */
+    inline bool GetRemoveVpcConfiguration() const{ return m_removeVpcConfiguration; }
+
+    /**
+     * <p>Whether to remove the VPC configuration from the workspace.</p> <p>Setting
+     * this to <code>true</code> and providing a <code>vpcConfiguration</code> to set
+     * will return an error.</p>
+     */
+    inline bool RemoveVpcConfigurationHasBeenSet() const { return m_removeVpcConfigurationHasBeenSet; }
+
+    /**
+     * <p>Whether to remove the VPC configuration from the workspace.</p> <p>Setting
+     * this to <code>true</code> and providing a <code>vpcConfiguration</code> to set
+     * will return an error.</p>
+     */
+    inline void SetRemoveVpcConfiguration(bool value) { m_removeVpcConfigurationHasBeenSet = true; m_removeVpcConfiguration = value; }
+
+    /**
+     * <p>Whether to remove the VPC configuration from the workspace.</p> <p>Setting
+     * this to <code>true</code> and providing a <code>vpcConfiguration</code> to set
+     * will return an error.</p>
+     */
+    inline UpdateWorkspaceRequest& WithRemoveVpcConfiguration(bool value) { SetRemoveVpcConfiguration(value); return *this;}
+
+
+    /**
      * <p>The name of the CloudFormation stack set to use to generate IAM roles to be
      * used for this workspace.</p>
      */
@@ -291,6 +321,43 @@ namespace Model
      * used for this workspace.</p>
      */
     inline UpdateWorkspaceRequest& WithStackSetName(const char* value) { SetStackSetName(value); return *this;}
+
+
+    /**
+     * <p>The configuration settings for an Amazon VPC that contains data sources for
+     * your Grafana workspace to connect to.</p>
+     */
+    inline const VpcConfiguration& GetVpcConfiguration() const{ return m_vpcConfiguration; }
+
+    /**
+     * <p>The configuration settings for an Amazon VPC that contains data sources for
+     * your Grafana workspace to connect to.</p>
+     */
+    inline bool VpcConfigurationHasBeenSet() const { return m_vpcConfigurationHasBeenSet; }
+
+    /**
+     * <p>The configuration settings for an Amazon VPC that contains data sources for
+     * your Grafana workspace to connect to.</p>
+     */
+    inline void SetVpcConfiguration(const VpcConfiguration& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = value; }
+
+    /**
+     * <p>The configuration settings for an Amazon VPC that contains data sources for
+     * your Grafana workspace to connect to.</p>
+     */
+    inline void SetVpcConfiguration(VpcConfiguration&& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = std::move(value); }
+
+    /**
+     * <p>The configuration settings for an Amazon VPC that contains data sources for
+     * your Grafana workspace to connect to.</p>
+     */
+    inline UpdateWorkspaceRequest& WithVpcConfiguration(const VpcConfiguration& value) { SetVpcConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration settings for an Amazon VPC that contains data sources for
+     * your Grafana workspace to connect to.</p>
+     */
+    inline UpdateWorkspaceRequest& WithVpcConfiguration(VpcConfiguration&& value) { SetVpcConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -733,8 +800,14 @@ namespace Model
     PermissionType m_permissionType;
     bool m_permissionTypeHasBeenSet = false;
 
+    bool m_removeVpcConfiguration;
+    bool m_removeVpcConfigurationHasBeenSet = false;
+
     Aws::String m_stackSetName;
     bool m_stackSetNameHasBeenSet = false;
+
+    VpcConfiguration m_vpcConfiguration;
+    bool m_vpcConfigurationHasBeenSet = false;
 
     Aws::Vector<DataSourceType> m_workspaceDataSources;
     bool m_workspaceDataSourcesHasBeenSet = false;

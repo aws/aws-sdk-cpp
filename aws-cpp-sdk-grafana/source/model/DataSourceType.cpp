@@ -28,6 +28,7 @@ namespace Aws
         static const int SITEWISE_HASH = HashingUtils::HashString("SITEWISE");
         static const int ATHENA_HASH = HashingUtils::HashString("ATHENA");
         static const int REDSHIFT_HASH = HashingUtils::HashString("REDSHIFT");
+        static const int TWINMAKER_HASH = HashingUtils::HashString("TWINMAKER");
 
 
         DataSourceType GetDataSourceTypeForName(const Aws::String& name)
@@ -65,6 +66,10 @@ namespace Aws
           {
             return DataSourceType::REDSHIFT;
           }
+          else if (hashCode == TWINMAKER_HASH)
+          {
+            return DataSourceType::TWINMAKER;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -95,6 +100,8 @@ namespace Aws
             return "ATHENA";
           case DataSourceType::REDSHIFT:
             return "REDSHIFT";
+          case DataSourceType::TWINMAKER:
+            return "TWINMAKER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

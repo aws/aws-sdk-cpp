@@ -156,50 +156,38 @@ namespace Model
 
 
     /**
-     * <p>The resource type to be retained by the retention rule. Currently, only
-     * Amazon EBS snapshots and EBS-backed AMIs are supported. To retain snapshots,
-     * specify <code>EBS_SNAPSHOT</code>. To retain EBS-backed AMIs, specify
-     * <code>EC2_IMAGE</code>.</p>
+     *  <p>This parameter is currently not supported. You can't update a
+     * retention rule's resource type after creation.</p> 
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The resource type to be retained by the retention rule. Currently, only
-     * Amazon EBS snapshots and EBS-backed AMIs are supported. To retain snapshots,
-     * specify <code>EBS_SNAPSHOT</code>. To retain EBS-backed AMIs, specify
-     * <code>EC2_IMAGE</code>.</p>
+     *  <p>This parameter is currently not supported. You can't update a
+     * retention rule's resource type after creation.</p> 
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The resource type to be retained by the retention rule. Currently, only
-     * Amazon EBS snapshots and EBS-backed AMIs are supported. To retain snapshots,
-     * specify <code>EBS_SNAPSHOT</code>. To retain EBS-backed AMIs, specify
-     * <code>EC2_IMAGE</code>.</p>
+     *  <p>This parameter is currently not supported. You can't update a
+     * retention rule's resource type after creation.</p> 
      */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The resource type to be retained by the retention rule. Currently, only
-     * Amazon EBS snapshots and EBS-backed AMIs are supported. To retain snapshots,
-     * specify <code>EBS_SNAPSHOT</code>. To retain EBS-backed AMIs, specify
-     * <code>EC2_IMAGE</code>.</p>
+     *  <p>This parameter is currently not supported. You can't update a
+     * retention rule's resource type after creation.</p> 
      */
     inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The resource type to be retained by the retention rule. Currently, only
-     * Amazon EBS snapshots and EBS-backed AMIs are supported. To retain snapshots,
-     * specify <code>EBS_SNAPSHOT</code>. To retain EBS-backed AMIs, specify
-     * <code>EC2_IMAGE</code>.</p>
+     *  <p>This parameter is currently not supported. You can't update a
+     * retention rule's resource type after creation.</p> 
      */
     inline UpdateRuleRequest& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The resource type to be retained by the retention rule. Currently, only
-     * Amazon EBS snapshots and EBS-backed AMIs are supported. To retain snapshots,
-     * specify <code>EBS_SNAPSHOT</code>. To retain EBS-backed AMIs, specify
-     * <code>EC2_IMAGE</code>.</p>
+     *  <p>This parameter is currently not supported. You can't update a
+     * retention rule's resource type after creation.</p> 
      */
     inline UpdateRuleRequest& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 

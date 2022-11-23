@@ -28,6 +28,7 @@
 #include <aws/grafana/model/DeleteWorkspaceApiKeyRequest.h>
 #include <aws/grafana/model/DescribeWorkspaceRequest.h>
 #include <aws/grafana/model/DescribeWorkspaceAuthenticationRequest.h>
+#include <aws/grafana/model/DescribeWorkspaceConfigurationRequest.h>
 #include <aws/grafana/model/DisassociateLicenseRequest.h>
 #include <aws/grafana/model/ListPermissionsRequest.h>
 #include <aws/grafana/model/ListTagsForResourceRequest.h>
@@ -37,6 +38,7 @@
 #include <aws/grafana/model/UpdatePermissionsRequest.h>
 #include <aws/grafana/model/UpdateWorkspaceRequest.h>
 #include <aws/grafana/model/UpdateWorkspaceAuthenticationRequest.h>
+#include <aws/grafana/model/UpdateWorkspaceConfigurationRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -392,6 +394,38 @@ void ManagedGrafanaClient::DescribeWorkspaceAuthenticationAsync(const DescribeWo
     } );
 }
 
+DescribeWorkspaceConfigurationOutcome ManagedGrafanaClient::DescribeWorkspaceConfiguration(const DescribeWorkspaceConfigurationRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeWorkspaceConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.WorkspaceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeWorkspaceConfiguration", "Required field: WorkspaceId, is not set");
+    return DescribeWorkspaceConfigurationOutcome(Aws::Client::AWSError<ManagedGrafanaErrors>(ManagedGrafanaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkspaceId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeWorkspaceConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/configuration");
+  return DescribeWorkspaceConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeWorkspaceConfigurationOutcomeCallable ManagedGrafanaClient::DescribeWorkspaceConfigurationCallable(const DescribeWorkspaceConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeWorkspaceConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeWorkspaceConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ManagedGrafanaClient::DescribeWorkspaceConfigurationAsync(const DescribeWorkspaceConfigurationRequest& request, const DescribeWorkspaceConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeWorkspaceConfiguration(request), context);
+    } );
+}
+
 DisassociateLicenseOutcome ManagedGrafanaClient::DisassociateLicense(const DisassociateLicenseRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateLicense, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -677,6 +711,38 @@ void ManagedGrafanaClient::UpdateWorkspaceAuthenticationAsync(const UpdateWorksp
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, UpdateWorkspaceAuthentication(request), context);
+    } );
+}
+
+UpdateWorkspaceConfigurationOutcome ManagedGrafanaClient::UpdateWorkspaceConfiguration(const UpdateWorkspaceConfigurationRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateWorkspaceConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.WorkspaceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateWorkspaceConfiguration", "Required field: WorkspaceId, is not set");
+    return UpdateWorkspaceConfigurationOutcome(Aws::Client::AWSError<ManagedGrafanaErrors>(ManagedGrafanaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkspaceId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateWorkspaceConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/configuration");
+  return UpdateWorkspaceConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateWorkspaceConfigurationOutcomeCallable ManagedGrafanaClient::UpdateWorkspaceConfigurationCallable(const UpdateWorkspaceConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateWorkspaceConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateWorkspaceConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ManagedGrafanaClient::UpdateWorkspaceConfigurationAsync(const UpdateWorkspaceConfigurationRequest& request, const UpdateWorkspaceConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateWorkspaceConfiguration(request), context);
     } );
 }
 

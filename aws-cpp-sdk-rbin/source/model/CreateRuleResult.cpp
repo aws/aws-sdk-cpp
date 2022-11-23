@@ -18,13 +18,15 @@ using namespace Aws;
 
 CreateRuleResult::CreateRuleResult() : 
     m_resourceType(ResourceType::NOT_SET),
-    m_status(RuleStatus::NOT_SET)
+    m_status(RuleStatus::NOT_SET),
+    m_lockState(LockState::NOT_SET)
 {
 }
 
 CreateRuleResult::CreateRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_resourceType(ResourceType::NOT_SET),
-    m_status(RuleStatus::NOT_SET)
+    m_status(RuleStatus::NOT_SET),
+    m_lockState(LockState::NOT_SET)
 {
   *this = result;
 }
@@ -77,6 +79,18 @@ CreateRuleResult& CreateRuleResult::operator =(const Aws::AmazonWebServiceResult
   if(jsonValue.ValueExists("Status"))
   {
     m_status = RuleStatusMapper::GetRuleStatusForName(jsonValue.GetString("Status"));
+
+  }
+
+  if(jsonValue.ValueExists("LockConfiguration"))
+  {
+    m_lockConfiguration = jsonValue.GetObject("LockConfiguration");
+
+  }
+
+  if(jsonValue.ValueExists("LockState"))
+  {
+    m_lockState = LockStateMapper::GetLockStateForName(jsonValue.GetString("LockState"));
 
   }
 

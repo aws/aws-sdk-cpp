@@ -26,8 +26,8 @@ namespace Model
 
   /**
    * <p>A structure containing the identity of one user or group and the
-   * <code>Admin</code> or <code>Editor</code> role that they have.</p><p><h3>See
-   * Also:</h3>   <a
+   * <code>Admin</code>, <code>Editor</code>, or <code>Viewer</code> role that they
+   * have.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/PermissionEntry">AWS
    * API Reference</a></p>
    */
@@ -41,38 +41,38 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the user or group has the <code>Admin</code> or
-     * <code>Editor</code> role.</p>
+     * <p>Specifies whether the user or group has the <code>Admin</code>,
+     * <code>Editor</code>, or <code>Viewer</code> role.</p>
      */
     inline const Role& GetRole() const{ return m_role; }
 
     /**
-     * <p>Specifies whether the user or group has the <code>Admin</code> or
-     * <code>Editor</code> role.</p>
+     * <p>Specifies whether the user or group has the <code>Admin</code>,
+     * <code>Editor</code>, or <code>Viewer</code> role.</p>
      */
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
 
     /**
-     * <p>Specifies whether the user or group has the <code>Admin</code> or
-     * <code>Editor</code> role.</p>
+     * <p>Specifies whether the user or group has the <code>Admin</code>,
+     * <code>Editor</code>, or <code>Viewer</code> role.</p>
      */
     inline void SetRole(const Role& value) { m_roleHasBeenSet = true; m_role = value; }
 
     /**
-     * <p>Specifies whether the user or group has the <code>Admin</code> or
-     * <code>Editor</code> role.</p>
+     * <p>Specifies whether the user or group has the <code>Admin</code>,
+     * <code>Editor</code>, or <code>Viewer</code> role.</p>
      */
     inline void SetRole(Role&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
 
     /**
-     * <p>Specifies whether the user or group has the <code>Admin</code> or
-     * <code>Editor</code> role.</p>
+     * <p>Specifies whether the user or group has the <code>Admin</code>,
+     * <code>Editor</code>, or <code>Viewer</code> role.</p>
      */
     inline PermissionEntry& WithRole(const Role& value) { SetRole(value); return *this;}
 
     /**
-     * <p>Specifies whether the user or group has the <code>Admin</code> or
-     * <code>Editor</code> role.</p>
+     * <p>Specifies whether the user or group has the <code>Admin</code>,
+     * <code>Editor</code>, or <code>Viewer</code> role.</p>
      */
     inline PermissionEntry& WithRole(Role&& value) { SetRole(std::move(value)); return *this;}
 
