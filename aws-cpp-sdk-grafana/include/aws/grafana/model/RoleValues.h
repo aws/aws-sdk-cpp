@@ -27,7 +27,9 @@ namespace Model
   /**
    * <p>This structure defines which groups defined in the SAML assertion attribute
    * are to be mapped to the Grafana <code>Admin</code> and <code>Editor</code> roles
-   * in the workspace.</p><p><h3>See Also:</h3>   <a
+   * in the workspace. SAML authenticated users not part of <code>Admin</code> or
+   * <code>Editor</code> role groups have <code>Viewer</code> permission over the
+   * workspace.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/RoleValues">AWS
    * API Reference</a></p>
    */

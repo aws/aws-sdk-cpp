@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rbin/model/ResourceType.h>
+#include <aws/rbin/model/LockConfiguration.h>
 #include <aws/rbin/model/Tag.h>
 #include <aws/rbin/model/ResourceTag.h>
 #include <utility>
@@ -325,6 +326,37 @@ namespace Model
      */
     inline CreateRuleRequest& AddResourceTags(ResourceTag&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Information about the retention rule lock configuration.</p>
+     */
+    inline const LockConfiguration& GetLockConfiguration() const{ return m_lockConfiguration; }
+
+    /**
+     * <p>Information about the retention rule lock configuration.</p>
+     */
+    inline bool LockConfigurationHasBeenSet() const { return m_lockConfigurationHasBeenSet; }
+
+    /**
+     * <p>Information about the retention rule lock configuration.</p>
+     */
+    inline void SetLockConfiguration(const LockConfiguration& value) { m_lockConfigurationHasBeenSet = true; m_lockConfiguration = value; }
+
+    /**
+     * <p>Information about the retention rule lock configuration.</p>
+     */
+    inline void SetLockConfiguration(LockConfiguration&& value) { m_lockConfigurationHasBeenSet = true; m_lockConfiguration = std::move(value); }
+
+    /**
+     * <p>Information about the retention rule lock configuration.</p>
+     */
+    inline CreateRuleRequest& WithLockConfiguration(const LockConfiguration& value) { SetLockConfiguration(value); return *this;}
+
+    /**
+     * <p>Information about the retention rule lock configuration.</p>
+     */
+    inline CreateRuleRequest& WithLockConfiguration(LockConfiguration&& value) { SetLockConfiguration(std::move(value)); return *this;}
+
   private:
 
     RetentionPeriod m_retentionPeriod;
@@ -341,6 +373,9 @@ namespace Model
 
     Aws::Vector<ResourceTag> m_resourceTags;
     bool m_resourceTagsHasBeenSet = false;
+
+    LockConfiguration m_lockConfiguration;
+    bool m_lockConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

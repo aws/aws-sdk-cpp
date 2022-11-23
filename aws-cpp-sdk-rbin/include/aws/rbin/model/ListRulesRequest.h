@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rbin/model/ResourceType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/rbin/model/LockState.h>
 #include <aws/rbin/model/ResourceTag.h>
 #include <utility>
 
@@ -208,6 +209,43 @@ namespace Model
      */
     inline ListRulesRequest& AddResourceTags(ResourceTag&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The lock state of the retention rules to list. Only retention rules with the
+     * specified lock state are returned.</p>
+     */
+    inline const LockState& GetLockState() const{ return m_lockState; }
+
+    /**
+     * <p>The lock state of the retention rules to list. Only retention rules with the
+     * specified lock state are returned.</p>
+     */
+    inline bool LockStateHasBeenSet() const { return m_lockStateHasBeenSet; }
+
+    /**
+     * <p>The lock state of the retention rules to list. Only retention rules with the
+     * specified lock state are returned.</p>
+     */
+    inline void SetLockState(const LockState& value) { m_lockStateHasBeenSet = true; m_lockState = value; }
+
+    /**
+     * <p>The lock state of the retention rules to list. Only retention rules with the
+     * specified lock state are returned.</p>
+     */
+    inline void SetLockState(LockState&& value) { m_lockStateHasBeenSet = true; m_lockState = std::move(value); }
+
+    /**
+     * <p>The lock state of the retention rules to list. Only retention rules with the
+     * specified lock state are returned.</p>
+     */
+    inline ListRulesRequest& WithLockState(const LockState& value) { SetLockState(value); return *this;}
+
+    /**
+     * <p>The lock state of the retention rules to list. Only retention rules with the
+     * specified lock state are returned.</p>
+     */
+    inline ListRulesRequest& WithLockState(LockState&& value) { SetLockState(std::move(value)); return *this;}
+
   private:
 
     int m_maxResults;
@@ -221,6 +259,9 @@ namespace Model
 
     Aws::Vector<ResourceTag> m_resourceTags;
     bool m_resourceTagsHasBeenSet = false;
+
+    LockState m_lockState;
+    bool m_lockStateHasBeenSet = false;
   };
 
 } // namespace Model

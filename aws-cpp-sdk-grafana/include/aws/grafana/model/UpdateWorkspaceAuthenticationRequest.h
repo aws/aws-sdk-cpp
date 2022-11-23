@@ -36,72 +36,72 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single
-     * Sign On, or both to authenticate users for using the Grafana console within a
-     * workspace. For more information, see <a
+     * <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center
+     * (successor to Single Sign-On), or both to authenticate users for using the
+     * Grafana console within a workspace. For more information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User
      * authentication in Amazon Managed Grafana</a>.</p>
      */
     inline const Aws::Vector<AuthenticationProviderTypes>& GetAuthenticationProviders() const{ return m_authenticationProviders; }
 
     /**
-     * <p>Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single
-     * Sign On, or both to authenticate users for using the Grafana console within a
-     * workspace. For more information, see <a
+     * <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center
+     * (successor to Single Sign-On), or both to authenticate users for using the
+     * Grafana console within a workspace. For more information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User
      * authentication in Amazon Managed Grafana</a>.</p>
      */
     inline bool AuthenticationProvidersHasBeenSet() const { return m_authenticationProvidersHasBeenSet; }
 
     /**
-     * <p>Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single
-     * Sign On, or both to authenticate users for using the Grafana console within a
-     * workspace. For more information, see <a
+     * <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center
+     * (successor to Single Sign-On), or both to authenticate users for using the
+     * Grafana console within a workspace. For more information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User
      * authentication in Amazon Managed Grafana</a>.</p>
      */
     inline void SetAuthenticationProviders(const Aws::Vector<AuthenticationProviderTypes>& value) { m_authenticationProvidersHasBeenSet = true; m_authenticationProviders = value; }
 
     /**
-     * <p>Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single
-     * Sign On, or both to authenticate users for using the Grafana console within a
-     * workspace. For more information, see <a
+     * <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center
+     * (successor to Single Sign-On), or both to authenticate users for using the
+     * Grafana console within a workspace. For more information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User
      * authentication in Amazon Managed Grafana</a>.</p>
      */
     inline void SetAuthenticationProviders(Aws::Vector<AuthenticationProviderTypes>&& value) { m_authenticationProvidersHasBeenSet = true; m_authenticationProviders = std::move(value); }
 
     /**
-     * <p>Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single
-     * Sign On, or both to authenticate users for using the Grafana console within a
-     * workspace. For more information, see <a
+     * <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center
+     * (successor to Single Sign-On), or both to authenticate users for using the
+     * Grafana console within a workspace. For more information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User
      * authentication in Amazon Managed Grafana</a>.</p>
      */
     inline UpdateWorkspaceAuthenticationRequest& WithAuthenticationProviders(const Aws::Vector<AuthenticationProviderTypes>& value) { SetAuthenticationProviders(value); return *this;}
 
     /**
-     * <p>Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single
-     * Sign On, or both to authenticate users for using the Grafana console within a
-     * workspace. For more information, see <a
+     * <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center
+     * (successor to Single Sign-On), or both to authenticate users for using the
+     * Grafana console within a workspace. For more information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User
      * authentication in Amazon Managed Grafana</a>.</p>
      */
     inline UpdateWorkspaceAuthenticationRequest& WithAuthenticationProviders(Aws::Vector<AuthenticationProviderTypes>&& value) { SetAuthenticationProviders(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single
-     * Sign On, or both to authenticate users for using the Grafana console within a
-     * workspace. For more information, see <a
+     * <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center
+     * (successor to Single Sign-On), or both to authenticate users for using the
+     * Grafana console within a workspace. For more information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User
      * authentication in Amazon Managed Grafana</a>.</p>
      */
     inline UpdateWorkspaceAuthenticationRequest& AddAuthenticationProviders(const AuthenticationProviderTypes& value) { m_authenticationProvidersHasBeenSet = true; m_authenticationProviders.push_back(value); return *this; }
 
     /**
-     * <p>Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single
-     * Sign On, or both to authenticate users for using the Grafana console within a
-     * workspace. For more information, see <a
+     * <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center
+     * (successor to Single Sign-On), or both to authenticate users for using the
+     * Grafana console within a workspace. For more information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User
      * authentication in Amazon Managed Grafana</a>.</p>
      */

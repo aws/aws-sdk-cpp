@@ -21,14 +21,18 @@ namespace Model
 RuleSummary::RuleSummary() : 
     m_identifierHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_retentionPeriodHasBeenSet(false)
+    m_retentionPeriodHasBeenSet(false),
+    m_lockState(LockState::NOT_SET),
+    m_lockStateHasBeenSet(false)
 {
 }
 
 RuleSummary::RuleSummary(JsonView jsonValue) : 
     m_identifierHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_retentionPeriodHasBeenSet(false)
+    m_retentionPeriodHasBeenSet(false),
+    m_lockState(LockState::NOT_SET),
+    m_lockStateHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +60,13 @@ RuleSummary& RuleSummary::operator =(JsonView jsonValue)
     m_retentionPeriodHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LockState"))
+  {
+    m_lockState = LockStateMapper::GetLockStateForName(jsonValue.GetString("LockState"));
+
+    m_lockStateHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -79,6 +90,11 @@ JsonValue RuleSummary::Jsonize() const
   {
    payload.WithObject("RetentionPeriod", m_retentionPeriod.Jsonize());
 
+  }
+
+  if(m_lockStateHasBeenSet)
+  {
+   payload.WithString("LockState", LockStateMapper::GetNameForLockState(m_lockState));
   }
 
   return payload;

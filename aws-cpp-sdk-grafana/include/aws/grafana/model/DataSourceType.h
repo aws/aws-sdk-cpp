@@ -23,7 +23,8 @@ namespace Model
     TIMESTREAM,
     SITEWISE,
     ATHENA,
-    REDSHIFT
+    REDSHIFT,
+    TWINMAKER
   };
 
 namespace DataSourceTypeMapper

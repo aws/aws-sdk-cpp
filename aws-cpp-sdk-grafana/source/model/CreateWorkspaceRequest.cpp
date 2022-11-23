@@ -18,11 +18,13 @@ CreateWorkspaceRequest::CreateWorkspaceRequest() :
     m_authenticationProvidersHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
     m_clientTokenHasBeenSet(true),
+    m_configurationHasBeenSet(false),
     m_organizationRoleNameHasBeenSet(false),
     m_permissionType(PermissionType::NOT_SET),
     m_permissionTypeHasBeenSet(false),
     m_stackSetNameHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_vpcConfigurationHasBeenSet(false),
     m_workspaceDataSourcesHasBeenSet(false),
     m_workspaceDescriptionHasBeenSet(false),
     m_workspaceNameHasBeenSet(false),
@@ -58,6 +60,12 @@ Aws::String CreateWorkspaceRequest::SerializePayload() const
 
   }
 
+  if(m_configurationHasBeenSet)
+  {
+   payload.WithString("configuration", m_configuration);
+
+  }
+
   if(m_organizationRoleNameHasBeenSet)
   {
    payload.WithString("organizationRoleName", m_organizationRoleName);
@@ -83,6 +91,12 @@ Aws::String CreateWorkspaceRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_vpcConfigurationHasBeenSet)
+  {
+   payload.WithObject("vpcConfiguration", m_vpcConfiguration.Jsonize());
 
   }
 

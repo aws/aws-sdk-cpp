@@ -45,6 +45,7 @@ WorkspaceDescription::WorkspaceDescription() :
     m_status(WorkspaceStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_vpcConfigurationHasBeenSet(false),
     m_workspaceRoleArnHasBeenSet(false)
 {
 }
@@ -76,6 +77,7 @@ WorkspaceDescription::WorkspaceDescription(JsonView jsonValue) :
     m_status(WorkspaceStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_vpcConfigurationHasBeenSet(false),
     m_workspaceRoleArnHasBeenSet(false)
 {
   *this = jsonValue;
@@ -242,6 +244,13 @@ WorkspaceDescription& WorkspaceDescription::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("vpcConfiguration"))
+  {
+    m_vpcConfiguration = jsonValue.GetObject("vpcConfiguration");
+
+    m_vpcConfigurationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("workspaceRoleArn"))
   {
     m_workspaceRoleArn = jsonValue.GetString("workspaceRoleArn");
@@ -391,6 +400,12 @@ JsonValue WorkspaceDescription::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_vpcConfigurationHasBeenSet)
+  {
+   payload.WithObject("vpcConfiguration", m_vpcConfiguration.Jsonize());
 
   }
 

@@ -33,37 +33,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the API key that was deleted.</p>
+     * <p>The name of the key that was deleted.</p>
      */
     inline const Aws::String& GetKeyName() const{ return m_keyName; }
 
     /**
-     * <p>The name of the API key that was deleted.</p>
+     * <p>The name of the key that was deleted.</p>
      */
     inline void SetKeyName(const Aws::String& value) { m_keyName = value; }
 
     /**
-     * <p>The name of the API key that was deleted.</p>
+     * <p>The name of the key that was deleted.</p>
      */
     inline void SetKeyName(Aws::String&& value) { m_keyName = std::move(value); }
 
     /**
-     * <p>The name of the API key that was deleted.</p>
+     * <p>The name of the key that was deleted.</p>
      */
     inline void SetKeyName(const char* value) { m_keyName.assign(value); }
 
     /**
-     * <p>The name of the API key that was deleted.</p>
+     * <p>The name of the key that was deleted.</p>
      */
     inline DeleteWorkspaceApiKeyResult& WithKeyName(const Aws::String& value) { SetKeyName(value); return *this;}
 
     /**
-     * <p>The name of the API key that was deleted.</p>
+     * <p>The name of the key that was deleted.</p>
      */
     inline DeleteWorkspaceApiKeyResult& WithKeyName(Aws::String&& value) { SetKeyName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the API key that was deleted.</p>
+     * <p>The name of the key that was deleted.</p>
      */
     inline DeleteWorkspaceApiKeyResult& WithKeyName(const char* value) { SetKeyName(value); return *this;}
 
