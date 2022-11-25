@@ -18,7 +18,7 @@ namespace Aws
         class AWSClient;
 
         /**
-         *
+         * Helper class to generate pre-signed AWS URLs.
          */
         class AWS_CORE_API AWSUrlPresigner
         {
@@ -28,120 +28,140 @@ namespace Aws
             virtual ~AWSUrlPresigner() {};
 
             /**
-             * Generates a signed Uri using the injected signer. for the supplied uri and http method. expirationInSeconds defaults
+             * Generates a signed Uri using the injected signer, for the supplied uri and http method. expirationInSeconds defaults
              * to 0 which is the default 7 days. The implication of this function is using auth signer v4 to sign it.
              */
             Aws::String GeneratePresignedUrl(const Aws::Http::URI &uri,
                                              Aws::Http::HttpMethod method,
-                                             long long expirationInSeconds = 0);
+                                             long long expirationInSeconds = 0) const;
 
             /**
-             * Generates a signed Uri using the injected signer. for the supplied uri, http method and customized headers. expirationInSeconds defaults
+             * Generates a signed Uri using the injected signer, for the supplied uri, http method, and customized headers. expirationInSeconds defaults
              * to 0 which is the default 7 days. The implication of this function is using auth signer v4 to sign it.
              */
             Aws::String GeneratePresignedUrl(const Aws::Http::URI &uri,
                                              Aws::Http::HttpMethod method,
                                              const Aws::Http::HeaderValueCollection &customizedHeaders,
-                                             long long expirationInSeconds = 0);
-
-            /**
-             * Generates a signed Uri using the injected signer. for the supplied uri and http method and region. expirationInSeconds defaults
-             * to 0 which is the default 7 days.
-             */
-            Aws::String GeneratePresignedUrl(const Aws::Http::URI &uri,
-                                             Aws::Http::HttpMethod method,
-                                             const char *region,
                                              long long expirationInSeconds = 0) const;
 
             /**
-             * Generates a signed Uri using the injected signer. for the supplied uri, http method and customized headers. expirationInSeconds defaults
+             * Generates a signed Uri using the injected signer, for the supplied uri, http method, and region. expirationInSeconds defaults
              * to 0 which is the default 7 days.
              */
             Aws::String GeneratePresignedUrl(const Aws::Http::URI &uri,
                                              Aws::Http::HttpMethod method,
-                                             const char *region,
-                                             const Aws::Http::HeaderValueCollection &customizedHeaders,
-                                             long long expirationInSeconds = 0);
-
-            /**
-             * Generates a signed Uri using the injected signer. for the supplied uri and http method, region, and service name. expirationInSeconds defaults
-             * to 0 which is the default 7 days.
-             */
-            Aws::String GeneratePresignedUrl(const Aws::Http::URI &uri,
-                                             Aws::Http::HttpMethod method,
-                                             const char *region,
-                                             const char *serviceName,
+                                             const char *regionOverride,
                                              long long expirationInSeconds = 0) const;
 
             /**
-             * Generates a signed Uri using the injected signer. for the supplied uri, http method and customized headers. expirationInSeconds defaults
+             * Generates a signed Uri using the injected signer, for the supplied uri, http method, and customized headers. expirationInSeconds defaults
              * to 0 which is the default 7 days.
              */
             Aws::String GeneratePresignedUrl(const Aws::Http::URI &uri,
                                              Aws::Http::HttpMethod method,
-                                             const char *region,
-                                             const char *serviceName,
+                                             const char *regionOverride,
                                              const Aws::Http::HeaderValueCollection &customizedHeaders,
-                                             long long expirationInSeconds = 0);
+                                             long long expirationInSeconds = 0) const;
 
             /**
-             * Generates a signed Uri using the injected signer. for the supplied uri and http method, region, service name and signer name. expirationInSeconds defaults
+             * Generates a signed Uri using the injected signer, for the supplied uri, http method, region, and service name. expirationInSeconds defaults
              * to 0 which is the default 7 days.
              */
             Aws::String GeneratePresignedUrl(const Aws::Http::URI &uri,
                                              Aws::Http::HttpMethod method,
-                                             const char *region,
-                                             const char *serviceName,
+                                             const char *regionOverride,
+                                             const char *serviceNameOverride,
+                                             long long expirationInSeconds = 0) const;
+
+            /**
+             * Generates a signed Uri using the injected signer, for the supplied uri, http method, and customized headers. expirationInSeconds defaults
+             * to 0 which is the default 7 days.
+             */
+            Aws::String GeneratePresignedUrl(const Aws::Http::URI &uri,
+                                             Aws::Http::HttpMethod method,
+                                             const char *regionOverride,
+                                             const char *serviceNameOverride,
+                                             const Aws::Http::HeaderValueCollection &customizedHeaders,
+                                             long long expirationInSeconds = 0) const;
+
+            /**
+             * Generates a signed Uri using the injected signer, for the supplied uri, http method, region, service name, and signer name. expirationInSeconds defaults
+             * to 0 which is the default 7 days.
+             */
+            Aws::String GeneratePresignedUrl(const Aws::Http::URI &uri,
+                                             Aws::Http::HttpMethod method,
+                                             const char *regionOverride,
+                                             const char *serviceNameOverride,
                                              const char *signerName,
                                              long long expirationInSeconds = 0) const;
 
             /**
-             * Generates a signed Uri using the injected signer. for the supplied uri, http method, region, service name, signer name and customized headers. expirationInSeconds defaults
+             * Generates a signed Uri using the injected signer, for the supplied uri, http method, region, service name, signer name, and customized headers. expirationInSeconds defaults
              * to 0 which is the default 7 days.
+             *
+             * This is a real method for uri pre-signing, the rest are just overloads.
              */
             Aws::String GeneratePresignedUrl(const Aws::Http::URI &uri,
                                              Aws::Http::HttpMethod method,
-                                             const char *region,
-                                             const char *serviceName,
+                                             const char *regionOverride,
+                                             const char *serviceNameOverride,
                                              const char *signerName,
                                              const Aws::Http::HeaderValueCollection &customizedHeaders,
-                                             long long expirationInSeconds = 0);
+                                             long long expirationInSeconds = 0) const;
 
+            /**
+             * Generates a signed Uri for a supplied AWSEndpoint.
+             */
             Aws::String GeneratePresignedUrl(const Aws::Endpoint::AWSEndpoint &endpoint,
                                              Aws::Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
                                              const Aws::Http::HeaderValueCollection &customizedHeaders = {},
                                              uint64_t expirationInSeconds = 0,
                                              const char *signerName = Aws::Auth::SIGV4_SIGNER,
                                              const char *signerRegionOverride = nullptr,
-                                             const char *signerServiceNameOverride = nullptr);
+                                             const char *signerServiceNameOverride = nullptr) const;
 
+            /**
+             * Generates a signed Uri for a supplied request and uri.
+             */
             Aws::String GeneratePresignedUrl(const Aws::AmazonWebServiceRequest &request,
                                              const Aws::Http::URI &uri,
                                              Aws::Http::HttpMethod method,
                                              const Aws::Http::QueryStringParameterCollection &extraParams = Aws::Http::QueryStringParameterCollection(),
                                              long long expirationInSeconds = 0) const;
 
+            /**
+             * Generates a signed Uri using the injected signer. for the supplied request object, uri, http method, region, service name, signer name, and customized headers.
+             * expirationInSeconds defaults to 0 which is the default 7 days.
+             *
+             * This is a real method for request+uri pre-signing, the rest are just overloads.
+             */
             Aws::String GeneratePresignedUrl(const Aws::AmazonWebServiceRequest &request,
                                              const Aws::Http::URI &uri,
                                              Aws::Http::HttpMethod method,
-                                             const char *region,
-                                             const char *serviceName,
+                                             const char *regionOverride,
+                                             const char *serviceNameOverride,
                                              const char *signerName,
                                              const Aws::Http::QueryStringParameterCollection &extraParams = Aws::Http::QueryStringParameterCollection(),
                                              long long expirationInSeconds = 0) const;
 
+            /**
+             * Generates a signed Uri for a supplied request and uri.
+             */
             Aws::String GeneratePresignedUrl(const Aws::AmazonWebServiceRequest &request,
                                              const Aws::Http::URI &uri,
                                              Aws::Http::HttpMethod method,
-                                             const char *region,
-                                             const char *serviceName,
+                                             const char *regionOverride,
+                                             const char *serviceNameOverride,
                                              const Aws::Http::QueryStringParameterCollection &extraParams = Aws::Http::QueryStringParameterCollection(),
                                              long long expirationInSeconds = 0) const;
 
+            /**
+             * Generates a signed Uri for a supplied request and uri.
+             */
             Aws::String GeneratePresignedUrl(const Aws::AmazonWebServiceRequest &request,
                                              const Aws::Http::URI &uri,
                                              Aws::Http::HttpMethod method,
-                                             const char *region,
+                                             const char *regionOverride,
                                              const Aws::Http::QueryStringParameterCollection &extraParams = Aws::Http::QueryStringParameterCollection(),
                                              long long expirationInSeconds = 0) const;
 

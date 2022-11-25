@@ -4,6 +4,8 @@
  */
 
 #pragma once
+#if !defined(AWS_JSON_CLIENT_H)
+#define AWS_JSON_CLIENT_H
 
 #include <aws/core/Core_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -104,3 +106,5 @@ namespace Aws
         };
     } // namespace Client
 } // namespace Aws
+
+#endif // !defined(AWS_JSON_CLIENT_H)

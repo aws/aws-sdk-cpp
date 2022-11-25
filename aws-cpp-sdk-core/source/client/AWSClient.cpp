@@ -961,7 +961,7 @@ Aws::String AWSClient::GeneratePresignedUrl(const Aws::Endpoint::AWSEndpoint& en
 Aws::String AWSClient::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& request, const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region,
     const Aws::Http::QueryStringParameterCollection& extraParams, long long expirationInSeconds) const
 {
-    return AWSUrlPresigner(*this).GeneratePresignedUrl(request, uri, method, region, region, extraParams, expirationInSeconds);
+    return AWSUrlPresigner(*this).GeneratePresignedUrl(request, uri, method, region, extraParams, expirationInSeconds);
 }
 
 Aws::String AWSClient::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& request, const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName,
