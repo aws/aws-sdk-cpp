@@ -1,14 +1,6 @@
 static const int SUCCESS_RESPONSE_MIN = 200;
 static const int SUCCESS_RESPONSE_MAX = 299;
 
-static bool DoesResponseGenerateError(const std::shared_ptr<HttpResponse>& response)
-{
-    if (response->HasClientError()) return true;
-
-    int responseCode = static_cast<int>(response->GetResponseCode());
-    return responseCode < SUCCESS_RESPONSE_MIN || responseCode > SUCCESS_RESPONSE_MAX;
-}
-
 static int S3CrtRequestHeadersCallback(struct aws_s3_meta_request *meta_request, const struct aws_http_headers *headers,
     int response_status, void *user_data)
 {
@@ -89,7 +81,7 @@ static void S3CrtRequestFinishCallback(struct aws_s3_meta_request *meta_request,
 Aws::Client::XmlOutcome S3CrtClient::GenerateXmlOutcome(const std::shared_ptr<HttpResponse>& response) const
 {
   Aws::Client::HttpResponseOutcome httpOutcome;
-  if (DoesResponseGenerateError(response))
+  if (AWSClient::DoesResponseGenerateError(response))
   {
     AWS_LOGSTREAM_DEBUG(ALLOCATION_TAG, "Request returned error. Attempting to generate appropriate error codes from response");
     auto error = BuildAWSError(response);
@@ -125,7 +117,7 @@ Aws::Client::XmlOutcome S3CrtClient::GenerateXmlOutcome(const std::shared_ptr<Ht
 Aws::Client::StreamOutcome S3CrtClient::GenerateStreamOutcome(const std::shared_ptr<Http::HttpResponse>& response) const
 {
   Aws::Client::HttpResponseOutcome httpOutcome;
-  if (DoesResponseGenerateError(response))
+  if (AWSClient::DoesResponseGenerateError(response))
   {
     AWS_LOGSTREAM_DEBUG(ALLOCATION_TAG, "Request returned error. Attempting to generate appropriate error codes from response");
     auto error = BuildAWSError(response);
