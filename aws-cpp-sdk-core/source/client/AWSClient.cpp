@@ -7,6 +7,7 @@
 #include <aws/core/AmazonWebServiceRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSAuthSignerProvider.h>
+#include <aws/core/client/AWSUrlPresigner.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
 #include <aws/core/client/ClientConfiguration.h>
@@ -64,7 +65,7 @@ static const std::chrono::milliseconds TIME_DIFF_MAX = std::chrono::minutes(4);
 //-4 Minutes
 static const std::chrono::milliseconds TIME_DIFF_MIN = std::chrono::minutes(-4);
 
-static CoreErrors GuessBodylessErrorType(Aws::Http::HttpResponseCode responseCode)
+CoreErrors AWSClient::GuessBodylessErrorType(Aws::Http::HttpResponseCode responseCode)
 {
     switch (responseCode)
     {
@@ -76,6 +77,14 @@ static CoreErrors GuessBodylessErrorType(Aws::Http::HttpResponseCode responseCod
     default:
         return CoreErrors::UNKNOWN;
     }
+}
+
+bool AWSClient::DoesResponseGenerateError(const std::shared_ptr<HttpResponse>& response)
+{
+    if (response->HasClientError()) return true;
+
+    int responseCode = static_cast<int>(response->GetResponseCode());
+    return responseCode < SUCCESS_RESPONSE_MIN || responseCode > SUCCESS_RESPONSE_MAX;
 }
 
 struct RequestInfo
@@ -474,15 +483,6 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
     }
     Aws::Monitoring::OnFinish(this->GetServiceClientName(), requestName, httpRequest, contexts);
     return outcome;
-}
-
-static bool DoesResponseGenerateError(const std::shared_ptr<HttpResponse>& response)
-{
-    if (response->HasClientError()) return true;
-
-    int responseCode = static_cast<int>(response->GetResponseCode());
-    return responseCode < SUCCESS_RESPONSE_MIN || responseCode > SUCCESS_RESPONSE_MAX;
-
 }
 
 HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<HttpRequest>& httpRequest, const Aws::AmazonWebServiceRequest& request,
@@ -909,114 +909,42 @@ void AWSClient::AddCommonHeaders(HttpRequest& httpRequest) const
 
 Aws::String AWSClient::GeneratePresignedUrl(const URI& uri, HttpMethod method, long long expirationInSeconds)
 {
-    std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-    auto signer = GetSignerByName(Aws::Auth::SIGV4_SIGNER);
-    if (signer->PresignRequest(*request, expirationInSeconds))
-    {
-        return request->GetURIString();
-    }
-
-    return {};
+    return AWSUrlPresigner(*this).GeneratePresignedUrl(uri, method, expirationInSeconds);
 }
 
 Aws::String AWSClient::GeneratePresignedUrl(const URI& uri, HttpMethod method, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds)
 {
-    std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-    for (const auto& it: customizedHeaders)
-    {
-        request->SetHeaderValue(it.first.c_str(), it.second);
-    }
-    auto signer = GetSignerByName(Aws::Auth::SIGV4_SIGNER);
-    if (signer->PresignRequest(*request, expirationInSeconds))
-    {
-        return request->GetURIString();
-    }
-
-    return {};
+    return AWSUrlPresigner(*this).GeneratePresignedUrl(uri, method, customizedHeaders, expirationInSeconds);
 }
 
 Aws::String AWSClient::GeneratePresignedUrl(const URI& uri, HttpMethod method, const char* region, long long expirationInSeconds) const
 {
-    std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-    auto signer = GetSignerByName(Aws::Auth::SIGV4_SIGNER);
-    if (signer->PresignRequest(*request, region, expirationInSeconds))
-    {
-        return request->GetURIString();
-    }
-
-    return {};
+    return AWSUrlPresigner(*this).GeneratePresignedUrl(uri, method, region, expirationInSeconds);
 }
 
 Aws::String AWSClient::GeneratePresignedUrl(const URI& uri, HttpMethod method, const char* region, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds)
 {
-    std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-    for (const auto& it: customizedHeaders)
-    {
-        request->SetHeaderValue(it.first.c_str(), it.second);
-    }
-    auto signer = GetSignerByName(Aws::Auth::SIGV4_SIGNER);
-    if (signer->PresignRequest(*request, region, expirationInSeconds))
-    {
-        return request->GetURIString();
-    }
-
-    return {};
+    return AWSUrlPresigner(*this).GeneratePresignedUrl(uri, method, region, customizedHeaders, expirationInSeconds);
 }
 
 Aws::String AWSClient::GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, long long expirationInSeconds) const
 {
-    std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-    auto signer = GetSignerByName(Aws::Auth::SIGV4_SIGNER);
-    if (signer->PresignRequest(*request, region, serviceName, expirationInSeconds))
-    {
-        return request->GetURIString();
-    }
-
-    return {};
+    return AWSUrlPresigner(*this).GeneratePresignedUrl(uri, method, region, serviceName, expirationInSeconds);
 }
 
 Aws::String AWSClient::GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds)
 {
-    std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-    for (const auto& it: customizedHeaders)
-    {
-        request->SetHeaderValue(it.first.c_str(), it.second);
-    }
-    auto signer = GetSignerByName(Aws::Auth::SIGV4_SIGNER);
-    if (signer->PresignRequest(*request, region, serviceName, expirationInSeconds))
-    {
-        return request->GetURIString();
-    }
-
-    return {};
+    return AWSUrlPresigner(*this).GeneratePresignedUrl(uri, method, region, serviceName, customizedHeaders, expirationInSeconds);
 }
 
 Aws::String AWSClient::GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, const char* signerName, long long expirationInSeconds) const
 {
-    std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-    auto signer = GetSignerByName(signerName);
-    if (signer->PresignRequest(*request, region, serviceName, expirationInSeconds))
-    {
-        return request->GetURIString();
-    }
-
-    return {};
+    return AWSUrlPresigner(*this).GeneratePresignedUrl(uri, method, region, serviceName, signerName, expirationInSeconds);
 }
 
 Aws::String AWSClient::GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, const char* signerName, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds)
 {
-    std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-    for (const auto& it: customizedHeaders)
-    {
-        request->SetHeaderValue(it.first.c_str(), it.second);
-    }
-    auto signer = GetSignerByName(signerName);
-    if (signer->PresignRequest(*request, region, serviceName, expirationInSeconds))
-    {
-        return request->GetURIString();
-    }
-
-    return {};
+    return AWSUrlPresigner(*this).GeneratePresignedUrl(uri, method, region, serviceName, signerName, customizedHeaders, expirationInSeconds);
 }
 
 Aws::String AWSClient::GeneratePresignedUrl(const Aws::Endpoint::AWSEndpoint& endpoint,
@@ -1027,93 +955,37 @@ Aws::String AWSClient::GeneratePresignedUrl(const Aws::Endpoint::AWSEndpoint& en
                                             const char* signerRegionOverride /* = nullptr */,
                                             const char* signerServiceNameOverride /* = nullptr */)
 {
-    const Aws::Http::URI& uri = endpoint.GetURI();
-    if (endpoint.GetAttributes()) {
-        signerName = endpoint.GetAttributes()->authScheme.GetName().c_str();
-        if (endpoint.GetAttributes()->authScheme.GetSigningRegion()) {
-            signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegion()->c_str();
-        }
-        if (endpoint.GetAttributes()->authScheme.GetSigningRegionSet()) {
-            signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegionSet()->c_str();
-        }
-        if (endpoint.GetAttributes()->authScheme.GetSigningName()) {
-            signerServiceNameOverride = endpoint.GetAttributes()->authScheme.GetSigningName()->c_str();
-        }
-    }
-
-    std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-    for (const auto& it : endpoint.GetHeaders())
-    {
-        request->SetHeaderValue(it.first, it.second);
-    }
-    for (const auto& it: customizedHeaders)
-    {
-        request->SetHeaderValue(it.first, it.second);
-    }
-    auto signer = GetSignerByName(signerName);
-    if (signer->PresignRequest(*request, signerRegionOverride, signerServiceNameOverride, expirationInSeconds))
-    {
-        return request->GetURIString();
-    }
-
-    return {};
+    return AWSUrlPresigner(*this).GeneratePresignedUrl(endpoint, method, customizedHeaders, expirationInSeconds, signerName, signerRegionOverride, signerServiceNameOverride);
 }
 
 Aws::String AWSClient::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& request, const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region,
     const Aws::Http::QueryStringParameterCollection& extraParams, long long expirationInSeconds) const
 {
-    std::shared_ptr<HttpRequest> httpRequest =
-        ConvertToRequestForPresigning(request, uri, method, extraParams);
-    auto signer = GetSignerByName(Aws::Auth::SIGV4_SIGNER);
-    if (signer->PresignRequest(*httpRequest, region, expirationInSeconds))
-    {
-        return httpRequest->GetURIString();
-    }
-
-    return {};
+    return AWSUrlPresigner(*this).GeneratePresignedUrl(request, uri, method, region, region, extraParams, expirationInSeconds);
 }
 
 Aws::String AWSClient::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& request, const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName,
-const Aws::Http::QueryStringParameterCollection& extraParams, long long expirationInSeconds) const
+    const Aws::Http::QueryStringParameterCollection& extraParams, long long expirationInSeconds) const
 {
-    std::shared_ptr<HttpRequest> httpRequest =
-        ConvertToRequestForPresigning(request, uri, method, extraParams);
-    auto signer = GetSignerByName(Aws::Auth::SIGV4_SIGNER);
-    if (signer->PresignRequest(*httpRequest, region, serviceName, expirationInSeconds))
-    {
-        return httpRequest->GetURIString();
-    }
+    return AWSUrlPresigner(*this).GeneratePresignedUrl(request, uri, method, region, serviceName, extraParams, expirationInSeconds);
+}
 
-    return {};
+Aws::String AWSClient::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& request,
+                                            const Aws::Http::URI& uri,
+                                            Aws::Http::HttpMethod method,
+                                            const char* region,
+                                            const char* serviceName,
+                                            const char* signerName,
+                                            const Aws::Http::QueryStringParameterCollection& extraParams,
+                                            long long expirationInSeconds) const
+{
+    return AWSUrlPresigner(*this).GeneratePresignedUrl(request, uri, method, region, serviceName, signerName, extraParams, expirationInSeconds);
 }
 
 Aws::String AWSClient::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& request, const Aws::Http::URI& uri, Aws::Http::HttpMethod method,
     const Aws::Http::QueryStringParameterCollection& extraParams, long long expirationInSeconds) const
 {
-    std::shared_ptr<HttpRequest> httpRequest =
-        ConvertToRequestForPresigning(request, uri, method, extraParams);
-    auto signer = GetSignerByName(Aws::Auth::SIGV4_SIGNER);
-    if (signer->PresignRequest(*httpRequest, expirationInSeconds))
-    {
-        return httpRequest->GetURIString();
-    }
-
-    return {};
-}
-
-std::shared_ptr<Aws::Http::HttpRequest> AWSClient::ConvertToRequestForPresigning(const Aws::AmazonWebServiceRequest& request, const Aws::Http::URI& uri,
-    Aws::Http::HttpMethod method, const Aws::Http::QueryStringParameterCollection& extraParams) const
-{
-    Aws::Http::URI uriCopy = uri;
-    request.PutToPresignedUrl(uriCopy);
-    std::shared_ptr<HttpRequest> httpRequest = CreateHttpRequest(uriCopy, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-
-    for (auto& param : extraParams)
-    {
-        httpRequest->AddQueryStringParameter(param.first.c_str(), param.second);
-    }
-
-    return httpRequest;
+    return AWSUrlPresigner(*this).GeneratePresignedUrl(request, uri, method, extraParams, expirationInSeconds);
 }
 
 std::shared_ptr<Aws::IOStream> AWSClient::GetBodyStream(const Aws::AmazonWebServiceRequest& request) const {
@@ -1163,333 +1035,4 @@ void AWSClient::AppendRecursionDetectionHeader(std::shared_ptr<Aws::Http::HttpRe
     xAmznTraceIdVal = xAmznTraceIdValEncodedStr.str();
 
     ioRequest->SetHeaderValue(Aws::Http::X_AMZN_TRACE_ID_HEADER, xAmznTraceIdVal);
-}
-
-////////////////////////////////////////////////////////////////////////////
-AWSJsonClient::AWSJsonClient(const Aws::Client::ClientConfiguration& configuration,
-    const std::shared_ptr<Aws::Client::AWSAuthSigner>& signer,
-    const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller) :
-    BASECLASS(configuration, signer, errorMarshaller)
-{
-}
-
-AWSJsonClient::AWSJsonClient(const Aws::Client::ClientConfiguration& configuration,
-    const std::shared_ptr<Aws::Auth::AWSAuthSignerProvider>& signerProvider,
-    const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller) :
-    BASECLASS(configuration, signerProvider, errorMarshaller)
-{
-}
-
-JsonOutcome AWSJsonClient::MakeRequest(const Aws::AmazonWebServiceRequest& request,
-                                       const Aws::Endpoint::AWSEndpoint& endpoint,
-                                       Http::HttpMethod method /* = Http::HttpMethod::HTTP_POST */,
-                                       const char* signerName /* = Aws::Auth::NULL_SIGNER */,
-                                       const char* signerRegionOverride /* = nullptr */,
-                                       const char* signerServiceNameOverride /* = nullptr */) const
-{
-    const Aws::Http::URI& uri = endpoint.GetURI();
-    if (endpoint.GetAttributes()) {
-        signerName = endpoint.GetAttributes()->authScheme.GetName().c_str();
-        if (endpoint.GetAttributes()->authScheme.GetSigningRegion()) {
-            signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegion()->c_str();
-        }
-        if (endpoint.GetAttributes()->authScheme.GetSigningRegionSet()) {
-            signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegionSet()->c_str();
-        }
-        if (endpoint.GetAttributes()->authScheme.GetSigningName()) {
-            signerServiceNameOverride = endpoint.GetAttributes()->authScheme.GetSigningName()->c_str();
-        }
-    }
-    return MakeRequest(uri, request, method, signerName, signerRegionOverride, signerServiceNameOverride);
-}
-
-JsonOutcome AWSJsonClient::MakeRequest(const Aws::Endpoint::AWSEndpoint& endpoint,
-                                       Http::HttpMethod method /* = Http::HttpMethod::HTTP_POST */,
-                                       const char* signerName /* = Aws::Auth::NULL_SIGNER */,
-                                       const char* signerRegionOverride /* = nullptr */,
-                                       const char* signerServiceNameOverride /* = nullptr */) const
-{
-    const Aws::Http::URI& uri = endpoint.GetURI();
-    if (endpoint.GetAttributes()) {
-        signerName = endpoint.GetAttributes()->authScheme.GetName().c_str();
-        if (endpoint.GetAttributes()->authScheme.GetSigningRegion()) {
-            signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegion()->c_str();
-        }
-        if (endpoint.GetAttributes()->authScheme.GetSigningRegionSet()) {
-            signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegionSet()->c_str();
-        }
-        if (endpoint.GetAttributes()->authScheme.GetSigningName()) {
-            signerServiceNameOverride = endpoint.GetAttributes()->authScheme.GetSigningName()->c_str();
-        }
-    }
-    return MakeRequest(uri, method, signerName, signerRegionOverride, signerServiceNameOverride);
-}
-
-JsonOutcome AWSJsonClient::MakeRequest(const Aws::Http::URI& uri,
-    const Aws::AmazonWebServiceRequest& request,
-    Http::HttpMethod method,
-    const char* signerName,
-    const char* signerRegionOverride,
-    const char* signerServiceNameOverride) const
-{
-    HttpResponseOutcome httpOutcome(BASECLASS::AttemptExhaustively(uri, request, method, signerName, signerRegionOverride, signerServiceNameOverride));
-    if (!httpOutcome.IsSuccess())
-    {
-        return JsonOutcome(std::move(httpOutcome));
-    }
-
-    if (httpOutcome.GetResult()->GetResponseBody().tellp() > 0)
-        //this is stupid, but gcc doesn't pick up the covariant on the dereference so we have to give it a little hint.
-        return JsonOutcome(AmazonWebServiceResult<JsonValue>(JsonValue(httpOutcome.GetResult()->GetResponseBody()),
-        httpOutcome.GetResult()->GetHeaders(),
-        httpOutcome.GetResult()->GetResponseCode()));
-
-    else
-        return JsonOutcome(AmazonWebServiceResult<JsonValue>(JsonValue(), httpOutcome.GetResult()->GetHeaders()));
-}
-
-JsonOutcome AWSJsonClient::MakeRequest(const Aws::Http::URI& uri,
-    Http::HttpMethod method,
-    const char* signerName,
-    const char* requestName,
-    const char* signerRegionOverride,
-    const char* signerServiceNameOverride) const
-{
-    HttpResponseOutcome httpOutcome(BASECLASS::AttemptExhaustively(uri, method, signerName, requestName, signerRegionOverride, signerServiceNameOverride));
-    if (!httpOutcome.IsSuccess())
-    {
-        return JsonOutcome(std::move(httpOutcome));
-    }
-
-    if (httpOutcome.GetResult()->GetResponseBody().tellp() > 0)
-    {
-        JsonValue jsonValue(httpOutcome.GetResult()->GetResponseBody());
-        if (!jsonValue.WasParseSuccessful())
-        {
-            return JsonOutcome(AWSError<CoreErrors>(CoreErrors::UNKNOWN, "Json Parser Error", jsonValue.GetErrorMessage(), false));
-        }
-
-        //this is stupid, but gcc doesn't pick up the covariant on the dereference so we have to give it a little hint.
-        return JsonOutcome(AmazonWebServiceResult<JsonValue>(std::move(jsonValue),
-            httpOutcome.GetResult()->GetHeaders(),
-            httpOutcome.GetResult()->GetResponseCode()));
-    }
-
-    return JsonOutcome(AmazonWebServiceResult<JsonValue>(JsonValue(), httpOutcome.GetResult()->GetHeaders()));
-}
-
-JsonOutcome AWSJsonClient::MakeEventStreamRequest(std::shared_ptr<Aws::Http::HttpRequest>& request) const
-{
-    // request is assumed to be signed
-    std::shared_ptr<HttpResponse> httpResponse = MakeHttpRequest(request);
-
-    if (DoesResponseGenerateError(httpResponse))
-    {
-        AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Request returned error. Attempting to generate appropriate error codes from response");
-        auto error = BuildAWSError(httpResponse);
-        return JsonOutcome(std::move(error));
-    }
-
-    AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Request returned successful response.");
-
-    HttpResponseOutcome httpOutcome(std::move(httpResponse));
-
-    if (httpOutcome.GetResult()->GetResponseBody().tellp() > 0)
-    {
-        JsonValue jsonValue(httpOutcome.GetResult()->GetResponseBody());
-        if (!jsonValue.WasParseSuccessful())
-        {
-            return JsonOutcome(AWSError<CoreErrors>(CoreErrors::UNKNOWN, "Json Parser Error", jsonValue.GetErrorMessage(), false));
-        }
-
-        //this is stupid, but gcc doesn't pick up the covariant on the dereference so we have to give it a little hint.
-        return JsonOutcome(AmazonWebServiceResult<JsonValue>(std::move(jsonValue),
-            httpOutcome.GetResult()->GetHeaders(),
-            httpOutcome.GetResult()->GetResponseCode()));
-    }
-
-    return JsonOutcome(AmazonWebServiceResult<JsonValue>(JsonValue(), httpOutcome.GetResult()->GetHeaders()));
-}
-
-AWSError<CoreErrors> AWSJsonClient::BuildAWSError(
-    const std::shared_ptr<Aws::Http::HttpResponse>& httpResponse) const
-{
-    AWSError<CoreErrors> error;
-    if (httpResponse->HasClientError())
-    {
-        bool retryable = httpResponse->GetClientErrorType() == CoreErrors::NETWORK_CONNECTION ? true : false;
-        error = AWSError<CoreErrors>(httpResponse->GetClientErrorType(), "", httpResponse->GetClientErrorMessage(), retryable);
-    }
-    else if (!httpResponse->GetResponseBody() || httpResponse->GetResponseBody().tellp() < 1)
-    {
-        auto responseCode = httpResponse->GetResponseCode();
-        auto errorCode = GuessBodylessErrorType(responseCode);
-
-        Aws::StringStream ss;
-        ss << "No response body.";
-        error = AWSError<CoreErrors>(errorCode, "", ss.str(),
-            IsRetryableHttpResponseCode(responseCode));
-    }
-    else
-    {
-        assert(httpResponse->GetResponseCode() != HttpResponseCode::OK);
-        error = GetErrorMarshaller()->Marshall(*httpResponse);
-    }
-
-    error.SetResponseHeaders(httpResponse->GetHeaders());
-    error.SetResponseCode(httpResponse->GetResponseCode());
-    error.SetRemoteHostIpAddress(httpResponse->GetOriginatingRequest().GetResolvedRemoteHost());
-    AWS_LOGSTREAM_ERROR(AWS_CLIENT_LOG_TAG, error);
-    return error;
-}
-
-/////////////////////////////////////////////////////////////////////////////////////////
-AWSXMLClient::AWSXMLClient(const Aws::Client::ClientConfiguration& configuration,
-    const std::shared_ptr<Aws::Client::AWSAuthSigner>& signer,
-    const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller) :
-    BASECLASS(configuration, signer, errorMarshaller)
-{
-}
-
-AWSXMLClient::AWSXMLClient(const Aws::Client::ClientConfiguration& configuration,
-    const std::shared_ptr<Aws::Auth::AWSAuthSignerProvider>& signerProvider,
-    const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller) :
-    BASECLASS(configuration, signerProvider, errorMarshaller)
-{
-}
-
-XmlOutcome AWSXMLClient::MakeRequest(const Aws::AmazonWebServiceRequest& request,
-                                     const Aws::Endpoint::AWSEndpoint& endpoint,
-                                     Http::HttpMethod method /* = Http::HttpMethod::HTTP_POST */,
-                                     const char* signerName /* = Aws::Auth::NULL_SIGNER */,
-                                     const char* signerRegionOverride /* = nullptr */,
-                                     const char* signerServiceNameOverride /* = nullptr */) const
-{
-    const Aws::Http::URI& uri = endpoint.GetURI();
-    if (endpoint.GetAttributes()) {
-        signerName = endpoint.GetAttributes()->authScheme.GetName().c_str();
-        if (endpoint.GetAttributes()->authScheme.GetSigningRegion()) {
-            signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegion()->c_str();
-        }
-        if (endpoint.GetAttributes()->authScheme.GetSigningRegionSet()) {
-            signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegionSet()->c_str();
-        }
-        if (endpoint.GetAttributes()->authScheme.GetSigningName()) {
-            signerServiceNameOverride = endpoint.GetAttributes()->authScheme.GetSigningName()->c_str();
-        }
-    }
-    return MakeRequest(uri, request, method, signerName, signerRegionOverride, signerServiceNameOverride);
-}
-
-XmlOutcome AWSXMLClient::MakeRequest(const Aws::Endpoint::AWSEndpoint& endpoint,
-                                     const char* requestName /* = "" */,
-                                     Http::HttpMethod method /* = Http::HttpMethod::HTTP_POST */,
-                                     const char* signerName /* = Aws::Auth::NULL_SIGNER */,
-                                     const char* signerRegionOverride /* = nullptr */,
-                                     const char* signerServiceNameOverride /* = nullptr */) const
-{
-    const Aws::Http::URI& uri = endpoint.GetURI();
-    if (endpoint.GetAttributes()) {
-        signerName = endpoint.GetAttributes()->authScheme.GetName().c_str();
-        if (endpoint.GetAttributes()->authScheme.GetSigningRegion()) {
-            signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegion()->c_str();
-        }
-        if (endpoint.GetAttributes()->authScheme.GetSigningRegionSet()) {
-            signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegionSet()->c_str();
-        }
-        if (endpoint.GetAttributes()->authScheme.GetSigningName()) {
-            signerServiceNameOverride = endpoint.GetAttributes()->authScheme.GetSigningName()->c_str();
-        }
-    }
-    return MakeRequest(uri, method, signerName, requestName, signerRegionOverride, signerServiceNameOverride);
-}
-
-XmlOutcome AWSXMLClient::MakeRequest(const Aws::Http::URI& uri,
-    const Aws::AmazonWebServiceRequest& request,
-    Http::HttpMethod method,
-    const char* signerName,
-    const char* signerRegionOverride,
-    const char* signerServiceNameOverride) const
-{
-    HttpResponseOutcome httpOutcome(BASECLASS::AttemptExhaustively(uri, request, method, signerName, signerRegionOverride, signerServiceNameOverride));
-    if (!httpOutcome.IsSuccess())
-    {
-        return XmlOutcome(std::move(httpOutcome));
-    }
-
-    if (httpOutcome.GetResult()->GetResponseBody().tellp() > 0)
-    {
-        XmlDocument xmlDoc = XmlDocument::CreateFromXmlStream(httpOutcome.GetResult()->GetResponseBody());
-
-        if (!xmlDoc.WasParseSuccessful())
-        {
-            AWS_LOGSTREAM_ERROR(AWS_CLIENT_LOG_TAG, "Xml parsing for error failed with message " << xmlDoc.GetErrorMessage().c_str());
-            return AWSError<CoreErrors>(CoreErrors::UNKNOWN, "Xml Parse Error", xmlDoc.GetErrorMessage(), false);
-        }
-
-        return XmlOutcome(AmazonWebServiceResult<XmlDocument>(std::move(xmlDoc),
-            httpOutcome.GetResult()->GetHeaders(), httpOutcome.GetResult()->GetResponseCode()));
-    }
-
-    return XmlOutcome(AmazonWebServiceResult<XmlDocument>(XmlDocument(), httpOutcome.GetResult()->GetHeaders()));
-}
-
-XmlOutcome AWSXMLClient::MakeRequest(const Aws::Http::URI& uri,
-    Http::HttpMethod method,
-    const char* signerName,
-    const char* requestName,
-    const char* signerRegionOverride,
-    const char* signerServiceNameOverride) const
-{
-    HttpResponseOutcome httpOutcome(BASECLASS::AttemptExhaustively(uri, method, signerName, requestName, signerRegionOverride, signerServiceNameOverride));
-    if (!httpOutcome.IsSuccess())
-    {
-        return XmlOutcome(std::move(httpOutcome));
-    }
-
-    if (httpOutcome.GetResult()->GetResponseBody().tellp() > 0)
-    {
-        return XmlOutcome(AmazonWebServiceResult<XmlDocument>(
-            XmlDocument::CreateFromXmlStream(httpOutcome.GetResult()->GetResponseBody()),
-            httpOutcome.GetResult()->GetHeaders(), httpOutcome.GetResult()->GetResponseCode()));
-    }
-
-    return XmlOutcome(AmazonWebServiceResult<XmlDocument>(XmlDocument(), httpOutcome.GetResult()->GetHeaders()));
-}
-
-AWSError<CoreErrors> AWSXMLClient::BuildAWSError(const std::shared_ptr<Http::HttpResponse>& httpResponse) const
-{
-    AWSError<CoreErrors> error;
-    if (httpResponse->HasClientError())
-    {
-        bool retryable = httpResponse->GetClientErrorType() == CoreErrors::NETWORK_CONNECTION ? true : false;
-        error = AWSError<CoreErrors>(httpResponse->GetClientErrorType(), "", httpResponse->GetClientErrorMessage(), retryable);
-    }
-    else if (!httpResponse->GetResponseBody() || httpResponse->GetResponseBody().tellp() < 1)
-    {
-        auto responseCode = httpResponse->GetResponseCode();
-        auto errorCode = GuessBodylessErrorType(responseCode);
-
-        Aws::StringStream ss;
-        ss << "No response body.";
-        error = AWSError<CoreErrors>(errorCode, "", ss.str(), IsRetryableHttpResponseCode(responseCode));
-    }
-    else
-    {
-        // When trying to build an AWS Error from a response which is an FStream, we need to rewind the
-        // file pointer back to the beginning in order to correctly read the input using the XML string iterator
-        if ((httpResponse->GetResponseBody().tellp() > 0)
-            && (httpResponse->GetResponseBody().tellg() > 0))
-        {
-            httpResponse->GetResponseBody().seekg(0);
-        }
-
-        error = GetErrorMarshaller()->Marshall(*httpResponse);
-    }
-
-    error.SetResponseHeaders(httpResponse->GetHeaders());
-    error.SetResponseCode(httpResponse->GetResponseCode());
-    error.SetRemoteHostIpAddress(httpResponse->GetOriginatingRequest().GetResolvedRemoteHost());
-    AWS_LOGSTREAM_ERROR(AWS_CLIENT_LOG_TAG, error);
-    return error;
 }
