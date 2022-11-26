@@ -12,7 +12,7 @@ namespace Aws
 {
 namespace CognitoIdentity
 {
-class CognitoIdentityEndpointRules
+class AWS_COGNITOIDENTITY_API CognitoIdentityEndpointRules
 {
 public:
     static Aws::String GetRulesAsString();
