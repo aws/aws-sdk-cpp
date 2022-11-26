@@ -12,7 +12,7 @@ namespace Aws
 {
 namespace STS
 {
-class STSEndpointRules
+class AWS_STS_API STSEndpointRules
 {
 public:
     static Aws::String GetRulesAsString();
