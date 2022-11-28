@@ -74,6 +74,74 @@ namespace mgn
 
 
         /**
+         * <p>Archive application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ArchiveApplication">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ArchiveApplicationOutcome ArchiveApplication(const Model::ArchiveApplicationRequest& request) const;
+
+        /**
+         * A Callable wrapper for ArchiveApplication that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ArchiveApplicationOutcomeCallable ArchiveApplicationCallable(const Model::ArchiveApplicationRequest& request) const;
+
+        /**
+         * An Async wrapper for ArchiveApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ArchiveApplicationAsync(const Model::ArchiveApplicationRequest& request, const ArchiveApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Archive wave.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ArchiveWave">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::ArchiveWaveOutcome ArchiveWave(const Model::ArchiveWaveRequest& request) const;
+
+        /**
+         * A Callable wrapper for ArchiveWave that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ArchiveWaveOutcomeCallable ArchiveWaveCallable(const Model::ArchiveWaveRequest& request) const;
+
+        /**
+         * An Async wrapper for ArchiveWave that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ArchiveWaveAsync(const Model::ArchiveWaveRequest& request, const ArchiveWaveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Associate applications to wave.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/AssociateApplications">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateApplicationsOutcome AssociateApplications(const Model::AssociateApplicationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssociateApplications that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssociateApplicationsOutcomeCallable AssociateApplicationsCallable(const Model::AssociateApplicationsRequest& request) const;
+
+        /**
+         * An Async wrapper for AssociateApplications that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssociateApplicationsAsync(const Model::AssociateApplicationsRequest& request, const AssociateApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Associate source servers to application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/AssociateSourceServers">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateSourceServersOutcome AssociateSourceServers(const Model::AssociateSourceServersRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssociateSourceServers that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssociateSourceServersOutcomeCallable AssociateSourceServersCallable(const Model::AssociateSourceServersRequest& request) const;
+
+        /**
+         * An Async wrapper for AssociateSourceServers that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssociateSourceServersAsync(const Model::AssociateSourceServersRequest& request, const AssociateSourceServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Allows the user to set the SourceServer.LifeCycle.state property for specific
          * Source Server IDs to one of the following: READY_FOR_TEST or READY_FOR_CUTOVER.
          * This command only works if the Source Server is already launchable
@@ -94,7 +162,24 @@ namespace mgn
         virtual void ChangeServerLifeCycleStateAsync(const Model::ChangeServerLifeCycleStateRequest& request, const ChangeServerLifeCycleStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new ReplicationConfigurationTemplate.</p><p><h3>See Also:</h3>   <a
+         * <p>Create application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateApplication">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateApplicationOutcome CreateApplication(const Model::CreateApplicationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateApplication that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateApplicationOutcomeCallable CreateApplicationCallable(const Model::CreateApplicationRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateApplicationAsync(const Model::CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a new Launch Configuration Template.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateLaunchConfigurationTemplate">AWS
          * API Reference</a></p>
          */
@@ -128,6 +213,40 @@ namespace mgn
         virtual void CreateReplicationConfigurationTemplateAsync(const Model::CreateReplicationConfigurationTemplateRequest& request, const CreateReplicationConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Create wave.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateWave">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::CreateWaveOutcome CreateWave(const Model::CreateWaveRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateWave that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateWaveOutcomeCallable CreateWaveCallable(const Model::CreateWaveRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateWave that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateWaveAsync(const Model::CreateWaveRequest& request, const CreateWaveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Delete application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteApplication">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteApplicationOutcome DeleteApplication(const Model::DeleteApplicationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteApplication that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteApplicationOutcomeCallable DeleteApplicationCallable(const Model::DeleteApplicationRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteApplicationAsync(const Model::DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes a single Job by ID.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteJob">AWS API
          * Reference</a></p>
@@ -145,7 +264,8 @@ namespace mgn
         virtual void DeleteJobAsync(const Model::DeleteJobRequest& request, const DeleteJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new ReplicationConfigurationTemplate.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a single Launch Configuration Template by ID.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteLaunchConfigurationTemplate">AWS
          * API Reference</a></p>
          */
@@ -214,6 +334,23 @@ namespace mgn
         virtual void DeleteVcenterClientAsync(const Model::DeleteVcenterClientRequest& request, const DeleteVcenterClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Delete wave.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteWave">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::DeleteWaveOutcome DeleteWave(const Model::DeleteWaveRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteWave that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteWaveOutcomeCallable DeleteWaveCallable(const Model::DeleteWaveRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteWave that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteWaveAsync(const Model::DeleteWaveRequest& request, const DeleteWaveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves detailed job log items with paging.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DescribeJobLogItems">AWS
          * API Reference</a></p>
@@ -253,7 +390,8 @@ namespace mgn
         virtual void DescribeJobsAsync(const Model::DescribeJobsRequest& request, const DescribeJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new ReplicationConfigurationTemplate.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all Launch Configuration Templates, filtered by Launch Configuration
+         * Template IDs</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DescribeLaunchConfigurationTemplates">AWS
          * API Reference</a></p>
          */
@@ -322,6 +460,40 @@ namespace mgn
          * An Async wrapper for DescribeVcenterClients that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeVcenterClientsAsync(const Model::DescribeVcenterClientsRequest& request, const DescribeVcenterClientsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Disassociate applications from wave.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DisassociateApplications">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateApplicationsOutcome DisassociateApplications(const Model::DisassociateApplicationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisassociateApplications that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisassociateApplicationsOutcomeCallable DisassociateApplicationsCallable(const Model::DisassociateApplicationsRequest& request) const;
+
+        /**
+         * An Async wrapper for DisassociateApplications that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisassociateApplicationsAsync(const Model::DisassociateApplicationsRequest& request, const DisassociateApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Disassociate source servers from application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DisassociateSourceServers">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateSourceServersOutcome DisassociateSourceServers(const Model::DisassociateSourceServersRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisassociateSourceServers that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisassociateSourceServersOutcomeCallable DisassociateSourceServersCallable(const Model::DisassociateSourceServersRequest& request) const;
+
+        /**
+         * An Async wrapper for DisassociateSourceServers that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisassociateSourceServersAsync(const Model::DisassociateSourceServersRequest& request, const DisassociateSourceServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disconnects specific Source Servers from Application Migration Service. Data
@@ -432,6 +604,42 @@ namespace mgn
         virtual void InitializeServiceAsync(const Model::InitializeServiceRequest& request, const InitializeServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves all applications or multiple applications by ID.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListApplications">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListApplicationsOutcome ListApplications(const Model::ListApplicationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListApplications that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListApplicationsOutcomeCallable ListApplicationsCallable(const Model::ListApplicationsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListApplications that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListApplicationsAsync(const Model::ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>List source server post migration custom actions.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListSourceServerActions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListSourceServerActionsOutcome ListSourceServerActions(const Model::ListSourceServerActionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListSourceServerActions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListSourceServerActionsOutcomeCallable ListSourceServerActionsCallable(const Model::ListSourceServerActionsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListSourceServerActions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListSourceServerActionsAsync(const Model::ListSourceServerActionsRequest& request, const ListSourceServerActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>List all tags for your Application Migration Service resources.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListTagsForResource">AWS
@@ -448,6 +656,40 @@ namespace mgn
          * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>List template post migration custom actions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListTemplateActions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTemplateActionsOutcome ListTemplateActions(const Model::ListTemplateActionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListTemplateActions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTemplateActionsOutcomeCallable ListTemplateActionsCallable(const Model::ListTemplateActionsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListTemplateActions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTemplateActionsAsync(const Model::ListTemplateActionsRequest& request, const ListTemplateActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves all waves or multiple waves by ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListWaves">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::ListWavesOutcome ListWaves(const Model::ListWavesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListWaves that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListWavesOutcomeCallable ListWavesCallable(const Model::ListWavesRequest& request) const;
+
+        /**
+         * An Async wrapper for ListWaves that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListWavesAsync(const Model::ListWavesRequest& request, const ListWavesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Archives specific Source Servers by setting the SourceServer.isArchived
@@ -468,6 +710,75 @@ namespace mgn
          * An Async wrapper for MarkAsArchived that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void MarkAsArchivedAsync(const Model::MarkAsArchivedRequest& request, const MarkAsArchivedResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Put source server post migration custom action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/PutSourceServerAction">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutSourceServerActionOutcome PutSourceServerAction(const Model::PutSourceServerActionRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutSourceServerAction that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutSourceServerActionOutcomeCallable PutSourceServerActionCallable(const Model::PutSourceServerActionRequest& request) const;
+
+        /**
+         * An Async wrapper for PutSourceServerAction that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutSourceServerActionAsync(const Model::PutSourceServerActionRequest& request, const PutSourceServerActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Put template post migration custom action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/PutTemplateAction">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutTemplateActionOutcome PutTemplateAction(const Model::PutTemplateActionRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutTemplateAction that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutTemplateActionOutcomeCallable PutTemplateActionCallable(const Model::PutTemplateActionRequest& request) const;
+
+        /**
+         * An Async wrapper for PutTemplateAction that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutTemplateActionAsync(const Model::PutTemplateActionRequest& request, const PutTemplateActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Remove source server post migration custom action.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/RemoveSourceServerAction">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RemoveSourceServerActionOutcome RemoveSourceServerAction(const Model::RemoveSourceServerActionRequest& request) const;
+
+        /**
+         * A Callable wrapper for RemoveSourceServerAction that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RemoveSourceServerActionOutcomeCallable RemoveSourceServerActionCallable(const Model::RemoveSourceServerActionRequest& request) const;
+
+        /**
+         * An Async wrapper for RemoveSourceServerAction that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RemoveSourceServerActionAsync(const Model::RemoveSourceServerActionRequest& request, const RemoveSourceServerActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Remove template post migration custom action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/RemoveTemplateAction">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RemoveTemplateActionOutcome RemoveTemplateAction(const Model::RemoveTemplateActionRequest& request) const;
+
+        /**
+         * A Callable wrapper for RemoveTemplateAction that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RemoveTemplateActionOutcomeCallable RemoveTemplateActionCallable(const Model::RemoveTemplateActionRequest& request) const;
+
+        /**
+         * An Async wrapper for RemoveTemplateAction that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RemoveTemplateActionAsync(const Model::RemoveTemplateActionRequest& request, const RemoveTemplateActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Causes the data replication initiation sequence to begin immediately upon
@@ -586,6 +897,40 @@ namespace mgn
         virtual void TerminateTargetInstancesAsync(const Model::TerminateTargetInstancesRequest& request, const TerminateTargetInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Unarchive application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UnarchiveApplication">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UnarchiveApplicationOutcome UnarchiveApplication(const Model::UnarchiveApplicationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UnarchiveApplication that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UnarchiveApplicationOutcomeCallable UnarchiveApplicationCallable(const Model::UnarchiveApplicationRequest& request) const;
+
+        /**
+         * An Async wrapper for UnarchiveApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UnarchiveApplicationAsync(const Model::UnarchiveApplicationRequest& request, const UnarchiveApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Unarchive wave.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UnarchiveWave">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UnarchiveWaveOutcome UnarchiveWave(const Model::UnarchiveWaveRequest& request) const;
+
+        /**
+         * A Callable wrapper for UnarchiveWave that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UnarchiveWaveOutcomeCallable UnarchiveWaveCallable(const Model::UnarchiveWaveRequest& request) const;
+
+        /**
+         * An Async wrapper for UnarchiveWave that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UnarchiveWaveAsync(const Model::UnarchiveWaveRequest& request, const UnarchiveWaveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes the specified set of tags from the specified set of Application
          * Migration Service resources.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UntagResource">AWS
@@ -602,6 +947,23 @@ namespace mgn
          * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Update application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateApplication">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateApplicationOutcome UpdateApplication(const Model::UpdateApplicationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateApplication that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateApplicationOutcomeCallable UpdateApplicationCallable(const Model::UpdateApplicationRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateApplicationAsync(const Model::UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates multiple LaunchConfigurations by Source Server ID.</p><p><h3>See
@@ -622,7 +984,8 @@ namespace mgn
         virtual void UpdateLaunchConfigurationAsync(const Model::UpdateLaunchConfigurationRequest& request, const UpdateLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new ReplicationConfigurationTemplate.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an existing Launch Configuration Template by ID.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateLaunchConfigurationTemplate">AWS
          * API Reference</a></p>
          */
@@ -691,6 +1054,23 @@ namespace mgn
          * An Async wrapper for UpdateSourceServerReplicationType that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateSourceServerReplicationTypeAsync(const Model::UpdateSourceServerReplicationTypeRequest& request, const UpdateSourceServerReplicationTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Update wave.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateWave">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::UpdateWaveOutcome UpdateWave(const Model::UpdateWaveRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateWave that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateWaveOutcomeCallable UpdateWaveCallable(const Model::UpdateWaveRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateWave that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateWaveAsync(const Model::UpdateWaveRequest& request, const UpdateWaveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

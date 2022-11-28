@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 GetLogGroupFieldsRequest::GetLogGroupFieldsRequest() : 
     m_logGroupNameHasBeenSet(false),
     m_time(0),
-    m_timeHasBeenSet(false)
+    m_timeHasBeenSet(false),
+    m_logGroupIdentifierHasBeenSet(false)
 {
 }
 
@@ -32,6 +33,12 @@ Aws::String GetLogGroupFieldsRequest::SerializePayload() const
   if(m_timeHasBeenSet)
   {
    payload.WithInt64("time", m_time);
+
+  }
+
+  if(m_logGroupIdentifierHasBeenSet)
+  {
+   payload.WithString("logGroupIdentifier", m_logGroupIdentifier);
 
   }
 

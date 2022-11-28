@@ -91,8 +91,12 @@ namespace EFS
          * directory. Applications using the access point can only access data in the
          * application's own directory and any subdirectories. To learn more, see <a
          * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Mounting
-         * a file system using EFS access points</a>.</p> <p>This operation requires
-         * permissions for the <code>elasticfilesystem:CreateAccessPoint</code>
+         * a file system using EFS access points</a>.</p>  <p>If multiple requests to
+         * create access points on the same file system are sent in quick succession, and
+         * the file system is near the limit of 120 access points, you may experience a
+         * throttling response for these requests. This is to ensure that the file system
+         * does not exceed the stated access point limit.</p>  <p>This operation
+         * requires permissions for the <code>elasticfilesystem:CreateAccessPoint</code>
          * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateAccessPoint">AWS
          * API Reference</a></p>

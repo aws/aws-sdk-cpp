@@ -25,8 +25,8 @@ namespace Model
 
   /**
    * <p>The Amazon Simple Notification Service (Amazon SNS) topic to which Amazon
-   * Textract publishes the completion status of an asynchronous document operation,
-   * such as <a>StartDocumentTextDetection</a>. </p><p><h3>See Also:</h3>   <a
+   * Textract publishes the completion status of an asynchronous document operation.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/NotificationChannel">AWS
    * API Reference</a></p>
    */

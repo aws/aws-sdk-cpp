@@ -25,6 +25,8 @@ namespace Aws
         static const int FAILBACK_READY_FOR_LAUNCH_HASH = HashingUtils::HashString("FAILBACK_READY_FOR_LAUNCH");
         static const int FAILBACK_COMPLETED_HASH = HashingUtils::HashString("FAILBACK_COMPLETED");
         static const int FAILBACK_ERROR_HASH = HashingUtils::HashString("FAILBACK_ERROR");
+        static const int FAILBACK_NOT_READY_FOR_LAUNCH_HASH = HashingUtils::HashString("FAILBACK_NOT_READY_FOR_LAUNCH");
+        static const int FAILBACK_LAUNCH_STATE_NOT_AVAILABLE_HASH = HashingUtils::HashString("FAILBACK_LAUNCH_STATE_NOT_AVAILABLE");
 
 
         FailbackState GetFailbackStateForName(const Aws::String& name)
@@ -50,6 +52,14 @@ namespace Aws
           {
             return FailbackState::FAILBACK_ERROR;
           }
+          else if (hashCode == FAILBACK_NOT_READY_FOR_LAUNCH_HASH)
+          {
+            return FailbackState::FAILBACK_NOT_READY_FOR_LAUNCH;
+          }
+          else if (hashCode == FAILBACK_LAUNCH_STATE_NOT_AVAILABLE_HASH)
+          {
+            return FailbackState::FAILBACK_LAUNCH_STATE_NOT_AVAILABLE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +84,10 @@ namespace Aws
             return "FAILBACK_COMPLETED";
           case FailbackState::FAILBACK_ERROR:
             return "FAILBACK_ERROR";
+          case FailbackState::FAILBACK_NOT_READY_FOR_LAUNCH:
+            return "FAILBACK_NOT_READY_FOR_LAUNCH";
+          case FailbackState::FAILBACK_LAUNCH_STATE_NOT_AVAILABLE:
+            return "FAILBACK_LAUNCH_STATE_NOT_AVAILABLE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

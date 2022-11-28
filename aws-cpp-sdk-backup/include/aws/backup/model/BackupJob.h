@@ -1109,6 +1109,80 @@ namespace Model
      */
     inline BackupJob& WithBackupType(const char* value) { SetBackupType(value); return *this;}
 
+
+    /**
+     * <p>This uniquely identifies a request to Backup to back up a resource. The
+     * return will be the parent (composite) job ID.</p>
+     */
+    inline const Aws::String& GetParentJobId() const{ return m_parentJobId; }
+
+    /**
+     * <p>This uniquely identifies a request to Backup to back up a resource. The
+     * return will be the parent (composite) job ID.</p>
+     */
+    inline bool ParentJobIdHasBeenSet() const { return m_parentJobIdHasBeenSet; }
+
+    /**
+     * <p>This uniquely identifies a request to Backup to back up a resource. The
+     * return will be the parent (composite) job ID.</p>
+     */
+    inline void SetParentJobId(const Aws::String& value) { m_parentJobIdHasBeenSet = true; m_parentJobId = value; }
+
+    /**
+     * <p>This uniquely identifies a request to Backup to back up a resource. The
+     * return will be the parent (composite) job ID.</p>
+     */
+    inline void SetParentJobId(Aws::String&& value) { m_parentJobIdHasBeenSet = true; m_parentJobId = std::move(value); }
+
+    /**
+     * <p>This uniquely identifies a request to Backup to back up a resource. The
+     * return will be the parent (composite) job ID.</p>
+     */
+    inline void SetParentJobId(const char* value) { m_parentJobIdHasBeenSet = true; m_parentJobId.assign(value); }
+
+    /**
+     * <p>This uniquely identifies a request to Backup to back up a resource. The
+     * return will be the parent (composite) job ID.</p>
+     */
+    inline BackupJob& WithParentJobId(const Aws::String& value) { SetParentJobId(value); return *this;}
+
+    /**
+     * <p>This uniquely identifies a request to Backup to back up a resource. The
+     * return will be the parent (composite) job ID.</p>
+     */
+    inline BackupJob& WithParentJobId(Aws::String&& value) { SetParentJobId(std::move(value)); return *this;}
+
+    /**
+     * <p>This uniquely identifies a request to Backup to back up a resource. The
+     * return will be the parent (composite) job ID.</p>
+     */
+    inline BackupJob& WithParentJobId(const char* value) { SetParentJobId(value); return *this;}
+
+
+    /**
+     * <p>This is a boolean value indicating this is a parent (composite) backup
+     * job.</p>
+     */
+    inline bool GetIsParent() const{ return m_isParent; }
+
+    /**
+     * <p>This is a boolean value indicating this is a parent (composite) backup
+     * job.</p>
+     */
+    inline bool IsParentHasBeenSet() const { return m_isParentHasBeenSet; }
+
+    /**
+     * <p>This is a boolean value indicating this is a parent (composite) backup
+     * job.</p>
+     */
+    inline void SetIsParent(bool value) { m_isParentHasBeenSet = true; m_isParent = value; }
+
+    /**
+     * <p>This is a boolean value indicating this is a parent (composite) backup
+     * job.</p>
+     */
+    inline BackupJob& WithIsParent(bool value) { SetIsParent(value); return *this;}
+
   private:
 
     Aws::String m_accountId;
@@ -1170,6 +1244,12 @@ namespace Model
 
     Aws::String m_backupType;
     bool m_backupTypeHasBeenSet = false;
+
+    Aws::String m_parentJobId;
+    bool m_parentJobIdHasBeenSet = false;
+
+    bool m_isParent;
+    bool m_isParentHasBeenSet = false;
   };
 
 } // namespace Model

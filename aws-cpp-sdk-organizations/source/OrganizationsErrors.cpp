@@ -77,6 +77,7 @@ static const int ORGANIZATIONAL_UNIT_NOT_FOUND_HASH = HashingUtils::HashString("
 static const int HANDSHAKE_CONSTRAINT_VIOLATION_HASH = HashingUtils::HashString("HandshakeConstraintViolationException");
 static const int ACCOUNT_NOT_FOUND_HASH = HashingUtils::HashString("AccountNotFoundException");
 static const int DUPLICATE_ORGANIZATIONAL_UNIT_HASH = HashingUtils::HashString("DuplicateOrganizationalUnitException");
+static const int RESOURCE_POLICY_NOT_FOUND_HASH = HashingUtils::HashString("ResourcePolicyNotFoundException");
 static const int POLICY_TYPE_ALREADY_ENABLED_HASH = HashingUtils::HashString("PolicyTypeAlreadyEnabledException");
 static const int DUPLICATE_HANDSHAKE_HASH = HashingUtils::HashString("DuplicateHandshakeException");
 static const int TARGET_NOT_FOUND_HASH = HashingUtils::HashString("TargetNotFoundException");
@@ -196,6 +197,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == DUPLICATE_ORGANIZATIONAL_UNIT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::DUPLICATE_ORGANIZATIONAL_UNIT), false);
+  }
+  else if (hashCode == RESOURCE_POLICY_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::RESOURCE_POLICY_NOT_FOUND), false);
   }
   else if (hashCode == POLICY_TYPE_ALREADY_ENABLED_HASH)
   {

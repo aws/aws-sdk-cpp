@@ -41,7 +41,10 @@ BackupJob::BackupJob() :
     m_bytesTransferred(0),
     m_bytesTransferredHasBeenSet(false),
     m_backupOptionsHasBeenSet(false),
-    m_backupTypeHasBeenSet(false)
+    m_backupTypeHasBeenSet(false),
+    m_parentJobIdHasBeenSet(false),
+    m_isParent(false),
+    m_isParentHasBeenSet(false)
 {
 }
 
@@ -68,7 +71,10 @@ BackupJob::BackupJob(JsonView jsonValue) :
     m_bytesTransferred(0),
     m_bytesTransferredHasBeenSet(false),
     m_backupOptionsHasBeenSet(false),
-    m_backupTypeHasBeenSet(false)
+    m_backupTypeHasBeenSet(false),
+    m_parentJobIdHasBeenSet(false),
+    m_isParent(false),
+    m_isParentHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -218,6 +224,20 @@ BackupJob& BackupJob::operator =(JsonView jsonValue)
     m_backupTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ParentJobId"))
+  {
+    m_parentJobId = jsonValue.GetString("ParentJobId");
+
+    m_parentJobIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IsParent"))
+  {
+    m_isParent = jsonValue.GetBool("IsParent");
+
+    m_isParentHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -342,6 +362,18 @@ JsonValue BackupJob::Jsonize() const
   if(m_backupTypeHasBeenSet)
   {
    payload.WithString("BackupType", m_backupType);
+
+  }
+
+  if(m_parentJobIdHasBeenSet)
+  {
+   payload.WithString("ParentJobId", m_parentJobId);
+
+  }
+
+  if(m_isParentHasBeenSet)
+  {
+   payload.WithBool("IsParent", m_isParent);
 
   }
 

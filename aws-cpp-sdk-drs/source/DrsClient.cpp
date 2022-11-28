@@ -43,9 +43,12 @@
 #include <aws/drs/model/ListStagingAccountsRequest.h>
 #include <aws/drs/model/ListTagsForResourceRequest.h>
 #include <aws/drs/model/RetryDataReplicationRequest.h>
+#include <aws/drs/model/ReverseReplicationRequest.h>
 #include <aws/drs/model/StartFailbackLaunchRequest.h>
 #include <aws/drs/model/StartRecoveryRequest.h>
+#include <aws/drs/model/StartReplicationRequest.h>
 #include <aws/drs/model/StopFailbackRequest.h>
+#include <aws/drs/model/StopReplicationRequest.h>
 #include <aws/drs/model/TagResourceRequest.h>
 #include <aws/drs/model/TerminateRecoveryInstancesRequest.h>
 #include <aws/drs/model/UntagResourceRequest.h>
@@ -737,6 +740,31 @@ void DrsClient::RetryDataReplicationAsync(const RetryDataReplicationRequest& req
     } );
 }
 
+ReverseReplicationOutcome DrsClient::ReverseReplication(const ReverseReplicationRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ReverseReplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ReverseReplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/ReverseReplication");
+  return ReverseReplicationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ReverseReplicationOutcomeCallable DrsClient::ReverseReplicationCallable(const ReverseReplicationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ReverseReplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ReverseReplication(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DrsClient::ReverseReplicationAsync(const ReverseReplicationRequest& request, const ReverseReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ReverseReplication(request), context);
+    } );
+}
+
 StartFailbackLaunchOutcome DrsClient::StartFailbackLaunch(const StartFailbackLaunchRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartFailbackLaunch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -787,6 +815,31 @@ void DrsClient::StartRecoveryAsync(const StartRecoveryRequest& request, const St
     } );
 }
 
+StartReplicationOutcome DrsClient::StartReplication(const StartReplicationRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartReplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartReplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/StartReplication");
+  return StartReplicationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartReplicationOutcomeCallable DrsClient::StartReplicationCallable(const StartReplicationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartReplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartReplication(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DrsClient::StartReplicationAsync(const StartReplicationRequest& request, const StartReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartReplication(request), context);
+    } );
+}
+
 StopFailbackOutcome DrsClient::StopFailback(const StopFailbackRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopFailback, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -809,6 +862,31 @@ void DrsClient::StopFailbackAsync(const StopFailbackRequest& request, const Stop
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, StopFailback(request), context);
+    } );
+}
+
+StopReplicationOutcome DrsClient::StopReplication(const StopReplicationRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopReplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StopReplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/StopReplication");
+  return StopReplicationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StopReplicationOutcomeCallable DrsClient::StopReplicationCallable(const StopReplicationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StopReplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopReplication(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DrsClient::StopReplicationAsync(const StopReplicationRequest& request, const StopReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StopReplication(request), context);
     } );
 }
 

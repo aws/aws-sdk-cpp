@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot/model/MqttHeaders.h>
 #include <utility>
 
 namespace Aws
@@ -144,6 +145,49 @@ namespace Model
      */
     inline RepublishAction& WithQos(int value) { SetQos(value); return *this;}
 
+
+    /**
+     * <p>MQTT Version 5.0 headers information. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html"> MQTT</a>
+     * from the Amazon Web Services IoT Core Developer Guide.</p>
+     */
+    inline const MqttHeaders& GetHeaders() const{ return m_headers; }
+
+    /**
+     * <p>MQTT Version 5.0 headers information. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html"> MQTT</a>
+     * from the Amazon Web Services IoT Core Developer Guide.</p>
+     */
+    inline bool HeadersHasBeenSet() const { return m_headersHasBeenSet; }
+
+    /**
+     * <p>MQTT Version 5.0 headers information. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html"> MQTT</a>
+     * from the Amazon Web Services IoT Core Developer Guide.</p>
+     */
+    inline void SetHeaders(const MqttHeaders& value) { m_headersHasBeenSet = true; m_headers = value; }
+
+    /**
+     * <p>MQTT Version 5.0 headers information. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html"> MQTT</a>
+     * from the Amazon Web Services IoT Core Developer Guide.</p>
+     */
+    inline void SetHeaders(MqttHeaders&& value) { m_headersHasBeenSet = true; m_headers = std::move(value); }
+
+    /**
+     * <p>MQTT Version 5.0 headers information. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html"> MQTT</a>
+     * from the Amazon Web Services IoT Core Developer Guide.</p>
+     */
+    inline RepublishAction& WithHeaders(const MqttHeaders& value) { SetHeaders(value); return *this;}
+
+    /**
+     * <p>MQTT Version 5.0 headers information. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html"> MQTT</a>
+     * from the Amazon Web Services IoT Core Developer Guide.</p>
+     */
+    inline RepublishAction& WithHeaders(MqttHeaders&& value) { SetHeaders(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_roleArn;
@@ -154,6 +198,9 @@ namespace Model
 
     int m_qos;
     bool m_qosHasBeenSet = false;
+
+    MqttHeaders m_headers;
+    bool m_headersHasBeenSet = false;
   };
 
 } // namespace Model

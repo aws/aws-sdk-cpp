@@ -22,7 +22,14 @@ PublishRequest::PublishRequest() :
     m_qos(0),
     m_qosHasBeenSet(false),
     m_retain(false),
-    m_retainHasBeenSet(false)
+    m_retainHasBeenSet(false),
+    m_userPropertiesHasBeenSet(false),
+    m_payloadFormatIndicator(PayloadFormatIndicator::NOT_SET),
+    m_payloadFormatIndicatorHasBeenSet(false),
+    m_responseTopicHasBeenSet(false),
+    m_correlationDataHasBeenSet(false),
+    m_messageExpiry(0),
+    m_messageExpiryHasBeenSet(false)
 {
 }
 
@@ -44,5 +51,45 @@ void PublishRequest::AddQueryStringParameters(URI& uri) const
       ss.str("");
     }
 
+    if(m_responseTopicHasBeenSet)
+    {
+      ss << m_responseTopic;
+      uri.AddQueryStringParameter("responseTopic", ss.str());
+      ss.str("");
+    }
+
+    if(m_messageExpiryHasBeenSet)
+    {
+      ss << m_messageExpiry;
+      uri.AddQueryStringParameter("messageExpiry", ss.str());
+      ss.str("");
+    }
+
 }
 
+Aws::Http::HeaderValueCollection PublishRequest::GetRequestSpecificHeaders() const
+{
+  Aws::Http::HeaderValueCollection headers;
+  Aws::StringStream ss;
+  if(m_userPropertiesHasBeenSet)
+  {
+    ss << m_userProperties;
+    headers.emplace("x-amz-mqtt5-user-properties",  ss.str());
+    ss.str("");
+  }
+
+  if(m_payloadFormatIndicatorHasBeenSet)
+  {
+    headers.emplace("x-amz-mqtt5-payload-format-indicator", PayloadFormatIndicatorMapper::GetNameForPayloadFormatIndicator(m_payloadFormatIndicator));
+  }
+
+  if(m_correlationDataHasBeenSet)
+  {
+    ss << m_correlationData;
+    headers.emplace("x-amz-mqtt5-correlation-data",  ss.str());
+    ss.str("");
+  }
+
+  return headers;
+
+}

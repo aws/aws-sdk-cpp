@@ -216,42 +216,42 @@ namespace Model
 
 
     /**
-     * <p>Indicates the channel identified for the <code>Result</code>.</p>
+     * <p>Indicates which audio channel is associated with the <code>Result</code>.</p>
      */
     inline const Aws::String& GetChannelId() const{ return m_channelId; }
 
     /**
-     * <p>Indicates the channel identified for the <code>Result</code>.</p>
+     * <p>Indicates which audio channel is associated with the <code>Result</code>.</p>
      */
     inline bool ChannelIdHasBeenSet() const { return m_channelIdHasBeenSet; }
 
     /**
-     * <p>Indicates the channel identified for the <code>Result</code>.</p>
+     * <p>Indicates which audio channel is associated with the <code>Result</code>.</p>
      */
     inline void SetChannelId(const Aws::String& value) { m_channelIdHasBeenSet = true; m_channelId = value; }
 
     /**
-     * <p>Indicates the channel identified for the <code>Result</code>.</p>
+     * <p>Indicates which audio channel is associated with the <code>Result</code>.</p>
      */
     inline void SetChannelId(Aws::String&& value) { m_channelIdHasBeenSet = true; m_channelId = std::move(value); }
 
     /**
-     * <p>Indicates the channel identified for the <code>Result</code>.</p>
+     * <p>Indicates which audio channel is associated with the <code>Result</code>.</p>
      */
     inline void SetChannelId(const char* value) { m_channelIdHasBeenSet = true; m_channelId.assign(value); }
 
     /**
-     * <p>Indicates the channel identified for the <code>Result</code>.</p>
+     * <p>Indicates which audio channel is associated with the <code>Result</code>.</p>
      */
     inline Result& WithChannelId(const Aws::String& value) { SetChannelId(value); return *this;}
 
     /**
-     * <p>Indicates the channel identified for the <code>Result</code>.</p>
+     * <p>Indicates which audio channel is associated with the <code>Result</code>.</p>
      */
     inline Result& WithChannelId(Aws::String&& value) { SetChannelId(std::move(value)); return *this;}
 
     /**
-     * <p>Indicates the channel identified for the <code>Result</code>.</p>
+     * <p>Indicates which audio channel is associated with the <code>Result</code>.</p>
      */
     inline Result& WithChannelId(const char* value) { SetChannelId(value); return *this;}
 

@@ -34,6 +34,7 @@ namespace Aws
         static const int UNKNOWN_BUSINESS_VALIDATION_HASH = HashingUtils::HashString("UNKNOWN_BUSINESS_VALIDATION");
         static const int MISSING_PAYMENT_INSTRUMENT_HASH = HashingUtils::HashString("MISSING_PAYMENT_INSTRUMENT");
         static const int INVALID_PAYMENT_INSTRUMENT_HASH = HashingUtils::HashString("INVALID_PAYMENT_INSTRUMENT");
+        static const int UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED_HASH = HashingUtils::HashString("UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED");
 
 
         CreateAccountFailureReason GetCreateAccountFailureReasonForName(const Aws::String& name)
@@ -95,6 +96,10 @@ namespace Aws
           {
             return CreateAccountFailureReason::INVALID_PAYMENT_INSTRUMENT;
           }
+          else if (hashCode == UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED_HASH)
+          {
+            return CreateAccountFailureReason::UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -137,6 +142,8 @@ namespace Aws
             return "MISSING_PAYMENT_INSTRUMENT";
           case CreateAccountFailureReason::INVALID_PAYMENT_INSTRUMENT:
             return "INVALID_PAYMENT_INSTRUMENT";
+          case CreateAccountFailureReason::UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED:
+            return "UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

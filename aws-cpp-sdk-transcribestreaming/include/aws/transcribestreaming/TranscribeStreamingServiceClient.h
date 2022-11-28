@@ -15,13 +15,16 @@ namespace Aws
 namespace TranscribeStreamingService
 {
   /**
-   * <p>Amazon Transcribe streaming offers two types of real-time transcription:
-   * <b>Standard</b> and <b>Medical</b>.</p> <ul> <li> <p> <b>Standard
-   * transcriptions</b> are the most common option. Refer to for details.</p> </li>
-   * <li> <p> <b>Medical transcriptions</b> are tailored to medical professionals and
-   * incorporate medical terms. A common use case for this service is transcribing
-   * doctor-patient dialogue in real time, so doctors can focus on their patient
-   * instead of taking notes. Refer to for details.</p> </li> </ul>
+   * <p>Amazon Transcribe streaming offers three main types of real-time
+   * transcription: <b>Standard</b>, <b>Medical</b>, and <b>Call Analytics</b>.</p>
+   * <ul> <li> <p> <b>Standard transcriptions</b> are the most common option. Refer
+   * to for details.</p> </li> <li> <p> <b>Medical transcriptions</b> are tailored to
+   * medical professionals and incorporate medical terms. A common use case for this
+   * service is transcribing doctor-patient dialogue in real time, so doctors can
+   * focus on their patient instead of taking notes. Refer to for details.</p> </li>
+   * <li> <p> <b>Call Analytics transcriptions</b> are designed for use with call
+   * center audio on two different channels; if you're looking for insight into
+   * customer service calls, use this option. Refer to for details.</p> </li> </ul>
    */
   class AWS_TRANSCRIBESTREAMINGSERVICE_API TranscribeStreamingServiceClient : public Aws::Client::AWSJsonClient
   {
@@ -81,9 +84,34 @@ namespace TranscribeStreamingService
 
         /**
          * <p>Starts a bidirectional HTTP/2 or WebSocket stream where audio is streamed to
+         * Amazon Transcribe and the transcription results are streamed to your
+         * application. Use this operation for <a
+         * href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics.html">Call
+         * Analytics</a> transcriptions.</p> <p>The following parameters are required:</p>
+         * <ul> <li> <p> <code>language-code</code> </p> </li> <li> <p>
+         * <code>media-encoding</code> </p> </li> <li> <p> <code>sample-rate</code> </p>
+         * </li> </ul> <p>For more information on streaming with Amazon Transcribe, see <a
+         * href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html">Transcribing
+         * streaming audio</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-streaming-2017-10-26/StartCallAnalyticsStreamTranscription">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor.
+         * The streamReadyHandler is triggered when the stream is ready to be written to.
+         * The handler is triggered when the request is finished.
+         */
+        virtual void StartCallAnalyticsStreamTranscriptionAsync(Model::StartCallAnalyticsStreamTranscriptionRequest& request,
+                const StartCallAnalyticsStreamTranscriptionStreamReadyHandler& streamReadyHandler,
+                const StartCallAnalyticsStreamTranscriptionResponseReceivedHandler& handler,
+                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext = nullptr) const;
+
+        /**
+         * <p>Starts a bidirectional HTTP/2 or WebSocket stream where audio is streamed to
          * Amazon Transcribe Medical and the transcription results are streamed to your
-         * application.</p> <p>For more information on streaming with Amazon Transcribe
-         * Medical, see <a
+         * application.</p> <p>The following parameters are required:</p> <ul> <li> <p>
+         * <code>language-code</code> </p> </li> <li> <p> <code>media-encoding</code> </p>
+         * </li> <li> <p> <code>sample-rate</code> </p> </li> </ul> <p>For more information
+         * on streaming with Amazon Transcribe Medical, see <a
          * href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html">Transcribing
          * streaming audio</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-streaming-2017-10-26/StartMedicalStreamTranscription">AWS
@@ -101,10 +129,10 @@ namespace TranscribeStreamingService
         /**
          * <p>Starts a bidirectional HTTP/2 or WebSocket stream where audio is streamed to
          * Amazon Transcribe and the transcription results are streamed to your
-         * application.</p> <p>The following are encoded as headers:</p> <ul> <li>
-         * <p>language-code</p> </li> <li> <p>media-encoding</p> </li> <li>
-         * <p>sample-rate</p> </li> <li> <p>session-id</p> </li> </ul> <p>For more
-         * information on streaming with Amazon Transcribe, see <a
+         * application.</p> <p>The following parameters are required:</p> <ul> <li> <p>
+         * <code>language-code</code> or <code>identify-language</code> </p> </li> <li> <p>
+         * <code>media-encoding</code> </p> </li> <li> <p> <code>sample-rate</code> </p>
+         * </li> </ul> <p>For more information on streaming with Amazon Transcribe, see <a
          * href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html">Transcribing
          * streaming audio</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-streaming-2017-10-26/StartStreamTranscription">AWS

@@ -22,7 +22,9 @@ CategoryProperties::CategoryProperties() :
     m_categoryNameHasBeenSet(false),
     m_rulesHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
+    m_lastUpdateTimeHasBeenSet(false),
+    m_inputType(InputType::NOT_SET),
+    m_inputTypeHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,9 @@ CategoryProperties::CategoryProperties(JsonView jsonValue) :
     m_categoryNameHasBeenSet(false),
     m_rulesHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
+    m_lastUpdateTimeHasBeenSet(false),
+    m_inputType(InputType::NOT_SET),
+    m_inputTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -68,6 +72,13 @@ CategoryProperties& CategoryProperties::operator =(JsonView jsonValue)
     m_lastUpdateTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("InputType"))
+  {
+    m_inputType = InputTypeMapper::GetInputTypeForName(jsonValue.GetString("InputType"));
+
+    m_inputTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -100,6 +111,11 @@ JsonValue CategoryProperties::Jsonize() const
   if(m_lastUpdateTimeHasBeenSet)
   {
    payload.WithDouble("LastUpdateTime", m_lastUpdateTime.SecondsWithMSPrecision());
+  }
+
+  if(m_inputTypeHasBeenSet)
+  {
+   payload.WithString("InputType", InputTypeMapper::GetNameForInputType(m_inputType));
   }
 
   return payload;

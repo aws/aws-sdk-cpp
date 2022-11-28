@@ -39,7 +39,11 @@ RecoveryPointByBackupVault::RecoveryPointByBackupVault() :
     m_encryptionKeyArnHasBeenSet(false),
     m_isEncrypted(false),
     m_isEncryptedHasBeenSet(false),
-    m_lastRestoreTimeHasBeenSet(false)
+    m_lastRestoreTimeHasBeenSet(false),
+    m_parentRecoveryPointArnHasBeenSet(false),
+    m_compositeMemberIdentifierHasBeenSet(false),
+    m_isParent(false),
+    m_isParentHasBeenSet(false)
 {
 }
 
@@ -64,7 +68,11 @@ RecoveryPointByBackupVault::RecoveryPointByBackupVault(JsonView jsonValue) :
     m_encryptionKeyArnHasBeenSet(false),
     m_isEncrypted(false),
     m_isEncryptedHasBeenSet(false),
-    m_lastRestoreTimeHasBeenSet(false)
+    m_lastRestoreTimeHasBeenSet(false),
+    m_parentRecoveryPointArnHasBeenSet(false),
+    m_compositeMemberIdentifierHasBeenSet(false),
+    m_isParent(false),
+    m_isParentHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -197,6 +205,27 @@ RecoveryPointByBackupVault& RecoveryPointByBackupVault::operator =(JsonView json
     m_lastRestoreTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ParentRecoveryPointArn"))
+  {
+    m_parentRecoveryPointArn = jsonValue.GetString("ParentRecoveryPointArn");
+
+    m_parentRecoveryPointArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CompositeMemberIdentifier"))
+  {
+    m_compositeMemberIdentifier = jsonValue.GetString("CompositeMemberIdentifier");
+
+    m_compositeMemberIdentifierHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IsParent"))
+  {
+    m_isParent = jsonValue.GetBool("IsParent");
+
+    m_isParentHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -306,6 +335,24 @@ JsonValue RecoveryPointByBackupVault::Jsonize() const
   if(m_lastRestoreTimeHasBeenSet)
   {
    payload.WithDouble("LastRestoreTime", m_lastRestoreTime.SecondsWithMSPrecision());
+  }
+
+  if(m_parentRecoveryPointArnHasBeenSet)
+  {
+   payload.WithString("ParentRecoveryPointArn", m_parentRecoveryPointArn);
+
+  }
+
+  if(m_compositeMemberIdentifierHasBeenSet)
+  {
+   payload.WithString("CompositeMemberIdentifier", m_compositeMemberIdentifier);
+
+  }
+
+  if(m_isParentHasBeenSet)
+  {
+   payload.WithBool("IsParent", m_isParent);
+
   }
 
   return payload;

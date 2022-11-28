@@ -341,6 +341,63 @@ namespace Textract
         virtual void GetExpenseAnalysisAsync(const Model::GetExpenseAnalysisRequest& request, const GetExpenseAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets the results for an Amazon Textract asynchronous operation that analyzes
+         * text in a lending document. </p> <p>You start asynchronous text analysis by
+         * calling <code>StartLendingAnalysis</code>, which returns a job identifier
+         * (<code>JobId</code>). When the text analysis operation finishes, Amazon Textract
+         * publishes a completion status to the Amazon Simple Notification Service (Amazon
+         * SNS) topic that's registered in the initial call to
+         * <code>StartLendingAnalysis</code>. </p> <p>To get the results of the text
+         * analysis operation, first check that the status value published to the Amazon
+         * SNS topic is SUCCEEDED. If so, call GetLendingAnalysis, and pass the job
+         * identifier (<code>JobId</code>) from the initial call to
+         * <code>StartLendingAnalysis</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetLendingAnalysis">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetLendingAnalysisOutcome GetLendingAnalysis(const Model::GetLendingAnalysisRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetLendingAnalysis that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetLendingAnalysisOutcomeCallable GetLendingAnalysisCallable(const Model::GetLendingAnalysisRequest& request) const;
+
+        /**
+         * An Async wrapper for GetLendingAnalysis that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetLendingAnalysisAsync(const Model::GetLendingAnalysisRequest& request, const GetLendingAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets summarized results for the <code>StartLendingAnalysis</code> operation,
+         * which analyzes text in a lending document. The returned summary consists of
+         * information about documents grouped together by a common document type.
+         * Information like detected signatures, page numbers, and split documents is
+         * returned with respect to the type of grouped document. </p> <p>You start
+         * asynchronous text analysis by calling <code>StartLendingAnalysis</code>, which
+         * returns a job identifier (<code>JobId</code>). When the text analysis operation
+         * finishes, Amazon Textract publishes a completion status to the Amazon Simple
+         * Notification Service (Amazon SNS) topic that's registered in the initial call to
+         * <code>StartLendingAnalysis</code>. </p> <p>To get the results of the text
+         * analysis operation, first check that the status value published to the Amazon
+         * SNS topic is SUCCEEDED. If so, call <code>GetLendingAnalysisSummary</code>, and
+         * pass the job identifier (<code>JobId</code>) from the initial call to
+         * <code>StartLendingAnalysis</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetLendingAnalysisSummary">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetLendingAnalysisSummaryOutcome GetLendingAnalysisSummary(const Model::GetLendingAnalysisSummaryRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetLendingAnalysisSummary that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetLendingAnalysisSummaryOutcomeCallable GetLendingAnalysisSummaryCallable(const Model::GetLendingAnalysisSummaryRequest& request) const;
+
+        /**
+         * An Async wrapper for GetLendingAnalysisSummary that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetLendingAnalysisSummaryAsync(const Model::GetLendingAnalysisSummaryRequest& request, const GetLendingAnalysisSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Starts the asynchronous analysis of an input document for relationships
          * between detected items such as key-value pairs, tables, and selection
          * elements.</p> <p> <code>StartDocumentAnalysis</code> can analyze text in
@@ -438,6 +495,45 @@ namespace Textract
          * An Async wrapper for StartExpenseAnalysis that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StartExpenseAnalysisAsync(const Model::StartExpenseAnalysisRequest& request, const StartExpenseAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Starts the classification and analysis of an input document.
+         * <code>StartLendingAnalysis</code> initiates the classification and analysis of a
+         * packet of lending documents. <code>StartLendingAnalysis</code> operates on a
+         * document file located in an Amazon S3 bucket.</p> <p>
+         * <code>StartLendingAnalysis</code> can analyze text in documents that are in one
+         * of the following formats: JPEG, PNG, TIFF, PDF. Use
+         * <code>DocumentLocation</code> to specify the bucket name and the file name of
+         * the document. </p> <p> <code>StartLendingAnalysis</code> returns a job
+         * identifier (<code>JobId</code>) that you use to get the results of the
+         * operation. When the text analysis is finished, Amazon Textract publishes a
+         * completion status to the Amazon Simple Notification Service (Amazon SNS) topic
+         * that you specify in <code>NotificationChannel</code>. To get the results of the
+         * text analysis operation, first check that the status value published to the
+         * Amazon SNS topic is SUCCEEDED. If the status is SUCCEEDED you can call either
+         * <code>GetLendingAnalysis</code> or <code>GetLendingAnalysisSummary</code> and
+         * provide the <code>JobId</code> to obtain the results of the analysis.</p> <p>If
+         * using <code>OutputConfig</code> to specify an Amazon S3 bucket, the output will
+         * be contained within the specified prefix in a directory labeled with the job-id.
+         * In the directory there are 3 sub-directories: </p> <ul> <li> <p>detailedResponse
+         * (contains the GetLendingAnalysis response)</p> </li> <li> <p>summaryResponse
+         * (for the GetLendingAnalysisSummary response)</p> </li> <li> <p>splitDocuments
+         * (documents split across logical boundaries)</p> </li> </ul><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/StartLendingAnalysis">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartLendingAnalysisOutcome StartLendingAnalysis(const Model::StartLendingAnalysisRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartLendingAnalysis that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartLendingAnalysisOutcomeCallable StartLendingAnalysisCallable(const Model::StartLendingAnalysisRequest& request) const;
+
+        /**
+         * An Async wrapper for StartLendingAnalysis that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartLendingAnalysisAsync(const Model::StartLendingAnalysisRequest& request, const StartLendingAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

@@ -44,6 +44,10 @@ namespace Aws
         static const int DUPLICATE_TAG_KEY_HASH = HashingUtils::HashString("DUPLICATE_TAG_KEY");
         static const int TARGET_NOT_SUPPORTED_HASH = HashingUtils::HashString("TARGET_NOT_SUPPORTED");
         static const int INVALID_EMAIL_ADDRESS_TARGET_HASH = HashingUtils::HashString("INVALID_EMAIL_ADDRESS_TARGET");
+        static const int INVALID_RESOURCE_POLICY_JSON_HASH = HashingUtils::HashString("INVALID_RESOURCE_POLICY_JSON");
+        static const int UNSUPPORTED_ACTION_IN_RESOURCE_POLICY_HASH = HashingUtils::HashString("UNSUPPORTED_ACTION_IN_RESOURCE_POLICY");
+        static const int UNSUPPORTED_POLICY_TYPE_IN_RESOURCE_POLICY_HASH = HashingUtils::HashString("UNSUPPORTED_POLICY_TYPE_IN_RESOURCE_POLICY");
+        static const int UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY_HASH = HashingUtils::HashString("UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY");
 
 
         InvalidInputExceptionReason GetInvalidInputExceptionReasonForName(const Aws::String& name)
@@ -145,6 +149,22 @@ namespace Aws
           {
             return InvalidInputExceptionReason::INVALID_EMAIL_ADDRESS_TARGET;
           }
+          else if (hashCode == INVALID_RESOURCE_POLICY_JSON_HASH)
+          {
+            return InvalidInputExceptionReason::INVALID_RESOURCE_POLICY_JSON;
+          }
+          else if (hashCode == UNSUPPORTED_ACTION_IN_RESOURCE_POLICY_HASH)
+          {
+            return InvalidInputExceptionReason::UNSUPPORTED_ACTION_IN_RESOURCE_POLICY;
+          }
+          else if (hashCode == UNSUPPORTED_POLICY_TYPE_IN_RESOURCE_POLICY_HASH)
+          {
+            return InvalidInputExceptionReason::UNSUPPORTED_POLICY_TYPE_IN_RESOURCE_POLICY;
+          }
+          else if (hashCode == UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY_HASH)
+          {
+            return InvalidInputExceptionReason::UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -207,6 +227,14 @@ namespace Aws
             return "TARGET_NOT_SUPPORTED";
           case InvalidInputExceptionReason::INVALID_EMAIL_ADDRESS_TARGET:
             return "INVALID_EMAIL_ADDRESS_TARGET";
+          case InvalidInputExceptionReason::INVALID_RESOURCE_POLICY_JSON:
+            return "INVALID_RESOURCE_POLICY_JSON";
+          case InvalidInputExceptionReason::UNSUPPORTED_ACTION_IN_RESOURCE_POLICY:
+            return "UNSUPPORTED_ACTION_IN_RESOURCE_POLICY";
+          case InvalidInputExceptionReason::UNSUPPORTED_POLICY_TYPE_IN_RESOURCE_POLICY:
+            return "UNSUPPORTED_POLICY_TYPE_IN_RESOURCE_POLICY";
+          case InvalidInputExceptionReason::UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY:
+            return "UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -41,7 +41,8 @@ CreateServiceRequest::CreateServiceRequest() :
     m_propagateTags(PropagateTags::NOT_SET),
     m_propagateTagsHasBeenSet(false),
     m_enableExecuteCommand(false),
-    m_enableExecuteCommandHasBeenSet(false)
+    m_enableExecuteCommandHasBeenSet(false),
+    m_serviceConnectConfigurationHasBeenSet(false)
 {
 }
 
@@ -205,6 +206,12 @@ Aws::String CreateServiceRequest::SerializePayload() const
   if(m_enableExecuteCommandHasBeenSet)
   {
    payload.WithBool("enableExecuteCommand", m_enableExecuteCommand);
+
+  }
+
+  if(m_serviceConnectConfigurationHasBeenSet)
+  {
+   payload.WithObject("serviceConnectConfiguration", m_serviceConnectConfiguration.Jsonize());
 
   }
 

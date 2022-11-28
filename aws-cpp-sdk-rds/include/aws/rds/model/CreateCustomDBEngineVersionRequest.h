@@ -88,73 +88,73 @@ namespace Model
 
 
     /**
-     * <p>The name of your CEV. The name format is <code>19.<i>customized_string</i>
-     * </code>. For example, a valid name is <code>19.my_cev1</code>. This setting is
-     * required for RDS Custom for Oracle, but optional for Amazon RDS. The combination
-     * of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
+     * <p>The name of your CEV. The name format is 19.<i>customized_string</i>. For
+     * example, a valid CEV name is <code>19.my_cev1</code>. This setting is required
+     * for RDS Custom for Oracle, but optional for Amazon RDS. The combination of
+     * <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
      * Region.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
-     * <p>The name of your CEV. The name format is <code>19.<i>customized_string</i>
-     * </code>. For example, a valid name is <code>19.my_cev1</code>. This setting is
-     * required for RDS Custom for Oracle, but optional for Amazon RDS. The combination
-     * of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
+     * <p>The name of your CEV. The name format is 19.<i>customized_string</i>. For
+     * example, a valid CEV name is <code>19.my_cev1</code>. This setting is required
+     * for RDS Custom for Oracle, but optional for Amazon RDS. The combination of
+     * <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
      * Region.</p>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
-     * <p>The name of your CEV. The name format is <code>19.<i>customized_string</i>
-     * </code>. For example, a valid name is <code>19.my_cev1</code>. This setting is
-     * required for RDS Custom for Oracle, but optional for Amazon RDS. The combination
-     * of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
+     * <p>The name of your CEV. The name format is 19.<i>customized_string</i>. For
+     * example, a valid CEV name is <code>19.my_cev1</code>. This setting is required
+     * for RDS Custom for Oracle, but optional for Amazon RDS. The combination of
+     * <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
      * Region.</p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
-     * <p>The name of your CEV. The name format is <code>19.<i>customized_string</i>
-     * </code>. For example, a valid name is <code>19.my_cev1</code>. This setting is
-     * required for RDS Custom for Oracle, but optional for Amazon RDS. The combination
-     * of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
+     * <p>The name of your CEV. The name format is 19.<i>customized_string</i>. For
+     * example, a valid CEV name is <code>19.my_cev1</code>. This setting is required
+     * for RDS Custom for Oracle, but optional for Amazon RDS. The combination of
+     * <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
      * Region.</p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
-     * <p>The name of your CEV. The name format is <code>19.<i>customized_string</i>
-     * </code>. For example, a valid name is <code>19.my_cev1</code>. This setting is
-     * required for RDS Custom for Oracle, but optional for Amazon RDS. The combination
-     * of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
+     * <p>The name of your CEV. The name format is 19.<i>customized_string</i>. For
+     * example, a valid CEV name is <code>19.my_cev1</code>. This setting is required
+     * for RDS Custom for Oracle, but optional for Amazon RDS. The combination of
+     * <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
      * Region.</p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
-     * <p>The name of your CEV. The name format is <code>19.<i>customized_string</i>
-     * </code>. For example, a valid name is <code>19.my_cev1</code>. This setting is
-     * required for RDS Custom for Oracle, but optional for Amazon RDS. The combination
-     * of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
+     * <p>The name of your CEV. The name format is 19.<i>customized_string</i>. For
+     * example, a valid CEV name is <code>19.my_cev1</code>. This setting is required
+     * for RDS Custom for Oracle, but optional for Amazon RDS. The combination of
+     * <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
      * Region.</p>
      */
     inline CreateCustomDBEngineVersionRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p>The name of your CEV. The name format is <code>19.<i>customized_string</i>
-     * </code>. For example, a valid name is <code>19.my_cev1</code>. This setting is
-     * required for RDS Custom for Oracle, but optional for Amazon RDS. The combination
-     * of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
+     * <p>The name of your CEV. The name format is 19.<i>customized_string</i>. For
+     * example, a valid CEV name is <code>19.my_cev1</code>. This setting is required
+     * for RDS Custom for Oracle, but optional for Amazon RDS. The combination of
+     * <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
      * Region.</p>
      */
     inline CreateCustomDBEngineVersionRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The name of your CEV. The name format is <code>19.<i>customized_string</i>
-     * </code>. For example, a valid name is <code>19.my_cev1</code>. This setting is
-     * required for RDS Custom for Oracle, but optional for Amazon RDS. The combination
-     * of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
+     * <p>The name of your CEV. The name format is 19.<i>customized_string</i>. For
+     * example, a valid CEV name is <code>19.my_cev1</code>. This setting is required
+     * for RDS Custom for Oracle, but optional for Amazon RDS. The combination of
+     * <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
      * Region.</p>
      */
     inline CreateCustomDBEngineVersionRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}

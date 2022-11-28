@@ -29,6 +29,18 @@ namespace Aws
         static const int FAILED_TO_CONFIGURE_REPLICATION_SOFTWARE_HASH = HashingUtils::HashString("FAILED_TO_CONFIGURE_REPLICATION_SOFTWARE");
         static const int FAILED_TO_PAIR_AGENT_WITH_REPLICATION_SOFTWARE_HASH = HashingUtils::HashString("FAILED_TO_PAIR_AGENT_WITH_REPLICATION_SOFTWARE");
         static const int FAILED_TO_ESTABLISH_AGENT_REPLICATOR_SOFTWARE_COMMUNICATION_HASH = HashingUtils::HashString("FAILED_TO_ESTABLISH_AGENT_REPLICATOR_SOFTWARE_COMMUNICATION");
+        static const int FAILED_GETTING_REPLICATION_STATE_HASH = HashingUtils::HashString("FAILED_GETTING_REPLICATION_STATE");
+        static const int SNAPSHOTS_FAILURE_HASH = HashingUtils::HashString("SNAPSHOTS_FAILURE");
+        static const int FAILED_TO_CREATE_SECURITY_GROUP_HASH = HashingUtils::HashString("FAILED_TO_CREATE_SECURITY_GROUP");
+        static const int FAILED_TO_LAUNCH_REPLICATION_SERVER_HASH = HashingUtils::HashString("FAILED_TO_LAUNCH_REPLICATION_SERVER");
+        static const int FAILED_TO_BOOT_REPLICATION_SERVER_HASH = HashingUtils::HashString("FAILED_TO_BOOT_REPLICATION_SERVER");
+        static const int FAILED_TO_AUTHENTICATE_WITH_SERVICE_HASH = HashingUtils::HashString("FAILED_TO_AUTHENTICATE_WITH_SERVICE");
+        static const int FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE_HASH = HashingUtils::HashString("FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE");
+        static const int FAILED_TO_CREATE_STAGING_DISKS_HASH = HashingUtils::HashString("FAILED_TO_CREATE_STAGING_DISKS");
+        static const int FAILED_TO_ATTACH_STAGING_DISKS_HASH = HashingUtils::HashString("FAILED_TO_ATTACH_STAGING_DISKS");
+        static const int FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT_HASH = HashingUtils::HashString("FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT");
+        static const int FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER_HASH = HashingUtils::HashString("FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER");
+        static const int FAILED_TO_START_DATA_TRANSFER_HASH = HashingUtils::HashString("FAILED_TO_START_DATA_TRANSFER");
 
 
         FailbackReplicationError GetFailbackReplicationErrorForName(const Aws::String& name)
@@ -70,6 +82,54 @@ namespace Aws
           {
             return FailbackReplicationError::FAILED_TO_ESTABLISH_AGENT_REPLICATOR_SOFTWARE_COMMUNICATION;
           }
+          else if (hashCode == FAILED_GETTING_REPLICATION_STATE_HASH)
+          {
+            return FailbackReplicationError::FAILED_GETTING_REPLICATION_STATE;
+          }
+          else if (hashCode == SNAPSHOTS_FAILURE_HASH)
+          {
+            return FailbackReplicationError::SNAPSHOTS_FAILURE;
+          }
+          else if (hashCode == FAILED_TO_CREATE_SECURITY_GROUP_HASH)
+          {
+            return FailbackReplicationError::FAILED_TO_CREATE_SECURITY_GROUP;
+          }
+          else if (hashCode == FAILED_TO_LAUNCH_REPLICATION_SERVER_HASH)
+          {
+            return FailbackReplicationError::FAILED_TO_LAUNCH_REPLICATION_SERVER;
+          }
+          else if (hashCode == FAILED_TO_BOOT_REPLICATION_SERVER_HASH)
+          {
+            return FailbackReplicationError::FAILED_TO_BOOT_REPLICATION_SERVER;
+          }
+          else if (hashCode == FAILED_TO_AUTHENTICATE_WITH_SERVICE_HASH)
+          {
+            return FailbackReplicationError::FAILED_TO_AUTHENTICATE_WITH_SERVICE;
+          }
+          else if (hashCode == FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE_HASH)
+          {
+            return FailbackReplicationError::FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE;
+          }
+          else if (hashCode == FAILED_TO_CREATE_STAGING_DISKS_HASH)
+          {
+            return FailbackReplicationError::FAILED_TO_CREATE_STAGING_DISKS;
+          }
+          else if (hashCode == FAILED_TO_ATTACH_STAGING_DISKS_HASH)
+          {
+            return FailbackReplicationError::FAILED_TO_ATTACH_STAGING_DISKS;
+          }
+          else if (hashCode == FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT_HASH)
+          {
+            return FailbackReplicationError::FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT;
+          }
+          else if (hashCode == FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER_HASH)
+          {
+            return FailbackReplicationError::FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER;
+          }
+          else if (hashCode == FAILED_TO_START_DATA_TRANSFER_HASH)
+          {
+            return FailbackReplicationError::FAILED_TO_START_DATA_TRANSFER;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -102,6 +162,30 @@ namespace Aws
             return "FAILED_TO_PAIR_AGENT_WITH_REPLICATION_SOFTWARE";
           case FailbackReplicationError::FAILED_TO_ESTABLISH_AGENT_REPLICATOR_SOFTWARE_COMMUNICATION:
             return "FAILED_TO_ESTABLISH_AGENT_REPLICATOR_SOFTWARE_COMMUNICATION";
+          case FailbackReplicationError::FAILED_GETTING_REPLICATION_STATE:
+            return "FAILED_GETTING_REPLICATION_STATE";
+          case FailbackReplicationError::SNAPSHOTS_FAILURE:
+            return "SNAPSHOTS_FAILURE";
+          case FailbackReplicationError::FAILED_TO_CREATE_SECURITY_GROUP:
+            return "FAILED_TO_CREATE_SECURITY_GROUP";
+          case FailbackReplicationError::FAILED_TO_LAUNCH_REPLICATION_SERVER:
+            return "FAILED_TO_LAUNCH_REPLICATION_SERVER";
+          case FailbackReplicationError::FAILED_TO_BOOT_REPLICATION_SERVER:
+            return "FAILED_TO_BOOT_REPLICATION_SERVER";
+          case FailbackReplicationError::FAILED_TO_AUTHENTICATE_WITH_SERVICE:
+            return "FAILED_TO_AUTHENTICATE_WITH_SERVICE";
+          case FailbackReplicationError::FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE:
+            return "FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE";
+          case FailbackReplicationError::FAILED_TO_CREATE_STAGING_DISKS:
+            return "FAILED_TO_CREATE_STAGING_DISKS";
+          case FailbackReplicationError::FAILED_TO_ATTACH_STAGING_DISKS:
+            return "FAILED_TO_ATTACH_STAGING_DISKS";
+          case FailbackReplicationError::FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT:
+            return "FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT";
+          case FailbackReplicationError::FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER:
+            return "FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER";
+          case FailbackReplicationError::FAILED_TO_START_DATA_TRANSFER:
+            return "FAILED_TO_START_DATA_TRANSFER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

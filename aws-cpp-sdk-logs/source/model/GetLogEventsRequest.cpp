@@ -14,6 +14,7 @@ using namespace Aws::Utils;
 
 GetLogEventsRequest::GetLogEventsRequest() : 
     m_logGroupNameHasBeenSet(false),
+    m_logGroupIdentifierHasBeenSet(false),
     m_logStreamNameHasBeenSet(false),
     m_startTime(0),
     m_startTimeHasBeenSet(false),
@@ -23,7 +24,9 @@ GetLogEventsRequest::GetLogEventsRequest() :
     m_limit(0),
     m_limitHasBeenSet(false),
     m_startFromHead(false),
-    m_startFromHeadHasBeenSet(false)
+    m_startFromHeadHasBeenSet(false),
+    m_unmask(false),
+    m_unmaskHasBeenSet(false)
 {
 }
 
@@ -34,6 +37,12 @@ Aws::String GetLogEventsRequest::SerializePayload() const
   if(m_logGroupNameHasBeenSet)
   {
    payload.WithString("logGroupName", m_logGroupName);
+
+  }
+
+  if(m_logGroupIdentifierHasBeenSet)
+  {
+   payload.WithString("logGroupIdentifier", m_logGroupIdentifier);
 
   }
 
@@ -70,6 +79,12 @@ Aws::String GetLogEventsRequest::SerializePayload() const
   if(m_startFromHeadHasBeenSet)
   {
    payload.WithBool("startFromHead", m_startFromHead);
+
+  }
+
+  if(m_unmaskHasBeenSet)
+  {
+   payload.WithBool("unmask", m_unmask);
 
   }
 

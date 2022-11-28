@@ -24,7 +24,8 @@ ListRecoveryPointsByBackupVaultRequest::ListRecoveryPointsByBackupVaultRequest()
     m_byResourceTypeHasBeenSet(false),
     m_byBackupPlanIdHasBeenSet(false),
     m_byCreatedBeforeHasBeenSet(false),
-    m_byCreatedAfterHasBeenSet(false)
+    m_byCreatedAfterHasBeenSet(false),
+    m_byParentRecoveryPointArnHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,13 @@ void ListRecoveryPointsByBackupVaultRequest::AddQueryStringParameters(URI& uri) 
     {
       ss << m_byCreatedAfter.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
       uri.AddQueryStringParameter("createdAfter", ss.str());
+      ss.str("");
+    }
+
+    if(m_byParentRecoveryPointArnHasBeenSet)
+    {
+      ss << m_byParentRecoveryPointArn;
+      uri.AddQueryStringParameter("parentRecoveryPointArn", ss.str());
       ss.str("");
     }
 

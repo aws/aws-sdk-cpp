@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/transcribestreaming/TranscribeStreamingService_EXPORTS.h>
 #include <aws/transcribestreaming/model/AudioEvent.h>
+#include <aws/transcribestreaming/model/ConfigurationEvent.h>
 #include <utility>
 #include <aws/core/utils/event/EventStream.h>
 
@@ -34,6 +35,16 @@ namespace Model
        msg.InsertEventHeader(":event-type", Aws::String("AudioEvent"));
        msg.InsertEventHeader(":content-type", Aws::String("application/octet-stream"));
        msg.WriteEventPayload(value.GetAudioChunk());
+       WriteEvent(msg);
+       return *this;
+    }
+    AudioStream& WriteConfigurationEvent(const ConfigurationEvent& value)
+    {
+       Aws::Utils::Event::Message msg;
+       msg.InsertEventHeader(":message-type", Aws::String("event"));
+       msg.InsertEventHeader(":event-type", Aws::String("ConfigurationEvent"));
+       msg.InsertEventHeader(":content-type", Aws::String("application/json"));
+       msg.WriteEventPayload(value.Jsonize().View().WriteCompact());
        WriteEvent(msg);
        return *this;
     }

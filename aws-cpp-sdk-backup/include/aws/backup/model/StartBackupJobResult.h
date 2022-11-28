@@ -152,6 +152,25 @@ namespace Model
      */
     inline StartBackupJobResult& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 
+
+    /**
+     * <p>This is a returned boolean value indicating this is a parent (composite)
+     * backup job.</p>
+     */
+    inline bool GetIsParent() const{ return m_isParent; }
+
+    /**
+     * <p>This is a returned boolean value indicating this is a parent (composite)
+     * backup job.</p>
+     */
+    inline void SetIsParent(bool value) { m_isParent = value; }
+
+    /**
+     * <p>This is a returned boolean value indicating this is a parent (composite)
+     * backup job.</p>
+     */
+    inline StartBackupJobResult& WithIsParent(bool value) { SetIsParent(value); return *this;}
+
   private:
 
     Aws::String m_backupJobId;
@@ -159,6 +178,8 @@ namespace Model
     Aws::String m_recoveryPointArn;
 
     Aws::Utils::DateTime m_creationDate;
+
+    bool m_isParent;
   };
 
 } // namespace Model

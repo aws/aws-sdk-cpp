@@ -82,47 +82,47 @@ namespace Model
 
 
     /**
-     * <p>A list of strings. </p>
+     * <p>A list of strings. The default maximum length or number of strings is 10.</p>
      */
     inline const Aws::Vector<Aws::String>& GetStringListValue() const{ return m_stringListValue; }
 
     /**
-     * <p>A list of strings. </p>
+     * <p>A list of strings. The default maximum length or number of strings is 10.</p>
      */
     inline bool StringListValueHasBeenSet() const { return m_stringListValueHasBeenSet; }
 
     /**
-     * <p>A list of strings. </p>
+     * <p>A list of strings. The default maximum length or number of strings is 10.</p>
      */
     inline void SetStringListValue(const Aws::Vector<Aws::String>& value) { m_stringListValueHasBeenSet = true; m_stringListValue = value; }
 
     /**
-     * <p>A list of strings. </p>
+     * <p>A list of strings. The default maximum length or number of strings is 10.</p>
      */
     inline void SetStringListValue(Aws::Vector<Aws::String>&& value) { m_stringListValueHasBeenSet = true; m_stringListValue = std::move(value); }
 
     /**
-     * <p>A list of strings. </p>
+     * <p>A list of strings. The default maximum length or number of strings is 10.</p>
      */
     inline DocumentAttributeValue& WithStringListValue(const Aws::Vector<Aws::String>& value) { SetStringListValue(value); return *this;}
 
     /**
-     * <p>A list of strings. </p>
+     * <p>A list of strings. The default maximum length or number of strings is 10.</p>
      */
     inline DocumentAttributeValue& WithStringListValue(Aws::Vector<Aws::String>&& value) { SetStringListValue(std::move(value)); return *this;}
 
     /**
-     * <p>A list of strings. </p>
+     * <p>A list of strings. The default maximum length or number of strings is 10.</p>
      */
     inline DocumentAttributeValue& AddStringListValue(const Aws::String& value) { m_stringListValueHasBeenSet = true; m_stringListValue.push_back(value); return *this; }
 
     /**
-     * <p>A list of strings. </p>
+     * <p>A list of strings. The default maximum length or number of strings is 10.</p>
      */
     inline DocumentAttributeValue& AddStringListValue(Aws::String&& value) { m_stringListValueHasBeenSet = true; m_stringListValue.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of strings. </p>
+     * <p>A list of strings. The default maximum length or number of strings is 10.</p>
      */
     inline DocumentAttributeValue& AddStringListValue(const char* value) { m_stringListValueHasBeenSet = true; m_stringListValue.push_back(value); return *this; }
 

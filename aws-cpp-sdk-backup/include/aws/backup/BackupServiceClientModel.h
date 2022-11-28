@@ -18,10 +18,12 @@
 /* End of generic header includes */
 
 /* Service model headers required in BackupClient header */
+#include <aws/backup/model/CancelLegalHoldResult.h>
 #include <aws/backup/model/CreateBackupPlanResult.h>
 #include <aws/backup/model/CreateBackupSelectionResult.h>
 #include <aws/backup/model/CreateBackupVaultResult.h>
 #include <aws/backup/model/CreateFrameworkResult.h>
+#include <aws/backup/model/CreateLegalHoldResult.h>
 #include <aws/backup/model/CreateReportPlanResult.h>
 #include <aws/backup/model/DeleteBackupPlanResult.h>
 #include <aws/backup/model/DescribeBackupJobResult.h>
@@ -42,6 +44,7 @@
 #include <aws/backup/model/GetBackupSelectionResult.h>
 #include <aws/backup/model/GetBackupVaultAccessPolicyResult.h>
 #include <aws/backup/model/GetBackupVaultNotificationsResult.h>
+#include <aws/backup/model/GetLegalHoldResult.h>
 #include <aws/backup/model/GetRecoveryPointRestoreMetadataResult.h>
 #include <aws/backup/model/GetSupportedResourceTypesResult.h>
 #include <aws/backup/model/ListBackupJobsResult.h>
@@ -52,8 +55,10 @@
 #include <aws/backup/model/ListBackupVaultsResult.h>
 #include <aws/backup/model/ListCopyJobsResult.h>
 #include <aws/backup/model/ListFrameworksResult.h>
+#include <aws/backup/model/ListLegalHoldsResult.h>
 #include <aws/backup/model/ListProtectedResourcesResult.h>
 #include <aws/backup/model/ListRecoveryPointsByBackupVaultResult.h>
+#include <aws/backup/model/ListRecoveryPointsByLegalHoldResult.h>
 #include <aws/backup/model/ListRecoveryPointsByResourceResult.h>
 #include <aws/backup/model/ListReportJobsResult.h>
 #include <aws/backup/model/ListReportPlansResult.h>
@@ -108,10 +113,12 @@ namespace Aws
     namespace Model
     {
       /* Service model forward declarations required in BackupClient header */
+      class CancelLegalHoldRequest;
       class CreateBackupPlanRequest;
       class CreateBackupSelectionRequest;
       class CreateBackupVaultRequest;
       class CreateFrameworkRequest;
+      class CreateLegalHoldRequest;
       class CreateReportPlanRequest;
       class DeleteBackupPlanRequest;
       class DeleteBackupSelectionRequest;
@@ -134,6 +141,7 @@ namespace Aws
       class DescribeReportPlanRequest;
       class DescribeRestoreJobRequest;
       class DisassociateRecoveryPointRequest;
+      class DisassociateRecoveryPointFromParentRequest;
       class ExportBackupPlanTemplateRequest;
       class GetBackupPlanRequest;
       class GetBackupPlanFromJSONRequest;
@@ -141,6 +149,7 @@ namespace Aws
       class GetBackupSelectionRequest;
       class GetBackupVaultAccessPolicyRequest;
       class GetBackupVaultNotificationsRequest;
+      class GetLegalHoldRequest;
       class GetRecoveryPointRestoreMetadataRequest;
       class ListBackupJobsRequest;
       class ListBackupPlanTemplatesRequest;
@@ -150,8 +159,10 @@ namespace Aws
       class ListBackupVaultsRequest;
       class ListCopyJobsRequest;
       class ListFrameworksRequest;
+      class ListLegalHoldsRequest;
       class ListProtectedResourcesRequest;
       class ListRecoveryPointsByBackupVaultRequest;
+      class ListRecoveryPointsByLegalHoldRequest;
       class ListRecoveryPointsByResourceRequest;
       class ListReportJobsRequest;
       class ListReportPlansRequest;
@@ -176,10 +187,12 @@ namespace Aws
       /* End of service model forward declarations required in BackupClient header */
 
       /* Service model Outcome class definitions */
+      typedef Aws::Utils::Outcome<CancelLegalHoldResult, BackupError> CancelLegalHoldOutcome;
       typedef Aws::Utils::Outcome<CreateBackupPlanResult, BackupError> CreateBackupPlanOutcome;
       typedef Aws::Utils::Outcome<CreateBackupSelectionResult, BackupError> CreateBackupSelectionOutcome;
       typedef Aws::Utils::Outcome<CreateBackupVaultResult, BackupError> CreateBackupVaultOutcome;
       typedef Aws::Utils::Outcome<CreateFrameworkResult, BackupError> CreateFrameworkOutcome;
+      typedef Aws::Utils::Outcome<CreateLegalHoldResult, BackupError> CreateLegalHoldOutcome;
       typedef Aws::Utils::Outcome<CreateReportPlanResult, BackupError> CreateReportPlanOutcome;
       typedef Aws::Utils::Outcome<DeleteBackupPlanResult, BackupError> DeleteBackupPlanOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, BackupError> DeleteBackupSelectionOutcome;
@@ -202,6 +215,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeReportPlanResult, BackupError> DescribeReportPlanOutcome;
       typedef Aws::Utils::Outcome<DescribeRestoreJobResult, BackupError> DescribeRestoreJobOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, BackupError> DisassociateRecoveryPointOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, BackupError> DisassociateRecoveryPointFromParentOutcome;
       typedef Aws::Utils::Outcome<ExportBackupPlanTemplateResult, BackupError> ExportBackupPlanTemplateOutcome;
       typedef Aws::Utils::Outcome<GetBackupPlanResult, BackupError> GetBackupPlanOutcome;
       typedef Aws::Utils::Outcome<GetBackupPlanFromJSONResult, BackupError> GetBackupPlanFromJSONOutcome;
@@ -209,6 +223,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetBackupSelectionResult, BackupError> GetBackupSelectionOutcome;
       typedef Aws::Utils::Outcome<GetBackupVaultAccessPolicyResult, BackupError> GetBackupVaultAccessPolicyOutcome;
       typedef Aws::Utils::Outcome<GetBackupVaultNotificationsResult, BackupError> GetBackupVaultNotificationsOutcome;
+      typedef Aws::Utils::Outcome<GetLegalHoldResult, BackupError> GetLegalHoldOutcome;
       typedef Aws::Utils::Outcome<GetRecoveryPointRestoreMetadataResult, BackupError> GetRecoveryPointRestoreMetadataOutcome;
       typedef Aws::Utils::Outcome<GetSupportedResourceTypesResult, BackupError> GetSupportedResourceTypesOutcome;
       typedef Aws::Utils::Outcome<ListBackupJobsResult, BackupError> ListBackupJobsOutcome;
@@ -219,8 +234,10 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListBackupVaultsResult, BackupError> ListBackupVaultsOutcome;
       typedef Aws::Utils::Outcome<ListCopyJobsResult, BackupError> ListCopyJobsOutcome;
       typedef Aws::Utils::Outcome<ListFrameworksResult, BackupError> ListFrameworksOutcome;
+      typedef Aws::Utils::Outcome<ListLegalHoldsResult, BackupError> ListLegalHoldsOutcome;
       typedef Aws::Utils::Outcome<ListProtectedResourcesResult, BackupError> ListProtectedResourcesOutcome;
       typedef Aws::Utils::Outcome<ListRecoveryPointsByBackupVaultResult, BackupError> ListRecoveryPointsByBackupVaultOutcome;
+      typedef Aws::Utils::Outcome<ListRecoveryPointsByLegalHoldResult, BackupError> ListRecoveryPointsByLegalHoldOutcome;
       typedef Aws::Utils::Outcome<ListRecoveryPointsByResourceResult, BackupError> ListRecoveryPointsByResourceOutcome;
       typedef Aws::Utils::Outcome<ListReportJobsResult, BackupError> ListReportJobsOutcome;
       typedef Aws::Utils::Outcome<ListReportPlansResult, BackupError> ListReportPlansOutcome;
@@ -245,10 +262,12 @@ namespace Aws
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
+      typedef std::future<CancelLegalHoldOutcome> CancelLegalHoldOutcomeCallable;
       typedef std::future<CreateBackupPlanOutcome> CreateBackupPlanOutcomeCallable;
       typedef std::future<CreateBackupSelectionOutcome> CreateBackupSelectionOutcomeCallable;
       typedef std::future<CreateBackupVaultOutcome> CreateBackupVaultOutcomeCallable;
       typedef std::future<CreateFrameworkOutcome> CreateFrameworkOutcomeCallable;
+      typedef std::future<CreateLegalHoldOutcome> CreateLegalHoldOutcomeCallable;
       typedef std::future<CreateReportPlanOutcome> CreateReportPlanOutcomeCallable;
       typedef std::future<DeleteBackupPlanOutcome> DeleteBackupPlanOutcomeCallable;
       typedef std::future<DeleteBackupSelectionOutcome> DeleteBackupSelectionOutcomeCallable;
@@ -271,6 +290,7 @@ namespace Aws
       typedef std::future<DescribeReportPlanOutcome> DescribeReportPlanOutcomeCallable;
       typedef std::future<DescribeRestoreJobOutcome> DescribeRestoreJobOutcomeCallable;
       typedef std::future<DisassociateRecoveryPointOutcome> DisassociateRecoveryPointOutcomeCallable;
+      typedef std::future<DisassociateRecoveryPointFromParentOutcome> DisassociateRecoveryPointFromParentOutcomeCallable;
       typedef std::future<ExportBackupPlanTemplateOutcome> ExportBackupPlanTemplateOutcomeCallable;
       typedef std::future<GetBackupPlanOutcome> GetBackupPlanOutcomeCallable;
       typedef std::future<GetBackupPlanFromJSONOutcome> GetBackupPlanFromJSONOutcomeCallable;
@@ -278,6 +298,7 @@ namespace Aws
       typedef std::future<GetBackupSelectionOutcome> GetBackupSelectionOutcomeCallable;
       typedef std::future<GetBackupVaultAccessPolicyOutcome> GetBackupVaultAccessPolicyOutcomeCallable;
       typedef std::future<GetBackupVaultNotificationsOutcome> GetBackupVaultNotificationsOutcomeCallable;
+      typedef std::future<GetLegalHoldOutcome> GetLegalHoldOutcomeCallable;
       typedef std::future<GetRecoveryPointRestoreMetadataOutcome> GetRecoveryPointRestoreMetadataOutcomeCallable;
       typedef std::future<GetSupportedResourceTypesOutcome> GetSupportedResourceTypesOutcomeCallable;
       typedef std::future<ListBackupJobsOutcome> ListBackupJobsOutcomeCallable;
@@ -288,8 +309,10 @@ namespace Aws
       typedef std::future<ListBackupVaultsOutcome> ListBackupVaultsOutcomeCallable;
       typedef std::future<ListCopyJobsOutcome> ListCopyJobsOutcomeCallable;
       typedef std::future<ListFrameworksOutcome> ListFrameworksOutcomeCallable;
+      typedef std::future<ListLegalHoldsOutcome> ListLegalHoldsOutcomeCallable;
       typedef std::future<ListProtectedResourcesOutcome> ListProtectedResourcesOutcomeCallable;
       typedef std::future<ListRecoveryPointsByBackupVaultOutcome> ListRecoveryPointsByBackupVaultOutcomeCallable;
+      typedef std::future<ListRecoveryPointsByLegalHoldOutcome> ListRecoveryPointsByLegalHoldOutcomeCallable;
       typedef std::future<ListRecoveryPointsByResourceOutcome> ListRecoveryPointsByResourceOutcomeCallable;
       typedef std::future<ListReportJobsOutcome> ListReportJobsOutcomeCallable;
       typedef std::future<ListReportPlansOutcome> ListReportPlansOutcomeCallable;
@@ -317,10 +340,12 @@ namespace Aws
     class BackupClient;
 
     /* Service model async handlers definitions */
+    typedef std::function<void(const BackupClient*, const Model::CancelLegalHoldRequest&, const Model::CancelLegalHoldOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelLegalHoldResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::CreateBackupPlanRequest&, const Model::CreateBackupPlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBackupPlanResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::CreateBackupSelectionRequest&, const Model::CreateBackupSelectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBackupSelectionResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::CreateBackupVaultRequest&, const Model::CreateBackupVaultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBackupVaultResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::CreateFrameworkRequest&, const Model::CreateFrameworkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFrameworkResponseReceivedHandler;
+    typedef std::function<void(const BackupClient*, const Model::CreateLegalHoldRequest&, const Model::CreateLegalHoldOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLegalHoldResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::CreateReportPlanRequest&, const Model::CreateReportPlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateReportPlanResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::DeleteBackupPlanRequest&, const Model::DeleteBackupPlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBackupPlanResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::DeleteBackupSelectionRequest&, const Model::DeleteBackupSelectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBackupSelectionResponseReceivedHandler;
@@ -343,6 +368,7 @@ namespace Aws
     typedef std::function<void(const BackupClient*, const Model::DescribeReportPlanRequest&, const Model::DescribeReportPlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReportPlanResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::DescribeRestoreJobRequest&, const Model::DescribeRestoreJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRestoreJobResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::DisassociateRecoveryPointRequest&, const Model::DisassociateRecoveryPointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateRecoveryPointResponseReceivedHandler;
+    typedef std::function<void(const BackupClient*, const Model::DisassociateRecoveryPointFromParentRequest&, const Model::DisassociateRecoveryPointFromParentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateRecoveryPointFromParentResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::ExportBackupPlanTemplateRequest&, const Model::ExportBackupPlanTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportBackupPlanTemplateResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::GetBackupPlanRequest&, const Model::GetBackupPlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBackupPlanResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::GetBackupPlanFromJSONRequest&, const Model::GetBackupPlanFromJSONOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBackupPlanFromJSONResponseReceivedHandler;
@@ -350,6 +376,7 @@ namespace Aws
     typedef std::function<void(const BackupClient*, const Model::GetBackupSelectionRequest&, const Model::GetBackupSelectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBackupSelectionResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::GetBackupVaultAccessPolicyRequest&, const Model::GetBackupVaultAccessPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBackupVaultAccessPolicyResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::GetBackupVaultNotificationsRequest&, const Model::GetBackupVaultNotificationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBackupVaultNotificationsResponseReceivedHandler;
+    typedef std::function<void(const BackupClient*, const Model::GetLegalHoldRequest&, const Model::GetLegalHoldOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLegalHoldResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::GetRecoveryPointRestoreMetadataRequest&, const Model::GetRecoveryPointRestoreMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRecoveryPointRestoreMetadataResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::GetSupportedResourceTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSupportedResourceTypesResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::ListBackupJobsRequest&, const Model::ListBackupJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBackupJobsResponseReceivedHandler;
@@ -360,8 +387,10 @@ namespace Aws
     typedef std::function<void(const BackupClient*, const Model::ListBackupVaultsRequest&, const Model::ListBackupVaultsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBackupVaultsResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::ListCopyJobsRequest&, const Model::ListCopyJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCopyJobsResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::ListFrameworksRequest&, const Model::ListFrameworksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFrameworksResponseReceivedHandler;
+    typedef std::function<void(const BackupClient*, const Model::ListLegalHoldsRequest&, const Model::ListLegalHoldsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLegalHoldsResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::ListProtectedResourcesRequest&, const Model::ListProtectedResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProtectedResourcesResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::ListRecoveryPointsByBackupVaultRequest&, const Model::ListRecoveryPointsByBackupVaultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRecoveryPointsByBackupVaultResponseReceivedHandler;
+    typedef std::function<void(const BackupClient*, const Model::ListRecoveryPointsByLegalHoldRequest&, const Model::ListRecoveryPointsByLegalHoldOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRecoveryPointsByLegalHoldResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::ListRecoveryPointsByResourceRequest&, const Model::ListRecoveryPointsByResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRecoveryPointsByResourceResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::ListReportJobsRequest&, const Model::ListReportJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListReportJobsResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::ListReportPlansRequest&, const Model::ListReportPlansOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListReportPlansResponseReceivedHandler;

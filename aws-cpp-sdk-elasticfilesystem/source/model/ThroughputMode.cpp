@@ -22,6 +22,7 @@ namespace Aws
 
         static const int bursting_HASH = HashingUtils::HashString("bursting");
         static const int provisioned_HASH = HashingUtils::HashString("provisioned");
+        static const int elastic_HASH = HashingUtils::HashString("elastic");
 
 
         ThroughputMode GetThroughputModeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == provisioned_HASH)
           {
             return ThroughputMode::provisioned;
+          }
+          else if (hashCode == elastic_HASH)
+          {
+            return ThroughputMode::elastic;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "bursting";
           case ThroughputMode::provisioned:
             return "provisioned";
+          case ThroughputMode::elastic:
+            return "elastic";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

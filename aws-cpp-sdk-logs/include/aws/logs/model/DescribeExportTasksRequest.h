@@ -36,50 +36,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the export task. Specifying a task ID filters the results to zero
-     * or one export tasks.</p>
+     * <p>The ID of the export task. Specifying a task ID filters the results to one or
+     * zero export tasks.</p>
      */
     inline const Aws::String& GetTaskId() const{ return m_taskId; }
 
     /**
-     * <p>The ID of the export task. Specifying a task ID filters the results to zero
-     * or one export tasks.</p>
+     * <p>The ID of the export task. Specifying a task ID filters the results to one or
+     * zero export tasks.</p>
      */
     inline bool TaskIdHasBeenSet() const { return m_taskIdHasBeenSet; }
 
     /**
-     * <p>The ID of the export task. Specifying a task ID filters the results to zero
-     * or one export tasks.</p>
+     * <p>The ID of the export task. Specifying a task ID filters the results to one or
+     * zero export tasks.</p>
      */
     inline void SetTaskId(const Aws::String& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
 
     /**
-     * <p>The ID of the export task. Specifying a task ID filters the results to zero
-     * or one export tasks.</p>
+     * <p>The ID of the export task. Specifying a task ID filters the results to one or
+     * zero export tasks.</p>
      */
     inline void SetTaskId(Aws::String&& value) { m_taskIdHasBeenSet = true; m_taskId = std::move(value); }
 
     /**
-     * <p>The ID of the export task. Specifying a task ID filters the results to zero
-     * or one export tasks.</p>
+     * <p>The ID of the export task. Specifying a task ID filters the results to one or
+     * zero export tasks.</p>
      */
     inline void SetTaskId(const char* value) { m_taskIdHasBeenSet = true; m_taskId.assign(value); }
 
     /**
-     * <p>The ID of the export task. Specifying a task ID filters the results to zero
-     * or one export tasks.</p>
+     * <p>The ID of the export task. Specifying a task ID filters the results to one or
+     * zero export tasks.</p>
      */
     inline DescribeExportTasksRequest& WithTaskId(const Aws::String& value) { SetTaskId(value); return *this;}
 
     /**
-     * <p>The ID of the export task. Specifying a task ID filters the results to zero
-     * or one export tasks.</p>
+     * <p>The ID of the export task. Specifying a task ID filters the results to one or
+     * zero export tasks.</p>
      */
     inline DescribeExportTasksRequest& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the export task. Specifying a task ID filters the results to zero
-     * or one export tasks.</p>
+     * <p>The ID of the export task. Specifying a task ID filters the results to one or
+     * zero export tasks.</p>
      */
     inline DescribeExportTasksRequest& WithTaskId(const char* value) { SetTaskId(value); return *this;}
 

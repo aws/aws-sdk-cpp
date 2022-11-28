@@ -19,14 +19,18 @@ using namespace Aws;
 DescribeBackupJobResult::DescribeBackupJobResult() : 
     m_state(BackupJobState::NOT_SET),
     m_backupSizeInBytes(0),
-    m_bytesTransferred(0)
+    m_bytesTransferred(0),
+    m_isParent(false),
+    m_numberOfChildJobs(0)
 {
 }
 
 DescribeBackupJobResult::DescribeBackupJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_state(BackupJobState::NOT_SET),
     m_backupSizeInBytes(0),
-    m_bytesTransferred(0)
+    m_bytesTransferred(0),
+    m_isParent(false),
+    m_numberOfChildJobs(0)
 {
   *this = result;
 }
@@ -155,6 +159,33 @@ DescribeBackupJobResult& DescribeBackupJobResult::operator =(const Aws::AmazonWe
   {
     m_backupType = jsonValue.GetString("BackupType");
 
+  }
+
+  if(jsonValue.ValueExists("ParentJobId"))
+  {
+    m_parentJobId = jsonValue.GetString("ParentJobId");
+
+  }
+
+  if(jsonValue.ValueExists("IsParent"))
+  {
+    m_isParent = jsonValue.GetBool("IsParent");
+
+  }
+
+  if(jsonValue.ValueExists("NumberOfChildJobs"))
+  {
+    m_numberOfChildJobs = jsonValue.GetInt64("NumberOfChildJobs");
+
+  }
+
+  if(jsonValue.ValueExists("ChildJobsInState"))
+  {
+    Aws::Map<Aws::String, JsonView> childJobsInStateJsonMap = jsonValue.GetObject("ChildJobsInState").GetAllObjects();
+    for(auto& childJobsInStateItem : childJobsInStateJsonMap)
+    {
+      m_childJobsInState[BackupJobStateMapper::GetBackupJobStateForName(childJobsInStateItem.first)] = childJobsInStateItem.second.AsInt64();
+    }
   }
 
 

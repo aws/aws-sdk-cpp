@@ -35,50 +35,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the custom vocabulary filter you want information about.
-     * Vocabulary filter names are case sensitive.</p>
+     * <p>The name of the custom vocabulary filter you want information about. Custom
+     * vocabulary filter names are case sensitive.</p>
      */
     inline const Aws::String& GetVocabularyFilterName() const{ return m_vocabularyFilterName; }
 
     /**
-     * <p>The name of the custom vocabulary filter you want information about.
-     * Vocabulary filter names are case sensitive.</p>
+     * <p>The name of the custom vocabulary filter you want information about. Custom
+     * vocabulary filter names are case sensitive.</p>
      */
     inline bool VocabularyFilterNameHasBeenSet() const { return m_vocabularyFilterNameHasBeenSet; }
 
     /**
-     * <p>The name of the custom vocabulary filter you want information about.
-     * Vocabulary filter names are case sensitive.</p>
+     * <p>The name of the custom vocabulary filter you want information about. Custom
+     * vocabulary filter names are case sensitive.</p>
      */
     inline void SetVocabularyFilterName(const Aws::String& value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName = value; }
 
     /**
-     * <p>The name of the custom vocabulary filter you want information about.
-     * Vocabulary filter names are case sensitive.</p>
+     * <p>The name of the custom vocabulary filter you want information about. Custom
+     * vocabulary filter names are case sensitive.</p>
      */
     inline void SetVocabularyFilterName(Aws::String&& value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName = std::move(value); }
 
     /**
-     * <p>The name of the custom vocabulary filter you want information about.
-     * Vocabulary filter names are case sensitive.</p>
+     * <p>The name of the custom vocabulary filter you want information about. Custom
+     * vocabulary filter names are case sensitive.</p>
      */
     inline void SetVocabularyFilterName(const char* value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName.assign(value); }
 
     /**
-     * <p>The name of the custom vocabulary filter you want information about.
-     * Vocabulary filter names are case sensitive.</p>
+     * <p>The name of the custom vocabulary filter you want information about. Custom
+     * vocabulary filter names are case sensitive.</p>
      */
     inline GetVocabularyFilterRequest& WithVocabularyFilterName(const Aws::String& value) { SetVocabularyFilterName(value); return *this;}
 
     /**
-     * <p>The name of the custom vocabulary filter you want information about.
-     * Vocabulary filter names are case sensitive.</p>
+     * <p>The name of the custom vocabulary filter you want information about. Custom
+     * vocabulary filter names are case sensitive.</p>
      */
     inline GetVocabularyFilterRequest& WithVocabularyFilterName(Aws::String&& value) { SetVocabularyFilterName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the custom vocabulary filter you want information about.
-     * Vocabulary filter names are case sensitive.</p>
+     * <p>The name of the custom vocabulary filter you want information about. Custom
+     * vocabulary filter names are case sensitive.</p>
      */
     inline GetVocabularyFilterRequest& WithVocabularyFilterName(const char* value) { SetVocabularyFilterName(value); return *this;}
 

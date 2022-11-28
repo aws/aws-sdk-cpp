@@ -28,7 +28,8 @@ CreateJobRequest::CreateJobRequest() :
     m_namespaceIdHasBeenSet(false),
     m_jobTemplateArnHasBeenSet(false),
     m_jobExecutionsRetryConfigHasBeenSet(false),
-    m_documentParametersHasBeenSet(false)
+    m_documentParametersHasBeenSet(false),
+    m_schedulingConfigHasBeenSet(false)
 {
 }
 
@@ -131,6 +132,12 @@ Aws::String CreateJobRequest::SerializePayload() const
      documentParametersJsonMap.WithString(documentParametersItem.first, documentParametersItem.second);
    }
    payload.WithObject("documentParameters", std::move(documentParametersJsonMap));
+
+  }
+
+  if(m_schedulingConfigHasBeenSet)
+  {
+   payload.WithObject("schedulingConfig", m_schedulingConfig.Jsonize());
 
   }
 

@@ -25,6 +25,7 @@ namespace Aws
         static const int AFTER_30_DAYS_HASH = HashingUtils::HashString("AFTER_30_DAYS");
         static const int AFTER_60_DAYS_HASH = HashingUtils::HashString("AFTER_60_DAYS");
         static const int AFTER_90_DAYS_HASH = HashingUtils::HashString("AFTER_90_DAYS");
+        static const int AFTER_1_DAY_HASH = HashingUtils::HashString("AFTER_1_DAY");
 
 
         TransitionToIARules GetTransitionToIARulesForName(const Aws::String& name)
@@ -50,6 +51,10 @@ namespace Aws
           {
             return TransitionToIARules::AFTER_90_DAYS;
           }
+          else if (hashCode == AFTER_1_DAY_HASH)
+          {
+            return TransitionToIARules::AFTER_1_DAY;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +79,8 @@ namespace Aws
             return "AFTER_60_DAYS";
           case TransitionToIARules::AFTER_90_DAYS:
             return "AFTER_90_DAYS";
+          case TransitionToIARules::AFTER_1_DAY:
+            return "AFTER_1_DAY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

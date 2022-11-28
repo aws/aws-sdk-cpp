@@ -28,6 +28,8 @@ RecoveryInstance::RecoveryInstance() :
     m_isDrill(false),
     m_isDrillHasBeenSet(false),
     m_jobIDHasBeenSet(false),
+    m_originEnvironment(OriginEnvironment::NOT_SET),
+    m_originEnvironmentHasBeenSet(false),
     m_pointInTimeSnapshotDateTimeHasBeenSet(false),
     m_recoveryInstanceIDHasBeenSet(false),
     m_recoveryInstancePropertiesHasBeenSet(false),
@@ -46,6 +48,8 @@ RecoveryInstance::RecoveryInstance(JsonView jsonValue) :
     m_isDrill(false),
     m_isDrillHasBeenSet(false),
     m_jobIDHasBeenSet(false),
+    m_originEnvironment(OriginEnvironment::NOT_SET),
+    m_originEnvironmentHasBeenSet(false),
     m_pointInTimeSnapshotDateTimeHasBeenSet(false),
     m_recoveryInstanceIDHasBeenSet(false),
     m_recoveryInstancePropertiesHasBeenSet(false),
@@ -104,6 +108,13 @@ RecoveryInstance& RecoveryInstance::operator =(JsonView jsonValue)
     m_jobID = jsonValue.GetString("jobID");
 
     m_jobIDHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("originEnvironment"))
+  {
+    m_originEnvironment = OriginEnvironmentMapper::GetOriginEnvironmentForName(jsonValue.GetString("originEnvironment"));
+
+    m_originEnvironmentHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("pointInTimeSnapshotDateTime"))
@@ -190,6 +201,11 @@ JsonValue RecoveryInstance::Jsonize() const
   {
    payload.WithString("jobID", m_jobID);
 
+  }
+
+  if(m_originEnvironmentHasBeenSet)
+  {
+   payload.WithString("originEnvironment", OriginEnvironmentMapper::GetNameForOriginEnvironment(m_originEnvironment));
   }
 
   if(m_pointInTimeSnapshotDateTimeHasBeenSet)

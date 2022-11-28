@@ -23,7 +23,8 @@ namespace Model
     ABORTED,
     COMPLETED,
     FAILED,
-    EXPIRED
+    EXPIRED,
+    PARTIAL
   };
 
 namespace BackupJobStateMapper

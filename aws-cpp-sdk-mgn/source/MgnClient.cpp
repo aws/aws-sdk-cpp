@@ -21,39 +21,61 @@
 #include <aws/mgn/MgnClient.h>
 #include <aws/mgn/MgnErrorMarshaller.h>
 #include <aws/mgn/MgnEndpointProvider.h>
+#include <aws/mgn/model/ArchiveApplicationRequest.h>
+#include <aws/mgn/model/ArchiveWaveRequest.h>
+#include <aws/mgn/model/AssociateApplicationsRequest.h>
+#include <aws/mgn/model/AssociateSourceServersRequest.h>
 #include <aws/mgn/model/ChangeServerLifeCycleStateRequest.h>
+#include <aws/mgn/model/CreateApplicationRequest.h>
 #include <aws/mgn/model/CreateLaunchConfigurationTemplateRequest.h>
 #include <aws/mgn/model/CreateReplicationConfigurationTemplateRequest.h>
+#include <aws/mgn/model/CreateWaveRequest.h>
+#include <aws/mgn/model/DeleteApplicationRequest.h>
 #include <aws/mgn/model/DeleteJobRequest.h>
 #include <aws/mgn/model/DeleteLaunchConfigurationTemplateRequest.h>
 #include <aws/mgn/model/DeleteReplicationConfigurationTemplateRequest.h>
 #include <aws/mgn/model/DeleteSourceServerRequest.h>
 #include <aws/mgn/model/DeleteVcenterClientRequest.h>
+#include <aws/mgn/model/DeleteWaveRequest.h>
 #include <aws/mgn/model/DescribeJobLogItemsRequest.h>
 #include <aws/mgn/model/DescribeJobsRequest.h>
 #include <aws/mgn/model/DescribeLaunchConfigurationTemplatesRequest.h>
 #include <aws/mgn/model/DescribeReplicationConfigurationTemplatesRequest.h>
 #include <aws/mgn/model/DescribeSourceServersRequest.h>
 #include <aws/mgn/model/DescribeVcenterClientsRequest.h>
+#include <aws/mgn/model/DisassociateApplicationsRequest.h>
+#include <aws/mgn/model/DisassociateSourceServersRequest.h>
 #include <aws/mgn/model/DisconnectFromServiceRequest.h>
 #include <aws/mgn/model/FinalizeCutoverRequest.h>
 #include <aws/mgn/model/GetLaunchConfigurationRequest.h>
 #include <aws/mgn/model/GetReplicationConfigurationRequest.h>
 #include <aws/mgn/model/InitializeServiceRequest.h>
+#include <aws/mgn/model/ListApplicationsRequest.h>
+#include <aws/mgn/model/ListSourceServerActionsRequest.h>
 #include <aws/mgn/model/ListTagsForResourceRequest.h>
+#include <aws/mgn/model/ListTemplateActionsRequest.h>
+#include <aws/mgn/model/ListWavesRequest.h>
 #include <aws/mgn/model/MarkAsArchivedRequest.h>
+#include <aws/mgn/model/PutSourceServerActionRequest.h>
+#include <aws/mgn/model/PutTemplateActionRequest.h>
+#include <aws/mgn/model/RemoveSourceServerActionRequest.h>
+#include <aws/mgn/model/RemoveTemplateActionRequest.h>
 #include <aws/mgn/model/RetryDataReplicationRequest.h>
 #include <aws/mgn/model/StartCutoverRequest.h>
 #include <aws/mgn/model/StartReplicationRequest.h>
 #include <aws/mgn/model/StartTestRequest.h>
 #include <aws/mgn/model/TagResourceRequest.h>
 #include <aws/mgn/model/TerminateTargetInstancesRequest.h>
+#include <aws/mgn/model/UnarchiveApplicationRequest.h>
+#include <aws/mgn/model/UnarchiveWaveRequest.h>
 #include <aws/mgn/model/UntagResourceRequest.h>
+#include <aws/mgn/model/UpdateApplicationRequest.h>
 #include <aws/mgn/model/UpdateLaunchConfigurationRequest.h>
 #include <aws/mgn/model/UpdateLaunchConfigurationTemplateRequest.h>
 #include <aws/mgn/model/UpdateReplicationConfigurationRequest.h>
 #include <aws/mgn/model/UpdateReplicationConfigurationTemplateRequest.h>
 #include <aws/mgn/model/UpdateSourceServerReplicationTypeRequest.h>
+#include <aws/mgn/model/UpdateWaveRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -182,6 +204,106 @@ void MgnClient::OverrideEndpoint(const Aws::String& endpoint)
   m_endpointProvider->OverrideEndpoint(endpoint);
 }
 
+ArchiveApplicationOutcome MgnClient::ArchiveApplication(const ArchiveApplicationRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ArchiveApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ArchiveApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/ArchiveApplication");
+  return ArchiveApplicationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ArchiveApplicationOutcomeCallable MgnClient::ArchiveApplicationCallable(const ArchiveApplicationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ArchiveApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ArchiveApplication(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MgnClient::ArchiveApplicationAsync(const ArchiveApplicationRequest& request, const ArchiveApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ArchiveApplication(request), context);
+    } );
+}
+
+ArchiveWaveOutcome MgnClient::ArchiveWave(const ArchiveWaveRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ArchiveWave, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ArchiveWave, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/ArchiveWave");
+  return ArchiveWaveOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ArchiveWaveOutcomeCallable MgnClient::ArchiveWaveCallable(const ArchiveWaveRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ArchiveWaveOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ArchiveWave(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MgnClient::ArchiveWaveAsync(const ArchiveWaveRequest& request, const ArchiveWaveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ArchiveWave(request), context);
+    } );
+}
+
+AssociateApplicationsOutcome MgnClient::AssociateApplications(const AssociateApplicationsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateApplications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssociateApplications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/AssociateApplications");
+  return AssociateApplicationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+AssociateApplicationsOutcomeCallable MgnClient::AssociateApplicationsCallable(const AssociateApplicationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateApplicationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateApplications(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MgnClient::AssociateApplicationsAsync(const AssociateApplicationsRequest& request, const AssociateApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssociateApplications(request), context);
+    } );
+}
+
+AssociateSourceServersOutcome MgnClient::AssociateSourceServers(const AssociateSourceServersRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateSourceServers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssociateSourceServers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/AssociateSourceServers");
+  return AssociateSourceServersOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+AssociateSourceServersOutcomeCallable MgnClient::AssociateSourceServersCallable(const AssociateSourceServersRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateSourceServersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateSourceServers(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MgnClient::AssociateSourceServersAsync(const AssociateSourceServersRequest& request, const AssociateSourceServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssociateSourceServers(request), context);
+    } );
+}
+
 ChangeServerLifeCycleStateOutcome MgnClient::ChangeServerLifeCycleState(const ChangeServerLifeCycleStateRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ChangeServerLifeCycleState, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -204,6 +326,31 @@ void MgnClient::ChangeServerLifeCycleStateAsync(const ChangeServerLifeCycleState
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, ChangeServerLifeCycleState(request), context);
+    } );
+}
+
+CreateApplicationOutcome MgnClient::CreateApplication(const CreateApplicationRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/CreateApplication");
+  return CreateApplicationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateApplicationOutcomeCallable MgnClient::CreateApplicationCallable(const CreateApplicationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateApplication(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MgnClient::CreateApplicationAsync(const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateApplication(request), context);
     } );
 }
 
@@ -254,6 +401,56 @@ void MgnClient::CreateReplicationConfigurationTemplateAsync(const CreateReplicat
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, CreateReplicationConfigurationTemplate(request), context);
+    } );
+}
+
+CreateWaveOutcome MgnClient::CreateWave(const CreateWaveRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateWave, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateWave, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/CreateWave");
+  return CreateWaveOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateWaveOutcomeCallable MgnClient::CreateWaveCallable(const CreateWaveRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateWaveOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateWave(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MgnClient::CreateWaveAsync(const CreateWaveRequest& request, const CreateWaveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateWave(request), context);
+    } );
+}
+
+DeleteApplicationOutcome MgnClient::DeleteApplication(const DeleteApplicationRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteApplication");
+  return DeleteApplicationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteApplicationOutcomeCallable MgnClient::DeleteApplicationCallable(const DeleteApplicationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteApplication(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MgnClient::DeleteApplicationAsync(const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteApplication(request), context);
     } );
 }
 
@@ -379,6 +576,31 @@ void MgnClient::DeleteVcenterClientAsync(const DeleteVcenterClientRequest& reque
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DeleteVcenterClient(request), context);
+    } );
+}
+
+DeleteWaveOutcome MgnClient::DeleteWave(const DeleteWaveRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteWave, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteWave, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteWave");
+  return DeleteWaveOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteWaveOutcomeCallable MgnClient::DeleteWaveCallable(const DeleteWaveRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteWaveOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteWave(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MgnClient::DeleteWaveAsync(const DeleteWaveRequest& request, const DeleteWaveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteWave(request), context);
     } );
 }
 
@@ -532,6 +754,56 @@ void MgnClient::DescribeVcenterClientsAsync(const DescribeVcenterClientsRequest&
     } );
 }
 
+DisassociateApplicationsOutcome MgnClient::DisassociateApplications(const DisassociateApplicationsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateApplications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisassociateApplications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/DisassociateApplications");
+  return DisassociateApplicationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DisassociateApplicationsOutcomeCallable MgnClient::DisassociateApplicationsCallable(const DisassociateApplicationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateApplicationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateApplications(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MgnClient::DisassociateApplicationsAsync(const DisassociateApplicationsRequest& request, const DisassociateApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateApplications(request), context);
+    } );
+}
+
+DisassociateSourceServersOutcome MgnClient::DisassociateSourceServers(const DisassociateSourceServersRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateSourceServers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisassociateSourceServers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/DisassociateSourceServers");
+  return DisassociateSourceServersOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DisassociateSourceServersOutcomeCallable MgnClient::DisassociateSourceServersCallable(const DisassociateSourceServersRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateSourceServersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateSourceServers(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MgnClient::DisassociateSourceServersAsync(const DisassociateSourceServersRequest& request, const DisassociateSourceServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateSourceServers(request), context);
+    } );
+}
+
 DisconnectFromServiceOutcome MgnClient::DisconnectFromService(const DisconnectFromServiceRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisconnectFromService, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -657,6 +929,56 @@ void MgnClient::InitializeServiceAsync(const InitializeServiceRequest& request, 
     } );
 }
 
+ListApplicationsOutcome MgnClient::ListApplications(const ListApplicationsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListApplications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListApplications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/ListApplications");
+  return ListApplicationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListApplicationsOutcomeCallable MgnClient::ListApplicationsCallable(const ListApplicationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListApplicationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListApplications(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MgnClient::ListApplicationsAsync(const ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListApplications(request), context);
+    } );
+}
+
+ListSourceServerActionsOutcome MgnClient::ListSourceServerActions(const ListSourceServerActionsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSourceServerActions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSourceServerActions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/ListSourceServerActions");
+  return ListSourceServerActionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListSourceServerActionsOutcomeCallable MgnClient::ListSourceServerActionsCallable(const ListSourceServerActionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListSourceServerActionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSourceServerActions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MgnClient::ListSourceServerActionsAsync(const ListSourceServerActionsRequest& request, const ListSourceServerActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListSourceServerActions(request), context);
+    } );
+}
+
 ListTagsForResourceOutcome MgnClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -688,6 +1010,56 @@ void MgnClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& reque
     } );
 }
 
+ListTemplateActionsOutcome MgnClient::ListTemplateActions(const ListTemplateActionsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTemplateActions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTemplateActions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/ListTemplateActions");
+  return ListTemplateActionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListTemplateActionsOutcomeCallable MgnClient::ListTemplateActionsCallable(const ListTemplateActionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListTemplateActionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTemplateActions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MgnClient::ListTemplateActionsAsync(const ListTemplateActionsRequest& request, const ListTemplateActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTemplateActions(request), context);
+    } );
+}
+
+ListWavesOutcome MgnClient::ListWaves(const ListWavesRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListWaves, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListWaves, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/ListWaves");
+  return ListWavesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListWavesOutcomeCallable MgnClient::ListWavesCallable(const ListWavesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListWavesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListWaves(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MgnClient::ListWavesAsync(const ListWavesRequest& request, const ListWavesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListWaves(request), context);
+    } );
+}
+
 MarkAsArchivedOutcome MgnClient::MarkAsArchived(const MarkAsArchivedRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, MarkAsArchived, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -710,6 +1082,106 @@ void MgnClient::MarkAsArchivedAsync(const MarkAsArchivedRequest& request, const 
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, MarkAsArchived(request), context);
+    } );
+}
+
+PutSourceServerActionOutcome MgnClient::PutSourceServerAction(const PutSourceServerActionRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutSourceServerAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutSourceServerAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/PutSourceServerAction");
+  return PutSourceServerActionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutSourceServerActionOutcomeCallable MgnClient::PutSourceServerActionCallable(const PutSourceServerActionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutSourceServerActionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutSourceServerAction(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MgnClient::PutSourceServerActionAsync(const PutSourceServerActionRequest& request, const PutSourceServerActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutSourceServerAction(request), context);
+    } );
+}
+
+PutTemplateActionOutcome MgnClient::PutTemplateAction(const PutTemplateActionRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutTemplateAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutTemplateAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/PutTemplateAction");
+  return PutTemplateActionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutTemplateActionOutcomeCallable MgnClient::PutTemplateActionCallable(const PutTemplateActionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutTemplateActionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutTemplateAction(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MgnClient::PutTemplateActionAsync(const PutTemplateActionRequest& request, const PutTemplateActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutTemplateAction(request), context);
+    } );
+}
+
+RemoveSourceServerActionOutcome MgnClient::RemoveSourceServerAction(const RemoveSourceServerActionRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, RemoveSourceServerAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RemoveSourceServerAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/RemoveSourceServerAction");
+  return RemoveSourceServerActionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+RemoveSourceServerActionOutcomeCallable MgnClient::RemoveSourceServerActionCallable(const RemoveSourceServerActionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RemoveSourceServerActionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RemoveSourceServerAction(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MgnClient::RemoveSourceServerActionAsync(const RemoveSourceServerActionRequest& request, const RemoveSourceServerActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RemoveSourceServerAction(request), context);
+    } );
+}
+
+RemoveTemplateActionOutcome MgnClient::RemoveTemplateAction(const RemoveTemplateActionRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, RemoveTemplateAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RemoveTemplateAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/RemoveTemplateAction");
+  return RemoveTemplateActionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+RemoveTemplateActionOutcomeCallable MgnClient::RemoveTemplateActionCallable(const RemoveTemplateActionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RemoveTemplateActionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RemoveTemplateAction(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MgnClient::RemoveTemplateActionAsync(const RemoveTemplateActionRequest& request, const RemoveTemplateActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RemoveTemplateAction(request), context);
     } );
 }
 
@@ -869,6 +1341,56 @@ void MgnClient::TerminateTargetInstancesAsync(const TerminateTargetInstancesRequ
     } );
 }
 
+UnarchiveApplicationOutcome MgnClient::UnarchiveApplication(const UnarchiveApplicationRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UnarchiveApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UnarchiveApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/UnarchiveApplication");
+  return UnarchiveApplicationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UnarchiveApplicationOutcomeCallable MgnClient::UnarchiveApplicationCallable(const UnarchiveApplicationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UnarchiveApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UnarchiveApplication(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MgnClient::UnarchiveApplicationAsync(const UnarchiveApplicationRequest& request, const UnarchiveApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UnarchiveApplication(request), context);
+    } );
+}
+
+UnarchiveWaveOutcome MgnClient::UnarchiveWave(const UnarchiveWaveRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UnarchiveWave, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UnarchiveWave, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/UnarchiveWave");
+  return UnarchiveWaveOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UnarchiveWaveOutcomeCallable MgnClient::UnarchiveWaveCallable(const UnarchiveWaveRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UnarchiveWaveOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UnarchiveWave(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MgnClient::UnarchiveWaveAsync(const UnarchiveWaveRequest& request, const UnarchiveWaveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UnarchiveWave(request), context);
+    } );
+}
+
 UntagResourceOutcome MgnClient::UntagResource(const UntagResourceRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -902,6 +1424,31 @@ void MgnClient::UntagResourceAsync(const UntagResourceRequest& request, const Un
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, UntagResource(request), context);
+    } );
+}
+
+UpdateApplicationOutcome MgnClient::UpdateApplication(const UpdateApplicationRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateApplication");
+  return UpdateApplicationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateApplicationOutcomeCallable MgnClient::UpdateApplicationCallable(const UpdateApplicationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateApplication(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MgnClient::UpdateApplicationAsync(const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateApplication(request), context);
     } );
 }
 
@@ -1027,6 +1574,31 @@ void MgnClient::UpdateSourceServerReplicationTypeAsync(const UpdateSourceServerR
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, UpdateSourceServerReplicationType(request), context);
+    } );
+}
+
+UpdateWaveOutcome MgnClient::UpdateWave(const UpdateWaveRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateWave, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateWave, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateWave");
+  return UpdateWaveOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateWaveOutcomeCallable MgnClient::UpdateWaveCallable(const UpdateWaveRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateWaveOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateWave(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MgnClient::UpdateWaveAsync(const UpdateWaveRequest& request, const UpdateWaveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateWave(request), context);
     } );
 }
 

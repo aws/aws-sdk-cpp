@@ -30,13 +30,13 @@ namespace Model
    * mark of your media file. You must use <code>StartTime</code> and
    * <code>EndTime</code> as a set; that is, if you include one, you must include
    * both.</p> <p>You can use also <code>First</code> to search from the start of the
-   * audio until the time you specify, or <code>Last</code> to search from the time
-   * you specify until the end of the audio. For example, setting <code>First</code>
-   * to 50000 only searches for your specified criteria in the audio contained
-   * between the start of the media file to the 50,000 millisecond mark. You can use
-   * <code>First</code> and <code>Last</code> independently of each other.</p> <p>If
-   * you prefer to use percentage instead of milliseconds, see .</p><p><h3>See
-   * Also:</h3>   <a
+   * audio until the time that you specify, or <code>Last</code> to search from the
+   * time that you specify until the end of the audio. For example, setting
+   * <code>First</code> to 50000 only searches for your specified criteria in the
+   * audio contained between the start of the media file to the 50,000 millisecond
+   * mark. You can use <code>First</code> and <code>Last</code> independently of each
+   * other.</p> <p>If you prefer to use percentage instead of milliseconds, see
+   * .</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/AbsoluteTimeRange">AWS
    * API Reference</a></p>
    */
@@ -108,51 +108,59 @@ namespace Model
 
 
     /**
-     * <p>The time, in milliseconds, from the start of your media file until the value
-     * you specify in which Amazon Transcribe searches for your specified criteria.</p>
+     * <p>The time, in milliseconds, from the start of your media file until the
+     * specified value. Amazon Transcribe searches for your specified criteria in this
+     * time segment.</p>
      */
     inline long long GetFirst() const{ return m_first; }
 
     /**
-     * <p>The time, in milliseconds, from the start of your media file until the value
-     * you specify in which Amazon Transcribe searches for your specified criteria.</p>
+     * <p>The time, in milliseconds, from the start of your media file until the
+     * specified value. Amazon Transcribe searches for your specified criteria in this
+     * time segment.</p>
      */
     inline bool FirstHasBeenSet() const { return m_firstHasBeenSet; }
 
     /**
-     * <p>The time, in milliseconds, from the start of your media file until the value
-     * you specify in which Amazon Transcribe searches for your specified criteria.</p>
+     * <p>The time, in milliseconds, from the start of your media file until the
+     * specified value. Amazon Transcribe searches for your specified criteria in this
+     * time segment.</p>
      */
     inline void SetFirst(long long value) { m_firstHasBeenSet = true; m_first = value; }
 
     /**
-     * <p>The time, in milliseconds, from the start of your media file until the value
-     * you specify in which Amazon Transcribe searches for your specified criteria.</p>
+     * <p>The time, in milliseconds, from the start of your media file until the
+     * specified value. Amazon Transcribe searches for your specified criteria in this
+     * time segment.</p>
      */
     inline AbsoluteTimeRange& WithFirst(long long value) { SetFirst(value); return *this;}
 
 
     /**
-     * <p>The time, in milliseconds, from the value you specify until the end of your
-     * media file in which Amazon Transcribe searches for your specified criteria.</p>
+     * <p>The time, in milliseconds, from the specified value until the end of your
+     * media file. Amazon Transcribe searches for your specified criteria in this time
+     * segment.</p>
      */
     inline long long GetLast() const{ return m_last; }
 
     /**
-     * <p>The time, in milliseconds, from the value you specify until the end of your
-     * media file in which Amazon Transcribe searches for your specified criteria.</p>
+     * <p>The time, in milliseconds, from the specified value until the end of your
+     * media file. Amazon Transcribe searches for your specified criteria in this time
+     * segment.</p>
      */
     inline bool LastHasBeenSet() const { return m_lastHasBeenSet; }
 
     /**
-     * <p>The time, in milliseconds, from the value you specify until the end of your
-     * media file in which Amazon Transcribe searches for your specified criteria.</p>
+     * <p>The time, in milliseconds, from the specified value until the end of your
+     * media file. Amazon Transcribe searches for your specified criteria in this time
+     * segment.</p>
      */
     inline void SetLast(long long value) { m_lastHasBeenSet = true; m_last = value; }
 
     /**
-     * <p>The time, in milliseconds, from the value you specify until the end of your
-     * media file in which Amazon Transcribe searches for your specified criteria.</p>
+     * <p>The time, in milliseconds, from the specified value until the end of your
+     * media file. Amazon Transcribe searches for your specified criteria in this time
+     * segment.</p>
      */
     inline AbsoluteTimeRange& WithLast(long long value) { SetLast(value); return *this;}
 

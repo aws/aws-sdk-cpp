@@ -232,12 +232,11 @@ namespace Model
 
 
     /**
-     * <p>(Optional)</p> <p>The name of an IAM role that Organizations automatically
-     * preconfigures in the new member account. This role trusts the management
-     * account, allowing users in the management account to assume the role, as
-     * permitted by the management account administrator. The role has administrator
-     * permissions in the new member account.</p> <p>If you don't specify this
-     * parameter, the role name defaults to
+     * <p>The name of an IAM role that Organizations automatically preconfigures in the
+     * new member account. This role trusts the management account, allowing users in
+     * the management account to assume the role, as permitted by the management
+     * account administrator. The role has administrator permissions in the new member
+     * account.</p> <p>If you don't specify this parameter, the role name defaults to
      * <code>OrganizationAccountAccessRole</code>.</p> <p>For more information about
      * how to use this role to access the member account, see the following links:</p>
      * <ul> <li> <p> <a
@@ -254,12 +253,11 @@ namespace Model
     inline const Aws::String& GetRoleName() const{ return m_roleName; }
 
     /**
-     * <p>(Optional)</p> <p>The name of an IAM role that Organizations automatically
-     * preconfigures in the new member account. This role trusts the management
-     * account, allowing users in the management account to assume the role, as
-     * permitted by the management account administrator. The role has administrator
-     * permissions in the new member account.</p> <p>If you don't specify this
-     * parameter, the role name defaults to
+     * <p>The name of an IAM role that Organizations automatically preconfigures in the
+     * new member account. This role trusts the management account, allowing users in
+     * the management account to assume the role, as permitted by the management
+     * account administrator. The role has administrator permissions in the new member
+     * account.</p> <p>If you don't specify this parameter, the role name defaults to
      * <code>OrganizationAccountAccessRole</code>.</p> <p>For more information about
      * how to use this role to access the member account, see the following links:</p>
      * <ul> <li> <p> <a
@@ -276,12 +274,11 @@ namespace Model
     inline bool RoleNameHasBeenSet() const { return m_roleNameHasBeenSet; }
 
     /**
-     * <p>(Optional)</p> <p>The name of an IAM role that Organizations automatically
-     * preconfigures in the new member account. This role trusts the management
-     * account, allowing users in the management account to assume the role, as
-     * permitted by the management account administrator. The role has administrator
-     * permissions in the new member account.</p> <p>If you don't specify this
-     * parameter, the role name defaults to
+     * <p>The name of an IAM role that Organizations automatically preconfigures in the
+     * new member account. This role trusts the management account, allowing users in
+     * the management account to assume the role, as permitted by the management
+     * account administrator. The role has administrator permissions in the new member
+     * account.</p> <p>If you don't specify this parameter, the role name defaults to
      * <code>OrganizationAccountAccessRole</code>.</p> <p>For more information about
      * how to use this role to access the member account, see the following links:</p>
      * <ul> <li> <p> <a
@@ -298,12 +295,11 @@ namespace Model
     inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
     /**
-     * <p>(Optional)</p> <p>The name of an IAM role that Organizations automatically
-     * preconfigures in the new member account. This role trusts the management
-     * account, allowing users in the management account to assume the role, as
-     * permitted by the management account administrator. The role has administrator
-     * permissions in the new member account.</p> <p>If you don't specify this
-     * parameter, the role name defaults to
+     * <p>The name of an IAM role that Organizations automatically preconfigures in the
+     * new member account. This role trusts the management account, allowing users in
+     * the management account to assume the role, as permitted by the management
+     * account administrator. The role has administrator permissions in the new member
+     * account.</p> <p>If you don't specify this parameter, the role name defaults to
      * <code>OrganizationAccountAccessRole</code>.</p> <p>For more information about
      * how to use this role to access the member account, see the following links:</p>
      * <ul> <li> <p> <a
@@ -320,12 +316,11 @@ namespace Model
     inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = std::move(value); }
 
     /**
-     * <p>(Optional)</p> <p>The name of an IAM role that Organizations automatically
-     * preconfigures in the new member account. This role trusts the management
-     * account, allowing users in the management account to assume the role, as
-     * permitted by the management account administrator. The role has administrator
-     * permissions in the new member account.</p> <p>If you don't specify this
-     * parameter, the role name defaults to
+     * <p>The name of an IAM role that Organizations automatically preconfigures in the
+     * new member account. This role trusts the management account, allowing users in
+     * the management account to assume the role, as permitted by the management
+     * account administrator. The role has administrator permissions in the new member
+     * account.</p> <p>If you don't specify this parameter, the role name defaults to
      * <code>OrganizationAccountAccessRole</code>.</p> <p>For more information about
      * how to use this role to access the member account, see the following links:</p>
      * <ul> <li> <p> <a
@@ -342,12 +337,11 @@ namespace Model
     inline void SetRoleName(const char* value) { m_roleNameHasBeenSet = true; m_roleName.assign(value); }
 
     /**
-     * <p>(Optional)</p> <p>The name of an IAM role that Organizations automatically
-     * preconfigures in the new member account. This role trusts the management
-     * account, allowing users in the management account to assume the role, as
-     * permitted by the management account administrator. The role has administrator
-     * permissions in the new member account.</p> <p>If you don't specify this
-     * parameter, the role name defaults to
+     * <p>The name of an IAM role that Organizations automatically preconfigures in the
+     * new member account. This role trusts the management account, allowing users in
+     * the management account to assume the role, as permitted by the management
+     * account administrator. The role has administrator permissions in the new member
+     * account.</p> <p>If you don't specify this parameter, the role name defaults to
      * <code>OrganizationAccountAccessRole</code>.</p> <p>For more information about
      * how to use this role to access the member account, see the following links:</p>
      * <ul> <li> <p> <a
@@ -364,12 +358,11 @@ namespace Model
     inline CreateAccountRequest& WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
 
     /**
-     * <p>(Optional)</p> <p>The name of an IAM role that Organizations automatically
-     * preconfigures in the new member account. This role trusts the management
-     * account, allowing users in the management account to assume the role, as
-     * permitted by the management account administrator. The role has administrator
-     * permissions in the new member account.</p> <p>If you don't specify this
-     * parameter, the role name defaults to
+     * <p>The name of an IAM role that Organizations automatically preconfigures in the
+     * new member account. This role trusts the management account, allowing users in
+     * the management account to assume the role, as permitted by the management
+     * account administrator. The role has administrator permissions in the new member
+     * account.</p> <p>If you don't specify this parameter, the role name defaults to
      * <code>OrganizationAccountAccessRole</code>.</p> <p>For more information about
      * how to use this role to access the member account, see the following links:</p>
      * <ul> <li> <p> <a
@@ -386,12 +379,11 @@ namespace Model
     inline CreateAccountRequest& WithRoleName(Aws::String&& value) { SetRoleName(std::move(value)); return *this;}
 
     /**
-     * <p>(Optional)</p> <p>The name of an IAM role that Organizations automatically
-     * preconfigures in the new member account. This role trusts the management
-     * account, allowing users in the management account to assume the role, as
-     * permitted by the management account administrator. The role has administrator
-     * permissions in the new member account.</p> <p>If you don't specify this
-     * parameter, the role name defaults to
+     * <p>The name of an IAM role that Organizations automatically preconfigures in the
+     * new member account. This role trusts the management account, allowing users in
+     * the management account to assume the role, as permitted by the management
+     * account administrator. The role has administrator permissions in the new member
+     * account.</p> <p>If you don't specify this parameter, the role name defaults to
      * <code>OrganizationAccountAccessRole</code>.</p> <p>For more information about
      * how to use this role to access the member account, see the following links:</p>
      * <ul> <li> <p> <a

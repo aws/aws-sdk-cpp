@@ -14,6 +14,7 @@ using namespace Aws::Utils;
 
 DescribeLogStreamsRequest::DescribeLogStreamsRequest() : 
     m_logGroupNameHasBeenSet(false),
+    m_logGroupIdentifierHasBeenSet(false),
     m_logStreamNamePrefixHasBeenSet(false),
     m_orderBy(OrderBy::NOT_SET),
     m_orderByHasBeenSet(false),
@@ -32,6 +33,12 @@ Aws::String DescribeLogStreamsRequest::SerializePayload() const
   if(m_logGroupNameHasBeenSet)
   {
    payload.WithString("logGroupName", m_logGroupName);
+
+  }
+
+  if(m_logGroupIdentifierHasBeenSet)
+  {
+   payload.WithString("logGroupIdentifier", m_logGroupIdentifier);
 
   }
 

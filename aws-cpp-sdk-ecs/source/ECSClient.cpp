@@ -48,6 +48,7 @@
 #include <aws/ecs/model/ListClustersRequest.h>
 #include <aws/ecs/model/ListContainerInstancesRequest.h>
 #include <aws/ecs/model/ListServicesRequest.h>
+#include <aws/ecs/model/ListServicesByNamespaceRequest.h>
 #include <aws/ecs/model/ListTagsForResourceRequest.h>
 #include <aws/ecs/model/ListTaskDefinitionFamiliesRequest.h>
 #include <aws/ecs/model/ListTaskDefinitionsRequest.h>
@@ -848,6 +849,30 @@ void ECSClient::ListServicesAsync(const ListServicesRequest& request, const List
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, ListServices(request), context);
+    } );
+}
+
+ListServicesByNamespaceOutcome ECSClient::ListServicesByNamespace(const ListServicesByNamespaceRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListServicesByNamespace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListServicesByNamespace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListServicesByNamespaceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListServicesByNamespaceOutcomeCallable ECSClient::ListServicesByNamespaceCallable(const ListServicesByNamespaceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListServicesByNamespaceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListServicesByNamespace(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ECSClient::ListServicesByNamespaceAsync(const ListServicesByNamespaceRequest& request, const ListServicesByNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListServicesByNamespace(request), context);
     } );
 }
 

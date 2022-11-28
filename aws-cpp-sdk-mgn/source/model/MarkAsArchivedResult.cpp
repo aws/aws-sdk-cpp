@@ -32,6 +32,12 @@ MarkAsArchivedResult::MarkAsArchivedResult(const Aws::AmazonWebServiceResult<Jso
 MarkAsArchivedResult& MarkAsArchivedResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("applicationID"))
+  {
+    m_applicationID = jsonValue.GetString("applicationID");
+
+  }
+
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");

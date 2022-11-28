@@ -34,6 +34,7 @@
 #include <aws/rds/model/CopyDBParameterGroupRequest.h>
 #include <aws/rds/model/CopyDBSnapshotRequest.h>
 #include <aws/rds/model/CopyOptionGroupRequest.h>
+#include <aws/rds/model/CreateBlueGreenDeploymentRequest.h>
 #include <aws/rds/model/CreateCustomDBEngineVersionRequest.h>
 #include <aws/rds/model/CreateDBClusterRequest.h>
 #include <aws/rds/model/CreateDBClusterEndpointRequest.h>
@@ -50,6 +51,7 @@
 #include <aws/rds/model/CreateEventSubscriptionRequest.h>
 #include <aws/rds/model/CreateGlobalClusterRequest.h>
 #include <aws/rds/model/CreateOptionGroupRequest.h>
+#include <aws/rds/model/DeleteBlueGreenDeploymentRequest.h>
 #include <aws/rds/model/DeleteCustomDBEngineVersionRequest.h>
 #include <aws/rds/model/DeleteDBClusterRequest.h>
 #include <aws/rds/model/DeleteDBClusterEndpointRequest.h>
@@ -68,6 +70,7 @@
 #include <aws/rds/model/DeleteOptionGroupRequest.h>
 #include <aws/rds/model/DeregisterDBProxyTargetsRequest.h>
 #include <aws/rds/model/DescribeAccountAttributesRequest.h>
+#include <aws/rds/model/DescribeBlueGreenDeploymentsRequest.h>
 #include <aws/rds/model/DescribeCertificatesRequest.h>
 #include <aws/rds/model/DescribeDBClusterBacktracksRequest.h>
 #include <aws/rds/model/DescribeDBClusterEndpointsRequest.h>
@@ -157,6 +160,7 @@
 #include <aws/rds/model/StopDBClusterRequest.h>
 #include <aws/rds/model/StopDBInstanceRequest.h>
 #include <aws/rds/model/StopDBInstanceAutomatedBackupsReplicationRequest.h>
+#include <aws/rds/model/SwitchoverBlueGreenDeploymentRequest.h>
 #include <aws/rds/model/SwitchoverReadReplicaRequest.h>
 
 using namespace Aws;
@@ -643,6 +647,30 @@ void RDSClient::CopyOptionGroupAsync(const CopyOptionGroupRequest& request, cons
     } );
 }
 
+CreateBlueGreenDeploymentOutcome RDSClient::CreateBlueGreenDeployment(const CreateBlueGreenDeploymentRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateBlueGreenDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateBlueGreenDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateBlueGreenDeploymentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+CreateBlueGreenDeploymentOutcomeCallable RDSClient::CreateBlueGreenDeploymentCallable(const CreateBlueGreenDeploymentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateBlueGreenDeploymentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateBlueGreenDeployment(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RDSClient::CreateBlueGreenDeploymentAsync(const CreateBlueGreenDeploymentRequest& request, const CreateBlueGreenDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateBlueGreenDeployment(request), context);
+    } );
+}
+
 CreateCustomDBEngineVersionOutcome RDSClient::CreateCustomDBEngineVersion(const CreateCustomDBEngineVersionRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateCustomDBEngineVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1046,6 +1074,30 @@ void RDSClient::CreateOptionGroupAsync(const CreateOptionGroupRequest& request, 
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, CreateOptionGroup(request), context);
+    } );
+}
+
+DeleteBlueGreenDeploymentOutcome RDSClient::DeleteBlueGreenDeployment(const DeleteBlueGreenDeploymentRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBlueGreenDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteBlueGreenDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteBlueGreenDeploymentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DeleteBlueGreenDeploymentOutcomeCallable RDSClient::DeleteBlueGreenDeploymentCallable(const DeleteBlueGreenDeploymentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteBlueGreenDeploymentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBlueGreenDeployment(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RDSClient::DeleteBlueGreenDeploymentAsync(const DeleteBlueGreenDeploymentRequest& request, const DeleteBlueGreenDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteBlueGreenDeployment(request), context);
     } );
 }
 
@@ -1478,6 +1530,30 @@ void RDSClient::DescribeAccountAttributesAsync(const DescribeAccountAttributesRe
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DescribeAccountAttributes(request), context);
+    } );
+}
+
+DescribeBlueGreenDeploymentsOutcome RDSClient::DescribeBlueGreenDeployments(const DescribeBlueGreenDeploymentsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeBlueGreenDeployments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeBlueGreenDeployments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeBlueGreenDeploymentsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DescribeBlueGreenDeploymentsOutcomeCallable RDSClient::DescribeBlueGreenDeploymentsCallable(const DescribeBlueGreenDeploymentsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeBlueGreenDeploymentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeBlueGreenDeployments(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RDSClient::DescribeBlueGreenDeploymentsAsync(const DescribeBlueGreenDeploymentsRequest& request, const DescribeBlueGreenDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeBlueGreenDeployments(request), context);
     } );
 }
 
@@ -3625,6 +3701,30 @@ void RDSClient::StopDBInstanceAutomatedBackupsReplicationAsync(const StopDBInsta
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, StopDBInstanceAutomatedBackupsReplication(request), context);
+    } );
+}
+
+SwitchoverBlueGreenDeploymentOutcome RDSClient::SwitchoverBlueGreenDeployment(const SwitchoverBlueGreenDeploymentRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, SwitchoverBlueGreenDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SwitchoverBlueGreenDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return SwitchoverBlueGreenDeploymentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+SwitchoverBlueGreenDeploymentOutcomeCallable RDSClient::SwitchoverBlueGreenDeploymentCallable(const SwitchoverBlueGreenDeploymentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SwitchoverBlueGreenDeploymentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SwitchoverBlueGreenDeployment(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RDSClient::SwitchoverBlueGreenDeploymentAsync(const SwitchoverBlueGreenDeploymentRequest& request, const SwitchoverBlueGreenDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SwitchoverBlueGreenDeployment(request), context);
     } );
 }
 

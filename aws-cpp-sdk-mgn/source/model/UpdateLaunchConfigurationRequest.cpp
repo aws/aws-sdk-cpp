@@ -19,9 +19,12 @@ UpdateLaunchConfigurationRequest::UpdateLaunchConfigurationRequest() :
     m_copyPrivateIpHasBeenSet(false),
     m_copyTags(false),
     m_copyTagsHasBeenSet(false),
+    m_enableMapAutoTagging(false),
+    m_enableMapAutoTaggingHasBeenSet(false),
     m_launchDisposition(LaunchDisposition::NOT_SET),
     m_launchDispositionHasBeenSet(false),
     m_licensingHasBeenSet(false),
+    m_mapAutoTaggingMpeIDHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_postLaunchActionsHasBeenSet(false),
     m_sourceServerIDHasBeenSet(false),
@@ -51,6 +54,12 @@ Aws::String UpdateLaunchConfigurationRequest::SerializePayload() const
 
   }
 
+  if(m_enableMapAutoTaggingHasBeenSet)
+  {
+   payload.WithBool("enableMapAutoTagging", m_enableMapAutoTagging);
+
+  }
+
   if(m_launchDispositionHasBeenSet)
   {
    payload.WithString("launchDisposition", LaunchDispositionMapper::GetNameForLaunchDisposition(m_launchDisposition));
@@ -59,6 +68,12 @@ Aws::String UpdateLaunchConfigurationRequest::SerializePayload() const
   if(m_licensingHasBeenSet)
   {
    payload.WithObject("licensing", m_licensing.Jsonize());
+
+  }
+
+  if(m_mapAutoTaggingMpeIDHasBeenSet)
+  {
+   payload.WithString("mapAutoTaggingMpeID", m_mapAutoTaggingMpeID);
 
   }
 

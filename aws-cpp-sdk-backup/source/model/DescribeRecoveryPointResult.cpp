@@ -20,7 +20,8 @@ DescribeRecoveryPointResult::DescribeRecoveryPointResult() :
     m_status(RecoveryPointStatus::NOT_SET),
     m_backupSizeInBytes(0),
     m_isEncrypted(false),
-    m_storageClass(StorageClass::NOT_SET)
+    m_storageClass(StorageClass::NOT_SET),
+    m_isParent(false)
 {
 }
 
@@ -28,7 +29,8 @@ DescribeRecoveryPointResult::DescribeRecoveryPointResult(const Aws::AmazonWebSer
     m_status(RecoveryPointStatus::NOT_SET),
     m_backupSizeInBytes(0),
     m_isEncrypted(false),
-    m_storageClass(StorageClass::NOT_SET)
+    m_storageClass(StorageClass::NOT_SET),
+    m_isParent(false)
 {
   *this = result;
 }
@@ -147,6 +149,24 @@ DescribeRecoveryPointResult& DescribeRecoveryPointResult::operator =(const Aws::
   if(jsonValue.ValueExists("LastRestoreTime"))
   {
     m_lastRestoreTime = jsonValue.GetDouble("LastRestoreTime");
+
+  }
+
+  if(jsonValue.ValueExists("ParentRecoveryPointArn"))
+  {
+    m_parentRecoveryPointArn = jsonValue.GetString("ParentRecoveryPointArn");
+
+  }
+
+  if(jsonValue.ValueExists("CompositeMemberIdentifier"))
+  {
+    m_compositeMemberIdentifier = jsonValue.GetString("CompositeMemberIdentifier");
+
+  }
+
+  if(jsonValue.ValueExists("IsParent"))
+  {
+    m_isParent = jsonValue.GetBool("IsParent");
 
   }
 

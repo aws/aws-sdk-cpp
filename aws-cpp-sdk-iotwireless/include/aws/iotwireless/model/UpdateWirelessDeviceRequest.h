@@ -8,6 +8,7 @@
 #include <aws/iotwireless/IoTWirelessRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotwireless/model/LoRaWANUpdateDevice.h>
+#include <aws/iotwireless/model/PositioningConfigStatus.h>
 #include <utility>
 
 namespace Aws
@@ -227,6 +228,43 @@ namespace Model
      */
     inline UpdateWirelessDeviceRequest& WithLoRaWAN(LoRaWANUpdateDevice&& value) { SetLoRaWAN(std::move(value)); return *this;}
 
+
+    /**
+     * <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning
+     * information.</p>
+     */
+    inline const PositioningConfigStatus& GetPositioning() const{ return m_positioning; }
+
+    /**
+     * <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning
+     * information.</p>
+     */
+    inline bool PositioningHasBeenSet() const { return m_positioningHasBeenSet; }
+
+    /**
+     * <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning
+     * information.</p>
+     */
+    inline void SetPositioning(const PositioningConfigStatus& value) { m_positioningHasBeenSet = true; m_positioning = value; }
+
+    /**
+     * <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning
+     * information.</p>
+     */
+    inline void SetPositioning(PositioningConfigStatus&& value) { m_positioningHasBeenSet = true; m_positioning = std::move(value); }
+
+    /**
+     * <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning
+     * information.</p>
+     */
+    inline UpdateWirelessDeviceRequest& WithPositioning(const PositioningConfigStatus& value) { SetPositioning(value); return *this;}
+
+    /**
+     * <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning
+     * information.</p>
+     */
+    inline UpdateWirelessDeviceRequest& WithPositioning(PositioningConfigStatus&& value) { SetPositioning(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -243,6 +281,9 @@ namespace Model
 
     LoRaWANUpdateDevice m_loRaWAN;
     bool m_loRaWANHasBeenSet = false;
+
+    PositioningConfigStatus m_positioning;
+    bool m_positioningHasBeenSet = false;
   };
 
 } // namespace Model

@@ -16,7 +16,10 @@ ListMetricsRequest::ListMetricsRequest() :
     m_dimensionsHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_recentlyActive(RecentlyActive::NOT_SET),
-    m_recentlyActiveHasBeenSet(false)
+    m_recentlyActiveHasBeenSet(false),
+    m_includeLinkedAccounts(false),
+    m_includeLinkedAccountsHasBeenSet(false),
+    m_owningAccountHasBeenSet(false)
 {
 }
 
@@ -52,6 +55,16 @@ Aws::String ListMetricsRequest::SerializePayload() const
   if(m_recentlyActiveHasBeenSet)
   {
     ss << "RecentlyActive=" << RecentlyActiveMapper::GetNameForRecentlyActive(m_recentlyActive) << "&";
+  }
+
+  if(m_includeLinkedAccountsHasBeenSet)
+  {
+    ss << "IncludeLinkedAccounts=" << std::boolalpha << m_includeLinkedAccounts << "&";
+  }
+
+  if(m_owningAccountHasBeenSet)
+  {
+    ss << "OwningAccount=" << StringUtils::URLEncode(m_owningAccount.c_str()) << "&";
   }
 
   ss << "Version=2010-08-01";

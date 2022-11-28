@@ -17,7 +17,9 @@ UpdateWirelessDeviceRequest::UpdateWirelessDeviceRequest() :
     m_destinationNameHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_loRaWANHasBeenSet(false)
+    m_loRaWANHasBeenSet(false),
+    m_positioning(PositioningConfigStatus::NOT_SET),
+    m_positioningHasBeenSet(false)
 {
 }
 
@@ -47,6 +49,11 @@ Aws::String UpdateWirelessDeviceRequest::SerializePayload() const
   {
    payload.WithObject("LoRaWAN", m_loRaWAN.Jsonize());
 
+  }
+
+  if(m_positioningHasBeenSet)
+  {
+   payload.WithString("Positioning", PositioningConfigStatusMapper::GetNameForPositioningConfigStatus(m_positioning));
   }
 
   return payload.View().WriteReadable();

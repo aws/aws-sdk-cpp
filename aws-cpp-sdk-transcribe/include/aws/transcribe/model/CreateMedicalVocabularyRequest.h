@@ -40,72 +40,72 @@ namespace Model
     /**
      * <p>A unique name, chosen by you, for your new custom medical vocabulary.</p>
      * <p>This name is case sensitive, cannot contain spaces, and must be unique within
-     * an Amazon Web Services account. If you try to create a new medical vocabulary
-     * with the same name as an existing medical vocabulary, you get a
-     * <code>ConflictException</code> error.</p>
+     * an Amazon Web Services account. If you try to create a new custom medical
+     * vocabulary with the same name as an existing custom medical vocabulary, you get
+     * a <code>ConflictException</code> error.</p>
      */
     inline const Aws::String& GetVocabularyName() const{ return m_vocabularyName; }
 
     /**
      * <p>A unique name, chosen by you, for your new custom medical vocabulary.</p>
      * <p>This name is case sensitive, cannot contain spaces, and must be unique within
-     * an Amazon Web Services account. If you try to create a new medical vocabulary
-     * with the same name as an existing medical vocabulary, you get a
-     * <code>ConflictException</code> error.</p>
+     * an Amazon Web Services account. If you try to create a new custom medical
+     * vocabulary with the same name as an existing custom medical vocabulary, you get
+     * a <code>ConflictException</code> error.</p>
      */
     inline bool VocabularyNameHasBeenSet() const { return m_vocabularyNameHasBeenSet; }
 
     /**
      * <p>A unique name, chosen by you, for your new custom medical vocabulary.</p>
      * <p>This name is case sensitive, cannot contain spaces, and must be unique within
-     * an Amazon Web Services account. If you try to create a new medical vocabulary
-     * with the same name as an existing medical vocabulary, you get a
-     * <code>ConflictException</code> error.</p>
+     * an Amazon Web Services account. If you try to create a new custom medical
+     * vocabulary with the same name as an existing custom medical vocabulary, you get
+     * a <code>ConflictException</code> error.</p>
      */
     inline void SetVocabularyName(const Aws::String& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = value; }
 
     /**
      * <p>A unique name, chosen by you, for your new custom medical vocabulary.</p>
      * <p>This name is case sensitive, cannot contain spaces, and must be unique within
-     * an Amazon Web Services account. If you try to create a new medical vocabulary
-     * with the same name as an existing medical vocabulary, you get a
-     * <code>ConflictException</code> error.</p>
+     * an Amazon Web Services account. If you try to create a new custom medical
+     * vocabulary with the same name as an existing custom medical vocabulary, you get
+     * a <code>ConflictException</code> error.</p>
      */
     inline void SetVocabularyName(Aws::String&& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = std::move(value); }
 
     /**
      * <p>A unique name, chosen by you, for your new custom medical vocabulary.</p>
      * <p>This name is case sensitive, cannot contain spaces, and must be unique within
-     * an Amazon Web Services account. If you try to create a new medical vocabulary
-     * with the same name as an existing medical vocabulary, you get a
-     * <code>ConflictException</code> error.</p>
+     * an Amazon Web Services account. If you try to create a new custom medical
+     * vocabulary with the same name as an existing custom medical vocabulary, you get
+     * a <code>ConflictException</code> error.</p>
      */
     inline void SetVocabularyName(const char* value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName.assign(value); }
 
     /**
      * <p>A unique name, chosen by you, for your new custom medical vocabulary.</p>
      * <p>This name is case sensitive, cannot contain spaces, and must be unique within
-     * an Amazon Web Services account. If you try to create a new medical vocabulary
-     * with the same name as an existing medical vocabulary, you get a
-     * <code>ConflictException</code> error.</p>
+     * an Amazon Web Services account. If you try to create a new custom medical
+     * vocabulary with the same name as an existing custom medical vocabulary, you get
+     * a <code>ConflictException</code> error.</p>
      */
     inline CreateMedicalVocabularyRequest& WithVocabularyName(const Aws::String& value) { SetVocabularyName(value); return *this;}
 
     /**
      * <p>A unique name, chosen by you, for your new custom medical vocabulary.</p>
      * <p>This name is case sensitive, cannot contain spaces, and must be unique within
-     * an Amazon Web Services account. If you try to create a new medical vocabulary
-     * with the same name as an existing medical vocabulary, you get a
-     * <code>ConflictException</code> error.</p>
+     * an Amazon Web Services account. If you try to create a new custom medical
+     * vocabulary with the same name as an existing custom medical vocabulary, you get
+     * a <code>ConflictException</code> error.</p>
      */
     inline CreateMedicalVocabularyRequest& WithVocabularyName(Aws::String&& value) { SetVocabularyName(std::move(value)); return *this;}
 
     /**
      * <p>A unique name, chosen by you, for your new custom medical vocabulary.</p>
      * <p>This name is case sensitive, cannot contain spaces, and must be unique within
-     * an Amazon Web Services account. If you try to create a new medical vocabulary
-     * with the same name as an existing medical vocabulary, you get a
-     * <code>ConflictException</code> error.</p>
+     * an Amazon Web Services account. If you try to create a new custom medical
+     * vocabulary with the same name as an existing custom medical vocabulary, you get
+     * a <code>ConflictException</code> error.</p>
      */
     inline CreateMedicalVocabularyRequest& WithVocabularyName(const char* value) { SetVocabularyName(value); return *this;}
 
@@ -220,8 +220,8 @@ namespace Model
 
     /**
      * <p>Adds one or more custom tags, each in the form of a key:value pair, to a new
-     * medical vocabulary at the time you create this new vocabulary.</p> <p>To learn
-     * more about using tags with Amazon Transcribe, refer to <a
+     * custom medical vocabulary at the time you create this new custom vocabulary.</p>
+     * <p>To learn more about using tags with Amazon Transcribe, refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging
      * resources</a>.</p>
      */
@@ -229,8 +229,8 @@ namespace Model
 
     /**
      * <p>Adds one or more custom tags, each in the form of a key:value pair, to a new
-     * medical vocabulary at the time you create this new vocabulary.</p> <p>To learn
-     * more about using tags with Amazon Transcribe, refer to <a
+     * custom medical vocabulary at the time you create this new custom vocabulary.</p>
+     * <p>To learn more about using tags with Amazon Transcribe, refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging
      * resources</a>.</p>
      */
@@ -238,8 +238,8 @@ namespace Model
 
     /**
      * <p>Adds one or more custom tags, each in the form of a key:value pair, to a new
-     * medical vocabulary at the time you create this new vocabulary.</p> <p>To learn
-     * more about using tags with Amazon Transcribe, refer to <a
+     * custom medical vocabulary at the time you create this new custom vocabulary.</p>
+     * <p>To learn more about using tags with Amazon Transcribe, refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging
      * resources</a>.</p>
      */
@@ -247,8 +247,8 @@ namespace Model
 
     /**
      * <p>Adds one or more custom tags, each in the form of a key:value pair, to a new
-     * medical vocabulary at the time you create this new vocabulary.</p> <p>To learn
-     * more about using tags with Amazon Transcribe, refer to <a
+     * custom medical vocabulary at the time you create this new custom vocabulary.</p>
+     * <p>To learn more about using tags with Amazon Transcribe, refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging
      * resources</a>.</p>
      */
@@ -256,8 +256,8 @@ namespace Model
 
     /**
      * <p>Adds one or more custom tags, each in the form of a key:value pair, to a new
-     * medical vocabulary at the time you create this new vocabulary.</p> <p>To learn
-     * more about using tags with Amazon Transcribe, refer to <a
+     * custom medical vocabulary at the time you create this new custom vocabulary.</p>
+     * <p>To learn more about using tags with Amazon Transcribe, refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging
      * resources</a>.</p>
      */
@@ -265,8 +265,8 @@ namespace Model
 
     /**
      * <p>Adds one or more custom tags, each in the form of a key:value pair, to a new
-     * medical vocabulary at the time you create this new vocabulary.</p> <p>To learn
-     * more about using tags with Amazon Transcribe, refer to <a
+     * custom medical vocabulary at the time you create this new custom vocabulary.</p>
+     * <p>To learn more about using tags with Amazon Transcribe, refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging
      * resources</a>.</p>
      */
@@ -274,8 +274,8 @@ namespace Model
 
     /**
      * <p>Adds one or more custom tags, each in the form of a key:value pair, to a new
-     * medical vocabulary at the time you create this new vocabulary.</p> <p>To learn
-     * more about using tags with Amazon Transcribe, refer to <a
+     * custom medical vocabulary at the time you create this new custom vocabulary.</p>
+     * <p>To learn more about using tags with Amazon Transcribe, refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging
      * resources</a>.</p>
      */
@@ -283,8 +283,8 @@ namespace Model
 
     /**
      * <p>Adds one or more custom tags, each in the form of a key:value pair, to a new
-     * medical vocabulary at the time you create this new vocabulary.</p> <p>To learn
-     * more about using tags with Amazon Transcribe, refer to <a
+     * custom medical vocabulary at the time you create this new custom vocabulary.</p>
+     * <p>To learn more about using tags with Amazon Transcribe, refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging
      * resources</a>.</p>
      */

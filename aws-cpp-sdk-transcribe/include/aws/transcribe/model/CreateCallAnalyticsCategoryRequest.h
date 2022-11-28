@@ -8,6 +8,7 @@
 #include <aws/transcribe/TranscribeServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/transcribe/model/InputType.h>
 #include <aws/transcribe/model/Rule.h>
 #include <utility>
 
@@ -110,76 +111,149 @@ namespace Model
 
 
     /**
-     * <p>Rules define a Call Analytics category. When creating a new Call Analytics
-     * category, you must create between 1 and 20 rules for that category. For each
-     * rule, you specify a filter you want applied to the attributes of a call. For
-     * example, you can choose a sentiment filter that detects if a customer's
-     * sentiment was positive during the last 30 seconds of the call.</p>
+     * <p>Rules define a Call Analytics category. When creating a new category, you
+     * must create between 1 and 20 rules for that category. For each rule, you specify
+     * a filter you want applied to the attributes of a call. For example, you can
+     * choose a sentiment filter that detects if a customer's sentiment was positive
+     * during the last 30 seconds of the call.</p>
      */
     inline const Aws::Vector<Rule>& GetRules() const{ return m_rules; }
 
     /**
-     * <p>Rules define a Call Analytics category. When creating a new Call Analytics
-     * category, you must create between 1 and 20 rules for that category. For each
-     * rule, you specify a filter you want applied to the attributes of a call. For
-     * example, you can choose a sentiment filter that detects if a customer's
-     * sentiment was positive during the last 30 seconds of the call.</p>
+     * <p>Rules define a Call Analytics category. When creating a new category, you
+     * must create between 1 and 20 rules for that category. For each rule, you specify
+     * a filter you want applied to the attributes of a call. For example, you can
+     * choose a sentiment filter that detects if a customer's sentiment was positive
+     * during the last 30 seconds of the call.</p>
      */
     inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
 
     /**
-     * <p>Rules define a Call Analytics category. When creating a new Call Analytics
-     * category, you must create between 1 and 20 rules for that category. For each
-     * rule, you specify a filter you want applied to the attributes of a call. For
-     * example, you can choose a sentiment filter that detects if a customer's
-     * sentiment was positive during the last 30 seconds of the call.</p>
+     * <p>Rules define a Call Analytics category. When creating a new category, you
+     * must create between 1 and 20 rules for that category. For each rule, you specify
+     * a filter you want applied to the attributes of a call. For example, you can
+     * choose a sentiment filter that detects if a customer's sentiment was positive
+     * during the last 30 seconds of the call.</p>
      */
     inline void SetRules(const Aws::Vector<Rule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
 
     /**
-     * <p>Rules define a Call Analytics category. When creating a new Call Analytics
-     * category, you must create between 1 and 20 rules for that category. For each
-     * rule, you specify a filter you want applied to the attributes of a call. For
-     * example, you can choose a sentiment filter that detects if a customer's
-     * sentiment was positive during the last 30 seconds of the call.</p>
+     * <p>Rules define a Call Analytics category. When creating a new category, you
+     * must create between 1 and 20 rules for that category. For each rule, you specify
+     * a filter you want applied to the attributes of a call. For example, you can
+     * choose a sentiment filter that detects if a customer's sentiment was positive
+     * during the last 30 seconds of the call.</p>
      */
     inline void SetRules(Aws::Vector<Rule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
 
     /**
-     * <p>Rules define a Call Analytics category. When creating a new Call Analytics
-     * category, you must create between 1 and 20 rules for that category. For each
-     * rule, you specify a filter you want applied to the attributes of a call. For
-     * example, you can choose a sentiment filter that detects if a customer's
-     * sentiment was positive during the last 30 seconds of the call.</p>
+     * <p>Rules define a Call Analytics category. When creating a new category, you
+     * must create between 1 and 20 rules for that category. For each rule, you specify
+     * a filter you want applied to the attributes of a call. For example, you can
+     * choose a sentiment filter that detects if a customer's sentiment was positive
+     * during the last 30 seconds of the call.</p>
      */
     inline CreateCallAnalyticsCategoryRequest& WithRules(const Aws::Vector<Rule>& value) { SetRules(value); return *this;}
 
     /**
-     * <p>Rules define a Call Analytics category. When creating a new Call Analytics
-     * category, you must create between 1 and 20 rules for that category. For each
-     * rule, you specify a filter you want applied to the attributes of a call. For
-     * example, you can choose a sentiment filter that detects if a customer's
-     * sentiment was positive during the last 30 seconds of the call.</p>
+     * <p>Rules define a Call Analytics category. When creating a new category, you
+     * must create between 1 and 20 rules for that category. For each rule, you specify
+     * a filter you want applied to the attributes of a call. For example, you can
+     * choose a sentiment filter that detects if a customer's sentiment was positive
+     * during the last 30 seconds of the call.</p>
      */
     inline CreateCallAnalyticsCategoryRequest& WithRules(Aws::Vector<Rule>&& value) { SetRules(std::move(value)); return *this;}
 
     /**
-     * <p>Rules define a Call Analytics category. When creating a new Call Analytics
-     * category, you must create between 1 and 20 rules for that category. For each
-     * rule, you specify a filter you want applied to the attributes of a call. For
-     * example, you can choose a sentiment filter that detects if a customer's
-     * sentiment was positive during the last 30 seconds of the call.</p>
+     * <p>Rules define a Call Analytics category. When creating a new category, you
+     * must create between 1 and 20 rules for that category. For each rule, you specify
+     * a filter you want applied to the attributes of a call. For example, you can
+     * choose a sentiment filter that detects if a customer's sentiment was positive
+     * during the last 30 seconds of the call.</p>
      */
     inline CreateCallAnalyticsCategoryRequest& AddRules(const Rule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
 
     /**
-     * <p>Rules define a Call Analytics category. When creating a new Call Analytics
-     * category, you must create between 1 and 20 rules for that category. For each
-     * rule, you specify a filter you want applied to the attributes of a call. For
-     * example, you can choose a sentiment filter that detects if a customer's
-     * sentiment was positive during the last 30 seconds of the call.</p>
+     * <p>Rules define a Call Analytics category. When creating a new category, you
+     * must create between 1 and 20 rules for that category. For each rule, you specify
+     * a filter you want applied to the attributes of a call. For example, you can
+     * choose a sentiment filter that detects if a customer's sentiment was positive
+     * during the last 30 seconds of the call.</p>
      */
     inline CreateCallAnalyticsCategoryRequest& AddRules(Rule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Choose whether you want to create a streaming or a batch category for your
+     * Call Analytics transcription.</p> <p>Specifying <code>POST_CALL</code> assigns
+     * your category to batch transcriptions; categories with this input type cannot be
+     * applied to streaming (real-time) transcriptions.</p> <p>Specifying
+     * <code>REAL_TIME</code> assigns your category to streaming transcriptions;
+     * categories with this input type cannot be applied to batch (post-call)
+     * transcriptions.</p> <p>If you do not include <code>InputType</code>, your
+     * category is created as a batch category by default.</p>
+     */
+    inline const InputType& GetInputType() const{ return m_inputType; }
+
+    /**
+     * <p>Choose whether you want to create a streaming or a batch category for your
+     * Call Analytics transcription.</p> <p>Specifying <code>POST_CALL</code> assigns
+     * your category to batch transcriptions; categories with this input type cannot be
+     * applied to streaming (real-time) transcriptions.</p> <p>Specifying
+     * <code>REAL_TIME</code> assigns your category to streaming transcriptions;
+     * categories with this input type cannot be applied to batch (post-call)
+     * transcriptions.</p> <p>If you do not include <code>InputType</code>, your
+     * category is created as a batch category by default.</p>
+     */
+    inline bool InputTypeHasBeenSet() const { return m_inputTypeHasBeenSet; }
+
+    /**
+     * <p>Choose whether you want to create a streaming or a batch category for your
+     * Call Analytics transcription.</p> <p>Specifying <code>POST_CALL</code> assigns
+     * your category to batch transcriptions; categories with this input type cannot be
+     * applied to streaming (real-time) transcriptions.</p> <p>Specifying
+     * <code>REAL_TIME</code> assigns your category to streaming transcriptions;
+     * categories with this input type cannot be applied to batch (post-call)
+     * transcriptions.</p> <p>If you do not include <code>InputType</code>, your
+     * category is created as a batch category by default.</p>
+     */
+    inline void SetInputType(const InputType& value) { m_inputTypeHasBeenSet = true; m_inputType = value; }
+
+    /**
+     * <p>Choose whether you want to create a streaming or a batch category for your
+     * Call Analytics transcription.</p> <p>Specifying <code>POST_CALL</code> assigns
+     * your category to batch transcriptions; categories with this input type cannot be
+     * applied to streaming (real-time) transcriptions.</p> <p>Specifying
+     * <code>REAL_TIME</code> assigns your category to streaming transcriptions;
+     * categories with this input type cannot be applied to batch (post-call)
+     * transcriptions.</p> <p>If you do not include <code>InputType</code>, your
+     * category is created as a batch category by default.</p>
+     */
+    inline void SetInputType(InputType&& value) { m_inputTypeHasBeenSet = true; m_inputType = std::move(value); }
+
+    /**
+     * <p>Choose whether you want to create a streaming or a batch category for your
+     * Call Analytics transcription.</p> <p>Specifying <code>POST_CALL</code> assigns
+     * your category to batch transcriptions; categories with this input type cannot be
+     * applied to streaming (real-time) transcriptions.</p> <p>Specifying
+     * <code>REAL_TIME</code> assigns your category to streaming transcriptions;
+     * categories with this input type cannot be applied to batch (post-call)
+     * transcriptions.</p> <p>If you do not include <code>InputType</code>, your
+     * category is created as a batch category by default.</p>
+     */
+    inline CreateCallAnalyticsCategoryRequest& WithInputType(const InputType& value) { SetInputType(value); return *this;}
+
+    /**
+     * <p>Choose whether you want to create a streaming or a batch category for your
+     * Call Analytics transcription.</p> <p>Specifying <code>POST_CALL</code> assigns
+     * your category to batch transcriptions; categories with this input type cannot be
+     * applied to streaming (real-time) transcriptions.</p> <p>Specifying
+     * <code>REAL_TIME</code> assigns your category to streaming transcriptions;
+     * categories with this input type cannot be applied to batch (post-call)
+     * transcriptions.</p> <p>If you do not include <code>InputType</code>, your
+     * category is created as a batch category by default.</p>
+     */
+    inline CreateCallAnalyticsCategoryRequest& WithInputType(InputType&& value) { SetInputType(std::move(value)); return *this;}
 
   private:
 
@@ -188,6 +262,9 @@ namespace Model
 
     Aws::Vector<Rule> m_rules;
     bool m_rulesHasBeenSet = false;
+
+    InputType m_inputType;
+    bool m_inputTypeHasBeenSet = false;
   };
 
 } // namespace Model

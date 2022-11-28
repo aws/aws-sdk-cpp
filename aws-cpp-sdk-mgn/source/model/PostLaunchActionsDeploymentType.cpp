@@ -22,6 +22,7 @@ namespace Aws
 
         static const int TEST_AND_CUTOVER_HASH = HashingUtils::HashString("TEST_AND_CUTOVER");
         static const int CUTOVER_ONLY_HASH = HashingUtils::HashString("CUTOVER_ONLY");
+        static const int TEST_ONLY_HASH = HashingUtils::HashString("TEST_ONLY");
 
 
         PostLaunchActionsDeploymentType GetPostLaunchActionsDeploymentTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == CUTOVER_ONLY_HASH)
           {
             return PostLaunchActionsDeploymentType::CUTOVER_ONLY;
+          }
+          else if (hashCode == TEST_ONLY_HASH)
+          {
+            return PostLaunchActionsDeploymentType::TEST_ONLY;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "TEST_AND_CUTOVER";
           case PostLaunchActionsDeploymentType::CUTOVER_ONLY:
             return "CUTOVER_ONLY";
+          case PostLaunchActionsDeploymentType::TEST_ONLY:
+            return "TEST_ONLY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

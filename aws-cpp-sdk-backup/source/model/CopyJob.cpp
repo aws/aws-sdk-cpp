@@ -35,7 +35,14 @@ CopyJob::CopyJob() :
     m_backupSizeInBytesHasBeenSet(false),
     m_iamRoleArnHasBeenSet(false),
     m_createdByHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
+    m_resourceTypeHasBeenSet(false),
+    m_parentJobIdHasBeenSet(false),
+    m_isParent(false),
+    m_isParentHasBeenSet(false),
+    m_compositeMemberIdentifierHasBeenSet(false),
+    m_numberOfChildJobs(0),
+    m_numberOfChildJobsHasBeenSet(false),
+    m_childJobsInStateHasBeenSet(false)
 {
 }
 
@@ -56,7 +63,14 @@ CopyJob::CopyJob(JsonView jsonValue) :
     m_backupSizeInBytesHasBeenSet(false),
     m_iamRoleArnHasBeenSet(false),
     m_createdByHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
+    m_resourceTypeHasBeenSet(false),
+    m_parentJobIdHasBeenSet(false),
+    m_isParent(false),
+    m_isParentHasBeenSet(false),
+    m_compositeMemberIdentifierHasBeenSet(false),
+    m_numberOfChildJobs(0),
+    m_numberOfChildJobsHasBeenSet(false),
+    m_childJobsInStateHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -168,6 +182,44 @@ CopyJob& CopyJob::operator =(JsonView jsonValue)
     m_resourceTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ParentJobId"))
+  {
+    m_parentJobId = jsonValue.GetString("ParentJobId");
+
+    m_parentJobIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IsParent"))
+  {
+    m_isParent = jsonValue.GetBool("IsParent");
+
+    m_isParentHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CompositeMemberIdentifier"))
+  {
+    m_compositeMemberIdentifier = jsonValue.GetString("CompositeMemberIdentifier");
+
+    m_compositeMemberIdentifierHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NumberOfChildJobs"))
+  {
+    m_numberOfChildJobs = jsonValue.GetInt64("NumberOfChildJobs");
+
+    m_numberOfChildJobsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ChildJobsInState"))
+  {
+    Aws::Map<Aws::String, JsonView> childJobsInStateJsonMap = jsonValue.GetObject("ChildJobsInState").GetAllObjects();
+    for(auto& childJobsInStateItem : childJobsInStateJsonMap)
+    {
+      m_childJobsInState[CopyJobStateMapper::GetCopyJobStateForName(childJobsInStateItem.first)] = childJobsInStateItem.second.AsInt64();
+    }
+    m_childJobsInStateHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -259,6 +311,41 @@ JsonValue CopyJob::Jsonize() const
   if(m_resourceTypeHasBeenSet)
   {
    payload.WithString("ResourceType", m_resourceType);
+
+  }
+
+  if(m_parentJobIdHasBeenSet)
+  {
+   payload.WithString("ParentJobId", m_parentJobId);
+
+  }
+
+  if(m_isParentHasBeenSet)
+  {
+   payload.WithBool("IsParent", m_isParent);
+
+  }
+
+  if(m_compositeMemberIdentifierHasBeenSet)
+  {
+   payload.WithString("CompositeMemberIdentifier", m_compositeMemberIdentifier);
+
+  }
+
+  if(m_numberOfChildJobsHasBeenSet)
+  {
+   payload.WithInt64("NumberOfChildJobs", m_numberOfChildJobs);
+
+  }
+
+  if(m_childJobsInStateHasBeenSet)
+  {
+   JsonValue childJobsInStateJsonMap;
+   for(auto& childJobsInStateItem : m_childJobsInState)
+   {
+     childJobsInStateJsonMap.WithInt64(CopyJobStateMapper::GetNameForCopyJobState(childJobsInStateItem.first), childJobsInStateItem.second);
+   }
+   payload.WithObject("ChildJobsInState", std::move(childJobsInStateJsonMap));
 
   }
 

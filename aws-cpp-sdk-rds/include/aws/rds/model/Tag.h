@@ -25,7 +25,10 @@ namespace Model
 
   /**
    * <p>Metadata assigned to an Amazon RDS resource consisting of a key-value
-   * pair.</p><p><h3>See Also:</h3>   <a
+   * pair.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging
+   * Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/Tag">AWS API
    * Reference</a></p>
    */

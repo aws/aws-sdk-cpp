@@ -25,6 +25,8 @@ RecoveryInstanceFailback::RecoveryInstanceFailback() :
     m_failbackClientLastSeenByServiceDateTimeHasBeenSet(false),
     m_failbackInitiationTimeHasBeenSet(false),
     m_failbackJobIDHasBeenSet(false),
+    m_failbackLaunchType(FailbackLaunchType::NOT_SET),
+    m_failbackLaunchTypeHasBeenSet(false),
     m_failbackToOriginalServer(false),
     m_failbackToOriginalServerHasBeenSet(false),
     m_firstByteDateTimeHasBeenSet(false),
@@ -40,6 +42,8 @@ RecoveryInstanceFailback::RecoveryInstanceFailback(JsonView jsonValue) :
     m_failbackClientLastSeenByServiceDateTimeHasBeenSet(false),
     m_failbackInitiationTimeHasBeenSet(false),
     m_failbackJobIDHasBeenSet(false),
+    m_failbackLaunchType(FailbackLaunchType::NOT_SET),
+    m_failbackLaunchTypeHasBeenSet(false),
     m_failbackToOriginalServer(false),
     m_failbackToOriginalServerHasBeenSet(false),
     m_firstByteDateTimeHasBeenSet(false),
@@ -91,6 +95,13 @@ RecoveryInstanceFailback& RecoveryInstanceFailback::operator =(JsonView jsonValu
     m_failbackJobID = jsonValue.GetString("failbackJobID");
 
     m_failbackJobIDHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("failbackLaunchType"))
+  {
+    m_failbackLaunchType = FailbackLaunchTypeMapper::GetFailbackLaunchTypeForName(jsonValue.GetString("failbackLaunchType"));
+
+    m_failbackLaunchTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("failbackToOriginalServer"))
@@ -155,6 +166,11 @@ JsonValue RecoveryInstanceFailback::Jsonize() const
   {
    payload.WithString("failbackJobID", m_failbackJobID);
 
+  }
+
+  if(m_failbackLaunchTypeHasBeenSet)
+  {
+   payload.WithString("failbackLaunchType", FailbackLaunchTypeMapper::GetNameForFailbackLaunchType(m_failbackLaunchType));
   }
 
   if(m_failbackToOriginalServerHasBeenSet)

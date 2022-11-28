@@ -21,10 +21,12 @@
 #include <aws/backup/BackupClient.h>
 #include <aws/backup/BackupErrorMarshaller.h>
 #include <aws/backup/BackupEndpointProvider.h>
+#include <aws/backup/model/CancelLegalHoldRequest.h>
 #include <aws/backup/model/CreateBackupPlanRequest.h>
 #include <aws/backup/model/CreateBackupSelectionRequest.h>
 #include <aws/backup/model/CreateBackupVaultRequest.h>
 #include <aws/backup/model/CreateFrameworkRequest.h>
+#include <aws/backup/model/CreateLegalHoldRequest.h>
 #include <aws/backup/model/CreateReportPlanRequest.h>
 #include <aws/backup/model/DeleteBackupPlanRequest.h>
 #include <aws/backup/model/DeleteBackupSelectionRequest.h>
@@ -47,6 +49,7 @@
 #include <aws/backup/model/DescribeReportPlanRequest.h>
 #include <aws/backup/model/DescribeRestoreJobRequest.h>
 #include <aws/backup/model/DisassociateRecoveryPointRequest.h>
+#include <aws/backup/model/DisassociateRecoveryPointFromParentRequest.h>
 #include <aws/backup/model/ExportBackupPlanTemplateRequest.h>
 #include <aws/backup/model/GetBackupPlanRequest.h>
 #include <aws/backup/model/GetBackupPlanFromJSONRequest.h>
@@ -54,6 +57,7 @@
 #include <aws/backup/model/GetBackupSelectionRequest.h>
 #include <aws/backup/model/GetBackupVaultAccessPolicyRequest.h>
 #include <aws/backup/model/GetBackupVaultNotificationsRequest.h>
+#include <aws/backup/model/GetLegalHoldRequest.h>
 #include <aws/backup/model/GetRecoveryPointRestoreMetadataRequest.h>
 #include <aws/backup/model/ListBackupJobsRequest.h>
 #include <aws/backup/model/ListBackupPlanTemplatesRequest.h>
@@ -63,8 +67,10 @@
 #include <aws/backup/model/ListBackupVaultsRequest.h>
 #include <aws/backup/model/ListCopyJobsRequest.h>
 #include <aws/backup/model/ListFrameworksRequest.h>
+#include <aws/backup/model/ListLegalHoldsRequest.h>
 #include <aws/backup/model/ListProtectedResourcesRequest.h>
 #include <aws/backup/model/ListRecoveryPointsByBackupVaultRequest.h>
+#include <aws/backup/model/ListRecoveryPointsByLegalHoldRequest.h>
 #include <aws/backup/model/ListRecoveryPointsByResourceRequest.h>
 #include <aws/backup/model/ListReportJobsRequest.h>
 #include <aws/backup/model/ListReportPlansRequest.h>
@@ -214,6 +220,42 @@ void BackupClient::OverrideEndpoint(const Aws::String& endpoint)
   m_endpointProvider->OverrideEndpoint(endpoint);
 }
 
+CancelLegalHoldOutcome BackupClient::CancelLegalHold(const CancelLegalHoldRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelLegalHold, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.LegalHoldIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CancelLegalHold", "Required field: LegalHoldId, is not set");
+    return CancelLegalHoldOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LegalHoldId]", false));
+  }
+  if (!request.CancelDescriptionHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CancelLegalHold", "Required field: CancelDescription, is not set");
+    return CancelLegalHoldOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CancelDescription]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CancelLegalHold, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/legal-holds/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLegalHoldId());
+  return CancelLegalHoldOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+CancelLegalHoldOutcomeCallable BackupClient::CancelLegalHoldCallable(const CancelLegalHoldRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CancelLegalHoldOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelLegalHold(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BackupClient::CancelLegalHoldAsync(const CancelLegalHoldRequest& request, const CancelLegalHoldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CancelLegalHold(request), context);
+    } );
+}
+
 CreateBackupPlanOutcome BackupClient::CreateBackupPlan(const CreateBackupPlanRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateBackupPlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -324,6 +366,31 @@ void BackupClient::CreateFrameworkAsync(const CreateFrameworkRequest& request, c
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, CreateFramework(request), context);
+    } );
+}
+
+CreateLegalHoldOutcome BackupClient::CreateLegalHold(const CreateLegalHoldRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateLegalHold, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateLegalHold, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/legal-holds/");
+  return CreateLegalHoldOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateLegalHoldOutcomeCallable BackupClient::CreateLegalHoldCallable(const CreateLegalHoldRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateLegalHoldOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLegalHold(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BackupClient::CreateLegalHoldAsync(const CreateLegalHoldRequest& request, const CreateLegalHoldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateLegalHold(request), context);
     } );
 }
 
@@ -1023,6 +1090,45 @@ void BackupClient::DisassociateRecoveryPointAsync(const DisassociateRecoveryPoin
     } );
 }
 
+DisassociateRecoveryPointFromParentOutcome BackupClient::DisassociateRecoveryPointFromParent(const DisassociateRecoveryPointFromParentRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateRecoveryPointFromParent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.BackupVaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateRecoveryPointFromParent", "Required field: BackupVaultName, is not set");
+    return DisassociateRecoveryPointFromParentOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupVaultName]", false));
+  }
+  if (!request.RecoveryPointArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateRecoveryPointFromParent", "Required field: RecoveryPointArn, is not set");
+    return DisassociateRecoveryPointFromParentOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecoveryPointArn]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisassociateRecoveryPointFromParent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/backup-vaults/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackupVaultName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/recovery-points/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecoveryPointArn());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/parentAssociation");
+  return DisassociateRecoveryPointFromParentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DisassociateRecoveryPointFromParentOutcomeCallable BackupClient::DisassociateRecoveryPointFromParentCallable(const DisassociateRecoveryPointFromParentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateRecoveryPointFromParentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateRecoveryPointFromParent(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BackupClient::DisassociateRecoveryPointFromParentAsync(const DisassociateRecoveryPointFromParentRequest& request, const DisassociateRecoveryPointFromParentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateRecoveryPointFromParent(request), context);
+    } );
+}
+
 ExportBackupPlanTemplateOutcome BackupClient::ExportBackupPlanTemplate(const ExportBackupPlanTemplateRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ExportBackupPlanTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1242,6 +1348,37 @@ void BackupClient::GetBackupVaultNotificationsAsync(const GetBackupVaultNotifica
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, GetBackupVaultNotifications(request), context);
+    } );
+}
+
+GetLegalHoldOutcome BackupClient::GetLegalHold(const GetLegalHoldRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetLegalHold, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.LegalHoldIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetLegalHold", "Required field: LegalHoldId, is not set");
+    return GetLegalHoldOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LegalHoldId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetLegalHold, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/legal-holds/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLegalHoldId());
+  return GetLegalHoldOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetLegalHoldOutcomeCallable BackupClient::GetLegalHoldCallable(const GetLegalHoldRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetLegalHoldOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLegalHold(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BackupClient::GetLegalHoldAsync(const GetLegalHoldRequest& request, const GetLegalHoldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetLegalHold(request), context);
     } );
 }
 
@@ -1524,6 +1661,31 @@ void BackupClient::ListFrameworksAsync(const ListFrameworksRequest& request, con
     } );
 }
 
+ListLegalHoldsOutcome BackupClient::ListLegalHolds(const ListLegalHoldsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListLegalHolds, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListLegalHolds, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/legal-holds/");
+  return ListLegalHoldsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListLegalHoldsOutcomeCallable BackupClient::ListLegalHoldsCallable(const ListLegalHoldsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListLegalHoldsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListLegalHolds(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BackupClient::ListLegalHoldsAsync(const ListLegalHoldsRequest& request, const ListLegalHoldsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListLegalHolds(request), context);
+    } );
+}
+
 ListProtectedResourcesOutcome BackupClient::ListProtectedResources(const ListProtectedResourcesRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListProtectedResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1578,6 +1740,38 @@ void BackupClient::ListRecoveryPointsByBackupVaultAsync(const ListRecoveryPoints
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, ListRecoveryPointsByBackupVault(request), context);
+    } );
+}
+
+ListRecoveryPointsByLegalHoldOutcome BackupClient::ListRecoveryPointsByLegalHold(const ListRecoveryPointsByLegalHoldRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRecoveryPointsByLegalHold, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.LegalHoldIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListRecoveryPointsByLegalHold", "Required field: LegalHoldId, is not set");
+    return ListRecoveryPointsByLegalHoldOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LegalHoldId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRecoveryPointsByLegalHold, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/legal-holds/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLegalHoldId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/recovery-points");
+  return ListRecoveryPointsByLegalHoldOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListRecoveryPointsByLegalHoldOutcomeCallable BackupClient::ListRecoveryPointsByLegalHoldCallable(const ListRecoveryPointsByLegalHoldRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListRecoveryPointsByLegalHoldOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRecoveryPointsByLegalHold(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BackupClient::ListRecoveryPointsByLegalHoldAsync(const ListRecoveryPointsByLegalHoldRequest& request, const ListRecoveryPointsByLegalHoldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListRecoveryPointsByLegalHold(request), context);
     } );
 }
 

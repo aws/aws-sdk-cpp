@@ -33,6 +33,7 @@
 #include <aws/organizations/model/DescribeOrganizationResult.h>
 #include <aws/organizations/model/DescribeOrganizationalUnitResult.h>
 #include <aws/organizations/model/DescribePolicyResult.h>
+#include <aws/organizations/model/DescribeResourcePolicyResult.h>
 #include <aws/organizations/model/DisablePolicyTypeResult.h>
 #include <aws/organizations/model/EnableAllFeaturesResult.h>
 #include <aws/organizations/model/EnablePolicyTypeResult.h>
@@ -53,6 +54,7 @@
 #include <aws/organizations/model/ListRootsResult.h>
 #include <aws/organizations/model/ListTagsForResourceResult.h>
 #include <aws/organizations/model/ListTargetsForPolicyResult.h>
+#include <aws/organizations/model/PutResourcePolicyResult.h>
 #include <aws/organizations/model/UpdateOrganizationalUnitResult.h>
 #include <aws/organizations/model/UpdatePolicyResult.h>
 #include <aws/core/NoResult.h>
@@ -139,6 +141,7 @@ namespace Aws
       class ListTagsForResourceRequest;
       class ListTargetsForPolicyRequest;
       class MoveAccountRequest;
+      class PutResourcePolicyRequest;
       class RegisterDelegatedAdministratorRequest;
       class RemoveAccountFromOrganizationRequest;
       class TagResourceRequest;
@@ -161,6 +164,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, OrganizationsError> DeleteOrganizationOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, OrganizationsError> DeleteOrganizationalUnitOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, OrganizationsError> DeletePolicyOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, OrganizationsError> DeleteResourcePolicyOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, OrganizationsError> DeregisterDelegatedAdministratorOutcome;
       typedef Aws::Utils::Outcome<DescribeAccountResult, OrganizationsError> DescribeAccountOutcome;
       typedef Aws::Utils::Outcome<DescribeCreateAccountStatusResult, OrganizationsError> DescribeCreateAccountStatusOutcome;
@@ -169,6 +173,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeOrganizationResult, OrganizationsError> DescribeOrganizationOutcome;
       typedef Aws::Utils::Outcome<DescribeOrganizationalUnitResult, OrganizationsError> DescribeOrganizationalUnitOutcome;
       typedef Aws::Utils::Outcome<DescribePolicyResult, OrganizationsError> DescribePolicyOutcome;
+      typedef Aws::Utils::Outcome<DescribeResourcePolicyResult, OrganizationsError> DescribeResourcePolicyOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, OrganizationsError> DetachPolicyOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, OrganizationsError> DisableAWSServiceAccessOutcome;
       typedef Aws::Utils::Outcome<DisablePolicyTypeResult, OrganizationsError> DisablePolicyTypeOutcome;
@@ -194,6 +199,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, OrganizationsError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<ListTargetsForPolicyResult, OrganizationsError> ListTargetsForPolicyOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, OrganizationsError> MoveAccountOutcome;
+      typedef Aws::Utils::Outcome<PutResourcePolicyResult, OrganizationsError> PutResourcePolicyOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, OrganizationsError> RegisterDelegatedAdministratorOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, OrganizationsError> RemoveAccountFromOrganizationOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, OrganizationsError> TagResourceOutcome;
@@ -216,6 +222,7 @@ namespace Aws
       typedef std::future<DeleteOrganizationOutcome> DeleteOrganizationOutcomeCallable;
       typedef std::future<DeleteOrganizationalUnitOutcome> DeleteOrganizationalUnitOutcomeCallable;
       typedef std::future<DeletePolicyOutcome> DeletePolicyOutcomeCallable;
+      typedef std::future<DeleteResourcePolicyOutcome> DeleteResourcePolicyOutcomeCallable;
       typedef std::future<DeregisterDelegatedAdministratorOutcome> DeregisterDelegatedAdministratorOutcomeCallable;
       typedef std::future<DescribeAccountOutcome> DescribeAccountOutcomeCallable;
       typedef std::future<DescribeCreateAccountStatusOutcome> DescribeCreateAccountStatusOutcomeCallable;
@@ -224,6 +231,7 @@ namespace Aws
       typedef std::future<DescribeOrganizationOutcome> DescribeOrganizationOutcomeCallable;
       typedef std::future<DescribeOrganizationalUnitOutcome> DescribeOrganizationalUnitOutcomeCallable;
       typedef std::future<DescribePolicyOutcome> DescribePolicyOutcomeCallable;
+      typedef std::future<DescribeResourcePolicyOutcome> DescribeResourcePolicyOutcomeCallable;
       typedef std::future<DetachPolicyOutcome> DetachPolicyOutcomeCallable;
       typedef std::future<DisableAWSServiceAccessOutcome> DisableAWSServiceAccessOutcomeCallable;
       typedef std::future<DisablePolicyTypeOutcome> DisablePolicyTypeOutcomeCallable;
@@ -249,6 +257,7 @@ namespace Aws
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<ListTargetsForPolicyOutcome> ListTargetsForPolicyOutcomeCallable;
       typedef std::future<MoveAccountOutcome> MoveAccountOutcomeCallable;
+      typedef std::future<PutResourcePolicyOutcome> PutResourcePolicyOutcomeCallable;
       typedef std::future<RegisterDelegatedAdministratorOutcome> RegisterDelegatedAdministratorOutcomeCallable;
       typedef std::future<RemoveAccountFromOrganizationOutcome> RemoveAccountFromOrganizationOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -274,6 +283,7 @@ namespace Aws
     typedef std::function<void(const OrganizationsClient*, const Model::DeleteOrganizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteOrganizationResponseReceivedHandler;
     typedef std::function<void(const OrganizationsClient*, const Model::DeleteOrganizationalUnitRequest&, const Model::DeleteOrganizationalUnitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteOrganizationalUnitResponseReceivedHandler;
     typedef std::function<void(const OrganizationsClient*, const Model::DeletePolicyRequest&, const Model::DeletePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePolicyResponseReceivedHandler;
+    typedef std::function<void(const OrganizationsClient*, const Model::DeleteResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const OrganizationsClient*, const Model::DeregisterDelegatedAdministratorRequest&, const Model::DeregisterDelegatedAdministratorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterDelegatedAdministratorResponseReceivedHandler;
     typedef std::function<void(const OrganizationsClient*, const Model::DescribeAccountRequest&, const Model::DescribeAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountResponseReceivedHandler;
     typedef std::function<void(const OrganizationsClient*, const Model::DescribeCreateAccountStatusRequest&, const Model::DescribeCreateAccountStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCreateAccountStatusResponseReceivedHandler;
@@ -282,6 +292,7 @@ namespace Aws
     typedef std::function<void(const OrganizationsClient*, const Model::DescribeOrganizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeOrganizationResponseReceivedHandler;
     typedef std::function<void(const OrganizationsClient*, const Model::DescribeOrganizationalUnitRequest&, const Model::DescribeOrganizationalUnitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeOrganizationalUnitResponseReceivedHandler;
     typedef std::function<void(const OrganizationsClient*, const Model::DescribePolicyRequest&, const Model::DescribePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePolicyResponseReceivedHandler;
+    typedef std::function<void(const OrganizationsClient*, const Model::DescribeResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const OrganizationsClient*, const Model::DetachPolicyRequest&, const Model::DetachPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachPolicyResponseReceivedHandler;
     typedef std::function<void(const OrganizationsClient*, const Model::DisableAWSServiceAccessRequest&, const Model::DisableAWSServiceAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableAWSServiceAccessResponseReceivedHandler;
     typedef std::function<void(const OrganizationsClient*, const Model::DisablePolicyTypeRequest&, const Model::DisablePolicyTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisablePolicyTypeResponseReceivedHandler;
@@ -307,6 +318,7 @@ namespace Aws
     typedef std::function<void(const OrganizationsClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const OrganizationsClient*, const Model::ListTargetsForPolicyRequest&, const Model::ListTargetsForPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTargetsForPolicyResponseReceivedHandler;
     typedef std::function<void(const OrganizationsClient*, const Model::MoveAccountRequest&, const Model::MoveAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MoveAccountResponseReceivedHandler;
+    typedef std::function<void(const OrganizationsClient*, const Model::PutResourcePolicyRequest&, const Model::PutResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const OrganizationsClient*, const Model::RegisterDelegatedAdministratorRequest&, const Model::RegisterDelegatedAdministratorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterDelegatedAdministratorResponseReceivedHandler;
     typedef std::function<void(const OrganizationsClient*, const Model::RemoveAccountFromOrganizationRequest&, const Model::RemoveAccountFromOrganizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveAccountFromOrganizationResponseReceivedHandler;
     typedef std::function<void(const OrganizationsClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;

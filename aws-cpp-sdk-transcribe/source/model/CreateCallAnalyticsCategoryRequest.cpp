@@ -14,7 +14,9 @@ using namespace Aws::Utils;
 
 CreateCallAnalyticsCategoryRequest::CreateCallAnalyticsCategoryRequest() : 
     m_categoryNameHasBeenSet(false),
-    m_rulesHasBeenSet(false)
+    m_rulesHasBeenSet(false),
+    m_inputType(InputType::NOT_SET),
+    m_inputTypeHasBeenSet(false)
 {
 }
 
@@ -37,6 +39,11 @@ Aws::String CreateCallAnalyticsCategoryRequest::SerializePayload() const
    }
    payload.WithArray("Rules", std::move(rulesJsonList));
 
+  }
+
+  if(m_inputTypeHasBeenSet)
+  {
+   payload.WithString("InputType", InputTypeMapper::GetNameForInputType(m_inputType));
   }
 
   return payload.View().WriteReadable();

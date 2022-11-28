@@ -120,7 +120,7 @@ namespace Organizations
 
         /**
          * <p>Sends a response to the originator of a handshake agreeing to the action
-         * proposed by the handshake request.</p> <p>This operation can be called only by
+         * proposed by the handshake request.</p> <p>You can only call this operation by
          * the following principals when they also have the relevant IAM permissions:</p>
          * <ul> <li> <p> <b>Invitation to join</b> or <b>Approve all features request</b>
          * handshakes: only a principal from the member account.</p> <p>The user who calls
@@ -268,7 +268,7 @@ namespace Organizations
          * completion message even though account initialization might still be in
          * progress. You might need to wait a few minutes before you can successfully
          * access the account. To check the status of the request, do one of the
-         * following:</p> <ul> <li> <p>Use the <code>Id</code> member of the
+         * following:</p> <ul> <li> <p>Use the <code>Id</code> value of the
          * <code>CreateAccountStatus</code> response element from this operation to provide
          * as a parameter to the <a>DescribeCreateAccountStatus</a> operation.</p> </li>
          * <li> <p>Check the CloudTrail log for the <code>CreateAccountResult</code> event.
@@ -621,6 +621,24 @@ namespace Organizations
         virtual void DeletePolicyAsync(const Model::DeletePolicyRequest& request, const DeletePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes the resource policy from your organization.</p> <p>You can only call
+         * this operation from the organization's management account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeleteResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteResourcePolicyOutcome DeleteResourcePolicy() const;
+
+        /**
+         * A Callable wrapper for DeleteResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteResourcePolicyOutcomeCallable DeleteResourcePolicyCallable() const;
+
+        /**
+         * An Async wrapper for DeleteResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteResourcePolicyAsync(const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        /**
          * <p>Removes the specified member Amazon Web Services account as a delegated
          * administrator for the specified Amazon Web Services service.</p> 
          * <p>Deregistering a delegated administrator can have unintended impacts on the
@@ -801,6 +819,24 @@ namespace Organizations
         virtual void DescribePolicyAsync(const Model::DescribePolicyRequest& request, const DescribePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves information about a resource policy.</p> <p>You can only call this
+         * operation from the organization's management account or by a member account that
+         * is a delegated administrator for an AWS service.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeResourcePolicyOutcome DescribeResourcePolicy() const;
+
+        /**
+         * A Callable wrapper for DescribeResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeResourcePolicyOutcomeCallable DescribeResourcePolicyCallable() const;
+
+        /**
+         * An Async wrapper for DescribeResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeResourcePolicyAsync(const DescribeResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        /**
          * <p>Detaches a policy from a target root, organizational unit (OU), or
          * account.</p>  <p>If the policy being detached is a service control
          * policy (SCP), the changes to permissions for Identity and Access Management
@@ -944,7 +980,7 @@ namespace Organizations
          * enabling services to integrate with Organizations, see <a
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Integrating
          * Organizations with Other Amazon Web Services Services</a> in the
-         * <i>Organizations User Guide.</i> </p> <p>This operation can be called only from
+         * <i>Organizations User Guide.</i> </p> <p>You can only call this operation from
          * the organization's management account and only if the organization has <a
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">enabled
          * all features</a>.</p><p><h3>See Also:</h3>   <a
@@ -1560,6 +1596,24 @@ namespace Organizations
          * An Async wrapper for MoveAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void MoveAccountAsync(const Model::MoveAccountRequest& request, const MoveAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates or updates a resource policy.</p> <p>You can only call this operation
+         * from the organization's management account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/PutResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutResourcePolicyOutcome PutResourcePolicy(const Model::PutResourcePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutResourcePolicyOutcomeCallable PutResourcePolicyCallable(const Model::PutResourcePolicyRequest& request) const;
+
+        /**
+         * An Async wrapper for PutResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutResourcePolicyAsync(const Model::PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables the specified member account to administer the Organizations features

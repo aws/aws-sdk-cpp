@@ -873,40 +873,23 @@ namespace IoTWireless
         virtual void GetPartnerAccountAsync(const Model::GetPartnerAccountRequest& request, const GetPartnerAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Get the position information for a given resource.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetPosition">AWS
+         * <p>Get estimated position information as a payload in GeoJSON format. The
+         * payload measurement data is resolved using solvers that are provided by
+         * third-party vendors.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetPositionEstimate">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetPositionOutcome GetPosition(const Model::GetPositionRequest& request) const;
+        virtual Model::GetPositionEstimateOutcome GetPositionEstimate(const Model::GetPositionEstimateRequest& request) const;
 
         /**
-         * A Callable wrapper for GetPosition that returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetPositionEstimate that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::GetPositionOutcomeCallable GetPositionCallable(const Model::GetPositionRequest& request) const;
+        virtual Model::GetPositionEstimateOutcomeCallable GetPositionEstimateCallable(const Model::GetPositionEstimateRequest& request) const;
 
         /**
-         * An Async wrapper for GetPosition that queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetPositionEstimate that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void GetPositionAsync(const Model::GetPositionRequest& request, const GetPositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
-
-        /**
-         * <p>Get position configuration for a given resource.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetPositionConfiguration">AWS
-         * API Reference</a></p>
-         */
-        virtual Model::GetPositionConfigurationOutcome GetPositionConfiguration(const Model::GetPositionConfigurationRequest& request) const;
-
-        /**
-         * A Callable wrapper for GetPositionConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetPositionConfigurationOutcomeCallable GetPositionConfigurationCallable(const Model::GetPositionConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for GetPositionConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetPositionConfigurationAsync(const Model::GetPositionConfigurationRequest& request, const GetPositionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void GetPositionEstimateAsync(const Model::GetPositionEstimateRequest& request, const GetPositionEstimateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get the event configuration for a particular resource
@@ -944,6 +927,26 @@ namespace IoTWireless
          * An Async wrapper for GetResourceLogLevel that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetResourceLogLevelAsync(const Model::GetResourceLogLevelRequest& request, const GetResourceLogLevelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Get the position information for a given wireless device or a wireless
+         * gateway resource. The postion information uses the <a
+         * href="https://gisgeography.com/wgs84-world-geodetic-system/"> World Geodetic
+         * System (WGS84)</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetResourcePosition">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetResourcePositionOutcome GetResourcePosition(const Model::GetResourcePositionRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetResourcePosition that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetResourcePositionOutcomeCallable GetResourcePositionCallable(const Model::GetResourcePositionRequest& request) const;
+
+        /**
+         * An Async wrapper for GetResourcePosition that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetResourcePositionAsync(const Model::GetResourcePositionRequest& request, const GetResourcePositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the account-specific endpoint for Configuration and Update Server (CUPS)
@@ -1266,24 +1269,6 @@ namespace IoTWireless
         virtual void ListPartnerAccountsAsync(const Model::ListPartnerAccountsRequest& request, const ListPartnerAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>List position configurations for a given resource, such as positioning
-         * solvers.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListPositionConfigurations">AWS
-         * API Reference</a></p>
-         */
-        virtual Model::ListPositionConfigurationsOutcome ListPositionConfigurations(const Model::ListPositionConfigurationsRequest& request) const;
-
-        /**
-         * A Callable wrapper for ListPositionConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListPositionConfigurationsOutcomeCallable ListPositionConfigurationsCallable(const Model::ListPositionConfigurationsRequest& request) const;
-
-        /**
-         * An Async wrapper for ListPositionConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListPositionConfigurationsAsync(const Model::ListPositionConfigurationsRequest& request, const ListPositionConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
-
-        /**
          * <p>List queued messages in the downlink queue.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListQueuedMessages">AWS
          * API Reference</a></p>
@@ -1389,24 +1374,6 @@ namespace IoTWireless
          * An Async wrapper for ListWirelessGateways that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListWirelessGatewaysAsync(const Model::ListWirelessGatewaysRequest& request, const ListWirelessGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
-
-        /**
-         * <p>Put position configuration for a given resource.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/PutPositionConfiguration">AWS
-         * API Reference</a></p>
-         */
-        virtual Model::PutPositionConfigurationOutcome PutPositionConfiguration(const Model::PutPositionConfigurationRequest& request) const;
-
-        /**
-         * A Callable wrapper for PutPositionConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutPositionConfigurationOutcomeCallable PutPositionConfigurationCallable(const Model::PutPositionConfigurationRequest& request) const;
-
-        /**
-         * An Async wrapper for PutPositionConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutPositionConfigurationAsync(const Model::PutPositionConfigurationRequest& request, const PutPositionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets the log-level override for a resource-ID and resource-type. This option
@@ -1746,23 +1713,6 @@ namespace IoTWireless
         virtual void UpdatePartnerAccountAsync(const Model::UpdatePartnerAccountRequest& request, const UpdatePartnerAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Update the position information of a resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdatePosition">AWS
-         * API Reference</a></p>
-         */
-        virtual Model::UpdatePositionOutcome UpdatePosition(const Model::UpdatePositionRequest& request) const;
-
-        /**
-         * A Callable wrapper for UpdatePosition that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UpdatePositionOutcomeCallable UpdatePositionCallable(const Model::UpdatePositionRequest& request) const;
-
-        /**
-         * An Async wrapper for UpdatePosition that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UpdatePositionAsync(const Model::UpdatePositionRequest& request, const UpdatePositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
-
-        /**
          * <p>Update the event configuration for a particular resource
          * identifier.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateResourceEventConfiguration">AWS
@@ -1779,6 +1729,26 @@ namespace IoTWireless
          * An Async wrapper for UpdateResourceEventConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateResourceEventConfigurationAsync(const Model::UpdateResourceEventConfigurationRequest& request, const UpdateResourceEventConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Update the position information of a given wireless device or a wireless
+         * gateway resource. The postion coordinates are based on the <a
+         * href="https://gisgeography.com/wgs84-world-geodetic-system/"> World Geodetic
+         * System (WGS84)</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateResourcePosition">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateResourcePositionOutcome UpdateResourcePosition(const Model::UpdateResourcePositionRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateResourcePosition that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateResourcePositionOutcomeCallable UpdateResourcePositionCallable(const Model::UpdateResourcePositionRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateResourcePosition that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateResourcePositionAsync(const Model::UpdateResourcePositionRequest& request, const UpdateResourcePositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates properties of a wireless device.</p><p><h3>See Also:</h3>   <a

@@ -23,6 +23,9 @@ namespace Aws
         static const int TaskFailedToStart_HASH = HashingUtils::HashString("TaskFailedToStart");
         static const int EssentialContainerExited_HASH = HashingUtils::HashString("EssentialContainerExited");
         static const int UserInitiated_HASH = HashingUtils::HashString("UserInitiated");
+        static const int ServiceSchedulerInitiated_HASH = HashingUtils::HashString("ServiceSchedulerInitiated");
+        static const int SpotInterruption_HASH = HashingUtils::HashString("SpotInterruption");
+        static const int TerminationNotice_HASH = HashingUtils::HashString("TerminationNotice");
 
 
         TaskStopCode GetTaskStopCodeForName(const Aws::String& name)
@@ -39,6 +42,18 @@ namespace Aws
           else if (hashCode == UserInitiated_HASH)
           {
             return TaskStopCode::UserInitiated;
+          }
+          else if (hashCode == ServiceSchedulerInitiated_HASH)
+          {
+            return TaskStopCode::ServiceSchedulerInitiated;
+          }
+          else if (hashCode == SpotInterruption_HASH)
+          {
+            return TaskStopCode::SpotInterruption;
+          }
+          else if (hashCode == TerminationNotice_HASH)
+          {
+            return TaskStopCode::TerminationNotice;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +75,12 @@ namespace Aws
             return "EssentialContainerExited";
           case TaskStopCode::UserInitiated:
             return "UserInitiated";
+          case TaskStopCode::ServiceSchedulerInitiated:
+            return "ServiceSchedulerInitiated";
+          case TaskStopCode::SpotInterruption:
+            return "SpotInterruption";
+          case TaskStopCode::TerminationNotice:
+            return "TerminationNotice";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

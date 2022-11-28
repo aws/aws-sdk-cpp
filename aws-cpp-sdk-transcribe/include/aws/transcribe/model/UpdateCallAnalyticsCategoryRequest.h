@@ -8,6 +8,7 @@
 #include <aws/transcribe/TranscribeServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/transcribe/model/InputType.h>
 #include <aws/transcribe/model/Rule.h>
 #include <utility>
 
@@ -141,6 +142,61 @@ namespace Model
      */
     inline UpdateCallAnalyticsCategoryRequest& AddRules(Rule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Choose whether you want to update a streaming or a batch Call Analytics
+     * category. The input type you specify must match the input type specified when
+     * the category was created. For example, if you created a category with the
+     * <code>POST_CALL</code> input type, you must use <code>POST_CALL</code> as the
+     * input type when updating this category.</p>
+     */
+    inline const InputType& GetInputType() const{ return m_inputType; }
+
+    /**
+     * <p>Choose whether you want to update a streaming or a batch Call Analytics
+     * category. The input type you specify must match the input type specified when
+     * the category was created. For example, if you created a category with the
+     * <code>POST_CALL</code> input type, you must use <code>POST_CALL</code> as the
+     * input type when updating this category.</p>
+     */
+    inline bool InputTypeHasBeenSet() const { return m_inputTypeHasBeenSet; }
+
+    /**
+     * <p>Choose whether you want to update a streaming or a batch Call Analytics
+     * category. The input type you specify must match the input type specified when
+     * the category was created. For example, if you created a category with the
+     * <code>POST_CALL</code> input type, you must use <code>POST_CALL</code> as the
+     * input type when updating this category.</p>
+     */
+    inline void SetInputType(const InputType& value) { m_inputTypeHasBeenSet = true; m_inputType = value; }
+
+    /**
+     * <p>Choose whether you want to update a streaming or a batch Call Analytics
+     * category. The input type you specify must match the input type specified when
+     * the category was created. For example, if you created a category with the
+     * <code>POST_CALL</code> input type, you must use <code>POST_CALL</code> as the
+     * input type when updating this category.</p>
+     */
+    inline void SetInputType(InputType&& value) { m_inputTypeHasBeenSet = true; m_inputType = std::move(value); }
+
+    /**
+     * <p>Choose whether you want to update a streaming or a batch Call Analytics
+     * category. The input type you specify must match the input type specified when
+     * the category was created. For example, if you created a category with the
+     * <code>POST_CALL</code> input type, you must use <code>POST_CALL</code> as the
+     * input type when updating this category.</p>
+     */
+    inline UpdateCallAnalyticsCategoryRequest& WithInputType(const InputType& value) { SetInputType(value); return *this;}
+
+    /**
+     * <p>Choose whether you want to update a streaming or a batch Call Analytics
+     * category. The input type you specify must match the input type specified when
+     * the category was created. For example, if you created a category with the
+     * <code>POST_CALL</code> input type, you must use <code>POST_CALL</code> as the
+     * input type when updating this category.</p>
+     */
+    inline UpdateCallAnalyticsCategoryRequest& WithInputType(InputType&& value) { SetInputType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_categoryName;
@@ -148,6 +204,9 @@ namespace Model
 
     Aws::Vector<Rule> m_rules;
     bool m_rulesHasBeenSet = false;
+
+    InputType m_inputType;
+    bool m_inputTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -64,6 +64,8 @@ namespace Aws
     namespace Model
     {
       /* Service model forward declarations required in TranscribeStreamingServiceClient header */
+      class StartCallAnalyticsStreamTranscriptionRequest;
+      class AudioStream;
       class StartMedicalStreamTranscriptionRequest;
       class AudioStream;
       class StartStreamTranscriptionRequest;
@@ -71,11 +73,13 @@ namespace Aws
       /* End of service model forward declarations required in TranscribeStreamingServiceClient header */
 
       /* Service model Outcome class definitions */
+      typedef Aws::Utils::Outcome<Aws::NoResult, TranscribeStreamingServiceError> StartCallAnalyticsStreamTranscriptionOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, TranscribeStreamingServiceError> StartMedicalStreamTranscriptionOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, TranscribeStreamingServiceError> StartStreamTranscriptionOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
+      typedef std::future<StartCallAnalyticsStreamTranscriptionOutcome> StartCallAnalyticsStreamTranscriptionOutcomeCallable;
       typedef std::future<StartMedicalStreamTranscriptionOutcome> StartMedicalStreamTranscriptionOutcomeCallable;
       typedef std::future<StartStreamTranscriptionOutcome> StartStreamTranscriptionOutcomeCallable;
       /* End of service model Outcome callable definitions */
@@ -84,6 +88,8 @@ namespace Aws
     class TranscribeStreamingServiceClient;
 
     /* Service model async handlers definitions */
+    typedef std::function<void(Model::AudioStream&)> StartCallAnalyticsStreamTranscriptionStreamReadyHandler;
+    typedef std::function<void(const TranscribeStreamingServiceClient*, const Model::StartCallAnalyticsStreamTranscriptionRequest&, const Model::StartCallAnalyticsStreamTranscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartCallAnalyticsStreamTranscriptionResponseReceivedHandler;
     typedef std::function<void(Model::AudioStream&)> StartMedicalStreamTranscriptionStreamReadyHandler;
     typedef std::function<void(const TranscribeStreamingServiceClient*, const Model::StartMedicalStreamTranscriptionRequest&, const Model::StartMedicalStreamTranscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMedicalStreamTranscriptionResponseReceivedHandler;
     typedef std::function<void(Model::AudioStream&)> StartStreamTranscriptionStreamReadyHandler;

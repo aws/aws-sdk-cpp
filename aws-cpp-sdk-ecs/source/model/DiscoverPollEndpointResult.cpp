@@ -40,6 +40,12 @@ DiscoverPollEndpointResult& DiscoverPollEndpointResult::operator =(const Aws::Am
 
   }
 
+  if(jsonValue.ValueExists("serviceConnectEndpoint"))
+  {
+    m_serviceConnectEndpoint = jsonValue.GetString("serviceConnectEndpoint");
+
+  }
+
 
 
   return *this;

@@ -122,25 +122,25 @@ namespace Model
 
     /**
      * <p>Timestamp showing when this policy was last updated, expressed as the number
-     * of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+     * of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
      */
     inline long long GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
 
     /**
      * <p>Timestamp showing when this policy was last updated, expressed as the number
-     * of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+     * of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
      */
     inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
 
     /**
      * <p>Timestamp showing when this policy was last updated, expressed as the number
-     * of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+     * of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
      */
     inline void SetLastUpdatedTime(long long value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
 
     /**
      * <p>Timestamp showing when this policy was last updated, expressed as the number
-     * of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+     * of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
      */
     inline ResourcePolicy& WithLastUpdatedTime(long long value) { SetLastUpdatedTime(value); return *this;}
 

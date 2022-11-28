@@ -41,42 +41,42 @@ namespace Model
 
 
     /**
-     * <p>The column that provides the document's unique identifier.</p>
+     * <p>The column that provides the document's identifier.</p>
      */
     inline const Aws::String& GetDocumentIdColumnName() const{ return m_documentIdColumnName; }
 
     /**
-     * <p>The column that provides the document's unique identifier.</p>
+     * <p>The column that provides the document's identifier.</p>
      */
     inline bool DocumentIdColumnNameHasBeenSet() const { return m_documentIdColumnNameHasBeenSet; }
 
     /**
-     * <p>The column that provides the document's unique identifier.</p>
+     * <p>The column that provides the document's identifier.</p>
      */
     inline void SetDocumentIdColumnName(const Aws::String& value) { m_documentIdColumnNameHasBeenSet = true; m_documentIdColumnName = value; }
 
     /**
-     * <p>The column that provides the document's unique identifier.</p>
+     * <p>The column that provides the document's identifier.</p>
      */
     inline void SetDocumentIdColumnName(Aws::String&& value) { m_documentIdColumnNameHasBeenSet = true; m_documentIdColumnName = std::move(value); }
 
     /**
-     * <p>The column that provides the document's unique identifier.</p>
+     * <p>The column that provides the document's identifier.</p>
      */
     inline void SetDocumentIdColumnName(const char* value) { m_documentIdColumnNameHasBeenSet = true; m_documentIdColumnName.assign(value); }
 
     /**
-     * <p>The column that provides the document's unique identifier.</p>
+     * <p>The column that provides the document's identifier.</p>
      */
     inline ColumnConfiguration& WithDocumentIdColumnName(const Aws::String& value) { SetDocumentIdColumnName(value); return *this;}
 
     /**
-     * <p>The column that provides the document's unique identifier.</p>
+     * <p>The column that provides the document's identifier.</p>
      */
     inline ColumnConfiguration& WithDocumentIdColumnName(Aws::String&& value) { SetDocumentIdColumnName(std::move(value)); return *this;}
 
     /**
-     * <p>The column that provides the document's unique identifier.</p>
+     * <p>The column that provides the document's identifier.</p>
      */
     inline ColumnConfiguration& WithDocumentIdColumnName(const char* value) { SetDocumentIdColumnName(value); return *this;}
 

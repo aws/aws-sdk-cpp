@@ -168,60 +168,60 @@ namespace Model
 
 
     /**
-     * <p>Specify the encoding used for the input audio. Supported formats are:</p>
-     * <ul> <li> <p>FLAC</p> </li> <li> <p>OPUS-encoded audio in an Ogg container</p>
-     * </li> <li> <p>PCM (only signed 16-bit little-endian audio formats, which does
-     * not include WAV)</p> </li> </ul> <p>For more information, see <a
+     * <p>Specify the encoding of your input audio. Supported formats are:</p> <ul>
+     * <li> <p>FLAC</p> </li> <li> <p>OPUS-encoded audio in an Ogg container</p> </li>
+     * <li> <p>PCM (only signed 16-bit little-endian audio formats, which does not
+     * include WAV)</p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media
      * formats</a>.</p>
      */
     inline const MediaEncoding& GetMediaEncoding() const{ return m_mediaEncoding; }
 
     /**
-     * <p>Specify the encoding used for the input audio. Supported formats are:</p>
-     * <ul> <li> <p>FLAC</p> </li> <li> <p>OPUS-encoded audio in an Ogg container</p>
-     * </li> <li> <p>PCM (only signed 16-bit little-endian audio formats, which does
-     * not include WAV)</p> </li> </ul> <p>For more information, see <a
+     * <p>Specify the encoding of your input audio. Supported formats are:</p> <ul>
+     * <li> <p>FLAC</p> </li> <li> <p>OPUS-encoded audio in an Ogg container</p> </li>
+     * <li> <p>PCM (only signed 16-bit little-endian audio formats, which does not
+     * include WAV)</p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media
      * formats</a>.</p>
      */
     inline bool MediaEncodingHasBeenSet() const { return m_mediaEncodingHasBeenSet; }
 
     /**
-     * <p>Specify the encoding used for the input audio. Supported formats are:</p>
-     * <ul> <li> <p>FLAC</p> </li> <li> <p>OPUS-encoded audio in an Ogg container</p>
-     * </li> <li> <p>PCM (only signed 16-bit little-endian audio formats, which does
-     * not include WAV)</p> </li> </ul> <p>For more information, see <a
+     * <p>Specify the encoding of your input audio. Supported formats are:</p> <ul>
+     * <li> <p>FLAC</p> </li> <li> <p>OPUS-encoded audio in an Ogg container</p> </li>
+     * <li> <p>PCM (only signed 16-bit little-endian audio formats, which does not
+     * include WAV)</p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media
      * formats</a>.</p>
      */
     inline void SetMediaEncoding(const MediaEncoding& value) { m_mediaEncodingHasBeenSet = true; m_mediaEncoding = value; }
 
     /**
-     * <p>Specify the encoding used for the input audio. Supported formats are:</p>
-     * <ul> <li> <p>FLAC</p> </li> <li> <p>OPUS-encoded audio in an Ogg container</p>
-     * </li> <li> <p>PCM (only signed 16-bit little-endian audio formats, which does
-     * not include WAV)</p> </li> </ul> <p>For more information, see <a
+     * <p>Specify the encoding of your input audio. Supported formats are:</p> <ul>
+     * <li> <p>FLAC</p> </li> <li> <p>OPUS-encoded audio in an Ogg container</p> </li>
+     * <li> <p>PCM (only signed 16-bit little-endian audio formats, which does not
+     * include WAV)</p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media
      * formats</a>.</p>
      */
     inline void SetMediaEncoding(MediaEncoding&& value) { m_mediaEncodingHasBeenSet = true; m_mediaEncoding = std::move(value); }
 
     /**
-     * <p>Specify the encoding used for the input audio. Supported formats are:</p>
-     * <ul> <li> <p>FLAC</p> </li> <li> <p>OPUS-encoded audio in an Ogg container</p>
-     * </li> <li> <p>PCM (only signed 16-bit little-endian audio formats, which does
-     * not include WAV)</p> </li> </ul> <p>For more information, see <a
+     * <p>Specify the encoding of your input audio. Supported formats are:</p> <ul>
+     * <li> <p>FLAC</p> </li> <li> <p>OPUS-encoded audio in an Ogg container</p> </li>
+     * <li> <p>PCM (only signed 16-bit little-endian audio formats, which does not
+     * include WAV)</p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media
      * formats</a>.</p>
      */
     inline StartStreamTranscriptionRequest& WithMediaEncoding(const MediaEncoding& value) { SetMediaEncoding(value); return *this;}
 
     /**
-     * <p>Specify the encoding used for the input audio. Supported formats are:</p>
-     * <ul> <li> <p>FLAC</p> </li> <li> <p>OPUS-encoded audio in an Ogg container</p>
-     * </li> <li> <p>PCM (only signed 16-bit little-endian audio formats, which does
-     * not include WAV)</p> </li> </ul> <p>For more information, see <a
+     * <p>Specify the encoding of your input audio. Supported formats are:</p> <ul>
+     * <li> <p>FLAC</p> </li> <li> <p>OPUS-encoded audio in an Ogg container</p> </li>
+     * <li> <p>PCM (only signed 16-bit little-endian audio formats, which does not
+     * include WAV)</p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media
      * formats</a>.</p>
      */
@@ -232,12 +232,13 @@ namespace Model
      * <p>Specify the name of the custom vocabulary that you want to use when
      * processing your transcription. Note that vocabulary names are case
      * sensitive.</p> <p>If the language of the specified custom vocabulary doesn't
-     * match the language identified in your media, your job fails.</p> 
-     * <p>This parameter is <b>not</b> intended for use with the
-     * <code>IdentifyLanguage</code> parameter. If you're including
-     * <code>IdentifyLanguage</code> in your request and want to use one or more custom
-     * vocabularies with your transcription, use the <code>VocabularyNames</code>
-     * parameter instead.</p>  <p>For more information, see <a
+     * match the language identified in your media, the custom vocabulary is not
+     * applied to your transcription.</p>  <p>This parameter is <b>not</b>
+     * intended for use with the <code>IdentifyLanguage</code> parameter. If you're
+     * including <code>IdentifyLanguage</code> in your request and want to use one or
+     * more custom vocabularies with your transcription, use the
+     * <code>VocabularyNames</code> parameter instead.</p>  <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom
      * vocabularies</a>.</p>
      */
@@ -247,12 +248,13 @@ namespace Model
      * <p>Specify the name of the custom vocabulary that you want to use when
      * processing your transcription. Note that vocabulary names are case
      * sensitive.</p> <p>If the language of the specified custom vocabulary doesn't
-     * match the language identified in your media, your job fails.</p> 
-     * <p>This parameter is <b>not</b> intended for use with the
-     * <code>IdentifyLanguage</code> parameter. If you're including
-     * <code>IdentifyLanguage</code> in your request and want to use one or more custom
-     * vocabularies with your transcription, use the <code>VocabularyNames</code>
-     * parameter instead.</p>  <p>For more information, see <a
+     * match the language identified in your media, the custom vocabulary is not
+     * applied to your transcription.</p>  <p>This parameter is <b>not</b>
+     * intended for use with the <code>IdentifyLanguage</code> parameter. If you're
+     * including <code>IdentifyLanguage</code> in your request and want to use one or
+     * more custom vocabularies with your transcription, use the
+     * <code>VocabularyNames</code> parameter instead.</p>  <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom
      * vocabularies</a>.</p>
      */
@@ -262,12 +264,13 @@ namespace Model
      * <p>Specify the name of the custom vocabulary that you want to use when
      * processing your transcription. Note that vocabulary names are case
      * sensitive.</p> <p>If the language of the specified custom vocabulary doesn't
-     * match the language identified in your media, your job fails.</p> 
-     * <p>This parameter is <b>not</b> intended for use with the
-     * <code>IdentifyLanguage</code> parameter. If you're including
-     * <code>IdentifyLanguage</code> in your request and want to use one or more custom
-     * vocabularies with your transcription, use the <code>VocabularyNames</code>
-     * parameter instead.</p>  <p>For more information, see <a
+     * match the language identified in your media, the custom vocabulary is not
+     * applied to your transcription.</p>  <p>This parameter is <b>not</b>
+     * intended for use with the <code>IdentifyLanguage</code> parameter. If you're
+     * including <code>IdentifyLanguage</code> in your request and want to use one or
+     * more custom vocabularies with your transcription, use the
+     * <code>VocabularyNames</code> parameter instead.</p>  <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom
      * vocabularies</a>.</p>
      */
@@ -277,12 +280,13 @@ namespace Model
      * <p>Specify the name of the custom vocabulary that you want to use when
      * processing your transcription. Note that vocabulary names are case
      * sensitive.</p> <p>If the language of the specified custom vocabulary doesn't
-     * match the language identified in your media, your job fails.</p> 
-     * <p>This parameter is <b>not</b> intended for use with the
-     * <code>IdentifyLanguage</code> parameter. If you're including
-     * <code>IdentifyLanguage</code> in your request and want to use one or more custom
-     * vocabularies with your transcription, use the <code>VocabularyNames</code>
-     * parameter instead.</p>  <p>For more information, see <a
+     * match the language identified in your media, the custom vocabulary is not
+     * applied to your transcription.</p>  <p>This parameter is <b>not</b>
+     * intended for use with the <code>IdentifyLanguage</code> parameter. If you're
+     * including <code>IdentifyLanguage</code> in your request and want to use one or
+     * more custom vocabularies with your transcription, use the
+     * <code>VocabularyNames</code> parameter instead.</p>  <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom
      * vocabularies</a>.</p>
      */
@@ -292,12 +296,13 @@ namespace Model
      * <p>Specify the name of the custom vocabulary that you want to use when
      * processing your transcription. Note that vocabulary names are case
      * sensitive.</p> <p>If the language of the specified custom vocabulary doesn't
-     * match the language identified in your media, your job fails.</p> 
-     * <p>This parameter is <b>not</b> intended for use with the
-     * <code>IdentifyLanguage</code> parameter. If you're including
-     * <code>IdentifyLanguage</code> in your request and want to use one or more custom
-     * vocabularies with your transcription, use the <code>VocabularyNames</code>
-     * parameter instead.</p>  <p>For more information, see <a
+     * match the language identified in your media, the custom vocabulary is not
+     * applied to your transcription.</p>  <p>This parameter is <b>not</b>
+     * intended for use with the <code>IdentifyLanguage</code> parameter. If you're
+     * including <code>IdentifyLanguage</code> in your request and want to use one or
+     * more custom vocabularies with your transcription, use the
+     * <code>VocabularyNames</code> parameter instead.</p>  <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom
      * vocabularies</a>.</p>
      */
@@ -307,12 +312,13 @@ namespace Model
      * <p>Specify the name of the custom vocabulary that you want to use when
      * processing your transcription. Note that vocabulary names are case
      * sensitive.</p> <p>If the language of the specified custom vocabulary doesn't
-     * match the language identified in your media, your job fails.</p> 
-     * <p>This parameter is <b>not</b> intended for use with the
-     * <code>IdentifyLanguage</code> parameter. If you're including
-     * <code>IdentifyLanguage</code> in your request and want to use one or more custom
-     * vocabularies with your transcription, use the <code>VocabularyNames</code>
-     * parameter instead.</p>  <p>For more information, see <a
+     * match the language identified in your media, the custom vocabulary is not
+     * applied to your transcription.</p>  <p>This parameter is <b>not</b>
+     * intended for use with the <code>IdentifyLanguage</code> parameter. If you're
+     * including <code>IdentifyLanguage</code> in your request and want to use one or
+     * more custom vocabularies with your transcription, use the
+     * <code>VocabularyNames</code> parameter instead.</p>  <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom
      * vocabularies</a>.</p>
      */
@@ -322,12 +328,13 @@ namespace Model
      * <p>Specify the name of the custom vocabulary that you want to use when
      * processing your transcription. Note that vocabulary names are case
      * sensitive.</p> <p>If the language of the specified custom vocabulary doesn't
-     * match the language identified in your media, your job fails.</p> 
-     * <p>This parameter is <b>not</b> intended for use with the
-     * <code>IdentifyLanguage</code> parameter. If you're including
-     * <code>IdentifyLanguage</code> in your request and want to use one or more custom
-     * vocabularies with your transcription, use the <code>VocabularyNames</code>
-     * parameter instead.</p>  <p>For more information, see <a
+     * match the language identified in your media, the custom vocabulary is not
+     * applied to your transcription.</p>  <p>This parameter is <b>not</b>
+     * intended for use with the <code>IdentifyLanguage</code> parameter. If you're
+     * including <code>IdentifyLanguage</code> in your request and want to use one or
+     * more custom vocabularies with your transcription, use the
+     * <code>VocabularyNames</code> parameter instead.</p>  <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom
      * vocabularies</a>.</p>
      */
@@ -337,12 +344,13 @@ namespace Model
      * <p>Specify the name of the custom vocabulary that you want to use when
      * processing your transcription. Note that vocabulary names are case
      * sensitive.</p> <p>If the language of the specified custom vocabulary doesn't
-     * match the language identified in your media, your job fails.</p> 
-     * <p>This parameter is <b>not</b> intended for use with the
-     * <code>IdentifyLanguage</code> parameter. If you're including
-     * <code>IdentifyLanguage</code> in your request and want to use one or more custom
-     * vocabularies with your transcription, use the <code>VocabularyNames</code>
-     * parameter instead.</p>  <p>For more information, see <a
+     * match the language identified in your media, the custom vocabulary is not
+     * applied to your transcription.</p>  <p>This parameter is <b>not</b>
+     * intended for use with the <code>IdentifyLanguage</code> parameter. If you're
+     * including <code>IdentifyLanguage</code> in your request and want to use one or
+     * more custom vocabularies with your transcription, use the
+     * <code>VocabularyNames</code> parameter instead.</p>  <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom
      * vocabularies</a>.</p>
      */
@@ -435,11 +443,11 @@ namespace Model
      * <p>Specify the name of the custom vocabulary filter that you want to use when
      * processing your transcription. Note that vocabulary filter names are case
      * sensitive.</p> <p>If the language of the specified custom vocabulary filter
-     * doesn't match the language identified in your media, your job fails.</p>
-     *  <p>This parameter is <b>not</b> intended for use with the
-     * <code>IdentifyLanguage</code> parameter. If you're including
-     * <code>IdentifyLanguage</code> in your request and want to use one or more
-     * vocabulary filters with your transcription, use the
+     * doesn't match the language identified in your media, the vocabulary filter is
+     * not applied to your transcription.</p>  <p>This parameter is
+     * <b>not</b> intended for use with the <code>IdentifyLanguage</code> parameter. If
+     * you're including <code>IdentifyLanguage</code> in your request and want to use
+     * one or more vocabulary filters with your transcription, use the
      * <code>VocabularyFilterNames</code> parameter instead.</p>  <p>For
      * more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Using
@@ -451,11 +459,11 @@ namespace Model
      * <p>Specify the name of the custom vocabulary filter that you want to use when
      * processing your transcription. Note that vocabulary filter names are case
      * sensitive.</p> <p>If the language of the specified custom vocabulary filter
-     * doesn't match the language identified in your media, your job fails.</p>
-     *  <p>This parameter is <b>not</b> intended for use with the
-     * <code>IdentifyLanguage</code> parameter. If you're including
-     * <code>IdentifyLanguage</code> in your request and want to use one or more
-     * vocabulary filters with your transcription, use the
+     * doesn't match the language identified in your media, the vocabulary filter is
+     * not applied to your transcription.</p>  <p>This parameter is
+     * <b>not</b> intended for use with the <code>IdentifyLanguage</code> parameter. If
+     * you're including <code>IdentifyLanguage</code> in your request and want to use
+     * one or more vocabulary filters with your transcription, use the
      * <code>VocabularyFilterNames</code> parameter instead.</p>  <p>For
      * more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Using
@@ -467,11 +475,11 @@ namespace Model
      * <p>Specify the name of the custom vocabulary filter that you want to use when
      * processing your transcription. Note that vocabulary filter names are case
      * sensitive.</p> <p>If the language of the specified custom vocabulary filter
-     * doesn't match the language identified in your media, your job fails.</p>
-     *  <p>This parameter is <b>not</b> intended for use with the
-     * <code>IdentifyLanguage</code> parameter. If you're including
-     * <code>IdentifyLanguage</code> in your request and want to use one or more
-     * vocabulary filters with your transcription, use the
+     * doesn't match the language identified in your media, the vocabulary filter is
+     * not applied to your transcription.</p>  <p>This parameter is
+     * <b>not</b> intended for use with the <code>IdentifyLanguage</code> parameter. If
+     * you're including <code>IdentifyLanguage</code> in your request and want to use
+     * one or more vocabulary filters with your transcription, use the
      * <code>VocabularyFilterNames</code> parameter instead.</p>  <p>For
      * more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Using
@@ -483,11 +491,11 @@ namespace Model
      * <p>Specify the name of the custom vocabulary filter that you want to use when
      * processing your transcription. Note that vocabulary filter names are case
      * sensitive.</p> <p>If the language of the specified custom vocabulary filter
-     * doesn't match the language identified in your media, your job fails.</p>
-     *  <p>This parameter is <b>not</b> intended for use with the
-     * <code>IdentifyLanguage</code> parameter. If you're including
-     * <code>IdentifyLanguage</code> in your request and want to use one or more
-     * vocabulary filters with your transcription, use the
+     * doesn't match the language identified in your media, the vocabulary filter is
+     * not applied to your transcription.</p>  <p>This parameter is
+     * <b>not</b> intended for use with the <code>IdentifyLanguage</code> parameter. If
+     * you're including <code>IdentifyLanguage</code> in your request and want to use
+     * one or more vocabulary filters with your transcription, use the
      * <code>VocabularyFilterNames</code> parameter instead.</p>  <p>For
      * more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Using
@@ -499,11 +507,11 @@ namespace Model
      * <p>Specify the name of the custom vocabulary filter that you want to use when
      * processing your transcription. Note that vocabulary filter names are case
      * sensitive.</p> <p>If the language of the specified custom vocabulary filter
-     * doesn't match the language identified in your media, your job fails.</p>
-     *  <p>This parameter is <b>not</b> intended for use with the
-     * <code>IdentifyLanguage</code> parameter. If you're including
-     * <code>IdentifyLanguage</code> in your request and want to use one or more
-     * vocabulary filters with your transcription, use the
+     * doesn't match the language identified in your media, the vocabulary filter is
+     * not applied to your transcription.</p>  <p>This parameter is
+     * <b>not</b> intended for use with the <code>IdentifyLanguage</code> parameter. If
+     * you're including <code>IdentifyLanguage</code> in your request and want to use
+     * one or more vocabulary filters with your transcription, use the
      * <code>VocabularyFilterNames</code> parameter instead.</p>  <p>For
      * more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Using
@@ -515,11 +523,11 @@ namespace Model
      * <p>Specify the name of the custom vocabulary filter that you want to use when
      * processing your transcription. Note that vocabulary filter names are case
      * sensitive.</p> <p>If the language of the specified custom vocabulary filter
-     * doesn't match the language identified in your media, your job fails.</p>
-     *  <p>This parameter is <b>not</b> intended for use with the
-     * <code>IdentifyLanguage</code> parameter. If you're including
-     * <code>IdentifyLanguage</code> in your request and want to use one or more
-     * vocabulary filters with your transcription, use the
+     * doesn't match the language identified in your media, the vocabulary filter is
+     * not applied to your transcription.</p>  <p>This parameter is
+     * <b>not</b> intended for use with the <code>IdentifyLanguage</code> parameter. If
+     * you're including <code>IdentifyLanguage</code> in your request and want to use
+     * one or more vocabulary filters with your transcription, use the
      * <code>VocabularyFilterNames</code> parameter instead.</p>  <p>For
      * more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Using
@@ -531,11 +539,11 @@ namespace Model
      * <p>Specify the name of the custom vocabulary filter that you want to use when
      * processing your transcription. Note that vocabulary filter names are case
      * sensitive.</p> <p>If the language of the specified custom vocabulary filter
-     * doesn't match the language identified in your media, your job fails.</p>
-     *  <p>This parameter is <b>not</b> intended for use with the
-     * <code>IdentifyLanguage</code> parameter. If you're including
-     * <code>IdentifyLanguage</code> in your request and want to use one or more
-     * vocabulary filters with your transcription, use the
+     * doesn't match the language identified in your media, the vocabulary filter is
+     * not applied to your transcription.</p>  <p>This parameter is
+     * <b>not</b> intended for use with the <code>IdentifyLanguage</code> parameter. If
+     * you're including <code>IdentifyLanguage</code> in your request and want to use
+     * one or more vocabulary filters with your transcription, use the
      * <code>VocabularyFilterNames</code> parameter instead.</p>  <p>For
      * more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Using
@@ -547,11 +555,11 @@ namespace Model
      * <p>Specify the name of the custom vocabulary filter that you want to use when
      * processing your transcription. Note that vocabulary filter names are case
      * sensitive.</p> <p>If the language of the specified custom vocabulary filter
-     * doesn't match the language identified in your media, your job fails.</p>
-     *  <p>This parameter is <b>not</b> intended for use with the
-     * <code>IdentifyLanguage</code> parameter. If you're including
-     * <code>IdentifyLanguage</code> in your request and want to use one or more
-     * vocabulary filters with your transcription, use the
+     * doesn't match the language identified in your media, the vocabulary filter is
+     * not applied to your transcription.</p>  <p>This parameter is
+     * <b>not</b> intended for use with the <code>IdentifyLanguage</code> parameter. If
+     * you're including <code>IdentifyLanguage</code> in your request and want to use
+     * one or more vocabulary filters with your transcription, use the
      * <code>VocabularyFilterNames</code> parameter instead.</p>  <p>For
      * more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Using
@@ -1102,7 +1110,7 @@ namespace Model
      * processing your transcription. Note that language model names are case
      * sensitive.</p> <p>The language of the specified language model must match the
      * language code you specify in your transcription request. If the languages don't
-     * match, the language model isn't applied. There are no errors or warnings
+     * match, the custom language model isn't applied. There are no errors or warnings
      * associated with a language mismatch.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-language-models.html">Custom
      * language models</a>.</p>
@@ -1114,7 +1122,7 @@ namespace Model
      * processing your transcription. Note that language model names are case
      * sensitive.</p> <p>The language of the specified language model must match the
      * language code you specify in your transcription request. If the languages don't
-     * match, the language model isn't applied. There are no errors or warnings
+     * match, the custom language model isn't applied. There are no errors or warnings
      * associated with a language mismatch.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-language-models.html">Custom
      * language models</a>.</p>
@@ -1126,7 +1134,7 @@ namespace Model
      * processing your transcription. Note that language model names are case
      * sensitive.</p> <p>The language of the specified language model must match the
      * language code you specify in your transcription request. If the languages don't
-     * match, the language model isn't applied. There are no errors or warnings
+     * match, the custom language model isn't applied. There are no errors or warnings
      * associated with a language mismatch.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-language-models.html">Custom
      * language models</a>.</p>
@@ -1138,7 +1146,7 @@ namespace Model
      * processing your transcription. Note that language model names are case
      * sensitive.</p> <p>The language of the specified language model must match the
      * language code you specify in your transcription request. If the languages don't
-     * match, the language model isn't applied. There are no errors or warnings
+     * match, the custom language model isn't applied. There are no errors or warnings
      * associated with a language mismatch.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-language-models.html">Custom
      * language models</a>.</p>
@@ -1150,7 +1158,7 @@ namespace Model
      * processing your transcription. Note that language model names are case
      * sensitive.</p> <p>The language of the specified language model must match the
      * language code you specify in your transcription request. If the languages don't
-     * match, the language model isn't applied. There are no errors or warnings
+     * match, the custom language model isn't applied. There are no errors or warnings
      * associated with a language mismatch.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-language-models.html">Custom
      * language models</a>.</p>
@@ -1162,7 +1170,7 @@ namespace Model
      * processing your transcription. Note that language model names are case
      * sensitive.</p> <p>The language of the specified language model must match the
      * language code you specify in your transcription request. If the languages don't
-     * match, the language model isn't applied. There are no errors or warnings
+     * match, the custom language model isn't applied. There are no errors or warnings
      * associated with a language mismatch.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-language-models.html">Custom
      * language models</a>.</p>
@@ -1174,7 +1182,7 @@ namespace Model
      * processing your transcription. Note that language model names are case
      * sensitive.</p> <p>The language of the specified language model must match the
      * language code you specify in your transcription request. If the languages don't
-     * match, the language model isn't applied. There are no errors or warnings
+     * match, the custom language model isn't applied. There are no errors or warnings
      * associated with a language mismatch.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-language-models.html">Custom
      * language models</a>.</p>
@@ -1186,7 +1194,7 @@ namespace Model
      * processing your transcription. Note that language model names are case
      * sensitive.</p> <p>The language of the specified language model must match the
      * language code you specify in your transcription request. If the languages don't
-     * match, the language model isn't applied. There are no errors or warnings
+     * match, the custom language model isn't applied. There are no errors or warnings
      * associated with a language mismatch.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-language-models.html">Custom
      * language models</a>.</p>
