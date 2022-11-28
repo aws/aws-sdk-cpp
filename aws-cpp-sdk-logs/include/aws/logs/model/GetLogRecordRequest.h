@@ -106,10 +106,46 @@ namespace Model
      */
     inline GetLogRecordRequest& WithLogRecordPointer(const char* value) { SetLogRecordPointer(value); return *this;}
 
+
+    /**
+     * <p>Specify <code>true</code> to display the log event fields with all sensitive
+     * data unmasked and visible. The default is <code>false</code>.</p> <p>To use this
+     * operation with this parameter, you must be signed into an account with the
+     * <code>logs:Unmask</code> permission.</p>
+     */
+    inline bool GetUnmask() const{ return m_unmask; }
+
+    /**
+     * <p>Specify <code>true</code> to display the log event fields with all sensitive
+     * data unmasked and visible. The default is <code>false</code>.</p> <p>To use this
+     * operation with this parameter, you must be signed into an account with the
+     * <code>logs:Unmask</code> permission.</p>
+     */
+    inline bool UnmaskHasBeenSet() const { return m_unmaskHasBeenSet; }
+
+    /**
+     * <p>Specify <code>true</code> to display the log event fields with all sensitive
+     * data unmasked and visible. The default is <code>false</code>.</p> <p>To use this
+     * operation with this parameter, you must be signed into an account with the
+     * <code>logs:Unmask</code> permission.</p>
+     */
+    inline void SetUnmask(bool value) { m_unmaskHasBeenSet = true; m_unmask = value; }
+
+    /**
+     * <p>Specify <code>true</code> to display the log event fields with all sensitive
+     * data unmasked and visible. The default is <code>false</code>.</p> <p>To use this
+     * operation with this parameter, you must be signed into an account with the
+     * <code>logs:Unmask</code> permission.</p>
+     */
+    inline GetLogRecordRequest& WithUnmask(bool value) { SetUnmask(value); return *this;}
+
   private:
 
     Aws::String m_logRecordPointer;
     bool m_logRecordPointerHasBeenSet = false;
+
+    bool m_unmask;
+    bool m_unmaskHasBeenSet = false;
   };
 
 } // namespace Model

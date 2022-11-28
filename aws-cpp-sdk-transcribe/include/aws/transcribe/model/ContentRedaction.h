@@ -27,9 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>Allows you to redact or flag specified personally identifiable information
-   * (PII) in your transcript. If you use <code>ContentRedaction</code>, you must
-   * also include the sub-parameters: <code>PiiEntityTypes</code>,
+   * <p>Makes it possible to redact or flag specified personally identifiable
+   * information (PII) in your transcript. If you use <code>ContentRedaction</code>,
+   * you must also include the sub-parameters: <code>PiiEntityTypes</code>,
    * <code>RedactionOutput</code>, and <code>RedactionType</code>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ContentRedaction">AWS

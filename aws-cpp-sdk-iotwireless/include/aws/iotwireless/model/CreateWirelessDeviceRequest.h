@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotwireless/model/LoRaWANDevice.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iotwireless/model/PositioningConfigStatus.h>
 #include <aws/iotwireless/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -341,6 +342,43 @@ namespace Model
      */
     inline CreateWirelessDeviceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning
+     * information.</p>
+     */
+    inline const PositioningConfigStatus& GetPositioning() const{ return m_positioning; }
+
+    /**
+     * <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning
+     * information.</p>
+     */
+    inline bool PositioningHasBeenSet() const { return m_positioningHasBeenSet; }
+
+    /**
+     * <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning
+     * information.</p>
+     */
+    inline void SetPositioning(const PositioningConfigStatus& value) { m_positioningHasBeenSet = true; m_positioning = value; }
+
+    /**
+     * <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning
+     * information.</p>
+     */
+    inline void SetPositioning(PositioningConfigStatus&& value) { m_positioningHasBeenSet = true; m_positioning = std::move(value); }
+
+    /**
+     * <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning
+     * information.</p>
+     */
+    inline CreateWirelessDeviceRequest& WithPositioning(const PositioningConfigStatus& value) { SetPositioning(value); return *this;}
+
+    /**
+     * <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning
+     * information.</p>
+     */
+    inline CreateWirelessDeviceRequest& WithPositioning(PositioningConfigStatus&& value) { SetPositioning(std::move(value)); return *this;}
+
   private:
 
     WirelessDeviceType m_type;
@@ -363,6 +401,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    PositioningConfigStatus m_positioning;
+    bool m_positioningHasBeenSet = false;
   };
 
 } // namespace Model

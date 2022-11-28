@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     Complete,
     InternalError,
-    PartialData
+    PartialData,
+    Forbidden
   };
 
 namespace StatusCodeMapper

@@ -25,8 +25,12 @@ namespace Model
 
   /**
    * <p>Describes the Amazon S3 location of the media file you want to use in your
-   * request.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/Media">AWS
+   * request.</p> <p>For information on supported media formats, refer to the <a
+   * href="https://docs.aws.amazon.com/APIReference/API_StartTranscriptionJob.html#transcribe-StartTranscriptionJob-request-MediaFormat">MediaFormat</a>
+   * parameter or the <a
+   * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media
+   * formats</a> section in the Amazon S3 Developer Guide.</p><p><h3>See Also:</h3>  
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/Media">AWS
    * API Reference</a></p>
    */
   class AWS_TRANSCRIBESERVICE_API Media
@@ -134,7 +138,8 @@ namespace Model
      * </p> </li> </ul> <p>Note that the Amazon S3 bucket that contains your input
      * media must be located in the same Amazon Web Services Region where you're making
      * your transcription request.</p>  <p>
-     * <code>RedactedMediaFileUri</code> is only supported for Call Analytics
+     * <code>RedactedMediaFileUri</code> produces a redacted audio file in addition to
+     * a redacted transcript. It is only supported for Call Analytics
      * (<code>StartCallAnalyticsJob</code>) transcription requests.</p> 
      */
     inline const Aws::String& GetRedactedMediaFileUri() const{ return m_redactedMediaFileUri; }
@@ -146,7 +151,8 @@ namespace Model
      * </p> </li> </ul> <p>Note that the Amazon S3 bucket that contains your input
      * media must be located in the same Amazon Web Services Region where you're making
      * your transcription request.</p>  <p>
-     * <code>RedactedMediaFileUri</code> is only supported for Call Analytics
+     * <code>RedactedMediaFileUri</code> produces a redacted audio file in addition to
+     * a redacted transcript. It is only supported for Call Analytics
      * (<code>StartCallAnalyticsJob</code>) transcription requests.</p> 
      */
     inline bool RedactedMediaFileUriHasBeenSet() const { return m_redactedMediaFileUriHasBeenSet; }
@@ -158,7 +164,8 @@ namespace Model
      * </p> </li> </ul> <p>Note that the Amazon S3 bucket that contains your input
      * media must be located in the same Amazon Web Services Region where you're making
      * your transcription request.</p>  <p>
-     * <code>RedactedMediaFileUri</code> is only supported for Call Analytics
+     * <code>RedactedMediaFileUri</code> produces a redacted audio file in addition to
+     * a redacted transcript. It is only supported for Call Analytics
      * (<code>StartCallAnalyticsJob</code>) transcription requests.</p> 
      */
     inline void SetRedactedMediaFileUri(const Aws::String& value) { m_redactedMediaFileUriHasBeenSet = true; m_redactedMediaFileUri = value; }
@@ -170,7 +177,8 @@ namespace Model
      * </p> </li> </ul> <p>Note that the Amazon S3 bucket that contains your input
      * media must be located in the same Amazon Web Services Region where you're making
      * your transcription request.</p>  <p>
-     * <code>RedactedMediaFileUri</code> is only supported for Call Analytics
+     * <code>RedactedMediaFileUri</code> produces a redacted audio file in addition to
+     * a redacted transcript. It is only supported for Call Analytics
      * (<code>StartCallAnalyticsJob</code>) transcription requests.</p> 
      */
     inline void SetRedactedMediaFileUri(Aws::String&& value) { m_redactedMediaFileUriHasBeenSet = true; m_redactedMediaFileUri = std::move(value); }
@@ -182,7 +190,8 @@ namespace Model
      * </p> </li> </ul> <p>Note that the Amazon S3 bucket that contains your input
      * media must be located in the same Amazon Web Services Region where you're making
      * your transcription request.</p>  <p>
-     * <code>RedactedMediaFileUri</code> is only supported for Call Analytics
+     * <code>RedactedMediaFileUri</code> produces a redacted audio file in addition to
+     * a redacted transcript. It is only supported for Call Analytics
      * (<code>StartCallAnalyticsJob</code>) transcription requests.</p> 
      */
     inline void SetRedactedMediaFileUri(const char* value) { m_redactedMediaFileUriHasBeenSet = true; m_redactedMediaFileUri.assign(value); }
@@ -194,7 +203,8 @@ namespace Model
      * </p> </li> </ul> <p>Note that the Amazon S3 bucket that contains your input
      * media must be located in the same Amazon Web Services Region where you're making
      * your transcription request.</p>  <p>
-     * <code>RedactedMediaFileUri</code> is only supported for Call Analytics
+     * <code>RedactedMediaFileUri</code> produces a redacted audio file in addition to
+     * a redacted transcript. It is only supported for Call Analytics
      * (<code>StartCallAnalyticsJob</code>) transcription requests.</p> 
      */
     inline Media& WithRedactedMediaFileUri(const Aws::String& value) { SetRedactedMediaFileUri(value); return *this;}
@@ -206,7 +216,8 @@ namespace Model
      * </p> </li> </ul> <p>Note that the Amazon S3 bucket that contains your input
      * media must be located in the same Amazon Web Services Region where you're making
      * your transcription request.</p>  <p>
-     * <code>RedactedMediaFileUri</code> is only supported for Call Analytics
+     * <code>RedactedMediaFileUri</code> produces a redacted audio file in addition to
+     * a redacted transcript. It is only supported for Call Analytics
      * (<code>StartCallAnalyticsJob</code>) transcription requests.</p> 
      */
     inline Media& WithRedactedMediaFileUri(Aws::String&& value) { SetRedactedMediaFileUri(std::move(value)); return *this;}
@@ -218,7 +229,8 @@ namespace Model
      * </p> </li> </ul> <p>Note that the Amazon S3 bucket that contains your input
      * media must be located in the same Amazon Web Services Region where you're making
      * your transcription request.</p>  <p>
-     * <code>RedactedMediaFileUri</code> is only supported for Call Analytics
+     * <code>RedactedMediaFileUri</code> produces a redacted audio file in addition to
+     * a redacted transcript. It is only supported for Call Analytics
      * (<code>StartCallAnalyticsJob</code>) transcription requests.</p> 
      */
     inline Media& WithRedactedMediaFileUri(const char* value) { SetRedactedMediaFileUri(value); return *this;}

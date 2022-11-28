@@ -77,6 +77,25 @@ namespace Backup
 
 
         /**
+         * <p>This action removes the specified legal hold on a recovery point. This action
+         * can only be performed by a user with sufficient permissions.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CancelLegalHold">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CancelLegalHoldOutcome CancelLegalHold(const Model::CancelLegalHoldRequest& request) const;
+
+        /**
+         * A Callable wrapper for CancelLegalHold that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CancelLegalHoldOutcomeCallable CancelLegalHoldCallable(const Model::CancelLegalHoldRequest& request) const;
+
+        /**
+         * An Async wrapper for CancelLegalHold that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CancelLegalHoldAsync(const Model::CancelLegalHoldRequest& request, const CancelLegalHoldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a backup plan using a backup plan name and backup rules. A backup
          * plan is a document that contains information that Backup uses to schedule tasks
          * that create recovery points for resources.</p> <p>If you call
@@ -158,6 +177,27 @@ namespace Backup
          * An Async wrapper for CreateFramework that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateFrameworkAsync(const Model::CreateFrameworkRequest& request, const CreateFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This action creates a legal hold on a recovery point (backup). A legal hold
+         * is a restraint on altering or deleting a backup until an authorized user cancels
+         * the legal hold. Any actions to delete or disassociate a recovery point will fail
+         * with an error if one or more active legal holds are on the recovery
+         * point.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateLegalHold">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateLegalHoldOutcome CreateLegalHold(const Model::CreateLegalHoldRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateLegalHold that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateLegalHoldOutcomeCallable CreateLegalHoldCallable(const Model::CreateLegalHoldRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateLegalHold that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateLegalHoldAsync(const Model::CreateLegalHoldRequest& request, const CreateLegalHoldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a report plan. A report plan is a document that contains information
@@ -315,8 +355,17 @@ namespace Backup
         /**
          * <p>Deletes the recovery point specified by a recovery point ID.</p> <p>If the
          * recovery point ID belongs to a continuous backup, calling this endpoint deletes
-         * the existing continuous backup and stops future continuous backup.</p><p><h3>See
-         * Also:</h3>   <a
+         * the existing continuous backup and stops future continuous backup.</p> <p>When
+         * an IAM role's permissions are insufficient to call this API, the service sends
+         * back an HTTP 200 response with an empty HTTP body, but the recovery point is not
+         * deleted. Instead, it enters an <code>EXPIRED</code> state.</p> <p>
+         * <code>EXPIRED</code> recovery points can be deleted with this API once the IAM
+         * role has the <code>iam:CreateServiceLinkedRole</code> action. To learn more
+         * about adding this role, see <a
+         * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/deleting-backups.html#deleting-backups-troubleshooting">
+         * Troubleshooting manual deletions</a>.</p> <p>If the user or role is deleted or
+         * the permission within the role is removed, the deletion will not be successful
+         * and will enter an <code>EXPIRED</code> state.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteRecoveryPoint">AWS
          * API Reference</a></p>
          */
@@ -576,6 +625,25 @@ namespace Backup
         virtual void DisassociateRecoveryPointAsync(const Model::DisassociateRecoveryPointRequest& request, const DisassociateRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>This action to a specific child (nested) recovery point removes the
+         * relationship between the specified recovery point and its parent (composite)
+         * recovery point.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DisassociateRecoveryPointFromParent">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateRecoveryPointFromParentOutcome DisassociateRecoveryPointFromParent(const Model::DisassociateRecoveryPointFromParentRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisassociateRecoveryPointFromParent that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisassociateRecoveryPointFromParentOutcomeCallable DisassociateRecoveryPointFromParentCallable(const Model::DisassociateRecoveryPointFromParentRequest& request) const;
+
+        /**
+         * An Async wrapper for DisassociateRecoveryPointFromParent that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisassociateRecoveryPointFromParentAsync(const Model::DisassociateRecoveryPointFromParentRequest& request, const DisassociateRecoveryPointFromParentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns the backup plan that is specified by the plan ID as a backup
          * template.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ExportBackupPlanTemplate">AWS
@@ -702,6 +770,25 @@ namespace Backup
          * An Async wrapper for GetBackupVaultNotifications that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetBackupVaultNotificationsAsync(const Model::GetBackupVaultNotificationsRequest& request, const GetBackupVaultNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This action returns details for a specified legal hold. The details are the
+         * body of a legal hold in JSON format, in addition to metadata.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetLegalHold">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetLegalHoldOutcome GetLegalHold(const Model::GetLegalHoldRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetLegalHold that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetLegalHoldOutcomeCallable GetLegalHoldCallable(const Model::GetLegalHoldRequest& request) const;
+
+        /**
+         * An Async wrapper for GetLegalHold that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetLegalHoldAsync(const Model::GetLegalHoldRequest& request, const GetLegalHoldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a set of metadata key-value pairs that were used to create the
@@ -887,6 +974,24 @@ namespace Backup
         virtual void ListFrameworksAsync(const Model::ListFrameworksRequest& request, const ListFrameworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>This action returns metadata about active and previous legal
+         * holds.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListLegalHolds">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListLegalHoldsOutcome ListLegalHolds(const Model::ListLegalHoldsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListLegalHolds that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListLegalHoldsOutcomeCallable ListLegalHoldsCallable(const Model::ListLegalHoldsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListLegalHolds that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListLegalHoldsAsync(const Model::ListLegalHoldsRequest& request, const ListLegalHoldsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns an array of resources successfully backed up by Backup, including the
          * time the resource was saved, an Amazon Resource Name (ARN) of the resource, and
          * a resource type.</p><p><h3>See Also:</h3>   <a
@@ -922,6 +1027,24 @@ namespace Backup
          * An Async wrapper for ListRecoveryPointsByBackupVault that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListRecoveryPointsByBackupVaultAsync(const Model::ListRecoveryPointsByBackupVaultRequest& request, const ListRecoveryPointsByBackupVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This action returns recovery point ARNs (Amazon Resource Names) of the
+         * specified legal hold.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRecoveryPointsByLegalHold">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListRecoveryPointsByLegalHoldOutcome ListRecoveryPointsByLegalHold(const Model::ListRecoveryPointsByLegalHoldRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListRecoveryPointsByLegalHold that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListRecoveryPointsByLegalHoldOutcomeCallable ListRecoveryPointsByLegalHoldCallable(const Model::ListRecoveryPointsByLegalHoldRequest& request) const;
+
+        /**
+         * An Async wrapper for ListRecoveryPointsByLegalHold that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListRecoveryPointsByLegalHoldAsync(const Model::ListRecoveryPointsByLegalHoldRequest& request, const ListRecoveryPointsByLegalHoldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns detailed information about all the recovery points of the type
@@ -1152,8 +1275,11 @@ namespace Backup
         virtual void StartRestoreJobAsync(const Model::StartRestoreJobRequest& request, const StartRestoreJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Attempts to cancel a job to create a one-time backup of a
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Attempts to cancel a job to create a one-time backup of a resource.</p>
+         * <p>This action is not supported for the following services: Amazon FSx for
+         * Windows File Server, Amazon FSx for Lustre, FSx for ONTAP , Amazon FSx for
+         * OpenZFS, Amazon DocumentDB (with MongoDB compatibility), Amazon RDS, Amazon
+         * Aurora, and Amazon Neptune.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/StopBackupJob">AWS
          * API Reference</a></p>
          */

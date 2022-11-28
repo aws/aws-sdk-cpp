@@ -43,42 +43,42 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for the synchronization job.</p>
+     * <p>A identifier for the synchronization job.</p>
      */
     inline const Aws::String& GetExecutionId() const{ return m_executionId; }
 
     /**
-     * <p>A unique identifier for the synchronization job.</p>
+     * <p>A identifier for the synchronization job.</p>
      */
     inline bool ExecutionIdHasBeenSet() const { return m_executionIdHasBeenSet; }
 
     /**
-     * <p>A unique identifier for the synchronization job.</p>
+     * <p>A identifier for the synchronization job.</p>
      */
     inline void SetExecutionId(const Aws::String& value) { m_executionIdHasBeenSet = true; m_executionId = value; }
 
     /**
-     * <p>A unique identifier for the synchronization job.</p>
+     * <p>A identifier for the synchronization job.</p>
      */
     inline void SetExecutionId(Aws::String&& value) { m_executionIdHasBeenSet = true; m_executionId = std::move(value); }
 
     /**
-     * <p>A unique identifier for the synchronization job.</p>
+     * <p>A identifier for the synchronization job.</p>
      */
     inline void SetExecutionId(const char* value) { m_executionIdHasBeenSet = true; m_executionId.assign(value); }
 
     /**
-     * <p>A unique identifier for the synchronization job.</p>
+     * <p>A identifier for the synchronization job.</p>
      */
     inline DataSourceSyncJob& WithExecutionId(const Aws::String& value) { SetExecutionId(value); return *this;}
 
     /**
-     * <p>A unique identifier for the synchronization job.</p>
+     * <p>A identifier for the synchronization job.</p>
      */
     inline DataSourceSyncJob& WithExecutionId(Aws::String&& value) { SetExecutionId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for the synchronization job.</p>
+     * <p>A identifier for the synchronization job.</p>
      */
     inline DataSourceSyncJob& WithExecutionId(const char* value) { SetExecutionId(value); return *this;}
 

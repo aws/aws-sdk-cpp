@@ -37,36 +37,36 @@ namespace Model
 
     /**
      * <p>Lists all custom medical vocabularies that have the status specified in your
-     * request. Vocabularies are ordered by creation date, with the newest vocabulary
-     * first.</p>
+     * request. Custom vocabularies are ordered by creation date, with the newest
+     * vocabulary first.</p>
      */
     inline const VocabularyState& GetStatus() const{ return m_status; }
 
     /**
      * <p>Lists all custom medical vocabularies that have the status specified in your
-     * request. Vocabularies are ordered by creation date, with the newest vocabulary
-     * first.</p>
+     * request. Custom vocabularies are ordered by creation date, with the newest
+     * vocabulary first.</p>
      */
     inline void SetStatus(const VocabularyState& value) { m_status = value; }
 
     /**
      * <p>Lists all custom medical vocabularies that have the status specified in your
-     * request. Vocabularies are ordered by creation date, with the newest vocabulary
-     * first.</p>
+     * request. Custom vocabularies are ordered by creation date, with the newest
+     * vocabulary first.</p>
      */
     inline void SetStatus(VocabularyState&& value) { m_status = std::move(value); }
 
     /**
      * <p>Lists all custom medical vocabularies that have the status specified in your
-     * request. Vocabularies are ordered by creation date, with the newest vocabulary
-     * first.</p>
+     * request. Custom vocabularies are ordered by creation date, with the newest
+     * vocabulary first.</p>
      */
     inline ListMedicalVocabulariesResult& WithStatus(const VocabularyState& value) { SetStatus(value); return *this;}
 
     /**
      * <p>Lists all custom medical vocabularies that have the status specified in your
-     * request. Vocabularies are ordered by creation date, with the newest vocabulary
-     * first.</p>
+     * request. Custom vocabularies are ordered by creation date, with the newest
+     * vocabulary first.</p>
      */
     inline ListMedicalVocabulariesResult& WithStatus(VocabularyState&& value) { SetStatus(std::move(value)); return *this;}
 

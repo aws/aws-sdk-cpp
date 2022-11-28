@@ -22,6 +22,7 @@
 #include <aws/transcribestreaming/TranscribeStreamingServiceClient.h>
 #include <aws/transcribestreaming/TranscribeStreamingServiceErrorMarshaller.h>
 #include <aws/transcribestreaming/TranscribeStreamingServiceEndpointProvider.h>
+#include <aws/transcribestreaming/model/StartCallAnalyticsStreamTranscriptionRequest.h>
 #include <aws/transcribestreaming/model/StartMedicalStreamTranscriptionRequest.h>
 #include <aws/transcribestreaming/model/StartStreamTranscriptionRequest.h>
 
@@ -152,6 +153,66 @@ void TranscribeStreamingServiceClient::OverrideEndpoint(const Aws::String& endpo
   m_endpointProvider->OverrideEndpoint(endpoint);
 }
 
+void TranscribeStreamingServiceClient::StartCallAnalyticsStreamTranscriptionAsync(Model::StartCallAnalyticsStreamTranscriptionRequest& request,
+                const StartCallAnalyticsStreamTranscriptionStreamReadyHandler& streamReadyHandler,
+                const StartCallAnalyticsStreamTranscriptionResponseReceivedHandler& handler,
+                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
+{
+  if (!m_endpointProvider) {
+    handler(this, request, StartCallAnalyticsStreamTranscriptionOutcome(Aws::Client::AWSError<TranscribeStreamingServiceErrors>(TranscribeStreamingServiceErrors::INTERNAL_FAILURE, "INTERNAL_FAILURE", "Endpoint provider is not initialized", false)), handlerContext);
+    return;
+  }
+  if (!request.LanguageCodeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartCallAnalyticsStreamTranscription", "Required field: LanguageCode, is not set");
+    handler(this, request, StartCallAnalyticsStreamTranscriptionOutcome(Aws::Client::AWSError<TranscribeStreamingServiceErrors>(TranscribeStreamingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LanguageCode]", false)), handlerContext);
+    return;
+  }
+  if (!request.MediaSampleRateHertzHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartCallAnalyticsStreamTranscription", "Required field: MediaSampleRateHertz, is not set");
+    handler(this, request, StartCallAnalyticsStreamTranscriptionOutcome(Aws::Client::AWSError<TranscribeStreamingServiceErrors>(TranscribeStreamingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MediaSampleRateHertz]", false)), handlerContext);
+    return;
+  }
+  if (!request.MediaEncodingHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartCallAnalyticsStreamTranscription", "Required field: MediaEncoding, is not set");
+    handler(this, request, StartCallAnalyticsStreamTranscriptionOutcome(Aws::Client::AWSError<TranscribeStreamingServiceErrors>(TranscribeStreamingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MediaEncoding]", false)), handlerContext);
+    return;
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  if (!endpointResolutionOutcome.IsSuccess()) {
+    handler(this, request, StartCallAnalyticsStreamTranscriptionOutcome(Aws::Client::AWSError<CoreErrors>(
+        CoreErrors::ENDPOINT_RESOLUTION_FAILURE, "ENDPOINT_RESOLUTION_FAILURE", endpointResolutionOutcome.GetError().GetMessage(), false)), handlerContext);
+    return;
+  }
+  endpointResolutionOutcome.GetResult().AddPathSegments("/call-analytics-stream-transcription");
+  request.SetResponseStreamFactory(
+      [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
+  );
+
+  auto eventEncoderStream = Aws::MakeShared<Model::AudioStream>(ALLOCATION_TAG);
+  eventEncoderStream->SetSigner(GetSignerByName(Aws::Auth::EVENTSTREAM_SIGV4_SIGNER));
+  request.SetAudioStream(eventEncoderStream); // this becomes the body of the request
+  auto sem = Aws::MakeShared<Aws::Utils::Threading::Semaphore>(ALLOCATION_TAG, 0, 1);
+  request.SetRequestSignedHandler([eventEncoderStream, sem](const Aws::Http::HttpRequest& httpRequest) { eventEncoderStream->SetSignatureSeed(Aws::Client::GetAuthorizationHeader(httpRequest)); sem->ReleaseAll(); });
+
+  m_executor->Submit([this, &endpointResolutionOutcome, &request, handler, handlerContext] () mutable {
+      JsonOutcome outcome = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::EVENTSTREAM_SIGV4_SIGNER);
+      if(outcome.IsSuccess())
+      {
+        handler(this, request, StartCallAnalyticsStreamTranscriptionOutcome(NoResult()), handlerContext);
+      }
+      else
+      {
+        request.GetAudioStream()->Close();
+        handler(this, request, StartCallAnalyticsStreamTranscriptionOutcome(outcome.GetError()), handlerContext);
+      }
+      return StartCallAnalyticsStreamTranscriptionOutcome(NoResult());
+  });
+  sem->WaitOne();
+  streamReadyHandler(*request.GetAudioStream());
+}
 void TranscribeStreamingServiceClient::StartMedicalStreamTranscriptionAsync(Model::StartMedicalStreamTranscriptionRequest& request,
                 const StartMedicalStreamTranscriptionStreamReadyHandler& streamReadyHandler,
                 const StartMedicalStreamTranscriptionResponseReceivedHandler& handler,

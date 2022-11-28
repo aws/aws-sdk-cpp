@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     bursting,
-    provisioned
+    provisioned,
+    elastic
   };
 
 namespace ThroughputModeMapper

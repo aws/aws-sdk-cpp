@@ -54,6 +54,17 @@ ListMetricsResult& ListMetricsResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
     }
+    XmlNode owningAccountsNode = resultNode.FirstChild("OwningAccounts");
+    if(!owningAccountsNode.IsNull())
+    {
+      XmlNode owningAccountsMember = owningAccountsNode.FirstChild("member");
+      while(!owningAccountsMember.IsNull())
+      {
+        m_owningAccounts.push_back(owningAccountsMember.GetText());
+        owningAccountsMember = owningAccountsMember.NextNode("member");
+      }
+
+    }
   }
 
   if (!rootNode.IsNull()) {

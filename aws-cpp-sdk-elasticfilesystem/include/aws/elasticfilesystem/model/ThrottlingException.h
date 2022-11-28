@@ -25,8 +25,9 @@ namespace Model
 
   /**
    * <p>Returned when the <code>CreateAccessPoint</code> API action is called too
-   * quickly and the number of Access Points in the account is nearing the limit of
-   * 120.</p><p><h3>See Also:</h3>   <a
+   * quickly and the number of Access Points on the file system is nearing the <a
+   * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#limits-efs-resources-per-account-per-region">limit
+   * of 120</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/ThrottlingException">AWS
    * API Reference</a></p>
    */

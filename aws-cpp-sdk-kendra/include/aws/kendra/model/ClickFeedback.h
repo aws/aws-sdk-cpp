@@ -41,42 +41,42 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier of the search result that was clicked.</p>
+     * <p>The identifier of the search result that was clicked.</p>
      */
     inline const Aws::String& GetResultId() const{ return m_resultId; }
 
     /**
-     * <p>The unique identifier of the search result that was clicked.</p>
+     * <p>The identifier of the search result that was clicked.</p>
      */
     inline bool ResultIdHasBeenSet() const { return m_resultIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier of the search result that was clicked.</p>
+     * <p>The identifier of the search result that was clicked.</p>
      */
     inline void SetResultId(const Aws::String& value) { m_resultIdHasBeenSet = true; m_resultId = value; }
 
     /**
-     * <p>The unique identifier of the search result that was clicked.</p>
+     * <p>The identifier of the search result that was clicked.</p>
      */
     inline void SetResultId(Aws::String&& value) { m_resultIdHasBeenSet = true; m_resultId = std::move(value); }
 
     /**
-     * <p>The unique identifier of the search result that was clicked.</p>
+     * <p>The identifier of the search result that was clicked.</p>
      */
     inline void SetResultId(const char* value) { m_resultIdHasBeenSet = true; m_resultId.assign(value); }
 
     /**
-     * <p>The unique identifier of the search result that was clicked.</p>
+     * <p>The identifier of the search result that was clicked.</p>
      */
     inline ClickFeedback& WithResultId(const Aws::String& value) { SetResultId(value); return *this;}
 
     /**
-     * <p>The unique identifier of the search result that was clicked.</p>
+     * <p>The identifier of the search result that was clicked.</p>
      */
     inline ClickFeedback& WithResultId(Aws::String&& value) { SetResultId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier of the search result that was clicked.</p>
+     * <p>The identifier of the search result that was clicked.</p>
      */
     inline ClickFeedback& WithResultId(const char* value) { SetResultId(value); return *this;}
 

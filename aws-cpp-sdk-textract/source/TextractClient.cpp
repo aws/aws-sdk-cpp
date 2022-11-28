@@ -28,9 +28,12 @@
 #include <aws/textract/model/GetDocumentAnalysisRequest.h>
 #include <aws/textract/model/GetDocumentTextDetectionRequest.h>
 #include <aws/textract/model/GetExpenseAnalysisRequest.h>
+#include <aws/textract/model/GetLendingAnalysisRequest.h>
+#include <aws/textract/model/GetLendingAnalysisSummaryRequest.h>
 #include <aws/textract/model/StartDocumentAnalysisRequest.h>
 #include <aws/textract/model/StartDocumentTextDetectionRequest.h>
 #include <aws/textract/model/StartExpenseAnalysisRequest.h>
+#include <aws/textract/model/StartLendingAnalysisRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -327,6 +330,54 @@ void TextractClient::GetExpenseAnalysisAsync(const GetExpenseAnalysisRequest& re
     } );
 }
 
+GetLendingAnalysisOutcome TextractClient::GetLendingAnalysis(const GetLendingAnalysisRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetLendingAnalysis, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetLendingAnalysis, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetLendingAnalysisOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetLendingAnalysisOutcomeCallable TextractClient::GetLendingAnalysisCallable(const GetLendingAnalysisRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetLendingAnalysisOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLendingAnalysis(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TextractClient::GetLendingAnalysisAsync(const GetLendingAnalysisRequest& request, const GetLendingAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetLendingAnalysis(request), context);
+    } );
+}
+
+GetLendingAnalysisSummaryOutcome TextractClient::GetLendingAnalysisSummary(const GetLendingAnalysisSummaryRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetLendingAnalysisSummary, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetLendingAnalysisSummary, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetLendingAnalysisSummaryOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetLendingAnalysisSummaryOutcomeCallable TextractClient::GetLendingAnalysisSummaryCallable(const GetLendingAnalysisSummaryRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetLendingAnalysisSummaryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLendingAnalysisSummary(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TextractClient::GetLendingAnalysisSummaryAsync(const GetLendingAnalysisSummaryRequest& request, const GetLendingAnalysisSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetLendingAnalysisSummary(request), context);
+    } );
+}
+
 StartDocumentAnalysisOutcome TextractClient::StartDocumentAnalysis(const StartDocumentAnalysisRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartDocumentAnalysis, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -396,6 +447,30 @@ void TextractClient::StartExpenseAnalysisAsync(const StartExpenseAnalysisRequest
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, StartExpenseAnalysis(request), context);
+    } );
+}
+
+StartLendingAnalysisOutcome TextractClient::StartLendingAnalysis(const StartLendingAnalysisRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartLendingAnalysis, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartLendingAnalysis, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return StartLendingAnalysisOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartLendingAnalysisOutcomeCallable TextractClient::StartLendingAnalysisCallable(const StartLendingAnalysisRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartLendingAnalysisOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartLendingAnalysis(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TextractClient::StartLendingAnalysisAsync(const StartLendingAnalysisRequest& request, const StartLendingAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartLendingAnalysis(request), context);
     } );
 }
 

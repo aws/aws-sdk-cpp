@@ -57,22 +57,22 @@ namespace Model
 
 
     /**
-     * <p>The log events that are too old.</p>
+     * <p>The log events that are dated too far in the past.</p>
      */
     inline int GetTooOldLogEventEndIndex() const{ return m_tooOldLogEventEndIndex; }
 
     /**
-     * <p>The log events that are too old.</p>
+     * <p>The log events that are dated too far in the past.</p>
      */
     inline bool TooOldLogEventEndIndexHasBeenSet() const { return m_tooOldLogEventEndIndexHasBeenSet; }
 
     /**
-     * <p>The log events that are too old.</p>
+     * <p>The log events that are dated too far in the past.</p>
      */
     inline void SetTooOldLogEventEndIndex(int value) { m_tooOldLogEventEndIndexHasBeenSet = true; m_tooOldLogEventEndIndex = value; }
 
     /**
-     * <p>The log events that are too old.</p>
+     * <p>The log events that are dated too far in the past.</p>
      */
     inline RejectedLogEventsInfo& WithTooOldLogEventEndIndex(int value) { SetTooOldLogEventEndIndex(value); return *this;}
 

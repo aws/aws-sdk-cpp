@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/iotwireless/IoTWireless_EXPORTS.h>
 #include <aws/iotwireless/model/Positioning.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iotwireless/model/ApplicationConfig.h>
 #include <utility>
 
 namespace Aws
@@ -113,6 +115,55 @@ namespace Model
      */
     inline FPorts& WithPositioning(Positioning&& value) { SetPositioning(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Optional LoRaWAN application information, which can be used for
+     * geolocation.</p>
+     */
+    inline const Aws::Vector<ApplicationConfig>& GetApplications() const{ return m_applications; }
+
+    /**
+     * <p>Optional LoRaWAN application information, which can be used for
+     * geolocation.</p>
+     */
+    inline bool ApplicationsHasBeenSet() const { return m_applicationsHasBeenSet; }
+
+    /**
+     * <p>Optional LoRaWAN application information, which can be used for
+     * geolocation.</p>
+     */
+    inline void SetApplications(const Aws::Vector<ApplicationConfig>& value) { m_applicationsHasBeenSet = true; m_applications = value; }
+
+    /**
+     * <p>Optional LoRaWAN application information, which can be used for
+     * geolocation.</p>
+     */
+    inline void SetApplications(Aws::Vector<ApplicationConfig>&& value) { m_applicationsHasBeenSet = true; m_applications = std::move(value); }
+
+    /**
+     * <p>Optional LoRaWAN application information, which can be used for
+     * geolocation.</p>
+     */
+    inline FPorts& WithApplications(const Aws::Vector<ApplicationConfig>& value) { SetApplications(value); return *this;}
+
+    /**
+     * <p>Optional LoRaWAN application information, which can be used for
+     * geolocation.</p>
+     */
+    inline FPorts& WithApplications(Aws::Vector<ApplicationConfig>&& value) { SetApplications(std::move(value)); return *this;}
+
+    /**
+     * <p>Optional LoRaWAN application information, which can be used for
+     * geolocation.</p>
+     */
+    inline FPorts& AddApplications(const ApplicationConfig& value) { m_applicationsHasBeenSet = true; m_applications.push_back(value); return *this; }
+
+    /**
+     * <p>Optional LoRaWAN application information, which can be used for
+     * geolocation.</p>
+     */
+    inline FPorts& AddApplications(ApplicationConfig&& value) { m_applicationsHasBeenSet = true; m_applications.push_back(std::move(value)); return *this; }
+
   private:
 
     int m_fuota;
@@ -126,6 +177,9 @@ namespace Model
 
     Positioning m_positioning;
     bool m_positioningHasBeenSet = false;
+
+    Aws::Vector<ApplicationConfig> m_applications;
+    bool m_applicationsHasBeenSet = false;
   };
 
 } // namespace Model

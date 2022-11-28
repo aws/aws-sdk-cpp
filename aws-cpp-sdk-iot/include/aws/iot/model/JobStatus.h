@@ -19,7 +19,8 @@ namespace Model
     IN_PROGRESS,
     CANCELED,
     COMPLETED,
-    DELETION_IN_PROGRESS
+    DELETION_IN_PROGRESS,
+    SCHEDULED
   };
 
 namespace JobStatusMapper

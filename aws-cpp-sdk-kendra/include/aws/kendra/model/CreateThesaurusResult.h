@@ -33,37 +33,37 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier of the thesaurus. </p>
+     * <p>The identifier of the thesaurus. </p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The unique identifier of the thesaurus. </p>
+     * <p>The identifier of the thesaurus. </p>
      */
     inline void SetId(const Aws::String& value) { m_id = value; }
 
     /**
-     * <p>The unique identifier of the thesaurus. </p>
+     * <p>The identifier of the thesaurus. </p>
      */
     inline void SetId(Aws::String&& value) { m_id = std::move(value); }
 
     /**
-     * <p>The unique identifier of the thesaurus. </p>
+     * <p>The identifier of the thesaurus. </p>
      */
     inline void SetId(const char* value) { m_id.assign(value); }
 
     /**
-     * <p>The unique identifier of the thesaurus. </p>
+     * <p>The identifier of the thesaurus. </p>
      */
     inline CreateThesaurusResult& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The unique identifier of the thesaurus. </p>
+     * <p>The identifier of the thesaurus. </p>
      */
     inline CreateThesaurusResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier of the thesaurus. </p>
+     * <p>The identifier of the thesaurus. </p>
      */
     inline CreateThesaurusResult& WithId(const char* value) { SetId(value); return *this;}
 

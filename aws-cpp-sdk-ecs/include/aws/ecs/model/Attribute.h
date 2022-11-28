@@ -112,8 +112,8 @@ namespace Model
      * <p>The value of the attribute. The <code>value</code> must contain between 1 and
      * 128 characters. It can contain letters (uppercase and lowercase), numbers,
      * hyphens (-), underscores (_), periods (.), at signs (@), forward slashes (/),
-     * back slashes (\), colons (:), or spaces. The value can't can't start or end with
-     * a space.</p>
+     * back slashes (\), colons (:), or spaces. The value can't start or end with a
+     * space.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
@@ -121,8 +121,8 @@ namespace Model
      * <p>The value of the attribute. The <code>value</code> must contain between 1 and
      * 128 characters. It can contain letters (uppercase and lowercase), numbers,
      * hyphens (-), underscores (_), periods (.), at signs (@), forward slashes (/),
-     * back slashes (\), colons (:), or spaces. The value can't can't start or end with
-     * a space.</p>
+     * back slashes (\), colons (:), or spaces. The value can't start or end with a
+     * space.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
@@ -130,8 +130,8 @@ namespace Model
      * <p>The value of the attribute. The <code>value</code> must contain between 1 and
      * 128 characters. It can contain letters (uppercase and lowercase), numbers,
      * hyphens (-), underscores (_), periods (.), at signs (@), forward slashes (/),
-     * back slashes (\), colons (:), or spaces. The value can't can't start or end with
-     * a space.</p>
+     * back slashes (\), colons (:), or spaces. The value can't start or end with a
+     * space.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
@@ -139,8 +139,8 @@ namespace Model
      * <p>The value of the attribute. The <code>value</code> must contain between 1 and
      * 128 characters. It can contain letters (uppercase and lowercase), numbers,
      * hyphens (-), underscores (_), periods (.), at signs (@), forward slashes (/),
-     * back slashes (\), colons (:), or spaces. The value can't can't start or end with
-     * a space.</p>
+     * back slashes (\), colons (:), or spaces. The value can't start or end with a
+     * space.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
@@ -148,8 +148,8 @@ namespace Model
      * <p>The value of the attribute. The <code>value</code> must contain between 1 and
      * 128 characters. It can contain letters (uppercase and lowercase), numbers,
      * hyphens (-), underscores (_), periods (.), at signs (@), forward slashes (/),
-     * back slashes (\), colons (:), or spaces. The value can't can't start or end with
-     * a space.</p>
+     * back slashes (\), colons (:), or spaces. The value can't start or end with a
+     * space.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
@@ -157,8 +157,8 @@ namespace Model
      * <p>The value of the attribute. The <code>value</code> must contain between 1 and
      * 128 characters. It can contain letters (uppercase and lowercase), numbers,
      * hyphens (-), underscores (_), periods (.), at signs (@), forward slashes (/),
-     * back slashes (\), colons (:), or spaces. The value can't can't start or end with
-     * a space.</p>
+     * back slashes (\), colons (:), or spaces. The value can't start or end with a
+     * space.</p>
      */
     inline Attribute& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
@@ -166,8 +166,8 @@ namespace Model
      * <p>The value of the attribute. The <code>value</code> must contain between 1 and
      * 128 characters. It can contain letters (uppercase and lowercase), numbers,
      * hyphens (-), underscores (_), periods (.), at signs (@), forward slashes (/),
-     * back slashes (\), colons (:), or spaces. The value can't can't start or end with
-     * a space.</p>
+     * back slashes (\), colons (:), or spaces. The value can't start or end with a
+     * space.</p>
      */
     inline Attribute& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
@@ -175,8 +175,8 @@ namespace Model
      * <p>The value of the attribute. The <code>value</code> must contain between 1 and
      * 128 characters. It can contain letters (uppercase and lowercase), numbers,
      * hyphens (-), underscores (_), periods (.), at signs (@), forward slashes (/),
-     * back slashes (\), colons (:), or spaces. The value can't can't start or end with
-     * a space.</p>
+     * back slashes (\), colons (:), or spaces. The value can't start or end with a
+     * space.</p>
      */
     inline Attribute& WithValue(const char* value) { SetValue(value); return *this;}
 

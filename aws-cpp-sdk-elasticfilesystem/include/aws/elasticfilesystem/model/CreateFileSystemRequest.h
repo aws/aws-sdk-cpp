@@ -358,14 +358,13 @@ namespace Model
 
 
     /**
-     * <p>Specifies the throughput mode for the file system, either
-     * <code>bursting</code> or <code>provisioned</code>. If you set
-     * <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a
+     * <p>Specifies the throughput mode for the file system. The mode can be
+     * <code>bursting</code>, <code>provisioned</code>, or <code>elastic</code>. If you
+     * set <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a
      * value for <code>ProvisionedThroughputInMibps</code>. After you create the file
      * system, you can decrease your file system's throughput in Provisioned Throughput
-     * mode or change between the throughput modes, as long as it’s been more than 24
-     * hours since the last decrease or throughput mode change. For more information,
-     * see <a
+     * mode or change between the throughput modes, with certain time restrictions. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput">Specifying
      * throughput with provisioned mode</a> in the <i>Amazon EFS User Guide</i>. </p>
      * <p>Default is <code>bursting</code>.</p>
@@ -373,14 +372,13 @@ namespace Model
     inline const ThroughputMode& GetThroughputMode() const{ return m_throughputMode; }
 
     /**
-     * <p>Specifies the throughput mode for the file system, either
-     * <code>bursting</code> or <code>provisioned</code>. If you set
-     * <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a
+     * <p>Specifies the throughput mode for the file system. The mode can be
+     * <code>bursting</code>, <code>provisioned</code>, or <code>elastic</code>. If you
+     * set <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a
      * value for <code>ProvisionedThroughputInMibps</code>. After you create the file
      * system, you can decrease your file system's throughput in Provisioned Throughput
-     * mode or change between the throughput modes, as long as it’s been more than 24
-     * hours since the last decrease or throughput mode change. For more information,
-     * see <a
+     * mode or change between the throughput modes, with certain time restrictions. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput">Specifying
      * throughput with provisioned mode</a> in the <i>Amazon EFS User Guide</i>. </p>
      * <p>Default is <code>bursting</code>.</p>
@@ -388,14 +386,13 @@ namespace Model
     inline bool ThroughputModeHasBeenSet() const { return m_throughputModeHasBeenSet; }
 
     /**
-     * <p>Specifies the throughput mode for the file system, either
-     * <code>bursting</code> or <code>provisioned</code>. If you set
-     * <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a
+     * <p>Specifies the throughput mode for the file system. The mode can be
+     * <code>bursting</code>, <code>provisioned</code>, or <code>elastic</code>. If you
+     * set <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a
      * value for <code>ProvisionedThroughputInMibps</code>. After you create the file
      * system, you can decrease your file system's throughput in Provisioned Throughput
-     * mode or change between the throughput modes, as long as it’s been more than 24
-     * hours since the last decrease or throughput mode change. For more information,
-     * see <a
+     * mode or change between the throughput modes, with certain time restrictions. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput">Specifying
      * throughput with provisioned mode</a> in the <i>Amazon EFS User Guide</i>. </p>
      * <p>Default is <code>bursting</code>.</p>
@@ -403,14 +400,13 @@ namespace Model
     inline void SetThroughputMode(const ThroughputMode& value) { m_throughputModeHasBeenSet = true; m_throughputMode = value; }
 
     /**
-     * <p>Specifies the throughput mode for the file system, either
-     * <code>bursting</code> or <code>provisioned</code>. If you set
-     * <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a
+     * <p>Specifies the throughput mode for the file system. The mode can be
+     * <code>bursting</code>, <code>provisioned</code>, or <code>elastic</code>. If you
+     * set <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a
      * value for <code>ProvisionedThroughputInMibps</code>. After you create the file
      * system, you can decrease your file system's throughput in Provisioned Throughput
-     * mode or change between the throughput modes, as long as it’s been more than 24
-     * hours since the last decrease or throughput mode change. For more information,
-     * see <a
+     * mode or change between the throughput modes, with certain time restrictions. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput">Specifying
      * throughput with provisioned mode</a> in the <i>Amazon EFS User Guide</i>. </p>
      * <p>Default is <code>bursting</code>.</p>
@@ -418,14 +414,13 @@ namespace Model
     inline void SetThroughputMode(ThroughputMode&& value) { m_throughputModeHasBeenSet = true; m_throughputMode = std::move(value); }
 
     /**
-     * <p>Specifies the throughput mode for the file system, either
-     * <code>bursting</code> or <code>provisioned</code>. If you set
-     * <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a
+     * <p>Specifies the throughput mode for the file system. The mode can be
+     * <code>bursting</code>, <code>provisioned</code>, or <code>elastic</code>. If you
+     * set <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a
      * value for <code>ProvisionedThroughputInMibps</code>. After you create the file
      * system, you can decrease your file system's throughput in Provisioned Throughput
-     * mode or change between the throughput modes, as long as it’s been more than 24
-     * hours since the last decrease or throughput mode change. For more information,
-     * see <a
+     * mode or change between the throughput modes, with certain time restrictions. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput">Specifying
      * throughput with provisioned mode</a> in the <i>Amazon EFS User Guide</i>. </p>
      * <p>Default is <code>bursting</code>.</p>
@@ -433,14 +428,13 @@ namespace Model
     inline CreateFileSystemRequest& WithThroughputMode(const ThroughputMode& value) { SetThroughputMode(value); return *this;}
 
     /**
-     * <p>Specifies the throughput mode for the file system, either
-     * <code>bursting</code> or <code>provisioned</code>. If you set
-     * <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a
+     * <p>Specifies the throughput mode for the file system. The mode can be
+     * <code>bursting</code>, <code>provisioned</code>, or <code>elastic</code>. If you
+     * set <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a
      * value for <code>ProvisionedThroughputInMibps</code>. After you create the file
      * system, you can decrease your file system's throughput in Provisioned Throughput
-     * mode or change between the throughput modes, as long as it’s been more than 24
-     * hours since the last decrease or throughput mode change. For more information,
-     * see <a
+     * mode or change between the throughput modes, with certain time restrictions. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput">Specifying
      * throughput with provisioned mode</a> in the <i>Amazon EFS User Guide</i>. </p>
      * <p>Default is <code>bursting</code>.</p>

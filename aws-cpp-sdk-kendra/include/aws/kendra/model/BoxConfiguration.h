@@ -110,8 +110,8 @@ namespace Model
      * <li> <p>passphrase—A set of characters that act like a password.</p> </li> </ul>
      * <p>You create an application in Box to generate the keys or credentials required
      * for the secret. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html#box-authentication">Authentication
-     * for a Box data source</a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html">Using a
+     * Box data source</a>.</p>
      */
     inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
 
@@ -127,8 +127,8 @@ namespace Model
      * <li> <p>passphrase—A set of characters that act like a password.</p> </li> </ul>
      * <p>You create an application in Box to generate the keys or credentials required
      * for the secret. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html#box-authentication">Authentication
-     * for a Box data source</a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html">Using a
+     * Box data source</a>.</p>
      */
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
 
@@ -144,8 +144,8 @@ namespace Model
      * <li> <p>passphrase—A set of characters that act like a password.</p> </li> </ul>
      * <p>You create an application in Box to generate the keys or credentials required
      * for the secret. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html#box-authentication">Authentication
-     * for a Box data source</a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html">Using a
+     * Box data source</a>.</p>
      */
     inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
 
@@ -161,8 +161,8 @@ namespace Model
      * <li> <p>passphrase—A set of characters that act like a password.</p> </li> </ul>
      * <p>You create an application in Box to generate the keys or credentials required
      * for the secret. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html#box-authentication">Authentication
-     * for a Box data source</a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html">Using a
+     * Box data source</a>.</p>
      */
     inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
 
@@ -178,8 +178,8 @@ namespace Model
      * <li> <p>passphrase—A set of characters that act like a password.</p> </li> </ul>
      * <p>You create an application in Box to generate the keys or credentials required
      * for the secret. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html#box-authentication">Authentication
-     * for a Box data source</a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html">Using a
+     * Box data source</a>.</p>
      */
     inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
 
@@ -195,8 +195,8 @@ namespace Model
      * <li> <p>passphrase—A set of characters that act like a password.</p> </li> </ul>
      * <p>You create an application in Box to generate the keys or credentials required
      * for the secret. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html#box-authentication">Authentication
-     * for a Box data source</a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html">Using a
+     * Box data source</a>.</p>
      */
     inline BoxConfiguration& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
 
@@ -212,8 +212,8 @@ namespace Model
      * <li> <p>passphrase—A set of characters that act like a password.</p> </li> </ul>
      * <p>You create an application in Box to generate the keys or credentials required
      * for the secret. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html#box-authentication">Authentication
-     * for a Box data source</a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html">Using a
+     * Box data source</a>.</p>
      */
     inline BoxConfiguration& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
 
@@ -229,8 +229,8 @@ namespace Model
      * <li> <p>passphrase—A set of characters that act like a password.</p> </li> </ul>
      * <p>You create an application in Box to generate the keys or credentials required
      * for the secret. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html#box-authentication">Authentication
-     * for a Box data source</a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html">Using a
+     * Box data source</a>.</p>
      */
     inline BoxConfiguration& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
 

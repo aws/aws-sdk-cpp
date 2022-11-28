@@ -40,42 +40,42 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier of the document.</p>
+     * <p>The identifier of the document.</p>
      */
     inline const Aws::String& GetDocumentId() const{ return m_documentId; }
 
     /**
-     * <p>The unique identifier of the document.</p>
+     * <p>The identifier of the document.</p>
      */
     inline bool DocumentIdHasBeenSet() const { return m_documentIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier of the document.</p>
+     * <p>The identifier of the document.</p>
      */
     inline void SetDocumentId(const Aws::String& value) { m_documentIdHasBeenSet = true; m_documentId = value; }
 
     /**
-     * <p>The unique identifier of the document.</p>
+     * <p>The identifier of the document.</p>
      */
     inline void SetDocumentId(Aws::String&& value) { m_documentIdHasBeenSet = true; m_documentId = std::move(value); }
 
     /**
-     * <p>The unique identifier of the document.</p>
+     * <p>The identifier of the document.</p>
      */
     inline void SetDocumentId(const char* value) { m_documentIdHasBeenSet = true; m_documentId.assign(value); }
 
     /**
-     * <p>The unique identifier of the document.</p>
+     * <p>The identifier of the document.</p>
      */
     inline Status& WithDocumentId(const Aws::String& value) { SetDocumentId(value); return *this;}
 
     /**
-     * <p>The unique identifier of the document.</p>
+     * <p>The identifier of the document.</p>
      */
     inline Status& WithDocumentId(Aws::String&& value) { SetDocumentId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier of the document.</p>
+     * <p>The identifier of the document.</p>
      */
     inline Status& WithDocumentId(const char* value) { SetDocumentId(value); return *this;}
 

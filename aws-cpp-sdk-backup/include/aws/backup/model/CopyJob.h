@@ -9,6 +9,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/backup/model/CopyJobState.h>
 #include <aws/backup/model/RecoveryPointCreator.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -706,6 +707,211 @@ namespace Model
      */
     inline CopyJob& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
+
+    /**
+     * <p>This uniquely identifies a request to Backup to copy a resource. The return
+     * will be the parent (composite) job ID.</p>
+     */
+    inline const Aws::String& GetParentJobId() const{ return m_parentJobId; }
+
+    /**
+     * <p>This uniquely identifies a request to Backup to copy a resource. The return
+     * will be the parent (composite) job ID.</p>
+     */
+    inline bool ParentJobIdHasBeenSet() const { return m_parentJobIdHasBeenSet; }
+
+    /**
+     * <p>This uniquely identifies a request to Backup to copy a resource. The return
+     * will be the parent (composite) job ID.</p>
+     */
+    inline void SetParentJobId(const Aws::String& value) { m_parentJobIdHasBeenSet = true; m_parentJobId = value; }
+
+    /**
+     * <p>This uniquely identifies a request to Backup to copy a resource. The return
+     * will be the parent (composite) job ID.</p>
+     */
+    inline void SetParentJobId(Aws::String&& value) { m_parentJobIdHasBeenSet = true; m_parentJobId = std::move(value); }
+
+    /**
+     * <p>This uniquely identifies a request to Backup to copy a resource. The return
+     * will be the parent (composite) job ID.</p>
+     */
+    inline void SetParentJobId(const char* value) { m_parentJobIdHasBeenSet = true; m_parentJobId.assign(value); }
+
+    /**
+     * <p>This uniquely identifies a request to Backup to copy a resource. The return
+     * will be the parent (composite) job ID.</p>
+     */
+    inline CopyJob& WithParentJobId(const Aws::String& value) { SetParentJobId(value); return *this;}
+
+    /**
+     * <p>This uniquely identifies a request to Backup to copy a resource. The return
+     * will be the parent (composite) job ID.</p>
+     */
+    inline CopyJob& WithParentJobId(Aws::String&& value) { SetParentJobId(std::move(value)); return *this;}
+
+    /**
+     * <p>This uniquely identifies a request to Backup to copy a resource. The return
+     * will be the parent (composite) job ID.</p>
+     */
+    inline CopyJob& WithParentJobId(const char* value) { SetParentJobId(value); return *this;}
+
+
+    /**
+     * <p>This is a boolean value indicating this is a parent (composite) copy job.</p>
+     */
+    inline bool GetIsParent() const{ return m_isParent; }
+
+    /**
+     * <p>This is a boolean value indicating this is a parent (composite) copy job.</p>
+     */
+    inline bool IsParentHasBeenSet() const { return m_isParentHasBeenSet; }
+
+    /**
+     * <p>This is a boolean value indicating this is a parent (composite) copy job.</p>
+     */
+    inline void SetIsParent(bool value) { m_isParentHasBeenSet = true; m_isParent = value; }
+
+    /**
+     * <p>This is a boolean value indicating this is a parent (composite) copy job.</p>
+     */
+    inline CopyJob& WithIsParent(bool value) { SetIsParent(value); return *this;}
+
+
+    /**
+     * <p>This is the identifier of a resource within a composite group, such as nested
+     * (child) recovery point belonging to a composite (parent) stack. The ID is
+     * transferred from the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax">
+     * logical ID</a> within a stack.</p>
+     */
+    inline const Aws::String& GetCompositeMemberIdentifier() const{ return m_compositeMemberIdentifier; }
+
+    /**
+     * <p>This is the identifier of a resource within a composite group, such as nested
+     * (child) recovery point belonging to a composite (parent) stack. The ID is
+     * transferred from the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax">
+     * logical ID</a> within a stack.</p>
+     */
+    inline bool CompositeMemberIdentifierHasBeenSet() const { return m_compositeMemberIdentifierHasBeenSet; }
+
+    /**
+     * <p>This is the identifier of a resource within a composite group, such as nested
+     * (child) recovery point belonging to a composite (parent) stack. The ID is
+     * transferred from the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax">
+     * logical ID</a> within a stack.</p>
+     */
+    inline void SetCompositeMemberIdentifier(const Aws::String& value) { m_compositeMemberIdentifierHasBeenSet = true; m_compositeMemberIdentifier = value; }
+
+    /**
+     * <p>This is the identifier of a resource within a composite group, such as nested
+     * (child) recovery point belonging to a composite (parent) stack. The ID is
+     * transferred from the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax">
+     * logical ID</a> within a stack.</p>
+     */
+    inline void SetCompositeMemberIdentifier(Aws::String&& value) { m_compositeMemberIdentifierHasBeenSet = true; m_compositeMemberIdentifier = std::move(value); }
+
+    /**
+     * <p>This is the identifier of a resource within a composite group, such as nested
+     * (child) recovery point belonging to a composite (parent) stack. The ID is
+     * transferred from the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax">
+     * logical ID</a> within a stack.</p>
+     */
+    inline void SetCompositeMemberIdentifier(const char* value) { m_compositeMemberIdentifierHasBeenSet = true; m_compositeMemberIdentifier.assign(value); }
+
+    /**
+     * <p>This is the identifier of a resource within a composite group, such as nested
+     * (child) recovery point belonging to a composite (parent) stack. The ID is
+     * transferred from the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax">
+     * logical ID</a> within a stack.</p>
+     */
+    inline CopyJob& WithCompositeMemberIdentifier(const Aws::String& value) { SetCompositeMemberIdentifier(value); return *this;}
+
+    /**
+     * <p>This is the identifier of a resource within a composite group, such as nested
+     * (child) recovery point belonging to a composite (parent) stack. The ID is
+     * transferred from the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax">
+     * logical ID</a> within a stack.</p>
+     */
+    inline CopyJob& WithCompositeMemberIdentifier(Aws::String&& value) { SetCompositeMemberIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p>This is the identifier of a resource within a composite group, such as nested
+     * (child) recovery point belonging to a composite (parent) stack. The ID is
+     * transferred from the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax">
+     * logical ID</a> within a stack.</p>
+     */
+    inline CopyJob& WithCompositeMemberIdentifier(const char* value) { SetCompositeMemberIdentifier(value); return *this;}
+
+
+    /**
+     * <p>This is the number of child (nested) copy jobs.</p>
+     */
+    inline long long GetNumberOfChildJobs() const{ return m_numberOfChildJobs; }
+
+    /**
+     * <p>This is the number of child (nested) copy jobs.</p>
+     */
+    inline bool NumberOfChildJobsHasBeenSet() const { return m_numberOfChildJobsHasBeenSet; }
+
+    /**
+     * <p>This is the number of child (nested) copy jobs.</p>
+     */
+    inline void SetNumberOfChildJobs(long long value) { m_numberOfChildJobsHasBeenSet = true; m_numberOfChildJobs = value; }
+
+    /**
+     * <p>This is the number of child (nested) copy jobs.</p>
+     */
+    inline CopyJob& WithNumberOfChildJobs(long long value) { SetNumberOfChildJobs(value); return *this;}
+
+
+    /**
+     * <p>This returns the statistics of the included child (nested) copy jobs.</p>
+     */
+    inline const Aws::Map<CopyJobState, long long>& GetChildJobsInState() const{ return m_childJobsInState; }
+
+    /**
+     * <p>This returns the statistics of the included child (nested) copy jobs.</p>
+     */
+    inline bool ChildJobsInStateHasBeenSet() const { return m_childJobsInStateHasBeenSet; }
+
+    /**
+     * <p>This returns the statistics of the included child (nested) copy jobs.</p>
+     */
+    inline void SetChildJobsInState(const Aws::Map<CopyJobState, long long>& value) { m_childJobsInStateHasBeenSet = true; m_childJobsInState = value; }
+
+    /**
+     * <p>This returns the statistics of the included child (nested) copy jobs.</p>
+     */
+    inline void SetChildJobsInState(Aws::Map<CopyJobState, long long>&& value) { m_childJobsInStateHasBeenSet = true; m_childJobsInState = std::move(value); }
+
+    /**
+     * <p>This returns the statistics of the included child (nested) copy jobs.</p>
+     */
+    inline CopyJob& WithChildJobsInState(const Aws::Map<CopyJobState, long long>& value) { SetChildJobsInState(value); return *this;}
+
+    /**
+     * <p>This returns the statistics of the included child (nested) copy jobs.</p>
+     */
+    inline CopyJob& WithChildJobsInState(Aws::Map<CopyJobState, long long>&& value) { SetChildJobsInState(std::move(value)); return *this;}
+
+    /**
+     * <p>This returns the statistics of the included child (nested) copy jobs.</p>
+     */
+    inline CopyJob& AddChildJobsInState(const CopyJobState& key, long long value) { m_childJobsInStateHasBeenSet = true; m_childJobsInState.emplace(key, value); return *this; }
+
+    /**
+     * <p>This returns the statistics of the included child (nested) copy jobs.</p>
+     */
+    inline CopyJob& AddChildJobsInState(CopyJobState&& key, long long value) { m_childJobsInStateHasBeenSet = true; m_childJobsInState.emplace(std::move(key), value); return *this; }
+
   private:
 
     Aws::String m_accountId;
@@ -752,6 +958,21 @@ namespace Model
 
     Aws::String m_resourceType;
     bool m_resourceTypeHasBeenSet = false;
+
+    Aws::String m_parentJobId;
+    bool m_parentJobIdHasBeenSet = false;
+
+    bool m_isParent;
+    bool m_isParentHasBeenSet = false;
+
+    Aws::String m_compositeMemberIdentifier;
+    bool m_compositeMemberIdentifierHasBeenSet = false;
+
+    long long m_numberOfChildJobs;
+    bool m_numberOfChildJobsHasBeenSet = false;
+
+    Aws::Map<CopyJobState, long long> m_childJobsInState;
+    bool m_childJobsInStateHasBeenSet = false;
   };
 
 } // namespace Model

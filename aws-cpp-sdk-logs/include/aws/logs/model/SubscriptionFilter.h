@@ -248,25 +248,25 @@ namespace Model
 
     /**
      * <p>The creation time of the subscription filter, expressed as the number of
-     * milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+     * milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
      */
     inline long long GetCreationTime() const{ return m_creationTime; }
 
     /**
      * <p>The creation time of the subscription filter, expressed as the number of
-     * milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+     * milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
      */
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
      * <p>The creation time of the subscription filter, expressed as the number of
-     * milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+     * milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
      */
     inline void SetCreationTime(long long value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
      * <p>The creation time of the subscription filter, expressed as the number of
-     * milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+     * milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
      */
     inline SubscriptionFilter& WithCreationTime(long long value) { SetCreationTime(value); return *this;}
 

@@ -77,66 +77,66 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
-     * For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of the KMS key to use when encrypting log
+     * data. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
-     * Resource Names - Key Management Service</a>.</p>
+     * Resource Names</a>.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
-     * For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of the KMS key to use when encrypting log
+     * data. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
-     * Resource Names - Key Management Service</a>.</p>
+     * Resource Names</a>.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
-     * For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of the KMS key to use when encrypting log
+     * data. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
-     * Resource Names - Key Management Service</a>.</p>
+     * Resource Names</a>.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
-     * For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of the KMS key to use when encrypting log
+     * data. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
-     * Resource Names - Key Management Service</a>.</p>
+     * Resource Names</a>.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
-     * For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of the KMS key to use when encrypting log
+     * data. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
-     * Resource Names - Key Management Service</a>.</p>
+     * Resource Names</a>.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
-     * For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of the KMS key to use when encrypting log
+     * data. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
-     * Resource Names - Key Management Service</a>.</p>
+     * Resource Names</a>.</p>
      */
     inline CreateLogGroupRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
-     * For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of the KMS key to use when encrypting log
+     * data. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
-     * Resource Names - Key Management Service</a>.</p>
+     * Resource Names</a>.</p>
      */
     inline CreateLogGroupRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
-     * For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of the KMS key to use when encrypting log
+     * data. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
-     * Resource Names - Key Management Service</a>.</p>
+     * Resource Names</a>.</p>
      */
     inline CreateLogGroupRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

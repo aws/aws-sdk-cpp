@@ -83,42 +83,42 @@ namespace Model
 
 
     /**
-     * <p>The cpu override for the task.</p>
+     * <p>The CPU override for the task.</p>
      */
     inline const Aws::String& GetCpu() const{ return m_cpu; }
 
     /**
-     * <p>The cpu override for the task.</p>
+     * <p>The CPU override for the task.</p>
      */
     inline bool CpuHasBeenSet() const { return m_cpuHasBeenSet; }
 
     /**
-     * <p>The cpu override for the task.</p>
+     * <p>The CPU override for the task.</p>
      */
     inline void SetCpu(const Aws::String& value) { m_cpuHasBeenSet = true; m_cpu = value; }
 
     /**
-     * <p>The cpu override for the task.</p>
+     * <p>The CPU override for the task.</p>
      */
     inline void SetCpu(Aws::String&& value) { m_cpuHasBeenSet = true; m_cpu = std::move(value); }
 
     /**
-     * <p>The cpu override for the task.</p>
+     * <p>The CPU override for the task.</p>
      */
     inline void SetCpu(const char* value) { m_cpuHasBeenSet = true; m_cpu.assign(value); }
 
     /**
-     * <p>The cpu override for the task.</p>
+     * <p>The CPU override for the task.</p>
      */
     inline TaskOverride& WithCpu(const Aws::String& value) { SetCpu(value); return *this;}
 
     /**
-     * <p>The cpu override for the task.</p>
+     * <p>The CPU override for the task.</p>
      */
     inline TaskOverride& WithCpu(Aws::String&& value) { SetCpu(std::move(value)); return *this;}
 
     /**
-     * <p>The cpu override for the task.</p>
+     * <p>The CPU override for the task.</p>
      */
     inline TaskOverride& WithCpu(const char* value) { SetCpu(value); return *this;}
 

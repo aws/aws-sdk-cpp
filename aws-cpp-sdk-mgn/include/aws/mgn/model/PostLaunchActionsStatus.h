@@ -26,7 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Server participating in Job.</p><p><h3>See Also:</h3>   <a
+   * <p>Status of the Post Launch Actions running on the Test or Cutover
+   * instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/PostLaunchActionsStatus">AWS
    * API Reference</a></p>
    */
@@ -40,83 +41,91 @@ namespace Model
 
 
     /**
-     * <p>Server participating in Job.</p>
+     * <p>List of Post Launch Action status.</p>
      */
     inline const Aws::Vector<JobPostLaunchActionsLaunchStatus>& GetPostLaunchActionsLaunchStatusList() const{ return m_postLaunchActionsLaunchStatusList; }
 
     /**
-     * <p>Server participating in Job.</p>
+     * <p>List of Post Launch Action status.</p>
      */
     inline bool PostLaunchActionsLaunchStatusListHasBeenSet() const { return m_postLaunchActionsLaunchStatusListHasBeenSet; }
 
     /**
-     * <p>Server participating in Job.</p>
+     * <p>List of Post Launch Action status.</p>
      */
     inline void SetPostLaunchActionsLaunchStatusList(const Aws::Vector<JobPostLaunchActionsLaunchStatus>& value) { m_postLaunchActionsLaunchStatusListHasBeenSet = true; m_postLaunchActionsLaunchStatusList = value; }
 
     /**
-     * <p>Server participating in Job.</p>
+     * <p>List of Post Launch Action status.</p>
      */
     inline void SetPostLaunchActionsLaunchStatusList(Aws::Vector<JobPostLaunchActionsLaunchStatus>&& value) { m_postLaunchActionsLaunchStatusListHasBeenSet = true; m_postLaunchActionsLaunchStatusList = std::move(value); }
 
     /**
-     * <p>Server participating in Job.</p>
+     * <p>List of Post Launch Action status.</p>
      */
     inline PostLaunchActionsStatus& WithPostLaunchActionsLaunchStatusList(const Aws::Vector<JobPostLaunchActionsLaunchStatus>& value) { SetPostLaunchActionsLaunchStatusList(value); return *this;}
 
     /**
-     * <p>Server participating in Job.</p>
+     * <p>List of Post Launch Action status.</p>
      */
     inline PostLaunchActionsStatus& WithPostLaunchActionsLaunchStatusList(Aws::Vector<JobPostLaunchActionsLaunchStatus>&& value) { SetPostLaunchActionsLaunchStatusList(std::move(value)); return *this;}
 
     /**
-     * <p>Server participating in Job.</p>
+     * <p>List of Post Launch Action status.</p>
      */
     inline PostLaunchActionsStatus& AddPostLaunchActionsLaunchStatusList(const JobPostLaunchActionsLaunchStatus& value) { m_postLaunchActionsLaunchStatusListHasBeenSet = true; m_postLaunchActionsLaunchStatusList.push_back(value); return *this; }
 
     /**
-     * <p>Server participating in Job.</p>
+     * <p>List of Post Launch Action status.</p>
      */
     inline PostLaunchActionsStatus& AddPostLaunchActionsLaunchStatusList(JobPostLaunchActionsLaunchStatus&& value) { m_postLaunchActionsLaunchStatusListHasBeenSet = true; m_postLaunchActionsLaunchStatusList.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Server participating in Job.</p>
+     * <p>Time where the AWS Systems Manager was detected as running on the Test or
+     * Cutover instance.</p>
      */
     inline const Aws::String& GetSsmAgentDiscoveryDatetime() const{ return m_ssmAgentDiscoveryDatetime; }
 
     /**
-     * <p>Server participating in Job.</p>
+     * <p>Time where the AWS Systems Manager was detected as running on the Test or
+     * Cutover instance.</p>
      */
     inline bool SsmAgentDiscoveryDatetimeHasBeenSet() const { return m_ssmAgentDiscoveryDatetimeHasBeenSet; }
 
     /**
-     * <p>Server participating in Job.</p>
+     * <p>Time where the AWS Systems Manager was detected as running on the Test or
+     * Cutover instance.</p>
      */
     inline void SetSsmAgentDiscoveryDatetime(const Aws::String& value) { m_ssmAgentDiscoveryDatetimeHasBeenSet = true; m_ssmAgentDiscoveryDatetime = value; }
 
     /**
-     * <p>Server participating in Job.</p>
+     * <p>Time where the AWS Systems Manager was detected as running on the Test or
+     * Cutover instance.</p>
      */
     inline void SetSsmAgentDiscoveryDatetime(Aws::String&& value) { m_ssmAgentDiscoveryDatetimeHasBeenSet = true; m_ssmAgentDiscoveryDatetime = std::move(value); }
 
     /**
-     * <p>Server participating in Job.</p>
+     * <p>Time where the AWS Systems Manager was detected as running on the Test or
+     * Cutover instance.</p>
      */
     inline void SetSsmAgentDiscoveryDatetime(const char* value) { m_ssmAgentDiscoveryDatetimeHasBeenSet = true; m_ssmAgentDiscoveryDatetime.assign(value); }
 
     /**
-     * <p>Server participating in Job.</p>
+     * <p>Time where the AWS Systems Manager was detected as running on the Test or
+     * Cutover instance.</p>
      */
     inline PostLaunchActionsStatus& WithSsmAgentDiscoveryDatetime(const Aws::String& value) { SetSsmAgentDiscoveryDatetime(value); return *this;}
 
     /**
-     * <p>Server participating in Job.</p>
+     * <p>Time where the AWS Systems Manager was detected as running on the Test or
+     * Cutover instance.</p>
      */
     inline PostLaunchActionsStatus& WithSsmAgentDiscoveryDatetime(Aws::String&& value) { SetSsmAgentDiscoveryDatetime(std::move(value)); return *this;}
 
     /**
-     * <p>Server participating in Job.</p>
+     * <p>Time where the AWS Systems Manager was detected as running on the Test or
+     * Cutover instance.</p>
      */
     inline PostLaunchActionsStatus& WithSsmAgentDiscoveryDatetime(const char* value) { SetSsmAgentDiscoveryDatetime(value); return *this;}
 

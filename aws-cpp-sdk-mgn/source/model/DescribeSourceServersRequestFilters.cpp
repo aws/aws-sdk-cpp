@@ -19,6 +19,7 @@ namespace Model
 {
 
 DescribeSourceServersRequestFilters::DescribeSourceServersRequestFilters() : 
+    m_applicationIDsHasBeenSet(false),
     m_isArchived(false),
     m_isArchivedHasBeenSet(false),
     m_lifeCycleStatesHasBeenSet(false),
@@ -28,6 +29,7 @@ DescribeSourceServersRequestFilters::DescribeSourceServersRequestFilters() :
 }
 
 DescribeSourceServersRequestFilters::DescribeSourceServersRequestFilters(JsonView jsonValue) : 
+    m_applicationIDsHasBeenSet(false),
     m_isArchived(false),
     m_isArchivedHasBeenSet(false),
     m_lifeCycleStatesHasBeenSet(false),
@@ -39,6 +41,16 @@ DescribeSourceServersRequestFilters::DescribeSourceServersRequestFilters(JsonVie
 
 DescribeSourceServersRequestFilters& DescribeSourceServersRequestFilters::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("applicationIDs"))
+  {
+    Aws::Utils::Array<JsonView> applicationIDsJsonList = jsonValue.GetArray("applicationIDs");
+    for(unsigned applicationIDsIndex = 0; applicationIDsIndex < applicationIDsJsonList.GetLength(); ++applicationIDsIndex)
+    {
+      m_applicationIDs.push_back(applicationIDsJsonList[applicationIDsIndex].AsString());
+    }
+    m_applicationIDsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("isArchived"))
   {
     m_isArchived = jsonValue.GetBool("isArchived");
@@ -82,6 +94,17 @@ DescribeSourceServersRequestFilters& DescribeSourceServersRequestFilters::operat
 JsonValue DescribeSourceServersRequestFilters::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_applicationIDsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> applicationIDsJsonList(m_applicationIDs.size());
+   for(unsigned applicationIDsIndex = 0; applicationIDsIndex < applicationIDsJsonList.GetLength(); ++applicationIDsIndex)
+   {
+     applicationIDsJsonList[applicationIDsIndex].AsString(m_applicationIDs[applicationIDsIndex]);
+   }
+   payload.WithArray("applicationIDs", std::move(applicationIDsJsonList));
+
+  }
 
   if(m_isArchivedHasBeenSet)
   {

@@ -81,7 +81,13 @@ namespace Model
      * <p>The setting to use by default for a cluster. This parameter is used to turn
      * on CloudWatch Container Insights for a cluster. If this value is specified, it
      * overrides the <code>containerInsights</code> value set with
-     * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p>
+     * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p> 
+     * <p>Currently, if you delete an existing cluster that does not have Container
+     * Insights turned on, and then create a new cluster with the same name with
+     * Container Insights tuned on, Container Insights will not actually be turned on.
+     * If you want to preserve the same name for your existing cluster and turn on
+     * Container Insights, you must wait 7 days before you can re-create it.</p>
+     * 
      */
     inline const Aws::Vector<ClusterSetting>& GetSettings() const{ return m_settings; }
 
@@ -89,7 +95,13 @@ namespace Model
      * <p>The setting to use by default for a cluster. This parameter is used to turn
      * on CloudWatch Container Insights for a cluster. If this value is specified, it
      * overrides the <code>containerInsights</code> value set with
-     * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p>
+     * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p> 
+     * <p>Currently, if you delete an existing cluster that does not have Container
+     * Insights turned on, and then create a new cluster with the same name with
+     * Container Insights tuned on, Container Insights will not actually be turned on.
+     * If you want to preserve the same name for your existing cluster and turn on
+     * Container Insights, you must wait 7 days before you can re-create it.</p>
+     * 
      */
     inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
 
@@ -97,7 +109,13 @@ namespace Model
      * <p>The setting to use by default for a cluster. This parameter is used to turn
      * on CloudWatch Container Insights for a cluster. If this value is specified, it
      * overrides the <code>containerInsights</code> value set with
-     * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p>
+     * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p> 
+     * <p>Currently, if you delete an existing cluster that does not have Container
+     * Insights turned on, and then create a new cluster with the same name with
+     * Container Insights tuned on, Container Insights will not actually be turned on.
+     * If you want to preserve the same name for your existing cluster and turn on
+     * Container Insights, you must wait 7 days before you can re-create it.</p>
+     * 
      */
     inline void SetSettings(const Aws::Vector<ClusterSetting>& value) { m_settingsHasBeenSet = true; m_settings = value; }
 
@@ -105,7 +123,13 @@ namespace Model
      * <p>The setting to use by default for a cluster. This parameter is used to turn
      * on CloudWatch Container Insights for a cluster. If this value is specified, it
      * overrides the <code>containerInsights</code> value set with
-     * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p>
+     * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p> 
+     * <p>Currently, if you delete an existing cluster that does not have Container
+     * Insights turned on, and then create a new cluster with the same name with
+     * Container Insights tuned on, Container Insights will not actually be turned on.
+     * If you want to preserve the same name for your existing cluster and turn on
+     * Container Insights, you must wait 7 days before you can re-create it.</p>
+     * 
      */
     inline void SetSettings(Aws::Vector<ClusterSetting>&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
 
@@ -113,7 +137,13 @@ namespace Model
      * <p>The setting to use by default for a cluster. This parameter is used to turn
      * on CloudWatch Container Insights for a cluster. If this value is specified, it
      * overrides the <code>containerInsights</code> value set with
-     * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p>
+     * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p> 
+     * <p>Currently, if you delete an existing cluster that does not have Container
+     * Insights turned on, and then create a new cluster with the same name with
+     * Container Insights tuned on, Container Insights will not actually be turned on.
+     * If you want to preserve the same name for your existing cluster and turn on
+     * Container Insights, you must wait 7 days before you can re-create it.</p>
+     * 
      */
     inline UpdateClusterSettingsRequest& WithSettings(const Aws::Vector<ClusterSetting>& value) { SetSettings(value); return *this;}
 
@@ -121,7 +151,13 @@ namespace Model
      * <p>The setting to use by default for a cluster. This parameter is used to turn
      * on CloudWatch Container Insights for a cluster. If this value is specified, it
      * overrides the <code>containerInsights</code> value set with
-     * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p>
+     * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p> 
+     * <p>Currently, if you delete an existing cluster that does not have Container
+     * Insights turned on, and then create a new cluster with the same name with
+     * Container Insights tuned on, Container Insights will not actually be turned on.
+     * If you want to preserve the same name for your existing cluster and turn on
+     * Container Insights, you must wait 7 days before you can re-create it.</p>
+     * 
      */
     inline UpdateClusterSettingsRequest& WithSettings(Aws::Vector<ClusterSetting>&& value) { SetSettings(std::move(value)); return *this;}
 
@@ -129,7 +165,13 @@ namespace Model
      * <p>The setting to use by default for a cluster. This parameter is used to turn
      * on CloudWatch Container Insights for a cluster. If this value is specified, it
      * overrides the <code>containerInsights</code> value set with
-     * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p>
+     * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p> 
+     * <p>Currently, if you delete an existing cluster that does not have Container
+     * Insights turned on, and then create a new cluster with the same name with
+     * Container Insights tuned on, Container Insights will not actually be turned on.
+     * If you want to preserve the same name for your existing cluster and turn on
+     * Container Insights, you must wait 7 days before you can re-create it.</p>
+     * 
      */
     inline UpdateClusterSettingsRequest& AddSettings(const ClusterSetting& value) { m_settingsHasBeenSet = true; m_settings.push_back(value); return *this; }
 
@@ -137,7 +179,13 @@ namespace Model
      * <p>The setting to use by default for a cluster. This parameter is used to turn
      * on CloudWatch Container Insights for a cluster. If this value is specified, it
      * overrides the <code>containerInsights</code> value set with
-     * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p>
+     * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p> 
+     * <p>Currently, if you delete an existing cluster that does not have Container
+     * Insights turned on, and then create a new cluster with the same name with
+     * Container Insights tuned on, Container Insights will not actually be turned on.
+     * If you want to preserve the same name for your existing cluster and turn on
+     * Container Insights, you must wait 7 days before you can re-create it.</p>
+     * 
      */
     inline UpdateClusterSettingsRequest& AddSettings(ClusterSetting&& value) { m_settingsHasBeenSet = true; m_settings.push_back(std::move(value)); return *this; }
 

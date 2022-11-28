@@ -402,6 +402,55 @@ namespace Model
      */
     inline ListRecoveryPointsByBackupVaultRequest& WithByCreatedAfter(Aws::Utils::DateTime&& value) { SetByCreatedAfter(std::move(value)); return *this;}
 
+
+    /**
+     * <p>This returns only recovery points that match the specified parent (composite)
+     * recovery point Amazon Resource Name (ARN).</p>
+     */
+    inline const Aws::String& GetByParentRecoveryPointArn() const{ return m_byParentRecoveryPointArn; }
+
+    /**
+     * <p>This returns only recovery points that match the specified parent (composite)
+     * recovery point Amazon Resource Name (ARN).</p>
+     */
+    inline bool ByParentRecoveryPointArnHasBeenSet() const { return m_byParentRecoveryPointArnHasBeenSet; }
+
+    /**
+     * <p>This returns only recovery points that match the specified parent (composite)
+     * recovery point Amazon Resource Name (ARN).</p>
+     */
+    inline void SetByParentRecoveryPointArn(const Aws::String& value) { m_byParentRecoveryPointArnHasBeenSet = true; m_byParentRecoveryPointArn = value; }
+
+    /**
+     * <p>This returns only recovery points that match the specified parent (composite)
+     * recovery point Amazon Resource Name (ARN).</p>
+     */
+    inline void SetByParentRecoveryPointArn(Aws::String&& value) { m_byParentRecoveryPointArnHasBeenSet = true; m_byParentRecoveryPointArn = std::move(value); }
+
+    /**
+     * <p>This returns only recovery points that match the specified parent (composite)
+     * recovery point Amazon Resource Name (ARN).</p>
+     */
+    inline void SetByParentRecoveryPointArn(const char* value) { m_byParentRecoveryPointArnHasBeenSet = true; m_byParentRecoveryPointArn.assign(value); }
+
+    /**
+     * <p>This returns only recovery points that match the specified parent (composite)
+     * recovery point Amazon Resource Name (ARN).</p>
+     */
+    inline ListRecoveryPointsByBackupVaultRequest& WithByParentRecoveryPointArn(const Aws::String& value) { SetByParentRecoveryPointArn(value); return *this;}
+
+    /**
+     * <p>This returns only recovery points that match the specified parent (composite)
+     * recovery point Amazon Resource Name (ARN).</p>
+     */
+    inline ListRecoveryPointsByBackupVaultRequest& WithByParentRecoveryPointArn(Aws::String&& value) { SetByParentRecoveryPointArn(std::move(value)); return *this;}
+
+    /**
+     * <p>This returns only recovery points that match the specified parent (composite)
+     * recovery point Amazon Resource Name (ARN).</p>
+     */
+    inline ListRecoveryPointsByBackupVaultRequest& WithByParentRecoveryPointArn(const char* value) { SetByParentRecoveryPointArn(value); return *this;}
+
   private:
 
     Aws::String m_backupVaultName;
@@ -427,6 +476,9 @@ namespace Model
 
     Aws::Utils::DateTime m_byCreatedAfter;
     bool m_byCreatedAfterHasBeenSet = false;
+
+    Aws::String m_byParentRecoveryPointArn;
+    bool m_byParentRecoveryPointArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -37,7 +37,8 @@ Cluster::Cluster() :
     m_capacityProvidersHasBeenSet(false),
     m_defaultCapacityProviderStrategyHasBeenSet(false),
     m_attachmentsHasBeenSet(false),
-    m_attachmentsStatusHasBeenSet(false)
+    m_attachmentsStatusHasBeenSet(false),
+    m_serviceConnectDefaultsHasBeenSet(false)
 {
 }
 
@@ -60,7 +61,8 @@ Cluster::Cluster(JsonView jsonValue) :
     m_capacityProvidersHasBeenSet(false),
     m_defaultCapacityProviderStrategyHasBeenSet(false),
     m_attachmentsHasBeenSet(false),
-    m_attachmentsStatusHasBeenSet(false)
+    m_attachmentsStatusHasBeenSet(false),
+    m_serviceConnectDefaultsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -190,6 +192,13 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_attachmentsStatusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("serviceConnectDefaults"))
+  {
+    m_serviceConnectDefaults = jsonValue.GetObject("serviceConnectDefaults");
+
+    m_serviceConnectDefaultsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -314,6 +323,12 @@ JsonValue Cluster::Jsonize() const
   if(m_attachmentsStatusHasBeenSet)
   {
    payload.WithString("attachmentsStatus", m_attachmentsStatus);
+
+  }
+
+  if(m_serviceConnectDefaultsHasBeenSet)
+  {
+   payload.WithObject("serviceConnectDefaults", m_serviceConnectDefaults.Jsonize());
 
   }
 

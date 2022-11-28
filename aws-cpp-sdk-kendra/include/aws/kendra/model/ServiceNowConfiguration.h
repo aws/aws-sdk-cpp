@@ -96,8 +96,8 @@ namespace Model
      * the user name and password required to connect to the ServiceNow instance. You
      * can also provide OAuth authentication credentials of user name, password, client
      * ID, and client secret. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html#servicenow-authentication">Authentication
-     * for a ServiceNow data source</a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using
+     * a ServiceNow data source</a>.</p>
      */
     inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
 
@@ -106,8 +106,8 @@ namespace Model
      * the user name and password required to connect to the ServiceNow instance. You
      * can also provide OAuth authentication credentials of user name, password, client
      * ID, and client secret. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html#servicenow-authentication">Authentication
-     * for a ServiceNow data source</a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using
+     * a ServiceNow data source</a>.</p>
      */
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
 
@@ -116,8 +116,8 @@ namespace Model
      * the user name and password required to connect to the ServiceNow instance. You
      * can also provide OAuth authentication credentials of user name, password, client
      * ID, and client secret. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html#servicenow-authentication">Authentication
-     * for a ServiceNow data source</a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using
+     * a ServiceNow data source</a>.</p>
      */
     inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
 
@@ -126,8 +126,8 @@ namespace Model
      * the user name and password required to connect to the ServiceNow instance. You
      * can also provide OAuth authentication credentials of user name, password, client
      * ID, and client secret. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html#servicenow-authentication">Authentication
-     * for a ServiceNow data source</a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using
+     * a ServiceNow data source</a>.</p>
      */
     inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
 
@@ -136,8 +136,8 @@ namespace Model
      * the user name and password required to connect to the ServiceNow instance. You
      * can also provide OAuth authentication credentials of user name, password, client
      * ID, and client secret. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html#servicenow-authentication">Authentication
-     * for a ServiceNow data source</a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using
+     * a ServiceNow data source</a>.</p>
      */
     inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
 
@@ -146,8 +146,8 @@ namespace Model
      * the user name and password required to connect to the ServiceNow instance. You
      * can also provide OAuth authentication credentials of user name, password, client
      * ID, and client secret. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html#servicenow-authentication">Authentication
-     * for a ServiceNow data source</a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using
+     * a ServiceNow data source</a>.</p>
      */
     inline ServiceNowConfiguration& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
 
@@ -156,8 +156,8 @@ namespace Model
      * the user name and password required to connect to the ServiceNow instance. You
      * can also provide OAuth authentication credentials of user name, password, client
      * ID, and client secret. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html#servicenow-authentication">Authentication
-     * for a ServiceNow data source</a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using
+     * a ServiceNow data source</a>.</p>
      */
     inline ServiceNowConfiguration& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
 
@@ -166,8 +166,8 @@ namespace Model
      * the user name and password required to connect to the ServiceNow instance. You
      * can also provide OAuth authentication credentials of user name, password, client
      * ID, and client secret. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html#servicenow-authentication">Authentication
-     * for a ServiceNow data source</a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using
+     * a ServiceNow data source</a>.</p>
      */
     inline ServiceNowConfiguration& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
 

@@ -488,56 +488,56 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the
-     * target recovery point; for example,
+     * target resource; for example:
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the
-     * target recovery point; for example,
+     * target resource; for example:
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the
-     * target recovery point; for example,
+     * target resource; for example:
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline void SetIamRoleArn(const Aws::String& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the
-     * target recovery point; for example,
+     * target resource; for example:
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline void SetIamRoleArn(Aws::String&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the
-     * target recovery point; for example,
+     * target resource; for example:
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline void SetIamRoleArn(const char* value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the
-     * target recovery point; for example,
+     * target resource; for example:
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline StartRestoreJobRequest& WithIamRoleArn(const Aws::String& value) { SetIamRoleArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the
-     * target recovery point; for example,
+     * target resource; for example:
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline StartRestoreJobRequest& WithIamRoleArn(Aws::String&& value) { SetIamRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the
-     * target recovery point; for example,
+     * target resource; for example:
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline StartRestoreJobRequest& WithIamRoleArn(const char* value) { SetIamRoleArn(value); return *this;}

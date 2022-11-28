@@ -18,7 +18,10 @@ namespace Model
     NOT_SET,
     TaskFailedToStart,
     EssentialContainerExited,
-    UserInitiated
+    UserInitiated,
+    ServiceSchedulerInitiated,
+    SpotInterruption,
+    TerminationNotice
   };
 
 namespace TaskStopCodeMapper

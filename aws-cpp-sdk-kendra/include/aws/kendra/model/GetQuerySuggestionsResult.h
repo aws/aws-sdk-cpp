@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier for a list of query suggestions for an index.</p>
+     * <p>The identifier for a list of query suggestions for an index.</p>
      */
     inline const Aws::String& GetQuerySuggestionsId() const{ return m_querySuggestionsId; }
 
     /**
-     * <p>The unique identifier for a list of query suggestions for an index.</p>
+     * <p>The identifier for a list of query suggestions for an index.</p>
      */
     inline void SetQuerySuggestionsId(const Aws::String& value) { m_querySuggestionsId = value; }
 
     /**
-     * <p>The unique identifier for a list of query suggestions for an index.</p>
+     * <p>The identifier for a list of query suggestions for an index.</p>
      */
     inline void SetQuerySuggestionsId(Aws::String&& value) { m_querySuggestionsId = std::move(value); }
 
     /**
-     * <p>The unique identifier for a list of query suggestions for an index.</p>
+     * <p>The identifier for a list of query suggestions for an index.</p>
      */
     inline void SetQuerySuggestionsId(const char* value) { m_querySuggestionsId.assign(value); }
 
     /**
-     * <p>The unique identifier for a list of query suggestions for an index.</p>
+     * <p>The identifier for a list of query suggestions for an index.</p>
      */
     inline GetQuerySuggestionsResult& WithQuerySuggestionsId(const Aws::String& value) { SetQuerySuggestionsId(value); return *this;}
 
     /**
-     * <p>The unique identifier for a list of query suggestions for an index.</p>
+     * <p>The identifier for a list of query suggestions for an index.</p>
      */
     inline GetQuerySuggestionsResult& WithQuerySuggestionsId(Aws::String&& value) { SetQuerySuggestionsId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier for a list of query suggestions for an index.</p>
+     * <p>The identifier for a list of query suggestions for an index.</p>
      */
     inline GetQuerySuggestionsResult& WithQuerySuggestionsId(const char* value) { SetQuerySuggestionsId(value); return *this;}
 

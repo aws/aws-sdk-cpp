@@ -202,29 +202,33 @@ namespace Model
 
     /**
      * <p>The maximum number of custom language models to return in each page of
-     * results. If there are fewer results than the value you specify, only the actual
-     * results are returned. If you don't specify a value, a default of 5 is used.</p>
+     * results. If there are fewer results than the value that you specify, only the
+     * actual results are returned. If you don't specify a value, a default of 5 is
+     * used.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of custom language models to return in each page of
-     * results. If there are fewer results than the value you specify, only the actual
-     * results are returned. If you don't specify a value, a default of 5 is used.</p>
+     * results. If there are fewer results than the value that you specify, only the
+     * actual results are returned. If you don't specify a value, a default of 5 is
+     * used.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of custom language models to return in each page of
-     * results. If there are fewer results than the value you specify, only the actual
-     * results are returned. If you don't specify a value, a default of 5 is used.</p>
+     * results. If there are fewer results than the value that you specify, only the
+     * actual results are returned. If you don't specify a value, a default of 5 is
+     * used.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of custom language models to return in each page of
-     * results. If there are fewer results than the value you specify, only the actual
-     * results are returned. If you don't specify a value, a default of 5 is used.</p>
+     * results. If there are fewer results than the value that you specify, only the
+     * actual results are returned. If you don't specify a value, a default of 5 is
+     * used.</p>
      */
     inline ListLanguageModelsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

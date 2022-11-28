@@ -219,8 +219,8 @@ namespace IoT
 
         /**
          * <p>Attaches the specified principal to the specified thing. A principal can be
-         * X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or
-         * federated identities.</p> <p>Requires permission to access the <a
+         * X.509 certificates, Amazon Cognito identities or federated identities.</p>
+         * <p>Requires permission to access the <a
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AttachThingPrincipal</a>
          * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachThingPrincipal">AWS

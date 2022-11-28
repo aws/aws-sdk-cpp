@@ -30,8 +30,9 @@ namespace Model
    * designed to match:</p> <ul> <li> <p>The presence of silence at specified periods
    * throughout the call</p> </li> <li> <p>The presence of speech at specified
    * periods throughout the call</p> </li> </ul> <p>See <a
-   * href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html#call-analytics-create-categories-rules">Rule
-   * criteria</a> for usage examples.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html#tca-rules-batch">Rule
+   * criteria for batch categories</a> for usage examples.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/NonTalkTimeFilter">AWS
    * API Reference</a></p>
    */
@@ -45,104 +46,116 @@ namespace Model
 
 
     /**
-     * <p>Specify the duration, in milliseconds, of the period of silence you want to
-     * flag. For example, you can flag a silent period that lasts 30000
+     * <p>Specify the duration, in milliseconds, of the period of silence that you want
+     * to flag. For example, you can flag a silent period that lasts 30,000
      * milliseconds.</p>
      */
     inline long long GetThreshold() const{ return m_threshold; }
 
     /**
-     * <p>Specify the duration, in milliseconds, of the period of silence you want to
-     * flag. For example, you can flag a silent period that lasts 30000
+     * <p>Specify the duration, in milliseconds, of the period of silence that you want
+     * to flag. For example, you can flag a silent period that lasts 30,000
      * milliseconds.</p>
      */
     inline bool ThresholdHasBeenSet() const { return m_thresholdHasBeenSet; }
 
     /**
-     * <p>Specify the duration, in milliseconds, of the period of silence you want to
-     * flag. For example, you can flag a silent period that lasts 30000
+     * <p>Specify the duration, in milliseconds, of the period of silence that you want
+     * to flag. For example, you can flag a silent period that lasts 30,000
      * milliseconds.</p>
      */
     inline void SetThreshold(long long value) { m_thresholdHasBeenSet = true; m_threshold = value; }
 
     /**
-     * <p>Specify the duration, in milliseconds, of the period of silence you want to
-     * flag. For example, you can flag a silent period that lasts 30000
+     * <p>Specify the duration, in milliseconds, of the period of silence that you want
+     * to flag. For example, you can flag a silent period that lasts 30,000
      * milliseconds.</p>
      */
     inline NonTalkTimeFilter& WithThreshold(long long value) { SetThreshold(value); return *this;}
 
 
     /**
-     * <p>Allows you to specify a time range (in milliseconds) in your audio, during
-     * which you want to search for a period of silence. See for more detail.</p>
+     * <p>Makes it possible to specify a time range (in milliseconds) in your audio,
+     * during which you want to search for a period of silence. See for more
+     * detail.</p>
      */
     inline const AbsoluteTimeRange& GetAbsoluteTimeRange() const{ return m_absoluteTimeRange; }
 
     /**
-     * <p>Allows you to specify a time range (in milliseconds) in your audio, during
-     * which you want to search for a period of silence. See for more detail.</p>
+     * <p>Makes it possible to specify a time range (in milliseconds) in your audio,
+     * during which you want to search for a period of silence. See for more
+     * detail.</p>
      */
     inline bool AbsoluteTimeRangeHasBeenSet() const { return m_absoluteTimeRangeHasBeenSet; }
 
     /**
-     * <p>Allows you to specify a time range (in milliseconds) in your audio, during
-     * which you want to search for a period of silence. See for more detail.</p>
+     * <p>Makes it possible to specify a time range (in milliseconds) in your audio,
+     * during which you want to search for a period of silence. See for more
+     * detail.</p>
      */
     inline void SetAbsoluteTimeRange(const AbsoluteTimeRange& value) { m_absoluteTimeRangeHasBeenSet = true; m_absoluteTimeRange = value; }
 
     /**
-     * <p>Allows you to specify a time range (in milliseconds) in your audio, during
-     * which you want to search for a period of silence. See for more detail.</p>
+     * <p>Makes it possible to specify a time range (in milliseconds) in your audio,
+     * during which you want to search for a period of silence. See for more
+     * detail.</p>
      */
     inline void SetAbsoluteTimeRange(AbsoluteTimeRange&& value) { m_absoluteTimeRangeHasBeenSet = true; m_absoluteTimeRange = std::move(value); }
 
     /**
-     * <p>Allows you to specify a time range (in milliseconds) in your audio, during
-     * which you want to search for a period of silence. See for more detail.</p>
+     * <p>Makes it possible to specify a time range (in milliseconds) in your audio,
+     * during which you want to search for a period of silence. See for more
+     * detail.</p>
      */
     inline NonTalkTimeFilter& WithAbsoluteTimeRange(const AbsoluteTimeRange& value) { SetAbsoluteTimeRange(value); return *this;}
 
     /**
-     * <p>Allows you to specify a time range (in milliseconds) in your audio, during
-     * which you want to search for a period of silence. See for more detail.</p>
+     * <p>Makes it possible to specify a time range (in milliseconds) in your audio,
+     * during which you want to search for a period of silence. See for more
+     * detail.</p>
      */
     inline NonTalkTimeFilter& WithAbsoluteTimeRange(AbsoluteTimeRange&& value) { SetAbsoluteTimeRange(std::move(value)); return *this;}
 
 
     /**
-     * <p>Allows you to specify a time range (in percentage) in your media file, during
-     * which you want to search for a period of silence. See for more detail.</p>
+     * <p>Makes it possible to specify a time range (in percentage) in your media file,
+     * during which you want to search for a period of silence. See for more
+     * detail.</p>
      */
     inline const RelativeTimeRange& GetRelativeTimeRange() const{ return m_relativeTimeRange; }
 
     /**
-     * <p>Allows you to specify a time range (in percentage) in your media file, during
-     * which you want to search for a period of silence. See for more detail.</p>
+     * <p>Makes it possible to specify a time range (in percentage) in your media file,
+     * during which you want to search for a period of silence. See for more
+     * detail.</p>
      */
     inline bool RelativeTimeRangeHasBeenSet() const { return m_relativeTimeRangeHasBeenSet; }
 
     /**
-     * <p>Allows you to specify a time range (in percentage) in your media file, during
-     * which you want to search for a period of silence. See for more detail.</p>
+     * <p>Makes it possible to specify a time range (in percentage) in your media file,
+     * during which you want to search for a period of silence. See for more
+     * detail.</p>
      */
     inline void SetRelativeTimeRange(const RelativeTimeRange& value) { m_relativeTimeRangeHasBeenSet = true; m_relativeTimeRange = value; }
 
     /**
-     * <p>Allows you to specify a time range (in percentage) in your media file, during
-     * which you want to search for a period of silence. See for more detail.</p>
+     * <p>Makes it possible to specify a time range (in percentage) in your media file,
+     * during which you want to search for a period of silence. See for more
+     * detail.</p>
      */
     inline void SetRelativeTimeRange(RelativeTimeRange&& value) { m_relativeTimeRangeHasBeenSet = true; m_relativeTimeRange = std::move(value); }
 
     /**
-     * <p>Allows you to specify a time range (in percentage) in your media file, during
-     * which you want to search for a period of silence. See for more detail.</p>
+     * <p>Makes it possible to specify a time range (in percentage) in your media file,
+     * during which you want to search for a period of silence. See for more
+     * detail.</p>
      */
     inline NonTalkTimeFilter& WithRelativeTimeRange(const RelativeTimeRange& value) { SetRelativeTimeRange(value); return *this;}
 
     /**
-     * <p>Allows you to specify a time range (in percentage) in your media file, during
-     * which you want to search for a period of silence. See for more detail.</p>
+     * <p>Makes it possible to specify a time range (in percentage) in your media file,
+     * during which you want to search for a period of silence. See for more
+     * detail.</p>
      */
     inline NonTalkTimeFilter& WithRelativeTimeRange(RelativeTimeRange&& value) { SetRelativeTimeRange(std::move(value)); return *this;}
 

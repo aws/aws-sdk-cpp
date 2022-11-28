@@ -36,72 +36,72 @@ namespace Model
 
 
     /**
-     * <p>A name for the query definition. If you are saving a lot of query
-     * definitions, we recommend that you name them so that you can easily find the
-     * ones you want by using the first part of the name as a filter in the
+     * <p>A name for the query definition. If you are saving numerous query
+     * definitions, we recommend that you name them. This way, you can find the ones
+     * you want by using the first part of the name as a filter in the
      * <code>queryDefinitionNamePrefix</code> parameter of <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>A name for the query definition. If you are saving a lot of query
-     * definitions, we recommend that you name them so that you can easily find the
-     * ones you want by using the first part of the name as a filter in the
+     * <p>A name for the query definition. If you are saving numerous query
+     * definitions, we recommend that you name them. This way, you can find the ones
+     * you want by using the first part of the name as a filter in the
      * <code>queryDefinitionNamePrefix</code> parameter of <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>A name for the query definition. If you are saving a lot of query
-     * definitions, we recommend that you name them so that you can easily find the
-     * ones you want by using the first part of the name as a filter in the
+     * <p>A name for the query definition. If you are saving numerous query
+     * definitions, we recommend that you name them. This way, you can find the ones
+     * you want by using the first part of the name as a filter in the
      * <code>queryDefinitionNamePrefix</code> parameter of <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>A name for the query definition. If you are saving a lot of query
-     * definitions, we recommend that you name them so that you can easily find the
-     * ones you want by using the first part of the name as a filter in the
+     * <p>A name for the query definition. If you are saving numerous query
+     * definitions, we recommend that you name them. This way, you can find the ones
+     * you want by using the first part of the name as a filter in the
      * <code>queryDefinitionNamePrefix</code> parameter of <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>A name for the query definition. If you are saving a lot of query
-     * definitions, we recommend that you name them so that you can easily find the
-     * ones you want by using the first part of the name as a filter in the
+     * <p>A name for the query definition. If you are saving numerous query
+     * definitions, we recommend that you name them. This way, you can find the ones
+     * you want by using the first part of the name as a filter in the
      * <code>queryDefinitionNamePrefix</code> parameter of <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>A name for the query definition. If you are saving a lot of query
-     * definitions, we recommend that you name them so that you can easily find the
-     * ones you want by using the first part of the name as a filter in the
+     * <p>A name for the query definition. If you are saving numerous query
+     * definitions, we recommend that you name them. This way, you can find the ones
+     * you want by using the first part of the name as a filter in the
      * <code>queryDefinitionNamePrefix</code> parameter of <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>.</p>
      */
     inline PutQueryDefinitionRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>A name for the query definition. If you are saving a lot of query
-     * definitions, we recommend that you name them so that you can easily find the
-     * ones you want by using the first part of the name as a filter in the
+     * <p>A name for the query definition. If you are saving numerous query
+     * definitions, we recommend that you name them. This way, you can find the ones
+     * you want by using the first part of the name as a filter in the
      * <code>queryDefinitionNamePrefix</code> parameter of <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>.</p>
      */
     inline PutQueryDefinitionRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>A name for the query definition. If you are saving a lot of query
-     * definitions, we recommend that you name them so that you can easily find the
-     * ones you want by using the first part of the name as a filter in the
+     * <p>A name for the query definition. If you are saving numerous query
+     * definitions, we recommend that you name them. This way, you can find the ones
+     * you want by using the first part of the name as a filter in the
      * <code>queryDefinitionNamePrefix</code> parameter of <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>.</p>
      */

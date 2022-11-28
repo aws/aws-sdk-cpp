@@ -80,25 +80,25 @@ namespace Model
 
     /**
      * <p>The time the event occurred, expressed as the number of milliseconds after
-     * Jan 1, 1970 00:00:00 UTC.</p>
+     * <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
      */
     inline long long GetTimestamp() const{ return m_timestamp; }
 
     /**
      * <p>The time the event occurred, expressed as the number of milliseconds after
-     * Jan 1, 1970 00:00:00 UTC.</p>
+     * <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
      */
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
 
     /**
      * <p>The time the event occurred, expressed as the number of milliseconds after
-     * Jan 1, 1970 00:00:00 UTC.</p>
+     * <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
      */
     inline void SetTimestamp(long long value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
      * <p>The time the event occurred, expressed as the number of milliseconds after
-     * Jan 1, 1970 00:00:00 UTC.</p>
+     * <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
      */
     inline FilteredLogEvent& WithTimestamp(long long value) { SetTimestamp(value); return *this;}
 
@@ -146,25 +146,25 @@ namespace Model
 
     /**
      * <p>The time the event was ingested, expressed as the number of milliseconds
-     * after Jan 1, 1970 00:00:00 UTC.</p>
+     * after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
      */
     inline long long GetIngestionTime() const{ return m_ingestionTime; }
 
     /**
      * <p>The time the event was ingested, expressed as the number of milliseconds
-     * after Jan 1, 1970 00:00:00 UTC.</p>
+     * after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
      */
     inline bool IngestionTimeHasBeenSet() const { return m_ingestionTimeHasBeenSet; }
 
     /**
      * <p>The time the event was ingested, expressed as the number of milliseconds
-     * after Jan 1, 1970 00:00:00 UTC.</p>
+     * after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
      */
     inline void SetIngestionTime(long long value) { m_ingestionTimeHasBeenSet = true; m_ingestionTime = value; }
 
     /**
      * <p>The time the event was ingested, expressed as the number of milliseconds
-     * after Jan 1, 1970 00:00:00 UTC.</p>
+     * after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
      */
     inline FilteredLogEvent& WithIngestionTime(long long value) { SetIngestionTime(value); return *this;}
 

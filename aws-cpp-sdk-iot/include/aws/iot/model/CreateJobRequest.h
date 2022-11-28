@@ -15,6 +15,7 @@
 #include <aws/iot/model/TimeoutConfig.h>
 #include <aws/iot/model/JobExecutionsRetryConfig.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/iot/model/SchedulingConfig.h>
 #include <aws/iot/model/Tag.h>
 #include <utility>
 
@@ -869,6 +870,43 @@ namespace Model
      */
     inline CreateJobRequest& AddDocumentParameters(const char* key, const char* value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The configuration that allows you to schedule a job for a future date and
+     * time in addition to specifying the end behavior for each job execution.</p>
+     */
+    inline const SchedulingConfig& GetSchedulingConfig() const{ return m_schedulingConfig; }
+
+    /**
+     * <p>The configuration that allows you to schedule a job for a future date and
+     * time in addition to specifying the end behavior for each job execution.</p>
+     */
+    inline bool SchedulingConfigHasBeenSet() const { return m_schedulingConfigHasBeenSet; }
+
+    /**
+     * <p>The configuration that allows you to schedule a job for a future date and
+     * time in addition to specifying the end behavior for each job execution.</p>
+     */
+    inline void SetSchedulingConfig(const SchedulingConfig& value) { m_schedulingConfigHasBeenSet = true; m_schedulingConfig = value; }
+
+    /**
+     * <p>The configuration that allows you to schedule a job for a future date and
+     * time in addition to specifying the end behavior for each job execution.</p>
+     */
+    inline void SetSchedulingConfig(SchedulingConfig&& value) { m_schedulingConfigHasBeenSet = true; m_schedulingConfig = std::move(value); }
+
+    /**
+     * <p>The configuration that allows you to schedule a job for a future date and
+     * time in addition to specifying the end behavior for each job execution.</p>
+     */
+    inline CreateJobRequest& WithSchedulingConfig(const SchedulingConfig& value) { SetSchedulingConfig(value); return *this;}
+
+    /**
+     * <p>The configuration that allows you to schedule a job for a future date and
+     * time in addition to specifying the end behavior for each job execution.</p>
+     */
+    inline CreateJobRequest& WithSchedulingConfig(SchedulingConfig&& value) { SetSchedulingConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_jobId;
@@ -915,6 +953,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_documentParameters;
     bool m_documentParametersHasBeenSet = false;
+
+    SchedulingConfig m_schedulingConfig;
+    bool m_schedulingConfigHasBeenSet = false;
   };
 
 } // namespace Model

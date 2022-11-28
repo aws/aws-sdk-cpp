@@ -28,6 +28,7 @@ namespace Aws
         static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
         static const int EXPIRED_HASH = HashingUtils::HashString("EXPIRED");
+        static const int PARTIAL_HASH = HashingUtils::HashString("PARTIAL");
 
 
         BackupJobState GetBackupJobStateForName(const Aws::String& name)
@@ -65,6 +66,10 @@ namespace Aws
           {
             return BackupJobState::EXPIRED;
           }
+          else if (hashCode == PARTIAL_HASH)
+          {
+            return BackupJobState::PARTIAL;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -95,6 +100,8 @@ namespace Aws
             return "FAILED";
           case BackupJobState::EXPIRED:
             return "EXPIRED";
+          case BackupJobState::PARTIAL:
+            return "PARTIAL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
