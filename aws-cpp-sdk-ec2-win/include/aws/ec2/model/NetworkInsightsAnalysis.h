@@ -169,6 +169,34 @@ namespace Model
     inline NetworkInsightsAnalysis& WithNetworkInsightsPathId(const char* value) { SetNetworkInsightsPathId(value); return *this;}
 
 
+    
+    inline const Aws::Vector<Aws::String>& GetAdditionalAccounts() const{ return m_additionalAccounts; }
+
+    
+    inline bool AdditionalAccountsHasBeenSet() const { return m_additionalAccountsHasBeenSet; }
+
+    
+    inline void SetAdditionalAccounts(const Aws::Vector<Aws::String>& value) { m_additionalAccountsHasBeenSet = true; m_additionalAccounts = value; }
+
+    
+    inline void SetAdditionalAccounts(Aws::Vector<Aws::String>&& value) { m_additionalAccountsHasBeenSet = true; m_additionalAccounts = std::move(value); }
+
+    
+    inline NetworkInsightsAnalysis& WithAdditionalAccounts(const Aws::Vector<Aws::String>& value) { SetAdditionalAccounts(value); return *this;}
+
+    
+    inline NetworkInsightsAnalysis& WithAdditionalAccounts(Aws::Vector<Aws::String>&& value) { SetAdditionalAccounts(std::move(value)); return *this;}
+
+    
+    inline NetworkInsightsAnalysis& AddAdditionalAccounts(const Aws::String& value) { m_additionalAccountsHasBeenSet = true; m_additionalAccounts.push_back(value); return *this; }
+
+    
+    inline NetworkInsightsAnalysis& AddAdditionalAccounts(Aws::String&& value) { m_additionalAccountsHasBeenSet = true; m_additionalAccounts.push_back(std::move(value)); return *this; }
+
+    
+    inline NetworkInsightsAnalysis& AddAdditionalAccounts(const char* value) { m_additionalAccountsHasBeenSet = true; m_additionalAccounts.push_back(value); return *this; }
+
+
     /**
      * <p>The Amazon Resource Names (ARN) of the Amazon Web Services resources that the
      * path must traverse.</p>
@@ -569,6 +597,34 @@ namespace Model
     inline NetworkInsightsAnalysis& AddAlternatePathHints(AlternatePathHint&& value) { m_alternatePathHintsHasBeenSet = true; m_alternatePathHints.push_back(std::move(value)); return *this; }
 
 
+    
+    inline const Aws::Vector<Aws::String>& GetSuggestedAccounts() const{ return m_suggestedAccounts; }
+
+    
+    inline bool SuggestedAccountsHasBeenSet() const { return m_suggestedAccountsHasBeenSet; }
+
+    
+    inline void SetSuggestedAccounts(const Aws::Vector<Aws::String>& value) { m_suggestedAccountsHasBeenSet = true; m_suggestedAccounts = value; }
+
+    
+    inline void SetSuggestedAccounts(Aws::Vector<Aws::String>&& value) { m_suggestedAccountsHasBeenSet = true; m_suggestedAccounts = std::move(value); }
+
+    
+    inline NetworkInsightsAnalysis& WithSuggestedAccounts(const Aws::Vector<Aws::String>& value) { SetSuggestedAccounts(value); return *this;}
+
+    
+    inline NetworkInsightsAnalysis& WithSuggestedAccounts(Aws::Vector<Aws::String>&& value) { SetSuggestedAccounts(std::move(value)); return *this;}
+
+    
+    inline NetworkInsightsAnalysis& AddSuggestedAccounts(const Aws::String& value) { m_suggestedAccountsHasBeenSet = true; m_suggestedAccounts.push_back(value); return *this; }
+
+    
+    inline NetworkInsightsAnalysis& AddSuggestedAccounts(Aws::String&& value) { m_suggestedAccountsHasBeenSet = true; m_suggestedAccounts.push_back(std::move(value)); return *this; }
+
+    
+    inline NetworkInsightsAnalysis& AddSuggestedAccounts(const char* value) { m_suggestedAccountsHasBeenSet = true; m_suggestedAccounts.push_back(value); return *this; }
+
+
     /**
      * <p>The tags.</p>
      */
@@ -620,6 +676,9 @@ namespace Model
     Aws::String m_networkInsightsPathId;
     bool m_networkInsightsPathIdHasBeenSet = false;
 
+    Aws::Vector<Aws::String> m_additionalAccounts;
+    bool m_additionalAccountsHasBeenSet = false;
+
     Aws::Vector<Aws::String> m_filterInArns;
     bool m_filterInArnsHasBeenSet = false;
 
@@ -649,6 +708,9 @@ namespace Model
 
     Aws::Vector<AlternatePathHint> m_alternatePathHints;
     bool m_alternatePathHintsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_suggestedAccounts;
+    bool m_suggestedAccountsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;

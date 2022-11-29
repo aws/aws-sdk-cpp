@@ -141,43 +141,43 @@ namespace Model
 
     /**
      * <p>The valid number of threads per core that can be configured for the instance
-     * type. </p>
+     * type.</p>
      */
     inline const Aws::Vector<int>& GetValidThreadsPerCore() const{ return m_validThreadsPerCore; }
 
     /**
      * <p>The valid number of threads per core that can be configured for the instance
-     * type. </p>
+     * type.</p>
      */
     inline bool ValidThreadsPerCoreHasBeenSet() const { return m_validThreadsPerCoreHasBeenSet; }
 
     /**
      * <p>The valid number of threads per core that can be configured for the instance
-     * type. </p>
+     * type.</p>
      */
     inline void SetValidThreadsPerCore(const Aws::Vector<int>& value) { m_validThreadsPerCoreHasBeenSet = true; m_validThreadsPerCore = value; }
 
     /**
      * <p>The valid number of threads per core that can be configured for the instance
-     * type. </p>
+     * type.</p>
      */
     inline void SetValidThreadsPerCore(Aws::Vector<int>&& value) { m_validThreadsPerCoreHasBeenSet = true; m_validThreadsPerCore = std::move(value); }
 
     /**
      * <p>The valid number of threads per core that can be configured for the instance
-     * type. </p>
+     * type.</p>
      */
     inline VCpuInfo& WithValidThreadsPerCore(const Aws::Vector<int>& value) { SetValidThreadsPerCore(value); return *this;}
 
     /**
      * <p>The valid number of threads per core that can be configured for the instance
-     * type. </p>
+     * type.</p>
      */
     inline VCpuInfo& WithValidThreadsPerCore(Aws::Vector<int>&& value) { SetValidThreadsPerCore(std::move(value)); return *this;}
 
     /**
      * <p>The valid number of threads per core that can be configured for the instance
-     * type. </p>
+     * type.</p>
      */
     inline VCpuInfo& AddValidThreadsPerCore(int value) { m_validThreadsPerCoreHasBeenSet = true; m_validThreadsPerCore.push_back(value); return *this; }
 

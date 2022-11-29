@@ -80,6 +80,34 @@ namespace Model
     inline StartNetworkInsightsAnalysisRequest& WithNetworkInsightsPathId(const char* value) { SetNetworkInsightsPathId(value); return *this;}
 
 
+    
+    inline const Aws::Vector<Aws::String>& GetAdditionalAccounts() const{ return m_additionalAccounts; }
+
+    
+    inline bool AdditionalAccountsHasBeenSet() const { return m_additionalAccountsHasBeenSet; }
+
+    
+    inline void SetAdditionalAccounts(const Aws::Vector<Aws::String>& value) { m_additionalAccountsHasBeenSet = true; m_additionalAccounts = value; }
+
+    
+    inline void SetAdditionalAccounts(Aws::Vector<Aws::String>&& value) { m_additionalAccountsHasBeenSet = true; m_additionalAccounts = std::move(value); }
+
+    
+    inline StartNetworkInsightsAnalysisRequest& WithAdditionalAccounts(const Aws::Vector<Aws::String>& value) { SetAdditionalAccounts(value); return *this;}
+
+    
+    inline StartNetworkInsightsAnalysisRequest& WithAdditionalAccounts(Aws::Vector<Aws::String>&& value) { SetAdditionalAccounts(std::move(value)); return *this;}
+
+    
+    inline StartNetworkInsightsAnalysisRequest& AddAdditionalAccounts(const Aws::String& value) { m_additionalAccountsHasBeenSet = true; m_additionalAccounts.push_back(value); return *this; }
+
+    
+    inline StartNetworkInsightsAnalysisRequest& AddAdditionalAccounts(Aws::String&& value) { m_additionalAccountsHasBeenSet = true; m_additionalAccounts.push_back(std::move(value)); return *this; }
+
+    
+    inline StartNetworkInsightsAnalysisRequest& AddAdditionalAccounts(const char* value) { m_additionalAccountsHasBeenSet = true; m_additionalAccounts.push_back(value); return *this; }
+
+
     /**
      * <p>The Amazon Resource Names (ARN) of the resources that the path must
      * traverse.</p>
@@ -277,6 +305,9 @@ namespace Model
 
     Aws::String m_networkInsightsPathId;
     bool m_networkInsightsPathIdHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_additionalAccounts;
+    bool m_additionalAccountsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_filterInArns;
     bool m_filterInArnsHasBeenSet = false;

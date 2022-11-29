@@ -363,6 +363,39 @@ namespace Model
      */
     inline NetworkInfo& WithEncryptionInTransitSupported(bool value) { SetEncryptionInTransitSupported(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether the instance type supports ENA Express. ENA Express uses
+     * Amazon Web Services Scalable Reliable Datagram (SRD) technology to increase the
+     * maximum bandwidth used per stream and minimize tail latency of network traffic
+     * between EC2 instances.</p>
+     */
+    inline bool GetEnaSrdSupported() const{ return m_enaSrdSupported; }
+
+    /**
+     * <p>Indicates whether the instance type supports ENA Express. ENA Express uses
+     * Amazon Web Services Scalable Reliable Datagram (SRD) technology to increase the
+     * maximum bandwidth used per stream and minimize tail latency of network traffic
+     * between EC2 instances.</p>
+     */
+    inline bool EnaSrdSupportedHasBeenSet() const { return m_enaSrdSupportedHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the instance type supports ENA Express. ENA Express uses
+     * Amazon Web Services Scalable Reliable Datagram (SRD) technology to increase the
+     * maximum bandwidth used per stream and minimize tail latency of network traffic
+     * between EC2 instances.</p>
+     */
+    inline void SetEnaSrdSupported(bool value) { m_enaSrdSupportedHasBeenSet = true; m_enaSrdSupported = value; }
+
+    /**
+     * <p>Indicates whether the instance type supports ENA Express. ENA Express uses
+     * Amazon Web Services Scalable Reliable Datagram (SRD) technology to increase the
+     * maximum bandwidth used per stream and minimize tail latency of network traffic
+     * between EC2 instances.</p>
+     */
+    inline NetworkInfo& WithEnaSrdSupported(bool value) { SetEnaSrdSupported(value); return *this;}
+
   private:
 
     Aws::String m_networkPerformance;
@@ -400,6 +433,9 @@ namespace Model
 
     bool m_encryptionInTransitSupported;
     bool m_encryptionInTransitSupportedHasBeenSet = false;
+
+    bool m_enaSrdSupported;
+    bool m_enaSrdSupportedHasBeenSet = false;
   };
 
 } // namespace Model

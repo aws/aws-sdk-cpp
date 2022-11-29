@@ -17,7 +17,8 @@ ModifyNetworkInterfaceAttributeRequest::ModifyNetworkInterfaceAttributeRequest()
     m_dryRunHasBeenSet(false),
     m_groupsHasBeenSet(false),
     m_networkInterfaceIdHasBeenSet(false),
-    m_sourceDestCheckHasBeenSet(false)
+    m_sourceDestCheckHasBeenSet(false),
+    m_enaSrdSpecificationHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,11 @@ Aws::String ModifyNetworkInterfaceAttributeRequest::SerializePayload() const
   if(m_sourceDestCheckHasBeenSet)
   {
     m_sourceDestCheck.OutputToStream(ss, "SourceDestCheck");
+  }
+
+  if(m_enaSrdSpecificationHasBeenSet)
+  {
+    m_enaSrdSpecification.OutputToStream(ss, "EnaSrdSpecification");
   }
 
   ss << "Version=2016-11-15";

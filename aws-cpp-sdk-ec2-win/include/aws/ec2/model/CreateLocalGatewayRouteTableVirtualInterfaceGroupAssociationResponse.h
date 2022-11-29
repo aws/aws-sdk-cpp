@@ -33,19 +33,34 @@ namespace Model
     CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
-    
+    /**
+     * <p>Information about the local gateway route table virtual interface group
+     * association.</p>
+     */
     inline const LocalGatewayRouteTableVirtualInterfaceGroupAssociation& GetLocalGatewayRouteTableVirtualInterfaceGroupAssociation() const{ return m_localGatewayRouteTableVirtualInterfaceGroupAssociation; }
 
-    
+    /**
+     * <p>Information about the local gateway route table virtual interface group
+     * association.</p>
+     */
     inline void SetLocalGatewayRouteTableVirtualInterfaceGroupAssociation(const LocalGatewayRouteTableVirtualInterfaceGroupAssociation& value) { m_localGatewayRouteTableVirtualInterfaceGroupAssociation = value; }
 
-    
+    /**
+     * <p>Information about the local gateway route table virtual interface group
+     * association.</p>
+     */
     inline void SetLocalGatewayRouteTableVirtualInterfaceGroupAssociation(LocalGatewayRouteTableVirtualInterfaceGroupAssociation&& value) { m_localGatewayRouteTableVirtualInterfaceGroupAssociation = std::move(value); }
 
-    
+    /**
+     * <p>Information about the local gateway route table virtual interface group
+     * association.</p>
+     */
     inline CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse& WithLocalGatewayRouteTableVirtualInterfaceGroupAssociation(const LocalGatewayRouteTableVirtualInterfaceGroupAssociation& value) { SetLocalGatewayRouteTableVirtualInterfaceGroupAssociation(value); return *this;}
 
-    
+    /**
+     * <p>Information about the local gateway route table virtual interface group
+     * association.</p>
+     */
     inline CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse& WithLocalGatewayRouteTableVirtualInterfaceGroupAssociation(LocalGatewayRouteTableVirtualInterfaceGroupAssociation&& value) { SetLocalGatewayRouteTableVirtualInterfaceGroupAssociation(std::move(value)); return *this;}
 
 
