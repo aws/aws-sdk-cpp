@@ -14,7 +14,8 @@ using namespace Aws::Utils;
 
 RegisterIdentityProviderRequest::RegisterIdentityProviderRequest() : 
     m_identityProviderHasBeenSet(false),
-    m_productHasBeenSet(false)
+    m_productHasBeenSet(false),
+    m_settingsHasBeenSet(false)
 {
 }
 
@@ -31,6 +32,12 @@ Aws::String RegisterIdentityProviderRequest::SerializePayload() const
   if(m_productHasBeenSet)
   {
    payload.WithString("Product", m_product);
+
+  }
+
+  if(m_settingsHasBeenSet)
+  {
+   payload.WithObject("Settings", m_settings.Jsonize());
 
   }
 

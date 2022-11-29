@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The function was able to make a network connection to the configured file
-   * system, but the mount operation timed out.</p><p><h3>See Also:</h3>   <a
+   * <p>The Lambda function made a network connection to the configured file system,
+   * but the mount operation timed out.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/EFSMountTimeoutException">AWS
    * API Reference</a></p>
    */

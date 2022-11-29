@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>Details about the ECR automated re-scan duration setting for your
-   * environment</p><p><h3>See Also:</h3>   <a
+   * environment.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/EcrConfiguration">AWS
    * API Reference</a></p>
    */

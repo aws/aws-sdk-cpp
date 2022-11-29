@@ -31,7 +31,9 @@ namespace Model
     EC2_INSTANCE_STOPPED,
     PENDING_DISABLE,
     NO_INVENTORY,
-    STALE_INVENTORY
+    STALE_INVENTORY,
+    EXCLUDED_BY_TAG,
+    UNSUPPORTED_RUNTIME
   };
 
 namespace ScanStatusReasonMapper

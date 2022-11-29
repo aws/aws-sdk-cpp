@@ -21,14 +21,18 @@ namespace Model
 EvaluationResultQualifier::EvaluationResultQualifier() : 
     m_configRuleNameHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false)
+    m_resourceIdHasBeenSet(false),
+    m_evaluationMode(EvaluationMode::NOT_SET),
+    m_evaluationModeHasBeenSet(false)
 {
 }
 
 EvaluationResultQualifier::EvaluationResultQualifier(JsonView jsonValue) : 
     m_configRuleNameHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false)
+    m_resourceIdHasBeenSet(false),
+    m_evaluationMode(EvaluationMode::NOT_SET),
+    m_evaluationModeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +60,13 @@ EvaluationResultQualifier& EvaluationResultQualifier::operator =(JsonView jsonVa
     m_resourceIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EvaluationMode"))
+  {
+    m_evaluationMode = EvaluationModeMapper::GetEvaluationModeForName(jsonValue.GetString("EvaluationMode"));
+
+    m_evaluationModeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -79,6 +90,11 @@ JsonValue EvaluationResultQualifier::Jsonize() const
   {
    payload.WithString("ResourceId", m_resourceId);
 
+  }
+
+  if(m_evaluationModeHasBeenSet)
+  {
+   payload.WithString("EvaluationMode", EvaluationModeMapper::GetNameForEvaluationMode(m_evaluationMode));
   }
 
   return payload;

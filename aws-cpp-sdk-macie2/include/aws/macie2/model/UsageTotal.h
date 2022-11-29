@@ -121,44 +121,56 @@ namespace Model
 
 
     /**
-     * <p>The name of the metric. Possible values are: DATA_INVENTORY_EVALUATION, for
-     * monitoring S3 buckets; and, SENSITIVE_DATA_DISCOVERY, for analyzing S3 objects
-     * to detect sensitive data.</p>
+     * <p>The name of the metric. Possible values are: AUTOMATED_OBJECT_MONITORING, to
+     * monitor S3 objects for automated sensitive data discovery;
+     * AUTOMATED_SENSITIVE_DATA_DISCOVERY, to analyze S3 objects for automated
+     * sensitive data discovery; DATA_INVENTORY_EVALUATION, to monitor S3 buckets; and,
+     * SENSITIVE_DATA_DISCOVERY, to run classification jobs.</p>
      */
     inline const UsageType& GetType() const{ return m_type; }
 
     /**
-     * <p>The name of the metric. Possible values are: DATA_INVENTORY_EVALUATION, for
-     * monitoring S3 buckets; and, SENSITIVE_DATA_DISCOVERY, for analyzing S3 objects
-     * to detect sensitive data.</p>
+     * <p>The name of the metric. Possible values are: AUTOMATED_OBJECT_MONITORING, to
+     * monitor S3 objects for automated sensitive data discovery;
+     * AUTOMATED_SENSITIVE_DATA_DISCOVERY, to analyze S3 objects for automated
+     * sensitive data discovery; DATA_INVENTORY_EVALUATION, to monitor S3 buckets; and,
+     * SENSITIVE_DATA_DISCOVERY, to run classification jobs.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The name of the metric. Possible values are: DATA_INVENTORY_EVALUATION, for
-     * monitoring S3 buckets; and, SENSITIVE_DATA_DISCOVERY, for analyzing S3 objects
-     * to detect sensitive data.</p>
+     * <p>The name of the metric. Possible values are: AUTOMATED_OBJECT_MONITORING, to
+     * monitor S3 objects for automated sensitive data discovery;
+     * AUTOMATED_SENSITIVE_DATA_DISCOVERY, to analyze S3 objects for automated
+     * sensitive data discovery; DATA_INVENTORY_EVALUATION, to monitor S3 buckets; and,
+     * SENSITIVE_DATA_DISCOVERY, to run classification jobs.</p>
      */
     inline void SetType(const UsageType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The name of the metric. Possible values are: DATA_INVENTORY_EVALUATION, for
-     * monitoring S3 buckets; and, SENSITIVE_DATA_DISCOVERY, for analyzing S3 objects
-     * to detect sensitive data.</p>
+     * <p>The name of the metric. Possible values are: AUTOMATED_OBJECT_MONITORING, to
+     * monitor S3 objects for automated sensitive data discovery;
+     * AUTOMATED_SENSITIVE_DATA_DISCOVERY, to analyze S3 objects for automated
+     * sensitive data discovery; DATA_INVENTORY_EVALUATION, to monitor S3 buckets; and,
+     * SENSITIVE_DATA_DISCOVERY, to run classification jobs.</p>
      */
     inline void SetType(UsageType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The name of the metric. Possible values are: DATA_INVENTORY_EVALUATION, for
-     * monitoring S3 buckets; and, SENSITIVE_DATA_DISCOVERY, for analyzing S3 objects
-     * to detect sensitive data.</p>
+     * <p>The name of the metric. Possible values are: AUTOMATED_OBJECT_MONITORING, to
+     * monitor S3 objects for automated sensitive data discovery;
+     * AUTOMATED_SENSITIVE_DATA_DISCOVERY, to analyze S3 objects for automated
+     * sensitive data discovery; DATA_INVENTORY_EVALUATION, to monitor S3 buckets; and,
+     * SENSITIVE_DATA_DISCOVERY, to run classification jobs.</p>
      */
     inline UsageTotal& WithType(const UsageType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The name of the metric. Possible values are: DATA_INVENTORY_EVALUATION, for
-     * monitoring S3 buckets; and, SENSITIVE_DATA_DISCOVERY, for analyzing S3 objects
-     * to detect sensitive data.</p>
+     * <p>The name of the metric. Possible values are: AUTOMATED_OBJECT_MONITORING, to
+     * monitor S3 objects for automated sensitive data discovery;
+     * AUTOMATED_SENSITIVE_DATA_DISCOVERY, to analyze S3 objects for automated
+     * sensitive data discovery; DATA_INVENTORY_EVALUATION, to monitor S3 buckets; and,
+     * SENSITIVE_DATA_DISCOVERY, to run classification jobs.</p>
      */
     inline UsageTotal& WithType(UsageType&& value) { SetType(std::move(value)); return *this;}
 

@@ -7,6 +7,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/EnaSrdSpecification.h>
 #include <utility>
 
 namespace Aws
@@ -204,6 +205,43 @@ namespace Model
      */
     inline AttachNetworkInterfaceRequest& WithNetworkCardIndex(int value) { SetNetworkCardIndex(value); return *this;}
 
+
+    /**
+     * <p>Configures ENA Express for the network interface that this action attaches to
+     * the instance.</p>
+     */
+    inline const EnaSrdSpecification& GetEnaSrdSpecification() const{ return m_enaSrdSpecification; }
+
+    /**
+     * <p>Configures ENA Express for the network interface that this action attaches to
+     * the instance.</p>
+     */
+    inline bool EnaSrdSpecificationHasBeenSet() const { return m_enaSrdSpecificationHasBeenSet; }
+
+    /**
+     * <p>Configures ENA Express for the network interface that this action attaches to
+     * the instance.</p>
+     */
+    inline void SetEnaSrdSpecification(const EnaSrdSpecification& value) { m_enaSrdSpecificationHasBeenSet = true; m_enaSrdSpecification = value; }
+
+    /**
+     * <p>Configures ENA Express for the network interface that this action attaches to
+     * the instance.</p>
+     */
+    inline void SetEnaSrdSpecification(EnaSrdSpecification&& value) { m_enaSrdSpecificationHasBeenSet = true; m_enaSrdSpecification = std::move(value); }
+
+    /**
+     * <p>Configures ENA Express for the network interface that this action attaches to
+     * the instance.</p>
+     */
+    inline AttachNetworkInterfaceRequest& WithEnaSrdSpecification(const EnaSrdSpecification& value) { SetEnaSrdSpecification(value); return *this;}
+
+    /**
+     * <p>Configures ENA Express for the network interface that this action attaches to
+     * the instance.</p>
+     */
+    inline AttachNetworkInterfaceRequest& WithEnaSrdSpecification(EnaSrdSpecification&& value) { SetEnaSrdSpecification(std::move(value)); return *this;}
+
   private:
 
     int m_deviceIndex;
@@ -220,6 +258,9 @@ namespace Model
 
     int m_networkCardIndex;
     bool m_networkCardIndexHasBeenSet = false;
+
+    EnaSrdSpecification m_enaSrdSpecification;
+    bool m_enaSrdSpecificationHasBeenSet = false;
   };
 
 } // namespace Model

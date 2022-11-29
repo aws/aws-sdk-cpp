@@ -25,7 +25,8 @@ RecommendationPreferencesDetail::RecommendationPreferencesDetail() :
     m_enhancedInfrastructureMetrics(EnhancedInfrastructureMetrics::NOT_SET),
     m_enhancedInfrastructureMetricsHasBeenSet(false),
     m_inferredWorkloadTypes(InferredWorkloadTypesPreference::NOT_SET),
-    m_inferredWorkloadTypesHasBeenSet(false)
+    m_inferredWorkloadTypesHasBeenSet(false),
+    m_externalMetricsPreferenceHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ RecommendationPreferencesDetail::RecommendationPreferencesDetail(JsonView jsonVa
     m_enhancedInfrastructureMetrics(EnhancedInfrastructureMetrics::NOT_SET),
     m_enhancedInfrastructureMetricsHasBeenSet(false),
     m_inferredWorkloadTypes(InferredWorkloadTypesPreference::NOT_SET),
-    m_inferredWorkloadTypesHasBeenSet(false)
+    m_inferredWorkloadTypesHasBeenSet(false),
+    m_externalMetricsPreferenceHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -71,6 +73,13 @@ RecommendationPreferencesDetail& RecommendationPreferencesDetail::operator =(Jso
     m_inferredWorkloadTypesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("externalMetricsPreference"))
+  {
+    m_externalMetricsPreference = jsonValue.GetObject("externalMetricsPreference");
+
+    m_externalMetricsPreferenceHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -97,6 +106,12 @@ JsonValue RecommendationPreferencesDetail::Jsonize() const
   if(m_inferredWorkloadTypesHasBeenSet)
   {
    payload.WithString("inferredWorkloadTypes", InferredWorkloadTypesPreferenceMapper::GetNameForInferredWorkloadTypesPreference(m_inferredWorkloadTypes));
+  }
+
+  if(m_externalMetricsPreferenceHasBeenSet)
+  {
+   payload.WithObject("externalMetricsPreference", m_externalMetricsPreference.Jsonize());
+
   }
 
   return payload;

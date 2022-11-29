@@ -14,7 +14,8 @@ using namespace Aws::Utils;
 
 DescribeConfigRulesRequest::DescribeConfigRulesRequest() : 
     m_configRuleNamesHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -36,6 +37,12 @@ Aws::String DescribeConfigRulesRequest::SerializePayload() const
   if(m_nextTokenHasBeenSet)
   {
    payload.WithString("NextToken", m_nextToken);
+
+  }
+
+  if(m_filtersHasBeenSet)
+  {
+   payload.WithObject("Filters", m_filters.Jsonize());
 
   }
 

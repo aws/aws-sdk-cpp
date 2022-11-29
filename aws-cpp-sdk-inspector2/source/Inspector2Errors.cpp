@@ -7,6 +7,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/inspector2/Inspector2Errors.h>
 #include <aws/inspector2/model/ConflictException.h>
+#include <aws/inspector2/model/ThrottlingException.h>
 #include <aws/inspector2/model/ServiceQuotaExceededException.h>
 #include <aws/inspector2/model/InternalServerException.h>
 #include <aws/inspector2/model/ValidationException.h>
@@ -24,6 +25,12 @@ template<> AWS_INSPECTOR2_API ConflictException Inspector2Error::GetModeledError
 {
   assert(this->GetErrorType() == Inspector2Errors::CONFLICT);
   return ConflictException(this->GetJsonPayload().View());
+}
+
+template<> AWS_INSPECTOR2_API ThrottlingException Inspector2Error::GetModeledError()
+{
+  assert(this->GetErrorType() == Inspector2Errors::THROTTLING);
+  return ThrottlingException(this->GetJsonPayload().View());
 }
 
 template<> AWS_INSPECTOR2_API ServiceQuotaExceededException Inspector2Error::GetModeledError()

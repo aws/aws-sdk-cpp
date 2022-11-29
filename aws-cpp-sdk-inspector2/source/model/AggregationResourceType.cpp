@@ -22,6 +22,7 @@ namespace Aws
 
         static const int AWS_EC2_INSTANCE_HASH = HashingUtils::HashString("AWS_EC2_INSTANCE");
         static const int AWS_ECR_CONTAINER_IMAGE_HASH = HashingUtils::HashString("AWS_ECR_CONTAINER_IMAGE");
+        static const int AWS_LAMBDA_FUNCTION_HASH = HashingUtils::HashString("AWS_LAMBDA_FUNCTION");
 
 
         AggregationResourceType GetAggregationResourceTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == AWS_ECR_CONTAINER_IMAGE_HASH)
           {
             return AggregationResourceType::AWS_ECR_CONTAINER_IMAGE;
+          }
+          else if (hashCode == AWS_LAMBDA_FUNCTION_HASH)
+          {
+            return AggregationResourceType::AWS_LAMBDA_FUNCTION;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "AWS_EC2_INSTANCE";
           case AggregationResourceType::AWS_ECR_CONTAINER_IMAGE:
             return "AWS_ECR_CONTAINER_IMAGE";
+          case AggregationResourceType::AWS_LAMBDA_FUNCTION:
+            return "AWS_LAMBDA_FUNCTION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

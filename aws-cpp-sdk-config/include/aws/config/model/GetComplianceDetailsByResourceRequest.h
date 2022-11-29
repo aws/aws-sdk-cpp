@@ -242,6 +242,71 @@ namespace Model
      */
     inline GetComplianceDetailsByResourceRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>The unique ID of Amazon Web Services resource execution for which you want to
+     * retrieve evaluation results. </p>  <p>You need to only provide either a
+     * <code>ResourceEvaluationID</code> or a <code>ResourceID </code>and
+     * <code>ResourceType</code>.</p> 
+     */
+    inline const Aws::String& GetResourceEvaluationId() const{ return m_resourceEvaluationId; }
+
+    /**
+     * <p>The unique ID of Amazon Web Services resource execution for which you want to
+     * retrieve evaluation results. </p>  <p>You need to only provide either a
+     * <code>ResourceEvaluationID</code> or a <code>ResourceID </code>and
+     * <code>ResourceType</code>.</p> 
+     */
+    inline bool ResourceEvaluationIdHasBeenSet() const { return m_resourceEvaluationIdHasBeenSet; }
+
+    /**
+     * <p>The unique ID of Amazon Web Services resource execution for which you want to
+     * retrieve evaluation results. </p>  <p>You need to only provide either a
+     * <code>ResourceEvaluationID</code> or a <code>ResourceID </code>and
+     * <code>ResourceType</code>.</p> 
+     */
+    inline void SetResourceEvaluationId(const Aws::String& value) { m_resourceEvaluationIdHasBeenSet = true; m_resourceEvaluationId = value; }
+
+    /**
+     * <p>The unique ID of Amazon Web Services resource execution for which you want to
+     * retrieve evaluation results. </p>  <p>You need to only provide either a
+     * <code>ResourceEvaluationID</code> or a <code>ResourceID </code>and
+     * <code>ResourceType</code>.</p> 
+     */
+    inline void SetResourceEvaluationId(Aws::String&& value) { m_resourceEvaluationIdHasBeenSet = true; m_resourceEvaluationId = std::move(value); }
+
+    /**
+     * <p>The unique ID of Amazon Web Services resource execution for which you want to
+     * retrieve evaluation results. </p>  <p>You need to only provide either a
+     * <code>ResourceEvaluationID</code> or a <code>ResourceID </code>and
+     * <code>ResourceType</code>.</p> 
+     */
+    inline void SetResourceEvaluationId(const char* value) { m_resourceEvaluationIdHasBeenSet = true; m_resourceEvaluationId.assign(value); }
+
+    /**
+     * <p>The unique ID of Amazon Web Services resource execution for which you want to
+     * retrieve evaluation results. </p>  <p>You need to only provide either a
+     * <code>ResourceEvaluationID</code> or a <code>ResourceID </code>and
+     * <code>ResourceType</code>.</p> 
+     */
+    inline GetComplianceDetailsByResourceRequest& WithResourceEvaluationId(const Aws::String& value) { SetResourceEvaluationId(value); return *this;}
+
+    /**
+     * <p>The unique ID of Amazon Web Services resource execution for which you want to
+     * retrieve evaluation results. </p>  <p>You need to only provide either a
+     * <code>ResourceEvaluationID</code> or a <code>ResourceID </code>and
+     * <code>ResourceType</code>.</p> 
+     */
+    inline GetComplianceDetailsByResourceRequest& WithResourceEvaluationId(Aws::String&& value) { SetResourceEvaluationId(std::move(value)); return *this;}
+
+    /**
+     * <p>The unique ID of Amazon Web Services resource execution for which you want to
+     * retrieve evaluation results. </p>  <p>You need to only provide either a
+     * <code>ResourceEvaluationID</code> or a <code>ResourceID </code>and
+     * <code>ResourceType</code>.</p> 
+     */
+    inline GetComplianceDetailsByResourceRequest& WithResourceEvaluationId(const char* value) { SetResourceEvaluationId(value); return *this;}
+
   private:
 
     Aws::String m_resourceType;
@@ -255,6 +320,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    Aws::String m_resourceEvaluationId;
+    bool m_resourceEvaluationIdHasBeenSet = false;
   };
 
 } // namespace Model

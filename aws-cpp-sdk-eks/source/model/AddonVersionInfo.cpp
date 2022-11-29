@@ -21,14 +21,18 @@ namespace Model
 AddonVersionInfo::AddonVersionInfo() : 
     m_addonVersionHasBeenSet(false),
     m_architectureHasBeenSet(false),
-    m_compatibilitiesHasBeenSet(false)
+    m_compatibilitiesHasBeenSet(false),
+    m_requiresConfiguration(false),
+    m_requiresConfigurationHasBeenSet(false)
 {
 }
 
 AddonVersionInfo::AddonVersionInfo(JsonView jsonValue) : 
     m_addonVersionHasBeenSet(false),
     m_architectureHasBeenSet(false),
-    m_compatibilitiesHasBeenSet(false)
+    m_compatibilitiesHasBeenSet(false),
+    m_requiresConfiguration(false),
+    m_requiresConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -60,6 +64,13 @@ AddonVersionInfo& AddonVersionInfo::operator =(JsonView jsonValue)
       m_compatibilities.push_back(compatibilitiesJsonList[compatibilitiesIndex].AsObject());
     }
     m_compatibilitiesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("requiresConfiguration"))
+  {
+    m_requiresConfiguration = jsonValue.GetBool("requiresConfiguration");
+
+    m_requiresConfigurationHasBeenSet = true;
   }
 
   return *this;
@@ -94,6 +105,12 @@ JsonValue AddonVersionInfo::Jsonize() const
      compatibilitiesJsonList[compatibilitiesIndex].AsObject(m_compatibilities[compatibilitiesIndex].Jsonize());
    }
    payload.WithArray("compatibilities", std::move(compatibilitiesJsonList));
+
+  }
+
+  if(m_requiresConfigurationHasBeenSet)
+  {
+   payload.WithBool("requiresConfiguration", m_requiresConfiguration);
 
   }
 

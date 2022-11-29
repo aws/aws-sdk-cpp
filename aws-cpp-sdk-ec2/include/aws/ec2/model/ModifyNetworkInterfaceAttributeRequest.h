@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/AttributeBooleanValue.h>
+#include <aws/ec2/model/EnaSrdSpecification.h>
 #include <utility>
 
 namespace Aws
@@ -45,38 +46,44 @@ namespace Model
   public:
 
     /**
-     * <p>Information about the interface attachment. If modifying the 'delete on
-     * termination' attribute, you must specify the ID of the interface attachment.</p>
+     * <p>Information about the interface attachment. If modifying the <code>delete on
+     * termination</code> attribute, you must specify the ID of the interface
+     * attachment.</p>
      */
     inline const NetworkInterfaceAttachmentChanges& GetAttachment() const{ return m_attachment; }
 
     /**
-     * <p>Information about the interface attachment. If modifying the 'delete on
-     * termination' attribute, you must specify the ID of the interface attachment.</p>
+     * <p>Information about the interface attachment. If modifying the <code>delete on
+     * termination</code> attribute, you must specify the ID of the interface
+     * attachment.</p>
      */
     inline bool AttachmentHasBeenSet() const { return m_attachmentHasBeenSet; }
 
     /**
-     * <p>Information about the interface attachment. If modifying the 'delete on
-     * termination' attribute, you must specify the ID of the interface attachment.</p>
+     * <p>Information about the interface attachment. If modifying the <code>delete on
+     * termination</code> attribute, you must specify the ID of the interface
+     * attachment.</p>
      */
     inline void SetAttachment(const NetworkInterfaceAttachmentChanges& value) { m_attachmentHasBeenSet = true; m_attachment = value; }
 
     /**
-     * <p>Information about the interface attachment. If modifying the 'delete on
-     * termination' attribute, you must specify the ID of the interface attachment.</p>
+     * <p>Information about the interface attachment. If modifying the <code>delete on
+     * termination</code> attribute, you must specify the ID of the interface
+     * attachment.</p>
      */
     inline void SetAttachment(NetworkInterfaceAttachmentChanges&& value) { m_attachmentHasBeenSet = true; m_attachment = std::move(value); }
 
     /**
-     * <p>Information about the interface attachment. If modifying the 'delete on
-     * termination' attribute, you must specify the ID of the interface attachment.</p>
+     * <p>Information about the interface attachment. If modifying the <code>delete on
+     * termination</code> attribute, you must specify the ID of the interface
+     * attachment.</p>
      */
     inline ModifyNetworkInterfaceAttributeRequest& WithAttachment(const NetworkInterfaceAttachmentChanges& value) { SetAttachment(value); return *this;}
 
     /**
-     * <p>Information about the interface attachment. If modifying the 'delete on
-     * termination' attribute, you must specify the ID of the interface attachment.</p>
+     * <p>Information about the interface attachment. If modifying the <code>delete on
+     * termination</code> attribute, you must specify the ID of the interface
+     * attachment.</p>
      */
     inline ModifyNetworkInterfaceAttributeRequest& WithAttachment(NetworkInterfaceAttachmentChanges&& value) { SetAttachment(std::move(value)); return *this;}
 
@@ -319,6 +326,43 @@ namespace Model
      */
     inline ModifyNetworkInterfaceAttributeRequest& WithSourceDestCheck(AttributeBooleanValue&& value) { SetSourceDestCheck(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Updates the ENA Express configuration for the network interface that’s
+     * attached to the instance.</p>
+     */
+    inline const EnaSrdSpecification& GetEnaSrdSpecification() const{ return m_enaSrdSpecification; }
+
+    /**
+     * <p>Updates the ENA Express configuration for the network interface that’s
+     * attached to the instance.</p>
+     */
+    inline bool EnaSrdSpecificationHasBeenSet() const { return m_enaSrdSpecificationHasBeenSet; }
+
+    /**
+     * <p>Updates the ENA Express configuration for the network interface that’s
+     * attached to the instance.</p>
+     */
+    inline void SetEnaSrdSpecification(const EnaSrdSpecification& value) { m_enaSrdSpecificationHasBeenSet = true; m_enaSrdSpecification = value; }
+
+    /**
+     * <p>Updates the ENA Express configuration for the network interface that’s
+     * attached to the instance.</p>
+     */
+    inline void SetEnaSrdSpecification(EnaSrdSpecification&& value) { m_enaSrdSpecificationHasBeenSet = true; m_enaSrdSpecification = std::move(value); }
+
+    /**
+     * <p>Updates the ENA Express configuration for the network interface that’s
+     * attached to the instance.</p>
+     */
+    inline ModifyNetworkInterfaceAttributeRequest& WithEnaSrdSpecification(const EnaSrdSpecification& value) { SetEnaSrdSpecification(value); return *this;}
+
+    /**
+     * <p>Updates the ENA Express configuration for the network interface that’s
+     * attached to the instance.</p>
+     */
+    inline ModifyNetworkInterfaceAttributeRequest& WithEnaSrdSpecification(EnaSrdSpecification&& value) { SetEnaSrdSpecification(std::move(value)); return *this;}
+
   private:
 
     NetworkInterfaceAttachmentChanges m_attachment;
@@ -338,6 +382,9 @@ namespace Model
 
     AttributeBooleanValue m_sourceDestCheck;
     bool m_sourceDestCheckHasBeenSet = false;
+
+    EnaSrdSpecification m_enaSrdSpecification;
+    bool m_enaSrdSpecificationHasBeenSet = false;
   };
 
 } // namespace Model

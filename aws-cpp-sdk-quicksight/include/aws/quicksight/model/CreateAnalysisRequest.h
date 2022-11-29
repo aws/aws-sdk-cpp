@@ -10,6 +10,7 @@
 #include <aws/quicksight/model/Parameters.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/quicksight/model/AnalysisSourceEntity.h>
+#include <aws/quicksight/model/AnalysisDefinition.h>
 #include <aws/quicksight/model/ResourcePermission.h>
 #include <aws/quicksight/model/Tag.h>
 #include <utility>
@@ -442,6 +443,43 @@ namespace Model
      */
     inline CreateAnalysisRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The definition of an analysis.</p> <p>A definition is the data model of all
+     * features in a Dashboard, Template, or Analysis.</p>
+     */
+    inline const AnalysisDefinition& GetDefinition() const{ return m_definition; }
+
+    /**
+     * <p>The definition of an analysis.</p> <p>A definition is the data model of all
+     * features in a Dashboard, Template, or Analysis.</p>
+     */
+    inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
+
+    /**
+     * <p>The definition of an analysis.</p> <p>A definition is the data model of all
+     * features in a Dashboard, Template, or Analysis.</p>
+     */
+    inline void SetDefinition(const AnalysisDefinition& value) { m_definitionHasBeenSet = true; m_definition = value; }
+
+    /**
+     * <p>The definition of an analysis.</p> <p>A definition is the data model of all
+     * features in a Dashboard, Template, or Analysis.</p>
+     */
+    inline void SetDefinition(AnalysisDefinition&& value) { m_definitionHasBeenSet = true; m_definition = std::move(value); }
+
+    /**
+     * <p>The definition of an analysis.</p> <p>A definition is the data model of all
+     * features in a Dashboard, Template, or Analysis.</p>
+     */
+    inline CreateAnalysisRequest& WithDefinition(const AnalysisDefinition& value) { SetDefinition(value); return *this;}
+
+    /**
+     * <p>The definition of an analysis.</p> <p>A definition is the data model of all
+     * features in a Dashboard, Template, or Analysis.</p>
+     */
+    inline CreateAnalysisRequest& WithDefinition(AnalysisDefinition&& value) { SetDefinition(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_awsAccountId;
@@ -467,6 +505,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    AnalysisDefinition m_definition;
+    bool m_definitionHasBeenSet = false;
   };
 
 } // namespace Model

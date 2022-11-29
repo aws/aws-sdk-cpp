@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>One of the parameters in the request is invalid.</p><p><h3>See Also:</h3>  
+   * <p>One of the parameters in the request is not valid.</p><p><h3>See Also:</h3>  
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/InvalidParameterValueException">AWS
    * API Reference</a></p>

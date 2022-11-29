@@ -174,77 +174,161 @@ namespace Model
 
 
     /**
-     * <p>Specifies the file system deployment type. Amazon FSx for OpenZFS supports
-     * <code>SINGLE_AZ_1</code>. <code>SINGLE_AZ_1</code> deployment type is configured
-     * for redundancy within a single Availability Zone.</p>
+     * <p>Specifies the file system deployment type. Single AZ deployment types are
+     * configured for redundancy within a single Availability Zone in an Amazon Web
+     * Services Region . Valid values are the following:</p> <ul> <li> <p>
+     * <code>SINGLE_AZ_1</code>- (Default) Creates file systems with throughput
+     * capacities of 64 - 4,096 MB/s. <code>Single_AZ_1</code> is available in all
+     * Amazon Web Services Regions where Amazon FSx for OpenZFS is available, except US
+     * West (Oregon).</p> </li> <li> <p> <code>SINGLE_AZ_2</code>- Creates file systems
+     * with throughput capacities of 160 - 10,240 MB/s using an NVMe L2ARC cache.
+     * <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East
+     * (Ohio), US West (Oregon), and Europe (Ireland) Amazon Web Services Regions.</p>
+     * </li> </ul> <p>For more information, see: <a
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/available-aws-regions.html">Deployment
+     * type availability</a> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/zfs-fs-performance.html">
+     * File system performance</a>in the<i>Amazon FSx for OpenZFS User Guide</i>.</p>
      */
     inline const OpenZFSDeploymentType& GetDeploymentType() const{ return m_deploymentType; }
 
     /**
-     * <p>Specifies the file system deployment type. Amazon FSx for OpenZFS supports
-     * <code>SINGLE_AZ_1</code>. <code>SINGLE_AZ_1</code> deployment type is configured
-     * for redundancy within a single Availability Zone.</p>
+     * <p>Specifies the file system deployment type. Single AZ deployment types are
+     * configured for redundancy within a single Availability Zone in an Amazon Web
+     * Services Region . Valid values are the following:</p> <ul> <li> <p>
+     * <code>SINGLE_AZ_1</code>- (Default) Creates file systems with throughput
+     * capacities of 64 - 4,096 MB/s. <code>Single_AZ_1</code> is available in all
+     * Amazon Web Services Regions where Amazon FSx for OpenZFS is available, except US
+     * West (Oregon).</p> </li> <li> <p> <code>SINGLE_AZ_2</code>- Creates file systems
+     * with throughput capacities of 160 - 10,240 MB/s using an NVMe L2ARC cache.
+     * <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East
+     * (Ohio), US West (Oregon), and Europe (Ireland) Amazon Web Services Regions.</p>
+     * </li> </ul> <p>For more information, see: <a
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/available-aws-regions.html">Deployment
+     * type availability</a> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/zfs-fs-performance.html">
+     * File system performance</a>in the<i>Amazon FSx for OpenZFS User Guide</i>.</p>
      */
     inline bool DeploymentTypeHasBeenSet() const { return m_deploymentTypeHasBeenSet; }
 
     /**
-     * <p>Specifies the file system deployment type. Amazon FSx for OpenZFS supports
-     * <code>SINGLE_AZ_1</code>. <code>SINGLE_AZ_1</code> deployment type is configured
-     * for redundancy within a single Availability Zone.</p>
+     * <p>Specifies the file system deployment type. Single AZ deployment types are
+     * configured for redundancy within a single Availability Zone in an Amazon Web
+     * Services Region . Valid values are the following:</p> <ul> <li> <p>
+     * <code>SINGLE_AZ_1</code>- (Default) Creates file systems with throughput
+     * capacities of 64 - 4,096 MB/s. <code>Single_AZ_1</code> is available in all
+     * Amazon Web Services Regions where Amazon FSx for OpenZFS is available, except US
+     * West (Oregon).</p> </li> <li> <p> <code>SINGLE_AZ_2</code>- Creates file systems
+     * with throughput capacities of 160 - 10,240 MB/s using an NVMe L2ARC cache.
+     * <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East
+     * (Ohio), US West (Oregon), and Europe (Ireland) Amazon Web Services Regions.</p>
+     * </li> </ul> <p>For more information, see: <a
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/available-aws-regions.html">Deployment
+     * type availability</a> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/zfs-fs-performance.html">
+     * File system performance</a>in the<i>Amazon FSx for OpenZFS User Guide</i>.</p>
      */
     inline void SetDeploymentType(const OpenZFSDeploymentType& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = value; }
 
     /**
-     * <p>Specifies the file system deployment type. Amazon FSx for OpenZFS supports
-     * <code>SINGLE_AZ_1</code>. <code>SINGLE_AZ_1</code> deployment type is configured
-     * for redundancy within a single Availability Zone.</p>
+     * <p>Specifies the file system deployment type. Single AZ deployment types are
+     * configured for redundancy within a single Availability Zone in an Amazon Web
+     * Services Region . Valid values are the following:</p> <ul> <li> <p>
+     * <code>SINGLE_AZ_1</code>- (Default) Creates file systems with throughput
+     * capacities of 64 - 4,096 MB/s. <code>Single_AZ_1</code> is available in all
+     * Amazon Web Services Regions where Amazon FSx for OpenZFS is available, except US
+     * West (Oregon).</p> </li> <li> <p> <code>SINGLE_AZ_2</code>- Creates file systems
+     * with throughput capacities of 160 - 10,240 MB/s using an NVMe L2ARC cache.
+     * <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East
+     * (Ohio), US West (Oregon), and Europe (Ireland) Amazon Web Services Regions.</p>
+     * </li> </ul> <p>For more information, see: <a
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/available-aws-regions.html">Deployment
+     * type availability</a> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/zfs-fs-performance.html">
+     * File system performance</a>in the<i>Amazon FSx for OpenZFS User Guide</i>.</p>
      */
     inline void SetDeploymentType(OpenZFSDeploymentType&& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = std::move(value); }
 
     /**
-     * <p>Specifies the file system deployment type. Amazon FSx for OpenZFS supports
-     * <code>SINGLE_AZ_1</code>. <code>SINGLE_AZ_1</code> deployment type is configured
-     * for redundancy within a single Availability Zone.</p>
+     * <p>Specifies the file system deployment type. Single AZ deployment types are
+     * configured for redundancy within a single Availability Zone in an Amazon Web
+     * Services Region . Valid values are the following:</p> <ul> <li> <p>
+     * <code>SINGLE_AZ_1</code>- (Default) Creates file systems with throughput
+     * capacities of 64 - 4,096 MB/s. <code>Single_AZ_1</code> is available in all
+     * Amazon Web Services Regions where Amazon FSx for OpenZFS is available, except US
+     * West (Oregon).</p> </li> <li> <p> <code>SINGLE_AZ_2</code>- Creates file systems
+     * with throughput capacities of 160 - 10,240 MB/s using an NVMe L2ARC cache.
+     * <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East
+     * (Ohio), US West (Oregon), and Europe (Ireland) Amazon Web Services Regions.</p>
+     * </li> </ul> <p>For more information, see: <a
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/available-aws-regions.html">Deployment
+     * type availability</a> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/zfs-fs-performance.html">
+     * File system performance</a>in the<i>Amazon FSx for OpenZFS User Guide</i>.</p>
      */
     inline CreateFileSystemOpenZFSConfiguration& WithDeploymentType(const OpenZFSDeploymentType& value) { SetDeploymentType(value); return *this;}
 
     /**
-     * <p>Specifies the file system deployment type. Amazon FSx for OpenZFS supports
-     * <code>SINGLE_AZ_1</code>. <code>SINGLE_AZ_1</code> deployment type is configured
-     * for redundancy within a single Availability Zone.</p>
+     * <p>Specifies the file system deployment type. Single AZ deployment types are
+     * configured for redundancy within a single Availability Zone in an Amazon Web
+     * Services Region . Valid values are the following:</p> <ul> <li> <p>
+     * <code>SINGLE_AZ_1</code>- (Default) Creates file systems with throughput
+     * capacities of 64 - 4,096 MB/s. <code>Single_AZ_1</code> is available in all
+     * Amazon Web Services Regions where Amazon FSx for OpenZFS is available, except US
+     * West (Oregon).</p> </li> <li> <p> <code>SINGLE_AZ_2</code>- Creates file systems
+     * with throughput capacities of 160 - 10,240 MB/s using an NVMe L2ARC cache.
+     * <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East
+     * (Ohio), US West (Oregon), and Europe (Ireland) Amazon Web Services Regions.</p>
+     * </li> </ul> <p>For more information, see: <a
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/available-aws-regions.html">Deployment
+     * type availability</a> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/zfs-fs-performance.html">
+     * File system performance</a>in the<i>Amazon FSx for OpenZFS User Guide</i>.</p>
      */
     inline CreateFileSystemOpenZFSConfiguration& WithDeploymentType(OpenZFSDeploymentType&& value) { SetDeploymentType(std::move(value)); return *this;}
 
 
     /**
      * <p>Specifies the throughput of an Amazon FSx for OpenZFS file system, measured
-     * in megabytes per second (MB/s). Valid values are 64, 128, 256, 512, 1024, 2048,
-     * 3072, or 4096 MB/s. You pay for additional throughput capacity that you
-     * provision.</p>
+     * in megabytes per second (MB/s). Valid values depend on the DeploymentType you
+     * choose, as follows:</p> <ul> <li> <p>For <code>SINGLE_AZ_1</code>, valid values
+     * are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p> </li> <li> <p>For
+     * <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840,
+     * 5120, 7680, or 10240 MB/s.</p> </li> </ul> <p>You pay for additional throughput
+     * capacity that you provision.</p>
      */
     inline int GetThroughputCapacity() const{ return m_throughputCapacity; }
 
     /**
      * <p>Specifies the throughput of an Amazon FSx for OpenZFS file system, measured
-     * in megabytes per second (MB/s). Valid values are 64, 128, 256, 512, 1024, 2048,
-     * 3072, or 4096 MB/s. You pay for additional throughput capacity that you
-     * provision.</p>
+     * in megabytes per second (MB/s). Valid values depend on the DeploymentType you
+     * choose, as follows:</p> <ul> <li> <p>For <code>SINGLE_AZ_1</code>, valid values
+     * are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p> </li> <li> <p>For
+     * <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840,
+     * 5120, 7680, or 10240 MB/s.</p> </li> </ul> <p>You pay for additional throughput
+     * capacity that you provision.</p>
      */
     inline bool ThroughputCapacityHasBeenSet() const { return m_throughputCapacityHasBeenSet; }
 
     /**
      * <p>Specifies the throughput of an Amazon FSx for OpenZFS file system, measured
-     * in megabytes per second (MB/s). Valid values are 64, 128, 256, 512, 1024, 2048,
-     * 3072, or 4096 MB/s. You pay for additional throughput capacity that you
-     * provision.</p>
+     * in megabytes per second (MB/s). Valid values depend on the DeploymentType you
+     * choose, as follows:</p> <ul> <li> <p>For <code>SINGLE_AZ_1</code>, valid values
+     * are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p> </li> <li> <p>For
+     * <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840,
+     * 5120, 7680, or 10240 MB/s.</p> </li> </ul> <p>You pay for additional throughput
+     * capacity that you provision.</p>
      */
     inline void SetThroughputCapacity(int value) { m_throughputCapacityHasBeenSet = true; m_throughputCapacity = value; }
 
     /**
      * <p>Specifies the throughput of an Amazon FSx for OpenZFS file system, measured
-     * in megabytes per second (MB/s). Valid values are 64, 128, 256, 512, 1024, 2048,
-     * 3072, or 4096 MB/s. You pay for additional throughput capacity that you
-     * provision.</p>
+     * in megabytes per second (MB/s). Valid values depend on the DeploymentType you
+     * choose, as follows:</p> <ul> <li> <p>For <code>SINGLE_AZ_1</code>, valid values
+     * are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p> </li> <li> <p>For
+     * <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840,
+     * 5120, 7680, or 10240 MB/s.</p> </li> </ul> <p>You pay for additional throughput
+     * capacity that you provision.</p>
      */
     inline CreateFileSystemOpenZFSConfiguration& WithThroughputCapacity(int value) { SetThroughputCapacity(value); return *this;}
 

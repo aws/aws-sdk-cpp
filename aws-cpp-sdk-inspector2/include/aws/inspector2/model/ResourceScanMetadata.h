@@ -8,6 +8,7 @@
 #include <aws/inspector2/model/Ec2Metadata.h>
 #include <aws/inspector2/model/EcrContainerImageMetadata.h>
 #include <aws/inspector2/model/EcrRepositoryMetadata.h>
+#include <aws/inspector2/model/LambdaFunctionMetadata.h>
 #include <utility>
 
 namespace Aws
@@ -144,6 +145,37 @@ namespace Model
      */
     inline ResourceScanMetadata& WithEcrRepository(EcrRepositoryMetadata&& value) { SetEcrRepository(std::move(value)); return *this;}
 
+
+    /**
+     * <p>An object that contains metadata details for an AWS Lambda function.</p>
+     */
+    inline const LambdaFunctionMetadata& GetLambdaFunction() const{ return m_lambdaFunction; }
+
+    /**
+     * <p>An object that contains metadata details for an AWS Lambda function.</p>
+     */
+    inline bool LambdaFunctionHasBeenSet() const { return m_lambdaFunctionHasBeenSet; }
+
+    /**
+     * <p>An object that contains metadata details for an AWS Lambda function.</p>
+     */
+    inline void SetLambdaFunction(const LambdaFunctionMetadata& value) { m_lambdaFunctionHasBeenSet = true; m_lambdaFunction = value; }
+
+    /**
+     * <p>An object that contains metadata details for an AWS Lambda function.</p>
+     */
+    inline void SetLambdaFunction(LambdaFunctionMetadata&& value) { m_lambdaFunctionHasBeenSet = true; m_lambdaFunction = std::move(value); }
+
+    /**
+     * <p>An object that contains metadata details for an AWS Lambda function.</p>
+     */
+    inline ResourceScanMetadata& WithLambdaFunction(const LambdaFunctionMetadata& value) { SetLambdaFunction(value); return *this;}
+
+    /**
+     * <p>An object that contains metadata details for an AWS Lambda function.</p>
+     */
+    inline ResourceScanMetadata& WithLambdaFunction(LambdaFunctionMetadata&& value) { SetLambdaFunction(std::move(value)); return *this;}
+
   private:
 
     Ec2Metadata m_ec2;
@@ -154,6 +186,9 @@ namespace Model
 
     EcrRepositoryMetadata m_ecrRepository;
     bool m_ecrRepositoryHasBeenSet = false;
+
+    LambdaFunctionMetadata m_lambdaFunction;
+    bool m_lambdaFunctionHasBeenSet = false;
   };
 
 } // namespace Model

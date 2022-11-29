@@ -293,40 +293,40 @@ namespace Model
 
 
     /**
-     * <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-     * determine whether Lambda should process an event. For more information, see <a
+     * <p>An object that defines the filter criteria that determine whether Lambda
+     * should process an event. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
      * event filtering</a>.</p>
      */
     inline const FilterCriteria& GetFilterCriteria() const{ return m_filterCriteria; }
 
     /**
-     * <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-     * determine whether Lambda should process an event. For more information, see <a
+     * <p>An object that defines the filter criteria that determine whether Lambda
+     * should process an event. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
      * event filtering</a>.</p>
      */
     inline void SetFilterCriteria(const FilterCriteria& value) { m_filterCriteria = value; }
 
     /**
-     * <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-     * determine whether Lambda should process an event. For more information, see <a
+     * <p>An object that defines the filter criteria that determine whether Lambda
+     * should process an event. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
      * event filtering</a>.</p>
      */
     inline void SetFilterCriteria(FilterCriteria&& value) { m_filterCriteria = std::move(value); }
 
     /**
-     * <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-     * determine whether Lambda should process an event. For more information, see <a
+     * <p>An object that defines the filter criteria that determine whether Lambda
+     * should process an event. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
      * event filtering</a>.</p>
      */
     inline UpdateEventSourceMappingResult& WithFilterCriteria(const FilterCriteria& value) { SetFilterCriteria(value); return *this;}
 
     /**
-     * <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-     * determine whether Lambda should process an event. For more information, see <a
+     * <p>An object that defines the filter criteria that determine whether Lambda
+     * should process an event. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
      * event filtering</a>.</p>
      */

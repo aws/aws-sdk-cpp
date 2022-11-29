@@ -29,9 +29,12 @@ MatchingBucket::MatchingBucket() :
     m_errorCodeHasBeenSet(false),
     m_errorMessageHasBeenSet(false),
     m_jobDetailsHasBeenSet(false),
+    m_lastAutomatedDiscoveryTimeHasBeenSet(false),
     m_objectCount(0),
     m_objectCountHasBeenSet(false),
     m_objectCountByEncryptionTypeHasBeenSet(false),
+    m_sensitivityScore(0),
+    m_sensitivityScoreHasBeenSet(false),
     m_sizeInBytes(0),
     m_sizeInBytesHasBeenSet(false),
     m_sizeInBytesCompressed(0),
@@ -52,9 +55,12 @@ MatchingBucket::MatchingBucket(JsonView jsonValue) :
     m_errorCodeHasBeenSet(false),
     m_errorMessageHasBeenSet(false),
     m_jobDetailsHasBeenSet(false),
+    m_lastAutomatedDiscoveryTimeHasBeenSet(false),
     m_objectCount(0),
     m_objectCountHasBeenSet(false),
     m_objectCountByEncryptionTypeHasBeenSet(false),
+    m_sensitivityScore(0),
+    m_sensitivityScoreHasBeenSet(false),
     m_sizeInBytes(0),
     m_sizeInBytesHasBeenSet(false),
     m_sizeInBytesCompressed(0),
@@ -116,6 +122,13 @@ MatchingBucket& MatchingBucket::operator =(JsonView jsonValue)
     m_jobDetailsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("lastAutomatedDiscoveryTime"))
+  {
+    m_lastAutomatedDiscoveryTime = jsonValue.GetString("lastAutomatedDiscoveryTime");
+
+    m_lastAutomatedDiscoveryTimeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("objectCount"))
   {
     m_objectCount = jsonValue.GetInt64("objectCount");
@@ -128,6 +141,13 @@ MatchingBucket& MatchingBucket::operator =(JsonView jsonValue)
     m_objectCountByEncryptionType = jsonValue.GetObject("objectCountByEncryptionType");
 
     m_objectCountByEncryptionTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("sensitivityScore"))
+  {
+    m_sensitivityScore = jsonValue.GetInteger("sensitivityScore");
+
+    m_sensitivityScoreHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("sizeInBytes"))
@@ -206,6 +226,11 @@ JsonValue MatchingBucket::Jsonize() const
 
   }
 
+  if(m_lastAutomatedDiscoveryTimeHasBeenSet)
+  {
+   payload.WithString("lastAutomatedDiscoveryTime", m_lastAutomatedDiscoveryTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
   if(m_objectCountHasBeenSet)
   {
    payload.WithInt64("objectCount", m_objectCount);
@@ -215,6 +240,12 @@ JsonValue MatchingBucket::Jsonize() const
   if(m_objectCountByEncryptionTypeHasBeenSet)
   {
    payload.WithObject("objectCountByEncryptionType", m_objectCountByEncryptionType.Jsonize());
+
+  }
+
+  if(m_sensitivityScoreHasBeenSet)
+  {
+   payload.WithInteger("sensitivityScore", m_sensitivityScore);
 
   }
 

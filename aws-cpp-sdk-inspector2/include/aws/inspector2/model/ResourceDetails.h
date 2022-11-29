@@ -7,6 +7,7 @@
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/inspector2/model/AwsEc2InstanceDetails.h>
 #include <aws/inspector2/model/AwsEcrContainerImageDetails.h>
+#include <aws/inspector2/model/AwsLambdaFunctionDetails.h>
 #include <utility>
 
 namespace Aws
@@ -112,6 +113,43 @@ namespace Model
      */
     inline ResourceDetails& WithAwsEcrContainerImage(AwsEcrContainerImageDetails&& value) { SetAwsEcrContainerImage(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A summary of the information about an AWS Lambda function affected by a
+     * finding.</p>
+     */
+    inline const AwsLambdaFunctionDetails& GetAwsLambdaFunction() const{ return m_awsLambdaFunction; }
+
+    /**
+     * <p>A summary of the information about an AWS Lambda function affected by a
+     * finding.</p>
+     */
+    inline bool AwsLambdaFunctionHasBeenSet() const { return m_awsLambdaFunctionHasBeenSet; }
+
+    /**
+     * <p>A summary of the information about an AWS Lambda function affected by a
+     * finding.</p>
+     */
+    inline void SetAwsLambdaFunction(const AwsLambdaFunctionDetails& value) { m_awsLambdaFunctionHasBeenSet = true; m_awsLambdaFunction = value; }
+
+    /**
+     * <p>A summary of the information about an AWS Lambda function affected by a
+     * finding.</p>
+     */
+    inline void SetAwsLambdaFunction(AwsLambdaFunctionDetails&& value) { m_awsLambdaFunctionHasBeenSet = true; m_awsLambdaFunction = std::move(value); }
+
+    /**
+     * <p>A summary of the information about an AWS Lambda function affected by a
+     * finding.</p>
+     */
+    inline ResourceDetails& WithAwsLambdaFunction(const AwsLambdaFunctionDetails& value) { SetAwsLambdaFunction(value); return *this;}
+
+    /**
+     * <p>A summary of the information about an AWS Lambda function affected by a
+     * finding.</p>
+     */
+    inline ResourceDetails& WithAwsLambdaFunction(AwsLambdaFunctionDetails&& value) { SetAwsLambdaFunction(std::move(value)); return *this;}
+
   private:
 
     AwsEc2InstanceDetails m_awsEc2Instance;
@@ -119,6 +157,9 @@ namespace Model
 
     AwsEcrContainerImageDetails m_awsEcrContainerImage;
     bool m_awsEcrContainerImageHasBeenSet = false;
+
+    AwsLambdaFunctionDetails m_awsLambdaFunction;
+    bool m_awsLambdaFunctionHasBeenSet = false;
   };
 
 } // namespace Model

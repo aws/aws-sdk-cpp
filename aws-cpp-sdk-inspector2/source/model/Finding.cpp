@@ -21,6 +21,9 @@ namespace Model
 Finding::Finding() : 
     m_awsAccountIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_exploitAvailable(ExploitAvailable::NOT_SET),
+    m_exploitAvailableHasBeenSet(false),
+    m_exploitabilityDetailsHasBeenSet(false),
     m_findingArnHasBeenSet(false),
     m_firstObservedAtHasBeenSet(false),
     m_fixAvailable(FixAvailable::NOT_SET),
@@ -47,6 +50,9 @@ Finding::Finding() :
 Finding::Finding(JsonView jsonValue) : 
     m_awsAccountIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_exploitAvailable(ExploitAvailable::NOT_SET),
+    m_exploitAvailableHasBeenSet(false),
+    m_exploitabilityDetailsHasBeenSet(false),
     m_findingArnHasBeenSet(false),
     m_firstObservedAtHasBeenSet(false),
     m_fixAvailable(FixAvailable::NOT_SET),
@@ -85,6 +91,20 @@ Finding& Finding::operator =(JsonView jsonValue)
     m_description = jsonValue.GetString("description");
 
     m_descriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("exploitAvailable"))
+  {
+    m_exploitAvailable = ExploitAvailableMapper::GetExploitAvailableForName(jsonValue.GetString("exploitAvailable"));
+
+    m_exploitAvailableHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("exploitabilityDetails"))
+  {
+    m_exploitabilityDetails = jsonValue.GetObject("exploitabilityDetails");
+
+    m_exploitabilityDetailsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("findingArn"))
@@ -211,6 +231,17 @@ JsonValue Finding::Jsonize() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
+
+  }
+
+  if(m_exploitAvailableHasBeenSet)
+  {
+   payload.WithString("exploitAvailable", ExploitAvailableMapper::GetNameForExploitAvailable(m_exploitAvailable));
+  }
+
+  if(m_exploitabilityDetailsHasBeenSet)
+  {
+   payload.WithObject("exploitabilityDetails", m_exploitabilityDetails.Jsonize());
 
   }
 

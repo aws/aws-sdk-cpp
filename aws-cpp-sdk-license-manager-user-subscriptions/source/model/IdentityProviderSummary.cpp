@@ -22,6 +22,7 @@ IdentityProviderSummary::IdentityProviderSummary() :
     m_failureMessageHasBeenSet(false),
     m_identityProviderHasBeenSet(false),
     m_productHasBeenSet(false),
+    m_settingsHasBeenSet(false),
     m_statusHasBeenSet(false)
 {
 }
@@ -30,6 +31,7 @@ IdentityProviderSummary::IdentityProviderSummary(JsonView jsonValue) :
     m_failureMessageHasBeenSet(false),
     m_identityProviderHasBeenSet(false),
     m_productHasBeenSet(false),
+    m_settingsHasBeenSet(false),
     m_statusHasBeenSet(false)
 {
   *this = jsonValue;
@@ -56,6 +58,13 @@ IdentityProviderSummary& IdentityProviderSummary::operator =(JsonView jsonValue)
     m_product = jsonValue.GetString("Product");
 
     m_productHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Settings"))
+  {
+    m_settings = jsonValue.GetObject("Settings");
+
+    m_settingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Status"))
@@ -87,6 +96,12 @@ JsonValue IdentityProviderSummary::Jsonize() const
   if(m_productHasBeenSet)
   {
    payload.WithString("Product", m_product);
+
+  }
+
+  if(m_settingsHasBeenSet)
+  {
+   payload.WithObject("Settings", m_settings.Jsonize());
 
   }
 

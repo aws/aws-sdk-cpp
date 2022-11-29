@@ -70,6 +70,12 @@ GetBucketStatisticsResult& GetBucketStatisticsResult::operator =(const Aws::Amaz
 
   }
 
+  if(jsonValue.ValueExists("bucketStatisticsBySensitivity"))
+  {
+    m_bucketStatisticsBySensitivity = jsonValue.GetObject("bucketStatisticsBySensitivity");
+
+  }
+
   if(jsonValue.ValueExists("classifiableObjectCount"))
   {
     m_classifiableObjectCount = jsonValue.GetInt64("classifiableObjectCount");

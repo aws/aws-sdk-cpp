@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/inspector2/model/ExploitAvailable.h>
+#include <aws/inspector2/model/ExploitabilityDetails.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/inspector2/model/FixAvailable.h>
 #include <aws/inspector2/model/InspectorScoreDetails.h>
@@ -128,6 +130,74 @@ namespace Model
      * <p>The description of the finding.</p>
      */
     inline Finding& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+
+    /**
+     * <p>If a finding discovered in your environment has an exploit available.</p>
+     */
+    inline const ExploitAvailable& GetExploitAvailable() const{ return m_exploitAvailable; }
+
+    /**
+     * <p>If a finding discovered in your environment has an exploit available.</p>
+     */
+    inline bool ExploitAvailableHasBeenSet() const { return m_exploitAvailableHasBeenSet; }
+
+    /**
+     * <p>If a finding discovered in your environment has an exploit available.</p>
+     */
+    inline void SetExploitAvailable(const ExploitAvailable& value) { m_exploitAvailableHasBeenSet = true; m_exploitAvailable = value; }
+
+    /**
+     * <p>If a finding discovered in your environment has an exploit available.</p>
+     */
+    inline void SetExploitAvailable(ExploitAvailable&& value) { m_exploitAvailableHasBeenSet = true; m_exploitAvailable = std::move(value); }
+
+    /**
+     * <p>If a finding discovered in your environment has an exploit available.</p>
+     */
+    inline Finding& WithExploitAvailable(const ExploitAvailable& value) { SetExploitAvailable(value); return *this;}
+
+    /**
+     * <p>If a finding discovered in your environment has an exploit available.</p>
+     */
+    inline Finding& WithExploitAvailable(ExploitAvailable&& value) { SetExploitAvailable(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The details of an exploit available for a finding discovered in your
+     * environment.</p>
+     */
+    inline const ExploitabilityDetails& GetExploitabilityDetails() const{ return m_exploitabilityDetails; }
+
+    /**
+     * <p>The details of an exploit available for a finding discovered in your
+     * environment.</p>
+     */
+    inline bool ExploitabilityDetailsHasBeenSet() const { return m_exploitabilityDetailsHasBeenSet; }
+
+    /**
+     * <p>The details of an exploit available for a finding discovered in your
+     * environment.</p>
+     */
+    inline void SetExploitabilityDetails(const ExploitabilityDetails& value) { m_exploitabilityDetailsHasBeenSet = true; m_exploitabilityDetails = value; }
+
+    /**
+     * <p>The details of an exploit available for a finding discovered in your
+     * environment.</p>
+     */
+    inline void SetExploitabilityDetails(ExploitabilityDetails&& value) { m_exploitabilityDetailsHasBeenSet = true; m_exploitabilityDetails = std::move(value); }
+
+    /**
+     * <p>The details of an exploit available for a finding discovered in your
+     * environment.</p>
+     */
+    inline Finding& WithExploitabilityDetails(const ExploitabilityDetails& value) { SetExploitabilityDetails(value); return *this;}
+
+    /**
+     * <p>The details of an exploit available for a finding discovered in your
+     * environment.</p>
+     */
+    inline Finding& WithExploitabilityDetails(ExploitabilityDetails&& value) { SetExploitabilityDetails(std::move(value)); return *this;}
 
 
     /**
@@ -639,6 +709,12 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    ExploitAvailable m_exploitAvailable;
+    bool m_exploitAvailableHasBeenSet = false;
+
+    ExploitabilityDetails m_exploitabilityDetails;
+    bool m_exploitabilityDetailsHasBeenSet = false;
 
     Aws::String m_findingArn;
     bool m_findingArnHasBeenSet = false;

@@ -41,42 +41,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Web Services account the Amazon EC2 instance belongs to.</p>
+     * <p>The Amazon Web Services account for the Amazon EC2 instance.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The Amazon Web Services account the Amazon EC2 instance belongs to.</p>
+     * <p>The Amazon Web Services account for the Amazon EC2 instance.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The Amazon Web Services account the Amazon EC2 instance belongs to.</p>
+     * <p>The Amazon Web Services account for the Amazon EC2 instance.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The Amazon Web Services account the Amazon EC2 instance belongs to.</p>
+     * <p>The Amazon Web Services account for the Amazon EC2 instance.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The Amazon Web Services account the Amazon EC2 instance belongs to.</p>
+     * <p>The Amazon Web Services account for the Amazon EC2 instance.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The Amazon Web Services account the Amazon EC2 instance belongs to.</p>
+     * <p>The Amazon Web Services account for the Amazon EC2 instance.</p>
      */
     inline Ec2InstanceAggregationResponse& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The Amazon Web Services account the Amazon EC2 instance belongs to.</p>
+     * <p>The Amazon Web Services account for the Amazon EC2 instance.</p>
      */
     inline Ec2InstanceAggregationResponse& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Web Services account the Amazon EC2 instance belongs to.</p>
+     * <p>The Amazon Web Services account for the Amazon EC2 instance.</p>
      */
     inline Ec2InstanceAggregationResponse& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 

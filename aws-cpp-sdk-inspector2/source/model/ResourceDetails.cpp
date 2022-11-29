@@ -20,13 +20,15 @@ namespace Model
 
 ResourceDetails::ResourceDetails() : 
     m_awsEc2InstanceHasBeenSet(false),
-    m_awsEcrContainerImageHasBeenSet(false)
+    m_awsEcrContainerImageHasBeenSet(false),
+    m_awsLambdaFunctionHasBeenSet(false)
 {
 }
 
 ResourceDetails::ResourceDetails(JsonView jsonValue) : 
     m_awsEc2InstanceHasBeenSet(false),
-    m_awsEcrContainerImageHasBeenSet(false)
+    m_awsEcrContainerImageHasBeenSet(false),
+    m_awsLambdaFunctionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
     m_awsEcrContainerImageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("awsLambdaFunction"))
+  {
+    m_awsLambdaFunction = jsonValue.GetObject("awsLambdaFunction");
+
+    m_awsLambdaFunctionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue ResourceDetails::Jsonize() const
   if(m_awsEcrContainerImageHasBeenSet)
   {
    payload.WithObject("awsEcrContainerImage", m_awsEcrContainerImage.Jsonize());
+
+  }
+
+  if(m_awsLambdaFunctionHasBeenSet)
+  {
+   payload.WithObject("awsLambdaFunction", m_awsLambdaFunction.Jsonize());
 
   }
 

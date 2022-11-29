@@ -48,8 +48,10 @@
 #include <aws/macie2/model/EnableOrganizationAdminAccountRequest.h>
 #include <aws/macie2/model/GetAdministratorAccountRequest.h>
 #include <aws/macie2/model/GetAllowListRequest.h>
+#include <aws/macie2/model/GetAutomatedDiscoveryConfigurationRequest.h>
 #include <aws/macie2/model/GetBucketStatisticsRequest.h>
 #include <aws/macie2/model/GetClassificationExportConfigurationRequest.h>
+#include <aws/macie2/model/GetClassificationScopeRequest.h>
 #include <aws/macie2/model/GetCustomDataIdentifierRequest.h>
 #include <aws/macie2/model/GetFindingStatisticsRequest.h>
 #include <aws/macie2/model/GetFindingsRequest.h>
@@ -59,13 +61,16 @@
 #include <aws/macie2/model/GetMacieSessionRequest.h>
 #include <aws/macie2/model/GetMasterAccountRequest.h>
 #include <aws/macie2/model/GetMemberRequest.h>
+#include <aws/macie2/model/GetResourceProfileRequest.h>
 #include <aws/macie2/model/GetRevealConfigurationRequest.h>
 #include <aws/macie2/model/GetSensitiveDataOccurrencesRequest.h>
 #include <aws/macie2/model/GetSensitiveDataOccurrencesAvailabilityRequest.h>
+#include <aws/macie2/model/GetSensitivityInspectionTemplateRequest.h>
 #include <aws/macie2/model/GetUsageStatisticsRequest.h>
 #include <aws/macie2/model/GetUsageTotalsRequest.h>
 #include <aws/macie2/model/ListAllowListsRequest.h>
 #include <aws/macie2/model/ListClassificationJobsRequest.h>
+#include <aws/macie2/model/ListClassificationScopesRequest.h>
 #include <aws/macie2/model/ListCustomDataIdentifiersRequest.h>
 #include <aws/macie2/model/ListFindingsRequest.h>
 #include <aws/macie2/model/ListFindingsFiltersRequest.h>
@@ -73,6 +78,9 @@
 #include <aws/macie2/model/ListManagedDataIdentifiersRequest.h>
 #include <aws/macie2/model/ListMembersRequest.h>
 #include <aws/macie2/model/ListOrganizationAdminAccountsRequest.h>
+#include <aws/macie2/model/ListResourceProfileArtifactsRequest.h>
+#include <aws/macie2/model/ListResourceProfileDetectionsRequest.h>
+#include <aws/macie2/model/ListSensitivityInspectionTemplatesRequest.h>
 #include <aws/macie2/model/ListTagsForResourceRequest.h>
 #include <aws/macie2/model/PutClassificationExportConfigurationRequest.h>
 #include <aws/macie2/model/PutFindingsPublicationConfigurationRequest.h>
@@ -81,12 +89,17 @@
 #include <aws/macie2/model/TestCustomDataIdentifierRequest.h>
 #include <aws/macie2/model/UntagResourceRequest.h>
 #include <aws/macie2/model/UpdateAllowListRequest.h>
+#include <aws/macie2/model/UpdateAutomatedDiscoveryConfigurationRequest.h>
 #include <aws/macie2/model/UpdateClassificationJobRequest.h>
+#include <aws/macie2/model/UpdateClassificationScopeRequest.h>
 #include <aws/macie2/model/UpdateFindingsFilterRequest.h>
 #include <aws/macie2/model/UpdateMacieSessionRequest.h>
 #include <aws/macie2/model/UpdateMemberSessionRequest.h>
 #include <aws/macie2/model/UpdateOrganizationConfigurationRequest.h>
+#include <aws/macie2/model/UpdateResourceProfileRequest.h>
+#include <aws/macie2/model/UpdateResourceProfileDetectionsRequest.h>
 #include <aws/macie2/model/UpdateRevealConfigurationRequest.h>
+#include <aws/macie2/model/UpdateSensitivityInspectionTemplateRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -937,6 +950,31 @@ void Macie2Client::GetAllowListAsync(const GetAllowListRequest& request, const G
     } );
 }
 
+GetAutomatedDiscoveryConfigurationOutcome Macie2Client::GetAutomatedDiscoveryConfiguration(const GetAutomatedDiscoveryConfigurationRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAutomatedDiscoveryConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetAutomatedDiscoveryConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/automated-discovery/configuration");
+  return GetAutomatedDiscoveryConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetAutomatedDiscoveryConfigurationOutcomeCallable Macie2Client::GetAutomatedDiscoveryConfigurationCallable(const GetAutomatedDiscoveryConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetAutomatedDiscoveryConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAutomatedDiscoveryConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Macie2Client::GetAutomatedDiscoveryConfigurationAsync(const GetAutomatedDiscoveryConfigurationRequest& request, const GetAutomatedDiscoveryConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetAutomatedDiscoveryConfiguration(request), context);
+    } );
+}
+
 GetBucketStatisticsOutcome Macie2Client::GetBucketStatistics(const GetBucketStatisticsRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBucketStatistics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -984,6 +1022,37 @@ void Macie2Client::GetClassificationExportConfigurationAsync(const GetClassifica
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, GetClassificationExportConfiguration(request), context);
+    } );
+}
+
+GetClassificationScopeOutcome Macie2Client::GetClassificationScope(const GetClassificationScopeRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetClassificationScope, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetClassificationScope", "Required field: Id, is not set");
+    return GetClassificationScopeOutcome(Aws::Client::AWSError<Macie2Errors>(Macie2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetClassificationScope, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/classification-scopes/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+  return GetClassificationScopeOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetClassificationScopeOutcomeCallable Macie2Client::GetClassificationScopeCallable(const GetClassificationScopeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetClassificationScopeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetClassificationScope(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Macie2Client::GetClassificationScopeAsync(const GetClassificationScopeRequest& request, const GetClassificationScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetClassificationScope(request), context);
     } );
 }
 
@@ -1230,6 +1299,36 @@ void Macie2Client::GetMemberAsync(const GetMemberRequest& request, const GetMemb
     } );
 }
 
+GetResourceProfileOutcome Macie2Client::GetResourceProfile(const GetResourceProfileRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetResourceProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetResourceProfile", "Required field: ResourceArn, is not set");
+    return GetResourceProfileOutcome(Aws::Client::AWSError<Macie2Errors>(Macie2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetResourceProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/resource-profiles");
+  return GetResourceProfileOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetResourceProfileOutcomeCallable Macie2Client::GetResourceProfileCallable(const GetResourceProfileRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetResourceProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetResourceProfile(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Macie2Client::GetResourceProfileAsync(const GetResourceProfileRequest& request, const GetResourceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetResourceProfile(request), context);
+    } );
+}
+
 GetRevealConfigurationOutcome Macie2Client::GetRevealConfiguration(const GetRevealConfigurationRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRevealConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1316,6 +1415,37 @@ void Macie2Client::GetSensitiveDataOccurrencesAvailabilityAsync(const GetSensiti
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, GetSensitiveDataOccurrencesAvailability(request), context);
+    } );
+}
+
+GetSensitivityInspectionTemplateOutcome Macie2Client::GetSensitivityInspectionTemplate(const GetSensitivityInspectionTemplateRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSensitivityInspectionTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetSensitivityInspectionTemplate", "Required field: Id, is not set");
+    return GetSensitivityInspectionTemplateOutcome(Aws::Client::AWSError<Macie2Errors>(Macie2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetSensitivityInspectionTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/templates/sensitivity-inspections/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+  return GetSensitivityInspectionTemplateOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetSensitivityInspectionTemplateOutcomeCallable Macie2Client::GetSensitivityInspectionTemplateCallable(const GetSensitivityInspectionTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetSensitivityInspectionTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSensitivityInspectionTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Macie2Client::GetSensitivityInspectionTemplateAsync(const GetSensitivityInspectionTemplateRequest& request, const GetSensitivityInspectionTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetSensitivityInspectionTemplate(request), context);
     } );
 }
 
@@ -1416,6 +1546,31 @@ void Macie2Client::ListClassificationJobsAsync(const ListClassificationJobsReque
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, ListClassificationJobs(request), context);
+    } );
+}
+
+ListClassificationScopesOutcome Macie2Client::ListClassificationScopes(const ListClassificationScopesRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListClassificationScopes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListClassificationScopes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/classification-scopes");
+  return ListClassificationScopesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListClassificationScopesOutcomeCallable Macie2Client::ListClassificationScopesCallable(const ListClassificationScopesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListClassificationScopesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListClassificationScopes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Macie2Client::ListClassificationScopesAsync(const ListClassificationScopesRequest& request, const ListClassificationScopesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListClassificationScopes(request), context);
     } );
 }
 
@@ -1591,6 +1746,91 @@ void Macie2Client::ListOrganizationAdminAccountsAsync(const ListOrganizationAdmi
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, ListOrganizationAdminAccounts(request), context);
+    } );
+}
+
+ListResourceProfileArtifactsOutcome Macie2Client::ListResourceProfileArtifacts(const ListResourceProfileArtifactsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListResourceProfileArtifacts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListResourceProfileArtifacts", "Required field: ResourceArn, is not set");
+    return ListResourceProfileArtifactsOutcome(Aws::Client::AWSError<Macie2Errors>(Macie2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListResourceProfileArtifacts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/resource-profiles/artifacts");
+  return ListResourceProfileArtifactsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListResourceProfileArtifactsOutcomeCallable Macie2Client::ListResourceProfileArtifactsCallable(const ListResourceProfileArtifactsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListResourceProfileArtifactsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListResourceProfileArtifacts(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Macie2Client::ListResourceProfileArtifactsAsync(const ListResourceProfileArtifactsRequest& request, const ListResourceProfileArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListResourceProfileArtifacts(request), context);
+    } );
+}
+
+ListResourceProfileDetectionsOutcome Macie2Client::ListResourceProfileDetections(const ListResourceProfileDetectionsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListResourceProfileDetections, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListResourceProfileDetections", "Required field: ResourceArn, is not set");
+    return ListResourceProfileDetectionsOutcome(Aws::Client::AWSError<Macie2Errors>(Macie2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListResourceProfileDetections, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/resource-profiles/detections");
+  return ListResourceProfileDetectionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListResourceProfileDetectionsOutcomeCallable Macie2Client::ListResourceProfileDetectionsCallable(const ListResourceProfileDetectionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListResourceProfileDetectionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListResourceProfileDetections(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Macie2Client::ListResourceProfileDetectionsAsync(const ListResourceProfileDetectionsRequest& request, const ListResourceProfileDetectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListResourceProfileDetections(request), context);
+    } );
+}
+
+ListSensitivityInspectionTemplatesOutcome Macie2Client::ListSensitivityInspectionTemplates(const ListSensitivityInspectionTemplatesRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSensitivityInspectionTemplates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSensitivityInspectionTemplates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/templates/sensitivity-inspections");
+  return ListSensitivityInspectionTemplatesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListSensitivityInspectionTemplatesOutcomeCallable Macie2Client::ListSensitivityInspectionTemplatesCallable(const ListSensitivityInspectionTemplatesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListSensitivityInspectionTemplatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSensitivityInspectionTemplates(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Macie2Client::ListSensitivityInspectionTemplatesAsync(const ListSensitivityInspectionTemplatesRequest& request, const ListSensitivityInspectionTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListSensitivityInspectionTemplates(request), context);
     } );
 }
 
@@ -1823,6 +2063,31 @@ void Macie2Client::UpdateAllowListAsync(const UpdateAllowListRequest& request, c
     } );
 }
 
+UpdateAutomatedDiscoveryConfigurationOutcome Macie2Client::UpdateAutomatedDiscoveryConfiguration(const UpdateAutomatedDiscoveryConfigurationRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAutomatedDiscoveryConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateAutomatedDiscoveryConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/automated-discovery/configuration");
+  return UpdateAutomatedDiscoveryConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateAutomatedDiscoveryConfigurationOutcomeCallable Macie2Client::UpdateAutomatedDiscoveryConfigurationCallable(const UpdateAutomatedDiscoveryConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateAutomatedDiscoveryConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAutomatedDiscoveryConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Macie2Client::UpdateAutomatedDiscoveryConfigurationAsync(const UpdateAutomatedDiscoveryConfigurationRequest& request, const UpdateAutomatedDiscoveryConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateAutomatedDiscoveryConfiguration(request), context);
+    } );
+}
+
 UpdateClassificationJobOutcome Macie2Client::UpdateClassificationJob(const UpdateClassificationJobRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateClassificationJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1851,6 +2116,37 @@ void Macie2Client::UpdateClassificationJobAsync(const UpdateClassificationJobReq
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, UpdateClassificationJob(request), context);
+    } );
+}
+
+UpdateClassificationScopeOutcome Macie2Client::UpdateClassificationScope(const UpdateClassificationScopeRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateClassificationScope, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateClassificationScope", "Required field: Id, is not set");
+    return UpdateClassificationScopeOutcome(Aws::Client::AWSError<Macie2Errors>(Macie2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateClassificationScope, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/classification-scopes/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+  return UpdateClassificationScopeOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateClassificationScopeOutcomeCallable Macie2Client::UpdateClassificationScopeCallable(const UpdateClassificationScopeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateClassificationScopeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateClassificationScope(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Macie2Client::UpdateClassificationScopeAsync(const UpdateClassificationScopeRequest& request, const UpdateClassificationScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateClassificationScope(request), context);
     } );
 }
 
@@ -1966,6 +2262,66 @@ void Macie2Client::UpdateOrganizationConfigurationAsync(const UpdateOrganization
     } );
 }
 
+UpdateResourceProfileOutcome Macie2Client::UpdateResourceProfile(const UpdateResourceProfileRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateResourceProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateResourceProfile", "Required field: ResourceArn, is not set");
+    return UpdateResourceProfileOutcome(Aws::Client::AWSError<Macie2Errors>(Macie2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateResourceProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/resource-profiles");
+  return UpdateResourceProfileOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateResourceProfileOutcomeCallable Macie2Client::UpdateResourceProfileCallable(const UpdateResourceProfileRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateResourceProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateResourceProfile(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Macie2Client::UpdateResourceProfileAsync(const UpdateResourceProfileRequest& request, const UpdateResourceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateResourceProfile(request), context);
+    } );
+}
+
+UpdateResourceProfileDetectionsOutcome Macie2Client::UpdateResourceProfileDetections(const UpdateResourceProfileDetectionsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateResourceProfileDetections, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateResourceProfileDetections", "Required field: ResourceArn, is not set");
+    return UpdateResourceProfileDetectionsOutcome(Aws::Client::AWSError<Macie2Errors>(Macie2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateResourceProfileDetections, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/resource-profiles/detections");
+  return UpdateResourceProfileDetectionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateResourceProfileDetectionsOutcomeCallable Macie2Client::UpdateResourceProfileDetectionsCallable(const UpdateResourceProfileDetectionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateResourceProfileDetectionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateResourceProfileDetections(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Macie2Client::UpdateResourceProfileDetectionsAsync(const UpdateResourceProfileDetectionsRequest& request, const UpdateResourceProfileDetectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateResourceProfileDetections(request), context);
+    } );
+}
+
 UpdateRevealConfigurationOutcome Macie2Client::UpdateRevealConfiguration(const UpdateRevealConfigurationRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRevealConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1988,6 +2344,37 @@ void Macie2Client::UpdateRevealConfigurationAsync(const UpdateRevealConfiguratio
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, UpdateRevealConfiguration(request), context);
+    } );
+}
+
+UpdateSensitivityInspectionTemplateOutcome Macie2Client::UpdateSensitivityInspectionTemplate(const UpdateSensitivityInspectionTemplateRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateSensitivityInspectionTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateSensitivityInspectionTemplate", "Required field: Id, is not set");
+    return UpdateSensitivityInspectionTemplateOutcome(Aws::Client::AWSError<Macie2Errors>(Macie2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateSensitivityInspectionTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/templates/sensitivity-inspections/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+  return UpdateSensitivityInspectionTemplateOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateSensitivityInspectionTemplateOutcomeCallable Macie2Client::UpdateSensitivityInspectionTemplateCallable(const UpdateSensitivityInspectionTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateSensitivityInspectionTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateSensitivityInspectionTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Macie2Client::UpdateSensitivityInspectionTemplateAsync(const UpdateSensitivityInspectionTemplateRequest& request, const UpdateSensitivityInspectionTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateSensitivityInspectionTemplate(request), context);
     } );
 }
 

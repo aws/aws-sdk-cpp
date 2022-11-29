@@ -22,9 +22,9 @@ namespace Model
 {
 
   /**
-   * <p>The size of the function’s /tmp directory in MB. The default value is 512,
-   * but can be any whole number between 512 and 10240 MB.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>The size of the function's <code>/tmp</code> directory in MB. The default
+   * value is 512, but it can be any whole number between 512 and 10,240
+   * MB.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/EphemeralStorage">AWS
    * API Reference</a></p>
    */
@@ -38,22 +38,22 @@ namespace Model
 
 
     /**
-     * <p>The size of the function’s /tmp directory.</p>
+     * <p>The size of the function's <code>/tmp</code> directory.</p>
      */
     inline int GetSize() const{ return m_size; }
 
     /**
-     * <p>The size of the function’s /tmp directory.</p>
+     * <p>The size of the function's <code>/tmp</code> directory.</p>
      */
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
 
     /**
-     * <p>The size of the function’s /tmp directory.</p>
+     * <p>The size of the function's <code>/tmp</code> directory.</p>
      */
     inline void SetSize(int value) { m_sizeHasBeenSet = true; m_size = value; }
 
     /**
-     * <p>The size of the function’s /tmp directory.</p>
+     * <p>The size of the function's <code>/tmp</code> directory.</p>
      */
     inline EphemeralStorage& WithSize(int value) { SetSize(value); return *this;}
 

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/config/model/EvaluationMode.h>
 #include <utility>
 
 namespace Aws
@@ -161,6 +162,37 @@ namespace Model
      */
     inline EvaluationResultQualifier& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
+
+    /**
+     * <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
+     */
+    inline const EvaluationMode& GetEvaluationMode() const{ return m_evaluationMode; }
+
+    /**
+     * <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
+     */
+    inline bool EvaluationModeHasBeenSet() const { return m_evaluationModeHasBeenSet; }
+
+    /**
+     * <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
+     */
+    inline void SetEvaluationMode(const EvaluationMode& value) { m_evaluationModeHasBeenSet = true; m_evaluationMode = value; }
+
+    /**
+     * <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
+     */
+    inline void SetEvaluationMode(EvaluationMode&& value) { m_evaluationModeHasBeenSet = true; m_evaluationMode = std::move(value); }
+
+    /**
+     * <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
+     */
+    inline EvaluationResultQualifier& WithEvaluationMode(const EvaluationMode& value) { SetEvaluationMode(value); return *this;}
+
+    /**
+     * <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
+     */
+    inline EvaluationResultQualifier& WithEvaluationMode(EvaluationMode&& value) { SetEvaluationMode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_configRuleName;
@@ -171,6 +203,9 @@ namespace Model
 
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet = false;
+
+    EvaluationMode m_evaluationMode;
+    bool m_evaluationModeHasBeenSet = false;
   };
 
 } // namespace Model

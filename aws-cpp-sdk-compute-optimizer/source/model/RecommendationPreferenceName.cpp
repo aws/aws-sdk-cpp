@@ -22,6 +22,7 @@ namespace Aws
 
         static const int EnhancedInfrastructureMetrics_HASH = HashingUtils::HashString("EnhancedInfrastructureMetrics");
         static const int InferredWorkloadTypes_HASH = HashingUtils::HashString("InferredWorkloadTypes");
+        static const int ExternalMetricsPreference_HASH = HashingUtils::HashString("ExternalMetricsPreference");
 
 
         RecommendationPreferenceName GetRecommendationPreferenceNameForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == InferredWorkloadTypes_HASH)
           {
             return RecommendationPreferenceName::InferredWorkloadTypes;
+          }
+          else if (hashCode == ExternalMetricsPreference_HASH)
+          {
+            return RecommendationPreferenceName::ExternalMetricsPreference;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "EnhancedInfrastructureMetrics";
           case RecommendationPreferenceName::InferredWorkloadTypes:
             return "InferredWorkloadTypes";
+          case RecommendationPreferenceName::ExternalMetricsPreference:
+            return "ExternalMetricsPreference";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -7,6 +7,8 @@
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/AnalysisErrorType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/quicksight/model/Entity.h>
 #include <utility>
 
 namespace Aws
@@ -109,6 +111,47 @@ namespace Model
      */
     inline AnalysisError& WithMessage(const char* value) { SetMessage(value); return *this;}
 
+
+    /**
+     * <p/>
+     */
+    inline const Aws::Vector<Entity>& GetViolatedEntities() const{ return m_violatedEntities; }
+
+    /**
+     * <p/>
+     */
+    inline bool ViolatedEntitiesHasBeenSet() const { return m_violatedEntitiesHasBeenSet; }
+
+    /**
+     * <p/>
+     */
+    inline void SetViolatedEntities(const Aws::Vector<Entity>& value) { m_violatedEntitiesHasBeenSet = true; m_violatedEntities = value; }
+
+    /**
+     * <p/>
+     */
+    inline void SetViolatedEntities(Aws::Vector<Entity>&& value) { m_violatedEntitiesHasBeenSet = true; m_violatedEntities = std::move(value); }
+
+    /**
+     * <p/>
+     */
+    inline AnalysisError& WithViolatedEntities(const Aws::Vector<Entity>& value) { SetViolatedEntities(value); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline AnalysisError& WithViolatedEntities(Aws::Vector<Entity>&& value) { SetViolatedEntities(std::move(value)); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline AnalysisError& AddViolatedEntities(const Entity& value) { m_violatedEntitiesHasBeenSet = true; m_violatedEntities.push_back(value); return *this; }
+
+    /**
+     * <p/>
+     */
+    inline AnalysisError& AddViolatedEntities(Entity&& value) { m_violatedEntitiesHasBeenSet = true; m_violatedEntities.push_back(std::move(value)); return *this; }
+
   private:
 
     AnalysisErrorType m_type;
@@ -116,6 +159,9 @@ namespace Model
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
+
+    Aws::Vector<Entity> m_violatedEntities;
+    bool m_violatedEntitiesHasBeenSet = false;
   };
 
 } // namespace Model

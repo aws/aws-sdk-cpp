@@ -942,6 +942,29 @@ namespace QuickSight
         virtual void DescribeAnalysisAsync(const Model::DescribeAnalysisRequest& request, const DescribeAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Provides a detailed description of the definition of an analysis.</p> 
+         * <p>If you do not need to know details about the content of an Analysis, for
+         * instance if you are trying to check the status of a recently created or updated
+         * Analysis, use the <a
+         * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeAnalysis.html">
+         * <code>DescribeAnalysis</code> </a> instead. </p> <p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAnalysisDefinition">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAnalysisDefinitionOutcome DescribeAnalysisDefinition(const Model::DescribeAnalysisDefinitionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeAnalysisDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeAnalysisDefinitionOutcomeCallable DescribeAnalysisDefinitionCallable(const Model::DescribeAnalysisDefinitionRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeAnalysisDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeAnalysisDefinitionAsync(const Model::DescribeAnalysisDefinitionRequest& request, const DescribeAnalysisDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Provides the read and write permissions for an analysis.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAnalysisPermissions">AWS
@@ -975,6 +998,29 @@ namespace QuickSight
          * An Async wrapper for DescribeDashboard that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeDashboardAsync(const Model::DescribeDashboardRequest& request, const DescribeDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Provides a detailed description of the definition of a dashboard.</p> 
+         * <p>If you do not need to know details about the content of a dashboard, for
+         * instance if you are trying to check the status of a recently created or updated
+         * dashboard, use the <a
+         * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeDashboard.html">
+         * <code>DescribeDashboard</code> </a> instead. </p> <p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDashboardDefinition">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeDashboardDefinitionOutcome DescribeDashboardDefinition(const Model::DescribeDashboardDefinitionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeDashboardDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeDashboardDefinitionOutcomeCallable DescribeDashboardDefinitionCallable(const Model::DescribeDashboardDefinitionRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeDashboardDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeDashboardDefinitionAsync(const Model::DescribeDashboardDefinitionRequest& request, const DescribeDashboardDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes read and write permissions for a dashboard.</p><p><h3>See
@@ -1259,6 +1305,29 @@ namespace QuickSight
          * An Async wrapper for DescribeTemplateAlias that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeTemplateAliasAsync(const Model::DescribeTemplateAliasRequest& request, const DescribeTemplateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Provides a detailed description of the definition of a template.</p> 
+         * <p>If you do not need to know details about the content of a template, for
+         * instance if you are trying to check the status of a recently created or updated
+         * template, use the <a
+         * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeTemplate.html">
+         * <code>DescribeTemplate</code> </a> instead. </p> <p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTemplateDefinition">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeTemplateDefinitionOutcome DescribeTemplateDefinition(const Model::DescribeTemplateDefinitionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeTemplateDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeTemplateDefinitionOutcomeCallable DescribeTemplateDefinitionCallable(const Model::DescribeTemplateDefinitionRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeTemplateDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeTemplateDefinitionAsync(const Model::DescribeTemplateDefinitionRequest& request, const DescribeTemplateDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes read and write permissions on a template.</p><p><h3>See Also:</h3> 

@@ -27,7 +27,12 @@ CreateOntapVolumeConfiguration::CreateOntapVolumeConfiguration() :
     m_storageEfficiencyEnabled(false),
     m_storageEfficiencyEnabledHasBeenSet(false),
     m_storageVirtualMachineIdHasBeenSet(false),
-    m_tieringPolicyHasBeenSet(false)
+    m_tieringPolicyHasBeenSet(false),
+    m_ontapVolumeType(InputOntapVolumeType::NOT_SET),
+    m_ontapVolumeTypeHasBeenSet(false),
+    m_snapshotPolicyHasBeenSet(false),
+    m_copyTagsToBackups(false),
+    m_copyTagsToBackupsHasBeenSet(false)
 {
 }
 
@@ -40,7 +45,12 @@ CreateOntapVolumeConfiguration::CreateOntapVolumeConfiguration(JsonView jsonValu
     m_storageEfficiencyEnabled(false),
     m_storageEfficiencyEnabledHasBeenSet(false),
     m_storageVirtualMachineIdHasBeenSet(false),
-    m_tieringPolicyHasBeenSet(false)
+    m_tieringPolicyHasBeenSet(false),
+    m_ontapVolumeType(InputOntapVolumeType::NOT_SET),
+    m_ontapVolumeTypeHasBeenSet(false),
+    m_snapshotPolicyHasBeenSet(false),
+    m_copyTagsToBackups(false),
+    m_copyTagsToBackupsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -89,6 +99,27 @@ CreateOntapVolumeConfiguration& CreateOntapVolumeConfiguration::operator =(JsonV
     m_tieringPolicyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("OntapVolumeType"))
+  {
+    m_ontapVolumeType = InputOntapVolumeTypeMapper::GetInputOntapVolumeTypeForName(jsonValue.GetString("OntapVolumeType"));
+
+    m_ontapVolumeTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SnapshotPolicy"))
+  {
+    m_snapshotPolicy = jsonValue.GetString("SnapshotPolicy");
+
+    m_snapshotPolicyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CopyTagsToBackups"))
+  {
+    m_copyTagsToBackups = jsonValue.GetBool("CopyTagsToBackups");
+
+    m_copyTagsToBackupsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -128,6 +159,23 @@ JsonValue CreateOntapVolumeConfiguration::Jsonize() const
   if(m_tieringPolicyHasBeenSet)
   {
    payload.WithObject("TieringPolicy", m_tieringPolicy.Jsonize());
+
+  }
+
+  if(m_ontapVolumeTypeHasBeenSet)
+  {
+   payload.WithString("OntapVolumeType", InputOntapVolumeTypeMapper::GetNameForInputOntapVolumeType(m_ontapVolumeType));
+  }
+
+  if(m_snapshotPolicyHasBeenSet)
+  {
+   payload.WithString("SnapshotPolicy", m_snapshotPolicy);
+
+  }
+
+  if(m_copyTagsToBackupsHasBeenSet)
+  {
+   payload.WithBool("CopyTagsToBackups", m_copyTagsToBackups);
 
   }
 

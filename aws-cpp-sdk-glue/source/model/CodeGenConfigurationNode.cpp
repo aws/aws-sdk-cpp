@@ -68,7 +68,8 @@ CodeGenConfigurationNode::CodeGenConfigurationNode() :
     m_microsoftSQLServerCatalogTargetHasBeenSet(false),
     m_mySQLCatalogTargetHasBeenSet(false),
     m_oracleSQLCatalogTargetHasBeenSet(false),
-    m_postgreSQLCatalogTargetHasBeenSet(false)
+    m_postgreSQLCatalogTargetHasBeenSet(false),
+    m_dynamicTransformHasBeenSet(false)
 {
 }
 
@@ -122,7 +123,8 @@ CodeGenConfigurationNode::CodeGenConfigurationNode(JsonView jsonValue) :
     m_microsoftSQLServerCatalogTargetHasBeenSet(false),
     m_mySQLCatalogTargetHasBeenSet(false),
     m_oracleSQLCatalogTargetHasBeenSet(false),
-    m_postgreSQLCatalogTargetHasBeenSet(false)
+    m_postgreSQLCatalogTargetHasBeenSet(false),
+    m_dynamicTransformHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -479,6 +481,13 @@ CodeGenConfigurationNode& CodeGenConfigurationNode::operator =(JsonView jsonValu
     m_postgreSQLCatalogTargetHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DynamicTransform"))
+  {
+    m_dynamicTransform = jsonValue.GetObject("DynamicTransform");
+
+    m_dynamicTransformHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -783,6 +792,12 @@ JsonValue CodeGenConfigurationNode::Jsonize() const
   if(m_postgreSQLCatalogTargetHasBeenSet)
   {
    payload.WithObject("PostgreSQLCatalogTarget", m_postgreSQLCatalogTarget.Jsonize());
+
+  }
+
+  if(m_dynamicTransformHasBeenSet)
+  {
+   payload.WithObject("DynamicTransform", m_dynamicTransform.Jsonize());
 
   }
 

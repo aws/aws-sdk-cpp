@@ -25,6 +25,8 @@ AggregationResponse::AggregationResponse() :
     m_ec2InstanceAggregationHasBeenSet(false),
     m_findingTypeAggregationHasBeenSet(false),
     m_imageLayerAggregationHasBeenSet(false),
+    m_lambdaFunctionAggregationHasBeenSet(false),
+    m_lambdaLayerAggregationHasBeenSet(false),
     m_packageAggregationHasBeenSet(false),
     m_repositoryAggregationHasBeenSet(false),
     m_titleAggregationHasBeenSet(false)
@@ -38,6 +40,8 @@ AggregationResponse::AggregationResponse(JsonView jsonValue) :
     m_ec2InstanceAggregationHasBeenSet(false),
     m_findingTypeAggregationHasBeenSet(false),
     m_imageLayerAggregationHasBeenSet(false),
+    m_lambdaFunctionAggregationHasBeenSet(false),
+    m_lambdaLayerAggregationHasBeenSet(false),
     m_packageAggregationHasBeenSet(false),
     m_repositoryAggregationHasBeenSet(false),
     m_titleAggregationHasBeenSet(false)
@@ -87,6 +91,20 @@ AggregationResponse& AggregationResponse::operator =(JsonView jsonValue)
     m_imageLayerAggregation = jsonValue.GetObject("imageLayerAggregation");
 
     m_imageLayerAggregationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("lambdaFunctionAggregation"))
+  {
+    m_lambdaFunctionAggregation = jsonValue.GetObject("lambdaFunctionAggregation");
+
+    m_lambdaFunctionAggregationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("lambdaLayerAggregation"))
+  {
+    m_lambdaLayerAggregation = jsonValue.GetObject("lambdaLayerAggregation");
+
+    m_lambdaLayerAggregationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("packageAggregation"))
@@ -150,6 +168,18 @@ JsonValue AggregationResponse::Jsonize() const
   if(m_imageLayerAggregationHasBeenSet)
   {
    payload.WithObject("imageLayerAggregation", m_imageLayerAggregation.Jsonize());
+
+  }
+
+  if(m_lambdaFunctionAggregationHasBeenSet)
+  {
+   payload.WithObject("lambdaFunctionAggregation", m_lambdaFunctionAggregation.Jsonize());
+
+  }
+
+  if(m_lambdaLayerAggregationHasBeenSet)
+  {
+   payload.WithObject("lambdaLayerAggregation", m_lambdaLayerAggregation.Jsonize());
 
   }
 

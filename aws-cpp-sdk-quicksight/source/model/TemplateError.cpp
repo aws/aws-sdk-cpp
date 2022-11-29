@@ -21,14 +21,16 @@ namespace Model
 TemplateError::TemplateError() : 
     m_type(TemplateErrorType::NOT_SET),
     m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+    m_messageHasBeenSet(false),
+    m_violatedEntitiesHasBeenSet(false)
 {
 }
 
 TemplateError::TemplateError(JsonView jsonValue) : 
     m_type(TemplateErrorType::NOT_SET),
     m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+    m_messageHasBeenSet(false),
+    m_violatedEntitiesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -49,6 +51,16 @@ TemplateError& TemplateError::operator =(JsonView jsonValue)
     m_messageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ViolatedEntities"))
+  {
+    Aws::Utils::Array<JsonView> violatedEntitiesJsonList = jsonValue.GetArray("ViolatedEntities");
+    for(unsigned violatedEntitiesIndex = 0; violatedEntitiesIndex < violatedEntitiesJsonList.GetLength(); ++violatedEntitiesIndex)
+    {
+      m_violatedEntities.push_back(violatedEntitiesJsonList[violatedEntitiesIndex].AsObject());
+    }
+    m_violatedEntitiesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -64,6 +76,17 @@ JsonValue TemplateError::Jsonize() const
   if(m_messageHasBeenSet)
   {
    payload.WithString("Message", m_message);
+
+  }
+
+  if(m_violatedEntitiesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> violatedEntitiesJsonList(m_violatedEntities.size());
+   for(unsigned violatedEntitiesIndex = 0; violatedEntitiesIndex < violatedEntitiesJsonList.GetLength(); ++violatedEntitiesIndex)
+   {
+     violatedEntitiesJsonList[violatedEntitiesIndex].AsObject(m_violatedEntities[violatedEntitiesIndex].Jsonize());
+   }
+   payload.WithArray("ViolatedEntities", std::move(violatedEntitiesJsonList));
 
   }
 

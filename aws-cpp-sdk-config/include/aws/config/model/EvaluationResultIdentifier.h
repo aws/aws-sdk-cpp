@@ -7,6 +7,7 @@
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/config/model/EvaluationResultQualifier.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -123,6 +124,47 @@ namespace Model
      */
     inline EvaluationResultIdentifier& WithOrderingTimestamp(Aws::Utils::DateTime&& value) { SetOrderingTimestamp(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A Unique ID for an evaluation result.</p>
+     */
+    inline const Aws::String& GetResourceEvaluationId() const{ return m_resourceEvaluationId; }
+
+    /**
+     * <p>A Unique ID for an evaluation result.</p>
+     */
+    inline bool ResourceEvaluationIdHasBeenSet() const { return m_resourceEvaluationIdHasBeenSet; }
+
+    /**
+     * <p>A Unique ID for an evaluation result.</p>
+     */
+    inline void SetResourceEvaluationId(const Aws::String& value) { m_resourceEvaluationIdHasBeenSet = true; m_resourceEvaluationId = value; }
+
+    /**
+     * <p>A Unique ID for an evaluation result.</p>
+     */
+    inline void SetResourceEvaluationId(Aws::String&& value) { m_resourceEvaluationIdHasBeenSet = true; m_resourceEvaluationId = std::move(value); }
+
+    /**
+     * <p>A Unique ID for an evaluation result.</p>
+     */
+    inline void SetResourceEvaluationId(const char* value) { m_resourceEvaluationIdHasBeenSet = true; m_resourceEvaluationId.assign(value); }
+
+    /**
+     * <p>A Unique ID for an evaluation result.</p>
+     */
+    inline EvaluationResultIdentifier& WithResourceEvaluationId(const Aws::String& value) { SetResourceEvaluationId(value); return *this;}
+
+    /**
+     * <p>A Unique ID for an evaluation result.</p>
+     */
+    inline EvaluationResultIdentifier& WithResourceEvaluationId(Aws::String&& value) { SetResourceEvaluationId(std::move(value)); return *this;}
+
+    /**
+     * <p>A Unique ID for an evaluation result.</p>
+     */
+    inline EvaluationResultIdentifier& WithResourceEvaluationId(const char* value) { SetResourceEvaluationId(value); return *this;}
+
   private:
 
     EvaluationResultQualifier m_evaluationResultQualifier;
@@ -130,6 +172,9 @@ namespace Model
 
     Aws::Utils::DateTime m_orderingTimestamp;
     bool m_orderingTimestampHasBeenSet = false;
+
+    Aws::String m_resourceEvaluationId;
+    bool m_resourceEvaluationIdHasBeenSet = false;
   };
 
 } // namespace Model

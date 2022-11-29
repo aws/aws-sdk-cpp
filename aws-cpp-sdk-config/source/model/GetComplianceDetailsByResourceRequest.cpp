@@ -16,7 +16,8 @@ GetComplianceDetailsByResourceRequest::GetComplianceDetailsByResourceRequest() :
     m_resourceTypeHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
     m_complianceTypesHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_resourceEvaluationIdHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,12 @@ Aws::String GetComplianceDetailsByResourceRequest::SerializePayload() const
   if(m_nextTokenHasBeenSet)
   {
    payload.WithString("NextToken", m_nextToken);
+
+  }
+
+  if(m_resourceEvaluationIdHasBeenSet)
+  {
+   payload.WithString("ResourceEvaluationId", m_resourceEvaluationId);
 
   }
 

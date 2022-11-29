@@ -20,13 +20,15 @@ namespace Model
 
 ResourceState::ResourceState() : 
     m_ec2HasBeenSet(false),
-    m_ecrHasBeenSet(false)
+    m_ecrHasBeenSet(false),
+    m_lambdaHasBeenSet(false)
 {
 }
 
 ResourceState::ResourceState(JsonView jsonValue) : 
     m_ec2HasBeenSet(false),
-    m_ecrHasBeenSet(false)
+    m_ecrHasBeenSet(false),
+    m_lambdaHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ ResourceState& ResourceState::operator =(JsonView jsonValue)
     m_ecrHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("lambda"))
+  {
+    m_lambda = jsonValue.GetObject("lambda");
+
+    m_lambdaHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue ResourceState::Jsonize() const
   if(m_ecrHasBeenSet)
   {
    payload.WithObject("ecr", m_ecr.Jsonize());
+
+  }
+
+  if(m_lambdaHasBeenSet)
+  {
+   payload.WithObject("lambda", m_lambda.Jsonize());
 
   }
 

@@ -25,6 +25,7 @@ namespace Aws
         static const int ReservedFunctionConcurrentInvocationLimitExceeded_HASH = HashingUtils::HashString("ReservedFunctionConcurrentInvocationLimitExceeded");
         static const int ReservedFunctionInvocationRateLimitExceeded_HASH = HashingUtils::HashString("ReservedFunctionInvocationRateLimitExceeded");
         static const int CallerRateLimitExceeded_HASH = HashingUtils::HashString("CallerRateLimitExceeded");
+        static const int ConcurrentSnapshotCreateLimitExceeded_HASH = HashingUtils::HashString("ConcurrentSnapshotCreateLimitExceeded");
 
 
         ThrottleReason GetThrottleReasonForName(const Aws::String& name)
@@ -50,6 +51,10 @@ namespace Aws
           {
             return ThrottleReason::CallerRateLimitExceeded;
           }
+          else if (hashCode == ConcurrentSnapshotCreateLimitExceeded_HASH)
+          {
+            return ThrottleReason::ConcurrentSnapshotCreateLimitExceeded;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +79,8 @@ namespace Aws
             return "ReservedFunctionInvocationRateLimitExceeded";
           case ThrottleReason::CallerRateLimitExceeded:
             return "CallerRateLimitExceeded";
+          case ThrottleReason::ConcurrentSnapshotCreateLimitExceeded:
+            return "ConcurrentSnapshotCreateLimitExceeded";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

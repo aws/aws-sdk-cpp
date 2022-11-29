@@ -27,8 +27,8 @@ namespace Model
 
   /**
    * <p>The results of an operation to update or read environment variables. If the
-   * operation is successful, the response contains the environment variables. If it
-   * failed, the response contains details about the error.</p><p><h3>See Also:</h3> 
+   * operation succeeds, the response contains the environment variables. If it
+   * fails, the response contains details about the error.</p><p><h3>See Also:</h3>  
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/EnvironmentResponse">AWS
    * API Reference</a></p>

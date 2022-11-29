@@ -198,8 +198,8 @@ namespace Model
 
     /**
      * <p>An object representing the placement configuration for all the control plane
-     * instance of your local Amazon EKS cluster on an Amazon Web Services Outpost. For
-     * more information, see <a
+     * instances of your local Amazon EKS cluster on an Amazon Web Services Outpost.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity
      * considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
@@ -207,8 +207,8 @@ namespace Model
 
     /**
      * <p>An object representing the placement configuration for all the control plane
-     * instance of your local Amazon EKS cluster on an Amazon Web Services Outpost. For
-     * more information, see <a
+     * instances of your local Amazon EKS cluster on an Amazon Web Services Outpost.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity
      * considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
@@ -216,8 +216,8 @@ namespace Model
 
     /**
      * <p>An object representing the placement configuration for all the control plane
-     * instance of your local Amazon EKS cluster on an Amazon Web Services Outpost. For
-     * more information, see <a
+     * instances of your local Amazon EKS cluster on an Amazon Web Services Outpost.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity
      * considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
@@ -225,8 +225,8 @@ namespace Model
 
     /**
      * <p>An object representing the placement configuration for all the control plane
-     * instance of your local Amazon EKS cluster on an Amazon Web Services Outpost. For
-     * more information, see <a
+     * instances of your local Amazon EKS cluster on an Amazon Web Services Outpost.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity
      * considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
@@ -234,8 +234,8 @@ namespace Model
 
     /**
      * <p>An object representing the placement configuration for all the control plane
-     * instance of your local Amazon EKS cluster on an Amazon Web Services Outpost. For
-     * more information, see <a
+     * instances of your local Amazon EKS cluster on an Amazon Web Services Outpost.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity
      * considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
@@ -243,8 +243,8 @@ namespace Model
 
     /**
      * <p>An object representing the placement configuration for all the control plane
-     * instance of your local Amazon EKS cluster on an Amazon Web Services Outpost. For
-     * more information, see <a
+     * instances of your local Amazon EKS cluster on an Amazon Web Services Outpost.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity
      * considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
      */

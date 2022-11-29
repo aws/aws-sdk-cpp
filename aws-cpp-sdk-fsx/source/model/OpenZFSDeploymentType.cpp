@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int SINGLE_AZ_1_HASH = HashingUtils::HashString("SINGLE_AZ_1");
+        static const int SINGLE_AZ_2_HASH = HashingUtils::HashString("SINGLE_AZ_2");
 
 
         OpenZFSDeploymentType GetOpenZFSDeploymentTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == SINGLE_AZ_1_HASH)
           {
             return OpenZFSDeploymentType::SINGLE_AZ_1;
+          }
+          else if (hashCode == SINGLE_AZ_2_HASH)
+          {
+            return OpenZFSDeploymentType::SINGLE_AZ_2;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case OpenZFSDeploymentType::SINGLE_AZ_1:
             return "SINGLE_AZ_1";
+          case OpenZFSDeploymentType::SINGLE_AZ_2:
+            return "SINGLE_AZ_2";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

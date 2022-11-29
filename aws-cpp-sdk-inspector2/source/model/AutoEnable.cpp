@@ -22,7 +22,9 @@ AutoEnable::AutoEnable() :
     m_ec2(false),
     m_ec2HasBeenSet(false),
     m_ecr(false),
-    m_ecrHasBeenSet(false)
+    m_ecrHasBeenSet(false),
+    m_lambda(false),
+    m_lambdaHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,9 @@ AutoEnable::AutoEnable(JsonView jsonValue) :
     m_ec2(false),
     m_ec2HasBeenSet(false),
     m_ecr(false),
-    m_ecrHasBeenSet(false)
+    m_ecrHasBeenSet(false),
+    m_lambda(false),
+    m_lambdaHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -51,6 +55,13 @@ AutoEnable& AutoEnable::operator =(JsonView jsonValue)
     m_ecrHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("lambda"))
+  {
+    m_lambda = jsonValue.GetBool("lambda");
+
+    m_lambdaHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -67,6 +78,12 @@ JsonValue AutoEnable::Jsonize() const
   if(m_ecrHasBeenSet)
   {
    payload.WithBool("ecr", m_ecr);
+
+  }
+
+  if(m_lambdaHasBeenSet)
+  {
+   payload.WithBool("lambda", m_lambda);
 
   }
 

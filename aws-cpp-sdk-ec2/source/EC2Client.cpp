@@ -228,6 +228,7 @@
 #include <aws/ec2/model/DescribeAddressesAttributeRequest.h>
 #include <aws/ec2/model/DescribeAggregateIdFormatRequest.h>
 #include <aws/ec2/model/DescribeAvailabilityZonesRequest.h>
+#include <aws/ec2/model/DescribeAwsNetworkPerformanceMetricSubscriptionsRequest.h>
 #include <aws/ec2/model/DescribeBundleTasksRequest.h>
 #include <aws/ec2/model/DescribeByoipCidrsRequest.h>
 #include <aws/ec2/model/DescribeCapacityReservationFleetsRequest.h>
@@ -364,6 +365,7 @@
 #include <aws/ec2/model/DetachVolumeRequest.h>
 #include <aws/ec2/model/DetachVpnGatewayRequest.h>
 #include <aws/ec2/model/DisableAddressTransferRequest.h>
+#include <aws/ec2/model/DisableAwsNetworkPerformanceMetricSubscriptionRequest.h>
 #include <aws/ec2/model/DisableEbsEncryptionByDefaultRequest.h>
 #include <aws/ec2/model/DisableFastLaunchRequest.h>
 #include <aws/ec2/model/DisableFastSnapshotRestoresRequest.h>
@@ -387,11 +389,13 @@
 #include <aws/ec2/model/DisassociateTrunkInterfaceRequest.h>
 #include <aws/ec2/model/DisassociateVpcCidrBlockRequest.h>
 #include <aws/ec2/model/EnableAddressTransferRequest.h>
+#include <aws/ec2/model/EnableAwsNetworkPerformanceMetricSubscriptionRequest.h>
 #include <aws/ec2/model/EnableEbsEncryptionByDefaultRequest.h>
 #include <aws/ec2/model/EnableFastLaunchRequest.h>
 #include <aws/ec2/model/EnableFastSnapshotRestoresRequest.h>
 #include <aws/ec2/model/EnableImageDeprecationRequest.h>
 #include <aws/ec2/model/EnableIpamOrganizationAdminAccountRequest.h>
+#include <aws/ec2/model/EnableReachabilityAnalyzerOrganizationSharingRequest.h>
 #include <aws/ec2/model/EnableSerialConsoleAccessRequest.h>
 #include <aws/ec2/model/EnableTransitGatewayRouteTablePropagationRequest.h>
 #include <aws/ec2/model/EnableVgwRoutePropagationRequest.h>
@@ -404,6 +408,7 @@
 #include <aws/ec2/model/ExportTransitGatewayRoutesRequest.h>
 #include <aws/ec2/model/GetAssociatedEnclaveCertificateIamRolesRequest.h>
 #include <aws/ec2/model/GetAssociatedIpv6PoolCidrsRequest.h>
+#include <aws/ec2/model/GetAwsNetworkPerformanceDataRequest.h>
 #include <aws/ec2/model/GetCapacityReservationUsageRequest.h>
 #include <aws/ec2/model/GetCoipPoolUsageRequest.h>
 #include <aws/ec2/model/GetConsoleOutputRequest.h>
@@ -5665,6 +5670,30 @@ void EC2Client::DescribeAvailabilityZonesAsync(const DescribeAvailabilityZonesRe
     } );
 }
 
+DescribeAwsNetworkPerformanceMetricSubscriptionsOutcome EC2Client::DescribeAwsNetworkPerformanceMetricSubscriptions(const DescribeAwsNetworkPerformanceMetricSubscriptionsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAwsNetworkPerformanceMetricSubscriptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeAwsNetworkPerformanceMetricSubscriptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeAwsNetworkPerformanceMetricSubscriptionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DescribeAwsNetworkPerformanceMetricSubscriptionsOutcomeCallable EC2Client::DescribeAwsNetworkPerformanceMetricSubscriptionsCallable(const DescribeAwsNetworkPerformanceMetricSubscriptionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAwsNetworkPerformanceMetricSubscriptionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAwsNetworkPerformanceMetricSubscriptions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DescribeAwsNetworkPerformanceMetricSubscriptionsAsync(const DescribeAwsNetworkPerformanceMetricSubscriptionsRequest& request, const DescribeAwsNetworkPerformanceMetricSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeAwsNetworkPerformanceMetricSubscriptions(request), context);
+    } );
+}
+
 DescribeBundleTasksOutcome EC2Client::DescribeBundleTasks(const DescribeBundleTasksRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeBundleTasks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -8929,6 +8958,30 @@ void EC2Client::DisableAddressTransferAsync(const DisableAddressTransferRequest&
     } );
 }
 
+DisableAwsNetworkPerformanceMetricSubscriptionOutcome EC2Client::DisableAwsNetworkPerformanceMetricSubscription(const DisableAwsNetworkPerformanceMetricSubscriptionRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisableAwsNetworkPerformanceMetricSubscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisableAwsNetworkPerformanceMetricSubscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DisableAwsNetworkPerformanceMetricSubscriptionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DisableAwsNetworkPerformanceMetricSubscriptionOutcomeCallable EC2Client::DisableAwsNetworkPerformanceMetricSubscriptionCallable(const DisableAwsNetworkPerformanceMetricSubscriptionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisableAwsNetworkPerformanceMetricSubscriptionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisableAwsNetworkPerformanceMetricSubscription(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DisableAwsNetworkPerformanceMetricSubscriptionAsync(const DisableAwsNetworkPerformanceMetricSubscriptionRequest& request, const DisableAwsNetworkPerformanceMetricSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisableAwsNetworkPerformanceMetricSubscription(request), context);
+    } );
+}
+
 DisableEbsEncryptionByDefaultOutcome EC2Client::DisableEbsEncryptionByDefault(const DisableEbsEncryptionByDefaultRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisableEbsEncryptionByDefault, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -9481,6 +9534,30 @@ void EC2Client::EnableAddressTransferAsync(const EnableAddressTransferRequest& r
     } );
 }
 
+EnableAwsNetworkPerformanceMetricSubscriptionOutcome EC2Client::EnableAwsNetworkPerformanceMetricSubscription(const EnableAwsNetworkPerformanceMetricSubscriptionRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, EnableAwsNetworkPerformanceMetricSubscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, EnableAwsNetworkPerformanceMetricSubscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return EnableAwsNetworkPerformanceMetricSubscriptionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+EnableAwsNetworkPerformanceMetricSubscriptionOutcomeCallable EC2Client::EnableAwsNetworkPerformanceMetricSubscriptionCallable(const EnableAwsNetworkPerformanceMetricSubscriptionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< EnableAwsNetworkPerformanceMetricSubscriptionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->EnableAwsNetworkPerformanceMetricSubscription(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::EnableAwsNetworkPerformanceMetricSubscriptionAsync(const EnableAwsNetworkPerformanceMetricSubscriptionRequest& request, const EnableAwsNetworkPerformanceMetricSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, EnableAwsNetworkPerformanceMetricSubscription(request), context);
+    } );
+}
+
 EnableEbsEncryptionByDefaultOutcome EC2Client::EnableEbsEncryptionByDefault(const EnableEbsEncryptionByDefaultRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, EnableEbsEncryptionByDefault, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -9598,6 +9675,30 @@ void EC2Client::EnableIpamOrganizationAdminAccountAsync(const EnableIpamOrganiza
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, EnableIpamOrganizationAdminAccount(request), context);
+    } );
+}
+
+EnableReachabilityAnalyzerOrganizationSharingOutcome EC2Client::EnableReachabilityAnalyzerOrganizationSharing(const EnableReachabilityAnalyzerOrganizationSharingRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, EnableReachabilityAnalyzerOrganizationSharing, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, EnableReachabilityAnalyzerOrganizationSharing, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return EnableReachabilityAnalyzerOrganizationSharingOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+EnableReachabilityAnalyzerOrganizationSharingOutcomeCallable EC2Client::EnableReachabilityAnalyzerOrganizationSharingCallable(const EnableReachabilityAnalyzerOrganizationSharingRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< EnableReachabilityAnalyzerOrganizationSharingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->EnableReachabilityAnalyzerOrganizationSharing(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::EnableReachabilityAnalyzerOrganizationSharingAsync(const EnableReachabilityAnalyzerOrganizationSharingRequest& request, const EnableReachabilityAnalyzerOrganizationSharingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, EnableReachabilityAnalyzerOrganizationSharing(request), context);
     } );
 }
 
@@ -9886,6 +9987,30 @@ void EC2Client::GetAssociatedIpv6PoolCidrsAsync(const GetAssociatedIpv6PoolCidrs
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, GetAssociatedIpv6PoolCidrs(request), context);
+    } );
+}
+
+GetAwsNetworkPerformanceDataOutcome EC2Client::GetAwsNetworkPerformanceData(const GetAwsNetworkPerformanceDataRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAwsNetworkPerformanceData, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetAwsNetworkPerformanceData, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetAwsNetworkPerformanceDataOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+GetAwsNetworkPerformanceDataOutcomeCallable EC2Client::GetAwsNetworkPerformanceDataCallable(const GetAwsNetworkPerformanceDataRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetAwsNetworkPerformanceDataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAwsNetworkPerformanceData(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::GetAwsNetworkPerformanceDataAsync(const GetAwsNetworkPerformanceDataRequest& request, const GetAwsNetworkPerformanceDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetAwsNetworkPerformanceData(request), context);
     } );
 }
 

@@ -22,7 +22,8 @@ namespace Model
     FILE_SYSTEM_ALIAS_DISASSOCIATION,
     VOLUME_UPDATE,
     SNAPSHOT_UPDATE,
-    RELEASE_NFS_V3_LOCKS
+    RELEASE_NFS_V3_LOCKS,
+    VOLUME_RESTORE
   };
 
 namespace AdministrativeActionTypeMapper

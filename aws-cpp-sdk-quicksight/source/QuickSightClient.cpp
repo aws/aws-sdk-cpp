@@ -61,8 +61,10 @@
 #include <aws/quicksight/model/DescribeAccountSettingsRequest.h>
 #include <aws/quicksight/model/DescribeAccountSubscriptionRequest.h>
 #include <aws/quicksight/model/DescribeAnalysisRequest.h>
+#include <aws/quicksight/model/DescribeAnalysisDefinitionRequest.h>
 #include <aws/quicksight/model/DescribeAnalysisPermissionsRequest.h>
 #include <aws/quicksight/model/DescribeDashboardRequest.h>
+#include <aws/quicksight/model/DescribeDashboardDefinitionRequest.h>
 #include <aws/quicksight/model/DescribeDashboardPermissionsRequest.h>
 #include <aws/quicksight/model/DescribeDataSetRequest.h>
 #include <aws/quicksight/model/DescribeDataSetPermissionsRequest.h>
@@ -79,6 +81,7 @@
 #include <aws/quicksight/model/DescribeNamespaceRequest.h>
 #include <aws/quicksight/model/DescribeTemplateRequest.h>
 #include <aws/quicksight/model/DescribeTemplateAliasRequest.h>
+#include <aws/quicksight/model/DescribeTemplateDefinitionRequest.h>
 #include <aws/quicksight/model/DescribeTemplatePermissionsRequest.h>
 #include <aws/quicksight/model/DescribeThemeRequest.h>
 #include <aws/quicksight/model/DescribeThemeAliasRequest.h>
@@ -1854,6 +1857,45 @@ void QuickSightClient::DescribeAnalysisAsync(const DescribeAnalysisRequest& requ
     } );
 }
 
+DescribeAnalysisDefinitionOutcome QuickSightClient::DescribeAnalysisDefinition(const DescribeAnalysisDefinitionRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAnalysisDefinition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeAnalysisDefinition", "Required field: AwsAccountId, is not set");
+    return DescribeAnalysisDefinitionOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.AnalysisIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeAnalysisDefinition", "Required field: AnalysisId, is not set");
+    return DescribeAnalysisDefinitionOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AnalysisId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeAnalysisDefinition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/analyses/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAnalysisId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/definition");
+  return DescribeAnalysisDefinitionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeAnalysisDefinitionOutcomeCallable QuickSightClient::DescribeAnalysisDefinitionCallable(const DescribeAnalysisDefinitionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAnalysisDefinitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAnalysisDefinition(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::DescribeAnalysisDefinitionAsync(const DescribeAnalysisDefinitionRequest& request, const DescribeAnalysisDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeAnalysisDefinition(request), context);
+    } );
+}
+
 DescribeAnalysisPermissionsOutcome QuickSightClient::DescribeAnalysisPermissions(const DescribeAnalysisPermissionsRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAnalysisPermissions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1928,6 +1970,45 @@ void QuickSightClient::DescribeDashboardAsync(const DescribeDashboardRequest& re
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DescribeDashboard(request), context);
+    } );
+}
+
+DescribeDashboardDefinitionOutcome QuickSightClient::DescribeDashboardDefinition(const DescribeDashboardDefinitionRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDashboardDefinition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeDashboardDefinition", "Required field: AwsAccountId, is not set");
+    return DescribeDashboardDefinitionOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.DashboardIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeDashboardDefinition", "Required field: DashboardId, is not set");
+    return DescribeDashboardDefinitionOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DashboardId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeDashboardDefinition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/dashboards/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDashboardId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/definition");
+  return DescribeDashboardDefinitionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeDashboardDefinitionOutcomeCallable QuickSightClient::DescribeDashboardDefinitionCallable(const DescribeDashboardDefinitionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeDashboardDefinitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDashboardDefinition(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::DescribeDashboardDefinitionAsync(const DescribeDashboardDefinitionRequest& request, const DescribeDashboardDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeDashboardDefinition(request), context);
     } );
 }
 
@@ -2577,6 +2658,45 @@ void QuickSightClient::DescribeTemplateAliasAsync(const DescribeTemplateAliasReq
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DescribeTemplateAlias(request), context);
+    } );
+}
+
+DescribeTemplateDefinitionOutcome QuickSightClient::DescribeTemplateDefinition(const DescribeTemplateDefinitionRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeTemplateDefinition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeTemplateDefinition", "Required field: AwsAccountId, is not set");
+    return DescribeTemplateDefinitionOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.TemplateIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeTemplateDefinition", "Required field: TemplateId, is not set");
+    return DescribeTemplateDefinitionOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TemplateId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeTemplateDefinition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/templates/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTemplateId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/definition");
+  return DescribeTemplateDefinitionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeTemplateDefinitionOutcomeCallable QuickSightClient::DescribeTemplateDefinitionCallable(const DescribeTemplateDefinitionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeTemplateDefinitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeTemplateDefinition(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::DescribeTemplateDefinitionAsync(const DescribeTemplateDefinitionRequest& request, const DescribeTemplateDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeTemplateDefinition(request), context);
     } );
 }
 

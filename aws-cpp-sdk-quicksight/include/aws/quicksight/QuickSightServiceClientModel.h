@@ -58,8 +58,10 @@
 #include <aws/quicksight/model/DescribeAccountSettingsResult.h>
 #include <aws/quicksight/model/DescribeAccountSubscriptionResult.h>
 #include <aws/quicksight/model/DescribeAnalysisResult.h>
+#include <aws/quicksight/model/DescribeAnalysisDefinitionResult.h>
 #include <aws/quicksight/model/DescribeAnalysisPermissionsResult.h>
 #include <aws/quicksight/model/DescribeDashboardResult.h>
+#include <aws/quicksight/model/DescribeDashboardDefinitionResult.h>
 #include <aws/quicksight/model/DescribeDashboardPermissionsResult.h>
 #include <aws/quicksight/model/DescribeDataSetResult.h>
 #include <aws/quicksight/model/DescribeDataSetPermissionsResult.h>
@@ -76,6 +78,7 @@
 #include <aws/quicksight/model/DescribeNamespaceResult.h>
 #include <aws/quicksight/model/DescribeTemplateResult.h>
 #include <aws/quicksight/model/DescribeTemplateAliasResult.h>
+#include <aws/quicksight/model/DescribeTemplateDefinitionResult.h>
 #include <aws/quicksight/model/DescribeTemplatePermissionsResult.h>
 #include <aws/quicksight/model/DescribeThemeResult.h>
 #include <aws/quicksight/model/DescribeThemeAliasResult.h>
@@ -221,8 +224,10 @@ namespace Aws
       class DescribeAccountSettingsRequest;
       class DescribeAccountSubscriptionRequest;
       class DescribeAnalysisRequest;
+      class DescribeAnalysisDefinitionRequest;
       class DescribeAnalysisPermissionsRequest;
       class DescribeDashboardRequest;
+      class DescribeDashboardDefinitionRequest;
       class DescribeDashboardPermissionsRequest;
       class DescribeDataSetRequest;
       class DescribeDataSetPermissionsRequest;
@@ -239,6 +244,7 @@ namespace Aws
       class DescribeNamespaceRequest;
       class DescribeTemplateRequest;
       class DescribeTemplateAliasRequest;
+      class DescribeTemplateDefinitionRequest;
       class DescribeTemplatePermissionsRequest;
       class DescribeThemeRequest;
       class DescribeThemeAliasRequest;
@@ -347,8 +353,10 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeAccountSettingsResult, QuickSightError> DescribeAccountSettingsOutcome;
       typedef Aws::Utils::Outcome<DescribeAccountSubscriptionResult, QuickSightError> DescribeAccountSubscriptionOutcome;
       typedef Aws::Utils::Outcome<DescribeAnalysisResult, QuickSightError> DescribeAnalysisOutcome;
+      typedef Aws::Utils::Outcome<DescribeAnalysisDefinitionResult, QuickSightError> DescribeAnalysisDefinitionOutcome;
       typedef Aws::Utils::Outcome<DescribeAnalysisPermissionsResult, QuickSightError> DescribeAnalysisPermissionsOutcome;
       typedef Aws::Utils::Outcome<DescribeDashboardResult, QuickSightError> DescribeDashboardOutcome;
+      typedef Aws::Utils::Outcome<DescribeDashboardDefinitionResult, QuickSightError> DescribeDashboardDefinitionOutcome;
       typedef Aws::Utils::Outcome<DescribeDashboardPermissionsResult, QuickSightError> DescribeDashboardPermissionsOutcome;
       typedef Aws::Utils::Outcome<DescribeDataSetResult, QuickSightError> DescribeDataSetOutcome;
       typedef Aws::Utils::Outcome<DescribeDataSetPermissionsResult, QuickSightError> DescribeDataSetPermissionsOutcome;
@@ -365,6 +373,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeNamespaceResult, QuickSightError> DescribeNamespaceOutcome;
       typedef Aws::Utils::Outcome<DescribeTemplateResult, QuickSightError> DescribeTemplateOutcome;
       typedef Aws::Utils::Outcome<DescribeTemplateAliasResult, QuickSightError> DescribeTemplateAliasOutcome;
+      typedef Aws::Utils::Outcome<DescribeTemplateDefinitionResult, QuickSightError> DescribeTemplateDefinitionOutcome;
       typedef Aws::Utils::Outcome<DescribeTemplatePermissionsResult, QuickSightError> DescribeTemplatePermissionsOutcome;
       typedef Aws::Utils::Outcome<DescribeThemeResult, QuickSightError> DescribeThemeOutcome;
       typedef Aws::Utils::Outcome<DescribeThemeAliasResult, QuickSightError> DescribeThemeAliasOutcome;
@@ -473,8 +482,10 @@ namespace Aws
       typedef std::future<DescribeAccountSettingsOutcome> DescribeAccountSettingsOutcomeCallable;
       typedef std::future<DescribeAccountSubscriptionOutcome> DescribeAccountSubscriptionOutcomeCallable;
       typedef std::future<DescribeAnalysisOutcome> DescribeAnalysisOutcomeCallable;
+      typedef std::future<DescribeAnalysisDefinitionOutcome> DescribeAnalysisDefinitionOutcomeCallable;
       typedef std::future<DescribeAnalysisPermissionsOutcome> DescribeAnalysisPermissionsOutcomeCallable;
       typedef std::future<DescribeDashboardOutcome> DescribeDashboardOutcomeCallable;
+      typedef std::future<DescribeDashboardDefinitionOutcome> DescribeDashboardDefinitionOutcomeCallable;
       typedef std::future<DescribeDashboardPermissionsOutcome> DescribeDashboardPermissionsOutcomeCallable;
       typedef std::future<DescribeDataSetOutcome> DescribeDataSetOutcomeCallable;
       typedef std::future<DescribeDataSetPermissionsOutcome> DescribeDataSetPermissionsOutcomeCallable;
@@ -491,6 +502,7 @@ namespace Aws
       typedef std::future<DescribeNamespaceOutcome> DescribeNamespaceOutcomeCallable;
       typedef std::future<DescribeTemplateOutcome> DescribeTemplateOutcomeCallable;
       typedef std::future<DescribeTemplateAliasOutcome> DescribeTemplateAliasOutcomeCallable;
+      typedef std::future<DescribeTemplateDefinitionOutcome> DescribeTemplateDefinitionOutcomeCallable;
       typedef std::future<DescribeTemplatePermissionsOutcome> DescribeTemplatePermissionsOutcomeCallable;
       typedef std::future<DescribeThemeOutcome> DescribeThemeOutcomeCallable;
       typedef std::future<DescribeThemeAliasOutcome> DescribeThemeAliasOutcomeCallable;
@@ -602,8 +614,10 @@ namespace Aws
     typedef std::function<void(const QuickSightClient*, const Model::DescribeAccountSettingsRequest&, const Model::DescribeAccountSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountSettingsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeAccountSubscriptionRequest&, const Model::DescribeAccountSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountSubscriptionResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeAnalysisRequest&, const Model::DescribeAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAnalysisResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::DescribeAnalysisDefinitionRequest&, const Model::DescribeAnalysisDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAnalysisDefinitionResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeAnalysisPermissionsRequest&, const Model::DescribeAnalysisPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAnalysisPermissionsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeDashboardRequest&, const Model::DescribeDashboardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDashboardResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::DescribeDashboardDefinitionRequest&, const Model::DescribeDashboardDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDashboardDefinitionResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeDashboardPermissionsRequest&, const Model::DescribeDashboardPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDashboardPermissionsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeDataSetRequest&, const Model::DescribeDataSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDataSetResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeDataSetPermissionsRequest&, const Model::DescribeDataSetPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDataSetPermissionsResponseReceivedHandler;
@@ -620,6 +634,7 @@ namespace Aws
     typedef std::function<void(const QuickSightClient*, const Model::DescribeNamespaceRequest&, const Model::DescribeNamespaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNamespaceResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeTemplateRequest&, const Model::DescribeTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTemplateResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeTemplateAliasRequest&, const Model::DescribeTemplateAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTemplateAliasResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::DescribeTemplateDefinitionRequest&, const Model::DescribeTemplateDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTemplateDefinitionResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeTemplatePermissionsRequest&, const Model::DescribeTemplatePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTemplatePermissionsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeThemeRequest&, const Model::DescribeThemeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeThemeResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeThemeAliasRequest&, const Model::DescribeThemeAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeThemeAliasResponseReceivedHandler;

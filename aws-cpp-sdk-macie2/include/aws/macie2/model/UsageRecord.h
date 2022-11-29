@@ -92,37 +92,86 @@ namespace Model
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when the free trial
-     * started for the account.</p>
+     * of automated sensitive data discovery started for the account. If the account is
+     * a member account in an organization, this value is the same as the value for the
+     * organization's Amazon Macie administrator account.</p>
+     */
+    inline const Aws::Utils::DateTime& GetAutomatedDiscoveryFreeTrialStartDate() const{ return m_automatedDiscoveryFreeTrialStartDate; }
+
+    /**
+     * <p>The date and time, in UTC and extended ISO 8601 format, when the free trial
+     * of automated sensitive data discovery started for the account. If the account is
+     * a member account in an organization, this value is the same as the value for the
+     * organization's Amazon Macie administrator account.</p>
+     */
+    inline bool AutomatedDiscoveryFreeTrialStartDateHasBeenSet() const { return m_automatedDiscoveryFreeTrialStartDateHasBeenSet; }
+
+    /**
+     * <p>The date and time, in UTC and extended ISO 8601 format, when the free trial
+     * of automated sensitive data discovery started for the account. If the account is
+     * a member account in an organization, this value is the same as the value for the
+     * organization's Amazon Macie administrator account.</p>
+     */
+    inline void SetAutomatedDiscoveryFreeTrialStartDate(const Aws::Utils::DateTime& value) { m_automatedDiscoveryFreeTrialStartDateHasBeenSet = true; m_automatedDiscoveryFreeTrialStartDate = value; }
+
+    /**
+     * <p>The date and time, in UTC and extended ISO 8601 format, when the free trial
+     * of automated sensitive data discovery started for the account. If the account is
+     * a member account in an organization, this value is the same as the value for the
+     * organization's Amazon Macie administrator account.</p>
+     */
+    inline void SetAutomatedDiscoveryFreeTrialStartDate(Aws::Utils::DateTime&& value) { m_automatedDiscoveryFreeTrialStartDateHasBeenSet = true; m_automatedDiscoveryFreeTrialStartDate = std::move(value); }
+
+    /**
+     * <p>The date and time, in UTC and extended ISO 8601 format, when the free trial
+     * of automated sensitive data discovery started for the account. If the account is
+     * a member account in an organization, this value is the same as the value for the
+     * organization's Amazon Macie administrator account.</p>
+     */
+    inline UsageRecord& WithAutomatedDiscoveryFreeTrialStartDate(const Aws::Utils::DateTime& value) { SetAutomatedDiscoveryFreeTrialStartDate(value); return *this;}
+
+    /**
+     * <p>The date and time, in UTC and extended ISO 8601 format, when the free trial
+     * of automated sensitive data discovery started for the account. If the account is
+     * a member account in an organization, this value is the same as the value for the
+     * organization's Amazon Macie administrator account.</p>
+     */
+    inline UsageRecord& WithAutomatedDiscoveryFreeTrialStartDate(Aws::Utils::DateTime&& value) { SetAutomatedDiscoveryFreeTrialStartDate(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie
+     * free trial started for the account.</p>
      */
     inline const Aws::Utils::DateTime& GetFreeTrialStartDate() const{ return m_freeTrialStartDate; }
 
     /**
-     * <p>The date and time, in UTC and extended ISO 8601 format, when the free trial
-     * started for the account.</p>
+     * <p>The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie
+     * free trial started for the account.</p>
      */
     inline bool FreeTrialStartDateHasBeenSet() const { return m_freeTrialStartDateHasBeenSet; }
 
     /**
-     * <p>The date and time, in UTC and extended ISO 8601 format, when the free trial
-     * started for the account.</p>
+     * <p>The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie
+     * free trial started for the account.</p>
      */
     inline void SetFreeTrialStartDate(const Aws::Utils::DateTime& value) { m_freeTrialStartDateHasBeenSet = true; m_freeTrialStartDate = value; }
 
     /**
-     * <p>The date and time, in UTC and extended ISO 8601 format, when the free trial
-     * started for the account.</p>
+     * <p>The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie
+     * free trial started for the account.</p>
      */
     inline void SetFreeTrialStartDate(Aws::Utils::DateTime&& value) { m_freeTrialStartDateHasBeenSet = true; m_freeTrialStartDate = std::move(value); }
 
     /**
-     * <p>The date and time, in UTC and extended ISO 8601 format, when the free trial
-     * started for the account.</p>
+     * <p>The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie
+     * free trial started for the account.</p>
      */
     inline UsageRecord& WithFreeTrialStartDate(const Aws::Utils::DateTime& value) { SetFreeTrialStartDate(value); return *this;}
 
     /**
-     * <p>The date and time, in UTC and extended ISO 8601 format, when the free trial
-     * started for the account.</p>
+     * <p>The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie
+     * free trial started for the account.</p>
      */
     inline UsageRecord& WithFreeTrialStartDate(Aws::Utils::DateTime&& value) { SetFreeTrialStartDate(std::move(value)); return *this;}
 
@@ -187,6 +236,9 @@ namespace Model
 
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet = false;
+
+    Aws::Utils::DateTime m_automatedDiscoveryFreeTrialStartDate;
+    bool m_automatedDiscoveryFreeTrialStartDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_freeTrialStartDate;
     bool m_freeTrialStartDateHasBeenSet = false;

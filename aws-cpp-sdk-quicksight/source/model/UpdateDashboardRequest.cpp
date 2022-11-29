@@ -20,7 +20,8 @@ UpdateDashboardRequest::UpdateDashboardRequest() :
     m_parametersHasBeenSet(false),
     m_versionDescriptionHasBeenSet(false),
     m_dashboardPublishOptionsHasBeenSet(false),
-    m_themeArnHasBeenSet(false)
+    m_themeArnHasBeenSet(false),
+    m_definitionHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,12 @@ Aws::String UpdateDashboardRequest::SerializePayload() const
   if(m_themeArnHasBeenSet)
   {
    payload.WithString("ThemeArn", m_themeArn);
+
+  }
+
+  if(m_definitionHasBeenSet)
+  {
+   payload.WithObject("Definition", m_definition.Jsonize());
 
   }
 

@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The function couldn't mount the configured file system due to a permission or
-   * configuration issue.</p><p><h3>See Also:</h3>   <a
+   * <p>The Lambda function couldn't mount the configured file system due to a
+   * permission or configuration issue.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/EFSMountFailureException">AWS
    * API Reference</a></p>
    */

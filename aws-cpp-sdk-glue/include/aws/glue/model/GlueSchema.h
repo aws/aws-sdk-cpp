@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Specifies a user-defined schema when a schema cannot be determined by AWS
+   * <p>Specifies a user-defined schema when a schema cannot be determined by
    * Glue.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GlueSchema">AWS API
    * Reference</a></p>

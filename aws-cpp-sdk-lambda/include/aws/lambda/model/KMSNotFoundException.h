@@ -24,9 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Lambda was unable to decrypt the environment variables because the KMS key
-   * was not found. Check the function's KMS key settings. </p><p><h3>See Also:</h3> 
-   * <a
+   * <p>Lambda couldn't decrypt the environment variables because the KMS key was not
+   * found. Check the function's KMS key settings.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/KMSNotFoundException">AWS
    * API Reference</a></p>
    */

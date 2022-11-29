@@ -20,7 +20,10 @@ DescribeAddonVersionsRequest::DescribeAddonVersionsRequest() :
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
-    m_addonNameHasBeenSet(false)
+    m_addonNameHasBeenSet(false),
+    m_typesHasBeenSet(false),
+    m_publishersHasBeenSet(false),
+    m_ownersHasBeenSet(false)
 {
 }
 
@@ -58,6 +61,36 @@ void DescribeAddonVersionsRequest::AddQueryStringParameters(URI& uri) const
       ss << m_addonName;
       uri.AddQueryStringParameter("addonName", ss.str());
       ss.str("");
+    }
+
+    if(m_typesHasBeenSet)
+    {
+      for(const auto& item : m_types)
+      {
+        ss << item;
+        uri.AddQueryStringParameter("types", ss.str());
+        ss.str("");
+      }
+    }
+
+    if(m_publishersHasBeenSet)
+    {
+      for(const auto& item : m_publishers)
+      {
+        ss << item;
+        uri.AddQueryStringParameter("publishers", ss.str());
+        ss.str("");
+      }
+    }
+
+    if(m_ownersHasBeenSet)
+    {
+      for(const auto& item : m_owners)
+      {
+        ss << item;
+        uri.AddQueryStringParameter("owners", ss.str());
+        ss.str("");
+      }
     }
 
 }

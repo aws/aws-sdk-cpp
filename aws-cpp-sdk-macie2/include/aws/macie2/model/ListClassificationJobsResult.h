@@ -35,43 +35,43 @@ namespace Model
 
 
     /**
-     * <p>An array of objects, one for each job that meets the filter criteria
+     * <p>An array of objects, one for each job that matches the filter criteria
      * specified in the request.</p>
      */
     inline const Aws::Vector<JobSummary>& GetItems() const{ return m_items; }
 
     /**
-     * <p>An array of objects, one for each job that meets the filter criteria
+     * <p>An array of objects, one for each job that matches the filter criteria
      * specified in the request.</p>
      */
     inline void SetItems(const Aws::Vector<JobSummary>& value) { m_items = value; }
 
     /**
-     * <p>An array of objects, one for each job that meets the filter criteria
+     * <p>An array of objects, one for each job that matches the filter criteria
      * specified in the request.</p>
      */
     inline void SetItems(Aws::Vector<JobSummary>&& value) { m_items = std::move(value); }
 
     /**
-     * <p>An array of objects, one for each job that meets the filter criteria
+     * <p>An array of objects, one for each job that matches the filter criteria
      * specified in the request.</p>
      */
     inline ListClassificationJobsResult& WithItems(const Aws::Vector<JobSummary>& value) { SetItems(value); return *this;}
 
     /**
-     * <p>An array of objects, one for each job that meets the filter criteria
+     * <p>An array of objects, one for each job that matches the filter criteria
      * specified in the request.</p>
      */
     inline ListClassificationJobsResult& WithItems(Aws::Vector<JobSummary>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
-     * <p>An array of objects, one for each job that meets the filter criteria
+     * <p>An array of objects, one for each job that matches the filter criteria
      * specified in the request.</p>
      */
     inline ListClassificationJobsResult& AddItems(const JobSummary& value) { m_items.push_back(value); return *this; }
 
     /**
-     * <p>An array of objects, one for each job that meets the filter criteria
+     * <p>An array of objects, one for each job that matches the filter criteria
      * specified in the request.</p>
      */
     inline ListClassificationJobsResult& AddItems(JobSummary&& value) { m_items.push_back(std::move(value)); return *this; }

@@ -20,6 +20,7 @@ namespace Model
 
 UsageRecord::UsageRecord() : 
     m_accountIdHasBeenSet(false),
+    m_automatedDiscoveryFreeTrialStartDateHasBeenSet(false),
     m_freeTrialStartDateHasBeenSet(false),
     m_usageHasBeenSet(false)
 {
@@ -27,6 +28,7 @@ UsageRecord::UsageRecord() :
 
 UsageRecord::UsageRecord(JsonView jsonValue) : 
     m_accountIdHasBeenSet(false),
+    m_automatedDiscoveryFreeTrialStartDateHasBeenSet(false),
     m_freeTrialStartDateHasBeenSet(false),
     m_usageHasBeenSet(false)
 {
@@ -40,6 +42,13 @@ UsageRecord& UsageRecord::operator =(JsonView jsonValue)
     m_accountId = jsonValue.GetString("accountId");
 
     m_accountIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("automatedDiscoveryFreeTrialStartDate"))
+  {
+    m_automatedDiscoveryFreeTrialStartDate = jsonValue.GetString("automatedDiscoveryFreeTrialStartDate");
+
+    m_automatedDiscoveryFreeTrialStartDateHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("freeTrialStartDate"))
@@ -70,6 +79,11 @@ JsonValue UsageRecord::Jsonize() const
   {
    payload.WithString("accountId", m_accountId);
 
+  }
+
+  if(m_automatedDiscoveryFreeTrialStartDateHasBeenSet)
+  {
+   payload.WithString("automatedDiscoveryFreeTrialStartDate", m_automatedDiscoveryFreeTrialStartDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_freeTrialStartDateHasBeenSet)

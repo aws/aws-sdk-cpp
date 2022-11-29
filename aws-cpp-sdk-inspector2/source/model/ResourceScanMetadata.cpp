@@ -21,14 +21,16 @@ namespace Model
 ResourceScanMetadata::ResourceScanMetadata() : 
     m_ec2HasBeenSet(false),
     m_ecrImageHasBeenSet(false),
-    m_ecrRepositoryHasBeenSet(false)
+    m_ecrRepositoryHasBeenSet(false),
+    m_lambdaFunctionHasBeenSet(false)
 {
 }
 
 ResourceScanMetadata::ResourceScanMetadata(JsonView jsonValue) : 
     m_ec2HasBeenSet(false),
     m_ecrImageHasBeenSet(false),
-    m_ecrRepositoryHasBeenSet(false)
+    m_ecrRepositoryHasBeenSet(false),
+    m_lambdaFunctionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +58,13 @@ ResourceScanMetadata& ResourceScanMetadata::operator =(JsonView jsonValue)
     m_ecrRepositoryHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("lambdaFunction"))
+  {
+    m_lambdaFunction = jsonValue.GetObject("lambdaFunction");
+
+    m_lambdaFunctionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +87,12 @@ JsonValue ResourceScanMetadata::Jsonize() const
   if(m_ecrRepositoryHasBeenSet)
   {
    payload.WithObject("ecrRepository", m_ecrRepository.Jsonize());
+
+  }
+
+  if(m_lambdaFunctionHasBeenSet)
+  {
+   payload.WithObject("lambdaFunction", m_lambdaFunction.Jsonize());
 
   }
 

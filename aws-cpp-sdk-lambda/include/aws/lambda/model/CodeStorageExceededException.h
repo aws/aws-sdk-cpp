@@ -24,9 +24,10 @@ namespace Model
 {
 
   /**
-   * <p>You have exceeded your maximum total code size per account. <a
-   * href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a>
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>Your Amazon Web Services account has exceeded its maximum total code size.
+   * For more information, see <a
+   * href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
+   * quotas</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CodeStorageExceededException">AWS
    * API Reference</a></p>
    */

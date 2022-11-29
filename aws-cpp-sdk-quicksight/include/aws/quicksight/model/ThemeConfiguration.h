@@ -8,6 +8,7 @@
 #include <aws/quicksight/model/DataColorPalette.h>
 #include <aws/quicksight/model/UIColorPalette.h>
 #include <aws/quicksight/model/SheetStyle.h>
+#include <aws/quicksight/model/Typography.h>
 #include <utility>
 
 namespace Aws
@@ -138,6 +139,25 @@ namespace Model
      */
     inline ThemeConfiguration& WithSheet(SheetStyle&& value) { SetSheet(std::move(value)); return *this;}
 
+
+    
+    inline const Typography& GetTypography() const{ return m_typography; }
+
+    
+    inline bool TypographyHasBeenSet() const { return m_typographyHasBeenSet; }
+
+    
+    inline void SetTypography(const Typography& value) { m_typographyHasBeenSet = true; m_typography = value; }
+
+    
+    inline void SetTypography(Typography&& value) { m_typographyHasBeenSet = true; m_typography = std::move(value); }
+
+    
+    inline ThemeConfiguration& WithTypography(const Typography& value) { SetTypography(value); return *this;}
+
+    
+    inline ThemeConfiguration& WithTypography(Typography&& value) { SetTypography(std::move(value)); return *this;}
+
   private:
 
     DataColorPalette m_dataColorPalette;
@@ -148,6 +168,9 @@ namespace Model
 
     SheetStyle m_sheet;
     bool m_sheetHasBeenSet = false;
+
+    Typography m_typography;
+    bool m_typographyHasBeenSet = false;
   };
 
 } // namespace Model

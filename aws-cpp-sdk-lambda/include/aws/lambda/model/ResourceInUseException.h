@@ -25,9 +25,8 @@ namespace Model
 
   /**
    * <p>The operation conflicts with the resource's availability. For example, you
-   * attempted to update an EventSource Mapping in CREATING, or tried to delete a
-   * EventSource mapping currently in the UPDATING state.</p><p><h3>See Also:</h3>  
-   * <a
+   * tried to update an event source mapping in the CREATING state, or you tried to
+   * delete an event source mapping currently UPDATING.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ResourceInUseException">AWS
    * API Reference</a></p>
    */

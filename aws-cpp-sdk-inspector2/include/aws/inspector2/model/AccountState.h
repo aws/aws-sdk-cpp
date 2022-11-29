@@ -27,7 +27,7 @@ namespace Model
 
   /**
    * <p>An object with details the status of an Amazon Web Services account within
-   * your Amazon Inspector environment</p><p><h3>See Also:</h3>   <a
+   * your Amazon Inspector environment.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/AccountState">AWS
    * API Reference</a></p>
    */

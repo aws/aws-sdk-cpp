@@ -23,6 +23,9 @@ CoverageFilterCriteria::CoverageFilterCriteria() :
     m_ec2InstanceTagsHasBeenSet(false),
     m_ecrImageTagsHasBeenSet(false),
     m_ecrRepositoryNameHasBeenSet(false),
+    m_lambdaFunctionNameHasBeenSet(false),
+    m_lambdaFunctionRuntimeHasBeenSet(false),
+    m_lambdaFunctionTagsHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
     m_scanStatusCodeHasBeenSet(false),
@@ -36,6 +39,9 @@ CoverageFilterCriteria::CoverageFilterCriteria(JsonView jsonValue) :
     m_ec2InstanceTagsHasBeenSet(false),
     m_ecrImageTagsHasBeenSet(false),
     m_ecrRepositoryNameHasBeenSet(false),
+    m_lambdaFunctionNameHasBeenSet(false),
+    m_lambdaFunctionRuntimeHasBeenSet(false),
+    m_lambdaFunctionTagsHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
     m_scanStatusCodeHasBeenSet(false),
@@ -85,6 +91,36 @@ CoverageFilterCriteria& CoverageFilterCriteria::operator =(JsonView jsonValue)
       m_ecrRepositoryName.push_back(ecrRepositoryNameJsonList[ecrRepositoryNameIndex].AsObject());
     }
     m_ecrRepositoryNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("lambdaFunctionName"))
+  {
+    Aws::Utils::Array<JsonView> lambdaFunctionNameJsonList = jsonValue.GetArray("lambdaFunctionName");
+    for(unsigned lambdaFunctionNameIndex = 0; lambdaFunctionNameIndex < lambdaFunctionNameJsonList.GetLength(); ++lambdaFunctionNameIndex)
+    {
+      m_lambdaFunctionName.push_back(lambdaFunctionNameJsonList[lambdaFunctionNameIndex].AsObject());
+    }
+    m_lambdaFunctionNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("lambdaFunctionRuntime"))
+  {
+    Aws::Utils::Array<JsonView> lambdaFunctionRuntimeJsonList = jsonValue.GetArray("lambdaFunctionRuntime");
+    for(unsigned lambdaFunctionRuntimeIndex = 0; lambdaFunctionRuntimeIndex < lambdaFunctionRuntimeJsonList.GetLength(); ++lambdaFunctionRuntimeIndex)
+    {
+      m_lambdaFunctionRuntime.push_back(lambdaFunctionRuntimeJsonList[lambdaFunctionRuntimeIndex].AsObject());
+    }
+    m_lambdaFunctionRuntimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("lambdaFunctionTags"))
+  {
+    Aws::Utils::Array<JsonView> lambdaFunctionTagsJsonList = jsonValue.GetArray("lambdaFunctionTags");
+    for(unsigned lambdaFunctionTagsIndex = 0; lambdaFunctionTagsIndex < lambdaFunctionTagsJsonList.GetLength(); ++lambdaFunctionTagsIndex)
+    {
+      m_lambdaFunctionTags.push_back(lambdaFunctionTagsJsonList[lambdaFunctionTagsIndex].AsObject());
+    }
+    m_lambdaFunctionTagsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("resourceId"))
@@ -185,6 +221,39 @@ JsonValue CoverageFilterCriteria::Jsonize() const
      ecrRepositoryNameJsonList[ecrRepositoryNameIndex].AsObject(m_ecrRepositoryName[ecrRepositoryNameIndex].Jsonize());
    }
    payload.WithArray("ecrRepositoryName", std::move(ecrRepositoryNameJsonList));
+
+  }
+
+  if(m_lambdaFunctionNameHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> lambdaFunctionNameJsonList(m_lambdaFunctionName.size());
+   for(unsigned lambdaFunctionNameIndex = 0; lambdaFunctionNameIndex < lambdaFunctionNameJsonList.GetLength(); ++lambdaFunctionNameIndex)
+   {
+     lambdaFunctionNameJsonList[lambdaFunctionNameIndex].AsObject(m_lambdaFunctionName[lambdaFunctionNameIndex].Jsonize());
+   }
+   payload.WithArray("lambdaFunctionName", std::move(lambdaFunctionNameJsonList));
+
+  }
+
+  if(m_lambdaFunctionRuntimeHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> lambdaFunctionRuntimeJsonList(m_lambdaFunctionRuntime.size());
+   for(unsigned lambdaFunctionRuntimeIndex = 0; lambdaFunctionRuntimeIndex < lambdaFunctionRuntimeJsonList.GetLength(); ++lambdaFunctionRuntimeIndex)
+   {
+     lambdaFunctionRuntimeJsonList[lambdaFunctionRuntimeIndex].AsObject(m_lambdaFunctionRuntime[lambdaFunctionRuntimeIndex].Jsonize());
+   }
+   payload.WithArray("lambdaFunctionRuntime", std::move(lambdaFunctionRuntimeJsonList));
+
+  }
+
+  if(m_lambdaFunctionTagsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> lambdaFunctionTagsJsonList(m_lambdaFunctionTags.size());
+   for(unsigned lambdaFunctionTagsIndex = 0; lambdaFunctionTagsIndex < lambdaFunctionTagsJsonList.GetLength(); ++lambdaFunctionTagsIndex)
+   {
+     lambdaFunctionTagsJsonList[lambdaFunctionTagsIndex].AsObject(m_lambdaFunctionTags[lambdaFunctionTagsIndex].Jsonize());
+   }
+   payload.WithArray("lambdaFunctionTags", std::move(lambdaFunctionTagsJsonList));
 
   }
 

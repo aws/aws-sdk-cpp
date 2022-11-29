@@ -31,6 +31,7 @@
 #include <aws/license-manager-user-subscriptions/model/RegisterIdentityProviderRequest.h>
 #include <aws/license-manager-user-subscriptions/model/StartProductSubscriptionRequest.h>
 #include <aws/license-manager-user-subscriptions/model/StopProductSubscriptionRequest.h>
+#include <aws/license-manager-user-subscriptions/model/UpdateIdentityProviderSettingsRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -406,6 +407,31 @@ void LicenseManagerUserSubscriptionsClient::StopProductSubscriptionAsync(const S
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, StopProductSubscription(request), context);
+    } );
+}
+
+UpdateIdentityProviderSettingsOutcome LicenseManagerUserSubscriptionsClient::UpdateIdentityProviderSettings(const UpdateIdentityProviderSettingsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateIdentityProviderSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateIdentityProviderSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/identity-provider/UpdateIdentityProviderSettings");
+  return UpdateIdentityProviderSettingsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateIdentityProviderSettingsOutcomeCallable LicenseManagerUserSubscriptionsClient::UpdateIdentityProviderSettingsCallable(const UpdateIdentityProviderSettingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateIdentityProviderSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateIdentityProviderSettings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LicenseManagerUserSubscriptionsClient::UpdateIdentityProviderSettingsAsync(const UpdateIdentityProviderSettingsRequest& request, const UpdateIdentityProviderSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateIdentityProviderSettings(request), context);
     } );
 }
 

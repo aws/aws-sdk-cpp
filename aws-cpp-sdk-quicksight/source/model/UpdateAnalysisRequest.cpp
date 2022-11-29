@@ -18,7 +18,8 @@ UpdateAnalysisRequest::UpdateAnalysisRequest() :
     m_nameHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_sourceEntityHasBeenSet(false),
-    m_themeArnHasBeenSet(false)
+    m_themeArnHasBeenSet(false),
+    m_definitionHasBeenSet(false)
 {
 }
 
@@ -47,6 +48,12 @@ Aws::String UpdateAnalysisRequest::SerializePayload() const
   if(m_themeArnHasBeenSet)
   {
    payload.WithString("ThemeArn", m_themeArn);
+
+  }
+
+  if(m_definitionHasBeenSet)
+  {
+   payload.WithObject("Definition", m_definition.Jsonize());
 
   }
 

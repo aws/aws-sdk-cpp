@@ -20,13 +20,15 @@ namespace Model
 
 EvaluationResultIdentifier::EvaluationResultIdentifier() : 
     m_evaluationResultQualifierHasBeenSet(false),
-    m_orderingTimestampHasBeenSet(false)
+    m_orderingTimestampHasBeenSet(false),
+    m_resourceEvaluationIdHasBeenSet(false)
 {
 }
 
 EvaluationResultIdentifier::EvaluationResultIdentifier(JsonView jsonValue) : 
     m_evaluationResultQualifierHasBeenSet(false),
-    m_orderingTimestampHasBeenSet(false)
+    m_orderingTimestampHasBeenSet(false),
+    m_resourceEvaluationIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ EvaluationResultIdentifier& EvaluationResultIdentifier::operator =(JsonView json
     m_orderingTimestampHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ResourceEvaluationId"))
+  {
+    m_resourceEvaluationId = jsonValue.GetString("ResourceEvaluationId");
+
+    m_resourceEvaluationIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue EvaluationResultIdentifier::Jsonize() const
   if(m_orderingTimestampHasBeenSet)
   {
    payload.WithDouble("OrderingTimestamp", m_orderingTimestamp.SecondsWithMSPrecision());
+  }
+
+  if(m_resourceEvaluationIdHasBeenSet)
+  {
+   payload.WithString("ResourceEvaluationId", m_resourceEvaluationId);
+
   }
 
   return payload;

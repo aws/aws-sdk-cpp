@@ -166,66 +166,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the recommendation preference to delete.</p> <p>Enhanced
-     * infrastructure metrics (<code>EnhancedInfrastructureMetrics</code>) is the only
-     * feature that can be activated through preferences. Therefore, it is also the
-     * only recommendation preference that can be deleted.</p>
+     * <p>The name of the recommendation preference to delete.</p>
      */
     inline const Aws::Vector<RecommendationPreferenceName>& GetRecommendationPreferenceNames() const{ return m_recommendationPreferenceNames; }
 
     /**
-     * <p>The name of the recommendation preference to delete.</p> <p>Enhanced
-     * infrastructure metrics (<code>EnhancedInfrastructureMetrics</code>) is the only
-     * feature that can be activated through preferences. Therefore, it is also the
-     * only recommendation preference that can be deleted.</p>
+     * <p>The name of the recommendation preference to delete.</p>
      */
     inline bool RecommendationPreferenceNamesHasBeenSet() const { return m_recommendationPreferenceNamesHasBeenSet; }
 
     /**
-     * <p>The name of the recommendation preference to delete.</p> <p>Enhanced
-     * infrastructure metrics (<code>EnhancedInfrastructureMetrics</code>) is the only
-     * feature that can be activated through preferences. Therefore, it is also the
-     * only recommendation preference that can be deleted.</p>
+     * <p>The name of the recommendation preference to delete.</p>
      */
     inline void SetRecommendationPreferenceNames(const Aws::Vector<RecommendationPreferenceName>& value) { m_recommendationPreferenceNamesHasBeenSet = true; m_recommendationPreferenceNames = value; }
 
     /**
-     * <p>The name of the recommendation preference to delete.</p> <p>Enhanced
-     * infrastructure metrics (<code>EnhancedInfrastructureMetrics</code>) is the only
-     * feature that can be activated through preferences. Therefore, it is also the
-     * only recommendation preference that can be deleted.</p>
+     * <p>The name of the recommendation preference to delete.</p>
      */
     inline void SetRecommendationPreferenceNames(Aws::Vector<RecommendationPreferenceName>&& value) { m_recommendationPreferenceNamesHasBeenSet = true; m_recommendationPreferenceNames = std::move(value); }
 
     /**
-     * <p>The name of the recommendation preference to delete.</p> <p>Enhanced
-     * infrastructure metrics (<code>EnhancedInfrastructureMetrics</code>) is the only
-     * feature that can be activated through preferences. Therefore, it is also the
-     * only recommendation preference that can be deleted.</p>
+     * <p>The name of the recommendation preference to delete.</p>
      */
     inline DeleteRecommendationPreferencesRequest& WithRecommendationPreferenceNames(const Aws::Vector<RecommendationPreferenceName>& value) { SetRecommendationPreferenceNames(value); return *this;}
 
     /**
-     * <p>The name of the recommendation preference to delete.</p> <p>Enhanced
-     * infrastructure metrics (<code>EnhancedInfrastructureMetrics</code>) is the only
-     * feature that can be activated through preferences. Therefore, it is also the
-     * only recommendation preference that can be deleted.</p>
+     * <p>The name of the recommendation preference to delete.</p>
      */
     inline DeleteRecommendationPreferencesRequest& WithRecommendationPreferenceNames(Aws::Vector<RecommendationPreferenceName>&& value) { SetRecommendationPreferenceNames(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the recommendation preference to delete.</p> <p>Enhanced
-     * infrastructure metrics (<code>EnhancedInfrastructureMetrics</code>) is the only
-     * feature that can be activated through preferences. Therefore, it is also the
-     * only recommendation preference that can be deleted.</p>
+     * <p>The name of the recommendation preference to delete.</p>
      */
     inline DeleteRecommendationPreferencesRequest& AddRecommendationPreferenceNames(const RecommendationPreferenceName& value) { m_recommendationPreferenceNamesHasBeenSet = true; m_recommendationPreferenceNames.push_back(value); return *this; }
 
     /**
-     * <p>The name of the recommendation preference to delete.</p> <p>Enhanced
-     * infrastructure metrics (<code>EnhancedInfrastructureMetrics</code>) is the only
-     * feature that can be activated through preferences. Therefore, it is also the
-     * only recommendation preference that can be deleted.</p>
+     * <p>The name of the recommendation preference to delete.</p>
      */
     inline DeleteRecommendationPreferencesRequest& AddRecommendationPreferenceNames(RecommendationPreferenceName&& value) { m_recommendationPreferenceNamesHasBeenSet = true; m_recommendationPreferenceNames.push_back(std::move(value)); return *this; }
 

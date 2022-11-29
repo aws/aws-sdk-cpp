@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int SENSITIVE_DATA_DISCOVERY_JOB_HASH = HashingUtils::HashString("SENSITIVE_DATA_DISCOVERY_JOB");
+        static const int AUTOMATED_SENSITIVE_DATA_DISCOVERY_HASH = HashingUtils::HashString("AUTOMATED_SENSITIVE_DATA_DISCOVERY");
 
 
         OriginType GetOriginTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == SENSITIVE_DATA_DISCOVERY_JOB_HASH)
           {
             return OriginType::SENSITIVE_DATA_DISCOVERY_JOB;
+          }
+          else if (hashCode == AUTOMATED_SENSITIVE_DATA_DISCOVERY_HASH)
+          {
+            return OriginType::AUTOMATED_SENSITIVE_DATA_DISCOVERY;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case OriginType::SENSITIVE_DATA_DISCOVERY_JOB:
             return "SENSITIVE_DATA_DISCOVERY_JOB";
+          case OriginType::AUTOMATED_SENSITIVE_DATA_DISCOVERY:
+            return "AUTOMATED_SENSITIVE_DATA_DISCOVERY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

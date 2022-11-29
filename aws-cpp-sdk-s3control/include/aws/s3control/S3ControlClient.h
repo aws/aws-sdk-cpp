@@ -1268,6 +1268,31 @@ namespace S3Control
         virtual void GetMultiRegionAccessPointPolicyStatusAsync(const Model::GetMultiRegionAccessPointPolicyStatusRequest& request, const GetMultiRegionAccessPointPolicyStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns the routing configuration for a Multi-Region Access Point, indicating
+         * which Regions are active or passive.</p> <p>To obtain routing control changes
+         * and failover requests, use the Amazon S3 failover control infrastructure
+         * endpoints in these five Amazon Web Services Regions:</p> <ul> <li> <p>
+         * <code>us-east-1</code> </p> </li> <li> <p> <code>us-west-2</code> </p> </li>
+         * <li> <p> <code>ap-southeast-2</code> </p> </li> <li> <p>
+         * <code>ap-northeast-1</code> </p> </li> <li> <p> <code>eu-west-1</code> </p>
+         * </li> </ul>  <p>Your Amazon S3 bucket does not need to be in these five
+         * Regions.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetMultiRegionAccessPointRoutes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetMultiRegionAccessPointRoutesOutcome GetMultiRegionAccessPointRoutes(const Model::GetMultiRegionAccessPointRoutesRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetMultiRegionAccessPointRoutes that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetMultiRegionAccessPointRoutesOutcomeCallable GetMultiRegionAccessPointRoutesCallable(const Model::GetMultiRegionAccessPointRoutesRequest& request) const;
+
+        /**
+         * An Async wrapper for GetMultiRegionAccessPointRoutes that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetMultiRegionAccessPointRoutesAsync(const Model::GetMultiRegionAccessPointRoutesRequest& request, const GetMultiRegionAccessPointRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves the <code>PublicAccessBlock</code> configuration for an Amazon Web
          * Services account. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
@@ -1985,6 +2010,41 @@ namespace S3Control
          * An Async wrapper for PutStorageLensConfigurationTagging that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutStorageLensConfigurationTaggingAsync(const Model::PutStorageLensConfigurationTaggingRequest& request, const PutStorageLensConfigurationTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Submits an updated route configuration for a Multi-Region Access Point. This
+         * API operation updates the routing status for the specified Regions from active
+         * to passive, or from passive to active. A value of <code>0</code> indicates a
+         * passive status, which means that traffic won't be routed to the specified
+         * Region. A value of <code>100</code> indicates an active status, which means that
+         * traffic will be routed to the specified Region. At least one Region must be
+         * active at all times.</p> <p>When the routing configuration is changed, any
+         * in-progress operations (uploads, copies, deletes, and so on) to formerly active
+         * Regions will continue to run to their final completion state (success or
+         * failure). The routing configurations of any Regions that aren’t specified remain
+         * unchanged.</p>  <p>Updated routing configurations might not be immediately
+         * applied. It can take up to 2 minutes for your changes to take effect.</p>
+         *  <p>To submit routing control changes and failover requests, use the
+         * Amazon S3 failover control infrastructure endpoints in these five Amazon Web
+         * Services Regions:</p> <ul> <li> <p> <code>us-east-1</code> </p> </li> <li> <p>
+         * <code>us-west-2</code> </p> </li> <li> <p> <code>ap-southeast-2</code> </p>
+         * </li> <li> <p> <code>ap-northeast-1</code> </p> </li> <li> <p>
+         * <code>eu-west-1</code> </p> </li> </ul>  <p>Your Amazon S3 bucket does not
+         * need to be in these five Regions.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/SubmitMultiRegionAccessPointRoutes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SubmitMultiRegionAccessPointRoutesOutcome SubmitMultiRegionAccessPointRoutes(const Model::SubmitMultiRegionAccessPointRoutesRequest& request) const;
+
+        /**
+         * A Callable wrapper for SubmitMultiRegionAccessPointRoutes that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SubmitMultiRegionAccessPointRoutesOutcomeCallable SubmitMultiRegionAccessPointRoutesCallable(const Model::SubmitMultiRegionAccessPointRoutesRequest& request) const;
+
+        /**
+         * An Async wrapper for SubmitMultiRegionAccessPointRoutes that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SubmitMultiRegionAccessPointRoutesAsync(const Model::SubmitMultiRegionAccessPointRoutesRequest& request, const SubmitMultiRegionAccessPointRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an existing S3 Batch Operations job's priority. For more information,

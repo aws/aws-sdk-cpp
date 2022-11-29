@@ -34,43 +34,43 @@ namespace Model
 
 
     /**
-     * <p>An array of objects, one for each group of findings that meet the filter
+     * <p>An array of objects, one for each group of findings that matches the filter
      * criteria specified in the request.</p>
      */
     inline const Aws::Vector<GroupCount>& GetCountsByGroup() const{ return m_countsByGroup; }
 
     /**
-     * <p>An array of objects, one for each group of findings that meet the filter
+     * <p>An array of objects, one for each group of findings that matches the filter
      * criteria specified in the request.</p>
      */
     inline void SetCountsByGroup(const Aws::Vector<GroupCount>& value) { m_countsByGroup = value; }
 
     /**
-     * <p>An array of objects, one for each group of findings that meet the filter
+     * <p>An array of objects, one for each group of findings that matches the filter
      * criteria specified in the request.</p>
      */
     inline void SetCountsByGroup(Aws::Vector<GroupCount>&& value) { m_countsByGroup = std::move(value); }
 
     /**
-     * <p>An array of objects, one for each group of findings that meet the filter
+     * <p>An array of objects, one for each group of findings that matches the filter
      * criteria specified in the request.</p>
      */
     inline GetFindingStatisticsResult& WithCountsByGroup(const Aws::Vector<GroupCount>& value) { SetCountsByGroup(value); return *this;}
 
     /**
-     * <p>An array of objects, one for each group of findings that meet the filter
+     * <p>An array of objects, one for each group of findings that matches the filter
      * criteria specified in the request.</p>
      */
     inline GetFindingStatisticsResult& WithCountsByGroup(Aws::Vector<GroupCount>&& value) { SetCountsByGroup(std::move(value)); return *this;}
 
     /**
-     * <p>An array of objects, one for each group of findings that meet the filter
+     * <p>An array of objects, one for each group of findings that matches the filter
      * criteria specified in the request.</p>
      */
     inline GetFindingStatisticsResult& AddCountsByGroup(const GroupCount& value) { m_countsByGroup.push_back(value); return *this; }
 
     /**
-     * <p>An array of objects, one for each group of findings that meet the filter
+     * <p>An array of objects, one for each group of findings that matches the filter
      * criteria specified in the request.</p>
      */
     inline GetFindingStatisticsResult& AddCountsByGroup(GroupCount&& value) { m_countsByGroup.push_back(std::move(value)); return *this; }

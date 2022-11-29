@@ -48,7 +48,8 @@ namespace Model
      * </li> <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
      * <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
      * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the
-     * cluster.</p> </li> </ul>
+     * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> - The ARN of the broker.</p> </li>
+     * </ul>
      */
     inline const Aws::String& GetEventSourceArn() const{ return m_eventSourceArn; }
 
@@ -58,7 +59,8 @@ namespace Model
      * </li> <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
      * <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
      * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the
-     * cluster.</p> </li> </ul>
+     * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> - The ARN of the broker.</p> </li>
+     * </ul>
      */
     inline bool EventSourceArnHasBeenSet() const { return m_eventSourceArnHasBeenSet; }
 
@@ -68,7 +70,8 @@ namespace Model
      * </li> <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
      * <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
      * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the
-     * cluster.</p> </li> </ul>
+     * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> - The ARN of the broker.</p> </li>
+     * </ul>
      */
     inline void SetEventSourceArn(const Aws::String& value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn = value; }
 
@@ -78,7 +81,8 @@ namespace Model
      * </li> <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
      * <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
      * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the
-     * cluster.</p> </li> </ul>
+     * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> - The ARN of the broker.</p> </li>
+     * </ul>
      */
     inline void SetEventSourceArn(Aws::String&& value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn = std::move(value); }
 
@@ -88,7 +92,8 @@ namespace Model
      * </li> <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
      * <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
      * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the
-     * cluster.</p> </li> </ul>
+     * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> - The ARN of the broker.</p> </li>
+     * </ul>
      */
     inline void SetEventSourceArn(const char* value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn.assign(value); }
 
@@ -98,7 +103,8 @@ namespace Model
      * </li> <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
      * <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
      * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the
-     * cluster.</p> </li> </ul>
+     * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> - The ARN of the broker.</p> </li>
+     * </ul>
      */
     inline CreateEventSourceMappingRequest& WithEventSourceArn(const Aws::String& value) { SetEventSourceArn(value); return *this;}
 
@@ -108,7 +114,8 @@ namespace Model
      * </li> <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
      * <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
      * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the
-     * cluster.</p> </li> </ul>
+     * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> - The ARN of the broker.</p> </li>
+     * </ul>
      */
     inline CreateEventSourceMappingRequest& WithEventSourceArn(Aws::String&& value) { SetEventSourceArn(std::move(value)); return *this;}
 
@@ -118,7 +125,8 @@ namespace Model
      * </li> <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
      * <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
      * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the
-     * cluster.</p> </li> </ul>
+     * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> - The ARN of the broker.</p> </li>
+     * </ul>
      */
     inline CreateEventSourceMappingRequest& WithEventSourceArn(const char* value) { SetEventSourceArn(value); return *this;}
 
@@ -323,48 +331,48 @@ namespace Model
 
 
     /**
-     * <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-     * determine whether Lambda should process an event. For more information, see <a
+     * <p>An object that defines the filter criteria that determine whether Lambda
+     * should process an event. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
      * event filtering</a>.</p>
      */
     inline const FilterCriteria& GetFilterCriteria() const{ return m_filterCriteria; }
 
     /**
-     * <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-     * determine whether Lambda should process an event. For more information, see <a
+     * <p>An object that defines the filter criteria that determine whether Lambda
+     * should process an event. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
      * event filtering</a>.</p>
      */
     inline bool FilterCriteriaHasBeenSet() const { return m_filterCriteriaHasBeenSet; }
 
     /**
-     * <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-     * determine whether Lambda should process an event. For more information, see <a
+     * <p>An object that defines the filter criteria that determine whether Lambda
+     * should process an event. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
      * event filtering</a>.</p>
      */
     inline void SetFilterCriteria(const FilterCriteria& value) { m_filterCriteriaHasBeenSet = true; m_filterCriteria = value; }
 
     /**
-     * <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-     * determine whether Lambda should process an event. For more information, see <a
+     * <p>An object that defines the filter criteria that determine whether Lambda
+     * should process an event. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
      * event filtering</a>.</p>
      */
     inline void SetFilterCriteria(FilterCriteria&& value) { m_filterCriteriaHasBeenSet = true; m_filterCriteria = std::move(value); }
 
     /**
-     * <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-     * determine whether Lambda should process an event. For more information, see <a
+     * <p>An object that defines the filter criteria that determine whether Lambda
+     * should process an event. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
      * event filtering</a>.</p>
      */
     inline CreateEventSourceMappingRequest& WithFilterCriteria(const FilterCriteria& value) { SetFilterCriteria(value); return *this;}
 
     /**
-     * <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-     * determine whether Lambda should process an event. For more information, see <a
+     * <p>An object that defines the filter criteria that determine whether Lambda
+     * should process an event. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
      * event filtering</a>.</p>
      */

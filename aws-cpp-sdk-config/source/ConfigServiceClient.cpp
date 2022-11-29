@@ -80,10 +80,12 @@
 #include <aws/config/model/GetOrganizationConformancePackDetailedStatusRequest.h>
 #include <aws/config/model/GetOrganizationCustomRulePolicyRequest.h>
 #include <aws/config/model/GetResourceConfigHistoryRequest.h>
+#include <aws/config/model/GetResourceEvaluationSummaryRequest.h>
 #include <aws/config/model/GetStoredQueryRequest.h>
 #include <aws/config/model/ListAggregateDiscoveredResourcesRequest.h>
 #include <aws/config/model/ListConformancePackComplianceScoresRequest.h>
 #include <aws/config/model/ListDiscoveredResourcesRequest.h>
+#include <aws/config/model/ListResourceEvaluationsRequest.h>
 #include <aws/config/model/ListStoredQueriesRequest.h>
 #include <aws/config/model/ListTagsForResourceRequest.h>
 #include <aws/config/model/PutAggregationAuthorizationRequest.h>
@@ -106,6 +108,7 @@
 #include <aws/config/model/StartConfigRulesEvaluationRequest.h>
 #include <aws/config/model/StartConfigurationRecorderRequest.h>
 #include <aws/config/model/StartRemediationExecutionRequest.h>
+#include <aws/config/model/StartResourceEvaluationRequest.h>
 #include <aws/config/model/StopConfigurationRecorderRequest.h>
 #include <aws/config/model/TagResourceRequest.h>
 #include <aws/config/model/UntagResourceRequest.h>
@@ -1678,6 +1681,30 @@ void ConfigServiceClient::GetResourceConfigHistoryAsync(const GetResourceConfigH
     } );
 }
 
+GetResourceEvaluationSummaryOutcome ConfigServiceClient::GetResourceEvaluationSummary(const GetResourceEvaluationSummaryRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetResourceEvaluationSummary, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetResourceEvaluationSummary, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetResourceEvaluationSummaryOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetResourceEvaluationSummaryOutcomeCallable ConfigServiceClient::GetResourceEvaluationSummaryCallable(const GetResourceEvaluationSummaryRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetResourceEvaluationSummaryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetResourceEvaluationSummary(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConfigServiceClient::GetResourceEvaluationSummaryAsync(const GetResourceEvaluationSummaryRequest& request, const GetResourceEvaluationSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetResourceEvaluationSummary(request), context);
+    } );
+}
+
 GetStoredQueryOutcome ConfigServiceClient::GetStoredQuery(const GetStoredQueryRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetStoredQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1771,6 +1798,30 @@ void ConfigServiceClient::ListDiscoveredResourcesAsync(const ListDiscoveredResou
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, ListDiscoveredResources(request), context);
+    } );
+}
+
+ListResourceEvaluationsOutcome ConfigServiceClient::ListResourceEvaluations(const ListResourceEvaluationsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListResourceEvaluations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListResourceEvaluations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListResourceEvaluationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListResourceEvaluationsOutcomeCallable ConfigServiceClient::ListResourceEvaluationsCallable(const ListResourceEvaluationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListResourceEvaluationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListResourceEvaluations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConfigServiceClient::ListResourceEvaluationsAsync(const ListResourceEvaluationsRequest& request, const ListResourceEvaluationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListResourceEvaluations(request), context);
     } );
 }
 
@@ -2299,6 +2350,30 @@ void ConfigServiceClient::StartRemediationExecutionAsync(const StartRemediationE
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, StartRemediationExecution(request), context);
+    } );
+}
+
+StartResourceEvaluationOutcome ConfigServiceClient::StartResourceEvaluation(const StartResourceEvaluationRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartResourceEvaluation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartResourceEvaluation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return StartResourceEvaluationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartResourceEvaluationOutcomeCallable ConfigServiceClient::StartResourceEvaluationCallable(const StartResourceEvaluationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartResourceEvaluationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartResourceEvaluation(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConfigServiceClient::StartResourceEvaluationAsync(const StartResourceEvaluationRequest& request, const StartResourceEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartResourceEvaluation(request), context);
     } );
 }
 
