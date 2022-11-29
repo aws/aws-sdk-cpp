@@ -369,22 +369,34 @@ namespace Model
     inline LocalGatewayRouteTable& WithMode(LocalGatewayRouteTableMode&& value) { SetMode(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Information about the state change.</p>
+     */
     inline const StateReason& GetStateReason() const{ return m_stateReason; }
 
-    
+    /**
+     * <p>Information about the state change.</p>
+     */
     inline bool StateReasonHasBeenSet() const { return m_stateReasonHasBeenSet; }
 
-    
+    /**
+     * <p>Information about the state change.</p>
+     */
     inline void SetStateReason(const StateReason& value) { m_stateReasonHasBeenSet = true; m_stateReason = value; }
 
-    
+    /**
+     * <p>Information about the state change.</p>
+     */
     inline void SetStateReason(StateReason&& value) { m_stateReasonHasBeenSet = true; m_stateReason = std::move(value); }
 
-    
+    /**
+     * <p>Information about the state change.</p>
+     */
     inline LocalGatewayRouteTable& WithStateReason(const StateReason& value) { SetStateReason(value); return *this;}
 
-    
+    /**
+     * <p>Information about the state change.</p>
+     */
     inline LocalGatewayRouteTable& WithStateReason(StateReason&& value) { SetStateReason(std::move(value)); return *this;}
 
   private:

@@ -122,9 +122,11 @@ namespace Model
 
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>service-name</code> - The name
-     * of the service.</p> </li> <li> <p> <code>service-type</code> - The type of
-     * service (<code>Interface</code> | <code>Gateway</code>).</p> </li> <li> <p>
+     * <p>One or more filters.</p> <ul> <li> <p> <code>owner</code> - The ID or alias
+     * of the Amazon Web Services account that owns the service.</p> </li> <li> <p>
+     * <code>service-name</code> - The name of the service.</p> </li> <li> <p>
+     * <code>service-type</code> - The type of service (<code>Interface</code> |
+     * <code>Gateway</code> | <code>GatewayLoadBalancer</code>).</p> </li> <li> <p>
      * <code>supported-ip-address-types</code> - The IP address type (<code>ipv4</code>
      * | <code>ipv6</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
@@ -139,9 +141,11 @@ namespace Model
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>service-name</code> - The name
-     * of the service.</p> </li> <li> <p> <code>service-type</code> - The type of
-     * service (<code>Interface</code> | <code>Gateway</code>).</p> </li> <li> <p>
+     * <p>One or more filters.</p> <ul> <li> <p> <code>owner</code> - The ID or alias
+     * of the Amazon Web Services account that owns the service.</p> </li> <li> <p>
+     * <code>service-name</code> - The name of the service.</p> </li> <li> <p>
+     * <code>service-type</code> - The type of service (<code>Interface</code> |
+     * <code>Gateway</code> | <code>GatewayLoadBalancer</code>).</p> </li> <li> <p>
      * <code>supported-ip-address-types</code> - The IP address type (<code>ipv4</code>
      * | <code>ipv6</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
@@ -156,9 +160,11 @@ namespace Model
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>service-name</code> - The name
-     * of the service.</p> </li> <li> <p> <code>service-type</code> - The type of
-     * service (<code>Interface</code> | <code>Gateway</code>).</p> </li> <li> <p>
+     * <p>One or more filters.</p> <ul> <li> <p> <code>owner</code> - The ID or alias
+     * of the Amazon Web Services account that owns the service.</p> </li> <li> <p>
+     * <code>service-name</code> - The name of the service.</p> </li> <li> <p>
+     * <code>service-type</code> - The type of service (<code>Interface</code> |
+     * <code>Gateway</code> | <code>GatewayLoadBalancer</code>).</p> </li> <li> <p>
      * <code>supported-ip-address-types</code> - The IP address type (<code>ipv4</code>
      * | <code>ipv6</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
@@ -173,9 +179,11 @@ namespace Model
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>service-name</code> - The name
-     * of the service.</p> </li> <li> <p> <code>service-type</code> - The type of
-     * service (<code>Interface</code> | <code>Gateway</code>).</p> </li> <li> <p>
+     * <p>One or more filters.</p> <ul> <li> <p> <code>owner</code> - The ID or alias
+     * of the Amazon Web Services account that owns the service.</p> </li> <li> <p>
+     * <code>service-name</code> - The name of the service.</p> </li> <li> <p>
+     * <code>service-type</code> - The type of service (<code>Interface</code> |
+     * <code>Gateway</code> | <code>GatewayLoadBalancer</code>).</p> </li> <li> <p>
      * <code>supported-ip-address-types</code> - The IP address type (<code>ipv4</code>
      * | <code>ipv6</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
@@ -190,9 +198,11 @@ namespace Model
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>service-name</code> - The name
-     * of the service.</p> </li> <li> <p> <code>service-type</code> - The type of
-     * service (<code>Interface</code> | <code>Gateway</code>).</p> </li> <li> <p>
+     * <p>One or more filters.</p> <ul> <li> <p> <code>owner</code> - The ID or alias
+     * of the Amazon Web Services account that owns the service.</p> </li> <li> <p>
+     * <code>service-name</code> - The name of the service.</p> </li> <li> <p>
+     * <code>service-type</code> - The type of service (<code>Interface</code> |
+     * <code>Gateway</code> | <code>GatewayLoadBalancer</code>).</p> </li> <li> <p>
      * <code>supported-ip-address-types</code> - The IP address type (<code>ipv4</code>
      * | <code>ipv6</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
@@ -207,9 +217,11 @@ namespace Model
     inline DescribeVpcEndpointServicesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>service-name</code> - The name
-     * of the service.</p> </li> <li> <p> <code>service-type</code> - The type of
-     * service (<code>Interface</code> | <code>Gateway</code>).</p> </li> <li> <p>
+     * <p>One or more filters.</p> <ul> <li> <p> <code>owner</code> - The ID or alias
+     * of the Amazon Web Services account that owns the service.</p> </li> <li> <p>
+     * <code>service-name</code> - The name of the service.</p> </li> <li> <p>
+     * <code>service-type</code> - The type of service (<code>Interface</code> |
+     * <code>Gateway</code> | <code>GatewayLoadBalancer</code>).</p> </li> <li> <p>
      * <code>supported-ip-address-types</code> - The IP address type (<code>ipv4</code>
      * | <code>ipv6</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
@@ -224,9 +236,11 @@ namespace Model
     inline DescribeVpcEndpointServicesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>service-name</code> - The name
-     * of the service.</p> </li> <li> <p> <code>service-type</code> - The type of
-     * service (<code>Interface</code> | <code>Gateway</code>).</p> </li> <li> <p>
+     * <p>One or more filters.</p> <ul> <li> <p> <code>owner</code> - The ID or alias
+     * of the Amazon Web Services account that owns the service.</p> </li> <li> <p>
+     * <code>service-name</code> - The name of the service.</p> </li> <li> <p>
+     * <code>service-type</code> - The type of service (<code>Interface</code> |
+     * <code>Gateway</code> | <code>GatewayLoadBalancer</code>).</p> </li> <li> <p>
      * <code>supported-ip-address-types</code> - The IP address type (<code>ipv4</code>
      * | <code>ipv6</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
@@ -241,9 +255,11 @@ namespace Model
     inline DescribeVpcEndpointServicesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>service-name</code> - The name
-     * of the service.</p> </li> <li> <p> <code>service-type</code> - The type of
-     * service (<code>Interface</code> | <code>Gateway</code>).</p> </li> <li> <p>
+     * <p>One or more filters.</p> <ul> <li> <p> <code>owner</code> - The ID or alias
+     * of the Amazon Web Services account that owns the service.</p> </li> <li> <p>
+     * <code>service-name</code> - The name of the service.</p> </li> <li> <p>
+     * <code>service-type</code> - The type of service (<code>Interface</code> |
+     * <code>Gateway</code> | <code>GatewayLoadBalancer</code>).</p> </li> <li> <p>
      * <code>supported-ip-address-types</code> - The IP address type (<code>ipv4</code>
      * | <code>ipv6</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
