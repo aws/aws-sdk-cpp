@@ -96,6 +96,11 @@ namespace Aws
         static const int capacity_reservation_fleet_HASH = HashingUtils::HashString("capacity-reservation-fleet");
         static const int traffic_mirror_filter_rule_HASH = HashingUtils::HashString("traffic-mirror-filter-rule");
         static const int vpc_endpoint_connection_device_type_HASH = HashingUtils::HashString("vpc-endpoint-connection-device-type");
+        static const int verified_access_instance_HASH = HashingUtils::HashString("verified-access-instance");
+        static const int verified_access_group_HASH = HashingUtils::HashString("verified-access-group");
+        static const int verified_access_endpoint_HASH = HashingUtils::HashString("verified-access-endpoint");
+        static const int verified_access_policy_HASH = HashingUtils::HashString("verified-access-policy");
+        static const int verified_access_trust_provider_HASH = HashingUtils::HashString("verified-access-trust-provider");
         static const int vpn_connection_device_type_HASH = HashingUtils::HashString("vpn-connection-device-type");
 
 
@@ -406,6 +411,26 @@ namespace Aws
           {
             return ResourceType::vpc_endpoint_connection_device_type;
           }
+          else if (hashCode == verified_access_instance_HASH)
+          {
+            return ResourceType::verified_access_instance;
+          }
+          else if (hashCode == verified_access_group_HASH)
+          {
+            return ResourceType::verified_access_group;
+          }
+          else if (hashCode == verified_access_endpoint_HASH)
+          {
+            return ResourceType::verified_access_endpoint;
+          }
+          else if (hashCode == verified_access_policy_HASH)
+          {
+            return ResourceType::verified_access_policy;
+          }
+          else if (hashCode == verified_access_trust_provider_HASH)
+          {
+            return ResourceType::verified_access_trust_provider;
+          }
           else if (hashCode == vpn_connection_device_type_HASH)
           {
             return ResourceType::vpn_connection_device_type;
@@ -576,6 +601,16 @@ namespace Aws
             return "traffic-mirror-filter-rule";
           case ResourceType::vpc_endpoint_connection_device_type:
             return "vpc-endpoint-connection-device-type";
+          case ResourceType::verified_access_instance:
+            return "verified-access-instance";
+          case ResourceType::verified_access_group:
+            return "verified-access-group";
+          case ResourceType::verified_access_endpoint:
+            return "verified-access-endpoint";
+          case ResourceType::verified_access_policy:
+            return "verified-access-policy";
+          case ResourceType::verified_access_trust_provider:
+            return "verified-access-trust-provider";
           case ResourceType::vpn_connection_device_type:
             return "vpn-connection-device-type";
           default:

@@ -183,7 +183,7 @@ namespace Model
      * (<code>\u000A</code>), and carriage return (<code>\u000D</code>) special
      * characters</p> </li> </ul> <p>For information about key policies, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key
-     * policies in KMS</a> in the <i>Key Management Service Developer Guide</i>. For
+     * policies in KMS</a> in the <i>Key Management Service Developer Guide</i>.For
      * help writing and formatting a JSON policy document, see the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
      * JSON Policy Reference</a> in the <i> <i>Identity and Access Management User
@@ -218,7 +218,7 @@ namespace Model
      * (<code>\u000A</code>), and carriage return (<code>\u000D</code>) special
      * characters</p> </li> </ul> <p>For information about key policies, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key
-     * policies in KMS</a> in the <i>Key Management Service Developer Guide</i>. For
+     * policies in KMS</a> in the <i>Key Management Service Developer Guide</i>.For
      * help writing and formatting a JSON policy document, see the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
      * JSON Policy Reference</a> in the <i> <i>Identity and Access Management User
@@ -253,7 +253,7 @@ namespace Model
      * (<code>\u000A</code>), and carriage return (<code>\u000D</code>) special
      * characters</p> </li> </ul> <p>For information about key policies, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key
-     * policies in KMS</a> in the <i>Key Management Service Developer Guide</i>. For
+     * policies in KMS</a> in the <i>Key Management Service Developer Guide</i>.For
      * help writing and formatting a JSON policy document, see the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
      * JSON Policy Reference</a> in the <i> <i>Identity and Access Management User
@@ -288,7 +288,7 @@ namespace Model
      * (<code>\u000A</code>), and carriage return (<code>\u000D</code>) special
      * characters</p> </li> </ul> <p>For information about key policies, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key
-     * policies in KMS</a> in the <i>Key Management Service Developer Guide</i>. For
+     * policies in KMS</a> in the <i>Key Management Service Developer Guide</i>.For
      * help writing and formatting a JSON policy document, see the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
      * JSON Policy Reference</a> in the <i> <i>Identity and Access Management User
@@ -323,7 +323,7 @@ namespace Model
      * (<code>\u000A</code>), and carriage return (<code>\u000D</code>) special
      * characters</p> </li> </ul> <p>For information about key policies, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key
-     * policies in KMS</a> in the <i>Key Management Service Developer Guide</i>. For
+     * policies in KMS</a> in the <i>Key Management Service Developer Guide</i>.For
      * help writing and formatting a JSON policy document, see the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
      * JSON Policy Reference</a> in the <i> <i>Identity and Access Management User
@@ -358,7 +358,7 @@ namespace Model
      * (<code>\u000A</code>), and carriage return (<code>\u000D</code>) special
      * characters</p> </li> </ul> <p>For information about key policies, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key
-     * policies in KMS</a> in the <i>Key Management Service Developer Guide</i>. For
+     * policies in KMS</a> in the <i>Key Management Service Developer Guide</i>.For
      * help writing and formatting a JSON policy document, see the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
      * JSON Policy Reference</a> in the <i> <i>Identity and Access Management User
@@ -393,7 +393,7 @@ namespace Model
      * (<code>\u000A</code>), and carriage return (<code>\u000D</code>) special
      * characters</p> </li> </ul> <p>For information about key policies, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key
-     * policies in KMS</a> in the <i>Key Management Service Developer Guide</i>. For
+     * policies in KMS</a> in the <i>Key Management Service Developer Guide</i>.For
      * help writing and formatting a JSON policy document, see the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
      * JSON Policy Reference</a> in the <i> <i>Identity and Access Management User
@@ -428,7 +428,7 @@ namespace Model
      * (<code>\u000A</code>), and carriage return (<code>\u000D</code>) special
      * characters</p> </li> </ul> <p>For information about key policies, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key
-     * policies in KMS</a> in the <i>Key Management Service Developer Guide</i>. For
+     * policies in KMS</a> in the <i>Key Management Service Developer Guide</i>.For
      * help writing and formatting a JSON policy document, see the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
      * JSON Policy Reference</a> in the <i> <i>Identity and Access Management User

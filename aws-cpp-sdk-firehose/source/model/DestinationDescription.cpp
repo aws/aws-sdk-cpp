@@ -26,7 +26,8 @@ DestinationDescription::DestinationDescription() :
     m_elasticsearchDestinationDescriptionHasBeenSet(false),
     m_amazonopensearchserviceDestinationDescriptionHasBeenSet(false),
     m_splunkDestinationDescriptionHasBeenSet(false),
-    m_httpEndpointDestinationDescriptionHasBeenSet(false)
+    m_httpEndpointDestinationDescriptionHasBeenSet(false),
+    m_amazonOpenSearchServerlessDestinationDescriptionHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ DestinationDescription::DestinationDescription(JsonView jsonValue) :
     m_elasticsearchDestinationDescriptionHasBeenSet(false),
     m_amazonopensearchserviceDestinationDescriptionHasBeenSet(false),
     m_splunkDestinationDescriptionHasBeenSet(false),
-    m_httpEndpointDestinationDescriptionHasBeenSet(false)
+    m_httpEndpointDestinationDescriptionHasBeenSet(false),
+    m_amazonOpenSearchServerlessDestinationDescriptionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -101,6 +103,13 @@ DestinationDescription& DestinationDescription::operator =(JsonView jsonValue)
     m_httpEndpointDestinationDescriptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AmazonOpenSearchServerlessDestinationDescription"))
+  {
+    m_amazonOpenSearchServerlessDestinationDescription = jsonValue.GetObject("AmazonOpenSearchServerlessDestinationDescription");
+
+    m_amazonOpenSearchServerlessDestinationDescriptionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -153,6 +162,12 @@ JsonValue DestinationDescription::Jsonize() const
   if(m_httpEndpointDestinationDescriptionHasBeenSet)
   {
    payload.WithObject("HttpEndpointDestinationDescription", m_httpEndpointDestinationDescription.Jsonize());
+
+  }
+
+  if(m_amazonOpenSearchServerlessDestinationDescriptionHasBeenSet)
+  {
+   payload.WithObject("AmazonOpenSearchServerlessDestinationDescription", m_amazonOpenSearchServerlessDestinationDescription.Jsonize());
 
   }
 

@@ -27,8 +27,6 @@ namespace Model
    * <p>The configuration of the dynamic partitioning mechanism that creates smaller
    * data sets from the streaming data by partitioning it based on partition keys.
    * Currently, dynamic partitioning is only supported for Amazon S3 destinations.
-   * For more information, see <a
-   * href="https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html">https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html</a>
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DynamicPartitioningConfiguration">AWS
    * API Reference</a></p>

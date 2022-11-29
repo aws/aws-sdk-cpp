@@ -51,6 +51,7 @@
 #include <aws/ec2/model/AttachClassicLinkVpcRequest.h>
 #include <aws/ec2/model/AttachInternetGatewayRequest.h>
 #include <aws/ec2/model/AttachNetworkInterfaceRequest.h>
+#include <aws/ec2/model/AttachVerifiedAccessTrustProviderRequest.h>
 #include <aws/ec2/model/AttachVolumeRequest.h>
 #include <aws/ec2/model/AttachVpnGatewayRequest.h>
 #include <aws/ec2/model/AuthorizeClientVpnIngressRequest.h>
@@ -138,6 +139,10 @@
 #include <aws/ec2/model/CreateTransitGatewayRouteTableRequest.h>
 #include <aws/ec2/model/CreateTransitGatewayRouteTableAnnouncementRequest.h>
 #include <aws/ec2/model/CreateTransitGatewayVpcAttachmentRequest.h>
+#include <aws/ec2/model/CreateVerifiedAccessEndpointRequest.h>
+#include <aws/ec2/model/CreateVerifiedAccessGroupRequest.h>
+#include <aws/ec2/model/CreateVerifiedAccessInstanceRequest.h>
+#include <aws/ec2/model/CreateVerifiedAccessTrustProviderRequest.h>
 #include <aws/ec2/model/CreateVolumeRequest.h>
 #include <aws/ec2/model/CreateVpcRequest.h>
 #include <aws/ec2/model/CreateVpcEndpointRequest.h>
@@ -206,6 +211,10 @@
 #include <aws/ec2/model/DeleteTransitGatewayRouteTableRequest.h>
 #include <aws/ec2/model/DeleteTransitGatewayRouteTableAnnouncementRequest.h>
 #include <aws/ec2/model/DeleteTransitGatewayVpcAttachmentRequest.h>
+#include <aws/ec2/model/DeleteVerifiedAccessEndpointRequest.h>
+#include <aws/ec2/model/DeleteVerifiedAccessGroupRequest.h>
+#include <aws/ec2/model/DeleteVerifiedAccessInstanceRequest.h>
+#include <aws/ec2/model/DeleteVerifiedAccessTrustProviderRequest.h>
 #include <aws/ec2/model/DeleteVolumeRequest.h>
 #include <aws/ec2/model/DeleteVpcRequest.h>
 #include <aws/ec2/model/DeleteVpcEndpointConnectionNotificationsRequest.h>
@@ -342,6 +351,11 @@
 #include <aws/ec2/model/DescribeTransitGatewayVpcAttachmentsRequest.h>
 #include <aws/ec2/model/DescribeTransitGatewaysRequest.h>
 #include <aws/ec2/model/DescribeTrunkInterfaceAssociationsRequest.h>
+#include <aws/ec2/model/DescribeVerifiedAccessEndpointsRequest.h>
+#include <aws/ec2/model/DescribeVerifiedAccessGroupsRequest.h>
+#include <aws/ec2/model/DescribeVerifiedAccessInstanceLoggingConfigurationsRequest.h>
+#include <aws/ec2/model/DescribeVerifiedAccessInstancesRequest.h>
+#include <aws/ec2/model/DescribeVerifiedAccessTrustProvidersRequest.h>
 #include <aws/ec2/model/DescribeVolumeAttributeRequest.h>
 #include <aws/ec2/model/DescribeVolumeStatusRequest.h>
 #include <aws/ec2/model/DescribeVolumesRequest.h>
@@ -362,6 +376,7 @@
 #include <aws/ec2/model/DetachClassicLinkVpcRequest.h>
 #include <aws/ec2/model/DetachInternetGatewayRequest.h>
 #include <aws/ec2/model/DetachNetworkInterfaceRequest.h>
+#include <aws/ec2/model/DetachVerifiedAccessTrustProviderRequest.h>
 #include <aws/ec2/model/DetachVolumeRequest.h>
 #include <aws/ec2/model/DetachVpnGatewayRequest.h>
 #include <aws/ec2/model/DisableAddressTransferRequest.h>
@@ -442,6 +457,8 @@
 #include <aws/ec2/model/GetTransitGatewayPrefixListReferencesRequest.h>
 #include <aws/ec2/model/GetTransitGatewayRouteTableAssociationsRequest.h>
 #include <aws/ec2/model/GetTransitGatewayRouteTablePropagationsRequest.h>
+#include <aws/ec2/model/GetVerifiedAccessEndpointPolicyRequest.h>
+#include <aws/ec2/model/GetVerifiedAccessGroupPolicyRequest.h>
 #include <aws/ec2/model/GetVpnConnectionDeviceSampleConfigurationRequest.h>
 #include <aws/ec2/model/GetVpnConnectionDeviceTypesRequest.h>
 #include <aws/ec2/model/ImportClientVpnClientCertificateRevocationListRequest.h>
@@ -494,6 +511,13 @@
 #include <aws/ec2/model/ModifyTransitGatewayRequest.h>
 #include <aws/ec2/model/ModifyTransitGatewayPrefixListReferenceRequest.h>
 #include <aws/ec2/model/ModifyTransitGatewayVpcAttachmentRequest.h>
+#include <aws/ec2/model/ModifyVerifiedAccessEndpointRequest.h>
+#include <aws/ec2/model/ModifyVerifiedAccessEndpointPolicyRequest.h>
+#include <aws/ec2/model/ModifyVerifiedAccessGroupRequest.h>
+#include <aws/ec2/model/ModifyVerifiedAccessGroupPolicyRequest.h>
+#include <aws/ec2/model/ModifyVerifiedAccessInstanceRequest.h>
+#include <aws/ec2/model/ModifyVerifiedAccessInstanceLoggingConfigurationRequest.h>
+#include <aws/ec2/model/ModifyVerifiedAccessTrustProviderRequest.h>
 #include <aws/ec2/model/ModifyVolumeRequest.h>
 #include <aws/ec2/model/ModifyVolumeAttributeRequest.h>
 #include <aws/ec2/model/ModifyVpcAttributeRequest.h>
@@ -1419,6 +1443,30 @@ void EC2Client::AttachNetworkInterfaceAsync(const AttachNetworkInterfaceRequest&
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, AttachNetworkInterface(request), context);
+    } );
+}
+
+AttachVerifiedAccessTrustProviderOutcome EC2Client::AttachVerifiedAccessTrustProvider(const AttachVerifiedAccessTrustProviderRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AttachVerifiedAccessTrustProvider, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AttachVerifiedAccessTrustProvider, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return AttachVerifiedAccessTrustProviderOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+AttachVerifiedAccessTrustProviderOutcomeCallable EC2Client::AttachVerifiedAccessTrustProviderCallable(const AttachVerifiedAccessTrustProviderRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AttachVerifiedAccessTrustProviderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AttachVerifiedAccessTrustProvider(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::AttachVerifiedAccessTrustProviderAsync(const AttachVerifiedAccessTrustProviderRequest& request, const AttachVerifiedAccessTrustProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AttachVerifiedAccessTrustProvider(request), context);
     } );
 }
 
@@ -3510,6 +3558,102 @@ void EC2Client::CreateTransitGatewayVpcAttachmentAsync(const CreateTransitGatewa
     } );
 }
 
+CreateVerifiedAccessEndpointOutcome EC2Client::CreateVerifiedAccessEndpoint(const CreateVerifiedAccessEndpointRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateVerifiedAccessEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateVerifiedAccessEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateVerifiedAccessEndpointOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+CreateVerifiedAccessEndpointOutcomeCallable EC2Client::CreateVerifiedAccessEndpointCallable(const CreateVerifiedAccessEndpointRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateVerifiedAccessEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateVerifiedAccessEndpoint(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::CreateVerifiedAccessEndpointAsync(const CreateVerifiedAccessEndpointRequest& request, const CreateVerifiedAccessEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateVerifiedAccessEndpoint(request), context);
+    } );
+}
+
+CreateVerifiedAccessGroupOutcome EC2Client::CreateVerifiedAccessGroup(const CreateVerifiedAccessGroupRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateVerifiedAccessGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateVerifiedAccessGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateVerifiedAccessGroupOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+CreateVerifiedAccessGroupOutcomeCallable EC2Client::CreateVerifiedAccessGroupCallable(const CreateVerifiedAccessGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateVerifiedAccessGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateVerifiedAccessGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::CreateVerifiedAccessGroupAsync(const CreateVerifiedAccessGroupRequest& request, const CreateVerifiedAccessGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateVerifiedAccessGroup(request), context);
+    } );
+}
+
+CreateVerifiedAccessInstanceOutcome EC2Client::CreateVerifiedAccessInstance(const CreateVerifiedAccessInstanceRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateVerifiedAccessInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateVerifiedAccessInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateVerifiedAccessInstanceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+CreateVerifiedAccessInstanceOutcomeCallable EC2Client::CreateVerifiedAccessInstanceCallable(const CreateVerifiedAccessInstanceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateVerifiedAccessInstanceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateVerifiedAccessInstance(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::CreateVerifiedAccessInstanceAsync(const CreateVerifiedAccessInstanceRequest& request, const CreateVerifiedAccessInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateVerifiedAccessInstance(request), context);
+    } );
+}
+
+CreateVerifiedAccessTrustProviderOutcome EC2Client::CreateVerifiedAccessTrustProvider(const CreateVerifiedAccessTrustProviderRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateVerifiedAccessTrustProvider, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateVerifiedAccessTrustProvider, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateVerifiedAccessTrustProviderOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+CreateVerifiedAccessTrustProviderOutcomeCallable EC2Client::CreateVerifiedAccessTrustProviderCallable(const CreateVerifiedAccessTrustProviderRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateVerifiedAccessTrustProviderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateVerifiedAccessTrustProvider(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::CreateVerifiedAccessTrustProviderAsync(const CreateVerifiedAccessTrustProviderRequest& request, const CreateVerifiedAccessTrustProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateVerifiedAccessTrustProvider(request), context);
+    } );
+}
+
 CreateVolumeOutcome EC2Client::CreateVolume(const CreateVolumeRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateVolume, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -5139,6 +5283,102 @@ void EC2Client::DeleteTransitGatewayVpcAttachmentAsync(const DeleteTransitGatewa
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DeleteTransitGatewayVpcAttachment(request), context);
+    } );
+}
+
+DeleteVerifiedAccessEndpointOutcome EC2Client::DeleteVerifiedAccessEndpoint(const DeleteVerifiedAccessEndpointRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVerifiedAccessEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteVerifiedAccessEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteVerifiedAccessEndpointOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DeleteVerifiedAccessEndpointOutcomeCallable EC2Client::DeleteVerifiedAccessEndpointCallable(const DeleteVerifiedAccessEndpointRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteVerifiedAccessEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteVerifiedAccessEndpoint(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DeleteVerifiedAccessEndpointAsync(const DeleteVerifiedAccessEndpointRequest& request, const DeleteVerifiedAccessEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteVerifiedAccessEndpoint(request), context);
+    } );
+}
+
+DeleteVerifiedAccessGroupOutcome EC2Client::DeleteVerifiedAccessGroup(const DeleteVerifiedAccessGroupRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVerifiedAccessGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteVerifiedAccessGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteVerifiedAccessGroupOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DeleteVerifiedAccessGroupOutcomeCallable EC2Client::DeleteVerifiedAccessGroupCallable(const DeleteVerifiedAccessGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteVerifiedAccessGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteVerifiedAccessGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DeleteVerifiedAccessGroupAsync(const DeleteVerifiedAccessGroupRequest& request, const DeleteVerifiedAccessGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteVerifiedAccessGroup(request), context);
+    } );
+}
+
+DeleteVerifiedAccessInstanceOutcome EC2Client::DeleteVerifiedAccessInstance(const DeleteVerifiedAccessInstanceRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVerifiedAccessInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteVerifiedAccessInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteVerifiedAccessInstanceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DeleteVerifiedAccessInstanceOutcomeCallable EC2Client::DeleteVerifiedAccessInstanceCallable(const DeleteVerifiedAccessInstanceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteVerifiedAccessInstanceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteVerifiedAccessInstance(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DeleteVerifiedAccessInstanceAsync(const DeleteVerifiedAccessInstanceRequest& request, const DeleteVerifiedAccessInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteVerifiedAccessInstance(request), context);
+    } );
+}
+
+DeleteVerifiedAccessTrustProviderOutcome EC2Client::DeleteVerifiedAccessTrustProvider(const DeleteVerifiedAccessTrustProviderRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVerifiedAccessTrustProvider, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteVerifiedAccessTrustProvider, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteVerifiedAccessTrustProviderOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DeleteVerifiedAccessTrustProviderOutcomeCallable EC2Client::DeleteVerifiedAccessTrustProviderCallable(const DeleteVerifiedAccessTrustProviderRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteVerifiedAccessTrustProviderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteVerifiedAccessTrustProvider(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DeleteVerifiedAccessTrustProviderAsync(const DeleteVerifiedAccessTrustProviderRequest& request, const DeleteVerifiedAccessTrustProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteVerifiedAccessTrustProvider(request), context);
     } );
 }
 
@@ -8406,6 +8646,126 @@ void EC2Client::DescribeTrunkInterfaceAssociationsAsync(const DescribeTrunkInter
     } );
 }
 
+DescribeVerifiedAccessEndpointsOutcome EC2Client::DescribeVerifiedAccessEndpoints(const DescribeVerifiedAccessEndpointsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeVerifiedAccessEndpoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeVerifiedAccessEndpoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeVerifiedAccessEndpointsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DescribeVerifiedAccessEndpointsOutcomeCallable EC2Client::DescribeVerifiedAccessEndpointsCallable(const DescribeVerifiedAccessEndpointsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeVerifiedAccessEndpointsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeVerifiedAccessEndpoints(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DescribeVerifiedAccessEndpointsAsync(const DescribeVerifiedAccessEndpointsRequest& request, const DescribeVerifiedAccessEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeVerifiedAccessEndpoints(request), context);
+    } );
+}
+
+DescribeVerifiedAccessGroupsOutcome EC2Client::DescribeVerifiedAccessGroups(const DescribeVerifiedAccessGroupsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeVerifiedAccessGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeVerifiedAccessGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeVerifiedAccessGroupsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DescribeVerifiedAccessGroupsOutcomeCallable EC2Client::DescribeVerifiedAccessGroupsCallable(const DescribeVerifiedAccessGroupsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeVerifiedAccessGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeVerifiedAccessGroups(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DescribeVerifiedAccessGroupsAsync(const DescribeVerifiedAccessGroupsRequest& request, const DescribeVerifiedAccessGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeVerifiedAccessGroups(request), context);
+    } );
+}
+
+DescribeVerifiedAccessInstanceLoggingConfigurationsOutcome EC2Client::DescribeVerifiedAccessInstanceLoggingConfigurations(const DescribeVerifiedAccessInstanceLoggingConfigurationsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeVerifiedAccessInstanceLoggingConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeVerifiedAccessInstanceLoggingConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeVerifiedAccessInstanceLoggingConfigurationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DescribeVerifiedAccessInstanceLoggingConfigurationsOutcomeCallable EC2Client::DescribeVerifiedAccessInstanceLoggingConfigurationsCallable(const DescribeVerifiedAccessInstanceLoggingConfigurationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeVerifiedAccessInstanceLoggingConfigurationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeVerifiedAccessInstanceLoggingConfigurations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DescribeVerifiedAccessInstanceLoggingConfigurationsAsync(const DescribeVerifiedAccessInstanceLoggingConfigurationsRequest& request, const DescribeVerifiedAccessInstanceLoggingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeVerifiedAccessInstanceLoggingConfigurations(request), context);
+    } );
+}
+
+DescribeVerifiedAccessInstancesOutcome EC2Client::DescribeVerifiedAccessInstances(const DescribeVerifiedAccessInstancesRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeVerifiedAccessInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeVerifiedAccessInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeVerifiedAccessInstancesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DescribeVerifiedAccessInstancesOutcomeCallable EC2Client::DescribeVerifiedAccessInstancesCallable(const DescribeVerifiedAccessInstancesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeVerifiedAccessInstancesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeVerifiedAccessInstances(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DescribeVerifiedAccessInstancesAsync(const DescribeVerifiedAccessInstancesRequest& request, const DescribeVerifiedAccessInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeVerifiedAccessInstances(request), context);
+    } );
+}
+
+DescribeVerifiedAccessTrustProvidersOutcome EC2Client::DescribeVerifiedAccessTrustProviders(const DescribeVerifiedAccessTrustProvidersRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeVerifiedAccessTrustProviders, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeVerifiedAccessTrustProviders, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeVerifiedAccessTrustProvidersOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DescribeVerifiedAccessTrustProvidersOutcomeCallable EC2Client::DescribeVerifiedAccessTrustProvidersCallable(const DescribeVerifiedAccessTrustProvidersRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeVerifiedAccessTrustProvidersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeVerifiedAccessTrustProviders(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DescribeVerifiedAccessTrustProvidersAsync(const DescribeVerifiedAccessTrustProvidersRequest& request, const DescribeVerifiedAccessTrustProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeVerifiedAccessTrustProviders(request), context);
+    } );
+}
+
 DescribeVolumeAttributeOutcome EC2Client::DescribeVolumeAttribute(const DescribeVolumeAttributeRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeVolumeAttribute, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -8883,6 +9243,30 @@ void EC2Client::DetachNetworkInterfaceAsync(const DetachNetworkInterfaceRequest&
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DetachNetworkInterface(request), context);
+    } );
+}
+
+DetachVerifiedAccessTrustProviderOutcome EC2Client::DetachVerifiedAccessTrustProvider(const DetachVerifiedAccessTrustProviderRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DetachVerifiedAccessTrustProvider, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DetachVerifiedAccessTrustProvider, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DetachVerifiedAccessTrustProviderOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DetachVerifiedAccessTrustProviderOutcomeCallable EC2Client::DetachVerifiedAccessTrustProviderCallable(const DetachVerifiedAccessTrustProviderRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DetachVerifiedAccessTrustProviderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DetachVerifiedAccessTrustProvider(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DetachVerifiedAccessTrustProviderAsync(const DetachVerifiedAccessTrustProviderRequest& request, const DetachVerifiedAccessTrustProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DetachVerifiedAccessTrustProvider(request), context);
     } );
 }
 
@@ -10806,6 +11190,54 @@ void EC2Client::GetTransitGatewayRouteTablePropagationsAsync(const GetTransitGat
     } );
 }
 
+GetVerifiedAccessEndpointPolicyOutcome EC2Client::GetVerifiedAccessEndpointPolicy(const GetVerifiedAccessEndpointPolicyRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetVerifiedAccessEndpointPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetVerifiedAccessEndpointPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetVerifiedAccessEndpointPolicyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+GetVerifiedAccessEndpointPolicyOutcomeCallable EC2Client::GetVerifiedAccessEndpointPolicyCallable(const GetVerifiedAccessEndpointPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetVerifiedAccessEndpointPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetVerifiedAccessEndpointPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::GetVerifiedAccessEndpointPolicyAsync(const GetVerifiedAccessEndpointPolicyRequest& request, const GetVerifiedAccessEndpointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetVerifiedAccessEndpointPolicy(request), context);
+    } );
+}
+
+GetVerifiedAccessGroupPolicyOutcome EC2Client::GetVerifiedAccessGroupPolicy(const GetVerifiedAccessGroupPolicyRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetVerifiedAccessGroupPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetVerifiedAccessGroupPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetVerifiedAccessGroupPolicyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+GetVerifiedAccessGroupPolicyOutcomeCallable EC2Client::GetVerifiedAccessGroupPolicyCallable(const GetVerifiedAccessGroupPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetVerifiedAccessGroupPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetVerifiedAccessGroupPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::GetVerifiedAccessGroupPolicyAsync(const GetVerifiedAccessGroupPolicyRequest& request, const GetVerifiedAccessGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetVerifiedAccessGroupPolicy(request), context);
+    } );
+}
+
 GetVpnConnectionDeviceSampleConfigurationOutcome EC2Client::GetVpnConnectionDeviceSampleConfiguration(const GetVpnConnectionDeviceSampleConfigurationRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetVpnConnectionDeviceSampleConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -12051,6 +12483,174 @@ void EC2Client::ModifyTransitGatewayVpcAttachmentAsync(const ModifyTransitGatewa
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, ModifyTransitGatewayVpcAttachment(request), context);
+    } );
+}
+
+ModifyVerifiedAccessEndpointOutcome EC2Client::ModifyVerifiedAccessEndpoint(const ModifyVerifiedAccessEndpointRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ModifyVerifiedAccessEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ModifyVerifiedAccessEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ModifyVerifiedAccessEndpointOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+ModifyVerifiedAccessEndpointOutcomeCallable EC2Client::ModifyVerifiedAccessEndpointCallable(const ModifyVerifiedAccessEndpointRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ModifyVerifiedAccessEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ModifyVerifiedAccessEndpoint(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::ModifyVerifiedAccessEndpointAsync(const ModifyVerifiedAccessEndpointRequest& request, const ModifyVerifiedAccessEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ModifyVerifiedAccessEndpoint(request), context);
+    } );
+}
+
+ModifyVerifiedAccessEndpointPolicyOutcome EC2Client::ModifyVerifiedAccessEndpointPolicy(const ModifyVerifiedAccessEndpointPolicyRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ModifyVerifiedAccessEndpointPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ModifyVerifiedAccessEndpointPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ModifyVerifiedAccessEndpointPolicyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+ModifyVerifiedAccessEndpointPolicyOutcomeCallable EC2Client::ModifyVerifiedAccessEndpointPolicyCallable(const ModifyVerifiedAccessEndpointPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ModifyVerifiedAccessEndpointPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ModifyVerifiedAccessEndpointPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::ModifyVerifiedAccessEndpointPolicyAsync(const ModifyVerifiedAccessEndpointPolicyRequest& request, const ModifyVerifiedAccessEndpointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ModifyVerifiedAccessEndpointPolicy(request), context);
+    } );
+}
+
+ModifyVerifiedAccessGroupOutcome EC2Client::ModifyVerifiedAccessGroup(const ModifyVerifiedAccessGroupRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ModifyVerifiedAccessGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ModifyVerifiedAccessGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ModifyVerifiedAccessGroupOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+ModifyVerifiedAccessGroupOutcomeCallable EC2Client::ModifyVerifiedAccessGroupCallable(const ModifyVerifiedAccessGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ModifyVerifiedAccessGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ModifyVerifiedAccessGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::ModifyVerifiedAccessGroupAsync(const ModifyVerifiedAccessGroupRequest& request, const ModifyVerifiedAccessGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ModifyVerifiedAccessGroup(request), context);
+    } );
+}
+
+ModifyVerifiedAccessGroupPolicyOutcome EC2Client::ModifyVerifiedAccessGroupPolicy(const ModifyVerifiedAccessGroupPolicyRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ModifyVerifiedAccessGroupPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ModifyVerifiedAccessGroupPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ModifyVerifiedAccessGroupPolicyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+ModifyVerifiedAccessGroupPolicyOutcomeCallable EC2Client::ModifyVerifiedAccessGroupPolicyCallable(const ModifyVerifiedAccessGroupPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ModifyVerifiedAccessGroupPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ModifyVerifiedAccessGroupPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::ModifyVerifiedAccessGroupPolicyAsync(const ModifyVerifiedAccessGroupPolicyRequest& request, const ModifyVerifiedAccessGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ModifyVerifiedAccessGroupPolicy(request), context);
+    } );
+}
+
+ModifyVerifiedAccessInstanceOutcome EC2Client::ModifyVerifiedAccessInstance(const ModifyVerifiedAccessInstanceRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ModifyVerifiedAccessInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ModifyVerifiedAccessInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ModifyVerifiedAccessInstanceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+ModifyVerifiedAccessInstanceOutcomeCallable EC2Client::ModifyVerifiedAccessInstanceCallable(const ModifyVerifiedAccessInstanceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ModifyVerifiedAccessInstanceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ModifyVerifiedAccessInstance(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::ModifyVerifiedAccessInstanceAsync(const ModifyVerifiedAccessInstanceRequest& request, const ModifyVerifiedAccessInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ModifyVerifiedAccessInstance(request), context);
+    } );
+}
+
+ModifyVerifiedAccessInstanceLoggingConfigurationOutcome EC2Client::ModifyVerifiedAccessInstanceLoggingConfiguration(const ModifyVerifiedAccessInstanceLoggingConfigurationRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ModifyVerifiedAccessInstanceLoggingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ModifyVerifiedAccessInstanceLoggingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ModifyVerifiedAccessInstanceLoggingConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+ModifyVerifiedAccessInstanceLoggingConfigurationOutcomeCallable EC2Client::ModifyVerifiedAccessInstanceLoggingConfigurationCallable(const ModifyVerifiedAccessInstanceLoggingConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ModifyVerifiedAccessInstanceLoggingConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ModifyVerifiedAccessInstanceLoggingConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::ModifyVerifiedAccessInstanceLoggingConfigurationAsync(const ModifyVerifiedAccessInstanceLoggingConfigurationRequest& request, const ModifyVerifiedAccessInstanceLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ModifyVerifiedAccessInstanceLoggingConfiguration(request), context);
+    } );
+}
+
+ModifyVerifiedAccessTrustProviderOutcome EC2Client::ModifyVerifiedAccessTrustProvider(const ModifyVerifiedAccessTrustProviderRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ModifyVerifiedAccessTrustProvider, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ModifyVerifiedAccessTrustProvider, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ModifyVerifiedAccessTrustProviderOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+ModifyVerifiedAccessTrustProviderOutcomeCallable EC2Client::ModifyVerifiedAccessTrustProviderCallable(const ModifyVerifiedAccessTrustProviderRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ModifyVerifiedAccessTrustProviderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ModifyVerifiedAccessTrustProvider(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::ModifyVerifiedAccessTrustProviderAsync(const ModifyVerifiedAccessTrustProviderRequest& request, const ModifyVerifiedAccessTrustProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ModifyVerifiedAccessTrustProvider(request), context);
     } );
 }
 

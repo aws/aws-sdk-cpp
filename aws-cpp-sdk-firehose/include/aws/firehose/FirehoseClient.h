@@ -18,7 +18,8 @@ namespace Firehose
    * <fullname>Amazon Kinesis Data Firehose API Reference</fullname> <p>Amazon
    * Kinesis Data Firehose is a fully managed service that delivers real-time
    * streaming data to destinations such as Amazon Simple Storage Service (Amazon
-   * S3), Amazon Elasticsearch Service (Amazon ES), Amazon Redshift, and Splunk.</p>
+   * S3), Amazon OpenSearch Service, Amazon Redshift, Splunk, and various other
+   * supportd destinations.</p>
    */
   class AWS_FIREHOSE_API FirehoseClient : public Aws::Client::AWSJsonClient
   {
@@ -78,18 +79,18 @@ namespace Firehose
 
         /**
          * <p>Creates a Kinesis Data Firehose delivery stream.</p> <p>By default, you can
-         * create up to 50 delivery streams per AWS Region.</p> <p>This is an asynchronous
-         * operation that immediately returns. The initial status of the delivery stream is
-         * <code>CREATING</code>. After the delivery stream is created, its status is
-         * <code>ACTIVE</code> and it now accepts data. If the delivery stream creation
-         * fails, the status transitions to <code>CREATING_FAILED</code>. Attempts to send
-         * data to a delivery stream that is not in the <code>ACTIVE</code> state cause an
-         * exception. To check the state of a delivery stream, use
-         * <a>DescribeDeliveryStream</a>.</p> <p>If the status of a delivery stream is
-         * <code>CREATING_FAILED</code>, this status doesn't change, and you can't invoke
-         * <code>CreateDeliveryStream</code> again on it. However, you can invoke the
-         * <a>DeleteDeliveryStream</a> operation to delete it.</p> <p>A Kinesis Data
-         * Firehose delivery stream can be configured to receive records directly from
+         * create up to 50 delivery streams per Amazon Web Services Region.</p> <p>This is
+         * an asynchronous operation that immediately returns. The initial status of the
+         * delivery stream is <code>CREATING</code>. After the delivery stream is created,
+         * its status is <code>ACTIVE</code> and it now accepts data. If the delivery
+         * stream creation fails, the status transitions to <code>CREATING_FAILED</code>.
+         * Attempts to send data to a delivery stream that is not in the
+         * <code>ACTIVE</code> state cause an exception. To check the state of a delivery
+         * stream, use <a>DescribeDeliveryStream</a>.</p> <p>If the status of a delivery
+         * stream is <code>CREATING_FAILED</code>, this status doesn't change, and you
+         * can't invoke <code>CreateDeliveryStream</code> again on it. However, you can
+         * invoke the <a>DeleteDeliveryStream</a> operation to delete it.</p> <p>A Kinesis
+         * Data Firehose delivery stream can be configured to receive records directly from
          * providers using <a>PutRecord</a> or <a>PutRecordBatch</a>, or it can be
          * configured to use an existing Kinesis stream as its source. To specify a Kinesis
          * data stream as input, set the <code>DeliveryStreamType</code> parameter to
@@ -459,15 +460,15 @@ namespace Firehose
 
         /**
          * <p>Adds or updates tags for the specified delivery stream. A tag is a key-value
-         * pair that you can define and assign to AWS resources. If you specify a tag that
-         * already exists, the tag value is replaced with the value that you specify in the
-         * request. Tags are metadata. For example, you can add friendly names and
-         * descriptions or other types of information that can help you distinguish the
-         * delivery stream. For more information about tags, see <a
+         * pair that you can define and assign to Amazon Web Services resources. If you
+         * specify a tag that already exists, the tag value is replaced with the value that
+         * you specify in the request. Tags are metadata. For example, you can add friendly
+         * names and descriptions or other types of information that can help you
+         * distinguish the delivery stream. For more information about tags, see <a
          * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-         * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-         * Guide</i>. </p> <p>Each delivery stream can have up to 50 tags. </p> <p>This
-         * operation has a limit of five transactions per second per account.
+         * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost
+         * Management User Guide</i>. </p> <p>Each delivery stream can have up to 50 tags.
+         * </p> <p>This operation has a limit of five transactions per second per account.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/TagDeliveryStream">AWS
          * API Reference</a></p>

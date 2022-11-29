@@ -593,6 +593,7 @@ namespace Aws
         static const int u_24tb1_112xlarge_HASH = HashingUtils::HashString("u-24tb1.112xlarge");
         static const int trn1_2xlarge_HASH = HashingUtils::HashString("trn1.2xlarge");
         static const int trn1_32xlarge_HASH = HashingUtils::HashString("trn1.32xlarge");
+        static const int hpc6id_32xlarge_HASH = HashingUtils::HashString("hpc6id.32xlarge");
 
         /*
         The if-else chains in this file are converted into a jump table by the compiler,
@@ -3482,6 +3483,11 @@ namespace Aws
             enumValue = InstanceType::trn1_32xlarge;
             return true;
           }
+          else if (hashCode == hpc6id_32xlarge_HASH)
+          {
+            enumValue = InstanceType::hpc6id_32xlarge;
+            return true;
+          }
           return false;
         }
 
@@ -5239,6 +5245,9 @@ namespace Aws
             return true;
           case InstanceType::trn1_32xlarge:
             value = "trn1.32xlarge";
+            return true;
+          case InstanceType::hpc6id_32xlarge:
+            value = "hpc6id.32xlarge";
             return true;
           default:
             return false;

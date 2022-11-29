@@ -107,64 +107,64 @@ namespace Model
     /**
      * <p>The ARN of the role used by the source Kinesis data stream. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
-     * Identity and Access Management (IAM) ARN Format</a>.</p>
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon
+     * Web Services Identity and Access Management (IAM) ARN Format</a>.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
     /**
      * <p>The ARN of the role used by the source Kinesis data stream. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
-     * Identity and Access Management (IAM) ARN Format</a>.</p>
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon
+     * Web Services Identity and Access Management (IAM) ARN Format</a>.</p>
      */
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
 
     /**
      * <p>The ARN of the role used by the source Kinesis data stream. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
-     * Identity and Access Management (IAM) ARN Format</a>.</p>
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon
+     * Web Services Identity and Access Management (IAM) ARN Format</a>.</p>
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
      * <p>The ARN of the role used by the source Kinesis data stream. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
-     * Identity and Access Management (IAM) ARN Format</a>.</p>
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon
+     * Web Services Identity and Access Management (IAM) ARN Format</a>.</p>
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
      * <p>The ARN of the role used by the source Kinesis data stream. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
-     * Identity and Access Management (IAM) ARN Format</a>.</p>
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon
+     * Web Services Identity and Access Management (IAM) ARN Format</a>.</p>
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
     /**
      * <p>The ARN of the role used by the source Kinesis data stream. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
-     * Identity and Access Management (IAM) ARN Format</a>.</p>
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon
+     * Web Services Identity and Access Management (IAM) ARN Format</a>.</p>
      */
     inline KinesisStreamSourceDescription& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
     /**
      * <p>The ARN of the role used by the source Kinesis data stream. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
-     * Identity and Access Management (IAM) ARN Format</a>.</p>
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon
+     * Web Services Identity and Access Management (IAM) ARN Format</a>.</p>
      */
     inline KinesisStreamSourceDescription& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the role used by the source Kinesis data stream. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
-     * Identity and Access Management (IAM) ARN Format</a>.</p>
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon
+     * Web Services Identity and Access Management (IAM) ARN Format</a>.</p>
      */
     inline KinesisStreamSourceDescription& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 

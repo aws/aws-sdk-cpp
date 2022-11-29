@@ -40,65 +40,73 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the encryption key. Must belong to the same
-     * AWS Region as the destination Amazon S3 bucket. For more information, see <a
+     * Amazon Web Services Region as the destination Amazon S3 bucket. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline const Aws::String& GetAWSKMSKeyARN() const{ return m_aWSKMSKeyARN; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the encryption key. Must belong to the same
-     * AWS Region as the destination Amazon S3 bucket. For more information, see <a
+     * Amazon Web Services Region as the destination Amazon S3 bucket. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline bool AWSKMSKeyARNHasBeenSet() const { return m_aWSKMSKeyARNHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the encryption key. Must belong to the same
-     * AWS Region as the destination Amazon S3 bucket. For more information, see <a
+     * Amazon Web Services Region as the destination Amazon S3 bucket. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline void SetAWSKMSKeyARN(const Aws::String& value) { m_aWSKMSKeyARNHasBeenSet = true; m_aWSKMSKeyARN = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the encryption key. Must belong to the same
-     * AWS Region as the destination Amazon S3 bucket. For more information, see <a
+     * Amazon Web Services Region as the destination Amazon S3 bucket. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline void SetAWSKMSKeyARN(Aws::String&& value) { m_aWSKMSKeyARNHasBeenSet = true; m_aWSKMSKeyARN = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the encryption key. Must belong to the same
-     * AWS Region as the destination Amazon S3 bucket. For more information, see <a
+     * Amazon Web Services Region as the destination Amazon S3 bucket. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline void SetAWSKMSKeyARN(const char* value) { m_aWSKMSKeyARNHasBeenSet = true; m_aWSKMSKeyARN.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the encryption key. Must belong to the same
-     * AWS Region as the destination Amazon S3 bucket. For more information, see <a
+     * Amazon Web Services Region as the destination Amazon S3 bucket. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline KMSEncryptionConfig& WithAWSKMSKeyARN(const Aws::String& value) { SetAWSKMSKeyARN(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the encryption key. Must belong to the same
-     * AWS Region as the destination Amazon S3 bucket. For more information, see <a
+     * Amazon Web Services Region as the destination Amazon S3 bucket. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline KMSEncryptionConfig& WithAWSKMSKeyARN(Aws::String&& value) { SetAWSKMSKeyARN(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the encryption key. Must belong to the same
-     * AWS Region as the destination Amazon S3 bucket. For more information, see <a
+     * Amazon Web Services Region as the destination Amazon S3 bucket. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline KMSEncryptionConfig& WithAWSKMSKeyARN(const char* value) { SetAWSKMSKeyARN(value); return *this;}
 

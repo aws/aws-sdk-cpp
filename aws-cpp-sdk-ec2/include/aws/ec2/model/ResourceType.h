@@ -92,6 +92,11 @@ namespace Model
     capacity_reservation_fleet,
     traffic_mirror_filter_rule,
     vpc_endpoint_connection_device_type,
+    verified_access_instance,
+    verified_access_group,
+    verified_access_endpoint,
+    verified_access_policy,
+    verified_access_trust_provider,
     vpn_connection_device_type
   };
 
