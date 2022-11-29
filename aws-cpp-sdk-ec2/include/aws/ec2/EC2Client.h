@@ -2300,7 +2300,7 @@ namespace EC2
          * is restored to a specific snapshot taken from the original root volume, or that
          * is restored from an AMI that has the same key characteristics as that of the
          * instance.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-restoring-volume.html#replace-root">Replace
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/replace-root.html">Replace
          * a root volume</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateReplaceRootVolumeTask">AWS
@@ -4890,6 +4890,24 @@ namespace EC2
         virtual void DescribeAvailabilityZonesAsync(const Model::DescribeAvailabilityZonesRequest& request, const DescribeAvailabilityZonesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Describes the curent Infrastructure Performance metric
+         * subscriptions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAwsNetworkPerformanceMetricSubscriptions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAwsNetworkPerformanceMetricSubscriptionsOutcome DescribeAwsNetworkPerformanceMetricSubscriptions(const Model::DescribeAwsNetworkPerformanceMetricSubscriptionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeAwsNetworkPerformanceMetricSubscriptions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeAwsNetworkPerformanceMetricSubscriptionsOutcomeCallable DescribeAwsNetworkPerformanceMetricSubscriptionsCallable(const Model::DescribeAwsNetworkPerformanceMetricSubscriptionsRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeAwsNetworkPerformanceMetricSubscriptions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeAwsNetworkPerformanceMetricSubscriptionsAsync(const Model::DescribeAwsNetworkPerformanceMetricSubscriptionsRequest& request, const DescribeAwsNetworkPerformanceMetricSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Describes the specified bundle tasks or all of your bundle tasks.</p> 
          * <p>Completed bundle tasks are listed for only a limited time. If your bundle
          * task is no longer in the list, you can still register an AMI from it. Just use
@@ -6446,7 +6464,7 @@ namespace EC2
 
         /**
          * <p>Describes a root volume replacement task. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-restoring-volume.html#replace-root">Replace
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/replace-root.html">Replace
          * a root volume</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReplaceRootVolumeTasks">AWS
@@ -7797,6 +7815,24 @@ namespace EC2
         virtual void DisableAddressTransferAsync(const Model::DisableAddressTransferRequest& request, const DisableAddressTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Disables Infrastructure Performance metric subscriptions.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableAwsNetworkPerformanceMetricSubscription">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisableAwsNetworkPerformanceMetricSubscriptionOutcome DisableAwsNetworkPerformanceMetricSubscription(const Model::DisableAwsNetworkPerformanceMetricSubscriptionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisableAwsNetworkPerformanceMetricSubscription that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisableAwsNetworkPerformanceMetricSubscriptionOutcomeCallable DisableAwsNetworkPerformanceMetricSubscriptionCallable(const Model::DisableAwsNetworkPerformanceMetricSubscriptionRequest& request) const;
+
+        /**
+         * An Async wrapper for DisableAwsNetworkPerformanceMetricSubscription that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisableAwsNetworkPerformanceMetricSubscriptionAsync(const Model::DisableAwsNetworkPerformanceMetricSubscriptionRequest& request, const DisableAwsNetworkPerformanceMetricSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Disables EBS encryption by default for your account in the current
          * Region.</p> <p>After you disable encryption by default, you can still create
          * encrypted volumes by enabling encryption when you create each volume.</p>
@@ -8281,6 +8317,24 @@ namespace EC2
         virtual void EnableAddressTransferAsync(const Model::EnableAddressTransferRequest& request, const EnableAddressTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Enables Infrastructure Performance subscriptions.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableAwsNetworkPerformanceMetricSubscription">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::EnableAwsNetworkPerformanceMetricSubscriptionOutcome EnableAwsNetworkPerformanceMetricSubscription(const Model::EnableAwsNetworkPerformanceMetricSubscriptionRequest& request) const;
+
+        /**
+         * A Callable wrapper for EnableAwsNetworkPerformanceMetricSubscription that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::EnableAwsNetworkPerformanceMetricSubscriptionOutcomeCallable EnableAwsNetworkPerformanceMetricSubscriptionCallable(const Model::EnableAwsNetworkPerformanceMetricSubscriptionRequest& request) const;
+
+        /**
+         * An Async wrapper for EnableAwsNetworkPerformanceMetricSubscription that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void EnableAwsNetworkPerformanceMetricSubscriptionAsync(const Model::EnableAwsNetworkPerformanceMetricSubscriptionRequest& request, const EnableAwsNetworkPerformanceMetricSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Enables EBS encryption by default for your account in the current Region.</p>
          * <p>After you enable encryption by default, the EBS volumes that you create are
          * always encrypted, either using the default KMS key or the KMS key that you
@@ -8401,6 +8455,21 @@ namespace EC2
          * An Async wrapper for EnableIpamOrganizationAdminAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void EnableIpamOrganizationAdminAccountAsync(const Model::EnableIpamOrganizationAdminAccountRequest& request, const EnableIpamOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
+         */
+        virtual Model::EnableReachabilityAnalyzerOrganizationSharingOutcome EnableReachabilityAnalyzerOrganizationSharing(const Model::EnableReachabilityAnalyzerOrganizationSharingRequest& request) const;
+
+        /**
+         * A Callable wrapper for EnableReachabilityAnalyzerOrganizationSharing that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::EnableReachabilityAnalyzerOrganizationSharingOutcomeCallable EnableReachabilityAnalyzerOrganizationSharingCallable(const Model::EnableReachabilityAnalyzerOrganizationSharingRequest& request) const;
+
+        /**
+         * An Async wrapper for EnableReachabilityAnalyzerOrganizationSharing that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void EnableReachabilityAnalyzerOrganizationSharingAsync(const Model::EnableReachabilityAnalyzerOrganizationSharingRequest& request, const EnableReachabilityAnalyzerOrganizationSharingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables access to the EC2 serial console of all instances for your account.
@@ -8659,6 +8728,23 @@ namespace EC2
          * An Async wrapper for GetAssociatedIpv6PoolCidrs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetAssociatedIpv6PoolCidrsAsync(const Model::GetAssociatedIpv6PoolCidrsRequest& request, const GetAssociatedIpv6PoolCidrsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets network performance data.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAwsNetworkPerformanceData">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAwsNetworkPerformanceDataOutcome GetAwsNetworkPerformanceData(const Model::GetAwsNetworkPerformanceDataRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetAwsNetworkPerformanceData that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetAwsNetworkPerformanceDataOutcomeCallable GetAwsNetworkPerformanceDataCallable(const Model::GetAwsNetworkPerformanceDataRequest& request) const;
+
+        /**
+         * An Async wrapper for GetAwsNetworkPerformanceData that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetAwsNetworkPerformanceDataAsync(const Model::GetAwsNetworkPerformanceDataRequest& request, const GetAwsNetworkPerformanceDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets usage information about a Capacity Reservation. If the Capacity

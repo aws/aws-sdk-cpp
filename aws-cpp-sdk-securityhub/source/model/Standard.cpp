@@ -23,7 +23,8 @@ Standard::Standard() :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_enabledByDefault(false),
-    m_enabledByDefaultHasBeenSet(false)
+    m_enabledByDefaultHasBeenSet(false),
+    m_standardsManagedByHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ Standard::Standard(JsonView jsonValue) :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_enabledByDefault(false),
-    m_enabledByDefaultHasBeenSet(false)
+    m_enabledByDefaultHasBeenSet(false),
+    m_standardsManagedByHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -67,6 +69,13 @@ Standard& Standard::operator =(JsonView jsonValue)
     m_enabledByDefaultHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("StandardsManagedBy"))
+  {
+    m_standardsManagedBy = jsonValue.GetObject("StandardsManagedBy");
+
+    m_standardsManagedByHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -95,6 +104,12 @@ JsonValue Standard::Jsonize() const
   if(m_enabledByDefaultHasBeenSet)
   {
    payload.WithBool("EnabledByDefault", m_enabledByDefault);
+
+  }
+
+  if(m_standardsManagedByHasBeenSet)
+  {
+   payload.WithObject("StandardsManagedBy", m_standardsManagedBy.Jsonize());
 
   }
 

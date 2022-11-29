@@ -40,32 +40,32 @@ namespace Model
 
 
     /**
-     * <p>The operator to use when comparing values in the filter</p>
+     * <p>The operator to use when comparing values in the filter.</p>
      */
     inline const StringComparison& GetComparison() const{ return m_comparison; }
 
     /**
-     * <p>The operator to use when comparing values in the filter</p>
+     * <p>The operator to use when comparing values in the filter.</p>
      */
     inline bool ComparisonHasBeenSet() const { return m_comparisonHasBeenSet; }
 
     /**
-     * <p>The operator to use when comparing values in the filter</p>
+     * <p>The operator to use when comparing values in the filter.</p>
      */
     inline void SetComparison(const StringComparison& value) { m_comparisonHasBeenSet = true; m_comparison = value; }
 
     /**
-     * <p>The operator to use when comparing values in the filter</p>
+     * <p>The operator to use when comparing values in the filter.</p>
      */
     inline void SetComparison(StringComparison&& value) { m_comparisonHasBeenSet = true; m_comparison = std::move(value); }
 
     /**
-     * <p>The operator to use when comparing values in the filter</p>
+     * <p>The operator to use when comparing values in the filter.</p>
      */
     inline StringFilter& WithComparison(const StringComparison& value) { SetComparison(value); return *this;}
 
     /**
-     * <p>The operator to use when comparing values in the filter</p>
+     * <p>The operator to use when comparing values in the filter.</p>
      */
     inline StringFilter& WithComparison(StringComparison&& value) { SetComparison(std::move(value)); return *this;}
 

@@ -34,43 +34,43 @@ namespace Model
 
 
     /**
-     * <p>An array of objects, one for each finding that meets the criteria specified
+     * <p>An array of objects, one for each finding that matches the criteria specified
      * in the request.</p>
      */
     inline const Aws::Vector<Finding>& GetFindings() const{ return m_findings; }
 
     /**
-     * <p>An array of objects, one for each finding that meets the criteria specified
+     * <p>An array of objects, one for each finding that matches the criteria specified
      * in the request.</p>
      */
     inline void SetFindings(const Aws::Vector<Finding>& value) { m_findings = value; }
 
     /**
-     * <p>An array of objects, one for each finding that meets the criteria specified
+     * <p>An array of objects, one for each finding that matches the criteria specified
      * in the request.</p>
      */
     inline void SetFindings(Aws::Vector<Finding>&& value) { m_findings = std::move(value); }
 
     /**
-     * <p>An array of objects, one for each finding that meets the criteria specified
+     * <p>An array of objects, one for each finding that matches the criteria specified
      * in the request.</p>
      */
     inline GetFindingsResult& WithFindings(const Aws::Vector<Finding>& value) { SetFindings(value); return *this;}
 
     /**
-     * <p>An array of objects, one for each finding that meets the criteria specified
+     * <p>An array of objects, one for each finding that matches the criteria specified
      * in the request.</p>
      */
     inline GetFindingsResult& WithFindings(Aws::Vector<Finding>&& value) { SetFindings(std::move(value)); return *this;}
 
     /**
-     * <p>An array of objects, one for each finding that meets the criteria specified
+     * <p>An array of objects, one for each finding that matches the criteria specified
      * in the request.</p>
      */
     inline GetFindingsResult& AddFindings(const Finding& value) { m_findings.push_back(value); return *this; }
 
     /**
-     * <p>An array of objects, one for each finding that meets the criteria specified
+     * <p>An array of objects, one for each finding that matches the criteria specified
      * in the request.</p>
      */
     inline GetFindingsResult& AddFindings(Finding&& value) { m_findings.push_back(std::move(value)); return *this; }

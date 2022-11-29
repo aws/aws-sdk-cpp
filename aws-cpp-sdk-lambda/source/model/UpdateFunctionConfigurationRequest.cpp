@@ -32,7 +32,8 @@ UpdateFunctionConfigurationRequest::UpdateFunctionConfigurationRequest() :
     m_layersHasBeenSet(false),
     m_fileSystemConfigsHasBeenSet(false),
     m_imageConfigHasBeenSet(false),
-    m_ephemeralStorageHasBeenSet(false)
+    m_ephemeralStorageHasBeenSet(false),
+    m_snapStartHasBeenSet(false)
 {
 }
 
@@ -142,6 +143,12 @@ Aws::String UpdateFunctionConfigurationRequest::SerializePayload() const
   if(m_ephemeralStorageHasBeenSet)
   {
    payload.WithObject("EphemeralStorage", m_ephemeralStorage.Jsonize());
+
+  }
+
+  if(m_snapStartHasBeenSet)
+  {
+   payload.WithObject("SnapStart", m_snapStart.Jsonize());
 
   }
 

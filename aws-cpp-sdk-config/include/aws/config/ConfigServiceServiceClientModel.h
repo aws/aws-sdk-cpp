@@ -67,10 +67,12 @@
 #include <aws/config/model/GetOrganizationConformancePackDetailedStatusResult.h>
 #include <aws/config/model/GetOrganizationCustomRulePolicyResult.h>
 #include <aws/config/model/GetResourceConfigHistoryResult.h>
+#include <aws/config/model/GetResourceEvaluationSummaryResult.h>
 #include <aws/config/model/GetStoredQueryResult.h>
 #include <aws/config/model/ListAggregateDiscoveredResourcesResult.h>
 #include <aws/config/model/ListConformancePackComplianceScoresResult.h>
 #include <aws/config/model/ListDiscoveredResourcesResult.h>
+#include <aws/config/model/ListResourceEvaluationsResult.h>
 #include <aws/config/model/ListStoredQueriesResult.h>
 #include <aws/config/model/ListTagsForResourceResult.h>
 #include <aws/config/model/PutAggregationAuthorizationResult.h>
@@ -88,6 +90,7 @@
 #include <aws/config/model/SelectResourceConfigResult.h>
 #include <aws/config/model/StartConfigRulesEvaluationResult.h>
 #include <aws/config/model/StartRemediationExecutionResult.h>
+#include <aws/config/model/StartResourceEvaluationResult.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in ConfigServiceClient header */
 
@@ -188,10 +191,12 @@ namespace Aws
       class GetOrganizationConformancePackDetailedStatusRequest;
       class GetOrganizationCustomRulePolicyRequest;
       class GetResourceConfigHistoryRequest;
+      class GetResourceEvaluationSummaryRequest;
       class GetStoredQueryRequest;
       class ListAggregateDiscoveredResourcesRequest;
       class ListConformancePackComplianceScoresRequest;
       class ListDiscoveredResourcesRequest;
+      class ListResourceEvaluationsRequest;
       class ListStoredQueriesRequest;
       class ListTagsForResourceRequest;
       class PutAggregationAuthorizationRequest;
@@ -214,6 +219,7 @@ namespace Aws
       class StartConfigRulesEvaluationRequest;
       class StartConfigurationRecorderRequest;
       class StartRemediationExecutionRequest;
+      class StartResourceEvaluationRequest;
       class StopConfigurationRecorderRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
@@ -280,10 +286,12 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetOrganizationConformancePackDetailedStatusResult, ConfigServiceError> GetOrganizationConformancePackDetailedStatusOutcome;
       typedef Aws::Utils::Outcome<GetOrganizationCustomRulePolicyResult, ConfigServiceError> GetOrganizationCustomRulePolicyOutcome;
       typedef Aws::Utils::Outcome<GetResourceConfigHistoryResult, ConfigServiceError> GetResourceConfigHistoryOutcome;
+      typedef Aws::Utils::Outcome<GetResourceEvaluationSummaryResult, ConfigServiceError> GetResourceEvaluationSummaryOutcome;
       typedef Aws::Utils::Outcome<GetStoredQueryResult, ConfigServiceError> GetStoredQueryOutcome;
       typedef Aws::Utils::Outcome<ListAggregateDiscoveredResourcesResult, ConfigServiceError> ListAggregateDiscoveredResourcesOutcome;
       typedef Aws::Utils::Outcome<ListConformancePackComplianceScoresResult, ConfigServiceError> ListConformancePackComplianceScoresOutcome;
       typedef Aws::Utils::Outcome<ListDiscoveredResourcesResult, ConfigServiceError> ListDiscoveredResourcesOutcome;
+      typedef Aws::Utils::Outcome<ListResourceEvaluationsResult, ConfigServiceError> ListResourceEvaluationsOutcome;
       typedef Aws::Utils::Outcome<ListStoredQueriesResult, ConfigServiceError> ListStoredQueriesOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, ConfigServiceError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<PutAggregationAuthorizationResult, ConfigServiceError> PutAggregationAuthorizationOutcome;
@@ -306,6 +314,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<StartConfigRulesEvaluationResult, ConfigServiceError> StartConfigRulesEvaluationOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> StartConfigurationRecorderOutcome;
       typedef Aws::Utils::Outcome<StartRemediationExecutionResult, ConfigServiceError> StartRemediationExecutionOutcome;
+      typedef Aws::Utils::Outcome<StartResourceEvaluationResult, ConfigServiceError> StartResourceEvaluationOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> StopConfigurationRecorderOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> UntagResourceOutcome;
@@ -372,10 +381,12 @@ namespace Aws
       typedef std::future<GetOrganizationConformancePackDetailedStatusOutcome> GetOrganizationConformancePackDetailedStatusOutcomeCallable;
       typedef std::future<GetOrganizationCustomRulePolicyOutcome> GetOrganizationCustomRulePolicyOutcomeCallable;
       typedef std::future<GetResourceConfigHistoryOutcome> GetResourceConfigHistoryOutcomeCallable;
+      typedef std::future<GetResourceEvaluationSummaryOutcome> GetResourceEvaluationSummaryOutcomeCallable;
       typedef std::future<GetStoredQueryOutcome> GetStoredQueryOutcomeCallable;
       typedef std::future<ListAggregateDiscoveredResourcesOutcome> ListAggregateDiscoveredResourcesOutcomeCallable;
       typedef std::future<ListConformancePackComplianceScoresOutcome> ListConformancePackComplianceScoresOutcomeCallable;
       typedef std::future<ListDiscoveredResourcesOutcome> ListDiscoveredResourcesOutcomeCallable;
+      typedef std::future<ListResourceEvaluationsOutcome> ListResourceEvaluationsOutcomeCallable;
       typedef std::future<ListStoredQueriesOutcome> ListStoredQueriesOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<PutAggregationAuthorizationOutcome> PutAggregationAuthorizationOutcomeCallable;
@@ -398,6 +409,7 @@ namespace Aws
       typedef std::future<StartConfigRulesEvaluationOutcome> StartConfigRulesEvaluationOutcomeCallable;
       typedef std::future<StartConfigurationRecorderOutcome> StartConfigurationRecorderOutcomeCallable;
       typedef std::future<StartRemediationExecutionOutcome> StartRemediationExecutionOutcomeCallable;
+      typedef std::future<StartResourceEvaluationOutcome> StartResourceEvaluationOutcomeCallable;
       typedef std::future<StopConfigurationRecorderOutcome> StopConfigurationRecorderOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
@@ -467,10 +479,12 @@ namespace Aws
     typedef std::function<void(const ConfigServiceClient*, const Model::GetOrganizationConformancePackDetailedStatusRequest&, const Model::GetOrganizationConformancePackDetailedStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOrganizationConformancePackDetailedStatusResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::GetOrganizationCustomRulePolicyRequest&, const Model::GetOrganizationCustomRulePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOrganizationCustomRulePolicyResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::GetResourceConfigHistoryRequest&, const Model::GetResourceConfigHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourceConfigHistoryResponseReceivedHandler;
+    typedef std::function<void(const ConfigServiceClient*, const Model::GetResourceEvaluationSummaryRequest&, const Model::GetResourceEvaluationSummaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourceEvaluationSummaryResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::GetStoredQueryRequest&, const Model::GetStoredQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStoredQueryResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::ListAggregateDiscoveredResourcesRequest&, const Model::ListAggregateDiscoveredResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAggregateDiscoveredResourcesResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::ListConformancePackComplianceScoresRequest&, const Model::ListConformancePackComplianceScoresOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConformancePackComplianceScoresResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::ListDiscoveredResourcesRequest&, const Model::ListDiscoveredResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDiscoveredResourcesResponseReceivedHandler;
+    typedef std::function<void(const ConfigServiceClient*, const Model::ListResourceEvaluationsRequest&, const Model::ListResourceEvaluationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourceEvaluationsResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::ListStoredQueriesRequest&, const Model::ListStoredQueriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStoredQueriesResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::PutAggregationAuthorizationRequest&, const Model::PutAggregationAuthorizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAggregationAuthorizationResponseReceivedHandler;
@@ -493,6 +507,7 @@ namespace Aws
     typedef std::function<void(const ConfigServiceClient*, const Model::StartConfigRulesEvaluationRequest&, const Model::StartConfigRulesEvaluationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartConfigRulesEvaluationResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::StartConfigurationRecorderRequest&, const Model::StartConfigurationRecorderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartConfigurationRecorderResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::StartRemediationExecutionRequest&, const Model::StartRemediationExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartRemediationExecutionResponseReceivedHandler;
+    typedef std::function<void(const ConfigServiceClient*, const Model::StartResourceEvaluationRequest&, const Model::StartResourceEvaluationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartResourceEvaluationResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::StopConfigurationRecorderRequest&, const Model::StopConfigurationRecorderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopConfigurationRecorderResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;

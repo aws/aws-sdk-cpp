@@ -28,7 +28,7 @@ namespace Model
    * <p>A function's environment variable settings. You can use environment variables
    * to adjust your function's behavior without updating code. An environment
    * variable is a pair of strings that are stored in a function's version-specific
-   * configuration. </p><p><h3>See Also:</h3>   <a
+   * configuration.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/Environment">AWS
    * API Reference</a></p>
    */

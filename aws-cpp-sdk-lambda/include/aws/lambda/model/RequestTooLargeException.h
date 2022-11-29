@@ -25,9 +25,9 @@ namespace Model
 
   /**
    * <p>The request payload exceeded the <code>Invoke</code> request body JSON input
-   * limit. For more information, see <a
-   * href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>.
-   * </p><p><h3>See Also:</h3>   <a
+   * quota. For more information, see <a
+   * href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
+   * quotas</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RequestTooLargeException">AWS
    * API Reference</a></p>
    */

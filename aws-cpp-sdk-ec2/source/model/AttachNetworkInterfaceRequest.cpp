@@ -18,7 +18,8 @@ AttachNetworkInterfaceRequest::AttachNetworkInterfaceRequest() :
     m_instanceIdHasBeenSet(false),
     m_networkInterfaceIdHasBeenSet(false),
     m_networkCardIndex(0),
-    m_networkCardIndexHasBeenSet(false)
+    m_networkCardIndexHasBeenSet(false),
+    m_enaSrdSpecificationHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,11 @@ Aws::String AttachNetworkInterfaceRequest::SerializePayload() const
   if(m_networkCardIndexHasBeenSet)
   {
     ss << "NetworkCardIndex=" << m_networkCardIndex << "&";
+  }
+
+  if(m_enaSrdSpecificationHasBeenSet)
+  {
+    m_enaSrdSpecification.OutputToStream(ss, "EnaSrdSpecification");
   }
 
   ss << "Version=2016-11-15";

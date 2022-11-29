@@ -253,6 +253,12 @@ GetFunctionConfigurationResult& GetFunctionConfigurationResult::operator =(const
 
   }
 
+  if(jsonValue.ValueExists("SnapStart"))
+  {
+    m_snapStart = jsonValue.GetObject("SnapStart");
+
+  }
+
 
 
   return *this;

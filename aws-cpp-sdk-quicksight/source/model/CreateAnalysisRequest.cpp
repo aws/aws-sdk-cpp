@@ -20,7 +20,8 @@ CreateAnalysisRequest::CreateAnalysisRequest() :
     m_permissionsHasBeenSet(false),
     m_sourceEntityHasBeenSet(false),
     m_themeArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_definitionHasBeenSet(false)
 {
 }
 
@@ -71,6 +72,12 @@ Aws::String CreateAnalysisRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_definitionHasBeenSet)
+  {
+   payload.WithObject("Definition", m_definition.Jsonize());
 
   }
 

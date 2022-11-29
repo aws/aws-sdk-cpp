@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The function couldn't make a network connection to the configured file
+   * <p>The Lambda function couldn't make a network connection to the configured file
    * system.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/EFSMountConnectivityException">AWS
    * API Reference</a></p>

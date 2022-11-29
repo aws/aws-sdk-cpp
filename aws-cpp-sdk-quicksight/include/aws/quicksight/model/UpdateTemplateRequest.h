@@ -8,6 +8,7 @@
 #include <aws/quicksight/QuickSightRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/quicksight/model/TemplateSourceEntity.h>
+#include <aws/quicksight/model/TemplateVersionDefinition.h>
 #include <utility>
 
 namespace Aws
@@ -325,6 +326,43 @@ namespace Model
      */
     inline UpdateTemplateRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
+    /**
+     * <p>The definition of a template.</p> <p>A definition is the data model of all
+     * features in a Dashboard, Template, or Analysis.</p>
+     */
+    inline const TemplateVersionDefinition& GetDefinition() const{ return m_definition; }
+
+    /**
+     * <p>The definition of a template.</p> <p>A definition is the data model of all
+     * features in a Dashboard, Template, or Analysis.</p>
+     */
+    inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
+
+    /**
+     * <p>The definition of a template.</p> <p>A definition is the data model of all
+     * features in a Dashboard, Template, or Analysis.</p>
+     */
+    inline void SetDefinition(const TemplateVersionDefinition& value) { m_definitionHasBeenSet = true; m_definition = value; }
+
+    /**
+     * <p>The definition of a template.</p> <p>A definition is the data model of all
+     * features in a Dashboard, Template, or Analysis.</p>
+     */
+    inline void SetDefinition(TemplateVersionDefinition&& value) { m_definitionHasBeenSet = true; m_definition = std::move(value); }
+
+    /**
+     * <p>The definition of a template.</p> <p>A definition is the data model of all
+     * features in a Dashboard, Template, or Analysis.</p>
+     */
+    inline UpdateTemplateRequest& WithDefinition(const TemplateVersionDefinition& value) { SetDefinition(value); return *this;}
+
+    /**
+     * <p>The definition of a template.</p> <p>A definition is the data model of all
+     * features in a Dashboard, Template, or Analysis.</p>
+     */
+    inline UpdateTemplateRequest& WithDefinition(TemplateVersionDefinition&& value) { SetDefinition(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_awsAccountId;
@@ -341,6 +379,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    TemplateVersionDefinition m_definition;
+    bool m_definitionHasBeenSet = false;
   };
 
 } // namespace Model

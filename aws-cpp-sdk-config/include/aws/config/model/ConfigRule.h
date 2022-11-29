@@ -10,6 +10,8 @@
 #include <aws/config/model/Source.h>
 #include <aws/config/model/MaximumExecutionFrequency.h>
 #include <aws/config/model/ConfigRuleState.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/config/model/EvaluationModeConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -626,6 +628,55 @@ namespace Model
      */
     inline ConfigRule& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
 
+
+    /**
+     * <p>The modes the Config rule can be evaluated in. The valid values are distinct
+     * objects. By default, the value is Detective evaluation mode only.</p>
+     */
+    inline const Aws::Vector<EvaluationModeConfiguration>& GetEvaluationModes() const{ return m_evaluationModes; }
+
+    /**
+     * <p>The modes the Config rule can be evaluated in. The valid values are distinct
+     * objects. By default, the value is Detective evaluation mode only.</p>
+     */
+    inline bool EvaluationModesHasBeenSet() const { return m_evaluationModesHasBeenSet; }
+
+    /**
+     * <p>The modes the Config rule can be evaluated in. The valid values are distinct
+     * objects. By default, the value is Detective evaluation mode only.</p>
+     */
+    inline void SetEvaluationModes(const Aws::Vector<EvaluationModeConfiguration>& value) { m_evaluationModesHasBeenSet = true; m_evaluationModes = value; }
+
+    /**
+     * <p>The modes the Config rule can be evaluated in. The valid values are distinct
+     * objects. By default, the value is Detective evaluation mode only.</p>
+     */
+    inline void SetEvaluationModes(Aws::Vector<EvaluationModeConfiguration>&& value) { m_evaluationModesHasBeenSet = true; m_evaluationModes = std::move(value); }
+
+    /**
+     * <p>The modes the Config rule can be evaluated in. The valid values are distinct
+     * objects. By default, the value is Detective evaluation mode only.</p>
+     */
+    inline ConfigRule& WithEvaluationModes(const Aws::Vector<EvaluationModeConfiguration>& value) { SetEvaluationModes(value); return *this;}
+
+    /**
+     * <p>The modes the Config rule can be evaluated in. The valid values are distinct
+     * objects. By default, the value is Detective evaluation mode only.</p>
+     */
+    inline ConfigRule& WithEvaluationModes(Aws::Vector<EvaluationModeConfiguration>&& value) { SetEvaluationModes(std::move(value)); return *this;}
+
+    /**
+     * <p>The modes the Config rule can be evaluated in. The valid values are distinct
+     * objects. By default, the value is Detective evaluation mode only.</p>
+     */
+    inline ConfigRule& AddEvaluationModes(const EvaluationModeConfiguration& value) { m_evaluationModesHasBeenSet = true; m_evaluationModes.push_back(value); return *this; }
+
+    /**
+     * <p>The modes the Config rule can be evaluated in. The valid values are distinct
+     * objects. By default, the value is Detective evaluation mode only.</p>
+     */
+    inline ConfigRule& AddEvaluationModes(EvaluationModeConfiguration&& value) { m_evaluationModesHasBeenSet = true; m_evaluationModes.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_configRuleName;
@@ -657,6 +708,9 @@ namespace Model
 
     Aws::String m_createdBy;
     bool m_createdByHasBeenSet = false;
+
+    Aws::Vector<EvaluationModeConfiguration> m_evaluationModes;
+    bool m_evaluationModesHasBeenSet = false;
   };
 
 } // namespace Model

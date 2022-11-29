@@ -26,7 +26,7 @@ namespace Model
   /**
    * <p>The code signature failed one or more of the validation checks for signature
    * mismatch or expiry, and the code signing policy is set to ENFORCE. Lambda blocks
-   * the deployment. </p><p><h3>See Also:</h3>   <a
+   * the deployment.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CodeVerificationFailedException">AWS
    * API Reference</a></p>
    */

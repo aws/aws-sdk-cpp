@@ -27,6 +27,7 @@ namespace Aws
         static const int VOLUME_UPDATE_HASH = HashingUtils::HashString("VOLUME_UPDATE");
         static const int SNAPSHOT_UPDATE_HASH = HashingUtils::HashString("SNAPSHOT_UPDATE");
         static const int RELEASE_NFS_V3_LOCKS_HASH = HashingUtils::HashString("RELEASE_NFS_V3_LOCKS");
+        static const int VOLUME_RESTORE_HASH = HashingUtils::HashString("VOLUME_RESTORE");
 
 
         AdministrativeActionType GetAdministrativeActionTypeForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return AdministrativeActionType::RELEASE_NFS_V3_LOCKS;
           }
+          else if (hashCode == VOLUME_RESTORE_HASH)
+          {
+            return AdministrativeActionType::VOLUME_RESTORE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -88,6 +93,8 @@ namespace Aws
             return "SNAPSHOT_UPDATE";
           case AdministrativeActionType::RELEASE_NFS_V3_LOCKS:
             return "RELEASE_NFS_V3_LOCKS";
+          case AdministrativeActionType::VOLUME_RESTORE:
+            return "VOLUME_RESTORE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

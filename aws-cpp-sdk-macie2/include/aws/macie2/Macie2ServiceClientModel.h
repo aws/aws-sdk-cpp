@@ -45,8 +45,10 @@
 #include <aws/macie2/model/EnableOrganizationAdminAccountResult.h>
 #include <aws/macie2/model/GetAdministratorAccountResult.h>
 #include <aws/macie2/model/GetAllowListResult.h>
+#include <aws/macie2/model/GetAutomatedDiscoveryConfigurationResult.h>
 #include <aws/macie2/model/GetBucketStatisticsResult.h>
 #include <aws/macie2/model/GetClassificationExportConfigurationResult.h>
+#include <aws/macie2/model/GetClassificationScopeResult.h>
 #include <aws/macie2/model/GetCustomDataIdentifierResult.h>
 #include <aws/macie2/model/GetFindingStatisticsResult.h>
 #include <aws/macie2/model/GetFindingsResult.h>
@@ -56,13 +58,16 @@
 #include <aws/macie2/model/GetMacieSessionResult.h>
 #include <aws/macie2/model/GetMasterAccountResult.h>
 #include <aws/macie2/model/GetMemberResult.h>
+#include <aws/macie2/model/GetResourceProfileResult.h>
 #include <aws/macie2/model/GetRevealConfigurationResult.h>
 #include <aws/macie2/model/GetSensitiveDataOccurrencesResult.h>
 #include <aws/macie2/model/GetSensitiveDataOccurrencesAvailabilityResult.h>
+#include <aws/macie2/model/GetSensitivityInspectionTemplateResult.h>
 #include <aws/macie2/model/GetUsageStatisticsResult.h>
 #include <aws/macie2/model/GetUsageTotalsResult.h>
 #include <aws/macie2/model/ListAllowListsResult.h>
 #include <aws/macie2/model/ListClassificationJobsResult.h>
+#include <aws/macie2/model/ListClassificationScopesResult.h>
 #include <aws/macie2/model/ListCustomDataIdentifiersResult.h>
 #include <aws/macie2/model/ListFindingsResult.h>
 #include <aws/macie2/model/ListFindingsFiltersResult.h>
@@ -70,6 +75,9 @@
 #include <aws/macie2/model/ListManagedDataIdentifiersResult.h>
 #include <aws/macie2/model/ListMembersResult.h>
 #include <aws/macie2/model/ListOrganizationAdminAccountsResult.h>
+#include <aws/macie2/model/ListResourceProfileArtifactsResult.h>
+#include <aws/macie2/model/ListResourceProfileDetectionsResult.h>
+#include <aws/macie2/model/ListSensitivityInspectionTemplatesResult.h>
 #include <aws/macie2/model/ListTagsForResourceResult.h>
 #include <aws/macie2/model/PutClassificationExportConfigurationResult.h>
 #include <aws/macie2/model/PutFindingsPublicationConfigurationResult.h>
@@ -78,12 +86,17 @@
 #include <aws/macie2/model/TestCustomDataIdentifierResult.h>
 #include <aws/macie2/model/UntagResourceResult.h>
 #include <aws/macie2/model/UpdateAllowListResult.h>
+#include <aws/macie2/model/UpdateAutomatedDiscoveryConfigurationResult.h>
 #include <aws/macie2/model/UpdateClassificationJobResult.h>
+#include <aws/macie2/model/UpdateClassificationScopeResult.h>
 #include <aws/macie2/model/UpdateFindingsFilterResult.h>
 #include <aws/macie2/model/UpdateMacieSessionResult.h>
 #include <aws/macie2/model/UpdateMemberSessionResult.h>
 #include <aws/macie2/model/UpdateOrganizationConfigurationResult.h>
+#include <aws/macie2/model/UpdateResourceProfileResult.h>
+#include <aws/macie2/model/UpdateResourceProfileDetectionsResult.h>
 #include <aws/macie2/model/UpdateRevealConfigurationResult.h>
+#include <aws/macie2/model/UpdateSensitivityInspectionTemplateResult.h>
 /* End of service model headers required in Macie2Client header */
 
 namespace Aws
@@ -151,8 +164,10 @@ namespace Aws
       class EnableOrganizationAdminAccountRequest;
       class GetAdministratorAccountRequest;
       class GetAllowListRequest;
+      class GetAutomatedDiscoveryConfigurationRequest;
       class GetBucketStatisticsRequest;
       class GetClassificationExportConfigurationRequest;
+      class GetClassificationScopeRequest;
       class GetCustomDataIdentifierRequest;
       class GetFindingStatisticsRequest;
       class GetFindingsRequest;
@@ -162,13 +177,16 @@ namespace Aws
       class GetMacieSessionRequest;
       class GetMasterAccountRequest;
       class GetMemberRequest;
+      class GetResourceProfileRequest;
       class GetRevealConfigurationRequest;
       class GetSensitiveDataOccurrencesRequest;
       class GetSensitiveDataOccurrencesAvailabilityRequest;
+      class GetSensitivityInspectionTemplateRequest;
       class GetUsageStatisticsRequest;
       class GetUsageTotalsRequest;
       class ListAllowListsRequest;
       class ListClassificationJobsRequest;
+      class ListClassificationScopesRequest;
       class ListCustomDataIdentifiersRequest;
       class ListFindingsRequest;
       class ListFindingsFiltersRequest;
@@ -176,6 +194,9 @@ namespace Aws
       class ListManagedDataIdentifiersRequest;
       class ListMembersRequest;
       class ListOrganizationAdminAccountsRequest;
+      class ListResourceProfileArtifactsRequest;
+      class ListResourceProfileDetectionsRequest;
+      class ListSensitivityInspectionTemplatesRequest;
       class ListTagsForResourceRequest;
       class PutClassificationExportConfigurationRequest;
       class PutFindingsPublicationConfigurationRequest;
@@ -184,12 +205,17 @@ namespace Aws
       class TestCustomDataIdentifierRequest;
       class UntagResourceRequest;
       class UpdateAllowListRequest;
+      class UpdateAutomatedDiscoveryConfigurationRequest;
       class UpdateClassificationJobRequest;
+      class UpdateClassificationScopeRequest;
       class UpdateFindingsFilterRequest;
       class UpdateMacieSessionRequest;
       class UpdateMemberSessionRequest;
       class UpdateOrganizationConfigurationRequest;
+      class UpdateResourceProfileRequest;
+      class UpdateResourceProfileDetectionsRequest;
       class UpdateRevealConfigurationRequest;
+      class UpdateSensitivityInspectionTemplateRequest;
       /* End of service model forward declarations required in Macie2Client header */
 
       /* Service model Outcome class definitions */
@@ -220,8 +246,10 @@ namespace Aws
       typedef Aws::Utils::Outcome<EnableOrganizationAdminAccountResult, Macie2Error> EnableOrganizationAdminAccountOutcome;
       typedef Aws::Utils::Outcome<GetAdministratorAccountResult, Macie2Error> GetAdministratorAccountOutcome;
       typedef Aws::Utils::Outcome<GetAllowListResult, Macie2Error> GetAllowListOutcome;
+      typedef Aws::Utils::Outcome<GetAutomatedDiscoveryConfigurationResult, Macie2Error> GetAutomatedDiscoveryConfigurationOutcome;
       typedef Aws::Utils::Outcome<GetBucketStatisticsResult, Macie2Error> GetBucketStatisticsOutcome;
       typedef Aws::Utils::Outcome<GetClassificationExportConfigurationResult, Macie2Error> GetClassificationExportConfigurationOutcome;
+      typedef Aws::Utils::Outcome<GetClassificationScopeResult, Macie2Error> GetClassificationScopeOutcome;
       typedef Aws::Utils::Outcome<GetCustomDataIdentifierResult, Macie2Error> GetCustomDataIdentifierOutcome;
       typedef Aws::Utils::Outcome<GetFindingStatisticsResult, Macie2Error> GetFindingStatisticsOutcome;
       typedef Aws::Utils::Outcome<GetFindingsResult, Macie2Error> GetFindingsOutcome;
@@ -231,13 +259,16 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetMacieSessionResult, Macie2Error> GetMacieSessionOutcome;
       typedef Aws::Utils::Outcome<GetMasterAccountResult, Macie2Error> GetMasterAccountOutcome;
       typedef Aws::Utils::Outcome<GetMemberResult, Macie2Error> GetMemberOutcome;
+      typedef Aws::Utils::Outcome<GetResourceProfileResult, Macie2Error> GetResourceProfileOutcome;
       typedef Aws::Utils::Outcome<GetRevealConfigurationResult, Macie2Error> GetRevealConfigurationOutcome;
       typedef Aws::Utils::Outcome<GetSensitiveDataOccurrencesResult, Macie2Error> GetSensitiveDataOccurrencesOutcome;
       typedef Aws::Utils::Outcome<GetSensitiveDataOccurrencesAvailabilityResult, Macie2Error> GetSensitiveDataOccurrencesAvailabilityOutcome;
+      typedef Aws::Utils::Outcome<GetSensitivityInspectionTemplateResult, Macie2Error> GetSensitivityInspectionTemplateOutcome;
       typedef Aws::Utils::Outcome<GetUsageStatisticsResult, Macie2Error> GetUsageStatisticsOutcome;
       typedef Aws::Utils::Outcome<GetUsageTotalsResult, Macie2Error> GetUsageTotalsOutcome;
       typedef Aws::Utils::Outcome<ListAllowListsResult, Macie2Error> ListAllowListsOutcome;
       typedef Aws::Utils::Outcome<ListClassificationJobsResult, Macie2Error> ListClassificationJobsOutcome;
+      typedef Aws::Utils::Outcome<ListClassificationScopesResult, Macie2Error> ListClassificationScopesOutcome;
       typedef Aws::Utils::Outcome<ListCustomDataIdentifiersResult, Macie2Error> ListCustomDataIdentifiersOutcome;
       typedef Aws::Utils::Outcome<ListFindingsResult, Macie2Error> ListFindingsOutcome;
       typedef Aws::Utils::Outcome<ListFindingsFiltersResult, Macie2Error> ListFindingsFiltersOutcome;
@@ -245,6 +276,9 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListManagedDataIdentifiersResult, Macie2Error> ListManagedDataIdentifiersOutcome;
       typedef Aws::Utils::Outcome<ListMembersResult, Macie2Error> ListMembersOutcome;
       typedef Aws::Utils::Outcome<ListOrganizationAdminAccountsResult, Macie2Error> ListOrganizationAdminAccountsOutcome;
+      typedef Aws::Utils::Outcome<ListResourceProfileArtifactsResult, Macie2Error> ListResourceProfileArtifactsOutcome;
+      typedef Aws::Utils::Outcome<ListResourceProfileDetectionsResult, Macie2Error> ListResourceProfileDetectionsOutcome;
+      typedef Aws::Utils::Outcome<ListSensitivityInspectionTemplatesResult, Macie2Error> ListSensitivityInspectionTemplatesOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, Macie2Error> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<PutClassificationExportConfigurationResult, Macie2Error> PutClassificationExportConfigurationOutcome;
       typedef Aws::Utils::Outcome<PutFindingsPublicationConfigurationResult, Macie2Error> PutFindingsPublicationConfigurationOutcome;
@@ -253,12 +287,17 @@ namespace Aws
       typedef Aws::Utils::Outcome<TestCustomDataIdentifierResult, Macie2Error> TestCustomDataIdentifierOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, Macie2Error> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateAllowListResult, Macie2Error> UpdateAllowListOutcome;
+      typedef Aws::Utils::Outcome<UpdateAutomatedDiscoveryConfigurationResult, Macie2Error> UpdateAutomatedDiscoveryConfigurationOutcome;
       typedef Aws::Utils::Outcome<UpdateClassificationJobResult, Macie2Error> UpdateClassificationJobOutcome;
+      typedef Aws::Utils::Outcome<UpdateClassificationScopeResult, Macie2Error> UpdateClassificationScopeOutcome;
       typedef Aws::Utils::Outcome<UpdateFindingsFilterResult, Macie2Error> UpdateFindingsFilterOutcome;
       typedef Aws::Utils::Outcome<UpdateMacieSessionResult, Macie2Error> UpdateMacieSessionOutcome;
       typedef Aws::Utils::Outcome<UpdateMemberSessionResult, Macie2Error> UpdateMemberSessionOutcome;
       typedef Aws::Utils::Outcome<UpdateOrganizationConfigurationResult, Macie2Error> UpdateOrganizationConfigurationOutcome;
+      typedef Aws::Utils::Outcome<UpdateResourceProfileResult, Macie2Error> UpdateResourceProfileOutcome;
+      typedef Aws::Utils::Outcome<UpdateResourceProfileDetectionsResult, Macie2Error> UpdateResourceProfileDetectionsOutcome;
       typedef Aws::Utils::Outcome<UpdateRevealConfigurationResult, Macie2Error> UpdateRevealConfigurationOutcome;
+      typedef Aws::Utils::Outcome<UpdateSensitivityInspectionTemplateResult, Macie2Error> UpdateSensitivityInspectionTemplateOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
@@ -289,8 +328,10 @@ namespace Aws
       typedef std::future<EnableOrganizationAdminAccountOutcome> EnableOrganizationAdminAccountOutcomeCallable;
       typedef std::future<GetAdministratorAccountOutcome> GetAdministratorAccountOutcomeCallable;
       typedef std::future<GetAllowListOutcome> GetAllowListOutcomeCallable;
+      typedef std::future<GetAutomatedDiscoveryConfigurationOutcome> GetAutomatedDiscoveryConfigurationOutcomeCallable;
       typedef std::future<GetBucketStatisticsOutcome> GetBucketStatisticsOutcomeCallable;
       typedef std::future<GetClassificationExportConfigurationOutcome> GetClassificationExportConfigurationOutcomeCallable;
+      typedef std::future<GetClassificationScopeOutcome> GetClassificationScopeOutcomeCallable;
       typedef std::future<GetCustomDataIdentifierOutcome> GetCustomDataIdentifierOutcomeCallable;
       typedef std::future<GetFindingStatisticsOutcome> GetFindingStatisticsOutcomeCallable;
       typedef std::future<GetFindingsOutcome> GetFindingsOutcomeCallable;
@@ -300,13 +341,16 @@ namespace Aws
       typedef std::future<GetMacieSessionOutcome> GetMacieSessionOutcomeCallable;
       typedef std::future<GetMasterAccountOutcome> GetMasterAccountOutcomeCallable;
       typedef std::future<GetMemberOutcome> GetMemberOutcomeCallable;
+      typedef std::future<GetResourceProfileOutcome> GetResourceProfileOutcomeCallable;
       typedef std::future<GetRevealConfigurationOutcome> GetRevealConfigurationOutcomeCallable;
       typedef std::future<GetSensitiveDataOccurrencesOutcome> GetSensitiveDataOccurrencesOutcomeCallable;
       typedef std::future<GetSensitiveDataOccurrencesAvailabilityOutcome> GetSensitiveDataOccurrencesAvailabilityOutcomeCallable;
+      typedef std::future<GetSensitivityInspectionTemplateOutcome> GetSensitivityInspectionTemplateOutcomeCallable;
       typedef std::future<GetUsageStatisticsOutcome> GetUsageStatisticsOutcomeCallable;
       typedef std::future<GetUsageTotalsOutcome> GetUsageTotalsOutcomeCallable;
       typedef std::future<ListAllowListsOutcome> ListAllowListsOutcomeCallable;
       typedef std::future<ListClassificationJobsOutcome> ListClassificationJobsOutcomeCallable;
+      typedef std::future<ListClassificationScopesOutcome> ListClassificationScopesOutcomeCallable;
       typedef std::future<ListCustomDataIdentifiersOutcome> ListCustomDataIdentifiersOutcomeCallable;
       typedef std::future<ListFindingsOutcome> ListFindingsOutcomeCallable;
       typedef std::future<ListFindingsFiltersOutcome> ListFindingsFiltersOutcomeCallable;
@@ -314,6 +358,9 @@ namespace Aws
       typedef std::future<ListManagedDataIdentifiersOutcome> ListManagedDataIdentifiersOutcomeCallable;
       typedef std::future<ListMembersOutcome> ListMembersOutcomeCallable;
       typedef std::future<ListOrganizationAdminAccountsOutcome> ListOrganizationAdminAccountsOutcomeCallable;
+      typedef std::future<ListResourceProfileArtifactsOutcome> ListResourceProfileArtifactsOutcomeCallable;
+      typedef std::future<ListResourceProfileDetectionsOutcome> ListResourceProfileDetectionsOutcomeCallable;
+      typedef std::future<ListSensitivityInspectionTemplatesOutcome> ListSensitivityInspectionTemplatesOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<PutClassificationExportConfigurationOutcome> PutClassificationExportConfigurationOutcomeCallable;
       typedef std::future<PutFindingsPublicationConfigurationOutcome> PutFindingsPublicationConfigurationOutcomeCallable;
@@ -322,12 +369,17 @@ namespace Aws
       typedef std::future<TestCustomDataIdentifierOutcome> TestCustomDataIdentifierOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateAllowListOutcome> UpdateAllowListOutcomeCallable;
+      typedef std::future<UpdateAutomatedDiscoveryConfigurationOutcome> UpdateAutomatedDiscoveryConfigurationOutcomeCallable;
       typedef std::future<UpdateClassificationJobOutcome> UpdateClassificationJobOutcomeCallable;
+      typedef std::future<UpdateClassificationScopeOutcome> UpdateClassificationScopeOutcomeCallable;
       typedef std::future<UpdateFindingsFilterOutcome> UpdateFindingsFilterOutcomeCallable;
       typedef std::future<UpdateMacieSessionOutcome> UpdateMacieSessionOutcomeCallable;
       typedef std::future<UpdateMemberSessionOutcome> UpdateMemberSessionOutcomeCallable;
       typedef std::future<UpdateOrganizationConfigurationOutcome> UpdateOrganizationConfigurationOutcomeCallable;
+      typedef std::future<UpdateResourceProfileOutcome> UpdateResourceProfileOutcomeCallable;
+      typedef std::future<UpdateResourceProfileDetectionsOutcome> UpdateResourceProfileDetectionsOutcomeCallable;
       typedef std::future<UpdateRevealConfigurationOutcome> UpdateRevealConfigurationOutcomeCallable;
+      typedef std::future<UpdateSensitivityInspectionTemplateOutcome> UpdateSensitivityInspectionTemplateOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
 
@@ -361,8 +413,10 @@ namespace Aws
     typedef std::function<void(const Macie2Client*, const Model::EnableOrganizationAdminAccountRequest&, const Model::EnableOrganizationAdminAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableOrganizationAdminAccountResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::GetAdministratorAccountRequest&, const Model::GetAdministratorAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAdministratorAccountResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::GetAllowListRequest&, const Model::GetAllowListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAllowListResponseReceivedHandler;
+    typedef std::function<void(const Macie2Client*, const Model::GetAutomatedDiscoveryConfigurationRequest&, const Model::GetAutomatedDiscoveryConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAutomatedDiscoveryConfigurationResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::GetBucketStatisticsRequest&, const Model::GetBucketStatisticsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketStatisticsResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::GetClassificationExportConfigurationRequest&, const Model::GetClassificationExportConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetClassificationExportConfigurationResponseReceivedHandler;
+    typedef std::function<void(const Macie2Client*, const Model::GetClassificationScopeRequest&, const Model::GetClassificationScopeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetClassificationScopeResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::GetCustomDataIdentifierRequest&, const Model::GetCustomDataIdentifierOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCustomDataIdentifierResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::GetFindingStatisticsRequest&, const Model::GetFindingStatisticsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFindingStatisticsResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::GetFindingsRequest&, const Model::GetFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFindingsResponseReceivedHandler;
@@ -372,13 +426,16 @@ namespace Aws
     typedef std::function<void(const Macie2Client*, const Model::GetMacieSessionRequest&, const Model::GetMacieSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMacieSessionResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::GetMasterAccountRequest&, const Model::GetMasterAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMasterAccountResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::GetMemberRequest&, const Model::GetMemberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMemberResponseReceivedHandler;
+    typedef std::function<void(const Macie2Client*, const Model::GetResourceProfileRequest&, const Model::GetResourceProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourceProfileResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::GetRevealConfigurationRequest&, const Model::GetRevealConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRevealConfigurationResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::GetSensitiveDataOccurrencesRequest&, const Model::GetSensitiveDataOccurrencesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSensitiveDataOccurrencesResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::GetSensitiveDataOccurrencesAvailabilityRequest&, const Model::GetSensitiveDataOccurrencesAvailabilityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSensitiveDataOccurrencesAvailabilityResponseReceivedHandler;
+    typedef std::function<void(const Macie2Client*, const Model::GetSensitivityInspectionTemplateRequest&, const Model::GetSensitivityInspectionTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSensitivityInspectionTemplateResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::GetUsageStatisticsRequest&, const Model::GetUsageStatisticsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUsageStatisticsResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::GetUsageTotalsRequest&, const Model::GetUsageTotalsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUsageTotalsResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::ListAllowListsRequest&, const Model::ListAllowListsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAllowListsResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::ListClassificationJobsRequest&, const Model::ListClassificationJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListClassificationJobsResponseReceivedHandler;
+    typedef std::function<void(const Macie2Client*, const Model::ListClassificationScopesRequest&, const Model::ListClassificationScopesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListClassificationScopesResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::ListCustomDataIdentifiersRequest&, const Model::ListCustomDataIdentifiersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCustomDataIdentifiersResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::ListFindingsRequest&, const Model::ListFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFindingsResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::ListFindingsFiltersRequest&, const Model::ListFindingsFiltersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFindingsFiltersResponseReceivedHandler;
@@ -386,6 +443,9 @@ namespace Aws
     typedef std::function<void(const Macie2Client*, const Model::ListManagedDataIdentifiersRequest&, const Model::ListManagedDataIdentifiersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListManagedDataIdentifiersResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::ListMembersRequest&, const Model::ListMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMembersResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::ListOrganizationAdminAccountsRequest&, const Model::ListOrganizationAdminAccountsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOrganizationAdminAccountsResponseReceivedHandler;
+    typedef std::function<void(const Macie2Client*, const Model::ListResourceProfileArtifactsRequest&, const Model::ListResourceProfileArtifactsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourceProfileArtifactsResponseReceivedHandler;
+    typedef std::function<void(const Macie2Client*, const Model::ListResourceProfileDetectionsRequest&, const Model::ListResourceProfileDetectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourceProfileDetectionsResponseReceivedHandler;
+    typedef std::function<void(const Macie2Client*, const Model::ListSensitivityInspectionTemplatesRequest&, const Model::ListSensitivityInspectionTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSensitivityInspectionTemplatesResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::PutClassificationExportConfigurationRequest&, const Model::PutClassificationExportConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutClassificationExportConfigurationResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::PutFindingsPublicationConfigurationRequest&, const Model::PutFindingsPublicationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutFindingsPublicationConfigurationResponseReceivedHandler;
@@ -394,12 +454,17 @@ namespace Aws
     typedef std::function<void(const Macie2Client*, const Model::TestCustomDataIdentifierRequest&, const Model::TestCustomDataIdentifierOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestCustomDataIdentifierResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::UpdateAllowListRequest&, const Model::UpdateAllowListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAllowListResponseReceivedHandler;
+    typedef std::function<void(const Macie2Client*, const Model::UpdateAutomatedDiscoveryConfigurationRequest&, const Model::UpdateAutomatedDiscoveryConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAutomatedDiscoveryConfigurationResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::UpdateClassificationJobRequest&, const Model::UpdateClassificationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateClassificationJobResponseReceivedHandler;
+    typedef std::function<void(const Macie2Client*, const Model::UpdateClassificationScopeRequest&, const Model::UpdateClassificationScopeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateClassificationScopeResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::UpdateFindingsFilterRequest&, const Model::UpdateFindingsFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFindingsFilterResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::UpdateMacieSessionRequest&, const Model::UpdateMacieSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMacieSessionResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::UpdateMemberSessionRequest&, const Model::UpdateMemberSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMemberSessionResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::UpdateOrganizationConfigurationRequest&, const Model::UpdateOrganizationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateOrganizationConfigurationResponseReceivedHandler;
+    typedef std::function<void(const Macie2Client*, const Model::UpdateResourceProfileRequest&, const Model::UpdateResourceProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateResourceProfileResponseReceivedHandler;
+    typedef std::function<void(const Macie2Client*, const Model::UpdateResourceProfileDetectionsRequest&, const Model::UpdateResourceProfileDetectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateResourceProfileDetectionsResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::UpdateRevealConfigurationRequest&, const Model::UpdateRevealConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRevealConfigurationResponseReceivedHandler;
+    typedef std::function<void(const Macie2Client*, const Model::UpdateSensitivityInspectionTemplateRequest&, const Model::UpdateSensitivityInspectionTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSensitivityInspectionTemplateResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace Macie2
 } // namespace Aws

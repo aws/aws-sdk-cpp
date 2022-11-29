@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/compute-optimizer/model/EnhancedInfrastructureMetrics.h>
 #include <aws/compute-optimizer/model/InferredWorkloadTypesPreference.h>
+#include <aws/compute-optimizer/model/ExternalMetricsPreference.h>
 #include <aws/compute-optimizer/model/CpuVendorArchitecture.h>
 #include <utility>
 
@@ -285,6 +286,61 @@ namespace Model
      */
     inline EffectiveRecommendationPreferences& WithInferredWorkloadTypes(InferredWorkloadTypesPreference&& value) { SetInferredWorkloadTypes(std::move(value)); return *this;}
 
+
+    /**
+     * <p> An object that describes the external metrics recommendation preference.
+     * </p> <p> If the preference is applied in the latest recommendation refresh, an
+     * object with a valid <code>source</code> value appears in the response. If the
+     * preference isn't applied to the recommendations already, then this object
+     * doesn't appear in the response. </p>
+     */
+    inline const ExternalMetricsPreference& GetExternalMetricsPreference() const{ return m_externalMetricsPreference; }
+
+    /**
+     * <p> An object that describes the external metrics recommendation preference.
+     * </p> <p> If the preference is applied in the latest recommendation refresh, an
+     * object with a valid <code>source</code> value appears in the response. If the
+     * preference isn't applied to the recommendations already, then this object
+     * doesn't appear in the response. </p>
+     */
+    inline bool ExternalMetricsPreferenceHasBeenSet() const { return m_externalMetricsPreferenceHasBeenSet; }
+
+    /**
+     * <p> An object that describes the external metrics recommendation preference.
+     * </p> <p> If the preference is applied in the latest recommendation refresh, an
+     * object with a valid <code>source</code> value appears in the response. If the
+     * preference isn't applied to the recommendations already, then this object
+     * doesn't appear in the response. </p>
+     */
+    inline void SetExternalMetricsPreference(const ExternalMetricsPreference& value) { m_externalMetricsPreferenceHasBeenSet = true; m_externalMetricsPreference = value; }
+
+    /**
+     * <p> An object that describes the external metrics recommendation preference.
+     * </p> <p> If the preference is applied in the latest recommendation refresh, an
+     * object with a valid <code>source</code> value appears in the response. If the
+     * preference isn't applied to the recommendations already, then this object
+     * doesn't appear in the response. </p>
+     */
+    inline void SetExternalMetricsPreference(ExternalMetricsPreference&& value) { m_externalMetricsPreferenceHasBeenSet = true; m_externalMetricsPreference = std::move(value); }
+
+    /**
+     * <p> An object that describes the external metrics recommendation preference.
+     * </p> <p> If the preference is applied in the latest recommendation refresh, an
+     * object with a valid <code>source</code> value appears in the response. If the
+     * preference isn't applied to the recommendations already, then this object
+     * doesn't appear in the response. </p>
+     */
+    inline EffectiveRecommendationPreferences& WithExternalMetricsPreference(const ExternalMetricsPreference& value) { SetExternalMetricsPreference(value); return *this;}
+
+    /**
+     * <p> An object that describes the external metrics recommendation preference.
+     * </p> <p> If the preference is applied in the latest recommendation refresh, an
+     * object with a valid <code>source</code> value appears in the response. If the
+     * preference isn't applied to the recommendations already, then this object
+     * doesn't appear in the response. </p>
+     */
+    inline EffectiveRecommendationPreferences& WithExternalMetricsPreference(ExternalMetricsPreference&& value) { SetExternalMetricsPreference(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<CpuVendorArchitecture> m_cpuVendorArchitectures;
@@ -295,6 +351,9 @@ namespace Model
 
     InferredWorkloadTypesPreference m_inferredWorkloadTypes;
     bool m_inferredWorkloadTypesHasBeenSet = false;
+
+    ExternalMetricsPreference m_externalMetricsPreference;
+    bool m_externalMetricsPreferenceHasBeenSet = false;
   };
 
 } // namespace Model

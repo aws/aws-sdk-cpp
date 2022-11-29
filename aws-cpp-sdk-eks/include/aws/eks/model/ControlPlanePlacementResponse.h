@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The placement configuration for all the control plane instance of your local
+   * <p>The placement configuration for all the control plane instances of your local
    * Amazon EKS cluster on an Amazon Web Services Outpost. For more information, see
    * <a
    * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity

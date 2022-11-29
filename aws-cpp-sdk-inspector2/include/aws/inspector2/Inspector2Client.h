@@ -200,7 +200,7 @@ namespace Inspector2
 
         /**
          * <p>Describe Amazon Inspector configuration settings for an Amazon Web Services
-         * organization</p><p><h3>See Also:</h3>   <a
+         * organization.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/DescribeOrganizationConfiguration">AWS
          * API Reference</a></p>
          */

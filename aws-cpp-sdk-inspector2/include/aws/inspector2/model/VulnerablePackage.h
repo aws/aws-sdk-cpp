@@ -346,6 +346,55 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Number (ARN) of the AWS Lambda function affected by a
+     * finding.</p>
+     */
+    inline const Aws::String& GetSourceLambdaLayerArn() const{ return m_sourceLambdaLayerArn; }
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the AWS Lambda function affected by a
+     * finding.</p>
+     */
+    inline bool SourceLambdaLayerArnHasBeenSet() const { return m_sourceLambdaLayerArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the AWS Lambda function affected by a
+     * finding.</p>
+     */
+    inline void SetSourceLambdaLayerArn(const Aws::String& value) { m_sourceLambdaLayerArnHasBeenSet = true; m_sourceLambdaLayerArn = value; }
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the AWS Lambda function affected by a
+     * finding.</p>
+     */
+    inline void SetSourceLambdaLayerArn(Aws::String&& value) { m_sourceLambdaLayerArnHasBeenSet = true; m_sourceLambdaLayerArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the AWS Lambda function affected by a
+     * finding.</p>
+     */
+    inline void SetSourceLambdaLayerArn(const char* value) { m_sourceLambdaLayerArnHasBeenSet = true; m_sourceLambdaLayerArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the AWS Lambda function affected by a
+     * finding.</p>
+     */
+    inline VulnerablePackage& WithSourceLambdaLayerArn(const Aws::String& value) { SetSourceLambdaLayerArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the AWS Lambda function affected by a
+     * finding.</p>
+     */
+    inline VulnerablePackage& WithSourceLambdaLayerArn(Aws::String&& value) { SetSourceLambdaLayerArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the AWS Lambda function affected by a
+     * finding.</p>
+     */
+    inline VulnerablePackage& WithSourceLambdaLayerArn(const char* value) { SetSourceLambdaLayerArn(value); return *this;}
+
+
+    /**
      * <p>The source layer hash of the vulnerable package.</p>
      */
     inline const Aws::String& GetSourceLayerHash() const{ return m_sourceLayerHash; }
@@ -451,6 +500,9 @@ namespace Model
 
     Aws::String m_remediation;
     bool m_remediationHasBeenSet = false;
+
+    Aws::String m_sourceLambdaLayerArn;
+    bool m_sourceLambdaLayerArnHasBeenSet = false;
 
     Aws::String m_sourceLayerHash;
     bool m_sourceLayerHashHasBeenSet = false;

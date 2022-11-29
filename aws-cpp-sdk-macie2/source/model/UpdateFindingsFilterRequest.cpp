@@ -15,14 +15,14 @@ using namespace Aws::Utils;
 UpdateFindingsFilterRequest::UpdateFindingsFilterRequest() : 
     m_action(FindingsFilterAction::NOT_SET),
     m_actionHasBeenSet(false),
+    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientTokenHasBeenSet(true),
     m_descriptionHasBeenSet(false),
     m_findingCriteriaHasBeenSet(false),
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_position(0),
-    m_positionHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
-    m_clientTokenHasBeenSet(true)
+    m_positionHasBeenSet(false)
 {
 }
 
@@ -33,6 +33,12 @@ Aws::String UpdateFindingsFilterRequest::SerializePayload() const
   if(m_actionHasBeenSet)
   {
    payload.WithString("action", FindingsFilterActionMapper::GetNameForFindingsFilterAction(m_action));
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("clientToken", m_clientToken);
+
   }
 
   if(m_descriptionHasBeenSet)
@@ -56,12 +62,6 @@ Aws::String UpdateFindingsFilterRequest::SerializePayload() const
   if(m_positionHasBeenSet)
   {
    payload.WithInteger("position", m_position);
-
-  }
-
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
 
   }
 

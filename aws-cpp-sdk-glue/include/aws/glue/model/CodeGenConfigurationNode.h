@@ -55,6 +55,7 @@
 #include <aws/glue/model/MySQLCatalogTarget.h>
 #include <aws/glue/model/OracleSQLCatalogTarget.h>
 #include <aws/glue/model/PostgreSQLCatalogTarget.h>
+#include <aws/glue/model/DynamicTransform.h>
 #include <utility>
 
 namespace Aws
@@ -1793,6 +1794,37 @@ namespace Model
      */
     inline CodeGenConfigurationNode& WithPostgreSQLCatalogTarget(PostgreSQLCatalogTarget&& value) { SetPostgreSQLCatalogTarget(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies a custom visual transform created by a user.</p>
+     */
+    inline const DynamicTransform& GetDynamicTransform() const{ return m_dynamicTransform; }
+
+    /**
+     * <p>Specifies a custom visual transform created by a user.</p>
+     */
+    inline bool DynamicTransformHasBeenSet() const { return m_dynamicTransformHasBeenSet; }
+
+    /**
+     * <p>Specifies a custom visual transform created by a user.</p>
+     */
+    inline void SetDynamicTransform(const DynamicTransform& value) { m_dynamicTransformHasBeenSet = true; m_dynamicTransform = value; }
+
+    /**
+     * <p>Specifies a custom visual transform created by a user.</p>
+     */
+    inline void SetDynamicTransform(DynamicTransform&& value) { m_dynamicTransformHasBeenSet = true; m_dynamicTransform = std::move(value); }
+
+    /**
+     * <p>Specifies a custom visual transform created by a user.</p>
+     */
+    inline CodeGenConfigurationNode& WithDynamicTransform(const DynamicTransform& value) { SetDynamicTransform(value); return *this;}
+
+    /**
+     * <p>Specifies a custom visual transform created by a user.</p>
+     */
+    inline CodeGenConfigurationNode& WithDynamicTransform(DynamicTransform&& value) { SetDynamicTransform(std::move(value)); return *this;}
+
   private:
 
     AthenaConnectorSource m_athenaConnectorSource;
@@ -1944,6 +1976,9 @@ namespace Model
 
     PostgreSQLCatalogTarget m_postgreSQLCatalogTarget;
     bool m_postgreSQLCatalogTargetHasBeenSet = false;
+
+    DynamicTransform m_dynamicTransform;
+    bool m_dynamicTransformHasBeenSet = false;
   };
 
 } // namespace Model

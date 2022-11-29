@@ -153,9 +153,9 @@ namespace Model
 
 
     /**
-     * <p>The settings used when restoring the specified volume from snapshot. </p>
-     * <ul> <li> <p> <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots
-     * between the current state and the specified snapshot. If there are intermediate
+     * <p>The settings used when restoring the specified volume from snapshot.</p> <ul>
+     * <li> <p> <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots between
+     * the current state and the specified snapshot. If there are intermediate
      * snapshots and this option isn't used, <code>RestoreVolumeFromSnapshot</code>
      * fails.</p> </li> <li> <p> <code>DELETE_CLONED_VOLUMES</code> - Deletes any
      * dependent clone volumes created from intermediate snapshots. If there are any
@@ -165,9 +165,9 @@ namespace Model
     inline const Aws::Vector<RestoreOpenZFSVolumeOption>& GetOptions() const{ return m_options; }
 
     /**
-     * <p>The settings used when restoring the specified volume from snapshot. </p>
-     * <ul> <li> <p> <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots
-     * between the current state and the specified snapshot. If there are intermediate
+     * <p>The settings used when restoring the specified volume from snapshot.</p> <ul>
+     * <li> <p> <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots between
+     * the current state and the specified snapshot. If there are intermediate
      * snapshots and this option isn't used, <code>RestoreVolumeFromSnapshot</code>
      * fails.</p> </li> <li> <p> <code>DELETE_CLONED_VOLUMES</code> - Deletes any
      * dependent clone volumes created from intermediate snapshots. If there are any
@@ -177,9 +177,9 @@ namespace Model
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
 
     /**
-     * <p>The settings used when restoring the specified volume from snapshot. </p>
-     * <ul> <li> <p> <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots
-     * between the current state and the specified snapshot. If there are intermediate
+     * <p>The settings used when restoring the specified volume from snapshot.</p> <ul>
+     * <li> <p> <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots between
+     * the current state and the specified snapshot. If there are intermediate
      * snapshots and this option isn't used, <code>RestoreVolumeFromSnapshot</code>
      * fails.</p> </li> <li> <p> <code>DELETE_CLONED_VOLUMES</code> - Deletes any
      * dependent clone volumes created from intermediate snapshots. If there are any
@@ -189,9 +189,9 @@ namespace Model
     inline void SetOptions(const Aws::Vector<RestoreOpenZFSVolumeOption>& value) { m_optionsHasBeenSet = true; m_options = value; }
 
     /**
-     * <p>The settings used when restoring the specified volume from snapshot. </p>
-     * <ul> <li> <p> <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots
-     * between the current state and the specified snapshot. If there are intermediate
+     * <p>The settings used when restoring the specified volume from snapshot.</p> <ul>
+     * <li> <p> <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots between
+     * the current state and the specified snapshot. If there are intermediate
      * snapshots and this option isn't used, <code>RestoreVolumeFromSnapshot</code>
      * fails.</p> </li> <li> <p> <code>DELETE_CLONED_VOLUMES</code> - Deletes any
      * dependent clone volumes created from intermediate snapshots. If there are any
@@ -201,9 +201,9 @@ namespace Model
     inline void SetOptions(Aws::Vector<RestoreOpenZFSVolumeOption>&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
 
     /**
-     * <p>The settings used when restoring the specified volume from snapshot. </p>
-     * <ul> <li> <p> <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots
-     * between the current state and the specified snapshot. If there are intermediate
+     * <p>The settings used when restoring the specified volume from snapshot.</p> <ul>
+     * <li> <p> <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots between
+     * the current state and the specified snapshot. If there are intermediate
      * snapshots and this option isn't used, <code>RestoreVolumeFromSnapshot</code>
      * fails.</p> </li> <li> <p> <code>DELETE_CLONED_VOLUMES</code> - Deletes any
      * dependent clone volumes created from intermediate snapshots. If there are any
@@ -213,9 +213,9 @@ namespace Model
     inline RestoreVolumeFromSnapshotRequest& WithOptions(const Aws::Vector<RestoreOpenZFSVolumeOption>& value) { SetOptions(value); return *this;}
 
     /**
-     * <p>The settings used when restoring the specified volume from snapshot. </p>
-     * <ul> <li> <p> <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots
-     * between the current state and the specified snapshot. If there are intermediate
+     * <p>The settings used when restoring the specified volume from snapshot.</p> <ul>
+     * <li> <p> <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots between
+     * the current state and the specified snapshot. If there are intermediate
      * snapshots and this option isn't used, <code>RestoreVolumeFromSnapshot</code>
      * fails.</p> </li> <li> <p> <code>DELETE_CLONED_VOLUMES</code> - Deletes any
      * dependent clone volumes created from intermediate snapshots. If there are any
@@ -225,9 +225,9 @@ namespace Model
     inline RestoreVolumeFromSnapshotRequest& WithOptions(Aws::Vector<RestoreOpenZFSVolumeOption>&& value) { SetOptions(std::move(value)); return *this;}
 
     /**
-     * <p>The settings used when restoring the specified volume from snapshot. </p>
-     * <ul> <li> <p> <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots
-     * between the current state and the specified snapshot. If there are intermediate
+     * <p>The settings used when restoring the specified volume from snapshot.</p> <ul>
+     * <li> <p> <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots between
+     * the current state and the specified snapshot. If there are intermediate
      * snapshots and this option isn't used, <code>RestoreVolumeFromSnapshot</code>
      * fails.</p> </li> <li> <p> <code>DELETE_CLONED_VOLUMES</code> - Deletes any
      * dependent clone volumes created from intermediate snapshots. If there are any
@@ -237,9 +237,9 @@ namespace Model
     inline RestoreVolumeFromSnapshotRequest& AddOptions(const RestoreOpenZFSVolumeOption& value) { m_optionsHasBeenSet = true; m_options.push_back(value); return *this; }
 
     /**
-     * <p>The settings used when restoring the specified volume from snapshot. </p>
-     * <ul> <li> <p> <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots
-     * between the current state and the specified snapshot. If there are intermediate
+     * <p>The settings used when restoring the specified volume from snapshot.</p> <ul>
+     * <li> <p> <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots between
+     * the current state and the specified snapshot. If there are intermediate
      * snapshots and this option isn't used, <code>RestoreVolumeFromSnapshot</code>
      * fails.</p> </li> <li> <p> <code>DELETE_CLONED_VOLUMES</code> - Deletes any
      * dependent clone volumes created from intermediate snapshots. If there are any

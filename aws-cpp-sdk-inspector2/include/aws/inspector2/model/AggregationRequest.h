@@ -11,6 +11,8 @@
 #include <aws/inspector2/model/Ec2InstanceAggregation.h>
 #include <aws/inspector2/model/FindingTypeAggregation.h>
 #include <aws/inspector2/model/ImageLayerAggregation.h>
+#include <aws/inspector2/model/LambdaFunctionAggregation.h>
+#include <aws/inspector2/model/LambdaLayerAggregation.h>
 #include <aws/inspector2/model/PackageAggregation.h>
 #include <aws/inspector2/model/RepositoryAggregation.h>
 #include <aws/inspector2/model/TitleAggregation.h>
@@ -268,6 +270,68 @@ namespace Model
 
 
     /**
+     * <p>Returns an object with findings aggregated by AWS Lambda function.</p>
+     */
+    inline const LambdaFunctionAggregation& GetLambdaFunctionAggregation() const{ return m_lambdaFunctionAggregation; }
+
+    /**
+     * <p>Returns an object with findings aggregated by AWS Lambda function.</p>
+     */
+    inline bool LambdaFunctionAggregationHasBeenSet() const { return m_lambdaFunctionAggregationHasBeenSet; }
+
+    /**
+     * <p>Returns an object with findings aggregated by AWS Lambda function.</p>
+     */
+    inline void SetLambdaFunctionAggregation(const LambdaFunctionAggregation& value) { m_lambdaFunctionAggregationHasBeenSet = true; m_lambdaFunctionAggregation = value; }
+
+    /**
+     * <p>Returns an object with findings aggregated by AWS Lambda function.</p>
+     */
+    inline void SetLambdaFunctionAggregation(LambdaFunctionAggregation&& value) { m_lambdaFunctionAggregationHasBeenSet = true; m_lambdaFunctionAggregation = std::move(value); }
+
+    /**
+     * <p>Returns an object with findings aggregated by AWS Lambda function.</p>
+     */
+    inline AggregationRequest& WithLambdaFunctionAggregation(const LambdaFunctionAggregation& value) { SetLambdaFunctionAggregation(value); return *this;}
+
+    /**
+     * <p>Returns an object with findings aggregated by AWS Lambda function.</p>
+     */
+    inline AggregationRequest& WithLambdaFunctionAggregation(LambdaFunctionAggregation&& value) { SetLambdaFunctionAggregation(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Returns an object with findings aggregated by AWS Lambda layer.</p>
+     */
+    inline const LambdaLayerAggregation& GetLambdaLayerAggregation() const{ return m_lambdaLayerAggregation; }
+
+    /**
+     * <p>Returns an object with findings aggregated by AWS Lambda layer.</p>
+     */
+    inline bool LambdaLayerAggregationHasBeenSet() const { return m_lambdaLayerAggregationHasBeenSet; }
+
+    /**
+     * <p>Returns an object with findings aggregated by AWS Lambda layer.</p>
+     */
+    inline void SetLambdaLayerAggregation(const LambdaLayerAggregation& value) { m_lambdaLayerAggregationHasBeenSet = true; m_lambdaLayerAggregation = value; }
+
+    /**
+     * <p>Returns an object with findings aggregated by AWS Lambda layer.</p>
+     */
+    inline void SetLambdaLayerAggregation(LambdaLayerAggregation&& value) { m_lambdaLayerAggregationHasBeenSet = true; m_lambdaLayerAggregation = std::move(value); }
+
+    /**
+     * <p>Returns an object with findings aggregated by AWS Lambda layer.</p>
+     */
+    inline AggregationRequest& WithLambdaLayerAggregation(const LambdaLayerAggregation& value) { SetLambdaLayerAggregation(value); return *this;}
+
+    /**
+     * <p>Returns an object with findings aggregated by AWS Lambda layer.</p>
+     */
+    inline AggregationRequest& WithLambdaLayerAggregation(LambdaLayerAggregation&& value) { SetLambdaLayerAggregation(std::move(value)); return *this;}
+
+
+    /**
      * <p>An object that contains details about an aggregation request based on
      * operating system package type.</p>
      */
@@ -396,6 +460,12 @@ namespace Model
 
     ImageLayerAggregation m_imageLayerAggregation;
     bool m_imageLayerAggregationHasBeenSet = false;
+
+    LambdaFunctionAggregation m_lambdaFunctionAggregation;
+    bool m_lambdaFunctionAggregationHasBeenSet = false;
+
+    LambdaLayerAggregation m_lambdaLayerAggregation;
+    bool m_lambdaLayerAggregationHasBeenSet = false;
 
     PackageAggregation m_packageAggregation;
     bool m_packageAggregationHasBeenSet = false;

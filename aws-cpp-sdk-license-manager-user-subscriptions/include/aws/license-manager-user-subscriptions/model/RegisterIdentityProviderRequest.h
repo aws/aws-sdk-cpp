@@ -8,6 +8,7 @@
 #include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptionsRequest.h>
 #include <aws/license-manager-user-subscriptions/model/IdentityProvider.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/license-manager-user-subscriptions/model/Settings.h>
 #include <utility>
 
 namespace Aws
@@ -104,6 +105,43 @@ namespace Model
      */
     inline RegisterIdentityProviderRequest& WithProduct(const char* value) { SetProduct(value); return *this;}
 
+
+    /**
+     * <p>The registered identity provider’s product related configuration settings
+     * such as the subnets to provision VPC endpoints.</p>
+     */
+    inline const Settings& GetSettings() const{ return m_settings; }
+
+    /**
+     * <p>The registered identity provider’s product related configuration settings
+     * such as the subnets to provision VPC endpoints.</p>
+     */
+    inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
+
+    /**
+     * <p>The registered identity provider’s product related configuration settings
+     * such as the subnets to provision VPC endpoints.</p>
+     */
+    inline void SetSettings(const Settings& value) { m_settingsHasBeenSet = true; m_settings = value; }
+
+    /**
+     * <p>The registered identity provider’s product related configuration settings
+     * such as the subnets to provision VPC endpoints.</p>
+     */
+    inline void SetSettings(Settings&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
+
+    /**
+     * <p>The registered identity provider’s product related configuration settings
+     * such as the subnets to provision VPC endpoints.</p>
+     */
+    inline RegisterIdentityProviderRequest& WithSettings(const Settings& value) { SetSettings(value); return *this;}
+
+    /**
+     * <p>The registered identity provider’s product related configuration settings
+     * such as the subnets to provision VPC endpoints.</p>
+     */
+    inline RegisterIdentityProviderRequest& WithSettings(Settings&& value) { SetSettings(std::move(value)); return *this;}
+
   private:
 
     IdentityProvider m_identityProvider;
@@ -111,6 +149,9 @@ namespace Model
 
     Aws::String m_product;
     bool m_productHasBeenSet = false;
+
+    Settings m_settings;
+    bool m_settingsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -1161,8 +1161,8 @@ namespace ConfigService
         /**
          * <p>Returns the evaluation results for the specified Amazon Web Services
          * resource. The results indicate which Config rules were used to evaluate the
-         * resource, when each rule was last used, and whether the resource complies with
-         * each rule.</p><p><h3>See Also:</h3>   <a
+         * resource, when each rule was last invoked, and whether the resource complies
+         * with each rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByResource">AWS
          * API Reference</a></p>
          */
@@ -1393,6 +1393,28 @@ namespace ConfigService
         virtual void GetResourceConfigHistoryAsync(const Model::GetResourceConfigHistoryRequest& request, const GetResourceConfigHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a summary of resource evaluation for the specified resource
+         * evaluation ID from the proactive rules that were run. The results indicate which
+         * evaluation context was used to evaluate the rules, which resource details were
+         * evaluated, the evaluation mode that was run, and whether the resource details
+         * comply with the configuration of the proactive rules. </p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceEvaluationSummary">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetResourceEvaluationSummaryOutcome GetResourceEvaluationSummary(const Model::GetResourceEvaluationSummaryRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetResourceEvaluationSummary that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetResourceEvaluationSummaryOutcomeCallable GetResourceEvaluationSummaryCallable(const Model::GetResourceEvaluationSummaryRequest& request) const;
+
+        /**
+         * An Async wrapper for GetResourceEvaluationSummary that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetResourceEvaluationSummaryAsync(const Model::GetResourceEvaluationSummaryRequest& request, const GetResourceEvaluationSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns the details of a specific stored query.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetStoredQuery">AWS
          * API Reference</a></p>
@@ -1487,6 +1509,24 @@ namespace ConfigService
          * An Async wrapper for ListDiscoveredResources that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListDiscoveredResourcesAsync(const Model::ListDiscoveredResourcesRequest& request, const ListDiscoveredResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a list of proactive resource evaluations.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListResourceEvaluations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListResourceEvaluationsOutcome ListResourceEvaluations(const Model::ListResourceEvaluationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListResourceEvaluations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListResourceEvaluationsOutcomeCallable ListResourceEvaluationsCallable(const Model::ListResourceEvaluationsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListResourceEvaluations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListResourceEvaluationsAsync(const Model::ListResourceEvaluationsRequest& request, const ListResourceEvaluationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the stored queries for a single Amazon Web Services account and a
@@ -1883,8 +1923,9 @@ namespace ConfigService
          * exception for a specific resource with a specific Config rule. </p> 
          * <p>Config generates a remediation exception when a problem occurs executing a
          * remediation action to a specific resource. Remediation exceptions blocks
-         * auto-remediation until the exception is cleared.</p> <p><h3>See
-         * Also:</h3>   <a
+         * auto-remediation until the exception is cleared.</p>   <p>To place
+         * an exception on an Amazon Web Services resource, ensure remediation is set as
+         * manual remediation.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRemediationExceptions">AWS
          * API Reference</a></p>
          */
@@ -2107,6 +2148,30 @@ namespace ConfigService
          * An Async wrapper for StartRemediationExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StartRemediationExecutionAsync(const Model::StartRemediationExecutionRequest& request, const StartRemediationExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Runs an on-demand evaluation for the specified resource to determine whether
+         * the resource details will comply with configured Config rules. You can also use
+         * it for evaluation purposes. Config recommends using an evaluation context. It
+         * runs an execution against the resource details with all of the Config rules in
+         * your account that match with the specified proactive mode and resource type.</p>
+         *  <p>Ensure you have the <code>cloudformation:DescribeType</code> role
+         * setup to validate the resource type schema. </p> <p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartResourceEvaluation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartResourceEvaluationOutcome StartResourceEvaluation(const Model::StartResourceEvaluationRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartResourceEvaluation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartResourceEvaluationOutcomeCallable StartResourceEvaluationCallable(const Model::StartResourceEvaluationRequest& request) const;
+
+        /**
+         * An Async wrapper for StartResourceEvaluation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartResourceEvaluationAsync(const Model::StartResourceEvaluationRequest& request, const StartResourceEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops recording configurations of the Amazon Web Services resources you have

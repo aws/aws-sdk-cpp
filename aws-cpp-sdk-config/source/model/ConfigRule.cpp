@@ -30,7 +30,8 @@ ConfigRule::ConfigRule() :
     m_maximumExecutionFrequencyHasBeenSet(false),
     m_configRuleState(ConfigRuleState::NOT_SET),
     m_configRuleStateHasBeenSet(false),
-    m_createdByHasBeenSet(false)
+    m_createdByHasBeenSet(false),
+    m_evaluationModesHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ ConfigRule::ConfigRule(JsonView jsonValue) :
     m_maximumExecutionFrequencyHasBeenSet(false),
     m_configRuleState(ConfigRuleState::NOT_SET),
     m_configRuleStateHasBeenSet(false),
-    m_createdByHasBeenSet(false)
+    m_createdByHasBeenSet(false),
+    m_evaluationModesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -123,6 +125,16 @@ ConfigRule& ConfigRule::operator =(JsonView jsonValue)
     m_createdByHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EvaluationModes"))
+  {
+    Aws::Utils::Array<JsonView> evaluationModesJsonList = jsonValue.GetArray("EvaluationModes");
+    for(unsigned evaluationModesIndex = 0; evaluationModesIndex < evaluationModesJsonList.GetLength(); ++evaluationModesIndex)
+    {
+      m_evaluationModes.push_back(evaluationModesJsonList[evaluationModesIndex].AsObject());
+    }
+    m_evaluationModesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -185,6 +197,17 @@ JsonValue ConfigRule::Jsonize() const
   if(m_createdByHasBeenSet)
   {
    payload.WithString("CreatedBy", m_createdBy);
+
+  }
+
+  if(m_evaluationModesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> evaluationModesJsonList(m_evaluationModes.size());
+   for(unsigned evaluationModesIndex = 0; evaluationModesIndex < evaluationModesJsonList.GetLength(); ++evaluationModesIndex)
+   {
+     evaluationModesJsonList[evaluationModesIndex].AsObject(m_evaluationModes[evaluationModesIndex].Jsonize());
+   }
+   payload.WithArray("EvaluationModes", std::move(evaluationModesJsonList));
 
   }
 

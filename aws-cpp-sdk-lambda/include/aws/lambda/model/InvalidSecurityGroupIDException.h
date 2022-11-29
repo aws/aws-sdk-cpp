@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The Security Group ID provided in the Lambda function VPC configuration is
-   * invalid.</p><p><h3>See Also:</h3>   <a
+   * <p>The security group ID provided in the Lambda function VPC configuration is
+   * not valid.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/InvalidSecurityGroupIDException">AWS
    * API Reference</a></p>
    */

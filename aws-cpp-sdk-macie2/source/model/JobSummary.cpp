@@ -19,6 +19,7 @@ namespace Model
 {
 
 JobSummary::JobSummary() : 
+    m_bucketCriteriaHasBeenSet(false),
     m_bucketDefinitionsHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_jobIdHasBeenSet(false),
@@ -28,12 +29,12 @@ JobSummary::JobSummary() :
     m_jobTypeHasBeenSet(false),
     m_lastRunErrorStatusHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_userPausedDetailsHasBeenSet(false),
-    m_bucketCriteriaHasBeenSet(false)
+    m_userPausedDetailsHasBeenSet(false)
 {
 }
 
 JobSummary::JobSummary(JsonView jsonValue) : 
+    m_bucketCriteriaHasBeenSet(false),
     m_bucketDefinitionsHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_jobIdHasBeenSet(false),
@@ -43,14 +44,20 @@ JobSummary::JobSummary(JsonView jsonValue) :
     m_jobTypeHasBeenSet(false),
     m_lastRunErrorStatusHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_userPausedDetailsHasBeenSet(false),
-    m_bucketCriteriaHasBeenSet(false)
+    m_userPausedDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 JobSummary& JobSummary::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("bucketCriteria"))
+  {
+    m_bucketCriteria = jsonValue.GetObject("bucketCriteria");
+
+    m_bucketCriteriaHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("bucketDefinitions"))
   {
     Aws::Utils::Array<JsonView> bucketDefinitionsJsonList = jsonValue.GetArray("bucketDefinitions");
@@ -110,19 +117,18 @@ JobSummary& JobSummary::operator =(JsonView jsonValue)
     m_userPausedDetailsHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("bucketCriteria"))
-  {
-    m_bucketCriteria = jsonValue.GetObject("bucketCriteria");
-
-    m_bucketCriteriaHasBeenSet = true;
-  }
-
   return *this;
 }
 
 JsonValue JobSummary::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_bucketCriteriaHasBeenSet)
+  {
+   payload.WithObject("bucketCriteria", m_bucketCriteria.Jsonize());
+
+  }
 
   if(m_bucketDefinitionsHasBeenSet)
   {
@@ -171,12 +177,6 @@ JsonValue JobSummary::Jsonize() const
   if(m_userPausedDetailsHasBeenSet)
   {
    payload.WithObject("userPausedDetails", m_userPausedDetails.Jsonize());
-
-  }
-
-  if(m_bucketCriteriaHasBeenSet)
-  {
-   payload.WithObject("bucketCriteria", m_bucketCriteria.Jsonize());
 
   }
 

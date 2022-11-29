@@ -60,7 +60,8 @@ FunctionConfiguration::FunctionConfiguration() :
     m_signingProfileVersionArnHasBeenSet(false),
     m_signingJobArnHasBeenSet(false),
     m_architecturesHasBeenSet(false),
-    m_ephemeralStorageHasBeenSet(false)
+    m_ephemeralStorageHasBeenSet(false),
+    m_snapStartHasBeenSet(false)
 {
 }
 
@@ -106,7 +107,8 @@ FunctionConfiguration::FunctionConfiguration(JsonView jsonValue) :
     m_signingProfileVersionArnHasBeenSet(false),
     m_signingJobArnHasBeenSet(false),
     m_architecturesHasBeenSet(false),
-    m_ephemeralStorageHasBeenSet(false)
+    m_ephemeralStorageHasBeenSet(false),
+    m_snapStartHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -353,6 +355,13 @@ FunctionConfiguration& FunctionConfiguration::operator =(JsonView jsonValue)
     m_ephemeralStorageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SnapStart"))
+  {
+    m_snapStart = jsonValue.GetObject("SnapStart");
+
+    m_snapStartHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -564,6 +573,12 @@ JsonValue FunctionConfiguration::Jsonize() const
   if(m_ephemeralStorageHasBeenSet)
   {
    payload.WithObject("EphemeralStorage", m_ephemeralStorage.Jsonize());
+
+  }
+
+  if(m_snapStartHasBeenSet)
+  {
+   payload.WithObject("SnapStart", m_snapStart.Jsonize());
 
   }
 

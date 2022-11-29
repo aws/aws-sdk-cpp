@@ -10,7 +10,6 @@
 #include <aws/fsx/model/SvmEndpoints.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/fsx/model/StorageVirtualMachineLifecycle.h>
-#include <aws/fsx/model/StorageVirtualMachineSubtype.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/fsx/model/LifecycleTransitionReason.h>
 #include <aws/fsx/model/StorageVirtualMachineRootVolumeSecurityStyle.h>
@@ -358,37 +357,6 @@ namespace Model
 
 
     /**
-     * <p>Describes the SVM's subtype.</p>
-     */
-    inline const StorageVirtualMachineSubtype& GetSubtype() const{ return m_subtype; }
-
-    /**
-     * <p>Describes the SVM's subtype.</p>
-     */
-    inline bool SubtypeHasBeenSet() const { return m_subtypeHasBeenSet; }
-
-    /**
-     * <p>Describes the SVM's subtype.</p>
-     */
-    inline void SetSubtype(const StorageVirtualMachineSubtype& value) { m_subtypeHasBeenSet = true; m_subtype = value; }
-
-    /**
-     * <p>Describes the SVM's subtype.</p>
-     */
-    inline void SetSubtype(StorageVirtualMachineSubtype&& value) { m_subtypeHasBeenSet = true; m_subtype = std::move(value); }
-
-    /**
-     * <p>Describes the SVM's subtype.</p>
-     */
-    inline StorageVirtualMachine& WithSubtype(const StorageVirtualMachineSubtype& value) { SetSubtype(value); return *this;}
-
-    /**
-     * <p>Describes the SVM's subtype.</p>
-     */
-    inline StorageVirtualMachine& WithSubtype(StorageVirtualMachineSubtype&& value) { SetSubtype(std::move(value)); return *this;}
-
-
-    /**
      * <p>The SVM's UUID (universally unique identifier).</p>
      */
     inline const Aws::String& GetUUID() const{ return m_uUID; }
@@ -540,9 +508,6 @@ namespace Model
 
     Aws::String m_storageVirtualMachineId;
     bool m_storageVirtualMachineIdHasBeenSet = false;
-
-    StorageVirtualMachineSubtype m_subtype;
-    bool m_subtypeHasBeenSet = false;
 
     Aws::String m_uUID;
     bool m_uUIDHasBeenSet = false;

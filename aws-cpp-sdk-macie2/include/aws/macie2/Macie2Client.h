@@ -15,14 +15,7 @@ namespace Aws
 namespace Macie2
 {
   /**
-   * <p>Amazon Macie is a fully managed data security and data privacy service that
-   * uses machine learning and pattern matching to discover and protect your
-   * sensitive data in AWS. Macie automates the discovery of sensitive data, such as
-   * PII and intellectual property, to provide you with insight into the data that
-   * your organization stores in AWS. Macie also provides an inventory of your Amazon
-   * S3 buckets, which it continually monitors for you. If Macie detects sensitive
-   * data or potential data access issues, it generates detailed findings for you to
-   * review and act upon as necessary.</p>
+   * <p>Amazon Macie</p>
    */
   class AWS_MACIE2_API Macie2Client : public Aws::Client::AWSJsonClient
   {
@@ -348,8 +341,8 @@ namespace Macie2
 
         /**
          * <p>Retrieves (queries) statistical data and other information about one or more
-         * S3 buckets that Amazon Macie monitors and analyzes.</p><p><h3>See Also:</h3>  
-         * <a
+         * S3 buckets that Amazon Macie monitors and analyzes for an account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DescribeBuckets">AWS
          * API Reference</a></p>
          */
@@ -566,8 +559,26 @@ namespace Macie2
         virtual void GetAllowListAsync(const Model::GetAllowListRequest& request, const GetAllowListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves (queries) aggregated statistical data about S3 buckets that Amazon
-         * Macie monitors and analyzes.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the configuration settings and status of automated sensitive data
+         * discovery for an account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetAutomatedDiscoveryConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAutomatedDiscoveryConfigurationOutcome GetAutomatedDiscoveryConfiguration(const Model::GetAutomatedDiscoveryConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetAutomatedDiscoveryConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetAutomatedDiscoveryConfigurationOutcomeCallable GetAutomatedDiscoveryConfigurationCallable(const Model::GetAutomatedDiscoveryConfigurationRequest& request) const;
+
+        /**
+         * An Async wrapper for GetAutomatedDiscoveryConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetAutomatedDiscoveryConfigurationAsync(const Model::GetAutomatedDiscoveryConfigurationRequest& request, const GetAutomatedDiscoveryConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves (queries) aggregated statistical data about all the S3 buckets that
+         * Amazon Macie monitors and analyzes for an account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetBucketStatistics">AWS
          * API Reference</a></p>
          */
@@ -600,6 +611,24 @@ namespace Macie2
          * An Async wrapper for GetClassificationExportConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetClassificationExportConfigurationAsync(const Model::GetClassificationExportConfigurationRequest& request, const GetClassificationExportConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves the classification scope settings for an account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetClassificationScope">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetClassificationScopeOutcome GetClassificationScope(const Model::GetClassificationScopeRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetClassificationScope that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetClassificationScopeOutcomeCallable GetClassificationScopeCallable(const Model::GetClassificationScopeRequest& request) const;
+
+        /**
+         * An Async wrapper for GetClassificationScope that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetClassificationScopeAsync(const Model::GetClassificationScopeRequest& request, const GetClassificationScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the criteria and other settings for a custom data
@@ -709,7 +738,7 @@ namespace Macie2
         virtual void GetInvitationsCountAsync(const Model::GetInvitationsCountRequest& request, const GetInvitationsCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the current status and configuration settings for an Amazon Macie
+         * <p>Retrieves the status and configuration settings for an Amazon Macie
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetMacieSession">AWS
          * API Reference</a></p>
@@ -765,6 +794,24 @@ namespace Macie2
         virtual void GetMemberAsync(const Model::GetMemberRequest& request, const GetMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves (queries) sensitive data discovery statistics and the sensitivity
+         * score for an S3 bucket.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetResourceProfile">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetResourceProfileOutcome GetResourceProfile(const Model::GetResourceProfileRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetResourceProfile that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetResourceProfileOutcomeCallable GetResourceProfileCallable(const Model::GetResourceProfileRequest& request) const;
+
+        /**
+         * An Async wrapper for GetResourceProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetResourceProfileAsync(const Model::GetResourceProfileRequest& request, const GetResourceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves the status and configuration settings for retrieving occurrences of
          * sensitive data reported by findings.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetRevealConfiguration">AWS
@@ -817,6 +864,24 @@ namespace Macie2
          * An Async wrapper for GetSensitiveDataOccurrencesAvailability that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetSensitiveDataOccurrencesAvailabilityAsync(const Model::GetSensitiveDataOccurrencesAvailabilityRequest& request, const GetSensitiveDataOccurrencesAvailabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves the settings for the sensitivity inspection template for an
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetSensitivityInspectionTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetSensitivityInspectionTemplateOutcome GetSensitivityInspectionTemplate(const Model::GetSensitivityInspectionTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetSensitivityInspectionTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetSensitivityInspectionTemplateOutcomeCallable GetSensitivityInspectionTemplateCallable(const Model::GetSensitivityInspectionTemplateRequest& request) const;
+
+        /**
+         * An Async wrapper for GetSensitivityInspectionTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetSensitivityInspectionTemplateAsync(const Model::GetSensitivityInspectionTemplateRequest& request, const GetSensitivityInspectionTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves (queries) quotas and aggregated usage data for one or more
@@ -889,6 +954,24 @@ namespace Macie2
          * An Async wrapper for ListClassificationJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListClassificationJobsAsync(const Model::ListClassificationJobsRequest& request, const ListClassificationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves a subset of information about the classification scope for an
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListClassificationScopes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListClassificationScopesOutcome ListClassificationScopes(const Model::ListClassificationScopesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListClassificationScopes that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListClassificationScopesOutcomeCallable ListClassificationScopesCallable(const Model::ListClassificationScopesRequest& request) const;
+
+        /**
+         * An Async wrapper for ListClassificationScopes that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListClassificationScopesAsync(const Model::ListClassificationScopesRequest& request, const ListClassificationScopesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a subset of information about all the custom data identifiers for
@@ -1015,6 +1098,60 @@ namespace Macie2
          * An Async wrapper for ListOrganizationAdminAccounts that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListOrganizationAdminAccountsAsync(const Model::ListOrganizationAdminAccountsRequest& request, const ListOrganizationAdminAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves information about objects that were selected from an S3 bucket for
+         * automated sensitive data discovery.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListResourceProfileArtifacts">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListResourceProfileArtifactsOutcome ListResourceProfileArtifacts(const Model::ListResourceProfileArtifactsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListResourceProfileArtifacts that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListResourceProfileArtifactsOutcomeCallable ListResourceProfileArtifactsCallable(const Model::ListResourceProfileArtifactsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListResourceProfileArtifacts that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListResourceProfileArtifactsAsync(const Model::ListResourceProfileArtifactsRequest& request, const ListResourceProfileArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves information about the types and amount of sensitive data that
+         * Amazon Macie found in an S3 bucket.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListResourceProfileDetections">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListResourceProfileDetectionsOutcome ListResourceProfileDetections(const Model::ListResourceProfileDetectionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListResourceProfileDetections that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListResourceProfileDetectionsOutcomeCallable ListResourceProfileDetectionsCallable(const Model::ListResourceProfileDetectionsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListResourceProfileDetections that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListResourceProfileDetectionsAsync(const Model::ListResourceProfileDetectionsRequest& request, const ListResourceProfileDetectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves a subset of information about the sensitivity inspection template
+         * for an account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListSensitivityInspectionTemplates">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListSensitivityInspectionTemplatesOutcome ListSensitivityInspectionTemplates(const Model::ListSensitivityInspectionTemplatesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListSensitivityInspectionTemplates that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListSensitivityInspectionTemplatesOutcomeCallable ListSensitivityInspectionTemplatesCallable(const Model::ListSensitivityInspectionTemplatesRequest& request) const;
+
+        /**
+         * An Async wrapper for ListSensitivityInspectionTemplates that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListSensitivityInspectionTemplatesAsync(const Model::ListSensitivityInspectionTemplatesRequest& request, const ListSensitivityInspectionTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the tags (keys and values) that are associated with an Amazon Macie
@@ -1160,6 +1297,24 @@ namespace Macie2
         virtual void UpdateAllowListAsync(const Model::UpdateAllowListRequest& request, const UpdateAllowListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Enables or disables automated sensitive data discovery for an
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateAutomatedDiscoveryConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAutomatedDiscoveryConfigurationOutcome UpdateAutomatedDiscoveryConfiguration(const Model::UpdateAutomatedDiscoveryConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateAutomatedDiscoveryConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateAutomatedDiscoveryConfigurationOutcomeCallable UpdateAutomatedDiscoveryConfigurationCallable(const Model::UpdateAutomatedDiscoveryConfigurationRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateAutomatedDiscoveryConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateAutomatedDiscoveryConfigurationAsync(const Model::UpdateAutomatedDiscoveryConfigurationRequest& request, const UpdateAutomatedDiscoveryConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Changes the status of a classification job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateClassificationJob">AWS
          * API Reference</a></p>
@@ -1175,6 +1330,24 @@ namespace Macie2
          * An Async wrapper for UpdateClassificationJob that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateClassificationJobAsync(const Model::UpdateClassificationJobRequest& request, const UpdateClassificationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates the classification scope settings for an account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateClassificationScope">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateClassificationScopeOutcome UpdateClassificationScope(const Model::UpdateClassificationScopeRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateClassificationScope that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateClassificationScopeOutcomeCallable UpdateClassificationScopeCallable(const Model::UpdateClassificationScopeRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateClassificationScope that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateClassificationScopeAsync(const Model::UpdateClassificationScopeRequest& request, const UpdateClassificationScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the criteria and other settings for a findings filter.</p><p><h3>See
@@ -1249,6 +1422,41 @@ namespace Macie2
         virtual void UpdateOrganizationConfigurationAsync(const Model::UpdateOrganizationConfigurationRequest& request, const UpdateOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates the sensitivity score for an S3 bucket.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateResourceProfile">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateResourceProfileOutcome UpdateResourceProfile(const Model::UpdateResourceProfileRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateResourceProfile that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateResourceProfileOutcomeCallable UpdateResourceProfileCallable(const Model::UpdateResourceProfileRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateResourceProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateResourceProfileAsync(const Model::UpdateResourceProfileRequest& request, const UpdateResourceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates the sensitivity scoring settings for an S3 bucket.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateResourceProfileDetections">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateResourceProfileDetectionsOutcome UpdateResourceProfileDetections(const Model::UpdateResourceProfileDetectionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateResourceProfileDetections that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateResourceProfileDetectionsOutcomeCallable UpdateResourceProfileDetectionsCallable(const Model::UpdateResourceProfileDetectionsRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateResourceProfileDetections that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateResourceProfileDetectionsAsync(const Model::UpdateResourceProfileDetectionsRequest& request, const UpdateResourceProfileDetectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the status and configuration settings for retrieving occurrences of
          * sensitive data reported by findings.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateRevealConfiguration">AWS
@@ -1265,6 +1473,24 @@ namespace Macie2
          * An Async wrapper for UpdateRevealConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateRevealConfigurationAsync(const Model::UpdateRevealConfigurationRequest& request, const UpdateRevealConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates the settings for the sensitivity inspection template for an
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateSensitivityInspectionTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateSensitivityInspectionTemplateOutcome UpdateSensitivityInspectionTemplate(const Model::UpdateSensitivityInspectionTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateSensitivityInspectionTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateSensitivityInspectionTemplateOutcomeCallable UpdateSensitivityInspectionTemplateCallable(const Model::UpdateSensitivityInspectionTemplateRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateSensitivityInspectionTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateSensitivityInspectionTemplateAsync(const Model::UpdateSensitivityInspectionTemplateRequest& request, const UpdateSensitivityInspectionTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

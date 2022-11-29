@@ -85,6 +85,31 @@ namespace Model
      */
     inline AutoEnable& WithEcr(bool value) { SetEcr(value); return *this;}
 
+
+    /**
+     * <p>Represents whether AWS Lambda scans are automatically enabled for new members
+     * of your Amazon Inspector organization. </p>
+     */
+    inline bool GetLambda() const{ return m_lambda; }
+
+    /**
+     * <p>Represents whether AWS Lambda scans are automatically enabled for new members
+     * of your Amazon Inspector organization. </p>
+     */
+    inline bool LambdaHasBeenSet() const { return m_lambdaHasBeenSet; }
+
+    /**
+     * <p>Represents whether AWS Lambda scans are automatically enabled for new members
+     * of your Amazon Inspector organization. </p>
+     */
+    inline void SetLambda(bool value) { m_lambdaHasBeenSet = true; m_lambda = value; }
+
+    /**
+     * <p>Represents whether AWS Lambda scans are automatically enabled for new members
+     * of your Amazon Inspector organization. </p>
+     */
+    inline AutoEnable& WithLambda(bool value) { SetLambda(value); return *this;}
+
   private:
 
     bool m_ec2;
@@ -92,6 +117,9 @@ namespace Model
 
     bool m_ecr;
     bool m_ecrHasBeenSet = false;
+
+    bool m_lambda;
+    bool m_lambdaHasBeenSet = false;
   };
 
 } // namespace Model

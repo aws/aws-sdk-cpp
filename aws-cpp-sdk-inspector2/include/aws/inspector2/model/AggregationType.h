@@ -24,7 +24,9 @@ namespace Model
     AWS_EC2_INSTANCE,
     AWS_ECR_CONTAINER,
     IMAGE_LAYER,
-    ACCOUNT
+    ACCOUNT,
+    AWS_LAMBDA_FUNCTION,
+    LAMBDA_LAYER
   };
 
 namespace AggregationTypeMapper

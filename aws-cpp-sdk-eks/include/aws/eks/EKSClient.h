@@ -385,8 +385,10 @@ namespace EKS
         virtual void DescribeAddonAsync(const Model::DescribeAddonRequest& request, const DescribeAddonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the Kubernetes versions that the add-on can be used
-         * with.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the versions for an add-on. Information such as the Kubernetes
+         * versions that you can use the add-on with, the <code>owner</code>,
+         * <code>publisher</code>, and the <code>type</code> of the add-on are returned.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeAddonVersions">AWS
          * API Reference</a></p>
          */

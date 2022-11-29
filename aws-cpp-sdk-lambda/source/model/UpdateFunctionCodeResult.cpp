@@ -253,6 +253,12 @@ UpdateFunctionCodeResult& UpdateFunctionCodeResult::operator =(const Aws::Amazon
 
   }
 
+  if(jsonValue.ValueExists("SnapStart"))
+  {
+    m_snapStart = jsonValue.GetObject("SnapStart");
+
+  }
+
 
 
   return *this;

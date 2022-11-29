@@ -139,28 +139,28 @@ namespace Model
     /**
      * <p>Specifying this option preserves the add-on software on your cluster but
      * Amazon EKS stops managing any settings for the add-on. If an IAM account is
-     * associated with the add-on, it is not removed.</p>
+     * associated with the add-on, it isn't removed.</p>
      */
     inline bool GetPreserve() const{ return m_preserve; }
 
     /**
      * <p>Specifying this option preserves the add-on software on your cluster but
      * Amazon EKS stops managing any settings for the add-on. If an IAM account is
-     * associated with the add-on, it is not removed.</p>
+     * associated with the add-on, it isn't removed.</p>
      */
     inline bool PreserveHasBeenSet() const { return m_preserveHasBeenSet; }
 
     /**
      * <p>Specifying this option preserves the add-on software on your cluster but
      * Amazon EKS stops managing any settings for the add-on. If an IAM account is
-     * associated with the add-on, it is not removed.</p>
+     * associated with the add-on, it isn't removed.</p>
      */
     inline void SetPreserve(bool value) { m_preserveHasBeenSet = true; m_preserve = value; }
 
     /**
      * <p>Specifying this option preserves the add-on software on your cluster but
      * Amazon EKS stops managing any settings for the add-on. If an IAM account is
-     * associated with the add-on, it is not removed.</p>
+     * associated with the add-on, it isn't removed.</p>
      */
     inline DeleteAddonRequest& WithPreserve(bool value) { SetPreserve(value); return *this;}
 

@@ -86,47 +86,47 @@ namespace Model
 
 
     /**
-     * <p>A list of VPC security groups IDs.</p>
+     * <p>A list of VPC security group IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
 
     /**
-     * <p>A list of VPC security groups IDs.</p>
+     * <p>A list of VPC security group IDs.</p>
      */
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
 
     /**
-     * <p>A list of VPC security groups IDs.</p>
+     * <p>A list of VPC security group IDs.</p>
      */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
 
     /**
-     * <p>A list of VPC security groups IDs.</p>
+     * <p>A list of VPC security group IDs.</p>
      */
     inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
 
     /**
-     * <p>A list of VPC security groups IDs.</p>
+     * <p>A list of VPC security group IDs.</p>
      */
     inline VpcConfigResponse& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
 
     /**
-     * <p>A list of VPC security groups IDs.</p>
+     * <p>A list of VPC security group IDs.</p>
      */
     inline VpcConfigResponse& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
 
     /**
-     * <p>A list of VPC security groups IDs.</p>
+     * <p>A list of VPC security group IDs.</p>
      */
     inline VpcConfigResponse& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
     /**
-     * <p>A list of VPC security groups IDs.</p>
+     * <p>A list of VPC security group IDs.</p>
      */
     inline VpcConfigResponse& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of VPC security groups IDs.</p>
+     * <p>A list of VPC security group IDs.</p>
      */
     inline VpcConfigResponse& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 

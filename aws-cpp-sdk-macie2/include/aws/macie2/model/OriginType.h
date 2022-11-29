@@ -16,7 +16,8 @@ namespace Model
   enum class OriginType
   {
     NOT_SET,
-    SENSITIVE_DATA_DISCOVERY_JOB
+    SENSITIVE_DATA_DISCOVERY_JOB,
+    AUTOMATED_SENSITIVE_DATA_DISCOVERY
   };
 
 namespace OriginTypeMapper

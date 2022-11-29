@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     EC2_INSTANCE_HOURS,
     ECR_INITIAL_SCAN,
-    ECR_RESCAN
+    ECR_RESCAN,
+    LAMBDA_FUNCTION_HOURS
   };
 
 namespace UsageTypeMapper

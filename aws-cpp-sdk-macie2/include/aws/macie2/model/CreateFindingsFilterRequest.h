@@ -37,42 +37,42 @@ namespace Model
 
 
     /**
-     * <p>The action to perform on findings that meet the filter criteria
+     * <p>The action to perform on findings that match the filter criteria
      * (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive)
      * the findings; and, NOOP, don't perform any action on the findings.</p>
      */
     inline const FindingsFilterAction& GetAction() const{ return m_action; }
 
     /**
-     * <p>The action to perform on findings that meet the filter criteria
+     * <p>The action to perform on findings that match the filter criteria
      * (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive)
      * the findings; and, NOOP, don't perform any action on the findings.</p>
      */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
 
     /**
-     * <p>The action to perform on findings that meet the filter criteria
+     * <p>The action to perform on findings that match the filter criteria
      * (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive)
      * the findings; and, NOOP, don't perform any action on the findings.</p>
      */
     inline void SetAction(const FindingsFilterAction& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
-     * <p>The action to perform on findings that meet the filter criteria
+     * <p>The action to perform on findings that match the filter criteria
      * (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive)
      * the findings; and, NOOP, don't perform any action on the findings.</p>
      */
     inline void SetAction(FindingsFilterAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
-     * <p>The action to perform on findings that meet the filter criteria
+     * <p>The action to perform on findings that match the filter criteria
      * (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive)
      * the findings; and, NOOP, don't perform any action on the findings.</p>
      */
     inline CreateFindingsFilterRequest& WithAction(const FindingsFilterAction& value) { SetAction(value); return *this;}
 
     /**
-     * <p>The action to perform on findings that meet the filter criteria
+     * <p>The action to perform on findings that match the filter criteria
      * (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive)
      * the findings; and, NOOP, don't perform any action on the findings.</p>
      */

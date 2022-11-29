@@ -282,42 +282,42 @@ namespace Model
 
 
     /**
-     * <p>The registry the Amazon ECR container image belongs to.</p>
+     * <p>The registry for the Amazon ECR container image.</p>
      */
     inline const Aws::String& GetRegistry() const{ return m_registry; }
 
     /**
-     * <p>The registry the Amazon ECR container image belongs to.</p>
+     * <p>The registry for the Amazon ECR container image.</p>
      */
     inline bool RegistryHasBeenSet() const { return m_registryHasBeenSet; }
 
     /**
-     * <p>The registry the Amazon ECR container image belongs to.</p>
+     * <p>The registry for the Amazon ECR container image.</p>
      */
     inline void SetRegistry(const Aws::String& value) { m_registryHasBeenSet = true; m_registry = value; }
 
     /**
-     * <p>The registry the Amazon ECR container image belongs to.</p>
+     * <p>The registry for the Amazon ECR container image.</p>
      */
     inline void SetRegistry(Aws::String&& value) { m_registryHasBeenSet = true; m_registry = std::move(value); }
 
     /**
-     * <p>The registry the Amazon ECR container image belongs to.</p>
+     * <p>The registry for the Amazon ECR container image.</p>
      */
     inline void SetRegistry(const char* value) { m_registryHasBeenSet = true; m_registry.assign(value); }
 
     /**
-     * <p>The registry the Amazon ECR container image belongs to.</p>
+     * <p>The registry for the Amazon ECR container image.</p>
      */
     inline AwsEcrContainerImageDetails& WithRegistry(const Aws::String& value) { SetRegistry(value); return *this;}
 
     /**
-     * <p>The registry the Amazon ECR container image belongs to.</p>
+     * <p>The registry for the Amazon ECR container image.</p>
      */
     inline AwsEcrContainerImageDetails& WithRegistry(Aws::String&& value) { SetRegistry(std::move(value)); return *this;}
 
     /**
-     * <p>The registry the Amazon ECR container image belongs to.</p>
+     * <p>The registry for the Amazon ECR container image.</p>
      */
     inline AwsEcrContainerImageDetails& WithRegistry(const char* value) { SetRegistry(value); return *this;}
 

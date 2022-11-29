@@ -12,6 +12,7 @@ using namespace Aws::Utils;
 
 StartNetworkInsightsAnalysisRequest::StartNetworkInsightsAnalysisRequest() : 
     m_networkInsightsPathIdHasBeenSet(false),
+    m_additionalAccountsHasBeenSet(false),
     m_filterInArnsHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
@@ -28,6 +29,17 @@ Aws::String StartNetworkInsightsAnalysisRequest::SerializePayload() const
   if(m_networkInsightsPathIdHasBeenSet)
   {
     ss << "NetworkInsightsPathId=" << StringUtils::URLEncode(m_networkInsightsPathId.c_str()) << "&";
+  }
+
+  if(m_additionalAccountsHasBeenSet)
+  {
+    unsigned additionalAccountsCount = 1;
+    for(auto& item : m_additionalAccounts)
+    {
+      ss << "AdditionalAccount." << additionalAccountsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      additionalAccountsCount++;
+    }
   }
 
   if(m_filterInArnsHasBeenSet)

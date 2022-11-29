@@ -7,6 +7,7 @@
 #include <aws/eks/EKS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/eks/model/MarketplaceInformation.h>
 #include <aws/eks/model/AddonVersionInfo.h>
 #include <utility>
 
@@ -169,6 +170,119 @@ namespace Model
      */
     inline AddonInfo& AddAddonVersions(AddonVersionInfo&& value) { m_addonVersionsHasBeenSet = true; m_addonVersions.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The publisher of the add-on.</p>
+     */
+    inline const Aws::String& GetPublisher() const{ return m_publisher; }
+
+    /**
+     * <p>The publisher of the add-on.</p>
+     */
+    inline bool PublisherHasBeenSet() const { return m_publisherHasBeenSet; }
+
+    /**
+     * <p>The publisher of the add-on.</p>
+     */
+    inline void SetPublisher(const Aws::String& value) { m_publisherHasBeenSet = true; m_publisher = value; }
+
+    /**
+     * <p>The publisher of the add-on.</p>
+     */
+    inline void SetPublisher(Aws::String&& value) { m_publisherHasBeenSet = true; m_publisher = std::move(value); }
+
+    /**
+     * <p>The publisher of the add-on.</p>
+     */
+    inline void SetPublisher(const char* value) { m_publisherHasBeenSet = true; m_publisher.assign(value); }
+
+    /**
+     * <p>The publisher of the add-on.</p>
+     */
+    inline AddonInfo& WithPublisher(const Aws::String& value) { SetPublisher(value); return *this;}
+
+    /**
+     * <p>The publisher of the add-on.</p>
+     */
+    inline AddonInfo& WithPublisher(Aws::String&& value) { SetPublisher(std::move(value)); return *this;}
+
+    /**
+     * <p>The publisher of the add-on.</p>
+     */
+    inline AddonInfo& WithPublisher(const char* value) { SetPublisher(value); return *this;}
+
+
+    /**
+     * <p>The owner of the add-on.</p>
+     */
+    inline const Aws::String& GetOwner() const{ return m_owner; }
+
+    /**
+     * <p>The owner of the add-on.</p>
+     */
+    inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
+
+    /**
+     * <p>The owner of the add-on.</p>
+     */
+    inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
+
+    /**
+     * <p>The owner of the add-on.</p>
+     */
+    inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
+
+    /**
+     * <p>The owner of the add-on.</p>
+     */
+    inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
+
+    /**
+     * <p>The owner of the add-on.</p>
+     */
+    inline AddonInfo& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
+
+    /**
+     * <p>The owner of the add-on.</p>
+     */
+    inline AddonInfo& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
+
+    /**
+     * <p>The owner of the add-on.</p>
+     */
+    inline AddonInfo& WithOwner(const char* value) { SetOwner(value); return *this;}
+
+
+    /**
+     * <p>Information about the add-on from the Amazon Web Services Marketplace.</p>
+     */
+    inline const MarketplaceInformation& GetMarketplaceInformation() const{ return m_marketplaceInformation; }
+
+    /**
+     * <p>Information about the add-on from the Amazon Web Services Marketplace.</p>
+     */
+    inline bool MarketplaceInformationHasBeenSet() const { return m_marketplaceInformationHasBeenSet; }
+
+    /**
+     * <p>Information about the add-on from the Amazon Web Services Marketplace.</p>
+     */
+    inline void SetMarketplaceInformation(const MarketplaceInformation& value) { m_marketplaceInformationHasBeenSet = true; m_marketplaceInformation = value; }
+
+    /**
+     * <p>Information about the add-on from the Amazon Web Services Marketplace.</p>
+     */
+    inline void SetMarketplaceInformation(MarketplaceInformation&& value) { m_marketplaceInformationHasBeenSet = true; m_marketplaceInformation = std::move(value); }
+
+    /**
+     * <p>Information about the add-on from the Amazon Web Services Marketplace.</p>
+     */
+    inline AddonInfo& WithMarketplaceInformation(const MarketplaceInformation& value) { SetMarketplaceInformation(value); return *this;}
+
+    /**
+     * <p>Information about the add-on from the Amazon Web Services Marketplace.</p>
+     */
+    inline AddonInfo& WithMarketplaceInformation(MarketplaceInformation&& value) { SetMarketplaceInformation(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_addonName;
@@ -179,6 +293,15 @@ namespace Model
 
     Aws::Vector<AddonVersionInfo> m_addonVersions;
     bool m_addonVersionsHasBeenSet = false;
+
+    Aws::String m_publisher;
+    bool m_publisherHasBeenSet = false;
+
+    Aws::String m_owner;
+    bool m_ownerHasBeenSet = false;
+
+    MarketplaceInformation m_marketplaceInformation;
+    bool m_marketplaceInformationHasBeenSet = false;
   };
 
 } // namespace Model

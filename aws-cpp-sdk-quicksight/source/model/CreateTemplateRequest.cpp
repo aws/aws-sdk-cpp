@@ -19,7 +19,8 @@ CreateTemplateRequest::CreateTemplateRequest() :
     m_permissionsHasBeenSet(false),
     m_sourceEntityHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_versionDescriptionHasBeenSet(false)
+    m_versionDescriptionHasBeenSet(false),
+    m_definitionHasBeenSet(false)
 {
 }
 
@@ -64,6 +65,12 @@ Aws::String CreateTemplateRequest::SerializePayload() const
   if(m_versionDescriptionHasBeenSet)
   {
    payload.WithString("VersionDescription", m_versionDescription);
+
+  }
+
+  if(m_definitionHasBeenSet)
+  {
+   payload.WithObject("Definition", m_definition.Jsonize());
 
   }
 

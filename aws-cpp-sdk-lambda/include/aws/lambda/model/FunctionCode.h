@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>The code for the Lambda function. You can specify either an object in Amazon
+   * <p>The code for the Lambda function. You can either specify an object in Amazon
    * S3, upload a .zip file archive deployment package directly, or specify the URI
    * of a container image.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/FunctionCode">AWS
@@ -42,37 +42,37 @@ namespace Model
 
     /**
      * <p>The base64-encoded contents of the deployment package. Amazon Web Services
-     * SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
+     * SDK and CLI clients handle the encoding for you.</p>
      */
     inline const Aws::Utils::CryptoBuffer& GetZipFile() const{ return m_zipFile; }
 
     /**
      * <p>The base64-encoded contents of the deployment package. Amazon Web Services
-     * SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
+     * SDK and CLI clients handle the encoding for you.</p>
      */
     inline bool ZipFileHasBeenSet() const { return m_zipFileHasBeenSet; }
 
     /**
      * <p>The base64-encoded contents of the deployment package. Amazon Web Services
-     * SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
+     * SDK and CLI clients handle the encoding for you.</p>
      */
     inline void SetZipFile(const Aws::Utils::CryptoBuffer& value) { m_zipFileHasBeenSet = true; m_zipFile = value; }
 
     /**
      * <p>The base64-encoded contents of the deployment package. Amazon Web Services
-     * SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
+     * SDK and CLI clients handle the encoding for you.</p>
      */
     inline void SetZipFile(Aws::Utils::CryptoBuffer&& value) { m_zipFileHasBeenSet = true; m_zipFile = std::move(value); }
 
     /**
      * <p>The base64-encoded contents of the deployment package. Amazon Web Services
-     * SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
+     * SDK and CLI clients handle the encoding for you.</p>
      */
     inline FunctionCode& WithZipFile(const Aws::Utils::CryptoBuffer& value) { SetZipFile(value); return *this;}
 
     /**
      * <p>The base64-encoded contents of the deployment package. Amazon Web Services
-     * SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
+     * SDK and CLI clients handle the encoding for you.</p>
      */
     inline FunctionCode& WithZipFile(Aws::Utils::CryptoBuffer&& value) { SetZipFile(std::move(value)); return *this;}
 

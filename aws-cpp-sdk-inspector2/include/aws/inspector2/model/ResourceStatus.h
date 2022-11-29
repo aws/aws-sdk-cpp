@@ -99,6 +99,43 @@ namespace Model
      */
     inline ResourceStatus& WithEcr(Status&& value) { SetEcr(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The status of Amazon Inspector scanning for AWS Lambda function
+     * resources.</p>
+     */
+    inline const Status& GetLambda() const{ return m_lambda; }
+
+    /**
+     * <p>The status of Amazon Inspector scanning for AWS Lambda function
+     * resources.</p>
+     */
+    inline bool LambdaHasBeenSet() const { return m_lambdaHasBeenSet; }
+
+    /**
+     * <p>The status of Amazon Inspector scanning for AWS Lambda function
+     * resources.</p>
+     */
+    inline void SetLambda(const Status& value) { m_lambdaHasBeenSet = true; m_lambda = value; }
+
+    /**
+     * <p>The status of Amazon Inspector scanning for AWS Lambda function
+     * resources.</p>
+     */
+    inline void SetLambda(Status&& value) { m_lambdaHasBeenSet = true; m_lambda = std::move(value); }
+
+    /**
+     * <p>The status of Amazon Inspector scanning for AWS Lambda function
+     * resources.</p>
+     */
+    inline ResourceStatus& WithLambda(const Status& value) { SetLambda(value); return *this;}
+
+    /**
+     * <p>The status of Amazon Inspector scanning for AWS Lambda function
+     * resources.</p>
+     */
+    inline ResourceStatus& WithLambda(Status&& value) { SetLambda(std::move(value)); return *this;}
+
   private:
 
     Status m_ec2;
@@ -106,6 +143,9 @@ namespace Model
 
     Status m_ecr;
     bool m_ecrHasBeenSet = false;
+
+    Status m_lambda;
+    bool m_lambdaHasBeenSet = false;
   };
 
 } // namespace Model

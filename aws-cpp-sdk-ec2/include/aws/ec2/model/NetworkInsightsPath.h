@@ -238,6 +238,56 @@ namespace Model
     inline NetworkInsightsPath& WithDestination(const char* value) { SetDestination(value); return *this;}
 
 
+    
+    inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
+
+    
+    inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }
+
+    
+    inline void SetSourceArn(const Aws::String& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
+
+    
+    inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::move(value); }
+
+    
+    inline void SetSourceArn(const char* value) { m_sourceArnHasBeenSet = true; m_sourceArn.assign(value); }
+
+    
+    inline NetworkInsightsPath& WithSourceArn(const Aws::String& value) { SetSourceArn(value); return *this;}
+
+    
+    inline NetworkInsightsPath& WithSourceArn(Aws::String&& value) { SetSourceArn(std::move(value)); return *this;}
+
+    
+    inline NetworkInsightsPath& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
+
+
+    
+    inline const Aws::String& GetDestinationArn() const{ return m_destinationArn; }
+
+    
+    inline bool DestinationArnHasBeenSet() const { return m_destinationArnHasBeenSet; }
+
+    
+    inline void SetDestinationArn(const Aws::String& value) { m_destinationArnHasBeenSet = true; m_destinationArn = value; }
+
+    
+    inline void SetDestinationArn(Aws::String&& value) { m_destinationArnHasBeenSet = true; m_destinationArn = std::move(value); }
+
+    
+    inline void SetDestinationArn(const char* value) { m_destinationArnHasBeenSet = true; m_destinationArn.assign(value); }
+
+    
+    inline NetworkInsightsPath& WithDestinationArn(const Aws::String& value) { SetDestinationArn(value); return *this;}
+
+    
+    inline NetworkInsightsPath& WithDestinationArn(Aws::String&& value) { SetDestinationArn(std::move(value)); return *this;}
+
+    
+    inline NetworkInsightsPath& WithDestinationArn(const char* value) { SetDestinationArn(value); return *this;}
+
+
     /**
      * <p>The IP address of the Amazon Web Services resource that is the source of the
      * path.</p>
@@ -444,6 +494,12 @@ namespace Model
 
     Aws::String m_destination;
     bool m_destinationHasBeenSet = false;
+
+    Aws::String m_sourceArn;
+    bool m_sourceArnHasBeenSet = false;
+
+    Aws::String m_destinationArn;
+    bool m_destinationArnHasBeenSet = false;
 
     Aws::String m_sourceIp;
     bool m_sourceIpHasBeenSet = false;

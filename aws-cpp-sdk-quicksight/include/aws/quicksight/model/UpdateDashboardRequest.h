@@ -10,6 +10,7 @@
 #include <aws/quicksight/model/DashboardSourceEntity.h>
 #include <aws/quicksight/model/Parameters.h>
 #include <aws/quicksight/model/DashboardPublishOptions.h>
+#include <aws/quicksight/model/DashboardVersionDefinition.h>
 #include <utility>
 
 namespace Aws
@@ -526,6 +527,43 @@ namespace Model
      */
     inline UpdateDashboardRequest& WithThemeArn(const char* value) { SetThemeArn(value); return *this;}
 
+
+    /**
+     * <p>The definition of a dashboard.</p> <p>A definition is the data model of all
+     * features in a Dashboard, Template, or Analysis.</p>
+     */
+    inline const DashboardVersionDefinition& GetDefinition() const{ return m_definition; }
+
+    /**
+     * <p>The definition of a dashboard.</p> <p>A definition is the data model of all
+     * features in a Dashboard, Template, or Analysis.</p>
+     */
+    inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
+
+    /**
+     * <p>The definition of a dashboard.</p> <p>A definition is the data model of all
+     * features in a Dashboard, Template, or Analysis.</p>
+     */
+    inline void SetDefinition(const DashboardVersionDefinition& value) { m_definitionHasBeenSet = true; m_definition = value; }
+
+    /**
+     * <p>The definition of a dashboard.</p> <p>A definition is the data model of all
+     * features in a Dashboard, Template, or Analysis.</p>
+     */
+    inline void SetDefinition(DashboardVersionDefinition&& value) { m_definitionHasBeenSet = true; m_definition = std::move(value); }
+
+    /**
+     * <p>The definition of a dashboard.</p> <p>A definition is the data model of all
+     * features in a Dashboard, Template, or Analysis.</p>
+     */
+    inline UpdateDashboardRequest& WithDefinition(const DashboardVersionDefinition& value) { SetDefinition(value); return *this;}
+
+    /**
+     * <p>The definition of a dashboard.</p> <p>A definition is the data model of all
+     * features in a Dashboard, Template, or Analysis.</p>
+     */
+    inline UpdateDashboardRequest& WithDefinition(DashboardVersionDefinition&& value) { SetDefinition(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_awsAccountId;
@@ -551,6 +589,9 @@ namespace Model
 
     Aws::String m_themeArn;
     bool m_themeArnHasBeenSet = false;
+
+    DashboardVersionDefinition m_definition;
+    bool m_definitionHasBeenSet = false;
   };
 
 } // namespace Model

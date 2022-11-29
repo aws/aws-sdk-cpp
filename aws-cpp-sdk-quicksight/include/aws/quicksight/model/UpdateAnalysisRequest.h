@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/quicksight/model/Parameters.h>
 #include <aws/quicksight/model/AnalysisSourceEntity.h>
+#include <aws/quicksight/model/AnalysisDefinition.h>
 #include <utility>
 
 namespace Aws
@@ -317,6 +318,43 @@ namespace Model
      */
     inline UpdateAnalysisRequest& WithThemeArn(const char* value) { SetThemeArn(value); return *this;}
 
+
+    /**
+     * <p>The definition of an analysis.</p> <p>A definition is the data model of all
+     * features in a Dashboard, Template, or Analysis.</p>
+     */
+    inline const AnalysisDefinition& GetDefinition() const{ return m_definition; }
+
+    /**
+     * <p>The definition of an analysis.</p> <p>A definition is the data model of all
+     * features in a Dashboard, Template, or Analysis.</p>
+     */
+    inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
+
+    /**
+     * <p>The definition of an analysis.</p> <p>A definition is the data model of all
+     * features in a Dashboard, Template, or Analysis.</p>
+     */
+    inline void SetDefinition(const AnalysisDefinition& value) { m_definitionHasBeenSet = true; m_definition = value; }
+
+    /**
+     * <p>The definition of an analysis.</p> <p>A definition is the data model of all
+     * features in a Dashboard, Template, or Analysis.</p>
+     */
+    inline void SetDefinition(AnalysisDefinition&& value) { m_definitionHasBeenSet = true; m_definition = std::move(value); }
+
+    /**
+     * <p>The definition of an analysis.</p> <p>A definition is the data model of all
+     * features in a Dashboard, Template, or Analysis.</p>
+     */
+    inline UpdateAnalysisRequest& WithDefinition(const AnalysisDefinition& value) { SetDefinition(value); return *this;}
+
+    /**
+     * <p>The definition of an analysis.</p> <p>A definition is the data model of all
+     * features in a Dashboard, Template, or Analysis.</p>
+     */
+    inline UpdateAnalysisRequest& WithDefinition(AnalysisDefinition&& value) { SetDefinition(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_awsAccountId;
@@ -336,6 +374,9 @@ namespace Model
 
     Aws::String m_themeArn;
     bool m_themeArnHasBeenSet = false;
+
+    AnalysisDefinition m_definition;
+    bool m_definitionHasBeenSet = false;
   };
 
 } // namespace Model

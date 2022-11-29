@@ -35,7 +35,12 @@ OpenZFSVolumeConfiguration::OpenZFSVolumeConfiguration() :
     m_readOnly(false),
     m_readOnlyHasBeenSet(false),
     m_nfsExportsHasBeenSet(false),
-    m_userAndGroupQuotasHasBeenSet(false)
+    m_userAndGroupQuotasHasBeenSet(false),
+    m_restoreToSnapshotHasBeenSet(false),
+    m_deleteIntermediateSnaphots(false),
+    m_deleteIntermediateSnaphotsHasBeenSet(false),
+    m_deleteClonedVolumes(false),
+    m_deleteClonedVolumesHasBeenSet(false)
 {
 }
 
@@ -56,7 +61,12 @@ OpenZFSVolumeConfiguration::OpenZFSVolumeConfiguration(JsonView jsonValue) :
     m_readOnly(false),
     m_readOnlyHasBeenSet(false),
     m_nfsExportsHasBeenSet(false),
-    m_userAndGroupQuotasHasBeenSet(false)
+    m_userAndGroupQuotasHasBeenSet(false),
+    m_restoreToSnapshotHasBeenSet(false),
+    m_deleteIntermediateSnaphots(false),
+    m_deleteIntermediateSnaphotsHasBeenSet(false),
+    m_deleteClonedVolumes(false),
+    m_deleteClonedVolumesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -146,6 +156,27 @@ OpenZFSVolumeConfiguration& OpenZFSVolumeConfiguration::operator =(JsonView json
     m_userAndGroupQuotasHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RestoreToSnapshot"))
+  {
+    m_restoreToSnapshot = jsonValue.GetString("RestoreToSnapshot");
+
+    m_restoreToSnapshotHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DeleteIntermediateSnaphots"))
+  {
+    m_deleteIntermediateSnaphots = jsonValue.GetBool("DeleteIntermediateSnaphots");
+
+    m_deleteIntermediateSnaphotsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DeleteClonedVolumes"))
+  {
+    m_deleteClonedVolumes = jsonValue.GetBool("DeleteClonedVolumes");
+
+    m_deleteClonedVolumesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -225,6 +256,24 @@ JsonValue OpenZFSVolumeConfiguration::Jsonize() const
      userAndGroupQuotasJsonList[userAndGroupQuotasIndex].AsObject(m_userAndGroupQuotas[userAndGroupQuotasIndex].Jsonize());
    }
    payload.WithArray("UserAndGroupQuotas", std::move(userAndGroupQuotasJsonList));
+
+  }
+
+  if(m_restoreToSnapshotHasBeenSet)
+  {
+   payload.WithString("RestoreToSnapshot", m_restoreToSnapshot);
+
+  }
+
+  if(m_deleteIntermediateSnaphotsHasBeenSet)
+  {
+   payload.WithBool("DeleteIntermediateSnaphots", m_deleteIntermediateSnaphots);
+
+  }
+
+  if(m_deleteClonedVolumesHasBeenSet)
+  {
+   payload.WithBool("DeleteClonedVolumes", m_deleteClonedVolumes);
 
   }
 

@@ -8,6 +8,7 @@
 #include <aws/config/ConfigServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/config/model/DescribeConfigRulesFilters.h>
 #include <utility>
 
 namespace Aws
@@ -141,6 +142,43 @@ namespace Model
      */
     inline DescribeConfigRulesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>Returns a list of Detecive or Proactive Config rules. By default, this API
+     * returns an unfiltered list.</p>
+     */
+    inline const DescribeConfigRulesFilters& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>Returns a list of Detecive or Proactive Config rules. By default, this API
+     * returns an unfiltered list.</p>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+
+    /**
+     * <p>Returns a list of Detecive or Proactive Config rules. By default, this API
+     * returns an unfiltered list.</p>
+     */
+    inline void SetFilters(const DescribeConfigRulesFilters& value) { m_filtersHasBeenSet = true; m_filters = value; }
+
+    /**
+     * <p>Returns a list of Detecive or Proactive Config rules. By default, this API
+     * returns an unfiltered list.</p>
+     */
+    inline void SetFilters(DescribeConfigRulesFilters&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
+
+    /**
+     * <p>Returns a list of Detecive or Proactive Config rules. By default, this API
+     * returns an unfiltered list.</p>
+     */
+    inline DescribeConfigRulesRequest& WithFilters(const DescribeConfigRulesFilters& value) { SetFilters(value); return *this;}
+
+    /**
+     * <p>Returns a list of Detecive or Proactive Config rules. By default, this API
+     * returns an unfiltered list.</p>
+     */
+    inline DescribeConfigRulesRequest& WithFilters(DescribeConfigRulesFilters&& value) { SetFilters(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_configRuleNames;
@@ -148,6 +186,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    DescribeConfigRulesFilters m_filters;
+    bool m_filtersHasBeenSet = false;
   };
 
 } // namespace Model

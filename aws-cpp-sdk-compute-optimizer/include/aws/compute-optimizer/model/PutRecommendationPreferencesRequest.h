@@ -10,6 +10,7 @@
 #include <aws/compute-optimizer/model/Scope.h>
 #include <aws/compute-optimizer/model/EnhancedInfrastructureMetrics.h>
 #include <aws/compute-optimizer/model/InferredWorkloadTypesPreference.h>
+#include <aws/compute-optimizer/model/ExternalMetricsPreference.h>
 #include <utility>
 
 namespace Aws
@@ -340,6 +341,79 @@ namespace Model
      */
     inline PutRecommendationPreferencesRequest& WithInferredWorkloadTypes(InferredWorkloadTypesPreference&& value) { SetInferredWorkloadTypes(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The provider of the external metrics recommendation preference to create or
+     * update.</p> <p>Specify a valid provider in the <code>source</code> field to
+     * activate the preference. To delete this preference, see the
+     * <a>DeleteRecommendationPreferences</a> action.</p> <p>This preference can only
+     * be set for the <code>Ec2Instance</code> resource type.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">External
+     * metrics ingestion</a> in the <i>Compute Optimizer User Guide</i>.</p>
+     */
+    inline const ExternalMetricsPreference& GetExternalMetricsPreference() const{ return m_externalMetricsPreference; }
+
+    /**
+     * <p>The provider of the external metrics recommendation preference to create or
+     * update.</p> <p>Specify a valid provider in the <code>source</code> field to
+     * activate the preference. To delete this preference, see the
+     * <a>DeleteRecommendationPreferences</a> action.</p> <p>This preference can only
+     * be set for the <code>Ec2Instance</code> resource type.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">External
+     * metrics ingestion</a> in the <i>Compute Optimizer User Guide</i>.</p>
+     */
+    inline bool ExternalMetricsPreferenceHasBeenSet() const { return m_externalMetricsPreferenceHasBeenSet; }
+
+    /**
+     * <p>The provider of the external metrics recommendation preference to create or
+     * update.</p> <p>Specify a valid provider in the <code>source</code> field to
+     * activate the preference. To delete this preference, see the
+     * <a>DeleteRecommendationPreferences</a> action.</p> <p>This preference can only
+     * be set for the <code>Ec2Instance</code> resource type.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">External
+     * metrics ingestion</a> in the <i>Compute Optimizer User Guide</i>.</p>
+     */
+    inline void SetExternalMetricsPreference(const ExternalMetricsPreference& value) { m_externalMetricsPreferenceHasBeenSet = true; m_externalMetricsPreference = value; }
+
+    /**
+     * <p>The provider of the external metrics recommendation preference to create or
+     * update.</p> <p>Specify a valid provider in the <code>source</code> field to
+     * activate the preference. To delete this preference, see the
+     * <a>DeleteRecommendationPreferences</a> action.</p> <p>This preference can only
+     * be set for the <code>Ec2Instance</code> resource type.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">External
+     * metrics ingestion</a> in the <i>Compute Optimizer User Guide</i>.</p>
+     */
+    inline void SetExternalMetricsPreference(ExternalMetricsPreference&& value) { m_externalMetricsPreferenceHasBeenSet = true; m_externalMetricsPreference = std::move(value); }
+
+    /**
+     * <p>The provider of the external metrics recommendation preference to create or
+     * update.</p> <p>Specify a valid provider in the <code>source</code> field to
+     * activate the preference. To delete this preference, see the
+     * <a>DeleteRecommendationPreferences</a> action.</p> <p>This preference can only
+     * be set for the <code>Ec2Instance</code> resource type.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">External
+     * metrics ingestion</a> in the <i>Compute Optimizer User Guide</i>.</p>
+     */
+    inline PutRecommendationPreferencesRequest& WithExternalMetricsPreference(const ExternalMetricsPreference& value) { SetExternalMetricsPreference(value); return *this;}
+
+    /**
+     * <p>The provider of the external metrics recommendation preference to create or
+     * update.</p> <p>Specify a valid provider in the <code>source</code> field to
+     * activate the preference. To delete this preference, see the
+     * <a>DeleteRecommendationPreferences</a> action.</p> <p>This preference can only
+     * be set for the <code>Ec2Instance</code> resource type.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">External
+     * metrics ingestion</a> in the <i>Compute Optimizer User Guide</i>.</p>
+     */
+    inline PutRecommendationPreferencesRequest& WithExternalMetricsPreference(ExternalMetricsPreference&& value) { SetExternalMetricsPreference(std::move(value)); return *this;}
+
   private:
 
     ResourceType m_resourceType;
@@ -353,6 +427,9 @@ namespace Model
 
     InferredWorkloadTypesPreference m_inferredWorkloadTypes;
     bool m_inferredWorkloadTypesHasBeenSet = false;
+
+    ExternalMetricsPreference m_externalMetricsPreference;
+    bool m_externalMetricsPreferenceHasBeenSet = false;
   };
 
 } // namespace Model

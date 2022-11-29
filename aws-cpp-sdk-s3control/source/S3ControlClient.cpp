@@ -58,6 +58,7 @@
 #include <aws/s3control/model/GetMultiRegionAccessPointRequest.h>
 #include <aws/s3control/model/GetMultiRegionAccessPointPolicyRequest.h>
 #include <aws/s3control/model/GetMultiRegionAccessPointPolicyStatusRequest.h>
+#include <aws/s3control/model/GetMultiRegionAccessPointRoutesRequest.h>
 #include <aws/s3control/model/GetPublicAccessBlockRequest.h>
 #include <aws/s3control/model/GetStorageLensConfigurationRequest.h>
 #include <aws/s3control/model/GetStorageLensConfigurationTaggingRequest.h>
@@ -79,6 +80,7 @@
 #include <aws/s3control/model/PutPublicAccessBlockRequest.h>
 #include <aws/s3control/model/PutStorageLensConfigurationRequest.h>
 #include <aws/s3control/model/PutStorageLensConfigurationTaggingRequest.h>
+#include <aws/s3control/model/SubmitMultiRegionAccessPointRoutesRequest.h>
 #include <aws/s3control/model/UpdateJobPriorityRequest.h>
 #include <aws/s3control/model/UpdateJobStatusRequest.h>
 
@@ -1530,7 +1532,7 @@ GetMultiRegionAccessPointOutcome S3ControlClient::GetMultiRegionAccessPoint(cons
   auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("" + request.GetAccountId() + ".");
   AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetMultiRegionAccessPointOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/mrap/instances/");
-  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
+  endpointResolutionOutcome.GetResult().AddPathSegments(request.GetName());
   return GetMultiRegionAccessPointOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1568,7 +1570,7 @@ GetMultiRegionAccessPointPolicyOutcome S3ControlClient::GetMultiRegionAccessPoin
   auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("" + request.GetAccountId() + ".");
   AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetMultiRegionAccessPointPolicyOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/mrap/instances/");
-  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
+  endpointResolutionOutcome.GetResult().AddPathSegments(request.GetName());
   endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   return GetMultiRegionAccessPointPolicyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
 }
@@ -1607,7 +1609,7 @@ GetMultiRegionAccessPointPolicyStatusOutcome S3ControlClient::GetMultiRegionAcce
   auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("" + request.GetAccountId() + ".");
   AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetMultiRegionAccessPointPolicyStatusOutcome(addPrefixErr.value()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/mrap/instances/");
-  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
+  endpointResolutionOutcome.GetResult().AddPathSegments(request.GetName());
   endpointResolutionOutcome.GetResult().AddPathSegments("/policystatus");
   return GetMultiRegionAccessPointPolicyStatusOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
 }
@@ -1625,6 +1627,50 @@ void S3ControlClient::GetMultiRegionAccessPointPolicyStatusAsync(const GetMultiR
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, GetMultiRegionAccessPointPolicyStatus(request), context);
+    } );
+}
+
+GetMultiRegionAccessPointRoutesOutcome S3ControlClient::GetMultiRegionAccessPointRoutes(const GetMultiRegionAccessPointRoutesRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMultiRegionAccessPointRoutes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetMultiRegionAccessPointRoutes", "Required field: AccountId, is not set");
+    return GetMultiRegionAccessPointRoutesOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  if (!request.MrapHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetMultiRegionAccessPointRoutes", "Required field: Mrap, is not set");
+    return GetMultiRegionAccessPointRoutesOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Mrap]", false));
+  }
+  if (request.GetAccountId().size() != 12 || request.GetAccountId().find_first_not_of("0123456789") != Aws::String::npos)
+  {
+    AWS_LOGSTREAM_ERROR("GetMultiRegionAccessPointRoutes", "Required field: AccountId has invalid value");
+    return GetMultiRegionAccessPointRoutesOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "AccountId is invalid", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetMultiRegionAccessPointRoutes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("" + request.GetAccountId() + ".");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetMultiRegionAccessPointRoutesOutcome(addPrefixErr.value()));
+  endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/mrap/instances/");
+  endpointResolutionOutcome.GetResult().AddPathSegments(request.GetMrap());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/routes");
+  return GetMultiRegionAccessPointRoutesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+}
+
+GetMultiRegionAccessPointRoutesOutcomeCallable S3ControlClient::GetMultiRegionAccessPointRoutesCallable(const GetMultiRegionAccessPointRoutesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetMultiRegionAccessPointRoutesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMultiRegionAccessPointRoutes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3ControlClient::GetMultiRegionAccessPointRoutesAsync(const GetMultiRegionAccessPointRoutesRequest& request, const GetMultiRegionAccessPointRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetMultiRegionAccessPointRoutes(request), context);
     } );
 }
 
@@ -2444,6 +2490,50 @@ void S3ControlClient::PutStorageLensConfigurationTaggingAsync(const PutStorageLe
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, PutStorageLensConfigurationTagging(request), context);
+    } );
+}
+
+SubmitMultiRegionAccessPointRoutesOutcome S3ControlClient::SubmitMultiRegionAccessPointRoutes(const SubmitMultiRegionAccessPointRoutesRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, SubmitMultiRegionAccessPointRoutes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("SubmitMultiRegionAccessPointRoutes", "Required field: AccountId, is not set");
+    return SubmitMultiRegionAccessPointRoutesOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  if (!request.MrapHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("SubmitMultiRegionAccessPointRoutes", "Required field: Mrap, is not set");
+    return SubmitMultiRegionAccessPointRoutesOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Mrap]", false));
+  }
+  if (request.GetAccountId().size() != 12 || request.GetAccountId().find_first_not_of("0123456789") != Aws::String::npos)
+  {
+    AWS_LOGSTREAM_ERROR("SubmitMultiRegionAccessPointRoutes", "Required field: AccountId has invalid value");
+    return SubmitMultiRegionAccessPointRoutesOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "AccountId is invalid", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SubmitMultiRegionAccessPointRoutes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("" + request.GetAccountId() + ".");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), SubmitMultiRegionAccessPointRoutesOutcome(addPrefixErr.value()));
+  endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/mrap/instances/");
+  endpointResolutionOutcome.GetResult().AddPathSegments(request.GetMrap());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/routes");
+  return SubmitMultiRegionAccessPointRoutesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH));
+}
+
+SubmitMultiRegionAccessPointRoutesOutcomeCallable S3ControlClient::SubmitMultiRegionAccessPointRoutesCallable(const SubmitMultiRegionAccessPointRoutesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SubmitMultiRegionAccessPointRoutesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SubmitMultiRegionAccessPointRoutes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3ControlClient::SubmitMultiRegionAccessPointRoutesAsync(const SubmitMultiRegionAccessPointRoutesRequest& request, const SubmitMultiRegionAccessPointRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SubmitMultiRegionAccessPointRoutes(request), context);
     } );
 }
 

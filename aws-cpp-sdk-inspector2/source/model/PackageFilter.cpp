@@ -23,6 +23,7 @@ PackageFilter::PackageFilter() :
     m_epochHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_releaseHasBeenSet(false),
+    m_sourceLambdaLayerArnHasBeenSet(false),
     m_sourceLayerHashHasBeenSet(false),
     m_versionHasBeenSet(false)
 {
@@ -33,6 +34,7 @@ PackageFilter::PackageFilter(JsonView jsonValue) :
     m_epochHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_releaseHasBeenSet(false),
+    m_sourceLambdaLayerArnHasBeenSet(false),
     m_sourceLayerHashHasBeenSet(false),
     m_versionHasBeenSet(false)
 {
@@ -67,6 +69,13 @@ PackageFilter& PackageFilter::operator =(JsonView jsonValue)
     m_release = jsonValue.GetObject("release");
 
     m_releaseHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("sourceLambdaLayerArn"))
+  {
+    m_sourceLambdaLayerArn = jsonValue.GetObject("sourceLambdaLayerArn");
+
+    m_sourceLambdaLayerArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("sourceLayerHash"))
@@ -111,6 +120,12 @@ JsonValue PackageFilter::Jsonize() const
   if(m_releaseHasBeenSet)
   {
    payload.WithObject("release", m_release.Jsonize());
+
+  }
+
+  if(m_sourceLambdaLayerArnHasBeenSet)
+  {
+   payload.WithObject("sourceLambdaLayerArn", m_sourceLambdaLayerArn.Jsonize());
 
   }
 

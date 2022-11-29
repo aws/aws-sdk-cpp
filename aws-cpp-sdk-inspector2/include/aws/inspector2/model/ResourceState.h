@@ -111,6 +111,25 @@ namespace Model
      */
     inline ResourceState& WithEcr(State&& value) { SetEcr(std::move(value)); return *this;}
 
+
+    
+    inline const State& GetLambda() const{ return m_lambda; }
+
+    
+    inline bool LambdaHasBeenSet() const { return m_lambdaHasBeenSet; }
+
+    
+    inline void SetLambda(const State& value) { m_lambdaHasBeenSet = true; m_lambda = value; }
+
+    
+    inline void SetLambda(State&& value) { m_lambdaHasBeenSet = true; m_lambda = std::move(value); }
+
+    
+    inline ResourceState& WithLambda(const State& value) { SetLambda(value); return *this;}
+
+    
+    inline ResourceState& WithLambda(State&& value) { SetLambda(std::move(value)); return *this;}
+
   private:
 
     State m_ec2;
@@ -118,6 +137,9 @@ namespace Model
 
     State m_ecr;
     bool m_ecrHasBeenSet = false;
+
+    State m_lambda;
+    bool m_lambdaHasBeenSet = false;
   };
 
 } // namespace Model

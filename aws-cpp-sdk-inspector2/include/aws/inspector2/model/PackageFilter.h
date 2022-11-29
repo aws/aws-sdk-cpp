@@ -169,6 +169,25 @@ namespace Model
     inline PackageFilter& WithRelease(StringFilter&& value) { SetRelease(std::move(value)); return *this;}
 
 
+    
+    inline const StringFilter& GetSourceLambdaLayerArn() const{ return m_sourceLambdaLayerArn; }
+
+    
+    inline bool SourceLambdaLayerArnHasBeenSet() const { return m_sourceLambdaLayerArnHasBeenSet; }
+
+    
+    inline void SetSourceLambdaLayerArn(const StringFilter& value) { m_sourceLambdaLayerArnHasBeenSet = true; m_sourceLambdaLayerArn = value; }
+
+    
+    inline void SetSourceLambdaLayerArn(StringFilter&& value) { m_sourceLambdaLayerArnHasBeenSet = true; m_sourceLambdaLayerArn = std::move(value); }
+
+    
+    inline PackageFilter& WithSourceLambdaLayerArn(const StringFilter& value) { SetSourceLambdaLayerArn(value); return *this;}
+
+    
+    inline PackageFilter& WithSourceLambdaLayerArn(StringFilter&& value) { SetSourceLambdaLayerArn(std::move(value)); return *this;}
+
+
     /**
      * <p>An object that contains details on the source layer hash to filter on.</p>
      */
@@ -243,6 +262,9 @@ namespace Model
 
     StringFilter m_release;
     bool m_releaseHasBeenSet = false;
+
+    StringFilter m_sourceLambdaLayerArn;
+    bool m_sourceLambdaLayerArnHasBeenSet = false;
 
     StringFilter m_sourceLayerHash;
     bool m_sourceLayerHashHasBeenSet = false;

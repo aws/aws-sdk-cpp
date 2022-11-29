@@ -37,10 +37,10 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> -
+     * </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> -
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length
      * constraint applies only to the full ARN. If you specify only the function name,
      * it is limited to 64 characters in length.</p>
@@ -49,10 +49,10 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> -
+     * </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> -
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length
      * constraint applies only to the full ARN. If you specify only the function name,
      * it is limited to 64 characters in length.</p>
@@ -61,10 +61,10 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> -
+     * </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> -
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length
      * constraint applies only to the full ARN. If you specify only the function name,
      * it is limited to 64 characters in length.</p>
@@ -73,10 +73,10 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> -
+     * </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> -
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length
      * constraint applies only to the full ARN. If you specify only the function name,
      * it is limited to 64 characters in length.</p>
@@ -85,10 +85,10 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> -
+     * </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> -
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length
      * constraint applies only to the full ARN. If you specify only the function name,
      * it is limited to 64 characters in length.</p>
@@ -97,10 +97,10 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> -
+     * </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> -
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length
      * constraint applies only to the full ARN. If you specify only the function name,
      * it is limited to 64 characters in length.</p>
@@ -109,10 +109,10 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> -
+     * </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> -
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length
      * constraint applies only to the full ARN. If you specify only the function name,
      * it is limited to 64 characters in length.</p>
@@ -121,10 +121,10 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> -
+     * </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> -
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length
      * constraint applies only to the full ARN. If you specify only the function name,
      * it is limited to 64 characters in length.</p>
@@ -134,43 +134,43 @@ namespace Model
 
     /**
      * <p>The base64-encoded contents of the deployment package. Amazon Web Services
-     * SDK and Amazon Web Services CLI clients handle the encoding for you. Use only
-     * with a function defined with a .zip file archive deployment package.</p>
+     * SDK and CLI clients handle the encoding for you. Use only with a function
+     * defined with a .zip file archive deployment package.</p>
      */
     inline const Aws::Utils::CryptoBuffer& GetZipFile() const{ return m_zipFile; }
 
     /**
      * <p>The base64-encoded contents of the deployment package. Amazon Web Services
-     * SDK and Amazon Web Services CLI clients handle the encoding for you. Use only
-     * with a function defined with a .zip file archive deployment package.</p>
+     * SDK and CLI clients handle the encoding for you. Use only with a function
+     * defined with a .zip file archive deployment package.</p>
      */
     inline bool ZipFileHasBeenSet() const { return m_zipFileHasBeenSet; }
 
     /**
      * <p>The base64-encoded contents of the deployment package. Amazon Web Services
-     * SDK and Amazon Web Services CLI clients handle the encoding for you. Use only
-     * with a function defined with a .zip file archive deployment package.</p>
+     * SDK and CLI clients handle the encoding for you. Use only with a function
+     * defined with a .zip file archive deployment package.</p>
      */
     inline void SetZipFile(const Aws::Utils::CryptoBuffer& value) { m_zipFileHasBeenSet = true; m_zipFile = value; }
 
     /**
      * <p>The base64-encoded contents of the deployment package. Amazon Web Services
-     * SDK and Amazon Web Services CLI clients handle the encoding for you. Use only
-     * with a function defined with a .zip file archive deployment package.</p>
+     * SDK and CLI clients handle the encoding for you. Use only with a function
+     * defined with a .zip file archive deployment package.</p>
      */
     inline void SetZipFile(Aws::Utils::CryptoBuffer&& value) { m_zipFileHasBeenSet = true; m_zipFile = std::move(value); }
 
     /**
      * <p>The base64-encoded contents of the deployment package. Amazon Web Services
-     * SDK and Amazon Web Services CLI clients handle the encoding for you. Use only
-     * with a function defined with a .zip file archive deployment package.</p>
+     * SDK and CLI clients handle the encoding for you. Use only with a function
+     * defined with a .zip file archive deployment package.</p>
      */
     inline UpdateFunctionCodeRequest& WithZipFile(const Aws::Utils::CryptoBuffer& value) { SetZipFile(value); return *this;}
 
     /**
      * <p>The base64-encoded contents of the deployment package. Amazon Web Services
-     * SDK and Amazon Web Services CLI clients handle the encoding for you. Use only
-     * with a function defined with a .zip file archive deployment package.</p>
+     * SDK and CLI clients handle the encoding for you. Use only with a function
+     * defined with a .zip file archive deployment package.</p>
      */
     inline UpdateFunctionCodeRequest& WithZipFile(Aws::Utils::CryptoBuffer&& value) { SetZipFile(std::move(value)); return *this;}
 
@@ -430,56 +430,56 @@ namespace Model
 
 
     /**
-     * <p>Only update the function if the revision ID matches the ID that's specified.
+     * <p>Update the function only if the revision ID matches the ID that's specified.
      * Use this option to avoid modifying a function that has changed since you last
      * read it.</p>
      */
     inline const Aws::String& GetRevisionId() const{ return m_revisionId; }
 
     /**
-     * <p>Only update the function if the revision ID matches the ID that's specified.
+     * <p>Update the function only if the revision ID matches the ID that's specified.
      * Use this option to avoid modifying a function that has changed since you last
      * read it.</p>
      */
     inline bool RevisionIdHasBeenSet() const { return m_revisionIdHasBeenSet; }
 
     /**
-     * <p>Only update the function if the revision ID matches the ID that's specified.
+     * <p>Update the function only if the revision ID matches the ID that's specified.
      * Use this option to avoid modifying a function that has changed since you last
      * read it.</p>
      */
     inline void SetRevisionId(const Aws::String& value) { m_revisionIdHasBeenSet = true; m_revisionId = value; }
 
     /**
-     * <p>Only update the function if the revision ID matches the ID that's specified.
+     * <p>Update the function only if the revision ID matches the ID that's specified.
      * Use this option to avoid modifying a function that has changed since you last
      * read it.</p>
      */
     inline void SetRevisionId(Aws::String&& value) { m_revisionIdHasBeenSet = true; m_revisionId = std::move(value); }
 
     /**
-     * <p>Only update the function if the revision ID matches the ID that's specified.
+     * <p>Update the function only if the revision ID matches the ID that's specified.
      * Use this option to avoid modifying a function that has changed since you last
      * read it.</p>
      */
     inline void SetRevisionId(const char* value) { m_revisionIdHasBeenSet = true; m_revisionId.assign(value); }
 
     /**
-     * <p>Only update the function if the revision ID matches the ID that's specified.
+     * <p>Update the function only if the revision ID matches the ID that's specified.
      * Use this option to avoid modifying a function that has changed since you last
      * read it.</p>
      */
     inline UpdateFunctionCodeRequest& WithRevisionId(const Aws::String& value) { SetRevisionId(value); return *this;}
 
     /**
-     * <p>Only update the function if the revision ID matches the ID that's specified.
+     * <p>Update the function only if the revision ID matches the ID that's specified.
      * Use this option to avoid modifying a function that has changed since you last
      * read it.</p>
      */
     inline UpdateFunctionCodeRequest& WithRevisionId(Aws::String&& value) { SetRevisionId(std::move(value)); return *this;}
 
     /**
-     * <p>Only update the function if the revision ID matches the ID that's specified.
+     * <p>Update the function only if the revision ID matches the ID that's specified.
      * Use this option to avoid modifying a function that has changed since you last
      * read it.</p>
      */

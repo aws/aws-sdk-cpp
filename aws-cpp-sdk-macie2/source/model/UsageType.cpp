@@ -22,6 +22,8 @@ namespace Aws
 
         static const int DATA_INVENTORY_EVALUATION_HASH = HashingUtils::HashString("DATA_INVENTORY_EVALUATION");
         static const int SENSITIVE_DATA_DISCOVERY_HASH = HashingUtils::HashString("SENSITIVE_DATA_DISCOVERY");
+        static const int AUTOMATED_SENSITIVE_DATA_DISCOVERY_HASH = HashingUtils::HashString("AUTOMATED_SENSITIVE_DATA_DISCOVERY");
+        static const int AUTOMATED_OBJECT_MONITORING_HASH = HashingUtils::HashString("AUTOMATED_OBJECT_MONITORING");
 
 
         UsageType GetUsageTypeForName(const Aws::String& name)
@@ -34,6 +36,14 @@ namespace Aws
           else if (hashCode == SENSITIVE_DATA_DISCOVERY_HASH)
           {
             return UsageType::SENSITIVE_DATA_DISCOVERY;
+          }
+          else if (hashCode == AUTOMATED_SENSITIVE_DATA_DISCOVERY_HASH)
+          {
+            return UsageType::AUTOMATED_SENSITIVE_DATA_DISCOVERY;
+          }
+          else if (hashCode == AUTOMATED_OBJECT_MONITORING_HASH)
+          {
+            return UsageType::AUTOMATED_OBJECT_MONITORING;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +63,10 @@ namespace Aws
             return "DATA_INVENTORY_EVALUATION";
           case UsageType::SENSITIVE_DATA_DISCOVERY:
             return "SENSITIVE_DATA_DISCOVERY";
+          case UsageType::AUTOMATED_SENSITIVE_DATA_DISCOVERY:
+            return "AUTOMATED_SENSITIVE_DATA_DISCOVERY";
+          case UsageType::AUTOMATED_OBJECT_MONITORING:
+            return "AUTOMATED_OBJECT_MONITORING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

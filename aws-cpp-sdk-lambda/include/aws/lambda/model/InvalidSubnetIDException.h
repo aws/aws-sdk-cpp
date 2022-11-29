@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The Subnet ID provided in the Lambda function VPC configuration is
-   * invalid.</p><p><h3>See Also:</h3>   <a
+   * <p>The subnet ID provided in the Lambda function VPC configuration is not
+   * valid.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/InvalidSubnetIDException">AWS
    * API Reference</a></p>
    */
