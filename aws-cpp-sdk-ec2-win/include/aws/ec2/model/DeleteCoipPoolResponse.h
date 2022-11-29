@@ -33,19 +33,29 @@ namespace Model
     DeleteCoipPoolResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
-    
+    /**
+     * <p>Information about the CoIP address pool.</p>
+     */
     inline const CoipPool& GetCoipPool() const{ return m_coipPool; }
 
-    
+    /**
+     * <p>Information about the CoIP address pool.</p>
+     */
     inline void SetCoipPool(const CoipPool& value) { m_coipPool = value; }
 
-    
+    /**
+     * <p>Information about the CoIP address pool.</p>
+     */
     inline void SetCoipPool(CoipPool&& value) { m_coipPool = std::move(value); }
 
-    
+    /**
+     * <p>Information about the CoIP address pool.</p>
+     */
     inline DeleteCoipPoolResponse& WithCoipPool(const CoipPool& value) { SetCoipPool(value); return *this;}
 
-    
+    /**
+     * <p>Information about the CoIP address pool.</p>
+     */
     inline DeleteCoipPoolResponse& WithCoipPool(CoipPool&& value) { SetCoipPool(std::move(value)); return *this;}
 
 

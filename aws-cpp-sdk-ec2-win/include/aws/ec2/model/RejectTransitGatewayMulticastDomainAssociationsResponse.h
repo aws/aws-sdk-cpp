@@ -33,19 +33,29 @@ namespace Model
     RejectTransitGatewayMulticastDomainAssociationsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
-    
+    /**
+     * <p>Information about the multicast domain associations.</p>
+     */
     inline const TransitGatewayMulticastDomainAssociations& GetAssociations() const{ return m_associations; }
 
-    
+    /**
+     * <p>Information about the multicast domain associations.</p>
+     */
     inline void SetAssociations(const TransitGatewayMulticastDomainAssociations& value) { m_associations = value; }
 
-    
+    /**
+     * <p>Information about the multicast domain associations.</p>
+     */
     inline void SetAssociations(TransitGatewayMulticastDomainAssociations&& value) { m_associations = std::move(value); }
 
-    
+    /**
+     * <p>Information about the multicast domain associations.</p>
+     */
     inline RejectTransitGatewayMulticastDomainAssociationsResponse& WithAssociations(const TransitGatewayMulticastDomainAssociations& value) { SetAssociations(value); return *this;}
 
-    
+    /**
+     * <p>Information about the multicast domain associations.</p>
+     */
     inline RejectTransitGatewayMulticastDomainAssociationsResponse& WithAssociations(TransitGatewayMulticastDomainAssociations&& value) { SetAssociations(std::move(value)); return *this;}
 
 

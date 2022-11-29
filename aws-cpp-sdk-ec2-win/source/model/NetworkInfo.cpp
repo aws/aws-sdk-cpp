@@ -41,7 +41,9 @@ NetworkInfo::NetworkInfo() :
     m_efaSupportedHasBeenSet(false),
     m_efaInfoHasBeenSet(false),
     m_encryptionInTransitSupported(false),
-    m_encryptionInTransitSupportedHasBeenSet(false)
+    m_encryptionInTransitSupportedHasBeenSet(false),
+    m_enaSrdSupported(false),
+    m_enaSrdSupportedHasBeenSet(false)
 {
 }
 
@@ -66,7 +68,9 @@ NetworkInfo::NetworkInfo(const XmlNode& xmlNode) :
     m_efaSupportedHasBeenSet(false),
     m_efaInfoHasBeenSet(false),
     m_encryptionInTransitSupported(false),
-    m_encryptionInTransitSupportedHasBeenSet(false)
+    m_encryptionInTransitSupportedHasBeenSet(false),
+    m_enaSrdSupported(false),
+    m_enaSrdSupportedHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -155,6 +159,12 @@ NetworkInfo& NetworkInfo::operator =(const XmlNode& xmlNode)
       m_encryptionInTransitSupported = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(encryptionInTransitSupportedNode.GetText()).c_str()).c_str());
       m_encryptionInTransitSupportedHasBeenSet = true;
     }
+    XmlNode enaSrdSupportedNode = resultNode.FirstChild("enaSrdSupported");
+    if(!enaSrdSupportedNode.IsNull())
+    {
+      m_enaSrdSupported = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enaSrdSupportedNode.GetText()).c_str()).c_str());
+      m_enaSrdSupportedHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -230,6 +240,11 @@ void NetworkInfo::OutputToStream(Aws::OStream& oStream, const char* location, un
       oStream << location << index << locationValue << ".EncryptionInTransitSupported=" << std::boolalpha << m_encryptionInTransitSupported << "&";
   }
 
+  if(m_enaSrdSupportedHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EnaSrdSupported=" << std::boolalpha << m_enaSrdSupported << "&";
+  }
+
 }
 
 void NetworkInfo::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -289,6 +304,10 @@ void NetworkInfo::OutputToStream(Aws::OStream& oStream, const char* location) co
   if(m_encryptionInTransitSupportedHasBeenSet)
   {
       oStream << location << ".EncryptionInTransitSupported=" << std::boolalpha << m_encryptionInTransitSupported << "&";
+  }
+  if(m_enaSrdSupportedHasBeenSet)
+  {
+      oStream << location << ".EnaSrdSupported=" << std::boolalpha << m_enaSrdSupported << "&";
   }
 }
 

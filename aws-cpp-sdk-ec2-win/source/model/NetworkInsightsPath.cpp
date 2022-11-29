@@ -26,6 +26,8 @@ NetworkInsightsPath::NetworkInsightsPath() :
     m_createdDateHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_destinationHasBeenSet(false),
+    m_sourceArnHasBeenSet(false),
+    m_destinationArnHasBeenSet(false),
     m_sourceIpHasBeenSet(false),
     m_destinationIpHasBeenSet(false),
     m_protocol(Protocol::NOT_SET),
@@ -42,6 +44,8 @@ NetworkInsightsPath::NetworkInsightsPath(const XmlNode& xmlNode) :
     m_createdDateHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_destinationHasBeenSet(false),
+    m_sourceArnHasBeenSet(false),
+    m_destinationArnHasBeenSet(false),
     m_sourceIpHasBeenSet(false),
     m_destinationIpHasBeenSet(false),
     m_protocol(Protocol::NOT_SET),
@@ -88,6 +92,18 @@ NetworkInsightsPath& NetworkInsightsPath::operator =(const XmlNode& xmlNode)
     {
       m_destination = Aws::Utils::Xml::DecodeEscapedXmlText(destinationNode.GetText());
       m_destinationHasBeenSet = true;
+    }
+    XmlNode sourceArnNode = resultNode.FirstChild("sourceArn");
+    if(!sourceArnNode.IsNull())
+    {
+      m_sourceArn = Aws::Utils::Xml::DecodeEscapedXmlText(sourceArnNode.GetText());
+      m_sourceArnHasBeenSet = true;
+    }
+    XmlNode destinationArnNode = resultNode.FirstChild("destinationArn");
+    if(!destinationArnNode.IsNull())
+    {
+      m_destinationArn = Aws::Utils::Xml::DecodeEscapedXmlText(destinationArnNode.GetText());
+      m_destinationArnHasBeenSet = true;
     }
     XmlNode sourceIpNode = resultNode.FirstChild("sourceIp");
     if(!sourceIpNode.IsNull())
@@ -157,6 +173,16 @@ void NetworkInsightsPath::OutputToStream(Aws::OStream& oStream, const char* loca
       oStream << location << index << locationValue << ".Destination=" << StringUtils::URLEncode(m_destination.c_str()) << "&";
   }
 
+  if(m_sourceArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SourceArn=" << StringUtils::URLEncode(m_sourceArn.c_str()) << "&";
+  }
+
+  if(m_destinationArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DestinationArn=" << StringUtils::URLEncode(m_destinationArn.c_str()) << "&";
+  }
+
   if(m_sourceIpHasBeenSet)
   {
       oStream << location << index << locationValue << ".SourceIp=" << StringUtils::URLEncode(m_sourceIp.c_str()) << "&";
@@ -211,6 +237,14 @@ void NetworkInsightsPath::OutputToStream(Aws::OStream& oStream, const char* loca
   if(m_destinationHasBeenSet)
   {
       oStream << location << ".Destination=" << StringUtils::URLEncode(m_destination.c_str()) << "&";
+  }
+  if(m_sourceArnHasBeenSet)
+  {
+      oStream << location << ".SourceArn=" << StringUtils::URLEncode(m_sourceArn.c_str()) << "&";
+  }
+  if(m_destinationArnHasBeenSet)
+  {
+      oStream << location << ".DestinationArn=" << StringUtils::URLEncode(m_destinationArn.c_str()) << "&";
   }
   if(m_sourceIpHasBeenSet)
   {
