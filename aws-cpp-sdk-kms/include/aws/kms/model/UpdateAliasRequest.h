@@ -107,9 +107,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
      * Web Services managed key</a>.</p> <p>The KMS key must be in the same Amazon Web
      * Services account and Region as the alias. Also, the new target KMS key must be
-     * the same type as the current target KMS key (both symmetric or both asymmetric)
-     * and they must have the same key usage. </p> <p>Specify the key ID or key ARN of
-     * the KMS key.</p> <p>For example:</p> <ul> <li> <p>Key ID:
+     * the same type as the current target KMS key (both symmetric or both asymmetric
+     * or both HMAC) and they must have the same key usage. </p> <p>Specify the key ID
+     * or key ARN of the KMS key.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul> <p>To get the key ID and key ARN for a KMS key, use
@@ -126,9 +126,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
      * Web Services managed key</a>.</p> <p>The KMS key must be in the same Amazon Web
      * Services account and Region as the alias. Also, the new target KMS key must be
-     * the same type as the current target KMS key (both symmetric or both asymmetric)
-     * and they must have the same key usage. </p> <p>Specify the key ID or key ARN of
-     * the KMS key.</p> <p>For example:</p> <ul> <li> <p>Key ID:
+     * the same type as the current target KMS key (both symmetric or both asymmetric
+     * or both HMAC) and they must have the same key usage. </p> <p>Specify the key ID
+     * or key ARN of the KMS key.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul> <p>To get the key ID and key ARN for a KMS key, use
@@ -145,9 +145,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
      * Web Services managed key</a>.</p> <p>The KMS key must be in the same Amazon Web
      * Services account and Region as the alias. Also, the new target KMS key must be
-     * the same type as the current target KMS key (both symmetric or both asymmetric)
-     * and they must have the same key usage. </p> <p>Specify the key ID or key ARN of
-     * the KMS key.</p> <p>For example:</p> <ul> <li> <p>Key ID:
+     * the same type as the current target KMS key (both symmetric or both asymmetric
+     * or both HMAC) and they must have the same key usage. </p> <p>Specify the key ID
+     * or key ARN of the KMS key.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul> <p>To get the key ID and key ARN for a KMS key, use
@@ -164,9 +164,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
      * Web Services managed key</a>.</p> <p>The KMS key must be in the same Amazon Web
      * Services account and Region as the alias. Also, the new target KMS key must be
-     * the same type as the current target KMS key (both symmetric or both asymmetric)
-     * and they must have the same key usage. </p> <p>Specify the key ID or key ARN of
-     * the KMS key.</p> <p>For example:</p> <ul> <li> <p>Key ID:
+     * the same type as the current target KMS key (both symmetric or both asymmetric
+     * or both HMAC) and they must have the same key usage. </p> <p>Specify the key ID
+     * or key ARN of the KMS key.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul> <p>To get the key ID and key ARN for a KMS key, use
@@ -183,9 +183,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
      * Web Services managed key</a>.</p> <p>The KMS key must be in the same Amazon Web
      * Services account and Region as the alias. Also, the new target KMS key must be
-     * the same type as the current target KMS key (both symmetric or both asymmetric)
-     * and they must have the same key usage. </p> <p>Specify the key ID or key ARN of
-     * the KMS key.</p> <p>For example:</p> <ul> <li> <p>Key ID:
+     * the same type as the current target KMS key (both symmetric or both asymmetric
+     * or both HMAC) and they must have the same key usage. </p> <p>Specify the key ID
+     * or key ARN of the KMS key.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul> <p>To get the key ID and key ARN for a KMS key, use
@@ -202,9 +202,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
      * Web Services managed key</a>.</p> <p>The KMS key must be in the same Amazon Web
      * Services account and Region as the alias. Also, the new target KMS key must be
-     * the same type as the current target KMS key (both symmetric or both asymmetric)
-     * and they must have the same key usage. </p> <p>Specify the key ID or key ARN of
-     * the KMS key.</p> <p>For example:</p> <ul> <li> <p>Key ID:
+     * the same type as the current target KMS key (both symmetric or both asymmetric
+     * or both HMAC) and they must have the same key usage. </p> <p>Specify the key ID
+     * or key ARN of the KMS key.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul> <p>To get the key ID and key ARN for a KMS key, use
@@ -221,9 +221,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
      * Web Services managed key</a>.</p> <p>The KMS key must be in the same Amazon Web
      * Services account and Region as the alias. Also, the new target KMS key must be
-     * the same type as the current target KMS key (both symmetric or both asymmetric)
-     * and they must have the same key usage. </p> <p>Specify the key ID or key ARN of
-     * the KMS key.</p> <p>For example:</p> <ul> <li> <p>Key ID:
+     * the same type as the current target KMS key (both symmetric or both asymmetric
+     * or both HMAC) and they must have the same key usage. </p> <p>Specify the key ID
+     * or key ARN of the KMS key.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul> <p>To get the key ID and key ARN for a KMS key, use
@@ -240,9 +240,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
      * Web Services managed key</a>.</p> <p>The KMS key must be in the same Amazon Web
      * Services account and Region as the alias. Also, the new target KMS key must be
-     * the same type as the current target KMS key (both symmetric or both asymmetric)
-     * and they must have the same key usage. </p> <p>Specify the key ID or key ARN of
-     * the KMS key.</p> <p>For example:</p> <ul> <li> <p>Key ID:
+     * the same type as the current target KMS key (both symmetric or both asymmetric
+     * or both HMAC) and they must have the same key usage. </p> <p>Specify the key ID
+     * or key ARN of the KMS key.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul> <p>To get the key ID and key ARN for a KMS key, use

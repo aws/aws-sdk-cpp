@@ -29,6 +29,12 @@ namespace Firehose
 namespace Model
 {
 
+  /**
+   * <p>Describes an update for a destination in Amazon OpenSearch
+   * Service.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/AmazonopensearchserviceDestinationUpdate">AWS
+   * API Reference</a></p>
+   */
   class AWS_FIREHOSE_API AmazonopensearchserviceDestinationUpdate
   {
   public:
@@ -38,185 +44,413 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data
+     * Firehose for calling the Amazon OpenSearch Service Configuration API and for
+     * indexing documents. </p>
+     */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data
+     * Firehose for calling the Amazon OpenSearch Service Configuration API and for
+     * indexing documents. </p>
+     */
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data
+     * Firehose for calling the Amazon OpenSearch Service Configuration API and for
+     * indexing documents. </p>
+     */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data
+     * Firehose for calling the Amazon OpenSearch Service Configuration API and for
+     * indexing documents. </p>
+     */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data
+     * Firehose for calling the Amazon OpenSearch Service Configuration API and for
+     * indexing documents. </p>
+     */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data
+     * Firehose for calling the Amazon OpenSearch Service Configuration API and for
+     * indexing documents. </p>
+     */
     inline AmazonopensearchserviceDestinationUpdate& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data
+     * Firehose for calling the Amazon OpenSearch Service Configuration API and for
+     * indexing documents. </p>
+     */
     inline AmazonopensearchserviceDestinationUpdate& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data
+     * Firehose for calling the Amazon OpenSearch Service Configuration API and for
+     * indexing documents. </p>
+     */
     inline AmazonopensearchserviceDestinationUpdate& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
 
-    
+    /**
+     * <p>The ARN of the Amazon OpenSearch Service domain. The IAM role must have
+     * permissions for DescribeDomain, DescribeDomains, and DescribeDomainConfig after
+     * assuming the IAM role specified in RoleARN.</p>
+     */
     inline const Aws::String& GetDomainARN() const{ return m_domainARN; }
 
-    
+    /**
+     * <p>The ARN of the Amazon OpenSearch Service domain. The IAM role must have
+     * permissions for DescribeDomain, DescribeDomains, and DescribeDomainConfig after
+     * assuming the IAM role specified in RoleARN.</p>
+     */
     inline bool DomainARNHasBeenSet() const { return m_domainARNHasBeenSet; }
 
-    
+    /**
+     * <p>The ARN of the Amazon OpenSearch Service domain. The IAM role must have
+     * permissions for DescribeDomain, DescribeDomains, and DescribeDomainConfig after
+     * assuming the IAM role specified in RoleARN.</p>
+     */
     inline void SetDomainARN(const Aws::String& value) { m_domainARNHasBeenSet = true; m_domainARN = value; }
 
-    
+    /**
+     * <p>The ARN of the Amazon OpenSearch Service domain. The IAM role must have
+     * permissions for DescribeDomain, DescribeDomains, and DescribeDomainConfig after
+     * assuming the IAM role specified in RoleARN.</p>
+     */
     inline void SetDomainARN(Aws::String&& value) { m_domainARNHasBeenSet = true; m_domainARN = std::move(value); }
 
-    
+    /**
+     * <p>The ARN of the Amazon OpenSearch Service domain. The IAM role must have
+     * permissions for DescribeDomain, DescribeDomains, and DescribeDomainConfig after
+     * assuming the IAM role specified in RoleARN.</p>
+     */
     inline void SetDomainARN(const char* value) { m_domainARNHasBeenSet = true; m_domainARN.assign(value); }
 
-    
+    /**
+     * <p>The ARN of the Amazon OpenSearch Service domain. The IAM role must have
+     * permissions for DescribeDomain, DescribeDomains, and DescribeDomainConfig after
+     * assuming the IAM role specified in RoleARN.</p>
+     */
     inline AmazonopensearchserviceDestinationUpdate& WithDomainARN(const Aws::String& value) { SetDomainARN(value); return *this;}
 
-    
+    /**
+     * <p>The ARN of the Amazon OpenSearch Service domain. The IAM role must have
+     * permissions for DescribeDomain, DescribeDomains, and DescribeDomainConfig after
+     * assuming the IAM role specified in RoleARN.</p>
+     */
     inline AmazonopensearchserviceDestinationUpdate& WithDomainARN(Aws::String&& value) { SetDomainARN(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The ARN of the Amazon OpenSearch Service domain. The IAM role must have
+     * permissions for DescribeDomain, DescribeDomains, and DescribeDomainConfig after
+     * assuming the IAM role specified in RoleARN.</p>
+     */
     inline AmazonopensearchserviceDestinationUpdate& WithDomainARN(const char* value) { SetDomainARN(value); return *this;}
 
 
-    
+    /**
+     * <p>The endpoint to use when communicating with the cluster. Specify either this
+     * ClusterEndpoint or the DomainARN field. </p>
+     */
     inline const Aws::String& GetClusterEndpoint() const{ return m_clusterEndpoint; }
 
-    
+    /**
+     * <p>The endpoint to use when communicating with the cluster. Specify either this
+     * ClusterEndpoint or the DomainARN field. </p>
+     */
     inline bool ClusterEndpointHasBeenSet() const { return m_clusterEndpointHasBeenSet; }
 
-    
+    /**
+     * <p>The endpoint to use when communicating with the cluster. Specify either this
+     * ClusterEndpoint or the DomainARN field. </p>
+     */
     inline void SetClusterEndpoint(const Aws::String& value) { m_clusterEndpointHasBeenSet = true; m_clusterEndpoint = value; }
 
-    
+    /**
+     * <p>The endpoint to use when communicating with the cluster. Specify either this
+     * ClusterEndpoint or the DomainARN field. </p>
+     */
     inline void SetClusterEndpoint(Aws::String&& value) { m_clusterEndpointHasBeenSet = true; m_clusterEndpoint = std::move(value); }
 
-    
+    /**
+     * <p>The endpoint to use when communicating with the cluster. Specify either this
+     * ClusterEndpoint or the DomainARN field. </p>
+     */
     inline void SetClusterEndpoint(const char* value) { m_clusterEndpointHasBeenSet = true; m_clusterEndpoint.assign(value); }
 
-    
+    /**
+     * <p>The endpoint to use when communicating with the cluster. Specify either this
+     * ClusterEndpoint or the DomainARN field. </p>
+     */
     inline AmazonopensearchserviceDestinationUpdate& WithClusterEndpoint(const Aws::String& value) { SetClusterEndpoint(value); return *this;}
 
-    
+    /**
+     * <p>The endpoint to use when communicating with the cluster. Specify either this
+     * ClusterEndpoint or the DomainARN field. </p>
+     */
     inline AmazonopensearchserviceDestinationUpdate& WithClusterEndpoint(Aws::String&& value) { SetClusterEndpoint(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The endpoint to use when communicating with the cluster. Specify either this
+     * ClusterEndpoint or the DomainARN field. </p>
+     */
     inline AmazonopensearchserviceDestinationUpdate& WithClusterEndpoint(const char* value) { SetClusterEndpoint(value); return *this;}
 
 
-    
+    /**
+     * <p>The Amazon OpenSearch Service index name.</p>
+     */
     inline const Aws::String& GetIndexName() const{ return m_indexName; }
 
-    
+    /**
+     * <p>The Amazon OpenSearch Service index name.</p>
+     */
     inline bool IndexNameHasBeenSet() const { return m_indexNameHasBeenSet; }
 
-    
+    /**
+     * <p>The Amazon OpenSearch Service index name.</p>
+     */
     inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
 
-    
+    /**
+     * <p>The Amazon OpenSearch Service index name.</p>
+     */
     inline void SetIndexName(Aws::String&& value) { m_indexNameHasBeenSet = true; m_indexName = std::move(value); }
 
-    
+    /**
+     * <p>The Amazon OpenSearch Service index name.</p>
+     */
     inline void SetIndexName(const char* value) { m_indexNameHasBeenSet = true; m_indexName.assign(value); }
 
-    
+    /**
+     * <p>The Amazon OpenSearch Service index name.</p>
+     */
     inline AmazonopensearchserviceDestinationUpdate& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon OpenSearch Service index name.</p>
+     */
     inline AmazonopensearchserviceDestinationUpdate& WithIndexName(Aws::String&& value) { SetIndexName(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The Amazon OpenSearch Service index name.</p>
+     */
     inline AmazonopensearchserviceDestinationUpdate& WithIndexName(const char* value) { SetIndexName(value); return *this;}
 
 
-    
+    /**
+     * <p>The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be
+     * only one type per index. If you try to specify a new type for an existing index
+     * that already has another type, Kinesis Data Firehose returns an error during
+     * runtime. </p> <p>If you upgrade Elasticsearch from 6.x to 7.x and don’t update
+     * your delivery stream, Kinesis Data Firehose still delivers data to Elasticsearch
+     * with the old index name and type name. If you want to update your delivery
+     * stream with a new index name, provide an empty string for TypeName. </p>
+     */
     inline const Aws::String& GetTypeName() const{ return m_typeName; }
 
-    
+    /**
+     * <p>The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be
+     * only one type per index. If you try to specify a new type for an existing index
+     * that already has another type, Kinesis Data Firehose returns an error during
+     * runtime. </p> <p>If you upgrade Elasticsearch from 6.x to 7.x and don’t update
+     * your delivery stream, Kinesis Data Firehose still delivers data to Elasticsearch
+     * with the old index name and type name. If you want to update your delivery
+     * stream with a new index name, provide an empty string for TypeName. </p>
+     */
     inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
 
-    
+    /**
+     * <p>The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be
+     * only one type per index. If you try to specify a new type for an existing index
+     * that already has another type, Kinesis Data Firehose returns an error during
+     * runtime. </p> <p>If you upgrade Elasticsearch from 6.x to 7.x and don’t update
+     * your delivery stream, Kinesis Data Firehose still delivers data to Elasticsearch
+     * with the old index name and type name. If you want to update your delivery
+     * stream with a new index name, provide an empty string for TypeName. </p>
+     */
     inline void SetTypeName(const Aws::String& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
 
-    
+    /**
+     * <p>The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be
+     * only one type per index. If you try to specify a new type for an existing index
+     * that already has another type, Kinesis Data Firehose returns an error during
+     * runtime. </p> <p>If you upgrade Elasticsearch from 6.x to 7.x and don’t update
+     * your delivery stream, Kinesis Data Firehose still delivers data to Elasticsearch
+     * with the old index name and type name. If you want to update your delivery
+     * stream with a new index name, provide an empty string for TypeName. </p>
+     */
     inline void SetTypeName(Aws::String&& value) { m_typeNameHasBeenSet = true; m_typeName = std::move(value); }
 
-    
+    /**
+     * <p>The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be
+     * only one type per index. If you try to specify a new type for an existing index
+     * that already has another type, Kinesis Data Firehose returns an error during
+     * runtime. </p> <p>If you upgrade Elasticsearch from 6.x to 7.x and don’t update
+     * your delivery stream, Kinesis Data Firehose still delivers data to Elasticsearch
+     * with the old index name and type name. If you want to update your delivery
+     * stream with a new index name, provide an empty string for TypeName. </p>
+     */
     inline void SetTypeName(const char* value) { m_typeNameHasBeenSet = true; m_typeName.assign(value); }
 
-    
+    /**
+     * <p>The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be
+     * only one type per index. If you try to specify a new type for an existing index
+     * that already has another type, Kinesis Data Firehose returns an error during
+     * runtime. </p> <p>If you upgrade Elasticsearch from 6.x to 7.x and don’t update
+     * your delivery stream, Kinesis Data Firehose still delivers data to Elasticsearch
+     * with the old index name and type name. If you want to update your delivery
+     * stream with a new index name, provide an empty string for TypeName. </p>
+     */
     inline AmazonopensearchserviceDestinationUpdate& WithTypeName(const Aws::String& value) { SetTypeName(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be
+     * only one type per index. If you try to specify a new type for an existing index
+     * that already has another type, Kinesis Data Firehose returns an error during
+     * runtime. </p> <p>If you upgrade Elasticsearch from 6.x to 7.x and don’t update
+     * your delivery stream, Kinesis Data Firehose still delivers data to Elasticsearch
+     * with the old index name and type name. If you want to update your delivery
+     * stream with a new index name, provide an empty string for TypeName. </p>
+     */
     inline AmazonopensearchserviceDestinationUpdate& WithTypeName(Aws::String&& value) { SetTypeName(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be
+     * only one type per index. If you try to specify a new type for an existing index
+     * that already has another type, Kinesis Data Firehose returns an error during
+     * runtime. </p> <p>If you upgrade Elasticsearch from 6.x to 7.x and don’t update
+     * your delivery stream, Kinesis Data Firehose still delivers data to Elasticsearch
+     * with the old index name and type name. If you want to update your delivery
+     * stream with a new index name, provide an empty string for TypeName. </p>
+     */
     inline AmazonopensearchserviceDestinationUpdate& WithTypeName(const char* value) { SetTypeName(value); return *this;}
 
 
-    
+    /**
+     * <p>The Amazon OpenSearch Service index rotation period. Index rotation appends a
+     * timestamp to IndexName to facilitate the expiration of old data.</p>
+     */
     inline const AmazonopensearchserviceIndexRotationPeriod& GetIndexRotationPeriod() const{ return m_indexRotationPeriod; }
 
-    
+    /**
+     * <p>The Amazon OpenSearch Service index rotation period. Index rotation appends a
+     * timestamp to IndexName to facilitate the expiration of old data.</p>
+     */
     inline bool IndexRotationPeriodHasBeenSet() const { return m_indexRotationPeriodHasBeenSet; }
 
-    
+    /**
+     * <p>The Amazon OpenSearch Service index rotation period. Index rotation appends a
+     * timestamp to IndexName to facilitate the expiration of old data.</p>
+     */
     inline void SetIndexRotationPeriod(const AmazonopensearchserviceIndexRotationPeriod& value) { m_indexRotationPeriodHasBeenSet = true; m_indexRotationPeriod = value; }
 
-    
+    /**
+     * <p>The Amazon OpenSearch Service index rotation period. Index rotation appends a
+     * timestamp to IndexName to facilitate the expiration of old data.</p>
+     */
     inline void SetIndexRotationPeriod(AmazonopensearchserviceIndexRotationPeriod&& value) { m_indexRotationPeriodHasBeenSet = true; m_indexRotationPeriod = std::move(value); }
 
-    
+    /**
+     * <p>The Amazon OpenSearch Service index rotation period. Index rotation appends a
+     * timestamp to IndexName to facilitate the expiration of old data.</p>
+     */
     inline AmazonopensearchserviceDestinationUpdate& WithIndexRotationPeriod(const AmazonopensearchserviceIndexRotationPeriod& value) { SetIndexRotationPeriod(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon OpenSearch Service index rotation period. Index rotation appends a
+     * timestamp to IndexName to facilitate the expiration of old data.</p>
+     */
     inline AmazonopensearchserviceDestinationUpdate& WithIndexRotationPeriod(AmazonopensearchserviceIndexRotationPeriod&& value) { SetIndexRotationPeriod(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The buffering options. If no value is specified,
+     * AmazonopensearchBufferingHints object default values are used. </p>
+     */
     inline const AmazonopensearchserviceBufferingHints& GetBufferingHints() const{ return m_bufferingHints; }
 
-    
+    /**
+     * <p>The buffering options. If no value is specified,
+     * AmazonopensearchBufferingHints object default values are used. </p>
+     */
     inline bool BufferingHintsHasBeenSet() const { return m_bufferingHintsHasBeenSet; }
 
-    
+    /**
+     * <p>The buffering options. If no value is specified,
+     * AmazonopensearchBufferingHints object default values are used. </p>
+     */
     inline void SetBufferingHints(const AmazonopensearchserviceBufferingHints& value) { m_bufferingHintsHasBeenSet = true; m_bufferingHints = value; }
 
-    
+    /**
+     * <p>The buffering options. If no value is specified,
+     * AmazonopensearchBufferingHints object default values are used. </p>
+     */
     inline void SetBufferingHints(AmazonopensearchserviceBufferingHints&& value) { m_bufferingHintsHasBeenSet = true; m_bufferingHints = std::move(value); }
 
-    
+    /**
+     * <p>The buffering options. If no value is specified,
+     * AmazonopensearchBufferingHints object default values are used. </p>
+     */
     inline AmazonopensearchserviceDestinationUpdate& WithBufferingHints(const AmazonopensearchserviceBufferingHints& value) { SetBufferingHints(value); return *this;}
 
-    
+    /**
+     * <p>The buffering options. If no value is specified,
+     * AmazonopensearchBufferingHints object default values are used. </p>
+     */
     inline AmazonopensearchserviceDestinationUpdate& WithBufferingHints(AmazonopensearchserviceBufferingHints&& value) { SetBufferingHints(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver
+     * documents to Amazon OpenSearch Service. The default value is 300 (5 minutes).
+     * </p>
+     */
     inline const AmazonopensearchserviceRetryOptions& GetRetryOptions() const{ return m_retryOptions; }
 
-    
+    /**
+     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver
+     * documents to Amazon OpenSearch Service. The default value is 300 (5 minutes).
+     * </p>
+     */
     inline bool RetryOptionsHasBeenSet() const { return m_retryOptionsHasBeenSet; }
 
-    
+    /**
+     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver
+     * documents to Amazon OpenSearch Service. The default value is 300 (5 minutes).
+     * </p>
+     */
     inline void SetRetryOptions(const AmazonopensearchserviceRetryOptions& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = value; }
 
-    
+    /**
+     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver
+     * documents to Amazon OpenSearch Service. The default value is 300 (5 minutes).
+     * </p>
+     */
     inline void SetRetryOptions(AmazonopensearchserviceRetryOptions&& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = std::move(value); }
 
-    
+    /**
+     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver
+     * documents to Amazon OpenSearch Service. The default value is 300 (5 minutes).
+     * </p>
+     */
     inline AmazonopensearchserviceDestinationUpdate& WithRetryOptions(const AmazonopensearchserviceRetryOptions& value) { SetRetryOptions(value); return *this;}
 
-    
+    /**
+     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver
+     * documents to Amazon OpenSearch Service. The default value is 300 (5 minutes).
+     * </p>
+     */
     inline AmazonopensearchserviceDestinationUpdate& WithRetryOptions(AmazonopensearchserviceRetryOptions&& value) { SetRetryOptions(std::move(value)); return *this;}
 
 

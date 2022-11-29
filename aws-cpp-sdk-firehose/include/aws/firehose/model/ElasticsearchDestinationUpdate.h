@@ -51,7 +51,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
      * Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
@@ -62,7 +62,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
      * Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
 
@@ -73,7 +73,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
      * Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
@@ -84,7 +84,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
      * Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
@@ -95,7 +95,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
      * Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
@@ -106,7 +106,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
      * Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline ElasticsearchDestinationUpdate& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
@@ -117,7 +117,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
      * Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline ElasticsearchDestinationUpdate& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
@@ -128,104 +128,96 @@ namespace Model
      * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
      * Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline ElasticsearchDestinationUpdate& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
 
     /**
      * <p>The ARN of the Amazon ES domain. The IAM role must have permissions
-     * for <code>DescribeElasticsearchDomain</code>,
-     * <code>DescribeElasticsearchDomains</code>, and
-     * <code>DescribeElasticsearchDomainConfig</code> after assuming the IAM role
-     * specified in <code>RoleARN</code>. For more information, see <a
+     * for <code>DescribeDomain</code>, <code>DescribeDomains</code>, and
+     * <code>DescribeDomainConfig</code> after assuming the IAM role specified in
+     * <code>RoleARN</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p> <p>Specify either
-     * <code>ClusterEndpoint</code> or <code>DomainARN</code>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
+     * <p>Specify either <code>ClusterEndpoint</code> or <code>DomainARN</code>.</p>
      */
     inline const Aws::String& GetDomainARN() const{ return m_domainARN; }
 
     /**
      * <p>The ARN of the Amazon ES domain. The IAM role must have permissions
-     * for <code>DescribeElasticsearchDomain</code>,
-     * <code>DescribeElasticsearchDomains</code>, and
-     * <code>DescribeElasticsearchDomainConfig</code> after assuming the IAM role
-     * specified in <code>RoleARN</code>. For more information, see <a
+     * for <code>DescribeDomain</code>, <code>DescribeDomains</code>, and
+     * <code>DescribeDomainConfig</code> after assuming the IAM role specified in
+     * <code>RoleARN</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p> <p>Specify either
-     * <code>ClusterEndpoint</code> or <code>DomainARN</code>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
+     * <p>Specify either <code>ClusterEndpoint</code> or <code>DomainARN</code>.</p>
      */
     inline bool DomainARNHasBeenSet() const { return m_domainARNHasBeenSet; }
 
     /**
      * <p>The ARN of the Amazon ES domain. The IAM role must have permissions
-     * for <code>DescribeElasticsearchDomain</code>,
-     * <code>DescribeElasticsearchDomains</code>, and
-     * <code>DescribeElasticsearchDomainConfig</code> after assuming the IAM role
-     * specified in <code>RoleARN</code>. For more information, see <a
+     * for <code>DescribeDomain</code>, <code>DescribeDomains</code>, and
+     * <code>DescribeDomainConfig</code> after assuming the IAM role specified in
+     * <code>RoleARN</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p> <p>Specify either
-     * <code>ClusterEndpoint</code> or <code>DomainARN</code>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
+     * <p>Specify either <code>ClusterEndpoint</code> or <code>DomainARN</code>.</p>
      */
     inline void SetDomainARN(const Aws::String& value) { m_domainARNHasBeenSet = true; m_domainARN = value; }
 
     /**
      * <p>The ARN of the Amazon ES domain. The IAM role must have permissions
-     * for <code>DescribeElasticsearchDomain</code>,
-     * <code>DescribeElasticsearchDomains</code>, and
-     * <code>DescribeElasticsearchDomainConfig</code> after assuming the IAM role
-     * specified in <code>RoleARN</code>. For more information, see <a
+     * for <code>DescribeDomain</code>, <code>DescribeDomains</code>, and
+     * <code>DescribeDomainConfig</code> after assuming the IAM role specified in
+     * <code>RoleARN</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p> <p>Specify either
-     * <code>ClusterEndpoint</code> or <code>DomainARN</code>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
+     * <p>Specify either <code>ClusterEndpoint</code> or <code>DomainARN</code>.</p>
      */
     inline void SetDomainARN(Aws::String&& value) { m_domainARNHasBeenSet = true; m_domainARN = std::move(value); }
 
     /**
      * <p>The ARN of the Amazon ES domain. The IAM role must have permissions
-     * for <code>DescribeElasticsearchDomain</code>,
-     * <code>DescribeElasticsearchDomains</code>, and
-     * <code>DescribeElasticsearchDomainConfig</code> after assuming the IAM role
-     * specified in <code>RoleARN</code>. For more information, see <a
+     * for <code>DescribeDomain</code>, <code>DescribeDomains</code>, and
+     * <code>DescribeDomainConfig</code> after assuming the IAM role specified in
+     * <code>RoleARN</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p> <p>Specify either
-     * <code>ClusterEndpoint</code> or <code>DomainARN</code>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
+     * <p>Specify either <code>ClusterEndpoint</code> or <code>DomainARN</code>.</p>
      */
     inline void SetDomainARN(const char* value) { m_domainARNHasBeenSet = true; m_domainARN.assign(value); }
 
     /**
      * <p>The ARN of the Amazon ES domain. The IAM role must have permissions
-     * for <code>DescribeElasticsearchDomain</code>,
-     * <code>DescribeElasticsearchDomains</code>, and
-     * <code>DescribeElasticsearchDomainConfig</code> after assuming the IAM role
-     * specified in <code>RoleARN</code>. For more information, see <a
+     * for <code>DescribeDomain</code>, <code>DescribeDomains</code>, and
+     * <code>DescribeDomainConfig</code> after assuming the IAM role specified in
+     * <code>RoleARN</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p> <p>Specify either
-     * <code>ClusterEndpoint</code> or <code>DomainARN</code>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
+     * <p>Specify either <code>ClusterEndpoint</code> or <code>DomainARN</code>.</p>
      */
     inline ElasticsearchDestinationUpdate& WithDomainARN(const Aws::String& value) { SetDomainARN(value); return *this;}
 
     /**
      * <p>The ARN of the Amazon ES domain. The IAM role must have permissions
-     * for <code>DescribeElasticsearchDomain</code>,
-     * <code>DescribeElasticsearchDomains</code>, and
-     * <code>DescribeElasticsearchDomainConfig</code> after assuming the IAM role
-     * specified in <code>RoleARN</code>. For more information, see <a
+     * for <code>DescribeDomain</code>, <code>DescribeDomains</code>, and
+     * <code>DescribeDomainConfig</code> after assuming the IAM role specified in
+     * <code>RoleARN</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p> <p>Specify either
-     * <code>ClusterEndpoint</code> or <code>DomainARN</code>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
+     * <p>Specify either <code>ClusterEndpoint</code> or <code>DomainARN</code>.</p>
      */
     inline ElasticsearchDestinationUpdate& WithDomainARN(Aws::String&& value) { SetDomainARN(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the Amazon ES domain. The IAM role must have permissions
-     * for <code>DescribeElasticsearchDomain</code>,
-     * <code>DescribeElasticsearchDomains</code>, and
-     * <code>DescribeElasticsearchDomainConfig</code> after assuming the IAM role
-     * specified in <code>RoleARN</code>. For more information, see <a
+     * for <code>DescribeDomain</code>, <code>DescribeDomains</code>, and
+     * <code>DescribeDomainConfig</code> after assuming the IAM role specified in
+     * <code>RoleARN</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p> <p>Specify either
-     * <code>ClusterEndpoint</code> or <code>DomainARN</code>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
+     * <p>Specify either <code>ClusterEndpoint</code> or <code>DomainARN</code>.</p>
      */
     inline ElasticsearchDestinationUpdate& WithDomainARN(const char* value) { SetDomainARN(value); return *this;}
 

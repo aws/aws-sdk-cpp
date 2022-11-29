@@ -588,7 +588,8 @@ namespace Model
     u_18tb1_112xlarge,
     u_24tb1_112xlarge,
     trn1_2xlarge,
-    trn1_32xlarge
+    trn1_32xlarge,
+    hpc6id_32xlarge
   };
 
 namespace InstanceTypeMapper

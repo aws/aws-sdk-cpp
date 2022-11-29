@@ -27,7 +27,10 @@ CustomKeyStoresListEntry::CustomKeyStoresListEntry() :
     m_connectionStateHasBeenSet(false),
     m_connectionErrorCode(ConnectionErrorCodeType::NOT_SET),
     m_connectionErrorCodeHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
+    m_creationDateHasBeenSet(false),
+    m_customKeyStoreType(CustomKeyStoreType::NOT_SET),
+    m_customKeyStoreTypeHasBeenSet(false),
+    m_xksProxyConfigurationHasBeenSet(false)
 {
 }
 
@@ -40,7 +43,10 @@ CustomKeyStoresListEntry::CustomKeyStoresListEntry(JsonView jsonValue) :
     m_connectionStateHasBeenSet(false),
     m_connectionErrorCode(ConnectionErrorCodeType::NOT_SET),
     m_connectionErrorCodeHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
+    m_creationDateHasBeenSet(false),
+    m_customKeyStoreType(CustomKeyStoreType::NOT_SET),
+    m_customKeyStoreTypeHasBeenSet(false),
+    m_xksProxyConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -96,6 +102,20 @@ CustomKeyStoresListEntry& CustomKeyStoresListEntry::operator =(JsonView jsonValu
     m_creationDateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CustomKeyStoreType"))
+  {
+    m_customKeyStoreType = CustomKeyStoreTypeMapper::GetCustomKeyStoreTypeForName(jsonValue.GetString("CustomKeyStoreType"));
+
+    m_customKeyStoreTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("XksProxyConfiguration"))
+  {
+    m_xksProxyConfiguration = jsonValue.GetObject("XksProxyConfiguration");
+
+    m_xksProxyConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -140,6 +160,17 @@ JsonValue CustomKeyStoresListEntry::Jsonize() const
   if(m_creationDateHasBeenSet)
   {
    payload.WithDouble("CreationDate", m_creationDate.SecondsWithMSPrecision());
+  }
+
+  if(m_customKeyStoreTypeHasBeenSet)
+  {
+   payload.WithString("CustomKeyStoreType", CustomKeyStoreTypeMapper::GetNameForCustomKeyStoreType(m_customKeyStoreType));
+  }
+
+  if(m_xksProxyConfigurationHasBeenSet)
+  {
+   payload.WithObject("XksProxyConfiguration", m_xksProxyConfiguration.Jsonize());
+
   }
 
   return payload;

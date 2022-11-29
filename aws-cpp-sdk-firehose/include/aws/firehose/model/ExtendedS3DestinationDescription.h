@@ -47,66 +47,66 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information,
-     * see <a
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information,
-     * see <a
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information,
-     * see <a
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information,
-     * see <a
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information,
-     * see <a
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information,
-     * see <a
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline ExtendedS3DestinationDescription& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information,
-     * see <a
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline ExtendedS3DestinationDescription& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information,
-     * see <a
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline ExtendedS3DestinationDescription& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
@@ -114,56 +114,56 @@ namespace Model
     /**
      * <p>The ARN of the S3 bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline const Aws::String& GetBucketARN() const{ return m_bucketARN; }
 
     /**
      * <p>The ARN of the S3 bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline bool BucketARNHasBeenSet() const { return m_bucketARNHasBeenSet; }
 
     /**
      * <p>The ARN of the S3 bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline void SetBucketARN(const Aws::String& value) { m_bucketARNHasBeenSet = true; m_bucketARN = value; }
 
     /**
      * <p>The ARN of the S3 bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline void SetBucketARN(Aws::String&& value) { m_bucketARNHasBeenSet = true; m_bucketARN = std::move(value); }
 
     /**
      * <p>The ARN of the S3 bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline void SetBucketARN(const char* value) { m_bucketARNHasBeenSet = true; m_bucketARN.assign(value); }
 
     /**
      * <p>The ARN of the S3 bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline ExtendedS3DestinationDescription& WithBucketARN(const Aws::String& value) { SetBucketARN(value); return *this;}
 
     /**
      * <p>The ARN of the S3 bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline ExtendedS3DestinationDescription& WithBucketARN(Aws::String&& value) { SetBucketARN(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the S3 bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline ExtendedS3DestinationDescription& WithBucketARN(const char* value) { SetBucketARN(value); return *this;}
 
@@ -576,8 +576,6 @@ namespace Model
      * <p>The configuration of the dynamic partitioning mechanism that creates smaller
      * data sets from the streaming data by partitioning it based on partition keys.
      * Currently, dynamic partitioning is only supported for Amazon S3 destinations.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html">https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html</a>
      * </p>
      */
     inline const DynamicPartitioningConfiguration& GetDynamicPartitioningConfiguration() const{ return m_dynamicPartitioningConfiguration; }
@@ -586,8 +584,6 @@ namespace Model
      * <p>The configuration of the dynamic partitioning mechanism that creates smaller
      * data sets from the streaming data by partitioning it based on partition keys.
      * Currently, dynamic partitioning is only supported for Amazon S3 destinations.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html">https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html</a>
      * </p>
      */
     inline bool DynamicPartitioningConfigurationHasBeenSet() const { return m_dynamicPartitioningConfigurationHasBeenSet; }
@@ -596,8 +592,6 @@ namespace Model
      * <p>The configuration of the dynamic partitioning mechanism that creates smaller
      * data sets from the streaming data by partitioning it based on partition keys.
      * Currently, dynamic partitioning is only supported for Amazon S3 destinations.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html">https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html</a>
      * </p>
      */
     inline void SetDynamicPartitioningConfiguration(const DynamicPartitioningConfiguration& value) { m_dynamicPartitioningConfigurationHasBeenSet = true; m_dynamicPartitioningConfiguration = value; }
@@ -606,8 +600,6 @@ namespace Model
      * <p>The configuration of the dynamic partitioning mechanism that creates smaller
      * data sets from the streaming data by partitioning it based on partition keys.
      * Currently, dynamic partitioning is only supported for Amazon S3 destinations.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html">https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html</a>
      * </p>
      */
     inline void SetDynamicPartitioningConfiguration(DynamicPartitioningConfiguration&& value) { m_dynamicPartitioningConfigurationHasBeenSet = true; m_dynamicPartitioningConfiguration = std::move(value); }
@@ -616,8 +608,6 @@ namespace Model
      * <p>The configuration of the dynamic partitioning mechanism that creates smaller
      * data sets from the streaming data by partitioning it based on partition keys.
      * Currently, dynamic partitioning is only supported for Amazon S3 destinations.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html">https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html</a>
      * </p>
      */
     inline ExtendedS3DestinationDescription& WithDynamicPartitioningConfiguration(const DynamicPartitioningConfiguration& value) { SetDynamicPartitioningConfiguration(value); return *this;}
@@ -626,8 +616,6 @@ namespace Model
      * <p>The configuration of the dynamic partitioning mechanism that creates smaller
      * data sets from the streaming data by partitioning it based on partition keys.
      * Currently, dynamic partitioning is only supported for Amazon S3 destinations.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html">https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html</a>
      * </p>
      */
     inline ExtendedS3DestinationDescription& WithDynamicPartitioningConfiguration(DynamicPartitioningConfiguration&& value) { SetDynamicPartitioningConfiguration(std::move(value)); return *this;}

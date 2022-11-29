@@ -30,6 +30,14 @@ namespace Aws
         static const int USER_LOGGED_IN_HASH = HashingUtils::HashString("USER_LOGGED_IN");
         static const int SUBNET_NOT_FOUND_HASH = HashingUtils::HashString("SUBNET_NOT_FOUND");
         static const int INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET_HASH = HashingUtils::HashString("INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET");
+        static const int XKS_PROXY_ACCESS_DENIED_HASH = HashingUtils::HashString("XKS_PROXY_ACCESS_DENIED");
+        static const int XKS_PROXY_NOT_REACHABLE_HASH = HashingUtils::HashString("XKS_PROXY_NOT_REACHABLE");
+        static const int XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND_HASH = HashingUtils::HashString("XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND");
+        static const int XKS_PROXY_INVALID_RESPONSE_HASH = HashingUtils::HashString("XKS_PROXY_INVALID_RESPONSE");
+        static const int XKS_PROXY_INVALID_CONFIGURATION_HASH = HashingUtils::HashString("XKS_PROXY_INVALID_CONFIGURATION");
+        static const int XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION_HASH = HashingUtils::HashString("XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION");
+        static const int XKS_PROXY_TIMED_OUT_HASH = HashingUtils::HashString("XKS_PROXY_TIMED_OUT");
+        static const int XKS_PROXY_INVALID_TLS_CONFIGURATION_HASH = HashingUtils::HashString("XKS_PROXY_INVALID_TLS_CONFIGURATION");
 
 
         ConnectionErrorCodeType GetConnectionErrorCodeTypeForName(const Aws::String& name)
@@ -75,6 +83,38 @@ namespace Aws
           {
             return ConnectionErrorCodeType::INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET;
           }
+          else if (hashCode == XKS_PROXY_ACCESS_DENIED_HASH)
+          {
+            return ConnectionErrorCodeType::XKS_PROXY_ACCESS_DENIED;
+          }
+          else if (hashCode == XKS_PROXY_NOT_REACHABLE_HASH)
+          {
+            return ConnectionErrorCodeType::XKS_PROXY_NOT_REACHABLE;
+          }
+          else if (hashCode == XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND_HASH)
+          {
+            return ConnectionErrorCodeType::XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND;
+          }
+          else if (hashCode == XKS_PROXY_INVALID_RESPONSE_HASH)
+          {
+            return ConnectionErrorCodeType::XKS_PROXY_INVALID_RESPONSE;
+          }
+          else if (hashCode == XKS_PROXY_INVALID_CONFIGURATION_HASH)
+          {
+            return ConnectionErrorCodeType::XKS_PROXY_INVALID_CONFIGURATION;
+          }
+          else if (hashCode == XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION_HASH)
+          {
+            return ConnectionErrorCodeType::XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION;
+          }
+          else if (hashCode == XKS_PROXY_TIMED_OUT_HASH)
+          {
+            return ConnectionErrorCodeType::XKS_PROXY_TIMED_OUT;
+          }
+          else if (hashCode == XKS_PROXY_INVALID_TLS_CONFIGURATION_HASH)
+          {
+            return ConnectionErrorCodeType::XKS_PROXY_INVALID_TLS_CONFIGURATION;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -109,6 +149,22 @@ namespace Aws
             return "SUBNET_NOT_FOUND";
           case ConnectionErrorCodeType::INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET:
             return "INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET";
+          case ConnectionErrorCodeType::XKS_PROXY_ACCESS_DENIED:
+            return "XKS_PROXY_ACCESS_DENIED";
+          case ConnectionErrorCodeType::XKS_PROXY_NOT_REACHABLE:
+            return "XKS_PROXY_NOT_REACHABLE";
+          case ConnectionErrorCodeType::XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND:
+            return "XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND";
+          case ConnectionErrorCodeType::XKS_PROXY_INVALID_RESPONSE:
+            return "XKS_PROXY_INVALID_RESPONSE";
+          case ConnectionErrorCodeType::XKS_PROXY_INVALID_CONFIGURATION:
+            return "XKS_PROXY_INVALID_CONFIGURATION";
+          case ConnectionErrorCodeType::XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION:
+            return "XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION";
+          case ConnectionErrorCodeType::XKS_PROXY_TIMED_OUT:
+            return "XKS_PROXY_TIMED_OUT";
+          case ConnectionErrorCodeType::XKS_PROXY_INVALID_TLS_CONFIGURATION:
+            return "XKS_PROXY_INVALID_TLS_CONFIGURATION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

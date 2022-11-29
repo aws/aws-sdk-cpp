@@ -826,7 +826,7 @@ namespace Model
      * KMS key when it is created. To tag an existing KMS key, use the
      * <a>TagResource</a> operation.</p>  <p>Tagging or untagging a KMS key can
      * allow or deny permission to the KMS key. For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for
      * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>To
      * use this parameter, you must have <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>
@@ -851,7 +851,7 @@ namespace Model
      * KMS key when it is created. To tag an existing KMS key, use the
      * <a>TagResource</a> operation.</p>  <p>Tagging or untagging a KMS key can
      * allow or deny permission to the KMS key. For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for
      * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>To
      * use this parameter, you must have <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>
@@ -876,7 +876,7 @@ namespace Model
      * KMS key when it is created. To tag an existing KMS key, use the
      * <a>TagResource</a> operation.</p>  <p>Tagging or untagging a KMS key can
      * allow or deny permission to the KMS key. For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for
      * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>To
      * use this parameter, you must have <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>
@@ -901,7 +901,7 @@ namespace Model
      * KMS key when it is created. To tag an existing KMS key, use the
      * <a>TagResource</a> operation.</p>  <p>Tagging or untagging a KMS key can
      * allow or deny permission to the KMS key. For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for
      * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>To
      * use this parameter, you must have <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>
@@ -926,7 +926,7 @@ namespace Model
      * KMS key when it is created. To tag an existing KMS key, use the
      * <a>TagResource</a> operation.</p>  <p>Tagging or untagging a KMS key can
      * allow or deny permission to the KMS key. For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for
      * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>To
      * use this parameter, you must have <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>
@@ -951,7 +951,7 @@ namespace Model
      * KMS key when it is created. To tag an existing KMS key, use the
      * <a>TagResource</a> operation.</p>  <p>Tagging or untagging a KMS key can
      * allow or deny permission to the KMS key. For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for
      * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>To
      * use this parameter, you must have <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>
@@ -976,7 +976,7 @@ namespace Model
      * KMS key when it is created. To tag an existing KMS key, use the
      * <a>TagResource</a> operation.</p>  <p>Tagging or untagging a KMS key can
      * allow or deny permission to the KMS key. For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for
      * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>To
      * use this parameter, you must have <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>
@@ -1001,7 +1001,7 @@ namespace Model
      * KMS key when it is created. To tag an existing KMS key, use the
      * <a>TagResource</a> operation.</p>  <p>Tagging or untagging a KMS key can
      * allow or deny permission to the KMS key. For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for
      * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>To
      * use this parameter, you must have <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>

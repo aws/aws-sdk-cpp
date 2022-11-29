@@ -13,6 +13,7 @@
 #include <aws/firehose/model/AmazonopensearchserviceDestinationUpdate.h>
 #include <aws/firehose/model/SplunkDestinationUpdate.h>
 #include <aws/firehose/model/HttpEndpointDestinationUpdate.h>
+#include <aws/firehose/model/AmazonOpenSearchServerlessDestinationUpdate.h>
 #include <utility>
 
 namespace Aws
@@ -296,22 +297,34 @@ namespace Model
     inline UpdateDestinationRequest& WithElasticsearchDestinationUpdate(ElasticsearchDestinationUpdate&& value) { SetElasticsearchDestinationUpdate(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Describes an update for a destination in Amazon OpenSearch Service.</p>
+     */
     inline const AmazonopensearchserviceDestinationUpdate& GetAmazonopensearchserviceDestinationUpdate() const{ return m_amazonopensearchserviceDestinationUpdate; }
 
-    
+    /**
+     * <p>Describes an update for a destination in Amazon OpenSearch Service.</p>
+     */
     inline bool AmazonopensearchserviceDestinationUpdateHasBeenSet() const { return m_amazonopensearchserviceDestinationUpdateHasBeenSet; }
 
-    
+    /**
+     * <p>Describes an update for a destination in Amazon OpenSearch Service.</p>
+     */
     inline void SetAmazonopensearchserviceDestinationUpdate(const AmazonopensearchserviceDestinationUpdate& value) { m_amazonopensearchserviceDestinationUpdateHasBeenSet = true; m_amazonopensearchserviceDestinationUpdate = value; }
 
-    
+    /**
+     * <p>Describes an update for a destination in Amazon OpenSearch Service.</p>
+     */
     inline void SetAmazonopensearchserviceDestinationUpdate(AmazonopensearchserviceDestinationUpdate&& value) { m_amazonopensearchserviceDestinationUpdateHasBeenSet = true; m_amazonopensearchserviceDestinationUpdate = std::move(value); }
 
-    
+    /**
+     * <p>Describes an update for a destination in Amazon OpenSearch Service.</p>
+     */
     inline UpdateDestinationRequest& WithAmazonopensearchserviceDestinationUpdate(const AmazonopensearchserviceDestinationUpdate& value) { SetAmazonopensearchserviceDestinationUpdate(value); return *this;}
 
-    
+    /**
+     * <p>Describes an update for a destination in Amazon OpenSearch Service.</p>
+     */
     inline UpdateDestinationRequest& WithAmazonopensearchserviceDestinationUpdate(AmazonopensearchserviceDestinationUpdate&& value) { SetAmazonopensearchserviceDestinationUpdate(std::move(value)); return *this;}
 
 
@@ -376,6 +389,43 @@ namespace Model
      */
     inline UpdateDestinationRequest& WithHttpEndpointDestinationUpdate(HttpEndpointDestinationUpdate&& value) { SetHttpEndpointDestinationUpdate(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Describes an update for a destination in the Serverless offering for Amazon
+     * OpenSearch Service.</p>
+     */
+    inline const AmazonOpenSearchServerlessDestinationUpdate& GetAmazonOpenSearchServerlessDestinationUpdate() const{ return m_amazonOpenSearchServerlessDestinationUpdate; }
+
+    /**
+     * <p>Describes an update for a destination in the Serverless offering for Amazon
+     * OpenSearch Service.</p>
+     */
+    inline bool AmazonOpenSearchServerlessDestinationUpdateHasBeenSet() const { return m_amazonOpenSearchServerlessDestinationUpdateHasBeenSet; }
+
+    /**
+     * <p>Describes an update for a destination in the Serverless offering for Amazon
+     * OpenSearch Service.</p>
+     */
+    inline void SetAmazonOpenSearchServerlessDestinationUpdate(const AmazonOpenSearchServerlessDestinationUpdate& value) { m_amazonOpenSearchServerlessDestinationUpdateHasBeenSet = true; m_amazonOpenSearchServerlessDestinationUpdate = value; }
+
+    /**
+     * <p>Describes an update for a destination in the Serverless offering for Amazon
+     * OpenSearch Service.</p>
+     */
+    inline void SetAmazonOpenSearchServerlessDestinationUpdate(AmazonOpenSearchServerlessDestinationUpdate&& value) { m_amazonOpenSearchServerlessDestinationUpdateHasBeenSet = true; m_amazonOpenSearchServerlessDestinationUpdate = std::move(value); }
+
+    /**
+     * <p>Describes an update for a destination in the Serverless offering for Amazon
+     * OpenSearch Service.</p>
+     */
+    inline UpdateDestinationRequest& WithAmazonOpenSearchServerlessDestinationUpdate(const AmazonOpenSearchServerlessDestinationUpdate& value) { SetAmazonOpenSearchServerlessDestinationUpdate(value); return *this;}
+
+    /**
+     * <p>Describes an update for a destination in the Serverless offering for Amazon
+     * OpenSearch Service.</p>
+     */
+    inline UpdateDestinationRequest& WithAmazonOpenSearchServerlessDestinationUpdate(AmazonOpenSearchServerlessDestinationUpdate&& value) { SetAmazonOpenSearchServerlessDestinationUpdate(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_deliveryStreamName;
@@ -404,6 +454,9 @@ namespace Model
 
     HttpEndpointDestinationUpdate m_httpEndpointDestinationUpdate;
     bool m_httpEndpointDestinationUpdateHasBeenSet = false;
+
+    AmazonOpenSearchServerlessDestinationUpdate m_amazonOpenSearchServerlessDestinationUpdate;
+    bool m_amazonOpenSearchServerlessDestinationUpdateHasBeenSet = false;
   };
 
 } // namespace Model

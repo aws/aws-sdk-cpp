@@ -555,7 +555,8 @@ namespace Model
      * <p>This parameter is required only for asymmetric KMS keys. The default value,
      * <code>SYMMETRIC_DEFAULT</code>, is the algorithm used for symmetric encryption
      * KMS keys. If you are using an asymmetric KMS key, we recommend
-     * RSAES_OAEP_SHA_256.</p>
+     * RSAES_OAEP_SHA_256.</p> <p>The SM2PKE algorithm is only available in China
+     * Regions.</p>
      */
     inline const EncryptionAlgorithmSpec& GetEncryptionAlgorithm() const{ return m_encryptionAlgorithm; }
 
@@ -565,7 +566,8 @@ namespace Model
      * <p>This parameter is required only for asymmetric KMS keys. The default value,
      * <code>SYMMETRIC_DEFAULT</code>, is the algorithm used for symmetric encryption
      * KMS keys. If you are using an asymmetric KMS key, we recommend
-     * RSAES_OAEP_SHA_256.</p>
+     * RSAES_OAEP_SHA_256.</p> <p>The SM2PKE algorithm is only available in China
+     * Regions.</p>
      */
     inline bool EncryptionAlgorithmHasBeenSet() const { return m_encryptionAlgorithmHasBeenSet; }
 
@@ -575,7 +577,8 @@ namespace Model
      * <p>This parameter is required only for asymmetric KMS keys. The default value,
      * <code>SYMMETRIC_DEFAULT</code>, is the algorithm used for symmetric encryption
      * KMS keys. If you are using an asymmetric KMS key, we recommend
-     * RSAES_OAEP_SHA_256.</p>
+     * RSAES_OAEP_SHA_256.</p> <p>The SM2PKE algorithm is only available in China
+     * Regions.</p>
      */
     inline void SetEncryptionAlgorithm(const EncryptionAlgorithmSpec& value) { m_encryptionAlgorithmHasBeenSet = true; m_encryptionAlgorithm = value; }
 
@@ -585,7 +588,8 @@ namespace Model
      * <p>This parameter is required only for asymmetric KMS keys. The default value,
      * <code>SYMMETRIC_DEFAULT</code>, is the algorithm used for symmetric encryption
      * KMS keys. If you are using an asymmetric KMS key, we recommend
-     * RSAES_OAEP_SHA_256.</p>
+     * RSAES_OAEP_SHA_256.</p> <p>The SM2PKE algorithm is only available in China
+     * Regions.</p>
      */
     inline void SetEncryptionAlgorithm(EncryptionAlgorithmSpec&& value) { m_encryptionAlgorithmHasBeenSet = true; m_encryptionAlgorithm = std::move(value); }
 
@@ -595,7 +599,8 @@ namespace Model
      * <p>This parameter is required only for asymmetric KMS keys. The default value,
      * <code>SYMMETRIC_DEFAULT</code>, is the algorithm used for symmetric encryption
      * KMS keys. If you are using an asymmetric KMS key, we recommend
-     * RSAES_OAEP_SHA_256.</p>
+     * RSAES_OAEP_SHA_256.</p> <p>The SM2PKE algorithm is only available in China
+     * Regions.</p>
      */
     inline EncryptRequest& WithEncryptionAlgorithm(const EncryptionAlgorithmSpec& value) { SetEncryptionAlgorithm(value); return *this;}
 
@@ -605,7 +610,8 @@ namespace Model
      * <p>This parameter is required only for asymmetric KMS keys. The default value,
      * <code>SYMMETRIC_DEFAULT</code>, is the algorithm used for symmetric encryption
      * KMS keys. If you are using an asymmetric KMS key, we recommend
-     * RSAES_OAEP_SHA_256.</p>
+     * RSAES_OAEP_SHA_256.</p> <p>The SM2PKE algorithm is only available in China
+     * Regions.</p>
      */
     inline EncryptRequest& WithEncryptionAlgorithm(EncryptionAlgorithmSpec&& value) { SetEncryptionAlgorithm(std::move(value)); return *this;}
 

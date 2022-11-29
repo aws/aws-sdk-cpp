@@ -83,8 +83,9 @@ namespace Model
      * use the <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a>
      * operation to revoke the grant you gave to Kinesis Data Firehose. If a failure to
-     * retire the grant happens due to an AWS KMS issue, Kinesis Data Firehose keeps
-     * retrying the delete operation.</p> <p>The default value is false.</p>
+     * retire the grant happens due to an Amazon Web Services KMS issue, Kinesis Data
+     * Firehose keeps retrying the delete operation.</p> <p>The default value is
+     * false.</p>
      */
     inline bool GetAllowForceDelete() const{ return m_allowForceDelete; }
 
@@ -96,8 +97,9 @@ namespace Model
      * use the <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a>
      * operation to revoke the grant you gave to Kinesis Data Firehose. If a failure to
-     * retire the grant happens due to an AWS KMS issue, Kinesis Data Firehose keeps
-     * retrying the delete operation.</p> <p>The default value is false.</p>
+     * retire the grant happens due to an Amazon Web Services KMS issue, Kinesis Data
+     * Firehose keeps retrying the delete operation.</p> <p>The default value is
+     * false.</p>
      */
     inline bool AllowForceDeleteHasBeenSet() const { return m_allowForceDeleteHasBeenSet; }
 
@@ -109,8 +111,9 @@ namespace Model
      * use the <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a>
      * operation to revoke the grant you gave to Kinesis Data Firehose. If a failure to
-     * retire the grant happens due to an AWS KMS issue, Kinesis Data Firehose keeps
-     * retrying the delete operation.</p> <p>The default value is false.</p>
+     * retire the grant happens due to an Amazon Web Services KMS issue, Kinesis Data
+     * Firehose keeps retrying the delete operation.</p> <p>The default value is
+     * false.</p>
      */
     inline void SetAllowForceDelete(bool value) { m_allowForceDeleteHasBeenSet = true; m_allowForceDelete = value; }
 
@@ -122,8 +125,9 @@ namespace Model
      * use the <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a>
      * operation to revoke the grant you gave to Kinesis Data Firehose. If a failure to
-     * retire the grant happens due to an AWS KMS issue, Kinesis Data Firehose keeps
-     * retrying the delete operation.</p> <p>The default value is false.</p>
+     * retire the grant happens due to an Amazon Web Services KMS issue, Kinesis Data
+     * Firehose keeps retrying the delete operation.</p> <p>The default value is
+     * false.</p>
      */
     inline DeleteDeliveryStreamRequest& WithAllowForceDelete(bool value) { SetAllowForceDelete(value); return *this;}
 

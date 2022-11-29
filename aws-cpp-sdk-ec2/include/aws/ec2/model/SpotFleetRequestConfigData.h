@@ -958,7 +958,7 @@ namespace Model
      * the On-Demand Instances and Spot Instances in your request, Spot Fleet will
      * launch instances until it reaches the maximum amount you're willing to pay. When
      * the maximum amount you're willing to pay is reached, the fleet stops launching
-     * instances even if it hasn���t met the target capacity.</p>
+     * instances even if it hasn’t met the target capacity.</p>
      */
     inline const Aws::String& GetOnDemandMaxTotalPrice() const{ return m_onDemandMaxTotalPrice; }
 
@@ -970,7 +970,7 @@ namespace Model
      * the On-Demand Instances and Spot Instances in your request, Spot Fleet will
      * launch instances until it reaches the maximum amount you're willing to pay. When
      * the maximum amount you're willing to pay is reached, the fleet stops launching
-     * instances even if it hasn���t met the target capacity.</p>
+     * instances even if it hasn’t met the target capacity.</p>
      */
     inline bool OnDemandMaxTotalPriceHasBeenSet() const { return m_onDemandMaxTotalPriceHasBeenSet; }
 
@@ -982,7 +982,7 @@ namespace Model
      * the On-Demand Instances and Spot Instances in your request, Spot Fleet will
      * launch instances until it reaches the maximum amount you're willing to pay. When
      * the maximum amount you're willing to pay is reached, the fleet stops launching
-     * instances even if it hasn���t met the target capacity.</p>
+     * instances even if it hasn’t met the target capacity.</p>
      */
     inline void SetOnDemandMaxTotalPrice(const Aws::String& value) { m_onDemandMaxTotalPriceHasBeenSet = true; m_onDemandMaxTotalPrice = value; }
 
@@ -994,7 +994,7 @@ namespace Model
      * the On-Demand Instances and Spot Instances in your request, Spot Fleet will
      * launch instances until it reaches the maximum amount you're willing to pay. When
      * the maximum amount you're willing to pay is reached, the fleet stops launching
-     * instances even if it hasn���t met the target capacity.</p>
+     * instances even if it hasn’t met the target capacity.</p>
      */
     inline void SetOnDemandMaxTotalPrice(Aws::String&& value) { m_onDemandMaxTotalPriceHasBeenSet = true; m_onDemandMaxTotalPrice = std::move(value); }
 
@@ -1006,7 +1006,7 @@ namespace Model
      * the On-Demand Instances and Spot Instances in your request, Spot Fleet will
      * launch instances until it reaches the maximum amount you're willing to pay. When
      * the maximum amount you're willing to pay is reached, the fleet stops launching
-     * instances even if it hasn���t met the target capacity.</p>
+     * instances even if it hasn’t met the target capacity.</p>
      */
     inline void SetOnDemandMaxTotalPrice(const char* value) { m_onDemandMaxTotalPriceHasBeenSet = true; m_onDemandMaxTotalPrice.assign(value); }
 
@@ -1018,7 +1018,7 @@ namespace Model
      * the On-Demand Instances and Spot Instances in your request, Spot Fleet will
      * launch instances until it reaches the maximum amount you're willing to pay. When
      * the maximum amount you're willing to pay is reached, the fleet stops launching
-     * instances even if it hasn���t met the target capacity.</p>
+     * instances even if it hasn’t met the target capacity.</p>
      */
     inline SpotFleetRequestConfigData& WithOnDemandMaxTotalPrice(const Aws::String& value) { SetOnDemandMaxTotalPrice(value); return *this;}
 
@@ -1030,7 +1030,7 @@ namespace Model
      * the On-Demand Instances and Spot Instances in your request, Spot Fleet will
      * launch instances until it reaches the maximum amount you're willing to pay. When
      * the maximum amount you're willing to pay is reached, the fleet stops launching
-     * instances even if it hasn���t met the target capacity.</p>
+     * instances even if it hasn’t met the target capacity.</p>
      */
     inline SpotFleetRequestConfigData& WithOnDemandMaxTotalPrice(Aws::String&& value) { SetOnDemandMaxTotalPrice(std::move(value)); return *this;}
 
@@ -1042,7 +1042,7 @@ namespace Model
      * the On-Demand Instances and Spot Instances in your request, Spot Fleet will
      * launch instances until it reaches the maximum amount you're willing to pay. When
      * the maximum amount you're willing to pay is reached, the fleet stops launching
-     * instances even if it hasn���t met the target capacity.</p>
+     * instances even if it hasn’t met the target capacity.</p>
      */
     inline SpotFleetRequestConfigData& WithOnDemandMaxTotalPrice(const char* value) { SetOnDemandMaxTotalPrice(value); return *this;}
 

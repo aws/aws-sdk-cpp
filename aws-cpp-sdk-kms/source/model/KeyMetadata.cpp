@@ -49,7 +49,8 @@ KeyMetadata::KeyMetadata() :
     m_multiRegionConfigurationHasBeenSet(false),
     m_pendingDeletionWindowInDays(0),
     m_pendingDeletionWindowInDaysHasBeenSet(false),
-    m_macAlgorithmsHasBeenSet(false)
+    m_macAlgorithmsHasBeenSet(false),
+    m_xksKeyConfigurationHasBeenSet(false)
 {
 }
 
@@ -84,7 +85,8 @@ KeyMetadata::KeyMetadata(JsonView jsonValue) :
     m_multiRegionConfigurationHasBeenSet(false),
     m_pendingDeletionWindowInDays(0),
     m_pendingDeletionWindowInDaysHasBeenSet(false),
-    m_macAlgorithmsHasBeenSet(false)
+    m_macAlgorithmsHasBeenSet(false),
+    m_xksKeyConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -254,6 +256,13 @@ KeyMetadata& KeyMetadata::operator =(JsonView jsonValue)
     m_macAlgorithmsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("XksKeyConfiguration"))
+  {
+    m_xksKeyConfiguration = jsonValue.GetObject("XksKeyConfiguration");
+
+    m_xksKeyConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -396,6 +405,12 @@ JsonValue KeyMetadata::Jsonize() const
      macAlgorithmsJsonList[macAlgorithmsIndex].AsString(MacAlgorithmSpecMapper::GetNameForMacAlgorithmSpec(m_macAlgorithms[macAlgorithmsIndex]));
    }
    payload.WithArray("MacAlgorithms", std::move(macAlgorithmsJsonList));
+
+  }
+
+  if(m_xksKeyConfigurationHasBeenSet)
+  {
+   payload.WithObject("XksKeyConfiguration", m_xksKeyConfiguration.Jsonize());
 
   }
 
