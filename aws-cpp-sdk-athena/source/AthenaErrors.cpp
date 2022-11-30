@@ -43,6 +43,7 @@ namespace AthenaErrorMapper
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
 static const int METADATA_HASH = HashingUtils::HashString("MetadataException");
 static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
+static const int SESSION_ALREADY_EXISTS_HASH = HashingUtils::HashString("SessionAlreadyExistsException");
 static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 
 
@@ -61,6 +62,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == TOO_MANY_REQUESTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(AthenaErrors::TOO_MANY_REQUESTS), true);
+  }
+  else if (hashCode == SESSION_ALREADY_EXISTS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AthenaErrors::SESSION_ALREADY_EXISTS), false);
   }
   else if (hashCode == INVALID_REQUEST_HASH)
   {

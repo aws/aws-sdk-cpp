@@ -18,7 +18,8 @@ CreatePresignedDomainUrlRequest::CreatePresignedDomainUrlRequest() :
     m_sessionExpirationDurationInSeconds(0),
     m_sessionExpirationDurationInSecondsHasBeenSet(false),
     m_expiresInSeconds(0),
-    m_expiresInSecondsHasBeenSet(false)
+    m_expiresInSecondsHasBeenSet(false),
+    m_spaceNameHasBeenSet(false)
 {
 }
 
@@ -47,6 +48,12 @@ Aws::String CreatePresignedDomainUrlRequest::SerializePayload() const
   if(m_expiresInSecondsHasBeenSet)
   {
    payload.WithInteger("ExpiresInSeconds", m_expiresInSeconds);
+
+  }
+
+  if(m_spaceNameHasBeenSet)
+  {
+   payload.WithString("SpaceName", m_spaceName);
 
   }
 

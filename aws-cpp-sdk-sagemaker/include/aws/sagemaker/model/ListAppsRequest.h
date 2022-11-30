@@ -249,6 +249,47 @@ namespace Model
      */
     inline ListAppsRequest& WithUserProfileNameEquals(const char* value) { SetUserProfileNameEquals(value); return *this;}
 
+
+    /**
+     * <p>A parameter to search by space name.</p>
+     */
+    inline const Aws::String& GetSpaceNameEquals() const{ return m_spaceNameEquals; }
+
+    /**
+     * <p>A parameter to search by space name.</p>
+     */
+    inline bool SpaceNameEqualsHasBeenSet() const { return m_spaceNameEqualsHasBeenSet; }
+
+    /**
+     * <p>A parameter to search by space name.</p>
+     */
+    inline void SetSpaceNameEquals(const Aws::String& value) { m_spaceNameEqualsHasBeenSet = true; m_spaceNameEquals = value; }
+
+    /**
+     * <p>A parameter to search by space name.</p>
+     */
+    inline void SetSpaceNameEquals(Aws::String&& value) { m_spaceNameEqualsHasBeenSet = true; m_spaceNameEquals = std::move(value); }
+
+    /**
+     * <p>A parameter to search by space name.</p>
+     */
+    inline void SetSpaceNameEquals(const char* value) { m_spaceNameEqualsHasBeenSet = true; m_spaceNameEquals.assign(value); }
+
+    /**
+     * <p>A parameter to search by space name.</p>
+     */
+    inline ListAppsRequest& WithSpaceNameEquals(const Aws::String& value) { SetSpaceNameEquals(value); return *this;}
+
+    /**
+     * <p>A parameter to search by space name.</p>
+     */
+    inline ListAppsRequest& WithSpaceNameEquals(Aws::String&& value) { SetSpaceNameEquals(std::move(value)); return *this;}
+
+    /**
+     * <p>A parameter to search by space name.</p>
+     */
+    inline ListAppsRequest& WithSpaceNameEquals(const char* value) { SetSpaceNameEquals(value); return *this;}
+
   private:
 
     Aws::String m_nextToken;
@@ -268,6 +309,9 @@ namespace Model
 
     Aws::String m_userProfileNameEquals;
     bool m_userProfileNameEqualsHasBeenSet = false;
+
+    Aws::String m_spaceNameEquals;
+    bool m_spaceNameEqualsHasBeenSet = false;
   };
 
 } // namespace Model

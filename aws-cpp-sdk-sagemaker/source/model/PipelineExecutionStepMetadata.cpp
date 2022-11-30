@@ -31,7 +31,8 @@ PipelineExecutionStepMetadata::PipelineExecutionStepMetadata() :
     m_qualityCheckHasBeenSet(false),
     m_clarifyCheckHasBeenSet(false),
     m_eMRHasBeenSet(false),
-    m_failHasBeenSet(false)
+    m_failHasBeenSet(false),
+    m_autoMLJobHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ PipelineExecutionStepMetadata::PipelineExecutionStepMetadata(JsonView jsonValue)
     m_qualityCheckHasBeenSet(false),
     m_clarifyCheckHasBeenSet(false),
     m_eMRHasBeenSet(false),
-    m_failHasBeenSet(false)
+    m_failHasBeenSet(false),
+    m_autoMLJobHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -146,6 +148,13 @@ PipelineExecutionStepMetadata& PipelineExecutionStepMetadata::operator =(JsonVie
     m_failHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AutoMLJob"))
+  {
+    m_autoMLJob = jsonValue.GetObject("AutoMLJob");
+
+    m_autoMLJobHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -228,6 +237,12 @@ JsonValue PipelineExecutionStepMetadata::Jsonize() const
   if(m_failHasBeenSet)
   {
    payload.WithObject("Fail", m_fail.Jsonize());
+
+  }
+
+  if(m_autoMLJobHasBeenSet)
+  {
+   payload.WithObject("AutoMLJob", m_autoMLJob.Jsonize());
 
   }
 

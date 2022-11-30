@@ -38,42 +38,42 @@ namespace Model
 
 
     /**
-     * <p>The S3 bucket that's part of the source of the asset.</p>
+     * <p>The Amazon S3 bucket that's part of the source of the asset.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * <p>The S3 bucket that's part of the source of the asset.</p>
+     * <p>The Amazon S3 bucket that's part of the source of the asset.</p>
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
     /**
-     * <p>The S3 bucket that's part of the source of the asset.</p>
+     * <p>The Amazon S3 bucket that's part of the source of the asset.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * <p>The S3 bucket that's part of the source of the asset.</p>
+     * <p>The Amazon S3 bucket that's part of the source of the asset.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * <p>The S3 bucket that's part of the source of the asset.</p>
+     * <p>The Amazon S3 bucket that's part of the source of the asset.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * <p>The S3 bucket that's part of the source of the asset.</p>
+     * <p>The Amazon S3 bucket that's part of the source of the asset.</p>
      */
     inline AssetSourceEntry& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * <p>The S3 bucket that's part of the source of the asset.</p>
+     * <p>The Amazon S3 bucket that's part of the source of the asset.</p>
      */
     inline AssetSourceEntry& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * <p>The S3 bucket that's part of the source of the asset.</p>
+     * <p>The Amazon S3 bucket that's part of the source of the asset.</p>
      */
     inline AssetSourceEntry& WithBucket(const char* value) { SetBucket(value); return *this;}
 

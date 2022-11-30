@@ -557,6 +557,77 @@ namespace Model
      */
     inline DescribeEndpointResult& WithExplainerConfig(ExplainerConfig&& value) { SetExplainerConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Array of <code>ProductionVariant</code> objects. There is one for each model
+     * that you want to host at this endpoint in shadow mode with production traffic
+     * replicated from the model specified on <code>ProductionVariants</code>.If you
+     * use this field, you can only specify one variant for
+     * <code>ProductionVariants</code> and one variant for
+     * <code>ShadowProductionVariants</code>. </p>
+     */
+    inline const Aws::Vector<ProductionVariantSummary>& GetShadowProductionVariants() const{ return m_shadowProductionVariants; }
+
+    /**
+     * <p> Array of <code>ProductionVariant</code> objects. There is one for each model
+     * that you want to host at this endpoint in shadow mode with production traffic
+     * replicated from the model specified on <code>ProductionVariants</code>.If you
+     * use this field, you can only specify one variant for
+     * <code>ProductionVariants</code> and one variant for
+     * <code>ShadowProductionVariants</code>. </p>
+     */
+    inline void SetShadowProductionVariants(const Aws::Vector<ProductionVariantSummary>& value) { m_shadowProductionVariants = value; }
+
+    /**
+     * <p> Array of <code>ProductionVariant</code> objects. There is one for each model
+     * that you want to host at this endpoint in shadow mode with production traffic
+     * replicated from the model specified on <code>ProductionVariants</code>.If you
+     * use this field, you can only specify one variant for
+     * <code>ProductionVariants</code> and one variant for
+     * <code>ShadowProductionVariants</code>. </p>
+     */
+    inline void SetShadowProductionVariants(Aws::Vector<ProductionVariantSummary>&& value) { m_shadowProductionVariants = std::move(value); }
+
+    /**
+     * <p> Array of <code>ProductionVariant</code> objects. There is one for each model
+     * that you want to host at this endpoint in shadow mode with production traffic
+     * replicated from the model specified on <code>ProductionVariants</code>.If you
+     * use this field, you can only specify one variant for
+     * <code>ProductionVariants</code> and one variant for
+     * <code>ShadowProductionVariants</code>. </p>
+     */
+    inline DescribeEndpointResult& WithShadowProductionVariants(const Aws::Vector<ProductionVariantSummary>& value) { SetShadowProductionVariants(value); return *this;}
+
+    /**
+     * <p> Array of <code>ProductionVariant</code> objects. There is one for each model
+     * that you want to host at this endpoint in shadow mode with production traffic
+     * replicated from the model specified on <code>ProductionVariants</code>.If you
+     * use this field, you can only specify one variant for
+     * <code>ProductionVariants</code> and one variant for
+     * <code>ShadowProductionVariants</code>. </p>
+     */
+    inline DescribeEndpointResult& WithShadowProductionVariants(Aws::Vector<ProductionVariantSummary>&& value) { SetShadowProductionVariants(std::move(value)); return *this;}
+
+    /**
+     * <p> Array of <code>ProductionVariant</code> objects. There is one for each model
+     * that you want to host at this endpoint in shadow mode with production traffic
+     * replicated from the model specified on <code>ProductionVariants</code>.If you
+     * use this field, you can only specify one variant for
+     * <code>ProductionVariants</code> and one variant for
+     * <code>ShadowProductionVariants</code>. </p>
+     */
+    inline DescribeEndpointResult& AddShadowProductionVariants(const ProductionVariantSummary& value) { m_shadowProductionVariants.push_back(value); return *this; }
+
+    /**
+     * <p> Array of <code>ProductionVariant</code> objects. There is one for each model
+     * that you want to host at this endpoint in shadow mode with production traffic
+     * replicated from the model specified on <code>ProductionVariants</code>.If you
+     * use this field, you can only specify one variant for
+     * <code>ProductionVariants</code> and one variant for
+     * <code>ShadowProductionVariants</code>. </p>
+     */
+    inline DescribeEndpointResult& AddShadowProductionVariants(ProductionVariantSummary&& value) { m_shadowProductionVariants.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_endpointName;
@@ -584,6 +655,8 @@ namespace Model
     PendingDeploymentSummary m_pendingDeploymentSummary;
 
     ExplainerConfig m_explainerConfig;
+
+    Aws::Vector<ProductionVariantSummary> m_shadowProductionVariants;
   };
 
 } // namespace Model

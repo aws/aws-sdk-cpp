@@ -225,38 +225,32 @@ namespace Model
 
 
     /**
-     * <p>The instance type to deploy a Debugger custom rule for debugging a training
-     * job.</p>
+     * <p>The instance type to deploy a custom rule for debugging a training job.</p>
      */
     inline const ProcessingInstanceType& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p>The instance type to deploy a Debugger custom rule for debugging a training
-     * job.</p>
+     * <p>The instance type to deploy a custom rule for debugging a training job.</p>
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
-     * <p>The instance type to deploy a Debugger custom rule for debugging a training
-     * job.</p>
+     * <p>The instance type to deploy a custom rule for debugging a training job.</p>
      */
     inline void SetInstanceType(const ProcessingInstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>The instance type to deploy a Debugger custom rule for debugging a training
-     * job.</p>
+     * <p>The instance type to deploy a custom rule for debugging a training job.</p>
      */
     inline void SetInstanceType(ProcessingInstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
-     * <p>The instance type to deploy a Debugger custom rule for debugging a training
-     * job.</p>
+     * <p>The instance type to deploy a custom rule for debugging a training job.</p>
      */
     inline DebugRuleConfiguration& WithInstanceType(const ProcessingInstanceType& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>The instance type to deploy a Debugger custom rule for debugging a training
-     * job.</p>
+     * <p>The instance type to deploy a custom rule for debugging a training job.</p>
      */
     inline DebugRuleConfiguration& WithInstanceType(ProcessingInstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
 

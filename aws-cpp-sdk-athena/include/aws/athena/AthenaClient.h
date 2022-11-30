@@ -202,6 +202,25 @@ namespace Athena
         virtual void CreateNamedQueryAsync(const Model::CreateNamedQueryRequest& request, const CreateNamedQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates an empty <code>ipynb</code> file in the specified Apache Spark
+         * enabled workgroup. Throws an error if a file in the workgroup with the same name
+         * already exists.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateNotebook">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateNotebookOutcome CreateNotebook(const Model::CreateNotebookRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateNotebook that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateNotebookOutcomeCallable CreateNotebookCallable(const Model::CreateNotebookRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateNotebook that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateNotebookAsync(const Model::CreateNotebookRequest& request, const CreateNotebookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a prepared statement for use with SQL queries in
          * Athena.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreatePreparedStatement">AWS
@@ -220,7 +239,31 @@ namespace Athena
         virtual void CreatePreparedStatementAsync(const Model::CreatePreparedStatementRequest& request, const CreatePreparedStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a workgroup with the specified name.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets an authentication token and the URL at which the notebook can be
+         * accessed. During programmatic access, <code>CreatePresignedNotebookUrl</code>
+         * must be called every 10 minutes to refresh the authentication
+         * token.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreatePresignedNotebookUrl">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreatePresignedNotebookUrlOutcome CreatePresignedNotebookUrl(const Model::CreatePresignedNotebookUrlRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreatePresignedNotebookUrl that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreatePresignedNotebookUrlOutcomeCallable CreatePresignedNotebookUrlCallable(const Model::CreatePresignedNotebookUrlRequest& request) const;
+
+        /**
+         * An Async wrapper for CreatePresignedNotebookUrl that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreatePresignedNotebookUrlAsync(const Model::CreatePresignedNotebookUrlRequest& request, const CreatePresignedNotebookUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a workgroup with the specified name. Only one of
+         * <code>Configurations</code> or <code>Configuration</code> can be specified;
+         * <code>Configurations</code> for a workgroup with multi engine support (for
+         * example, an Apache Spark enabled workgroup) or <code>Configuration</code> for an
+         * Athena SQL workgroup.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateWorkGroup">AWS
          * API Reference</a></p>
          */
@@ -276,6 +319,23 @@ namespace Athena
         virtual void DeleteNamedQueryAsync(const Model::DeleteNamedQueryRequest& request, const DeleteNamedQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes the specified notebook.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteNotebook">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteNotebookOutcome DeleteNotebook(const Model::DeleteNotebookRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteNotebook that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteNotebookOutcomeCallable DeleteNotebookCallable(const Model::DeleteNotebookRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteNotebook that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteNotebookAsync(const Model::DeleteNotebookRequest& request, const DeleteNotebookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes the prepared statement with the specified name from the specified
          * workgroup.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeletePreparedStatement">AWS
@@ -310,6 +370,77 @@ namespace Athena
          * An Async wrapper for DeleteWorkGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteWorkGroupAsync(const Model::DeleteWorkGroupRequest& request, const DeleteWorkGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Exports the specified notebook and its metadata.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ExportNotebook">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ExportNotebookOutcome ExportNotebook(const Model::ExportNotebookRequest& request) const;
+
+        /**
+         * A Callable wrapper for ExportNotebook that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ExportNotebookOutcomeCallable ExportNotebookCallable(const Model::ExportNotebookRequest& request) const;
+
+        /**
+         * An Async wrapper for ExportNotebook that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ExportNotebookAsync(const Model::ExportNotebookRequest& request, const ExportNotebookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes a previously submitted calculation execution.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCalculationExecution">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCalculationExecutionOutcome GetCalculationExecution(const Model::GetCalculationExecutionRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetCalculationExecution that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetCalculationExecutionOutcomeCallable GetCalculationExecutionCallable(const Model::GetCalculationExecutionRequest& request) const;
+
+        /**
+         * An Async wrapper for GetCalculationExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetCalculationExecutionAsync(const Model::GetCalculationExecutionRequest& request, const GetCalculationExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves a pre-signed URL to a copy of the code that was executed for the
+         * calculation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCalculationExecutionCode">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCalculationExecutionCodeOutcome GetCalculationExecutionCode(const Model::GetCalculationExecutionCodeRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetCalculationExecutionCode that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetCalculationExecutionCodeOutcomeCallable GetCalculationExecutionCodeCallable(const Model::GetCalculationExecutionCodeRequest& request) const;
+
+        /**
+         * An Async wrapper for GetCalculationExecutionCode that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetCalculationExecutionCodeAsync(const Model::GetCalculationExecutionCodeRequest& request, const GetCalculationExecutionCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets the status of a current calculation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCalculationExecutionStatus">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCalculationExecutionStatusOutcome GetCalculationExecutionStatus(const Model::GetCalculationExecutionStatusRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetCalculationExecutionStatus that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetCalculationExecutionStatusOutcomeCallable GetCalculationExecutionStatusCallable(const Model::GetCalculationExecutionStatusRequest& request) const;
+
+        /**
+         * An Async wrapper for GetCalculationExecutionStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetCalculationExecutionStatusAsync(const Model::GetCalculationExecutionStatusRequest& request, const GetCalculationExecutionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the specified data catalog.</p><p><h3>See Also:</h3>   <a
@@ -363,6 +494,24 @@ namespace Athena
          * An Async wrapper for GetNamedQuery that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetNamedQueryAsync(const Model::GetNamedQueryRequest& request, const GetNamedQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves notebook metadata for the specified notebook ID.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetNotebookMetadata">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetNotebookMetadataOutcome GetNotebookMetadata(const Model::GetNotebookMetadataRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetNotebookMetadata that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetNotebookMetadataOutcomeCallable GetNotebookMetadataCallable(const Model::GetNotebookMetadataRequest& request) const;
+
+        /**
+         * An Async wrapper for GetNotebookMetadata that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetNotebookMetadataAsync(const Model::GetNotebookMetadataRequest& request, const GetNotebookMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the prepared statement with the specified name from the specified
@@ -455,6 +604,41 @@ namespace Athena
         virtual void GetQueryRuntimeStatisticsAsync(const Model::GetQueryRuntimeStatisticsRequest& request, const GetQueryRuntimeStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets the full details of a previously created session, including the session
+         * status and configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetSession">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetSessionOutcome GetSession(const Model::GetSessionRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetSession that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetSessionOutcomeCallable GetSessionCallable(const Model::GetSessionRequest& request) const;
+
+        /**
+         * An Async wrapper for GetSession that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetSessionAsync(const Model::GetSessionRequest& request, const GetSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets the current status of a session.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetSessionStatus">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetSessionStatusOutcome GetSessionStatus(const Model::GetSessionStatusRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetSessionStatus that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetSessionStatusOutcomeCallable GetSessionStatusCallable(const Model::GetSessionStatusRequest& request) const;
+
+        /**
+         * An Async wrapper for GetSessionStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetSessionStatusAsync(const Model::GetSessionStatusRequest& request, const GetSessionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns table metadata for the specified catalog, database, and
          * table.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetTableMetadata">AWS
@@ -489,6 +673,63 @@ namespace Athena
          * An Async wrapper for GetWorkGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetWorkGroupAsync(const Model::GetWorkGroupRequest& request, const GetWorkGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Imports a single <code>ipynb</code> file to a Spark enabled workgroup. The
+         * maximum file size that can be imported is 10 megabytes. If an <code>ipynb</code>
+         * file with the same name already exists in the workgroup, throws an
+         * error.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ImportNotebook">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ImportNotebookOutcome ImportNotebook(const Model::ImportNotebookRequest& request) const;
+
+        /**
+         * A Callable wrapper for ImportNotebook that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ImportNotebookOutcomeCallable ImportNotebookCallable(const Model::ImportNotebookRequest& request) const;
+
+        /**
+         * An Async wrapper for ImportNotebook that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ImportNotebookAsync(const Model::ImportNotebookRequest& request, const ImportNotebookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the supported DPU sizes for the supported application runtimes (for
+         * example, <code>Jupyter 1.0</code>). </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListApplicationDPUSizes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListApplicationDPUSizesOutcome ListApplicationDPUSizes(const Model::ListApplicationDPUSizesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListApplicationDPUSizes that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListApplicationDPUSizesOutcomeCallable ListApplicationDPUSizesCallable(const Model::ListApplicationDPUSizesRequest& request) const;
+
+        /**
+         * An Async wrapper for ListApplicationDPUSizes that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListApplicationDPUSizesAsync(const Model::ListApplicationDPUSizesRequest& request, const ListApplicationDPUSizesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists the calculations that have been submitted to a session in descending
+         * order. Newer calculations are listed first; older calculations are listed
+         * later.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListCalculationExecutions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCalculationExecutionsOutcome ListCalculationExecutions(const Model::ListCalculationExecutionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListCalculationExecutions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListCalculationExecutionsOutcomeCallable ListCalculationExecutionsCallable(const Model::ListCalculationExecutionsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListCalculationExecutions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListCalculationExecutionsAsync(const Model::ListCalculationExecutionsRequest& request, const ListCalculationExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the data catalogs in the current Amazon Web Services
@@ -545,6 +786,25 @@ namespace Athena
         virtual void ListEngineVersionsAsync(const Model::ListEngineVersionsRequest& request, const ListEngineVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists, in descending order, the executors that have been submitted to a
+         * session. Newer executors are listed first; older executors are listed later. The
+         * result can be optionally filtered by state.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListExecutors">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListExecutorsOutcome ListExecutors(const Model::ListExecutorsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListExecutors that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListExecutorsOutcomeCallable ListExecutorsCallable(const Model::ListExecutorsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListExecutors that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListExecutorsAsync(const Model::ListExecutorsRequest& request, const ListExecutorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Provides a list of available query IDs only for queries saved in the
          * specified workgroup. Requires that you have access to the specified workgroup.
          * If a workgroup is not specified, lists the saved queries for the primary
@@ -567,6 +827,44 @@ namespace Athena
          * An Async wrapper for ListNamedQueries that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListNamedQueriesAsync(const Model::ListNamedQueriesRequest& request, const ListNamedQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Displays the notebook files for the specified workgroup in paginated
+         * format.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListNotebookMetadata">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListNotebookMetadataOutcome ListNotebookMetadata(const Model::ListNotebookMetadataRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListNotebookMetadata that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListNotebookMetadataOutcomeCallable ListNotebookMetadataCallable(const Model::ListNotebookMetadataRequest& request) const;
+
+        /**
+         * An Async wrapper for ListNotebookMetadata that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListNotebookMetadataAsync(const Model::ListNotebookMetadataRequest& request, const ListNotebookMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists, in descending order, the sessions that have been created in a notebook
+         * that are in an active state like <code>CREATING</code>, <code>CREATED</code>,
+         * <code>IDLE</code> or <code>BUSY</code>. Newer sessions are listed first; older
+         * sessions are listed later.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListNotebookSessions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListNotebookSessionsOutcome ListNotebookSessions(const Model::ListNotebookSessionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListNotebookSessions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListNotebookSessionsOutcomeCallable ListNotebookSessionsCallable(const Model::ListNotebookSessionsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListNotebookSessions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListNotebookSessionsAsync(const Model::ListNotebookSessionsRequest& request, const ListNotebookSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the prepared statements in the specified workgroup.</p><p><h3>See
@@ -609,6 +907,26 @@ namespace Athena
          * An Async wrapper for ListQueryExecutions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListQueryExecutionsAsync(const Model::ListQueryExecutionsRequest& request, const ListQueryExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists the sessions in a workgroup that are in an active state like
+         * <code>CREATING</code>, <code>CREATED</code>, <code>IDLE</code>, or
+         * <code>BUSY</code>. Newer sessions are listed first; older sessions are listed
+         * later.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListSessions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListSessionsOutcome ListSessions(const Model::ListSessionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListSessions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListSessionsOutcomeCallable ListSessionsCallable(const Model::ListSessionsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListSessions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListSessionsAsync(const Model::ListSessionsRequest& request, const ListSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the metadata for the tables in the specified data catalog
@@ -664,6 +982,25 @@ namespace Athena
         virtual void ListWorkGroupsAsync(const Model::ListWorkGroupsRequest& request, const ListWorkGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Submits calculations for execution within a session. You can supply the code
+         * to run as an inline code block within the request or as an Amazon S3
+         * URL.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StartCalculationExecution">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartCalculationExecutionOutcome StartCalculationExecution(const Model::StartCalculationExecutionRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartCalculationExecution that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartCalculationExecutionOutcomeCallable StartCalculationExecutionCallable(const Model::StartCalculationExecutionRequest& request) const;
+
+        /**
+         * An Async wrapper for StartCalculationExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartCalculationExecutionAsync(const Model::StartCalculationExecutionRequest& request, const StartCalculationExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Runs the SQL query statements contained in the <code>Query</code>. Requires
          * you to have access to the workgroup in which the query ran. Running queries
          * against an external catalog requires <a>GetDataCatalog</a> permission to the
@@ -685,6 +1022,49 @@ namespace Athena
          * An Async wrapper for StartQueryExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StartQueryExecutionAsync(const Model::StartQueryExecutionRequest& request, const StartQueryExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a session for running calculations within a workgroup. The session is
+         * ready when it reaches an <code>IDLE</code> state.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StartSession">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartSessionOutcome StartSession(const Model::StartSessionRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartSession that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartSessionOutcomeCallable StartSessionCallable(const Model::StartSessionRequest& request) const;
+
+        /**
+         * An Async wrapper for StartSession that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartSessionAsync(const Model::StartSessionRequest& request, const StartSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Requests the cancellation of a calculation. A
+         * <code>StopCalculationExecution</code> call on a calculation that is already in a
+         * terminal state (for example, <code>STOPPED</code>, <code>FAILED</code>, or
+         * <code>COMPLETED</code>) succeeds but has no effect.</p>  <p>Cancelling a
+         * calculation is done on a best effort basis. If a calculation cannot be
+         * cancelled, you can be charged for its completion. If you are concerned about
+         * being charged for a calculation that cannot be cancelled, consider terminating
+         * the session in which the calculation is running.</p> <p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StopCalculationExecution">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopCalculationExecutionOutcome StopCalculationExecution(const Model::StopCalculationExecutionRequest& request) const;
+
+        /**
+         * A Callable wrapper for StopCalculationExecution that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StopCalculationExecutionOutcomeCallable StopCalculationExecutionCallable(const Model::StopCalculationExecutionRequest& request) const;
+
+        /**
+         * An Async wrapper for StopCalculationExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StopCalculationExecutionAsync(const Model::StopCalculationExecutionRequest& request, const StopCalculationExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops a query execution. Requires you to have access to the workgroup in
@@ -737,6 +1117,28 @@ namespace Athena
          * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Terminates an active session. A <code>TerminateSession</code> call on a
+         * session that is already inactive (for example, in a <code>FAILED</code>,
+         * <code>TERMINATED</code> or <code>TERMINATING</code> state) succeeds but has no
+         * effect. Calculations running in the session when <code>TerminateSession</code>
+         * is called are forcefully stopped, but may display as <code>FAILED</code> instead
+         * of <code>STOPPED</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/TerminateSession">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TerminateSessionOutcome TerminateSession(const Model::TerminateSessionRequest& request) const;
+
+        /**
+         * A Callable wrapper for TerminateSession that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TerminateSessionOutcomeCallable TerminateSessionCallable(const Model::TerminateSessionRequest& request) const;
+
+        /**
+         * An Async wrapper for TerminateSession that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TerminateSessionAsync(const Model::TerminateSessionRequest& request, const TerminateSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes one or more tags from a data catalog or workgroup
@@ -793,6 +1195,40 @@ namespace Athena
         virtual void UpdateNamedQueryAsync(const Model::UpdateNamedQueryRequest& request, const UpdateNamedQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates the contents of a Spark notebook.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateNotebook">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateNotebookOutcome UpdateNotebook(const Model::UpdateNotebookRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateNotebook that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateNotebookOutcomeCallable UpdateNotebookCallable(const Model::UpdateNotebookRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateNotebook that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateNotebookAsync(const Model::UpdateNotebookRequest& request, const UpdateNotebookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates the metadata for a notebook.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateNotebookMetadata">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateNotebookMetadataOutcome UpdateNotebookMetadata(const Model::UpdateNotebookMetadataRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateNotebookMetadata that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateNotebookMetadataOutcomeCallable UpdateNotebookMetadataCallable(const Model::UpdateNotebookMetadataRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateNotebookMetadata that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateNotebookMetadataAsync(const Model::UpdateNotebookMetadataRequest& request, const UpdateNotebookMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates a prepared statement.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdatePreparedStatement">AWS
          * API Reference</a></p>
@@ -811,7 +1247,12 @@ namespace Athena
 
         /**
          * <p>Updates the workgroup with the specified name. The workgroup's name cannot be
-         * changed.</p><p><h3>See Also:</h3>   <a
+         * changed. Only one of <code>ConfigurationsUpdates</code> or
+         * <code>ConfigurationUpdates</code> can be specified;
+         * <code>ConfigurationsUpdates</code> for a workgroup with multi engine support
+         * (for example, an Apache Spark enabled workgroup) or
+         * <code>ConfigurationUpdates</code> for an Athena SQL workgroup.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateWorkGroup">AWS
          * API Reference</a></p>
          */

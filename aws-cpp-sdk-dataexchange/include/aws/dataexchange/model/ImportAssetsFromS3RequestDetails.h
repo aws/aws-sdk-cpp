@@ -41,42 +41,42 @@ namespace Model
 
 
     /**
-     * <p>Is a list of S3 bucket and object key pairs.</p>
+     * <p>Is a list of Amazon S3 bucket and object key pairs.</p>
      */
     inline const Aws::Vector<AssetSourceEntry>& GetAssetSources() const{ return m_assetSources; }
 
     /**
-     * <p>Is a list of S3 bucket and object key pairs.</p>
+     * <p>Is a list of Amazon S3 bucket and object key pairs.</p>
      */
     inline bool AssetSourcesHasBeenSet() const { return m_assetSourcesHasBeenSet; }
 
     /**
-     * <p>Is a list of S3 bucket and object key pairs.</p>
+     * <p>Is a list of Amazon S3 bucket and object key pairs.</p>
      */
     inline void SetAssetSources(const Aws::Vector<AssetSourceEntry>& value) { m_assetSourcesHasBeenSet = true; m_assetSources = value; }
 
     /**
-     * <p>Is a list of S3 bucket and object key pairs.</p>
+     * <p>Is a list of Amazon S3 bucket and object key pairs.</p>
      */
     inline void SetAssetSources(Aws::Vector<AssetSourceEntry>&& value) { m_assetSourcesHasBeenSet = true; m_assetSources = std::move(value); }
 
     /**
-     * <p>Is a list of S3 bucket and object key pairs.</p>
+     * <p>Is a list of Amazon S3 bucket and object key pairs.</p>
      */
     inline ImportAssetsFromS3RequestDetails& WithAssetSources(const Aws::Vector<AssetSourceEntry>& value) { SetAssetSources(value); return *this;}
 
     /**
-     * <p>Is a list of S3 bucket and object key pairs.</p>
+     * <p>Is a list of Amazon S3 bucket and object key pairs.</p>
      */
     inline ImportAssetsFromS3RequestDetails& WithAssetSources(Aws::Vector<AssetSourceEntry>&& value) { SetAssetSources(std::move(value)); return *this;}
 
     /**
-     * <p>Is a list of S3 bucket and object key pairs.</p>
+     * <p>Is a list of Amazon S3 bucket and object key pairs.</p>
      */
     inline ImportAssetsFromS3RequestDetails& AddAssetSources(const AssetSourceEntry& value) { m_assetSourcesHasBeenSet = true; m_assetSources.push_back(value); return *this; }
 
     /**
-     * <p>Is a list of S3 bucket and object key pairs.</p>
+     * <p>Is a list of Amazon S3 bucket and object key pairs.</p>
      */
     inline ImportAssetsFromS3RequestDetails& AddAssetSources(AssetSourceEntry&& value) { m_assetSourcesHasBeenSet = true; m_assetSources.push_back(std::move(value)); return *this; }
 

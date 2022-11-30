@@ -98,6 +98,12 @@ DescribeAppResult& DescribeAppResult::operator =(const Aws::AmazonWebServiceResu
 
   }
 
+  if(jsonValue.ValueExists("SpaceName"))
+  {
+    m_spaceName = jsonValue.GetString("SpaceName");
+
+  }
+
 
 
   return *this;

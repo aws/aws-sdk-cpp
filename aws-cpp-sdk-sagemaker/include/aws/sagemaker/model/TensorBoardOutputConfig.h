@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Configuration of storage locations for the Debugger TensorBoard output
-   * data.</p><p><h3>See Also:</h3>   <a
+   * <p>Configuration of storage locations for the Amazon SageMaker Debugger
+   * TensorBoard output data.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TensorBoardOutputConfig">AWS
    * API Reference</a></p>
    */

@@ -179,6 +179,47 @@ namespace Model
      */
     inline ExperimentConfig& WithTrialComponentDisplayName(const char* value) { SetTrialComponentDisplayName(value); return *this;}
 
+
+    /**
+     * <p>The name of the experiment run to associate the trial component with.</p>
+     */
+    inline const Aws::String& GetRunName() const{ return m_runName; }
+
+    /**
+     * <p>The name of the experiment run to associate the trial component with.</p>
+     */
+    inline bool RunNameHasBeenSet() const { return m_runNameHasBeenSet; }
+
+    /**
+     * <p>The name of the experiment run to associate the trial component with.</p>
+     */
+    inline void SetRunName(const Aws::String& value) { m_runNameHasBeenSet = true; m_runName = value; }
+
+    /**
+     * <p>The name of the experiment run to associate the trial component with.</p>
+     */
+    inline void SetRunName(Aws::String&& value) { m_runNameHasBeenSet = true; m_runName = std::move(value); }
+
+    /**
+     * <p>The name of the experiment run to associate the trial component with.</p>
+     */
+    inline void SetRunName(const char* value) { m_runNameHasBeenSet = true; m_runName.assign(value); }
+
+    /**
+     * <p>The name of the experiment run to associate the trial component with.</p>
+     */
+    inline ExperimentConfig& WithRunName(const Aws::String& value) { SetRunName(value); return *this;}
+
+    /**
+     * <p>The name of the experiment run to associate the trial component with.</p>
+     */
+    inline ExperimentConfig& WithRunName(Aws::String&& value) { SetRunName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the experiment run to associate the trial component with.</p>
+     */
+    inline ExperimentConfig& WithRunName(const char* value) { SetRunName(value); return *this;}
+
   private:
 
     Aws::String m_experimentName;
@@ -189,6 +230,9 @@ namespace Model
 
     Aws::String m_trialComponentDisplayName;
     bool m_trialComponentDisplayNameHasBeenSet = false;
+
+    Aws::String m_runName;
+    bool m_runNameHasBeenSet = false;
   };
 
 } // namespace Model

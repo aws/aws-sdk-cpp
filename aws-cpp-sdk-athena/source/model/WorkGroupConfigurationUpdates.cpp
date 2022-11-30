@@ -30,7 +30,12 @@ WorkGroupConfigurationUpdates::WorkGroupConfigurationUpdates() :
     m_removeBytesScannedCutoffPerQueryHasBeenSet(false),
     m_requesterPaysEnabled(false),
     m_requesterPaysEnabledHasBeenSet(false),
-    m_engineVersionHasBeenSet(false)
+    m_engineVersionHasBeenSet(false),
+    m_removeCustomerContentEncryptionConfiguration(false),
+    m_removeCustomerContentEncryptionConfigurationHasBeenSet(false),
+    m_additionalConfigurationHasBeenSet(false),
+    m_executionRoleHasBeenSet(false),
+    m_customerContentEncryptionConfigurationHasBeenSet(false)
 {
 }
 
@@ -46,7 +51,12 @@ WorkGroupConfigurationUpdates::WorkGroupConfigurationUpdates(JsonView jsonValue)
     m_removeBytesScannedCutoffPerQueryHasBeenSet(false),
     m_requesterPaysEnabled(false),
     m_requesterPaysEnabledHasBeenSet(false),
-    m_engineVersionHasBeenSet(false)
+    m_engineVersionHasBeenSet(false),
+    m_removeCustomerContentEncryptionConfiguration(false),
+    m_removeCustomerContentEncryptionConfigurationHasBeenSet(false),
+    m_additionalConfigurationHasBeenSet(false),
+    m_executionRoleHasBeenSet(false),
+    m_customerContentEncryptionConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -102,6 +112,34 @@ WorkGroupConfigurationUpdates& WorkGroupConfigurationUpdates::operator =(JsonVie
     m_engineVersionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RemoveCustomerContentEncryptionConfiguration"))
+  {
+    m_removeCustomerContentEncryptionConfiguration = jsonValue.GetBool("RemoveCustomerContentEncryptionConfiguration");
+
+    m_removeCustomerContentEncryptionConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AdditionalConfiguration"))
+  {
+    m_additionalConfiguration = jsonValue.GetString("AdditionalConfiguration");
+
+    m_additionalConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ExecutionRole"))
+  {
+    m_executionRole = jsonValue.GetString("ExecutionRole");
+
+    m_executionRoleHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CustomerContentEncryptionConfiguration"))
+  {
+    m_customerContentEncryptionConfiguration = jsonValue.GetObject("CustomerContentEncryptionConfiguration");
+
+    m_customerContentEncryptionConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -148,6 +186,30 @@ JsonValue WorkGroupConfigurationUpdates::Jsonize() const
   if(m_engineVersionHasBeenSet)
   {
    payload.WithObject("EngineVersion", m_engineVersion.Jsonize());
+
+  }
+
+  if(m_removeCustomerContentEncryptionConfigurationHasBeenSet)
+  {
+   payload.WithBool("RemoveCustomerContentEncryptionConfiguration", m_removeCustomerContentEncryptionConfiguration);
+
+  }
+
+  if(m_additionalConfigurationHasBeenSet)
+  {
+   payload.WithString("AdditionalConfiguration", m_additionalConfiguration);
+
+  }
+
+  if(m_executionRoleHasBeenSet)
+  {
+   payload.WithString("ExecutionRole", m_executionRole);
+
+  }
+
+  if(m_customerContentEncryptionConfigurationHasBeenSet)
+  {
+   payload.WithObject("CustomerContentEncryptionConfiguration", m_customerContentEncryptionConfiguration.Jsonize());
 
   }
 

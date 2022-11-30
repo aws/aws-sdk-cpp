@@ -42,6 +42,12 @@ namespace Aws
         static const int Concurrent_in_progress_jobs_to_import_assets_from_an_API_Gateway_API_HASH = HashingUtils::HashString("Concurrent in progress jobs to import assets from an API Gateway API");
         static const int Amazon_API_Gateway_API_assets_per_revision_HASH = HashingUtils::HashString("Amazon API Gateway API assets per revision");
         static const int Revisions_per_Amazon_API_Gateway_API_data_set_HASH = HashingUtils::HashString("Revisions per Amazon API Gateway API data set");
+        static const int Concurrent_in_progress_jobs_to_import_assets_from_an_AWS_Lake_Formation_tag_policy_HASH = HashingUtils::HashString("Concurrent in progress jobs to import assets from an AWS Lake Formation tag policy");
+        static const int AWS_Lake_Formation_data_permission_assets_per_revision_HASH = HashingUtils::HashString("AWS Lake Formation data permission assets per revision");
+        static const int Revisions_per_AWS_Lake_Formation_data_permission_data_set_HASH = HashingUtils::HashString("Revisions per AWS Lake Formation data permission data set");
+        static const int Revisions_per_Amazon_S3_data_access_data_set_HASH = HashingUtils::HashString("Revisions per Amazon S3 data access data set");
+        static const int Amazon_S3_data_access_assets_per_revision_HASH = HashingUtils::HashString("Amazon S3 data access assets per revision");
+        static const int Concurrent_in_progress_jobs_to_create_Amazon_S3_data_access_assets_from_S3_buckets_HASH = HashingUtils::HashString("Concurrent in progress jobs to create Amazon S3 data access assets from S3 buckets");
 
 
         LimitName GetLimitNameForName(const Aws::String& name)
@@ -135,6 +141,30 @@ namespace Aws
           {
             return LimitName::Revisions_per_Amazon_API_Gateway_API_data_set;
           }
+          else if (hashCode == Concurrent_in_progress_jobs_to_import_assets_from_an_AWS_Lake_Formation_tag_policy_HASH)
+          {
+            return LimitName::Concurrent_in_progress_jobs_to_import_assets_from_an_AWS_Lake_Formation_tag_policy;
+          }
+          else if (hashCode == AWS_Lake_Formation_data_permission_assets_per_revision_HASH)
+          {
+            return LimitName::AWS_Lake_Formation_data_permission_assets_per_revision;
+          }
+          else if (hashCode == Revisions_per_AWS_Lake_Formation_data_permission_data_set_HASH)
+          {
+            return LimitName::Revisions_per_AWS_Lake_Formation_data_permission_data_set;
+          }
+          else if (hashCode == Revisions_per_Amazon_S3_data_access_data_set_HASH)
+          {
+            return LimitName::Revisions_per_Amazon_S3_data_access_data_set;
+          }
+          else if (hashCode == Amazon_S3_data_access_assets_per_revision_HASH)
+          {
+            return LimitName::Amazon_S3_data_access_assets_per_revision;
+          }
+          else if (hashCode == Concurrent_in_progress_jobs_to_create_Amazon_S3_data_access_assets_from_S3_buckets_HASH)
+          {
+            return LimitName::Concurrent_in_progress_jobs_to_create_Amazon_S3_data_access_assets_from_S3_buckets;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -193,6 +223,18 @@ namespace Aws
             return "Amazon API Gateway API assets per revision";
           case LimitName::Revisions_per_Amazon_API_Gateway_API_data_set:
             return "Revisions per Amazon API Gateway API data set";
+          case LimitName::Concurrent_in_progress_jobs_to_import_assets_from_an_AWS_Lake_Formation_tag_policy:
+            return "Concurrent in progress jobs to import assets from an AWS Lake Formation tag policy";
+          case LimitName::AWS_Lake_Formation_data_permission_assets_per_revision:
+            return "AWS Lake Formation data permission assets per revision";
+          case LimitName::Revisions_per_AWS_Lake_Formation_data_permission_data_set:
+            return "Revisions per AWS Lake Formation data permission data set";
+          case LimitName::Revisions_per_Amazon_S3_data_access_data_set:
+            return "Revisions per Amazon S3 data access data set";
+          case LimitName::Amazon_S3_data_access_assets_per_revision:
+            return "Amazon S3 data access assets per revision";
+          case LimitName::Concurrent_in_progress_jobs_to_create_Amazon_S3_data_access_assets_from_S3_buckets:
+            return "Concurrent in progress jobs to create Amazon S3 data access assets from S3 buckets";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

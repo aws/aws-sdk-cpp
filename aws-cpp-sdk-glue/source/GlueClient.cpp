@@ -29,6 +29,7 @@
 #include <aws/glue/model/BatchGetBlueprintsRequest.h>
 #include <aws/glue/model/BatchGetCrawlersRequest.h>
 #include <aws/glue/model/BatchGetCustomEntityTypesRequest.h>
+#include <aws/glue/model/BatchGetDataQualityResultRequest.h>
 #include <aws/glue/model/BatchGetDevEndpointsRequest.h>
 #include <aws/glue/model/BatchGetJobsRequest.h>
 #include <aws/glue/model/BatchGetPartitionRequest.h>
@@ -36,6 +37,8 @@
 #include <aws/glue/model/BatchGetWorkflowsRequest.h>
 #include <aws/glue/model/BatchStopJobRunRequest.h>
 #include <aws/glue/model/BatchUpdatePartitionRequest.h>
+#include <aws/glue/model/CancelDataQualityRuleRecommendationRunRequest.h>
+#include <aws/glue/model/CancelDataQualityRulesetEvaluationRunRequest.h>
 #include <aws/glue/model/CancelMLTaskRunRequest.h>
 #include <aws/glue/model/CancelStatementRequest.h>
 #include <aws/glue/model/CheckSchemaVersionValidityRequest.h>
@@ -44,6 +47,7 @@
 #include <aws/glue/model/CreateConnectionRequest.h>
 #include <aws/glue/model/CreateCrawlerRequest.h>
 #include <aws/glue/model/CreateCustomEntityTypeRequest.h>
+#include <aws/glue/model/CreateDataQualityRulesetRequest.h>
 #include <aws/glue/model/CreateDatabaseRequest.h>
 #include <aws/glue/model/CreateDevEndpointRequest.h>
 #include <aws/glue/model/CreateJobRequest.h>
@@ -66,6 +70,7 @@
 #include <aws/glue/model/DeleteConnectionRequest.h>
 #include <aws/glue/model/DeleteCrawlerRequest.h>
 #include <aws/glue/model/DeleteCustomEntityTypeRequest.h>
+#include <aws/glue/model/DeleteDataQualityRulesetRequest.h>
 #include <aws/glue/model/DeleteDatabaseRequest.h>
 #include <aws/glue/model/DeleteDevEndpointRequest.h>
 #include <aws/glue/model/DeleteJobRequest.h>
@@ -98,6 +103,10 @@
 #include <aws/glue/model/GetCrawlersRequest.h>
 #include <aws/glue/model/GetCustomEntityTypeRequest.h>
 #include <aws/glue/model/GetDataCatalogEncryptionSettingsRequest.h>
+#include <aws/glue/model/GetDataQualityResultRequest.h>
+#include <aws/glue/model/GetDataQualityRuleRecommendationRunRequest.h>
+#include <aws/glue/model/GetDataQualityRulesetRequest.h>
+#include <aws/glue/model/GetDataQualityRulesetEvaluationRunRequest.h>
 #include <aws/glue/model/GetDatabaseRequest.h>
 #include <aws/glue/model/GetDatabasesRequest.h>
 #include <aws/glue/model/GetDataflowGraphRequest.h>
@@ -149,6 +158,10 @@
 #include <aws/glue/model/ListCrawlersRequest.h>
 #include <aws/glue/model/ListCrawlsRequest.h>
 #include <aws/glue/model/ListCustomEntityTypesRequest.h>
+#include <aws/glue/model/ListDataQualityResultsRequest.h>
+#include <aws/glue/model/ListDataQualityRuleRecommendationRunsRequest.h>
+#include <aws/glue/model/ListDataQualityRulesetEvaluationRunsRequest.h>
+#include <aws/glue/model/ListDataQualityRulesetsRequest.h>
 #include <aws/glue/model/ListDevEndpointsRequest.h>
 #include <aws/glue/model/ListJobsRequest.h>
 #include <aws/glue/model/ListMLTransformsRequest.h>
@@ -173,6 +186,8 @@
 #include <aws/glue/model/StartBlueprintRunRequest.h>
 #include <aws/glue/model/StartCrawlerRequest.h>
 #include <aws/glue/model/StartCrawlerScheduleRequest.h>
+#include <aws/glue/model/StartDataQualityRuleRecommendationRunRequest.h>
+#include <aws/glue/model/StartDataQualityRulesetEvaluationRunRequest.h>
 #include <aws/glue/model/StartExportLabelsTaskRunRequest.h>
 #include <aws/glue/model/StartImportLabelsTaskRunRequest.h>
 #include <aws/glue/model/StartJobRunRequest.h>
@@ -194,6 +209,7 @@
 #include <aws/glue/model/UpdateConnectionRequest.h>
 #include <aws/glue/model/UpdateCrawlerRequest.h>
 #include <aws/glue/model/UpdateCrawlerScheduleRequest.h>
+#include <aws/glue/model/UpdateDataQualityRulesetRequest.h>
 #include <aws/glue/model/UpdateDatabaseRequest.h>
 #include <aws/glue/model/UpdateDevEndpointRequest.h>
 #include <aws/glue/model/UpdateJobRequest.h>
@@ -527,6 +543,30 @@ void GlueClient::BatchGetCustomEntityTypesAsync(const BatchGetCustomEntityTypesR
     } );
 }
 
+BatchGetDataQualityResultOutcome GlueClient::BatchGetDataQualityResult(const BatchGetDataQualityResultRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchGetDataQualityResult, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchGetDataQualityResult, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return BatchGetDataQualityResultOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+BatchGetDataQualityResultOutcomeCallable GlueClient::BatchGetDataQualityResultCallable(const BatchGetDataQualityResultRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchGetDataQualityResultOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchGetDataQualityResult(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::BatchGetDataQualityResultAsync(const BatchGetDataQualityResultRequest& request, const BatchGetDataQualityResultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchGetDataQualityResult(request), context);
+    } );
+}
+
 BatchGetDevEndpointsOutcome GlueClient::BatchGetDevEndpoints(const BatchGetDevEndpointsRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchGetDevEndpoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -692,6 +732,54 @@ void GlueClient::BatchUpdatePartitionAsync(const BatchUpdatePartitionRequest& re
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, BatchUpdatePartition(request), context);
+    } );
+}
+
+CancelDataQualityRuleRecommendationRunOutcome GlueClient::CancelDataQualityRuleRecommendationRun(const CancelDataQualityRuleRecommendationRunRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelDataQualityRuleRecommendationRun, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CancelDataQualityRuleRecommendationRun, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CancelDataQualityRuleRecommendationRunOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CancelDataQualityRuleRecommendationRunOutcomeCallable GlueClient::CancelDataQualityRuleRecommendationRunCallable(const CancelDataQualityRuleRecommendationRunRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CancelDataQualityRuleRecommendationRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelDataQualityRuleRecommendationRun(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::CancelDataQualityRuleRecommendationRunAsync(const CancelDataQualityRuleRecommendationRunRequest& request, const CancelDataQualityRuleRecommendationRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CancelDataQualityRuleRecommendationRun(request), context);
+    } );
+}
+
+CancelDataQualityRulesetEvaluationRunOutcome GlueClient::CancelDataQualityRulesetEvaluationRun(const CancelDataQualityRulesetEvaluationRunRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelDataQualityRulesetEvaluationRun, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CancelDataQualityRulesetEvaluationRun, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CancelDataQualityRulesetEvaluationRunOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CancelDataQualityRulesetEvaluationRunOutcomeCallable GlueClient::CancelDataQualityRulesetEvaluationRunCallable(const CancelDataQualityRulesetEvaluationRunRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CancelDataQualityRulesetEvaluationRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelDataQualityRulesetEvaluationRun(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::CancelDataQualityRulesetEvaluationRunAsync(const CancelDataQualityRulesetEvaluationRunRequest& request, const CancelDataQualityRulesetEvaluationRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CancelDataQualityRulesetEvaluationRun(request), context);
     } );
 }
 
@@ -884,6 +972,30 @@ void GlueClient::CreateCustomEntityTypeAsync(const CreateCustomEntityTypeRequest
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, CreateCustomEntityType(request), context);
+    } );
+}
+
+CreateDataQualityRulesetOutcome GlueClient::CreateDataQualityRuleset(const CreateDataQualityRulesetRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDataQualityRuleset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDataQualityRuleset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateDataQualityRulesetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateDataQualityRulesetOutcomeCallable GlueClient::CreateDataQualityRulesetCallable(const CreateDataQualityRulesetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateDataQualityRulesetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDataQualityRuleset(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::CreateDataQualityRulesetAsync(const CreateDataQualityRulesetRequest& request, const CreateDataQualityRulesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateDataQualityRuleset(request), context);
     } );
 }
 
@@ -1412,6 +1524,30 @@ void GlueClient::DeleteCustomEntityTypeAsync(const DeleteCustomEntityTypeRequest
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DeleteCustomEntityType(request), context);
+    } );
+}
+
+DeleteDataQualityRulesetOutcome GlueClient::DeleteDataQualityRuleset(const DeleteDataQualityRulesetRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDataQualityRuleset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteDataQualityRuleset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteDataQualityRulesetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteDataQualityRulesetOutcomeCallable GlueClient::DeleteDataQualityRulesetCallable(const DeleteDataQualityRulesetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteDataQualityRulesetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDataQualityRuleset(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::DeleteDataQualityRulesetAsync(const DeleteDataQualityRulesetRequest& request, const DeleteDataQualityRulesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteDataQualityRuleset(request), context);
     } );
 }
 
@@ -2180,6 +2316,102 @@ void GlueClient::GetDataCatalogEncryptionSettingsAsync(const GetDataCatalogEncry
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, GetDataCatalogEncryptionSettings(request), context);
+    } );
+}
+
+GetDataQualityResultOutcome GlueClient::GetDataQualityResult(const GetDataQualityResultRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDataQualityResult, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDataQualityResult, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetDataQualityResultOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetDataQualityResultOutcomeCallable GlueClient::GetDataQualityResultCallable(const GetDataQualityResultRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetDataQualityResultOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDataQualityResult(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::GetDataQualityResultAsync(const GetDataQualityResultRequest& request, const GetDataQualityResultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetDataQualityResult(request), context);
+    } );
+}
+
+GetDataQualityRuleRecommendationRunOutcome GlueClient::GetDataQualityRuleRecommendationRun(const GetDataQualityRuleRecommendationRunRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDataQualityRuleRecommendationRun, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDataQualityRuleRecommendationRun, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetDataQualityRuleRecommendationRunOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetDataQualityRuleRecommendationRunOutcomeCallable GlueClient::GetDataQualityRuleRecommendationRunCallable(const GetDataQualityRuleRecommendationRunRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetDataQualityRuleRecommendationRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDataQualityRuleRecommendationRun(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::GetDataQualityRuleRecommendationRunAsync(const GetDataQualityRuleRecommendationRunRequest& request, const GetDataQualityRuleRecommendationRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetDataQualityRuleRecommendationRun(request), context);
+    } );
+}
+
+GetDataQualityRulesetOutcome GlueClient::GetDataQualityRuleset(const GetDataQualityRulesetRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDataQualityRuleset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDataQualityRuleset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetDataQualityRulesetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetDataQualityRulesetOutcomeCallable GlueClient::GetDataQualityRulesetCallable(const GetDataQualityRulesetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetDataQualityRulesetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDataQualityRuleset(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::GetDataQualityRulesetAsync(const GetDataQualityRulesetRequest& request, const GetDataQualityRulesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetDataQualityRuleset(request), context);
+    } );
+}
+
+GetDataQualityRulesetEvaluationRunOutcome GlueClient::GetDataQualityRulesetEvaluationRun(const GetDataQualityRulesetEvaluationRunRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDataQualityRulesetEvaluationRun, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDataQualityRulesetEvaluationRun, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetDataQualityRulesetEvaluationRunOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetDataQualityRulesetEvaluationRunOutcomeCallable GlueClient::GetDataQualityRulesetEvaluationRunCallable(const GetDataQualityRulesetEvaluationRunRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetDataQualityRulesetEvaluationRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDataQualityRulesetEvaluationRun(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::GetDataQualityRulesetEvaluationRunAsync(const GetDataQualityRulesetEvaluationRunRequest& request, const GetDataQualityRulesetEvaluationRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetDataQualityRulesetEvaluationRun(request), context);
     } );
 }
 
@@ -3407,6 +3639,102 @@ void GlueClient::ListCustomEntityTypesAsync(const ListCustomEntityTypesRequest& 
     } );
 }
 
+ListDataQualityResultsOutcome GlueClient::ListDataQualityResults(const ListDataQualityResultsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDataQualityResults, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDataQualityResults, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListDataQualityResultsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListDataQualityResultsOutcomeCallable GlueClient::ListDataQualityResultsCallable(const ListDataQualityResultsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListDataQualityResultsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDataQualityResults(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::ListDataQualityResultsAsync(const ListDataQualityResultsRequest& request, const ListDataQualityResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListDataQualityResults(request), context);
+    } );
+}
+
+ListDataQualityRuleRecommendationRunsOutcome GlueClient::ListDataQualityRuleRecommendationRuns(const ListDataQualityRuleRecommendationRunsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDataQualityRuleRecommendationRuns, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDataQualityRuleRecommendationRuns, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListDataQualityRuleRecommendationRunsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListDataQualityRuleRecommendationRunsOutcomeCallable GlueClient::ListDataQualityRuleRecommendationRunsCallable(const ListDataQualityRuleRecommendationRunsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListDataQualityRuleRecommendationRunsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDataQualityRuleRecommendationRuns(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::ListDataQualityRuleRecommendationRunsAsync(const ListDataQualityRuleRecommendationRunsRequest& request, const ListDataQualityRuleRecommendationRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListDataQualityRuleRecommendationRuns(request), context);
+    } );
+}
+
+ListDataQualityRulesetEvaluationRunsOutcome GlueClient::ListDataQualityRulesetEvaluationRuns(const ListDataQualityRulesetEvaluationRunsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDataQualityRulesetEvaluationRuns, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDataQualityRulesetEvaluationRuns, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListDataQualityRulesetEvaluationRunsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListDataQualityRulesetEvaluationRunsOutcomeCallable GlueClient::ListDataQualityRulesetEvaluationRunsCallable(const ListDataQualityRulesetEvaluationRunsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListDataQualityRulesetEvaluationRunsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDataQualityRulesetEvaluationRuns(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::ListDataQualityRulesetEvaluationRunsAsync(const ListDataQualityRulesetEvaluationRunsRequest& request, const ListDataQualityRulesetEvaluationRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListDataQualityRulesetEvaluationRuns(request), context);
+    } );
+}
+
+ListDataQualityRulesetsOutcome GlueClient::ListDataQualityRulesets(const ListDataQualityRulesetsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDataQualityRulesets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDataQualityRulesets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListDataQualityRulesetsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListDataQualityRulesetsOutcomeCallable GlueClient::ListDataQualityRulesetsCallable(const ListDataQualityRulesetsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListDataQualityRulesetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDataQualityRulesets(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::ListDataQualityRulesetsAsync(const ListDataQualityRulesetsRequest& request, const ListDataQualityRulesetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListDataQualityRulesets(request), context);
+    } );
+}
+
 ListDevEndpointsOutcome GlueClient::ListDevEndpoints(const ListDevEndpointsRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDevEndpoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -3983,6 +4311,54 @@ void GlueClient::StartCrawlerScheduleAsync(const StartCrawlerScheduleRequest& re
     } );
 }
 
+StartDataQualityRuleRecommendationRunOutcome GlueClient::StartDataQualityRuleRecommendationRun(const StartDataQualityRuleRecommendationRunRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartDataQualityRuleRecommendationRun, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartDataQualityRuleRecommendationRun, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return StartDataQualityRuleRecommendationRunOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartDataQualityRuleRecommendationRunOutcomeCallable GlueClient::StartDataQualityRuleRecommendationRunCallable(const StartDataQualityRuleRecommendationRunRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartDataQualityRuleRecommendationRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartDataQualityRuleRecommendationRun(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::StartDataQualityRuleRecommendationRunAsync(const StartDataQualityRuleRecommendationRunRequest& request, const StartDataQualityRuleRecommendationRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartDataQualityRuleRecommendationRun(request), context);
+    } );
+}
+
+StartDataQualityRulesetEvaluationRunOutcome GlueClient::StartDataQualityRulesetEvaluationRun(const StartDataQualityRulesetEvaluationRunRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartDataQualityRulesetEvaluationRun, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartDataQualityRulesetEvaluationRun, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return StartDataQualityRulesetEvaluationRunOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartDataQualityRulesetEvaluationRunOutcomeCallable GlueClient::StartDataQualityRulesetEvaluationRunCallable(const StartDataQualityRulesetEvaluationRunRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartDataQualityRulesetEvaluationRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartDataQualityRulesetEvaluationRun(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::StartDataQualityRulesetEvaluationRunAsync(const StartDataQualityRulesetEvaluationRunRequest& request, const StartDataQualityRulesetEvaluationRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartDataQualityRulesetEvaluationRun(request), context);
+    } );
+}
+
 StartExportLabelsTaskRunOutcome GlueClient::StartExportLabelsTaskRun(const StartExportLabelsTaskRunRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartExportLabelsTaskRun, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -4484,6 +4860,30 @@ void GlueClient::UpdateCrawlerScheduleAsync(const UpdateCrawlerScheduleRequest& 
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, UpdateCrawlerSchedule(request), context);
+    } );
+}
+
+UpdateDataQualityRulesetOutcome GlueClient::UpdateDataQualityRuleset(const UpdateDataQualityRulesetRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDataQualityRuleset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateDataQualityRuleset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateDataQualityRulesetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateDataQualityRulesetOutcomeCallable GlueClient::UpdateDataQualityRulesetCallable(const UpdateDataQualityRulesetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateDataQualityRulesetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDataQualityRuleset(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::UpdateDataQualityRulesetAsync(const UpdateDataQualityRulesetRequest& request, const UpdateDataQualityRulesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateDataQualityRuleset(request), context);
     } );
 }
 

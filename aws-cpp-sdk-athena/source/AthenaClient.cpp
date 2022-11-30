@@ -26,36 +26,59 @@
 #include <aws/athena/model/BatchGetQueryExecutionRequest.h>
 #include <aws/athena/model/CreateDataCatalogRequest.h>
 #include <aws/athena/model/CreateNamedQueryRequest.h>
+#include <aws/athena/model/CreateNotebookRequest.h>
 #include <aws/athena/model/CreatePreparedStatementRequest.h>
+#include <aws/athena/model/CreatePresignedNotebookUrlRequest.h>
 #include <aws/athena/model/CreateWorkGroupRequest.h>
 #include <aws/athena/model/DeleteDataCatalogRequest.h>
 #include <aws/athena/model/DeleteNamedQueryRequest.h>
+#include <aws/athena/model/DeleteNotebookRequest.h>
 #include <aws/athena/model/DeletePreparedStatementRequest.h>
 #include <aws/athena/model/DeleteWorkGroupRequest.h>
+#include <aws/athena/model/ExportNotebookRequest.h>
+#include <aws/athena/model/GetCalculationExecutionRequest.h>
+#include <aws/athena/model/GetCalculationExecutionCodeRequest.h>
+#include <aws/athena/model/GetCalculationExecutionStatusRequest.h>
 #include <aws/athena/model/GetDataCatalogRequest.h>
 #include <aws/athena/model/GetDatabaseRequest.h>
 #include <aws/athena/model/GetNamedQueryRequest.h>
+#include <aws/athena/model/GetNotebookMetadataRequest.h>
 #include <aws/athena/model/GetPreparedStatementRequest.h>
 #include <aws/athena/model/GetQueryExecutionRequest.h>
 #include <aws/athena/model/GetQueryResultsRequest.h>
 #include <aws/athena/model/GetQueryRuntimeStatisticsRequest.h>
+#include <aws/athena/model/GetSessionRequest.h>
+#include <aws/athena/model/GetSessionStatusRequest.h>
 #include <aws/athena/model/GetTableMetadataRequest.h>
 #include <aws/athena/model/GetWorkGroupRequest.h>
+#include <aws/athena/model/ImportNotebookRequest.h>
+#include <aws/athena/model/ListApplicationDPUSizesRequest.h>
+#include <aws/athena/model/ListCalculationExecutionsRequest.h>
 #include <aws/athena/model/ListDataCatalogsRequest.h>
 #include <aws/athena/model/ListDatabasesRequest.h>
 #include <aws/athena/model/ListEngineVersionsRequest.h>
+#include <aws/athena/model/ListExecutorsRequest.h>
 #include <aws/athena/model/ListNamedQueriesRequest.h>
+#include <aws/athena/model/ListNotebookMetadataRequest.h>
+#include <aws/athena/model/ListNotebookSessionsRequest.h>
 #include <aws/athena/model/ListPreparedStatementsRequest.h>
 #include <aws/athena/model/ListQueryExecutionsRequest.h>
+#include <aws/athena/model/ListSessionsRequest.h>
 #include <aws/athena/model/ListTableMetadataRequest.h>
 #include <aws/athena/model/ListTagsForResourceRequest.h>
 #include <aws/athena/model/ListWorkGroupsRequest.h>
+#include <aws/athena/model/StartCalculationExecutionRequest.h>
 #include <aws/athena/model/StartQueryExecutionRequest.h>
+#include <aws/athena/model/StartSessionRequest.h>
+#include <aws/athena/model/StopCalculationExecutionRequest.h>
 #include <aws/athena/model/StopQueryExecutionRequest.h>
 #include <aws/athena/model/TagResourceRequest.h>
+#include <aws/athena/model/TerminateSessionRequest.h>
 #include <aws/athena/model/UntagResourceRequest.h>
 #include <aws/athena/model/UpdateDataCatalogRequest.h>
 #include <aws/athena/model/UpdateNamedQueryRequest.h>
+#include <aws/athena/model/UpdateNotebookRequest.h>
+#include <aws/athena/model/UpdateNotebookMetadataRequest.h>
 #include <aws/athena/model/UpdatePreparedStatementRequest.h>
 #include <aws/athena/model/UpdateWorkGroupRequest.h>
 
@@ -306,6 +329,30 @@ void AthenaClient::CreateNamedQueryAsync(const CreateNamedQueryRequest& request,
     } );
 }
 
+CreateNotebookOutcome AthenaClient::CreateNotebook(const CreateNotebookRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateNotebook, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateNotebook, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateNotebookOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateNotebookOutcomeCallable AthenaClient::CreateNotebookCallable(const CreateNotebookRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateNotebookOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateNotebook(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AthenaClient::CreateNotebookAsync(const CreateNotebookRequest& request, const CreateNotebookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateNotebook(request), context);
+    } );
+}
+
 CreatePreparedStatementOutcome AthenaClient::CreatePreparedStatement(const CreatePreparedStatementRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePreparedStatement, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -327,6 +374,30 @@ void AthenaClient::CreatePreparedStatementAsync(const CreatePreparedStatementReq
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, CreatePreparedStatement(request), context);
+    } );
+}
+
+CreatePresignedNotebookUrlOutcome AthenaClient::CreatePresignedNotebookUrl(const CreatePresignedNotebookUrlRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePresignedNotebookUrl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreatePresignedNotebookUrl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreatePresignedNotebookUrlOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreatePresignedNotebookUrlOutcomeCallable AthenaClient::CreatePresignedNotebookUrlCallable(const CreatePresignedNotebookUrlRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreatePresignedNotebookUrlOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreatePresignedNotebookUrl(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AthenaClient::CreatePresignedNotebookUrlAsync(const CreatePresignedNotebookUrlRequest& request, const CreatePresignedNotebookUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreatePresignedNotebookUrl(request), context);
     } );
 }
 
@@ -402,6 +473,30 @@ void AthenaClient::DeleteNamedQueryAsync(const DeleteNamedQueryRequest& request,
     } );
 }
 
+DeleteNotebookOutcome AthenaClient::DeleteNotebook(const DeleteNotebookRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteNotebook, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteNotebook, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteNotebookOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteNotebookOutcomeCallable AthenaClient::DeleteNotebookCallable(const DeleteNotebookRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteNotebookOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteNotebook(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AthenaClient::DeleteNotebookAsync(const DeleteNotebookRequest& request, const DeleteNotebookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteNotebook(request), context);
+    } );
+}
+
 DeletePreparedStatementOutcome AthenaClient::DeletePreparedStatement(const DeletePreparedStatementRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePreparedStatement, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -447,6 +542,102 @@ void AthenaClient::DeleteWorkGroupAsync(const DeleteWorkGroupRequest& request, c
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DeleteWorkGroup(request), context);
+    } );
+}
+
+ExportNotebookOutcome AthenaClient::ExportNotebook(const ExportNotebookRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ExportNotebook, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ExportNotebook, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ExportNotebookOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ExportNotebookOutcomeCallable AthenaClient::ExportNotebookCallable(const ExportNotebookRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ExportNotebookOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ExportNotebook(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AthenaClient::ExportNotebookAsync(const ExportNotebookRequest& request, const ExportNotebookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ExportNotebook(request), context);
+    } );
+}
+
+GetCalculationExecutionOutcome AthenaClient::GetCalculationExecution(const GetCalculationExecutionRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCalculationExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetCalculationExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetCalculationExecutionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetCalculationExecutionOutcomeCallable AthenaClient::GetCalculationExecutionCallable(const GetCalculationExecutionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetCalculationExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCalculationExecution(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AthenaClient::GetCalculationExecutionAsync(const GetCalculationExecutionRequest& request, const GetCalculationExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetCalculationExecution(request), context);
+    } );
+}
+
+GetCalculationExecutionCodeOutcome AthenaClient::GetCalculationExecutionCode(const GetCalculationExecutionCodeRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCalculationExecutionCode, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetCalculationExecutionCode, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetCalculationExecutionCodeOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetCalculationExecutionCodeOutcomeCallable AthenaClient::GetCalculationExecutionCodeCallable(const GetCalculationExecutionCodeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetCalculationExecutionCodeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCalculationExecutionCode(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AthenaClient::GetCalculationExecutionCodeAsync(const GetCalculationExecutionCodeRequest& request, const GetCalculationExecutionCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetCalculationExecutionCode(request), context);
+    } );
+}
+
+GetCalculationExecutionStatusOutcome AthenaClient::GetCalculationExecutionStatus(const GetCalculationExecutionStatusRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCalculationExecutionStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetCalculationExecutionStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetCalculationExecutionStatusOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetCalculationExecutionStatusOutcomeCallable AthenaClient::GetCalculationExecutionStatusCallable(const GetCalculationExecutionStatusRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetCalculationExecutionStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCalculationExecutionStatus(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AthenaClient::GetCalculationExecutionStatusAsync(const GetCalculationExecutionStatusRequest& request, const GetCalculationExecutionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetCalculationExecutionStatus(request), context);
     } );
 }
 
@@ -519,6 +710,30 @@ void AthenaClient::GetNamedQueryAsync(const GetNamedQueryRequest& request, const
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, GetNamedQuery(request), context);
+    } );
+}
+
+GetNotebookMetadataOutcome AthenaClient::GetNotebookMetadata(const GetNotebookMetadataRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetNotebookMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetNotebookMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetNotebookMetadataOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetNotebookMetadataOutcomeCallable AthenaClient::GetNotebookMetadataCallable(const GetNotebookMetadataRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetNotebookMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetNotebookMetadata(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AthenaClient::GetNotebookMetadataAsync(const GetNotebookMetadataRequest& request, const GetNotebookMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetNotebookMetadata(request), context);
     } );
 }
 
@@ -618,6 +833,54 @@ void AthenaClient::GetQueryRuntimeStatisticsAsync(const GetQueryRuntimeStatistic
     } );
 }
 
+GetSessionOutcome AthenaClient::GetSession(const GetSessionRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetSessionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetSessionOutcomeCallable AthenaClient::GetSessionCallable(const GetSessionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetSessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSession(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AthenaClient::GetSessionAsync(const GetSessionRequest& request, const GetSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetSession(request), context);
+    } );
+}
+
+GetSessionStatusOutcome AthenaClient::GetSessionStatus(const GetSessionStatusRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSessionStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetSessionStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetSessionStatusOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetSessionStatusOutcomeCallable AthenaClient::GetSessionStatusCallable(const GetSessionStatusRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetSessionStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSessionStatus(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AthenaClient::GetSessionStatusAsync(const GetSessionStatusRequest& request, const GetSessionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetSessionStatus(request), context);
+    } );
+}
+
 GetTableMetadataOutcome AthenaClient::GetTableMetadata(const GetTableMetadataRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTableMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -663,6 +926,78 @@ void AthenaClient::GetWorkGroupAsync(const GetWorkGroupRequest& request, const G
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, GetWorkGroup(request), context);
+    } );
+}
+
+ImportNotebookOutcome AthenaClient::ImportNotebook(const ImportNotebookRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ImportNotebook, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ImportNotebook, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ImportNotebookOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ImportNotebookOutcomeCallable AthenaClient::ImportNotebookCallable(const ImportNotebookRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ImportNotebookOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ImportNotebook(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AthenaClient::ImportNotebookAsync(const ImportNotebookRequest& request, const ImportNotebookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ImportNotebook(request), context);
+    } );
+}
+
+ListApplicationDPUSizesOutcome AthenaClient::ListApplicationDPUSizes(const ListApplicationDPUSizesRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListApplicationDPUSizes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListApplicationDPUSizes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListApplicationDPUSizesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListApplicationDPUSizesOutcomeCallable AthenaClient::ListApplicationDPUSizesCallable(const ListApplicationDPUSizesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListApplicationDPUSizesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListApplicationDPUSizes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AthenaClient::ListApplicationDPUSizesAsync(const ListApplicationDPUSizesRequest& request, const ListApplicationDPUSizesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListApplicationDPUSizes(request), context);
+    } );
+}
+
+ListCalculationExecutionsOutcome AthenaClient::ListCalculationExecutions(const ListCalculationExecutionsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCalculationExecutions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCalculationExecutions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListCalculationExecutionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListCalculationExecutionsOutcomeCallable AthenaClient::ListCalculationExecutionsCallable(const ListCalculationExecutionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListCalculationExecutionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCalculationExecutions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AthenaClient::ListCalculationExecutionsAsync(const ListCalculationExecutionsRequest& request, const ListCalculationExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListCalculationExecutions(request), context);
     } );
 }
 
@@ -738,6 +1073,30 @@ void AthenaClient::ListEngineVersionsAsync(const ListEngineVersionsRequest& requ
     } );
 }
 
+ListExecutorsOutcome AthenaClient::ListExecutors(const ListExecutorsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListExecutors, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListExecutors, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListExecutorsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListExecutorsOutcomeCallable AthenaClient::ListExecutorsCallable(const ListExecutorsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListExecutorsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListExecutors(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AthenaClient::ListExecutorsAsync(const ListExecutorsRequest& request, const ListExecutorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListExecutors(request), context);
+    } );
+}
+
 ListNamedQueriesOutcome AthenaClient::ListNamedQueries(const ListNamedQueriesRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListNamedQueries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -759,6 +1118,54 @@ void AthenaClient::ListNamedQueriesAsync(const ListNamedQueriesRequest& request,
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, ListNamedQueries(request), context);
+    } );
+}
+
+ListNotebookMetadataOutcome AthenaClient::ListNotebookMetadata(const ListNotebookMetadataRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListNotebookMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListNotebookMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListNotebookMetadataOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListNotebookMetadataOutcomeCallable AthenaClient::ListNotebookMetadataCallable(const ListNotebookMetadataRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListNotebookMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListNotebookMetadata(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AthenaClient::ListNotebookMetadataAsync(const ListNotebookMetadataRequest& request, const ListNotebookMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListNotebookMetadata(request), context);
+    } );
+}
+
+ListNotebookSessionsOutcome AthenaClient::ListNotebookSessions(const ListNotebookSessionsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListNotebookSessions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListNotebookSessions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListNotebookSessionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListNotebookSessionsOutcomeCallable AthenaClient::ListNotebookSessionsCallable(const ListNotebookSessionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListNotebookSessionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListNotebookSessions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AthenaClient::ListNotebookSessionsAsync(const ListNotebookSessionsRequest& request, const ListNotebookSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListNotebookSessions(request), context);
     } );
 }
 
@@ -807,6 +1214,30 @@ void AthenaClient::ListQueryExecutionsAsync(const ListQueryExecutionsRequest& re
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, ListQueryExecutions(request), context);
+    } );
+}
+
+ListSessionsOutcome AthenaClient::ListSessions(const ListSessionsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSessions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSessions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListSessionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListSessionsOutcomeCallable AthenaClient::ListSessionsCallable(const ListSessionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListSessionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSessions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AthenaClient::ListSessionsAsync(const ListSessionsRequest& request, const ListSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListSessions(request), context);
     } );
 }
 
@@ -882,6 +1313,30 @@ void AthenaClient::ListWorkGroupsAsync(const ListWorkGroupsRequest& request, con
     } );
 }
 
+StartCalculationExecutionOutcome AthenaClient::StartCalculationExecution(const StartCalculationExecutionRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartCalculationExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartCalculationExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return StartCalculationExecutionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartCalculationExecutionOutcomeCallable AthenaClient::StartCalculationExecutionCallable(const StartCalculationExecutionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartCalculationExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartCalculationExecution(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AthenaClient::StartCalculationExecutionAsync(const StartCalculationExecutionRequest& request, const StartCalculationExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartCalculationExecution(request), context);
+    } );
+}
+
 StartQueryExecutionOutcome AthenaClient::StartQueryExecution(const StartQueryExecutionRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartQueryExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -903,6 +1358,54 @@ void AthenaClient::StartQueryExecutionAsync(const StartQueryExecutionRequest& re
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, StartQueryExecution(request), context);
+    } );
+}
+
+StartSessionOutcome AthenaClient::StartSession(const StartSessionRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return StartSessionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartSessionOutcomeCallable AthenaClient::StartSessionCallable(const StartSessionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartSessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartSession(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AthenaClient::StartSessionAsync(const StartSessionRequest& request, const StartSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartSession(request), context);
+    } );
+}
+
+StopCalculationExecutionOutcome AthenaClient::StopCalculationExecution(const StopCalculationExecutionRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopCalculationExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StopCalculationExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return StopCalculationExecutionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StopCalculationExecutionOutcomeCallable AthenaClient::StopCalculationExecutionCallable(const StopCalculationExecutionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StopCalculationExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopCalculationExecution(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AthenaClient::StopCalculationExecutionAsync(const StopCalculationExecutionRequest& request, const StopCalculationExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StopCalculationExecution(request), context);
     } );
 }
 
@@ -951,6 +1454,30 @@ void AthenaClient::TagResourceAsync(const TagResourceRequest& request, const Tag
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, TagResource(request), context);
+    } );
+}
+
+TerminateSessionOutcome AthenaClient::TerminateSession(const TerminateSessionRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, TerminateSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TerminateSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return TerminateSessionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+TerminateSessionOutcomeCallable AthenaClient::TerminateSessionCallable(const TerminateSessionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< TerminateSessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TerminateSession(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AthenaClient::TerminateSessionAsync(const TerminateSessionRequest& request, const TerminateSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TerminateSession(request), context);
     } );
 }
 
@@ -1023,6 +1550,54 @@ void AthenaClient::UpdateNamedQueryAsync(const UpdateNamedQueryRequest& request,
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, UpdateNamedQuery(request), context);
+    } );
+}
+
+UpdateNotebookOutcome AthenaClient::UpdateNotebook(const UpdateNotebookRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateNotebook, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateNotebook, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateNotebookOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateNotebookOutcomeCallable AthenaClient::UpdateNotebookCallable(const UpdateNotebookRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateNotebookOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateNotebook(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AthenaClient::UpdateNotebookAsync(const UpdateNotebookRequest& request, const UpdateNotebookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateNotebook(request), context);
+    } );
+}
+
+UpdateNotebookMetadataOutcome AthenaClient::UpdateNotebookMetadata(const UpdateNotebookMetadataRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateNotebookMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateNotebookMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateNotebookMetadataOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateNotebookMetadataOutcomeCallable AthenaClient::UpdateNotebookMetadataCallable(const UpdateNotebookMetadataRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateNotebookMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateNotebookMetadata(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AthenaClient::UpdateNotebookMetadataAsync(const UpdateNotebookMetadataRequest& request, const UpdateNotebookMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateNotebookMetadata(request), context);
     } );
 }
 

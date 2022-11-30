@@ -28,7 +28,10 @@ WorkGroupConfiguration::WorkGroupConfiguration() :
     m_bytesScannedCutoffPerQueryHasBeenSet(false),
     m_requesterPaysEnabled(false),
     m_requesterPaysEnabledHasBeenSet(false),
-    m_engineVersionHasBeenSet(false)
+    m_engineVersionHasBeenSet(false),
+    m_additionalConfigurationHasBeenSet(false),
+    m_executionRoleHasBeenSet(false),
+    m_customerContentEncryptionConfigurationHasBeenSet(false)
 {
 }
 
@@ -42,7 +45,10 @@ WorkGroupConfiguration::WorkGroupConfiguration(JsonView jsonValue) :
     m_bytesScannedCutoffPerQueryHasBeenSet(false),
     m_requesterPaysEnabled(false),
     m_requesterPaysEnabledHasBeenSet(false),
-    m_engineVersionHasBeenSet(false)
+    m_engineVersionHasBeenSet(false),
+    m_additionalConfigurationHasBeenSet(false),
+    m_executionRoleHasBeenSet(false),
+    m_customerContentEncryptionConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -91,6 +97,27 @@ WorkGroupConfiguration& WorkGroupConfiguration::operator =(JsonView jsonValue)
     m_engineVersionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AdditionalConfiguration"))
+  {
+    m_additionalConfiguration = jsonValue.GetString("AdditionalConfiguration");
+
+    m_additionalConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ExecutionRole"))
+  {
+    m_executionRole = jsonValue.GetString("ExecutionRole");
+
+    m_executionRoleHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CustomerContentEncryptionConfiguration"))
+  {
+    m_customerContentEncryptionConfiguration = jsonValue.GetObject("CustomerContentEncryptionConfiguration");
+
+    m_customerContentEncryptionConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -131,6 +158,24 @@ JsonValue WorkGroupConfiguration::Jsonize() const
   if(m_engineVersionHasBeenSet)
   {
    payload.WithObject("EngineVersion", m_engineVersion.Jsonize());
+
+  }
+
+  if(m_additionalConfigurationHasBeenSet)
+  {
+   payload.WithString("AdditionalConfiguration", m_additionalConfiguration);
+
+  }
+
+  if(m_executionRoleHasBeenSet)
+  {
+   payload.WithString("ExecutionRole", m_executionRole);
+
+  }
+
+  if(m_customerContentEncryptionConfigurationHasBeenSet)
+  {
+   payload.WithObject("CustomerContentEncryptionConfiguration", m_customerContentEncryptionConfiguration.Jsonize());
 
   }
 

@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 UpdateDomainRequest::UpdateDomainRequest() : 
     m_domainIdHasBeenSet(false),
     m_defaultUserSettingsHasBeenSet(false),
-    m_domainSettingsForUpdateHasBeenSet(false)
+    m_domainSettingsForUpdateHasBeenSet(false),
+    m_defaultSpaceSettingsHasBeenSet(false)
 {
 }
 
@@ -38,6 +39,12 @@ Aws::String UpdateDomainRequest::SerializePayload() const
   if(m_domainSettingsForUpdateHasBeenSet)
   {
    payload.WithObject("DomainSettingsForUpdate", m_domainSettingsForUpdate.Jsonize());
+
+  }
+
+  if(m_defaultSpaceSettingsHasBeenSet)
+  {
+   payload.WithObject("DefaultSpaceSettings", m_defaultSpaceSettings.Jsonize());
 
   }
 

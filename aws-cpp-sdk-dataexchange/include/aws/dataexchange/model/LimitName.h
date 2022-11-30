@@ -37,7 +37,13 @@ namespace Model
     Amazon_Redshift_datashare_assets_per_revision,
     Concurrent_in_progress_jobs_to_import_assets_from_an_API_Gateway_API,
     Amazon_API_Gateway_API_assets_per_revision,
-    Revisions_per_Amazon_API_Gateway_API_data_set
+    Revisions_per_Amazon_API_Gateway_API_data_set,
+    Concurrent_in_progress_jobs_to_import_assets_from_an_AWS_Lake_Formation_tag_policy,
+    AWS_Lake_Formation_data_permission_assets_per_revision,
+    Revisions_per_AWS_Lake_Formation_data_permission_data_set,
+    Revisions_per_Amazon_S3_data_access_data_set,
+    Amazon_S3_data_access_assets_per_revision,
+    Concurrent_in_progress_jobs_to_create_Amazon_S3_data_access_assets_from_S3_buckets
   };
 
 namespace LimitNameMapper

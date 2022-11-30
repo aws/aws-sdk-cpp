@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/UserSettings.h>
 #include <aws/sagemaker/model/DomainSettingsForUpdate.h>
+#include <aws/sagemaker/model/DefaultSpaceSettings.h>
 #include <utility>
 
 namespace Aws
@@ -144,6 +145,37 @@ namespace Model
      */
     inline UpdateDomainRequest& WithDomainSettingsForUpdate(DomainSettingsForUpdate&& value) { SetDomainSettingsForUpdate(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The default settings used to create a space within the Domain.</p>
+     */
+    inline const DefaultSpaceSettings& GetDefaultSpaceSettings() const{ return m_defaultSpaceSettings; }
+
+    /**
+     * <p>The default settings used to create a space within the Domain.</p>
+     */
+    inline bool DefaultSpaceSettingsHasBeenSet() const { return m_defaultSpaceSettingsHasBeenSet; }
+
+    /**
+     * <p>The default settings used to create a space within the Domain.</p>
+     */
+    inline void SetDefaultSpaceSettings(const DefaultSpaceSettings& value) { m_defaultSpaceSettingsHasBeenSet = true; m_defaultSpaceSettings = value; }
+
+    /**
+     * <p>The default settings used to create a space within the Domain.</p>
+     */
+    inline void SetDefaultSpaceSettings(DefaultSpaceSettings&& value) { m_defaultSpaceSettingsHasBeenSet = true; m_defaultSpaceSettings = std::move(value); }
+
+    /**
+     * <p>The default settings used to create a space within the Domain.</p>
+     */
+    inline UpdateDomainRequest& WithDefaultSpaceSettings(const DefaultSpaceSettings& value) { SetDefaultSpaceSettings(value); return *this;}
+
+    /**
+     * <p>The default settings used to create a space within the Domain.</p>
+     */
+    inline UpdateDomainRequest& WithDefaultSpaceSettings(DefaultSpaceSettings&& value) { SetDefaultSpaceSettings(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_domainId;
@@ -154,6 +186,9 @@ namespace Model
 
     DomainSettingsForUpdate m_domainSettingsForUpdate;
     bool m_domainSettingsForUpdateHasBeenSet = false;
+
+    DefaultSpaceSettings m_defaultSpaceSettings;
+    bool m_defaultSpaceSettingsHasBeenSet = false;
   };
 
 } // namespace Model

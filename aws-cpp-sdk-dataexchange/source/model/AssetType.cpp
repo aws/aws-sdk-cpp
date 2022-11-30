@@ -23,6 +23,8 @@ namespace Aws
         static const int S3_SNAPSHOT_HASH = HashingUtils::HashString("S3_SNAPSHOT");
         static const int REDSHIFT_DATA_SHARE_HASH = HashingUtils::HashString("REDSHIFT_DATA_SHARE");
         static const int API_GATEWAY_API_HASH = HashingUtils::HashString("API_GATEWAY_API");
+        static const int S3_DATA_ACCESS_HASH = HashingUtils::HashString("S3_DATA_ACCESS");
+        static const int LAKE_FORMATION_DATA_PERMISSION_HASH = HashingUtils::HashString("LAKE_FORMATION_DATA_PERMISSION");
 
 
         AssetType GetAssetTypeForName(const Aws::String& name)
@@ -39,6 +41,14 @@ namespace Aws
           else if (hashCode == API_GATEWAY_API_HASH)
           {
             return AssetType::API_GATEWAY_API;
+          }
+          else if (hashCode == S3_DATA_ACCESS_HASH)
+          {
+            return AssetType::S3_DATA_ACCESS;
+          }
+          else if (hashCode == LAKE_FORMATION_DATA_PERMISSION_HASH)
+          {
+            return AssetType::LAKE_FORMATION_DATA_PERMISSION;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +70,10 @@ namespace Aws
             return "REDSHIFT_DATA_SHARE";
           case AssetType::API_GATEWAY_API:
             return "API_GATEWAY_API";
+          case AssetType::S3_DATA_ACCESS:
+            return "S3_DATA_ACCESS";
+          case AssetType::LAKE_FORMATION_DATA_PERMISSION:
+            return "LAKE_FORMATION_DATA_PERMISSION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

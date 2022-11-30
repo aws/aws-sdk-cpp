@@ -18,6 +18,8 @@
 #include <aws/sagemaker/model/Project.h>
 #include <aws/sagemaker/model/FeatureMetadata.h>
 #include <aws/sagemaker/model/HyperParameterTuningJobSearchEntity.h>
+#include <aws/sagemaker/model/ModelDashboardModel.h>
+#include <aws/sagemaker/model/ModelCard.h>
 #include <utility>
 
 namespace Aws
@@ -380,6 +382,62 @@ namespace Model
      */
     inline SearchRecord& WithHyperParameterTuningJob(HyperParameterTuningJobSearchEntity&& value) { SetHyperParameterTuningJob(std::move(value)); return *this;}
 
+
+    
+    inline const ModelDashboardModel& GetModel() const{ return m_model; }
+
+    
+    inline bool ModelHasBeenSet() const { return m_modelHasBeenSet; }
+
+    
+    inline void SetModel(const ModelDashboardModel& value) { m_modelHasBeenSet = true; m_model = value; }
+
+    
+    inline void SetModel(ModelDashboardModel&& value) { m_modelHasBeenSet = true; m_model = std::move(value); }
+
+    
+    inline SearchRecord& WithModel(const ModelDashboardModel& value) { SetModel(value); return *this;}
+
+    
+    inline SearchRecord& WithModel(ModelDashboardModel&& value) { SetModel(std::move(value)); return *this;}
+
+
+    /**
+     * <p>An Amazon SageMaker Model Card that documents details about a machine
+     * learning model.</p>
+     */
+    inline const ModelCard& GetModelCard() const{ return m_modelCard; }
+
+    /**
+     * <p>An Amazon SageMaker Model Card that documents details about a machine
+     * learning model.</p>
+     */
+    inline bool ModelCardHasBeenSet() const { return m_modelCardHasBeenSet; }
+
+    /**
+     * <p>An Amazon SageMaker Model Card that documents details about a machine
+     * learning model.</p>
+     */
+    inline void SetModelCard(const ModelCard& value) { m_modelCardHasBeenSet = true; m_modelCard = value; }
+
+    /**
+     * <p>An Amazon SageMaker Model Card that documents details about a machine
+     * learning model.</p>
+     */
+    inline void SetModelCard(ModelCard&& value) { m_modelCardHasBeenSet = true; m_modelCard = std::move(value); }
+
+    /**
+     * <p>An Amazon SageMaker Model Card that documents details about a machine
+     * learning model.</p>
+     */
+    inline SearchRecord& WithModelCard(const ModelCard& value) { SetModelCard(value); return *this;}
+
+    /**
+     * <p>An Amazon SageMaker Model Card that documents details about a machine
+     * learning model.</p>
+     */
+    inline SearchRecord& WithModelCard(ModelCard&& value) { SetModelCard(std::move(value)); return *this;}
+
   private:
 
     TrainingJob m_trainingJob;
@@ -420,6 +478,12 @@ namespace Model
 
     HyperParameterTuningJobSearchEntity m_hyperParameterTuningJob;
     bool m_hyperParameterTuningJobHasBeenSet = false;
+
+    ModelDashboardModel m_model;
+    bool m_modelHasBeenSet = false;
+
+    ModelCard m_modelCard;
+    bool m_modelCardHasBeenSet = false;
   };
 
 } // namespace Model

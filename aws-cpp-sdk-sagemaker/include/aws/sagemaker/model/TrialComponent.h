@@ -832,6 +832,47 @@ namespace Model
      */
     inline TrialComponent& AddParents(Parent&& value) { m_parentsHasBeenSet = true; m_parents.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The name of the experiment run.</p>
+     */
+    inline const Aws::String& GetRunName() const{ return m_runName; }
+
+    /**
+     * <p>The name of the experiment run.</p>
+     */
+    inline bool RunNameHasBeenSet() const { return m_runNameHasBeenSet; }
+
+    /**
+     * <p>The name of the experiment run.</p>
+     */
+    inline void SetRunName(const Aws::String& value) { m_runNameHasBeenSet = true; m_runName = value; }
+
+    /**
+     * <p>The name of the experiment run.</p>
+     */
+    inline void SetRunName(Aws::String&& value) { m_runNameHasBeenSet = true; m_runName = std::move(value); }
+
+    /**
+     * <p>The name of the experiment run.</p>
+     */
+    inline void SetRunName(const char* value) { m_runNameHasBeenSet = true; m_runName.assign(value); }
+
+    /**
+     * <p>The name of the experiment run.</p>
+     */
+    inline TrialComponent& WithRunName(const Aws::String& value) { SetRunName(value); return *this;}
+
+    /**
+     * <p>The name of the experiment run.</p>
+     */
+    inline TrialComponent& WithRunName(Aws::String&& value) { SetRunName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the experiment run.</p>
+     */
+    inline TrialComponent& WithRunName(const char* value) { SetRunName(value); return *this;}
+
   private:
 
     Aws::String m_trialComponentName;
@@ -893,6 +934,9 @@ namespace Model
 
     Aws::Vector<Parent> m_parents;
     bool m_parentsHasBeenSet = false;
+
+    Aws::String m_runName;
+    bool m_runNameHasBeenSet = false;
   };
 
 } // namespace Model

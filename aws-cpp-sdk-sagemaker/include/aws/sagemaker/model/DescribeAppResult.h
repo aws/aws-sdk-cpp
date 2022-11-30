@@ -391,6 +391,42 @@ namespace Model
      */
     inline DescribeAppResult& WithResourceSpec(ResourceSpec&& value) { SetResourceSpec(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The name of the space.</p>
+     */
+    inline const Aws::String& GetSpaceName() const{ return m_spaceName; }
+
+    /**
+     * <p>The name of the space.</p>
+     */
+    inline void SetSpaceName(const Aws::String& value) { m_spaceName = value; }
+
+    /**
+     * <p>The name of the space.</p>
+     */
+    inline void SetSpaceName(Aws::String&& value) { m_spaceName = std::move(value); }
+
+    /**
+     * <p>The name of the space.</p>
+     */
+    inline void SetSpaceName(const char* value) { m_spaceName.assign(value); }
+
+    /**
+     * <p>The name of the space.</p>
+     */
+    inline DescribeAppResult& WithSpaceName(const Aws::String& value) { SetSpaceName(value); return *this;}
+
+    /**
+     * <p>The name of the space.</p>
+     */
+    inline DescribeAppResult& WithSpaceName(Aws::String&& value) { SetSpaceName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the space.</p>
+     */
+    inline DescribeAppResult& WithSpaceName(const char* value) { SetSpaceName(value); return *this;}
+
   private:
 
     Aws::String m_appArn;
@@ -414,6 +450,8 @@ namespace Model
     Aws::String m_failureReason;
 
     ResourceSpec m_resourceSpec;
+
+    Aws::String m_spaceName;
   };
 
 } // namespace Model

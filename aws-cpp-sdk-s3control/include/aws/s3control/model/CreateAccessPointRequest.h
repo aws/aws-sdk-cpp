@@ -41,50 +41,50 @@ namespace Model
     EndpointParameters GetEndpointContextParams() const override;
 
     /**
-     * <p>The Amazon Web Services account ID for the owner of the bucket for which you
-     * want to create an access point.</p>
+     * <p>The Amazon Web Services account ID for the account that owns the specified
+     * access point.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The Amazon Web Services account ID for the owner of the bucket for which you
-     * want to create an access point.</p>
+     * <p>The Amazon Web Services account ID for the account that owns the specified
+     * access point.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The Amazon Web Services account ID for the owner of the bucket for which you
-     * want to create an access point.</p>
+     * <p>The Amazon Web Services account ID for the account that owns the specified
+     * access point.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The Amazon Web Services account ID for the owner of the bucket for which you
-     * want to create an access point.</p>
+     * <p>The Amazon Web Services account ID for the account that owns the specified
+     * access point.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The Amazon Web Services account ID for the owner of the bucket for which you
-     * want to create an access point.</p>
+     * <p>The Amazon Web Services account ID for the account that owns the specified
+     * access point.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The Amazon Web Services account ID for the owner of the bucket for which you
-     * want to create an access point.</p>
+     * <p>The Amazon Web Services account ID for the account that owns the specified
+     * access point.</p>
      */
     inline CreateAccessPointRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The Amazon Web Services account ID for the owner of the bucket for which you
-     * want to create an access point.</p>
+     * <p>The Amazon Web Services account ID for the account that owns the specified
+     * access point.</p>
      */
     inline CreateAccessPointRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Web Services account ID for the owner of the bucket for which you
-     * want to create an access point.</p>
+     * <p>The Amazon Web Services account ID for the account that owns the specified
+     * access point.</p>
      */
     inline CreateAccessPointRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
@@ -336,6 +336,55 @@ namespace Model
      */
     inline CreateAccessPointRequest& WithPublicAccessBlockConfiguration(PublicAccessBlockConfiguration&& value) { SetPublicAccessBlockConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Amazon Web Services account ID associated with the S3 bucket associated
+     * with this access point.</p>
+     */
+    inline const Aws::String& GetBucketAccountId() const{ return m_bucketAccountId; }
+
+    /**
+     * <p>The Amazon Web Services account ID associated with the S3 bucket associated
+     * with this access point.</p>
+     */
+    inline bool BucketAccountIdHasBeenSet() const { return m_bucketAccountIdHasBeenSet; }
+
+    /**
+     * <p>The Amazon Web Services account ID associated with the S3 bucket associated
+     * with this access point.</p>
+     */
+    inline void SetBucketAccountId(const Aws::String& value) { m_bucketAccountIdHasBeenSet = true; m_bucketAccountId = value; }
+
+    /**
+     * <p>The Amazon Web Services account ID associated with the S3 bucket associated
+     * with this access point.</p>
+     */
+    inline void SetBucketAccountId(Aws::String&& value) { m_bucketAccountIdHasBeenSet = true; m_bucketAccountId = std::move(value); }
+
+    /**
+     * <p>The Amazon Web Services account ID associated with the S3 bucket associated
+     * with this access point.</p>
+     */
+    inline void SetBucketAccountId(const char* value) { m_bucketAccountIdHasBeenSet = true; m_bucketAccountId.assign(value); }
+
+    /**
+     * <p>The Amazon Web Services account ID associated with the S3 bucket associated
+     * with this access point.</p>
+     */
+    inline CreateAccessPointRequest& WithBucketAccountId(const Aws::String& value) { SetBucketAccountId(value); return *this;}
+
+    /**
+     * <p>The Amazon Web Services account ID associated with the S3 bucket associated
+     * with this access point.</p>
+     */
+    inline CreateAccessPointRequest& WithBucketAccountId(Aws::String&& value) { SetBucketAccountId(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Web Services account ID associated with the S3 bucket associated
+     * with this access point.</p>
+     */
+    inline CreateAccessPointRequest& WithBucketAccountId(const char* value) { SetBucketAccountId(value); return *this;}
+
   private:
 
     Aws::String m_accountId;
@@ -352,6 +401,9 @@ namespace Model
 
     PublicAccessBlockConfiguration m_publicAccessBlockConfiguration;
     bool m_publicAccessBlockConfigurationHasBeenSet = false;
+
+    Aws::String m_bucketAccountId;
+    bool m_bucketAccountIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -79,6 +79,15 @@ DescribeEndpointConfigResult& DescribeEndpointConfigResult::operator =(const Aws
 
   }
 
+  if(jsonValue.ValueExists("ShadowProductionVariants"))
+  {
+    Aws::Utils::Array<JsonView> shadowProductionVariantsJsonList = jsonValue.GetArray("ShadowProductionVariants");
+    for(unsigned shadowProductionVariantsIndex = 0; shadowProductionVariantsIndex < shadowProductionVariantsJsonList.GetLength(); ++shadowProductionVariantsIndex)
+    {
+      m_shadowProductionVariants.push_back(shadowProductionVariantsJsonList[shadowProductionVariantsIndex].AsObject());
+    }
+  }
+
 
 
   return *this;

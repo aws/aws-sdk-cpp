@@ -23,6 +23,7 @@ namespace Aws
         static const int POLICY_HASH = HashingUtils::HashString("POLICY");
         static const int BUCKET_ACL_HASH = HashingUtils::HashString("BUCKET_ACL");
         static const int S3_ACCESS_POINT_HASH = HashingUtils::HashString("S3_ACCESS_POINT");
+        static const int S3_ACCESS_POINT_ACCOUNT_HASH = HashingUtils::HashString("S3_ACCESS_POINT_ACCOUNT");
 
 
         FindingSourceType GetFindingSourceTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == S3_ACCESS_POINT_HASH)
           {
             return FindingSourceType::S3_ACCESS_POINT;
+          }
+          else if (hashCode == S3_ACCESS_POINT_ACCOUNT_HASH)
+          {
+            return FindingSourceType::S3_ACCESS_POINT_ACCOUNT;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "BUCKET_ACL";
           case FindingSourceType::S3_ACCESS_POINT:
             return "S3_ACCESS_POINT";
+          case FindingSourceType::S3_ACCESS_POINT_ACCOUNT:
+            return "S3_ACCESS_POINT_ACCOUNT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

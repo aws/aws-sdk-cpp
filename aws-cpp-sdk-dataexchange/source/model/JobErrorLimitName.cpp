@@ -23,6 +23,8 @@ namespace Aws
         static const int Assets_per_revision_HASH = HashingUtils::HashString("Assets per revision");
         static const int Asset_size_in_GB_HASH = HashingUtils::HashString("Asset size in GB");
         static const int Amazon_Redshift_datashare_assets_per_revision_HASH = HashingUtils::HashString("Amazon Redshift datashare assets per revision");
+        static const int AWS_Lake_Formation_data_permission_assets_per_revision_HASH = HashingUtils::HashString("AWS Lake Formation data permission assets per revision");
+        static const int Amazon_S3_data_access_assets_per_revision_HASH = HashingUtils::HashString("Amazon S3 data access assets per revision");
 
 
         JobErrorLimitName GetJobErrorLimitNameForName(const Aws::String& name)
@@ -39,6 +41,14 @@ namespace Aws
           else if (hashCode == Amazon_Redshift_datashare_assets_per_revision_HASH)
           {
             return JobErrorLimitName::Amazon_Redshift_datashare_assets_per_revision;
+          }
+          else if (hashCode == AWS_Lake_Formation_data_permission_assets_per_revision_HASH)
+          {
+            return JobErrorLimitName::AWS_Lake_Formation_data_permission_assets_per_revision;
+          }
+          else if (hashCode == Amazon_S3_data_access_assets_per_revision_HASH)
+          {
+            return JobErrorLimitName::Amazon_S3_data_access_assets_per_revision;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +70,10 @@ namespace Aws
             return "Asset size in GB";
           case JobErrorLimitName::Amazon_Redshift_datashare_assets_per_revision:
             return "Amazon Redshift datashare assets per revision";
+          case JobErrorLimitName::AWS_Lake_Formation_data_permission_assets_per_revision:
+            return "AWS Lake Formation data permission assets per revision";
+          case JobErrorLimitName::Amazon_S3_data_access_assets_per_revision:
+            return "Amazon S3 data access assets per revision";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -39,42 +39,42 @@ namespace Model
 
 
     /**
-     * <p>The source ARN.</p>
+     * <p>The source Amazon Resource Name (ARN).</p>
      */
     inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
 
     /**
-     * <p>The source ARN.</p>
+     * <p>The source Amazon Resource Name (ARN).</p>
      */
     inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }
 
     /**
-     * <p>The source ARN.</p>
+     * <p>The source Amazon Resource Name (ARN).</p>
      */
     inline void SetSourceArn(const Aws::String& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
 
     /**
-     * <p>The source ARN.</p>
+     * <p>The source Amazon Resource Name (ARN).</p>
      */
     inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::move(value); }
 
     /**
-     * <p>The source ARN.</p>
+     * <p>The source Amazon Resource Name (ARN).</p>
      */
     inline void SetSourceArn(const char* value) { m_sourceArnHasBeenSet = true; m_sourceArn.assign(value); }
 
     /**
-     * <p>The source ARN.</p>
+     * <p>The source Amazon Resource Name (ARN).</p>
      */
     inline TrialComponentSource& WithSourceArn(const Aws::String& value) { SetSourceArn(value); return *this;}
 
     /**
-     * <p>The source ARN.</p>
+     * <p>The source Amazon Resource Name (ARN).</p>
      */
     inline TrialComponentSource& WithSourceArn(Aws::String&& value) { SetSourceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The source ARN.</p>
+     * <p>The source Amazon Resource Name (ARN).</p>
      */
     inline TrialComponentSource& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
 

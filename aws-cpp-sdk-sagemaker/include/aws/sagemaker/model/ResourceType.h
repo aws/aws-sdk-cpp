@@ -28,7 +28,9 @@ namespace Model
     FeatureGroup,
     Project,
     FeatureMetadata,
-    HyperParameterTuningJob
+    HyperParameterTuningJob,
+    ModelCard,
+    Model
   };
 
 namespace ResourceTypeMapper

@@ -21,14 +21,18 @@ namespace Model
 AssetDetails::AssetDetails() : 
     m_s3SnapshotAssetHasBeenSet(false),
     m_redshiftDataShareAssetHasBeenSet(false),
-    m_apiGatewayApiAssetHasBeenSet(false)
+    m_apiGatewayApiAssetHasBeenSet(false),
+    m_s3DataAccessAssetHasBeenSet(false),
+    m_lakeFormationDataPermissionAssetHasBeenSet(false)
 {
 }
 
 AssetDetails::AssetDetails(JsonView jsonValue) : 
     m_s3SnapshotAssetHasBeenSet(false),
     m_redshiftDataShareAssetHasBeenSet(false),
-    m_apiGatewayApiAssetHasBeenSet(false)
+    m_apiGatewayApiAssetHasBeenSet(false),
+    m_s3DataAccessAssetHasBeenSet(false),
+    m_lakeFormationDataPermissionAssetHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +60,20 @@ AssetDetails& AssetDetails::operator =(JsonView jsonValue)
     m_apiGatewayApiAssetHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("S3DataAccessAsset"))
+  {
+    m_s3DataAccessAsset = jsonValue.GetObject("S3DataAccessAsset");
+
+    m_s3DataAccessAssetHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LakeFormationDataPermissionAsset"))
+  {
+    m_lakeFormationDataPermissionAsset = jsonValue.GetObject("LakeFormationDataPermissionAsset");
+
+    m_lakeFormationDataPermissionAssetHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +96,18 @@ JsonValue AssetDetails::Jsonize() const
   if(m_apiGatewayApiAssetHasBeenSet)
   {
    payload.WithObject("ApiGatewayApiAsset", m_apiGatewayApiAsset.Jsonize());
+
+  }
+
+  if(m_s3DataAccessAssetHasBeenSet)
+  {
+   payload.WithObject("S3DataAccessAsset", m_s3DataAccessAsset.Jsonize());
+
+  }
+
+  if(m_lakeFormationDataPermissionAssetHasBeenSet)
+  {
+   payload.WithObject("LakeFormationDataPermissionAsset", m_lakeFormationDataPermissionAsset.Jsonize());
 
   }
 

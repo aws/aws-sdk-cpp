@@ -115,74 +115,90 @@ namespace Model
 
 
     /**
-     * <p>The name of the asset. When importing from Amazon S3, the S3 object key is
-     * used as the asset name. When exporting to Amazon S3, the asset name is used as
-     * default target S3 object key. When importing from Amazon API Gateway API, the
-     * API name is used as the asset name. When importing from Amazon Redshift, the
-     * datashare name is used as the asset name.</p>
+     * <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object
+     * key is used as the asset name. When exporting to Amazon S3, the asset name is
+     * used as default target Amazon S3 object key. When importing from Amazon API
+     * Gateway API, the API name is used as the asset name. When importing from Amazon
+     * Redshift, the datashare name is used as the asset name. When importing from AWS
+     * Lake Formation, the static values of "Database(s) included in the LF-tag policy"
+     * or "Table(s) included in LF-tag policy" are used as the name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the asset. When importing from Amazon S3, the S3 object key is
-     * used as the asset name. When exporting to Amazon S3, the asset name is used as
-     * default target S3 object key. When importing from Amazon API Gateway API, the
-     * API name is used as the asset name. When importing from Amazon Redshift, the
-     * datashare name is used as the asset name.</p>
+     * <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object
+     * key is used as the asset name. When exporting to Amazon S3, the asset name is
+     * used as default target Amazon S3 object key. When importing from Amazon API
+     * Gateway API, the API name is used as the asset name. When importing from Amazon
+     * Redshift, the datashare name is used as the asset name. When importing from AWS
+     * Lake Formation, the static values of "Database(s) included in the LF-tag policy"
+     * or "Table(s) included in LF-tag policy" are used as the name.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the asset. When importing from Amazon S3, the S3 object key is
-     * used as the asset name. When exporting to Amazon S3, the asset name is used as
-     * default target S3 object key. When importing from Amazon API Gateway API, the
-     * API name is used as the asset name. When importing from Amazon Redshift, the
-     * datashare name is used as the asset name.</p>
+     * <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object
+     * key is used as the asset name. When exporting to Amazon S3, the asset name is
+     * used as default target Amazon S3 object key. When importing from Amazon API
+     * Gateway API, the API name is used as the asset name. When importing from Amazon
+     * Redshift, the datashare name is used as the asset name. When importing from AWS
+     * Lake Formation, the static values of "Database(s) included in the LF-tag policy"
+     * or "Table(s) included in LF-tag policy" are used as the name.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the asset. When importing from Amazon S3, the S3 object key is
-     * used as the asset name. When exporting to Amazon S3, the asset name is used as
-     * default target S3 object key. When importing from Amazon API Gateway API, the
-     * API name is used as the asset name. When importing from Amazon Redshift, the
-     * datashare name is used as the asset name.</p>
+     * <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object
+     * key is used as the asset name. When exporting to Amazon S3, the asset name is
+     * used as default target Amazon S3 object key. When importing from Amazon API
+     * Gateway API, the API name is used as the asset name. When importing from Amazon
+     * Redshift, the datashare name is used as the asset name. When importing from AWS
+     * Lake Formation, the static values of "Database(s) included in the LF-tag policy"
+     * or "Table(s) included in LF-tag policy" are used as the name.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the asset. When importing from Amazon S3, the S3 object key is
-     * used as the asset name. When exporting to Amazon S3, the asset name is used as
-     * default target S3 object key. When importing from Amazon API Gateway API, the
-     * API name is used as the asset name. When importing from Amazon Redshift, the
-     * datashare name is used as the asset name.</p>
+     * <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object
+     * key is used as the asset name. When exporting to Amazon S3, the asset name is
+     * used as default target Amazon S3 object key. When importing from Amazon API
+     * Gateway API, the API name is used as the asset name. When importing from Amazon
+     * Redshift, the datashare name is used as the asset name. When importing from AWS
+     * Lake Formation, the static values of "Database(s) included in the LF-tag policy"
+     * or "Table(s) included in LF-tag policy" are used as the name.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the asset. When importing from Amazon S3, the S3 object key is
-     * used as the asset name. When exporting to Amazon S3, the asset name is used as
-     * default target S3 object key. When importing from Amazon API Gateway API, the
-     * API name is used as the asset name. When importing from Amazon Redshift, the
-     * datashare name is used as the asset name.</p>
+     * <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object
+     * key is used as the asset name. When exporting to Amazon S3, the asset name is
+     * used as default target Amazon S3 object key. When importing from Amazon API
+     * Gateway API, the API name is used as the asset name. When importing from Amazon
+     * Redshift, the datashare name is used as the asset name. When importing from AWS
+     * Lake Formation, the static values of "Database(s) included in the LF-tag policy"
+     * or "Table(s) included in LF-tag policy" are used as the name.</p>
      */
     inline UpdateAssetRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the asset. When importing from Amazon S3, the S3 object key is
-     * used as the asset name. When exporting to Amazon S3, the asset name is used as
-     * default target S3 object key. When importing from Amazon API Gateway API, the
-     * API name is used as the asset name. When importing from Amazon Redshift, the
-     * datashare name is used as the asset name.</p>
+     * <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object
+     * key is used as the asset name. When exporting to Amazon S3, the asset name is
+     * used as default target Amazon S3 object key. When importing from Amazon API
+     * Gateway API, the API name is used as the asset name. When importing from Amazon
+     * Redshift, the datashare name is used as the asset name. When importing from AWS
+     * Lake Formation, the static values of "Database(s) included in the LF-tag policy"
+     * or "Table(s) included in LF-tag policy" are used as the name.</p>
      */
     inline UpdateAssetRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the asset. When importing from Amazon S3, the S3 object key is
-     * used as the asset name. When exporting to Amazon S3, the asset name is used as
-     * default target S3 object key. When importing from Amazon API Gateway API, the
-     * API name is used as the asset name. When importing from Amazon Redshift, the
-     * datashare name is used as the asset name.</p>
+     * <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object
+     * key is used as the asset name. When exporting to Amazon S3, the asset name is
+     * used as default target Amazon S3 object key. When importing from Amazon API
+     * Gateway API, the API name is used as the asset name. When importing from Amazon
+     * Redshift, the datashare name is used as the asset name. When importing from AWS
+     * Lake Formation, the static values of "Database(s) included in the LF-tag policy"
+     * or "Table(s) included in LF-tag policy" are used as the name.</p>
      */
     inline UpdateAssetRequest& WithName(const char* value) { SetName(value); return *this;}
 

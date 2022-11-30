@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Information about the origin of the data set.</p><p><h3>See Also:</h3>   <a
+   * <p>Details about the origin of the data set.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/OriginDetails">AWS
    * API Reference</a></p>
    */

@@ -38,7 +38,8 @@ TrialComponent::TrialComponent() :
     m_sourceDetailHasBeenSet(false),
     m_lineageGroupArnHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_parentsHasBeenSet(false)
+    m_parentsHasBeenSet(false),
+    m_runNameHasBeenSet(false)
 {
 }
 
@@ -62,7 +63,8 @@ TrialComponent::TrialComponent(JsonView jsonValue) :
     m_sourceDetailHasBeenSet(false),
     m_lineageGroupArnHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_parentsHasBeenSet(false)
+    m_parentsHasBeenSet(false),
+    m_runNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -227,6 +229,13 @@ TrialComponent& TrialComponent::operator =(JsonView jsonValue)
     m_parentsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RunName"))
+  {
+    m_runName = jsonValue.GetString("RunName");
+
+    m_runNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -377,6 +386,12 @@ JsonValue TrialComponent::Jsonize() const
      parentsJsonList[parentsIndex].AsObject(m_parents[parentsIndex].Jsonize());
    }
    payload.WithArray("Parents", std::move(parentsJsonList));
+
+  }
+
+  if(m_runNameHasBeenSet)
+  {
+   payload.WithString("RunName", m_runName);
 
   }
 
