@@ -306,6 +306,55 @@ namespace Model
      */
     inline AccessPoint& WithAlias(const char* value) { SetAlias(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Web Services account ID associated with the S3 bucket associated
+     * with this access point.</p>
+     */
+    inline const Aws::String& GetBucketAccountId() const{ return m_bucketAccountId; }
+
+    /**
+     * <p>The Amazon Web Services account ID associated with the S3 bucket associated
+     * with this access point.</p>
+     */
+    inline bool BucketAccountIdHasBeenSet() const { return m_bucketAccountIdHasBeenSet; }
+
+    /**
+     * <p>The Amazon Web Services account ID associated with the S3 bucket associated
+     * with this access point.</p>
+     */
+    inline void SetBucketAccountId(const Aws::String& value) { m_bucketAccountIdHasBeenSet = true; m_bucketAccountId = value; }
+
+    /**
+     * <p>The Amazon Web Services account ID associated with the S3 bucket associated
+     * with this access point.</p>
+     */
+    inline void SetBucketAccountId(Aws::String&& value) { m_bucketAccountIdHasBeenSet = true; m_bucketAccountId = std::move(value); }
+
+    /**
+     * <p>The Amazon Web Services account ID associated with the S3 bucket associated
+     * with this access point.</p>
+     */
+    inline void SetBucketAccountId(const char* value) { m_bucketAccountIdHasBeenSet = true; m_bucketAccountId.assign(value); }
+
+    /**
+     * <p>The Amazon Web Services account ID associated with the S3 bucket associated
+     * with this access point.</p>
+     */
+    inline AccessPoint& WithBucketAccountId(const Aws::String& value) { SetBucketAccountId(value); return *this;}
+
+    /**
+     * <p>The Amazon Web Services account ID associated with the S3 bucket associated
+     * with this access point.</p>
+     */
+    inline AccessPoint& WithBucketAccountId(Aws::String&& value) { SetBucketAccountId(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Web Services account ID associated with the S3 bucket associated
+     * with this access point.</p>
+     */
+    inline AccessPoint& WithBucketAccountId(const char* value) { SetBucketAccountId(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -325,6 +374,9 @@ namespace Model
 
     Aws::String m_alias;
     bool m_aliasHasBeenSet = false;
+
+    Aws::String m_bucketAccountId;
+    bool m_bucketAccountIdHasBeenSet = false;
   };
 
 } // namespace Model

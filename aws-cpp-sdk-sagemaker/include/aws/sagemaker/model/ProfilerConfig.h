@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Configuration information for Debugger system monitoring, framework
-   * profiling, and storage paths.</p><p><h3>See Also:</h3>   <a
+   * <p>Configuration information for Amazon SageMaker Debugger system monitoring,
+   * framework profiling, and storage paths.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ProfilerConfig">AWS
    * API Reference</a></p>
    */
@@ -280,22 +280,26 @@ namespace Model
 
 
     /**
-     * <p>To disable system monitoring and profiling, set to <code>True</code>.</p>
+     * <p>Configuration to turn off Amazon SageMaker Debugger's system monitoring and
+     * profiling functionality. To turn it off, set to <code>True</code>.</p>
      */
     inline bool GetDisableProfiler() const{ return m_disableProfiler; }
 
     /**
-     * <p>To disable system monitoring and profiling, set to <code>True</code>.</p>
+     * <p>Configuration to turn off Amazon SageMaker Debugger's system monitoring and
+     * profiling functionality. To turn it off, set to <code>True</code>.</p>
      */
     inline bool DisableProfilerHasBeenSet() const { return m_disableProfilerHasBeenSet; }
 
     /**
-     * <p>To disable system monitoring and profiling, set to <code>True</code>.</p>
+     * <p>Configuration to turn off Amazon SageMaker Debugger's system monitoring and
+     * profiling functionality. To turn it off, set to <code>True</code>.</p>
      */
     inline void SetDisableProfiler(bool value) { m_disableProfilerHasBeenSet = true; m_disableProfiler = value; }
 
     /**
-     * <p>To disable system monitoring and profiling, set to <code>True</code>.</p>
+     * <p>Configuration to turn off Amazon SageMaker Debugger's system monitoring and
+     * profiling functionality. To turn it off, set to <code>True</code>.</p>
      */
     inline ProfilerConfig& WithDisableProfiler(bool value) { SetDisableProfiler(value); return *this;}
 

@@ -21,7 +21,8 @@ ListAppsRequest::ListAppsRequest() :
     m_sortBy(AppSortKey::NOT_SET),
     m_sortByHasBeenSet(false),
     m_domainIdEqualsHasBeenSet(false),
-    m_userProfileNameEqualsHasBeenSet(false)
+    m_userProfileNameEqualsHasBeenSet(false),
+    m_spaceNameEqualsHasBeenSet(false)
 {
 }
 
@@ -60,6 +61,12 @@ Aws::String ListAppsRequest::SerializePayload() const
   if(m_userProfileNameEqualsHasBeenSet)
   {
    payload.WithString("UserProfileNameEquals", m_userProfileNameEquals);
+
+  }
+
+  if(m_spaceNameEqualsHasBeenSet)
+  {
+   payload.WithString("SpaceNameEquals", m_spaceNameEquals);
 
   }
 

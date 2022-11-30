@@ -45,14 +45,18 @@
 #include <aws/sagemaker/model/CreateExperimentRequest.h>
 #include <aws/sagemaker/model/CreateFeatureGroupRequest.h>
 #include <aws/sagemaker/model/CreateFlowDefinitionRequest.h>
+#include <aws/sagemaker/model/CreateHubRequest.h>
 #include <aws/sagemaker/model/CreateHumanTaskUiRequest.h>
 #include <aws/sagemaker/model/CreateHyperParameterTuningJobRequest.h>
 #include <aws/sagemaker/model/CreateImageRequest.h>
 #include <aws/sagemaker/model/CreateImageVersionRequest.h>
+#include <aws/sagemaker/model/CreateInferenceExperimentRequest.h>
 #include <aws/sagemaker/model/CreateInferenceRecommendationsJobRequest.h>
 #include <aws/sagemaker/model/CreateLabelingJobRequest.h>
 #include <aws/sagemaker/model/CreateModelRequest.h>
 #include <aws/sagemaker/model/CreateModelBiasJobDefinitionRequest.h>
+#include <aws/sagemaker/model/CreateModelCardRequest.h>
+#include <aws/sagemaker/model/CreateModelCardExportJobRequest.h>
 #include <aws/sagemaker/model/CreateModelExplainabilityJobDefinitionRequest.h>
 #include <aws/sagemaker/model/CreateModelPackageRequest.h>
 #include <aws/sagemaker/model/CreateModelPackageGroupRequest.h>
@@ -65,6 +69,7 @@
 #include <aws/sagemaker/model/CreatePresignedNotebookInstanceUrlRequest.h>
 #include <aws/sagemaker/model/CreateProcessingJobRequest.h>
 #include <aws/sagemaker/model/CreateProjectRequest.h>
+#include <aws/sagemaker/model/CreateSpaceRequest.h>
 #include <aws/sagemaker/model/CreateStudioLifecycleConfigRequest.h>
 #include <aws/sagemaker/model/CreateTrainingJobRequest.h>
 #include <aws/sagemaker/model/CreateTransformJobRequest.h>
@@ -91,11 +96,15 @@
 #include <aws/sagemaker/model/DeleteExperimentRequest.h>
 #include <aws/sagemaker/model/DeleteFeatureGroupRequest.h>
 #include <aws/sagemaker/model/DeleteFlowDefinitionRequest.h>
+#include <aws/sagemaker/model/DeleteHubRequest.h>
+#include <aws/sagemaker/model/DeleteHubContentRequest.h>
 #include <aws/sagemaker/model/DeleteHumanTaskUiRequest.h>
 #include <aws/sagemaker/model/DeleteImageRequest.h>
 #include <aws/sagemaker/model/DeleteImageVersionRequest.h>
+#include <aws/sagemaker/model/DeleteInferenceExperimentRequest.h>
 #include <aws/sagemaker/model/DeleteModelRequest.h>
 #include <aws/sagemaker/model/DeleteModelBiasJobDefinitionRequest.h>
+#include <aws/sagemaker/model/DeleteModelCardRequest.h>
 #include <aws/sagemaker/model/DeleteModelExplainabilityJobDefinitionRequest.h>
 #include <aws/sagemaker/model/DeleteModelPackageRequest.h>
 #include <aws/sagemaker/model/DeleteModelPackageGroupRequest.h>
@@ -106,6 +115,7 @@
 #include <aws/sagemaker/model/DeleteNotebookInstanceLifecycleConfigRequest.h>
 #include <aws/sagemaker/model/DeletePipelineRequest.h>
 #include <aws/sagemaker/model/DeleteProjectRequest.h>
+#include <aws/sagemaker/model/DeleteSpaceRequest.h>
 #include <aws/sagemaker/model/DeleteStudioLifecycleConfigRequest.h>
 #include <aws/sagemaker/model/DeleteTagsRequest.h>
 #include <aws/sagemaker/model/DeleteTrialRequest.h>
@@ -135,15 +145,20 @@
 #include <aws/sagemaker/model/DescribeFeatureGroupRequest.h>
 #include <aws/sagemaker/model/DescribeFeatureMetadataRequest.h>
 #include <aws/sagemaker/model/DescribeFlowDefinitionRequest.h>
+#include <aws/sagemaker/model/DescribeHubRequest.h>
+#include <aws/sagemaker/model/DescribeHubContentRequest.h>
 #include <aws/sagemaker/model/DescribeHumanTaskUiRequest.h>
 #include <aws/sagemaker/model/DescribeHyperParameterTuningJobRequest.h>
 #include <aws/sagemaker/model/DescribeImageRequest.h>
 #include <aws/sagemaker/model/DescribeImageVersionRequest.h>
+#include <aws/sagemaker/model/DescribeInferenceExperimentRequest.h>
 #include <aws/sagemaker/model/DescribeInferenceRecommendationsJobRequest.h>
 #include <aws/sagemaker/model/DescribeLabelingJobRequest.h>
 #include <aws/sagemaker/model/DescribeLineageGroupRequest.h>
 #include <aws/sagemaker/model/DescribeModelRequest.h>
 #include <aws/sagemaker/model/DescribeModelBiasJobDefinitionRequest.h>
+#include <aws/sagemaker/model/DescribeModelCardRequest.h>
+#include <aws/sagemaker/model/DescribeModelCardExportJobRequest.h>
 #include <aws/sagemaker/model/DescribeModelExplainabilityJobDefinitionRequest.h>
 #include <aws/sagemaker/model/DescribeModelPackageRequest.h>
 #include <aws/sagemaker/model/DescribeModelPackageGroupRequest.h>
@@ -156,6 +171,7 @@
 #include <aws/sagemaker/model/DescribePipelineExecutionRequest.h>
 #include <aws/sagemaker/model/DescribeProcessingJobRequest.h>
 #include <aws/sagemaker/model/DescribeProjectRequest.h>
+#include <aws/sagemaker/model/DescribeSpaceRequest.h>
 #include <aws/sagemaker/model/DescribeStudioLifecycleConfigRequest.h>
 #include <aws/sagemaker/model/DescribeSubscribedWorkteamRequest.h>
 #include <aws/sagemaker/model/DescribeTrainingJobRequest.h>
@@ -173,6 +189,7 @@
 #include <aws/sagemaker/model/GetModelPackageGroupPolicyRequest.h>
 #include <aws/sagemaker/model/GetSagemakerServicecatalogPortfolioStatusRequest.h>
 #include <aws/sagemaker/model/GetSearchSuggestionsRequest.h>
+#include <aws/sagemaker/model/ImportHubContentRequest.h>
 #include <aws/sagemaker/model/ListActionsRequest.h>
 #include <aws/sagemaker/model/ListAlgorithmsRequest.h>
 #include <aws/sagemaker/model/ListAppImageConfigsRequest.h>
@@ -195,22 +212,31 @@
 #include <aws/sagemaker/model/ListExperimentsRequest.h>
 #include <aws/sagemaker/model/ListFeatureGroupsRequest.h>
 #include <aws/sagemaker/model/ListFlowDefinitionsRequest.h>
+#include <aws/sagemaker/model/ListHubContentVersionsRequest.h>
+#include <aws/sagemaker/model/ListHubContentsRequest.h>
+#include <aws/sagemaker/model/ListHubsRequest.h>
 #include <aws/sagemaker/model/ListHumanTaskUisRequest.h>
 #include <aws/sagemaker/model/ListHyperParameterTuningJobsRequest.h>
 #include <aws/sagemaker/model/ListImageVersionsRequest.h>
 #include <aws/sagemaker/model/ListImagesRequest.h>
+#include <aws/sagemaker/model/ListInferenceExperimentsRequest.h>
 #include <aws/sagemaker/model/ListInferenceRecommendationsJobStepsRequest.h>
 #include <aws/sagemaker/model/ListInferenceRecommendationsJobsRequest.h>
 #include <aws/sagemaker/model/ListLabelingJobsRequest.h>
 #include <aws/sagemaker/model/ListLabelingJobsForWorkteamRequest.h>
 #include <aws/sagemaker/model/ListLineageGroupsRequest.h>
 #include <aws/sagemaker/model/ListModelBiasJobDefinitionsRequest.h>
+#include <aws/sagemaker/model/ListModelCardExportJobsRequest.h>
+#include <aws/sagemaker/model/ListModelCardVersionsRequest.h>
+#include <aws/sagemaker/model/ListModelCardsRequest.h>
 #include <aws/sagemaker/model/ListModelExplainabilityJobDefinitionsRequest.h>
 #include <aws/sagemaker/model/ListModelMetadataRequest.h>
 #include <aws/sagemaker/model/ListModelPackageGroupsRequest.h>
 #include <aws/sagemaker/model/ListModelPackagesRequest.h>
 #include <aws/sagemaker/model/ListModelQualityJobDefinitionsRequest.h>
 #include <aws/sagemaker/model/ListModelsRequest.h>
+#include <aws/sagemaker/model/ListMonitoringAlertHistoryRequest.h>
+#include <aws/sagemaker/model/ListMonitoringAlertsRequest.h>
 #include <aws/sagemaker/model/ListMonitoringExecutionsRequest.h>
 #include <aws/sagemaker/model/ListMonitoringSchedulesRequest.h>
 #include <aws/sagemaker/model/ListNotebookInstanceLifecycleConfigsRequest.h>
@@ -221,6 +247,7 @@
 #include <aws/sagemaker/model/ListPipelinesRequest.h>
 #include <aws/sagemaker/model/ListProcessingJobsRequest.h>
 #include <aws/sagemaker/model/ListProjectsRequest.h>
+#include <aws/sagemaker/model/ListSpacesRequest.h>
 #include <aws/sagemaker/model/ListStageDevicesRequest.h>
 #include <aws/sagemaker/model/ListStudioLifecycleConfigsRequest.h>
 #include <aws/sagemaker/model/ListSubscribedWorkteamsRequest.h>
@@ -242,6 +269,7 @@
 #include <aws/sagemaker/model/SendPipelineExecutionStepFailureRequest.h>
 #include <aws/sagemaker/model/SendPipelineExecutionStepSuccessRequest.h>
 #include <aws/sagemaker/model/StartEdgeDeploymentStageRequest.h>
+#include <aws/sagemaker/model/StartInferenceExperimentRequest.h>
 #include <aws/sagemaker/model/StartMonitoringScheduleRequest.h>
 #include <aws/sagemaker/model/StartNotebookInstanceRequest.h>
 #include <aws/sagemaker/model/StartPipelineExecutionRequest.h>
@@ -250,6 +278,7 @@
 #include <aws/sagemaker/model/StopEdgeDeploymentStageRequest.h>
 #include <aws/sagemaker/model/StopEdgePackagingJobRequest.h>
 #include <aws/sagemaker/model/StopHyperParameterTuningJobRequest.h>
+#include <aws/sagemaker/model/StopInferenceExperimentRequest.h>
 #include <aws/sagemaker/model/StopInferenceRecommendationsJobRequest.h>
 #include <aws/sagemaker/model/StopLabelingJobRequest.h>
 #include <aws/sagemaker/model/StopMonitoringScheduleRequest.h>
@@ -271,14 +300,19 @@
 #include <aws/sagemaker/model/UpdateExperimentRequest.h>
 #include <aws/sagemaker/model/UpdateFeatureGroupRequest.h>
 #include <aws/sagemaker/model/UpdateFeatureMetadataRequest.h>
+#include <aws/sagemaker/model/UpdateHubRequest.h>
 #include <aws/sagemaker/model/UpdateImageRequest.h>
+#include <aws/sagemaker/model/UpdateInferenceExperimentRequest.h>
+#include <aws/sagemaker/model/UpdateModelCardRequest.h>
 #include <aws/sagemaker/model/UpdateModelPackageRequest.h>
+#include <aws/sagemaker/model/UpdateMonitoringAlertRequest.h>
 #include <aws/sagemaker/model/UpdateMonitoringScheduleRequest.h>
 #include <aws/sagemaker/model/UpdateNotebookInstanceRequest.h>
 #include <aws/sagemaker/model/UpdateNotebookInstanceLifecycleConfigRequest.h>
 #include <aws/sagemaker/model/UpdatePipelineRequest.h>
 #include <aws/sagemaker/model/UpdatePipelineExecutionRequest.h>
 #include <aws/sagemaker/model/UpdateProjectRequest.h>
+#include <aws/sagemaker/model/UpdateSpaceRequest.h>
 #include <aws/sagemaker/model/UpdateTrainingJobRequest.h>
 #include <aws/sagemaker/model/UpdateTrialRequest.h>
 #include <aws/sagemaker/model/UpdateTrialComponentRequest.h>
@@ -989,6 +1023,30 @@ void SageMakerClient::CreateFlowDefinitionAsync(const CreateFlowDefinitionReques
     } );
 }
 
+CreateHubOutcome SageMakerClient::CreateHub(const CreateHubRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateHub, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateHub, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateHubOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateHubOutcomeCallable SageMakerClient::CreateHubCallable(const CreateHubRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateHubOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateHub(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::CreateHubAsync(const CreateHubRequest& request, const CreateHubResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateHub(request), context);
+    } );
+}
+
 CreateHumanTaskUiOutcome SageMakerClient::CreateHumanTaskUi(const CreateHumanTaskUiRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateHumanTaskUi, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1085,6 +1143,30 @@ void SageMakerClient::CreateImageVersionAsync(const CreateImageVersionRequest& r
     } );
 }
 
+CreateInferenceExperimentOutcome SageMakerClient::CreateInferenceExperiment(const CreateInferenceExperimentRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateInferenceExperiment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateInferenceExperiment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateInferenceExperimentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateInferenceExperimentOutcomeCallable SageMakerClient::CreateInferenceExperimentCallable(const CreateInferenceExperimentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateInferenceExperimentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateInferenceExperiment(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::CreateInferenceExperimentAsync(const CreateInferenceExperimentRequest& request, const CreateInferenceExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateInferenceExperiment(request), context);
+    } );
+}
+
 CreateInferenceRecommendationsJobOutcome SageMakerClient::CreateInferenceRecommendationsJob(const CreateInferenceRecommendationsJobRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateInferenceRecommendationsJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1178,6 +1260,54 @@ void SageMakerClient::CreateModelBiasJobDefinitionAsync(const CreateModelBiasJob
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, CreateModelBiasJobDefinition(request), context);
+    } );
+}
+
+CreateModelCardOutcome SageMakerClient::CreateModelCard(const CreateModelCardRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateModelCard, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateModelCard, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateModelCardOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateModelCardOutcomeCallable SageMakerClient::CreateModelCardCallable(const CreateModelCardRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateModelCardOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateModelCard(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::CreateModelCardAsync(const CreateModelCardRequest& request, const CreateModelCardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateModelCard(request), context);
+    } );
+}
+
+CreateModelCardExportJobOutcome SageMakerClient::CreateModelCardExportJob(const CreateModelCardExportJobRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateModelCardExportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateModelCardExportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateModelCardExportJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateModelCardExportJobOutcomeCallable SageMakerClient::CreateModelCardExportJobCallable(const CreateModelCardExportJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateModelCardExportJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateModelCardExportJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::CreateModelCardExportJobAsync(const CreateModelCardExportJobRequest& request, const CreateModelCardExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateModelCardExportJob(request), context);
     } );
 }
 
@@ -1466,6 +1596,30 @@ void SageMakerClient::CreateProjectAsync(const CreateProjectRequest& request, co
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, CreateProject(request), context);
+    } );
+}
+
+CreateSpaceOutcome SageMakerClient::CreateSpace(const CreateSpaceRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSpace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateSpace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateSpaceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateSpaceOutcomeCallable SageMakerClient::CreateSpaceCallable(const CreateSpaceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateSpaceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateSpace(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::CreateSpaceAsync(const CreateSpaceRequest& request, const CreateSpaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateSpace(request), context);
     } );
 }
 
@@ -2093,6 +2247,54 @@ void SageMakerClient::DeleteFlowDefinitionAsync(const DeleteFlowDefinitionReques
     } );
 }
 
+DeleteHubOutcome SageMakerClient::DeleteHub(const DeleteHubRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteHub, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteHub, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteHubOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteHubOutcomeCallable SageMakerClient::DeleteHubCallable(const DeleteHubRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteHubOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteHub(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::DeleteHubAsync(const DeleteHubRequest& request, const DeleteHubResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteHub(request), context);
+    } );
+}
+
+DeleteHubContentOutcome SageMakerClient::DeleteHubContent(const DeleteHubContentRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteHubContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteHubContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteHubContentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteHubContentOutcomeCallable SageMakerClient::DeleteHubContentCallable(const DeleteHubContentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteHubContentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteHubContent(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::DeleteHubContentAsync(const DeleteHubContentRequest& request, const DeleteHubContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteHubContent(request), context);
+    } );
+}
+
 DeleteHumanTaskUiOutcome SageMakerClient::DeleteHumanTaskUi(const DeleteHumanTaskUiRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteHumanTaskUi, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2165,6 +2367,30 @@ void SageMakerClient::DeleteImageVersionAsync(const DeleteImageVersionRequest& r
     } );
 }
 
+DeleteInferenceExperimentOutcome SageMakerClient::DeleteInferenceExperiment(const DeleteInferenceExperimentRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteInferenceExperiment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteInferenceExperiment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteInferenceExperimentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteInferenceExperimentOutcomeCallable SageMakerClient::DeleteInferenceExperimentCallable(const DeleteInferenceExperimentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteInferenceExperimentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteInferenceExperiment(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::DeleteInferenceExperimentAsync(const DeleteInferenceExperimentRequest& request, const DeleteInferenceExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteInferenceExperiment(request), context);
+    } );
+}
+
 DeleteModelOutcome SageMakerClient::DeleteModel(const DeleteModelRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2210,6 +2436,30 @@ void SageMakerClient::DeleteModelBiasJobDefinitionAsync(const DeleteModelBiasJob
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DeleteModelBiasJobDefinition(request), context);
+    } );
+}
+
+DeleteModelCardOutcome SageMakerClient::DeleteModelCard(const DeleteModelCardRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteModelCard, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteModelCard, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteModelCardOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteModelCardOutcomeCallable SageMakerClient::DeleteModelCardCallable(const DeleteModelCardRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteModelCardOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteModelCard(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::DeleteModelCardAsync(const DeleteModelCardRequest& request, const DeleteModelCardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteModelCard(request), context);
     } );
 }
 
@@ -2450,6 +2700,30 @@ void SageMakerClient::DeleteProjectAsync(const DeleteProjectRequest& request, co
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DeleteProject(request), context);
+    } );
+}
+
+DeleteSpaceOutcome SageMakerClient::DeleteSpace(const DeleteSpaceRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteSpace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteSpace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteSpaceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteSpaceOutcomeCallable SageMakerClient::DeleteSpaceCallable(const DeleteSpaceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteSpaceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteSpace(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::DeleteSpaceAsync(const DeleteSpaceRequest& request, const DeleteSpaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteSpace(request), context);
     } );
 }
 
@@ -3149,6 +3423,54 @@ void SageMakerClient::DescribeFlowDefinitionAsync(const DescribeFlowDefinitionRe
     } );
 }
 
+DescribeHubOutcome SageMakerClient::DescribeHub(const DescribeHubRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeHub, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeHub, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeHubOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeHubOutcomeCallable SageMakerClient::DescribeHubCallable(const DescribeHubRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeHubOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeHub(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::DescribeHubAsync(const DescribeHubRequest& request, const DescribeHubResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeHub(request), context);
+    } );
+}
+
+DescribeHubContentOutcome SageMakerClient::DescribeHubContent(const DescribeHubContentRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeHubContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeHubContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeHubContentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeHubContentOutcomeCallable SageMakerClient::DescribeHubContentCallable(const DescribeHubContentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeHubContentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeHubContent(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::DescribeHubContentAsync(const DescribeHubContentRequest& request, const DescribeHubContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeHubContent(request), context);
+    } );
+}
+
 DescribeHumanTaskUiOutcome SageMakerClient::DescribeHumanTaskUi(const DescribeHumanTaskUiRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeHumanTaskUi, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -3242,6 +3564,30 @@ void SageMakerClient::DescribeImageVersionAsync(const DescribeImageVersionReques
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DescribeImageVersion(request), context);
+    } );
+}
+
+DescribeInferenceExperimentOutcome SageMakerClient::DescribeInferenceExperiment(const DescribeInferenceExperimentRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeInferenceExperiment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeInferenceExperiment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeInferenceExperimentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeInferenceExperimentOutcomeCallable SageMakerClient::DescribeInferenceExperimentCallable(const DescribeInferenceExperimentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeInferenceExperimentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeInferenceExperiment(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::DescribeInferenceExperimentAsync(const DescribeInferenceExperimentRequest& request, const DescribeInferenceExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeInferenceExperiment(request), context);
     } );
 }
 
@@ -3362,6 +3708,54 @@ void SageMakerClient::DescribeModelBiasJobDefinitionAsync(const DescribeModelBia
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DescribeModelBiasJobDefinition(request), context);
+    } );
+}
+
+DescribeModelCardOutcome SageMakerClient::DescribeModelCard(const DescribeModelCardRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeModelCard, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeModelCard, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeModelCardOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeModelCardOutcomeCallable SageMakerClient::DescribeModelCardCallable(const DescribeModelCardRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeModelCardOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeModelCard(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::DescribeModelCardAsync(const DescribeModelCardRequest& request, const DescribeModelCardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeModelCard(request), context);
+    } );
+}
+
+DescribeModelCardExportJobOutcome SageMakerClient::DescribeModelCardExportJob(const DescribeModelCardExportJobRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeModelCardExportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeModelCardExportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeModelCardExportJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeModelCardExportJobOutcomeCallable SageMakerClient::DescribeModelCardExportJobCallable(const DescribeModelCardExportJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeModelCardExportJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeModelCardExportJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::DescribeModelCardExportJobAsync(const DescribeModelCardExportJobRequest& request, const DescribeModelCardExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeModelCardExportJob(request), context);
     } );
 }
 
@@ -3650,6 +4044,30 @@ void SageMakerClient::DescribeProjectAsync(const DescribeProjectRequest& request
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DescribeProject(request), context);
+    } );
+}
+
+DescribeSpaceOutcome SageMakerClient::DescribeSpace(const DescribeSpaceRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeSpace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeSpace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeSpaceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeSpaceOutcomeCallable SageMakerClient::DescribeSpaceCallable(const DescribeSpaceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeSpaceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeSpace(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::DescribeSpaceAsync(const DescribeSpaceRequest& request, const DescribeSpaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeSpace(request), context);
     } );
 }
 
@@ -4058,6 +4476,30 @@ void SageMakerClient::GetSearchSuggestionsAsync(const GetSearchSuggestionsReques
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, GetSearchSuggestions(request), context);
+    } );
+}
+
+ImportHubContentOutcome SageMakerClient::ImportHubContent(const ImportHubContentRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ImportHubContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ImportHubContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ImportHubContentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ImportHubContentOutcomeCallable SageMakerClient::ImportHubContentCallable(const ImportHubContentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ImportHubContentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ImportHubContent(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::ImportHubContentAsync(const ImportHubContentRequest& request, const ImportHubContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ImportHubContent(request), context);
     } );
 }
 
@@ -4589,6 +5031,78 @@ void SageMakerClient::ListFlowDefinitionsAsync(const ListFlowDefinitionsRequest&
     } );
 }
 
+ListHubContentVersionsOutcome SageMakerClient::ListHubContentVersions(const ListHubContentVersionsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListHubContentVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListHubContentVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListHubContentVersionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListHubContentVersionsOutcomeCallable SageMakerClient::ListHubContentVersionsCallable(const ListHubContentVersionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListHubContentVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListHubContentVersions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::ListHubContentVersionsAsync(const ListHubContentVersionsRequest& request, const ListHubContentVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListHubContentVersions(request), context);
+    } );
+}
+
+ListHubContentsOutcome SageMakerClient::ListHubContents(const ListHubContentsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListHubContents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListHubContents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListHubContentsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListHubContentsOutcomeCallable SageMakerClient::ListHubContentsCallable(const ListHubContentsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListHubContentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListHubContents(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::ListHubContentsAsync(const ListHubContentsRequest& request, const ListHubContentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListHubContents(request), context);
+    } );
+}
+
+ListHubsOutcome SageMakerClient::ListHubs(const ListHubsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListHubs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListHubs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListHubsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListHubsOutcomeCallable SageMakerClient::ListHubsCallable(const ListHubsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListHubsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListHubs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::ListHubsAsync(const ListHubsRequest& request, const ListHubsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListHubs(request), context);
+    } );
+}
+
 ListHumanTaskUisOutcome SageMakerClient::ListHumanTaskUis(const ListHumanTaskUisRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListHumanTaskUis, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -4682,6 +5196,30 @@ void SageMakerClient::ListImagesAsync(const ListImagesRequest& request, const Li
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, ListImages(request), context);
+    } );
+}
+
+ListInferenceExperimentsOutcome SageMakerClient::ListInferenceExperiments(const ListInferenceExperimentsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListInferenceExperiments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListInferenceExperiments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListInferenceExperimentsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListInferenceExperimentsOutcomeCallable SageMakerClient::ListInferenceExperimentsCallable(const ListInferenceExperimentsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListInferenceExperimentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListInferenceExperiments(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::ListInferenceExperimentsAsync(const ListInferenceExperimentsRequest& request, const ListInferenceExperimentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListInferenceExperiments(request), context);
     } );
 }
 
@@ -4829,6 +5367,78 @@ void SageMakerClient::ListModelBiasJobDefinitionsAsync(const ListModelBiasJobDef
     } );
 }
 
+ListModelCardExportJobsOutcome SageMakerClient::ListModelCardExportJobs(const ListModelCardExportJobsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListModelCardExportJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListModelCardExportJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListModelCardExportJobsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListModelCardExportJobsOutcomeCallable SageMakerClient::ListModelCardExportJobsCallable(const ListModelCardExportJobsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListModelCardExportJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListModelCardExportJobs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::ListModelCardExportJobsAsync(const ListModelCardExportJobsRequest& request, const ListModelCardExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListModelCardExportJobs(request), context);
+    } );
+}
+
+ListModelCardVersionsOutcome SageMakerClient::ListModelCardVersions(const ListModelCardVersionsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListModelCardVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListModelCardVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListModelCardVersionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListModelCardVersionsOutcomeCallable SageMakerClient::ListModelCardVersionsCallable(const ListModelCardVersionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListModelCardVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListModelCardVersions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::ListModelCardVersionsAsync(const ListModelCardVersionsRequest& request, const ListModelCardVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListModelCardVersions(request), context);
+    } );
+}
+
+ListModelCardsOutcome SageMakerClient::ListModelCards(const ListModelCardsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListModelCards, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListModelCards, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListModelCardsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListModelCardsOutcomeCallable SageMakerClient::ListModelCardsCallable(const ListModelCardsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListModelCardsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListModelCards(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::ListModelCardsAsync(const ListModelCardsRequest& request, const ListModelCardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListModelCards(request), context);
+    } );
+}
+
 ListModelExplainabilityJobDefinitionsOutcome SageMakerClient::ListModelExplainabilityJobDefinitions(const ListModelExplainabilityJobDefinitionsRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListModelExplainabilityJobDefinitions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -4970,6 +5580,54 @@ void SageMakerClient::ListModelsAsync(const ListModelsRequest& request, const Li
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, ListModels(request), context);
+    } );
+}
+
+ListMonitoringAlertHistoryOutcome SageMakerClient::ListMonitoringAlertHistory(const ListMonitoringAlertHistoryRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMonitoringAlertHistory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListMonitoringAlertHistory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListMonitoringAlertHistoryOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListMonitoringAlertHistoryOutcomeCallable SageMakerClient::ListMonitoringAlertHistoryCallable(const ListMonitoringAlertHistoryRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListMonitoringAlertHistoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMonitoringAlertHistory(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::ListMonitoringAlertHistoryAsync(const ListMonitoringAlertHistoryRequest& request, const ListMonitoringAlertHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListMonitoringAlertHistory(request), context);
+    } );
+}
+
+ListMonitoringAlertsOutcome SageMakerClient::ListMonitoringAlerts(const ListMonitoringAlertsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMonitoringAlerts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListMonitoringAlerts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListMonitoringAlertsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListMonitoringAlertsOutcomeCallable SageMakerClient::ListMonitoringAlertsCallable(const ListMonitoringAlertsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListMonitoringAlertsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMonitoringAlerts(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::ListMonitoringAlertsAsync(const ListMonitoringAlertsRequest& request, const ListMonitoringAlertsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListMonitoringAlerts(request), context);
     } );
 }
 
@@ -5210,6 +5868,30 @@ void SageMakerClient::ListProjectsAsync(const ListProjectsRequest& request, cons
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, ListProjects(request), context);
+    } );
+}
+
+ListSpacesOutcome SageMakerClient::ListSpaces(const ListSpacesRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSpaces, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSpaces, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListSpacesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListSpacesOutcomeCallable SageMakerClient::ListSpacesCallable(const ListSpacesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListSpacesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSpaces(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::ListSpacesAsync(const ListSpacesRequest& request, const ListSpacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListSpaces(request), context);
     } );
 }
 
@@ -5717,6 +6399,30 @@ void SageMakerClient::StartEdgeDeploymentStageAsync(const StartEdgeDeploymentSta
     } );
 }
 
+StartInferenceExperimentOutcome SageMakerClient::StartInferenceExperiment(const StartInferenceExperimentRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartInferenceExperiment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartInferenceExperiment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return StartInferenceExperimentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartInferenceExperimentOutcomeCallable SageMakerClient::StartInferenceExperimentCallable(const StartInferenceExperimentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartInferenceExperimentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartInferenceExperiment(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::StartInferenceExperimentAsync(const StartInferenceExperimentRequest& request, const StartInferenceExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartInferenceExperiment(request), context);
+    } );
+}
+
 StartMonitoringScheduleOutcome SageMakerClient::StartMonitoringSchedule(const StartMonitoringScheduleRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartMonitoringSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -5906,6 +6612,30 @@ void SageMakerClient::StopHyperParameterTuningJobAsync(const StopHyperParameterT
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, StopHyperParameterTuningJob(request), context);
+    } );
+}
+
+StopInferenceExperimentOutcome SageMakerClient::StopInferenceExperiment(const StopInferenceExperimentRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopInferenceExperiment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StopInferenceExperiment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return StopInferenceExperimentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StopInferenceExperimentOutcomeCallable SageMakerClient::StopInferenceExperimentCallable(const StopInferenceExperimentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StopInferenceExperimentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopInferenceExperiment(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::StopInferenceExperimentAsync(const StopInferenceExperimentRequest& request, const StopInferenceExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StopInferenceExperiment(request), context);
     } );
 }
 
@@ -6413,6 +7143,30 @@ void SageMakerClient::UpdateFeatureMetadataAsync(const UpdateFeatureMetadataRequ
     } );
 }
 
+UpdateHubOutcome SageMakerClient::UpdateHub(const UpdateHubRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateHub, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateHub, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateHubOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateHubOutcomeCallable SageMakerClient::UpdateHubCallable(const UpdateHubRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateHubOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateHub(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::UpdateHubAsync(const UpdateHubRequest& request, const UpdateHubResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateHub(request), context);
+    } );
+}
+
 UpdateImageOutcome SageMakerClient::UpdateImage(const UpdateImageRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateImage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -6437,6 +7191,54 @@ void SageMakerClient::UpdateImageAsync(const UpdateImageRequest& request, const 
     } );
 }
 
+UpdateInferenceExperimentOutcome SageMakerClient::UpdateInferenceExperiment(const UpdateInferenceExperimentRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateInferenceExperiment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateInferenceExperiment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateInferenceExperimentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateInferenceExperimentOutcomeCallable SageMakerClient::UpdateInferenceExperimentCallable(const UpdateInferenceExperimentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateInferenceExperimentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateInferenceExperiment(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::UpdateInferenceExperimentAsync(const UpdateInferenceExperimentRequest& request, const UpdateInferenceExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateInferenceExperiment(request), context);
+    } );
+}
+
+UpdateModelCardOutcome SageMakerClient::UpdateModelCard(const UpdateModelCardRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateModelCard, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateModelCard, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateModelCardOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateModelCardOutcomeCallable SageMakerClient::UpdateModelCardCallable(const UpdateModelCardRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateModelCardOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateModelCard(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::UpdateModelCardAsync(const UpdateModelCardRequest& request, const UpdateModelCardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateModelCard(request), context);
+    } );
+}
+
 UpdateModelPackageOutcome SageMakerClient::UpdateModelPackage(const UpdateModelPackageRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateModelPackage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -6458,6 +7260,30 @@ void SageMakerClient::UpdateModelPackageAsync(const UpdateModelPackageRequest& r
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, UpdateModelPackage(request), context);
+    } );
+}
+
+UpdateMonitoringAlertOutcome SageMakerClient::UpdateMonitoringAlert(const UpdateMonitoringAlertRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateMonitoringAlert, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateMonitoringAlert, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateMonitoringAlertOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateMonitoringAlertOutcomeCallable SageMakerClient::UpdateMonitoringAlertCallable(const UpdateMonitoringAlertRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateMonitoringAlertOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateMonitoringAlert(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::UpdateMonitoringAlertAsync(const UpdateMonitoringAlertRequest& request, const UpdateMonitoringAlertResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateMonitoringAlert(request), context);
     } );
 }
 
@@ -6602,6 +7428,30 @@ void SageMakerClient::UpdateProjectAsync(const UpdateProjectRequest& request, co
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, UpdateProject(request), context);
+    } );
+}
+
+UpdateSpaceOutcome SageMakerClient::UpdateSpace(const UpdateSpaceRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateSpace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateSpace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateSpaceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateSpaceOutcomeCallable SageMakerClient::UpdateSpaceCallable(const UpdateSpaceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateSpaceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateSpace(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::UpdateSpaceAsync(const UpdateSpaceRequest& request, const UpdateSpaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateSpace(request), context);
     } );
 }
 

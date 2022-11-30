@@ -153,42 +153,50 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier for the data set associated with this revision.</p>
+     * <p>The unique identifier for the data set associated with the data set
+     * revision.</p>
      */
     inline const Aws::String& GetDataSetId() const{ return m_dataSetId; }
 
     /**
-     * <p>The unique identifier for the data set associated with this revision.</p>
+     * <p>The unique identifier for the data set associated with the data set
+     * revision.</p>
      */
     inline bool DataSetIdHasBeenSet() const { return m_dataSetIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier for the data set associated with this revision.</p>
+     * <p>The unique identifier for the data set associated with the data set
+     * revision.</p>
      */
     inline void SetDataSetId(const Aws::String& value) { m_dataSetIdHasBeenSet = true; m_dataSetId = value; }
 
     /**
-     * <p>The unique identifier for the data set associated with this revision.</p>
+     * <p>The unique identifier for the data set associated with the data set
+     * revision.</p>
      */
     inline void SetDataSetId(Aws::String&& value) { m_dataSetIdHasBeenSet = true; m_dataSetId = std::move(value); }
 
     /**
-     * <p>The unique identifier for the data set associated with this revision.</p>
+     * <p>The unique identifier for the data set associated with the data set
+     * revision.</p>
      */
     inline void SetDataSetId(const char* value) { m_dataSetIdHasBeenSet = true; m_dataSetId.assign(value); }
 
     /**
-     * <p>The unique identifier for the data set associated with this revision.</p>
+     * <p>The unique identifier for the data set associated with the data set
+     * revision.</p>
      */
     inline RevisionEntry& WithDataSetId(const Aws::String& value) { SetDataSetId(value); return *this;}
 
     /**
-     * <p>The unique identifier for the data set associated with this revision.</p>
+     * <p>The unique identifier for the data set associated with the data set
+     * revision.</p>
      */
     inline RevisionEntry& WithDataSetId(Aws::String&& value) { SetDataSetId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier for the data set associated with this revision.</p>
+     * <p>The unique identifier for the data set associated with the data set
+     * revision.</p>
      */
     inline RevisionEntry& WithDataSetId(const char* value) { SetDataSetId(value); return *this;}
 

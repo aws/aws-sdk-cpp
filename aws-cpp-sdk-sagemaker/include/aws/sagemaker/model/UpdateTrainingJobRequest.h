@@ -88,87 +88,87 @@ namespace Model
 
 
     /**
-     * <p>Configuration information for Debugger system monitoring, framework
-     * profiling, and storage paths.</p>
+     * <p>Configuration information for Amazon SageMaker Debugger system monitoring,
+     * framework profiling, and storage paths.</p>
      */
     inline const ProfilerConfigForUpdate& GetProfilerConfig() const{ return m_profilerConfig; }
 
     /**
-     * <p>Configuration information for Debugger system monitoring, framework
-     * profiling, and storage paths.</p>
+     * <p>Configuration information for Amazon SageMaker Debugger system monitoring,
+     * framework profiling, and storage paths.</p>
      */
     inline bool ProfilerConfigHasBeenSet() const { return m_profilerConfigHasBeenSet; }
 
     /**
-     * <p>Configuration information for Debugger system monitoring, framework
-     * profiling, and storage paths.</p>
+     * <p>Configuration information for Amazon SageMaker Debugger system monitoring,
+     * framework profiling, and storage paths.</p>
      */
     inline void SetProfilerConfig(const ProfilerConfigForUpdate& value) { m_profilerConfigHasBeenSet = true; m_profilerConfig = value; }
 
     /**
-     * <p>Configuration information for Debugger system monitoring, framework
-     * profiling, and storage paths.</p>
+     * <p>Configuration information for Amazon SageMaker Debugger system monitoring,
+     * framework profiling, and storage paths.</p>
      */
     inline void SetProfilerConfig(ProfilerConfigForUpdate&& value) { m_profilerConfigHasBeenSet = true; m_profilerConfig = std::move(value); }
 
     /**
-     * <p>Configuration information for Debugger system monitoring, framework
-     * profiling, and storage paths.</p>
+     * <p>Configuration information for Amazon SageMaker Debugger system monitoring,
+     * framework profiling, and storage paths.</p>
      */
     inline UpdateTrainingJobRequest& WithProfilerConfig(const ProfilerConfigForUpdate& value) { SetProfilerConfig(value); return *this;}
 
     /**
-     * <p>Configuration information for Debugger system monitoring, framework
-     * profiling, and storage paths.</p>
+     * <p>Configuration information for Amazon SageMaker Debugger system monitoring,
+     * framework profiling, and storage paths.</p>
      */
     inline UpdateTrainingJobRequest& WithProfilerConfig(ProfilerConfigForUpdate&& value) { SetProfilerConfig(std::move(value)); return *this;}
 
 
     /**
-     * <p>Configuration information for Debugger rules for profiling system and
-     * framework metrics.</p>
+     * <p>Configuration information for Amazon SageMaker Debugger rules for profiling
+     * system and framework metrics.</p>
      */
     inline const Aws::Vector<ProfilerRuleConfiguration>& GetProfilerRuleConfigurations() const{ return m_profilerRuleConfigurations; }
 
     /**
-     * <p>Configuration information for Debugger rules for profiling system and
-     * framework metrics.</p>
+     * <p>Configuration information for Amazon SageMaker Debugger rules for profiling
+     * system and framework metrics.</p>
      */
     inline bool ProfilerRuleConfigurationsHasBeenSet() const { return m_profilerRuleConfigurationsHasBeenSet; }
 
     /**
-     * <p>Configuration information for Debugger rules for profiling system and
-     * framework metrics.</p>
+     * <p>Configuration information for Amazon SageMaker Debugger rules for profiling
+     * system and framework metrics.</p>
      */
     inline void SetProfilerRuleConfigurations(const Aws::Vector<ProfilerRuleConfiguration>& value) { m_profilerRuleConfigurationsHasBeenSet = true; m_profilerRuleConfigurations = value; }
 
     /**
-     * <p>Configuration information for Debugger rules for profiling system and
-     * framework metrics.</p>
+     * <p>Configuration information for Amazon SageMaker Debugger rules for profiling
+     * system and framework metrics.</p>
      */
     inline void SetProfilerRuleConfigurations(Aws::Vector<ProfilerRuleConfiguration>&& value) { m_profilerRuleConfigurationsHasBeenSet = true; m_profilerRuleConfigurations = std::move(value); }
 
     /**
-     * <p>Configuration information for Debugger rules for profiling system and
-     * framework metrics.</p>
+     * <p>Configuration information for Amazon SageMaker Debugger rules for profiling
+     * system and framework metrics.</p>
      */
     inline UpdateTrainingJobRequest& WithProfilerRuleConfigurations(const Aws::Vector<ProfilerRuleConfiguration>& value) { SetProfilerRuleConfigurations(value); return *this;}
 
     /**
-     * <p>Configuration information for Debugger rules for profiling system and
-     * framework metrics.</p>
+     * <p>Configuration information for Amazon SageMaker Debugger rules for profiling
+     * system and framework metrics.</p>
      */
     inline UpdateTrainingJobRequest& WithProfilerRuleConfigurations(Aws::Vector<ProfilerRuleConfiguration>&& value) { SetProfilerRuleConfigurations(std::move(value)); return *this;}
 
     /**
-     * <p>Configuration information for Debugger rules for profiling system and
-     * framework metrics.</p>
+     * <p>Configuration information for Amazon SageMaker Debugger rules for profiling
+     * system and framework metrics.</p>
      */
     inline UpdateTrainingJobRequest& AddProfilerRuleConfigurations(const ProfilerRuleConfiguration& value) { m_profilerRuleConfigurationsHasBeenSet = true; m_profilerRuleConfigurations.push_back(value); return *this; }
 
     /**
-     * <p>Configuration information for Debugger rules for profiling system and
-     * framework metrics.</p>
+     * <p>Configuration information for Amazon SageMaker Debugger rules for profiling
+     * system and framework metrics.</p>
      */
     inline UpdateTrainingJobRequest& AddProfilerRuleConfigurations(ProfilerRuleConfiguration&& value) { m_profilerRuleConfigurationsHasBeenSet = true; m_profilerRuleConfigurations.push_back(std::move(value)); return *this; }
 

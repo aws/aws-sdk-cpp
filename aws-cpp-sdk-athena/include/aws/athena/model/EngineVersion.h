@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The Athena engine version for running queries.</p><p><h3>See Also:</h3>   <a
+   * <p>The Athena engine version for running queries, or the PySpark engine version
+   * for running sessions.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/EngineVersion">AWS
    * API Reference</a></p>
    */

@@ -39,14 +39,18 @@
 #include <aws/sagemaker/model/CreateExperimentResult.h>
 #include <aws/sagemaker/model/CreateFeatureGroupResult.h>
 #include <aws/sagemaker/model/CreateFlowDefinitionResult.h>
+#include <aws/sagemaker/model/CreateHubResult.h>
 #include <aws/sagemaker/model/CreateHumanTaskUiResult.h>
 #include <aws/sagemaker/model/CreateHyperParameterTuningJobResult.h>
 #include <aws/sagemaker/model/CreateImageResult.h>
 #include <aws/sagemaker/model/CreateImageVersionResult.h>
+#include <aws/sagemaker/model/CreateInferenceExperimentResult.h>
 #include <aws/sagemaker/model/CreateInferenceRecommendationsJobResult.h>
 #include <aws/sagemaker/model/CreateLabelingJobResult.h>
 #include <aws/sagemaker/model/CreateModelResult.h>
 #include <aws/sagemaker/model/CreateModelBiasJobDefinitionResult.h>
+#include <aws/sagemaker/model/CreateModelCardResult.h>
+#include <aws/sagemaker/model/CreateModelCardExportJobResult.h>
 #include <aws/sagemaker/model/CreateModelExplainabilityJobDefinitionResult.h>
 #include <aws/sagemaker/model/CreateModelPackageResult.h>
 #include <aws/sagemaker/model/CreateModelPackageGroupResult.h>
@@ -59,6 +63,7 @@
 #include <aws/sagemaker/model/CreatePresignedNotebookInstanceUrlResult.h>
 #include <aws/sagemaker/model/CreateProcessingJobResult.h>
 #include <aws/sagemaker/model/CreateProjectResult.h>
+#include <aws/sagemaker/model/CreateSpaceResult.h>
 #include <aws/sagemaker/model/CreateStudioLifecycleConfigResult.h>
 #include <aws/sagemaker/model/CreateTrainingJobResult.h>
 #include <aws/sagemaker/model/CreateTransformJobResult.h>
@@ -76,6 +81,7 @@
 #include <aws/sagemaker/model/DeleteHumanTaskUiResult.h>
 #include <aws/sagemaker/model/DeleteImageResult.h>
 #include <aws/sagemaker/model/DeleteImageVersionResult.h>
+#include <aws/sagemaker/model/DeleteInferenceExperimentResult.h>
 #include <aws/sagemaker/model/DeletePipelineResult.h>
 #include <aws/sagemaker/model/DeleteTagsResult.h>
 #include <aws/sagemaker/model/DeleteTrialResult.h>
@@ -103,15 +109,20 @@
 #include <aws/sagemaker/model/DescribeFeatureGroupResult.h>
 #include <aws/sagemaker/model/DescribeFeatureMetadataResult.h>
 #include <aws/sagemaker/model/DescribeFlowDefinitionResult.h>
+#include <aws/sagemaker/model/DescribeHubResult.h>
+#include <aws/sagemaker/model/DescribeHubContentResult.h>
 #include <aws/sagemaker/model/DescribeHumanTaskUiResult.h>
 #include <aws/sagemaker/model/DescribeHyperParameterTuningJobResult.h>
 #include <aws/sagemaker/model/DescribeImageResult.h>
 #include <aws/sagemaker/model/DescribeImageVersionResult.h>
+#include <aws/sagemaker/model/DescribeInferenceExperimentResult.h>
 #include <aws/sagemaker/model/DescribeInferenceRecommendationsJobResult.h>
 #include <aws/sagemaker/model/DescribeLabelingJobResult.h>
 #include <aws/sagemaker/model/DescribeLineageGroupResult.h>
 #include <aws/sagemaker/model/DescribeModelResult.h>
 #include <aws/sagemaker/model/DescribeModelBiasJobDefinitionResult.h>
+#include <aws/sagemaker/model/DescribeModelCardResult.h>
+#include <aws/sagemaker/model/DescribeModelCardExportJobResult.h>
 #include <aws/sagemaker/model/DescribeModelExplainabilityJobDefinitionResult.h>
 #include <aws/sagemaker/model/DescribeModelPackageResult.h>
 #include <aws/sagemaker/model/DescribeModelPackageGroupResult.h>
@@ -124,6 +135,7 @@
 #include <aws/sagemaker/model/DescribePipelineExecutionResult.h>
 #include <aws/sagemaker/model/DescribeProcessingJobResult.h>
 #include <aws/sagemaker/model/DescribeProjectResult.h>
+#include <aws/sagemaker/model/DescribeSpaceResult.h>
 #include <aws/sagemaker/model/DescribeStudioLifecycleConfigResult.h>
 #include <aws/sagemaker/model/DescribeSubscribedWorkteamResult.h>
 #include <aws/sagemaker/model/DescribeTrainingJobResult.h>
@@ -141,6 +153,7 @@
 #include <aws/sagemaker/model/GetModelPackageGroupPolicyResult.h>
 #include <aws/sagemaker/model/GetSagemakerServicecatalogPortfolioStatusResult.h>
 #include <aws/sagemaker/model/GetSearchSuggestionsResult.h>
+#include <aws/sagemaker/model/ImportHubContentResult.h>
 #include <aws/sagemaker/model/ListActionsResult.h>
 #include <aws/sagemaker/model/ListAlgorithmsResult.h>
 #include <aws/sagemaker/model/ListAppImageConfigsResult.h>
@@ -163,22 +176,31 @@
 #include <aws/sagemaker/model/ListExperimentsResult.h>
 #include <aws/sagemaker/model/ListFeatureGroupsResult.h>
 #include <aws/sagemaker/model/ListFlowDefinitionsResult.h>
+#include <aws/sagemaker/model/ListHubContentVersionsResult.h>
+#include <aws/sagemaker/model/ListHubContentsResult.h>
+#include <aws/sagemaker/model/ListHubsResult.h>
 #include <aws/sagemaker/model/ListHumanTaskUisResult.h>
 #include <aws/sagemaker/model/ListHyperParameterTuningJobsResult.h>
 #include <aws/sagemaker/model/ListImageVersionsResult.h>
 #include <aws/sagemaker/model/ListImagesResult.h>
+#include <aws/sagemaker/model/ListInferenceExperimentsResult.h>
 #include <aws/sagemaker/model/ListInferenceRecommendationsJobStepsResult.h>
 #include <aws/sagemaker/model/ListInferenceRecommendationsJobsResult.h>
 #include <aws/sagemaker/model/ListLabelingJobsResult.h>
 #include <aws/sagemaker/model/ListLabelingJobsForWorkteamResult.h>
 #include <aws/sagemaker/model/ListLineageGroupsResult.h>
 #include <aws/sagemaker/model/ListModelBiasJobDefinitionsResult.h>
+#include <aws/sagemaker/model/ListModelCardExportJobsResult.h>
+#include <aws/sagemaker/model/ListModelCardVersionsResult.h>
+#include <aws/sagemaker/model/ListModelCardsResult.h>
 #include <aws/sagemaker/model/ListModelExplainabilityJobDefinitionsResult.h>
 #include <aws/sagemaker/model/ListModelMetadataResult.h>
 #include <aws/sagemaker/model/ListModelPackageGroupsResult.h>
 #include <aws/sagemaker/model/ListModelPackagesResult.h>
 #include <aws/sagemaker/model/ListModelQualityJobDefinitionsResult.h>
 #include <aws/sagemaker/model/ListModelsResult.h>
+#include <aws/sagemaker/model/ListMonitoringAlertHistoryResult.h>
+#include <aws/sagemaker/model/ListMonitoringAlertsResult.h>
 #include <aws/sagemaker/model/ListMonitoringExecutionsResult.h>
 #include <aws/sagemaker/model/ListMonitoringSchedulesResult.h>
 #include <aws/sagemaker/model/ListNotebookInstanceLifecycleConfigsResult.h>
@@ -189,6 +211,7 @@
 #include <aws/sagemaker/model/ListPipelinesResult.h>
 #include <aws/sagemaker/model/ListProcessingJobsResult.h>
 #include <aws/sagemaker/model/ListProjectsResult.h>
+#include <aws/sagemaker/model/ListSpacesResult.h>
 #include <aws/sagemaker/model/ListStageDevicesResult.h>
 #include <aws/sagemaker/model/ListStudioLifecycleConfigsResult.h>
 #include <aws/sagemaker/model/ListSubscribedWorkteamsResult.h>
@@ -208,7 +231,9 @@
 #include <aws/sagemaker/model/SearchResult.h>
 #include <aws/sagemaker/model/SendPipelineExecutionStepFailureResult.h>
 #include <aws/sagemaker/model/SendPipelineExecutionStepSuccessResult.h>
+#include <aws/sagemaker/model/StartInferenceExperimentResult.h>
 #include <aws/sagemaker/model/StartPipelineExecutionResult.h>
+#include <aws/sagemaker/model/StopInferenceExperimentResult.h>
 #include <aws/sagemaker/model/StopPipelineExecutionResult.h>
 #include <aws/sagemaker/model/UpdateActionResult.h>
 #include <aws/sagemaker/model/UpdateAppImageConfigResult.h>
@@ -220,14 +245,19 @@
 #include <aws/sagemaker/model/UpdateEndpointWeightsAndCapacitiesResult.h>
 #include <aws/sagemaker/model/UpdateExperimentResult.h>
 #include <aws/sagemaker/model/UpdateFeatureGroupResult.h>
+#include <aws/sagemaker/model/UpdateHubResult.h>
 #include <aws/sagemaker/model/UpdateImageResult.h>
+#include <aws/sagemaker/model/UpdateInferenceExperimentResult.h>
+#include <aws/sagemaker/model/UpdateModelCardResult.h>
 #include <aws/sagemaker/model/UpdateModelPackageResult.h>
+#include <aws/sagemaker/model/UpdateMonitoringAlertResult.h>
 #include <aws/sagemaker/model/UpdateMonitoringScheduleResult.h>
 #include <aws/sagemaker/model/UpdateNotebookInstanceResult.h>
 #include <aws/sagemaker/model/UpdateNotebookInstanceLifecycleConfigResult.h>
 #include <aws/sagemaker/model/UpdatePipelineResult.h>
 #include <aws/sagemaker/model/UpdatePipelineExecutionResult.h>
 #include <aws/sagemaker/model/UpdateProjectResult.h>
+#include <aws/sagemaker/model/UpdateSpaceResult.h>
 #include <aws/sagemaker/model/UpdateTrainingJobResult.h>
 #include <aws/sagemaker/model/UpdateTrialResult.h>
 #include <aws/sagemaker/model/UpdateTrialComponentResult.h>
@@ -299,14 +329,18 @@ namespace Aws
       class CreateExperimentRequest;
       class CreateFeatureGroupRequest;
       class CreateFlowDefinitionRequest;
+      class CreateHubRequest;
       class CreateHumanTaskUiRequest;
       class CreateHyperParameterTuningJobRequest;
       class CreateImageRequest;
       class CreateImageVersionRequest;
+      class CreateInferenceExperimentRequest;
       class CreateInferenceRecommendationsJobRequest;
       class CreateLabelingJobRequest;
       class CreateModelRequest;
       class CreateModelBiasJobDefinitionRequest;
+      class CreateModelCardRequest;
+      class CreateModelCardExportJobRequest;
       class CreateModelExplainabilityJobDefinitionRequest;
       class CreateModelPackageRequest;
       class CreateModelPackageGroupRequest;
@@ -319,6 +353,7 @@ namespace Aws
       class CreatePresignedNotebookInstanceUrlRequest;
       class CreateProcessingJobRequest;
       class CreateProjectRequest;
+      class CreateSpaceRequest;
       class CreateStudioLifecycleConfigRequest;
       class CreateTrainingJobRequest;
       class CreateTransformJobRequest;
@@ -345,11 +380,15 @@ namespace Aws
       class DeleteExperimentRequest;
       class DeleteFeatureGroupRequest;
       class DeleteFlowDefinitionRequest;
+      class DeleteHubRequest;
+      class DeleteHubContentRequest;
       class DeleteHumanTaskUiRequest;
       class DeleteImageRequest;
       class DeleteImageVersionRequest;
+      class DeleteInferenceExperimentRequest;
       class DeleteModelRequest;
       class DeleteModelBiasJobDefinitionRequest;
+      class DeleteModelCardRequest;
       class DeleteModelExplainabilityJobDefinitionRequest;
       class DeleteModelPackageRequest;
       class DeleteModelPackageGroupRequest;
@@ -360,6 +399,7 @@ namespace Aws
       class DeleteNotebookInstanceLifecycleConfigRequest;
       class DeletePipelineRequest;
       class DeleteProjectRequest;
+      class DeleteSpaceRequest;
       class DeleteStudioLifecycleConfigRequest;
       class DeleteTagsRequest;
       class DeleteTrialRequest;
@@ -389,15 +429,20 @@ namespace Aws
       class DescribeFeatureGroupRequest;
       class DescribeFeatureMetadataRequest;
       class DescribeFlowDefinitionRequest;
+      class DescribeHubRequest;
+      class DescribeHubContentRequest;
       class DescribeHumanTaskUiRequest;
       class DescribeHyperParameterTuningJobRequest;
       class DescribeImageRequest;
       class DescribeImageVersionRequest;
+      class DescribeInferenceExperimentRequest;
       class DescribeInferenceRecommendationsJobRequest;
       class DescribeLabelingJobRequest;
       class DescribeLineageGroupRequest;
       class DescribeModelRequest;
       class DescribeModelBiasJobDefinitionRequest;
+      class DescribeModelCardRequest;
+      class DescribeModelCardExportJobRequest;
       class DescribeModelExplainabilityJobDefinitionRequest;
       class DescribeModelPackageRequest;
       class DescribeModelPackageGroupRequest;
@@ -410,6 +455,7 @@ namespace Aws
       class DescribePipelineExecutionRequest;
       class DescribeProcessingJobRequest;
       class DescribeProjectRequest;
+      class DescribeSpaceRequest;
       class DescribeStudioLifecycleConfigRequest;
       class DescribeSubscribedWorkteamRequest;
       class DescribeTrainingJobRequest;
@@ -427,6 +473,7 @@ namespace Aws
       class GetModelPackageGroupPolicyRequest;
       class GetSagemakerServicecatalogPortfolioStatusRequest;
       class GetSearchSuggestionsRequest;
+      class ImportHubContentRequest;
       class ListActionsRequest;
       class ListAlgorithmsRequest;
       class ListAppImageConfigsRequest;
@@ -449,22 +496,31 @@ namespace Aws
       class ListExperimentsRequest;
       class ListFeatureGroupsRequest;
       class ListFlowDefinitionsRequest;
+      class ListHubContentVersionsRequest;
+      class ListHubContentsRequest;
+      class ListHubsRequest;
       class ListHumanTaskUisRequest;
       class ListHyperParameterTuningJobsRequest;
       class ListImageVersionsRequest;
       class ListImagesRequest;
+      class ListInferenceExperimentsRequest;
       class ListInferenceRecommendationsJobStepsRequest;
       class ListInferenceRecommendationsJobsRequest;
       class ListLabelingJobsRequest;
       class ListLabelingJobsForWorkteamRequest;
       class ListLineageGroupsRequest;
       class ListModelBiasJobDefinitionsRequest;
+      class ListModelCardExportJobsRequest;
+      class ListModelCardVersionsRequest;
+      class ListModelCardsRequest;
       class ListModelExplainabilityJobDefinitionsRequest;
       class ListModelMetadataRequest;
       class ListModelPackageGroupsRequest;
       class ListModelPackagesRequest;
       class ListModelQualityJobDefinitionsRequest;
       class ListModelsRequest;
+      class ListMonitoringAlertHistoryRequest;
+      class ListMonitoringAlertsRequest;
       class ListMonitoringExecutionsRequest;
       class ListMonitoringSchedulesRequest;
       class ListNotebookInstanceLifecycleConfigsRequest;
@@ -475,6 +531,7 @@ namespace Aws
       class ListPipelinesRequest;
       class ListProcessingJobsRequest;
       class ListProjectsRequest;
+      class ListSpacesRequest;
       class ListStageDevicesRequest;
       class ListStudioLifecycleConfigsRequest;
       class ListSubscribedWorkteamsRequest;
@@ -496,6 +553,7 @@ namespace Aws
       class SendPipelineExecutionStepFailureRequest;
       class SendPipelineExecutionStepSuccessRequest;
       class StartEdgeDeploymentStageRequest;
+      class StartInferenceExperimentRequest;
       class StartMonitoringScheduleRequest;
       class StartNotebookInstanceRequest;
       class StartPipelineExecutionRequest;
@@ -504,6 +562,7 @@ namespace Aws
       class StopEdgeDeploymentStageRequest;
       class StopEdgePackagingJobRequest;
       class StopHyperParameterTuningJobRequest;
+      class StopInferenceExperimentRequest;
       class StopInferenceRecommendationsJobRequest;
       class StopLabelingJobRequest;
       class StopMonitoringScheduleRequest;
@@ -525,14 +584,19 @@ namespace Aws
       class UpdateExperimentRequest;
       class UpdateFeatureGroupRequest;
       class UpdateFeatureMetadataRequest;
+      class UpdateHubRequest;
       class UpdateImageRequest;
+      class UpdateInferenceExperimentRequest;
+      class UpdateModelCardRequest;
       class UpdateModelPackageRequest;
+      class UpdateMonitoringAlertRequest;
       class UpdateMonitoringScheduleRequest;
       class UpdateNotebookInstanceRequest;
       class UpdateNotebookInstanceLifecycleConfigRequest;
       class UpdatePipelineRequest;
       class UpdatePipelineExecutionRequest;
       class UpdateProjectRequest;
+      class UpdateSpaceRequest;
       class UpdateTrainingJobRequest;
       class UpdateTrialRequest;
       class UpdateTrialComponentRequest;
@@ -566,14 +630,18 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateExperimentResult, SageMakerError> CreateExperimentOutcome;
       typedef Aws::Utils::Outcome<CreateFeatureGroupResult, SageMakerError> CreateFeatureGroupOutcome;
       typedef Aws::Utils::Outcome<CreateFlowDefinitionResult, SageMakerError> CreateFlowDefinitionOutcome;
+      typedef Aws::Utils::Outcome<CreateHubResult, SageMakerError> CreateHubOutcome;
       typedef Aws::Utils::Outcome<CreateHumanTaskUiResult, SageMakerError> CreateHumanTaskUiOutcome;
       typedef Aws::Utils::Outcome<CreateHyperParameterTuningJobResult, SageMakerError> CreateHyperParameterTuningJobOutcome;
       typedef Aws::Utils::Outcome<CreateImageResult, SageMakerError> CreateImageOutcome;
       typedef Aws::Utils::Outcome<CreateImageVersionResult, SageMakerError> CreateImageVersionOutcome;
+      typedef Aws::Utils::Outcome<CreateInferenceExperimentResult, SageMakerError> CreateInferenceExperimentOutcome;
       typedef Aws::Utils::Outcome<CreateInferenceRecommendationsJobResult, SageMakerError> CreateInferenceRecommendationsJobOutcome;
       typedef Aws::Utils::Outcome<CreateLabelingJobResult, SageMakerError> CreateLabelingJobOutcome;
       typedef Aws::Utils::Outcome<CreateModelResult, SageMakerError> CreateModelOutcome;
       typedef Aws::Utils::Outcome<CreateModelBiasJobDefinitionResult, SageMakerError> CreateModelBiasJobDefinitionOutcome;
+      typedef Aws::Utils::Outcome<CreateModelCardResult, SageMakerError> CreateModelCardOutcome;
+      typedef Aws::Utils::Outcome<CreateModelCardExportJobResult, SageMakerError> CreateModelCardExportJobOutcome;
       typedef Aws::Utils::Outcome<CreateModelExplainabilityJobDefinitionResult, SageMakerError> CreateModelExplainabilityJobDefinitionOutcome;
       typedef Aws::Utils::Outcome<CreateModelPackageResult, SageMakerError> CreateModelPackageOutcome;
       typedef Aws::Utils::Outcome<CreateModelPackageGroupResult, SageMakerError> CreateModelPackageGroupOutcome;
@@ -586,6 +654,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreatePresignedNotebookInstanceUrlResult, SageMakerError> CreatePresignedNotebookInstanceUrlOutcome;
       typedef Aws::Utils::Outcome<CreateProcessingJobResult, SageMakerError> CreateProcessingJobOutcome;
       typedef Aws::Utils::Outcome<CreateProjectResult, SageMakerError> CreateProjectOutcome;
+      typedef Aws::Utils::Outcome<CreateSpaceResult, SageMakerError> CreateSpaceOutcome;
       typedef Aws::Utils::Outcome<CreateStudioLifecycleConfigResult, SageMakerError> CreateStudioLifecycleConfigOutcome;
       typedef Aws::Utils::Outcome<CreateTrainingJobResult, SageMakerError> CreateTrainingJobOutcome;
       typedef Aws::Utils::Outcome<CreateTransformJobResult, SageMakerError> CreateTransformJobOutcome;
@@ -612,11 +681,15 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteExperimentResult, SageMakerError> DeleteExperimentOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteFeatureGroupOutcome;
       typedef Aws::Utils::Outcome<DeleteFlowDefinitionResult, SageMakerError> DeleteFlowDefinitionOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteHubOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteHubContentOutcome;
       typedef Aws::Utils::Outcome<DeleteHumanTaskUiResult, SageMakerError> DeleteHumanTaskUiOutcome;
       typedef Aws::Utils::Outcome<DeleteImageResult, SageMakerError> DeleteImageOutcome;
       typedef Aws::Utils::Outcome<DeleteImageVersionResult, SageMakerError> DeleteImageVersionOutcome;
+      typedef Aws::Utils::Outcome<DeleteInferenceExperimentResult, SageMakerError> DeleteInferenceExperimentOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteModelOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteModelBiasJobDefinitionOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteModelCardOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteModelExplainabilityJobDefinitionOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteModelPackageOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteModelPackageGroupOutcome;
@@ -627,6 +700,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteNotebookInstanceLifecycleConfigOutcome;
       typedef Aws::Utils::Outcome<DeletePipelineResult, SageMakerError> DeletePipelineOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteProjectOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteSpaceOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteStudioLifecycleConfigOutcome;
       typedef Aws::Utils::Outcome<DeleteTagsResult, SageMakerError> DeleteTagsOutcome;
       typedef Aws::Utils::Outcome<DeleteTrialResult, SageMakerError> DeleteTrialOutcome;
@@ -656,15 +730,20 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeFeatureGroupResult, SageMakerError> DescribeFeatureGroupOutcome;
       typedef Aws::Utils::Outcome<DescribeFeatureMetadataResult, SageMakerError> DescribeFeatureMetadataOutcome;
       typedef Aws::Utils::Outcome<DescribeFlowDefinitionResult, SageMakerError> DescribeFlowDefinitionOutcome;
+      typedef Aws::Utils::Outcome<DescribeHubResult, SageMakerError> DescribeHubOutcome;
+      typedef Aws::Utils::Outcome<DescribeHubContentResult, SageMakerError> DescribeHubContentOutcome;
       typedef Aws::Utils::Outcome<DescribeHumanTaskUiResult, SageMakerError> DescribeHumanTaskUiOutcome;
       typedef Aws::Utils::Outcome<DescribeHyperParameterTuningJobResult, SageMakerError> DescribeHyperParameterTuningJobOutcome;
       typedef Aws::Utils::Outcome<DescribeImageResult, SageMakerError> DescribeImageOutcome;
       typedef Aws::Utils::Outcome<DescribeImageVersionResult, SageMakerError> DescribeImageVersionOutcome;
+      typedef Aws::Utils::Outcome<DescribeInferenceExperimentResult, SageMakerError> DescribeInferenceExperimentOutcome;
       typedef Aws::Utils::Outcome<DescribeInferenceRecommendationsJobResult, SageMakerError> DescribeInferenceRecommendationsJobOutcome;
       typedef Aws::Utils::Outcome<DescribeLabelingJobResult, SageMakerError> DescribeLabelingJobOutcome;
       typedef Aws::Utils::Outcome<DescribeLineageGroupResult, SageMakerError> DescribeLineageGroupOutcome;
       typedef Aws::Utils::Outcome<DescribeModelResult, SageMakerError> DescribeModelOutcome;
       typedef Aws::Utils::Outcome<DescribeModelBiasJobDefinitionResult, SageMakerError> DescribeModelBiasJobDefinitionOutcome;
+      typedef Aws::Utils::Outcome<DescribeModelCardResult, SageMakerError> DescribeModelCardOutcome;
+      typedef Aws::Utils::Outcome<DescribeModelCardExportJobResult, SageMakerError> DescribeModelCardExportJobOutcome;
       typedef Aws::Utils::Outcome<DescribeModelExplainabilityJobDefinitionResult, SageMakerError> DescribeModelExplainabilityJobDefinitionOutcome;
       typedef Aws::Utils::Outcome<DescribeModelPackageResult, SageMakerError> DescribeModelPackageOutcome;
       typedef Aws::Utils::Outcome<DescribeModelPackageGroupResult, SageMakerError> DescribeModelPackageGroupOutcome;
@@ -677,6 +756,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribePipelineExecutionResult, SageMakerError> DescribePipelineExecutionOutcome;
       typedef Aws::Utils::Outcome<DescribeProcessingJobResult, SageMakerError> DescribeProcessingJobOutcome;
       typedef Aws::Utils::Outcome<DescribeProjectResult, SageMakerError> DescribeProjectOutcome;
+      typedef Aws::Utils::Outcome<DescribeSpaceResult, SageMakerError> DescribeSpaceOutcome;
       typedef Aws::Utils::Outcome<DescribeStudioLifecycleConfigResult, SageMakerError> DescribeStudioLifecycleConfigOutcome;
       typedef Aws::Utils::Outcome<DescribeSubscribedWorkteamResult, SageMakerError> DescribeSubscribedWorkteamOutcome;
       typedef Aws::Utils::Outcome<DescribeTrainingJobResult, SageMakerError> DescribeTrainingJobOutcome;
@@ -694,6 +774,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetModelPackageGroupPolicyResult, SageMakerError> GetModelPackageGroupPolicyOutcome;
       typedef Aws::Utils::Outcome<GetSagemakerServicecatalogPortfolioStatusResult, SageMakerError> GetSagemakerServicecatalogPortfolioStatusOutcome;
       typedef Aws::Utils::Outcome<GetSearchSuggestionsResult, SageMakerError> GetSearchSuggestionsOutcome;
+      typedef Aws::Utils::Outcome<ImportHubContentResult, SageMakerError> ImportHubContentOutcome;
       typedef Aws::Utils::Outcome<ListActionsResult, SageMakerError> ListActionsOutcome;
       typedef Aws::Utils::Outcome<ListAlgorithmsResult, SageMakerError> ListAlgorithmsOutcome;
       typedef Aws::Utils::Outcome<ListAppImageConfigsResult, SageMakerError> ListAppImageConfigsOutcome;
@@ -716,22 +797,31 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListExperimentsResult, SageMakerError> ListExperimentsOutcome;
       typedef Aws::Utils::Outcome<ListFeatureGroupsResult, SageMakerError> ListFeatureGroupsOutcome;
       typedef Aws::Utils::Outcome<ListFlowDefinitionsResult, SageMakerError> ListFlowDefinitionsOutcome;
+      typedef Aws::Utils::Outcome<ListHubContentVersionsResult, SageMakerError> ListHubContentVersionsOutcome;
+      typedef Aws::Utils::Outcome<ListHubContentsResult, SageMakerError> ListHubContentsOutcome;
+      typedef Aws::Utils::Outcome<ListHubsResult, SageMakerError> ListHubsOutcome;
       typedef Aws::Utils::Outcome<ListHumanTaskUisResult, SageMakerError> ListHumanTaskUisOutcome;
       typedef Aws::Utils::Outcome<ListHyperParameterTuningJobsResult, SageMakerError> ListHyperParameterTuningJobsOutcome;
       typedef Aws::Utils::Outcome<ListImageVersionsResult, SageMakerError> ListImageVersionsOutcome;
       typedef Aws::Utils::Outcome<ListImagesResult, SageMakerError> ListImagesOutcome;
+      typedef Aws::Utils::Outcome<ListInferenceExperimentsResult, SageMakerError> ListInferenceExperimentsOutcome;
       typedef Aws::Utils::Outcome<ListInferenceRecommendationsJobStepsResult, SageMakerError> ListInferenceRecommendationsJobStepsOutcome;
       typedef Aws::Utils::Outcome<ListInferenceRecommendationsJobsResult, SageMakerError> ListInferenceRecommendationsJobsOutcome;
       typedef Aws::Utils::Outcome<ListLabelingJobsResult, SageMakerError> ListLabelingJobsOutcome;
       typedef Aws::Utils::Outcome<ListLabelingJobsForWorkteamResult, SageMakerError> ListLabelingJobsForWorkteamOutcome;
       typedef Aws::Utils::Outcome<ListLineageGroupsResult, SageMakerError> ListLineageGroupsOutcome;
       typedef Aws::Utils::Outcome<ListModelBiasJobDefinitionsResult, SageMakerError> ListModelBiasJobDefinitionsOutcome;
+      typedef Aws::Utils::Outcome<ListModelCardExportJobsResult, SageMakerError> ListModelCardExportJobsOutcome;
+      typedef Aws::Utils::Outcome<ListModelCardVersionsResult, SageMakerError> ListModelCardVersionsOutcome;
+      typedef Aws::Utils::Outcome<ListModelCardsResult, SageMakerError> ListModelCardsOutcome;
       typedef Aws::Utils::Outcome<ListModelExplainabilityJobDefinitionsResult, SageMakerError> ListModelExplainabilityJobDefinitionsOutcome;
       typedef Aws::Utils::Outcome<ListModelMetadataResult, SageMakerError> ListModelMetadataOutcome;
       typedef Aws::Utils::Outcome<ListModelPackageGroupsResult, SageMakerError> ListModelPackageGroupsOutcome;
       typedef Aws::Utils::Outcome<ListModelPackagesResult, SageMakerError> ListModelPackagesOutcome;
       typedef Aws::Utils::Outcome<ListModelQualityJobDefinitionsResult, SageMakerError> ListModelQualityJobDefinitionsOutcome;
       typedef Aws::Utils::Outcome<ListModelsResult, SageMakerError> ListModelsOutcome;
+      typedef Aws::Utils::Outcome<ListMonitoringAlertHistoryResult, SageMakerError> ListMonitoringAlertHistoryOutcome;
+      typedef Aws::Utils::Outcome<ListMonitoringAlertsResult, SageMakerError> ListMonitoringAlertsOutcome;
       typedef Aws::Utils::Outcome<ListMonitoringExecutionsResult, SageMakerError> ListMonitoringExecutionsOutcome;
       typedef Aws::Utils::Outcome<ListMonitoringSchedulesResult, SageMakerError> ListMonitoringSchedulesOutcome;
       typedef Aws::Utils::Outcome<ListNotebookInstanceLifecycleConfigsResult, SageMakerError> ListNotebookInstanceLifecycleConfigsOutcome;
@@ -742,6 +832,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListPipelinesResult, SageMakerError> ListPipelinesOutcome;
       typedef Aws::Utils::Outcome<ListProcessingJobsResult, SageMakerError> ListProcessingJobsOutcome;
       typedef Aws::Utils::Outcome<ListProjectsResult, SageMakerError> ListProjectsOutcome;
+      typedef Aws::Utils::Outcome<ListSpacesResult, SageMakerError> ListSpacesOutcome;
       typedef Aws::Utils::Outcome<ListStageDevicesResult, SageMakerError> ListStageDevicesOutcome;
       typedef Aws::Utils::Outcome<ListStudioLifecycleConfigsResult, SageMakerError> ListStudioLifecycleConfigsOutcome;
       typedef Aws::Utils::Outcome<ListSubscribedWorkteamsResult, SageMakerError> ListSubscribedWorkteamsOutcome;
@@ -763,6 +854,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<SendPipelineExecutionStepFailureResult, SageMakerError> SendPipelineExecutionStepFailureOutcome;
       typedef Aws::Utils::Outcome<SendPipelineExecutionStepSuccessResult, SageMakerError> SendPipelineExecutionStepSuccessOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StartEdgeDeploymentStageOutcome;
+      typedef Aws::Utils::Outcome<StartInferenceExperimentResult, SageMakerError> StartInferenceExperimentOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StartMonitoringScheduleOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StartNotebookInstanceOutcome;
       typedef Aws::Utils::Outcome<StartPipelineExecutionResult, SageMakerError> StartPipelineExecutionOutcome;
@@ -771,6 +863,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StopEdgeDeploymentStageOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StopEdgePackagingJobOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StopHyperParameterTuningJobOutcome;
+      typedef Aws::Utils::Outcome<StopInferenceExperimentResult, SageMakerError> StopInferenceExperimentOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StopInferenceRecommendationsJobOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StopLabelingJobOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StopMonitoringScheduleOutcome;
@@ -792,14 +885,19 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdateExperimentResult, SageMakerError> UpdateExperimentOutcome;
       typedef Aws::Utils::Outcome<UpdateFeatureGroupResult, SageMakerError> UpdateFeatureGroupOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> UpdateFeatureMetadataOutcome;
+      typedef Aws::Utils::Outcome<UpdateHubResult, SageMakerError> UpdateHubOutcome;
       typedef Aws::Utils::Outcome<UpdateImageResult, SageMakerError> UpdateImageOutcome;
+      typedef Aws::Utils::Outcome<UpdateInferenceExperimentResult, SageMakerError> UpdateInferenceExperimentOutcome;
+      typedef Aws::Utils::Outcome<UpdateModelCardResult, SageMakerError> UpdateModelCardOutcome;
       typedef Aws::Utils::Outcome<UpdateModelPackageResult, SageMakerError> UpdateModelPackageOutcome;
+      typedef Aws::Utils::Outcome<UpdateMonitoringAlertResult, SageMakerError> UpdateMonitoringAlertOutcome;
       typedef Aws::Utils::Outcome<UpdateMonitoringScheduleResult, SageMakerError> UpdateMonitoringScheduleOutcome;
       typedef Aws::Utils::Outcome<UpdateNotebookInstanceResult, SageMakerError> UpdateNotebookInstanceOutcome;
       typedef Aws::Utils::Outcome<UpdateNotebookInstanceLifecycleConfigResult, SageMakerError> UpdateNotebookInstanceLifecycleConfigOutcome;
       typedef Aws::Utils::Outcome<UpdatePipelineResult, SageMakerError> UpdatePipelineOutcome;
       typedef Aws::Utils::Outcome<UpdatePipelineExecutionResult, SageMakerError> UpdatePipelineExecutionOutcome;
       typedef Aws::Utils::Outcome<UpdateProjectResult, SageMakerError> UpdateProjectOutcome;
+      typedef Aws::Utils::Outcome<UpdateSpaceResult, SageMakerError> UpdateSpaceOutcome;
       typedef Aws::Utils::Outcome<UpdateTrainingJobResult, SageMakerError> UpdateTrainingJobOutcome;
       typedef Aws::Utils::Outcome<UpdateTrialResult, SageMakerError> UpdateTrialOutcome;
       typedef Aws::Utils::Outcome<UpdateTrialComponentResult, SageMakerError> UpdateTrialComponentOutcome;
@@ -833,14 +931,18 @@ namespace Aws
       typedef std::future<CreateExperimentOutcome> CreateExperimentOutcomeCallable;
       typedef std::future<CreateFeatureGroupOutcome> CreateFeatureGroupOutcomeCallable;
       typedef std::future<CreateFlowDefinitionOutcome> CreateFlowDefinitionOutcomeCallable;
+      typedef std::future<CreateHubOutcome> CreateHubOutcomeCallable;
       typedef std::future<CreateHumanTaskUiOutcome> CreateHumanTaskUiOutcomeCallable;
       typedef std::future<CreateHyperParameterTuningJobOutcome> CreateHyperParameterTuningJobOutcomeCallable;
       typedef std::future<CreateImageOutcome> CreateImageOutcomeCallable;
       typedef std::future<CreateImageVersionOutcome> CreateImageVersionOutcomeCallable;
+      typedef std::future<CreateInferenceExperimentOutcome> CreateInferenceExperimentOutcomeCallable;
       typedef std::future<CreateInferenceRecommendationsJobOutcome> CreateInferenceRecommendationsJobOutcomeCallable;
       typedef std::future<CreateLabelingJobOutcome> CreateLabelingJobOutcomeCallable;
       typedef std::future<CreateModelOutcome> CreateModelOutcomeCallable;
       typedef std::future<CreateModelBiasJobDefinitionOutcome> CreateModelBiasJobDefinitionOutcomeCallable;
+      typedef std::future<CreateModelCardOutcome> CreateModelCardOutcomeCallable;
+      typedef std::future<CreateModelCardExportJobOutcome> CreateModelCardExportJobOutcomeCallable;
       typedef std::future<CreateModelExplainabilityJobDefinitionOutcome> CreateModelExplainabilityJobDefinitionOutcomeCallable;
       typedef std::future<CreateModelPackageOutcome> CreateModelPackageOutcomeCallable;
       typedef std::future<CreateModelPackageGroupOutcome> CreateModelPackageGroupOutcomeCallable;
@@ -853,6 +955,7 @@ namespace Aws
       typedef std::future<CreatePresignedNotebookInstanceUrlOutcome> CreatePresignedNotebookInstanceUrlOutcomeCallable;
       typedef std::future<CreateProcessingJobOutcome> CreateProcessingJobOutcomeCallable;
       typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
+      typedef std::future<CreateSpaceOutcome> CreateSpaceOutcomeCallable;
       typedef std::future<CreateStudioLifecycleConfigOutcome> CreateStudioLifecycleConfigOutcomeCallable;
       typedef std::future<CreateTrainingJobOutcome> CreateTrainingJobOutcomeCallable;
       typedef std::future<CreateTransformJobOutcome> CreateTransformJobOutcomeCallable;
@@ -879,11 +982,15 @@ namespace Aws
       typedef std::future<DeleteExperimentOutcome> DeleteExperimentOutcomeCallable;
       typedef std::future<DeleteFeatureGroupOutcome> DeleteFeatureGroupOutcomeCallable;
       typedef std::future<DeleteFlowDefinitionOutcome> DeleteFlowDefinitionOutcomeCallable;
+      typedef std::future<DeleteHubOutcome> DeleteHubOutcomeCallable;
+      typedef std::future<DeleteHubContentOutcome> DeleteHubContentOutcomeCallable;
       typedef std::future<DeleteHumanTaskUiOutcome> DeleteHumanTaskUiOutcomeCallable;
       typedef std::future<DeleteImageOutcome> DeleteImageOutcomeCallable;
       typedef std::future<DeleteImageVersionOutcome> DeleteImageVersionOutcomeCallable;
+      typedef std::future<DeleteInferenceExperimentOutcome> DeleteInferenceExperimentOutcomeCallable;
       typedef std::future<DeleteModelOutcome> DeleteModelOutcomeCallable;
       typedef std::future<DeleteModelBiasJobDefinitionOutcome> DeleteModelBiasJobDefinitionOutcomeCallable;
+      typedef std::future<DeleteModelCardOutcome> DeleteModelCardOutcomeCallable;
       typedef std::future<DeleteModelExplainabilityJobDefinitionOutcome> DeleteModelExplainabilityJobDefinitionOutcomeCallable;
       typedef std::future<DeleteModelPackageOutcome> DeleteModelPackageOutcomeCallable;
       typedef std::future<DeleteModelPackageGroupOutcome> DeleteModelPackageGroupOutcomeCallable;
@@ -894,6 +1001,7 @@ namespace Aws
       typedef std::future<DeleteNotebookInstanceLifecycleConfigOutcome> DeleteNotebookInstanceLifecycleConfigOutcomeCallable;
       typedef std::future<DeletePipelineOutcome> DeletePipelineOutcomeCallable;
       typedef std::future<DeleteProjectOutcome> DeleteProjectOutcomeCallable;
+      typedef std::future<DeleteSpaceOutcome> DeleteSpaceOutcomeCallable;
       typedef std::future<DeleteStudioLifecycleConfigOutcome> DeleteStudioLifecycleConfigOutcomeCallable;
       typedef std::future<DeleteTagsOutcome> DeleteTagsOutcomeCallable;
       typedef std::future<DeleteTrialOutcome> DeleteTrialOutcomeCallable;
@@ -923,15 +1031,20 @@ namespace Aws
       typedef std::future<DescribeFeatureGroupOutcome> DescribeFeatureGroupOutcomeCallable;
       typedef std::future<DescribeFeatureMetadataOutcome> DescribeFeatureMetadataOutcomeCallable;
       typedef std::future<DescribeFlowDefinitionOutcome> DescribeFlowDefinitionOutcomeCallable;
+      typedef std::future<DescribeHubOutcome> DescribeHubOutcomeCallable;
+      typedef std::future<DescribeHubContentOutcome> DescribeHubContentOutcomeCallable;
       typedef std::future<DescribeHumanTaskUiOutcome> DescribeHumanTaskUiOutcomeCallable;
       typedef std::future<DescribeHyperParameterTuningJobOutcome> DescribeHyperParameterTuningJobOutcomeCallable;
       typedef std::future<DescribeImageOutcome> DescribeImageOutcomeCallable;
       typedef std::future<DescribeImageVersionOutcome> DescribeImageVersionOutcomeCallable;
+      typedef std::future<DescribeInferenceExperimentOutcome> DescribeInferenceExperimentOutcomeCallable;
       typedef std::future<DescribeInferenceRecommendationsJobOutcome> DescribeInferenceRecommendationsJobOutcomeCallable;
       typedef std::future<DescribeLabelingJobOutcome> DescribeLabelingJobOutcomeCallable;
       typedef std::future<DescribeLineageGroupOutcome> DescribeLineageGroupOutcomeCallable;
       typedef std::future<DescribeModelOutcome> DescribeModelOutcomeCallable;
       typedef std::future<DescribeModelBiasJobDefinitionOutcome> DescribeModelBiasJobDefinitionOutcomeCallable;
+      typedef std::future<DescribeModelCardOutcome> DescribeModelCardOutcomeCallable;
+      typedef std::future<DescribeModelCardExportJobOutcome> DescribeModelCardExportJobOutcomeCallable;
       typedef std::future<DescribeModelExplainabilityJobDefinitionOutcome> DescribeModelExplainabilityJobDefinitionOutcomeCallable;
       typedef std::future<DescribeModelPackageOutcome> DescribeModelPackageOutcomeCallable;
       typedef std::future<DescribeModelPackageGroupOutcome> DescribeModelPackageGroupOutcomeCallable;
@@ -944,6 +1057,7 @@ namespace Aws
       typedef std::future<DescribePipelineExecutionOutcome> DescribePipelineExecutionOutcomeCallable;
       typedef std::future<DescribeProcessingJobOutcome> DescribeProcessingJobOutcomeCallable;
       typedef std::future<DescribeProjectOutcome> DescribeProjectOutcomeCallable;
+      typedef std::future<DescribeSpaceOutcome> DescribeSpaceOutcomeCallable;
       typedef std::future<DescribeStudioLifecycleConfigOutcome> DescribeStudioLifecycleConfigOutcomeCallable;
       typedef std::future<DescribeSubscribedWorkteamOutcome> DescribeSubscribedWorkteamOutcomeCallable;
       typedef std::future<DescribeTrainingJobOutcome> DescribeTrainingJobOutcomeCallable;
@@ -961,6 +1075,7 @@ namespace Aws
       typedef std::future<GetModelPackageGroupPolicyOutcome> GetModelPackageGroupPolicyOutcomeCallable;
       typedef std::future<GetSagemakerServicecatalogPortfolioStatusOutcome> GetSagemakerServicecatalogPortfolioStatusOutcomeCallable;
       typedef std::future<GetSearchSuggestionsOutcome> GetSearchSuggestionsOutcomeCallable;
+      typedef std::future<ImportHubContentOutcome> ImportHubContentOutcomeCallable;
       typedef std::future<ListActionsOutcome> ListActionsOutcomeCallable;
       typedef std::future<ListAlgorithmsOutcome> ListAlgorithmsOutcomeCallable;
       typedef std::future<ListAppImageConfigsOutcome> ListAppImageConfigsOutcomeCallable;
@@ -983,22 +1098,31 @@ namespace Aws
       typedef std::future<ListExperimentsOutcome> ListExperimentsOutcomeCallable;
       typedef std::future<ListFeatureGroupsOutcome> ListFeatureGroupsOutcomeCallable;
       typedef std::future<ListFlowDefinitionsOutcome> ListFlowDefinitionsOutcomeCallable;
+      typedef std::future<ListHubContentVersionsOutcome> ListHubContentVersionsOutcomeCallable;
+      typedef std::future<ListHubContentsOutcome> ListHubContentsOutcomeCallable;
+      typedef std::future<ListHubsOutcome> ListHubsOutcomeCallable;
       typedef std::future<ListHumanTaskUisOutcome> ListHumanTaskUisOutcomeCallable;
       typedef std::future<ListHyperParameterTuningJobsOutcome> ListHyperParameterTuningJobsOutcomeCallable;
       typedef std::future<ListImageVersionsOutcome> ListImageVersionsOutcomeCallable;
       typedef std::future<ListImagesOutcome> ListImagesOutcomeCallable;
+      typedef std::future<ListInferenceExperimentsOutcome> ListInferenceExperimentsOutcomeCallable;
       typedef std::future<ListInferenceRecommendationsJobStepsOutcome> ListInferenceRecommendationsJobStepsOutcomeCallable;
       typedef std::future<ListInferenceRecommendationsJobsOutcome> ListInferenceRecommendationsJobsOutcomeCallable;
       typedef std::future<ListLabelingJobsOutcome> ListLabelingJobsOutcomeCallable;
       typedef std::future<ListLabelingJobsForWorkteamOutcome> ListLabelingJobsForWorkteamOutcomeCallable;
       typedef std::future<ListLineageGroupsOutcome> ListLineageGroupsOutcomeCallable;
       typedef std::future<ListModelBiasJobDefinitionsOutcome> ListModelBiasJobDefinitionsOutcomeCallable;
+      typedef std::future<ListModelCardExportJobsOutcome> ListModelCardExportJobsOutcomeCallable;
+      typedef std::future<ListModelCardVersionsOutcome> ListModelCardVersionsOutcomeCallable;
+      typedef std::future<ListModelCardsOutcome> ListModelCardsOutcomeCallable;
       typedef std::future<ListModelExplainabilityJobDefinitionsOutcome> ListModelExplainabilityJobDefinitionsOutcomeCallable;
       typedef std::future<ListModelMetadataOutcome> ListModelMetadataOutcomeCallable;
       typedef std::future<ListModelPackageGroupsOutcome> ListModelPackageGroupsOutcomeCallable;
       typedef std::future<ListModelPackagesOutcome> ListModelPackagesOutcomeCallable;
       typedef std::future<ListModelQualityJobDefinitionsOutcome> ListModelQualityJobDefinitionsOutcomeCallable;
       typedef std::future<ListModelsOutcome> ListModelsOutcomeCallable;
+      typedef std::future<ListMonitoringAlertHistoryOutcome> ListMonitoringAlertHistoryOutcomeCallable;
+      typedef std::future<ListMonitoringAlertsOutcome> ListMonitoringAlertsOutcomeCallable;
       typedef std::future<ListMonitoringExecutionsOutcome> ListMonitoringExecutionsOutcomeCallable;
       typedef std::future<ListMonitoringSchedulesOutcome> ListMonitoringSchedulesOutcomeCallable;
       typedef std::future<ListNotebookInstanceLifecycleConfigsOutcome> ListNotebookInstanceLifecycleConfigsOutcomeCallable;
@@ -1009,6 +1133,7 @@ namespace Aws
       typedef std::future<ListPipelinesOutcome> ListPipelinesOutcomeCallable;
       typedef std::future<ListProcessingJobsOutcome> ListProcessingJobsOutcomeCallable;
       typedef std::future<ListProjectsOutcome> ListProjectsOutcomeCallable;
+      typedef std::future<ListSpacesOutcome> ListSpacesOutcomeCallable;
       typedef std::future<ListStageDevicesOutcome> ListStageDevicesOutcomeCallable;
       typedef std::future<ListStudioLifecycleConfigsOutcome> ListStudioLifecycleConfigsOutcomeCallable;
       typedef std::future<ListSubscribedWorkteamsOutcome> ListSubscribedWorkteamsOutcomeCallable;
@@ -1030,6 +1155,7 @@ namespace Aws
       typedef std::future<SendPipelineExecutionStepFailureOutcome> SendPipelineExecutionStepFailureOutcomeCallable;
       typedef std::future<SendPipelineExecutionStepSuccessOutcome> SendPipelineExecutionStepSuccessOutcomeCallable;
       typedef std::future<StartEdgeDeploymentStageOutcome> StartEdgeDeploymentStageOutcomeCallable;
+      typedef std::future<StartInferenceExperimentOutcome> StartInferenceExperimentOutcomeCallable;
       typedef std::future<StartMonitoringScheduleOutcome> StartMonitoringScheduleOutcomeCallable;
       typedef std::future<StartNotebookInstanceOutcome> StartNotebookInstanceOutcomeCallable;
       typedef std::future<StartPipelineExecutionOutcome> StartPipelineExecutionOutcomeCallable;
@@ -1038,6 +1164,7 @@ namespace Aws
       typedef std::future<StopEdgeDeploymentStageOutcome> StopEdgeDeploymentStageOutcomeCallable;
       typedef std::future<StopEdgePackagingJobOutcome> StopEdgePackagingJobOutcomeCallable;
       typedef std::future<StopHyperParameterTuningJobOutcome> StopHyperParameterTuningJobOutcomeCallable;
+      typedef std::future<StopInferenceExperimentOutcome> StopInferenceExperimentOutcomeCallable;
       typedef std::future<StopInferenceRecommendationsJobOutcome> StopInferenceRecommendationsJobOutcomeCallable;
       typedef std::future<StopLabelingJobOutcome> StopLabelingJobOutcomeCallable;
       typedef std::future<StopMonitoringScheduleOutcome> StopMonitoringScheduleOutcomeCallable;
@@ -1059,14 +1186,19 @@ namespace Aws
       typedef std::future<UpdateExperimentOutcome> UpdateExperimentOutcomeCallable;
       typedef std::future<UpdateFeatureGroupOutcome> UpdateFeatureGroupOutcomeCallable;
       typedef std::future<UpdateFeatureMetadataOutcome> UpdateFeatureMetadataOutcomeCallable;
+      typedef std::future<UpdateHubOutcome> UpdateHubOutcomeCallable;
       typedef std::future<UpdateImageOutcome> UpdateImageOutcomeCallable;
+      typedef std::future<UpdateInferenceExperimentOutcome> UpdateInferenceExperimentOutcomeCallable;
+      typedef std::future<UpdateModelCardOutcome> UpdateModelCardOutcomeCallable;
       typedef std::future<UpdateModelPackageOutcome> UpdateModelPackageOutcomeCallable;
+      typedef std::future<UpdateMonitoringAlertOutcome> UpdateMonitoringAlertOutcomeCallable;
       typedef std::future<UpdateMonitoringScheduleOutcome> UpdateMonitoringScheduleOutcomeCallable;
       typedef std::future<UpdateNotebookInstanceOutcome> UpdateNotebookInstanceOutcomeCallable;
       typedef std::future<UpdateNotebookInstanceLifecycleConfigOutcome> UpdateNotebookInstanceLifecycleConfigOutcomeCallable;
       typedef std::future<UpdatePipelineOutcome> UpdatePipelineOutcomeCallable;
       typedef std::future<UpdatePipelineExecutionOutcome> UpdatePipelineExecutionOutcomeCallable;
       typedef std::future<UpdateProjectOutcome> UpdateProjectOutcomeCallable;
+      typedef std::future<UpdateSpaceOutcome> UpdateSpaceOutcomeCallable;
       typedef std::future<UpdateTrainingJobOutcome> UpdateTrainingJobOutcomeCallable;
       typedef std::future<UpdateTrialOutcome> UpdateTrialOutcomeCallable;
       typedef std::future<UpdateTrialComponentOutcome> UpdateTrialComponentOutcomeCallable;
@@ -1103,14 +1235,18 @@ namespace Aws
     typedef std::function<void(const SageMakerClient*, const Model::CreateExperimentRequest&, const Model::CreateExperimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateExperimentResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateFeatureGroupRequest&, const Model::CreateFeatureGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFeatureGroupResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateFlowDefinitionRequest&, const Model::CreateFlowDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFlowDefinitionResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::CreateHubRequest&, const Model::CreateHubOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateHubResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateHumanTaskUiRequest&, const Model::CreateHumanTaskUiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateHumanTaskUiResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateHyperParameterTuningJobRequest&, const Model::CreateHyperParameterTuningJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateHyperParameterTuningJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateImageRequest&, const Model::CreateImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateImageResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateImageVersionRequest&, const Model::CreateImageVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateImageVersionResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::CreateInferenceExperimentRequest&, const Model::CreateInferenceExperimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInferenceExperimentResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateInferenceRecommendationsJobRequest&, const Model::CreateInferenceRecommendationsJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInferenceRecommendationsJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateLabelingJobRequest&, const Model::CreateLabelingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLabelingJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateModelRequest&, const Model::CreateModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateModelResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateModelBiasJobDefinitionRequest&, const Model::CreateModelBiasJobDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateModelBiasJobDefinitionResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::CreateModelCardRequest&, const Model::CreateModelCardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateModelCardResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::CreateModelCardExportJobRequest&, const Model::CreateModelCardExportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateModelCardExportJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateModelExplainabilityJobDefinitionRequest&, const Model::CreateModelExplainabilityJobDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateModelExplainabilityJobDefinitionResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateModelPackageRequest&, const Model::CreateModelPackageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateModelPackageResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateModelPackageGroupRequest&, const Model::CreateModelPackageGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateModelPackageGroupResponseReceivedHandler;
@@ -1123,6 +1259,7 @@ namespace Aws
     typedef std::function<void(const SageMakerClient*, const Model::CreatePresignedNotebookInstanceUrlRequest&, const Model::CreatePresignedNotebookInstanceUrlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePresignedNotebookInstanceUrlResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateProcessingJobRequest&, const Model::CreateProcessingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProcessingJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateProjectRequest&, const Model::CreateProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProjectResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::CreateSpaceRequest&, const Model::CreateSpaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSpaceResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateStudioLifecycleConfigRequest&, const Model::CreateStudioLifecycleConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStudioLifecycleConfigResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateTrainingJobRequest&, const Model::CreateTrainingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTrainingJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateTransformJobRequest&, const Model::CreateTransformJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTransformJobResponseReceivedHandler;
@@ -1149,11 +1286,15 @@ namespace Aws
     typedef std::function<void(const SageMakerClient*, const Model::DeleteExperimentRequest&, const Model::DeleteExperimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteExperimentResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteFeatureGroupRequest&, const Model::DeleteFeatureGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFeatureGroupResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteFlowDefinitionRequest&, const Model::DeleteFlowDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFlowDefinitionResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DeleteHubRequest&, const Model::DeleteHubOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteHubResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DeleteHubContentRequest&, const Model::DeleteHubContentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteHubContentResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteHumanTaskUiRequest&, const Model::DeleteHumanTaskUiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteHumanTaskUiResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteImageRequest&, const Model::DeleteImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteImageResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteImageVersionRequest&, const Model::DeleteImageVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteImageVersionResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DeleteInferenceExperimentRequest&, const Model::DeleteInferenceExperimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInferenceExperimentResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteModelRequest&, const Model::DeleteModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteModelResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteModelBiasJobDefinitionRequest&, const Model::DeleteModelBiasJobDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteModelBiasJobDefinitionResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DeleteModelCardRequest&, const Model::DeleteModelCardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteModelCardResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteModelExplainabilityJobDefinitionRequest&, const Model::DeleteModelExplainabilityJobDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteModelExplainabilityJobDefinitionResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteModelPackageRequest&, const Model::DeleteModelPackageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteModelPackageResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteModelPackageGroupRequest&, const Model::DeleteModelPackageGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteModelPackageGroupResponseReceivedHandler;
@@ -1164,6 +1305,7 @@ namespace Aws
     typedef std::function<void(const SageMakerClient*, const Model::DeleteNotebookInstanceLifecycleConfigRequest&, const Model::DeleteNotebookInstanceLifecycleConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNotebookInstanceLifecycleConfigResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeletePipelineRequest&, const Model::DeletePipelineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePipelineResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteProjectRequest&, const Model::DeleteProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProjectResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DeleteSpaceRequest&, const Model::DeleteSpaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSpaceResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteStudioLifecycleConfigRequest&, const Model::DeleteStudioLifecycleConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStudioLifecycleConfigResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteTagsRequest&, const Model::DeleteTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTagsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteTrialRequest&, const Model::DeleteTrialOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTrialResponseReceivedHandler;
@@ -1193,15 +1335,20 @@ namespace Aws
     typedef std::function<void(const SageMakerClient*, const Model::DescribeFeatureGroupRequest&, const Model::DescribeFeatureGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFeatureGroupResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeFeatureMetadataRequest&, const Model::DescribeFeatureMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFeatureMetadataResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeFlowDefinitionRequest&, const Model::DescribeFlowDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFlowDefinitionResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DescribeHubRequest&, const Model::DescribeHubOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeHubResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DescribeHubContentRequest&, const Model::DescribeHubContentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeHubContentResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeHumanTaskUiRequest&, const Model::DescribeHumanTaskUiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeHumanTaskUiResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeHyperParameterTuningJobRequest&, const Model::DescribeHyperParameterTuningJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeHyperParameterTuningJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeImageRequest&, const Model::DescribeImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeImageResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeImageVersionRequest&, const Model::DescribeImageVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeImageVersionResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DescribeInferenceExperimentRequest&, const Model::DescribeInferenceExperimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInferenceExperimentResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeInferenceRecommendationsJobRequest&, const Model::DescribeInferenceRecommendationsJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInferenceRecommendationsJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeLabelingJobRequest&, const Model::DescribeLabelingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLabelingJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeLineageGroupRequest&, const Model::DescribeLineageGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLineageGroupResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeModelRequest&, const Model::DescribeModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeModelResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeModelBiasJobDefinitionRequest&, const Model::DescribeModelBiasJobDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeModelBiasJobDefinitionResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DescribeModelCardRequest&, const Model::DescribeModelCardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeModelCardResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DescribeModelCardExportJobRequest&, const Model::DescribeModelCardExportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeModelCardExportJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeModelExplainabilityJobDefinitionRequest&, const Model::DescribeModelExplainabilityJobDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeModelExplainabilityJobDefinitionResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeModelPackageRequest&, const Model::DescribeModelPackageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeModelPackageResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeModelPackageGroupRequest&, const Model::DescribeModelPackageGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeModelPackageGroupResponseReceivedHandler;
@@ -1214,6 +1361,7 @@ namespace Aws
     typedef std::function<void(const SageMakerClient*, const Model::DescribePipelineExecutionRequest&, const Model::DescribePipelineExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePipelineExecutionResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeProcessingJobRequest&, const Model::DescribeProcessingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProcessingJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeProjectRequest&, const Model::DescribeProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProjectResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DescribeSpaceRequest&, const Model::DescribeSpaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSpaceResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeStudioLifecycleConfigRequest&, const Model::DescribeStudioLifecycleConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStudioLifecycleConfigResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeSubscribedWorkteamRequest&, const Model::DescribeSubscribedWorkteamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSubscribedWorkteamResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeTrainingJobRequest&, const Model::DescribeTrainingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTrainingJobResponseReceivedHandler;
@@ -1231,6 +1379,7 @@ namespace Aws
     typedef std::function<void(const SageMakerClient*, const Model::GetModelPackageGroupPolicyRequest&, const Model::GetModelPackageGroupPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetModelPackageGroupPolicyResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::GetSagemakerServicecatalogPortfolioStatusRequest&, const Model::GetSagemakerServicecatalogPortfolioStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSagemakerServicecatalogPortfolioStatusResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::GetSearchSuggestionsRequest&, const Model::GetSearchSuggestionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSearchSuggestionsResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ImportHubContentRequest&, const Model::ImportHubContentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportHubContentResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListActionsRequest&, const Model::ListActionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListActionsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListAlgorithmsRequest&, const Model::ListAlgorithmsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAlgorithmsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListAppImageConfigsRequest&, const Model::ListAppImageConfigsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAppImageConfigsResponseReceivedHandler;
@@ -1253,22 +1402,31 @@ namespace Aws
     typedef std::function<void(const SageMakerClient*, const Model::ListExperimentsRequest&, const Model::ListExperimentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListExperimentsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListFeatureGroupsRequest&, const Model::ListFeatureGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFeatureGroupsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListFlowDefinitionsRequest&, const Model::ListFlowDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFlowDefinitionsResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ListHubContentVersionsRequest&, const Model::ListHubContentVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHubContentVersionsResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ListHubContentsRequest&, const Model::ListHubContentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHubContentsResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ListHubsRequest&, const Model::ListHubsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHubsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListHumanTaskUisRequest&, const Model::ListHumanTaskUisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHumanTaskUisResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListHyperParameterTuningJobsRequest&, const Model::ListHyperParameterTuningJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHyperParameterTuningJobsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListImageVersionsRequest&, const Model::ListImageVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImageVersionsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListImagesRequest&, const Model::ListImagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImagesResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ListInferenceExperimentsRequest&, const Model::ListInferenceExperimentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInferenceExperimentsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListInferenceRecommendationsJobStepsRequest&, const Model::ListInferenceRecommendationsJobStepsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInferenceRecommendationsJobStepsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListInferenceRecommendationsJobsRequest&, const Model::ListInferenceRecommendationsJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInferenceRecommendationsJobsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListLabelingJobsRequest&, const Model::ListLabelingJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLabelingJobsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListLabelingJobsForWorkteamRequest&, const Model::ListLabelingJobsForWorkteamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLabelingJobsForWorkteamResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListLineageGroupsRequest&, const Model::ListLineageGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLineageGroupsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListModelBiasJobDefinitionsRequest&, const Model::ListModelBiasJobDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListModelBiasJobDefinitionsResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ListModelCardExportJobsRequest&, const Model::ListModelCardExportJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListModelCardExportJobsResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ListModelCardVersionsRequest&, const Model::ListModelCardVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListModelCardVersionsResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ListModelCardsRequest&, const Model::ListModelCardsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListModelCardsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListModelExplainabilityJobDefinitionsRequest&, const Model::ListModelExplainabilityJobDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListModelExplainabilityJobDefinitionsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListModelMetadataRequest&, const Model::ListModelMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListModelMetadataResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListModelPackageGroupsRequest&, const Model::ListModelPackageGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListModelPackageGroupsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListModelPackagesRequest&, const Model::ListModelPackagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListModelPackagesResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListModelQualityJobDefinitionsRequest&, const Model::ListModelQualityJobDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListModelQualityJobDefinitionsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListModelsRequest&, const Model::ListModelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListModelsResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ListMonitoringAlertHistoryRequest&, const Model::ListMonitoringAlertHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMonitoringAlertHistoryResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ListMonitoringAlertsRequest&, const Model::ListMonitoringAlertsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMonitoringAlertsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListMonitoringExecutionsRequest&, const Model::ListMonitoringExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMonitoringExecutionsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListMonitoringSchedulesRequest&, const Model::ListMonitoringSchedulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMonitoringSchedulesResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListNotebookInstanceLifecycleConfigsRequest&, const Model::ListNotebookInstanceLifecycleConfigsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListNotebookInstanceLifecycleConfigsResponseReceivedHandler;
@@ -1279,6 +1437,7 @@ namespace Aws
     typedef std::function<void(const SageMakerClient*, const Model::ListPipelinesRequest&, const Model::ListPipelinesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPipelinesResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListProcessingJobsRequest&, const Model::ListProcessingJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProcessingJobsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListProjectsRequest&, const Model::ListProjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProjectsResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ListSpacesRequest&, const Model::ListSpacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSpacesResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListStageDevicesRequest&, const Model::ListStageDevicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStageDevicesResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListStudioLifecycleConfigsRequest&, const Model::ListStudioLifecycleConfigsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStudioLifecycleConfigsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListSubscribedWorkteamsRequest&, const Model::ListSubscribedWorkteamsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSubscribedWorkteamsResponseReceivedHandler;
@@ -1300,6 +1459,7 @@ namespace Aws
     typedef std::function<void(const SageMakerClient*, const Model::SendPipelineExecutionStepFailureRequest&, const Model::SendPipelineExecutionStepFailureOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendPipelineExecutionStepFailureResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::SendPipelineExecutionStepSuccessRequest&, const Model::SendPipelineExecutionStepSuccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendPipelineExecutionStepSuccessResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StartEdgeDeploymentStageRequest&, const Model::StartEdgeDeploymentStageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartEdgeDeploymentStageResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::StartInferenceExperimentRequest&, const Model::StartInferenceExperimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartInferenceExperimentResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StartMonitoringScheduleRequest&, const Model::StartMonitoringScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMonitoringScheduleResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StartNotebookInstanceRequest&, const Model::StartNotebookInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartNotebookInstanceResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StartPipelineExecutionRequest&, const Model::StartPipelineExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartPipelineExecutionResponseReceivedHandler;
@@ -1308,6 +1468,7 @@ namespace Aws
     typedef std::function<void(const SageMakerClient*, const Model::StopEdgeDeploymentStageRequest&, const Model::StopEdgeDeploymentStageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopEdgeDeploymentStageResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StopEdgePackagingJobRequest&, const Model::StopEdgePackagingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopEdgePackagingJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StopHyperParameterTuningJobRequest&, const Model::StopHyperParameterTuningJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopHyperParameterTuningJobResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::StopInferenceExperimentRequest&, const Model::StopInferenceExperimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopInferenceExperimentResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StopInferenceRecommendationsJobRequest&, const Model::StopInferenceRecommendationsJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopInferenceRecommendationsJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StopLabelingJobRequest&, const Model::StopLabelingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopLabelingJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StopMonitoringScheduleRequest&, const Model::StopMonitoringScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopMonitoringScheduleResponseReceivedHandler;
@@ -1329,14 +1490,19 @@ namespace Aws
     typedef std::function<void(const SageMakerClient*, const Model::UpdateExperimentRequest&, const Model::UpdateExperimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateExperimentResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateFeatureGroupRequest&, const Model::UpdateFeatureGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFeatureGroupResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateFeatureMetadataRequest&, const Model::UpdateFeatureMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFeatureMetadataResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::UpdateHubRequest&, const Model::UpdateHubOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateHubResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateImageRequest&, const Model::UpdateImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateImageResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::UpdateInferenceExperimentRequest&, const Model::UpdateInferenceExperimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateInferenceExperimentResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::UpdateModelCardRequest&, const Model::UpdateModelCardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateModelCardResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateModelPackageRequest&, const Model::UpdateModelPackageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateModelPackageResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::UpdateMonitoringAlertRequest&, const Model::UpdateMonitoringAlertOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMonitoringAlertResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateMonitoringScheduleRequest&, const Model::UpdateMonitoringScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMonitoringScheduleResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateNotebookInstanceRequest&, const Model::UpdateNotebookInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateNotebookInstanceResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateNotebookInstanceLifecycleConfigRequest&, const Model::UpdateNotebookInstanceLifecycleConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateNotebookInstanceLifecycleConfigResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdatePipelineRequest&, const Model::UpdatePipelineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePipelineResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdatePipelineExecutionRequest&, const Model::UpdatePipelineExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePipelineExecutionResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateProjectRequest&, const Model::UpdateProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProjectResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::UpdateSpaceRequest&, const Model::UpdateSpaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSpaceResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateTrainingJobRequest&, const Model::UpdateTrainingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTrainingJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateTrialRequest&, const Model::UpdateTrialOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTrialResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateTrialComponentRequest&, const Model::UpdateTrialComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTrialComponentResponseReceivedHandler;

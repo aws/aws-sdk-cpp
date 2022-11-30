@@ -161,6 +161,47 @@ namespace Model
      */
     inline CreatePresignedDomainUrlRequest& WithExpiresInSeconds(int value) { SetExpiresInSeconds(value); return *this;}
 
+
+    /**
+     * <p>The name of the space.</p>
+     */
+    inline const Aws::String& GetSpaceName() const{ return m_spaceName; }
+
+    /**
+     * <p>The name of the space.</p>
+     */
+    inline bool SpaceNameHasBeenSet() const { return m_spaceNameHasBeenSet; }
+
+    /**
+     * <p>The name of the space.</p>
+     */
+    inline void SetSpaceName(const Aws::String& value) { m_spaceNameHasBeenSet = true; m_spaceName = value; }
+
+    /**
+     * <p>The name of the space.</p>
+     */
+    inline void SetSpaceName(Aws::String&& value) { m_spaceNameHasBeenSet = true; m_spaceName = std::move(value); }
+
+    /**
+     * <p>The name of the space.</p>
+     */
+    inline void SetSpaceName(const char* value) { m_spaceNameHasBeenSet = true; m_spaceName.assign(value); }
+
+    /**
+     * <p>The name of the space.</p>
+     */
+    inline CreatePresignedDomainUrlRequest& WithSpaceName(const Aws::String& value) { SetSpaceName(value); return *this;}
+
+    /**
+     * <p>The name of the space.</p>
+     */
+    inline CreatePresignedDomainUrlRequest& WithSpaceName(Aws::String&& value) { SetSpaceName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the space.</p>
+     */
+    inline CreatePresignedDomainUrlRequest& WithSpaceName(const char* value) { SetSpaceName(value); return *this;}
+
   private:
 
     Aws::String m_domainId;
@@ -174,6 +215,9 @@ namespace Model
 
     int m_expiresInSeconds;
     bool m_expiresInSecondsHasBeenSet = false;
+
+    Aws::String m_spaceName;
+    bool m_spaceNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,7 +30,8 @@ Endpoint::Endpoint() :
     m_creationTimeHasBeenSet(false),
     m_lastModifiedTimeHasBeenSet(false),
     m_monitoringSchedulesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_shadowProductionVariantsHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ Endpoint::Endpoint(JsonView jsonValue) :
     m_creationTimeHasBeenSet(false),
     m_lastModifiedTimeHasBeenSet(false),
     m_monitoringSchedulesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_shadowProductionVariantsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -139,6 +141,16 @@ Endpoint& Endpoint::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ShadowProductionVariants"))
+  {
+    Aws::Utils::Array<JsonView> shadowProductionVariantsJsonList = jsonValue.GetArray("ShadowProductionVariants");
+    for(unsigned shadowProductionVariantsIndex = 0; shadowProductionVariantsIndex < shadowProductionVariantsJsonList.GetLength(); ++shadowProductionVariantsIndex)
+    {
+      m_shadowProductionVariants.push_back(shadowProductionVariantsJsonList[shadowProductionVariantsIndex].AsObject());
+    }
+    m_shadowProductionVariantsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -221,6 +233,17 @@ JsonValue Endpoint::Jsonize() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_shadowProductionVariantsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> shadowProductionVariantsJsonList(m_shadowProductionVariants.size());
+   for(unsigned shadowProductionVariantsIndex = 0; shadowProductionVariantsIndex < shadowProductionVariantsJsonList.GetLength(); ++shadowProductionVariantsIndex)
+   {
+     shadowProductionVariantsJsonList[shadowProductionVariantsIndex].AsObject(m_shadowProductionVariants[shadowProductionVariantsIndex].Jsonize());
+   }
+   payload.WithArray("ShadowProductionVariants", std::move(shadowProductionVariantsJsonList));
 
   }
 

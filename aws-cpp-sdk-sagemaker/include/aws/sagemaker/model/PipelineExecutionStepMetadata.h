@@ -18,6 +18,7 @@
 #include <aws/sagemaker/model/ClarifyCheckStepMetadata.h>
 #include <aws/sagemaker/model/EMRStepMetadata.h>
 #include <aws/sagemaker/model/FailStepMetadata.h>
+#include <aws/sagemaker/model/AutoMLJobStepMetadata.h>
 #include <utility>
 
 namespace Aws
@@ -235,38 +236,38 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the model package the model was registered
-     * to by this step execution.</p>
+     * <p>The Amazon Resource Name (ARN) of the model package that the model was
+     * registered to by this step execution.</p>
      */
     inline const RegisterModelStepMetadata& GetRegisterModel() const{ return m_registerModel; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the model package the model was registered
-     * to by this step execution.</p>
+     * <p>The Amazon Resource Name (ARN) of the model package that the model was
+     * registered to by this step execution.</p>
      */
     inline bool RegisterModelHasBeenSet() const { return m_registerModelHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the model package the model was registered
-     * to by this step execution.</p>
+     * <p>The Amazon Resource Name (ARN) of the model package that the model was
+     * registered to by this step execution.</p>
      */
     inline void SetRegisterModel(const RegisterModelStepMetadata& value) { m_registerModelHasBeenSet = true; m_registerModel = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the model package the model was registered
-     * to by this step execution.</p>
+     * <p>The Amazon Resource Name (ARN) of the model package that the model was
+     * registered to by this step execution.</p>
      */
     inline void SetRegisterModel(RegisterModelStepMetadata&& value) { m_registerModelHasBeenSet = true; m_registerModel = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the model package the model was registered
-     * to by this step execution.</p>
+     * <p>The Amazon Resource Name (ARN) of the model package that the model was
+     * registered to by this step execution.</p>
      */
     inline PipelineExecutionStepMetadata& WithRegisterModel(const RegisterModelStepMetadata& value) { SetRegisterModel(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the model package the model was registered
-     * to by this step execution.</p>
+     * <p>The Amazon Resource Name (ARN) of the model package that the model was
+     * registered to by this step execution.</p>
      */
     inline PipelineExecutionStepMetadata& WithRegisterModel(RegisterModelStepMetadata&& value) { SetRegisterModel(std::move(value)); return *this;}
 
@@ -384,13 +385,13 @@ namespace Model
 
     /**
      * <p>The configurations and outcomes of the check step execution. This includes:
-     * </p> <ul> <li> <p>The type of the check conducted,</p> </li> <li> <p>The Amazon
+     * </p> <ul> <li> <p>The type of the check conducted.</p> </li> <li> <p>The Amazon
      * S3 URIs of baseline constraints and statistics files to be used for the drift
      * check.</p> </li> <li> <p>The Amazon S3 URIs of newly calculated baseline
      * constraints and statistics.</p> </li> <li> <p>The model package group name
      * provided.</p> </li> <li> <p>The Amazon S3 URI of the violation report if
      * violations detected.</p> </li> <li> <p>The Amazon Resource Name (ARN) of check
-     * processing job initiated by the step execution.</p> </li> <li> <p>The boolean
+     * processing job initiated by the step execution.</p> </li> <li> <p>The Boolean
      * flags indicating if the drift check is skipped.</p> </li> <li> <p>If step
      * property <code>BaselineUsedForDriftCheck</code> is set the same as
      * <code>CalculatedBaseline</code>.</p> </li> </ul>
@@ -399,13 +400,13 @@ namespace Model
 
     /**
      * <p>The configurations and outcomes of the check step execution. This includes:
-     * </p> <ul> <li> <p>The type of the check conducted,</p> </li> <li> <p>The Amazon
+     * </p> <ul> <li> <p>The type of the check conducted.</p> </li> <li> <p>The Amazon
      * S3 URIs of baseline constraints and statistics files to be used for the drift
      * check.</p> </li> <li> <p>The Amazon S3 URIs of newly calculated baseline
      * constraints and statistics.</p> </li> <li> <p>The model package group name
      * provided.</p> </li> <li> <p>The Amazon S3 URI of the violation report if
      * violations detected.</p> </li> <li> <p>The Amazon Resource Name (ARN) of check
-     * processing job initiated by the step execution.</p> </li> <li> <p>The boolean
+     * processing job initiated by the step execution.</p> </li> <li> <p>The Boolean
      * flags indicating if the drift check is skipped.</p> </li> <li> <p>If step
      * property <code>BaselineUsedForDriftCheck</code> is set the same as
      * <code>CalculatedBaseline</code>.</p> </li> </ul>
@@ -414,13 +415,13 @@ namespace Model
 
     /**
      * <p>The configurations and outcomes of the check step execution. This includes:
-     * </p> <ul> <li> <p>The type of the check conducted,</p> </li> <li> <p>The Amazon
+     * </p> <ul> <li> <p>The type of the check conducted.</p> </li> <li> <p>The Amazon
      * S3 URIs of baseline constraints and statistics files to be used for the drift
      * check.</p> </li> <li> <p>The Amazon S3 URIs of newly calculated baseline
      * constraints and statistics.</p> </li> <li> <p>The model package group name
      * provided.</p> </li> <li> <p>The Amazon S3 URI of the violation report if
      * violations detected.</p> </li> <li> <p>The Amazon Resource Name (ARN) of check
-     * processing job initiated by the step execution.</p> </li> <li> <p>The boolean
+     * processing job initiated by the step execution.</p> </li> <li> <p>The Boolean
      * flags indicating if the drift check is skipped.</p> </li> <li> <p>If step
      * property <code>BaselineUsedForDriftCheck</code> is set the same as
      * <code>CalculatedBaseline</code>.</p> </li> </ul>
@@ -429,13 +430,13 @@ namespace Model
 
     /**
      * <p>The configurations and outcomes of the check step execution. This includes:
-     * </p> <ul> <li> <p>The type of the check conducted,</p> </li> <li> <p>The Amazon
+     * </p> <ul> <li> <p>The type of the check conducted.</p> </li> <li> <p>The Amazon
      * S3 URIs of baseline constraints and statistics files to be used for the drift
      * check.</p> </li> <li> <p>The Amazon S3 URIs of newly calculated baseline
      * constraints and statistics.</p> </li> <li> <p>The model package group name
      * provided.</p> </li> <li> <p>The Amazon S3 URI of the violation report if
      * violations detected.</p> </li> <li> <p>The Amazon Resource Name (ARN) of check
-     * processing job initiated by the step execution.</p> </li> <li> <p>The boolean
+     * processing job initiated by the step execution.</p> </li> <li> <p>The Boolean
      * flags indicating if the drift check is skipped.</p> </li> <li> <p>If step
      * property <code>BaselineUsedForDriftCheck</code> is set the same as
      * <code>CalculatedBaseline</code>.</p> </li> </ul>
@@ -444,13 +445,13 @@ namespace Model
 
     /**
      * <p>The configurations and outcomes of the check step execution. This includes:
-     * </p> <ul> <li> <p>The type of the check conducted,</p> </li> <li> <p>The Amazon
+     * </p> <ul> <li> <p>The type of the check conducted.</p> </li> <li> <p>The Amazon
      * S3 URIs of baseline constraints and statistics files to be used for the drift
      * check.</p> </li> <li> <p>The Amazon S3 URIs of newly calculated baseline
      * constraints and statistics.</p> </li> <li> <p>The model package group name
      * provided.</p> </li> <li> <p>The Amazon S3 URI of the violation report if
      * violations detected.</p> </li> <li> <p>The Amazon Resource Name (ARN) of check
-     * processing job initiated by the step execution.</p> </li> <li> <p>The boolean
+     * processing job initiated by the step execution.</p> </li> <li> <p>The Boolean
      * flags indicating if the drift check is skipped.</p> </li> <li> <p>If step
      * property <code>BaselineUsedForDriftCheck</code> is set the same as
      * <code>CalculatedBaseline</code>.</p> </li> </ul>
@@ -459,13 +460,13 @@ namespace Model
 
     /**
      * <p>The configurations and outcomes of the check step execution. This includes:
-     * </p> <ul> <li> <p>The type of the check conducted,</p> </li> <li> <p>The Amazon
+     * </p> <ul> <li> <p>The type of the check conducted.</p> </li> <li> <p>The Amazon
      * S3 URIs of baseline constraints and statistics files to be used for the drift
      * check.</p> </li> <li> <p>The Amazon S3 URIs of newly calculated baseline
      * constraints and statistics.</p> </li> <li> <p>The model package group name
      * provided.</p> </li> <li> <p>The Amazon S3 URI of the violation report if
      * violations detected.</p> </li> <li> <p>The Amazon Resource Name (ARN) of check
-     * processing job initiated by the step execution.</p> </li> <li> <p>The boolean
+     * processing job initiated by the step execution.</p> </li> <li> <p>The Boolean
      * flags indicating if the drift check is skipped.</p> </li> <li> <p>If step
      * property <code>BaselineUsedForDriftCheck</code> is set the same as
      * <code>CalculatedBaseline</code>.</p> </li> </ul>
@@ -571,32 +572,32 @@ namespace Model
 
 
     /**
-     * <p>The configurations and outcomes of an EMR step execution.</p>
+     * <p>The configurations and outcomes of an Amazon EMR step execution.</p>
      */
     inline const EMRStepMetadata& GetEMR() const{ return m_eMR; }
 
     /**
-     * <p>The configurations and outcomes of an EMR step execution.</p>
+     * <p>The configurations and outcomes of an Amazon EMR step execution.</p>
      */
     inline bool EMRHasBeenSet() const { return m_eMRHasBeenSet; }
 
     /**
-     * <p>The configurations and outcomes of an EMR step execution.</p>
+     * <p>The configurations and outcomes of an Amazon EMR step execution.</p>
      */
     inline void SetEMR(const EMRStepMetadata& value) { m_eMRHasBeenSet = true; m_eMR = value; }
 
     /**
-     * <p>The configurations and outcomes of an EMR step execution.</p>
+     * <p>The configurations and outcomes of an Amazon EMR step execution.</p>
      */
     inline void SetEMR(EMRStepMetadata&& value) { m_eMRHasBeenSet = true; m_eMR = std::move(value); }
 
     /**
-     * <p>The configurations and outcomes of an EMR step execution.</p>
+     * <p>The configurations and outcomes of an Amazon EMR step execution.</p>
      */
     inline PipelineExecutionStepMetadata& WithEMR(const EMRStepMetadata& value) { SetEMR(value); return *this;}
 
     /**
-     * <p>The configurations and outcomes of an EMR step execution.</p>
+     * <p>The configurations and outcomes of an Amazon EMR step execution.</p>
      */
     inline PipelineExecutionStepMetadata& WithEMR(EMRStepMetadata&& value) { SetEMR(std::move(value)); return *this;}
 
@@ -630,6 +631,43 @@ namespace Model
      * <p>The configurations and outcomes of a Fail step execution.</p>
      */
     inline PipelineExecutionStepMetadata& WithFail(FailStepMetadata&& value) { SetFail(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the AutoML job that was run by this
+     * step.</p>
+     */
+    inline const AutoMLJobStepMetadata& GetAutoMLJob() const{ return m_autoMLJob; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the AutoML job that was run by this
+     * step.</p>
+     */
+    inline bool AutoMLJobHasBeenSet() const { return m_autoMLJobHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the AutoML job that was run by this
+     * step.</p>
+     */
+    inline void SetAutoMLJob(const AutoMLJobStepMetadata& value) { m_autoMLJobHasBeenSet = true; m_autoMLJob = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the AutoML job that was run by this
+     * step.</p>
+     */
+    inline void SetAutoMLJob(AutoMLJobStepMetadata&& value) { m_autoMLJobHasBeenSet = true; m_autoMLJob = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the AutoML job that was run by this
+     * step.</p>
+     */
+    inline PipelineExecutionStepMetadata& WithAutoMLJob(const AutoMLJobStepMetadata& value) { SetAutoMLJob(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the AutoML job that was run by this
+     * step.</p>
+     */
+    inline PipelineExecutionStepMetadata& WithAutoMLJob(AutoMLJobStepMetadata&& value) { SetAutoMLJob(std::move(value)); return *this;}
 
   private:
 
@@ -671,6 +709,9 @@ namespace Model
 
     FailStepMetadata m_fail;
     bool m_failHasBeenSet = false;
+
+    AutoMLJobStepMetadata m_autoMLJob;
+    bool m_autoMLJobHasBeenSet = false;
   };
 
 } // namespace Model

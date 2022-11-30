@@ -56,6 +56,7 @@
 #include <aws/glue/model/OracleSQLCatalogTarget.h>
 #include <aws/glue/model/PostgreSQLCatalogTarget.h>
 #include <aws/glue/model/DynamicTransform.h>
+#include <aws/glue/model/EvaluateDataQuality.h>
 #include <utility>
 
 namespace Aws
@@ -1825,6 +1826,37 @@ namespace Model
      */
     inline CodeGenConfigurationNode& WithDynamicTransform(DynamicTransform&& value) { SetDynamicTransform(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies your data quality evaluation criteria.</p>
+     */
+    inline const EvaluateDataQuality& GetEvaluateDataQuality() const{ return m_evaluateDataQuality; }
+
+    /**
+     * <p>Specifies your data quality evaluation criteria.</p>
+     */
+    inline bool EvaluateDataQualityHasBeenSet() const { return m_evaluateDataQualityHasBeenSet; }
+
+    /**
+     * <p>Specifies your data quality evaluation criteria.</p>
+     */
+    inline void SetEvaluateDataQuality(const EvaluateDataQuality& value) { m_evaluateDataQualityHasBeenSet = true; m_evaluateDataQuality = value; }
+
+    /**
+     * <p>Specifies your data quality evaluation criteria.</p>
+     */
+    inline void SetEvaluateDataQuality(EvaluateDataQuality&& value) { m_evaluateDataQualityHasBeenSet = true; m_evaluateDataQuality = std::move(value); }
+
+    /**
+     * <p>Specifies your data quality evaluation criteria.</p>
+     */
+    inline CodeGenConfigurationNode& WithEvaluateDataQuality(const EvaluateDataQuality& value) { SetEvaluateDataQuality(value); return *this;}
+
+    /**
+     * <p>Specifies your data quality evaluation criteria.</p>
+     */
+    inline CodeGenConfigurationNode& WithEvaluateDataQuality(EvaluateDataQuality&& value) { SetEvaluateDataQuality(std::move(value)); return *this;}
+
   private:
 
     AthenaConnectorSource m_athenaConnectorSource;
@@ -1979,6 +2011,9 @@ namespace Model
 
     DynamicTransform m_dynamicTransform;
     bool m_dynamicTransformHasBeenSet = false;
+
+    EvaluateDataQuality m_evaluateDataQuality;
+    bool m_evaluateDataQualityHasBeenSet = false;
   };
 
 } // namespace Model

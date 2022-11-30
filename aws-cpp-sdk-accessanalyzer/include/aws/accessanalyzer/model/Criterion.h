@@ -25,8 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>The criteria to use in the filter that defines the archive
-   * rule.</p><p><h3>See Also:</h3>   <a
+   * <p>The criteria to use in the filter that defines the archive rule. For more
+   * information on available filter keys, see <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">IAM
+   * Access Analyzer filter keys</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/Criterion">AWS
    * API Reference</a></p>
    */

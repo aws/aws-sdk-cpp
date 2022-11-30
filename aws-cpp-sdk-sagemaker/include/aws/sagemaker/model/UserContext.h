@@ -25,7 +25,8 @@ namespace Model
 
   /**
    * <p>Information about the user who created or modified an experiment, trial,
-   * trial component, lineage group, or project.</p><p><h3>See Also:</h3>   <a
+   * trial component, lineage group, project, or model card.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UserContext">AWS
    * API Reference</a></p>
    */

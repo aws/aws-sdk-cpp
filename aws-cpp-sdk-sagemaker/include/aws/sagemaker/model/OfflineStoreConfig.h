@@ -7,6 +7,7 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/S3StorageConfig.h>
 #include <aws/sagemaker/model/DataCatalogConfig.h>
+#include <aws/sagemaker/model/TableFormat.h>
 #include <utility>
 
 namespace Aws
@@ -141,6 +142,43 @@ namespace Model
      */
     inline OfflineStoreConfig& WithDataCatalogConfig(DataCatalogConfig&& value) { SetDataCatalogConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Format for the offline store feature group. <code>Iceberg</code> is the
+     * optimal format for feature groups shared between offline and online stores.</p>
+     */
+    inline const TableFormat& GetTableFormat() const{ return m_tableFormat; }
+
+    /**
+     * <p>Format for the offline store feature group. <code>Iceberg</code> is the
+     * optimal format for feature groups shared between offline and online stores.</p>
+     */
+    inline bool TableFormatHasBeenSet() const { return m_tableFormatHasBeenSet; }
+
+    /**
+     * <p>Format for the offline store feature group. <code>Iceberg</code> is the
+     * optimal format for feature groups shared between offline and online stores.</p>
+     */
+    inline void SetTableFormat(const TableFormat& value) { m_tableFormatHasBeenSet = true; m_tableFormat = value; }
+
+    /**
+     * <p>Format for the offline store feature group. <code>Iceberg</code> is the
+     * optimal format for feature groups shared between offline and online stores.</p>
+     */
+    inline void SetTableFormat(TableFormat&& value) { m_tableFormatHasBeenSet = true; m_tableFormat = std::move(value); }
+
+    /**
+     * <p>Format for the offline store feature group. <code>Iceberg</code> is the
+     * optimal format for feature groups shared between offline and online stores.</p>
+     */
+    inline OfflineStoreConfig& WithTableFormat(const TableFormat& value) { SetTableFormat(value); return *this;}
+
+    /**
+     * <p>Format for the offline store feature group. <code>Iceberg</code> is the
+     * optimal format for feature groups shared between offline and online stores.</p>
+     */
+    inline OfflineStoreConfig& WithTableFormat(TableFormat&& value) { SetTableFormat(std::move(value)); return *this;}
+
   private:
 
     S3StorageConfig m_s3StorageConfig;
@@ -151,6 +189,9 @@ namespace Model
 
     DataCatalogConfig m_dataCatalogConfig;
     bool m_dataCatalogConfigHasBeenSet = false;
+
+    TableFormat m_tableFormat;
+    bool m_tableFormatHasBeenSet = false;
   };
 
 } // namespace Model

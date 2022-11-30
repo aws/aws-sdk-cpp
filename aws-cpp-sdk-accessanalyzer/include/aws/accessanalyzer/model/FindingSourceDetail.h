@@ -94,10 +94,54 @@ namespace Model
      */
     inline FindingSourceDetail& WithAccessPointArn(const char* value) { SetAccessPointArn(value); return *this;}
 
+
+    /**
+     * <p>The account of the cross-account access point that generated the finding.</p>
+     */
+    inline const Aws::String& GetAccessPointAccount() const{ return m_accessPointAccount; }
+
+    /**
+     * <p>The account of the cross-account access point that generated the finding.</p>
+     */
+    inline bool AccessPointAccountHasBeenSet() const { return m_accessPointAccountHasBeenSet; }
+
+    /**
+     * <p>The account of the cross-account access point that generated the finding.</p>
+     */
+    inline void SetAccessPointAccount(const Aws::String& value) { m_accessPointAccountHasBeenSet = true; m_accessPointAccount = value; }
+
+    /**
+     * <p>The account of the cross-account access point that generated the finding.</p>
+     */
+    inline void SetAccessPointAccount(Aws::String&& value) { m_accessPointAccountHasBeenSet = true; m_accessPointAccount = std::move(value); }
+
+    /**
+     * <p>The account of the cross-account access point that generated the finding.</p>
+     */
+    inline void SetAccessPointAccount(const char* value) { m_accessPointAccountHasBeenSet = true; m_accessPointAccount.assign(value); }
+
+    /**
+     * <p>The account of the cross-account access point that generated the finding.</p>
+     */
+    inline FindingSourceDetail& WithAccessPointAccount(const Aws::String& value) { SetAccessPointAccount(value); return *this;}
+
+    /**
+     * <p>The account of the cross-account access point that generated the finding.</p>
+     */
+    inline FindingSourceDetail& WithAccessPointAccount(Aws::String&& value) { SetAccessPointAccount(std::move(value)); return *this;}
+
+    /**
+     * <p>The account of the cross-account access point that generated the finding.</p>
+     */
+    inline FindingSourceDetail& WithAccessPointAccount(const char* value) { SetAccessPointAccount(value); return *this;}
+
   private:
 
     Aws::String m_accessPointArn;
     bool m_accessPointArnHasBeenSet = false;
+
+    Aws::String m_accessPointAccount;
+    bool m_accessPointAccountHasBeenSet = false;
   };
 
 } // namespace Model

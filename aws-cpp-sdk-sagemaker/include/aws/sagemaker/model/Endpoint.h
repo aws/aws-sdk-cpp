@@ -498,6 +498,79 @@ namespace Model
      */
     inline Endpoint& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p> Array of <code>ProductionVariant</code> objects, one for each model that you
+     * want to host at this endpoint in shadow mode with production traffic replicated
+     * from the model specified on <code>ProductionVariants</code>.If you use this
+     * field, you can only specify one variant for <code>ProductionVariants</code> and
+     * one variant for <code>ShadowProductionVariants</code>. </p>
+     */
+    inline const Aws::Vector<ProductionVariantSummary>& GetShadowProductionVariants() const{ return m_shadowProductionVariants; }
+
+    /**
+     * <p> Array of <code>ProductionVariant</code> objects, one for each model that you
+     * want to host at this endpoint in shadow mode with production traffic replicated
+     * from the model specified on <code>ProductionVariants</code>.If you use this
+     * field, you can only specify one variant for <code>ProductionVariants</code> and
+     * one variant for <code>ShadowProductionVariants</code>. </p>
+     */
+    inline bool ShadowProductionVariantsHasBeenSet() const { return m_shadowProductionVariantsHasBeenSet; }
+
+    /**
+     * <p> Array of <code>ProductionVariant</code> objects, one for each model that you
+     * want to host at this endpoint in shadow mode with production traffic replicated
+     * from the model specified on <code>ProductionVariants</code>.If you use this
+     * field, you can only specify one variant for <code>ProductionVariants</code> and
+     * one variant for <code>ShadowProductionVariants</code>. </p>
+     */
+    inline void SetShadowProductionVariants(const Aws::Vector<ProductionVariantSummary>& value) { m_shadowProductionVariantsHasBeenSet = true; m_shadowProductionVariants = value; }
+
+    /**
+     * <p> Array of <code>ProductionVariant</code> objects, one for each model that you
+     * want to host at this endpoint in shadow mode with production traffic replicated
+     * from the model specified on <code>ProductionVariants</code>.If you use this
+     * field, you can only specify one variant for <code>ProductionVariants</code> and
+     * one variant for <code>ShadowProductionVariants</code>. </p>
+     */
+    inline void SetShadowProductionVariants(Aws::Vector<ProductionVariantSummary>&& value) { m_shadowProductionVariantsHasBeenSet = true; m_shadowProductionVariants = std::move(value); }
+
+    /**
+     * <p> Array of <code>ProductionVariant</code> objects, one for each model that you
+     * want to host at this endpoint in shadow mode with production traffic replicated
+     * from the model specified on <code>ProductionVariants</code>.If you use this
+     * field, you can only specify one variant for <code>ProductionVariants</code> and
+     * one variant for <code>ShadowProductionVariants</code>. </p>
+     */
+    inline Endpoint& WithShadowProductionVariants(const Aws::Vector<ProductionVariantSummary>& value) { SetShadowProductionVariants(value); return *this;}
+
+    /**
+     * <p> Array of <code>ProductionVariant</code> objects, one for each model that you
+     * want to host at this endpoint in shadow mode with production traffic replicated
+     * from the model specified on <code>ProductionVariants</code>.If you use this
+     * field, you can only specify one variant for <code>ProductionVariants</code> and
+     * one variant for <code>ShadowProductionVariants</code>. </p>
+     */
+    inline Endpoint& WithShadowProductionVariants(Aws::Vector<ProductionVariantSummary>&& value) { SetShadowProductionVariants(std::move(value)); return *this;}
+
+    /**
+     * <p> Array of <code>ProductionVariant</code> objects, one for each model that you
+     * want to host at this endpoint in shadow mode with production traffic replicated
+     * from the model specified on <code>ProductionVariants</code>.If you use this
+     * field, you can only specify one variant for <code>ProductionVariants</code> and
+     * one variant for <code>ShadowProductionVariants</code>. </p>
+     */
+    inline Endpoint& AddShadowProductionVariants(const ProductionVariantSummary& value) { m_shadowProductionVariantsHasBeenSet = true; m_shadowProductionVariants.push_back(value); return *this; }
+
+    /**
+     * <p> Array of <code>ProductionVariant</code> objects, one for each model that you
+     * want to host at this endpoint in shadow mode with production traffic replicated
+     * from the model specified on <code>ProductionVariants</code>.If you use this
+     * field, you can only specify one variant for <code>ProductionVariants</code> and
+     * one variant for <code>ShadowProductionVariants</code>. </p>
+     */
+    inline Endpoint& AddShadowProductionVariants(ProductionVariantSummary&& value) { m_shadowProductionVariantsHasBeenSet = true; m_shadowProductionVariants.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_endpointName;
@@ -532,6 +605,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::Vector<ProductionVariantSummary> m_shadowProductionVariants;
+    bool m_shadowProductionVariantsHasBeenSet = false;
   };
 
 } // namespace Model

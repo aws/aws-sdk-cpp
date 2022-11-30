@@ -19,7 +19,8 @@ CreateAccessPointRequest::CreateAccessPointRequest() :
     m_nameHasBeenSet(false),
     m_bucketHasBeenSet(false),
     m_vpcConfigurationHasBeenSet(false),
-    m_publicAccessBlockConfigurationHasBeenSet(false)
+    m_publicAccessBlockConfigurationHasBeenSet(false),
+    m_bucketAccountIdHasBeenSet(false)
 {
 }
 
@@ -47,6 +48,12 @@ Aws::String CreateAccessPointRequest::SerializePayload() const
   {
    XmlNode publicAccessBlockConfigurationNode = parentNode.CreateChildElement("PublicAccessBlockConfiguration");
    m_publicAccessBlockConfiguration.AddToNode(publicAccessBlockConfigurationNode);
+  }
+
+  if(m_bucketAccountIdHasBeenSet)
+  {
+   XmlNode bucketAccountIdNode = parentNode.CreateChildElement("BucketAccountId");
+   bucketAccountIdNode.SetText(m_bucketAccountId);
   }
 
   return payloadDoc.ConvertToString();

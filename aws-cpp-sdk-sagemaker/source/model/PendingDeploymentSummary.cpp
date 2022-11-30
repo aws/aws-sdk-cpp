@@ -21,14 +21,16 @@ namespace Model
 PendingDeploymentSummary::PendingDeploymentSummary() : 
     m_endpointConfigNameHasBeenSet(false),
     m_productionVariantsHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
+    m_startTimeHasBeenSet(false),
+    m_shadowProductionVariantsHasBeenSet(false)
 {
 }
 
 PendingDeploymentSummary::PendingDeploymentSummary(JsonView jsonValue) : 
     m_endpointConfigNameHasBeenSet(false),
     m_productionVariantsHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
+    m_startTimeHasBeenSet(false),
+    m_shadowProductionVariantsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -59,6 +61,16 @@ PendingDeploymentSummary& PendingDeploymentSummary::operator =(JsonView jsonValu
     m_startTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ShadowProductionVariants"))
+  {
+    Aws::Utils::Array<JsonView> shadowProductionVariantsJsonList = jsonValue.GetArray("ShadowProductionVariants");
+    for(unsigned shadowProductionVariantsIndex = 0; shadowProductionVariantsIndex < shadowProductionVariantsJsonList.GetLength(); ++shadowProductionVariantsIndex)
+    {
+      m_shadowProductionVariants.push_back(shadowProductionVariantsJsonList[shadowProductionVariantsIndex].AsObject());
+    }
+    m_shadowProductionVariantsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -86,6 +98,17 @@ JsonValue PendingDeploymentSummary::Jsonize() const
   if(m_startTimeHasBeenSet)
   {
    payload.WithDouble("StartTime", m_startTime.SecondsWithMSPrecision());
+  }
+
+  if(m_shadowProductionVariantsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> shadowProductionVariantsJsonList(m_shadowProductionVariants.size());
+   for(unsigned shadowProductionVariantsIndex = 0; shadowProductionVariantsIndex < shadowProductionVariantsJsonList.GetLength(); ++shadowProductionVariantsIndex)
+   {
+     shadowProductionVariantsJsonList[shadowProductionVariantsIndex].AsObject(m_shadowProductionVariants[shadowProductionVariantsIndex].Jsonize());
+   }
+   payload.WithArray("ShadowProductionVariants", std::move(shadowProductionVariantsJsonList));
+
   }
 
   return payload;

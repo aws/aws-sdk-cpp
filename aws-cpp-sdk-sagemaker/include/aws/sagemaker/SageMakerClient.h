@@ -723,6 +723,23 @@ namespace SageMaker
         virtual void CreateFlowDefinitionAsync(const Model::CreateFlowDefinitionRequest& request, const CreateFlowDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Create a hub.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHub">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateHubOutcome CreateHub(const Model::CreateHubRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateHub that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateHubOutcomeCallable CreateHubCallable(const Model::CreateHubRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateHub that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateHubAsync(const Model::CreateHubRequest& request, const CreateHubResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Defines the settings you will use for the human review workflow user
          * interface. Reviewers will see a three-panel interface with an instruction area,
          * the item to review, and an input area.</p><p><h3>See Also:</h3>   <a
@@ -810,6 +827,34 @@ namespace SageMaker
          * An Async wrapper for CreateImageVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateImageVersionAsync(const Model::CreateImageVersionRequest& request, const CreateImageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Creates an inference experiment using the configurations specified in the
+         * request. </p> <p> Use this API to schedule an experiment to compare model
+         * variants on a Amazon SageMaker inference endpoint. For more information about
+         * inference experiments, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/shadow-tests.html">Shadow
+         * tests</a>. </p> <p> Amazon SageMaker begins your experiment at the scheduled
+         * time and routes traffic to your endpoint's model variants based on your
+         * specified configuration. </p> <p> While the experiment is in progress or after
+         * it has concluded, you can view metrics that compare your model variants. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/shadow-tests-view-monitor-edit.html">View,
+         * monitor, and edit shadow tests</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateInferenceExperiment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateInferenceExperimentOutcome CreateInferenceExperiment(const Model::CreateInferenceExperimentRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateInferenceExperiment that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateInferenceExperimentOutcomeCallable CreateInferenceExperimentCallable(const Model::CreateInferenceExperimentRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateInferenceExperiment that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateInferenceExperimentAsync(const Model::CreateInferenceExperimentRequest& request, const CreateInferenceExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts a recommendation job. You can create either an instance recommendation
@@ -933,6 +978,44 @@ namespace SageMaker
          * An Async wrapper for CreateModelBiasJobDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateModelBiasJobDefinitionAsync(const Model::CreateModelBiasJobDefinitionRequest& request, const CreateModelBiasJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates an Amazon SageMaker Model Card.</p> <p>For information about how to
+         * use model cards, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html">Amazon
+         * SageMaker Model Card</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelCard">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateModelCardOutcome CreateModelCard(const Model::CreateModelCardRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateModelCard that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateModelCardOutcomeCallable CreateModelCardCallable(const Model::CreateModelCardRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateModelCard that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateModelCardAsync(const Model::CreateModelCardRequest& request, const CreateModelCardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates an Amazon SageMaker Model Card export job.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelCardExportJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateModelCardExportJobOutcome CreateModelCardExportJob(const Model::CreateModelCardExportJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateModelCardExportJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateModelCardExportJobOutcomeCallable CreateModelCardExportJobCallable(const Model::CreateModelCardExportJobRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateModelCardExportJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateModelCardExportJobAsync(const Model::CreateModelCardExportJobRequest& request, const CreateModelCardExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates the definition for a model explainability job.</p><p><h3>See
@@ -1237,6 +1320,24 @@ namespace SageMaker
          * An Async wrapper for CreateProject that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateProjectAsync(const Model::CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a space used for real time collaboration in a Domain.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateSpace">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateSpaceOutcome CreateSpace(const Model::CreateSpaceRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateSpace that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateSpaceOutcomeCallable CreateSpaceCallable(const Model::CreateSpaceRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateSpace that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateSpaceAsync(const Model::CreateSpaceRequest& request, const CreateSpaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new Studio Lifecycle Configuration.</p><p><h3>See Also:</h3>   <a
@@ -1822,6 +1923,40 @@ namespace SageMaker
         virtual void DeleteFlowDefinitionAsync(const Model::DeleteFlowDefinitionRequest& request, const DeleteFlowDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Delete a hub.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHub">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteHubOutcome DeleteHub(const Model::DeleteHubRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteHub that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteHubOutcomeCallable DeleteHubCallable(const Model::DeleteHubRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteHub that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteHubAsync(const Model::DeleteHubRequest& request, const DeleteHubResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Delete the contents of a hub.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHubContent">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteHubContentOutcome DeleteHubContent(const Model::DeleteHubContentRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteHubContent that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteHubContentOutcomeCallable DeleteHubContentCallable(const Model::DeleteHubContentRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteHubContent that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteHubContentAsync(const Model::DeleteHubContentRequest& request, const DeleteHubContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Use this operation to delete a human task user interface (worker task
          * template).</p> <p> To see a list of human task user interfaces (work task
          * templates) in your account, use . When you delete a worker task template, it no
@@ -1879,6 +2014,25 @@ namespace SageMaker
         virtual void DeleteImageVersionAsync(const Model::DeleteImageVersionRequest& request, const DeleteImageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes an inference experiment.</p>  <p> This operation does not
+         * delete your endpoint, variants, or any underlying resources. This operation only
+         * deletes the metadata of your experiment. </p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteInferenceExperiment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteInferenceExperimentOutcome DeleteInferenceExperiment(const Model::DeleteInferenceExperimentRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteInferenceExperiment that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteInferenceExperimentOutcomeCallable DeleteInferenceExperimentCallable(const Model::DeleteInferenceExperimentRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteInferenceExperiment that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteInferenceExperimentAsync(const Model::DeleteInferenceExperimentRequest& request, const DeleteInferenceExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes a model. The <code>DeleteModel</code> API deletes only the model
          * entry that was created in SageMaker when you called the <code>CreateModel</code>
          * API. It does not delete model artifacts, inference code, or the IAM role that
@@ -1915,6 +2069,23 @@ namespace SageMaker
          * An Async wrapper for DeleteModelBiasJobDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteModelBiasJobDefinitionAsync(const Model::DeleteModelBiasJobDefinitionRequest& request, const DeleteModelBiasJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes an Amazon SageMaker Model Card.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelCard">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteModelCardOutcome DeleteModelCard(const Model::DeleteModelCardRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteModelCard that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteModelCardOutcomeCallable DeleteModelCardCallable(const Model::DeleteModelCardRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteModelCard that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteModelCardAsync(const Model::DeleteModelCardRequest& request, const DeleteModelCardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an Amazon SageMaker model explainability job
@@ -2101,6 +2272,23 @@ namespace SageMaker
          * An Async wrapper for DeleteProject that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteProjectAsync(const Model::DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Used to delete a space.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteSpace">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteSpaceOutcome DeleteSpace(const Model::DeleteSpaceRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteSpace that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteSpaceOutcomeCallable DeleteSpaceCallable(const Model::DeleteSpaceRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteSpace that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteSpaceAsync(const Model::DeleteSpaceRequest& request, const DeleteSpaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the Studio Lifecycle Configuration. In order to delete the Lifecycle
@@ -2637,6 +2825,40 @@ namespace SageMaker
         virtual void DescribeFlowDefinitionAsync(const Model::DescribeFlowDefinitionRequest& request, const DescribeFlowDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Describe a hub.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHub">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeHubOutcome DescribeHub(const Model::DescribeHubRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeHub that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeHubOutcomeCallable DescribeHubCallable(const Model::DescribeHubRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeHub that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeHubAsync(const Model::DescribeHubRequest& request, const DescribeHubResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describe the content of a hub.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHubContent">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeHubContentOutcome DescribeHubContent(const Model::DescribeHubContentRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeHubContent that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeHubContentOutcomeCallable DescribeHubContentCallable(const Model::DescribeHubContentRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeHubContent that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeHubContentAsync(const Model::DescribeHubContentRequest& request, const DescribeHubContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns information about the requested human task user interface (worker
          * task template).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHumanTaskUi">AWS
@@ -2705,6 +2927,23 @@ namespace SageMaker
          * An Async wrapper for DescribeImageVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeImageVersionAsync(const Model::DescribeImageVersionRequest& request, const DescribeImageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns details about an inference experiment.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeInferenceExperiment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeInferenceExperimentOutcome DescribeInferenceExperiment(const Model::DescribeInferenceExperimentRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeInferenceExperiment that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeInferenceExperimentOutcomeCallable DescribeInferenceExperimentCallable(const Model::DescribeInferenceExperimentRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeInferenceExperiment that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeInferenceExperimentAsync(const Model::DescribeInferenceExperimentRequest& request, const DescribeInferenceExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides the results of the Inference Recommender job. One or more
@@ -2797,6 +3036,42 @@ namespace SageMaker
          * An Async wrapper for DescribeModelBiasJobDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeModelBiasJobDefinitionAsync(const Model::DescribeModelBiasJobDefinitionRequest& request, const DescribeModelBiasJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes the content, creation time, and security configuration of an Amazon
+         * SageMaker Model Card.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelCard">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeModelCardOutcome DescribeModelCard(const Model::DescribeModelCardRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeModelCard that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeModelCardOutcomeCallable DescribeModelCardCallable(const Model::DescribeModelCardRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeModelCard that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeModelCardAsync(const Model::DescribeModelCardRequest& request, const DescribeModelCardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes an Amazon SageMaker Model Card export job.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelCardExportJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeModelCardExportJobOutcome DescribeModelCardExportJob(const Model::DescribeModelCardExportJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeModelCardExportJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeModelCardExportJobOutcomeCallable DescribeModelCardExportJobCallable(const Model::DescribeModelCardExportJobRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeModelCardExportJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeModelCardExportJobAsync(const Model::DescribeModelCardExportJobRequest& request, const DescribeModelCardExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a description of a model explainability job definition.</p><p><h3>See
@@ -3011,6 +3286,23 @@ namespace SageMaker
          * An Async wrapper for DescribeProject that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeProjectAsync(const Model::DescribeProjectRequest& request, const DescribeProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes the space.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeSpace">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeSpaceOutcome DescribeSpace(const Model::DescribeSpaceRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeSpace that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeSpaceOutcomeCallable DescribeSpaceCallable(const Model::DescribeSpaceRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeSpace that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeSpaceAsync(const Model::DescribeSpaceRequest& request, const DescribeSpaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the Studio Lifecycle Configuration.</p><p><h3>See Also:</h3>   <a
@@ -3336,6 +3628,23 @@ namespace SageMaker
          * An Async wrapper for GetSearchSuggestions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetSearchSuggestionsAsync(const Model::GetSearchSuggestionsRequest& request, const GetSearchSuggestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Import hub content.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ImportHubContent">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ImportHubContentOutcome ImportHubContent(const Model::ImportHubContentRequest& request) const;
+
+        /**
+         * A Callable wrapper for ImportHubContent that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ImportHubContentOutcomeCallable ImportHubContentCallable(const Model::ImportHubContentRequest& request) const;
+
+        /**
+         * An Async wrapper for ImportHubContent that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ImportHubContentAsync(const Model::ImportHubContentRequest& request, const ImportHubContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the actions in your account and their properties.</p><p><h3>See
@@ -3728,6 +4037,57 @@ namespace SageMaker
         virtual void ListFlowDefinitionsAsync(const Model::ListFlowDefinitionsRequest& request, const ListFlowDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>List hub content versions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHubContentVersions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListHubContentVersionsOutcome ListHubContentVersions(const Model::ListHubContentVersionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListHubContentVersions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListHubContentVersionsOutcomeCallable ListHubContentVersionsCallable(const Model::ListHubContentVersionsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListHubContentVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListHubContentVersionsAsync(const Model::ListHubContentVersionsRequest& request, const ListHubContentVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>List the contents of a hub.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHubContents">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListHubContentsOutcome ListHubContents(const Model::ListHubContentsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListHubContents that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListHubContentsOutcomeCallable ListHubContentsCallable(const Model::ListHubContentsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListHubContents that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListHubContentsAsync(const Model::ListHubContentsRequest& request, const ListHubContentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>List all existing hubs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHubs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListHubsOutcome ListHubs(const Model::ListHubsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListHubs that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListHubsOutcomeCallable ListHubsCallable(const Model::ListHubsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListHubs that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListHubsAsync(const Model::ListHubsRequest& request, const ListHubsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns information about the human task user interfaces in your
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHumanTaskUis">AWS
@@ -3800,6 +4160,23 @@ namespace SageMaker
          * An Async wrapper for ListImages that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListImagesAsync(const Model::ListImagesRequest& request, const ListImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the list of all inference experiments.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceExperiments">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListInferenceExperimentsOutcome ListInferenceExperiments(const Model::ListInferenceExperimentsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListInferenceExperiments that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListInferenceExperimentsOutcomeCallable ListInferenceExperimentsCallable(const Model::ListInferenceExperimentsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListInferenceExperiments that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListInferenceExperimentsAsync(const Model::ListInferenceExperimentsRequest& request, const ListInferenceExperimentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of the subtasks for an Inference Recommender job.</p> <p>The
@@ -3913,6 +4290,59 @@ namespace SageMaker
         virtual void ListModelBiasJobDefinitionsAsync(const Model::ListModelBiasJobDefinitionsRequest& request, const ListModelBiasJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>List the export jobs for the Amazon SageMaker Model Card.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelCardExportJobs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListModelCardExportJobsOutcome ListModelCardExportJobs(const Model::ListModelCardExportJobsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListModelCardExportJobs that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListModelCardExportJobsOutcomeCallable ListModelCardExportJobsCallable(const Model::ListModelCardExportJobsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListModelCardExportJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListModelCardExportJobsAsync(const Model::ListModelCardExportJobsRequest& request, const ListModelCardExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>List existing versions of an Amazon SageMaker Model Card.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelCardVersions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListModelCardVersionsOutcome ListModelCardVersions(const Model::ListModelCardVersionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListModelCardVersions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListModelCardVersionsOutcomeCallable ListModelCardVersionsCallable(const Model::ListModelCardVersionsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListModelCardVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListModelCardVersionsAsync(const Model::ListModelCardVersionsRequest& request, const ListModelCardVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>List existing model cards.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelCards">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListModelCardsOutcome ListModelCards(const Model::ListModelCardsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListModelCards that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListModelCardsOutcomeCallable ListModelCardsCallable(const Model::ListModelCardsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListModelCards that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListModelCardsAsync(const Model::ListModelCardsRequest& request, const ListModelCardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists model explainability job definitions that satisfy various
          * filters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelExplainabilityJobDefinitions">AWS
@@ -4019,6 +4449,42 @@ namespace SageMaker
          * An Async wrapper for ListModels that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListModelsAsync(const Model::ListModelsRequest& request, const ListModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets a list of past alerts in a model monitoring schedule.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListMonitoringAlertHistory">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListMonitoringAlertHistoryOutcome ListMonitoringAlertHistory(const Model::ListMonitoringAlertHistoryRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListMonitoringAlertHistory that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListMonitoringAlertHistoryOutcomeCallable ListMonitoringAlertHistoryCallable(const Model::ListMonitoringAlertHistoryRequest& request) const;
+
+        /**
+         * An Async wrapper for ListMonitoringAlertHistory that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListMonitoringAlertHistoryAsync(const Model::ListMonitoringAlertHistoryRequest& request, const ListMonitoringAlertHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets the alerts for a single monitoring schedule.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListMonitoringAlerts">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListMonitoringAlertsOutcome ListMonitoringAlerts(const Model::ListMonitoringAlertsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListMonitoringAlerts that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListMonitoringAlertsOutcomeCallable ListMonitoringAlertsCallable(const Model::ListMonitoringAlertsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListMonitoringAlerts that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListMonitoringAlertsAsync(const Model::ListMonitoringAlertsRequest& request, const ListMonitoringAlertsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns list of all monitoring job executions.</p><p><h3>See Also:</h3>   <a
@@ -4195,6 +4661,23 @@ namespace SageMaker
          * An Async wrapper for ListProjects that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListProjectsAsync(const Model::ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists spaces.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListSpaces">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListSpacesOutcome ListSpaces(const Model::ListSpacesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListSpaces that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListSpacesOutcomeCallable ListSpacesCallable(const Model::ListSpacesRequest& request) const;
+
+        /**
+         * An Async wrapper for ListSpaces that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListSpacesAsync(const Model::ListSpacesRequest& request, const ListSpacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists devices allocated to the stage, containing detailed device information
@@ -4607,6 +5090,23 @@ namespace SageMaker
         virtual void StartEdgeDeploymentStageAsync(const Model::StartEdgeDeploymentStageRequest& request, const StartEdgeDeploymentStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Starts an inference experiment.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartInferenceExperiment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartInferenceExperimentOutcome StartInferenceExperiment(const Model::StartInferenceExperimentRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartInferenceExperiment that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartInferenceExperimentOutcomeCallable StartInferenceExperimentCallable(const Model::StartInferenceExperimentRequest& request) const;
+
+        /**
+         * An Async wrapper for StartInferenceExperiment that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartInferenceExperimentAsync(const Model::StartInferenceExperimentRequest& request, const StartInferenceExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Starts a previously stopped monitoring schedule.</p>  <p>By default,
          * when you successfully create a new schedule, the status of a monitoring schedule
          * is <code>scheduled</code>.</p> <p><h3>See Also:</h3>   <a
@@ -4760,6 +5260,23 @@ namespace SageMaker
          * An Async wrapper for StopHyperParameterTuningJob that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StopHyperParameterTuningJobAsync(const Model::StopHyperParameterTuningJobRequest& request, const StopHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Stops an inference experiment.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopInferenceExperiment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopInferenceExperimentOutcome StopInferenceExperiment(const Model::StopInferenceExperimentRequest& request) const;
+
+        /**
+         * A Callable wrapper for StopInferenceExperiment that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StopInferenceExperimentOutcomeCallable StopInferenceExperimentCallable(const Model::StopInferenceExperimentRequest& request) const;
+
+        /**
+         * An Async wrapper for StopInferenceExperiment that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StopInferenceExperimentAsync(const Model::StopInferenceExperimentRequest& request, const StopInferenceExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops an Inference Recommender job.</p><p><h3>See Also:</h3>   <a
@@ -5180,6 +5697,23 @@ namespace SageMaker
         virtual void UpdateFeatureMetadataAsync(const Model::UpdateFeatureMetadataRequest& request, const UpdateFeatureMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Update a hub.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateHub">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateHubOutcome UpdateHub(const Model::UpdateHubRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateHub that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateHubOutcomeCallable UpdateHubCallable(const Model::UpdateHubRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateHub that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateHubAsync(const Model::UpdateHubRequest& request, const UpdateHubResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the properties of a SageMaker image. To change the image's tags, use
          * the <a>AddTags</a> and <a>DeleteTags</a> APIs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateImage">AWS
@@ -5198,6 +5732,46 @@ namespace SageMaker
         virtual void UpdateImageAsync(const Model::UpdateImageRequest& request, const UpdateImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Updates an inference experiment that you created. The status of the
+         * inference experiment has to be either <code>Created</code>,
+         * <code>Running</code>. For more information on the status of an inference
+         * experiment, see <a>DescribeInferenceExperimentResponse$Status</a>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateInferenceExperiment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateInferenceExperimentOutcome UpdateInferenceExperiment(const Model::UpdateInferenceExperimentRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateInferenceExperiment that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateInferenceExperimentOutcomeCallable UpdateInferenceExperimentCallable(const Model::UpdateInferenceExperimentRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateInferenceExperiment that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateInferenceExperimentAsync(const Model::UpdateInferenceExperimentRequest& request, const UpdateInferenceExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Update an Amazon SageMaker Model Card.</p>  <p>You cannot update
+         * both model card content and model card status in a single call.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateModelCard">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateModelCardOutcome UpdateModelCard(const Model::UpdateModelCardRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateModelCard that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateModelCardOutcomeCallable UpdateModelCardCallable(const Model::UpdateModelCardRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateModelCard that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateModelCardAsync(const Model::UpdateModelCardRequest& request, const UpdateModelCardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates a versioned model.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateModelPackage">AWS
          * API Reference</a></p>
@@ -5213,6 +5787,23 @@ namespace SageMaker
          * An Async wrapper for UpdateModelPackage that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateModelPackageAsync(const Model::UpdateModelPackageRequest& request, const UpdateModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Update the parameters of a model monitor alert.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateMonitoringAlert">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateMonitoringAlertOutcome UpdateMonitoringAlert(const Model::UpdateMonitoringAlertRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateMonitoringAlert that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateMonitoringAlertOutcomeCallable UpdateMonitoringAlertCallable(const Model::UpdateMonitoringAlertRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateMonitoringAlert that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateMonitoringAlertAsync(const Model::UpdateMonitoringAlertRequest& request, const UpdateMonitoringAlertResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a previously created schedule.</p><p><h3>See Also:</h3>   <a
@@ -5323,6 +5914,23 @@ namespace SageMaker
          * An Async wrapper for UpdateProject that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateProjectAsync(const Model::UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates the settings of a space.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateSpace">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateSpaceOutcome UpdateSpace(const Model::UpdateSpaceRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateSpace that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateSpaceOutcomeCallable UpdateSpaceCallable(const Model::UpdateSpaceRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateSpace that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateSpaceAsync(const Model::UpdateSpaceRequest& request, const UpdateSpaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Update a model training job to request a new Debugger profiling configuration

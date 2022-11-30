@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -201,6 +202,124 @@ namespace Model
      */
     inline GlueTable& WithConnectionName(const char* value) { SetConnectionName(value); return *this;}
 
+
+    /**
+     * <p>Additional options for the table. Currently there are two keys supported:</p>
+     * <ul> <li> <p> <code>pushDownPredicate</code>: to filter on partitions without
+     * having to list and read all the files in your dataset.</p> </li> <li> <p>
+     * <code>catalogPartitionPredicate</code>: to use server-side partition pruning
+     * using partition indexes in the Glue Data Catalog.</p> </li> </ul>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetAdditionalOptions() const{ return m_additionalOptions; }
+
+    /**
+     * <p>Additional options for the table. Currently there are two keys supported:</p>
+     * <ul> <li> <p> <code>pushDownPredicate</code>: to filter on partitions without
+     * having to list and read all the files in your dataset.</p> </li> <li> <p>
+     * <code>catalogPartitionPredicate</code>: to use server-side partition pruning
+     * using partition indexes in the Glue Data Catalog.</p> </li> </ul>
+     */
+    inline bool AdditionalOptionsHasBeenSet() const { return m_additionalOptionsHasBeenSet; }
+
+    /**
+     * <p>Additional options for the table. Currently there are two keys supported:</p>
+     * <ul> <li> <p> <code>pushDownPredicate</code>: to filter on partitions without
+     * having to list and read all the files in your dataset.</p> </li> <li> <p>
+     * <code>catalogPartitionPredicate</code>: to use server-side partition pruning
+     * using partition indexes in the Glue Data Catalog.</p> </li> </ul>
+     */
+    inline void SetAdditionalOptions(const Aws::Map<Aws::String, Aws::String>& value) { m_additionalOptionsHasBeenSet = true; m_additionalOptions = value; }
+
+    /**
+     * <p>Additional options for the table. Currently there are two keys supported:</p>
+     * <ul> <li> <p> <code>pushDownPredicate</code>: to filter on partitions without
+     * having to list and read all the files in your dataset.</p> </li> <li> <p>
+     * <code>catalogPartitionPredicate</code>: to use server-side partition pruning
+     * using partition indexes in the Glue Data Catalog.</p> </li> </ul>
+     */
+    inline void SetAdditionalOptions(Aws::Map<Aws::String, Aws::String>&& value) { m_additionalOptionsHasBeenSet = true; m_additionalOptions = std::move(value); }
+
+    /**
+     * <p>Additional options for the table. Currently there are two keys supported:</p>
+     * <ul> <li> <p> <code>pushDownPredicate</code>: to filter on partitions without
+     * having to list and read all the files in your dataset.</p> </li> <li> <p>
+     * <code>catalogPartitionPredicate</code>: to use server-side partition pruning
+     * using partition indexes in the Glue Data Catalog.</p> </li> </ul>
+     */
+    inline GlueTable& WithAdditionalOptions(const Aws::Map<Aws::String, Aws::String>& value) { SetAdditionalOptions(value); return *this;}
+
+    /**
+     * <p>Additional options for the table. Currently there are two keys supported:</p>
+     * <ul> <li> <p> <code>pushDownPredicate</code>: to filter on partitions without
+     * having to list and read all the files in your dataset.</p> </li> <li> <p>
+     * <code>catalogPartitionPredicate</code>: to use server-side partition pruning
+     * using partition indexes in the Glue Data Catalog.</p> </li> </ul>
+     */
+    inline GlueTable& WithAdditionalOptions(Aws::Map<Aws::String, Aws::String>&& value) { SetAdditionalOptions(std::move(value)); return *this;}
+
+    /**
+     * <p>Additional options for the table. Currently there are two keys supported:</p>
+     * <ul> <li> <p> <code>pushDownPredicate</code>: to filter on partitions without
+     * having to list and read all the files in your dataset.</p> </li> <li> <p>
+     * <code>catalogPartitionPredicate</code>: to use server-side partition pruning
+     * using partition indexes in the Glue Data Catalog.</p> </li> </ul>
+     */
+    inline GlueTable& AddAdditionalOptions(const Aws::String& key, const Aws::String& value) { m_additionalOptionsHasBeenSet = true; m_additionalOptions.emplace(key, value); return *this; }
+
+    /**
+     * <p>Additional options for the table. Currently there are two keys supported:</p>
+     * <ul> <li> <p> <code>pushDownPredicate</code>: to filter on partitions without
+     * having to list and read all the files in your dataset.</p> </li> <li> <p>
+     * <code>catalogPartitionPredicate</code>: to use server-side partition pruning
+     * using partition indexes in the Glue Data Catalog.</p> </li> </ul>
+     */
+    inline GlueTable& AddAdditionalOptions(Aws::String&& key, const Aws::String& value) { m_additionalOptionsHasBeenSet = true; m_additionalOptions.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Additional options for the table. Currently there are two keys supported:</p>
+     * <ul> <li> <p> <code>pushDownPredicate</code>: to filter on partitions without
+     * having to list and read all the files in your dataset.</p> </li> <li> <p>
+     * <code>catalogPartitionPredicate</code>: to use server-side partition pruning
+     * using partition indexes in the Glue Data Catalog.</p> </li> </ul>
+     */
+    inline GlueTable& AddAdditionalOptions(const Aws::String& key, Aws::String&& value) { m_additionalOptionsHasBeenSet = true; m_additionalOptions.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Additional options for the table. Currently there are two keys supported:</p>
+     * <ul> <li> <p> <code>pushDownPredicate</code>: to filter on partitions without
+     * having to list and read all the files in your dataset.</p> </li> <li> <p>
+     * <code>catalogPartitionPredicate</code>: to use server-side partition pruning
+     * using partition indexes in the Glue Data Catalog.</p> </li> </ul>
+     */
+    inline GlueTable& AddAdditionalOptions(Aws::String&& key, Aws::String&& value) { m_additionalOptionsHasBeenSet = true; m_additionalOptions.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Additional options for the table. Currently there are two keys supported:</p>
+     * <ul> <li> <p> <code>pushDownPredicate</code>: to filter on partitions without
+     * having to list and read all the files in your dataset.</p> </li> <li> <p>
+     * <code>catalogPartitionPredicate</code>: to use server-side partition pruning
+     * using partition indexes in the Glue Data Catalog.</p> </li> </ul>
+     */
+    inline GlueTable& AddAdditionalOptions(const char* key, Aws::String&& value) { m_additionalOptionsHasBeenSet = true; m_additionalOptions.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Additional options for the table. Currently there are two keys supported:</p>
+     * <ul> <li> <p> <code>pushDownPredicate</code>: to filter on partitions without
+     * having to list and read all the files in your dataset.</p> </li> <li> <p>
+     * <code>catalogPartitionPredicate</code>: to use server-side partition pruning
+     * using partition indexes in the Glue Data Catalog.</p> </li> </ul>
+     */
+    inline GlueTable& AddAdditionalOptions(Aws::String&& key, const char* value) { m_additionalOptionsHasBeenSet = true; m_additionalOptions.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Additional options for the table. Currently there are two keys supported:</p>
+     * <ul> <li> <p> <code>pushDownPredicate</code>: to filter on partitions without
+     * having to list and read all the files in your dataset.</p> </li> <li> <p>
+     * <code>catalogPartitionPredicate</code>: to use server-side partition pruning
+     * using partition indexes in the Glue Data Catalog.</p> </li> </ul>
+     */
+    inline GlueTable& AddAdditionalOptions(const char* key, const char* value) { m_additionalOptionsHasBeenSet = true; m_additionalOptions.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_databaseName;
@@ -214,6 +333,9 @@ namespace Model
 
     Aws::String m_connectionName;
     bool m_connectionNameHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_additionalOptions;
+    bool m_additionalOptionsHasBeenSet = false;
   };
 
 } // namespace Model

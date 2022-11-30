@@ -88,6 +88,11 @@ GetAccessPointResult& GetAccessPointResult::operator =(const Aws::AmazonWebServi
       }
 
     }
+    XmlNode bucketAccountIdNode = resultNode.FirstChild("BucketAccountId");
+    if(!bucketAccountIdNode.IsNull())
+    {
+      m_bucketAccountId = Aws::Utils::Xml::DecodeEscapedXmlText(bucketAccountIdNode.GetText());
+    }
   }
 
   return *this;
